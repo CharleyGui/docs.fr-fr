@@ -1,15 +1,15 @@
 ---
 title: Composants architecturaux de .NET
-description: Décrit les composants architecturaux de .NET tels que .NET Standard, les implémentations de .NET, les runtimes .NET et les outils.
+description: Décrit les composants de l’architecture .NET, tels que les .NET Standard, les implémentations .NET, les runtimes .NET et les outils.
 author: cartermp
 ms.date: 10/05/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 0cdd2485e81626ffc9d17380427c29fee0f82083
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 316063dbcfba5c92b4a9c6a17051e0a7fc178a3a
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050251"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224393"
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 

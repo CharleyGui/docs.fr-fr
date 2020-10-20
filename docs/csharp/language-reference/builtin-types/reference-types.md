@@ -21,11 +21,11 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.openlocfilehash: c2c03f47babd9ccf87eb60d33b9d65d1a9c82e2e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399643"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223517"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Types référence intégrés (Référence C#)
 
@@ -33,7 +33,7 @@ C# a un nombre de types référence intégrés. Ils ont des mots clés ou des op
 
 ## <a name="the-object-type"></a>Type d’objet.
 
-Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Lorsqu’une variable `object` de type est convertie en type de valeur, on dit qu’elle *n’est pas boxée.* Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md).
+Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type `object` est convertie en un type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md).
 
 ## <a name="the-string-type"></a>Type de chaîne
 
@@ -67,14 +67,14 @@ string b = "h";
 b += "ello";
 ```
 
-`[]` [L’opérateur](../operators/member-access-operators.md#indexer-operator-) peut être utilisé pour l’accès rélu à des caractères individuels d’une chaîne. Les valeurs indiciels valides commencent et doivent être inférieures à `0` la longueur de la chaîne :
+L' `[]` [opérateur](../operators/member-access-operators.md#indexer-operator-) peut être utilisé pour l’accès en lecture seule aux caractères individuels d’une chaîne. Les valeurs d’index valides commencent à `0` et doivent être inférieures à la longueur de la chaîne :
 
 ```csharp
 string str = "test";
 char x = str[2];  // x = 's';
 ```
 
-De la même `[]` manière, l’opérateur peut également être utilisé pour itérer sur chaque personnage dans une chaîne:
+De la même façon, l' `[]` opérateur peut également être utilisé pour effectuer une itération au sein de chaque caractère dans une chaîne :
 
 ```csharp-interactive
 string str = "test";
@@ -170,15 +170,15 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Référence C](../index.md)
+- [Référence C#](../index.md)
 - [Mots clés C#](../keywords/index.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)
-- [Bonnes pratiques pour l’utilisation de chaînes](../../../standard/base-types/best-practices-strings.md)
-- [Opérations de base des cordes](../../../standard/base-types/basic-string-operations.md)
-- [Création de nouvelles chaînes](../../../standard/base-types/creating-new.md)
+- [Meilleures pratiques pour l’utilisation de chaînes](../../../standard/base-types/best-practices-strings.md)
+- [Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)
+- [Création de chaînes](../../../standard/base-types/creating-new.md)
 - [Opérateurs de conversion et de test de type](../operators/type-testing-and-cast.md)
-- [Comment lancer en toute sécurité en utilisant l’appariement des motifs et le comme et est les opérateurs](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Comment effectuer un cast en toute sécurité à l’aide de critères spéciaux et des opérateurs As et is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Procédure pas à pas : création et utilisation d’objets dynamiques](../../programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
 - <xref:System.Object?displayProperty=nameWithType>
 - <xref:System.String?displayProperty=nameWithType>

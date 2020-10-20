@@ -4,18 +4,18 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 10/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 8ef1429d265c87347bb8771dc01b319fcb9e84d0
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c745231f76142c11002ac6663906c8c44c69cdae
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955368"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223362"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Azure HDInsight
 
 Ce didacticiel vous apprend à déployer votre .NET pour Apache Spark application dans le Cloud par le biais d’un cluster Azure HDInsight. HDInsight facilite la création et la configuration d’un cluster Spark dans Azure, car les clusters Spark dans HDInsight sont compatibles avec le stockage Azure et les Azure Data Lake Storage.
 
-Dans ce tutoriel, vous allez découvrir comment :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >
@@ -51,7 +51,7 @@ Avant de commencer, effectuez les tâches suivantes :
 
 1. Visitez le [portail Azure](https://portal.azure.com).
 
-2. Sélectionnez **+ Créer une ressource**. Ensuite, sélectionnez **HDInsight** dans la catégorie **Analytics** .
+2. Sélectionnez **+ Créer une ressource**. Ensuite, sélectionnez **HDInsight** dans la catégorie **Analytics** .
 
     ![Créer une ressource HDInsight à partir d’Portail Azure](./media/hdinsight-deployment/create-hdinsight-resource.png)
 
@@ -100,11 +100,11 @@ Ensuite, vous publiez le *mySparkApp* créé dans [.net pour Apache Spark-bien d
    foo@bar:~/path/to/app$ dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
    ```
 
-2. Effectuez les tâches suivantes pour compresser les fichiers de votre application publiée afin de pouvoir les télécharger facilement vers votre cluster HDInsight.
+2. Effectuez les tâches suivantes pour compresser les fichiers de votre application publiée afin de pouvoir les télécharger facilement vers votre cluster HDInsight. Compressez le contenu du dossier de publication, *publish.zip* par exemple, qui a été créé à la suite de l’étape 1. Tous les assemblys doivent se trouver dans la première couche du fichier zip et il ne doit y avoir aucune couche de dossier intermédiaire. Cela signifie que lorsque vous décompressez *publish.zip*, tous les assemblys sont extraits dans votre répertoire de travail actuel.
 
    **Sur Windows :**
 
-   Accédez à *mySparkApp/bin/Release/netcoreapp 3.0/Ubuntu. 16.04-x64*. Ensuite, cliquez avec le bouton droit sur le dossier de **publication** et sélectionnez **Envoyer vers > dossier compressé (zippé)**. Nommez le nouveau dossier **publish.zip**.
+   Utilisez un programme d’extraction, tel que 7-zip ou WinZip, pour extraire le fichier dans le répertoire bin avec tous les fichiers binaires publiés.
 
    **Sur Linux, exécutez la commande ci-dessous :**
 

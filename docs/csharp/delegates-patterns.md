@@ -4,11 +4,11 @@ description: Découvrez les modèles courants pour l’utilisation de délégué
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
 ms.openlocfilehash: 22ab88e5b139381e3a8921baa20df035f1405146
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399664"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223687"
 ---
 # <a name="common-patterns-for-delegates"></a>Modèles courants pour les délégués
 
@@ -153,4 +153,4 @@ Nous venons de voir le début d’un composant de journal qui peut être étendu
 
 La classe Logger peut apporter des améliorations ou des modifications sans introduire de modifications avec rupture. Comme toute classe, vous ne pouvez pas modifier l’API publique sans risque de modifications avec rupture. Toutefois, le couplage entre l’enregistreur d’événements et les moteurs de sortie étant uniquement par l’intermédiaire du délégué, aucun autre type (tel que les interfaces ou classes de base) n’est appelé. Le couplage est aussi réduit que possible.
 
-[Suivant](events-overview.md)
+[Next](events-overview.md)

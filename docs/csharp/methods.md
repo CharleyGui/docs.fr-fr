@@ -4,12 +4,12 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 520aeed85ee00127c2bd3eee681b980d05f46d05
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: d5ca96ab3a07b85fa525dd06c975f8e3221c82e8
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874704"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223669"
 ---
 # <a name="methods-in-c"></a>Méthodes dans (C#)
 
@@ -198,7 +198,7 @@ L’appelant peut alors consommer le tuple retourné avec du code comme celui-ci
 
 ```csharp
 var person = GetPersonalInfo("111111111")
-Console.WriteLine("{person.Item1} {person.Item3}: age = {person.Item4}");
+Console.WriteLine($"{person.Item1} {person.Item3}: age = {person.Item4}");
 ```
 
 Vous pouvez aussi affecter des noms aux éléments du tuple dans la définition du type tuple. L’exemple suivant montre une autre version de la méthode `GetPersonalInfo` qui utilise des éléments nommés :
@@ -215,7 +215,7 @@ L’appel précédent de la méthode `GetPersonInfo` peut alors être modifié c
 
 ```csharp
 var person = GetPersonalInfo("111111111");
-Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
+Console.WriteLine($"{person.FName} {person.LName}: age = {person.Age}");
 ```
 
 Si un tableau est passé comme argument à une méthode et que celle-ci modifie la valeur d’éléments individuels, il n’est pas nécessaire que la méthode retourne le tableau, même si vous pouvez choisir de le faire pour la qualité du style ou pour obtenir un flux fonctionnel de valeurs.  La raison en est que C# passe tous les types référence par valeur et que la valeur d’une référence de tableau est le pointeur vers ce tableau. Dans l’exemple suivant, les modifications apportées au contenu du tableau `values` qui sont effectuées dans la méthode `DoubleValues` sont observables par tout code ayant une référence au tableau.

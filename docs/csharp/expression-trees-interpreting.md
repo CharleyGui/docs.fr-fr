@@ -4,12 +4,12 @@ description: Découvrez comment écrire du code pour analyser la structure d’u
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 960d72384a7e5f570fc1f94200a7d3b2179343fd
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 39baf32c9c53d57227d52b9370f8165ff92d708d
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91173306"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223672"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -516,7 +516,7 @@ Tout d’abord, les visiteurs gèrent uniquement les constantes qui sont des ent
 
 Même le dernier exemple reconnaît un sous-ensemble des types de nœuds possibles.
 Vous pouvez toujours lui fournir de nombreuses expressions qui entraîneront son échec.
-Une implémentation complète est fournie dans .NET Standard sous le nom <xref:System.Linq.Expressions.ExpressionVisitor>. Elle peut prendre en charge tous les types de nœud possibles.
+Une implémentation complète est incluse dans .NET Standard sous le nom <xref:System.Linq.Expressions.ExpressionVisitor> et peut gérer tous les types de nœuds possibles.
 
 Pour finir, la bibliothèque que j’ai utilisée dans cet article a été créée à des fins de démonstration et de formation. Elle n’est pas optimisée. Je l’ai écrit pour rendre les structures utilisées de façon claire, et pour mettre en évidence les techniques utilisées pour visiter les nœuds et analyser ce qu’il y a. Une implémentation de production accorderait davantage d’attention aux performances.
 

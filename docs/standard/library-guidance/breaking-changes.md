@@ -3,11 +3,11 @@ title: Changements cassants et bibliothèques .NET
 description: Recommandations relatives aux bonnes pratiques pour parcourir les changements cassants lors de la création de bibliothèques .NET.
 ms.date: 10/02/2018
 ms.openlocfilehash: 2cbd9e0a818b52aede6c9b1f60fdf52dcbd7b96f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400420"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223329"
 ---
 # <a name="breaking-changes"></a>Changements cassants
 
@@ -64,9 +64,9 @@ Un changement cassant binaire se produit quand vous modifiez l’API publique de
 
 Un changement cassant binaire peut également casser un **assembly entier**. Le renommage d’un assembly avec `AssemblyName` change l’identité de l’assembly, de même que l’ajout, la suppression ou le changement de la clé d’affectation de noms forts de l’assembly. Un changement de l’identité d’un assembly va casser tout le code compilé qui l’utilise.
 
-❌NE PAS changer un nom d’assemblage.
+❌ NE modifiez pas le nom d’un assembly.
 
-❌NE PAS ajouter, supprimer ou modifier la clé de nommage forte.
+❌ N’ajoutez pas, ne supprimez pas ou ne modifiez pas la clé de nom fort.
 
 ✔️ À ENVISAGER : Utiliser des classes de base abstraites plutôt que des interfaces.
 
@@ -100,7 +100,7 @@ public class Document
 
 - [Considérations relatives à la version et la mise à jour pour les développeurs C#](../../csharp/whats-new/version-update-considerations.md)
 - [A definitive guide to API-breaking changes in .NET](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)
-- [.NET enfreignant les règles de changement](https://github.com/dotnet/runtime/blob/master/docs/coding-guidelines/breaking-change-rules.md)
+- [Règles de modification avec rupture .NET](https://github.com/dotnet/runtime/blob/master/docs/coding-guidelines/breaking-change-rules.md)
 
 >[!div class="step-by-step"]
 >[Précédent](versioning.md)

@@ -1,15 +1,17 @@
 ---
 title: Créer des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark
 description: Découvrez comment implémenter des fonctions définies par l’utilisateur (UDF) dans .NET pour les applications Apache Spark.
+ms.author: nidutta
+author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 769bcf0a912d27e191dad82138648d1aefb3c3b6
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 50e631b0c561ebdf081d4c1b7d16bf25abb322e5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955034"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224183"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>Créer des fonctions définies par l’utilisateur (UDF) dans .NET pour Apache Spark
 
@@ -184,6 +186,12 @@ Notez que `func` et `func2` ne partagent plus de fermeture et qu’ils ont leurs
 
 * Les valeurs NULL dans les fonctions définies par l’utilisateur peuvent lever des exceptions. Il incombe au développeur de les gérer.
 * Les fonctions définies par l’utilisateur n’exploitent pas les optimisations fournies par les fonctions intégrées d’Spark. il est donc recommandé d’utiliser des fonctions intégrées dans la mesure du possible.
+
+## <a name="faqs"></a>FAQ
+
+**Pourquoi est-ce que j’obtiens l’erreur `System.NotImplementedException: The method or operation is not implemented.` ou `System.InvalidCastException: Unable to cast object of type 'System.Collections.Hashtable' to type 'System.Collections.Generic.IDictionary` lorsque j’essaie d’appeler une fonction UDF avec `ArrayType` ,, `MapType` `ArrayList` ou `HashTable` comme argument ou type de retour ?**  
+La prise en charge de `ArrayType` et de `MapType` n’est pas fournie jusqu’à la version [v 1.0](https://github.com/dotnet/spark/releases/tag/v1.0.0). par conséquent, vous obtiendriez cette erreur si vous utilisez un .net pour Apache Spark version antérieure à celle-ci, et que vous essayiez de passer ces types comme arguments à l’UDF ou en tant que type de retour.
+`ArrayList` les `HashTable` types et ne peuvent pas être pris en charge en tant que types de retour d’une fonction définie par l’utilisateur, car il s’agit de collections non génériques. par conséquent, leurs définitions de type d’élément ne peuvent pas être fournies à Spark
 
 ## <a name="next-steps"></a>Étapes suivantes
 

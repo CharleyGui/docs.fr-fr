@@ -2,12 +2,12 @@
 title: Nouveautés de .NET Core pour Desktop
 description: Découvrez .NET Core, les différences entre .NET Core et .NET Framework, ainsi que les nouvelles fonctionnalités qui ont été ajoutées.
 ms.date: 05/12/2020
-ms.openlocfilehash: b4fc0cb2841fe13b000223aefc5eaf63bd911994
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 796facaf8cd4f0d23fbcd04b90cb78fb28ebc465
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144262"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223641"
 ---
 # <a name="whats-new-with-net-core-for-desktop"></a>Nouveautés de .NET Core pour Desktop
 
@@ -83,7 +83,7 @@ Pour les nouvelles applications de bureau, nous vous recommandons de démarrer d
 
 ## <a name="net-standard-vs-pcl"></a>.NET Standard et PCL
 
-[.NET Standard](../../standard/net-standard.md) est une spécification officielle des API .NET qui sont destinées à être disponibles sur toutes les implémentations de .NET. L’objectif de .NET Standard est d’établir une meilleure uniformité dans l’écosystème .NET. .NET Standard est une spécification d’API .NET qui constituent un ensemble uniforme de contrats pour la compilation de votre code. Ces contrats sont implémentés dans chaque version de .NET, ce qui permet de portabilité entre les différentes implémentations de .NET.
+[.NET standard](../../standard/net-standard.md) est une spécification formelle des API .net qui sont destinées à être disponibles sur toutes les implémentations de .net. La motivation derrière .NET Standard consiste à établir une meilleure uniformité dans l’écosystème .NET. .NET Standard est une spécification d’API .NET qui constituent un ensemble uniforme de contrats pour la compilation de votre code. Ces contrats sont implémentés dans chaque version de .NET, ce qui permet de portabilité entre les différentes implémentations de .NET.
 
 .NET Standard permet les scénarios clés suivants :
 

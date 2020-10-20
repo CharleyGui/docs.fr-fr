@@ -4,12 +4,12 @@ description: En savoir plus sur les frameworks cibles pour les applications et l
 ms.date: 09/08/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 22689f6c1f161a67978dc0f41c6bc9a6b5acfad7
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 85bc05f07cfcc5f59a8a27790ee3d78a497cecdc
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065251"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223466"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
@@ -25,7 +25,7 @@ Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et 
 
 ## <a name="latest-versions"></a>Dernières versions
 
-Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker de Framework cible (TFM) est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET.
+Le tableau suivant définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker de Framework cible (TFM) est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET.
 
 | Version cible de .NET Framework      | Latest <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
 | :-: | :-: | :-: | :-: |
@@ -54,7 +54,7 @@ Un framework cible est généralement référencé par un TFM. Le tableau suivan
 
 Pour chaque TFM .NET 5,0 et versions ultérieures, par exemple, `net5.0` il existe des variantes TFM qui incluent des liaisons spécifiques au système d’exploitation. Ces variations sont indiquées dans le tableau suivant.
 
-| Format propre au système d’exploitation |  Exemple        |
+| Format propre au système d’exploitation | Exemple        |
 |--------------------|----------------|
 | \<base-tfm>-Android | .net 5.0-Android |
 | \<base-tfm>-iOS     | net 5.0-iOS     |
@@ -116,7 +116,7 @@ public class MyClass
     {
 #if NET40
         Console.WriteLine("Target framework: .NET Framework 4.0");
-#elif NET45  
+#elif NET45
         Console.WriteLine("Target framework: .NET Framework 4.5");
 #else
         Console.WriteLine("Target framework: .NET Standard 1.4");

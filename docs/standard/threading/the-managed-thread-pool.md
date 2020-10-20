@@ -10,11 +10,11 @@ helpviewer_keywords:
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
 ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400630"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223791"
 ---
 # <a name="the-managed-thread-pool"></a>Le pool de threads managés
 
@@ -45,7 +45,7 @@ Le nombre d’opérations qui peuvent être mises en file d’attente pour le po
 Vous pouvez contrôler le nombre maximal de threads à l'aide des méthodes <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType>.  
 
 > [!NOTE]
-> Le code qui héberge l’heure d’exécution de langue commune peut définir la taille en utilisant la [`ICorThreadpool::CorSetMaxThreads`](../../framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md) méthode.  
+> Le code qui héberge l’common language runtime peut définir la taille à l’aide de la [`ICorThreadpool::CorSetMaxThreads`](../../framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md) méthode.  
   
 ### <a name="thread-pool-minimums"></a>Valeurs minimales d’un pool de threads
 
@@ -63,7 +63,7 @@ Quand une valeur minimale est atteinte, le pool de threads peut créer des threa
 
 À compter du .NET Framework 4, le moyen le plus simple d’utiliser le pool de threads est d’utiliser la [bibliothèque parallèle de tâches (TPL)](../parallel-programming/task-parallel-library-tpl.md). Par défaut, les types de la bibliothèque parallèle de tâches, comme <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>, utilisent des threads de pool pour exécuter des tâches.
 
-Vous pouvez également utiliser le <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> pool de [`ICorThreadpool::CorQueueUserWorkItem`](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) threads en appelant à partir <xref:System.Threading.WaitCallback?displayProperty=nameWithType> de code géré (ou à partir de code non géré) et en passant un délégué représentant la méthode qui effectue la tâche.
+Vous pouvez également utiliser le pool de threads en appelant <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> à partir du code managé (ou [`ICorThreadpool::CorQueueUserWorkItem`](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) à partir du code non managé) et en passant un <xref:System.Threading.WaitCallback?displayProperty=nameWithType> délégué représentant la méthode qui exécute la tâche.
 
 Une autre façon d’utiliser le pool de threads est de mettre en file d’attente des éléments de travail associés à une opération d’attente en utilisant la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> et en passant un <xref:System.Threading.WaitHandle?displayProperty=nameWithType> qui, quand il est signalé ou quand il a expiré, appelle la méthode représentée par le délégué <xref:System.Threading.WaitOrTimerCallback?displayProperty=nameWithType>. Les threads de pool sont utilisés pour appeler les méthodes de rappel.  
 
@@ -89,8 +89,8 @@ Il existe plusieurs scénarios dans lesquels il est préférable de créer et de
 - <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>
 - <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>
 - [Bibliothèque parallèle de tâches](../parallel-programming/task-parallel-library-tpl.md)
-- [Comment : retourner une valeur à partir d'une tâche](../parallel-programming/how-to-return-a-value-from-a-task.md)
-- [Objets et caractéristiques de threading](threading-objects-and-features.md)
-- [Fils et threading](threads-and-threading.md)
-- [E/S sur fichier asynchrones](../io/asynchronous-file-i-o.md)
+- [Procédure : retourner une valeur à partir d’une tâche](../parallel-programming/how-to-return-a-value-from-a-task.md)
+- [Fonctionnalités et objets de threading](threading-objects-and-features.md)
+- [Threads et threading](threads-and-threading.md)
+- [E/s de fichier asynchrones](../io/asynchronous-file-i-o.md)
 - [Minuteurs](timers.md)

@@ -1,80 +1,87 @@
 ---
-title: Tests unitaires dans .NET Core et .NET Standard
-description: Cet article offre une courte vue d’ensemble des tests unitaires pour les projets .NET Core et .NET Standard.
-author: ardalis
-ms.author: wiwagn
-ms.date: 05/18/2020
-zone_pivot_groups: unit-testing-framework-set-one
-ms.openlocfilehash: e15f80b173389cdff86c6e62013e9c0f21171dd6
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+title: Test dans .NET
+description: Cet article fournit une brève présentation des concepts de test, de la terminologie et des outils de test dans .NET.
+author: IEvangelist
+ms.author: dapine
+ms.date: 10/19/2020
+ms.openlocfilehash: 36e88cc059447a98931593e0535c70cbc92a2cf4
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703103"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223469"
 ---
-# <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
+# <a name="testing-in-net"></a>Test dans .NET
 
-.NET Core permet de créer facilement des tests unitaires. Cet article présente les tests unitaires et explique ce qui les distingue des autres types de test. Les ressources connexes au bas de la page vous montrent comment ajouter un projet de test à votre solution. Après avoir configuré votre projet de test, vous pouvez exécuter vos tests unitaires à l’aide de la ligne de commande ou de Visual Studio.
+Cet article présente le concept de test et illustre la manière dont différents genres de tests peuvent être utilisés pour valider le code. Plusieurs outils sont disponibles pour tester des applications .NET, telles que l' [interface de commande CLI .net](#net-cli) ou les [environnements de développement intégré (IDE)](#ide).
 
-Si vous testez un projet de **ASP.net Core** , consultez [tests d’intégration dans ASP.net Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
+## <a name="test-types"></a>Types de test
 
-.NET Core 2.0 et ultérieur prend en charge [.NET Standard 2.0](../../standard/net-standard.md) et nous allons utiliser ses bibliothèques pour illustrer les tests unitaires.
+Le fait de disposer de tests automatisés est un excellent moyen de s’assurer que le code d’application fait ce que les auteurs l’envisagent de faire. Cet article couvre les tests unitaires, les tests d’intégration et les tests de charge.
 
-Vous pouvez utiliser des modèles de projet de test unitaire .NET Core 2.0 et ultérieur intégrés pour C#, F# et Visual Basic comme point de départ de votre projet personnel.
+### <a name="unit-tests"></a>Tests unitaires
 
-## <a name="what-are-unit-tests"></a>Que sont les tests unitaires ?
+Un *test unitaire* est un test qui exerce des composants logiciels individuels ou des méthodes, également appelées « unités de travail ». Les tests unitaires doivent uniquement tester le code dans le contrôle du développeur. Ils ne testent pas les problèmes d’infrastructure. Les problèmes d’infrastructure incluent l’interaction avec les bases de données, les systèmes de fichiers et les ressources réseau.
 
-L’utilisation de tests automatisés est un très bon moyen de vérifier qu’une application logicielle se comporte comme ses auteurs l’avaient prévu. Il existe plusieurs types de tests pour les applications logicielles. Citons par exemple les tests d’intégration, les tests web, les tests de charge, etc. Les **tests unitaires** testent les méthodes et les composants logiciels individuels. Les tests unitaires doivent uniquement tester le code sous le contrôle du développeur. Ils ne doivent pas tester les problèmes d’infrastructure. Les problèmes d’infrastructure comprennent les bases de données, les systèmes de fichiers et les ressources réseau.
+Pour plus d’informations sur la création de tests unitaires, consultez [outils de test](#testing-tools).
 
-Par ailleurs, n’oubliez pas qu’il existe des bonnes pratiques pour écrire des tests. Par exemple, le [développement piloté par les tests (TDD)](https://deviq.com/test-driven-development/) est lorsqu’un test unitaire est écrit avant le code qu’il est destiné à vérifier. Le développement TDD est comme créer le plan d’un livre avant de l’écrire. Il est conçu pour aider les développeurs à écrire du code plus simple, plus lisible et plus efficace.
+### <a name="integration-tests"></a>Tests d’intégration
 
-> [!NOTE]
-> L’équipe ASP.NET suit [ces conventions](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines#unit-tests-and-functional-tests) pour aider les développeurs à trouver des noms qui conviennent pour les méthodes et les classes de test.
+Un *test d’intégration* diffère d’un test unitaire dans la mesure où il exerce deux ou plusieurs composants logiciels pour fonctionner ensemble, également appelé « intégration ». Ces tests fonctionnent sur un spectre plus large du système testé, tandis que les tests unitaires se concentrent sur des composants individuels. Souvent, les tests d’intégration incluent des problèmes d’infrastructure.
 
-Essayez de ne pas introduire de dépendances à l’infrastructure quand vous écrivez des tests unitaires. Elles rendent les tests lents et fragiles et doivent être réservées aux tests d’intégration. Vous pouvez éviter ces dépendances dans votre application en suivant le [principe des dépendances explicites](https://deviq.com/explicit-dependencies-principle/) et en utilisant l’[injection de dépendances](/aspnet/core/fundamentals/dependency-injection). Vous pouvez également conserver vos tests unitaires dans un projet distinct de vos tests d’intégration. Ainsi, vous avez la garantie que votre projet de test unitaire n’a pas de références ou de dépendances aux packages de l’infrastructure.
+### <a name="load-tests"></a>Tests de charge
 
-## <a name="next-steps"></a>Étapes suivantes
+Un *test de charge* a pour but de déterminer si un système peut gérer une charge spécifiée, par exemple, le nombre d’utilisateurs simultanés utilisant une application et la capacité de l’application à gérer les interactions de façon réactive. Pour plus d’informations sur le test de charge des applications Web, consultez [ASP.net core le test de charge ou de stress](/aspnet/core/test/load-tests).
 
-Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
+## <a name="test-considerations"></a>Considérations relatives aux tests
 
-Les projets de test unitaire .NET Core sont pris en charge pour :
+Gardez à l’esprit qu’il existe des [pratiques recommandées](unit-testing-best-practices.md) pour l’écriture des tests. Par exemple, le [développement piloté par les tests (TDD)](https://deviq.com/test-driven-development) est le moment où un test unitaire est écrit avant le code qu’il doit vérifier. TDD est semblable à la création d’un plan pour un livre avant de l’écrire. Il est conçu pour aider les développeurs à écrire du code plus simple, plus lisible et plus efficace.
 
-- [C#](../../csharp/index.yml)
-- [F#](../../fsharp/index.yml)
-- [Visual Basic](../../visual-basic/index.yml)
+## <a name="testing-tools"></a>Outils de test
 
-Vous pouvez également choisir entre plusieurs frameworks de tests unitaires :
+.Net est une plateforme de développement multilingue, et vous pouvez écrire différents types de test pour [C#](../../csharp/index.yml), [F #](../../fsharp/index.yml)et [Visual Basic](../../visual-basic/index.yml). Pour chacune de ces langues, vous pouvez choisir entre plusieurs infrastructures de test.
 
-- [xUnit](https://xunit.net/)
-- [NUnit](https://nunit.org)
-- [MSTest](https://github.com/Microsoft/testfx-docs)
+### <a name="xunit"></a>xUnit
 
-Vous pouvez en savoir plus dans les procédures suivantes :
+[xUnit](https://xunit.net) est un outil de test d’unités libre, open source et axé sur la communauté pour .net. Écrit par l’inventeur d’origine de NUnit v2, xUnit.net est la technologie la plus récente pour le test unitaire des applications .NET. xUnit.net fonctionne avec resharper, CodeRush, TestDriven.NET et [Xamarin](/apps/xamarin). Il s’agit d’un projet de [.net Foundation](https://dotnetfoundation.org) qui fonctionne dans le cadre de son code de réalisation.
 
-:::zone pivot="mstest"
+Pour plus d’informations, consultez les ressources suivantes :
 
-- Créer des tests unitaires à l’aide de [*MSTest* et *C#* avec l’interface CLI .NET Core](unit-testing-with-mstest.md).
-- Créer des tests unitaires à l’aide de [*MSTest* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-mstest.md).
-- Créer des tests unitaires à l’aide de [*MSTest* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-mstest.md).
+- [Tests unitaires avec C #](unit-testing-with-dotnet-test.md)
+- [Tests unitaires avec F #](unit-testing-fsharp-with-dotnet-test.md)
+- [Tests unitaires avec Visual Basic](unit-testing-visual-basic-with-dotnet-test.md)
 
-:::zone-end
-:::zone pivot="xunit"
+### <a name="nunit"></a>NUnit
 
-- Créer des tests unitaires à l’aide de [*xUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-dotnet-test.md).
-- Créer des tests unitaires à l’aide de [*xUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-dotnet-test.md).
-- Créer des tests unitaires à l’aide de [*xUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
+[Nunit](https://nunit.org) est une infrastructure de tests unitaires pour tous les langages .net. Initialement porté à partir de JUnit, la version de production actuelle a été réécrite avec de nombreuses nouvelles fonctionnalités et la prise en charge d’une large gamme de plateformes .NET. Il s’agit d’un projet de [.net Foundation](https://dotnetfoundation.org).
 
-:::zone-end
-:::zone pivot="nunit"
+Pour plus d’informations, consultez les ressources suivantes :
 
-- Créer des tests unitaires à l’aide de [*NUnit* et *C#* avec l’interface CLI .NET Core](unit-testing-with-nunit.md).
-- Créer des tests unitaires à l’aide de [*NUnit* et *F#* avec l’interface CLI .NET Core](unit-testing-fsharp-with-nunit.md).
-- Créer des tests unitaires à l’aide de [*NUnit* et *Visual Basic* avec l’interface CLI .NET Core](unit-testing-visual-basic-with-nunit.md).
+- [Tests unitaires avec C #](unit-testing-with-nunit.md)
+- [Tests unitaires avec F #](unit-testing-fsharp-with-nunit.md)
+- [Tests unitaires avec Visual Basic](unit-testing-visual-basic-with-nunit.md)
 
-:::zone-end
+### <a name="mstest"></a>MSTest
 
-Vous pouvez en savoir plus dans les articles suivants :
+[MSTest](https://github.com/Microsoft/testfx-docs) est l’infrastructure de test Microsoft pour tous les langages .net. Il est extensible et fonctionne avec la CLI .NET et Visual Studio. Pour plus d’informations, consultez les ressources suivantes :
 
-- Visual Studio Enterprise propose des outils de test très performants pour .NET Core. Pour en savoir plus, découvrez [Live Unit Testing](/visualstudio/test/live-unit-testing) ou la[couverture du code](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage).
-- Pour plus d’informations sur l’exécution de tests unitaires sélectifs, consultez [Exécution de tests unitaires sélectifs](selective-unit-tests.md) ou [Inclusion et exclusion de tests avec Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
-- [Guide pratique pour utiliser xUnit avec .NET Core et Visual Studio](https://xunit.github.io/docs/getting-started-dotnet-core.html).
+- [Tests unitaires avec C #](unit-testing-with-mstest.md)
+- [Tests unitaires avec F #](unit-testing-fsharp-with-mstest.md)
+- [Tests unitaires avec Visual Basic](unit-testing-visual-basic-with-mstest.md)
+
+### <a name="net-cli"></a>CLI .NET
+
+Vous pouvez exécuter des tests unitaires de solutions à partir de l' [interface CLI .net](../tools/index.md), à l’aide de la commande [dotnet test](../tools/dotnet-test.md) . L’interface CLI .NET expose une majorité des fonctionnalités que les [environnements de développement intégré (IDE)](#ide) mettent à disposition via les interfaces utilisateur. L’interface CLI .NET est multiplateforme et peut être utilisée dans le cadre des pipelines d’intégration et de livraison continus. L’interface CLI .NET est utilisée avec les processus scriptés pour automatiser les tâches courantes.
+
+### <a name="ide"></a>IDE
+
+Que vous utilisiez Visual Studio, Visual Studio pour Mac ou Visual Studio Code, il existe des interfaces utilisateur graphiques pour la fonctionnalité de test. D’autres fonctionnalités sont disponibles pour les IDE que l’interface CLI, par exemple [Live Unit testing](/visualstudio/test/live-unit-testing). Pour plus d’informations, consultez [inclure et exclure des tests avec Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
+
+## <a name="see-also"></a>Voir aussi
+
+Pour plus d’informations, consultez les articles suivants :
+
+- [Meilleures pratiques en matière de tests unitaires avec .NET](unit-testing-best-practices.md)
+- [Tests d’intégration dans ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites)
+- [Exécution de tests unitaires sélectifs](selective-unit-tests.md)
+- [Utiliser la couverture du code pour les tests unitaires](unit-testing-code-coverage.md)

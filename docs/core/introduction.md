@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 0539519c2e1dd429983226065e8508ac148e25a8
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: d008fbeabf58a3dddf1ee96fc655b6a685f8edfd
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877559"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223581"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -320,7 +320,7 @@ Dans 2014, Microsoft a commencé à écrire un successeur interplateforme et ope
 
 Cet article concerne .NET 5, mais une grande partie de la documentation pour .NET 5 a toujours des références à « .NET Core » ou à « .NET Framework ». En outre, « Core » reste dans les noms [ASP.net Core](/aspnet/core/) et [Entity Framework Core](/ef/core/).
 
-La documentation fait également référence à .NET Standard. Le [.NET standard](../standard/net-standard.md) est une spécification d’API qui vous permet de développer des bibliothèques de classes pour plusieurs implémentations de .net.
+La documentation fait également référence à .NET Standard. [.NET standard](../standard/net-standard.md) est une spécification d’API qui vous permet de développer des bibliothèques de classes pour plusieurs implémentations de .net.
 
 Pour plus d’informations, consultez composants de l' [architecture .net](../standard/components.md).
 
@@ -340,11 +340,11 @@ Une partie de la terminologie pour .NET peut être déroutante, car le même mot
 
   |Context  | signification de « Framework » |
   |---------|---------------------|
-  | .NET Framework | Implémentation originale de Windows de .NET. « Framework » est en majuscules. |
+  | .NET Framework | Implémentation originale de Windows de .NET. « Framework » est en majuscules. |
   | version cible de .NET Framework | Ensemble d’API sur lequel repose une bibliothèque ou une application .NET. Exemples : .NET Core 3,1, .NET Standard 2,0 |
   | Moniker du Framework cible  | Un TFM est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET. Exemple : `net462` pour .NET Framework 4.6.2. |
   | application dépendante du Framework | Application qui peut s’exécuter uniquement sur un ordinateur sur lequel vous avez installé le runtime à partir de la [page de téléchargement de .net](https://dotnet.microsoft.com/download/dotnet-core). « Framework » dans cette utilisation est la même chose que le « runtime » que vous téléchargez à partir de la page de téléchargement de .NET. |
-  
+
 * **Kit SDK**
 
   |Context  | Signification du kit de développement logiciel (SDK) |

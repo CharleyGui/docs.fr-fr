@@ -2,25 +2,25 @@
 title: Nouveautés de .NET Core 2.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core.
 ms.date: 08/13/2017
-ms.openlocfilehash: 115b3adc72b6798c6a7bac9cc18044a8822808a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdca38d1584107727fe8e20b80ab2337f4cb05f1
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398831"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223716"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
 .NET core 2.0 inclut les nouvelles fonctionnalités et améliorations dans les domaines suivants :
 
-- [Outils](#tooling)
-- [Support multilingue](#language-support)
+- [Outillage](#tooling)
+- [Prise en charge linguistique](#language-support)
 - [Améliorations de plate-forme](#platform-improvements)
 - [Modifications d'API](#api-changes-and-library-support)
-- [Intégration Visual Studio](#visual-studio-integration)
+- [Visual Studio, intégration](#visual-studio-integration)
 - [Améliorations de la documentation](#documentation-improvements)
 
-## <a name="tooling"></a>Outils
+## <a name="tooling"></a>Outillage
 
 ### <a name="dotnet-restore-runs-implicitly"></a>la restauration de dotnet s’exécute implicitement
 
@@ -104,13 +104,13 @@ Vous pouvez également développer des applications qui ciblent Linux en tant qu
 
 ### <a name="support-for-net-standard-20"></a>Prise en charge de .NET 2.0 Standard
 
-.NET Standard définit un ensemble par version de l’API qui doit être disponible sur des mises en œuvre .NET conformes à cette version de la norme. .NET Standard est destiné aux développeurs de bibliothèques. Il vise à garantir la fonctionnalité disponible dans une bibliothèque qui cible une version de .NET Standard sur chaque mise en œuvre .NET. .NET core 1.x prend en charge la .NET Standard version 1.6 ; .NET Core 2.0 prend en charge la dernière version, .NET Standard 2.0. Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).
+.NET Standard définit un ensemble de versions d’API qui doivent être disponibles sur les implémentations de .NET conformes à cette version de la norme. .NET Standard est destiné aux développeurs de bibliothèques. Elle vise à garantir la fonctionnalité disponible pour une bibliothèque qui cible une version de .NET Standard sur chaque implémentation .NET. .NET Core 1. x prend en charge .NET Standard version 1,6 ; .NET Core 2,0 prend en charge la version la plus récente, .NET Standard 2,0. Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).
 
-.NET Standard 2.0 inclut plus de 20 000 API de plus que dans la version .NET Standard 1.6. Une grande partie de cette surface d’exposition étendue résulte de l’incorporation des API communs à .NET Framework et Xamarin dans .NET Standard.
+.NET Standard 2,0 comprend plus de 20 000 API que celles disponibles dans .NET Standard 1,6. Une grande partie de cette surface d’exposition étendue résulte de l’incorporation des API communs à .NET Framework et Xamarin dans .NET Standard.
 
-Les bibliothèques de classes .NET Standard 2.0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API présents dans .NET Standard 2.0. Aucune recompilation des bibliothèques .NET Framework n’est requise.
+Les bibliothèques de classes .NET Standard 2,0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API qui sont présentes dans .NET Standard 2,0. Aucune recompilation des bibliothèques .NET Framework n’est requise.
 
-Pour une liste des API qui ont été ajoutées à la norme .NET depuis sa dernière version, le .NET Standard 1.6, voir [.NET Standard 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
+Pour obtenir la liste des API qui ont été ajoutées à .NET Standard depuis sa dernière version, .NET Standard 1,6, consultez [.NET Standard 2,0 et 1,6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
 
 ### <a name="expanded-surface-area"></a>Surface d’exposition étendue
 
@@ -122,7 +122,7 @@ Et grâce au [pack de compatibilité Windows](../porting/windows-compat-pack.md)
 
 Le code .NET Core peut faire référence aux bibliothèques .NET Framework existantes, y compris les packages NuGet existants. Notez que les bibliothèques doivent utiliser des API qui se trouvent dans .NET Standard.
 
-## <a name="visual-studio-integration"></a>Intégration de Visual Studio
+## <a name="visual-studio-integration"></a>Visual Studio, intégration
 
 Visual Studio 2017 version 15,3 et dans certains cas, Visual Studio pour Mac proposent un nombre d’améliorations importantes pour les développeurs de .NET Core.
 
@@ -136,7 +136,7 @@ Pour recibler votre projet dans Visual Studio, ouvrez l’onglet **Application**
 
 Lorsque vous modifiez votre code, Live Unit Testing exécute automatiquement tous les tests unitaires affectés en arrière-plan et présente les résultats et la couverture du code dans l’environnement Visual Studio. .NET Core 2.0 prend désormais en charge Live Unit Testing. Live Unit Testing était auparavant disponible uniquement pour les applications .NET Framework.
 
-Pour plus d’informations, voir [Live Unit Testing with Visual Studio](/visualstudio/test/live-unit-testing) et live Unit Testing [FAQ](/visualstudio/test/live-unit-testing-faq).
+Pour plus d’informations, consultez [Live Unit testing avec Visual Studio](/visualstudio/test/live-unit-testing) et le [Forum aux questions sur Live Unit testing](/visualstudio/test/live-unit-testing-faq).
 
 ### <a name="better-support-for-multiple-target-frameworks"></a>Meilleure prise en charge pour plusieurs infrastructures cibles
 
@@ -154,10 +154,10 @@ Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual 
 
 [L’architecture de l’application .NET](https://dotnet.microsoft.com/learn/dotnet/architecture-guides) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
 
-- [Microservices et conteneurs Docker](../../architecture/microservices/index.md)
+- [Microservices et conteneurs d’ancrage](../../architecture/microservices/index.md)
 - [Applications Web avec ASP.NET](../../architecture/modern-web-apps-azure/index.md)
 - [Applications mobiles avec Xamarin](/xamarin/xamarin-forms/enterprise-application-patterns/index)
-- [Applications déployées dans le Cloud avec Azure](/azure/architecture/reference-architectures/index)
+- [Applications déployées sur le Cloud avec Azure](/azure/architecture/reference-architectures/index)
 
 ## <a name="see-also"></a>Voir aussi
 

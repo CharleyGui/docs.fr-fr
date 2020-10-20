@@ -4,11 +4,11 @@ description: La liste suivante est une compilation des principaux termes Machine
 ms.topic: reference
 ms.date: 07/31/2019
 ms.openlocfilehash: 32ccb6df1cb08db45ebd25a0d1c0ea4396a6c50b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398936"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223741"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -36,7 +36,7 @@ Dans ML.NET, un catalogue est une collection de fonctions d’extension, regroup
 
 Par exemple, chaque tâche de machine learning (classification binaire, régression, classement, etc.) dispose d’un catalogue d’algorithmes de machine learning (entraîneurs). Le catalogue des entraîneurs de classification binaire est : <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>classification ;
+## <a name="classification"></a>Classification
 
 Lorsque les données sont utilisées pour prédire une catégorie, la tâche [Apprentissage automatique supervisé](#supervised-machine-learning) est appelée classification. [Classification binaire](#binary-classification) fait référence à la prédiction de deux catégories uniquement (par exemple, la classification d’une image en tant qu’image de « chat » ou de « chien »). [Classification multiclasse](#multiclass-classification) fait référence à la prédiction de plusieurs catégories (par exemple, lors de la classification d’une image en tant qu’image d’une race spécifique de chien).
 
@@ -80,7 +80,7 @@ Dans une [classification](#classification), une métrique d’évaluation qui é
 
 Un paramètre d’un algorithme d’apprentissage automatique. Par exemple, le nombre d’arbres à assimiler dans une forêt décisionnelle ou la taille d’étape dans un algorithme de jambage descendant dégradé. Les valeurs des *hyperparamètres* sont définies avant l’apprentissage du modèle et régissent le processus de recherche des paramètres de la fonction de prédiction, par exemple, les points de comparaison dans un arbre de décision ou les pondérations dans un modèle de régression linéaire. Pour plus d’informations, consultez l’article Wikipédia [Hyperparamètre](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)).
 
-## <a name="label"></a>Étiquette
+## <a name="label"></a>Label
 
 L’élément à prédire avec le modèle d’apprentissage automatique. Par exemple, la race d’un chien ou le futur cours d’une action.
 
@@ -135,7 +135,7 @@ Dans une [classification](#classification), le rappel d’une classe correspond 
  La régularisation pénalise un modèle linéaire en raison de sa trop grande complexité. Il existe deux types de régularisation :
 
 - La régularisation $L_1$ attribue une pondération nulle aux caractéristiques non significatives. La taille du modèle enregistré peut être plus petite après ce type de régularisation.
-- la régularisation de $L 2 $ minimise la plage de poids pour les caractéristiques insignifiantes. Il s’agit d’un processus plus général et moins sensible aux valeurs aberrantes.
+- $L _2 $ régularisation réduit la plage de poids pour les fonctionnalités non significatives. Il s’agit d’un processus plus général qui est moins sensible aux valeurs hors norme.
 
 ## <a name="regression"></a>régression ;
 

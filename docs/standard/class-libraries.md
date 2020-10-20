@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: e2fd0237556f877af64708674f00e9efddf95869
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 35e408ed3552550f19879409128784b2513e56c8
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209641"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224266"
 ---
 # <a name="net-class-libraries"></a>Bibliothèques de classes .NET
 
@@ -42,9 +42,9 @@ De nombreux développeurs de bibliothèques ont abandonné la production de plus
 
 Les bibliothèques .NET Standard remplacent les concepts de bibliothèques spécifiques d’une plateforme et portables. Elles sont spécifiques d’une plateforme en ce sens qu’elles exposent toutes les fonctionnalités de la plateforme sous-jacente (pas de plateforme synthétique ni d’intersection de plateformes). Elles sont portables en ce sens qu’elles fonctionnent sur toutes les plateformes de prise en charge.
 
-.NET Standard expose un ensemble de _contrats_ de bibliothèque. Les implémentations .NET doivent prendre en charge chaque contrat dans son intégralité ou pas du tout. Ainsi, chaque implémentation prend en charge un ensemble de contrats .NET Standard. Le corollaire est que chaque bibliothèque de classes .NET Standard est prise en charge sur les plateformes qui prennent en charge les dépendances de son contrat.
+.NET Standard expose un ensemble de _contrats_de bibliothèque. Les implémentations .NET doivent prendre en charge chaque contrat dans son intégralité ou pas du tout. Ainsi, chaque implémentation prend en charge un ensemble de contrats .NET Standard. Le corollaire est que chaque bibliothèque de classes .NET Standard est prise en charge sur les plateformes qui prennent en charge les dépendances de son contrat.
 
-.NET Standard n’expose pas toutes les fonctionnalités du .NET Framework (ce n’est d’ailleurs pas son objectif), toutefois, il expose bien plus d’API que les bibliothèques de classes portables. D’autres API seront ajoutées au fil du temps.
+.NET Standard n’expose pas l’ensemble des fonctionnalités du .NET Framework (pas plus qu’un objectif), toutefois, elles exposent beaucoup plus d’API que les bibliothèques de classes portables. D’autres API seront ajoutées au fil du temps.
 
 Les plateformes suivantes prennent en charge les bibliothèques .NET Standard :
 

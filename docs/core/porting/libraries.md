@@ -3,12 +3,12 @@ title: Porter des bibliothèques vers .NET Core
 description: Découvrez comment porter des projets de bibliothèque de .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: ac9da2f850bf1e4e36367ad2154849a0c7efd535
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: dcacf4d59964e0ef2009b4e9694d7f562e3a1547
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164285"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223568"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
@@ -38,7 +38,7 @@ Cet article traite de la portabilité des dépendances tierces et de ce qu’il 
 
 ## <a name="retarget-to-net-framework-472"></a>Recibler pour .NET Framework 4.7.2
 
-Si votre code ne cible pas .NET Framework 4.7.2, nous vous recommandons de le recibler vers .NET Framework 4.7.2. Cela permet de garantir la disponibilité des dernières API de remplacement pour les cas où .NET Standard ne prend pas en charge les API existantes.
+Si votre code ne cible pas .NET Framework 4.7.2, nous vous recommandons de le recibler vers .NET Framework 4.7.2. Cela garantit la disponibilité des dernières solutions API pour les cas où .NET Standard ne prend pas en charge les API existantes.
 
 Pour chacun des projets que vous souhaitez porter, procédez comme suit dans Visual Studio :
 
@@ -120,7 +120,7 @@ La meilleure façon de vérifier que tout fonctionne quand vous avez porté votr
 En définitive, le travail de portage dépend fortement de la structuration du code .NET Framework. Une bonne façon de porter votre code est de commencer par la *base* de votre bibliothèque, qui est l’un des composants fondamentaux de votre code. Il peut s’agir de modèles de données ou d’autres classes et méthodes fondamentales utilisées directement ou indirectement par tout le reste.
 
 1. Portez le projet de test qui teste la couche en cours de portage de votre bibliothèque.
-1. Copiez la base de votre bibliothèque dans un nouveau projet .NET Core et sélectionnez la version de .NET Standard que vous voulez prendre en charge.
+1. Copiez la base de votre bibliothèque dans un nouveau projet .NET Core et sélectionnez la version de .NET Standard que vous souhaitez prendre en charge.
 1. Apportez les modifications nécessaires pour obtenir le code à compiler. Il est possible que la plupart nécessitent l’ajout de dépendances de package NuGet à votre fichier *csproj*.
 1. Exécutez les tests et procédez aux ajustements nécessaires.
 1. Sélectionnez la couche suivante de code à porter et répétez les étapes précédentes.

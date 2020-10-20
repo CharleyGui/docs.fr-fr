@@ -4,12 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: ffeaa1e11512cab64695c120f844594b8c5014a8
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 18f17839361d0cb60a52fbf4415665855f1d53be
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281106"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92223484"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 
@@ -93,7 +93,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-En renommant la classe en `FakeOrder`, vous avez rendu celle-ci beaucoup plus générique. Vous pouvez utiliser la classe en tant que mock ou stub. Selon ce qui est le plus approprié pour le cas de test. Dans l’exemple ci-dessus, `FakeOrder` est utilisé en tant que stub. Vous n’utilisez pas `FakeOrder` sous quelque forme que ce soit durant l’assertion. `FakeOrder`a été passé dans la `Purchase` classe pour satisfaire les spécifications du constructeur.
+En renommant la classe en `FakeOrder`, vous avez rendu celle-ci beaucoup plus générique. Vous pouvez utiliser la classe en tant que mock ou stub. Selon ce qui est le plus approprié pour le cas de test. Dans l’exemple ci-dessus, `FakeOrder` est utilisé en tant que stub. Vous n’utilisez pas `FakeOrder` sous quelque forme que ce soit durant l’assertion. `FakeOrder` a été passé dans la `Purchase` classe pour satisfaire les spécifications du constructeur.
 
 Pour l’utiliser en tant que Mock, vous pouvez faire quelque chose qui ressemble à ceci
 
@@ -113,7 +113,9 @@ Dans le cas présent, vous vérifiez une propriété sur le Fake (en le différe
 
 Le point principal à retenir à propos des mocks et des stubs est que les mocks sont comme des stubs. Toutefois, vous différenciez le mock (objet fictif) par assertion, contrairement au stub.
 
-## <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>meilleures pratiques recommandées.
+
+Essayez de ne pas introduire de dépendances à l’infrastructure quand vous écrivez des tests unitaires. Ils rendent les tests lents et fragiles et doivent être réservés pour les tests d’intégration. Vous pouvez éviter ces dépendances dans votre application en suivant le [principe des dépendances explicites](https://deviq.com/explicit-dependencies-principle) et en utilisant l’[injection de dépendances](../extensions/dependency-injection.md). Vous pouvez également conserver vos tests unitaires dans un projet distinct de vos tests d’intégration. Cela garantit que votre projet de test unitaire n’a pas de références à des dépendances ou à des dépendances sur des packages d’infrastructure.
 
 ### <a name="naming-your-tests"></a>Nommage de vos tests
 

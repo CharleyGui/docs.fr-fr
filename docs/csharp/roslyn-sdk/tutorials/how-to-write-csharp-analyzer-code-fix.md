@@ -3,12 +3,12 @@ title: 'Tutoriel : Écrire votre premier analyseur et correctif de code'
 description: Ce tutoriel fournit des instructions détaillées pour générer un analyseur et un correctif de code à l’aide du SDK .NET Compiler (API Roslyn).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: e79907f364939462b7d0d5814c4752be23bcfdf3
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 33c00e90d768021e36a7987be0ddd7daec4cfcec
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381591"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224046"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Écrire votre premier analyseur et correctif de code
 
@@ -18,27 +18,7 @@ Dans ce tutoriel, vous allez explorer la création d’un **analyseur** et d’u
 
 ## <a name="prerequisites"></a>Prérequis
 
-> [!NOTE]
-> Le modèle Visual Studio **Analyzer avec correction de code (.NET standard)** actuel contient un bogue connu et doit être corrigé dans Visual Studio 2019 version 16,7. Les projets dans le modèle ne se compilent pas, sauf si les modifications suivantes sont apportées :
->
-> 1. Sélectionnez les **Outils**  >  **options**outils  >  **Gestionnaire de package NuGet**  >  **sources du package**
->    - Sélectionnez le bouton plus (+) pour ajouter une nouvelle source :
->    - Définir la **source** sur `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json` et sélectionner **mettre à jour**
-> 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **MakeConst. vsix** , puis sélectionnez **modifier le fichier projet** .
->    - Mettez à jour le `<AssemblyName>` nœud pour ajouter le `.Visx` suffixe :
->      - `<AssemblyName>MakeConst.Vsix</AssemblyName>`
->    - Mettez à jour le `<ProjectReference>` nœud sur la ligne 41 pour modifier la `TargetFramework` valeur :
->      - `<ProjectReference Update="@(ProjectReference)" AdditionalProperties="TargetFramework=netstandard2.0" />`
-> 1. Mettez à jour le fichier *MakeConstUnitTests.cs* dans le projet *MakeConst. test* :
->    - Remplacez la ligne 9 par ce qui suit, notez la modification de l’espace de noms :
->      - `using Verify = Microsoft.CodeAnalysis.CSharp.Testing.MSTest.CodeFixVerifier<`
->    - Remplacez la ligne 24 par la méthode suivante :
->      - `await Verify.VerifyAnalyzerAsync(test);`
->    - Remplacez la ligne 62 par la méthode suivante :
->      - `await Verify.VerifyCodeFixAsync(test, expected, fixtest);`
-
-- [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
-- [Visual Studio 2019](https://www.visualstudio.com/downloads)
+- [Visual Studio 2019](https://www.visualstudio.com/downloads) version 16,7 ou ultérieure
 
 Vous devez installer le kit de **développement logiciel (SDK) .NET Compiler Platform** via le Visual Studio installer :
 
@@ -539,7 +519,7 @@ int k = i + j;
 
 Après ces modifications, vous obtenez des traits de soulignement ondulés rouges uniquement sur les deux premières variables. Ajoutez `const` à `i` et à `j`, et vous obtenez un nouvel avertissement sur `k`, car cet élément peut désormais devenir `const`.
 
-Félicitations ! Vous avez créé votre première extension .NET Compiler Platform qui effectue une analyse de code à la volée pour détecter un problème et fournit une solution rapide pour résoudre ce problème. Tout au long du processus, vous avez découvert la plupart des API de code qui font partie du SDK .NET Compiler Platform (API Roslyn). Vous pouvez comparer votre travail avec [l’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) dans notre référentiel GitHub d’exemples.
+Félicitations ! Vous avez créé votre première extension .NET Compiler Platform qui effectue une analyse de code à la volée pour détecter un problème et fournit une solution rapide pour résoudre ce problème. Tout au long du processus, vous avez découvert la plupart des API de code qui font partie du SDK .NET Compiler Platform (API Roslyn). Vous pouvez comparer votre travail avec [l’exemple terminé](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) dans notre référentiel GitHub d’exemples.
 
 ## <a name="other-resources"></a>Autres ressources
 

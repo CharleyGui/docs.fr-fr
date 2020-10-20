@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 10/13/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 1d9330b68f80da934777cb3aee6d2b3cb52c8256
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 3de9e0aea253b42d65199dc3d66f026dd023f4c7
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050342"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224404"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -98,7 +98,7 @@ Tous les logiciels d’exécution, outils de développement et ressources de com
 
 Le terme « écosystème .NET » diffère des termes tels que « pile .NET » en ce sens qu’il inclut les bibliothèques et les applications tierces. Voici un exemple dans une phrase :
 
-- « L’objectif de [.NET Standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .NET. »
+- « La motivation derrière [.NET standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .net ».
 
 ## <a name="framework"></a>framework
 
@@ -106,7 +106,7 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le terme « Framework » a une signification différente dans les termes suivants :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [Framework cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 - [application dépendante du Framework](../core/deploying/index.md#publish-framework-dependent)
@@ -138,13 +138,13 @@ Semblable au compilateur [AOT](#aot), ce compilateur convertit le langage [IL](#
 Une implémentation de .NET comprend les éléments suivants :
 
 - Un ou plusieurs runtimes. Exemples : [CLR](#clr), [CoreRT](#corert).
-- Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires. Exemples : [BCL](#bcl) pour [.NET Framework](#net-framework) et [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
+- Bibliothèque de classes qui implémente une version de .NET Standard et peut inclure des API supplémentaires. Exemples : [BCL](#bcl) pour [.NET Framework](#net-framework) et [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
 - Le cas échéant, un ou plusieurs frameworks d’application. Exemples : [ASP.net](#aspnet), Windows Forms et WPF sont inclus dans les .NET Framework et .net 5.
 - Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
 
 Exemples d’implémentations de .NET :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [.NET 5 et versions ultérieures (y compris .NET Core 2.1-3.1)](#net-5-and-later-versions)
 - [Plateforme Windows universelle (UWP)](#uwp)
 - [Mono](#mono)
@@ -244,7 +244,7 @@ Système d’exploitation et le matériel sur lequel il s’exécute, tel que Wi
 Voici quelques exemples d’utilisation dans des phrases :
 
 - « .NET Core est une implémentation multiplateforme de .NET ».
-- « Les profils de bibliothèque de classes portable représentent les plateformes Microsoft, alors que .NET Standard est indépendant de la plateforme. »
+- Les profils PCL représentent des plates-formes Microsoft, tandis que .NET Standard est agnostique à la plateforme.
 
 La documentation .NET héritée utilise parfois « plateforme .NET » pour signifier une [implémentation de .net ou de](#implementation-of-net) la [pile](#stack) .net, y compris toutes les implémentations. Ces deux utilisations ont tendance à être confondues avec la signification principale (système d’exploitation/matériel). nous essayons donc d’éviter ces utilisations.
 
@@ -278,7 +278,7 @@ La documentation .NET héritée utilise parfois « Runtime » dans le sens d�
 
 Ensemble de technologies de programmation qui sont utilisées conjointement pour générer et exécuter des applications.
 
-L’expression « la pile .NET » fait référence à .NET Standard et à toutes les implémentations de .NET. L’expression « une pile .NET » peut faire référence à une implémentation de .NET.
+« La pile .NET » fait référence à .NET Standard et à toutes les implémentations .NET. L’expression « une pile .NET » peut faire référence à une implémentation de .NET.
 
 ## <a name="target-framework"></a>version cible de .NET Framework
 

@@ -3,11 +3,11 @@ title: Transformations de données
 description: Explorez les composants d’ingénierie de fonctionnalité pris en charge dans ML.NET.
 ms.date: 04/02/2019
 ms.openlocfilehash: ca410b475c556db5ad4c3862fb79755b455d6830
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398922"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224209"
 ---
 # <a name="data-transformations"></a>Transformations de données
 
@@ -109,7 +109,7 @@ D’autres transformations de données n’exigent pas les données d’apprenti
 | <xref:Microsoft.ML.ExtensionsCatalog.IndicateMissingValues%2A> | Créer une colonne de sortie booléenne dont la valeur est true s’il manque la valeur de la colonne d’entrée |
 | <xref:Microsoft.ML.ExtensionsCatalog.ReplaceMissingValues%2A> | Créer une colonne de sortie dont la valeur est définie sur une valeur par défaut s’il manque la valeur de la colonne d’entrée, sur la valeur d’entrée sinon |
 
-## <a name="feature-selection"></a>Sélection de caractéristiques
+## <a name="feature-selection"></a>La sélection des caractéristiques
 
 | Transformer | Définition |
 | --- | --- |

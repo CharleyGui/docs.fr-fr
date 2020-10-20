@@ -3,11 +3,11 @@ title: Nouveautés de C# 6 | Guide C#
 description: Découvrez les nouvelles fonctionnalités de C# version 6
 ms.date: 12/12/2018
 ms.openlocfilehash: da40b4c9d4af0094fdd907c542e971ba55086e0f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399391"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224241"
 ---
 # <a name="whats-new-in-c-6"></a>Nouveautés de C# 6
 

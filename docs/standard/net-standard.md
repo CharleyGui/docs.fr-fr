@@ -5,12 +5,12 @@ ms.date: 10/05/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: a4a59fea3ab1a6bc93a12e3f0aa13dea726d8121
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: a4736e46eb7c25b64278bed8f2c2457002936b81
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050393"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224152"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -78,7 +78,7 @@ Des artefacts dérivés sont fournis pour une lecture plus pratique et pour acti
 
 Les assemblys de référence de .NET Standard sont distribués principalement via les packages NuGet. Les implémentations sont fournies de façons différentes, en fonction de l’implémentation de .NET.
 
-Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les packages .NET Standard ciblent le framework «.NET Standard ». Vous pouvez cibler le .NET Framework Standard avec le  [Moniker de framework cible compact](frameworks.md)`netstandard` (par exemple `netstandard1.4`). Les bibliothèques destinées à s’exécuter sur plusieurs implémentations de .NET doivent cibler ce Framework. Pour l’ensemble d’API le plus large, ciblez `netstandard2.0`, car le nombre d’API disponibles a plus que doublé entre .NET Standard 1.6 et 2.0.
+Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les packages de .NET Standard ciblent le Framework « .NET Standard ». Vous pouvez cibler le .NET Framework Standard avec le  [Moniker de framework cible compact](frameworks.md)`netstandard` (par exemple `netstandard1.4`). Les bibliothèques destinées à s’exécuter sur plusieurs implémentations de .NET doivent cibler ce Framework. Pour l’ensemble d’API le plus large, ciblez `netstandard2.0`, car le nombre d’API disponibles a plus que doublé entre .NET Standard 1.6 et 2.0.
 
 Le sous- [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) package fait référence à l’ensemble complet des packages NuGet qui définissent .NET standard.  La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et les API associées qui définissent .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 

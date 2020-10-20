@@ -7,16 +7,16 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 91807fa05ce49b8507ee6913ff2620452fcbfab5
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 71c853b38e56c56d0077d7eb20e36cd83d3cd23c
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301942"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224320"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
-Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client utilise un type qui ne satisfait pas une contrainte, le compilateur émet une erreur. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant liste les sept types de contrainte :
+Les contraintes informent le compilateur sur les fonctionnalités que doit avoir un argument de type. Sans contrainte, l’argument de type peut être n’importe quel type. Le compilateur peut seulement deviner les membres de <xref:System.Object?displayProperty=nameWithType>, qui est la classe de base par excellence de tous les types .NET. Pour plus d’informations, consultez [Pourquoi utiliser des contraintes](#why-use-constraints). Si le code client utilise un type qui ne satisfait pas une contrainte, le compilateur émet une erreur. Les contraintes sont spécifiées à l’aide du mot clé contextuel `where`. Le tableau suivant répertorie les différents types de contraintes :
 
 |Contrainte|Description|
 |----------------|-----------------|
@@ -29,7 +29,7 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 |`where T :` *\<base class name>*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` doit être un type de référence non Nullable dérivé de la classe de base spécifiée. |
 |`where T :` *\<base class name>?*|L’argument de type doit être la classe de base spécifiée ou en dériver. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` peut être un type Nullable ou non Nullable dérivé de la classe de base spécifiée. |
 |`where T :` *\<interface name>*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte Nullable en C# 8,0 et versions ultérieures, `T` doit être un type non Nullable qui implémente l’interface spécifiée.|
-|`where T :` *\<interface name>?*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte Nullable en C# 8,0, `T` peut être un type de référence Nullable, un type de référence non Nullable ou un type valeur. `T`n’est pas un type valeur Nullable.|
+|`where T :` *\<interface name>?*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique. Dans un contexte Nullable en C# 8,0, `T` peut être un type de référence Nullable, un type de référence non Nullable ou un type valeur. `T` n’est pas un type valeur Nullable.|
 |`where T : U`|L’argument de type fourni pour `T` doit être ou dériver de l’argument fourni pour `U` . Dans un contexte Nullable, si `U` est un type référence qui n’accepte pas les valeurs NULL, `T` doit être un type référence non Nullable. Si `U` est un type de référence Nullable, `T` peut avoir la valeur null ou n’accepte pas les valeurs NULL. |
 
 ## <a name="why-use-constraints"></a>Pourquoi utiliser des contraintes
@@ -114,7 +114,7 @@ Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compil�
 
 [!code-csharp[using the enum constraint](snippets/GenericWhereConstraints.cs#18)]
 
-`Enum.GetValues`et `Enum.GetName` utilisent la réflexion, ce qui a des répercussions sur les performances. Vous pouvez appeler `EnumNamedValues` pour générer une collection qui est mise en cache et réutilisée au lieu de répéter les appels qui requièrent la réflexion.
+`Enum.GetValues` et `Enum.GetName` utilisent la réflexion, ce qui a des répercussions sur les performances. Vous pouvez appeler `EnumNamedValues` pour générer une collection qui est mise en cache et réutilisée au lieu de répéter les appels qui requièrent la réflexion.
 
 Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un enum et générer un dictionnaire de ses valeurs et de ses noms :
 

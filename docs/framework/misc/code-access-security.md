@@ -16,17 +16,20 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: b5c32afb26c7b4bf7f8585c43ac11e57ebb5d015
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 528824e2d1b5d854f9eef816d3f7b20ba0f2b7db
+ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554864"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92224348"
 ---
 # <a name="code-access-security"></a>Sécurité d'accès du code
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
-  
+
+> [!NOTE]
+> La sécurité d’accès du code étant déconseillée, la plupart des codes modernes au sein de l’écosystème .NET ne sont pas conçus pour fonctionner dans un environnement de confiance partielle. Les applications qui reposent sur les autorités de certification ne doivent pas s’attendre à ce que les bibliothèques modernes se comportent correctement dans ces environnements, sauf si le développeur de la bibliothèque a pris des mesures explicites pour garantir la compatibilité au sein du sandbox  
+
  De nos jours, du fait d'une interconnexion extrême, les systèmes informatiques sont fréquemment exposés à du code provenant de diverses sources parfois inconnues. Le code peut être joint à un courrier électronique, contenu dans des documents ou téléchargé via Internet. Malheureusement, de nombreux utilisateurs d’ordinateurs ont personnellement fait l’expérience de code mobile malveillant, y compris de virus et de vers, qui peuvent endommager ou détruire des données et coûter du temps et de l’argent.  
   
  La plupart des mécanismes de sécurité courants accordent des droits aux utilisateurs en fonction de leurs informations d’identification (généralement un mot de passe) et restreignent les ressources (souvent des répertoires et des fichiers) auxquelles l’utilisateur est autorisé à accéder. Cependant, cette approche ne parvient pas à répondre à plusieurs situations : les utilisateurs peuvent obtenir du code provenant de nombreuses sources dont certaines peuvent ne pas être fiables, le code peut contenir des bogues ou des vulnérabilités qui permettent à du code nuisible de l'exploiter et le code fait parfois des choses dont l'utilisateur n'a pas conscience. Les systèmes informatiques peuvent donc être endommagés et des données confidentielles peuvent être divulguées si des utilisateurs prudents et dignes de confiance exécutent un logiciel malveillant ou rempli d'erreurs. La plupart des mécanismes de sécurité du système d’exploitation nécessitent que chaque partie du code soit approuvée pour s’exécuter, sauf peut-être pour les scripts d’une page Web. Un mécanisme de sécurité largement applicable qui permette à du code provenant d'un système informatique de s'exécuter en toute sécurité sur un autre système est donc nécessaire, même s'il n'existe pas de relations de confiance entre les systèmes.  
@@ -63,7 +66,7 @@ ms.locfileid: "90554864"
 <a name="related_topics"></a>
 ## <a name="related-articles"></a>Articles connexes
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Notions fondamentales de la sécurité d'accès du code](code-access-security-basics.md)|Décrit la sécurité d'accès du code et ses principales utilisations.|  
 |[Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)|Décrit le modèle de transparence de la sécurité dans le .NET Framework 4.|  
