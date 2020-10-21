@@ -1,7 +1,7 @@
 - name: "WCF Data Services\_4.5"
   href: index.md
   items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: wcf-data-services-overview.md
     - name: Prise en main
       href: getting-started-with-wcf-data-services.md
