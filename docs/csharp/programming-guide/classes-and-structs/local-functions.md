@@ -1,15 +1,15 @@
 ---
 title: Fonctions locales - Guide de programmation C#
 description: Les fonctions locales en C# sont des méthodes privées qui sont imbriquées dans un autre membre et peuvent être appelées à partir de leur membre conteneur.
-ms.date: 10/09/2020
+ms.date: 10/16/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: a2d389c8b1c687dc4885004fcdc33e0ed7ada977
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 75accda2e40443073274ece4d8964c13a0945dad
+ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955679"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92332898"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 
@@ -86,21 +86,39 @@ Comme avec l’itérateur de méthode, vous pouvez refactoriser l’exemple pré
 
 À première vue, les fonctions locales et les [expressions lambda](../../language-reference/operators/lambda-expressions.md) sont très similaires. Souvent, le choix d’utiliser des expressions lambda ou des fonctions locales est une question de style et de préférences personnelles. Toutefois, il existe de réelles différences qui vous feront utiliser les unes ou les autres et que vous devez connaître.
 
-Examinons les différences entre l’implémentation de l’algorithme factoriel avec une fonction locale et une expression lambda. Voici tout d’abord la version utilisant une fonction locale :
+Examinons les différences entre l’implémentation de l’algorithme factoriel avec une fonction locale et une expression lambda. Voici la version à l’aide d’une fonction locale :
 
 :::code language="csharp" source="snippets/local-functions/Program.cs" id="FactorialWithLocal" :::
 
-Comparez cette implémentation avec une version qui utilise des expressions lambda :
+Cette version utilise des expressions lambda :
 
 :::code language="csharp" source="snippets/local-functions/Program.cs" id="FactorialWithLambda" :::
 
-Les fonctions locales ont des noms. Les expressions lambda sont des méthodes anonymes qui sont affectées aux variables de type `Func` ou `Action`. Lorsque vous déclarez une fonction locale, les types d’arguments et le type de retour font partie de la déclaration de fonction. Au lieu de faire partie du corps de l’expression lambda, les types d’arguments et le type de retour font partie de la déclaration de type de variable de l’expression lambda. Ces deux différences peuvent rendre le code plus clair.
+### <a name="naming"></a>Dénomination
 
-Les fonctions locales ont des règles différentes pour l’affectation définie par rapport aux expressions lambda. Une déclaration de fonction locale peut être référencée à partir de n’importe quel emplacement de code où elle est dans la portée. Une expression lambda doit être assignée à une variable déléguée avant d’être accessible (ou appelée via le délégué référençant l’expression lambda). Notez que la version qui utilise l’expression lambda doit déclarer et initialiser l’expression lambda avant de la `nthFactorial` définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur. Ces différences font que les algorithmes récursifs sont plus faciles à créer en utilisant des fonctions locales. Vous pouvez déclarer et définir une fonction locale qui s’appelle elle-même. Les expressions lambda doivent être déclarées et une valeur par défaut doit leur être affectée avant qu’elles puissent être réaffectées à un corps référençant la même expression lambda.
+Les fonctions locales sont nommées explicitement comme les méthodes. Les expressions lambda sont des méthodes anonymes qui doivent être assignées à des variables d’un `delegate` type, généralement des `Action` `Func` types ou. Lorsque vous déclarez une fonction locale, le processus est semblable à l’écriture d’une méthode normale ; vous déclarez un type de retour et une signature de fonction.
 
-Les règles d’affectation définies s’appliquent également à toutes les variables qui sont capturées par la fonction locale ou l’expression lambda. Les règles des fonctions locales comme celles des expression lambda exigent que toutes les variables capturées soient définitivement affectées au point marquant le moment où la fonction locale ou l’expression lambda est convertie en délégué. La différence est que les expressions lambda sont converties en délégués au moment où elles sont déclarées. Les fonctions locales sont converties en délégués uniquement lorsqu’elles sont utilisées en tant que délégué. Si vous déclarez une fonction locale et la référencez uniquement en l’appelant comme une méthode, elle ne sera pas convertie en délégué. Cette règle vous permet de déclarer une fonction locale à n’importe quel emplacement qui vous convient dans sa portée englobante. Il est courant de déclarer des fonctions locales à la fin de la méthode parente, après des instructions return.
+### <a name="function-signatures-and-lambda-expression-types"></a>Signatures de fonctions et types d’expression lambda
 
-Troisième différence, le compilateur peut effectuer une analyse statique qui active des fonctions locales de manière à affecter définitivement les variables capturées dans la portée englobante. Prenons l’exemple suivant :
+Les expressions lambda s’appuient sur le type de la `Action` / `Func` variable qu’elles sont assignées pour déterminer les types d’arguments et de retour. Dans les fonctions locales, étant donné que la syntaxe est très similaire à l’écriture d’une méthode normale, les types d’argument et le type de retour font déjà partie de la déclaration de fonction.
+
+### <a name="definite-assignment"></a>Assignation définie
+
+Les expressions lambda sont des objets qui sont déclarés et assignés au moment de l’exécution. Pour qu’une expression lambda soit utilisée, elle doit être assignée de manière définitive : la `Action` / `Func` variable à laquelle elle sera assignée doit être déclarée et l’expression lambda assignée à celle-ci. Notez que `LambdaFactorial` doit déclarer et initialiser l’expression lambda `nthFactorial` avant de la définir. Si ce n’est pas le cas, cela entraîne une erreur de compilation due au fait que vous référencez `nthFactorial` avant de lui affecter une valeur.
+
+Les fonctions locales sont définies au moment de la compilation. Comme elles ne sont pas affectées à des variables, elles peuvent être référencées à partir de n’importe quel emplacement de code **où elles se trouvent dans la portée**; dans notre premier exemple `LocalFunctionFactorial` , nous pourrions déclarer notre fonction locale soit au-dessus soit au-dessous de l' `return` instruction et ne déclenchent aucune erreur du compilateur.
+
+Ces différences font que les algorithmes récursifs sont plus faciles à créer en utilisant des fonctions locales. Vous pouvez déclarer et définir une fonction locale qui s’appelle elle-même. Les expressions lambda doivent être déclarées et une valeur par défaut doit leur être affectée avant qu’elles puissent être réaffectées à un corps référençant la même expression lambda.
+
+### <a name="implementation-as-a-delegate"></a>Implémentation en tant que délégué
+
+Les expressions lambda sont converties en délégués lorsqu’elles sont déclarées. Les fonctions locales sont plus flexibles dans la mesure où elles peuvent être écrites comme une méthode traditionnelle *ou* en tant que délégué. Les fonctions locales sont converties en délégués uniquement lorsqu’elles sont ***utilisées*** en tant que délégué.
+
+Si vous déclarez une fonction locale et la référencez uniquement en l’appelant comme une méthode, elle ne sera pas convertie en délégué.
+
+### <a name="variable-capture"></a>Capture de variables
+
+Les règles d' [assignation définie](../../../../_csharplang/spec/variables.md#definite-assignment) affectent également toutes les variables capturées par la fonction locale ou l’expression lambda. Le compilateur peut effectuer une analyse statique qui permet aux fonctions locales d’affecter de manière définitive des variables capturées dans la portée englobante. Prenons l’exemple suivant :
 
 ```csharp
 int M()
@@ -115,7 +133,11 @@ int M()
 
 Le compilateur peut déterminer que `LocalFunction` affecte `y` de manière définitive lorsqu’elle est appelée. Dans la mesure où `LocalFunction` est appelée avant l’instruction `return`, `y` est affecté de manière définitive à l’instruction `return`.
 
-L’analyse qui active l’exemple d’analyse constitue la quatrième différence. En fonction de leur utilisation, les fonctions locales peuvent éviter les allocations de tas qui sont toujours nécessaires pour les expressions lambda. Si une fonction locale n’est jamais convertie en délégué, et qu’aucune des variables capturées par la fonction locale n’est capturée par d’autres expressions lambda ou fonctions locales qui sont converties en délégués, le compilateur peut éviter les allocations de tas.
+Notez que lorsqu’une fonction locale capture des variables dans la portée englobante, la fonction locale est implémentée en tant que type délégué.
+
+### <a name="heap-allocations"></a>Allocations de tas
+
+En fonction de leur utilisation, les fonctions locales peuvent éviter les allocations de tas qui sont toujours nécessaires pour les expressions lambda. Si une fonction locale n’est jamais convertie en délégué, et si aucune des variables capturées par la fonction locale n’est capturée par d’autres expressions lambda ou fonctions locales converties en délégués, le compilateur peut éviter les allocations de tas.
 
 Penchons-nous sur cet exemple asynchrone :
 
@@ -125,12 +147,20 @@ La fermeture de cette expression lambda contient les variables `address`, `index
 
 L’instanciation nécessaire pour les expressions lambda signifie des allocations de mémoire supplémentaires, qui peuvent être un facteur influençant les performances dans les chemins de code critiques au niveau du temps. Les fonctions locales n’entraînent pas cette charge supplémentaire. Dans l’exemple ci-dessus, la version des fonctions locales a deux allocations moins nombreuses que la version de l’expression lambda.
 
+Si vous savez que votre fonction locale ne sera pas convertie en un délégué et qu’aucune des variables capturées par celle-ci n’est capturée par d’autres expressions lambda ou fonctions locales converties en délégués, vous pouvez vous assurer que votre fonction locale évite d’être allouée sur le tas en la déclarant comme une `static` fonction locale. Notez que cette fonctionnalité est disponible dans C# 8,0 et versions ultérieures.
+
 > [!NOTE]
 > L’équivalent de cette méthode avec une fonction locale fait aussi appel à une classe pour la fermeture. Le fait que la fermeture d’une fonction locale soit implémentée en tant que `class` ou `struct` est un détail d’implémentation. Une fonction locale peut utiliser un type `struct` contrairement à une expression lambda qui utilise toujours un type `class`.
 
 :::code language="csharp" source="snippets/local-functions/Program.cs" id="AsyncWithLocal" :::
 
-Ultime avantage non décrit dans cet exemple : les fonctions locales peuvent être implémentées en tant qu’itérateurs, en utilisant la syntaxe `yield return` pour produire une séquence de valeurs. L’instruction `yield return` n’est pas autorisée dans les expressions lambda.
+### <a name="usage-of-the-yield-keyword"></a>Utilisation du `yield` mot clé
+
+Ultime avantage non décrit dans cet exemple : les fonctions locales peuvent être implémentées en tant qu’itérateurs, en utilisant la syntaxe `yield return` pour produire une séquence de valeurs.
+
+:::code language="csharp" source="snippets/local-functions/Program.cs" id="YieldReturn" :::
+
+L' `yield return` instruction n’est pas autorisée dans les expressions lambda, consultez [Erreur du compilateur CS1621](../../misc/cs1621.md).
 
 Alors que les fonctions locales peuvent sembler redondantes par rapport aux expressions lambda, elles ont en réalité des objectifs différents et des utilisations différentes. Les fonctions locales sont plus efficaces dans le cas où vous voulez écrire une fonction qui est appelée seulement dans le contexte d’une autre méthode.
 
