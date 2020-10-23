@@ -3,12 +3,12 @@ title: Modèles d'exploration de données relationnels et données NoSQL
 description: En savoir plus sur les données relationnelles et NoSQL dans les applications natives du Cloud
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: 6e7725c2d67452218d1c6bda89c2fec6aa4a2b96
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 11db5cdca06b9c2c8ce12598456c4b147ac379ba
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163633"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434862"
 ---
 # <a name="relational-vs-nosql-data"></a>Modèles d'exploration de données relationnels et données NoSQL
 
@@ -30,7 +30,7 @@ Les bases de données NoSQL incluent plusieurs modèles différents pour l’acc
 | :-------- | :-------- |
 | Magasin de documents | Les données et les métadonnées sont stockées hiérarchiquement dans des documents JSON à l’intérieur de la base de données. |
 | Magasin de valeurs de clés | La plus simple des bases de données NoSQL, les données sont représentées sous la forme d’une collection de paires clé-valeur. |
-| Magasin de colonnes larges | Les données associées sont stockées sous la forme d’un ensemble de paires clé/valeur imbriquées dans une seule colonne. |
+| Magasin de Wide-Column | Les données associées sont stockées sous la forme d’un ensemble de paires clé/valeur imbriquées dans une seule colonne. |
 | Magasin de graphes | Les données sont stockées dans une structure graphique en tant que propriétés de nœud, de périphérie et de données. |
 
 ## <a name="the-cap-theorem"></a>Le niveau de CAP
@@ -65,7 +65,7 @@ Ce type de résultat est connu sous le nom de cohérence éventuelle, caractéri
 
 La haute disponibilité et l’évolutivité massive sont souvent plus importantes pour l’entreprise que la cohérence forte. Les développeurs peuvent implémenter des techniques et des modèles tels que sagas, CQRS et une messagerie asynchrone pour adopter une cohérence éventuelle.
 
-> De nos jours, il convient de veiller à ce que conidering les contraintes de CAP. Un nouveau type de base de données, appelé NewSQL, est apparu, ce qui étend le moteur de base de données relationnelle pour la prise en charge de l’extensibilité horizontale et des performances évolutives des systèmes NoSQL.
+> De nos jours, il convient de veiller à prendre en compte les contraintes de CAP. Un nouveau type de base de données, appelé NewSQL, est apparu, ce qui étend le moteur de base de données relationnelle pour la prise en charge de l’extensibilité horizontale et des performances évolutives des systèmes NoSQL.
 
 ## <a name="considerations-for-relational-vs-nosql-systems"></a>Éléments à prendre en considération pour les systèmes relationnels et NoSQL
 
@@ -131,7 +131,7 @@ Toutefois, Microsoft poursuit son engagement à conserver Azure une « platefor
 
 ### <a name="azure-database-for-mysql"></a>Azure Database pour MySQL
 
-[MySQL](https://en.wikipedia.org/wiki/MySQL)   est une base de données relationnelle Open source et un pilier pour les applications basées sur la [pile de logiciels LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Largement choisi pour les charges de travail volumineuses *en lecture* , il est utilisé par de nombreuses grandes organisations, notamment Facebook, Twitter et YouTube. L’édition Community est disponible gratuitement, tandis que l’édition Enterprise requiert un achat de licence. Initialement créé dans 1995, le produit a été acheté par Sun Microsystems dans 2008. Oracle a acquis Sun et MySQL en 2010.
+[MySQL](https://en.wikipedia.org/wiki/MySQL) est une base de données relationnelle Open source et un pilier pour les applications basées sur la [pile de logiciels LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Largement choisi pour les charges de travail volumineuses *en lecture* , il est utilisé par de nombreuses grandes organisations, notamment Facebook, Twitter et YouTube. L’édition Community est disponible gratuitement, tandis que l’édition Enterprise requiert un achat de licence. Initialement créé dans 1995, le produit a été acheté par Sun Microsystems dans 2008. Oracle a acquis Sun et MySQL en 2010.
 
 [Azure Database pour MySQL](https://azure.microsoft.com/services/mysql/) est un service de base de données relationnelle géré basé sur le moteur Open source MySQL Server. Il utilise l’édition Community de MySQL. Le serveur Azure MySQL est le point d’administration du service. Il s’agit du même moteur MySQL Server utilisé pour les déploiements sur site. Le moteur peut créer une base de données unique par serveur ou plusieurs bases de données par serveur qui partagent des ressources. Vous pouvez continuer à gérer les données à l’aide des mêmes outils open source sans avoir à acquérir de nouvelles compétences ni à gérer des machines virtuelles.
 
@@ -258,11 +258,11 @@ En interne, Cosmos DB gère automatiquement le placement des [partitions logique
 
 ## <a name="newsql-databases"></a>Bases de données NewSQL
 
-*NewSQL*   est une technologie de base de données émergente qui combine l’extensibilité distribuée de NoSQL avec les garanties ACID d’une base de données relationnelle. Les bases de données NewSQL sont importantes pour les systèmes d’entreprise qui doivent traiter de gros volumes de données, dans des environnements distribués, avec une prise en charge de transactions complète et une conformité ACID. Bien qu’une base de données NoSQL puisse fournir une évolutivité massive, elle ne garantit pas la cohérence des données. Des problèmes intermittents de données incohérentes peuvent compliquer l’équipe de développement. Les développeurs doivent créer des protections dans leur code de microservice pour gérer les problèmes provoqués par des données incohérentes.
+*NewSQL* est une nouvelle technologie de base de données qui combine l’extensibilité distribuée de NoSQL avec les garanties acid d’une base de données relationnelle. Les bases de données NewSQL sont importantes pour les systèmes d’entreprise qui doivent traiter de gros volumes de données, dans des environnements distribués, avec une prise en charge de transactions complète et une conformité ACID. Bien qu’une base de données NoSQL puisse fournir une évolutivité massive, elle ne garantit pas la cohérence des données. Des problèmes intermittents de données incohérentes peuvent compliquer l’équipe de développement. Les développeurs doivent créer des protections dans leur code de microservice pour gérer les problèmes provoqués par des données incohérentes.
 
 CNCF (Cloud Native Computing Foundation) propose plusieurs projets de base de données NewSQL.
 
-| Projet | Caractéristiques |
+| Project | Caractéristiques |
 | :-------- | :-------- |
 | Cockroach DB |Une base de données relationnelle compatible ACID qui évolue globalement. Ajoutez un nouveau nœud à un cluster et CockroachDB s’occupe de l’équilibrage des données entre les instances et les zones géographiques. Il crée, gère et distribue les réplicas pour garantir la fiabilité. Il est open source et disponible gratuitement.  |
 | TiDB | Une base de données Open source qui prend en charge les charges de travail hybrides de traitement transactionnel et analytique (HTAP). Il est compatible avec MySQL et propose une extensibilité horizontale, une cohérence forte et une haute disponibilité.  TiDB agit comme un serveur MySQL. Vous pouvez continuer à utiliser les bibliothèques clientes MySQL existantes, sans avoir à modifier l’intégralité du code de votre application. |
@@ -279,7 +279,7 @@ Kubernetes utilise une *construction de services* pour permettre à un client d�
 
 Dans ce scénario, toutes les instances de base de données sont égales. Il n’existe pas de relations principales ou secondaires. Les techniques telles que *la réplication par consensus* dans CockroachDB permettent à n’importe quel nœud de base de données de traiter n’importe quelle demande. Si le nœud qui reçoit une demande d’équilibrage de charge dispose des données dont il a besoin localement, il répond immédiatement. Si ce n’est pas le cas, le nœud devient une passerelle et transfère la demande aux nœuds appropriés pour obtenir la réponse correcte. Du point de vue du client, chaque nœud de base de données est identique : ils apparaissent sous la forme d’une base de données *logique* unique avec les garanties de cohérence d’un système à un seul ordinateur, malgré des dizaines voire des centaines de nœuds qui fonctionnent en arrière-plan.
 
-Pour obtenir une vue détaillée de la mécanique des bases de données NewSQL, consultez l’article [Dash : quatre propriétés de Kubernetes-bases de données natives](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/) .
+Pour obtenir une vue détaillée de la mécanique des bases de données NewSQL, consultez l’article [Dash : quatre propriétés de Kubernetes-Native des bases de données](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/) .
 
 ## <a name="data-migration-to-the-cloud"></a>Migration des données vers le Cloud
 

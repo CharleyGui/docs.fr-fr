@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les modifications avec rupture dans les bibliothèques .NET de base.
 ms.date: 07/27/2020
-ms.openlocfilehash: 35192ae078c6025b9b399d6638ea8b4f426aceda
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: 900fd4e0e071f19aa286dec84632006870822f26
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332921"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434919"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Modifications importantes des bibliothèques .NET principales
 
@@ -17,6 +17,9 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Les API du global assembly cache sont obsolètes](#global-assembly-cache-apis-are-obsolete) | 5.0 |
+| [Les API de communication à distance sont obsolètes](#remoting-apis-are-obsolete) | 5.0 |
+| [La plupart des API de sécurité d’accès du code sont obsolètes](#most-code-access-security-apis-are-obsolete) | 5.0 |
 | [Obsoletions d’API avec ID de diagnostics autres que ceux par défaut](#api-obsoletions-with-non-default-diagnostic-ids) | 5.0 |
 | [La valeur de FrameworkDescription est .NET au lieu de .NET Core](#frameworkdescriptions-value-is-net-instead-of-net-core) | 5.0 |
 | [Modifications du comportement des API liées à l’assembly pour le format de publication à fichier unique](#assembly-related-api-behavior-changes-for-single-file-publishing-format) | 5.0 |
@@ -60,13 +63,25 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 ## <a name="net-50"></a>.NET 5,0
 
-[!INCLUDE [obsolete-apis-with-custom-diagnostics](../../../includes/core-changes/corefx/5.0/obsolete-apis-with-custom-diagnostics.md)]
+[!INCLUDE [remoting-apis-obsolete](../../../includes/core-changes/corefx/5.0/remoting-apis-obsolete.md)]
 
 ***
 
-[!INCLUDE [frameworkdescription-returns-net-not-net-core](../../../includes/core-changes/corefx/5.0/frameworkdescription-returns-net-not-net-core.md)]
+[!INCLUDE [globalassemblycache-property-obsolete](../../../includes/core-changes/corefx/5.0/global-assembly-cache-apis-obsolete.md)]
 
 **_
+
+[!INCLUDE [code-access-security-apis-obsolete](../../../includes/core-changes/corefx/5.0/code-access-security-apis-obsolete.md)]
+
+_*_
+
+[!INCLUDE [obsolete-apis-with-custom-diagnostics](../../../includes/core-changes/corefx/5.0/obsolete-apis-with-custom-diagnostics.md)]
+
+_*_
+
+[!INCLUDE [frameworkdescription-returns-net-not-net-core](../../../includes/core-changes/corefx/5.0/frameworkdescription-returns-net-not-net-core.md)]
+
+_*_
 
 [!INCLUDE [assembly-api-behavior-changes-for-single-file-publish](../../../includes/core-changes/corefx/5.0/assembly-api-behavior-changes-for-single-file-publish.md)]
 

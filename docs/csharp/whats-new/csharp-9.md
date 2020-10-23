@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 0ac3b410cd9ba886ee55aede952700f145f1b31b
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 57fd5f8775f95b2588e4a7120e35d6d531be4f01
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955165"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434829"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -34,7 +34,7 @@ C# 9,0 est pris en charge sur **.net 5**. Pour plus d’informations, consultez 
 
 ## <a name="record-types"></a>Types d’enregistrements
 
-C# 9,0 introduit les ***types d’enregistrements***, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
+C# 9,0 introduit **_types d’enregistrements_*_, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
 
 Les types d’enregistrements facilitent la création de types référence immuables dans .NET. Historiquement, les types .NET sont largement classés comme types référence (y compris les classes et les types anonymes) et les types valeur (y compris les structs et les tuples). Bien que les types de valeurs immuables soient recommandés, les types valeur mutables n’introduisent pas souvent des erreurs. Les variables de type valeur contiennent les valeurs afin que les modifications soient apportées à une copie des données d’origine lorsque les types valeur sont passés aux méthodes.
 
@@ -86,7 +86,7 @@ Le compilateur synthétise deux méthodes qui prennent en charge la sortie impri
 "Student { LastName = Wagner, FirstName = Bill, Level = 11 }"
 ```
 
-Les exemples indiqués jusqu’à présent utilisent la syntaxe traditionnelle pour déclarer des propriétés. Il existe une forme plus concise appelée ***enregistrements positionnels***.  Voici les trois types d’enregistrements définis précédemment en tant qu’enregistrements positionnels :
+Les exemples indiqués jusqu’à présent utilisent la syntaxe traditionnelle pour déclarer des propriétés. Il existe une forme plus concise appelée _*_enregistrements positionnels_*_.  Voici les trois types d’enregistrements définis précédemment en tant qu’enregistrements positionnels :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="PositionalRecords":::
 
@@ -98,7 +98,7 @@ Le compilateur produit une `Deconstruct` méthode pour les enregistrements posit
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="DeconstructRecord":::
 
-Enfin, les enregistrements prennent en charge ***les expressions-***. Une instruction ***with-expression*** demande au compilateur de créer une copie d’un enregistrement, mais *avec* les propriétés spécifiées modifiées :
+Enfin, les enregistrements prennent en charge _*_les expressions-_*_. Une instruction _*_with-expression_*_ demande au compilateur de créer une copie d’un enregistrement, mais les propriétés spécifiées _with * sont modifiées :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
@@ -106,7 +106,7 @@ La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` pro
 
 ## <a name="init-only-setters"></a>Setter init uniquement
 
-Les ***accesseurs set init only*** fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
+*Les **Setters init uniquement**_ fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
 
 L’exemple précédent pour les enregistrements positionnels illustre l’utilisation d’un accesseur Set init-only pour définir une propriété à l’aide d’une expression with. Vous pouvez déclarer des accesseurs set init uniquement dans n’importe quel type que vous écrivez. Par exemple, le struct suivant définit une structure d’observation météorologique :
 
@@ -127,7 +127,7 @@ Les Setters init uniquement peuvent être utiles pour définir des propriétés 
 
 ## <a name="top-level-statements"></a>Instructions de niveau supérieur
 
-***Les instructions de niveau supérieur*** suppriment la cérémonie inutile de nombreuses applications. Prenons le « Hello World ! » canonique. table
+_*_Les instructions de niveau supérieur_*_ suppriment la cérémonie inutile de nombreuses applications. Prenons le « Hello World ! » canonique. table
 
 ```csharp
 using System;
@@ -164,12 +164,12 @@ Plus important encore, les instructions de niveau supérieur ne limitent pas la 
 
 C# 9 comprend de nouvelles améliorations de la mise en correspondance des modèles :
 
-- Les ***modèles de type*** correspondent à une variable est un type
-- Les ***modèles entre parenthèses*** appliquent ou mettent en évidence la précédence des combinaisons de modèles
-- ***Les `and` modèles conjonctives*** nécessitent que les deux modèles correspondent
-- ***Les `or` modèles disjonctive*** nécessitent un modèle de correspondance
-- Les *** `not` modèles de négation*** requièrent qu’un modèle ne corresponde pas
-- Les ***modèles relationnels*** requièrent que l’entrée soit inférieure à, supérieure à, inférieure ou égale à une constante donnée, ou supérieure ou égale à celle-ci.
+- Les _*_modèles de type_*_ correspondent à une variable est un type
+- Les _*_modèles entre parenthèses_*_ appliquent ou mettent en évidence la précédence des combinaisons de modèles
+- _*_Les `and` modèles conjonctives_*_ nécessitent que les deux modèles correspondent
+- _*_Les `or` modèles disjonctive_*_ nécessitent un modèle de correspondance
+- Les _*_ `not` modèles de négation_*_ requièrent qu’un modèle ne corresponde pas
+- Les _*_modèles relationnels_*_ requièrent que l’entrée soit inférieure à, supérieure à, inférieure ou égale à une constante donnée, ou supérieure ou égale à celle-ci.
 
 Ces modèles enrichissent la syntaxe des modèles. Prenons les exemples suivants :
 
@@ -196,7 +196,7 @@ Trois nouvelles fonctionnalités améliorent la prise en charge de l’interopé
 
 Les entiers de taille native, `nint` et `nuint` , sont des types entiers. Elles sont exprimées par les types sous-jacents <xref:System.IntPtr?displayProperty=nameWithType> et <xref:System.UIntPtr?displayProperty=nameWithType> . Le compilateur recadre les conversions et les opérations supplémentaires pour ces types comme des ints natifs. Les entiers de taille native définissent des propriétés pour `MaxValue` ou `MinValue` . Ces valeurs ne peuvent pas être exprimées comme des constantes de compilation, car elles dépendent de la taille native d’un entier sur l’ordinateur cible. Ces valeurs sont en lecture seule au moment de l’exécution. Vous pouvez utiliser des valeurs constantes pour `nint` dans la plage [ `int.MinValue` .. `int.MaxValue`]. Vous pouvez utiliser des valeurs constantes pour `nuint` dans la plage [ `uint.MinValue` .. `uint.MaxValue`]. Le compilateur exécute un repli constant pour tous les opérateurs unaires et binaires à l’aide des <xref:System.Int32?displayProperty=nameWithType> <xref:System.UInt32?displayProperty=nameWithType> types et. Si le résultat ne tient pas dans 32 bits, l’opération est exécutée au moment de l’exécution et n’est pas considérée comme une constante. Les entiers de taille native peuvent augmenter les performances dans les scénarios où les calculs d’entiers sont largement utilisés et doivent avoir les performances les plus rapides possibles.
 
-Les pointeurs fonction fournissent une syntaxe simple pour accéder aux opcodes IL `ldftn` et `calli` . Vous pouvez déclarer des pointeurs de fonction à l’aide de la nouvelle `delegate*` syntaxe. Un `delegate*` type est un type pointeur. L’appel du `delegate*` type utilise `calli` , contrairement à un délégué qui utilise `callvirt` sur la `Invoke()` méthode. Syntaxiquement, les appels sont identiques. L’appel du pointeur de fonction utilise la `managed` Convention d’appel. Vous ajoutez le `unmanaged` mot clé après la `delegate*` syntaxe pour déclarer que vous souhaitez la `unmanaged` Convention d’appel. D’autres conventions d’appel peuvent être spécifiées à l’aide d’attributs sur la `delegate*` déclaration.
+Les pointeurs fonction fournissent une syntaxe simple pour accéder aux opcodes IL `ldftn` et `calli` . Vous pouvez déclarer des pointeurs de fonction à l’aide de la nouvelle `delegate_` syntaxe. Un `delegate*` type est un type pointeur. L’appel du `delegate*` type utilise `calli` , contrairement à un délégué qui utilise `callvirt` sur la `Invoke()` méthode. Syntaxiquement, les appels sont identiques. L’appel du pointeur de fonction utilise la `managed` Convention d’appel. Vous ajoutez le `unmanaged` mot clé après la `delegate*` syntaxe pour déclarer que vous souhaitez la `unmanaged` Convention d’appel. D’autres conventions d’appel peuvent être spécifiées à l’aide d’attributs sur la `delegate*` déclaration.
 
 Enfin, vous pouvez ajouter le <xref:System.Runtime.CompilerServices.SkipLocalsInitAttribute?displayProperty=nameWithType> pour indiquer au compilateur de ne pas émettre l' `localsinit` indicateur. Cet indicateur indique au CLR d’initialiser à zéro toutes les variables locales. L' `localsinit` indicateur a été le comportement par défaut pour C# depuis 1,0. Toutefois, l’initialisation sans zéro supplémentaire peut avoir un impact mesurable sur les performances dans certains scénarios. En particulier, lorsque vous utilisez `stackalloc` . Dans ce cas, vous pouvez ajouter le <xref:System.Runtime.CompilerServices.SkipLocalsInitAttribute> . Vous pouvez l’ajouter à une méthode ou une propriété unique, ou à un `class` , `struct` , `interface` ou même un module. Cet attribut n’affecte pas `abstract` les méthodes ; il affecte le code généré pour l’implémentation.
 
@@ -226,7 +226,7 @@ Une fonctionnalité similaire améliore la résolution de type cible des [expres
 
 À compter de C# 9,0, vous pouvez ajouter le `static` modificateur aux [expressions lambda](../language-reference/operators/lambda-expressions.md) ou aux [méthodes anonymes](../language-reference/operators/delegate-operator.md). Les expressions lambda statiques sont analogues aux `static` fonctions locales : une méthode lambda statique ou anonyme ne peut pas capturer les variables locales ou l’état de l’instance. Le `static` modificateur empêche la capture accidentelle d’autres variables.
 
-Les types de retour covariants fournissent la flexibilité pour les types de retour des fonctions substituées. Une fonction virtuelle substituée peut retourner un type dérivé du type de retour déclaré dans la méthode de la classe de base. Cela peut être utile pour les enregistrements et pour d’autres types qui prennent en charge les méthodes de fabrique ou de clonage virtuel.
+Les types de retour covariants fournissent la flexibilité pour les types de retour des méthodes [override](../language-reference/keywords/override.md) . Une méthode override peut retourner un type dérivé du type de retour de la méthode de base substituée. Cela peut être utile pour les enregistrements et pour d’autres types qui prennent en charge les méthodes de fabrique ou de clonage virtuel.
 
 En outre, la [ `foreach` boucle](../language-reference/keywords/foreach-in.md) reconnaît et utilise une méthode d’extension `GetEnumerator` qui, autrement, satisfait le `foreach` modèle. Ce changement signifie `foreach` qu’il est cohérent avec d’autres constructions basées sur des modèles, telles que le modèle asynchrone et la déconstruction basée sur des modèles. Dans la pratique, cette modification signifie que vous pouvez ajouter la `foreach` prise en charge à n’importe quel type. Vous devez limiter son utilisation à lorsque l’énumération d’un objet est logique dans votre conception.
 
@@ -240,9 +240,9 @@ Deux fonctionnalités finales prennent en charge les générateurs de code C#. L
 
 Un générateur de code lit des attributs ou d’autres éléments de code à l’aide des API d’analyse Roslyn. À partir de ces informations, il ajoute un nouveau code à la compilation. Les générateurs de source peuvent uniquement ajouter du code ; ils ne sont pas autorisés à modifier le code existant dans la compilation.
 
-Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la ***syntaxe de méthode partielle***et les ***initialiseurs de module***. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
+Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la**syntaxe de méthode partielle**_ et les _*_initialiseurs de module_*_. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
 
-La deuxième nouvelle fonctionnalité pour les générateurs de code est les ***initialiseurs de module***. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime lors du chargement de l’assembly. Méthode d’initialiseur de module :
+La deuxième nouvelle fonctionnalité pour les générateurs de code est _ *_initialiseurs de module_* *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime lors du chargement de l’assembly. Méthode d’initialiseur de module :
 
 - Doit être statique
 - Doit être sans paramètre
