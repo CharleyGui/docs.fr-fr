@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cd5bcc6bd96834d4803e00bd84eff4441abfe9f8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: eb0a5c8ac733f0db4e8356dca80f898bc7a72cfb
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641428"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471958"
 ---
 > [!IMPORTANT]
-> <span data-ttu-id="0c6de-101">Étant donné que les projets de bibliothèque de classes Portable ciblent uniquement un sous-ensemble très spécifique des implémentations de .NET, nous déconseillons fortement leur utilisation dans le développement de nouvelles applications.</span><span class="sxs-lookup"><span data-stu-id="0c6de-101">Because Portable Class Library projects target only a very specific subset of .NET implementations, we strongly discourage their use in new application development.</span></span> <span data-ttu-id="0c6de-102">Le remplacement recommandé est une bibliothèque .NET Standard, qui cible toutes les implémentations de .NET qui prennent en charge une version spécifique de .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="0c6de-102">The recommended replacement is a .NET Standard library, which targets all .NET implementations that support a specific version of the .NET Standard.</span></span> <span data-ttu-id="0c6de-103">Pour plus d'informations, consultez [.NET Standard](~/docs/standard/net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="0c6de-103">For more information, see [.NET Standard](~/docs/standard/net-standard.md).</span></span>
+> <span data-ttu-id="1b6f5-101">Nous déconseillons vivement d’utiliser les bibliothèques de classes portables dans le nouveau développement d’applications, car elles ne ciblent qu’un sous-ensemble spécifique d’implémentations .NET.</span><span class="sxs-lookup"><span data-stu-id="1b6f5-101">We strongly discourage the use of portable class libraries in new application development, because they target only a very specific subset of .NET implementations.</span></span> <span data-ttu-id="1b6f5-102">Si vous créez une bibliothèque réutilisable pour partager du code entre .NET Framework et d’autres implémentations .NET, le remplacement recommandé est une bibliothèque .NET Standard 2,0.</span><span class="sxs-lookup"><span data-stu-id="1b6f5-102">If you're building a reusable library to share code between .NET Framework and other .NET implementations, the recommended replacement is a .NET Standard 2.0 library.</span></span> <span data-ttu-id="1b6f5-103">Dans le cas contraire, utilisez .NET 5 ou une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="1b6f5-103">Otherwise, use .NET 5 or later.</span></span> <span data-ttu-id="1b6f5-104">Pour plus d'informations, consultez [.NET Standard](~/docs/standard/net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="1b6f5-104">For more information, see [.NET Standard](~/docs/standard/net-standard.md).</span></span>
