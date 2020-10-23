@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 55091ef9bb9f7a2aa24f585c94aa2a47960b1829
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 62d98adab0122936957301ee737c366541b0cfe6
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90874723"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471548"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -25,7 +25,7 @@ Pour suivre une procédure pas à pas et créer un modèle, consultez le didacti
 
 ### <a name="net-default-templates"></a>Modèles par défaut .NET
 
-Quand vous installez le [SDK .NET Core](https://dotnet.microsoft.com/download), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://facebook.github.io/react/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
+Quand vous installez le [SDK .NET Core](https://dotnet.microsoft.com/download), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://reactjs.org/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
 
 ```dotnetcli
 dotnet new --list

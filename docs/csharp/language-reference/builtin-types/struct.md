@@ -9,18 +9,18 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 7f3940ce487b9e382150234f317cf1dba34bb060
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5f446dae6a84706e1398a65ffb5a52270cfd92cf
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89132727"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471811"
 ---
 # <a name="structure-types-c-reference"></a>Types de structures (référence C#)
 
 Un type de *structure* (ou *type struct*) est un [type valeur](value-types.md) qui peut encapsuler des données et des fonctionnalités associées. Le `struct` mot clé vous permet de définir un type de structure :
 
-[!code-csharp[struct example](snippets/StructType.cs#StructExample)]
+[!code-csharp[struct example](snippets/shared/StructType.cs#StructExample)]
 
 Les types de structure ont une *sémantique de valeur*. Autrement dit, une variable d’un type structure contient une instance du type. Par défaut, les valeurs des variables sont copiées lors de l’assignation, en passant un argument à une méthode et en retournant un résultat de méthode. Dans le cas d’une variable de type structure, une instance du type est copiée. Pour plus d’informations, consultez [types valeur](value-types.md).
 
@@ -32,7 +32,7 @@ En général, vous utilisez des types de structure pour concevoir de petits type
 
 À compter de C# 7,2, vous utilisez le `readonly` modificateur pour déclarer qu’un type structure est immuable :
 
-[!code-csharp[readonly struct](snippets/StructType.cs#ReadonlyStruct)]
+[!code-csharp[readonly struct](snippets/shared/StructType.cs#ReadonlyStruct)]
 
 Tous les membres de données d’un `readonly` struct doivent être en lecture seule, comme suit :
 
@@ -54,15 +54,15 @@ En règle générale, vous appliquez le `readonly` modificateur aux genres suiva
 
 - leurs
 
-  [!code-csharp[readonly method](snippets/StructType.cs#ReadonlyMethod)]
+  [!code-csharp[readonly method](snippets/shared/StructType.cs#ReadonlyMethod)]
 
   Vous pouvez également appliquer le `readonly` modificateur aux méthodes qui remplacent les méthodes déclarées dans <xref:System.Object?displayProperty=nameWithType> :
 
-  [!code-csharp[readonly override](snippets/StructType.cs#ReadonlyOverride)]
+  [!code-csharp[readonly override](snippets/shared/StructType.cs#ReadonlyOverride)]
 
 - Propriétés et indexeurs :
 
-  [!code-csharp[readonly property get](snippets/StructType.cs#ReadonlyProperty)]
+  [!code-csharp[readonly property get](snippets/shared/StructType.cs#ReadonlyProperty)]
 
   Si vous devez appliquer le `readonly` modificateur aux deux accesseurs d’une propriété ou d’un indexeur, appliquez-le dans la déclaration de la propriété ou de l’indexeur.
 
@@ -95,7 +95,7 @@ En général, vous instanciez un type structure en appelant un constructeur appr
 
 Si tous les champs d’instance d’un type structure sont accessibles, vous pouvez également l’instancier sans l' `new` opérateur. Dans ce cas, vous devez initialiser tous les champs d’instance avant la première utilisation de l’instance. L’exemple suivant montre comment effectuer cette opération :
 
-[!code-csharp[without new](snippets/StructType.cs#WithoutNew)]
+[!code-csharp[without new](snippets/shared/StructType.cs#WithoutNew)]
 
 Dans le cas des [types valeur intégrés](value-types.md#built-in-value-types), utilisez les littéraux correspondants pour spécifier une valeur du type.
 
@@ -118,11 +118,11 @@ Lorsque vous transmettez une variable de type structure à une méthode en tant 
 
 En général, vous définissez un `ref` type struct lorsque vous avez besoin d’un type qui comprend également des membres de données de `ref` types struct :
 
-[!code-csharp[ref struct](snippets/StructType.cs#RefStruct)]
+[!code-csharp[ref struct](snippets/shared/StructType.cs#RefStruct)]
 
 Pour déclarer un `ref` struct en tant que [`readonly`](#readonly-struct) , combinez les `readonly` `ref` modificateurs et dans la déclaration de type (le `readonly` modificateur doit précéder le `ref` modificateur) :
 
-[!code-csharp[readonly ref struct](snippets/StructType.cs#ReadonlyRef)]
+[!code-csharp[readonly ref struct](snippets/shared/StructType.cs#ReadonlyRef)]
 
 Dans .NET, les exemples d’un `ref` struct sont <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> .
 

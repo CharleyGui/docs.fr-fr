@@ -5,12 +5,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: 74a1e244fa47cf7c6ea36454013b46b6e44f62c9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f807a9d9a7ccebf2ae71d47e01fbfba7338b1799
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557669"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471995"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 
@@ -18,12 +18,14 @@ Chaque version de .NET Framework contient les common language runtime (CLR), les
 
 Chaque nouvelle version de .NET Framework ajoute de nouvelles fonctionnalités, mais conserve les fonctionnalités des versions précédentes.
 
+[!INCLUDE [net-framework-future](../../../includes/net-framework-future.md)]
+
 Le CLR est identifié par son propre numéro de version. Le numéro de version de .NET Framework est incrémenté à chaque version, mais la version du CLR n’est pas toujours incrémentée. Par exemple, .NET Framework 4, 4,5 et versions ultérieures incluent CLR 4, mais .NET Framework 2,0, 3,0 et 3,5 incluent CLR 2,0. (Il n'y avait pas de version 3 du CLR.)
 
 > [!TIP]
 >
 > - Pour obtenir la liste complète des systèmes d’exploitation pris en charge, consultez [Configuration système requise](../get-started/system-requirements.md).
-> - Pour les téléchargements, consultez [Installer le .NET Framework pour les développeurs](../install/guide-for-developers.md).
+> - Pour obtenir des téléchargements, consultez [installer .NET Framework pour les développeurs](../install/guide-for-developers.md).
 > - Pour plus d’informations sur la détermination des versions de .NET Framework installées sur un ordinateur, voir How to determine the [.NET Framework versions installed](how-to-determine-which-versions-are-installed.md).
 
 ## <a name="version-information"></a>Informations sur la version
@@ -32,12 +34,12 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 - L’icône de coche ✔️ indique les versions de système d’exploitation sur lesquelles .NET Framework est installé par défaut.
 - L’icône du signe plus ➕ indique les versions de système d’exploitation sur lesquelles .NET Framework n’est pas installé, mais qui peuvent être installées.
-- L’astérisque **\*** indique les versions de système d’exploitation sur lesquelles .NET Framework (qu’il est préinstallé ou non) doit être activé [dans le panneau de configuration](../install/dotnet-35-windows-10.md) ou, pour Windows Server, via le gestionnaire de serveur.
+- L’astérisque * *\** _ indique les versions de système d’exploitation sur lesquelles .NET Framework (qu’il est préinstallé ou non) doit être activé [dans le panneau de configuration](../install/dotnet-35-windows-10.md) ou, pour Windows Server, via le gestionnaire de serveur.
 
 | | |
 | - | - |
 | [.NET Framework 4.8](#net-framework-48) | [.NET Framework 4.7.2](#net-framework-472) | [.NET Framework 4.7.1](#net-framework-471) | [.NET Framework 4.7](#net-framework-47) |
-| [.NET Framework 4.6.2](#net-framework-462) | [.NET Framework 4.6.1](#net-framework-461) | [.NET Framework 4.6](#net-framework-46) | [.NET Framework 4.5.2](#net-framework-452) |
+| [.NET Framework 4.6.2](#net-framework-462) | [.NET Framework 4.6.1](#net-framework-461) | [.NET Framework 4.6](#net-framework-46) | [.NET Framework 4.5.2](#net-framework-452) |
 | [.NET Framework 4.5.1](#net-framework-451) | [.NET Framework 4.5](#net-framework-45) | [.NET Framework 4](#net-framework-4) | [.NET Framework 3.5](#net-framework-35) |
 | [.NET Framework 3.0](#net-framework-30) | [.NET Framework 2.0](#net-framework-20) | [.NET Framework 1.1](#net-framework-11) | [.NET Framework 1.0](#net-framework-10) |
 
@@ -49,7 +51,7 @@ Les tableaux qui suivent résument .NET Framework historique des versions et met
 
 |||
 |-|-|
-|**Version CLR**|4|
+|_*Version CLR**|4|
 |**Versions de Windows**|✔️ 10 mai 2019 mise à jour<br/>➕ 10 octobre 2018 Update (version 1809)<br/>➕ 10 avril 2018 mise à jour (version 1803)<br/>Mise à jour des créateurs de ➕ 10 automne (version 1709)<br/>➕ 10 Creators Update (version 1703)<br/>➕ 10 mise à jour anniversaire (version 1607)<br/>➕ 8,1<br/>➕ 7|
 |**Versions de Windows Server**|➕ Windows Server 2019<br/>➕ Windows Server, version 1809<br/>➕ Windows Server, version 1803<br/>➕ 2016<br/>➕ 2012 R2<br/>➕ 2012<br/>➕ 2008 R2 SP1|
 |**Pour déterminer la version .NET installée**|Utilisez `Release` DWORD:<br/>- 528040 (Windows 10 Mise à jour de mai 2019)<br/>- 528049 (toutes les autres versions du système d’exploitation)<br/>(Voir [instructions](how-to-determine-which-versions-are-installed.md))|

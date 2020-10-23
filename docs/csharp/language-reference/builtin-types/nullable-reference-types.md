@@ -1,32 +1,32 @@
 ---
-title: Types de référence nuls - Référence C
-description: Renseignez-vous sur les types de référence nuls et sur la façon de les utiliser
+title: Types référence Nullable-référence C#
+description: En savoir plus sur les types de référence Nullable C# et leur utilisation
 ms.date: 04/06/2020
-ms.openlocfilehash: cb61b162b06faa51faabbcdd91e55618cdeaca73
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 274a613a8381a2b7718c9025f51aadb2eb32af36
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102695"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471861"
 ---
-# <a name="nullable-reference-types-c-reference"></a>Types de référence nuls (référence C)
+# <a name="nullable-reference-types-c-reference"></a>Types référence Nullable (référence C#)
 
 > [!NOTE]
-> Cet article couvre les types de référence in annulables. Vous pouvez également déclarer [les types de valeur nuls](nullable-value-types.md).
+> Cet article traite des types de référence Nullable. Vous pouvez également déclarer des [types valeur Nullable](nullable-value-types.md).
 
-Les types de référence nuls sont disponibles à partir de C 8.0, dans le code qui a opté dans un *contexte de conscience nulle*. Les types de référence nuls, les avertissements d’analyse statique nul et [l’opérateur null-indulgent](../operators/null-forgiving.md) sont des caractéristiques linguistiques facultatives. Tous sont désactivés par défaut. Un *contexte inquérable* est contrôlé au niveau du projet à l’aide de paramètres de construction ou de code à l’aide de pragmas.
+Les types référence Nullable sont disponibles à partir de C# 8,0, dans le code qui a opté pour un *contexte reconnaissant*la valeur null. Les types de référence Nullable, les avertissements d’analyse statique null et l' [opérateur null-indulgent avec](../operators/null-forgiving.md) sont des fonctionnalités de langage facultatives. Tous sont désactivés par défaut. Un *contexte Nullable* est contrôlé au niveau du projet à l’aide des paramètres de génération, ou dans le code à l’aide de pragmas.
 
- Dans un contexte de connaissance nulle :
+ Dans un contexte qui prend en charge la valeur NULL :
 
-- Une variable d’un type `T` de référence doit être parasitée avec `null`non-null, et ne peut jamais être attribué une valeur qui peut être .
-- Une variable d’un `T?` type de `null` référence `null`peut être parasiffée ou assignée, mais doit être vérifiée `null` avant de procéder au démosation.
-- Une `m` variable `T?` de type est considérée comme non nulle lorsque vous appliquez `m!`l’opérateur null-indulgent, comme dans .
+- Une variable d’un type référence `T` doit être initialisée avec une valeur non null et ne peut jamais être assignée à une valeur qui peut être `null` .
+- Une variable d’un type référence `T?` peut être initialisée avec `null` ou assignée `null` , mais doit être vérifiée `null` avant d’être déréférencée.
+- Une variable `m` de type `T?` est considérée comme non NULL lorsque vous appliquez l’opérateur null-indulgent avec, comme dans `m!` .
 
-Les distinctions entre un type `T` de référence non `T?` annulable et un type de référence nul sont appliquées par l’interprétation par le compilateur des règles précédentes. Une variable `T` de type et `T?` une variable de type sont représentées par le même type .NET. L’exemple suivant déclare une corde non annulable et une clause annulable, puis utilise l’opérateur qui pardonne l’annulation pour attribuer une valeur à une chaîne non annulable :
+Les différences entre un type de référence non Nullable `T` et un type de référence Nullable `T?` sont appliquées par l’interprétation du compilateur des règles précédentes. Une variable de type `T` et une variable de type `T?` sont représentées par le même type .net. L’exemple suivant déclare une chaîne non Nullable et une chaîne Nullable, puis utilise l’opérateur null-indulgent avec pour assigner une valeur à une chaîne qui n’accepte pas les valeurs NULL :
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetCoreSyntax":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetCoreSyntax":::
 
-Les `notNull` variables `nullable` et sont toutes <xref:System.String> deux représentées par le type. Étant donné que les types non annulables et in nullables sont tous deux stockés comme le même type, il y a plusieurs endroits où l’utilisation d’un type de référence nul n’est pas autorisée. En général, un type de référence nul ne peut pas être utilisé comme classe de base ou interface implémentée. Un type de référence in nullable ne peut pas être utilisé dans une création d’objet ou une expression de test de type. Un type de référence in nullable ne peut pas être le type d’expression d’accès d’un membre. Les exemples suivants montrent ces constructions :
+Les variables `notNull` et `nullable` sont toutes les deux représentées par le <xref:System.String> type. Étant donné que les types non Nullable et Nullable sont tous deux stockés sous le même type, il existe plusieurs emplacements où l’utilisation d’un type de référence Nullable n’est pas autorisée. En général, un type de référence Nullable ne peut pas être utilisé comme classe de base ou comme interface implémentée. Un type de référence Nullable ne peut pas être utilisé dans une expression de création d’objet ou de test de type. Un type de référence Nullable ne peut pas être le type d’une expression d’accès de membre. Les exemples suivants illustrent ces constructions :
 
 ```csharp
 public MyClass : System.Object? // not allowed
@@ -45,36 +45,36 @@ try
 }
 ```
 
-## <a name="nullable-references-and-static-analysis"></a>Références et analyses statiques insédables
+## <a name="nullable-references-and-static-analysis"></a>Références Nullable et analyse statique
 
-Les exemples de la section précédente illustrent la nature des types de références nuls. Les types de référence nuls ne sont pas de nouveaux types de classe, mais plutôt des annotations sur les types de référence existants. Le compilateur utilise ces annotations pour vous aider à trouver des erreurs de référence nulles potentielles dans votre code. Il n’y a pas de différence de temps d’exécution entre un type de référence non annulable et un type de référence nul. Le compilateur n’ajoute aucune vérification du temps d’exécution pour les types de référence non annulables. Les avantages sont dans l’analyse de temps de compilation. Le compilateur génère des avertissements qui vous aident à trouver et à corriger les erreurs nulles potentielles dans votre code. Vous déclarez votre intention, et le compilateur vous avertit lorsque votre code viole cette intention.
+Les exemples de la section précédente illustrent la nature des types de référence Nullable. Les types de référence Nullable ne sont pas de nouveaux types de classe, mais plutôt des annotations sur les types de référence existants. Le compilateur utilise ces annotations pour vous aider à identifier les erreurs de référence null potentielles dans votre code. Il n’existe aucune différence d’exécution entre un type de référence non Nullable et un type de référence Nullable. Le compilateur n’ajoute pas de vérification du runtime pour les types de référence non Nullable. Les avantages sont liés à l’analyse au moment de la compilation. Le compilateur génère des avertissements qui vous aident à trouver et à corriger les erreurs null potentielles dans votre code. Vous déclarez votre intention et le compilateur vous avertit lorsque votre code viole cet objectif.
 
-Dans un contexte in annulable, le compilateur effectue une analyse statique sur des variables de tout type de référence, à la fois in nullables et non annulables. Le compilateur suit l’état nul de chaque variable de référence comme *non nul* ou *peut-être nul*. L’état par défaut d’une référence non annulable *n’est pas nul*. L’état par défaut d’une référence annulée est *peut-être nul*.
+Dans un contexte activé avec la valeur null, le compilateur effectue une analyse statique sur les variables de tout type référence, à la fois Nullable et non Nullable. Le compilateur effectue le suivi de l’État null de chaque variable de référence comme *not null* ou *peut être null*. L’État par défaut d’une référence qui n’accepte pas les valeurs NULL n’est *pas null*. L’État par défaut d’une référence Nullable est *peut-être null*.
 
-Les types de référence non annulables devraient toujours être sûrs de la déreférence parce que leur état nul *n’est pas nul*. Pour faire respecter cette règle, le compilateur émet des avertissements si un type de référence non annulable n’est pas paradé à une valeur non nulle. Les variables locales doivent être assignées là où elles sont déclarées. Chaque constructeur doit attribuer chaque champ, soit dans son corps, un constructeur appelé, ou en utilisant un initialisateur de champ. Le compilateur émet des avertissements si une référence non annulable est attribuée à une référence dont l’état est *peut-être nul*. Toutefois, comme une référence non annulable *n’est pas nulle,* aucun avertissement n’est émis lorsque ces variables sont dé-référencées.
+Les types référence non Nullable doivent toujours être déréférencés, car leur état NULL n’est *pas null*. Pour appliquer cette règle, le compilateur émet des avertissements si un type de référence non Nullable n’est pas initialisé à une valeur non null. Les variables locales doivent être assignées là où elles sont déclarées. Chaque constructeur doit assigner chaque champ, dans son corps, à un constructeur appelé ou à l’aide d’un initialiseur de champ. Le compilateur émet des avertissements si une référence qui n’accepte pas les valeurs NULL est assignée à une référence dont l’État est *peut-être null*. Toutefois, étant donné qu’une référence non Nullable n’est *pas null*, aucun avertissement n’est émis lorsque ces variables sont déréférencées.
 
-Les types de référence nuls `null`peuvent être parasités ou attribués à . Par conséquent, l’analyse statique doit déterminer qu’une variable *n’est pas nulle* avant qu’elle ne soit déreférée. Si une référence annulée est déterminée à *être peut-être nulle,* elle ne peut pas être attribuée à une variable de référence non-nullable. La classe suivante montre des exemples de ces avertissements :
+Les types référence Nullable peuvent être initialisés ou assignés à `null` . Par conséquent, l’analyse statique doit déterminer qu’une variable n’a *pas la valeur null* avant d’être déréférencée. Si une référence Nullable est peut-être *null*, elle ne peut pas être assignée à une variable de référence n’acceptant pas les valeurs NULL. La classe suivante montre des exemples de ces avertissements :
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetClassWithNullable":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetClassWithNullable":::
 
-L’extrait suivant montre où le compilateur émet des avertissements lors de l’utilisation de cette classe:
+L’extrait de code suivant indique où le compilateur émet des avertissements lors de l’utilisation de cette classe :
 
-:::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
+:::code language="csharp" source="snippets/shared/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
 
-Les exemples précédents démontrent l’analyse statique du compilateur pour déterminer l’état nul des variables de référence. Le compilateur applique des règles linguistiques pour les vérifications et les affectations nulles pour éclairer son analyse.  Le compilateur ne peut pas faire d’hypothèses sur la sémantique des méthodes ou des propriétés. Si vous appelez des méthodes qui effectuent des contrôles nuls, le compilateur ne peut pas savoir que ces méthodes affectent l’état nul d’une variable. Il existe un certain nombre d’attributs que vous pouvez ajouter à vos API pour informer le compilateur sur la sémantique des arguments et des valeurs de retour. Ces attributs ont été appliqués à de nombreuses API communes dans les bibliothèques de base .NET. Par exemple, <xref:System.String.IsNullOrEmpty%2A> a été mis à jour, et le compilateur interprète correctement cette méthode comme une vérification nulle. Pour plus d’informations sur les attributs qui s’appliquent à l’analyse statique de l’état nul, voir l’article sur [les attributs Nullable](../attributes/nullable-analysis.md).
+Les exemples précédents illustrent l’analyse statique du compilateur pour déterminer l’État null des variables de référence. Le compilateur applique des règles de langage pour les vérifications et les assignations null afin d’en informer l’analyse.  Le compilateur ne peut pas faire d’hypothèses sur la sémantique des méthodes ou des propriétés. Si vous appelez des méthodes qui effectuent des vérifications de valeur null, le compilateur ne peut pas savoir que ces méthodes affectent l’État null d’une variable. Vous pouvez ajouter plusieurs attributs à vos API pour informer le compilateur de la sémantique des arguments et des valeurs de retour. Ces attributs ont été appliqués à de nombreuses API communes dans les bibliothèques .NET Core. Par exemple, <xref:System.String.IsNullOrEmpty%2A> a été mis à jour et le compilateur interprète correctement cette méthode comme une vérification de valeur null. Pour plus d’informations sur les attributs qui s’appliquent à l’analyse statique d’État null, consultez l’article sur les [attributs Nullable](../attributes/nullable-analysis.md).
 
-## <a name="setting-the-nullable-context"></a>Définir le contexte in nullable
+## <a name="setting-the-nullable-context"></a>Définition du contexte Nullable
 
-Il y a deux façons de contrôler le contexte nul. Au niveau du projet, `<Nullable>enable</Nullable>` vous pouvez ajouter le paramètre du projet. Dans un seul fichier source C, `#nullable enable` vous pouvez ajouter le pragma pour activer le contexte nul. Voir l’article sur [la mise en place d’une stratégie annulée](../../nullable-migration-strategies.md).
+Il existe deux façons de contrôler le contexte Nullable. Au niveau du projet, vous pouvez ajouter le `<Nullable>enable</Nullable>` paramètre de projet. Dans un seul fichier source C#, vous pouvez ajouter le `#nullable enable` pragma pour activer le contexte Nullable. Consultez l’article sur la [définition d’une stratégie Nullable](../../nullable-migration-strategies.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, voir les propositions suivantes pour la [spécification linguistique CMD](~/_csharplang/spec/introduction.md):
+Pour plus d’informations, consultez les propositions suivantes pour la [spécification du langage C#](~/_csharplang/spec/introduction.md):
 
 - [Types références Nullables](~/_csharplang/proposals/csharp-8.0/nullable-reference-types.md)
-- [Spécifications de types de référence nuls](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Spécification des types de référence Nullable Draft](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Types valeur Nullable](nullable-value-types.md)

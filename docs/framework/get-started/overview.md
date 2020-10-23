@@ -1,38 +1,39 @@
 ---
-title: Vue d’ensemble du .NET Framework
-description: Lisez une vue d’ensemble de .NET, qui est une technologie qui prend en charge la création et l’exécution d’applications et de services Web Windows.
-ms.date: 03/30/2017
+title: Vue d’ensemble de .NET Framework
+description: Lisez une vue d’ensemble de .NET Framework, qui est une technologie qui prend en charge la création et l’exécution d’applications et de services Web Windows.
+ms.date: 10/21/2020
 helpviewer_keywords:
 - application development [.NET Framework]
 - common language runtime
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: 3577a3ad13d9ef6935a1bed8a29e3d594857928e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 75b2e94b93eabdbf8a6a40f38c1b12a8caddd98a
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557760"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471742"
 ---
 # <a name="overview-of-net-framework"></a>Vue d’ensemble de .NET Framework
 
 .NET Framework est une technologie qui prend en charge la création et l’exécution d’applications et de services Web Windows. .NET Framework est conçu pour respecter les objectifs suivants :
 
-- Fournir un environnement de programmation orienté objet cohérent, que le code objet soit stocké et exécuté localement, exécuté localement mais distribué sur le Web ou exécuté à distance.
+- Fournir un environnement de programmation cohérent et orienté objet, que le code objet soit stocké et exécuté localement, exécuté localement mais distribué sur le Web ou exécuté à distance.
 
-- Fournir un environnement d'exécution de code qui minimise le déploiement de logiciel et de conflits de versions.
+- Fournir un environnement d’exécution de code qui :
 
-- Fournir un environnement d'exécution de code qui promeut l'exécution sécurisée de code y compris le code créé par un tiers d'un niveau de confiance moyen ou un tiers inconnu.
+  - Minimise le déploiement de logiciels et les conflits de contrôle de version.
 
-- Fournir un environnement d'exécution de code qui élimine les problèmes de performance des environnements interprétés ou écrits en scripts.
+  - Promeut l’exécution sécurisée du code, y compris le code créé par un tiers inconnu ou semi-approuvé.
 
-- Fournir au développeur un environnement cohérent entre une grande variété de types d’applications comme les applications Windows et les applications web.
+  - Élimine les problèmes de performances des environnements scriptés ou interprétés.
 
-- Pour générer toutes les communications sur les normes du secteur afin de garantir que le code basé sur .NET Framework s’intègre à tout autre code.
+- Rendez l’expérience du développeur cohérente entre les différents types d’applications, telles que les applications basées sur Windows et les applications Web.
 
-> [!NOTE]
-> Pour une présentation générale des .NET Framework pour les utilisateurs et les développeurs, consultez [prise en main](index.md).
+- Créez toutes les communications sur les normes du secteur pour vous assurer que le code basé sur .NET Framework s’intègre à tout autre code.
+
+[!INCLUDE [net-framework-future](../../../includes/net-framework-future.md)]
 
 .NET Framework se compose des common language runtime (CLR) et de la bibliothèque de classes .NET Framework. Le common language runtime est la base de .NET Framework. Le runtime est un agent qui manage le code au moment de l’exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une cohérence stricte des types et d’autres formes de précision qui favorisent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Pour le code qui cible le runtime, on parle de code managé, tandis que pour le code qui ne cible pas le runtime, on parle de code non managé. La bibliothèque de classes est une collection complète orientée objet de types réutilisables que vous utilisez pour développer des applications allant des applications de ligne de commande traditionnelles ou d’interface utilisateur graphique (GUI) aux applications basées sur les dernières innovations fournies par ASP.NET, telles que les Web Forms et les services Web XML.
 

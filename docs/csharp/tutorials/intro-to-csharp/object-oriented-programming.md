@@ -2,12 +2,12 @@
 title: Programmation orientée objet (C#)
 description: C# fournit une prise en charge complète de la programmation orientée objet, notamment l’abstraction, l’encapsulation, l’héritage et le polymorphisme.
 ms.date: 09/30/2020
-ms.openlocfilehash: 6e0155621be544b01453b8c107debb3a9b6c38f9
-ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
+ms.openlocfilehash: 353edf8fc68f495f3d875fa678aaaf91f1fd6406
+ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997663"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92471593"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation Object-Oriented (C#)
 
@@ -140,7 +140,7 @@ Notez que le `LineOfCreditAccount` constructeur modifie le signe du `creditLimit
 
 La dernière fonctionnalité à ajouter permet au `LineOfCreditAccount` de payer une taxe pour dépasser la limite de crédit au lieu de refuser la transaction.
 
-Une technique consiste à définir une fonction virtuelle où vous implémentez le comportement requis. La `Bank Account` classe refactorise la `MakeWithdrawal` méthode en deux méthodes. La nouvelle méthode effectue l’action spécifiée lorsque le retrait prend le solde inférieur au minimum. La `MakeWithdrawal` méthode existante a le code suivant :
+Une technique consiste à définir une fonction virtuelle où vous implémentez le comportement requis. La `BankAccount` classe refactorise la `MakeWithdrawal` méthode en deux méthodes. La nouvelle méthode effectue l’action spécifiée lorsque le retrait prend le solde inférieur au minimum. La `MakeWithdrawal` méthode existante a le code suivant :
 
 ```csharp
 public void MakeWithdrawal(decimal amount, DateTime date, string note)
