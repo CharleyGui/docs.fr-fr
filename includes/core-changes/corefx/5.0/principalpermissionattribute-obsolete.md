@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2c8a5c1ec87918a91600a3557c679a42cae74896
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: d9526055041f036958699aa935aa6cfef494b520
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556327"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434951"
 ---
 ### <a name="principalpermissionattribute-is-obsolete-as-error"></a>PrincipalPermissionAttribute est obsolète en tant qu’erreur
 
@@ -34,7 +34,7 @@ Cette différence de comportement entre .NET Framework et .net Core et .NET 5,0 
 
 5,0 Preview 7
 
-#### <a name="recommended-action"></a>Action recommandée
+#### <a name=""></a><a id="permission-action">Action recommandée</a>
 
 Si vous rencontrez l’erreur obsoletion, vous devez prendre des mesures.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0dfe04ba1313480f15a8e7a7e26da613799180b2
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: a93856aac97af5c392a2e4698d2da42413cfc3c8
+ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332877"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434988"
 ---
 ### <a name="aspnet-core-apps-allow-deserializing-quoted-numbers"></a>Les applications ASP.NET Core autorisent la désérialisation des nombres entre guillemets
 
@@ -20,7 +20,7 @@ Dans .NET Core 3,0-3,1, <xref:System.Text.Json.JsonSerializer> lève une lors de
 >
 > - Il n’y a aucun changement de comportement pour la valeur par défaut, autonome <xref:System.Text.Json.JsonSerializer> ou <xref:System.Text.Json.JsonSerializerOptions> .
 > - Il ne s’agit techniquement pas d’une modification avec rupture, car cela rend un scénario plus permissif au lieu de plus restrictif (autrement dit, il parvient à forcer un nombre à partir d’une chaîne JSON au lieu de lever une exception). Toutefois, étant donné qu’il s’agit d’un changement de comportement significatif qui affecte de nombreuses applications ASP.NET Core, il est documenté ici.
-> - Les <xref:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync%2A> <xref:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync%2A> méthodes d’extension et utilisent également le <xref:System.Text.Json.JsonSerializerDefaults.Web> jeu d’options de sérialisation.
+> - Les <xref:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync%2A?displayProperty=nameWithType> <xref:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync%2A?displayProperty=nameWithType> méthodes d’extension et utilisent également le <xref:System.Text.Json.JsonSerializerDefaults.Web> jeu d’options de sérialisation.
 
 #### <a name="version-introduced"></a>Version introduite
 
