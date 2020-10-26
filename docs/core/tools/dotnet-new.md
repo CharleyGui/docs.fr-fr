@@ -5,18 +5,18 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/01/2020
-ms.openlocfilehash: 70297cfe15732716b9ceacae091abe3c8957fb61
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 4a4c8e2806fee663b5f6aa255a6f24250a072a85
+ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495471"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92526618"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
@@ -58,7 +58,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Présent |
+| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Introduit |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -74,22 +74,22 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 | Élément de test NUnit 3                            | `nunit-test`                    | [C#], F#, VB | Test/NUnit                            | 2.2        |
 | Projet de test xUnit                           | [xUnit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
 | Composant Razor                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
-| Page Razor                                   | [page](#page)                   | [C#]         | Web/ASP.NET                           | 2,0        |
-| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2,0        |
-| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2,0        |
+| Page Razor                                   | [page](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
+| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
+| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Blazor Application serveur                            | [blazorserver](#blazorserver)   | [C#]         | InternetBlazor                            | 3.0        |
 | BlazorWebAssemblyApplication                       | `blazorwasm`                    | [C#]         | InternetBlazor/WebAssembly                | 3.1.300    |
 | ASP.NET Core vide                           | [web](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [MVC](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
-| ASP.NET Core avec Angular                    | [oblique](#spa)                 | [C#]         | Web/MVC/SPA                           | 2,0        |
-| ASP.NET Core avec React.js                   | [réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2,0        |
-| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2,0        |
+| ASP.NET Core avec Angular                    | [oblique](#spa)                 | [C#]         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core avec React.js                   | [réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2.0        |
 | Bibliothèque de classes Razor                          | [razorclasslib](#razorclasslib) | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor | 2.1        |
 | API web ASP.NET Core                         | [WebAPI](#webapi)               | [C#], F#     | Web/WebAPI                            | 1.0        |
 | ASP.NET Core Service gRPC                    | [GRPC](#web-others)             | [C#]         | Web/gRPC                              | 3.0        |
 | fichier gitignore dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
-| fichier global.json                             | [globaljson](#globaljson)       |              | Config                                | 2,0        |
+| fichier global.json                             | [globaljson](#globaljson)       |              | Config                                | 2.0        |
 | Configuration NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
 | Fichier manifeste de l’outil local dotnet              | `tool-manifest`                 |              | Config                                | 3.0        |
 | Configuration Web                                   | `webconfig`                     |              | Config                                | 1.0        |
@@ -143,7 +143,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`--type <TYPE>`**
 
-  Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont `project` , `item` et `other` .
+  Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont `project` et `item` .
 
 - **`-u|--uninstall [PATH|NUGET_ID]`**
 
@@ -190,11 +190,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   S’il est spécifié, n’exécute pas de restauration implicite pendant la création du projet. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
-***
+**_
 
 ### <a name="classlib"></a>classlib
 
-- **`-f|--framework <FRAMEWORK>`**
+- _*`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp<version>` pour créer une bibliothèque de classes .NET Core ou `netstandard<version>` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
 
@@ -208,11 +208,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a> WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
-- **`-f|--framework <FRAMEWORK>`**
+- _*`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
@@ -226,11 +226,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="winforms-winformslib"></a><a name="winforms"></a> WinForms, winformslib
 
-- **`--langVersion <VERSION_NUMBER>`**
+- _*`--langVersion <VERSION_NUMBER>`**
 
   Définit la `LangVersion` propriété dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3.
 
@@ -240,11 +240,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="worker-grpc"></a><a name="web-others"></a> Worker, GRPC
 
-- **`-f|--framework <FRAMEWORK>`**
+- _*`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
@@ -256,11 +256,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="mstest-xunit"></a><a name="test"></a> MSTest, xUnit
 
-- **`-f|--framework <FRAMEWORK>`**
+- _*`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option disponible depuis le kit de développement logiciel (SDK) .NET Core 3,0.
 
@@ -279,11 +279,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="nunit"></a>nunit
 
-- **`-f|--framework <FRAMEWORK>`**
+- _*`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler.
 
@@ -304,11 +304,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="page"></a>page
 
-- **`-na|--namespace <NAMESPACE_NAME>`**
+- _*`-na|--namespace <NAMESPACE_NAME>`**
 
   Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
@@ -316,19 +316,19 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Crée la page sans PageModel.
 
-***
+**_
 
 ### <a name="viewimports-proto"></a><a name="namespace"></a> viewimports, proto
 
-- **`-na|--namespace <NAMESPACE_NAME>`**
+- _*`-na|--namespace <NAMESPACE_NAME>`**
 
   Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
-***
+**_
 
 ### <a name="blazorserver"></a>blazorserver
 
-- **`-au|--auth <AUTHENTICATION_TYPE>`**
+- _*`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -395,11 +395,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="web"></a>web
 
-- **`--exclude-launch-settings`**
+- _*`--exclude-launch-settings`**
 
   Exclut *launchSettings.js* du modèle généré.
 
@@ -423,11 +423,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Désactive le protocole HTTPs.
 
-***
+**_
 
 ### <a name="mvc-webapp"></a><a name="web-options"></a> MVC, WebApp
 
-- **`-au|--auth <AUTHENTICATION_TYPE>`**
+- _*`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -513,11 +513,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Détermine si le projet est configuré pour utiliser la [compilation du runtime Razor](/aspnet/core/mvc/views/view-compilation#runtime-compilation) dans les versions Debug. Option disponible depuis le kit de développement logiciel (SDK) 3.1.201 .NET Core.
 
-***
+**_
 
 ### <a name="angular-react"></a><a name="spa"></a> angulaire, réaction
 
-- **`-au|--auth <AUTHENTICATION_TYPE>`**
+- _*`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Option disponible à partir du kit SDK .NET Core 3.0.
   
@@ -554,11 +554,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
 
-***
+**_
 
 ### <a name="reactredux"></a>reactredux
 
-- **`--exclude-launch-settings`**
+- _*`--exclude-launch-settings`**
 
   Exclut *launchSettings.js* du modèle généré.
 
@@ -582,11 +582,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Désactive le protocole HTTPs.
 
-***
+**_
 
 ### <a name="razorclasslib"></a>razorclasslib
 
-- **`--no-restore`**
+- _*`--no-restore`**
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
@@ -594,11 +594,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Prend en charge l’ajout de pages et de vues Razor traditionnelles en plus des composants de cette bibliothèque. Option disponible à partir du kit SDK .NET Core 3.0.
 
-***
+**_
   
 ### <a name="webapi"></a>webapi
 
-- **`-au|--auth <AUTHENTICATION_TYPE>`**
+- _*`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -663,11 +663,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
-***
+**_
 
 ### <a name="globaljson"></a>globaljson
 
-- **`--sdk-version <VERSION_NUMBER>`**
+- _*`--sdk-version <VERSION_NUMBER>`**
 
   Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global.js* .
 

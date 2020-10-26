@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 57fd5f8775f95b2588e4a7120e35d6d531be4f01
-ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
+ms.openlocfilehash: c256c03831ac759bc45467f38e85fd3a2884dda4
+ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434829"
+ms.lasthandoff: 10/26/2020
+ms.locfileid: "92526590"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -108,7 +108,7 @@ La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` pro
 
 *Les **Setters init uniquement**_ fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
 
-L’exemple précédent pour les enregistrements positionnels illustre l’utilisation d’un accesseur Set init-only pour définir une propriété à l’aide d’une expression with. Vous pouvez déclarer des accesseurs set init uniquement dans n’importe quel type que vous écrivez. Par exemple, le struct suivant définit une structure d’observation météorologique :
+Vous pouvez déclarer `init` uniquement des accesseurs set dans n’importe quel type que vous écrivez. Par exemple, le struct suivant définit une structure d’observation météorologique :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/WeatherObservation.cs" ID="DeclareWeatherObservation":::
 
