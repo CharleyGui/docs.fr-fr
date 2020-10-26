@@ -7,10 +7,8 @@ items:
     items:
       - name: Vue d’ensemble
         href: get-started/index.md
-      - name: Versions finales hors plage de .NET Framework
+      - name: Mises en production OOB (out-of-band)
         href: get-started/the-net-framework-and-out-of-band-releases.md
-      - name: .NET Core et l’open source
-        href: get-started/net-core-and-open-source.md
       - name: Configuration requise
         href: get-started/system-requirements.md
   - name: Guide d’installation
@@ -691,7 +689,7 @@ items:
             href: whats-new/obsolete-types.md
           - name: Membres obsolètes
             href: whats-new/obsolete-members.md
-  - name: Sécurité d’accès du code
+  - name: Sécurité d'accès du code
     items:
       - name: Vue d'ensemble
         href: misc/code-access-security.md
