@@ -3,34 +3,35 @@ title: Aspects de la sécurité des assemblys
 description: Quand vous générez un assembly .NET, vous pouvez spécifier les autorisations nécessaires à l’exécution de l’assembly. Cet article aborde les assemblys avec nom fort et les outils de signature.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], security
+- assemblies [.NET], security
 - signcodes
-- names [.NET Framework], assemblies
+- names [.NET], assemblies
 - strong-named assemblies, security considerations
 - signing assemblies
-- assemblies [.NET Framework], signing
+- assemblies [.NET], signing
 - granting permissions, assemblies
-- assemblies [.NET Framework], strong-named
-- names [.NET Framework], strong names
-- permissions [.NET Framework], assemblies
-- security [.NET Framework], assemblies
+- assemblies [.NET], strong-named
+- names [.NET], strong names
+- permissions [.NET], assemblies
+- security [.NET], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-ms.openlocfilehash: d0b822f725444248d1037c21ffea9afe1cebb7e2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 91ea206abf80da275651854b9f13aa0116b7a1c5
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290017"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687259"
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
+
 Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisations que l'assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
   
  La preuve est utilisée de deux façons :  
   
-- La preuve d’entrée est fusionnée avec la preuve rassemblée par le chargeur afin de constituer un jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load**, **Assembly.LoadFrom** et **Activator.CreateInstance**.  
+- La preuve d’entrée est fusionnée avec la preuve rassemblée par le chargeur afin de constituer un jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load** , **Assembly.LoadFrom** et **Activator.CreateInstance** .  
   
-- La preuve d’entrée est utilisée sans altération comme jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load(byte[])** et **AppDomain.DefineDynamicAssembly()**.  
+- La preuve d’entrée est utilisée sans altération comme jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load(byte[])** et **AppDomain.DefineDynamicAssembly()** .  
   
   Des autorisations facultatives peuvent être accordées par la [stratégie de sécurité](../../framework/misc/code-access-security-basics.md) définie sur l’ordinateur sur lequel l’assembly s’exécute. Si vous souhaitez que votre code gère toutes les exceptions de sécurité possibles, vous pouvez effectuer l'une des opérations suivantes :  
   
@@ -65,4 +66,4 @@ Lorsque vous générez un assembly, vous pouvez spécifier un jeu d'autorisation
 
 - [Assemblys avec nom fort](strong-named.md)
 - [Assemblys dans .NET](index.md)
-- [SignTool. exe (outil de signature)](../../framework/tools/signtool-exe.md)
+- [SignTool.exe (outil de signature)](../../framework/tools/signtool-exe.md)

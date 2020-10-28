@@ -3,19 +3,19 @@ title: Implémenter une méthode DisposeAsync
 description: Découvrez comment implémenter des méthodes DisposeAsync et DisposeAsyncCore pour effectuer un nettoyage asynchrone des ressources.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/16/2020
+ms.date: 10/26/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 6ddfd860571d883e20fdb18985fe2bc2d9477dec
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 5aa82c507c22a4795f39267ac8f435599fb9cd92
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720281"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687722"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
@@ -102,9 +102,34 @@ En outre, il peut être écrit pour utiliser l’étendue implicite d’une [dé
 
 ## <a name="stacked-usings"></a>Utilisation empilée
 
-Dans les situations où vous créez et utilisez plusieurs objets qui implémentent <xref:System.IAsyncDisposable> , il est possible que l’empilement `using` des instructions dans des conditions errantes puisse empêcher les appels à <xref:System.IAsyncDisposable.DisposeAsync> . Afin d’éviter tout problème potentiel, vous devez éviter l’empilement, et suivez plutôt le modèle d’exemple suivant :
+Dans les situations où vous créez et utilisez plusieurs objets qui implémentent <xref:System.IAsyncDisposable> , il est possible que l’empilement `await using` des instructions avec <xref:System.Threading.Tasks.ValueTask.ConfigureAwait%2A> puisse empêcher les appels à <xref:System.IAsyncDisposable.DisposeAsync> dans des conditions errantes. Pour vous assurer que <xref:System.IAsyncDisposable.DisposeAsync> est toujours appelé, vous devez éviter l’empilement. Les trois exemples de code suivants illustrent des modèles acceptables à utiliser à la place.
 
-:::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+### <a name="acceptable-pattern-one"></a>Modèle acceptable un
+
+:::code language="csharp" id="one" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+Dans l’exemple précédent, chaque opération de nettoyage asynchrone est définie explicitement dans le `await using` bloc. La portée externe est définie par la manière dont `objOne` définit ses accolades, englobante `objTwo` , comme étant `objTwo` supprimées en premier, suivies de `objOne` . Les deux `IAsyncDisposable` instances ont des <xref:System.IAsyncDisposable.DisposeAsync> méthodes attendues, effectuant ainsi l’opération de nettoyage asynchrone. Les appels sont imbriqués, et non empilés.
+
+### <a name="acceptable-pattern-two"></a>Modèle acceptable deux
+
+:::code language="csharp" id="two" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+Dans l’exemple précédent, chaque opération de nettoyage asynchrone est définie explicitement dans le `await using` bloc. À la fin de chaque bloc, la méthode de l' `IAsyncDisposable` instance correspondante est <xref:System.IAsyncDisposable.DisposeAsync> attendue, ce qui entraîne l’exécution de son opération de nettoyage asynchrone. Les appels sont séquentiels, et non empilés. Dans ce scénario `objOne` est supprimé en premier, puis `objTwo` est supprimé.
+
+### <a name="acceptable-pattern-three"></a>Modèle acceptable trois
+
+:::code language="csharp" id="three" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+Dans l’exemple précédent, chaque opération de nettoyage asynchrone est définie implicitement avec le corps de la méthode conteneur. À la fin du bloc englobant, les `IAsyncDisposable` instances effectuent leurs opérations de nettoyage asynchrones. Cette opération s’exécute dans l’ordre inverse à partir duquel elle a été déclarée, ce qui signifie qu’elle `objTwo` est supprimée avant `objOne` .
+
+### <a name="unacceptable-pattern"></a>Modèle inacceptable
+
+Si une exception est levée à partir du `AnotherAsyncDisposable` constructeur, `objOne` n’est pas correctement supprimée :
+
+:::code language="csharp" id="dontdothis" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/stacked-await-usings.cs":::
+
+> [!TIP]
+> Évitez ce modèle, car cela peut entraîner un comportement inattendu.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -6,7 +6,7 @@ helpviewer_keywords:
 - assembly manifest, viewing information
 - Ildasm.exe
 - MSIL Disassembler
-- assemblies [.NET Framework], viewing contents
+- assemblies [.NET], viewing contents
 - viewing assembly information
 - MSIL
 - viewing MSIL information
@@ -15,18 +15,18 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: aed490459252466c6da06e5422b83b1bc20fb885
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: be2311c601effbebd519e33b7a5e13d49f44bd05
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380065"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687500"
 ---
 # <a name="how-to-view-assembly-contents"></a>Comment : afficher le contenu d’un assembly
 
 Vous pouvez utiliser [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) pour visualiser les informations de langage MSIL (Microsoft Intermediate Language) dans un fichier. Si le fichier examiné est un assembly, ces informations peuvent inclure les attributs et les références de l’assembly à d’autres modules et assemblys. Ces informations peuvent être utiles pour déterminer si un fichier est un assembly ou une partie d’un assembly et si le fichier a des références à d’autres modules ou assemblys.
 
-Pour afficher le contenu d’un assembly à l’aide d' *Ildasm. exe*, entrez le nom de l' ** \< assembly Ildasm>** à l’invite de commandes. Par exemple, la commande suivante désassemble l’assembly *Hello. exe* .
+Pour afficher le contenu d’un assembly à l’aide de *Ildasm.exe* , entrez **Ildasm \<assembly name>** à l’invite de commandes. Par exemple, la commande suivante désassemble l’assembly *Hello.exe* .
 
 ```cmd
 ildasm Hello.exe
@@ -36,7 +36,7 @@ Pour afficher les informations de manifeste d’assembly, double-cliquez sur l�
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant démarre avec un programme « Hello World » de base. Après avoir compilé le programme, utilisez *Ildasm. exe* pour désassembler l’assembly *Hello. exe* et afficher le manifeste de l’assembly.
+L’exemple suivant démarre avec un programme « Hello World » de base. Après avoir compilé le programme, utilisez *Ildasm.exe* pour désassembler l’assembly *Hello.exe* et afficher le manifeste de l’assembly.
 
 ```cpp
 using namespace System;
@@ -76,7 +76,7 @@ Class MainApp
 End Class
 ```
 
-L’exécution de la commande *Ildasm. exe* sur l’assembly *Hello. exe* et le double-clic sur l’icône du **manifeste** dans la fenêtre du désassembleur MSIL génère la sortie suivante :
+L’exécution de la *ildasm.exe* de commande sur l’assembly *Hello.exe* et le double-clic sur l’icône du **manifeste** dans la fenêtre du désassembleur MSIL génère la sortie suivante :
 
 ```output
 // Metadata version: v4.0.30319
@@ -103,18 +103,18 @@ L’exécution de la commande *Ildasm. exe* sur l’assembly *Hello. exe* et le 
 // Image base: 0x00600000
 ```
 
-Le tableau suivant décrit chaque directive dans le manifeste de l’assembly de l’assembly *Hello. exe* utilisé dans l’exemple :
+Le tableau suivant décrit chaque directive dans le manifeste de l’assembly de l’assembly *Hello.exe* utilisé dans l’exemple :
 
 |Directive|Description|
 |---------------|-----------------|
-|**. assembly extern nom de l' \< assembly>**|Spécifie un autre assembly qui contient des éléments référencés par le module actuel (dans cet exemple, `mscorlib`).|
-|**>de \< jeton. PublicKeyToken**|Spécifie le jeton de la clé réelle de l’assembly référencé.|
-|**Numéro de \< version. ver>**|Spécifie le numéro de version de l’assembly référencé.|
-|**. nom de l’assembly de l’assembly \<>**|Spécifie le nom de l’assembly.|
-|**. valeur Int32 de l’algorithme de hachage \<>**|Spécifie l’algorithme de hachage utilisé.|
-|**Numéro de \< version. ver>**|Spécifie le numéro de version de l’assembly.|
-|**. nom de fichier. module \<>**|Spécifie le nom des modules qui composent l’assembly. Dans cet exemple, l’assembly se compose d’un seul fichier.|
-|**valeur du sous-système \<>**|Spécifie l’environnement d’application nécessaire pour le programme. Dans cet exemple, la valeur 3 indique que cet exécutable est exécuté à partir d’une console.|
+|**. assembly extern \<assembly name>**|Spécifie un autre assembly qui contient des éléments référencés par le module actuel (dans cet exemple, `mscorlib`).|
+|**. PublicKeyToken \<token>**|Spécifie le jeton de la clé réelle de l’assembly référencé.|
+|**. ver \<version number>**|Spécifie le numéro de version de l’assembly référencé.|
+|**. assembly \<assembly name>**|Spécifie le nom de l’assembly.|
+|**. algorithme de hachage \<int32 value>**|Spécifie l’algorithme de hachage utilisé.|
+|**. ver \<version number>**|Spécifie le numéro de version de l’assembly.|
+|**. module \<file name>**|Spécifie le nom des modules qui composent l’assembly. Dans cet exemple, l’assembly se compose d’un seul fichier.|
+|**. sous-système \<value>**|Spécifie l’environnement d’application nécessaire pour le programme. Dans cet exemple, la valeur 3 indique que cet exécutable est exécuté à partir d’une console.|
 |**.corflags**|Actuellement un champ réservé dans les métadonnées.|
 
 Un manifeste d’assembly peut contenir plusieurs directives différentes, en fonction du contenu de l’assembly. Pour obtenir une liste complète des directives du manifeste de l’assembly, consultez la documentation ECMA, en particulier « Partition II : Metadata Definition and Semantics » et « Partition III : CIL Instruction Set » :
@@ -126,4 +126,4 @@ Un manifeste d’assembly peut contenir plusieurs directives différentes, en fo
 
 - [Domaines d’application et assemblys](../../framework/app-domains/application-domains.md#application-domains-and-assemblies)
 - [Rubriques de procédures relatives aux domaines d’application et aux assemblys](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
-- [Ildasm. exe (Désassembleur IL)](../../framework/tools/ildasm-exe-il-disassembler.md)
+- [Ildasm.exe (Désassembleur IL)](../../framework/tools/ildasm-exe-il-disassembler.md)

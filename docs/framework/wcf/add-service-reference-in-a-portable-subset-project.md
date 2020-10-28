@@ -2,12 +2,12 @@
 title: Ajouter une référence de service à un projet de sous-ensemble portable
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: 8bedfb44523b4f67845d40fadfaa72d64622ba26
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: e9a0d3fbc75a8c64af892f74acedfc41dc115da3
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449476"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687712"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Ajouter une référence de service à un projet de sous-ensemble portable
 
@@ -46,5 +46,5 @@ Les projets de sous-ensemble portables permettent aux programmeurs d’assembly 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Accès aux services à l’aide d’un client WCF](accessing-services-using-a-wcf-client.md)
-- [Bibliothèque de classes portable](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)
+- [Accès aux services à l'aide d'un client WCF](accessing-services-using-a-wcf-client.md)
+- [Bibliothèque de classes portable](../cross-platform/portable-class-library.md)

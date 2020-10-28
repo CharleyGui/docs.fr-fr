@@ -7,17 +7,18 @@ helpviewer_keywords:
 - dynamic assemblies, assembly manifest
 - metadata, assembly manifest
 - culture, assembly manifest
-- assemblies [.NET Framework], metadata
+- assemblies [.NET], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-ms.openlocfilehash: 4f4d09f559ac66e1f3bc38af0781f7e01e7461d5
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 4b3bf6f7f6b8cf459a13dd0aca45069f82d01130
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380168"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687592"
 ---
 # <a name="assembly-manifest"></a>Manifeste d'assembly
-Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de données qui décrit comment les éléments de l'assembly sont reliés les uns aux autres. Le manifeste d'assembly contient les métadonnées de l'assembly. Un manifeste d'assembly comprend toutes les métadonnées nécessaires pour spécifier la version requise et l'identité de sécurité de l'assembly, ainsi que toutes les métadonnées nécessaires pour définir la portée de l'assembly et résoudre les références aux ressources et aux classes. Le manifeste d’assembly peut être stocké dans un fichier PE ( *. exe* ou *. dll*) avec le code MSIL (Microsoft Intermediate Language) ou dans un fichier PE autonome qui contient uniquement des informations de manifeste d’assembly.  
+
+Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de données qui décrit comment les éléments de l'assembly sont reliés les uns aux autres. Le manifeste d'assembly contient les métadonnées de l'assembly. Un manifeste d'assembly comprend toutes les métadonnées nécessaires pour spécifier la version requise et l'identité de sécurité de l'assembly, ainsi que toutes les métadonnées nécessaires pour définir la portée de l'assembly et résoudre les références aux ressources et aux classes. Le manifeste d’assembly peut être stocké dans un fichier PE ( *. exe* ou *. dll* ) avec le code MSIL (Microsoft Intermediate Language) ou dans un fichier PE autonome qui contient uniquement des informations de manifeste d’assembly.  
   
  L'illustration ci-dessous indique les différents modes de stockage du manifeste.  
   
@@ -44,7 +45,7 @@ Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de do
 |-----------------|-----------------|  
 |Nom de l'assembly|Chaîne de texte spécifiant le nom de l'assembly.|  
 |Numéro de version|Numéro de version principale et secondaire et numéro de révision et de build. Le Common Language Runtime utilise ces numéros pour appliquer la stratégie de version.|  
-|Culture|Informations sur la culture ou le langage que l'assembly prend en charge. Ces informations ne doivent être utilisées que pour désigner un assembly en tant qu'assembly satellite contenant des informations spécifiques à la culture ou au langage. Un assembly possédant des informations sur la culture est automatiquement considéré comme étant un assembly satellite.|  
+|culture|Informations sur la culture ou le langage que l'assembly prend en charge. Ces informations ne doivent être utilisées que pour désigner un assembly en tant qu'assembly satellite contenant des informations spécifiques à la culture ou au langage. Un assembly possédant des informations sur la culture est automatiquement considéré comme étant un assembly satellite.|  
 |Informations sur le nom fort|Clé publique de l'éditeur si un nom fort a été attribué à l'assembly.|  
 |Liste de tous les fichiers figurant dans l'assembly|Hachage de chaque fichier figurant dans l'assembly et nom de fichier. Notez que tous les fichiers qui composent l'assembly doivent figurer dans le même répertoire que le fichier qui comporte le manifeste d'assembly.|  
 |Informations sur les références de type|Informations utilisées par le runtime pour mapper une référence de type au fichier qui contient sa déclaration et son implémentation. Elles sont utilisées pour les types qui sont exportés à partir de l'assembly.|  

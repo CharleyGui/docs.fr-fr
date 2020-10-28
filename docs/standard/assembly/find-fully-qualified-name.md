@@ -1,30 +1,30 @@
 ---
 title: 'Comment : Rechercher le nom qualifié complet d’un assembly'
-description: Cet article explique comment obtenir le nom complet d’un assembly de .NET Framework ou d’un assembly .NET Core.
+description: Cet article explique comment obtenir le nom complet d’un assembly .NET.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- names [.NET Framework], fully qualified type names
-- names [.NET Framework], assemblies
-- assemblies [.NET Framework], names
+- names [.NET], fully qualified type names
+- names [.NET], assemblies
+- assemblies [.NET], names
 ms.assetid: 009dae23-e1f6-4a64-9a9a-32e4c34802b0
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 346d50dc7f279ce46c9803ad60479d3111739c25
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 223def7d992f5fae64c95aa6886f20980184eddc
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378942"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687616"
 ---
 # <a name="how-to-find-an-assemblys-fully-qualified-name"></a>Comment : Rechercher le nom qualifié complet d’un assembly
 
-Pour découvrir le nom qualifié complet d’un assembly de .NET Framework dans le Global Assembly Cache, utilisez l’outil global assembly cache ([Gacutil. exe](../../framework/tools/gacutil-exe-gac-tool.md)). Consultez [Comment : afficher le contenu du global assembly cache](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
+Pour découvrir le nom qualifié complet d’un assembly de .NET Framework dans le Global Assembly Cache, utilisez l’outil global assembly cache ([Gacutil.exe](../../framework/tools/gacutil-exe-gac-tool.md)). Consultez [Comment : afficher le contenu du global assembly cache](../../framework/app-domains/how-to-view-the-contents-of-the-gac.md).
 
 Pour les assemblys .NET Core, et pour les assemblys .NET Framework qui ne sont pas dans le Global Assembly Cache, vous pouvez obtenir le nom complet de l’assembly de plusieurs façons :
 
-- Vous pouvez utiliser le code pour sortir les informations dans la console ou dans une variable, ou vous pouvez utiliser le [désassembleur il](../../framework/tools/ildasm-exe-il-disassembler.md) pour examiner les métadonnées de l’assembly, qui contient le nom complet.
+- Vous pouvez utiliser le code pour sortir les informations dans la console ou dans une variable, ou vous pouvez utiliser le [Ildasm.exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) pour examiner les métadonnées de l’assembly, qui contient le nom complet.
 
 - Si l'assembly est déjà chargé par l'application, vous pouvez récupérer la valeur de la propriété <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> pour obtenir le nom complet. Vous pouvez utiliser la <xref:System.Type.Assembly> propriété d’un <xref:System.Type> défini dans cet assembly pour récupérer une référence à l' <xref:System.Reflection.Assembly> objet. Cet exemple en fournit une illustration.
 
@@ -121,7 +121,7 @@ End Class
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Noms d’assembly](names.md)
+- [Noms d’assemblys](names.md)
 - [Créer des assemblys](create.md)
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)
 - [Global assembly cache](../../framework/app-domains/gac.md)

@@ -5,19 +5,19 @@ ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, signing with strong names
 - signing assemblies
-- assemblies [.NET Framework], signing
-- assemblies [.NET Framework], strong-named
+- assemblies [.NET], signing
+- assemblies [.NET], strong-named
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: d4888a12ac0494ca34eac3553a5374c3517fee38
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 5192f7f372b9ef7927930c3599aebc6fca9f1f0f
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378622"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687654"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
 
@@ -28,7 +28,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 - À l'aide de l'onglet **Signature** dans la boîte de dialogue **Propriétés** d'un projet dans Visual Studio. Il s'agit de la façon la plus facile et la plus pratique de signer un assembly avec un nom fort.  
   
-- À l’aide de l’outil [Assembly Linker (al. exe)](../../framework/tools/al-exe-assembly-linker.md) pour lier un module de code .NET Framework (un fichier *. netmodule* ) à un fichier de clé.  
+- En utilisant [Assembly Linker (Al.exe)](../../framework/tools/al-exe-assembly-linker.md) pour lier un module de code .NET Framework (un fichier *. netmodule* ) à un fichier de clé.  
   
 - À l'aide d'attributs d'assembly pour insérer les informations de nom fort dans votre code. Vous pouvez utiliser l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> , selon l'emplacement du fichier de clé à utiliser.  
   
@@ -38,13 +38,13 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 ## <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-visual-studio"></a>Créer et signer un assembly avec un nom fort à l’aide de Visual Studio  
   
-1. Dans l’ **Explorateur de solutions**, ouvrez le menu contextuel du projet et choisissez **Propriétés**.  
+1. Dans l’ **Explorateur de solutions** , ouvrez le menu contextuel du projet et choisissez **Propriétés** .  
   
 2. Choisissez l'onglet **Signature** .  
   
 3. Sélectionnez la zone **Signer l'assembly** .  
   
-4. Dans la zone **choisir un fichier de clé de nom fort** , choisissez **Parcourir**, puis naviguez jusqu’au fichier de clé. Pour créer un nouveau fichier de clé, choisissez **nouveau** et entrez son nom dans la boîte de dialogue **créer une clé de nom fort** .  
+4. Dans la zone **choisir un fichier de clé de nom fort** , choisissez **Parcourir** , puis naviguez jusqu’au fichier de clé. Pour créer un nouveau fichier de clé, choisissez **nouveau** et entrez son nom dans la boîte de dialogue **créer une clé de nom fort** .  
   
 > [!NOTE]
 > Pour [différer la signature d’un assembly](delay-sign.md), choisissez un fichier de clé publique.  
@@ -53,9 +53,9 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 À l' [invite de commandes développeur pour Visual Studio](../../framework/tools/developer-command-prompt-for-vs.md), entrez la commande suivante :  
 
-**al** **/out :** \< *AssemblyName* >  * \< modulename>* **/keyfile :** \< *keyfilename*>  
+**al** **/out :** \<*assemblyName*> *\<moduleName>* **/keyfile :**\<*keyfileName*>  
 
-Où :  
+Où :  
 
 - *AssemblyName* est le nom de l’assembly fortement signé (un fichier *. dll* ou *. exe* ) que l’éditeur de liens d’assembly enverra.  
   
@@ -63,7 +63,7 @@ Où :
   
 - *keyfilename* est le nom du conteneur ou du fichier qui contient la paire de clés. Assembly Linker interprète un chemin d’accès relatif par rapport au répertoire actif.  
 
-L’exemple suivant signe l’assembly *myAssembly. dll* avec un nom fort à l’aide du fichier de clé *sgKey. snk*.  
+L’exemple suivant signe l’assembly *MyAssembly.dll* avec un nom fort à l’aide du fichier de clé *sgKey. snk* .  
 
 ```console
 al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk  
@@ -80,7 +80,7 @@ Pour plus d'informations sur l'utilisation de cet outil, consultez [Assembly Lin
    > [!NOTE]
    > Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
 
-L’exemple suivant utilise l' <xref:System.Reflection.AssemblyKeyFileAttribute> attribut avec un fichier de clé appelé *keyfile. snk*, qui se trouve dans le répertoire où l’assembly est compilé.  
+L’exemple suivant utilise l' <xref:System.Reflection.AssemblyKeyFileAttribute> attribut avec un fichier de clé appelé *keyfile. snk* , qui se trouve dans le répertoire où l’assembly est compilé.  
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("keyfile.snk")];
@@ -102,7 +102,7 @@ Compilez vos fichiers de code source avec l'option du compilateur `/keyfile` ou 
 
 Pour plus d’informations sur la signature différée, consultez [temporisation d’un assembly](delay-sign.md).  
 
-L’exemple suivant utilise le compilateur C# et signe l’assembly *utilitylibrary. dll* avec un nom fort à l’aide du fichier de clé *sgKey. snk*.  
+L’exemple suivant utilise le compilateur C# et signe l’assembly *UtilityLibrary.dll* avec un nom fort à l’aide du fichier de clé *sgKey. snk* .  
 
 ```cmd
 csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk  
@@ -111,8 +111,8 @@ csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)
-- [Guide pratique pour créer une paire de clés publique/privée](create-public-private-key-pair.md)
-- [Al. exe (Assembly Linker)](../../framework/tools/al-exe-assembly-linker.md)
+- [Comment : créer une paire de clés publique/privée](create-public-private-key-pair.md)
+- [Al.exe (Assembly Linker)](../../framework/tools/al-exe-assembly-linker.md)
 - [Temporiser la signature d’un assembly](delay-sign.md)
 - [Gérer la signature d’assemblys et de manifestes](/visualstudio/ide/managing-assembly-and-manifest-signing)
 - [Signature, page du concepteur de projets](/visualstudio/ide/reference/signing-page-project-designer)

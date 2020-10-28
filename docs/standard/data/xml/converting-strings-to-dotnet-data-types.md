@@ -1,26 +1,27 @@
 ---
-title: Conversion de chaînes en types de données .NET Framework
+title: Conversion de chaînes en types de données .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: fda5441c58d14b91a9eca16fff9149c8795f95b9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 28c84b04bde045643158d8d2b9fed44b74334e77
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289224"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688007"
 ---
-# <a name="converting-strings-to-net-framework-data-types"></a>Conversion de chaînes en types de données .NET Framework
-Si vous souhaitez convertir une chaîne en un type de données .NET Framework, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert**, consultez <xref:System.Xml.XmlConvert>.  
+# <a name="convert-strings-to-net-data-types"></a>Convertir des chaînes en types de données .NET
+
+Si vous souhaitez convertir une chaîne en type de données .NET, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert** , consultez <xref:System.Xml.XmlConvert>.  
   
- La chaîne retournée par la méthode **ToString** est une version de la chaîne des données qui lui sont passées. De plus, il existe plusieurs types .NET Framework qui sont convertis à l'aide de la classe **XmlConvert** bien qu'ils n'utilisent pas les méthodes de la classe **System.Convert**. La classe **XmlConvert** est conforme à la spécification des types de données XSD (XML Schema Definition) et possède un type de données auquel **XmlConvert** peut être mappé.  
+ La chaîne retournée par la méthode **ToString** est une version de la chaîne des données qui lui sont passées. En outre, il existe plusieurs types .NET qui sont convertis à l’aide de la classe **XmlConvert** , mais ils n’utilisent pas les méthodes de la classe **System. Convert** . La classe **XmlConvert** est conforme à la spécification des types de données XSD (XML Schema Definition) et possède un type de données auquel **XmlConvert** peut être mappé.  
   
- Le tableau suivant répertorie les types de données .NET Framework et les types de chaînes retournés à l'aide du mappage de types de données XSD (XML Schema Definition). Ces types .NET Framework ne peuvent pas être traités à l'aide de **System.Convert**.  
+ Le tableau suivant répertorie les types de données .NET et les types de chaîne retournés à l’aide du mappage de type de données XSD (XML Schema). Ces types .NET ne peuvent pas être traités à l’aide de **System. Convert** .  
   
-|Type .NET Framework|Chaîne retournée|  
+|Type .NET|Chaîne retournée|  
 |-------------------------|---------------------|  
 |Boolean|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
@@ -31,7 +32,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
 |Timespan|Le format est PnYnMnTnHnMnS, c'est-à-dire que `P2Y10M15DT10H30M20S` indique une durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
   
 > [!NOTE]
-> Durant la conversion de l'un des types .NET Framework répertoriés dans ce tableau vers une chaîne à l'aide de la méthode **ToString**, la chaîne retournée n'est pas le type de base, mais le type de chaîne XSD (XML Schema Definition).  
+> Si vous convertissez l’un des types .NET figurant dans le tableau en une chaîne à l’aide de la méthode **ToString** , la chaîne retournée n’est pas le type de base, mais le type de chaîne XSD (XML Schema).  
   
  Le type des valeurs **DateTime** et **Timespan** diffère en ce sens que **DateTime** représente un moment donné dans le temps, alors que **TimeSpan** représente un intervalle de temps. Les formats **DateTime** et **Timespan** sont spécifiés dans la spécification des types de données XSD (XML Schema Definition). Par exemple :  
   
@@ -69,12 +70,12 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  `<Number>200</Number>`  
   
- Si toutefois vous convertissez une chaîne en type **Boolean**, **Single** ou **Double**, le type .NET Framework retourné n'est pas le même que le type retourné avec la classe **System.Convert**.  
+ Toutefois, si vous convertissez une chaîne en type **Boolean** , **Single** ou **double** , le type .net retourné n’est pas le même que le type retourné lors de l’utilisation de la classe **System. Convert** .  
   
 ## <a name="string-to-boolean"></a>String vers Boolean  
- Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Boolean** à l'aide de la méthode **ToBoolean**.  
+ Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Boolean** à l'aide de la méthode **ToBoolean** .  
   
-|Paramètre d'entrée de chaîne valide|Type de sortie .NET Framework|  
+|Paramètre d'entrée de chaîne valide|Type de sortie .NET|  
 |----------------------------------|--------------------------------|  
 |"true"|Boolean.True|  
 |"1"|Boolean.True|  
@@ -83,7 +84,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  Examinons, par exemple, le code XML suivant :  
   
- **Input**  
+ **Entrée**  
   
 ```xml  
 <Boolean>true</Boolean>  
@@ -104,17 +105,17 @@ Console.WriteLine(bvalue);
 ```  
   
 ## <a name="string-to-single"></a>String vers Single  
- Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToSingle**.  
+ Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToSingle** .  
   
-|Paramètre d'entrée de chaîne valide|Type de sortie .NET Framework|  
+|Paramètre d'entrée de chaîne valide|Type de sortie .NET|  
 |----------------------------------|--------------------------------|  
 |"INF"|Single.PositiveInfinity|  
 |"-INF"|Single.NegativeInfinity|  
   
 ## <a name="string-to-double"></a>String vers Double  
- Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToDouble**.  
+ Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToDouble** .  
   
-|Paramètre d'entrée de chaîne valide|Type de sortie .NET Framework|  
+|Paramètre d'entrée de chaîne valide|Type de sortie .NET|  
 |----------------------------------|--------------------------------|  
 |"INF"|Double.PositiveInfinity|  
 |"-INF"|Double.NegativeInfinity|  
@@ -134,4 +135,4 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
 ## <a name="see-also"></a>Voir aussi
 
 - [Conversion des types de données XML](conversion-of-xml-data-types.md)
-- [Conversion de types .NET Framework en chaînes](converting-dotnet-types-to-strings.md)
+- [Conversion de types .NET en chaînes](converting-dotnet-types-to-strings.md)

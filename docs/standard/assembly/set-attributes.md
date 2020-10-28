@@ -3,7 +3,7 @@ title: Définir des attributs d’assembly
 description: Vous pouvez définir des attributs d’assembly pour un assembly .NET, y compris l’identité de l’assembly, l’information, le manifeste de l’assembly et les attributs de nom fort.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], attributes
+- assemblies [.NET], attributes
 - assembly binding, attributes
 - assembly manifest, attributes
 ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
@@ -11,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e3a077dcd1b62a4676a3ac6492a90e38c548e41b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 32318d647dee8f3f397e3497e7c2da640bd492d0
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378645"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687679"
 ---
 # <a name="set-assembly-attributes"></a>Définir des attributs d’assembly
 
@@ -40,7 +40,7 @@ Le tableau suivant décrit les attributs de version et de culture.
 |---------------------------------|-----------------|
 |<xref:System.Reflection.AssemblyCultureAttribute>|Champ énuméré désignant la culture que l’assembly prend en charge. Un assembly peut également spécifier une indépendance de culture, indiquant qu’il contient les ressources pour la culture par défaut. **Remarque :** Le runtime gère tout assembly qui n’a pas l’attribut de culture défini avec la valeur Null comme un assembly satellite. Ces assemblys sont soumis aux règles de liaison d’assembly satellite. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../../framework/deployment/how-the-runtime-locates-assemblies.md).|
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Valeur qui définit les attributs d’assembly, par exemple l’exécution côte à côte de l’assembly.|
-|<xref:System.Reflection.AssemblyVersionAttribute>|Valeur numérique au format *version principale*.*version secondaire*.*build*.*révision* (p. ex. 2.4.0.0). Le common language runtime utilise cette valeur pour effectuer les opérations de liaison dans les assemblys avec nom fort. **Remarque :**  Si l' <xref:System.Reflection.AssemblyInformationalVersionAttribute> attribut n’est pas appliqué à un assembly, le numéro de version spécifié par l' <xref:System.Reflection.AssemblyVersionAttribute> attribut est utilisé par les <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> Propriétés, et <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> .|
+|<xref:System.Reflection.AssemblyVersionAttribute>|Valeur numérique au format *version principale* . *version secondaire* . *build* . *révision* (p. ex. 2.4.0.0). Le common language runtime utilise cette valeur pour effectuer les opérations de liaison dans les assemblys avec nom fort. **Remarque :**  Si l' <xref:System.Reflection.AssemblyInformationalVersionAttribute> attribut n’est pas appliqué à un assembly, le numéro de version spécifié par l' <xref:System.Reflection.AssemblyVersionAttribute> attribut est utilisé par les <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> Propriétés, et <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> .|
 
 L’exemple de code suivant montre comment appliquer les attributs de version et de culture à un assembly.
 
@@ -98,10 +98,10 @@ Vous pouvez utiliser les attributs de nom fort pour définir un nom fort pour l�
 |Attribut Strong Name|Description|
 |----------------------------|-----------------|
 |<xref:System.Reflection.AssemblyDelaySignAttribute>|Valeur booléenne qui indique que la signature différée est utilisée.|
-|<xref:System.Reflection.AssemblyKeyFileAttribute>|Valeur de chaîne qui indique le nom du fichier contenant soit la clé publique (si la signature différée est utilisée), soit les clés publiques et privées transmises en tant que paramètres au constructeur de cet attribut. Notez que le nom de fichier est relatif au chemin d’accès du fichier de sortie ( *. exe* ou *. dll*), et non au chemin d’accès au fichier source.|
+|<xref:System.Reflection.AssemblyKeyFileAttribute>|Valeur de chaîne qui indique le nom du fichier contenant soit la clé publique (si la signature différée est utilisée), soit les clés publiques et privées transmises en tant que paramètres au constructeur de cet attribut. Notez que le nom de fichier est relatif au chemin d’accès du fichier de sortie ( *. exe* ou *. dll* ), et non au chemin d’accès au fichier source.|
 |<xref:System.Reflection.AssemblyKeyNameAttribute>|Indique le conteneur de clé qui possède la paire de clés transmise en tant que paramètre au constructeur de cet attribut.|
 
-L’exemple de code suivant montre les attributs à appliquer lors de l’utilisation de la signature différée pour créer un assembly avec nom fort avec un fichier de clé publique appelé *myKey. snk*.
+L’exemple de code suivant montre les attributs à appliquer lors de l’utilisation de la signature différée pour créer un assembly avec nom fort avec un fichier de clé publique appelé *myKey. snk* .
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("myKey.snk")];

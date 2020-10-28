@@ -5,19 +5,19 @@ ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, compile-time references
 - compile-time assembly referencing
-- assemblies [.NET Framework], strong-named
+- assemblies [.NET], strong-named
 - assembly binding, strong-named
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: e42c1b461da16d7000605b9b9321138bbfebd307
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 478f786995cfc4b57f0b18b2159775db104e9cfb
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379875"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687697"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Comment : référencer un assembly avec nom fort
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
@@ -31,11 +31,11 @@ Une référence au moment de la compilation se produit lorsque vous indiquez au 
 
 Saisissez ensuite la commande suivante dans une invite de commandes :  
 
-\<*commande* >  du compilateur **/Reference :** \< *nom de l’assembly*>  
+\<*compiler command*>**/Reference :**\<*assembly name*>  
 
-Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library**, qui permet de créer un assembly de bibliothèque.  
+Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library** , qui permet de créer un assembly de bibliothèque.  
 
-L’exemple suivant crée un assembly appelé *myAssembly. dll* qui référence un assembly avec nom fort appelé *myLibAssembly. dll* à partir d’un module de code appelé *myAssembly.cs*.  
+L’exemple suivant crée un assembly appelé *myAssembly.dll* qui référence un assembly avec nom fort appelé *myLibAssembly.dll* à partir d’un module de code appelé *myAssembly.cs* .  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  
@@ -45,7 +45,7 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 Quand vous faites référence à un assembly avec nom fort, par exemple à l’aide de la <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> méthode ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> , vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
 
-\<nom de l' *assembly* > **,** \< *numéro* > de version **,** \< *culture* > **,** \< *jeton de clé publique*>  
+\<*assembly name*>**,** \<*version number*>**,** \<*culture*>**,** \<*public key token*>  
 
 Par exemple :  
 
@@ -74,11 +74,11 @@ Dim myDll As Assembly = _
 
 Vous pouvez imprimer le format hexadécimal de la clé publique et du jeton de clé publique pour un assembly spécifique en utilisant la commande [Strong Name (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) suivante :  
 
-**sn-TP \< ** *assembly***>**  
+**SN-TP \<** *assembly* **>**  
 
 Si vous avez un fichier de clé publique, vous pouvez utiliser la commande suivante (notez la différence de casse de l’option de ligne de commande) à la place :  
 
-**sn -tp \<** *fichier de clé publique* **>**  
+**SN-TP \<** *public key file* **>**  
 
 ## <a name="see-also"></a>Voir aussi
 

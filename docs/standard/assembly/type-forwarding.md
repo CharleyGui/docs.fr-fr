@@ -3,30 +3,29 @@ title: Transfert de type dans le Common Language Runtime
 description: Le transfert de type vous permet de déplacer un type vers un autre assembly .NET sans avoir à recompiler les applications qui utilisent l’assembly d’origine.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], type forwarding
+- assemblies [.NET], type forwarding
 - type forwarding
 ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: f0be61bd4ce88569e22a350a9ea9490d67e74ff3
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: cd166068993fb5d1a5164615de3926a06dda8098
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378598"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687672"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Transfert de type dans le Common Language Runtime
+
 Le transfert de type vous permet de déplacer un type vers un autre assembly sans avoir à recompiler les applications utilisant l’assembly d’origine.  
   
- Par exemple, supposons qu’une application utilise la `Example` classe dans un assembly nommé *Utility. dll*. Les développeurs de *Utility. dll* peuvent décider de refactoriser l’assembly et, dans le processus, ils peuvent déplacer la `Example` classe vers un autre assembly. Si l’ancienne version de *Utility. dll* est remplacée par la nouvelle version de *Utility. dll* et son assembly associé, l’application qui utilise la `Example` classe échoue, car elle ne peut pas localiser la `Example` classe dans la nouvelle version de *Utility. dll*.  
+ Par exemple, supposons qu’une application utilise la `Example` classe dans un assembly nommé *Utility.dll* . Les développeurs de *Utility.dll* peuvent décider de refactoriser l’assembly et, dans le processus, ils peuvent déplacer la `Example` classe vers un autre assembly. Si l’ancienne version de *Utility.dll* est remplacée par la nouvelle version de *Utility.dll* et son assembly associé, l’application qui utilise la `Example` classe échoue, car elle ne peut pas localiser la `Example` classe dans la nouvelle version de *Utility.dll* .  
   
- Les développeurs de *Utility. dll* peuvent éviter cela en transférant les demandes de la `Example` classe, à l’aide de l' <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> attribut. Si l’attribut a été appliqué à la nouvelle version de *Utility. dll*, les demandes de la `Example` classe sont transférées à l’assembly qui contient désormais la classe. L’application existante continue à fonctionner normalement, sans nouvelle compilation.  
-  
-> [!NOTE]
-> Dans .NET Framework version 2.0, il est impossible de transférer des types provenant d’assemblys écrits en Visual Basic. Toutefois, une application écrite en Visual Basic peut utiliser des types transférés. Autrement dit, si l’application utilise un assembly codé en C# ou C++ et qu’un type de cet assembly est transmis à un autre assembly, l’application Visual Basic peut utiliser le type transféré.  
-  
-## <a name="forward-types"></a>Types de transfert  
+ Les développeurs de *Utility.dll* peuvent éviter cela en transférant les demandes de la `Example` classe, à l’aide de l' <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> attribut. Si l’attribut a été appliqué à la nouvelle version de *Utility.dll* , les demandes pour la `Example` classe sont transférées à l’assembly qui contient désormais la classe. L’application existante continue à fonctionner normalement, sans nouvelle compilation.
+
+## <a name="forward-a-type"></a>Transférer un type
+
  Le transfert de type se décompose en quatre étapes :  
   
 1. Déplacez le code source associé au type de l’assembly d’origine à l’assembly de destination.  

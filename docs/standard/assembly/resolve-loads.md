@@ -3,24 +3,25 @@ title: Résoudre les chargements d’assembly
 description: Cet article décrit l’événement .NET AppDomain. AssemblyResolve. Utilisez cet événement pour les applications qui requièrent le contrôle du chargement d’assembly.
 ms.date: 08/20/2019
 helpviewer_keywords:
-- assemblies [.NET Framework], resolving loads
+- assemblies [.NET], resolving loads
 - application domains, loading assemblies
 - resolving assembly loads
-- assemblies [.NET Framework], loading
+- assemblies [.NET], loading
 - application domains, resolving assembly loads
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 36f36b60a3a113c6b020cc1042c786c4091e567b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 16f2f61a2a36e4189e98c85b3d3ce706a52e2938
+ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378669"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687272"
 ---
 # <a name="resolve-assembly-loads"></a>Résoudre les chargements d’assembly
+
 .NET fournit l' <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement pour les applications qui requièrent un plus grand contrôle sur le chargement de l’assembly. En gérant cet événement, votre application peut charger un assembly dans le contexte de chargement à l’extérieur des chemins de détection normaux, sélectionner la version d’assembly à charger parmi plusieurs, émettre un assembly dynamique et le retourner, etc. Cette rubrique fournit des instructions sur la gestion de l’événement <xref:System.AppDomain.AssemblyResolve>.  
   
 > [!NOTE]
