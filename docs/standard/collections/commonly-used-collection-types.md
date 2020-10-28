@@ -4,21 +4,21 @@ description: Découvrez les types de collections couramment utilisés dans .NET,
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- collections [.NET Framework], generic
-- objects [.NET Framework], grouping in collections
-- generics [.NET Framework], collections
+- collections [.NET], generic
+- objects [.NET], grouping in collections
+- generics [.NET], collections
 - IList interface, grouping data in collections
 - IDictionary interface, grouping data in collections
 - grouping data in collections, generic collection types
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: d0f2abc71524408c2bd2fa35a1a2dde0e664d273
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8677ba5b4404d49e2f6e07cda19ac437254a5897
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600839"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889385"
 ---
 # <a name="commonly-used-collection-types"></a>Types de collections couramment utilisés
 Les types de collections sont des variations courantes des collections de données, telles que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.  
@@ -35,10 +35,10 @@ Les types de collections sont des variations courantes des collections de donné
   
 |Intitulé|Description|  
 |-----------|-----------------|  
-|[Collections et structures de données](index.md)|Présente les différents types de collection disponibles dans le .NET Framework, notamment les piles, les files d’attente, les listes, les tableaux et les dictionnaires.|  
+|[Collections et structures de données](index.md)|Présente les différents types de collection disponibles dans .NET, y compris les piles, les files d’attente, les listes, les tableaux et les dictionnaires.|  
 |[Types de collections Hashtable et Dictionary](hashtable-and-dictionary-collection-types.md)|Décrit les fonctionnalités des types de dictionnaires basés sur le hachage génériques et non génériques.|  
 |[Types de collections triées](sorted-collection-types.md)|Décrit les classes qui fournissent une fonctionnalité de tri pour les listes et les ensembles.|  
-|[Génériques](../generics/index.md)|Décrit la fonctionnalité génériques, notamment les collections, délégués et interfaces génériques fournis par le .NET Framework. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
+|[Génériques](../generics/index.md)|Décrit la fonctionnalité des génériques, notamment les collections, les délégués et les interfaces génériques fournis par .NET. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
   
 ## <a name="reference"></a>Informations de référence  
  <xref:System.Collections?displayProperty=nameWithType>  

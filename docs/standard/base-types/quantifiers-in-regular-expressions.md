@@ -11,16 +11,16 @@ helpviewer_keywords:
 - metacharacters, quantifiers
 - minimal matching quantifiers
 - quantifiers in regular expressions
-- .NET Framework regular expressions, quantifiers
+- .NET regular expressions, quantifiers
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 361286b992180e1d7fdf18d88022780cc3aa53fc
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063807"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889424"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>quantificateurs dans les expressions régulières
 Les quantificateurs spécifient le nombre d’instances d’un caractère, groupe ou classe de caractères devant être présentes dans l’entrée pour qu’une correspondance soit trouvée.  Le tableau suivant répertorie les quantificateurs pris en charge par .NET.  

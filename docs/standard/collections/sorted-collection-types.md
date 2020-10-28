@@ -7,14 +7,14 @@ helpviewer_keywords:
 - SortedList class, grouping data in collections
 - grouping data in collections, SortedList collection type
 - SortedList collection type
-- collections [.NET Framework], SortedList collection type
+- collections [.NET], SortedList collection type
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
-ms.openlocfilehash: 2d9d3744859eea1a09923980b3b4c57eca6bba97
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 339d247f3b7e775de740c6c1ce786b078441c699
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287937"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889320"
 ---
 # <a name="sorted-collection-types"></a>Types de collections triées
 
@@ -45,7 +45,7 @@ Pour les listes ou les dictionnaires triés qui doivent être accessibles simult
 > [!NOTE]
 > Pour les valeurs qui contiennent leurs propres clés (par exemple, des enregistrements d’employés qui contiennent un numéro d’ID de l’employé), vous pouvez créer une collection à clé qui possède certaines caractéristiques d’une liste et certaines caractéristiques d’un dictionnaire en dérivant de la classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602>.
 
-À partir de .NET Framework 4, la classe <xref:System.Collections.Generic.SortedSet%601> fournit une arborescence autonome qui maintient les données triées dans un certain ordre après les insertions, les suppressions et les recherches. Cette classe et la classe <xref:System.Collections.Generic.HashSet%601> implémentent l’interface <xref:System.Collections.Generic.ISet%601>.
+À partir de .NET Framework 4, la <xref:System.Collections.Generic.SortedSet%601> classe fournit une arborescence à équilibrage automatique qui conserve les données dans l’ordre de tri après les insertions, les suppressions et les recherches. Cette classe et la classe <xref:System.Collections.Generic.HashSet%601> implémentent l’interface <xref:System.Collections.Generic.ISet%601>.
 
 ## <a name="see-also"></a>Voir aussi
 

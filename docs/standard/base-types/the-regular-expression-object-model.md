@@ -11,37 +11,37 @@ helpviewer_keywords:
 - Regex class
 - Match class
 - pattern-matching with regular expressions, backreferences
-- .NET Framework regular expressions, classes
+- .NET regular expressions, classes
 - CaptureCollection class
 - Group class
-- characters [.NET Framework], backreferences
+- characters [.NET], backreferences
 - substrings
-- .NET Framework regular expressions, backreferences
+- .NET regular expressions, backreferences
 - searching with regular expressions, classes
 - backreferences
 - Capture class
 - repeating groups of characters
 - MatchCollection class
 - parsing text with regular expressions, backreferences
-- regular expressions [.NET Framework]
-- characters [.NET Framework], regular expressions
-- classes [.NET Framework], regular expression
-- regular expressions [.NET Framework], classes
-- characters [.NET Framework], metacharacters
+- regular expressions [.NET]
+- characters [.NET], regular expressions
+- classes [.NET], regular expression
+- regular expressions [.NET], classes
+- characters [.NET], metacharacters
 - metacharacters, regular expression classes
 - metacharacters, backreferences
 - parsing text with regular expressions, classes
-- regular expressions [.NET Framework], backreferences
-- strings [.NET Framework], regular expressions
+- regular expressions [.NET], backreferences
+- strings [.NET], regular expressions
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: 43672b85ecb64a15179881ec23c7fadd13d64868
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: d6f85d74b40902037620d065f63f1d0ad6cfc205
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768051"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888644"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
 <a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Il contient les sections suivantes :  
@@ -295,7 +295,7 @@ ms.locfileid: "84768051"
     |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  
     |`Length`|0|  
   
-     L'exemple suivant en est l'illustration. Dans le modèle d'expression régulière `aaa(bbb)*ccc`, le premier groupe de capture (la sous-chaîne « bbb ») peut être mis en correspondance zéro fois, ou plus. Comme la chaîne d’entrée « aaaccc » correspond au modèle, le groupe de capture ne possède pas de correspondance.  
+     L'exemple suivant illustre cette situation. Dans le modèle d'expression régulière `aaa(bbb)*ccc`, le premier groupe de capture (la sous-chaîne « bbb ») peut être mis en correspondance zéro fois, ou plus. Comme la chaîne d’entrée « aaaccc » correspond au modèle, le groupe de capture ne possède pas de correspondance.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  

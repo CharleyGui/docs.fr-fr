@@ -12,15 +12,15 @@ helpviewer_keywords:
 - characters, escapes
 - regular expressions, character escapes
 - escape characters
-- .NET Framework regular expressions, character escapes
+- .NET regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.openlocfilehash: 4491b83db195a8d0f5bbf4f4326d92ed9ebd24e7
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.openlocfilehash: 927fb32163a7b44561c19fdb35e38b488fc50fb7
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050440"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889515"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Caractères d'échappement dans les expressions régulières
 La barre oblique inverse (\\) dans une expression régulière indique une des possibilités suivantes :  
@@ -49,7 +49,7 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 |`\`*nnn*|Correspond à un caractère ASCII, où *nnn* se compose de deux ou trois chiffres qui représentent le code de caractère octal. Par exemple, `\040` représente un espace. Cette construction est interprétée comme une référence arrière si elle a un seul chiffre (par exemple `\2`) ou si elle correspond au nombre d'un groupe de capture. (Voir [Constructions de référence arrière](backreference-constructs-in-regular-expressions.md).)|  
 |`\x` *nn*|Correspond à un caractère ASCII, où *nn* est un code hexadécimal à deux chiffres d’un caractère.|  
 |`\c` *X*|Correspond à un caractère de contrôle ASCII, où X est la lettre du caractère de contrôle. Par exemple, `\cC` est Ctrl-C.|  
-|`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :** La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. Le caractère d’échappement de Perl 5 a la forme `\x{` *####* `…}` , où *####* `…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn*.|  
+|`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :** La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. Le caractère d’échappement de Perl 5 a la forme `\x{` *####* `…}` , où *####* `…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn* .|  
 |`\`|Quand ce caractère d'échappement est suivi d'un caractère non reconnu comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
   
 ## <a name="an-example"></a>Exemple  

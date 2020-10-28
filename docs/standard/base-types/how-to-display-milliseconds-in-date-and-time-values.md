@@ -9,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - DateTime.ToString method
 - displaying date and time data
-- time [.NET Framework], milliseconds
-- dates [.NET Framework], milliseconds
-- milliseconds [.NET Framework]
+- time [.NET], milliseconds
+- dates [.NET], milliseconds
+- milliseconds [.NET]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-ms.openlocfilehash: a6dbe6a3bf4f8c08493ec925bea4316d071f4182
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bff458e73d603781155b18160bc7d088d8bd78cb
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447067"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888467"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Procédure : afficher les millisecondes dans les valeurs de date et d’heure
 Les méthodes de mise en forme de date et d’heure par défaut, telles que <xref:System.DateTime.ToString?displayProperty=nameWithType>, incluent les heures, les minutes et les secondes d’une valeur d’heure, mais excluent son composant « millisecondes ». Cette rubrique montre comment inclure le composant « millisecondes » d’une date et d’une heure dans des chaînes de date et d’heure mises en forme.  
@@ -53,4 +53,4 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)

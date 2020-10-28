@@ -11,16 +11,16 @@ helpviewer_keywords:
 - searching with regular expressions, language elements
 - pattern-matching with regular expressions, language elements
 - regular expressions, language elements
-- regular expressions [.NET Framework]
+- regular expressions [.NET]
 - cheat sheet
-- .NET Framework regular expressions, language elements
+- .NET regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: 4788c84be76a5cc9a9a6327fcd054e08db4d1872
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 986e7417d85655acc66a5c308aa79477c96fd629
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556798"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889307"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
@@ -47,10 +47,10 @@ La barre oblique inverse (\\) dans une expression régulière indique que le ca
 |`\f`|Correspond à un saut de page, \u000C.|`[\f]{2,}`|`"\f\f\f"` dans `"\f\f\f"`|
 |`\n`|Correspond à une nouvelle ligne, \u000A.|`\r\n(\w+)`|`"\r\nThese"` dans `"\r\nThese are\ntwo lines."`|
 |`\e`|Correspond à un caractère d’échappement, \u001B.|`\e`|`"\x001B"` dans `"\x001B"`|
-|`\` *nnn*|Utilise la représentation octale pour spécifier un caractère (*nnn* se compose de deux ou trois chiffres).|`\w\040\w`|`"a b"`, `"c d"` dans `"a bc d"`|
-|`\x` *nn*|Utilise une représentation hexadécimale pour spécifier un caractère (*nn* se compose de deux chiffres exactement).|`\w\x20\w`|`"a b"`, `"c d"` dans `"a bc d"`|
-|`\c`*X*<br /><br /> `\c` *x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x*, où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
-|`\u` *nnnn*|Correspond à un caractère Unicode en utilisant la représentation hexadécimale (quatre chiffres exactement, représentés par *nnnn*).|`\w\u0020\w`|`"a b"`, `"c d"` dans `"a bc d"`|
+|`\`*nnn*|Utilise la représentation octale pour spécifier un caractère ( *nnn* se compose de deux ou trois chiffres).|`\w\040\w`|`"a b"`, `"c d"` dans `"a bc d"`|
+|`\x` *nn*|Utilise une représentation hexadécimale pour spécifier un caractère ( *nn* se compose de deux chiffres exactement).|`\w\x20\w`|`"a b"`, `"c d"` dans `"a bc d"`|
+|`\c` *X*<br /><br /> `\c` *x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x* , où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
+|`\u` *nnnn*|Correspond à un caractère Unicode en utilisant la représentation hexadécimale (quatre chiffres exactement, représentés par *nnnn* ).|`\w\u0020\w`|`"a b"`, `"c d"` dans `"a bc d"`|
 |`\`|Lorsque ce caractère d'échappement est suivi d'un caractère non identifié comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` est identique à `\x2A`et `\.` est identique à `\x2E`. Cela permet au moteur des expressions régulières de lever l’ambiguïté d’éléments de langage (tels que \* ou ?) et de caractères littéraux (représentés par `\*` ou `\?`).|`\d+[\+-x\*]\d+`|`"2+2"` et `"3*9"` dans `"(2+2) * 3*9"`|
 
 ## <a name="character-classes"></a>Classes de caractères
@@ -59,12 +59,12 @@ Une classe de caractères fait correspondre tout caractère d’un jeu de caract
 
 |Classe de caractères|Description|Modèle|Correspond à|
 |---------------------|-----------------|-------------|-------------|
-|`[`*character_group*`]`|Correspond à n’importe quel caractère unique dans *character_group*. Par défaut, la correspondance respecte la casse.|`[ae]`|`"a"` dans `"gray"`<br /><br /> `"a"`, `"e"` dans `"lane"`|
-|`[^`*character_group*`]`|Négation : correspond à n'importe quel caractère unique qui ne se trouve pas dans *groupe_caractères*. Par défaut, les caractères de *groupe_caractères* respectent la casse.|`[^aei]`|`"r"`, `"g"`, `"n"` dans `"reign"`|
-|`[` *premier* `-` *last* `]`|Plage de caractères : correspond à n'importe quel caractère unique dans la plage comprise entre *premier* et *dernier*.|`[A-Z]`|`"A"`, `"B"` dans `"AB123"`|
+|`[`*character_group*`]`|Correspond à n’importe quel caractère unique dans *character_group* . Par défaut, la correspondance respecte la casse.|`[ae]`|`"a"` dans `"gray"`<br /><br /> `"a"`, `"e"` dans `"lane"`|
+|`[^`*character_group*`]`|Négation : correspond à n'importe quel caractère unique qui ne se trouve pas dans *groupe_caractères* . Par défaut, les caractères de *groupe_caractères* respectent la casse.|`[^aei]`|`"r"`, `"g"`, `"n"` dans `"reign"`|
+|`[` *premier* `-` *last* `]`|Plage de caractères : correspond à n'importe quel caractère unique dans la plage comprise entre *premier* et *dernier* .|`[A-Z]`|`"A"`, `"B"` dans `"AB123"`|
 |`.`|Caractère générique : correspond à tout caractère à l'exception de \n.<br /><br /> Pour faire correspondre un caractère littéral « point » (. ou `\u002E`), vous devez le faire précéder du caractère d'échappement (`\.`).|`a.e`|`"ave"` dans `"nave"`<br /><br /> `"ate"` dans `"water"`|
-|`\p{`*nom*`}`|Correspond à n’importe quel caractère unique de la catégorie générale Unicode ou du bloc nommé spécifié par *name*.|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|`"C"`, `"L"` dans `"City Lights"`<br /><br /> `"Д"`, `"Ж"` dans `"ДЖem"`|
-|`\P{`*nom*`}`|Correspond à n'importe quel caractère unique qui ne se trouve pas dans la catégorie générale Unicode ou le bloc nommé spécifié par *name*.|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|`"i"`, `"t"`, `"y"` dans `"City"`<br /><br /> `"e"`, `"m"` dans `"ДЖem"`|
+|`\p{`*nom*`}`|Correspond à n’importe quel caractère unique de la catégorie générale Unicode ou du bloc nommé spécifié par *name* .|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|`"C"`, `"L"` dans `"City Lights"`<br /><br /> `"Д"`, `"Ж"` dans `"ДЖem"`|
+|`\P{`*nom*`}`|Correspond à n'importe quel caractère unique qui ne se trouve pas dans la catégorie générale Unicode ou le bloc nommé spécifié par *name* .|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|`"i"`, `"t"`, `"y"` dans `"City"`<br /><br /> `"e"`, `"m"` dans `"ДЖem"`|
 |`\w`|Correspond à n’importe quel caractère alphabétique.|`\w`|`"I"`, `"D"`, `"A"`, `"1"`, `"3"` dans `"ID A1.3"`|
 |`\W`|Correspond à tout caractère autre qu’un caractère de mot.|`\W`|`" "`, `"."` dans `"ID A1.3"`|
 |`\s`|Correspond à tout caractère espace blanc.|`\w\s`|`"D "` dans `"ID A1.3"`|
@@ -94,10 +94,10 @@ Les constructions de regroupement délimitent les sous-expressions d’une expre
 |Construction de regroupement|Description|Modèle|Correspond à|
 |------------------------|-----------------|-------------|-------------|
 |`(`sous- *expression*`)`|Capture la sous-expression mise en correspondance et lui assigne un nombre ordinal de base un.|`(\w)\1`|`"ee"` dans `"deep"`|
-|`(?<` *name* `>` *sous-expression* `)`<br /> ou <br />`(?'` *name* `'` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
-|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)` <br /> ou <br /> `(?'` *nom1* `-` *nom2* `'` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
+|`(?<` *name* `>` *sous-expression* `)`<br /> or <br />`(?'` *name* `'` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
+|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)` <br /> or <br /> `(?'` *nom1* `-` *nom2* `'` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
 |`(?:`sous- *expression*`)`|Définit un groupe sans capture.|`Write(?:Line)?`|`"WriteLine"` dans `"Console.WriteLine()"`<br /><br /> `"Write"` dans `"Console.Write(value)"`|
-|`(?imnsx-imnsx:`sous- *expression*`)`|Active ou désactive les options spécifiées dans *sous-expression*. Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` dans `"A12xl A12XL a12xl"`|
+|`(?imnsx-imnsx:`sous- *expression*`)`|Active ou désactive les options spécifiées dans *sous-expression* . Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` dans `"A12xl A12XL a12xl"`|
 |`(?=`sous- *expression*`)`|Assertion de préanalyse positive de largeur nulle.|`\w+(?=\.)`|`"is"`, `"ran"` et `"out"` dans `"He is. The dog ran. The sun is out."`|
 |`(?!`sous- *expression*`)`|Assertion de préanalyse négative de largeur nulle.|`\b(?!un)\w+\b`|`"sure"`, `"used"` dans `"unsure sure unity used"`|
 |`(?<=`sous- *expression*`)`|Assertion de postanalyse positive de largeur nulle.|`(?<=19)\d{2}\b`|`"99"`, `"50"`, `"05"` dans `"1851 1999 1950 1905 2003"`|
@@ -140,7 +140,7 @@ Les constructions d’alternative modifient une expression régulière pour perm
 |---------------------------|-----------------|-------------|-------------|
 |<code>&#124;</code>|Correspond à tout élément séparé par le caractère barre verticale (<code>&#124;</code>).|<code>th(e&#124;is&#124;at)</code>|`"the"`, `"this"` dans `"this is the day."`|
 |`(?(`*expression* `)` *Oui* <code>&#124;</code> *non*`)`|Correspond à *oui* si le modèle d’expression régulière indiqué par *expression* correspond ; sinon, correspond à *no* (facultatif). *expression* est interprétée comme une assertion de largeur nulle.|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|`"A10"`, `"910"` dans `"A10 C103 910"`|
-|`(?(` *name* `)` *oui* <code>&#124;</code> *non* `)`|Correspond à *oui* si *nom*, un groupe de capture nommé ou numéroté, a une correspondance ; sinon, correspond à *non* (facultatif).|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|`"Dogs.jpg "`, `"\"Yiska playing.jpg\""` dans `"Dogs.jpg \"Yiska playing.jpg\""`|
+|`(?(` *name* `)` *oui* <code>&#124;</code> *non* `)`|Correspond à *oui* si *nom* , un groupe de capture nommé ou numéroté, a une correspondance ; sinon, correspond à *non* (facultatif).|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|`"Dogs.jpg "`, `"\"Yiska playing.jpg\""` dans `"Dogs.jpg \"Yiska playing.jpg\""`|
 
 ## <a name="substitutions"></a>Substitutions
 
@@ -148,8 +148,8 @@ Les substitutions sont des éléments de langage d’expression régulière pris
 
 |Caractère|Description|Modèle|Modèle de remplacement|Chaîne d’entrée|Chaîne de résultat|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$`*nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
-|`${`*nom*`}`|Remplace la sous-chaîne mise en correspondance par le groupe nommé *nom*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
+|`$`*nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre* .|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`${`*nom*`}`|Remplace la sous-chaîne mise en correspondance par le groupe nommé *nom* .|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Remplace un "$" littéral.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Remplace une copie de la totalité de la correspondance.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|
 |``$` ``|Remplace tout le texte de la chaîne d'entrée avant la correspondance.|`B+`|``$` ``|`"AABBCC"`|`"AAAACC"`|
@@ -190,7 +190,7 @@ Diverses constructions modifient un modèle d’expression régulière ou fourni
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
-- [Expressions régulières](regular-expressions.md)
+- [Regular Expressions](regular-expressions.md)
 - [Classes d’expressions régulières](the-regular-expression-object-model.md)
-- [Expressions régulières - Aide-mémoire (téléchargement au format Word)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
+- [Expressions régulières - Aide-mémoire (téléchargement au format Word)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
 - [Expressions régulières - Aide-mémoire (téléchargement au format PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

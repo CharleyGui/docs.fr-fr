@@ -16,21 +16,21 @@ helpviewer_keywords:
 - WaitHandle class, code examples
 - asynchronous programming, status polling
 - polling asynchronous operation status
-- delegates [.NET Framework], asynchronous
+- delegates [.NET], asynchronous
 - synchronous calling in asynchronous manner
 - waiting for asynchronous calls
-- status information [.NET Framework], asynchronous operations
+- status information [.NET], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: ff2d30c00e7b6becb0c3ff910d825c2e9d6f78e3
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: d518e5f64096fde5c9b14222dc4fe0634e6bb7b1
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662639"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888891"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Appel de méthodes synchrones de façon asynchrone
 
-Le .NET Framework vous permet d’appeler n’importe quelle méthode de façon asynchrone. Pour ce faire, vous définissez un délégué avec la même signature que la méthode à appeler. Le Common Language Runtime définit automatiquement les méthodes `BeginInvoke` et `EndInvoke` pour ce délégué, avec les signatures appropriées.
+.NET vous permet d’appeler n’importe quelle méthode de façon asynchrone. Pour ce faire, vous définissez un délégué avec la même signature que la méthode que vous souhaitez appeler. Le common language runtime définit automatiquement `BeginInvoke` les `EndInvoke` méthodes et pour ce délégué, avec les signatures appropriées.
 
 > [!NOTE]
 > Les appels de délégués asynchrones, en particulier les méthodes `BeginInvoke` et `EndInvoke` , ne sont pas pris en charge dans le .NET Compact Framework.

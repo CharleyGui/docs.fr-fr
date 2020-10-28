@@ -7,20 +7,20 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- formatting [.NET Framework], dates
+- formatting [.NET], dates
 - custom DateTime format string
 - format specifiers, custom date and time
 - format strings
 - custom date and time format strings
-- formatting [.NET Framework], time
+- formatting [.NET], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 95f655ace1b2fb38100e3cc1089c4a3f61c5b264
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 36aaef2676383263b2009fd283f1671ef970f20e
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557357"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888631"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
@@ -31,7 +31,7 @@ Une chaîne de format de date et d'heure standard utilise un spécificateur de f
 - Pour définir la représentation textuelle d'une valeur de date et d'heure pouvant être convertie en valeur <xref:System.DateTime> ou en valeur <xref:System.DateTimeOffset> lors d'une opération d'analyse.
 
 > [!TIP]
-> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Vous pouvez télécharger l’ **utilitaire de mise en forme** , application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 Les chaînes de format de date et d'heure standard peuvent être utilisées avec les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.
 
@@ -86,7 +86,7 @@ Dans certains cas, il est pratique d'utiliser la chaîne de format standard comm
 
 |Chaîne de format standard|Défini par la propriété DateTimeFormatInfo.InvariantInfo|Chaîne de format personnalisée|
 |----------------------------|----------------------------------------------------------|--------------------------|
-|"O" ou "o"|None|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
+|"O" ou "o"|Aucun|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|
 |"R" ou "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|
@@ -452,6 +452,6 @@ La mise en forme dépend des propriétés de l'objet <xref:System.Globalization.
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Mise en forme des types](formatting-types.md)
-- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

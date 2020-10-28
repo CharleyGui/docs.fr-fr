@@ -7,24 +7,24 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - regular expressions, behavior
-- .NET Framework regular expressions, behavior
+- .NET regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 802c84bf93b3821459ab652e69a12fcc50280b9e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a93e0e7bac782d9a4ce47c1586796b063563d2b6
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290550"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888670"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 
-Le moteur d’expression régulière du .NET Framework est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans le .NET Framework sont implémentées à l’aide d’un moteur NFA classique.
+Le moteur d’expression régulière .NET est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans .NET sont implémentées à l’aide d’un moteur NFA classique.
 
 ## <a name="benefits-of-the-nfa-engine"></a>Avantages du moteur NFA
 
  Quand les moteurs DFA exécutent des critères spéciaux, leur ordre de traitement est piloté par la chaîne d’entrée. Les moteurs commencent au début de la chaîne d’entrée et continuent de manière séquentielle pour déterminer si le caractère suivant correspond au modèle d’expression régulière. Ils peuvent garantir une correspondance avec la chaîne la plus longue possible. Étant donné qu’ils ne testent jamais le même caractère deux fois, les moteurs DFA ne prennent pas en charge la rétroaction. Toutefois, étant donné qu’un moteur DFA contient uniquement un état fini, il ne peut pas rechercher un modèle avec des références arrière, et comme il ne construit pas d’expansion explicite, il ne peut pas capturer de sous-expressions.
 
- Contrairement aux moteurs DFA, quand les moteurs NFA classiques exécutent des critères spéciaux, leur ordre de traitement est piloté par le modèle d’expression régulière. Lorsqu’il traite un élément de langage particulier, le moteur utilise une correspondance gourmande ; autrement dit, il cherche la chaîne d’entrée la plus longue possible. Mais il enregistre également son état après avoir trouvé la correspondance correcte d’une sous-expression. Si une correspondance finit par échouer, le moteur peut revenir à un état enregistré pour tenter d’autres correspondances. Ce processus consistant à abandonner une correspondance réussie de sous-expression pour que les éléments de langage ultérieurs dans l’expression régulière puissent également correspondre est appelé *rétroaction*. Les moteurs NFA utilisent la rétroaction pour tester toutes les expansions possibles d’une expression régulière dans un ordre spécifique et accepter la première correspondance. Comme un moteur NFA classique construit une expansion spécifique de l’expression régulière pour obtenir une correspondance correcte, il peut capturer des correspondances de sous-expressions et des références arrière correspondantes. Toutefois, comme un moteur NFA classique utilise la rétroaction, il peut visiter le même état plusieurs fois s’il y parvient par différents chemins. Par conséquent, il peut s’exécuter lentement de façon exponentielle dans le pire des cas. Comme un moteur NFA classique accepte la première correspondance trouvée, il peut également en négliger d’autres (éventuellement plus longues).
+ Contrairement aux moteurs DFA, quand les moteurs NFA classiques exécutent des critères spéciaux, leur ordre de traitement est piloté par le modèle d’expression régulière. Lorsqu’il traite un élément de langage particulier, le moteur utilise une correspondance gourmande ; autrement dit, il cherche la chaîne d’entrée la plus longue possible. Mais il enregistre également son état après avoir trouvé la correspondance correcte d’une sous-expression. Si une correspondance finit par échouer, le moteur peut revenir à un état enregistré pour tenter d’autres correspondances. Ce processus consistant à abandonner une correspondance réussie de sous-expression pour que les éléments de langage ultérieurs dans l’expression régulière puissent également correspondre est appelé *rétroaction* . Les moteurs NFA utilisent la rétroaction pour tester toutes les expansions possibles d’une expression régulière dans un ordre spécifique et accepter la première correspondance. Comme un moteur NFA classique construit une expansion spécifique de l’expression régulière pour obtenir une correspondance correcte, il peut capturer des correspondances de sous-expressions et des références arrière correspondantes. Toutefois, comme un moteur NFA classique utilise la rétroaction, il peut visiter le même état plusieurs fois s’il y parvient par différents chemins. Par conséquent, il peut s’exécuter lentement de façon exponentielle dans le pire des cas. Comme un moteur NFA classique accepte la première correspondance trouvée, il peut également en négliger d’autres (éventuellement plus longues).
 
  Les moteurs NFA POSIX sont comme les moteurs NFA classiques, sauf qu’ils poursuivent la rétroaction jusqu’à garantir qu’ils ont trouvé la correspondance la plus longue possible. Ainsi, un moteur NFA POSIX est plus lent qu’un moteur NFA classique. Quand vous utilisez un moteur NFA POSIX, vous ne pouvez pas favoriser une correspondance plus courte au détriment d’une plus longue en modifiant l’ordre de la recherche rétroactive.
 
@@ -33,11 +33,11 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 > [!NOTE]
 > Pour plus d’informations sur la baisse des performances due à la rétroaction excessive et sur les moyens de créer une expression régulière pour y remédier, consultez [Rétroaction](backtracking-in-regular-expressions.md).
 
-## <a name="net-framework-engine-capabilities"></a>Fonctionnalités du moteur de .NET Framework
+## <a name="net-engine-capabilities"></a>Fonctionnalités du moteur .NET
 
- Pour tirer parti des avantages d’un moteur NFA classique, le moteur d’expression régulière du .NET Framework inclut un ensemble complet de constructions pour permettre aux programmeurs de diriger le moteur de rétroaction. Ces constructions peuvent être utilisées pour rechercher des correspondances plus rapidement ou pour favoriser des expansions spécifiques par rapport à d’autres.
+ Pour tirer parti des avantages d’un moteur NFA classique, le moteur d’expression régulière .NET inclut un ensemble complet de constructions pour permettre aux programmeurs de diriger le moteur de rétroaction. Ces constructions peuvent être utilisées pour rechercher des correspondances plus rapidement ou pour favoriser des expansions spécifiques par rapport à d’autres.
 
- Les autres fonctionnalités du moteur d’expression régulière du .NET Framework sont les suivantes :
+ Les autres fonctionnalités du moteur d’expression régulière .NET sont les suivantes :
 
 - Quantificateurs paresseux : `??` , `*?` , `+?` , `{` *n* `,` *m* `}?` . Ces constructions indiquent au moteur de rétroaction de rechercher d’abord le nombre minimal de répétitions. Par opposition, les quantificateurs gourmands ordinaires essaient de trouver d’abord le nombre maximal de répétitions. L’exemple suivant illustre la différence entre les deux. Une expression régulière correspond à une phrase se terminant par un nombre qu’un groupe de capture est destiné à extraire. L’expression régulière `.+(\d+)\.` inclut le quantificateur gourmand `.+`, qui amène le moteur d’expression régulière à capturer uniquement le dernier chiffre du nombre. Par opposition, l’expression régulière `.+?(\d+)\.` inclut le quantificateur paresseux `.+?`, qui amène le moteur d’expression régulière à capturer le nombre entier.
 
@@ -148,11 +148,11 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 |-----------|-----------------|
 |[Rétroaction](backtracking-in-regular-expressions.md)|Fournit des informations sur la manière dont la rétroaction d’expression régulière se ramifie pour trouver d’autres correspondances.|
 |[Compilation et réutilisation](compilation-and-reuse-in-regular-expressions.md)|Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.|
-|[Cohérence de thread](thread-safety-in-regular-expressions.md)|Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.|
-|[Expressions régulières du .NET Framework](regular-expressions.md)|Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.|
+|[Sécurité des threads](thread-safety-in-regular-expressions.md)|Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.|
+|[Expressions régulières .NET](regular-expressions.md)|Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.|
 |[Modèle objet d'expression régulière](the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l’utilisation des classes d’expression régulière.|
 |[Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

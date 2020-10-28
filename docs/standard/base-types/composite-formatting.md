@@ -8,25 +8,25 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - parameter specifiers
-- strings [.NET Framework], alignment
+- strings [.NET], alignment
 - format specifiers, composite formatting
-- strings [.NET Framework], composite
+- strings [.NET], composite
 - composite formatting
-- objects [.NET Framework], formatting multiple objects
+- objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 36197b382c449a2570e1d5530f307c4e66b0d983
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e15452016aa61cf44950e8b9e7fca58f23471ae7
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447262"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889463"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
 La fonctionnalité de mise en forme composite du .NET utilise une liste d’objets et une chaîne de format composite comme entrée. Une chaîne de format composite se compose de texte fixe mélangé à des espaces réservés indexés, appelés éléments de format, qui correspondent aux objets de la liste. L'opération de mise en forme produit une chaîne résultante qui se compose du texte fixe d'origine mélangé à la représentation sous forme de chaîne des objets de la liste.  
   
 > [!IMPORTANT]
-> Au lieu d’utiliser des chaînes de format composite, vous pouvez utiliser des *chaînes interpolées* si le langage et la version du langage que vous utilisez les prennent en charge. Une chaîne interpolée est une chaîne contenant des *expressions interpolées*. Chaque expression interpolée est résolue avec la valeur de l’expression et incluse dans la chaîne du résultat quand la chaîne est affectée. Pour plus d’informations, consultez [Interpolation de chaîne (Informations de référence sur C#)](../../csharp/language-reference/tokens/interpolated.md) et [Chaînes interpolées (Informations de référence sur Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Au lieu d’utiliser des chaînes de format composite, vous pouvez utiliser des *chaînes interpolées* si le langage et la version du langage que vous utilisez les prennent en charge. Une chaîne interpolée est une chaîne contenant des *expressions interpolées* . Chaque expression interpolée est résolue avec la valeur de l’expression et incluse dans la chaîne du résultat quand la chaîne est affectée. Pour plus d’informations, consultez [interpolation de chaîne (référence C#)](../../csharp/language-reference/tokens/interpolated.md) et [chaînes interpolées (référence Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 La fonctionnalité de mise en forme composite est prise en charge par les méthodes suivantes :  
   
@@ -56,12 +56,12 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 ## <a name="format-item-syntax"></a>Syntaxe des éléments de format  
  Chaque élément de format prend la forme suivante et comprend les composants suivants :  
   
- `{`*index*[ `,` *alignement*] [ `:` *FormatString*]`}`  
+ `{`*index* [ `,` *alignement* ] [ `:` *FormatString* ]`}`  
   
  Les accolades correspondantes (« { » et « } ») sont nécessaires.  
   
 ### <a name="index-component"></a>Composant d'index  
- Le composant obligatoire *index*, également appelé « spécificateur de paramètre », est un nombre à partir de 0 qui permet d’identifier un élément correspondant dans la liste des objets. En d'autres termes, l'élément de format dont le spécificateur de format est 0 met en forme le premier objet de la liste, l'élément de format dont le spécificateur de paramètres est 1 met en forme le deuxième objet de la liste, etc. L’exemple suivant comprend quatre spécificateurs de paramètres, numérotés de 0 à 3, pour représenter les nombres premiers inférieurs à 10 :  
+ Le composant obligatoire *index* , également appelé « spécificateur de paramètre », est un nombre à partir de 0 qui permet d’identifier un élément correspondant dans la liste des objets. En d'autres termes, l'élément de format dont le spécificateur de format est 0 met en forme le premier objet de la liste, l'élément de format dont le spécificateur de paramètres est 1 met en forme le deuxième objet de la liste, etc. L’exemple suivant comprend quatre spécificateurs de paramètres, numérotés de 0 à 3, pour représenter les nombres premiers inférieurs à 10 :  
   
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
@@ -74,7 +74,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
  Chaque élément de format peut faire référence à n'importe quel objet de la liste. Par exemple, s’il y a trois objets, vous pouvez mettre en forme le deuxième, le premier et le troisième objet en spécifiant une chaîne de format composite telle que : « {1} {0} {2} ». Un objet qui n'est pas référencé par un élément de format est ignoré. Une <xref:System.FormatException> est levée au moment de l’exécution si un spécificateur de paramètres désigne un élément situé en dehors des limites de la liste d’objets.  
   
 ### <a name="alignment-component"></a>Composant d'alignement  
- Le composant facultatif *alignment* est un entier signé indiquant la largeur préférée du champ mis en forme. Si la valeur du composant *alignment* est inférieure à la longueur de la chaîne mise en forme, *alignment*est ignoré et la longueur de la chaîne mise en forme est utilisée comme largeur de champ. Les données mises en forme dans le champ sont alignées à droite si *alignment* est positif et alignées à gauche si *alignment* est négatif. Si un remplissage est nécessaire, des espaces blancs sont utilisés. La virgule est obligatoire si *alignment* est spécifié.  
+ Le composant facultatif *alignment* est un entier signé indiquant la largeur préférée du champ mis en forme. Si la valeur du composant *alignment* est inférieure à la longueur de la chaîne mise en forme, *alignment* est ignoré et la longueur de la chaîne mise en forme est utilisée comme largeur de champ. Les données mises en forme dans le champ sont alignées à droite si *alignment* est positif et alignées à gauche si *alignment* est négatif. Si un remplissage est nécessaire, des espaces blancs sont utilisés. La virgule est obligatoire si *alignment* est spécifié.  
   
  L'exemple suivant définit deux tableaux, l'un contenant les noms des employés et l'autre contenant les heures qu'ils ont prestées sur une période de deux semaines. La chaîne de format composite aligne les noms à gauche dans un champ de 20 caractères et aligne leurs heures à droite dans un champ de 5 caractères. Notez que la chaîne de format standard "N1" est également utilisée pour mettre les heures sous la forme d'un nombre avec une décimale.  
   
@@ -84,7 +84,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 ### <a name="format-string-component"></a>Composant de chaîne de format  
  Le composant facultatif *formatString* est une chaîne de format appropriée pour le type d’objet mis en forme. Spécifiez une chaîne de format numérique standard ou personnalisée si l'objet correspondant est une valeur numérique, une chaîne de format de date et d'heure standard ou personnalisée si l'objet correspondant est un objet <xref:System.DateTime>, ou une [chaîne de format d'énumération](enumeration-format-strings.md) si l'objet correspondant est une valeur d'énumération. Si *formatString* n’est pas spécifié, le spécificateur de format général (« G ») pour un type numérique, de date et d’heure ou d’énumération est utilisé. Le point est obligatoire si *formatString* est spécifié.  
   
- Le tableau suivant répertorie les types ou les catégories de types dans la bibliothèque de classes .NET Framework qui prennent en charge un ensemble prédéfini de chaînes de format, et fournit des liens vers les rubriques qui répertorient les chaînes de format prises en charge. Notez que la mise en forme de chaînes est un mécanisme extensible qui permet de définir de nouvelles chaînes de format pour tous les types existants et de définir un ensemble de chaînes de format pris en charge par un type défini par l'application. Pour plus d'informations, consultez les rubriques sur l'interface <xref:System.IFormattable> et <xref:System.ICustomFormatter>.  
+ Le tableau suivant répertorie les types ou catégories de types de la bibliothèque de classes .NET qui prennent en charge un ensemble prédéfini de chaînes de format, et fournit des liens vers les rubriques qui répertorient les chaînes de format prises en charge. Notez que la mise en forme de chaînes est un mécanisme extensible qui permet de définir de nouvelles chaînes de format pour tous les types existants et de définir un ensemble de chaînes de format pris en charge par un type défini par l'application. Pour plus d'informations, consultez les rubriques sur l'interface <xref:System.IFormattable> et <xref:System.ICustomFormatter>.  
   
 |Type ou catégorie de type|Consultez|  
 |---------------------------|---------|  
@@ -123,7 +123,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 2. Si une implémentation de <xref:System.ICustomFormatter> est disponible, le runtime appelle sa méthode <xref:System.ICustomFormatter.Format%2A>. Il passe à la méthode la valeur *formatString* de l’élément de mise en forme, s’il en existe une, ou `null` si ce n’est pas le cas, ainsi que l’implémentation de <xref:System.IFormatProvider>. Si l’appel à la méthode <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> retourne `null`, l’exécution se poursuit à l’étape suivante. Sinon, le résultat de l’appel à <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> est retourné.
   
-3. Si la valeur implémente l'interface <xref:System.IFormattable>, la méthode de l'interface <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> est appelée. La valeur *formatString*, s’il en existe une dans l’élément de mise en forme, est passée à la méthode, ou bien la valeur `null` si ce n’est pas le cas. L'argument <xref:System.IFormatProvider> est déterminé comme suit :  
+3. Si la valeur implémente l'interface <xref:System.IFormattable>, la méthode de l'interface <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> est appelée. La valeur *formatString* , s’il en existe une dans l’élément de mise en forme, est passée à la méthode, ou bien la valeur `null` si ce n’est pas le cas. L'argument <xref:System.IFormatProvider> est déterminé comme suit :  
   
     - Pour une valeur numérique, si une méthode de mise en forme composite avec l’argument non null <xref:System.IFormatProvider> est appelée, le runtime demande un objet <xref:System.Globalization.NumberFormatInfo> de sa méthode <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>. S’il ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre <xref:System.IFormatProvider>, l’objet <xref:System.Globalization.NumberFormatInfo> de la culture actuelle du thread est utilisé.  
   

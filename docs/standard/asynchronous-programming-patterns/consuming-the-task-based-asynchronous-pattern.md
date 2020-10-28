@@ -4,25 +4,26 @@ description: Apprenez à utiliser le modèle asynchrone basé sur des tâches (T
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- .NET Framework, and TAP
-- asynchronous design patterns, .NET Framework
-- TAP, .NET Framework support for
-- Task-based Asynchronous Pattern, .NET Framework support for
-- .NET Framework, asynchronous design patterns
+- .NET and TAP
+- asynchronous design patterns, .NET
+- TAP, .NET support for
+- Task-based Asynchronous Pattern, .NET support for
+- .NET, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 68b1f723b3dcc4fd16073a653a778aa480cfa32e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 4a2715ab6572c33a1564986c5cfda112d5fa11db
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621754"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888865"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
-Lorsque vous utilisez le modèle asynchrone basé sur les tâches (TAP) pour travailler avec des opérations asynchrones, vous pouvez utiliser des rappels pour terminer l’attente sans blocage.  Pour les tâches, vous pouvez faire de même à l’aide de méthodes telles que <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. La prise en charge asynchrone basée sur le langage masque les rappels en permettant aux opérations asynchrones d’être attendues dans le flux de contrôle normal, et le code généré par le compilateur fournit cette même prise en charge au niveau de l’API.
+Lorsque vous utilisez le modèle asynchrone basé sur les tâches (TAP) pour travailler avec des opérations asynchrones, vous pouvez utiliser des rappels pour terminer l’attente sans blocage. Pour les tâches, vous pouvez faire de même à l’aide de méthodes telles que <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. La prise en charge asynchrone basée sur le langage masque les rappels en permettant aux opérations asynchrones d’être attendues dans le flux de contrôle normal, et le code généré par le compilateur fournit cette même prise en charge au niveau de l’API.
 
 ## <a name="suspending-execution-with-await"></a>Suspension de l’exécution avec Await
- À partir de .NET Framework 4.5, vous pouvez utiliser le mot clé [await](../../csharp/language-reference/operators/await.md) en C# et l’[opérateur Await](../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic pour attendre de manière asynchrone les objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. Pour plus d’informations sur la prise en charge des langages C# et Visual Basic dans .NET Framework 4.5, consultez les spécifications des langages C# et Visual Basic.
+
+Vous pouvez utiliser le mot clé [await](../../csharp/language-reference/operators/await.md) en C# et l' [opérateur await](../../visual-basic/language-reference/operators/await-operator.md) dans Visual Basic pour attendre de façon asynchrone <xref:System.Threading.Tasks.Task> les objets await et <xref:System.Threading.Tasks.Task%601> . Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. (Ces fonctionnalités de langage ont été introduites dans .NET Framework 4,5.)
 
  En arrière-plan, la fonctionnalité await installe un rappel sur la tâche à l’aide d’une continuation.  Ce rappel reprend la méthode asynchrone au point d’interruption. Quand la méthode asynchrone est reprise, si l’opération attendue s’est terminée correctement et est une <xref:System.Threading.Tasks.Task%601>, son `TResult` est retourné.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Canceled>, une exception <xref:System.OperationCanceledException> est levée.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Faulted>, l’exception qui a entraîné l’erreur est levée. Une `Task` peut échouer à cause de plusieurs exceptions, mais seule une de ces exceptions est propagée. Toutefois, la propriété <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> retourne une exception <xref:System.AggregateException> qui contient toutes les erreurs.
 
@@ -63,7 +64,8 @@ await someTask.ConfigureAwait(continueOnCapturedContext:false);
 ```
 
 ## <a name="canceling-an-asynchronous-operation"></a>Annulation d'une opération asynchrone
- À compter de .NET Framework 4, les méthodes TAP qui prennent en charge l’annulation fournissent au moins une surcharge qui accepte un jeton d’annulation (objet <xref:System.Threading.CancellationToken>).
+
+À partir de .NET Framework 4, les méthodes TAP qui prennent en charge l’annulation fournissent au moins une surcharge qui accepte un jeton d’annulation ( <xref:System.Threading.CancellationToken> objet).
 
  Un jeton d’annulation est créé via une source de jeton d’annulation (objet <xref:System.Threading.CancellationTokenSource>).  La propriété de la source <xref:System.Threading.CancellationTokenSource.Token%2A> retourne le jeton d’annulation qui sera signalé lorsque la méthode de la source sera <xref:System.Threading.CancellationTokenSource.Cancel%2A> appelée.  Par exemple, si vous souhaitez télécharger une seule page Web et que vous souhaitez être en mesure d’annuler l’opération, vous créez un <xref:System.Threading.CancellationTokenSource> objet, vous transmettez son jeton à la méthode TAP, puis vous appelez la méthode de la source <xref:System.Threading.CancellationTokenSource.Cancel%2A> lorsque vous êtes prêt à annuler l’opération :
 
@@ -535,7 +537,7 @@ public async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="building-task-based-combinators"></a>Création de combinateurs basés sur les tâches
- Une tâche étant en mesure de représenter une opération asynchrone et de fournir des fonctions synchrones et asynchrones pour effectuer la liaison avec l’opération, récupérer ses résultats et ainsi de suite, vous pouvez créer des bibliothèques utiles de combinateurs qui composent les tâches pour créer des modèles plus grands.  Comme expliqué dans la section précédente, .NET Framework inclut plusieurs combinateurs intégrés, mais vous pouvez également créer les vôtres. Les sections suivantes fournissent plusieurs exemples de types et méthodes de combinateurs potentiels.
+ Une tâche étant en mesure de représenter une opération asynchrone et de fournir des fonctions synchrones et asynchrones pour effectuer la liaison avec l’opération, récupérer ses résultats et ainsi de suite, vous pouvez créer des bibliothèques utiles de combinateurs qui composent les tâches pour créer des modèles plus grands. Comme indiqué dans la section précédente, .NET comprend plusieurs combinateurs intégrés, mais vous pouvez également créer votre propre combinateur. Les sections suivantes fournissent plusieurs exemples de types et méthodes de combinateurs potentiels.
 
 ### <a name="retryonfault"></a>RetryOnFault
  Dans de nombreuses situations, vous souhaiterez peut-être retenter une opération si une tentative précédente échoue.  Pour le code synchrone, vous pouvez créer une méthode d’assistance telle que `RetryOnFault` dans l’exemple suivant pour y parvenir :
@@ -832,7 +834,7 @@ private static void Produce(int data)
 ```
 
 > [!NOTE]
-> L’espace de noms <xref:System.Threading.Tasks.Dataflow> est disponible dans .NET Framework 4.5 via **NuGet**. Pour installer l’assembly qui contient l'espace de noms <xref:System.Threading.Tasks.Dataflow>, ouvrez votre projet dans Visual Studio, choisissez **Manage NuGet Packages** dans le menu Projet et recherchez en ligne le package Microsoft.Tpl.Dataflow.
+> L' <xref:System.Threading.Tasks.Dataflow> espace de noms est disponible sous la forme d’un package NuGet. Pour installer l’assembly qui contient l' <xref:System.Threading.Tasks.Dataflow> espace de noms, ouvrez votre projet dans Visual Studio, choisissez **gérer les packages NuGet** dans le menu projet et recherchez en ligne le `System.Threading.Tasks.Dataflow` Package.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: 2aaa24e54dad7b765781bf7c790890a57a77af14
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: d2dbe06597c99158eaa39812d4d5a95288450adc
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608351"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888564"
 ---
 # <a name="dependency-injection-in-net"></a>Injection de dépendances dans .NET
 
@@ -95,7 +95,7 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
 
 `LoggingMessageWriter` dépend de <xref:Microsoft.Extensions.Logging.ILogger%601> , qu’il demande dans le constructeur. `ILogger<TCategoryName>` est un [service fourni par le Framework](#framework-provided-services).
 
-Il n’est pas rare que l’injection de dépendances soit utilisée de manière chaînée. Dans ce cas, chaque dépendance demandée demande à son tour ses propres dépendances. Le conteneur résout les dépendances dans le graphique et retourne le service entièrement résolu. L’ensemble collectif de dépendances qui doivent être résolues est généralement appelé *arborescence des dépendances*, *graphique de dépendance* ou *graphique d’objet*.
+Il n’est pas rare que l’injection de dépendances soit utilisée de manière chaînée. Dans ce cas, chaque dépendance demandée demande à son tour ses propres dépendances. Le conteneur résout les dépendances dans le graphique et retourne le service entièrement résolu. L’ensemble collectif de dépendances qui doivent être résolues est généralement appelé *arborescence des dépendances* , *graphique de dépendance* ou *graphique d’objet* .
 
 Le conteneur se résout `ILogger<TCategoryName>` en tirant parti de [types ouverts (génériques)](/dotnet/csharp/language-reference/language-specification/types#open-and-closed-types), ce qui évite d’avoir à inscrire chaque [type construit (Générique)](/dotnet/csharp/language-reference/language-specification/types#constructed-types).
 
@@ -173,7 +173,7 @@ Dans les applications qui traitent les requêtes, les services délimités sont 
 Lors de l’utilisation de Entity Framework Core, la <xref:Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.AddDbContext%2A> méthode d’extension inscrit les `DbContext` types avec une durée de vie limitée par défaut.
 
 > [!NOTE]
-> Ne résolvez ***pas*** un service étendu à partir d’un singleton. L’état du service risque de ne pas être correct lors du traitement des requêtes suivantes. Il convient d’effectuer les opérations suivantes :
+> Do * **not** _ résoudre un service étendu à partir d’un singleton et veiller à ne pas le faire indirectement, par exemple via un service temporaire. L’état du service risque de ne pas être correct lors du traitement des requêtes suivantes. Il convient d’effectuer les opérations suivantes :
 >
 > - Résoudre un service Singleton à partir d’un service délimité ou étendu.
 > - Résoudre un service étendu à partir d’un autre service étendu ou temporaire.
@@ -194,7 +194,7 @@ Inscrire des services Singleton avec <xref:Microsoft.Extensions.DependencyInject
 Dans les applications qui traitent les requêtes, les services Singleton sont supprimés lorsque le <xref:Microsoft.Extensions.DependencyInjection.ServiceProvider> est supprimé lors de l’arrêt de l’application. Étant donné que la mémoire n’est pas libérée tant que l’application n’est pas arrêtée, envisagez d’utiliser la mémoire avec un service Singleton.
 
 > [!WARNING]
-> Ne résolvez ***pas*** un service étendu à partir d’un singleton. L’état du service risque de ne pas être correct lors du traitement des requêtes suivantes. Il est parfait de résoudre un service Singleton à partir d’un service étendu ou temporaire.
+> Ne résolvez _*_pas_*_ un service étendu à partir d’un singleton. L’état du service risque de ne pas être correct lors du traitement des requêtes suivantes. Il est parfait de résoudre un service Singleton à partir d’un service étendu ou temporaire.
 
 ## <a name="service-registration-methods"></a>Méthodes d’inscription du service
 
@@ -228,7 +228,7 @@ Pour plus d'informations, consultez les pages suivantes :
 - <xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddScoped%2A>
 - <xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton%2A>
 
-Les méthodes [TryAddEnumerable (ServiceDescriptor)](xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddEnumerable%2A) inscrivent le service uniquement s’il n’existe pas déjà une implémentation *du même type*. Plusieurs services sont résolus par le biais de `IEnumerable<{SERVICE}>`. Lors de l’inscription des services, ajoutez une instance si l’un des mêmes types n’a pas déjà été ajouté. Les auteurs de bibliothèque utilisent `TryAddEnumerable` pour éviter d’inscrire plusieurs copies d’une implémentation dans le conteneur.
+Les méthodes [TryAddEnumerable (ServiceDescriptor)](xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddEnumerable%2A) inscrivent le service uniquement s’il n’existe pas déjà une implémentation _of le même type *. Plusieurs services sont résolus par le biais de `IEnumerable<{SERVICE}>`. Lors de l’inscription des services, ajoutez une instance si l’un des mêmes types n’a pas déjà été ajouté. Les auteurs de bibliothèque utilisent `TryAddEnumerable` pour éviter d’inscrire plusieurs copies d’une implémentation dans le conteneur.
 
 Dans l’exemple suivant, le premier appel à `TryAddEnumerable` s’inscrit `MessageWriter` en tant qu’implémentation pour `IMessageWriter1` . Le deuxième appel s’inscrit `MessageWriter` pour `IMessageWriter2` . Le troisième appel n’a aucun effet, car `IMessageWriter1` a déjà une implémentation inscrite de `MessageWriter` :
 
@@ -272,7 +272,7 @@ Les services peuvent être résolus à l’aide de :
 
 Les constructeurs peuvent accepter des arguments qui ne sont pas fournis par l’injection de dépendances, mais les arguments doivent affecter des valeurs par défaut.
 
-Lorsque des services sont résolus par `IServiceProvider` ou `ActivatorUtilities`, l’injection de constructeurs exige un constructeur *public*.
+Lorsque des services sont résolus par `IServiceProvider` ou `ActivatorUtilities`, l’injection de constructeurs exige un constructeur *public* .
 
 Lorsque des services sont résolus par `ActivatorUtilities`, l’injection de constructeurs exige qu’un seul constructeur applicable existe. Les surcharges de constructeurs sont prises en charge, mais une seule peut exister dont les arguments peuvent tous être satisfaits par l’injection de dépendances.
 
@@ -291,6 +291,7 @@ Les services Scoped sont supprimés par le conteneur qui les a créés. Si un se
 
 - [Utiliser l’injection de dépendances dans .NET](dependency-injection-usage.md)
 - [Recommandations relatives à l’injection de dépendances](dependency-injection-guidelines.md)
+- [Injection de dépendances dans ASP.NET Core](/aspnet/core/fundamentals/dependency-injection)
 - [Modèles de conférence norvégiens pour le développement d’applications DI](https://www.youtube.com/watch?v=x-C-CNBVTaY)
 - [Principe des dépendances explicites](../../architecture/modern-web-apps-azure/architectural-principles.md#explicit-dependencies)
 - [Inversion des conteneurs de contrôle et le modèle d’injection de dépendances (Martin Fowler)](https://www.martinfowler.com/articles/injection.html)

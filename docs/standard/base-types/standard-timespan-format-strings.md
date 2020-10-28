@@ -12,18 +12,18 @@ helpviewer_keywords:
 - standard time interval format strings
 - standard format strings, time intervals
 - format specifiers, time intervals
-- time intervals [.NET Framework], formatting
-- time [.NET Framework], formatting
-- formatting [.NET Framework], time
+- time intervals [.NET], formatting
+- time [.NET], formatting
+- formatting [.NET], time
 - standard TimeSpan format strings
-- formatting [.NET Framework], time intervals
+- formatting [.NET], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 31e4158d42d794e830d9acfe666729846c43a1ee
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 99529d480ca32cb8be1e2013ca4551534e10026b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768116"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888943"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 
@@ -41,7 +41,7 @@ ms.locfileid: "84768116"
   
 Le tableau suivant répertorie les spécificateurs de format d'intervalle de temps standard.  
   
-|Spécificateur de format|Nom|Description|Exemples|  
+|Spécificateur de format|Name|Description|Exemples|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|Format constant (invariant)|Ce spécificateur ne dépend pas de la culture. Son format est le suivant : `[-][d'.']hh':'mm':'ss['.'fffffff]`.<br /><br /> (les chaînes de format "t" et "T" produisent les mêmes résultats)<br /><br /> Pour plus d’informations, consultez [Spécificateur de format constant ("c")](#the-constant-c-format-specifier).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|Format court général|Ce spécificateur retourne uniquement ce qui est nécessaire. Il dépend de la culture et prend la forme suivante : `[-][d':']h':'mm':'ss[.FFFFFFF]`.<br /><br /> Pour plus d’informations, consultez [Spécificateur de format court général ("g")](#the-general-short-g-format-specifier).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50,5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50,599 (fr-FR)|  
@@ -50,7 +50,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-constant-c-format-specifier"></a>Spécificateur de format constant ("c")  
  Le spécificateur de format "c" retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> au format suivant :  
   
- [-][*d*.]*hh*:*mm*:*ss*[.*fffffff*]  
+ [-][ *d* .] *hh* : *mm* : *ss* [. *fffffff* ]  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le point (.) et les deux-points (:) sont des symboles littéraux. Le tableau suivant décrit les éléments restants.  
   
@@ -60,10 +60,10 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
 |*mm*|Nombre de minutes, allant de "00" à "59".|  
-|*sécurité*|Nombre de secondes, allant de "0" à "59".|  
+|*ss*|Nombre de secondes, allant de "0" à "59".|  
 |*fffffff*|Partie fractionnaire facultative d'une seconde.  Sa valeur peut varier de "0000001" (une graduation ou un dix-millionième de seconde) à "9999999" (9 999 999 dix-millionièmes de seconde ou une seconde moins une graduation).|  
   
- Contrairement aux spécificateurs de format "g" et "G", le spécificateur de format "c" ne dépend pas de la culture. Il produit la représentation sous forme de chaîne d’une valeur <xref:System.TimeSpan> qui est invariante et commune à toutes les versions du .NET Framework antérieures à .NET Framework 4. "c" est la chaîne de format <xref:System.TimeSpan> par défaut. La méthode <xref:System.TimeSpan.ToString?displayProperty=nameWithType> met en forme une valeur d'intervalle de temps à l'aide de la chaîne de format "c".  
+ Contrairement aux spécificateurs de format "g" et "G", le spécificateur de format "c" ne dépend pas de la culture. Il produit la représentation sous forme de chaîne d’une <xref:System.TimeSpan> valeur qui est indifférente et qui est commune aux versions antérieures à .NET Framework 4. "c" est la chaîne de format <xref:System.TimeSpan> par défaut. La méthode <xref:System.TimeSpan.ToString?displayProperty=nameWithType> met en forme une valeur d'intervalle de temps à l'aide de la chaîne de format "c".  
   
 > [!NOTE]
 > <xref:System.TimeSpan> prend également en charge les chaînes de format standard "t" et "T", dont le comportement est identique à celui de la chaîne de format standard "c".  
@@ -74,9 +74,9 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
  [!code-vb[Conceptual.TimeSpan.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardc1.vb#1)]  
 
 ## <a name="the-general-short-g-format-specifier"></a>Spécificateur de format court général ("g")  
- Le spécificateur de format "g" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> dans un format compact, en incluant uniquement les éléments qui sont nécessaires. Elle se présente comme suit :  
+ Le spécificateur de format "g" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> dans un format compact, en incluant uniquement les éléments qui sont nécessaires. Elle a la forme suivante :  
   
- [-][*d*:]*h*:*mm*:*ss*[.*FFFFFFF*]  
+ [-][ *d* :] *h* : *mm* : *ss* [. *FFFFFFF* ]  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:) est un symbole littéral. Le tableau suivant décrit les éléments restants.  
   
@@ -86,7 +86,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*d*|Nombre facultatif de jours, sans zéros non significatifs.|  
 |*h*|Nombre d'heures, allant de "0" à "23", sans zéros non significatifs.|  
 |*mm*|Nombre de minutes, allant de "00" à "59".|  
-|*sécurité*|Nombre de secondes, allant de "00" à "59".|  
+|*ss*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*FFFFFFF*|Fractions de seconde. Le moins de chiffres possible sont affichés.|  
   
@@ -100,7 +100,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-general-long-g-format-specifier"></a>Spécificateur de format long général ("G")  
  Le spécificateur de format "G" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> sous une forme longue comprenant toujours les jours et les fractions de secondes. La chaîne qui résulte du spécificateur de format standard "G" est au format suivant :  
   
- [-] *d*:*hh*:*mm*:*SS*. *fffffff*  
+ [-] *d* : *hh* : *mm* : *SS* . *fffffff*  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:) est un symbole littéral. Le tableau suivant décrit les éléments restants.  
   
@@ -110,7 +110,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 |*d*|Nombre de jours, sans zéros non significatifs.|  
 |*hh*|Nombre d'heures, allant de "00" à "23".|  
 |*mm*|Nombre de minutes, allant de "00" à "59".|  
-|*sécurité*|Nombre de secondes, allant de "00" à "59".|  
+|*ss*|Nombre de secondes, allant de "00" à "59".|  
 |*.*|Séparateur des fractions de seconde. Il équivaut à la propriété <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> de la culture spécifiée, sans substitutions par l'utilisateur.|  
 |*fffffff*|Fractions de seconde.|  
   

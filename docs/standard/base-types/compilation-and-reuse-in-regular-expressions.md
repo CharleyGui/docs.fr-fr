@@ -5,19 +5,19 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - parsing text with regular expressions, compilation
 - searching with regular expressions, compilation
-- .NET Framework regular expressions, engines
-- .NET Framework regular expressions, compilation
+- .NET regular expressions, engines
+- .NET regular expressions, compilation
 - regular expressions, compilation
 - compilation, regular expressions
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-ms.openlocfilehash: 54f14a4f31bef00dd222686cc523935b2d9dd5fa
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fbf10c7f3b4ebf4db97b18b2a2ef165226a48027
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279036"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889476"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Compilation et réutilisation dans les expressions régulières
 Vous pouvez optimiser les performances des applications qui utilisent très souvent des expressions régulières en comprenant comment le moteur d’expression régulière compile les expressions et comment les expressions régulières sont mises en cache. Cette rubrique décrit la compilation et la mise en cache.  

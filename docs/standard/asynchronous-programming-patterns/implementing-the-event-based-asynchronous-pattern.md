@@ -10,20 +10,20 @@ helpviewer_keywords:
 - Event-based Asynchronous Pattern
 - ProgressChangedEventArgs class
 - BackgroundWorker component
-- events [.NET Framework], asynchronous
+- events [.NET], asynchronous
 - Asynchronous Pattern
 - AsyncOperationManager class
-- threading [.NET Framework], asynchronous features
-- components [.NET Framework], asynchronous
+- threading [.NET], asynchronous features
+- components [.NET], asynchronous
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: 466a0dd8a827cd869894106a0901bdab89601e25
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ca4b1b3ff1fb7180250de7436db9a4d642e8118c
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559094"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888787"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des événements
 
@@ -71,11 +71,11 @@ Définissez une méthode _MethodName_**Async** qui :
 
 - Retourne `void`.
 
-- Accepte les mêmes paramètres que la méthode *MethodName*.
+- Accepte les mêmes paramètres que la méthode *MethodName* .
 
 - Accepte plusieurs appels.
 
-Vous pouvez également définir une surcharge _MethodName_**Async** , identique à _MethodName_**Async**, mais avec un paramètre objet supplémentaire appelé `userState` . Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
+Vous pouvez également définir une surcharge _MethodName_**Async** , identique à _MethodName_**Async** , mais avec un paramètre objet supplémentaire appelé `userState` . Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
 
 Pour chaque signature de méthode _MethodName_**Async** distincte :
 
@@ -145,7 +145,7 @@ Utilisez les réponses à ces deux questions dans le tableau ci-dessous pour dé
 
 Si vous définissez la méthode `CancelAsync(object userState)`, les clients doivent être prudents lorsqu’ils choisissent leurs valeurs d’état afin qu’elles soient capables de distinguer toutes les méthodes asynchrones appelées sur l’objet, et pas seulement tous les appels d’une seule méthode asynchrone.
 
-La décision de nommer _la version d'_ opération asynchrone unique**AsyncCancel** est basée sur la possibilité de découvrir plus facilement la méthode dans un environnement de conception comme IntelliSense de Visual Studio. Il regroupe les membres associés et les distingue des autres membres qui n’ont rien à voir avec les fonctionnalités asynchrones. Si vous pensez que d’autres opérations asynchrones peuvent être ajoutées dans les versions ultérieures, il est préférable de définir `CancelAsync`.
+La décision de nommer _la version d'_ opération asynchrone unique **AsyncCancel** est basée sur la possibilité de découvrir plus facilement la méthode dans un environnement de conception comme IntelliSense de Visual Studio. Il regroupe les membres associés et les distingue des autres membres qui n’ont rien à voir avec les fonctionnalités asynchrones. Si vous pensez que d’autres opérations asynchrones peuvent être ajoutées dans les versions ultérieures, il est préférable de définir `CancelAsync`.
 
 Ne définissez pas plusieurs méthodes du tableau ci-dessus dans la même classe. Ceci sera inutile ou risquera d’encombrer l’interface de classe d’un trop grand nombre de méthodes.
 
@@ -213,13 +213,13 @@ Appelez ce gestionnaire d’événements sur le thread approprié comme décrit 
 
 ## <a name="handling-out-and-ref-parameters-in-methods"></a>Gestion des paramètres Out et Ref dans les méthodes
 
-Bien que l’utilisation de `out` et `ref` soit en règle générale déconseillée dans le .NET Framework, voici les règles à suivre lorsqu’ils sont présents :
+Bien que l’utilisation de `out` et de `ref` soit, en général, déconseillée dans .net, Voici les règles à suivre lorsqu’elles sont présentes :
 
 Soit une méthode synchrone *MethodName* :
 
-- `out` les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async**. Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
+- `out` les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async** . Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 
-- `ref` les paramètres de *MethodName* doivent apparaître dans le cadre de _MethodName_**Async**et dans le cadre de _MethodName_**CompletedEventArgs** portant le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
+- `ref` les paramètres de *MethodName* doivent apparaître dans le cadre de _MethodName_**Async** et dans le cadre de _MethodName_**CompletedEventArgs** portant le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 
 Prenons l’exemple suivant :
 

@@ -8,7 +8,7 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- strings [.NET Framework], removing characters
+- strings [.NET], removing characters
 - Remove method
 - TrimEnd method
 - Trim method
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 630fe6b51d151d1f1384f2e3cde62750c303d883
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d0057d503474f3f6ff886acda3ce1d72fb3ebe21
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446891"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888592"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Suppression d’espaces et de caractères dans .NET
 Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mots incluant des espaces vides (également appelés espaces blancs) à chaque extrémité du mot. Dans ce cas, vous pouvez utiliser l’une des méthodes de suppression de la classe **System.String** pour supprimer n’importe quel nombre d’espaces ou d’autres caractères à partir d’une position spécifiée dans la chaîne. Le tableau suivant décrit les méthodes de suppression disponibles.  
@@ -33,7 +33,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
 |<xref:System.String.TrimStart%2A?displayProperty=nameWithType>|Supprime les caractères spécifiés dans un tableau de caractères à partir du début d’une chaîne.|  
 |<xref:System.String.Remove%2A?displayProperty=nameWithType>|Supprime un nombre spécifié de caractères à partir de la position d’index spécifiée dans une chaîne.|  
   
-## <a name="trim"></a>SupprEspace
+## <a name="trim"></a>Supprimer les espaces
 
  Vous pouvez facilement supprimer les espaces blancs situés aux deux extrémités d’une chaîne à l’aide de la méthode <xref:System.String.Trim%2A?displayProperty=nameWithType>, comme indiqué dans l’exemple suivant.  
   
@@ -58,7 +58,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
  Ce code affiche `He` dans la console.  
   
- L’exemple suivant supprime le dernier mot d’une chaîne à l’aide de la méthode **TrimEnd**. Dans ce code, une virgule suit le mot `Hello` et, étant donné que la virgule n’est pas spécifiée dans le tableau de caractères à supprimer, la suppression s’arrête au niveau de la virgule.  
+ L’exemple suivant supprime le dernier mot d’une chaîne à l’aide de la méthode **TrimEnd** . Dans ce code, une virgule suit le mot `Hello` et, étant donné que la virgule n’est pas spécifiée dans le tableau de caractères à supprimer, la suppression s’arrête au niveau de la virgule.  
   
  [!code-cpp[Conceptual.String.BasicOps#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#19)]
  [!code-csharp[Conceptual.String.BasicOps#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#19)]
@@ -68,7 +68,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
 ## <a name="trimstart"></a>TrimStart
 
- La méthode **String.TrimStart** est similaire à la méthode **String.TrimEnd**, si ce n’est qu’elle crée une chaîne en supprimant les caractères à partir du début d’un objet string existant. Un tableau de caractères est passé à la méthode **TrimStart** pour spécifier les caractères à supprimer. Comme avec la méthode **TrimEnd**, l’ordre des éléments dans le tableau de caractères n’affecte pas l’opération de suppression. La suppression s’arrête lorsqu’un caractère non spécifié dans le tableau est trouvé.  
+ La méthode **String.TrimStart** est similaire à la méthode **String.TrimEnd** , si ce n’est qu’elle crée une chaîne en supprimant les caractères à partir du début d’un objet string existant. Un tableau de caractères est passé à la méthode **TrimStart** pour spécifier les caractères à supprimer. Comme avec la méthode **TrimEnd** , l’ordre des éléments dans le tableau de caractères n’affecte pas l’opération de suppression. La suppression s’arrête lorsqu’un caractère non spécifié dans le tableau est trouvé.  
   
  L’exemple suivant supprime le premier mot d’une chaîne. Dans cet exemple, la position du caractère `'l'` et du caractère `'H'` est inversée pour illustrer que l’ordre des caractères dans le tableau n’a pas d’importance.  
   

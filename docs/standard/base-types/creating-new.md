@@ -11,18 +11,19 @@ helpviewer_keywords:
 - Join method
 - Format method
 - Concat method
-- strings [.NET Framework], creating
+- strings [.NET], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: b44d0f8e1717ead72e28f0be644644961d1482b6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7dedaf61f56f19343299c841bb4cee70fb9c767a
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596446"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889437"
 ---
 # <a name="creating-new-strings-in-net"></a>Création de nouvelles chaînes dans .NET
-Le .NET Framework permet de créer des chaînes à l’aide d’une assignation simple, et surcharge un constructeur de classe pour prendre en charge la création de chaînes à l’aide de plusieurs paramètres différents. Le .NET Framework fournit également plusieurs méthodes dans la classe <xref:System.String?displayProperty=nameWithType> qui créent des objets de chaînes en combinant plusieurs chaînes, tableaux de chaînes ou objets.  
+
+.NET permet de créer des chaînes à l’aide d’une assignation simple, et surcharge un constructeur de classe pour prendre en charge la création de chaînes à l’aide de plusieurs paramètres différents. .NET fournit également plusieurs méthodes dans la <xref:System.String?displayProperty=nameWithType> classe qui créent des objets String en combinant plusieurs chaînes, tableaux de chaînes ou objets.  
   
 ## <a name="creating-strings-using-assignment"></a>Création de chaînes à l’aide d’une affectation  
  Le moyen le plus simple de créer un objet <xref:System.String> consiste à assigner un littéral de chaîne à un objet <xref:System.String>.  
@@ -42,7 +43,7 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|Copie des caractères spécifiés dans une chaîne à une position spécifiée dans un tableau de caractères.|  
   
 ### <a name="format"></a>Format  
- Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format**. Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](composite-formatting.md).  
+ Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format** . Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](composite-formatting.md).  
   
  L’exemple suivant utilise la méthode **Format** pour créer une chaîne utilisant une variable de type integer.  
   
@@ -52,7 +53,7 @@ Le .NET Framework permet de créer des chaînes à l’aide d’une assignation 
  Dans cet exemple, <xref:System.DateTime.Now%2A?displayProperty=nameWithType> affiche la date et l’heure actuelles de la manière spécifiée par la culture associée au thread actuel.  
   
 ### <a name="concat"></a>Concat  
- La méthode **String.Concat** peut être utilisée pour créer facilement un objet chaîne à partir de deux ou de plusieurs objets existants. Elle offre un moyen de concaténer des chaînes indépendamment du langage. Cette méthode accepte toute classe qui dérive de **System.Object**. L’exemple suivant crée une chaîne à partir de deux objets String existants et d’un caractère à utiliser comme séparateur.  
+ La méthode **String.Concat** peut être utilisée pour créer facilement un objet chaîne à partir de deux ou de plusieurs objets existants. Elle offre un moyen de concaténer des chaînes indépendamment du langage. Cette méthode accepte toute classe qui dérive de **System.Object** . L’exemple suivant crée une chaîne à partir de deux objets String existants et d’un caractère à utiliser comme séparateur.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  

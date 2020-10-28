@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : effectuer un aller-retour de valeurs de date et d’heure'
+title: "Comment : effectuer un aller-retour de valeurs de date et d'heure"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -7,19 +7,19 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - round-trip date and time values
-- dates [.NET Framework], round-trip values
-- time zones [.NET Framework], round-trip date and time values
-- time [.NET Framework], round-trip values
-- formatting strings [.NET Framework], round-trip values
+- dates [.NET], round-trip values
+- time zones [.NET], round-trip date and time values
+- time [.NET], round-trip values
+- formatting strings [.NET], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-ms.openlocfilehash: 60483a6e29c65fc0c5803e8084053d53d9fc3c37
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4dce882e29afd5084dc84d3e176e6121c55f4af8
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290446"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889086"
 ---
-# <a name="how-to-round-trip-date-and-time-values"></a>Procédure : effectuer un aller-retour de valeurs de date et d’heure
+# <a name="how-to-round-trip-date-and-time-values"></a>Comment : effectuer un aller-retour de valeurs de date et d'heure
 
 Dans de nombreuses applications, une valeur de date et d’heure est destinée à identifier clairement un point unique dans le temps. Cet article explique comment enregistrer et restaurer une valeur <xref:System.DateTime> , une valeur <xref:System.DateTimeOffset> et une valeur de date et d’heure avec des informations de fuseau horaire afin que la valeur restaurée identifie la même heure que la valeur enregistrée.
 
@@ -85,7 +85,7 @@ Ces exemples requièrent les éléments suivants :
 
 - Les espaces de noms suivants doivent être importés avec les `using` directives C# ou les `Imports` instructions Visual Basic :
 
-  - <xref:System>(C# uniquement)
+  - <xref:System> (C# uniquement)
 
   - <xref:System.Globalization?displayProperty=nameWithType>
 

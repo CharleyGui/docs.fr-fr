@@ -10,14 +10,14 @@ helpviewer_keywords:
 - character classes
 - regular expressions, character classes
 - characters, matching syntax
-- .NET Framework regular expressions, character classes
+- .NET regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: 85107bf2234eda1705126e524acd5b35952094bc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 619a32d98d697b3b1d461921bfe581acb720be68
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292096"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888722"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -48,7 +48,7 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
  .NET prend en charge les expressions de soustraction de classe de caractères, ce qui vous permet de définir un jeu de caractères comme résultat de l’exclusion d’une classe de caractères d’une autre classe de caractères. Pour plus d’informations, consultez [soustraction de classe de caractères](#CharacterClassSubtraction).  
   
 > [!NOTE]
-> Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères.  À compter de .NET Framework 4.6.2, les catégories de caractères sont basées sur la [norme Unicode version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). De .NET Framework 4 à .NET Framework 4.6.1, elles sont basées sur la [norme Unicode version 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+> Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères. Dans .NET Framework 4.6.2 et versions ultérieures, les catégories de caractères sont basées sur [la norme Unicode, version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/).
   
 <a name="PositiveGroup"></a>
 ## <a name="positive-character-group--"></a>Groupe de caractères positif : [ ]  
@@ -439,7 +439,7 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 |0250 - 02AF|`IsIPAExtensions`|  
 |02B0 - 02FF|`IsSpacingModifierLetters`|  
 |0300 - 036F|`IsCombiningDiacriticalMarks`|  
-|0370 - 03FF|`IsGreek`<br /><br /> -ou-<br /><br /> `IsGreekandCoptic`|  
+|0370 - 03FF|`IsGreek`<br /><br /> - ou -<br /><br /> `IsGreekandCoptic`|  
 |0400 - 04FF|`IsCyrillic`|  
 |0500 - 052F|`IsCyrillicSupplement`|  
 |0530 - 058F|`IsArmenian`|  
@@ -483,7 +483,7 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 |2000 - 206F|`IsGeneralPunctuation`|  
 |2070 - 209F|`IsSuperscriptsandSubscripts`|  
 |20A0 - 20CF|`IsCurrencySymbols`|  
-|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> -ou-<br /><br /> `IsCombiningMarksforSymbols`|  
+|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> - ou -<br /><br /> `IsCombiningMarksforSymbols`|  
 |2100 - 214F|`IsLetterlikeSymbols`|  
 |2150 - 218F|`IsNumberForms`|  
 |2190 - 21FF|`IsArrows`|  

@@ -7,31 +7,31 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- data formatting [.NET Framework]
-- dates [.NET Framework], formatting
-- date formatting [.NET Framework]
-- number formatting [.NET Framework]
+- data formatting [.NET]
+- dates [.NET], formatting
+- date formatting [.NET]
+- number formatting [.NET]
 - ToString method
-- custom cultural settings [.NET Framework]
-- numbers [.NET Framework], formatting
-- formatting strings [.NET Framework]
-- time [.NET Framework], formatting
-- currency [.NET Framework], formatting
-- types [.NET Framework], formatting
-- format specifiers [.NET Framework]
-- times [.NET Framework], formatting
-- culture [.NET Framework], formatting
-- formatting [.NET Framework], types supported
-- base types [.NET Framework], formatting
-- custom formatting [.NET Framework]
-- strings [.NET Framework], formatting
+- custom cultural settings [.NET]
+- numbers [.NET], formatting
+- formatting strings [.NET]
+- time [.NET], formatting
+- currency [.NET], formatting
+- types [.NET], formatting
+- format specifiers [.NET]
+- times [.NET], formatting
+- culture [.NET], formatting
+- formatting [.NET], types supported
+- base types [.NET], formatting
+- custom formatting [.NET]
+- strings [.NET], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: 5d280b53d15bc674f325a726d69915d763aec34f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f100c1abcb32e907b92c42f8cfa460d2c1927803
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447080"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888493"
 ---
 # <a name="format-types-in-net"></a>Types de format dans .NET
 
@@ -52,7 +52,7 @@ La mise en forme est le processus de conversion d'une instance d'une classe, d'u
 
 ## <a name="formatting-in-net"></a>Mise en forme dans .NET
 
-Le mécanisme de base de la mise en forme est l'implémentation par défaut de la méthode <xref:System.Object.ToString%2A?displayProperty=nameWithType>, décrite dans la section [Mise en forme par défaut à l'aide de la méthode ToString](#default-formatting-using-the-tostring-method), plus loin dans cette rubrique. Toutefois, .NET propose différentes manières de modifier et d’étendre sa prise en charge par défaut de la mise en forme. Ces options en question sont les suivantes :
+Le mécanisme de base de la mise en forme est l'implémentation par défaut de la méthode <xref:System.Object.ToString%2A?displayProperty=nameWithType>, décrite dans la section [Mise en forme par défaut à l'aide de la méthode ToString](#default-formatting-using-the-tostring-method), plus loin dans cette rubrique. Toutefois, .NET propose différentes manières de modifier et d’étendre sa prise en charge par défaut de la mise en forme. Elles sont associées aux limitations suivantes :
 
 - Substitution de la <xref:System.Object.ToString%2A?displayProperty=nameWithType> méthode pour définir une représentation sous forme de chaîne personnalisée de la valeur d’un objet. Pour plus d’informations, consultez la section [substitution de la méthode ToString](#override-the-tostring-method) , plus loin dans cette rubrique.
 
@@ -182,7 +182,7 @@ Vous pouvez également utiliser des chaînes de format standard pour définir la
 
 - Prise en charge d'un spécificateur de format qui est égal à une référence null (`Nothing` en Visual Basic). Un spécificateur de format qui est égal à une référence null doit être considéré comme équivalent au spécificateur de format "G".
 
-Par exemple, une classe `Temperature` peut stocker en interne la température en degrés Celsius et utiliser des spécificateurs de format pour représenter la valeur de l'objet `Temperature` en degrés Celsius, Fahrenheit et Kelvin. L'exemple suivant en est l'illustration.
+Par exemple, une classe `Temperature` peut stocker en interne la température en degrés Celsius et utiliser des spécificateurs de format pour représenter la valeur de l'objet `Temperature` en degrés Celsius, Fahrenheit et Kelvin. L'exemple suivant illustre cette situation.
 
 [!code-csharp[Conceptual.Formatting.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/appstandard1.cs#7)]
 [!code-vb[Conceptual.Formatting.Overview#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/appstandard1.vb#7)]
@@ -212,7 +212,7 @@ Bien que les chaînes de format standard puissent généralement gérer la plupa
 
 Tous les types numériques (c’est-à-dire, les types <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64> et <xref:System.Numerics.BigInteger>), ainsi que les types <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan> et <xref:System.Guid>, et tous les types énumération, prennent en charge la mise en forme avec des chaînes de format. Pour plus d’informations sur les chaînes de format spécifiques prises en charge par chaque type, consultez les rubriques suivantes :
 
-|Titre|Définition|
+|Intitulé|Définition|
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
@@ -350,7 +350,7 @@ L'exemple suivant utilise la classe `ByteByByteFormatter` pour mettre en forme d
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Définition|
+|Intitulé|Définition|
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
@@ -362,7 +362,7 @@ L'exemple suivant utilise la classe `ByteByByteFormatter` pour mettre en forme d
 |[Mise en forme composite](composite-formatting.md)|Explique comment incorporer une ou plusieurs valeurs mises en forme dans une chaîne. La chaîne peut ensuite être affichée dans la console ou écrite dans un flux.|
 |[Analyse de chaînes](parsing-strings.md)|Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.|
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.IFormattable?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>

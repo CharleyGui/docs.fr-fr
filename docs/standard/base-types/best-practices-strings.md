@@ -7,23 +7,23 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- strings [.NET Framework],searching
+- strings [.NET],searching
 - best practices,string comparison and sorting
-- strings [.NET Framework],best practices
-- strings [.NET Framework],basic string operations
+- strings [.NET],best practices
+- strings [.NET],basic string operations
 - sorting strings
-- strings [.NET Framework],sorting
-- string comparison [.NET Framework],best practices
+- strings [.NET],sorting
+- string comparison [.NET],best practices
 - string sorting
 - comparing strings
-- strings [.NET Framework],comparing
+- strings [.NET],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: 28c1397c71debeed181acb2c1acb01b0f8cee7c9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ed85d04ffbee0493745c4a5ef63313571b44628b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289363"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889099"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 
@@ -203,8 +203,8 @@ Le tableau suivant présente le mappage du contexte de chaîne sémantique à un
 |----------|--------------|-----------------------------------------------------|
 |Identificateurs internes respectant la casse.<br /><br /> Identificateurs respectant la casse dans des normes telles que XML et HTTP.<br /><br /> Paramètres liés à la sécurité respectant la casse.|Identificateur non linguistique, où les octets correspondent exactement.|<xref:System.StringComparison.Ordinal>|
 |Identificateurs internes ne respectant pas la casse.<br /><br /> Identificateurs ne respectant pas la casse dans des normes telles que XML et HTTP.<br /><br /> Chemins d'accès aux fichiers.<br /><br /> Clés et valeurs de Registre.<br /><br /> Variables d'environnement.<br /><br /> Identificateurs de ressource (par exemple, noms de handles).<br /><br /> Paramètres liés à la sécurité ne respectant pas la casse.|Identificateur non linguistique, où la casse n'est pas pertinente ; en particulier, les données stockées dans la plupart des services système Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
-|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
-|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
+|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
+|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
 
 ## <a name="common-string-comparison-methods-in-net"></a>Méthodes courantes de comparaison de chaînes dans .NET
 

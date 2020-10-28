@@ -8,17 +8,17 @@ dev_langs:
 - cpp
 helpviewer_keywords:
 - Char data type, parsing strings
-- enumerations [.NET Framework], parsing strings
+- enumerations [.NET], parsing strings
 - base types, parsing strings
 - parsing strings, other strings
 - Boolean data type, parsing strings
 ms.assetid: d139bc00-3c4e-4d78-ac9a-5c951b258d28
-ms.openlocfilehash: a3503e0e499c6010fcc3d8669fa5c1eaf2dbf570
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5a8afde40dddd69a9648439be5c0f232db23b37b
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277542"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889008"
 ---
 # <a name="parsing-other-strings-in-net"></a>Analyse d’autres chaînes dans .NET
 Outre des chaînes numériques et <xref:System.DateTime>, vous pouvez analyser des chaînes qui représentent les types <xref:System.Char>, <xref:System.Boolean> et <xref:System.Enum> dans des types de données.  

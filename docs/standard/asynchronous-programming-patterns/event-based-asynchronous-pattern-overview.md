@@ -10,19 +10,19 @@ helpviewer_keywords:
 - Event-based Asynchronous Pattern
 - ProgressChangedEventArgs class
 - BackgroundWorker component
-- events [.NET Framework], asynchronous
+- events [.NET], asynchronous
 - Asynchronous Pattern
 - AsyncOperationManager class
-- threading [.NET Framework], asynchronous features
+- threading [.NET], asynchronous features
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f0d3e2e8f1d1f58c9df8026b38fc0264812b092a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5ab3229f71e264bbcd26d3d4c7bb52430b02865a
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555677"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888826"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  
@@ -37,7 +37,7 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
   
 - de communiquer avec les opérations asynchrones en attente à l'aide du modèle d'événements et de délégués connu. Pour plus d'informations sur l'utilisation des gestionnaires d'événements et des délégués, consultez la page [Événements](../events/index.md).  
   
- Une classe prenant en charge le modèle asynchrone basé sur les événements possède une ou plusieurs méthodes nommées _MethodName_**Async**. Ces méthodes peuvent refléter des versions synchrones qui exécutent la même opération sur le thread actuel. La classe peut également posséder un événement _MethodName_**Completed** et une méthode _MethodName_**AsyncCancel** (ou simplement **CancelAsync**).  
+ Une classe prenant en charge le modèle asynchrone basé sur les événements possède une ou plusieurs méthodes nommées _MethodName_**Async** . Ces méthodes peuvent refléter des versions synchrones qui exécutent la même opération sur le thread actuel. La classe peut également posséder un événement _MethodName_**Completed** et une méthode _MethodName_**AsyncCancel** (ou simplement **CancelAsync** ).  
   
  <xref:System.Windows.Forms.PictureBox> est un composant courant qui prend en charge le modèle asynchrone basé sur les événements. Vous pouvez télécharger une image de façon synchrone en appelant sa méthode <xref:System.Windows.Forms.PictureBox.Load%2A>, mais si l’image est grande ou que la connexion réseau est lente, votre application cesse de répondre jusqu’à ce que l’opération de téléchargement soit terminée et que l’appel à <xref:System.Windows.Forms.PictureBox.Load%2A> soit retourné.  
   
@@ -46,10 +46,10 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
  Le modèle asynchrone basé sur les événements nécessite qu'une opération asynchrone puisse être annulée ; le contrôle <xref:System.Windows.Forms.PictureBox> prend en charge cette exigence avec sa méthode <xref:System.Windows.Forms.PictureBox.CancelAsync%2A>. L’appel de <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> soumet une demande d’arrêt du téléchargement en attente et, quand la tâche est annulée, l’événement <xref:System.Windows.Forms.PictureBox.LoadCompleted> est déclenché.  
   
 > [!CAUTION]
-> Comme il est possible que le téléchargement se termine au moment où la demande <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> est effectuée, <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> peut ne pas refléter la demande d'annulation. C’est ce que l’on appelle une *condition de concurrence*, un problème courant en programmation multithread. Pour plus d'informations sur les problèmes relatifs à la programmation multithread, consultez la page [Meilleures pratiques de threads managés](../threading/managed-threading-best-practices.md).  
+> Comme il est possible que le téléchargement se termine au moment où la demande <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> est effectuée, <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> peut ne pas refléter la demande d'annulation. C’est ce que l’on appelle une *condition de concurrence* , un problème courant en programmation multithread. Pour plus d'informations sur les problèmes relatifs à la programmation multithread, consultez la page [Meilleures pratiques de threads managés](../threading/managed-threading-best-practices.md).  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Caractéristiques du modèle asynchrone basé sur les événements  
- Le modèle asynchrone basé sur les événements peut prendre plusieurs formes selon la complexité des opérations prises en charge par une classe particulière. Les classes les plus simples peuvent avoir une seule méthode _MethodName_**Async** et un événement _MethodName_**Completed** correspondant. Les classes plus complexes peuvent posséder plusieurs méthodes _MethodName_**Async**, chacune assortie de l’événement _MethodName_**Completed** correspondant, ainsi que les versions synchrones de ces méthodes. Les classes peuvent éventuellement prendre en charge l'annulation, le rapport de progression et les résultats incrémentiels pour chaque méthode asynchrone.  
+ Le modèle asynchrone basé sur les événements peut prendre plusieurs formes selon la complexité des opérations prises en charge par une classe particulière. Les classes les plus simples peuvent avoir une seule méthode _MethodName_**Async** et un événement _MethodName_**Completed** correspondant. Les classes plus complexes peuvent posséder plusieurs méthodes _MethodName_**Async** , chacune assortie de l’événement _MethodName_**Completed** correspondant, ainsi que les versions synchrones de ces méthodes. Les classes peuvent éventuellement prendre en charge l'annulation, le rapport de progression et les résultats incrémentiels pour chaque méthode asynchrone.  
   
  Une méthode asynchrone peut également prendre en charge plusieurs appels en attente (plusieurs appels simultanés), ce qui permet à votre code de l'appeler autant de fois que nécessaire avant de terminer d'autres opérations en attente. La gestion correcte de cette situation peut nécessiter que votre application effectue le suivi de l'achèvement de chaque opération.  
   
@@ -126,7 +126,7 @@ public class AsyncExample
  Les méthodes qui prennent en charge une seule opération en attente à la fois, comme `Method1Async(string param)`, ne sont pas annulables.  
   
 ### <a name="receiving-progress-updates-and-incremental-results"></a>Réception des mises à jour de progression et des résultats incrémentiels  
- Une classe obéissant au modèle asynchrone basé sur les événements peut éventuellement fournir un événement pour assurer le suivi de la progression et des résultats incrémentiels. Celui-ci est généralement appelé `ProgressChanged` ou _MethodName_**ProgressChanged**, et son gestionnaire d’événements correspondant prend un paramètre <xref:System.ComponentModel.ProgressChangedEventArgs>.  
+ Une classe obéissant au modèle asynchrone basé sur les événements peut éventuellement fournir un événement pour assurer le suivi de la progression et des résultats incrémentiels. Celui-ci est généralement appelé `ProgressChanged` ou _MethodName_**ProgressChanged** , et son gestionnaire d’événements correspondant prend un paramètre <xref:System.ComponentModel.ProgressChangedEventArgs>.  
   
  Le gestionnaire d’événements de l’événement `ProgressChanged` peut examiner la propriété <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A?displayProperty=nameWithType> afin de déterminer le pourcentage d’exécution d’une tâche asynchrone. Cette propriété est comprise entre 0 et 100 et peut être utilisée pour mettre à jour la propriété <xref:System.Windows.Forms.ProgressBar.Value%2A> d'une <xref:System.Windows.Forms.ProgressBar>. Si plusieurs opérations asynchrones sont en attente, vous pouvez utiliser la propriété <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A?displayProperty=nameWithType> pour distinguer l'opération qui signale la progression.  
   

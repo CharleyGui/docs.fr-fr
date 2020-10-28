@@ -10,19 +10,19 @@ dev_langs:
 helpviewer_keywords:
 - multiple attribute instances
 - AttributeTargets enumeration
-- attributes [.NET Framework], custom
+- attributes [.NET], custom
 - AllowMultiple property
 - custom attributes
 - AttributeUsageAttribute class, custom attributes
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: f047e18531b46f0c89be9a6feaa9aa50341205e3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 670f34083834b35d26e6018372948022eec17d47
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550923"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889190"
 ---
 # <a name="writing-custom-attributes"></a>Écriture des attributs personnalisés
 Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de maîtriser les nombreux nouveaux concepts. Si vous êtes familiarisé avec la programmation orientée objet et savez concevoir des classes, vous possédez déjà la plupart des connaissances nécessaires. Les attributs personnalisés sont essentiellement des classes traditionnelles qui dérivent directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>. Tout comme les classes traditionnelles, les attributs personnalisés contiennent des méthodes qui stockent et récupèrent les données.  
@@ -104,7 +104,7 @@ Pour concevoir vos propres attributs personnalisés, vous n’avez pas besoin de
   
 - Les classes d’attributs doivent être déclarées comme des classes publiques.  
   
-- Par convention, le nom de la classe d’attributs se termine par le mot **Attribute**. Même si elle n’est pas obligatoire, cette convention est recommandée pour une meilleure lisibilité. Quand l’attribut est appliqué, l’inclusion du mot Attribute est facultative.  
+- Par convention, le nom de la classe d’attributs se termine par le mot **Attribute** . Même si elle n’est pas obligatoire, cette convention est recommandée pour une meilleure lisibilité. Quand l’attribut est appliqué, l’inclusion du mot Attribute est facultative.  
   
 - Toutes les classes d’attributs doivent hériter directement ou indirectement de <xref:System.Attribute?displayProperty=nameWithType>.  
   

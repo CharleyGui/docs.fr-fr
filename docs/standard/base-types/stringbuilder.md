@@ -9,20 +9,20 @@ dev_langs:
 - cpp
 helpviewer_keywords:
 - Remove method
-- strings [.NET Framework], capacities
+- strings [.NET], capacities
 - StringBuilder object
 - Replace method
 - AppendFormat method
 - Append method
 - Insert method
-- strings [.NET Framework], StringBuilder object
+- strings [.NET], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: 83d4b9327b55c511e2a46486e519e3cd0c77b1a3
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 1005da650c624b2b8f6616c163082ff95d7dc007
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803222"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888956"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Utilisation de la classe StringBuilder dans .NET
 L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’une des méthodes de la classe <xref:System.String?displayProperty=nameWithType>, vous créez un nouvel objet string en mémoire, ce qui nécessite une nouvelle allocation d’espace pour ce nouvel objet. Si vous devez effectuer des modifications répétées sur une chaîne, la surcharge associée à la création d’un objet <xref:System.String> peut être coûteuse. Vous pouvez utiliser la classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> quand vous voulez modifier une chaîne sans créer d’objet. Par exemple, la classe <xref:System.Text.StringBuilder> permet d’améliorer les performances quand il s’agit de concaténer un grand nombre de chaînes dans une boucle.  
@@ -54,23 +54,23 @@ L’objet <xref:System.String> est immuable. Chaque fois que vous utilisez l’u
  [!code-csharp[Conceptual.StringBuilder#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#3)]
  [!code-vb[Conceptual.StringBuilder#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#3)]  
   
- La méthode <xref:System.Text.StringBuilder.EnsureCapacity%2A> peut être utilisée pour vérifier la capacité de l’instance actuelle de **StringBuilder**. Si la capacité est supérieure à la valeur passée, aucune modification n’est apportée ; en revanche, si la capacité est inférieure à la valeur passée, la capacité actuelle est modifiée pour correspondre à la valeur passée.  
+ La méthode <xref:System.Text.StringBuilder.EnsureCapacity%2A> peut être utilisée pour vérifier la capacité de l’instance actuelle de **StringBuilder** . Si la capacité est supérieure à la valeur passée, aucune modification n’est apportée ; en revanche, si la capacité est inférieure à la valeur passée, la capacité actuelle est modifiée pour correspondre à la valeur passée.  
   
- Vous pouvez aussi afficher ou définir la propriété <xref:System.Text.StringBuilder.Length%2A>. Si vous attribuez à la propriété **Length** une valeur supérieure à celle de la propriété **Capacity**, la propriété **Capacity** prend automatiquement la valeur de la propriété **Length**. Si vous attribuez à la propriété **Length** une valeur inférieure à la longueur de la chaîne dans l’instance actuelle de **StringBuilder**, la chaîne se raccourcit.  
+ Vous pouvez aussi afficher ou définir la propriété <xref:System.Text.StringBuilder.Length%2A>. Si vous attribuez à la propriété **Length** une valeur supérieure à celle de la propriété **Capacity** , la propriété **Capacity** prend automatiquement la valeur de la propriété **Length** . Si vous attribuez à la propriété **Length** une valeur inférieure à la longueur de la chaîne dans l’instance actuelle de **StringBuilder** , la chaîne se raccourcit.  
   
 ## <a name="modifying-the-stringbuilder-string"></a>Modification de la chaîne StringBuilder  
- Le tableau suivant répertorie les méthodes que vous pouvez utiliser pour modifier le contenu d’une instance de **StringBuilder**.  
+ Le tableau suivant répertorie les méthodes que vous pouvez utiliser pour modifier le contenu d’une instance de **StringBuilder** .  
   
 |Nom de la méthode|Utilisation|  
 |-----------------|---------|  
-|<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType>|Ajoute des informations à la fin de l’instance actuelle de **StringBuilder**.|  
+|<xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType>|Ajoute des informations à la fin de l’instance actuelle de **StringBuilder** .|  
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|Remplace un spécificateur de format passé dans une chaîne avec du texte mis en forme.|  
-|<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|Insère une chaîne ou un objet dans l’index spécifié de l’instance actuelle de **StringBuilder**.|  
-|<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Supprime un nombre de caractères spécifié de l’instance actuelle de **StringBuilder**.|  
+|<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|Insère une chaîne ou un objet dans l’index spécifié de l’instance actuelle de **StringBuilder** .|  
+|<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Supprime un nombre de caractères spécifié de l’instance actuelle de **StringBuilder** .|  
 |<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|Remplace toutes les occurrences d’un caractère ou d’une chaîne spécifiée dans l’objet **StringBuilder** actuel par une autre chaîne ou un autre caractère spécifié.|  
   
 ### <a name="append"></a>Ajouter  
- La méthode **Append** permet d’ajouter du texte ou une représentation sous forme de chaîne d’un objet à la fin d’une chaîne représentée par l’instance actuelle de **StringBuilder**. L’exemple suivant initialise une instance de **StringBuilder** à « Hello World » avant d’ajouter du texte à la fin de l’objet. L’espace est alloué automatiquement en fonction des besoins.  
+ La méthode **Append** permet d’ajouter du texte ou une représentation sous forme de chaîne d’un objet à la fin d’une chaîne représentée par l’instance actuelle de **StringBuilder** . L’exemple suivant initialise une instance de **StringBuilder** à « Hello World » avant d’ajouter du texte à la fin de l’objet. L’espace est alloué automatiquement en fonction des besoins.  
   
  [!code-cpp[Conceptual.StringBuilder#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#4)]
  [!code-csharp[Conceptual.StringBuilder#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#4)]

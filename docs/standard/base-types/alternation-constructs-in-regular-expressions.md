@@ -13,14 +13,14 @@ helpviewer_keywords:
 - alternation constructs
 - optional matching patterns
 - constructs, alternation
-- .NET Framework regular expressions, alternation constructs
+- .NET regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 506c1cdeb577452628d67ab00df20dd30881f406
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 30af871502e0db48853705206db5e2b3da28bb76
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495432"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889177"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Constructions d'alternative dans les expressions régulières
 
@@ -49,7 +49,7 @@ L’expression régulière qui utilise le `|` caractère, `\bgr(a|e)y\b` , est i
 |<code>(a&#124;e)</code>|Mettre en correspondance un « a » ou un « e ».|  
 |`y\b`|Mettre en correspondance un « y » à la limite d'un mot.|  
 
-Le caractère `|` peut également être utilisé pour effectuer une correspondance de type inclusif/exclusif avec plusieurs caractères ou sous-expressions, qui peuvent inclure toute combinaison de caractère littéraux et éléments de langage d’expressions régulières. (La classe de caractères ne fournit pas cette fonctionnalité.) L’exemple suivant utilise le `|` caractère pour extraire un numéro de sécurité sociale (SSN) américain, qui est un nombre de 9 chiffres au format *DDD* - *JJ* - *dddd*, ou un numéro d’identification d’employeur (Ein) américain, qui est un nombre de 9 chiffres au format *JJ* - *ddddddd*.
+Le caractère `|` peut également être utilisé pour effectuer une correspondance de type inclusif/exclusif avec plusieurs caractères ou sous-expressions, qui peuvent inclure toute combinaison de caractère littéraux et éléments de langage d’expressions régulières. (La classe de caractères ne fournit pas cette fonctionnalité.) L’exemple suivant utilise le `|` caractère pour extraire un numéro de sécurité sociale (SSN) américain, qui est un nombre de 9 chiffres au format *DDD* - *JJ* - *dddd* , ou un numéro d’identification d’employeur (Ein) américain, qui est un nombre de 9 chiffres au format *JJ* - *ddddddd* .
 
 [!code-csharp[RegularExpressions.Language.Alternation#2](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
 [!code-vb[RegularExpressions.Language.Alternation#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
@@ -69,11 +69,11 @@ Cet élément de langage tente de mettre en correspondance un modèle parmi deux
 
 `(?(`*expression* `)` *Oui* `|` *non*`)`
 
-où *expression* est le modèle initial à faire correspondre, *Oui* est le modèle à faire correspondre si l' *expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si l' *expression* n’est pas mise en correspondance. Le moteur d’expression régulière traite l’*expression* comme une assertion de largeur nulle ; c’est-à-dire que le moteur d’expression régulière n’avance pas dans le flux d’entrée après avoir évalué l’*expression*. Par conséquent, cette construction est équivalente à la suivante :
+où *expression* est le modèle initial à faire correspondre, *Oui* est le modèle à faire correspondre si l' *expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si l' *expression* n’est pas mise en correspondance. Le moteur d’expression régulière traite l’ *expression* comme une assertion de largeur nulle ; c’est-à-dire que le moteur d’expression régulière n’avance pas dans le flux d’entrée après avoir évalué l’ *expression* . Par conséquent, cette construction est équivalente à la suivante :
 
 `(?(?=`*expression* `)` *Oui* `|` *non*`)`
 
-où `(?=` *expression* `)` est une construction d’assertion de largeur nulle. (Pour plus d’informations, consultez [constructions de regroupement](grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète l' *expression* comme une ancre (assertion de largeur nulle), l' *expression* doit être une assertion de largeur nulle (pour plus d’informations, consultez [ancres](anchors-in-regular-expressions.md)) ou une sous-expression qui est également contenue dans *Oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui* .  
+où `(?=` *expression* `)` est une construction d’assertion de largeur nulle. (Pour plus d’informations, consultez [constructions de regroupement](grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète l' *expression* comme une ancre (assertion de largeur nulle), l' *expression* doit être une assertion de largeur nulle (pour plus d’informations, consultez [ancres](anchors-in-regular-expressions.md)) ou une sous-expression qui est également contenue dans *Oui* . Sinon, aucune correspondance ne peut être établie avec le modèle *oui* .  
   
 > [!NOTE]
 > Si *expression* est un groupe de capture nommé ou numéroté, la construction alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle basée sur un groupe de capture valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
@@ -100,7 +100,7 @@ Cet élément de langage essaie de faire correspondre l'un de deux modèles selo
 
 `(?(` *name* `)` *oui* `|` *non* `)`
 
-ou
+or
 
 `(?(` *nombre* `)` *oui* `|` *non* `)`
 

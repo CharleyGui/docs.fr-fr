@@ -6,24 +6,25 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- numeric format strings [.NET Framework]
-- formatting [.NET Framework], numbers
-- number formatting [.NET Framework]
+- numeric format strings [.NET]
+- formatting [.NET], numbers
+- number formatting [.NET]
 - custom numeric format strings
-- numbers [.NET Framework], custom numeric format strings
+- numbers [.NET], custom numeric format strings
 - displaying date and time data
-- format providers [.NET Framework]
+- format providers [.NET]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-ms.openlocfilehash: d12899fff7d9e6cb63728ba0b160b70fa2a41a1a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 38c1890684bd89b2bc4719637209569f01bd17a2
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290511"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888480"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés
-Le .NET Framework vous donne un contrôle étendu sur la représentation sous forme de chaîne de valeurs numériques. Il prend en charge les fonctionnalités suivantes pour personnaliser le format des valeurs numériques :  
+
+.NET vous donne un contrôle étendu sur la représentation sous forme de chaîne de valeurs numériques. Il prend en charge les fonctionnalités suivantes pour personnaliser le format des valeurs numériques :  
   
 - Chaînes de format numériques standard, qui fournissent un ensemble prédéfini de formats pour convertir des nombres dans leur représentation sous forme de chaîne. Vous pouvez les utiliser avec toute méthode de mise en forme numérique, telle que <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, qui est dotée d’un paramètre `format`. Pour plus d’informations, consultez [Chaînes de format numériques standard](standard-numeric-format-strings.md).  
   
@@ -31,9 +32,9 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
 - Personnalisez les objets <xref:System.Globalization.CultureInfo> ou <xref:System.Globalization.NumberFormatInfo>, qui définissent les symboles et les modèles de format utilisés pour afficher les représentations sous forme de chaîne des valeurs numériques. Vous pouvez les utiliser avec toute méthode de mise en forme numérique, telle que <xref:System.Int32.ToString%2A>, qui est dotée d’un paramètre `provider`. En règle générale, le paramètre `provider` est utilisé pour spécifier une mise en forme propre à la culture.  
   
- Dans certains cas (par exemple, quand une application doit afficher un numéro de compte mis en forme, un numéro d’identification ou un code postal), ces trois techniques sont inappropriées. Le .NET Framework vous permet également de définir un objet de mise en forme qui n’est ni un objet <xref:System.Globalization.CultureInfo> ni un objet <xref:System.Globalization.NumberFormatInfo> pour déterminer la mise en forme d’une valeur numérique. Cette rubrique fournit des instructions détaillées pour l’implémentation de ce type d’objet et fournit un exemple qui met en forme les numéros de téléphone.  
+ Dans certains cas (par exemple, quand une application doit afficher un numéro de compte mis en forme, un numéro d’identification ou un code postal), ces trois techniques sont inappropriées. .NET vous permet également de définir un objet de mise en forme qui n’est ni un <xref:System.Globalization.CultureInfo> objet ni un <xref:System.Globalization.NumberFormatInfo> objet pour déterminer la mise en forme d’une valeur numérique. Cette rubrique fournit des instructions détaillées pour l’implémentation de ce type d’objet et fournit un exemple qui met en forme les numéros de téléphone.  
   
-### <a name="to-define-a-custom-format-provider"></a>Pour définir un fournisseur de format personnalisé  
+## <a name="define-a-custom-format-provider"></a>Définir un fournisseur de format personnalisé  
   
 1. Définir une classe qui implémente les inferfaces <xref:System.IFormatProvider> et <xref:System.ICustomFormatter>.  
   
@@ -55,13 +56,14 @@ Le .NET Framework vous donne un contrôle étendu sur la représentation sous fo
   
     4. Retournez la représentation sous forme de chaîne du paramètre `arg`.  
   
-### <a name="to-use-a-custom-numeric-formatting-object"></a>Pour utiliser un objet de mise en forme numérique personnalisé  
+## <a name="use-a-custom-numeric-formatting-object"></a>Utiliser un objet de mise en forme numérique personnalisé  
   
 1. Créez une instance de la classe de mise en forme personnalisée.  
   
 2. Appelez la méthode de mise en forme <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> en lui passant l’objet de mise en forme personnalisée, le spécificateur de mise en forme (ou <xref:System.String.Empty?displayProperty=nameWithType>, si aucun n’est utilisé) et la valeur numérique à mettre en forme.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemple
+
  L’exemple suivant définit un fournisseur de format numérique personnalisé nommé `TelephoneFormatter` qui convertit un nombre représentant un numéro de téléphone aux États-Unis au format NANP ou E.123 correspondant. La méthode gère deux spécificateurs de format, « N » (qui génère le format NANP) et « I » (qui génère le format E.123 international).  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]

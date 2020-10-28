@@ -10,25 +10,26 @@ helpviewer_keywords:
 - regular expressions, substitutions
 - replacement patterns
 - metacharacters, substitutions
-- .NET Framework regular expressions, substitutions
+- .NET regular expressions, substitutions
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: ab2ed6ff87f2d50d0f518ac64188bf8b5c98351c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 935fbf573c00aeaec639884888d7e3e6a83c7056
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768103"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888930"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
+
 Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d'une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
   
- Le .NET Framework définit les éléments de substitution répertoriés dans le tableau suivant.  
+ .NET définit les éléments de substitution répertoriés dans le tableau suivant.  
   
 |Substitution|Description|  
 |------------------|-----------------|  
-|$ *certain*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
+|$ *certain*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre* , où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
 |${ *nom* }|Comprend la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<` *nom* `> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).|  
 |$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#substituting-a--character).|  
 |$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#substituting-the-entire-match).|  
@@ -141,11 +142,11 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
 |Correspond|Position|Chaîne avant la correspondance|Chaîne de résultat|  
 |-----------|--------------|-------------------------|-------------------|  
-|1|2|aa|aa**aa**bb2cc3dd4ee5|  
-|2|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
-|3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
-|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
-|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|
+|1|2|aa|aa **aa** bb2cc3dd4ee5|  
+|2|5|aa1bb|aaaabb **aa1bb** cc3dd4ee5|  
+|3|8|aa1bb2cc|aaaabbaa1bbcc **aa1bb2cc** dd4ee5|  
+|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd **aa1bb2cc3dd** ee5|  
+|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee **aa1bb2cc3dd4ee**|
 
 ## <a name="substituting-the-text-after-the-match"></a>Substitution du texte après la correspondance  
  La substitution `$'` remplace la chaîne correspondante par la chaîne d'entrée entière après la correspondance. Autrement dit, elle duplique la chaîne d'entrée après la correspondance en supprimant le texte correspondant. N'importe quel texte qui précède le texte correspondant est inchangé dans la chaîne de résultat. S'il n'y a pas de correspondance, la substitution  `$'` n'a aucun effet.  
@@ -159,10 +160,10 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
 |Correspond|Position|Chaîne après la correspondance|Chaîne de résultat|  
 |-----------|--------------|------------------------|-------------------|  
-|1|2|bb2cc3dd4ee5|aa**bb2cc3dd4ee5**bb2cc3dd4ee5|  
-|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5|  
-|3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5|  
-|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5|  
+|1|2|bb2cc3dd4ee5|aa **bb2cc3dd4ee5** bb2cc3dd4ee5|  
+|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb **cc3dd4ee5** cc3dd4ee5|  
+|3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc **dd4ee5** dd4ee5|  
+|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd **ee5** ee5|  
 |5|14|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
 
 ## <a name="substituting-the-last-captured-group"></a>Substitution du dernier groupe capturé  
@@ -195,8 +196,8 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
 |Correspond|Position|Correspond|Chaîne de résultat|  
 |-----------|--------------|-----------|-------------------|  
-|1|3|123|ABC**ABC123DEF456**DEF456|  
-|2|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  
+|1|3|123|ABC **ABC123DEF456** DEF456|  
+|2|5|456|ABCABC123DEF456DEF **ABC123DEF456**|  
   
 ## <a name="see-also"></a>Voir aussi
 

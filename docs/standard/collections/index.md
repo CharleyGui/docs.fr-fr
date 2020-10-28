@@ -5,26 +5,26 @@ ms.date: 04/30/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - grouping data in collections
-- objects [.NET Framework], grouping in collections
+- objects [.NET], grouping in collections
 - Array class, grouping data in collections
-- threading [.NET Framework], safety
+- threading [.NET], safety
 - Collections classes
-- collections [.NET Framework]
+- collections [.NET]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 3d5b16dccdd9867293a52c74a2d379c807fd93e7
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 4ed4197ecdffad9579424957bf3f1f7ac6a782d7
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662743"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889346"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 
 Des données similaires peuvent souvent être gérées plus efficacement quand elles sont stockées et manipulées en tant que collection. Vous pouvez utiliser la <xref:System.Array?displayProperty=nameWithType> classe ou les classes des <xref:System.Collections> espaces de <xref:System.Collections.Generic> noms,, <xref:System.Collections.Concurrent> et <xref:System.Collections.Immutable> pour ajouter, supprimer et modifier des éléments individuels ou une plage d’éléments dans une collection.
 
-Il existe deux principaux types de collections : les collections génériques et non génériques. Les collections génériques ont été ajoutées au .NET Framework 2.0 et fournissent des collections de type sécurisé au moment de la compilation. Pour cette raison, les collections génériques offrent généralement de meilleures performances. Les collections génériques acceptent un paramètre de type lorsqu'elles sont construites, et ne nécessitent pas de transtypage du type <xref:System.Object> quand vous ajoutez ou supprimez des éléments de la collection.  En outre, la plupart des collections génériques sont prises en charge dans les applications du Windows Store. Les collections non génériques stockent des éléments en tant que <xref:System.Object> , nécessitent un cast et la plupart ne sont pas prises en charge pour le développement d’applications du Windows Store. Cependant, vous pouvez rencontrer ces collections non génériques dans du code plus ancien.
+Il existe deux principaux types de collections : les collections génériques et non génériques. Les collections génériques sont de type sécurisé au moment de la compilation. Pour cette raison, les collections génériques offrent généralement de meilleures performances. Les collections génériques acceptent un paramètre de type lorsqu'elles sont construites, et ne nécessitent pas de transtypage du type <xref:System.Object> quand vous ajoutez ou supprimez des éléments de la collection.  En outre, la plupart des collections génériques sont prises en charge dans les applications du Windows Store. Les collections non génériques stockent des éléments en tant que <xref:System.Object> , nécessitent un cast et la plupart ne sont pas prises en charge pour le développement d’applications du Windows Store. Cependant, vous pouvez rencontrer ces collections non génériques dans du code plus ancien.
 
-À compter de .NET Framework 4, les collections de l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection de plusieurs threads. Les classes de collection immuables de l' <xref:System.Collections.Immutable> espace de noms ([package NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) sont thread-safe, car les opérations sont effectuées sur une copie de la collection d’origine et la collection d’origine ne peut pas être modifiée.
+À partir de .NET Framework 4, les collections de l' <xref:System.Collections.Concurrent> espace de noms fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads. Les classes de collection immuables de l' <xref:System.Collections.Immutable> espace de noms ([package NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) sont thread-safe, car les opérations sont effectuées sur une copie de la collection d’origine et la collection d’origine ne peut pas être modifiée.
 
 <a name="BKMK_Commoncollectionfeatures"></a>
 ## <a name="common-collection-features"></a>Fonctionnalités communes à toutes les collections
@@ -33,11 +33,11 @@ Toutes les collections fournissent des méthodes pour l’ajout, la suppression 
 
 - **Possibilité d’énumérer la collection**
 
-    Les collections du .NET Framework implémentent soit <xref:System.Collections.IEnumerable?displayProperty=nameWithType>, soit <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> pour permettre à la collection d'être parcourue. Un énumérateur peut être vu comme un pointeur mobile pointant vers n'importe quel élément d'une collection. L’instruction [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) et [For Each...Next Instruction](../../visual-basic/language-reference/statements/for-each-next-statement.md) utilisent l’énumérateur exposé par la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> et masquent la complexité de la manipulation de l’énumérateur. En outre, toute collection qui implémente <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> est considérée comme étant un *type requêtable* et peut être interrogée avec LINQ. Les requêtes LINQ fournissent un modèle commun d'accès aux données. Elles sont généralement plus concises et lisibles que les boucles `foreach` standard, et fournissent des fonctionnalités de filtrage, de tri et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md), [Introduction aux requêtes LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [Opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
+    Les collections .NET implémentent <xref:System.Collections.IEnumerable?displayProperty=nameWithType> ou <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> pour permettre l’itération de la collection. Un énumérateur peut être vu comme un pointeur mobile pointant vers n'importe quel élément d'une collection. L’instruction [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) et [For Each...Next Instruction](../../visual-basic/language-reference/statements/for-each-next-statement.md) utilisent l’énumérateur exposé par la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> et masquent la complexité de la manipulation de l’énumérateur. En outre, toute collection qui implémente <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> est considérée comme étant un *type requêtable* et peut être interrogée avec LINQ. Les requêtes LINQ fournissent un modèle commun d'accès aux données. Elles sont généralement plus concises et lisibles que les boucles `foreach` standard, et fournissent des fonctionnalités de filtrage, de tri et de regroupement. Les requêtes LINQ peuvent également améliorer les performances. Pour plus d’informations, consultez [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md), [Introduction aux requêtes LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md) et [Opérations de requête de base (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
 
 - **Possibilité de copier le contenu d’une collection dans un tableau**
 
-    Toutes les collections peuvent être copiées dans un tableau à l'aide de la méthode **CopyTo**. Toutefois, l'ordre des éléments du nouveau tableau sera basé sur l'ordre où ils sont retournés par l'énumérateur. Le tableau résultant est toujours unidimensionnel avec une limite inférieure de zéro.
+    Toutes les collections peuvent être copiées dans un tableau à l'aide de la méthode **CopyTo** . Toutefois, l'ordre des éléments du nouveau tableau sera basé sur l'ordre où ils sont retournés par l'énumérateur. Le tableau résultant est toujours unidimensionnel avec une limite inférieure de zéro.
 
 De plus, de nombreuses classes de collection comprennent les fonctionnalités suivantes :
 
@@ -51,7 +51,7 @@ De plus, de nombreuses classes de collection comprennent les fonctionnalités su
 
 - **Limite inférieure cohérente**
 
-    La limite inférieure d'une collection est l'index de son premier élément. Toutes les collections indexées dans l'espace de noms <xref:System.Collections> ont une limite inférieure de zéro, ce qui signifie qu'elles sont indexées à 0. <xref:System.Array>a une limite inférieure de zéro par défaut, mais une limite inférieure différente peut être définie lors de la création d’une instance de la classe **Array** à l’aide de <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> .
+    La limite inférieure d'une collection est l'index de son premier élément. Toutes les collections indexées dans l'espace de noms <xref:System.Collections> ont une limite inférieure de zéro, ce qui signifie qu'elles sont indexées à 0. <xref:System.Array> a une limite inférieure de zéro par défaut, mais une limite inférieure différente peut être définie lors de la création d’une instance de la classe **Array** à l’aide de <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> .
 
 - **Synchronisation pour l’accès à partir de plusieurs threads** ( <xref:System.Collections> classes uniquement).
 
@@ -87,7 +87,7 @@ Lors du choix d’une [classe de collection](selecting-a-collection-class.md), i
 | `HashSet<T>.Add`, recherche  | O (1)       | O ( `n` )                    | `ImmutableHashSet<T>.Add`          | O (journal `n` ) |
 | `SortedSet<T>.Add`        | O (journal `n` ) | O ( `n` )                    | `ImmutableSortedSet<T>.Add`        | O (journal `n` ) |
 | `Dictionary<T>.Add`       | O (1)       | O ( `n` )                    | `ImmutableDictionary<T>.Add`       | O (journal `n` ) |
-| `Dictionary<T>`directes    | O (1)       | O (1) – ou strictement O ( `n` ) | `ImmutableDictionary<T>`directes    | O (journal `n` ) |
+| `Dictionary<T>` directes    | O (1)       | O (1) – ou strictement O ( `n` ) | `ImmutableDictionary<T>` directes    | O (journal `n` ) |
 | `SortedDictionary<T>.Add` | O (journal `n` ) | O ( `n` journal `n` )            | `ImmutableSortedDictionary<T>.Add` | O (journal `n` ) |
 
 Un `List<T>` peut être énuméré efficacement à l’aide d’une boucle `for` ou d’une `foreach` boucle. `ImmutableList<T>`Toutefois, un travail mal fait à l’intérieur d' `for` une boucle, en raison de l’heure O (log `n` ) de son indexeur. L’énumération d’une `ImmutableList<T>` boucle à l’aide d’une `foreach` boucle est efficace, car `ImmutableList<T>` utilise une arborescence binaire pour stocker ses données au lieu d’un tableau simple comme les `List<T>` utilisations. Un tableau peut être indexé très rapidement dans, tandis qu’une arborescence binaire doit être parcourue jusqu’à ce que le nœud avec l’index souhaité soit trouvé.

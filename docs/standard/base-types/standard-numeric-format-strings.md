@@ -8,33 +8,33 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- numeric format strings [.NET Framework]
-- formatting [.NET Framework], numbers
+- numeric format strings [.NET]
+- formatting [.NET], numbers
 - standard format strings, numeric
 - format strings
-- numbers [.NET Framework], formatting
+- numbers [.NET], formatting
 - format specifiers, numeric
 - standard numeric format strings
-- formatting numbers [.NET Framework]
+- formatting numbers [.NET]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 857e8803d27ae634dec6e19c6d183943e1c4cc41
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e5e1aa16d8df3d0cfce6dac00c91ca8e99e16e3d
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557370"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888969"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
 Les chaînes de format numériques standard sont utilisées pour mettre en forme des types numériques courants. Une chaîne de format numérique standard se présente sous la forme `Axx`, où :
 
-- `A` est un caractère alphabétique unique appelé *spécificateur de format*. Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md).
+- `A` est un caractère alphabétique unique appelé *spécificateur de format* . Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md).
 
-- `xx` est un entier facultatif appelé *spécificateur de précision*. Le spécificateur de précision est compris entre 0 et 99 ; il affecte le nombre de chiffres dans le résultat. Notez que le spécificateur de précision contrôle le nombre de chiffres dans la représentation sous forme de chaîne d'un nombre. Il n'arrondit pas le nombre lui-même. Pour exécuter une opération d'arrondi, utilisez la méthode <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType> ou <xref:System.Math.Round%2A?displayProperty=nameWithType>.
+- `xx` est un entier facultatif appelé *spécificateur de précision* . Le spécificateur de précision est compris entre 0 et 99 ; il affecte le nombre de chiffres dans le résultat. Notez que le spécificateur de précision contrôle le nombre de chiffres dans la représentation sous forme de chaîne d'un nombre. Il n'arrondit pas le nombre lui-même. Pour exécuter une opération d'arrondi, utilisez la méthode <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType> ou <xref:System.Math.Round%2A?displayProperty=nameWithType>.
 
   Quand le *spécificateur de précision* contrôle le nombre de chiffres fractionnaires dans la chaîne de résultat, celle-ci reflète un nombre qui est arrondi à un résultat représentable le plus proche du résultat précis à l’infini. S’il existe deux résultats représentables aussi proches l’un que l’autre :
-  - **Sur le .NET Framework et .NET Core jusqu’à .NET Core 2.0**, le runtime sélectionne le résultat ayant le chiffre le moins significatif le plus élevé (autrement dit, à l’aide de <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>).
-  - **Sur .NET Core 2.1 et versions ultérieures**, le runtime sélectionne le résultat ayant un chiffre encore moins significatif (autrement dit, à l’aide de <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>).
+  - **Sur .NET Framework et .net Core jusqu’à .net core 2,0** , le runtime sélectionne le résultat avec le chiffre le plus petit significatif (c’est-à-dire, à l’aide de <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType> ).
+  - **Sur .NET Core 2.1 et versions ultérieures** , le runtime sélectionne le résultat ayant un chiffre encore moins significatif (autrement dit, à l’aide de <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>).
 
   > [!NOTE]
   > Le spécificateur de précision détermine le nombre de chiffres dans la chaîne de résultat. Pour remplir une chaîne de résultat avec des espaces de début ou de fin, utilisez la fonctionnalité de [mise en forme composite](composite-formatting.md) et définissez un *composant d’alignement* dans l’élément de mise en forme.
@@ -48,13 +48,13 @@ Les chaînes de format numériques standard sont prises en charge par :
 - Les [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md) en C# et Visual Basic, qui fournissent une syntaxe simplifiée par rapport aux de chaînes de format composite.
 
 > [!TIP]
-> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Vous pouvez télécharger l’ **utilitaire de mise en forme** , application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 <a name="table"></a> Le tableau suivant décrit les spécificateurs de format numériques standard et affiche un exemple de sortie produite par chaque spécificateur de format. Consultez la section [Remarques](#NotesStandardFormatting) pour plus d’informations sur l’utilisation de chaînes de format numériques standard, et la section [Exemple](#example) pour obtenir une illustration complète de leur utilisation.
 
-|Spécificateur de format|Nom|Description|Exemples|
+|Spécificateur de format|Name|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
-|"C" ou "c"|Devise|Résultat : une valeur monétaire.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format monétaire ("C")](#CFormatString).|123,456 ("C", en-US)-> \\ $123,46<br /><br /> 123.456 ("C", fr-FR) -> 123,46 €<br /><br /> 123.456 ("C", ja-JP) -> ¥123<br /><br /> -123,456 ("C3", en-US)-> ( \\ $123,456)<br /><br /> -123.456 ("C3", fr-FR) -> -123,456 €<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
+|"C" ou "c"|Devise|Résultat : une valeur monétaire.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format monétaire ("C")](#CFormatString).|123,456 ("C", en-US)-> \\ $123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 &euro;<br /><br /> 123.456 ("C", ja-JP) -> ¥123<br /><br /> -123,456 ("C3", en-US)-> ( \\ $123,456)<br /><br /> -123,456 ("C3", fr-FR)->-123 456 &euro;<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
 |"D" ou "d"|Decimal|Résultat : chiffres entiers avec un signe négatif facultatif.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre minimal de chiffres.<br /><br /> Spécificateur de précision par défaut : nombre minimal de chiffres requis.<br /><br /> Informations supplémentaires : [Spécificateur de format décimal ("D")](#DFormatString).|1234 ("D") -> 1234<br /><br /> -1234 ("D6") -> -001234|
 |"E" ou "e"|Exponentiel (scientifique)|Résultat : notation exponentielle.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : 6.<br /><br /> Informations supplémentaires : [Spécificateur de format exponentiel ("E")](#EFormatString).|1052.0329112756 ("E", en-US) -> 1.052033E+003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1,052033e+003<br /><br /> -1052.0329112756 ("e2", en-US) -> -1.05e+003<br /><br /> -1052.0329112756 ("E2", fr-FR) -> -1,05E+003|
 |"F" ou "f"|Virgule fixe|Résultat : chiffres intégraux et décimaux avec un signe négatif facultatif.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format à virgule fixe ("F")](#FFormatString).|1234.567 ("F", en-US) -> 1234.57<br /><br /> 1234.567 ("F", de-DE) -> 1234,57<br /><br /> 1234 ("F1", en-US) -> 1234.0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234.56 ("F4", en-US) -> -1234.5600<br /><br /> -1234.56 ("F4", de-DE) -> -1234,5600|
@@ -373,7 +373,7 @@ Certaines descriptions de spécificateurs de format numériques standard font r�
 
 Quelle que soit la chaîne de format, si la valeur d'un type à virgule flottante <xref:System.Single> ou <xref:System.Double> est l'infini positif, l'infini négatif ou une valeur non numérique (NaN), la chaîne mise en forme est la valeur de la propriété <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A> ou <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> qui est spécifiée par l'objet <xref:System.Globalization.NumberFormatInfo> actuellement applicable.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-partial-note.md)]
 

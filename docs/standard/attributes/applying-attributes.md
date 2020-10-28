@@ -7,15 +7,15 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- assemblies [.NET Framework], attributes
-- attributes [.NET Framework], applying
+- assemblies [.NET], attributes
+- attributes [.NET], applying
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
-ms.openlocfilehash: 76591de6a4305b21b89d348f9ffe53f4e67e7334
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 24fe58ddf48e40b422652baa4c5bba86eea6b84f
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162828"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92889229"
 ---
 # <a name="apply-attributes"></a>Appliquer des attributs
 
@@ -33,11 +33,11 @@ Effectuez la procédure suivante pour appliquer un attribut à un élément de v
 
  L’attribut est émis dans des métadonnées lorsque vous compilez votre code et est disponible pour le common language runtime et toute application ou tout outil personnalisé via les services de réflexion du runtime.
 
- Par Convention, tous les noms d’attributs se terminent par « Attribute ». Toutefois, plusieurs langages qui ciblent le runtime, tels que Visual Basic et C#, ne nécessitent pas de spécifier le nom complet d’un attribut. Par exemple, si vous souhaitez initialiser <xref:System.ObsoleteAttribute?displayProperty=nameWithType>, vous devez uniquement le référencer en tant qu’attribut **obsolète**.
+ Par Convention, tous les noms d’attributs se terminent par « Attribute ». Toutefois, plusieurs langages qui ciblent le runtime, tels que Visual Basic et C#, ne nécessitent pas de spécifier le nom complet d’un attribut. Par exemple, si vous souhaitez initialiser <xref:System.ObsoleteAttribute?displayProperty=nameWithType>, vous devez uniquement le référencer en tant qu’attribut **obsolète** .
 
 ## <a name="apply-an-attribute-to-a-method"></a>Appliquer un attribut à une méthode
 
- L’exemple de code suivant montre comment utiliser **System. ObsoleteAttribute**, qui marque le code comme obsolète. La chaîne `"Will be removed in next version"` est passée à l’attribut. Cet attribut provoque un avertissement du compilateur qui affiche la chaîne passée lorsque le code que l’attribut décrit est appelé.
+ L’exemple de code suivant montre comment utiliser **System. ObsoleteAttribute** , qui marque le code comme obsolète. La chaîne `"Will be removed in next version"` est passée à l’attribut. Cet attribut provoque un avertissement du compilateur qui affiche la chaîne passée lorsque le code que l’attribut décrit est appelé.
 
  [!code-cpp[Conceptual.Attributes.Usage#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#3)]
  [!code-csharp[Conceptual.Attributes.Usage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#3)]

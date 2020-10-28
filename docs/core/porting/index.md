@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 74fe4519e41a07bc78a4dc346f8d1b52b5c7d092
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c206e56e095d1ca068fa2aa6f60e891895f7f999
+ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502767"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92888572"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -49,13 +49,13 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 1. Convertissez toutes vos `packages.config` dépendances au format [PackageReference](/nuget/consume-packages/package-references-in-project-files) avec l' [outil de conversion dans Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
-   Cette étape implique la conversion de vos dépendances à partir du `packages.config` format hérité. `packages.config`ne fonctionne pas sur .NET Core, cette conversion est donc nécessaire si vous avez des dépendances de package. Elle nécessite également uniquement les dépendances que vous utilisez directement dans un projet, ce qui facilite les étapes ultérieures en réduisant le nombre de dépendances que vous devez gérer.
+   Cette étape implique la conversion de vos dépendances à partir du `packages.config` format hérité. `packages.config` ne fonctionne pas sur .NET Core, cette conversion est donc nécessaire si vous avez des dépendances de package. Elle nécessite également uniquement les dépendances que vous utilisez directement dans un projet, ce qui facilite les étapes ultérieures en réduisant le nombre de dépendances que vous devez gérer.
 
 1. Convertissez votre fichier projet vers la nouvelle structure de fichiers de style SDK. Vous pouvez créer des projets pour .NET Core et copier des fichiers sources, ou essayer de convertir votre fichier projet existant à l’aide d’un outil.
 
    .NET Core utilise un [format de fichier projet](../tools/csproj.md) simplifié (et différent) que .NET Framework. Vous devez convertir vos fichiers projet dans ce format pour continuer. Ce style de projet vous permet également de cibler .NET Framework, à ce stade, vous souhaitez toujours cibler.
 
-   Vous pouvez tenter de porter des solutions plus petites ou des projets individuels en une seule opération au format de fichier projet .NET Core à l’aide de l’outil [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert`n’a pas la garantie de fonctionner pour tous vos projets et peut entraîner des modifications subtiles du comportement dont vous dépendez. Utilisez-le comme _point de départ_ pour automatiser les éléments de base qui peuvent être automatisés. Il ne s’agit pas d’une solution garantie pour la migration d’un projet, car il existe de nombreuses différences dans les cibles utilisées par les projets de style du kit de développement logiciel (SDK) par rapport aux anciens fichiers de projet.
+   Vous pouvez tenter de porter des solutions plus petites ou des projets individuels en une seule opération au format de fichier projet .NET Core à l’aide de l’outil [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert` n’a pas la garantie de fonctionner pour tous vos projets et peut entraîner des modifications subtiles du comportement dont vous dépendez. Utilisez-le comme _point de départ_ pour automatiser les éléments de base qui peuvent être automatisés. Il ne s’agit pas d’une solution garantie pour la migration d’un projet, car il existe de nombreuses différences dans les cibles utilisées par les projets de style du kit de développement logiciel (SDK) par rapport aux anciens fichiers de projet.
 
 1. Reciblez tous les projets que vous souhaitez porter vers la cible .NET Framework 4.7.2 ou une version ultérieure.
 
@@ -113,5 +113,10 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 > [!div class="nextstepaction"]
 > [Analyser les dépendances](third-party-deps.md) 
->  Package [NuGet package](../deploying/creating-nuget-packages.md) 
->  [Migration de ASP.net vers ASP.net Core](/aspnet/core/migration/proper-to-2x)
+>  [Empaqueter un package NuGet](../deploying/creating-nuget-packages.md)
+
+## <a name="see-also"></a>Voir aussi
+
+- [Migration de ASP.NET vers ASP.NET Core](/aspnet/core/migration/proper-to-2x)
+- [Migrer des applications WPF vers .NET Core](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)
+- [Migrer des applications Windows Forms vers .NET Core](winforms.md)
