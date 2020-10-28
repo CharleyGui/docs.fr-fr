@@ -725,24 +725,20 @@ items:
         href: misc/using-libraries-from-partially-trusted-code.md
       - name: Utilisation de la méthode Assert
         href: misc/using-the-assert-method.md
-  - name: Créer des applications console
-    href: ../standard/building-console-apps.md
-  - name: Consommer des événements dans une application Web Forms
-    href: ../standard/events/how-to-consume-events-in-a-web-forms-application.md
-  - name: Analyseur de code .NET Framework
-    href: ../standard/analyzers/framework-analyzer.md
+  - name: Analyse du code
+    href: code-analyzers.md
   - name: Développer pour plusieurs plateformes
     items:
       - name: Vue d'ensemble
-        href: ../standard/cross-platform/index.md
+        href: cross-platform/index.md
         displayName: cross platform
       - name: Bibliothèque de classes portable
-        href: ../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md
+        href: cross-platform/portable-class-library.md
       - name: Utiliser la bibliothèque de classes portables avec MVVM
-        href: ../standard/cross-platform/using-portable-class-library-with-model-view-view-model.md
+        href: cross-platform/using-portable-class-library-with-model-view-view-model.md
       - name: Ressources d’application pour les bibliothèques qui ciblent plusieurs plateformes
-        href: ../standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md
+        href: cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md
       - name: Prise en charge de .NET Framework pour les applications Microsoft Store et Windows Runtime
-        href: ../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md
+        href: cross-platform/support-for-windows-store-apps-and-windows-runtime.md
       - name: Passer un URI au Windows Runtime
-        href: ../standard/cross-platform/passing-a-uri-to-the-windows-runtime.md
+        href: cross-platform/passing-a-uri-to-the-windows-runtime.md
