@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel programming, pitfalls
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
-ms.openlocfilehash: 05d934b80e60a8630db5b70e16a07c014598487a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c66eae48df54b330843b4967f957264f2bddee1d
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599761"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925309"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Pièges potentiels dans le parallélisme des données et des tâches
 Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> permettent une amélioration significative des performances par rapport à des boucles séquentielles ordinaires. Toutefois, le travail de la parallélisation de la boucle présente une certaine complexité pouvant entraîner des problèmes qui, dans du code séquentiel, ne sont pas si courants ou ne surviennent pas du tout. Cette rubrique répertorie les pratiques à éviter lorsque vous écrivez des boucles parallèles.  
@@ -45,7 +45,7 @@ Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProper
  [!code-vb[TPL_Pitfalls#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_pitfalls/vb/pitfalls_vb.vb#04)]  
   
 ## <a name="limit-calls-to-thread-safe-methods"></a>Limiter les appels aux méthodes qui ne sont pas thread-safe  
- La plupart des méthodes statiques du .NET Framework sont thread-safe et peuvent être appelées à partir de plusieurs threads simultanément. Toutefois, même dans ces cas, la synchronisation impliquée peut entraîner un ralentissement significatif de la requête.  
+ La plupart des méthodes statiques dans .NET sont thread-safe et peuvent être appelées à partir de plusieurs threads simultanément. Toutefois, même dans ces cas, la synchronisation impliquée peut entraîner un ralentissement significatif de la requête.  
   
 > [!NOTE]
 > Vous pouvez le tester vous-même en insérant des appels à <xref:System.Console.WriteLine%2A> dans vos requêtes. Bien que cette méthode soit utilisée dans les exemples de documentation destinés à la démonstration, ne l’utilisez pas dans les boucles parallèles, sauf si nécessaire.  

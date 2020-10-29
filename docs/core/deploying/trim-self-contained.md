@@ -4,12 +4,12 @@ description: Découvrez comment supprimer les applications autonomes pour rédui
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 1ebcac51331407069e26b49e40bb6e071cefb752
-ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
+ms.openlocfilehash: bf38ffe4d47986ae78c6cf2b2e5ecb292411ba6c
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90770453"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925283"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Supprimer les exécutables et les déploiements autonomes
 
@@ -36,6 +36,39 @@ Lorsque le code référence indirectement un assembly par le biais de la réflex
 <ItemGroup>
     <TrimmerRootAssembly Include="System.Security" />
 </ItemGroup>
+```
+
+### <a name="support-for-ssl-certificates"></a>Prise en charge des certificats SSL
+
+Si votre application charge des certificats SSL, par exemple dans une application ASP.NET Core, vous souhaiterez vous assurer que lors du découpage, vous empêchez de découper les assemblys qui faciliteront le chargement des certificats SSL.
+
+Nous pouvons mettre à jour notre fichier projet pour inclure les éléments suivants pour ASP.NET Core 3,1 :
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>...</PropertyGroup>
+  <!--Include the following for .aspnetcore 3.1-->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="System.Net" />
+    <TrimmerRootAssembly Include="System.Net.Security" />
+    <TrimmerRootAssembly Include="System.Security" />
+  </ItemGroup>
+  ...
+</Project>
+```
+
+Si vous utilisez .net 5,0, nous pouvons mettre à jour notre fichier projet pour inclure les éléments suivants :
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+ <PropertyGroup>...</PropertyGroup>
+ <!--Include the following for .net 5.0-->
+ <ItemGroup>
+    <TrimmerRootAssembly Include="System.Net.Security" />
+    <TrimmerRootAssembly Include="System.Security" />
+  </ItemGroup>
+  ...
+</Project>
 ```
 
 ## <a name="trim-your-app---cli"></a>Découper votre application-CLI
@@ -71,25 +104,25 @@ Pour plus d’informations, consultez [publier des applications .net core avec C
 
 Visual Studio crée des profils de publication réutilisables qui contrôlent la façon dont votre application est publiée.
 
-01. Dans le volet **Explorateur de solutions** , cliquez avec le bouton droit sur le projet que vous souhaitez publier. Sélectionnez **publier...**.
+01. Dans le volet **Explorateur de solutions** , cliquez avec le bouton droit sur le projet que vous souhaitez publier. Sélectionnez **publier...** .
 
     :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
 
     Si vous ne disposez pas déjà d’un profil de publication, suivez les instructions pour en créer un et choisissez le type cible du **dossier** .
 
-01. Choisissez **Modifier**.
+01. Choisissez **Modifier** .
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Profil de publication Visual Studio avec le bouton modifier.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
 
 01. Dans la boîte de dialogue **paramètres de profil** , définissez les options suivantes :
 
     - Définissez **le** **mode de déploiement** sur autonome.
     - Définissez le **Runtime cible** sur la plateforme sur laquelle vous souhaitez publier.
-    - Sélectionnez **découper les assemblys inutilisés (en**préversion).
+    - Sélectionnez **découper les assemblys inutilisés (en** préversion).
 
     Choisissez **Enregistrer** pour enregistrer les paramètres et revenir à la boîte de dialogue **publier** .
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Boîte de dialogue Paramètres de profil avec les options mode de déploiement, Runtime cible et découper les assemblys inutilisés mis en surbrillance.":::
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
 
 01. Choisissez **publier** pour publier votre application supprimée.
 

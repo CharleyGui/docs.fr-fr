@@ -8,23 +8,23 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-ms.openlocfilehash: b14191d798baf458bd860c00913683f53d0a1fd8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fa67e3b94bc7b2f9afac749e50204138e9a041f0
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555651"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925257"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>Procédure : Itérer les répertoires de fichiers avec la classe parallèle
 Dans de nombreux cas, l’itération de fichiers est une opération facile à mettre en parallèle. La rubrique [Guide pratique : itérer les répertoires de fichiers avec PLINQ](how-to-iterate-file-directories-with-plinq.md) présente le moyen le plus simple d’effectuer cette tâche dans de nombreux scénarios. Toutefois, des problèmes risquent de survenir si le code doit gérer les différents types d’exceptions susceptibles de se produire avec l’accès au système de fichiers. L'exemple suivant montre une approche du problème. Il utilise une itération de type pile pour parcourir tous les fichiers et tous les dossiers situés sous un répertoire spécifié, et permet au code d’intercepter et de gérer différentes exceptions. Bien entendu, vous pouvez gérer les exceptions comme vous le souhaitez.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L’exemple suivant itère les répertoires de manière séquentielle, mais traite les fichiers en parallèle. C’est probablement la meilleure approche en cas de rapport élevé entre les répertoires et les fichiers. Il est également possible de paralléliser l’itération des répertoires et d’accéder à chaque fichier de manière séquentielle. Il n’est probablement pas efficace de paralléliser les deux boucles, sauf si l’ordinateur ciblé comporte un grand nombre de processeurs. Toutefois, comme toujours, vous devez tester votre application de manière approfondie pour déterminer la meilleure approche.  
   
  [!code-csharp[TPL_Parallel#08](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallel_file.cs#08)]
  [!code-vb[TPL_Parallel#08](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/fileiteration08.vb#08)]  
   
- Dans cet exemple, les E/S des fichiers sont effectuées de façon synchrone. En cas de fichiers volumineux ou de connexions réseau lentes, il peut être préférable d’accéder aux fichiers de façon asynchrone. Vous pouvez combiner des techniques d’E/S asynchrones avec l’itération parallèle. Pour plus d’informations, consultez [Bibliothèque parallèle de tâches (TPL) et programmation asynchrone](tpl-and-traditional-async-programming.md).  
+ Dans cet exemple, les E/S des fichiers sont effectuées de façon synchrone. En cas de fichiers volumineux ou de connexions réseau lentes, il peut être préférable d’accéder aux fichiers de façon asynchrone. Vous pouvez combiner des techniques d’E/S asynchrones avec l’itération parallèle. Pour plus d’informations, consultez [bibliothèque parallèle de tâches et programmation asynchrone .net traditionnelle](tpl-and-traditional-async-programming.md).  
   
  L’exemple utilise la variable `fileCount` locale pour maintenir un décompte du nombre total de fichiers traités. Étant donné que plusieurs tâches sont susceptibles d’y accéder simultanément, la méthode <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> est utilisée pour synchroniser les accès.  
   

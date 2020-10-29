@@ -1,6 +1,6 @@
 ---
 title: Introduction à PLINQ
-description: Découvrez comment créer des requêtes en parallèle à l’aide de PLINQ dans .NET. PLINQ est l’acronyme de Parallel Language-Integrated Query (LINQ).
+description: Découvrez comment créer des requêtes en parallèle à l’aide de PLINQ dans .NET. PLINQ correspond à LINQ (Parallel Language-Integrated Query).
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: 9dbc4fde3f72d01aee91978ed5cb0baf0895de26
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 37414c7963a3803518b41a5c6d262740313e2b37
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662457"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925348"
 ---
 # <a name="introduction-to-plinq"></a>Introduction à PLINQ
 
@@ -109,7 +109,7 @@ L’illustration suivante montre la différence entre `foreach` et <xref:System.
 
 ## <a name="cancellation"></a>Annulation
 
-PLINQ est intégré aux types d’annulation dans .NET Framework 4. (Pour plus d’informations, consultez [annulation dans les threads managés](../threading/cancellation-in-managed-threads.md).) Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
+PLINQ est intégré aux types d’annulation dans .NET. (Pour plus d’informations, consultez [annulation dans les threads managés](../threading/cancellation-in-managed-threads.md).) Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
 
 Il est possible qu’une requête PLINQ continue de traiter certains éléments après la définition du jeton d’annulation.
 

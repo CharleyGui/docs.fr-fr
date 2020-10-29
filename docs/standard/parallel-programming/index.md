@@ -6,26 +6,26 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-ms.openlocfilehash: 02087cf58720388c64d8aba5424db0b54828219a
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: edb3d38b0815c6703720292a45e302c62c81650b
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661963"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925335"
 ---
 # <a name="parallel-programming-in-net"></a>Programmation parallèle en .NET
 
 De nombreux ordinateurs personnels et stations de travail ont plusieurs cœurs de processeur qui permettent à plusieurs threads de s’exécuter simultanément. Pour tirer parti du matériel, vous pouvez paralléliser votre code pour distribuer le travail sur plusieurs processeurs.
 
-Dans le passé, la parallélisation nécessitait un niveau peu élevé de manipulation de threads et de verrous. Visual Studio et le .NET Framework améliorent la prise en charge de la programmation parallèle en fournissant une exécution, des types de bibliothèques de classes et des outils de diagnostics. Ces fonctionnalités, qui ont été introduites avec le .NET Framework 4, simplifient le développement parallèle. Vous pouvez écrire du code parallèle efficace, à grains fins et évolutif dans un idiome naturel sans devoir utiliser directement des threads ou le pool de threads.
+Dans le passé, la parallélisation nécessitait un niveau peu élevé de manipulation de threads et de verrous. Visual Studio et .NET améliorent la prise en charge de la programmation parallèle en fournissant un Runtime, des types de bibliothèques de classes et des outils de diagnostic. Ces fonctionnalités, qui ont été introduites dans .NET Framework 4, simplifient le développement parallèle. Vous pouvez écrire du code parallèle efficace, à grains fins et évolutif dans un idiome naturel sans devoir utiliser directement des threads ou le pool de threads.
 
-L’illustration suivante fournit une vue d’ensemble générale de l’architecture de programmation parallèle dans le .NET Framework :
+L’illustration suivante fournit une vue d’ensemble globale de l’architecture de programmation parallèle dans .NET.
 
 ![Architecture de programmation parallèle du .NET](./media/tpl-architecture.png)
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Technology|Description|
+|Technologie|Description|
 |----------------|-----------------|
 |[Bibliothèque parallèle de tâches](task-parallel-library-tpl.md)|Fournit la documentation pour la classe <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, qui inclut des versions parallèles de `For` et des boucles `ForEach`, et également pour la classe <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, qui représente la meilleure façon d'exprimer des opérations asynchrones.|
 |[Parallel LINQ (PLINQ)](introduction-to-plinq.md)|Implémentation parallèle de LINQ to Objects qui améliore de manière significative la performance dans de nombreux scénarios.|

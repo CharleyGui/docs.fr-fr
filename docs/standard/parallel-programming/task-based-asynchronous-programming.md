@@ -9,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: d735cb56c5914dd33ba694c95a8e92446ca47088
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720161"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925244"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
-La bibliothèque parallèle de tâches (TPL) est basée sur le concept de *tâche*, qui représente une opération asynchrone. À certains égards, une tâche ressemble à un thread ou à un élément de travail <xref:System.Threading.ThreadPool>, mais à un niveau d’abstraction supérieur. Le terme *parallélisme des tâches* fait référence à une ou plusieurs tâches indépendantes qui s’exécutent simultanément. Les tâches présentent deux grands avantages :
+La bibliothèque parallèle de tâches (TPL) est basée sur le concept de *tâche* , qui représente une opération asynchrone. À certains égards, une tâche ressemble à un thread ou à un élément de travail <xref:System.Threading.ThreadPool>, mais à un niveau d’abstraction supérieur. Le terme *parallélisme des tâches* fait référence à une ou plusieurs tâches indépendantes qui s’exécutent simultanément. Les tâches présentent deux grands avantages :
 
 - Une utilisation plus efficace et évolutive des ressources système.
 
@@ -28,7 +28,7 @@ La bibliothèque parallèle de tâches (TPL) est basée sur le concept de *tâch
 
      Les tâches et l'infrastructure construites autour de ces algorithmes fournissent un ensemble riche d'API prenant en charge l'attente, l'annulation, les continuations, la gestion fiable des exceptions, l'état détaillé, la planification personnalisée, et bien plus encore.
 
-Pour ces raisons, la bibliothèque parallèle de tâches est l'API privilégiée pour l'écriture du code multithread, asynchrone et parallèle dans .NET Framework.
+Pour ces deux raisons, TPL est l’API préférée pour l’écriture de code multithread, asynchrone et parallèle dans .NET.
 
 ## <a name="creating-and-running-tasks-implicitly"></a>Création et exécution implicites de tâches
 
@@ -94,45 +94,33 @@ Chaque tâche reçoit un ID d'entier qui l'identifie de façon unique dans un do
 
 ## <a name="task-creation-options"></a>Options de création de tâches
 
-La plupart des API qui créent des tâches fournissent des surcharges qui acceptent un paramètre <xref:System.Threading.Tasks.TaskCreationOptions>. En spécifiant l’une de ces options, vous indiquez au planificateur de tâches la manière de planifier la tâche dans le pool de threads. Le tableau suivant répertorie les différentes options de création de tâches.
+La plupart des API qui créent des tâches fournissent des surcharges qui acceptent un paramètre <xref:System.Threading.Tasks.TaskCreationOptions>. En spécifiant une ou plusieurs de ces options, vous indiquez au planificateur de tâches comment planifier la tâche sur le pool de threads. Les options peuvent être combinées à l’aide d’une **opération or au niveau du** bit.
 
-|Valeur du paramètre <xref:System.Threading.Tasks.TaskCreationOptions>|Description|
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-|<xref:System.Threading.Tasks.TaskCreationOptions.None>|Valeur par défaut lorsqu'aucune option n'est spécifiée. Le planificateur utilise ses méthodes heuristiques par défaut pour planifier la tâche.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Spécifie que la tâche doit être planifiée afin que les tâches créées précédemment soient susceptibles d’être exécutées plus tôt et que les tâches créées ultérieurement soient susceptibles d’être exécutées plus tard.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|Spécifie que la tâche représente une opération de longue durée.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|Spécifie qu’une tâche doit être créée en tant qu’enfant attaché à la tâche actuelle, s’il en existe une. Pour plus d'informations, consultez [Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md).|
-|<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|Indique que si une tâche interne spécifie l'option `AttachedToParent`, cette tâche ne sera pas une tâche enfant attachée.|
-|<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|Spécifie que le planificateur de tâches pour les tâches créées en appelant des méthodes comme <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> à partir d'une tâche particulière est le planificateur par défaut au lieu du planificateur sur lequel cette tâche s'exécute.|
-
-Les options peuvent être combinées avec une opération de bits **OR**. L’exemple suivant montre une tâche avec les options <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> et <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness>.
+L’exemple suivant montre une tâche avec les <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> options et <xref:System.Threading.Tasks.TaskContinuationOptions.PreferFairness> .
 
 [!code-csharp[TPL_TaskIntro#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#03)]
 [!code-vb[TPL_TaskIntro#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#03)]
 
 ## <a name="tasks-threads-and-culture"></a>Tâches, threads et culture
 
-Chaque thread possède une culture associée et une culture d'interface utilisateur, respectivement définies par les propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>. La culture d'un thread est utilisée dans des opérations telles que la mise en forme, l'analyse, le tri et la comparaison de chaînes. La culture d'interface utilisateur d'un thread est utilisée dans la recherche de ressources. En règle générale, sauf si vous spécifiez une culture par défaut pour tous les threads dans un domaine d'application à l'aide des propriétés <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType>, la culture par défaut et la culture d'interface utilisateur d'un thread sont définies par la culture du système. Si vous définissez explicitement la culture d'un thread et lancez un nouveau thread, ce dernier n'hérite pas de la culture du thread appelant ; au lieu de cela, sa culture est la culture du système par défaut. Le modèle de programmation basé sur les tâches pour les applications qui ciblent des versions du .NET Framework antérieures à .NET Framework 4.6 respecte cette pratique.
+Chaque thread a une culture associée et une culture d’interface utilisateur, qui sont définies par les <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> Propriétés et, respectivement. La culture d'un thread est utilisée dans des opérations telles que la mise en forme, l'analyse, le tri et la comparaison de chaînes. La culture d'interface utilisateur d'un thread est utilisée dans la recherche de ressources.
 
-> [!IMPORTANT]
-> Notez que la culture du thread appelant dans le cadre du contexte d’une tâche s’applique aux applications qui *ciblent* .NET Framework 4.6, et non celles qui *s’exécutent sous* .NET Framework 4.6. Vous pouvez cibler une version particulière du .NET Framework quand vous créez votre projet dans Visual Studio en sélectionnant une version dans la liste déroulante située en haut de la boîte de dialogue **Nouveau projet**. Sinon, en dehors de Visual Studio, vous pouvez utiliser l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute>. Pour les applications qui ciblent des versions du .NET Framework antérieures à .NET Framework 4.6, ou qui ne ciblent pas une version spécifique du .NET Framework, la culture d’une tâche demeure déterminée par la culture du thread sur lequel la tâche s’exécute.
+À moins que vous ne spécifiiez une culture par défaut pour tous les threads d’un domaine d’application à l’aide des <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> Propriétés et, la culture par défaut et la culture d’interface utilisateur d’un thread sont définies par la culture du système. Si vous définissez explicitement la culture d'un thread et lancez un nouveau thread, ce dernier n'hérite pas de la culture du thread appelant ; au lieu de cela, sa culture est la culture du système par défaut. Toutefois, dans la programmation basée sur les tâches, les tâches utilisent la culture du thread appelant, même si la tâche s’exécute de façon asynchrone sur un thread différent.
 
-À compter des applications qui ciblent .NET Framework 4.6, la culture du thread appelant est héritée par chaque tâche, même si la tâche s’exécute de façon asynchrone sur un thread de pool de threads.
+L'exemple suivant illustre cette situation de façon simple. Elle modifie la culture actuelle de l’application en français (France) (ou, si français (France) est déjà la culture actuelle, en anglais (États-Unis)). Il appelle ensuite un délégué nommé `formatDelegate` qui retourne des nombres mis en forme en tant que valeurs de devise dans la nouvelle culture. Si le délégué est appelé par une tâche de façon synchrone ou asynchrone, la tâche utilise la culture du thread appelant.
 
-L'exemple suivant illustre cette situation de façon simple. Il utilise l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> pour cibler .NET Framework 4.6 et définit la culture actuelle de l’application sur Français (France) ou, si Français (France) est déjà la culture actuelle, sur Anglais (États-Unis). Il appelle ensuite un délégué nommé `formatDelegate` qui retourne des nombres mis en forme en tant que valeurs de devise dans la nouvelle culture. Que le délégué exécute une tâche de manière synchrone ou asynchrone, il retourne le résultat attendu, car la culture du thread appelant est héritée par la tâche asynchrone.
+:::code language="csharp" source="snippets/cs/asyncculture1.cs" id="1":::
 
-[!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
-[!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
+:::code language="vbnet" source="snippets/vb/asyncculture1.vb" id="1":::
 
-Si vous utilisez Visual Studio, vous pouvez omettre l'attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute>. Pour cela, vous devez sélectionner le .NET Framework 4.6 comme cible au moment de la création du projet dans la boîte de dialogue **Nouveau projet**.
-
-Pour la sortie qui reflète le comportement des applications ciblant des versions du .NET Framework antérieures à .NET Framework 4.6, supprimez l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> du code source. La sortie reflète les conventions de mise en forme de la culture du système par défaut, pas de la culture du thread appelant.
+> [!NOTE]
+> Dans les versions de .NET Framework antérieures à .NET Framework 4,6, la culture d’une tâche est déterminée par la culture du thread sur lequel elle *s’exécute* , et non par la culture du *thread appelant* . Pour les tâches asynchrones, cela signifie que la culture utilisée par la tâche peut être différente de la culture du thread appelant.
 
 Pour plus d'informations sur les tâches asynchrones et la culture, consultez la section « Culture et opérations asynchrones basées sur les tâches » dans la rubrique <xref:System.Globalization.CultureInfo>.
 
 ## <a name="creating-task-continuations"></a>Création de continuations de tâches
 
-Les méthodes <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> vous permettent de spécifier une tâche à démarrer lorsque l’*antécédent* est terminé. Une référence à la tâche antécédente est passée au délégué de la tâche de continuation afin qu’il puisse examiner l’état de la tâche antécédente et, en récupérant la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>, utiliser la sortie de l’antécédent comme entrée pour la continuation.
+Les méthodes <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> vous permettent de spécifier une tâche à démarrer lorsque l’ *antécédent* est terminé. Une référence à la tâche antécédente est passée au délégué de la tâche de continuation afin qu’il puisse examiner l’état de la tâche antécédente et, en récupérant la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>, utiliser la sortie de l’antécédent comme entrée pour la continuation.
 
 Dans l'exemple suivant, la tâche `getData` est démarrée par un appel à la méthode <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType>. La tâche `processData` démarre automatiquement lorsque `getData` est terminé, et `displayData` commence lorsque `processData` est terminé. `getData` produit un tableau d'entiers, accessible à la tâche `processData` via la propriété `getData` de la tâche <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>. La tâche `processData` traite ce tableau et retourne un résultat dont le type est déduit du type de retour de l'expression lambda passée à la méthode <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType>. La tâche `displayData` s'exécute automatiquement lorsque `processData` est terminé, et l'objet <xref:System.Tuple%603> retourné par l'expression lambda `processData` est accessible à la tâche `displayData` via la propriété `processData` de la tâche <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>. La tâche `displayData` prend le résultat de la tâche `processData` et produit un résultat dont le type est déduit de façon semblable et mis à disposition du programme dans la propriété <xref:System.Threading.Tasks.Task%601.Result%2A>.
 
@@ -150,7 +138,7 @@ Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâc
 
 ## <a name="creating-detached-child-tasks"></a>Création de tâches enfants détachées
 
-Lorsque le code utilisateur qui s'exécute dans une tâche crée une tâche sans spécifier l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>, la nouvelle tâche n'est pas synchronisée avec la tâche parent externe. Ce type de tâche non synchronisée est appelé *tâche imbriquée détachée* ou *tâche enfant détachée*. L’exemple suivant montre une tâche qui crée une tâche enfant détachée.
+Lorsque le code utilisateur qui s'exécute dans une tâche crée une tâche sans spécifier l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>, la nouvelle tâche n'est pas synchronisée avec la tâche parent externe. Ce type de tâche non synchronisée est appelé *tâche imbriquée détachée* ou *tâche enfant détachée* . L’exemple suivant montre une tâche qui crée une tâche enfant détachée.
 
 [!code-csharp[TPL_TaskIntro#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#07)]
 [!code-vb[TPL_TaskIntro#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#07)]
@@ -273,7 +261,7 @@ Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Thr
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-|-|
 |[Chaînage des tâches à l’aide de tâches de continuation](chaining-tasks-by-using-continuation-tasks.md)|Décrit le fonctionnement des continuations.|
 |[Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md)|Décrit la différence entre les tâches enfants attachées et les tâches enfants détachées.|

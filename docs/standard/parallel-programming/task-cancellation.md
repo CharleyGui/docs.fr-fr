@@ -10,15 +10,16 @@ helpviewer_keywords:
 - tasks, cancellation
 - asynchronous task cancellation
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
-ms.openlocfilehash: 1d9b7b35341961c27107f007e0eafa51ef49e232
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: dba2f2ad9733f8881276bdb2705a6c8457351f9c
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768662"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925296"
 ---
-# <a name="task-cancellation"></a>Annulation de tâches
-Les classes <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> prennent en charge l'annulation via l'utilisation de jetons d'annulation dans .NET Framework. Pour plus d’informations, consultez [annulation dans les threads managés](../threading/cancellation-in-managed-threads.md). Dans les classes de tâche, l'annulation implique une coopération entre le délégué d'utilisateur, qui représente une opération annulable et le code qui a demandé l'annulation.  Une annulation réussie implique la demande du code appelant la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType>, et le délégué d'utilisateur terminant l'opération dans le délai imparti. Vous pouvez terminer l'opération à l'aide de l'une des options suivantes :  
+# <a name="task-cancellation"></a>Annulation de tâche
+
+Les <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> classes et prennent en charge l’annulation via l’utilisation de jetons d’annulation. Pour plus d’informations, consultez [annulation dans les threads managés](../threading/cancellation-in-managed-threads.md). Dans les classes de tâche, l’annulation implique une coopération entre le délégué d’utilisateur, qui représente une opération annulable et le code qui a demandé l’annulation. Une annulation réussie implique le code demandeur appelant la <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> méthode et le délégué utilisateur qui termine l’opération en temps opportun. Vous pouvez terminer l'opération à l'aide de l'une des options suivantes :  
   
 - Par un retour du délégué. Cela suffit dans la plupart des scénarios ; toutefois, une instance de tâche annulée de cette façon passe à l'état <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> , et non à l'état <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> .  
   

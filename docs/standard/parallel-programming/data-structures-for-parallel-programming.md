@@ -5,20 +5,21 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-ms.openlocfilehash: f9c130b73044440f24b7b8bbebe9527490a165c1
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cea9264a30469881e3ec54fc378af3ddb70bff8e
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288522"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925322"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Structures de données pour la programmation parallèle
-La version 4 de .NET Framework introduit de nouveaux types très utiles pour la programmation parallèle, notamment un ensemble de classes de collections simultanées, des primitives de synchronisation légères et des types pour l’initialisation tardive. Vous pouvez utiliser ces types avec n’importe quel code d’application multithread, y compris la bibliothèque parallèle de tâches et PLINQ.  
+
+.NET fournit plusieurs types qui sont utiles dans la programmation parallèle, y compris un ensemble de classes de collection simultanées, des primitives de synchronisation légères et des types pour l’initialisation tardive. Vous pouvez utiliser ces types avec n’importe quel code d’application multithread, y compris la bibliothèque parallèle de tâches et PLINQ.  
   
 ## <a name="concurrent-collection-classes"></a>Classes de collections simultanées  
- Les classes de collections de l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType> fournissent des opérations d’ajout et de suppression thread-safe qui évitent autant que possible les verrous et, là où ils se révèlent nécessaires, utilisent un verrouillage de granularité fine. Avec une classe de collections simultanées, contrairement aux collections introduites dans les versions 1.0 et 2.0 de .NET Framework, il n’est pas nécessaire que le code utilisateur prenne des verrous pour accéder aux éléments. Les classes de collections simultanées peuvent améliorer considérablement les performances des types comme <xref:System.Collections.ArrayList?displayProperty=nameWithType> et <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> (avec verrouillage implémenté par l’utilisateur) dans le cas où plusieurs threads ajoutent et suppriment des éléments d’une collection.  
+ Les classes de collections de l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType> fournissent des opérations d’ajout et de suppression thread-safe qui évitent autant que possible les verrous et, là où ils se révèlent nécessaires, utilisent un verrouillage de granularité fine. Une classe de collection simultanée ne requiert pas que le code utilisateur prenne des verrous lorsqu’il accède à des éléments. Les classes de collections simultanées peuvent améliorer considérablement les performances des types comme <xref:System.Collections.ArrayList?displayProperty=nameWithType> et <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> (avec verrouillage implémenté par l’utilisateur) dans le cas où plusieurs threads ajoutent et suppriment des éléments d’une collection.  
   
- Le tableau suivant liste les classes de collections simultanées :  
+ Le tableau suivant répertorie les classes de collections simultanées :  
   
 |Type|Description|  
 |----------|-----------------|  
@@ -31,9 +32,9 @@ La version 4 de .NET Framework introduit de nouveaux types très utiles pour la 
  Pour plus d’informations, consultez [Collections thread-safe](../collections/thread-safe/index.md).  
   
 ## <a name="synchronization-primitives"></a>Primitives de synchronisation  
- Les nouvelles primitives de synchronisation de l’espace de noms <xref:System.Threading?displayProperty=nameWithType> affinent la concurrence et améliorent les performances en évitant les coûteux mécanismes de verrouillage du code multithread hérité. Certains des nouveaux types, par exemple, <xref:System.Threading.Barrier?displayProperty=nameWithType> et <xref:System.Threading.CountdownEvent?displayProperty=nameWithType>, ont pas d’équivalents dans les versions antérieures de .NET Framework.  
+ Les primitives de synchronisation de l' <xref:System.Threading?displayProperty=nameWithType> espace de noms permettent une concurrence fine et des performances plus rapides en évitant les mécanismes de verrouillage coûteux détectés dans le code multithread hérité.
   
- Le tableau suivant liste les nouveaux types de synchronisation :  
+ Le tableau suivant répertorie les types de synchronisation :  
   
 |Type|Description|  
 |----------|-----------------|  
@@ -46,7 +47,7 @@ La version 4 de .NET Framework introduit de nouveaux types très utiles pour la 
   
  Pour plus d'informations, consultez les pages suivantes :  
   
-- [Comment : utiliser le verrouillage SpinLock pour une synchronisation de bas niveau](../threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+- [Comment : utiliser le verrouillage spinlock pour une synchronisation de bas niveau](../threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
 - [Comment : synchroniser des opérations simultanées avec un cloisonnement](../threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   

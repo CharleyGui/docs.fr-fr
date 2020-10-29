@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
-ms.openlocfilehash: abf31ea69af6a85140efb783959a9a586ef6a59e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5033cc24fce5fc17a950e4797de1ef4071e2b98a
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277997"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925374"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Procédure : itérer les répertoires de fichiers avec PLINQ
 
@@ -35,7 +35,7 @@ La deuxième requête utilise les <xref:System.IO.Directory.EnumerateDirectories
   
  Si vous utilisez <xref:System.IO.Directory.GetFiles%2A>, assurez-vous de disposer des autorisations suffisantes sur tous les répertoires de l’arborescence. Dans le cas contraire, une exception est levée et aucun résultat n’est retourné. Quand vous utilisez la méthode <xref:System.IO.Directory.EnumerateDirectories%2A> dans une requête PLINQ, la gestion des exceptions d’E/S de façon normale permettant de poursuivre l’itération devient problématique. Si votre code doit gérer les E/S ou les exceptions d’accès non autorisé, vous devez envisager l’approche décrite dans [Comment : itérer les répertoires de fichiers avec la classe parallèle](how-to-iterate-file-directories-with-the-parallel-class.md).  
   
- Si la latence des E/S s’avère un problème, par exemple avec des E/S de fichiers sur un réseau, optez plutôt pour l’une des techniques d’E/S asynchrones décrites dans [Bibliothèque parallèle de tâches et programmation asynchrone .NET traditionnelle](tpl-and-traditional-async-programming.md) et dans ce [billet de blog](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
+ Si la latence des e/s est un problème, par exemple avec les e/s de fichier sur un réseau, envisagez d’utiliser l’une des techniques d’e/s asynchrones décrites dans la [bibliothèque parallèle de tâches et la programmation asynchrone .net traditionnelle](tpl-and-traditional-async-programming.md) et dans ce billet de [blog](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
   
 ## <a name="see-also"></a>Voir aussi
 

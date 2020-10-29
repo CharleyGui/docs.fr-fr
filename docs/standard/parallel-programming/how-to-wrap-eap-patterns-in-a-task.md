@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to wrap EAP patterns
 ms.assetid: f11ed467-af2f-4504-8a2e-299a6c36d44e
-ms.openlocfilehash: eab94ac91be0c755a1da74e2f2220e3b76cc4249
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 339544ce9f0ee44097d1a60e0d2c2035d81f674d
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290783"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925361"
 ---
 # <a name="how-to-wrap-eap-patterns-in-a-task"></a>Procédure : inclure dans un wrapper des modèles EAP dans une tâche
 L’exemple suivant montre comment exposer une séquence arbitraire d’opérations EAP (modèle asynchrone basé sur des événements) comme une seule tâche à l’aide d’un <xref:System.Threading.Tasks.TaskCompletionSource%601>. L’exemple montre également comment utiliser un <xref:System.Threading.CancellationToken> pour appeler les méthodes d’annulation intégrées sur les objets <xref:System.Net.WebClient>.  
@@ -24,4 +24,4 @@ L’exemple suivant montre comment exposer une séquence arbitraire d’opérati
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque parallèle de tâches (TPL) et programmation asynchrone .NET Framework](tpl-and-traditional-async-programming.md)
+- [Bibliothèque parallèle de tâches et programmation asynchrone .NET traditionnelle](tpl-and-traditional-async-programming.md)

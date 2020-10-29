@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-ms.openlocfilehash: b4d58734fba4b834d5f5819a6bf19da0b7b7e8db
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 012ac4078c1e2f17d6eef88ee295b11161a0e24a
+ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285311"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92925270"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Pièges potentiels avec PLINQ
 
@@ -62,7 +62,7 @@ a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));
 
 ## <a name="limit-calls-to-thread-safe-methods"></a>Limiter les appels aux méthodes thread-safe
 
-La plupart des méthodes statiques du .NET Framework sont thread-safe et peuvent être appelées à partir de plusieurs threads simultanément. Toutefois, même dans ces cas, la synchronisation impliquée peut entraîner un ralentissement significatif de la requête.
+La plupart des méthodes statiques dans .NET sont thread-safe et peuvent être appelées à partir de plusieurs threads simultanément. Toutefois, même dans ces cas, la synchronisation impliquée peut entraîner un ralentissement significatif de la requête.
 
 > [!NOTE]
 > Vous pouvez le tester vous-même en insérant des appels à <xref:System.Console.WriteLine%2A> dans vos requêtes. Bien que cette méthode soit utilisée dans les exemples de documentation destinés à la démonstration, ne l’utilisez pas dans les requêtes PLINQ.
