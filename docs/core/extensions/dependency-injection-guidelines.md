@@ -1,18 +1,18 @@
 ---
-title: Instructions relatives à l’injection de dépendances
+title: Recommandations relatives à l’injection de dépendances
 description: Découvrez les différentes recommandations en matière d’injection de dépendances et les meilleures pratiques pour le développement d’applications .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/23/2020
+ms.date: 10/29/2020
 ms.topic: guide
-ms.openlocfilehash: a8d52642b9217c7340db69494624d8ab85ea6c92
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 092fdc70bd5d6bae82c4c1da96db4d5ac08df452
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247896"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063166"
 ---
-# <a name="dependency-injection-guidelines"></a>Instructions relatives à l’injection de dépendances
+# <a name="dependency-injection-guidelines"></a>Recommandations relatives à l’injection de dépendances
 
 Cet article fournit des recommandations générales et les meilleures pratiques pour implémenter l’injection de dépendances dans les applications .NET.
 
@@ -34,11 +34,17 @@ Dans l’exemple suivant, les services sont créés par le conteneur de service 
 
 :::code language="csharp" source="snippets/configuration/console-di-disposable/TransientDisposable.cs":::
 
+La jetable précédente est censée avoir une durée de vie transitoire.
+
 :::code language="csharp" source="snippets/configuration/console-di-disposable/ScopedDisposable.cs":::
+
+La jetable précédente est destinée à avoir une durée de vie limitée.
 
 :::code language="csharp" source="snippets/configuration/console-di-disposable/SingletonDisposable.cs":::
 
-:::code language="csharp" source="snippets/configuration/console-di-disposable/Program.cs" range="1-21,41-60":::
+La jetable précédente est censée avoir une durée de vie Singleton.
+
+:::code language="csharp" source="snippets/configuration/console-di-disposable/Program.cs" range="1-21,41-60" highlight="":::
 
 La console de débogage affiche l’exemple de sortie suivant après l’exécution de :
 
@@ -116,7 +122,7 @@ Inscrivez l’instance avec une durée de vie limitée. Utilisez <xref:Microsoft
 - La réception d’une <xref:System.IDisposable> dépendance via l’injection de dépendances ne nécessite pas que le récepteur s’implémente <xref:System.IDisposable> lui-même. Le récepteur de la <xref:System.IDisposable> dépendance ne doit pas appeler <xref:System.IDisposable.Dispose%2A> sur cette dépendance.
 - Utilisez des étendues pour contrôler les durées de vie des services. Les étendues ne sont pas hiérarchiques, et il n’existe pas de connexion spéciale entre les étendues.
 
-Pour plus d’informations sur le nettoyage des ressources, consultez [implémenter une méthode dispose](../../standard/garbage-collection/implementing-dispose.md)
+Pour plus d’informations sur le nettoyage des ressources, consultez [implémenter une `Dispose` méthode](../../standard/garbage-collection/implementing-dispose.md)ou [implémenter une `DisposeAsync` méthode](../../standard/garbage-collection/implementing-disposeasync.md). En outre, considérez les [services transitoires jetables capturés par](#disposable-transient-services-captured-by-container) le scénario de conteneur en ce qui concerne le nettoyage des ressources.
 
 ## <a name="default-service-container-replacement"></a>Remplacement de conteneur de services par défaut
 
@@ -150,17 +156,71 @@ La méthode de fabrique d’un service unique, telle que le deuxième argument d
 - `async/await` et la `Task` résolution de service basée sur n’est pas prise en charge. Étant donné que C# ne prend pas en charge les constructeurs asynchrones, utilisez des méthodes asynchrones après la résolution synchrone du service.
 - Évitez de stocker des données et des configurations directement dans le conteneur de services. Par exemple, le panier d’achat d’un utilisateur ne doit en général pas être ajouté au conteneur de services. La configuration doit utiliser le modèle d’options. De même, évitez les objets « garde-données » qui existent uniquement pour autoriser l’accès à un autre objet. Il est préférable de demander l’élément réel par le biais de l’injection de dépendance.
 - Évitez l’accès statique aux services. Par exemple, évitez de capturer [IApplicationBuilder. ApplicationServices](xref:Microsoft.AspNetCore.Builder.IApplicationBuilder.ApplicationServices) en tant que champ ou propriété statique à utiliser ailleurs.
-- Conservez les fabriques DI en mode rapide et synchrone.
-- Évitez d’utiliser le *modèle de localisation de service*. Par exemple, n’appelez pas <xref:System.IServiceProvider.GetService%2A> pour obtenir une instance de service lorsque vous pouvez utiliser l’injection de dépendance à la place.
+- Conservez les [fabriques di](#async-di-factories-can-cause-deadlocks) en mode rapide et synchrone.
+- Évitez d’utiliser le [*modèle de localisateur de service*](#scoped-service-as-singleton). Par exemple, n’appelez pas <xref:System.IServiceProvider.GetService%2A> pour obtenir une instance de service lorsque vous pouvez utiliser l’injection de dépendance à la place.
 - Une autre variante du localisateur de service à éviter est l’injection d’une fabrique qui résout les dépendances au moment de l’exécution. Ces deux pratiques combinent des stratégies [Inversion de contrôle](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion).
 - Évitez les appels à <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider%2A> dans `ConfigureServices` . L’appel de `BuildServiceProvider` se produit généralement lorsque le développeur souhaite résoudre un service dans `ConfigureServices` .
-- Les services transitoires jetables sont capturés par le conteneur pour la suppression. Cela peut entraîner une fuite de mémoire si elle est résolue à partir du conteneur de niveau supérieur.
+- Les [services transitoires jetables sont capturés](#disposable-transient-services-captured-by-container) par le conteneur pour la suppression. Cela peut entraîner une fuite de mémoire si elle est résolue à partir du conteneur de niveau supérieur.
 - Activez la validation de l’étendue pour vous assurer que l’application n’a pas de singletons qui capturent les services délimités. Pour plus d’informations, consultez [Validation de l’étendue](dependency-injection.md#scope-validation).
 
 Comme pour toutes les recommandations, vous pouvez vous trouver dans des situations où il est nécessaire d’ignorer une recommandation. Les exceptions sont rares, principalement des cas spéciaux dans l’infrastructure elle-même.
 
 L’injection de dépendance constitue une *alternative* aux modèles d’accès aux objets statiques/globaux. Il est possible que vous ne bénéficiez pas des avantages de l’injection de dépendances si vous la combinez avec l’accès aux objets statiques.
 
+## <a name="example-anti-patterns"></a>Exemples d’anti-modèles
+
+Outre les instructions de cet article, il existe plusieurs anti-modèles à *éviter. **should*** Certains de ces anti-modèles sont des apprentissages du développement des runtimes eux-mêmes.
+
+> [!WARNING]
+> Il s’agit d’un exemple de anti-modèles, de ne *pas* copier le code, de *ne pas* utiliser ces modèles et d’éviter ces modèles à tous les coûts.
+
+### <a name="disposable-transient-services-captured-by-container"></a>Services transitoires jetables capturés par conteneur
+
+Lorsque vous enregistrez des services *temporaires* qui implémentent <xref:System.IDisposable> , le conteneur d’injection de transactions contiendra par défaut ces références, et non <xref:System.IDisposable.Dispose> jusqu’à ce que l’application s’arrête. Cela peut entraîner une fuite de mémoire si elle est résolue à partir du conteneur de niveau.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="18-30":::
+
+Dans l’anti-modèle précédent, 1 000 `ExampleDisposable` objets sont instanciés et rootés. Elles ne sont pas supprimées tant que l' `serviceProvider` instance n’est pas supprimée.
+
+Pour plus d’informations sur le débogage des fuites de mémoire, consultez [déboguer une fuite de mémoire dans .net](../diagnostics/debug-memory-leak.md).
+
+### <a name="async-di-factories-can-cause-deadlocks"></a>Les fabriques de structures asynchrones Async peuvent provoquer des blocages
+
+Le terme « DI fabriques » fait référence aux méthodes de surcharge qui existent lors de l’appel de `Add{LIFETIME}` . Il existe des surcharges qui acceptent un `Func<IServiceProvider, T>` où `T` est le service en cours d’inscription et le paramètre est nommé `implementationFactory` . `implementationFactory`Peut être fourni en tant qu’expression lambda, fonction locale ou méthode. Si la fabrique est asynchrone et que vous utilisez <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> , cela provoque un interblocage.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="32-45" highlight="4-8":::
+
+Dans le code précédent, `implementationFactory` reçoit une expression lambda dans laquelle le corps appelle <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> sur une `Task<Bar>` méthode de retour. Cela ***provoque un interblocage*** . La `GetBarAsync` méthode émule simplement une opération de travail asynchrone avec <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> , puis appelle <xref:Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService%60%601(System.IServiceProvider)> .
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="47-53":::
+
+Pour plus d’informations sur l’aide asynchrone, consultez [programmation asynchrone : informations et conseils importants](../../csharp/async.md#important-info-and-advice). Pour plus d’informations sur le débogage des interblocages, consultez [Déboguer un blocage dans .net](../diagnostics/debug-deadlock.md).
+
+Quand vous exécutez cet anti-modèle et que le blocage se produit, vous pouvez afficher les deux threads en attente de la fenêtre piles parallèles de Visual Studio. Pour plus d’informations, consultez [afficher les threads et les tâches dans la fenêtre piles parallèles](/visualstudio/debugger/using-the-parallel-stacks-window).
+
+### <a name="captive-dependency"></a>Dépendance captive
+
+Le terme [« dépendance captive »](https://blog.ploeh.dk/2014/06/02/captive-dependency) a été inventé par [Mark Seeman](https://blog.ploeh.dk/about)et fait référence à une configuration insuffisante des durées de vie des services, où un service plus long contient un service plus éphémère.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="55-65":::
+
+Dans le code précédent, `Foo` est inscrit en tant que Singleton et `Bar` est étendu, ce qui, sur la surface, semble être valide. Toutefois, tenez compte de l’implémentation de `Foo` .
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Foo.cs" highlight="5":::
+
+L' `Foo` objet requiert un `Bar` objet, et étant donné que `Foo` est un singleton et `Bar` est étendu, il s’agit d’une configuration Inde. Comme c’est le cas, ne `Foo` serait instanciée qu’une seule fois et elle contiendrait `Bar` pour sa durée de vie, ce qui est plus long que la durée de vie limitée prévue de `Bar` . Vous devez envisager de valider des portées en passant `validateScopes: true` à l' <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean)> . Lorsque vous validez les étendues, vous obtenez un <xref:System.InvalidOperationException> avec un message semblable à « impossible d’utiliser la barre du service d’étendue » à partir du singleton « foo ».».
+
+Pour plus d’informations, consultez [Validation de l’étendue](dependency-injection.md#scope-validation).
+
+### <a name="scoped-service-as-singleton"></a>Service étendu en tant que singleton
+
+Si vous utilisez des services délimités, si vous ne créez pas d’étendue ou au sein d’une étendue existante, le service devient un singleton.
+
+:::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="68-82" highlight="13-14":::
+
+Dans le code précédent, `Bar` est récupéré dans un <xref:Microsoft.Extensions.DependencyInjection.IServiceScope> , ce qui est correct. L’anti-modèle est la récupération de l' `Bar` extérieur de la portée, et la variable est nommée `avoid` pour indiquer quel exemple de récupération est incorrect.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Injection de dépendances dans .NET](dependency-injection.md)
+- [Didacticiel : utiliser l’injection de dépendances dans .NET](dependency-injection-usage.md)

@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- times [.NET Framework], arithmetic operations
-- dates [.NET Framework], arithmetic operations
-- time zones [.NET Framework], arithmetic operations
-- arithmetic operations [.NET Framework], dates and times
-- dates [.NET Framework], comparing
+- times [.NET], arithmetic operations
+- dates [.NET], arithmetic operations
+- time zones [.NET], arithmetic operations
+- arithmetic operations [.NET], dates and times
+- dates [.NET], comparing
 - DateTime structure, arithmetic operations
 - DateTimeOffset structure, arithmetic operations
 ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
-ms.openlocfilehash: c212397f99bd09195f298d7d704c879705b14f02
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8350454c0570bcf0ba82fa5d83639da0433c785c
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281542"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063558"
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>Exécution d’opérations arithmétiques avec des dates et heures
 
@@ -34,7 +34,7 @@ La <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> propriété perme
 
 La <xref:System.DateTime.CompareTo%28System.DateTime%29> méthode signale que l’heure locale est antérieure (ou inférieure) à l’heure UTC, et l’opération de soustraction indique que la différence entre l’heure UTC et l’heure locale pour un système dans le fuseau horaire Pacifique (États-Unis) est de sept heures. Toutefois, étant donné que ces deux valeurs fournissent des représentations différentes d’un point unique dans le temps, il est clair dans ce cas que l’intervalle de temps est totalement attribuable au décalage du fuseau horaire local par rapport à l’heure UTC.
 
-Plus généralement, la <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> propriété n’affecte pas les résultats retournés par les <xref:System.DateTime.Kind> méthodes de comparaison et arithmétiques (comme la comparaison de deux points identiques dans le temps indique), bien qu’elle puisse affecter l’interprétation de ces résultats. Par exemple :
+Plus généralement, la <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> propriété n’affecte pas les résultats retournés par les <xref:System.DateTime.Kind> méthodes de comparaison et arithmétiques (comme la comparaison de deux points identiques dans le temps indique), bien qu’elle puisse affecter l’interprétation de ces résultats. Exemple :
 
 - Le résultat de toute opération arithmétique exécutée sur deux valeurs de date et d’heure dont <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> les propriétés sont égales <xref:System.DateTimeKind> reflète l’intervalle de temps réel entre les deux valeurs. De même, la comparaison de deux valeurs de date et d’heure de ce type indique précisément la relation entre les heures.
 
@@ -68,7 +68,7 @@ La principale limitation de l’utilisation de <xref:System.DateTimeOffset> vale
 
 ## <a name="arithmetic-operations-with-times-in-time-zones"></a>Opérations arithmétiques avec des heures dans des fuseaux horaires
 
-La <xref:System.TimeZoneInfo> classe comprend un certain nombre de méthodes de conversion qui appliquent automatiquement des ajustements lorsqu’ils convertissent des heures d’un fuseau horaire à un autre. Ces options en question sont les suivantes :
+La <xref:System.TimeZoneInfo> classe comprend un certain nombre de méthodes de conversion qui appliquent automatiquement des ajustements lorsqu’ils convertissent des heures d’un fuseau horaire à un autre. Elles sont associées aux limitations suivantes :
 
 - Les <xref:System.TimeZoneInfo.ConvertTime%2A> <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A> méthodes et, qui convertissent des heures entre deux fuseaux horaires quelconques.
 
@@ -86,4 +86,4 @@ Par exemple, le code suivant est semblable au code précédent qui ajoutait deux
 ## <a name="see-also"></a>Voir aussi
 
 - [Dates, heures et fuseaux horaires](index.md)
-- [Comment : utiliser des fuseaux horaires dans des opérations arithmétiques de date et d’heure](use-time-zones-in-arithmetic.md)
+- [Procédure : utiliser des fuseaux horaires en arithmétique de date et heure](use-time-zones-in-arithmetic.md)

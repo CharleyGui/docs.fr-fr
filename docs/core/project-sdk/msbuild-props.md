@@ -4,12 +4,12 @@ description: Référence pour les propriétés et les éléments MSBuild compris
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: ac5d082acae582352680782deadb71a86f977f3b
-ms.sourcegitcommit: 2e4adc490c1d2a705a0592b295d606b10b9f51f1
+ms.openlocfilehash: 463e2a163e6a20f5631b0ab82462614834156ae3
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91354451"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063226"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Référence MSBuild pour les projets SDK .NET
 
@@ -142,7 +142,7 @@ Pour plus d’informations sur le déploiement, consultez [déploiement d’appl
 
 ### <a name="embeddedresourceusedependentuponconvention"></a>EmbeddedResourceUseDependentUponConvention
 
-La `EmbeddedResourceUseDependentUponConvention` propriété définit si les noms des fichiers manifestes de ressources sont générés à partir des informations de type dans les fichiers sources qui sont colocalisés avec les fichiers de ressources. Par exemple, si *Form1. resx* se trouve dans le même dossier que *Form1.cs*et que `EmbeddedResourceUseDependentUponConvention` a la valeur `true` , le fichier *. Resources* généré prend son nom dans le premier type défini dans *Form1.cs*. Par exemple, si `MyNamespace.Form1` est le premier type défini dans *Form1.cs*, le nom de fichier généré est *MyNamespace. Form1. Resources*.
+La `EmbeddedResourceUseDependentUponConvention` propriété définit si les noms des fichiers manifestes de ressources sont générés à partir des informations de type dans les fichiers sources qui sont colocalisés avec les fichiers de ressources. Par exemple, si *Form1. resx* se trouve dans le même dossier que *Form1.cs* et que `EmbeddedResourceUseDependentUponConvention` a la valeur `true` , le fichier *. Resources* généré prend son nom dans le premier type défini dans *Form1.cs* . Par exemple, si `MyNamespace.Form1` est le premier type défini dans *Form1.cs* , le nom de fichier généré est *MyNamespace. Form1. Resources* .
 
 > [!NOTE]
 > Si `LogicalName` `ManifestResourceName` `DependentUpon` les métadonnées, ou sont spécifiées pour un `EmbeddedResource` élément, le nom de fichier manifeste généré pour ce fichier de ressources est basé sur ces métadonnées à la place.
@@ -181,7 +181,7 @@ La `AnalysisLevel` propriété vous permet de spécifier un niveau d’analyse d
 
 Le tableau suivant présente les options disponibles.
 
-| Value | Signification |
+| Valeur | Signification |
 |-|-|
 | `latest` | Les derniers analyseurs de code qui ont été publiés sont utilisés. Il s’agit de la valeur par défaut. |
 | `preview` | Les derniers analyseurs de code sont utilisés, même s’ils sont en version préliminaire. |
@@ -200,7 +200,7 @@ Le tableau suivant présente les options disponibles.
 
 Le tableau suivant présente les options disponibles.
 
-| Value | Signification |
+| Valeur | Signification |
 |-|-|
 | `Default` | Mode par défaut, où certaines règles sont activées en tant qu’avertissements de build, certaines règles sont activées en tant que suggestions de l’IDE Visual Studio, et le reste est désactivé. |
 | `AllEnabledByDefault` | Mode agressif ou opt-out, où toutes les règles sont activées par défaut en tant qu’avertissements de génération. Vous pouvez [choisir](../../fundamentals/code-analysis/configuration-options.md) de désactiver les règles individuelles de manière sélective pour les désactiver. |
@@ -230,6 +230,9 @@ L’analyse de la [qualité du code .net](../../fundamentals/code-analysis/overv
 > Une autre façon d’activer l’analyse du code .NET sur les projets qui ciblent les versions .NET antérieures à .NET 5,0 consiste à définir la propriété [AnalysisLevel](#analysislevel) sur `latest` .
 
 ### <a name="enforcecodestyleinbuild"></a>EnforceCodeStyleInBuild
+
+> [!NOTE]
+> Cette fonctionnalité est actuellement expérimentale et peut changer entre les versions .NET 5 et .NET 6.
 
 L' [analyse du style de code .net](../../fundamentals/code-analysis/overview.md#code-style-analysis) est désactivée, par défaut, à la génération pour tous les projets .net. Vous pouvez activer l’analyse de style de code pour les projets .NET en affectant à la propriété la valeur `EnforceCodeStyleInBuild` `true` .
 
@@ -395,7 +398,7 @@ L’extrait de code du fichier projet dans l’exemple suivant fait référence 
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Informations de référence
+### <a name="reference"></a>Référence
 
 L' `Reference` élément définit une référence à un fichier d’assembly.
 

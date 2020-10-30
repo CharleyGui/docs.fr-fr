@@ -3,18 +3,19 @@ title: Meilleures pratiques du modèle de design observateur
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- observer design pattern [.NET Framework], best practices
-- best practices [.NET Framework], observer design pattern
+- observer design pattern [.NET], best practices
+- best practices [.NET], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-ms.openlocfilehash: b4f8e568dcb6790dac1dc8fc5c969d6fa1367c4e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8e75343e1ca1c7f69306ee45148f2dc0eec3585f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288457"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064078"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Meilleures pratiques du modèle de design observateur
-Dans le .NET Framework, le modèle de conception observateur est implémenté comme un ensemble d’interfaces. L'interface <xref:System.IObservable%601?displayProperty=nameWithType> représente le fournisseur de données, qui est également chargé de fournir une implémentation <xref:System.IDisposable> permettant aux observateurs d'annuler leur abonnement aux notifications. L'interface <xref:System.IObserver%601?displayProperty=nameWithType> représente l'observateur. Cette rubrique décrit les meilleures pratiques que les développeurs doivent suivre quand ils implémentent le modèle de conception observateur à l'aide de ces interfaces.  
+
+Dans .NET, le modèle de conception observateur est implémenté comme un ensemble d’interfaces. L'interface <xref:System.IObservable%601?displayProperty=nameWithType> représente le fournisseur de données, qui est également chargé de fournir une implémentation <xref:System.IDisposable> permettant aux observateurs d'annuler leur abonnement aux notifications. L'interface <xref:System.IObserver%601?displayProperty=nameWithType> représente l'observateur. Cette rubrique décrit les meilleures pratiques que les développeurs doivent suivre quand ils implémentent le modèle de conception observateur à l'aide de ces interfaces.  
   
 ## <a name="threading"></a>Thread  
  En général, un fournisseur implémente la méthode <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> en ajoutant un observateur à une liste d’abonnés représentée par un objet de collection, puis il implémente la méthode <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> en supprimant un observateur de la liste des abonnés. Un observateur peut appeler ces méthodes à tout moment. De plus, étant donné que le contrat fournisseur/observateur ne spécifie pas qui est responsable de l'annulation d'abonnement après la méthode de rappel <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, il est possible que le fournisseur et l'observateur tentent de supprimer le même membre de la liste. En raison de cette éventualité, les méthodes <xref:System.IObservable%601.Subscribe%2A> et <xref:System.IDisposable.Dispose%2A> doivent être thread-safe. En général, cela implique l’utilisation d’une [collection simultanée](../parallel-programming/data-structures-for-parallel-programming.md) ou d’un verrou. Les implémentations qui ne sont pas thread-safe doivent indiquer explicitement qu'elles ne le sont pas.  

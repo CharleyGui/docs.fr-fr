@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- time zones [.NET Framework], deserializing
-- time zones [.NET Framework], restoring
+- time zones [.NET], deserializing
+- time zones [.NET], restoring
 ms.assetid: 6b7b4de9-da07-47e3-8f4c-823f81798ee7
-ms.openlocfilehash: b1cece13c88b3a49c9c4c90045a07dd009d4282d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1dd3dff2441ac5e21f3ebf97d58919a7c65d42c5
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281321"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063428"
 ---
 # <a name="how-to-restore-time-zones-from-an-embedded-resource"></a>Procédure : restaurer des fuseaux horaires à partir d’une ressource incorporée
 
@@ -26,7 +26,7 @@ Cette rubrique explique comment restaurer des fuseaux horaires qui ont été enr
 
 2. Instanciez un <xref:System.Resources.ResourceManager> objet en passant le nom qualifié complet du fichier de ressources incorporé et une référence à l’assembly qui contient le fichier de ressources.
 
-   Si vous ne pouvez pas déterminer le nom complet du fichier de ressources incorporé, utilisez [Ildasm. exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) pour examiner le manifeste de l’assembly. Une `.mresource` entrée identifie la ressource. Dans l’exemple, le nom complet de la ressource est `SerializeTimeZoneData.SerializedTimeZones` .
+   Si vous ne pouvez pas déterminer le nom complet du fichier de ressources incorporé, utilisez le [Ildasm.exe (Désassembleur il)](../../framework/tools/ildasm-exe-il-disassembler.md) pour examiner le manifeste de l’assembly. Une `.mresource` entrée identifie la ressource. Dans l’exemple, le nom complet de la ressource est `SerializeTimeZoneData.SerializedTimeZones` .
 
    Si le fichier de ressources est incorporé dans le même assembly qui contient le code d’instanciation du fuseau horaire, vous pouvez récupérer une référence à celui-ci en appelant la `static` `Shared` méthode (en Visual Basic) <xref:System.Reflection.Assembly.GetExecutingAssembly%2A> .
 
@@ -49,7 +49,7 @@ Ce code illustre la gestion des exceptions pour s’assurer qu’un <xref:System
 
 Cet exemple nécessite :
 
-- Qu’une référence à System. Windows. Forms. dll et System. Core. dll soit ajoutée au projet.
+- Qu’une référence à System.Windows.Forms.dll et System.Core.dll être ajoutée au projet.
 
 - Que les espaces de noms suivants soient importés :
 
@@ -59,5 +59,5 @@ Cet exemple nécessite :
 ## <a name="see-also"></a>Voir aussi
 
 - [Dates, heures et fuseaux horaires](index.md)
-- [Présentation du fuseau horaire](time-zone-overview.md)
+- [Vue d’ensemble des fuseaux horaires](time-zone-overview.md)
 - [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](save-time-zones-to-an-embedded-resource.md)

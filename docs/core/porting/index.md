@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: c206e56e095d1ca068fa2aa6f60e891895f7f999
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 00d6bb513a6bd8ee511b69c07272f605c39e5619
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888572"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063239"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -65,7 +65,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 1. Utilisez l' [Analyseur de portabilité .net](../../standard/analyzers/portability-analyzer.md) pour analyser vos assemblys et voir s’ils sont portables vers .net core.
 
-   L’outil de l’analyseur de portabilité .NET analyse vos assemblys compilés et génère un rapport. Ce rapport affiche un résumé de la portabilité de haut niveau et une répartition de chaque API que vous utilisez et qui n’est pas disponible sur le réseau principal. Quand vous utilisez l’outil, soumettez uniquement le projet individuel que vous convertissez pour vous concentrer sur les modifications d’API qui sont potentiellement nécessaires. La plupart des API ont une disponibilité équivalente dans .NET Core, à partir de laquelle vous souhaitez basculer.
+   L’outil de l’analyseur de portabilité .NET analyse vos assemblys compilés et génère un rapport. Ce rapport affiche un résumé de la portabilité de haut niveau et une répartition de chaque API que vous utilisez et qui n’est pas disponible sur .NET Core. Quand vous utilisez l’outil, soumettez uniquement le projet individuel que vous convertissez pour vous concentrer sur les modifications d’API qui sont potentiellement nécessaires. La plupart des API ont une disponibilité équivalente dans .NET Core, à partir de laquelle vous souhaitez basculer.
 
    Lors de la lecture des rapports générés par l’analyseur, les informations importantes sont les API réelles qui sont utilisées et pas nécessairement le pourcentage de prise en charge de la plateforme cible. De nombreuses API ont des options équivalentes dans .NET Standard/Core, et par conséquent, il est important de comprendre les scénarios dont votre bibliothèque ou votre application a besoin pour déterminer l’implication de la portabilité.
 

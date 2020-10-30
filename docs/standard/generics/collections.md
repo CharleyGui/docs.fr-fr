@@ -11,12 +11,12 @@ helpviewer_keywords:
 - generic collections [.NET]
 - generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-ms.openlocfilehash: 5767bac0bb1e3ae9e586e9a10d8452d421519447
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 956db9ace4ae00062accdd6e80c7911aaac7523f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287569"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064247"
 ---
 # <a name="generic-collections-in-net"></a>Collections génériques dans .NET
 
@@ -45,7 +45,7 @@ ms.locfileid: "84287569"
   
  La structure générique <xref:System.ArraySegment%601> offre un moyen de délimiter une plage d'éléments dans un tableau unidimensionnel de base zéro, de n'importe quel type. Le paramètre de type générique est le type des éléments du tableau.  
   
- Le délégué générique <xref:System.EventHandler%601> élimine le besoin de déclarer un type de délégué pour gérer les événements, si votre événement respecte le modèle de gestion des événements utilisé par le .NET Framework. Par exemple, supposons que vous avez créé une classe `MyEventArgs` dérivée de <xref:System.EventArgs>, pour stocker les données de votre événement. Vous pouvez ensuite déclarer l'événement comme suit :  
+ Le <xref:System.EventHandler%601> délégué générique élimine la nécessité de déclarer un type délégué pour gérer les événements, si votre événement suit le modèle de gestion des événements utilisé par .net. Par exemple, supposons que vous avez créé une classe `MyEventArgs` dérivée de <xref:System.EventArgs>, pour stocker les données de votre événement. Vous pouvez ensuite déclarer l'événement comme suit :  
   
  [!code-cpp[Conceptual.Generics.Overview#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source2.cpp#7)]
  [!code-csharp[Conceptual.Generics.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source2.cs#7)]

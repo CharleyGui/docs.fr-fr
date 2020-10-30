@@ -1,23 +1,23 @@
 ---
-title: 'Comment : créer des fuseaux horaires avec des règles d’ajustement'
+title: 'Procédure : créer des fuseaux horaires avec des règles d’ajustement'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- time zones [.NET Framework], creating
-- time zones [.NET Framework], and adjustment rules
-- adjustment rule [.NET Framework]
+- time zones [.NET], creating
+- time zones [.NET], and adjustment rules
+- adjustment rule [.NET]
 ms.assetid: c52ef192-13a9-435f-8015-3b12eae8c47c
-ms.openlocfilehash: b7e938581dfde3f1566aa2506302292686c2fc5c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 28ab7c8ceabcfd64a6797cf5a85869c469963983
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278166"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063818"
 ---
-# <a name="how-to-create-time-zones-with-adjustment-rules"></a>Comment : créer des fuseaux horaires avec des règles d’ajustement
+# <a name="how-to-create-time-zones-with-adjustment-rules"></a>Procédure : créer des fuseaux horaires avec des règles d’ajustement
 
 Les informations de fuseau horaire précises requises par une application peuvent ne pas être présentes sur un système particulier pour plusieurs raisons :
 
@@ -92,5 +92,5 @@ Cet exemple nécessite :
 ## <a name="see-also"></a>Voir aussi
 
 - [Dates, heures et fuseaux horaires](index.md)
-- [Présentation du fuseau horaire](time-zone-overview.md)
+- [Vue d’ensemble des fuseaux horaires](time-zone-overview.md)
 - [Comment : créer des fuseaux horaires sans règles d’ajustement](create-time-zones-without-adjustment-rules.md)

@@ -6,7 +6,7 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - memory, garbage collection
 - garbage collection, automatic memory management
-- GC [.NET Framework]
+- GC [.NET]
 - memory, allocating
 - common language runtime, garbage collection
 - garbage collector
@@ -19,12 +19,12 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: dde0012ff7233eb7ee13efab1931f129b0eae276
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 39b5bf62935054bd4b9be2d228cc42202aa89144
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662483"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063187"
 ---
 # <a name="garbage-collection"></a>Garbage collection
 
@@ -32,7 +32,7 @@ Le « garbage collector » du .NET gère l’allocation et la libération de m
   
 ## <a name="in-this-section"></a>Dans cette section
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Notions de base de garbage collection](fundamentals.md)|Décrit le fonctionnement du garbage collection, l’allocation des objets sur le tas managé, ainsi que d’autres concepts principaux.|  
 |[Garbage collection de station de travail et de serveur](workstation-server-gc.md)|Décrit les différences entre les garbage collection de station de travail pour les applications clientes et les garbage collection de serveur pour les applications serveur.|
@@ -46,7 +46,7 @@ Le « garbage collector » du .NET gère l’allocation et la libération de m
 |[Supervision des ressource de domaine d’application](app-domain-resource-monitoring.md)|Explique comment surveiller l’utilisation du processeur et de la mémoire par un domaine d’application.|  
 |[Références faibles](weak-references.md)|Décrit les fonctionnalités qui permettent au Garbage collector de collecter un objet tout en permettant à l’application d’accéder à cet objet.|  
   
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.GC?displayProperty=nameWithType>  
 - <xref:System.GCCollectionMode?displayProperty=nameWithType>  

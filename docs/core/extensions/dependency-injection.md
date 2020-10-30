@@ -3,14 +3,14 @@ title: Injection de dépendances dans .NET
 description: Découvrez comment .NET implémente l’injection de dépendances et comment l’utiliser.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/23/2020
+ms.date: 10/28/2020
 ms.topic: overview
-ms.openlocfilehash: d2dbe06597c99158eaa39812d4d5a95288450adc
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 2199f51ab13bedd50af747ce33ceee7b6eaefd8f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888564"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063146"
 ---
 # <a name="dependency-injection-in-net"></a>Injection de dépendances dans .NET
 
@@ -210,16 +210,41 @@ Le Framework fournit des méthodes d’extension d’inscription de service qui 
 
 Pour plus d’informations sur la suppression de type, consultez la section [Suppression des services](dependency-injection-guidelines.md#disposal-of-services).
 
+L’inscription d’un service avec un seul type d’implémentation équivaut à inscrire ce service avec le même type de service et l’implémentation. C’est pourquoi plusieurs implémentations d’un service ne peuvent pas être inscrites à l’aide des méthodes qui n’acceptent pas un type de service explicite. Ces méthodes peuvent inscrire plusieurs _instances * d’un service, mais elles auront toutes le même type d' *implémentation* .
+
+L’une des méthodes d’inscription de service ci-dessus peut être utilisée pour inscrire plusieurs instances de service du même type de service. Dans l’exemple suivant, `AddSingleton` est appelé deux fois avec `IMessageWriter` comme type de service. Le deuxième appel à `AddSingleton` remplace le précédent lorsqu’il est résolu en tant que `IMessageWriter` et ajoute au précédent lorsque plusieurs services sont résolus via `IEnumerable<IMessageWriter>` . Les services s’affichent dans l’ordre dans lequel ils ont été inscrits lorsqu’ils sont résolus via `IEnumerable<{SERVICE}>` .
+
+:::code language="csharp" source="snippets/configuration/console-di-ienumerable/Program.cs" highlight="19-24":::
+
+L’exemple de code source précédent inscrit deux implémentations du `IMessageWriter` .
+
+:::code language="csharp" source="snippets/configuration/console-di-ienumerable/ExampleService.cs" highlight="9-18":::
+
+`ExampleService`Définit deux paramètres de constructeur, un unique `IMessageWriter` et un `IEnumerable<IMessageWriter>` . Le seul `IMessageWriter` est le dernier implémentation à être enregistré, tandis que `IEnumerable<IMessageWriter>` représente toutes les implémentations inscrites.
+
 Le Framework fournit également des `TryAdd{LIFETIME}` méthodes d’extension, qui inscrivent le service uniquement si aucune implémentation n’est déjà inscrite.
 
-Dans l’exemple suivant, l’appel à `AddSingleton` s’inscrit `MessageWriter` en tant qu’implémentation de `IMessageWriter` . L’appel à n' `TryAddSingleton` a aucun effet, car `IMessageWriter` a déjà une implémentation inscrite :
+Dans l’exemple suivant, l’appel à `AddSingleton` s’inscrit `ConsoleMessageWriter` en tant qu’implémentation de `IMessageWriter` . L’appel à n' `TryAddSingleton` a aucun effet, car `IMessageWriter` a déjà une implémentation inscrite :
 
 ```csharp
-services.AddSingleton<IMessageWriter, MessageWriter>();
-services.TryAddSingleton<IMessageWriter, DifferentMessageWriter>();
+services.AddSingleton<IMessageWriter, ConsoleMessageWriter>();
+services.TryAddSingleton<IMessageWriter, LoggingMessageWriter>();
 ```
 
-Le n' `TryAddSingleton` a aucun effet, car il a déjà été ajouté et le « try » échoue.
+Le n' `TryAddSingleton` a aucun effet, car il a déjà été ajouté et le « try » échoue. Le `ExampleService` déclarerait les éléments suivants :
+
+```csharp
+public class ExampleService
+{
+    public ExampleService(
+        IMessageWriter messageWriter,
+        IEnumerable<IMessageWriter> messageWriters)
+    {
+        Trace.Assert(messageWriter is ConsoleMessageWriter);
+        Trace.Assert(messageWriters.Single() is ConsoleMessageWriter);
+    }
+}
+```
 
 Pour plus d'informations, consultez les pages suivantes :
 
@@ -228,7 +253,7 @@ Pour plus d'informations, consultez les pages suivantes :
 - <xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddScoped%2A>
 - <xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddSingleton%2A>
 
-Les méthodes [TryAddEnumerable (ServiceDescriptor)](xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddEnumerable%2A) inscrivent le service uniquement s’il n’existe pas déjà une implémentation _of le même type *. Plusieurs services sont résolus par le biais de `IEnumerable<{SERVICE}>`. Lors de l’inscription des services, ajoutez une instance si l’un des mêmes types n’a pas déjà été ajouté. Les auteurs de bibliothèque utilisent `TryAddEnumerable` pour éviter d’inscrire plusieurs copies d’une implémentation dans le conteneur.
+Les méthodes [TryAddEnumerable (ServiceDescriptor)](xref:Microsoft.Extensions.DependencyInjection.Extensions.ServiceCollectionDescriptorExtensions.TryAddEnumerable%2A) inscrivent le service uniquement s’il n’existe pas déjà une implémentation *du même type* . Plusieurs services sont résolus par le biais de `IEnumerable<{SERVICE}>`. Lors de l’inscription des services, ajoutez une instance si l’un des mêmes types n’a pas déjà été ajouté. Les auteurs de bibliothèque utilisent `TryAddEnumerable` pour éviter d’inscrire plusieurs copies d’une implémentation dans le conteneur.
 
 Dans l’exemple suivant, le premier appel à `TryAddEnumerable` s’inscrit `MessageWriter` en tant qu’implémentation pour `IMessageWriter1` . Le deuxième appel s’inscrit `MessageWriter` pour `IMessageWriter2` . Le troisième appel n’a aucun effet, car `IMessageWriter1` a déjà une implémentation inscrite de `MessageWriter` :
 

@@ -3,19 +3,19 @@ title: Globalisation et ICU
 ms.date: 05/21/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- globalization [.NET Framework], about globalization
+- globalization [.NET], about globalization
 - global applications, globalization
-- international applications [.NET Framework], globalization
+- international applications [.NET], globalization
 - world-ready applications, globalization
-- application development [.NET Framework], globalization
+- application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: 60533fbb215ffe8baba7e2d200faa1c4937294b9
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 87d0103e90d46ae83b23c9cc05e9efcaa51c831f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654879"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063987"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 
@@ -107,7 +107,7 @@ Pour les applications autonomes, aucune action spéciale n’est requise de la p
 
 Si vous utilisez ICU via un package NuGet, cela fonctionne dans les applications dépendantes du Framework. NuGet résout les ressources natives et les comprend dans le `deps.json` fichier et dans le répertoire de sortie de l’application sous le `runtimes` répertoire. .NET le charge à partir de là.
 
-Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Par exemple :
+Pour les applications dépendantes du Framework (non autonomes) où ICU est consommé à partir d’une build locale, vous devez effectuer des étapes supplémentaires. Le kit de développement logiciel (SDK) .NET ne dispose pas encore d’une fonctionnalité pour les fichiers binaires natifs « libres » à incorporer dans `deps.json` (consultez [ce problème du SDK](https://github.com/dotnet/sdk/issues/11373)). Au lieu de cela, vous pouvez l’activer en ajoutant des informations supplémentaires dans le fichier projet de l’application. Exemple :
 
 ```xml
 <ItemGroup>
@@ -137,7 +137,7 @@ Certaines directives pour le chargeur, comme `@loader_path` , indiquent au charg
 
 - `install_name_tool -change`
 
-  Exécutez les commandes suivantes :
+  Exécutez les commandes suivantes :
 
 ```bash
 install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dylib" /path/to/libicuuc.67.1.dylib

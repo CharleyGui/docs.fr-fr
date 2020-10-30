@@ -9,18 +9,18 @@ helpviewer_keywords:
 - CaseInsensitiveComparer class, using
 - CollectionsUtil.CreateCaseInsensitiveHashtable method
 - culture-insensitive string operations, collections
-- collections [.NET Framework], culture-insensitive string operations
+- collections [.NET], culture-insensitive string operations
 - CaseInsensitiveHashCodeProvider class, using
 - ArrayList.Sort method
 - SortedList class, culture-insensitive string operations
 - culture parameter
 ms.assetid: 5cdc9396-a64b-4615-a1cd-b605db4c5983
-ms.openlocfilehash: 377fa58e052e8f8e35a546c21fe2b4fb00cb103d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0a55a41b7cd2a2d245d0fb7722dddee794777422
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288262"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063961"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>Exécution d’opérations de chaînes indépendantes de la culture dans des collections
 
@@ -145,5 +145,5 @@ Les surcharges de la méthode `ArrayList.Sort` effectuent des tris dépendants d
 - <xref:System.Collections.SortedList>
 - <xref:System.Collections.Hashtable>
 - <xref:System.Collections.IComparer>
-- [Exécution d’opérations de chaînes indépendantes de la culture](performing-culture-insensitive-string-operations.md)
+- [Exécution d'opérations de chaînes indépendantes de la culture](performing-culture-insensitive-string-operations.md)
 - <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType>

@@ -6,19 +6,19 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- globalization [.NET Framework], about globalization
+- globalization [.NET], about globalization
 - global applications, globalization
-- international applications [.NET Framework], globalization
+- international applications [.NET], globalization
 - world-ready applications, globalization
-- application development [.NET Framework], globalization
+- application development [.NET], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: adc617362cf3ba07ff63f1095968e2bd88df88d9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 66ed197f102583553112083e3a21f89e33cd3e3f
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291914"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064169"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -102,7 +102,7 @@ En règle générale, les chaînes ordonnées devant s’afficher dans l’inter
 
 La comparaison de chaînes dépendante de la culture est définie par l’objet <xref:System.Globalization.CompareInfo>, qui est retourné par la propriété <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> de chaque culture. Les comparaisons de chaînes dépendantes de la culture qui utilisent les surcharges de méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> utilisent aussi l’objet <xref:System.Globalization.CompareInfo>.
 
-.NET utilise des tables pour effectuer des tris dépendants de la culture sur les données de chaîne. Le contenu de ces tables, qui comportent des données de pondération de tri et de normalisation de chaînes, est déterminé par la version de la norme Unicode implémentée par une version déterminée de .NET. Le tableau suivant répertorie les versions d’Unicode implémentées par les versions indiquées de .NET. Notez que cette liste de versions d’Unicode prises en charge s’applique uniquement à la comparaison et au tri de caractères ; elle ne s’applique pas à la classification des caractères Unicode par catégorie. Pour plus d’informations, consultez la section « Chaînes et norme Unicode » de l’article <xref:System.String>.
+.NET utilise des tables pour effectuer des tris dépendants de la culture sur les données de chaîne. Le contenu de ces tables, qui comportent des données de pondération de tri et de normalisation de chaînes, est déterminé par la version de la norme Unicode implémentée par une version déterminée de .NET. Le tableau suivant répertorie les versions d’Unicode implémentées par les versions spécifiées de .NET. Cette liste de versions Unicode prises en charge s’applique uniquement à la comparaison de caractères et au tri ; elle ne s’applique pas à la classification des caractères Unicode par catégorie. Pour plus d’informations, consultez la section « Chaînes et norme Unicode » de l’article <xref:System.String>.
 
 |Version du .NET Framework|Système d’exploitation|Version d’Unicode|
 |----------------------------|----------------------|---------------------|
@@ -112,9 +112,9 @@ La comparaison de chaînes dépendante de la culture est définie par l’objet 
 |.NET Framework 4|Tous les systèmes d’exploitation|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur Windows 7|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur les systèmes d’exploitation Windows 8 et versions ultérieures|Unicode 6.3.0|
-|.NET Core (toutes les versions)|En fonction de la version de la norme Unicode prise en charge par le système d’exploitation sous-jacent.|
+|.NET Core et .NET 5 +|En fonction de la version de la norme Unicode prise en charge par le système d’exploitation sous-jacent.|
 
-Depuis .NET Framework 4.5 et dans toutes les versions de .NET Core, la comparaison et le tri de chaînes dépendent du système d’exploitation. .NET Framework 4.5 et ultérieur s’exécutant sur Windows 7 récupère les données dans ses propres tables qui implémentent Unicode 5.0. .NET Framework 4.5 et ultérieur s’exécutant sur Windows 8 récupère les données dans ses propres tables qui implémentent Unicode 6.3. Sur .NET Core, la version Unicode prise en charge dépend du système d’exploitation sous-jacent. Si vous sérialisez des données triées dépendantes de la culture, vous pouvez utiliser la classe <xref:System.Globalization.SortVersion> pour déterminer à quel moment vos données sérialisées doivent être triées de sorte qu’elles correspondent au .NET et à l’ordre de tri du système d’exploitation. Pour obtenir un exemple, consultez la rubrique relative à la classe <xref:System.Globalization.SortVersion>.
+À compter de .NET Framework 4,5 et dans toutes les versions de .NET Core et de .NET 5 +, la comparaison et le tri des chaînes dépendent du système d’exploitation. .NET Framework 4,5 et versions ultérieures exécutées sur Windows 7 récupèrent les données de leurs propres tables qui implémentent Unicode 5,0. .NET Framework 4,5 et versions ultérieures s’exécutant sur Windows 8 et versions ultérieures récupèrent les données des tables du système d’exploitation qui implémentent Unicode 6,3. Sur .NET Core et .NET 5 +, la version prise en charge d’Unicode dépend du système d’exploitation sous-jacent. Si vous sérialisez des données triées dépendantes de la culture, vous pouvez utiliser la classe <xref:System.Globalization.SortVersion> pour déterminer à quel moment vos données sérialisées doivent être triées de sorte qu’elles correspondent au .NET et à l’ordre de tri du système d’exploitation. Pour obtenir un exemple, consultez la rubrique relative à la classe <xref:System.Globalization.SortVersion>.
 
 Si votre application effectue des tris étendus propres à la culture sur des données de chaîne, vous pouvez utiliser la classe <xref:System.Globalization.SortKey> pour comparer des chaînes. Une clé de tri reflète les pondérations de tri propres à la culture, notamment les pondérations alphabétiques, de casse et diacritiques d’une chaîne déterminée. Les comparaisons à base de clés de tri étant binaires, elles sont plus rapides que les comparaisons qui utilisent un objet <xref:System.Globalization.CompareInfo>, que ce soit de manière implicite ou explicite. Vous pouvez créer une clé de tri propre à la culture pour une chaîne déterminée en passant la chaîne à la méthode <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType>.
 

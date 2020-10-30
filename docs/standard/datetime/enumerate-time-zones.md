@@ -1,22 +1,22 @@
 ---
-title: 'Comment : énumérer les fuseaux horaires présents sur un ordinateur'
+title: 'Procédure : énumérer les fuseaux horaires d’un ordinateur'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- time zones [.NET Framework], enumerating
-- enumerating time zones [.NET Framework]
+- time zones [.NET], enumerating
+- enumerating time zones [.NET]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-ms.openlocfilehash: 8f1cc9d58bc0f169d458854eac6568caaa4481c7
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a51e9d0c51968d57e0d79dd80d8619ab11cdbf93
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286130"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063766"
 ---
-# <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Comment : énumérer les fuseaux horaires présents sur un ordinateur
+# <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Procédure : énumérer les fuseaux horaires d’un ordinateur
 
 Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir accéder aux informations le concernant. Les systèmes d’exploitation Windows XP et Windows Vista stockent ces informations dans le registre. Il existe de nombreux fuseaux horaires dans le monde, mais le Registre contient des informations sur un sous-ensemble de ces fuseaux horaires uniquement. De plus, le Registre est une structure dynamique dont le contenu peut être modifié délibérément ou accidentellement. Par conséquent, une application ne peut pas toujours supposer qu’un fuseau horaire particulier est défini et disponible sur un système. Pour de nombreuses applications qui utilisent des informations de fuseau horaire, il convient en premier lieu de déterminer si les fuseaux horaires requis sont disponibles sur le système local ou de fournir à l’utilisateur la liste des fuseaux horaires qu’il peut sélectionner. Il faut donc qu’une application énumère les fuseaux horaires définis sur un système local.
 
@@ -25,7 +25,7 @@ Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir
 
 ### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>Pour énumérer les fuseaux horaires présents sur le système local
 
-1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection générique d' <xref:System.TimeZoneInfo> objets. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Par exemple :
+1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection générique d' <xref:System.TimeZoneInfo> objets. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Exemple :
 
    [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
    [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]
@@ -63,7 +63,7 @@ Cet exemple nécessite :
 
 - Que les espaces de noms suivants soient importés :
 
-  <xref:System>(dans le code C#)
+  <xref:System> (dans le code C#)
 
   <xref:System.Collections.ObjectModel>
 

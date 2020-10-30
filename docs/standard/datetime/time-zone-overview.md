@@ -3,24 +3,24 @@ title: Vue d’ensemble des fuseaux horaires
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- time zones [.NET Framework], about time zones
-- transition time [.NET Framework]
+- time zones [.NET], about time zones
+- transition time [.NET]
 - TimeZoneInfo class, about TimeZoneInfo class
-- time zones [.NET Framework], creating
-- invalid time [.NET Framework]
-- fixed rule [.NET Framework]
-- ambiguous time [.NET Framework]
-- floating rule [.NET Framework]
-- daylight saving time [.NET Framework]
-- adjustment rule [.NET Framework]
-- time zones [.NET Framework], terminology
+- time zones [.NET], creating
+- invalid time [.NET]
+- fixed rule [.NET]
+- ambiguous time [.NET]
+- floating rule [.NET]
+- daylight saving time [.NET]
+- adjustment rule [.NET]
+- time zones [.NET], terminology
 ms.assetid: c4b7ed01-5e38-4959-a3b6-ef9765d6ccf1
-ms.openlocfilehash: 9cb50357931cb22fd2862ba7558154a4782e4557
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0f0fdbe4b63ddc9d55f7397fa71198d72e60e669
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281035"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064104"
 ---
 # <a name="time-zone-overview"></a>Vue d’ensemble des fuseaux horaires
 

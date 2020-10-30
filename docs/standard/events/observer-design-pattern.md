@@ -11,18 +11,18 @@ helpviewer_keywords:
 - IObservable<T> interface
 - IObserver<T> interface
 - IObservable(Of T) interface
-- observer design pattern [.NET Framework]
+- observer design pattern [.NET]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 80dac36199dd13abeab295d4b53a52615e7ae625
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e1f8dad2c19d3e11281cda5ef749730c5c6334d7
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559159"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064065"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 
-Le modèle de design Observateur permet à un abonné de s’inscrire auprès d’un fournisseur et d’en recevoir des notifications. Il convient pour les scénarios nécessitant des notifications selon le modèle push. Le modèle définit un *fournisseur* (également appelé un *sujet* ou un *observable*) et zéro, un ou plusieurs *observateurs*. Les observateurs s'inscrivent auprès du fournisseur et, chaque fois qu'une condition prédéfinie, un événement ou un changement d'état se produit, le fournisseur notifie automatiquement tous les observateurs en appelant l'une de leurs méthodes. Dans cet appel de méthode, le fournisseur peut également fournir des informations sur l'état actuel aux observateurs. Dans le .NET Framework, le modèle de design Observateur est appliqué en implémentant les interfaces génériques <xref:System.IObservable%601?displayProperty=nameWithType> et <xref:System.IObserver%601?displayProperty=nameWithType>. Le paramètre de type générique représente le type qui fournit les informations de notification.
+Le modèle de design Observateur permet à un abonné de s’inscrire auprès d’un fournisseur et d’en recevoir des notifications. Il convient pour les scénarios nécessitant des notifications selon le modèle push. Le modèle définit un *fournisseur* (également appelé un *sujet* ou un *observable* ) et zéro, un ou plusieurs *observateurs* . Les observateurs s'inscrivent auprès du fournisseur et, chaque fois qu'une condition prédéfinie, un événement ou un changement d'état se produit, le fournisseur notifie automatiquement tous les observateurs en appelant l'une de leurs méthodes. Dans cet appel de méthode, le fournisseur peut également fournir des informations sur l'état actuel aux observateurs. Dans .NET, le modèle de conception observateur est appliqué en implémentant <xref:System.IObservable%601?displayProperty=nameWithType> les <xref:System.IObserver%601?displayProperty=nameWithType> interfaces et génériques. Le paramètre de type générique représente le type qui fournit les informations de notification.
 
 ## <a name="applying-the-pattern"></a>Application du modèle
 

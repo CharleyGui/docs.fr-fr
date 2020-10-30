@@ -11,17 +11,18 @@ helpviewer_keywords:
 - culture, custom case mappings
 - culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-ms.openlocfilehash: 79ff899e2964ae2c1e90b7178616c612dddf6d86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0f7e8dde395feb548e6808547a223a3fa8855561
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287504"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063909"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Exécution d’opérations de chaînes indépendantes de la culture
-La plupart des méthodes .NET Framework qui exécutent des opérations de chaînes dépendantes de la culture fournissent par défaut des surcharges de méthode qui vous permettent de spécifier explicitement la culture à utiliser en passant un paramètre <xref:System.Globalization.CultureInfo>. Ces surcharges vous permettent d’éliminer les différences culturelles dans les règles de mappages et de tri de casse et de garantir des résultats indépendants de la culture.  
+
+La plupart des méthodes .NET qui effectuent des opérations de chaînes dépendantes de la culture fournissent par défaut des surcharges de méthode qui vous permettent de spécifier explicitement la culture à utiliser en passant un <xref:System.Globalization.CultureInfo> paramètre. Ces surcharges vous permettent d’éliminer les différences culturelles dans les règles de mappages et de tri de casse et de garantir des résultats indépendants de la culture.  
   
- Cette section fournit les rubriques suivantes pour montrer comment exécuter des opérations de chaînes indépendantes de la culture à l’aide de méthodes .NET Framework qui sont dépendantes de la culture par défaut.  
+ Cette section fournit les articles suivants pour illustrer comment effectuer des opérations de chaînes indépendantes de la culture à l’aide de méthodes .NET qui sont dépendantes de la culture par défaut.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Exécution de comparaisons de chaînes indépendantes de la culture](performing-culture-insensitive-string-comparisons.md)  

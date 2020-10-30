@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: dee5a4b54806bdadc18d759c5df7016da060fd75
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 7c4a61c1e5e735313a355bcab348fd6ef58a8686
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662847"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93062969"
 ---
 # <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
 
@@ -24,7 +24,7 @@ Les sections suivantes décrivent les outils disponibles pour analyser les probl
 
 ### <a name="memory-performance-counters"></a>Compteurs de performance mémoire
 
-Vous pouvez utiliser les compteurs de performances pour collecter des données sur les performances. Pour obtenir des instructions, voir [Génération de profils d'exécution](../../framework/debug-trace-profile/runtime-profiling.md). La catégorie Mémoire CLR .NET des compteurs de performances, telle qu'elle est décrite dans [Compteurs de performances dans le .NET Framework](../../framework/debug-trace-profile/performance-counters.md), fournit des informations sur le garbage collector.
+Vous pouvez utiliser les compteurs de performances pour collecter des données sur les performances. Pour obtenir des instructions, voir [Génération de profils d'exécution](../../framework/debug-trace-profile/runtime-profiling.md). La catégorie Mémoire CLR .NET des compteurs de performances, comme décrit dans [compteurs de performances dans .net](../../framework/debug-trace-profile/performance-counters.md), fournit des informations sur le garbage collector.
 
 ### <a name="debugging-with-sos"></a>Débogage avec l'extension SOS
 
@@ -34,7 +34,7 @@ Pour installer WinDbg, installez les outils de débogage pour Windows à partir 
 
 ### <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection
 
-Le suivi d'événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET Framework. À compter de .NET Framework 4, les [événements ETW de garbage collection](../../framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas managé d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :
+Le suivi d’événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET. À partir de .NET Framework 4, [garbage collection événements ETW](../../framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas géré à partir d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :
 
 - La génération d'objets qui est collectée
 
@@ -52,7 +52,7 @@ Les profileurs peuvent fournir des informations complètes. Toutefois, les profi
 
 ### <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application
 
-À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](app-domain-resource-monitoring.md).
+À compter de .NET Framework 4, le contrôle ARM (application domain Resource Monitoring) permet aux hôtes de surveiller l’utilisation de l’UC et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](app-domain-resource-monitoring.md).
 
 ## <a name="troubleshooting-performance-issues"></a>Résolution des problèmes de performances
 
@@ -182,7 +182,7 @@ La génération 0 est susceptible de contenir un plus grand nombre d'objets sur
 
 L'utilisation du processeur est élevée pendant les garbage collection. Si un temps de processus suffisant est consacré à un garbage collection, les collections seront trop fréquent ou la collection durera trop longtemps. Un taux d'allocation d'objets plus élevé sur le tas managé entraîne des garbage collection plus fréquents. La diminution du taux d'allocation réduit la fréquence des garbage collection.
 
-Vous pouvez surveiller les taux d'allocation à l'aide du compteur de performances `Allocated Bytes/second`. Pour plus d'informations, voir [Compteurs de performance dans le .NET Framework](../../framework/debug-trace-profile/performance-counters.md).
+Vous pouvez surveiller les taux d'allocation à l'aide du compteur de performances `Allocated Bytes/second`. Pour plus d’informations, consultez [compteurs de performance dans .net](../../framework/debug-trace-profile/performance-counters.md).
 
 La durée d’une collection est principalement un facteur du nombre d’objets qui survivent après l’allocation. Le garbage collector devra parcourir une grande quantité de mémoire si de nombreux objets restent à collecter. Le travail qui consiste à compacter les survivants prend beaucoup de temps. Pour déterminer le nombre d'objets traités au cours d'une collection, définissez un point d'arrêt dans le débogueur à la fin d'un garbage collection pour une génération spécifique.
 
@@ -230,7 +230,7 @@ La procédure suivante décrit comment définir un point d'arrêt pour mesurer l
 
   Cette commande force un arrêt si **RestartEE** est exécuté après la récupération des objets de génération 2 pour le garbage collection.
 
-  Dans le garbage collection pour serveur, un seul thread appelle **RestartEE**. Ainsi, le point d’arrêt se produit une seule fois pendant un garbage collection de génération 2.
+  Dans le garbage collection pour serveur, un seul thread appelle **RestartEE** . Ainsi, le point d’arrêt se produit une seule fois pendant un garbage collection de génération 2.
 
 ## <a name="performance-check-procedures"></a>Procédures de contrôle des performances
 
@@ -272,9 +272,9 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 - Examinez les deux compteurs de performances de mémoire suivants :
 
-  - **% Temps dans le GC**. Affiche le pourcentage de la durée calendaire passé à effectuer un garbage collection après le dernier cycle de garbage collection. Utilisez ce compteur pour déterminer si le garbage collector passe trop de temps à libérer de l'espace dans le tas managé. Si le temps passé au garbage collection est relativement faible, cela peut indiquer un problème de ressources en dehors du tas managé. Ce compteur peut être inexact si le garbage collection simultané ou le garbage collection d’arrière-plan sont impliqués.
+  - **% Temps dans le GC** . Affiche le pourcentage de la durée calendaire passé à effectuer un garbage collection après le dernier cycle de garbage collection. Utilisez ce compteur pour déterminer si le garbage collector passe trop de temps à libérer de l'espace dans le tas managé. Si le temps passé au garbage collection est relativement faible, cela peut indiquer un problème de ressources en dehors du tas managé. Ce compteur peut être inexact si le garbage collection simultané ou le garbage collection d’arrière-plan sont impliqués.
 
-  - Nombre **total d’octets validés**. Affiche la quantité de mémoire virtuelle actuellement validée par le garbage collector. Utilisez ce compteur pour déterminer si la mémoire consommée par le garbage collector est trop élevée par rapport à la mémoire totale utilisée par votre application.
+  - Nombre **total d’octets validés** . Affiche la quantité de mémoire virtuelle actuellement validée par le garbage collector. Utilisez ce compteur pour déterminer si la mémoire consommée par le garbage collector est trop élevée par rapport à la mémoire totale utilisée par votre application.
 
   La plupart des compteurs de performances de mémoire sont mis à jour à la fin de chaque garbage collection. Ils peuvent donc ne pas refléter les conditions actuelles à propos desquelles vous voulez obtenir des informations.
 
@@ -282,7 +282,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 ### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Pour déterminer si l'exception de mémoire insuffisante est managée
 
-1. Dans le débogueur WinDbg ou Visual Studio avec l’extension SOS chargée, tapez la commande d’exception d’impression (**pe**) suivante :
+1. Dans le débogueur WinDbg ou Visual Studio avec l’extension SOS chargée, tapez la commande d’exception d’impression ( **pe** ) suivante :
 
     **! PE**
 
@@ -328,11 +328,11 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Dans cet exemple, la taille de la région libre la plus grande est d'environ 24 000 Ko (3A980 en hexadécimal). Cette région est beaucoup plus petite que ce dont le garbage collector a besoin pour un segment.
 
-  -ou-
+  - ou -
 
 - Utilisez la commande **vmstat** :
 
-  **!vmstat**
+  **! vmstat**
 
   La région libre la plus grande correspond à la plus grande valeur de la colonne MAXIMUM, comme illustré dans la sortie suivante.
 
@@ -352,9 +352,9 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 1. Démarrez le Gestionnaire des tâches Windows.
 
-2. Sous l’onglet **Performances**, regardez la valeur validée. (Dans Windows 7, regardez **Validation (Ko)** sous **Groupe système**.)
+2. Sous l’onglet **Performances** , regardez la valeur validée. (Dans Windows 7, regardez **Validation (Ko)** sous **Groupe système** .)
 
-    Si le **Total** est proche de la **Limite**, la mémoire physique devient insuffisante.
+    Si le **Total** est proche de la **Limite** , la mémoire physique devient insuffisante.
 
 <a name="ManagedHeapCommit"></a>
 
@@ -371,7 +371,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
 - Utilisez le compteur de performances de mémoire `# Total reserved bytes`.
 
-  Le garbage collector réserve de la mémoire sous forme de segments, et vous pouvez déterminer où démarre un segment à l'aide de la commande **eeheap**.
+  Le garbage collector réserve de la mémoire sous forme de segments, et vous pouvez déterminer où démarre un segment à l'aide de la commande **eeheap** .
 
   > [!IMPORTANT]
   > Même s'il est possible de déterminer la quantité de mémoire que le garbage collector alloue à chaque segment, la taille d'un segment dépend de l'implémentation et est susceptible de changer à tout moment, y compris lors des mises à jour périodiques. Votre application ne doit jamais faire d'hypothèses concernant une taille de segment particulière, ni dépendre de celle-ci. Elle ne doit pas non plus tenter de configurer la quantité de mémoire disponible pour les allocations de segments.
@@ -424,7 +424,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Si le tas managé est volumineux, l’exécution de **dumpheap** peut prendre un certain temps.
 
-  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Par exemple :
+  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Exemple :
 
   ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
@@ -785,7 +785,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
   Total 6417525 objects
   ```
 
-  Les objets `double[]` ont disparu de la fin de la sortie, ce qui signifie qu'ils ont été collectés. Ces objets représentent environ 70 Mo. Les objets restants n'ont pas beaucoup changé. Ces objets `double[]` étaient donc à l'origine du déclenchement du garbage collection de génération 2. L'étape suivante consiste à déterminer pourquoi les objets `double[]` y sont situés et pourquoi ils sont morts. Vous pouvez demander à un développeur d'où proviennent ces objets ou vous pouvez utiliser la commande **gcroot**.
+  Les objets `double[]` ont disparu de la fin de la sortie, ce qui signifie qu'ils ont été collectés. Ces objets représentent environ 70 Mo. Les objets restants n'ont pas beaucoup changé. Ces objets `double[]` étaient donc à l'origine du déclenchement du garbage collection de génération 2. L'étape suivante consiste à déterminer pourquoi les objets `double[]` y sont situés et pourquoi ils sont morts. Vous pouvez demander à un développeur d'où proviennent ces objets ou vous pouvez utiliser la commande **gcroot** .
 
 <a name="HighCPU"></a>
 
