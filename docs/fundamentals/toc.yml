@@ -1560,6 +1560,8 @@ items:
         href: ../core/extensions/custom-logging-provider.md
       - name: Journalisation haute performance
         href: ../core/extensions/high-performance-logging.md
+      - name: Mise en forme des journaux de la console
+        href: ../core/extensions/console-log-formatter.md
   - name: HostBuilder (hôte générique)
     href: ../core/extensions/generic-host.md
   - name: Accès aux données
