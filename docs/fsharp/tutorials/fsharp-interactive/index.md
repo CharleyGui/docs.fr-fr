@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 08/20/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: ae8d68140ddec8e18ee23e9a43b548907e1ab5c4
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: b1020d8ab8f2282c792fb5d00656b6d43c2c6610
+ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720320"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93064117"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -19,9 +19,9 @@ Pour exécuter F# Interactive à partir de la console, exécutez `dotnet fsi` . 
 
 Pour plus d’informations sur les options de ligne de commande disponibles, consultez [Options de F# Interactive](../../language-reference/fsharp-interactive-options.md).
 
-Pour exécuter F# Interactive par l’intermédiaire de Visual Studio, vous pouvez cliquer sur le bouton de barre d’outils approprié intitulé **F# Interactive** ou utiliser les touches **Ctrl+Alt+F**. La fenêtre interactive, fenêtre Outil exécutant une session F# Interactive, s'affiche. Vous pouvez également sélectionner du code que vous souhaitez exécuter dans la fenêtre interactive et appuyer sur la combinaison de touches **Alt + Entrée**. F# Interactive démarre dans une fenêtre Outil nommée **F# Interactive**. Lorsque vous utilisez cette combinaison de touches, assurez-vous que la fenêtre de l'éditeur a le focus.
+Pour exécuter F# Interactive par l’intermédiaire de Visual Studio, vous pouvez cliquer sur le bouton de barre d’outils approprié intitulé **F# Interactive** ou utiliser les touches **Ctrl+Alt+F** . La fenêtre interactive, fenêtre Outil exécutant une session F# Interactive, s'affiche. Vous pouvez également sélectionner du code que vous souhaitez exécuter dans la fenêtre interactive et appuyer sur la combinaison de touches **Alt + Entrée** . F# Interactive démarre dans une fenêtre Outil nommée **F# Interactive** . Lorsque vous utilisez cette combinaison de touches, assurez-vous que la fenêtre de l'éditeur a le focus.
 
-Que vous utilisiez la console ou Visual Studio, une invite de commandes apparaît et l'interpréteur attend votre entrée. Vous pouvez saisir le code comme vous le feriez dans un fichier de code. Pour compiler et exécuter le code, entrez deux points-virgules (**;;**) pour terminer une ligne ou plusieurs lignes d’entrée.
+Que vous utilisiez la console ou Visual Studio, une invite de commandes apparaît et l'interpréteur attend votre entrée. Vous pouvez saisir le code comme vous le feriez dans un fichier de code. Pour compiler et exécuter le code, entrez deux points-virgules ( **;;** ) pour terminer une ligne ou plusieurs lignes d’entrée.
 
 F# Interactive tente de compiler le code et, en cas de réussite, exécute le code et imprime la signature des types et des valeurs qu'il a compilés. Si des erreurs se produisent, l'interpréteur imprime les messages d'erreur.
 
@@ -29,13 +29,13 @@ Le code entré dans la même session ayant accès à toutes les constructions en
 
 Comme lors de l'exécution dans Visual Studio, F# Interactive s'exécute indépendamment de votre projet, vous ne pouvez pas, par exemple, utiliser les constructions définies dans votre projet F# Interactive, sauf si vous copiez le code de la fonction dans la fenêtre interactive.
 
-Si vous avez un projet ouvert qui fait référence à des bibliothèques, vous pouvez référencer celles-ci dans F# Interactive par l’intermédiaire de l’**Explorateur de solutions**. Pour référencer une bibliothèque dans F# Interactive, développez le nœud **Références**, ouvrez le menu contextuel de la bibliothèque et choisissez **Envoyer à F# Interactive**.
+Si vous avez un projet ouvert qui fait référence à des bibliothèques, vous pouvez référencer celles-ci dans F# Interactive par l’intermédiaire de l’ **Explorateur de solutions** . Pour référencer une bibliothèque dans F# Interactive, développez le nœud **Références** , ouvrez le menu contextuel de la bibliothèque et choisissez **Envoyer à F# Interactive** .
 
-Vous pouvez contrôler les arguments de ligne de commande F# Interactive (options) en réglant les paramètres. Dans le menu **Outils**, sélectionnez **Options**, puis développez **Outils F#**. Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits**, qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de fsi.exe ou fsianycpu.exe, qui utilise l'architecture de l'ordinateur pour déterminer s'il doit s'exécuter comme processus 32 bits ou 64 bits.
+Vous pouvez contrôler les arguments de ligne de commande F# Interactive (options) en réglant les paramètres. Dans le menu **Outils** , sélectionnez **Options** , puis développez **Outils F#** . Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits** , qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de fsi.exe ou fsianycpu.exe, qui utilise l'architecture de l'ordinateur pour déterminer s'il doit s'exécuter comme processus 32 bits ou 64 bits.
 
 ## <a name="scripting-with-f"></a>Écriture de scripts avec F\#
 
-Les scripts utilisent l’extension de fichier **.fsx** ou **.fsscript**. Au lieu de compiler le code source puis d’exécuter l’assembly compilé, vous pouvez simplement exécuter **dotnet FSI** et spécifier le nom de fichier du script du code source f #, et F # Interactive lit le code et l’exécute en temps réel.
+Les scripts utilisent l’extension de fichier **.fsx** ou **.fsscript** . Au lieu de compiler le code source puis d’exécuter l’assembly compilé, vous pouvez simplement exécuter **dotnet FSI** et spécifier le nom de fichier du script du code source f #, et F # Interactive lit le code et l’exécute en temps réel.
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Différences entre les environnements interactifs, de script et compilés
 
@@ -54,9 +54,9 @@ Certaines directives sont disponibles lorsque vous exécutez des scripts en F# I
 
 Lorsque vous spécifiez des fichiers ou des chemins d'accès dans F# Interactive, un littéral de chaîne est attendu. Par conséquent, les fichiers et les chemins d'accès doivent être entre guillemets, et les caractères d'échappement habituels s'appliquent. En outre, vous pouvez utiliser le caractère @ pour que F# Interactive interprète une chaîne qui contient un chemin d'accès comme chaîne textuelle. Dans ce cas, F# Interactive ignore les caractères d'échappement.
 
-L’une des différences entre le mode compilé et le mode interactif est la façon d’accéder aux arguments de ligne de commande. En mode compilé, utilisez **System.Environment.GetCommandLineArgs**. Dans les scripts, utilisez **fsi.CommandLineArgs**.
+L’une des différences entre le mode compilé et le mode interactif est la façon d’accéder aux arguments de ligne de commande. En mode compilé, utilisez **System.Environment.GetCommandLineArgs** . Dans les scripts, utilisez **fsi.CommandLineArgs** .
 
-Le code suivant illustre comment créer une fonction qui lit les arguments de ligne de commande dans un script et montre également comment référencer un autre assembly à partir d’un script. Le premier fichier de code, **MyAssembly.fs**, est le code de l’assembly référencé. Compilez ce fichier avec la ligne de commande **fsc -a MyAssembly.fs**, puis exécutez le second fichier comme script avec la ligne de commande **fsi --exec file1.fsx** test.
+Le code suivant illustre comment créer une fonction qui lit les arguments de ligne de commande dans un script et montre également comment référencer un autre assembly à partir d’un script. Le premier fichier de code, **MyAssembly.fs** , est le code de l’assembly référencé. Compilez ce fichier avec la ligne de commande **fsc -a MyAssembly.fs** , puis exécutez le second fichier comme script avec la ligne de commande **fsi --exec file1.fsx** test.
 
 ```fsharp
 // MyAssembly.fs
@@ -92,7 +92,7 @@ test
 La `#r` syntaxe permettant de référencer une dll dans F# Interactive peut également être utilisée pour référencer un package NuGet à l’aide de la syntaxe suivante :
 
 ```fsharp
-#r "nuget: <package name>
+#r "nuget: <package name>"
 ```
 
 Par exemple, pour référencer le `FSharp.Data` package, utilisez la `#r` référence suivante :
@@ -117,6 +117,6 @@ ou de manière plus explicite :
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----|-----------|
 |[Options F# Interactive](../../language-reference/fsharp-interactive-options.md)|Décrit la syntaxe et les options de ligne de commande pour le F# Interactive, fsi.exe.|
