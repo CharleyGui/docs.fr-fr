@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 36ecbe763ed47e95d9339d1d748b3faab100c15e
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: e24772ee9c9d22786c9cfece43017f8526434601
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679597"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188053"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -90,13 +90,13 @@ Le chemin de périphérique DOS comprend les composants suivants :
 - Le spécificateur de chemin de périphérique (`\\.\` ou `\\?\`), qui identifie le chemin comme chemin de périphérique DOS.
 
    > [!NOTE]
-   > Le spécificateur `\\?\` est pris en charge dans toutes les versions de .NET Core et dans le .NET Framework à compter de la version 4.6.2.
+   > `\\?\`Est pris en charge dans toutes les versions de .net Core et .net 5 + et dans .NET Framework à partir de la version 4.6.2.
 
 - Un lien symbolique vers le « vrai » objet d’appareil (C: dans le cas d’un nom de lecteur, ou Volume{b75e2c83-0000-0000-0000-602f00000000} dans le cas d’un GUID de volume).
 
    Le premier segment du chemin de périphérique DOS après le spécificateur de chemin de périphérique identifie le volume ou le lecteur. (Par exemple, `\\?\C:\` et `\\.\BootPartition\`.)
 
-   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Exemple :
+   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Par exemple :
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
@@ -194,10 +194,10 @@ Pourquoi ignorer la normalisation ? Voici les trois raisons principales :
 
 1. Améliorer le niveau de performance en ignorant la normalisation précédemment effectuée.
 
-1. Sur le .NET Framework uniquement, ignorer la vérification de la longueur du chemin (`MAX_PATH`) et autoriser les chemins de plus de 259 caractères. La plupart des API autorisent ceci, à quelques exceptions près.
+1. Sur .NET Framework uniquement, pour ignorer la `MAX_PATH` vérification de la longueur du chemin d’accès afin d’autoriser les chemins d’accès qui sont supérieurs à 259 caractères. La plupart des API autorisent ceci, à quelques exceptions près.
 
 > [!NOTE]
-> .NET Core gère implicitement les chemins longs et n’effectue pas la vérification `MAX_PATH`. La vérification `MAX_PATH` s’applique uniquement au .NET Framework.
+> .NET Core et .NET 5 + gèrent les chemins d’accès longs de manière implicite et n’effectuent pas de `MAX_PATH` vérification. La `MAX_PATH` vérification s’applique uniquement aux .NET Framework.
 
 La seule différence entre les deux syntaxes de chemin de périphérique tient au fait que vous pouvez ignorer la normalisation et les vérifications de la longueur maximale des chemins ; sinon, elles sont identiques. Soyez prudent si vous choisissez d’ignorer la normalisation, car vous pouvez facilement créer des chemins difficiles à gérer pour les applications « normales ».
 

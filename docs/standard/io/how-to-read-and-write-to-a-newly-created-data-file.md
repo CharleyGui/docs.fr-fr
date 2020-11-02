@@ -10,21 +10,22 @@ dev_langs:
 helpviewer_keywords:
 - streams, reading and writing data
 - BinaryReader class, examples
-- I/O [.NET Framework], reading data
-- I/O [.NET Framework], writing data
+- I/O [.NET], reading data
+- I/O [.NET], writing data
 - BinaryWriter class, examples
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
-ms.openlocfilehash: 9a6b2985b7f532476c0f4c0f998d710f95e55d3a
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 236d50260efa66f21db6d0abba6cc5c258a74d8d
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769156"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188729"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>Comment : lire et écrire dans un fichier de données nouvellement créé
+
 Les classes <xref:System.IO.BinaryWriter?displayProperty=nameWithType> et <xref:System.IO.BinaryReader?displayProperty=nameWithType> sont utilisées pour écrire et lire des données autres que des chaînes de caractères. L’exemple suivant montre comment créer un flux de fichier vide, y écrire des données, puis les lire.
 
-L’exemple créé un fichier de données appelé *Test.data* dans le répertoire actif, crée les objets <xref:System.IO.BinaryWriter> et <xref:System.IO.BinaryReader> associés, puis utilise l’objet <xref:System.IO.BinaryWriter> pour écrire les entiers de 0 à 10 dans *Test.data*, ce qui laisse le pointeur de fichier à la fin du fichier. Ensuite, l’objet <xref:System.IO.BinaryReader> replace le pointeur de fichier au début, puis lit le contenu spécifié.  
+L’exemple créé un fichier de données appelé *Test.data* dans le répertoire actif, crée les objets <xref:System.IO.BinaryWriter> et <xref:System.IO.BinaryReader> associés, puis utilise l’objet <xref:System.IO.BinaryWriter> pour écrire les entiers de 0 à 10 dans *Test.data* , ce qui laisse le pointeur de fichier à la fin du fichier. Ensuite, l’objet <xref:System.IO.BinaryReader> replace le pointeur de fichier au début, puis lit le contenu spécifié.  
   
 > [!NOTE]
 > Si *Test.data* existe déjà dans le répertoire actif, une exception <xref:System.IO.IOException> est levée. Utilisez l’option de mode de fichier <xref:System.IO.FileMode.Create?displayProperty=nameWithType> plutôt que <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> pour toujours créer un fichier sans lever d’exception.  
@@ -46,4 +47,4 @@ L’exemple créé un fichier de données appelé *Test.data* dans le répertoir
 - [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)  
 - [Comment : lire les caractères d’une chaîne](how-to-read-characters-from-a-string.md)  
 - [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md)  
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

@@ -10,16 +10,17 @@ helpviewer_keywords:
 - log files, opening
 - streams, opening and appending to log file
 - log files, appending to
-- I/O [.NET Framework], log files
+- I/O [.NET], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-ms.openlocfilehash: a66dadd24cc327824e91df733f11a23112cd384a
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ed8345901dc5f44e947bd076944d7e61eac561da
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769169"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188170"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Procédure : ouvrir un fichier journal et y ajouter des éléments
+
 <xref:System.IO.StreamWriter> et <xref:System.IO.StreamReader> écrivent des caractères dans et lisent des caractères à partir des flux. L’exemple de code suivant ouvre le fichier *log.txt* pour l’entrée, ou crée le fichier s’il n’existe pas déjà, puis ajoute les informations à la fin du fichier. Ensuite, l’exemple écrit le contenu du fichier dans la sortie standard en vue de son affichage.
 
 Comme alternative à cet exemple, vous pourriez stocker les informations dans une chaîne ou un tableau de chaînes, puis utiliser la méthode <xref:System.IO.File.WriteAllText%2A?displayProperty=nameWithType> ou <xref:System.IO.File.WriteAllLines%2A?displayProperty=nameWithType> pour obtenir la même fonctionnalité.  
@@ -44,4 +45,4 @@ Comme alternative à cet exemple, vous pourriez stocker les informations dans un
 - [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)  
 - [Comment : lire les caractères d’une chaîne](how-to-read-characters-from-a-string.md)  
 - [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md)  
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

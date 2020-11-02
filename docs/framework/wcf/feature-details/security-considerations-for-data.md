@@ -5,22 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 8b54aea1409f2b4c0a3d39d215922ba62c2a3563
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: b9b033f779b083be8bcec195caf8e55607f14d31
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656968"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188313"
 ---
 # <a name="security-considerations-for-data"></a>Considérations sur la sécurité des données
 
-Lorsque vous traitez des données dans Windows Communication Foundation (WCF), vous devez prendre en compte un certain nombre de catégories de menaces. Le tableau suivant répertorie les classes de menace les plus importantes concernant le traitement de données. WCF fournit des outils pour atténuer ces menaces.
+Lorsque vous traitez des données dans Windows Communication Foundation (WCF), vous devez prendre en compte un certain nombre de catégories de menaces. La liste suivante répertorie les classes de menace les plus importantes relatives au traitement des données. WCF fournit des outils pour atténuer ces menaces.
 
-Déni de service lors de la réception de données non fiables, les données peuvent amener le côté réception à accéder à une quantité disproportionnée de diverses ressources, telles que la mémoire, les threads, les connexions disponibles ou les cycles de processeur, en provoquant des calculs de longue durée. Une attaque par déni de service contre un serveur peut engendrer son blocage et son incapacité à traiter les messages en provenance d'autres clients légitimes.
+* Déni de service
 
-L’exécution de code malveillant des données non fiables entrantes provoque l’exécution par le côté réception du code qu’il n’avait pas prévu.
+  Lors de la réception de données non fiables, les données peuvent entraîner l'accès du côté réception à une quantité disproportionnée de ressources variées, telles que la mémoire, les threads, les connexions disponibles ou les cycles de processeur en provoquant de longs calculs. Une attaque par déni de service contre un serveur peut engendrer son blocage et son incapacité à traiter les messages en provenance d'autres clients légitimes.
 
-Divulgation d’informations : l’attaquant distant force le tiers destinataire à répondre à ses demandes de manière à divulguer plus d’informations que prévu.
+* Exécution de code malveillant
+
+  Les données non fiables entrantes provoquent l'exécution de code imprévu par le côté réception.
+
+* Divulgation d’informations
+
+  L'intrus distant force la partie réception à répondre à ses demandes de sorte qu'elle divulgue plus d'informations que prévu.
 
 ## <a name="user-provided-code-and-code-access-security"></a>Code fourni par l'utilisateur et sécurité d'accès du code
 
@@ -155,7 +161,7 @@ Ce quota limite la profondeur d'imbrication maximale des éléments XML. Par exe
 
 #### <a name="maxnametablecharcount"></a>MaxNameTableCharCount
 
-Ce quota limite la taille du *nametable*du lecteur. Le nametable contient certaines chaînes (telles que des espaces de noms et des préfixes) rencontrées lors du traitement d'un document XML. Étant donné que ces chaînes sont mises en mémoire tampon, définissez ce quota afin d'empêcher une mise en mémoire tampon excessive lorsqu'une diffusion en continu est prévue.
+Ce quota limite la taille du *nametable* du lecteur. Le nametable contient certaines chaînes (telles que des espaces de noms et des préfixes) rencontrées lors du traitement d'un document XML. Étant donné que ces chaînes sont mises en mémoire tampon, définissez ce quota afin d'empêcher une mise en mémoire tampon excessive lorsqu'une diffusion en continu est prévue.
 
 #### <a name="maxstringcontentlength"></a>MaxStringContentLength
 
@@ -169,7 +175,7 @@ Ce quota limite la taille maximale d'un tableau de primitives que le lecteur XML
 
 L’encodage XML binaire pris en charge par WCF comprend une fonctionnalité de *chaînes de dictionnaire* . Une grande chaîne peut être encodée à l'aide de seulement quelques octets. Cette fonctionnalité permet des gains de performance significatifs, mais introduit de nouvelles menaces de déni de service à atténuer.
 
-Il existe deux types de dictionnaires : *statiques* et *dynamiques*. Le dictionnaire statique est une liste intégrée de longues chaînes qui peuvent être représentées à l'aide d'un code court dans l'encodage binaire. Cette liste de chaînes est déterminée lorsque le lecteur est créé et ne peut pas être modifiée. Aucune des chaînes du dictionnaire statique que WCF utilise par défaut n’est suffisamment grande pour poser une menace de déni de service sérieuse, bien qu’elles puissent toujours être utilisées dans une attaque par expansion de dictionnaire. Dans les scénarios complexes où vous fournissez votre propre dictionnaire statique, faites preuve de prudence lorsque vous introduisez de grandes chaînes de dictionnaire.
+Il existe deux types de dictionnaires : *statiques* et *dynamiques* . Le dictionnaire statique est une liste intégrée de longues chaînes qui peuvent être représentées à l'aide d'un code court dans l'encodage binaire. Cette liste de chaînes est déterminée lorsque le lecteur est créé et ne peut pas être modifiée. Aucune des chaînes du dictionnaire statique que WCF utilise par défaut n’est suffisamment grande pour poser une menace de déni de service sérieuse, bien qu’elles puissent toujours être utilisées dans une attaque par expansion de dictionnaire. Dans les scénarios complexes où vous fournissez votre propre dictionnaire statique, faites preuve de prudence lorsque vous introduisez de grandes chaînes de dictionnaire.
 
 Les dictionnaires dynamiques permettent aux messages de définir leurs propres chaînes et de les associer à des codes courts. Ces mappages de chaînes à du code sont conservés en mémoire pendant toute la session de communication, de sorte à ce que les messages suivants n'aient pas à renvoyer les chaînes et puissent utiliser les codes déjà définis. Ces chaînes peuvent être de longueur arbitraire et représentent donc une menace plus sérieuse que celles du dictionnaire statique.
 

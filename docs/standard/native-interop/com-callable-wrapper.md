@@ -13,12 +13,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-ms.openlocfilehash: c42ea0b5ba4cb01304ceae4ba2d2fc91b629a9b3
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: cc27ba47c88d424a80eb47aaa310bdfd6d18433a
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420524"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93187916"
 ---
 # <a name="com-callable-wrapper"></a>Wrapper pouvant être appelé par COM
 
@@ -42,18 +42,18 @@ Contrairement au client .NET qu'il encapsule, le wrapper CCW fait l'objet d'un
 
 CCW expose aux clients COM l’ensemble des interfaces, types de données et valeurs de retour publics et visibles par COM d’une manière qui est cohérente avec l’application de COM de l’interaction reposant sur l’interface. Pour un client COM, l’appel de méthodes sur un objet .NET est identique à l’appel de méthodes sur un objet COM.
 
-Pour adopter cette approche transparente, le wrapper CCW fabrique des interfaces COM classiques, comme **IUnknown** et **IDispatch**. Comme le montre l'illustration suivante, le wrapper CCW contient une référence unique sur l'objet .NET qu'il encapsule. Le client COM et l’objet .NET interagissent via le proxy et la construction stub du wrapper CCW.
+Pour adopter cette approche transparente, le wrapper CCW fabrique des interfaces COM classiques, comme **IUnknown** et **IDispatch** . Comme le montre l'illustration suivante, le wrapper CCW contient une référence unique sur l'objet .NET qu'il encapsule. Le client COM et l’objet .NET interagissent via le proxy et la construction stub du wrapper CCW.
 
 ![Diagramme illustrant la façon dont le wrapper CCW fabrique des interfaces COM.](./media/com-callable-wrapper/com-callable-wrapper-interfaces.gif)
 
-Outre l’exposition des interfaces qui sont implémentées explicitement par une classe dans l’environnement managé, le runtime .NET fournit également des implémentations des interfaces COM répertoriées dans le tableau suivant, pour le compte de l’objet. Une classe .NET peut substituer le comportement par défaut par sa propre implémentation de ces interfaces. Toutefois, le runtime fournit toujours l’implémentation pour les interfaces **IUnknown** et **IDispatch**.
+Outre l’exposition des interfaces qui sont implémentées explicitement par une classe dans l’environnement managé, le runtime .NET fournit également des implémentations des interfaces COM répertoriées dans le tableau suivant, pour le compte de l’objet. Une classe .NET peut substituer le comportement par défaut par sa propre implémentation de ces interfaces. Toutefois, le runtime fournit toujours l’implémentation pour les interfaces **IUnknown** et **IDispatch** .
 
 |Interface|Description|
 |---------------|-----------------|
 |**IDispatch**|Fournit un mécanisme de liaison tardive au type.|
 |**IErrorInfo**|Fournit une description textuelle de l’erreur, sa source, un fichier d’aide, un contexte d’aide et le GUID de l’interface ayant défini l’erreur (toujours **GUID_NULL** pour les classes .NET).|
 |**IProvideClassInfo**|Permet aux clients COM d’accéder à l’interface **ITypeInfo** implémentée par une classe managée. Retourne `COR_E_NOTSUPPORTED` sur .NET Core pour les types non importés à partir de COM. |
-|**ISupportErrorInfo**|Permet à un client COM de déterminer si l’objet managé prend en charge l’interface **IErrorInfo**. Dans ce cas, il permet au client d'obtenir un pointeur vers le dernier objet exception. Tous les types managés prennent en charge l’interface **IErrorInfo**.|
+|**ISupportErrorInfo**|Permet à un client COM de déterminer si l’objet managé prend en charge l’interface **IErrorInfo** . Dans ce cas, il permet au client d'obtenir un pointeur vers le dernier objet exception. Tous les types managés prennent en charge l’interface **IErrorInfo** .|
 |**ITypeInfo** (.NET Framework uniquement)|Fournit des informations de type pour une classe qui sont les mêmes que celles fournies par Tlbexp.exe.|
 |**IUnknown**|Fournit l’implémentation standard de l’interface **IUnknown** avec laquelle le client COM gère la durée de vie du wrapper CCW et fournit le forçage de type.|
 
@@ -61,10 +61,10 @@ Outre l’exposition des interfaces qui sont implémentées explicitement par un
 
 |Interface|Description|
 |---------------|-----------------|
-|L’interface de classe ( \_ *className*)|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
+|L’interface de classe ( \_ *className* )|Interface, exposée par le runtime et non définie explicitement, qui expose l'ensemble des interfaces, méthodes, propriétés et champs publics qui sont exposés explicitement sur un objet managé.|
 |**IConnectionPoint** et **IConnectionPointContainer**|Interface pour les objets qui émettent des événements basés sur les délégués (interface pour l'inscription des abonnés d'événements).|
-|**IDispatchEx** (.NET Framework uniquement)|Interface fournie par le runtime si la classe implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|
-|**IEnumVARIANT**|Interface pour les classes de type collection, qui énumère les objets d’une collection si la classe implémente **IEnumerable**.|
+|**IDispatchEx** (.NET Framework uniquement)|Interface fournie par le runtime si la classe implémente **IExpando** . L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch** , permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|
+|**IEnumVARIANT**|Interface pour les classes de type collection, qui énumère les objets d’une collection si la classe implémente **IEnumerable** .|
 
 ## <a name="introducing-the-class-interface"></a>Présentation de l'interface de classe
 
@@ -157,7 +157,7 @@ L'utilisation de l'interface de classe est une option acceptable pour les client
 
 Pour l'interface de classe, la génération de DISPID repose sur la position du membre de l'interface. Si vous modifiez l'ordre du membre et exportez la classe vers une bibliothèque de types, vous modifierez les DISPID générés dans l'interface de classe.
 
-Pour éviter l’arrêt des clients COM à liaison tardive lors de l’utilisation de l’interface de classe, appliquez **ClassInterfaceAttribute** avec la valeur **ClassInterfaceType.AutoDispatch**. Cette valeur implémente une interface de classe de dispatch, mais omet la description de l'interface de la bibliothèque de types. Sans description d'interface, les clients sont incapables de mettre en cache les DISPID au moment de la compilation. Même s'il s'agit du type d'interface par défaut pour l'interface de classe, vous pouvez appliquer explicitement la valeur d'attribut.
+Pour éviter l’arrêt des clients COM à liaison tardive lors de l’utilisation de l’interface de classe, appliquez **ClassInterfaceAttribute** avec la valeur **ClassInterfaceType.AutoDispatch** . Cette valeur implémente une interface de classe de dispatch, mais omet la description de l'interface de la bibliothèque de types. Sans description d'interface, les clients sont incapables de mettre en cache les DISPID au moment de la compilation. Même s'il s'agit du type d'interface par défaut pour l'interface de classe, vous pouvez appliquer explicitement la valeur d'attribut.
 
 ```vb
 <ClassInterface(ClassInterfaceType.AutoDispatch)> Public Class LoanApp
@@ -175,13 +175,13 @@ public class LoanApp
 }
 ```
 
-Pour obtenir le DISPID d’un membre d’interface au moment de l’exécution, les clients COM peuvent appeler **IDispatch.GetIdsOfNames**. Pour appeler une méthode sur l’interface, passez le DISPID retourné comme argument à **IDispatch.Invoke**.
+Pour obtenir le DISPID d’un membre d’interface au moment de l’exécution, les clients COM peuvent appeler **IDispatch.GetIdsOfNames** . Pour appeler une méthode sur l’interface, passez le DISPID retourné comme argument à **IDispatch.Invoke** .
 
 ### <a name="restrict-using-the-dual-interface-option-for-the-class-interface"></a>Limitez l'utilisation de l'option d'interface double pour l'interface de classe.
 
 Les interfaces doubles permettent une liaison anticipée et tardive aux membres d’interface par les clients COM. Au moment du design et au cours des tests, il peut s'avérer utile de faire de l'interface de classe une interface double. Pour une classe managée (et ses classes de base) qui ne sera jamais modifiée, cette option est également acceptable. Dans tous les autres cas, évitez d'utiliser l'interface double.
 
-Une interface double générée automatiquement peut être appropriée dans de rares cas. Toutefois, cela rend souvent le contrôle de version plus complexe. Par exemple, les clients COM qui utilisent l'interface de classe d'une classe dérivée peuvent facilement s'arrêter en raison des modifications apportées à la classe de base. Quand une tierce partie fournit la classe de base, la disposition de l'interface de classe est hors de votre contrôle. De plus, contrairement à une interface Dispatch uniquement, une interface Dual (**ClassInterfaceType.AutoDual**) offre une description de l’interface de classe dans la bibliothèque de types exportée. Une telle description encourage les clients à liaison tardive à mettre en cache les DISPID au moment de la compilation.
+Une interface double générée automatiquement peut être appropriée dans de rares cas. Toutefois, cela rend souvent le contrôle de version plus complexe. Par exemple, les clients COM qui utilisent l'interface de classe d'une classe dérivée peuvent facilement s'arrêter en raison des modifications apportées à la classe de base. Quand une tierce partie fournit la classe de base, la disposition de l'interface de classe est hors de votre contrôle. De plus, contrairement à une interface Dispatch uniquement, une interface Dual ( **ClassInterfaceType.AutoDual** ) offre une description de l’interface de classe dans la bibliothèque de types exportée. Une telle description encourage les clients à liaison tardive à mettre en cache les DISPID au moment de la compilation.
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Vérifiez que toutes les notifications d’événements COM sont à liaison tardive.
 

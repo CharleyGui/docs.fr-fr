@@ -8,16 +8,16 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- threading [.NET Framework], creating
-- threading [.NET Framework], passing data to threads
-- threading [.NET Framework], retrieving data from threads
+- threading [.NET], creating
+- threading [.NET], passing data to threads
+- threading [.NET], retrieving data from threads
 ms.assetid: 52b32222-e185-4f42-91a7-eaca65c0ab6d
-ms.openlocfilehash: 811028d3c853441ff3a61d3628a44e5c65ba7059
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: a1e8f8f6e017d29f352d79ea08c09b2d97041bba
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661912"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188378"
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Création de threads et passage de données au démarrage
 
@@ -40,9 +40,9 @@ Lorsqu’un processus de système d’exploitation est créé, le système d’e
   
 ## <a name="passing-data-to-threads"></a>Passage de données à des threads
 
- Dans la version 2.0 de .NET Framework, le délégué <xref:System.Threading.ParameterizedThreadStart> permet de transmettre facilement un objet contenant des données à un thread lorsque vous appelez la surcharge de la méthode <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>. Pour obtenir un exemple de code, consultez <xref:System.Threading.ParameterizedThreadStart>.  
+Le <xref:System.Threading.ParameterizedThreadStart> délégué offre un moyen simple de passer un objet contenant des données à un thread lorsque vous appelez <xref:System.Threading.Thread.Start(System.Object)?displayProperty=nameWithType> . Pour obtenir un exemple de code, consultez <xref:System.Threading.ParameterizedThreadStart>.
   
- L’utilisation du délégué <xref:System.Threading.ParameterizedThreadStart> n’est pas une méthode de type sécurisé pour transmettre des données, car la surcharge de la méthode <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> accepte tous les objets. Une alternative consiste à encapsuler la procédure de thread et les données dans une classe d’assistance et à utiliser le délégué <xref:System.Threading.ThreadStart> pour exécuter la procédure de thread. L’exemple suivant montre cette technique :
+ L’utilisation du <xref:System.Threading.ParameterizedThreadStart> délégué n’est pas une façon sécurisée de passer des données, car la <xref:System.Threading.Thread.Start(System.Object)?displayProperty=nameWithType> méthode accepte tout objet. Une alternative consiste à encapsuler la procédure de thread et les données dans une classe d’assistance et à utiliser le délégué <xref:System.Threading.ThreadStart> pour exécuter la procédure de thread. L’exemple suivant montre cette technique :
 
  [!code-cpp[System.Threading.ThreadStart2#3](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CPP/source3.cpp#3)]
  [!code-csharp[System.Threading.ThreadStart2#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CS/source3.cs#3)]
@@ -64,5 +64,5 @@ Ni le délégué <xref:System.Threading.ThreadStart> ni le délégué <xref:Syst
 - <xref:System.Threading.ThreadStart>
 - <xref:System.Threading.ParameterizedThreadStart>
 - <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>
-- [Threads](index.md)
-- [Utilisation des threads et du threading](using-threads-and-threading.md)
+- [Thread](index.md)
+- [Utilisation de threads et de threads](using-threads-and-threading.md)

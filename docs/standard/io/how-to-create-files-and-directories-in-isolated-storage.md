@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- directories [.NET Framework], isolated storage
-- files [.NET Framework], isolated storage
+- directories [.NET], isolated storage
+- files [.NET], isolated storage
 - isolated storage, creating files and directories
 - data stores, creating files and directories
 - data storage using isolated storage, creating files and directories
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-ms.openlocfilehash: b9ae108d9416bb834fc230fde1e62b929c21eb20
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: feb267a8ad05e0d2798f657e696c32adfa2680a0
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990161"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93187929"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Procédure : créer des fichiers et des répertoires dans un stockage isolé
 

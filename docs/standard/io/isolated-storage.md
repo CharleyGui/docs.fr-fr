@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 4ad7779b9810954d110af576dd834daf61888d59
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4289b809d9a401de92c74063a42216f3051543f6
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555918"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188560"
 ---
 # <a name="isolated-storage"></a>Stockage isolé
 
@@ -59,7 +59,7 @@ Le stockage isolé permet aux applications qui ne disposent pas d'un niveau de c
 
 Les administrateurs peuvent limiter la quantité de stockage isolé disponible pour un utilisateur ou une application, en fonction d'un niveau de confiance approprié. En outre, les administrateurs peuvent supprimer toutes les données rendues persistantes d'un utilisateur. Pour créer le stockage isolé ou y accéder, l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> appropriée doit être accordée au code.
 
-Pour accéder au stockage isolé, le code doit posséder tous les droits de système d'exploitation de la plateforme native. Les listes de contrôle d'accès (ACL) qui contrôlent les utilisateurs autorisés à utiliser le système de fichiers doivent être respectées. Les applications .NET Framework possèdent déjà des droits de système d'exploitation pour accéder au stockage isolé, sauf si elles effectuent un emprunt d'identité (spécifique à la plateforme). Dans ce cas, l'application doit garantir que l'identité de l'utilisateur empruntée possède les droits de système d'exploitation appropriés pour accéder au stockage isolé. Cet accès permet au code exécuté ou téléchargé à partir du Web de lire et d'écrire facilement dans une zone de stockage liée à un utilisateur particulier.
+Pour accéder au stockage isolé, le code doit posséder tous les droits de système d'exploitation de la plateforme native. Les listes de contrôle d'accès (ACL) qui contrôlent les utilisateurs autorisés à utiliser le système de fichiers doivent être respectées. Les applications .NET disposent déjà de droits de système d’exploitation pour accéder au stockage isolé, sauf si elles effectuent un emprunt d’identité (spécifique à la plateforme). Dans ce cas, l'application doit garantir que l'identité de l'utilisateur empruntée possède les droits de système d'exploitation appropriés pour accéder au stockage isolé. Cet accès permet au code exécuté ou téléchargé à partir du Web de lire et d'écrire facilement dans une zone de stockage liée à un utilisateur particulier.
 
 Pour contrôler l'accès au stockage isolé, le Common Language Runtime utilise des objets <xref:System.Security.Permissions.IsolatedStorageFilePermission> . Chaque objet possède des propriétés qui spécifient les valeurs suivantes :
 
@@ -134,7 +134,7 @@ Le troisième emplacement est partagé entre tous les comptes d’utilisateur su
 
 Les chemins d’accès précédents peuvent différer selon la version de Windows utilisée.
 
-Considérons maintenant un système multi-utilisateur avec deux utilisateurs inscrits _Mallory_ et _Bob_. Mallory a la possibilité d’accéder à son répertoire de profil utilisateur `C:\Users\Mallory\` et peut accéder à l’emplacement de stockage partagé à l’ensemble de l’ordinateur `C:\ProgramData\IsolatedStorage\` . Elle ne peut pas accéder au répertoire du profil utilisateur de Bob `C:\Users\Bob\` .
+Considérons maintenant un système multi-utilisateur avec deux utilisateurs inscrits _Mallory_ et _Bob_ . Mallory a la possibilité d’accéder à son répertoire de profil utilisateur `C:\Users\Mallory\` et peut accéder à l’emplacement de stockage partagé à l’ensemble de l’ordinateur `C:\ProgramData\IsolatedStorage\` . Elle ne peut pas accéder au répertoire du profil utilisateur de Bob `C:\Users\Bob\` .
 
 Si Mallory souhaite attaquer Bob, il peut écrire des données dans l’emplacement de stockage à l’intérieur de l’ordinateur, puis tenter d’influencer Bob dans la lecture à partir du magasin à l’intérieur de l’ordinateur. Quand Bob exécute une application qui lit à partir de ce magasin, cette application fonctionnera sur les données que Mallory y a placées, mais à partir du contexte du compte d’utilisateur de Bob. Le reste de ce document présente différents vecteurs d’attaque et les étapes que les applications peuvent effectuer pour réduire les risques liés à ces attaques.
 
@@ -150,10 +150,10 @@ Il ne s’agit pas de vecteurs de menace qui s’appliquent aux environnements d
 
 Une attaque par __élévation de privilèges__ se produit lorsque l’application de Bob lit le fichier de Mallory et tente automatiquement d’entreprendre une action en fonction du contenu de cette charge utile. Prenons l’exemple d’une application qui lit le contenu d’un script de démarrage à partir du magasin de l’ordinateur et transmet ce contenu à `Process.Start` . Si Mallory peut placer un script malveillant à l’intérieur du magasin de l’ordinateur, quand Bob lance son application :
 
-* Son application analyse et lance le script malveillant de Mallory _dans le contexte du profil utilisateur de Bob_.
+* Son application analyse et lance le script malveillant de Mallory _dans le contexte du profil utilisateur de Bob_ .
 * Mallory accède au compte de Bob sur l’ordinateur local.
 
-#### <a name="denial-of-service"></a>Denial of service (déni de service)
+#### <a name="denial-of-service"></a>Déni de service
 
 Une attaque par __déni de service__ se produit lorsque l’application de Bob lit le fichier et les blocages de Mallory, ou s’arrête de fonctionner correctement. Reprenons l’application mentionnée précédemment, qui tente d’analyser un script de démarrage à partir du magasin de l’ordinateur. Si Mallory peut placer un fichier dont le contenu est incorrect dans le magasin de l’ordinateur, il peut :
 
@@ -195,7 +195,7 @@ Il est parfois utile de vérifier une modification apportée au stockage isolé 
 
 ## <a name="creating-enumerating-and-deleting-isolated-storage"></a>Création, énumération et suppression du stockage isolé
 
-Le .NET Framework fournit trois classes dans l'espace de noms <xref:System.IO.IsolatedStorage> pour vous aider à exécuter des tâches qui impliquent le stockage isolé :
+.NET fournit trois classes dans l' <xref:System.IO.IsolatedStorage> espace de noms pour vous aider à effectuer des tâches qui impliquent le stockage isolé :
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, qui dérive de <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType> , assure la gestion de base des fichiers d'application et d'assembly stockés. Une instance de la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> représente un magasin unique situé dans le système de fichiers.
 
@@ -246,7 +246,7 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 |[Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé](how-to-find-existing-files-and-directories-in-isolated-storage.md)|Illustre comment lire la structure de répertoire et les fichiers dans le stockage isolé.|
 |[Procédure : lire et écrire des fichiers dans un stockage isolé](how-to-read-and-write-to-files-in-isolated-storage.md)|Fournit un exemple d'écriture d'une chaîne dans un fichier de stockage isolé et de sa lecture ultérieure.|
 |[Procédure : supprimer des fichiers et des répertoires dans un stockage isolé](how-to-delete-files-and-directories-in-isolated-storage.md)|Indique comment supprimer des fichiers et des répertoires d'un stockage isolé|
-|[E/s de fichier et de flux](index.md)|Explique comment accéder aux flux de données et de fichiers de façon synchrone et asynchrone.|
+|[Fichier et flux de données E/S](index.md)|Explique comment accéder aux flux de données et de fichiers de façon synchrone et asynchrone.|
 
 <a name="reference"></a>
 

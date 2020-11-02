@@ -1,28 +1,26 @@
 ---
 title: Exceptions dans les threads managés
-description: Découvrez comment les exceptions non gérées sont gérées dans .NET. Avec .NET version 2,0, la plupart des exceptions de threads non gérées se poursuivent naturellement et mènent à l’arrêt de l’application.
+description: Découvrez comment les exceptions non gérées sont gérées dans .NET. La plupart des exceptions de thread non gérées se poursuivent naturellement et mènent à l’arrêt de l’application.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - unhandled exceptions,in managed threads
-- threading [.NET Framework],unhandled exceptions
-- threading [.NET Framework],exceptions in managed threads
+- threading [.NET],unhandled exceptions
+- threading [.NET],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 2facb68c77815de7a6fb97ab8f2ee683ffbad724
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: b7cf7e94156eedc82c7ec5c863ee013b75d22e73
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767882"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188326"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
-À partir du .NET Framework version 2.0, le common language runtime permet à la plupart des exceptions non prises en charge dans les threads de poursuivre naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.  
+
+Le common language runtime permet à la plupart des exceptions non gérées dans les threads de continuer naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.
   
-> [!NOTE]
-> Il s’agit d’un changement important par rapport au .NET Framework versions 1.0 et 1.1, qui assurent une protection pour nombreuses exceptions non prises en charge, par exemple les exceptions non prises en charge dans les threads des pools de threads. Consultez la section [Changements par rapport aux versions précédentes](#ChangeFromPreviousVersions) plus loin dans cette rubrique.  
-  
- Le common language runtime représente une protection pour certaines exceptions non prises en charge qui sont utilisées pour contrôler le flux du programme :  
+Le common language runtime représente une protection pour certaines exceptions non prises en charge qui sont utilisées pour contrôler le flux du programme :  
   
 - Une <xref:System.Threading.ThreadAbortException> est levée dans un thread, car <xref:System.Threading.Thread.Abort%2A> a été appelé.  
   
@@ -38,13 +36,13 @@ ms.locfileid: "84767882"
 > Il est possible que le runtime lève une exception non prise en charge avant que du code managé ait pu installer un gestionnaire d’exceptions. Bien que le code managé n’ait pas eu la possibilité de traiter cette exception, elle est autorisée à poursuivre naturellement.  
   
 ## <a name="exposing-threading-problems-during-development"></a>Mettre en lumière des problèmes de threads au cours du développement  
- Lorsque les threads sont autorisés à s’interrompre de façon silencieuse, sans arrêter l’application, de graves problèmes de programmation risquent de passer inaperçus. Il s’agit d’un problème particulier pour les services et autres applications qui s’exécutent sur de longues périodes. Au fur et à mesure des échecs de threads, le programme s’endommage progressivement. L’application risque de voir ses performances se dégrader ou de ne plus répondre.  
+ Lorsque les threads sont autorisés à s’interrompre de façon silencieuse, sans arrêter l’application, de graves problèmes de programmation risquent de passer inaperçus. Il s’agit d’un problème particulier pour les services et d’autres applications qui s’exécutent pendant des périodes prolongées. Au fur et à mesure des échecs de threads, le programme s’endommage progressivement. L’application risque de voir ses performances se dégrader ou de ne plus répondre.  
   
  Le fait d’autoriser les exceptions non prises en charge dans les threads à poursuivre naturellement, jusqu’à ce que le système d’exploitation arrête le programme, expose à de tels problèmes lors du développement et des tests. Les rapports d’erreurs sur les arrêts du programme prennent en charge le débogage.  
   
-<a name="ChangeFromPreviousVersions"></a>
-## <a name="change-from-previous-versions"></a>Changements par rapport aux versions antérieures  
- La modification la plus importante concerne les threads managés. Dans les versions 1.0 et 1.1 du .NET Framework, le common language runtime représente une protection pour les exceptions non prises en charge dans les situations suivantes :  
+## <a name="change-from-previous-versions"></a>Modification par rapport aux versions précédentes
+
+Dans les versions 1,0 et 1,1 de .NET Framework, le common language runtime fournit un arrêt pour les exceptions non gérées dans les situations suivantes :  
   
 - Il n’existe pas d’exceptions non prises en charge sur un thread de pool de threads. Lorsqu’une tâche lève une exception qu’elle ne prend pas en charge, le runtime imprime l’arborescence des appels de procédure de l’exception dans la console, puis renvoie le thread au pool de threads.  
   
@@ -54,10 +52,11 @@ ms.locfileid: "84767882"
   
  L’état au premier plan ou en arrière-plan d’un thread managé n’affecte pas ce comportement.  
   
- Dans le cas des exceptions non prises en charge sur les threads provenant de code non managé, la différence est plus subtile. La boîte de dialogue à liaison JIT du runtime prévaut sur la boîte de dialogue du système d’exploitation pour les exceptions managées ou les exceptions natives sur les threads qui sont passés à travers du code natif. Le processus s’arrête dans tous les cas.  
-  
-### <a name="migrating-code"></a>Migrer du code  
- En général, la modification permet de mettre en lumière des problèmes de programmation auparavant non reconnus afin de les résoudre. Dans certains cas, toutefois, les programmeurs pouvaient tirer parti de la protection du runtime, par exemple pour arrêter des threads. Selon la situation, ils doivent envisager l’une des stratégies de migration suivantes :  
+ Dans le cas des exceptions non prises en charge sur les threads provenant de code non managé, la différence est plus subtile. La boîte de dialogue à liaison JIT du runtime prévaut sur la boîte de dialogue du système d’exploitation pour les exceptions managées ou les exceptions natives sur les threads qui sont passés à travers du code natif. Le processus s’arrête dans tous les cas.
+
+### <a name="migration"></a>Migration
+
+Si vous effectuez une migration à partir de .NET Framework 1,0 ou 1,1 et que vous avez tiré parti de l’arrêt du runtime, par exemple pour arrêter des threads, envisagez l’une des stratégies de migration suivantes :  
   
 - Restructurer le code de façon que le thread s’arrête normalement à la réception d’un signal.  
   
@@ -65,18 +64,18 @@ ms.locfileid: "84767882"
   
 - Si un thread doit être arrêté pour permettre l’arrêt du processus, faire du thread un thread d’arrière-plan afin qu’il s’arrête automatiquement à la sortie du processus.  
   
- Dans tous les cas, la stratégie doit respecter les instructions de conception des exceptions. Consultez la page [Instructions de conception des exceptions](../design-guidelines/exceptions.md).  
+Dans tous les cas, la stratégie doit respecter les instructions de conception des exceptions. Consultez la page [Instructions de conception des exceptions](../design-guidelines/exceptions.md).  
   
-### <a name="application-compatibility-flag"></a>Indicateur de compatibilité des applications  
- À titre de mesure de compatibilité temporaire, les administrateurs peuvent placer un indicateur de compatibilité dans la section `<runtime>` du fichier de configuration de l’application. Cela entraîne le retour du common language runtime au comportement des versions 1.0 et 1.1.  
+À titre de mesure de compatibilité temporaire, les administrateurs peuvent placer un indicateur de compatibilité dans la section `<runtime>` du fichier de configuration de l’application. Cela entraîne le retour du common language runtime au comportement des versions 1.0 et 1.1.  
   
 ```xml  
 <legacyUnhandledExceptionPolicy enabled="1"/>  
 ```  
   
-## <a name="host-override"></a>Remplacement de l’hôte  
- Dans le .NET Framework version 2.0, un hôte non managé peut utiliser l’interface [ICLRPolicyManager](../../framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) dans l’API d’hébergement pour remplacer la stratégie d’exceptions non prises en charge par défaut du common language runtime. La fonction [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) est utilisée pour définir la stratégie des exceptions non prises en charge .  
+## <a name="host-override"></a>Remplacement de l’hôte
+
+Un hôte non managé peut utiliser l’interface [ICLRPolicyManager](../../framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) dans l’API d’hébergement pour remplacer la stratégie d’exception non gérée par défaut de l’Common Language Runtime. La fonction [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) est utilisée pour définir la stratégie des exceptions non prises en charge .  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts de base du threading managé](managed-threading-basics.md)
+- [Éléments fondamentaux du threading managé](managed-threading-basics.md)

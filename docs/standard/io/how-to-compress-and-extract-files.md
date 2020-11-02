@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- I/O [.NET Framework], compression
+- I/O [.NET], compression
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: c13f464432aa6f67136d3a844bdeda256e7ab9b6
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ea078099aba3161818844d14af221eb582e7f11b
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769234"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188287"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Guide pratique pour compresser et extraire des fichiers
 
@@ -40,7 +40,7 @@ Si vous utilisez .NET Framework, ajoutez des références à ces deux bibliothè
 
 ## <a name="example-1-create-and-extract-a-zip-file"></a>Exemple 1 : créer et extraire un fichier. zip
 
-L’exemple suivant montre comment créer et extraire un fichier *.zip* à l’aide de la classe <xref:System.IO.Compression.ZipFile>. Cet exemple compresse le contenu d’un dossier dans un nouveau fichier *.zip*, puis extrait ce fichier zip dans un nouveau dossier.
+L’exemple suivant montre comment créer et extraire un fichier *.zip* à l’aide de la classe <xref:System.IO.Compression.ZipFile>. Cet exemple compresse le contenu d’un dossier dans un nouveau fichier *.zip* , puis extrait ce fichier zip dans un nouveau dossier.
 
 Pour exécuter l’exemple, créez un dossier *start* dans le dossier de votre programme, puis placez-y les fichiers à compresser.
 
@@ -49,7 +49,7 @@ Pour exécuter l’exemple, créez un dossier *start* dans le dossier de votre p
 
 ## <a name="example-2-extract-specific-file-extensions"></a>Exemple 2 : extraire des extensions de fichier spécifiques
 
-L’exemple suivant montre comment parcourir le contenu d’un fichier *.zip* existant et en extraire les fichiers ayant une extension *.txt*. Il utilise la classe <xref:System.IO.Compression.ZipArchive> pour accéder au fichier zip, et la classe <xref:System.IO.Compression.ZipArchiveEntry> pour inspecter chaque entrée. La méthode d’extension <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> de l’objet <xref:System.IO.Compression.ZipArchiveEntry> est disponible dans la classe <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>.
+L’exemple suivant montre comment parcourir le contenu d’un fichier *.zip* existant et en extraire les fichiers ayant une extension *.txt* . Il utilise la classe <xref:System.IO.Compression.ZipArchive> pour accéder au fichier zip, et la classe <xref:System.IO.Compression.ZipArchiveEntry> pour inspecter chaque entrée. La méthode d’extension <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> de l’objet <xref:System.IO.Compression.ZipArchiveEntry> est disponible dans la classe <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>.
 
 Pour exécuter l’exemple, placez un fichier *.zip* appelé *result.zip* dans le dossier de votre programme. Lorsque vous y êtes invité, fournissez le nom du dossier vers lequel extraire les fichiers.
 
@@ -80,4 +80,4 @@ Vous pouvez également utiliser les classes <xref:System.IO.Compression.GZipStre
 - <xref:System.IO.Compression.ZipArchiveEntry>  
 - <xref:System.IO.Compression.DeflateStream>  
 - <xref:System.IO.Compression.GZipStream>  
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

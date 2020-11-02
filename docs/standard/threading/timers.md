@@ -8,16 +8,16 @@ dev_langs:
 - vb
 - cpp
 helpviewer_keywords:
-- threading [.NET Framework], timers
+- threading [.NET], timers
 - timers, about timers
 ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
-ms.openlocfilehash: d463eb2a8d598dc5ba9b2fb51a6fc08c563e6fe4
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: c9d0b085285705af79f0fafa212867b5571863ba
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739492"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188716"
 ---
 # <a name="timers"></a>Minuteurs
 
@@ -35,7 +35,7 @@ ms.locfileid: "81739492"
 
 ## <a name="the-systemthreadingtimer-class"></a>Classe System.Threading.Timer
 
-La classe <xref:System.Threading.Timer?displayProperty=nameWithType> vous permet d’appeler en permanence un délégué à des intervalles de temps spécifiés. Vous pouvez également utiliser cette classe pour planifier un seul appel à un délégué dans un intervalle de temps spécifié. Le délégué est exécuté sur un thread <xref:System.Threading.ThreadPool>.
+La classe <xref:System.Threading.Timer?displayProperty=nameWithType> vous permet d’appeler en permanence un délégué à des intervalles de temps spécifiés. Vous pouvez également utiliser cette classe pour planifier un appel unique à un délégué dans un intervalle de temps spécifié. Le délégué est exécuté sur un thread <xref:System.Threading.ThreadPool>.
 
 Quand vous créez un objet <xref:System.Threading.Timer?displayProperty=nameWithType>, vous spécifiez un délégué <xref:System.Threading.TimerCallback> qui définit la méthode de rappel, un objet d’état facultatif qui est passé au rappel, la durée d’attente avant la première invocation du rappel et l’intervalle de temps entre les invocations de rappel. Pour annuler un minuteur en attente, appelez la méthode <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType>.
 
@@ -59,4 +59,4 @@ Pour plus d’informations et d’exemples, consultez <xref:System.Timers.Timer?
 
 - <xref:System.Threading.Timer?displayProperty=nameWithType>
 - <xref:System.Timers.Timer?displayProperty=nameWithType>
-- [Objets et caractéristiques de threading](threading-objects-and-features.md)
+- [Fonctionnalités et objets de threading](threading-objects-and-features.md)

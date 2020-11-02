@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 45f3951b727d3b615d8384541ff169e8840acab0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bd7112b3052f246a01e4a36d6d425b37cb6174dd
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599800"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188040"
 ---
 # <a name="handling-io-errors-in-net"></a>Gestion des erreurs E/S dans .NET
 
@@ -46,7 +46,7 @@ Toutefois, les conditions précises sous lesquelles le système d’exploitation
 
 En raison de cette dépendance envers le système d’exploitation, des conditions d’exception identiques (par exemple, l’erreur répertoire introuvable dans ce cas) peuvent faire qu’une méthode E/S lève l’une des exceptions de la classe entière d’exceptions E/S. Cela signifie que, lors de l’appel d’API E/S, votre code doit être prêt à gérer la plupart ou toutes ces exceptions, comme indiqué dans le tableau suivant :
 
-| Type d'exception | .NET Core | .NET Framework |
+| Type d'exception | .NET Core/. NET 5 + | .NET Framework |
 |---|---|---|
 | <xref:System.IO.IOException> | Oui | Oui |
 | <xref:System.IO.FileNotFoundException> | Oui | Oui |
@@ -72,7 +72,7 @@ Notez que, dans votre code gestion des exceptions, vous devez toujours gérer <x
 
 Dans le cas de <xref:System.IO.IOException>, vous pouvez obtenir des informations supplémentaires sur l’erreur à partir de la propriété [IOException.HResult](xref:System.Exception.HResult). Pour convertir la valeur HResult en un code d’erreur Win32, éliminez les 16 bits supérieurs de la valeur de 32 bits. Le tableau suivant répertorie les codes d’erreur qui peuvent être encapsulés dans <xref:System.IO.IOException>.
 
-| HResult | Constant | Description |
+| HResult | Constante | Description |
 | --- | --- | --- |
 | ERROR_SHARING_VIOLATION | 32 | Le nom de fichier est manquant ou le fichier ou le répertoire est en cours d’utilisation. |
 | ERROR_FILE_EXISTS | 80 | Le fichier existe déjà. |

@@ -2,18 +2,18 @@
 title: Marshaling de types - .NET
 description: Découvrez comment .NET marshale vos types en une représentation native.
 ms.date: 01/18/2019
-ms.openlocfilehash: 91b8f3d6cb53fd7a0adea7ea9669e7459e81445f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: bedaf49a5f7c5274f5e1bc7774490fec73651259
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706264"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188391"
 ---
 # <a name="type-marshaling"></a>Marshaling de types
 
 Le **marshaling** est le processus qui consiste à transformer les types quand ils doivent naviguer entre du code managé et du code natif.
 
-La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez `String`un, tandis que dans les chaînes universelles non managées peuvent être Unicode (« larges »), non-Unicode, terminé par null, ASCII, etc. Par défaut, le sous-système P/Invoke tente d’effectuer la bonne chose en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
+La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez un `String` , tandis que dans les chaînes universelles non managées peuvent être Unicode (« larges »), non-Unicode, terminé par null, ASCII, etc. Par défaut, le sous-système P/Invoke tente d’effectuer la bonne chose en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
 
 ```csharp
 [DllImport("somenativelibrary.dll")]
@@ -87,7 +87,7 @@ Quand vous appelez des méthodes sur des objets COM dans .NET, le runtime .NET m
 | `bool`    | `VARIANT_BOOL`                 |
 | `StringBuilder` | `LPWSTR`                 |
 | `string`  | `BSTR`                         |
-| Types délégués | `_Delegate*` dans le .NET Framework. Interdits dans .NET Core. |
+| Types délégués | `_Delegate*` dans le .NET Framework. Non autorisé dans .NET Core et .NET 5 +. |
 | `System.Drawing.Color` | `OLECOLOR`        |
 | Tableau .NET | `SAFEARRAY`                   |
 | `string[]` | `SAFEARRAY` de `BSTR`s        |

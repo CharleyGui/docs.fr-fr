@@ -4,19 +4,20 @@ description: Déterminez ou modifiez si un thread est un thread d’arrière-pla
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- threading [.NET Framework], foreground
-- threading [.NET Framework], background
+- threading [.NET], foreground
+- threading [.NET], background
 - foreground threads
 - background threads
 ms.assetid: cfe0d632-dd35-47e0-91ad-f742a444005e
-ms.openlocfilehash: 6cb7a92851728e16f4a317d6c24d072acee72a94
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 3b468d2de382719496d5dfaf4c704d43f3e748c3
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769039"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188066"
 ---
-# <a name="foreground-and-background-threads"></a>Threads de premier plan et d'arrière-plan
+# <a name="foreground-and-background-threads"></a>Threads de premier plan et d’arrière-plan
+
 Un thread managé est un thread d’arrière-plan ou un thread de premier plan. Les threads d’arrière-plan sont identiques aux threads de premier plan à une exception près : un thread d’arrière-plan ne permet pas de poursuivre l’exécution de l’environnement d’exécution managé. Une fois que tous les threads de premier plan ont été arrêtés dans un processus managé (où le fichier .exe est un assembly managé), le système arrête tous les threads d’arrière-plan et se ferme.  
   
 > [!NOTE]
@@ -25,7 +26,7 @@ Un thread managé est un thread d’arrière-plan ou un thread de premier plan. 
  Utilisez la propriété <xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType> pour déterminer si un thread est un thread d’arrière-plan ou de premier plan, ou pour modifier son état. Un thread peut être transformé en thread d’arrière-plan à tout moment en définissant sa propriété <xref:System.Threading.Thread.IsBackground%2A> sur `true`.  
   
 > [!IMPORTANT]
-> L’état de premier plan ou d’arrière-plan d’un thread n’affecte pas le résultat d’une exception non prise en charge dans le thread. Dans la version 2.0 de .NET Framework, une exception non prise en charge dans les threads de premier plan ou d’arrière-plan entraîne l’arrêt de l’application. Voir [Exceptions dans les threads managés](exceptions-in-managed-threads.md).  
+> L’état de premier plan ou d’arrière-plan d’un thread n’affecte pas le résultat d’une exception non prise en charge dans le thread. Une exception non gérée dans les threads de premier plan ou d’arrière-plan entraîne l’arrêt de l’application. Voir [Exceptions dans les threads managés](exceptions-in-managed-threads.md).  
   
  Les threads qui font partie du pool de threads managés (autrement dit, les threads dont la propriété <xref:System.Threading.Thread.IsThreadPoolThread%2A> est `true`) sont des threads d’arrière-plan. Tous les threads qui entrent dans l’environnement d’exécution managé à partir de code non managé sont marqués comme threads d’arrière-plan. Tous les threads générés en créant et en démarrant un nouvel objet <xref:System.Threading.Thread> sont par défaut des threads de premier plan.  
   

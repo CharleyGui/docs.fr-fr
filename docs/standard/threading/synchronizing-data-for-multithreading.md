@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 4d528c54816961caa251ce054abf2c6cf07e9d01
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 63ee85f3d8bab865ce34566ec381d23676b27991
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769104"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188586"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -25,7 +25,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
   
 - Synchronisation manuelle. Vous pouvez utiliser les objets de synchronisation fournis par la bibliothèque de classes .NET. Voir [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md), qui inclut également une présentation de la classe <xref:System.Threading.Monitor>.  
   
-- Contextes synchronisés. Pour les applications .NET Framework et Xamarin, vous pouvez utiliser <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> pour activer la synchronisation simple et automatique des objets <xref:System.ContextBoundObject>.  
+- Contextes synchronisés. Pour les applications .NET Framework et Xamarin uniquement, vous pouvez utiliser <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> pour activer la synchronisation simple et automatique des <xref:System.ContextBoundObject> objets.  
   
 - Classes de collection dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>. Ces classes fournissent des opérations d’ajout et de suppression intégrées et synchronisées. Pour plus d’informations, consultez [Collections thread-safe](../collections/thread-safe/index.md).  
   
@@ -62,7 +62,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 ### <a name="compiler-support"></a>Prise en charge du compilateur  
  Visual Basic et C# prennent en charge un mot clé de langage qui utilise <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> pour verrouiller l’objet. Visual Basic prend en charge l’instruction [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) et C#, l’instruction [lock](../../csharp/language-reference/keywords/lock-statement.md).  
   
- Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
+ Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock** , le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
   
 ## <a name="synchronized-context"></a>Contexte synchronisé  
 
@@ -71,7 +71,7 @@ Dans les applications .NET Framework et Xamarin uniquement, vous pouvez utiliser
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
-- [Threads et threads](threads-and-threading.md)
+- [Threads et threading](threads-and-threading.md)
 - [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)
 - [SyncLock, instruction](../../visual-basic/language-reference/statements/synclock-statement.md)
 - [lock, instruction](../../csharp/language-reference/keywords/lock-statement.md)

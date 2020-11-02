@@ -9,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET], thread pool
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 099670f8451e9e2cf78b372d3a4d393882a30407
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223791"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188690"
 ---
 # <a name="the-managed-thread-pool"></a>Le pool de threads managés
 
@@ -40,7 +40,7 @@ Pour plus d'informations, voir [Exceptions dans les threads managés](exceptions
   
 ### <a name="maximum-number-of-thread-pool-threads"></a>Nombre maximal de threads dans un pool
 
-Le nombre d’opérations qui peuvent être mises en file d’attente pour le pool de threads est limité seulement par la mémoire disponible. Cependant, le pool de threads limite le nombre de threads qui peuvent être actifs simultanément dans le processus. Si tous les threads du pool sont occupés, les éléments de travail supplémentaires sont mis en file d’attente jusqu’à ce que des threads soient disponibles pour les exécuter. À compter du .NET Framework 4, la taille par défaut du pool de threads pour un processus dépend de plusieurs facteurs, comme la taille de l’espace d’adressage virtuel. Un processus peut appeler la méthode <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> pour déterminer le nombre de threads.  
+Le nombre d’opérations qui peuvent être mises en file d’attente pour le pool de threads est limité seulement par la mémoire disponible. Cependant, le pool de threads limite le nombre de threads qui peuvent être actifs simultanément dans le processus. Si tous les threads du pool sont occupés, les éléments de travail supplémentaires sont mis en file d’attente jusqu’à ce que des threads soient disponibles pour les exécuter. La taille par défaut du pool de threads pour un processus dépend de plusieurs facteurs, tels que la taille de l’espace d’adressage virtuel. Un processus peut appeler la méthode <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> pour déterminer le nombre de threads.  
   
 Vous pouvez contrôler le nombre maximal de threads à l'aide des méthodes <xref:System.Threading.ThreadPool.GetMaxThreads%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType>.  
 
@@ -54,14 +54,14 @@ Le pool de threads fournit de nouveaux threads de travail ou des threads de term
 > [!NOTE]
 > Quand la demande est faible, le nombre réel de threads du pool peut être inférieur aux valeurs minimales.  
   
-Quand une valeur minimale est atteinte, le pool de threads peut créer des threads supplémentaires ou attendre que certaines tâches soient terminées. À compter du .NET Framework 4, le pool de threads crée et détruit des threads de travail pour optimiser le débit, qui est défini comme étant le nombre de tâches exécutées par unité de temps. Un nombre trop bas de threads peut ne pas permettre une utilisation optimale des ressources disponibles, tandis qu'un nombre trop élevé de threads peut augmenter les conflits de ressources.  
+Quand une valeur minimale est atteinte, le pool de threads peut créer des threads supplémentaires ou attendre que certaines tâches soient terminées. Le pool de threads crée et détruit les threads de travail afin d’optimiser le débit, qui est défini comme le nombre de tâches qui se terminent par unité de temps. Un nombre trop bas de threads peut ne pas permettre une utilisation optimale des ressources disponibles, tandis qu'un nombre trop élevé de threads peut augmenter les conflits de ressources.  
   
 > [!CAUTION]
 > Vous pouvez utiliser la méthode <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> pour augmenter le nombre minimal de threads inactifs. Toutefois, une augmentation non nécessaire de ces valeurs peut entraîner des problèmes de performances. Si vous démarrez trop de tâches en même temps, celles-ci seront lentes. Dans la plupart des cas, le pool de threads sera plus performant avec son propre algorithme d'allocation de threads.  
 
 ## <a name="using-the-thread-pool"></a>Utilisation du pool de threads
 
-À compter du .NET Framework 4, le moyen le plus simple d’utiliser le pool de threads est d’utiliser la [bibliothèque parallèle de tâches (TPL)](../parallel-programming/task-parallel-library-tpl.md). Par défaut, les types de la bibliothèque parallèle de tâches, comme <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>, utilisent des threads de pool pour exécuter des tâches.
+Le moyen le plus simple d’utiliser le pool de threads consiste à utiliser la [bibliothèque parallèle de tâches (TPL)](../parallel-programming/task-parallel-library-tpl.md). Par défaut, les types de la bibliothèque parallèle de tâches, comme <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>, utilisent des threads de pool pour exécuter des tâches.
 
 Vous pouvez également utiliser le pool de threads en appelant <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> à partir du code managé (ou [`ICorThreadpool::CorQueueUserWorkItem`](../../framework/unmanaged-api/hosting/icorthreadpool-corqueueuserworkitem-method.md) à partir du code non managé) et en passant un <xref:System.Threading.WaitCallback?displayProperty=nameWithType> délégué représentant la méthode qui exécute la tâche.
 

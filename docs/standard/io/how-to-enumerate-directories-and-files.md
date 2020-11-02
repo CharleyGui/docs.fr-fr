@@ -7,14 +7,14 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- I/O [.NET Framework], enumerating directories and files
+- I/O [.NET], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
-ms.openlocfilehash: 276668f4a3eee89610a81b1256820770d1f72dc3
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 7a757fc97fd934f02592264c3a495c3efc435fd5
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662574"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93187890"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a>Comment : énumérer des répertoires et des fichiers
 Les collections énumérables offrent de meilleures performances que les tableaux lorsque vous travaillez avec collections volumineuses de fichiers et de répertoires. Pour énumérer des répertoires et des fichiers, utilisez des méthodes qui retournent une collection énumérable de noms de répertoire ou de fichier ou leurs objets <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo> ou <xref:System.IO.FileSystemInfo>.  
@@ -64,4 +64,4 @@ L’exemple suivant utilise la méthode <xref:System.IO.DirectoryInfo.EnumerateF
   
 ## <a name="see-also"></a>Voir aussi
 
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

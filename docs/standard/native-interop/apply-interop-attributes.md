@@ -4,22 +4,22 @@ description: Cet article résume les attributs COM Interop de l’espace de noms
 ms.date: 03/30/2017
 helpviewer_keywords:
 - design-time attributes
-- .NET Framework, exposing components to COM
-- attributes [.NET Framework], design-time functionality
+- .NET, exposing components to COM
+- attributes [.NET], design-time functionality
 - conversion-tool attributes
-- attributes [.NET Framework], interop-specific
-- attributes [.NET Framework], conversion-tool
+- attributes [.NET], interop-specific
+- attributes [.NET], conversion-tool
 - interoperation with unmanaged code, applying attributes
-- interoperation with unmanaged code, exposing .NET Framework components
+- interoperation with unmanaged code, exposing .NET components
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: f9ccf59e52c1ef27649cd70a57f7b24bb5a8e9bf
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7b9e557e36d2ff6aa978eb28d3c82764ffb1980a
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291329"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188677"
 ---
 # <a name="applying-interop-attributes"></a>Application d'attributs d'interopérabilité
 L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégories d’attributs spécifiques à l’interopérabilité : ceux que vous appliquez au moment du design, ceux que les interfaces API et les outils de COM Interop appliquent au cours du processus de conversion et ceux que vous appliquez ou que COM Interop applique.  
@@ -38,11 +38,11 @@ L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégori
 |<xref:System.Runtime.InteropServices.ComRegisterFunctionAttribute>|Indique qu’une méthode doit être appelée quand l’assembly est inscrit en vue de son utilisation à partir de COM, de sorte que le code écrit par l’utilisateur puisse être exécuté au cours du processus d’inscription.|  
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|Identifie les interfaces qui sont des sources d’événements pour la classe.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|Indique qu’une méthode doit être appelée quand l’inscription de l’assembly dans COM est annulée, de sorte que le code écrit par l’utilisateur puisse s’exécuter au cours du processus.|  
-|<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Rend les types invisibles à COM quand l’attribut a la valeur **false**. Cet attribut peut être appliqué à un type individuel ou à l’intégralité de l’assembly pour contrôler la visibilité COM. Par défaut, tous les types publics managés sont visibles ; l’attribut n’est pas nécessaire pour les rendre visibles.|  
+|<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Rend les types invisibles à COM quand l’attribut a la valeur **false** . Cet attribut peut être appliqué à un type individuel ou à l’intégralité de l’assembly pour contrôler la visibilité COM. Par défaut, tous les types publics managés sont visibles ; l’attribut n’est pas nécessaire pour les rendre visibles.|  
 |<xref:System.Runtime.InteropServices.DispIdAttribute>|Spécifie l’identificateur de répartition COM (DISPID) d’une méthode ou d’un champ. Cet attribut contient le DISPID de la méthode, du champ ou de la propriété qu’il décrit.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|
 |<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|Indique l’interface par défaut pour une classe COM implémentée dans .NET.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|
-|<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Indique la position physique de chaque champ dans une classe en cas d’utilisation avec **StructLayoutAttribute** et d’affectation d’Explicit à **LayoutKind**.|  
-|<xref:System.Runtime.InteropServices.GuidAttribute>|Spécifie l’identificateur global unique (GUID) d’une classe, d’une interface ou d’une bibliothèque de types toute entière. La chaîne doit être passée à l’attribut sous la forme d’un argument de constructeur acceptable pour le type **System.Guid**.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
+|<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Indique la position physique de chaque champ dans une classe en cas d’utilisation avec **StructLayoutAttribute** et d’affectation d’Explicit à **LayoutKind** .|  
+|<xref:System.Runtime.InteropServices.GuidAttribute>|Spécifie l’identificateur global unique (GUID) d’une classe, d’une interface ou d’une bibliothèque de types toute entière. La chaîne doit être passée à l’attribut sous la forme d’un argument de constructeur acceptable pour le type **System.Guid** .<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute>|Indique l’implémentation d’interface **IDispatch** utilisée par le common language runtime lors de l’exposition d’interfaces Dual et de dispinterfaces à COM.|  
 |<xref:System.Runtime.InteropServices.InAttribute>|Indique que des données doivent être marshalées dans l’appelant. Peut s’utiliser pour attribuer des paramètres.|  
 |<xref:System.Runtime.InteropServices.InterfaceTypeAttribute>|Contrôle le mode d’exposition d’une interface managée à des clients COM (Dual, dérivée d’IUnknown ou IDispatch uniquement).<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
@@ -51,7 +51,7 @@ L’espace de noms <xref:System.Runtime.InteropServices> propose trois catégori
 |<xref:System.Runtime.InteropServices.OptionalAttribute>|Indique qu'un paramètre est facultatif.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
 |<xref:System.Runtime.InteropServices.OutAttribute>|Indique que les données d’un champ ou d’un paramètre doivent être remarshalées depuis un objet appelé vers son appelant.|  
 |<xref:System.Runtime.InteropServices.PreserveSigAttribute>|Supprime la transformation de la signature HRESULT ou retval qui s’effectue normalement au cours des appels d’interopérabilité. Cet attribut affecte le marshaling ainsi que l’exportation des bibliothèques de types.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
-|<xref:System.Runtime.InteropServices.ProgIdAttribute>|Spécifie le ProgID d’une classe .NET Framework. Peut s’utiliser pour attribuer des classes.|  
+|<xref:System.Runtime.InteropServices.ProgIdAttribute>|Spécifie le ProgID d’une classe .NET. Peut s’utiliser pour attribuer des classes.|  
 |<xref:System.Runtime.InteropServices.StructLayoutAttribute>|Contrôle la disposition physique des champs d’une classe.<br /><br /> Les outils de COM Interop peuvent appliquer cet attribut.|  
   
 ## <a name="conversion-tool-attributes"></a>Attributs d’outils de conversion  
