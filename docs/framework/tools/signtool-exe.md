@@ -6,17 +6,20 @@ helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: f1254f345a8b3bb796217442cbad36d2e942b403
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: ff330691483b56740ee72e280c1471af4282c638
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517202"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282242"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil Sign Tool)
 L'outil Signature est un outil en ligne de commande qui signe numériquement les fichiers, vérifie les signatures dans les fichiers et horodate les fichiers.  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
+
+> [!Note]  
+> Le kit de développement logiciel (SDK) Windows 10, Windows 10 HLK, Windows 10 WDK et Windows 10 ADK **builds 20236 et versions ultérieures** requièrent la spécification de l’algorithme Digest. La `sign` commande SignTool requiert la spécification de l' `/fd` **algorithme de synthèse de fichiers** et de l' `/td` option d' **algorithme de synthèse d’horodatage** au moment de la signature et de l’horodatage, respectivement. Un avertissement (code d’erreur 0, initialement) est levé si `/fd` n’est pas spécifié lors de la signature et si `/td` n’est pas spécifié lors de l’horodatage. Dans les versions ultérieures de SignTool, l’avertissement devient une erreur. SHA256 est recommandé et est considéré comme plus sûr que SHA1 par le secteur.  
   
  À l'invite de commandes, tapez :  
   
@@ -58,7 +61,7 @@ signtool [command] [options] [file_name | ...]
 |Option Catdb|Description|  
 |------------------|-----------------|  
 |`/d`|Spécifie que la base de données de catalogue par défaut est mise à jour. Si les options `/d` et `/g` ne sont pas utilisées, l'outil Signature met à jour le composant système et la base de données des pilotes.|  
-|`/g`*GUID*|Spécifie que la base de données de catalogue identifiée par l’identificateur global unique *GUID* est mise à jour.|  
+|`/g` *GUID*|Spécifie que la base de données de catalogue identifiée par l’identificateur global unique *GUID* est mise à jour.|  
 |`/r`|Supprime les catalogues spécifiés de la base de données de catalogue. Si cette option n'est pas spécifiée, l'outil Signature ajoute les catalogues spécifiés à la base de données de catalogue.|  
 |`/u`|Spécifie qu'un nom unique est généré automatiquement pour les fichiers catalogue ajoutés. Si nécessaire, les fichiers catalogue seront renommés pour empêcher des conflits entre les noms des fichiers catalogue existants. Si cette option n'est pas spécifiée, l'outil Signature remplace tout catalogue existant dont le nom est le même que celui du catalogue ajouté.|  
   
@@ -76,24 +79,25 @@ signtool [command] [options] [file_name | ...]
 |`/d`  *DESC*|Spécifie une description du contenu signé.|  
 |`/du`  *URL*|Spécifie une URL pour la description développée du contenu signé.|  
 |`/f`  *SignCertFile*|Spécifie le certificat de signature dans un fichier. Si le fichier est au format PFX (Personal Information Exchange) et protégé par un mot de passe, utilisez l'option `/p` pour spécifier le mot de passe. Si le fichier ne contient aucune clé privée, utilisez les options `/csp` et `/kc` pour spécifier le nom du conteneur CSP et de clés privées.|  
-|`/fd`|Spécifie l’algorithme de condensat de fichiers à utiliser pour créer des signatures de fichiers. La valeur par défaut est SHA1.|  
+|`/fd`|Spécifie l’algorithme de condensat de fichiers à utiliser pour créer des signatures de fichiers. </br> **Remarque :** Un avertissement est généré si le `/fd` commutateur n’est pas fourni lors de la signature. L’algorithme par défaut est SHA1 mais SHA256 est recommandé.|
+|`/fd`  *certHash*|La spécification de la chaîne *certHash* aura comme valeur par défaut l’algorithme utilisé sur le certificat de signature. </br> **Remarque :** Disponible uniquement dans les versions 20236 et ultérieures du Kit Windows 10.|  
 |`/i`  *IssuerName*|Spécifie le nom de l'émetteur du certificat de signature. Cette valeur peut être une sous-chaîne du nom d'émetteur entier.|  
 |`/kc`  *PrivKeyContainerName*|Spécifie le nom du conteneur de clés privées.|  
 |`/n`  *SubjectName*|Spécifie le nom de l'objet du certificat de signature. Cette valeur peut être une sous-chaîne du nom de l'objet entier.|  
 |`/nph`|En cas de prise en charge, supprime les hachages de pages pour les fichiers exécutables. La valeur par défaut est déterminée par la variable d'environnement SIGNTOOL_PAGE_HASHES et par la version de wintrust.dll. Cette option est ignorée pour les fichiers non PE.|  
-|`/p`  *De*|Spécifie le mot de passe à utiliser lors de l'ouverture d'un fichier PFX. (Utilisez l'option `/f` pour spécifier un fichier PFX.)|  
+|`/p`  *Mot de passe*|Spécifie le mot de passe à utiliser lors de l'ouverture d'un fichier PFX. (Utilisez l'option `/f` pour spécifier un fichier PFX.)|  
 |`/p7` *Chemin*|Spécifie qu'un fichier PKCS (Public Key Cryptography Standards) #7 est produit pour chaque fichier de contenu spécifié. Les fichiers de #7 PKCS sont nommés *chemin* \\ *nom_de_fichier*. P7.|  
 |`/p7ce` *Valeur*|Spécifie des options pour le contenu PKCS #7 signé. Remplacez *Value* par « Embedded » pour incorporer le contenu signé dans le fichier PKCS #7 ou par « DetachedSignedData » pour produire la partie signée des données d’un fichier PKCS #7 détaché. Si l'option `/p7ce` n'est pas utilisée, le contenu signé est incorporé par défaut.|  
 |`/p7co` *\<OID>*|Spécifie l'identificateur d'objet (OID) qui identifie le contenu PKCS #7 signé.|  
 |`/ph`|En cas de prise en charge, génère les hachages de pages pour les fichiers exécutables.|  
 |`/r`  *RootSubjectName*|Spécifie le nom de l'objet du certificat racine auquel le certificat de signature doit être lié. Cette valeur peut être une sous-chaîne du nom de l'objet entier du certificat racine.|  
 |`/s`  *StoreName*|Spécifie le magasin à ouvrir lors de la recherche du certificat. Si cette option n'est pas spécifiée, le magasin `My` est ouvert.|  
-|`/sha1`  *Format*|Spécifie le hachage SHA1 du certificat de signature. Le hachage SHA1 est souvent spécifié lorsque plusieurs certificats répondent aux critères spécifiés par les commutateurs restants.|  
+|`/sha1`  *Hachage*|Spécifie le hachage SHA1 du certificat de signature. Le hachage SHA1 est souvent spécifié lorsque plusieurs certificats répondent aux critères spécifiés par les commutateurs restants.|  
 |`/sm`|Spécifie qu'un magasin d'ordinateur, au lieu d'un magasin d'utilisateur, est utilisé.|  
 |`/t`  *URL*|Spécifie l'URL du serveur d'horodatage. Si cette option (ou `/tr`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l'option `/tr`.|  
-|`/td`  *ALG*|Utilisé avec l'option `/tr` pour demander un algorithme Digest utilisé par le serveur d'horodatage RFC 3161.|  
-|`/tr`  *URL*|Spécifie l'URL du serveur d'horodatage RFC 3161. Si cette option (ou `/t`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l'option `/t`.|  
-|`/u`  *Utilisation*|Spécifie l'utilisation améliorée de la clé (EKU) qui doit être présente dans le certificat de signature. La valeur de l'utilisation peut être spécifiée par un OID ou une chaîne. L'utilisation par défaut est « Signature du code » (1.3.6.1.5.5.7.3.3).|  
+|`/td`  *ALG*|Utilisé avec l'option `/tr` pour demander un algorithme Digest utilisé par le serveur d'horodatage RFC 3161. </br> **Remarque :** Un avertissement est généré si le `/td` commutateur n’est pas fourni lors de l’horodatage. L’algorithme par défaut est SHA1, mais SHA256 est recommandé. <br/> Le `/td` commutateur doit être déclaré après le `/tr` commutateur, et non avant. Si le `/td` commutateur est déclaré avant le `/tr` commutateur, l’horodateur retourné est de l’algorithme SHA1 au lieu de l’algorithme SHA256 prévu. |
+|`/tr`  *URL*|Spécifie l'URL du serveur d'horodatage RFC 3161. Si cette option (ou `/t`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l'option `/t`.|
+|`/u`  *Usage*|Spécifie l'utilisation améliorée de la clé (EKU) qui doit être présente dans le certificat de signature. La valeur de l'utilisation peut être spécifiée par un OID ou une chaîne. L'utilisation par défaut est « Signature du code » (1.3.6.1.5.5.7.3.3).|  
 |`/uw`|Spécifie l'utilisation « Windows System Component Verification » (1.3.6.1.4.1.311.10.3.6).|  
   
  Pour obtenir des exemples, consultez [Utilisation de SignTool pour signer un fichier](/windows/desktop/SecCrypto/using-signtool-to-sign-a-file).  
@@ -106,8 +110,8 @@ signtool [command] [options] [file_name | ...]
 |----------------------|-----------------|  
 |`/p7`|Horodate les fichiers PKCS #7.|  
 |`/t`  *URL*|Spécifie l'URL du serveur d'horodatage. Le fichier en cours d'horodatage doit avoir été signé au préalable. L'option `/t` ou `/tr` est obligatoire.|  
-|`/td`  *ALG*|Demande un algorithme de condensat utilisé par le serveur d’horodatage RFC 3161. `/td` est utilisé avec l'option `/tr`.|  
-|`/tp`*index*|Horodate la signature à l’*index*.|  
+|`/td`  *ALG*|Utilisé avec l'option `/tr` pour demander un algorithme Digest utilisé par le serveur d'horodatage RFC 3161. </br> **Remarque :** Un avertissement est généré si le `/td` commutateur n’est pas fourni lors de l’horodatage. L’algorithme par défaut est SHA1, mais SHA256 est recommandé. <br/> Le `/td` commutateur doit être déclaré après le `/tr` commutateur, et non avant. Si le `/td` commutateur est déclaré avant le `/tr` commutateur, l’horodateur retourné est de l’algorithme SHA1 au lieu de l’algorithme SHA256 prévu. |
+|`/tp`*index*|Horodate la signature à l’ *index*.|  
 |`/tr`  *URL*|Spécifie l'URL du serveur d'horodatage RFC 3161. Le fichier en cours d'horodatage doit avoir été signé au préalable. L'option `/tr` ou `/t` est obligatoire.|  
   
  Pour obtenir un exemple, consultez [Ajout d’horodatages à des fichiers précédemment signés](/windows/desktop/SecCrypto/adding-time-stamps-to-previously-signed-files).  
@@ -128,7 +132,7 @@ signtool [command] [options] [file_name | ...]
 |`/hash` (`SHA1`&#124;`SHA256`)|Spécifie un algorithme de hachage facultatif à utiliser lors de la recherche d'un fichier dans un catalogue.|  
 |`/kp`|Spécifie que la vérification doit être effectuée avec la stratégie de signature de pilotes en mode noyau.|  
 |`/ms`|Utilise plusieurs sémantiques de vérification. Il s’agit du comportement par défaut d’un appel [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) sur Windows 8 et versions ultérieures.|  
-|`/o` *Version*|Vérifie le fichier par version du système d'exploitation. *Version* a le format suivant : *PlatformID*:*VerMajor*.*VerMinor*.*BuildNumber*. *PlatformID* représente la valeur sous-jacente d’un membre de l’énumération <xref:System.PlatformID>. **Important :** L’utilisation du commutateur `/o` est recommandée. Si `/o` n'est pas spécifié, SignTool.exe peut retourner des résultats inattendus. Par exemple, si vous n'incluez pas le commutateur `/o`, les catalogues système qui valident correctement sur un système d'exploitation plus ancien peuvent ne pas valider correctement sur un système d'exploitation plus récent.|  
+|`/o` *Version*|Vérifie le fichier par version du système d'exploitation. *Version* a le format suivant : *PlatformID* : *VerMajor*. *VerMinor*. *BuildNumber*. *PlatformID* représente la valeur sous-jacente d’un membre de l’énumération <xref:System.PlatformID>. **Important :** L’utilisation du commutateur `/o` est recommandée. Si `/o` n'est pas spécifié, SignTool.exe peut retourner des résultats inattendus. Par exemple, si vous n'incluez pas le commutateur `/o`, les catalogues système qui valident correctement sur un système d'exploitation plus ancien peuvent ne pas valider correctement sur un système d'exploitation plus récent.|  
 |`/p7`|Vérifie les fichiers PKCS #7. Aucune stratégie existante n'est utilisée pour la validation PKCS #7. La signature est vérifiée et une chaîne est générée pour le certificat de signature.|  
 |`/pa`|Spécifie que la stratégie de vérification Authenticode par défaut doit être utilisée. Si l'option `/pa` n'est pas spécifiée, l'outil Signature utilise la stratégie de vérification des pilotes Windows. Cette option ne peut pas être utilisée avec les options `catdb`.|  
 |`/pg` *PolicyGUID*|Spécifie une stratégie de vérification par GUID. *PolicyGUID* correspond à la valeur ActionID de la stratégie de vérification. Cette option ne peut pas être utilisée avec les options `catdb`.|  
@@ -146,7 +150,7 @@ signtool [command] [options] [file_name | ...]
 |0|L'exécution a été correctement effectuée.|  
 |1|L'exécution a échoué.|  
 |2|L'exécution a été effectuée avec des avertissements.|  
-  
+
 ## <a name="examples"></a>Exemples  
  La commande suivante ajoute le fichier catalogue MyCatalogFileName.cat au composant système et à la base de données de pilotes. L'option `/u` génère un nom unique si nécessaire pour éviter de remplacer un fichier catalogue existant nommé `MyCatalogFileName.cat`.  
   
@@ -156,38 +160,44 @@ signtool catdb /v /u MyCatalogFileName.cat
   
  La commande suivante signe un fichier automatiquement à l'aide du meilleur certificat.  
   
-```console  
-signtool sign /a MyFile.exe  
-```  
-  
+```console
+signtool sign /a /fd SHA256 MyFile.exe
+```
+
  La commande suivante signe numériquement un fichier à l'aide d'un certificat stocké dans un fichier PFX protégé par un mot de passe.  
   
 ```console  
-signtool sign /f MyCert.pfx /p MyPassword MyFile.exe  
+signtool sign /f MyCert.pfx /p MyPassword /fd SHA256 MyFile.exe
 ```  
   
  La commande suivante signe numériquement et horodate un fichier. Le certificat utilisé pour signer le fichier est stocké dans un fichier PFX.  
   
 ```console  
-signtool sign /f MyCert.pfx /t http://timestamp.digicert.com MyFile.exe  
+signtool sign /f MyCert.pfx /t http://timestamp.digicert.com /fd SHA256 MyFile.exe
 ```  
   
  La commande suivante signe un fichier à l'aide d'un certificat situé dans le magasin `My` qui a un nom d'objet `My Company Certificate`.  
   
 ```console  
-signtool sign /n "My Company Certificate" MyFile.exe  
+signtool sign /n "My Company Certificate" /fd SHA256 MyFile.exe
 ```  
   
  La commande suivante signe un contrôle ActiveX et fournit des informations qui sont affichées par Internet Explorer lorsque l'utilisateur est invité à installer le contrôle.  
   
 ```console  
-Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html MyControl.exe  
+Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html /fd SHA256 MyControl.exe
 ```  
   
  La commande suivante horodate à un fichier qui a déjà été signé numériquement.  
   
 ```console  
-signtool timestamp /t http://timestamp.digicert.com MyFile.exe  
+signtool timestamp /t http://timestamp.digicert.com MyFile.exe
+```  
+
+L’heure de commande suivante horodate un fichier à l’aide d’un serveur d’horodatage RFC 3161.  
+  
+```console  
+signtool timestamp /tr http://timestamp.digicert.com /td SHA256 MyFile.exe
 ```  
   
  La commande suivante vérifie qu'un fichier a été signé.  

@@ -10,18 +10,18 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: d1f9878c7e7c07944a943c0b05e557ceaa5d1b2f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 572fcd289eea720873d94e7fc71f3b4a030d1d70
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812118"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282312"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
 Cet article fournit une introduction aux char systèmes d’encodage acter utilisés par .net. L’article explique comment les <xref:System.String> <xref:System.Char> types,, <xref:System.Text.Rune> et <xref:System.Globalization.StringInfo> fonctionnent avec Unicode, UTF-16 et UTF-8.
 
-Le terme * char acter* est utilisé ici dans le sens général de *ce qu’un lecteur perçoit comme un seul élément d’affichage*. Les exemples les plus courants sont la lettre « a », le symbole « @ » et l’Emoji « 🐂 ». Parfois, l’aspect char d’un acter est composé de plusieurs éléments d’affichage indépendants, comme l’explique la section sur les [clusters graphèmes](#grapheme-clusters) .
+Le terme *char acter* est utilisé ici dans le sens général de *ce qu’un lecteur perçoit comme un seul élément d’affichage*. Les exemples les plus courants sont la lettre « a », le symbole « @ » et l’Emoji « 🐂 ». Parfois, l’aspect char d’un acter est composé de plusieurs éléments d’affichage indépendants, comme l’explique la section sur les [clusters graphèmes](#grapheme-clusters) .
 
 ## <a name="the-no-locstring-and-no-locchar-types"></a>stringTypes et char
 
@@ -46,7 +46,7 @@ s[3] = 'l' ('\u006c')
 s[4] = 'o' ('\u006f')
 ```
 
-Chaque char acter est représenté par une `char` valeur unique. Ce modèle est valable pour la plupart des langues du monde. Par exemple, voici la sortie de deux acters chinois char qui ressemble à *Nǐ hǎo* et signifiant *Hello*:
+Chaque char acter est représenté par une `char` valeur unique. Ce modèle est valable pour la plupart des langues du monde. Par exemple, voici la sortie de deux acters chinois char qui ressemble à *Nǐ hǎo* et signifiant *Hello* :
 
 ```csharp
 PrintChars("你好");
@@ -110,7 +110,7 @@ Voici quelques exemples d’attributions de point de code, avec des liens vers U
 |Decimal|Hex       |Exemple|Description|
 |------:|----------|-------|-----------|
 |10     | `U+000A` |N/A| [SAUT DE LIGNE](https://www.unicode.org/charts/PDF/U0000.pdf) |
-|65     | `U+0061` | a | [LETTRE MINUSCULE LATINE A](https://www.unicode.org/charts/PDF/U0000.pdf) |
+|97     | `U+0061` | a | [LETTRE MINUSCULE LATINE A](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |562    | `U+0232` | Ȳ | [LETTRE MAJUSCULE LATINE Y AVEC MACRON](https://www.unicode.org/charts/PDF/U0180.pdf) |
 |68 675 | `U+10C43`| 𐱃 | [ANCIENNE LETTRE TURQUE ORKHON À](https://www.unicode.org/charts/PDF/U10C00.pdf) |
 |127 801| `U+1F339`| 🌹 | [ROSE-Emoji](https://www.unicode.org/charts/PDF/U1F300.pdf) |
@@ -124,21 +124,21 @@ Au sein de la plage complète de points de code, il existe deux sous-plages :
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.
 
-:::image type="content" source="media/character-encoding-introduction/bmp-and-supplementary.svg" alt-text="BMP et les points de code supplémentaires":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
 
 ## <a name="utf-16-code-units"></a>Unités de code UTF-16
 
-le format[UTF-16](https://www.unicode.org/faq/utf_bom.html#UTF16)(Unicode Transformation Format) 16 bits est un char système de codage acter qui utilise des *unités de code* 16 bits pour représenter les points de code Unicode. .NET utilise UTF-16 pour encoder le texte dans un `string` . Une `char` instance représente une unité de code 16 bits.
+le format [UTF-16](https://www.unicode.org/faq/utf_bom.html#UTF16)(Unicode Transformation Format) 16 bits est un char système de codage acter qui utilise des *unités de code* 16 bits pour représenter les points de code Unicode. .NET utilise UTF-16 pour encoder le texte dans un `string` . Une `char` instance représente une unité de code 16 bits.
 
 Une seule unité de code 16 bits peut représenter n’importe quel point de code dans la plage de 16 bits du plan multilingue de base. Toutefois, pour un point de code dans la plage supplémentaire, deux `char` instances sont nécessaires.
 
 ## <a name="surrogate-pairs"></a>Paires de substitution
 
-La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par une plage spéciale appelée points de code de *substitution*, de `U+D800` à `U+DFFF` (décimal 55 296 à 57 343), incluse.
+La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par une plage spéciale appelée points de code de *substitution* , de `U+D800` à `U+DFFF` (décimal 55 296 à 57 343), incluse.
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.
 
-:::image type="content" source="media/character-encoding-introduction/bmp-and-surrogate.svg" alt-text="BMP et les points de code de substitution":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text =" BMP et les points de code de substitution " :::
 
 Quand un point de code de *substitution étendu* ( `U+D800..U+DBFF` ) est immédiatement suivi d’un point de code de *substitution faible* ( `U+DC00..U+DFFF` ), la paire est interprétée comme un point de code supplémentaire à l’aide de la formule suivante :
 
@@ -184,7 +184,7 @@ Le terme [valeur scalaire Unicode](https://www.unicode.org/glossary/#unicode_sca
 
 Le diagramme suivant illustre les points de code de la valeur scalaire.
 
-:::image type="content" source="media/character-encoding-introduction/scalar-values.svg" alt-text="valeurs scalaires":::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a>RuneType en tant que valeur scalaire
 

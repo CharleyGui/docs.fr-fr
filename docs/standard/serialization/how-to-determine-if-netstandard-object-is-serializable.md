@@ -8,16 +8,16 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: a425d44ac3b58a568bd51e638f28a2b76ced9dec
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 9f7ab8a824b9687f68382a5edc342536289c5d09
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223989"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282327"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Comment déterminer si un objet .NET Standard est sérialisable
 
-.NET Standard est une spécification qui définit les types et les membres qui doivent être présents sur des implémentations .NET spécifiques qui se conforment à cette version de la norme. Toutefois, .NET Standard ne définit pas si un type est sérialisable. Les types définis dans la bibliothèque de .NET Standard ne sont pas marqués avec l' <xref:System.SerializableAttribute> attribut. Au lieu de cela, des implémentations .NET spécifiques, telles que les .NET Framework et .NET Core, sont libres de déterminer si un type particulier est sérialisable.
+.NET Standard est une spécification qui définit les types et les membres qui doivent être présents sur des implémentations .NET spécifiques qui se conforment à cette version de la norme. Toutefois, .NET Standard ne définit pas si un type est sérialisable. Les types définis dans la bibliothèque de .NET Standard ne sont pas marqués avec l' <xref:System.SerializableAttribute> attribut. Au lieu de cela, des implémentations .NET spécifiques, telles que .NET Framework et .NET Core, sont libres de déterminer si un type particulier est sérialisable.
 
 Si vous avez développé une bibliothèque qui cible .NET Standard, votre bibliothèque peut être consommée par n’importe quelle implémentation .NET qui prend en charge .NET Standard. Cela signifie que vous ne pouvez pas savoir à l’avance si un type particulier est sérialisable ; vous pouvez uniquement déterminer si elle est sérialisable au moment de l’exécution.
 

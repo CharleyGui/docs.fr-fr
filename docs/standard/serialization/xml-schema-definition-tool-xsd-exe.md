@@ -3,18 +3,18 @@ title: Outil XML Schema Definition (Xsd.exe)
 description: Le générateur de sérialiseur XML crée un assembly de sérialisation XML pour les types dans un assembly spécifié, ce qui améliore les performances de démarrage de XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: 0275ecfebd427feb104013024654d4a0bc98748a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c8ae3e05f2d775cbc4c44ce27e7474d1fcfc06a3
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288977"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281753"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Outil XML Schema Definition (Xsd.exe)
 
 L'outil XML Schema Definition Tool (Xsd.exe) génère des classes du Common Language Runtime et du schéma XML à partir de fichiers XDR, XML et XSD ou de classes figurant dans un assembly de runtime.
 
-L’outil XML Schema Definition (XSD. exe) se trouve généralement à l’emplacement suivant : \
+L’outil XML Schema Definition (Xsd.exe) se trouve généralement à l’emplacement suivant : \
 _C : \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {version} \\ bin \\ netfx {version} Tools\\_
 
 ## <a name="syntax"></a>Syntaxe
@@ -32,7 +32,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 ```
   
 > [!TIP]
-> Pour que .NET Framework outils fonctionnent correctement, vous devez définir `Path` correctement les `Include` variables d' `Lib` environnement, et. Définissez ces variables d’environnement en exécutant SDKVars. bat, qui se trouve dans le \<SDK> répertoire \v2.0\Bin. SDKVars.bat doit être exécuté dans chaque interpréteur de commandes.
+> Pour que .NET Framework outils fonctionnent correctement, vous devez définir `Path` correctement les `Include` variables d' `Lib` environnement, et. Définissez ces variables d’environnement en exécutant SDKVars.bat, qui se trouve dans le \<SDK> \\ \<version> répertoire \bin. SDKVars.bat doit être exécuté dans chaque interpréteur de commandes.
 
 ## <a name="argument"></a>Argument
 
@@ -47,7 +47,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |**/h \[\]**|Affiche la syntaxe et les options de commande de l'outil.|
 |**/o \[ utputdir \] :**_répertoire_|Spécifie le répertoire des fichiers de sortie. Cet argument ne peut être spécifié qu'à une seule reprise. L'emplacement par défaut est le répertoire actif.|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
-|**/p \[ arameters \] :**_file. xml_|Options de lecture pour différents modes d'opération à partir du fichier .xml spécifié. La forme abrégée est `/p:`. Pour plus d’informations, consultez la section [Notes](#remarks) .|
+|**/p \[ arameters \] :** _file.xml_|Options de lecture pour différents modes d'opération à partir du fichier .xml spécifié. La forme abrégée est `/p:`. Pour plus d’informations, consultez la section [Notes](#remarks) .|
 
 ## <a name="xsd-file-options"></a>Options de fichier XSD
  Vous ne devez spécifier qu'une seule des options suivantes pour les fichiers .xsd.
@@ -78,7 +78,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |------------|-----------------|
 |**/t \[ ype \] :**_TypeName_|Spécifie le nom du type pour lequel créer un schéma. Vous pouvez spécifier plusieurs arguments pour le type. Si *nom_type* ne spécifie pas d’espace de noms, Xsd.exe établit une correspondance entre tous les types de l’assembly et le type spécifié. Si *nom_type* spécifie un espace de noms, une correspondance est établie uniquement avec ce type. Si *nom_type* se termine par un astérisque (\*), l’outil établit une correspondance avec tous les types commençant par la chaîne qui précède \*. Si vous omettez l'option `/type`, Xsd.exe génère alors des schémas pour tous les types de l'assembly.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le tableau suivant affiche les opérations que Xsd.exe exécute.
 
@@ -105,7 +105,7 @@ Le tableau suivant affiche les opérations que Xsd.exe exécute.
 </xsd>
 ```
 
-Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas. xml, utilisez le `/parameters` commutateur en tapant ce qui suit à l’invite de commandes et en appuyant sur **entrée**:
+Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas.xml, utilisez le `/parameters` commutateur en tapant ce qui suit à l’invite de commandes et en appuyant sur **entrée** :
 
 ```console
  xsd /p:GenerateSchemas.xml
@@ -122,7 +122,7 @@ En revanche, si vous générez un schéma pour un seul type trouvé dans l'assem
 </xsd>
 ```
 
-Mais pour utiliser le code précédent, vous devez également fournir le nom de l'assembly à l'invite de commandes. Entrez ce qui suit à l’invite de commandes (en supposant que le fichier XML se nomme GenerateSchemaFromType. Xml) :
+Mais pour utiliser le code précédent, vous devez également fournir le nom de l'assembly à l'invite de commandes. Entrez ce qui suit à l’invite de commandes (en supposant que le fichier XML est nommé GenerateSchemaFromType.xml) :
 
 ```console
 xsd /p:GenerateSchemaFromType.xml ConsoleApplication1.exe

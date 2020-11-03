@@ -4,12 +4,12 @@ description: Découvrez comment utiliser le fichier global.json pour définir la
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7e372c75812e79f85bb8965895d5fef694d9af1a
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: 714e32ec841cee214f801de65bccf0041af66b0b
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90872388"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281543"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
@@ -31,7 +31,7 @@ Entrez : `object`
 
 Spécifie des informations sur le kit SDK .NET Core à sélectionner.
 
-#### <a name="version"></a>Version
+#### <a name="version"></a>version
 
 - Entrez : `string`
 
@@ -55,7 +55,7 @@ Indique si le programme de résolution du SDK doit prendre en compte les version
 Si vous ne définissez pas cette valeur explicitement, la valeur par défaut varie selon que vous exécutez à partir de Visual Studio :
 
 - Si vous **n’êtes pas** dans Visual Studio, la valeur par défaut est `true` .
-- Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option **utiliser des aperçus de l’kit SDK .net Core** (sous **Outils**  >  **options**  >  **environnement**  >  **aperçu des fonctionnalités**), la valeur par défaut est `true` ; sinon, `false` .
+- Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option **utiliser des aperçus de l’kit SDK .net Core** (sous **Outils**  >  **options**  >  **environnement**  >  **aperçu des fonctionnalités** ), la valeur par défaut est `true` ; sinon, `false` .
 
 #### <a name="rollforward"></a>Restauration par progression
 
@@ -64,6 +64,7 @@ Si vous ne définissez pas cette valeur explicitement, la valeur par défaut var
 - Disponible depuis : .NET Core 3,0 SDK.
 
 Stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK) en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente. Une [version](#version) doit être spécifiée avec une `rollForward` valeur, à moins que vous ne l’affectiez à `latestMajor` .
+Le comportement par défaut de restauration par progression est déterminé par les [règles de correspondance](#matching-rules).
 
 Pour comprendre les stratégies disponibles et leur comportement, considérez les définitions suivantes pour une version du kit de développement logiciel (SDK) au format `x.y.znn` :
 
@@ -163,7 +164,7 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Règles de correspondance
 
 > [!NOTE]
-> Les règles de correspondance sont régies par le `dotnet.exe` point d’entrée, qui est courant pour tous les runtimes installés .net Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte.
+> Les règles de correspondance sont régies par le `dotnet.exe` point d’entrée, qui est courant pour tous les runtimes installés .net Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte ou si vous utilisez un *global.jssur le* fichier.
 
 ## <a name="net-core-3x"></a>[.NET Core 3.x](#tab/netcore3x)
 
@@ -171,7 +172,7 @@ dotnet new globaljson --sdk-version 3.0.100
 
 - Si aucun *global.jssur* le fichier n’est trouvé, ou si *global.js* ne spécifie pas de version du kit de développement logiciel (SDK) ni de `allowPrerelease` valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à la valeur `rollForward` `latestMajor` ). La prise en compte des versions du kit de développement logiciel (SDK) préliminaire dépend de la méthode d' `dotnet` appel.
   - Si vous **n’êtes pas** dans Visual Studio, les versions préliminaires sont prises en compte.
-  - Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option utiliser les aperçus **de l’kit SDK .net Core** (sous **Outils**  >  **options**environnement préversion  >  **Environment**  >  **Preview Features**), les versions préliminaires sont prises en compte ; sinon, seules les versions release sont prises en compte.
+  - Si vous êtes dans Visual Studio, il utilise l’état de préversion demandé. Autrement dit, si vous utilisez une préversion de Visual Studio ou que vous définissez l’option utiliser les aperçus **de l’kit SDK .net Core** (sous **Outils**  >  **options** environnement préversion  >  **Environment**  >  **Preview Features** ), les versions préliminaires sont prises en compte ; sinon, seules les versions release sont prises en compte.
 - Si vous trouvez un *global.jssur* le fichier qui ne spécifie pas une version du kit de développement logiciel (SDK), mais qu’il spécifie une `allowPrerelease` valeur, la version la plus récente du kit de développement logiciel (SDK) est utilisée (équivalent à `rollForward` `latestMajor` ). La version la plus récente du kit de développement logiciel (SDK) peut être Release ou la version préliminaire dépend de la valeur de `allowPrerelease` . `true` indique que les versions préliminaires sont prises en compte. `false` indique que seules les versions release sont prises en compte.
 - Si un *global.jssur le* fichier est trouvé et qu’il spécifie une version du kit de développement logiciel (SDK) :
 
@@ -183,7 +184,7 @@ dotnet new globaljson --sdk-version 3.0.100
 Dans le SDK .NET Core 2. x, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 
 - Si aucun fichier *global.json* n’est trouvé ou que *global.json* ne spécifie pas de version du kit SDK, la dernière version installée du kit SDK est utilisée. La dernière version du kit de développement logiciel (SDK) peut être Release ou version préliminaire : le numéro de version le plus élevé gagne.
-- Si la version du kit SDK n’est pas spécifiée dans *global.json* :
+- Si la version du kit SDK n’est pas spécifiée dans *global.json*  :
   - Si la version spécifiée du kit SDK se trouve sur la machine, c’est cette même version qui est utilisée.
   - Si la version spécifiée du kit SDK est introuvable sur la machine, c’est la dernière **version corrective** installée du kit SDK qui est utilisée. La dernière **version du correctif** SDK installée peut être Release ou version préliminaire (le numéro de version le plus élevé gagne). Dans .NET Core 2.1 et ultérieur, les **versions correctives** antérieures à la **version corrective** spécifiée sont ignorées dans la sélection du kit SDK.
   - Dans le cas où ni la version spécifiée du kit SDK, ni une **version corrective** appropriée du kit SDK n’est trouvée, une erreur est générée.
@@ -196,7 +197,7 @@ La **future version** du kit SDK .NET Core est représentée par le premier chif
 
 La **version corrective** est définie par les deux derniers chiffres (`yz`) de la dernière partie du nombre (`xyz`) pour les versions 2.1.100 et ultérieures du kit SDK. Par exemple, si vous spécifiez la version `2.1.300` du kit SDK, le mécanisme de sélection du kit SDK trouve la version `2.1.399`, mais la version `2.1.400` n’est pas considérée comme une version corrective de la version `2.1.300`.
 
-Les versions du kit SDK .NET Core comprises entre `2.1.100` et `2.1.201` ont été lancées pendant la période transitoire entre les modèles de numérotation des versions et ne gèrent pas correctement la notation `xyz`. Si vous spécifiez ces versions dans le fichier *global.json*, nous vous recommandons vivement de vérifier que les versions spécifiées se trouvent sur les machines cibles.
+Les versions du kit SDK .NET Core comprises entre `2.1.100` et `2.1.201` ont été lancées pendant la période transitoire entre les modèles de numérotation des versions et ne gèrent pas correctement la notation `xyz`. Si vous spécifiez ces versions dans le fichier *global.json* , nous vous recommandons vivement de vérifier que les versions spécifiées se trouvent sur les machines cibles.
 
 ---
 

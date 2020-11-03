@@ -4,12 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 18f17839361d0cb60a52fbf4415665855f1d53be
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 6c1e9a665ad541bf6109634a6df857880ee47042
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223484"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281647"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 
@@ -65,9 +65,9 @@ Le terme *simulacre* n’est pas souvent utilisé de façon inutilisée pour par
 
 *Factice* : un substitut est un terme générique qui peut être utilisé pour décrire un objet de type stub ou factice. Qu’il s’agisse d’un stub ou d’un simulacre dépend du contexte dans lequel il est utilisé. En d’autres termes, un fake (élément fictif) peut être un stub ou un mob (objet fictif).
 
-*Mock* - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un simulacre commence comme un substitut jusqu’à ce qu’il soit déclaré.
+*Mock*  - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un simulacre commence comme un substitut jusqu’à ce qu’il soit déclaré.
 
-*Stub* - Un stub permet de remplacer de manière contrôlée une dépendance existante (ou collaborateur) dans le système. À l’aide d’un stub, vous pouvez tester votre code sans avoir à gérer directement la dépendance. Par défaut, un fake commence comme par être un stub.
+*Stub*  - Un stub permet de remplacer de manière contrôlée une dépendance existante (ou collaborateur) dans le système. À l’aide d’un stub, vous pouvez tester votre code sans avoir à gérer directement la dépendance. Par défaut, un fake commence comme par être un stub.
 
 Prenez l'exemple de l'extrait de code suivant :
 
@@ -143,7 +143,7 @@ Les tests ne se limitent pas à la vérification du bon fonctionnement de votre 
 
 **Organisation, Action, Assertion** est un modèle courant pour les tests unitaires. Comme son nom l’indique, il comporte trois actions principales :
 
-- *Organisation*, création et configuration des objets selon les besoins
+- *Organisation* , création et configuration des objets selon les besoins
 - *Agir* sur un objet.
 - *Assertion* de ce qui est prévu
 
@@ -188,7 +188,7 @@ Le nommage des variables dans les tests unitaires est aussi important, sinon plu
 #### <a name="why"></a>Pourquoi ?
 
 - Évite au lecteur du test d’inspecter le code de production pour déterminer ce qui rend la valeur spéciale.
-- Montre explicitement ce que vous essayez de *prouver* et non ce que vous essayez d’*accomplir*.
+- Montre explicitement ce que vous essayez de *prouver* et non ce que vous essayez d’ *accomplir*.
 
 Les chaînes magiques peuvent être sources de confusion pour le lecteur de vos tests. Si une chaîne semble inhabituelle, il peut se demander pourquoi une certaine valeur a été choisie pour un paramètre ou une valeur de retour. Cela peut l’amener à examiner de plus près les détails de l’implémentation, au lieu de se concentrer sur le test.
 
@@ -227,7 +227,7 @@ Quand vous introduisez une logique dans votre suite de tests, le risque d’intr
 
 ### <a name="prefer-helper-methods-to-setup-and-teardown"></a>Préférez les méthodes d’assistance à setup et teardown
 
-Si vous avez besoin d’un objet ou d’un état similaire pour vos tests, préférez une méthode d’assistance aux attributs Setup et Teardown, s’ils existent.
+Si vous avez besoin d’un objet ou d’un état similaire pour vos tests, préférez une méthode d’assistance à l’utilisation des `Setup` `Teardown` attributs et s’ils existent.
 
 #### <a name="why"></a>Pourquoi ?
 

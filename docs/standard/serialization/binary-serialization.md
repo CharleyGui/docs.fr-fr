@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 2ede74dd8a48735a7ded450d1da6d9cda8fc5ae6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bfb504862232345db07bdc92993069fc87afdbeb
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554493"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282092"
 ---
 # <a name="binary-serialization"></a>Sérialisation binaire
 
@@ -25,7 +25,7 @@ La sérialisation peut être définie comme le processus de stockage de l'état 
 Lorsque vous implémentez un mécanisme de sérialisation dans un environnement orienté objet, vous devez faire plusieurs compromis entre facilité d'utilisation et souplesse. Le processus peut être automatisé en grande partie, à condition que vous puissiez suffisamment le contrôler. Par exemple, dans certaines situations, la sérialisation binaire simple n'est pas suffisante ou une raison particulière peut exiger la définition des champs à sérialiser. Les sections suivantes étudient le mécanisme de sérialisation fiable fourni avec .NET et mettent en évidence plusieurs fonctionnalités importantes qui vous permettent de personnaliser le processus en fonction de vos besoins.
 
 > [!NOTE]
-> L'état d'un objet encodé UTF-8 ou UTF-7 n'est pas préservé si l'objet est sérialisé et désérialisé à l'aide de différentes versions du .NET Framework.
+> L’état d’un objet encodé UTF-8 ou UTF-7 n’est pas préservé si l’objet est sérialisé et désérialisé à l’aide de différentes versions de .NET.
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
@@ -351,7 +351,7 @@ Décrit le mécanisme de sérialisation XML inclus avec le Common Language Runt
 Décrit les indications de codage sécurisé à suivre lors de l'écriture du code qui exécute la sérialisation.
 
 - [.NET Remoting](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
-Décrit les différentes méthodes à partir de .NET Framework pour les communications à distance.
+Décrit les différentes méthodes de .NET Framework pour les communications à distance.
 
 - [Services Web XML créés à l’aide des clients de service Web XML et ASP.NET](/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
 Articles qui décrivent et expliquent comment programmer des services Web XML créés à l’aide de ASP.NET.

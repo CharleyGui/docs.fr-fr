@@ -1,20 +1,20 @@
 ---
 title: Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP
-description: Cet article répertorie un ensemble spécial d’attributs trouvés dans l’espace de noms System. Xml. Serialization requis pour se conformer à la spécification SOAP.
+description: Cet article répertorie un ensemble spécial d’attributs trouvés dans le System.Xml. L’espace de noms de sérialisation est nécessaire pour se conformer à la spécification SOAP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SOAP, XML serialization
 - XML serialization, SOAP
 - XML serialization, attributes
-- attributes [.NET Framework], XML serialization
+- attributes [.NET], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-ms.openlocfilehash: d9a4631189d348c02ab36054257a54c9c4673018
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 69a9d1c8734a393b576cf87e7e05ef92c10120c8
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289666"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282044"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP
 
@@ -41,4 +41,4 @@ Pour plus d’informations sur les attributs, consultez [Attributs](../attribute
 - [Attributs](../attributes/index.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
-- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)
+- [Comment : désérialiser un objet](how-to-deserialize-an-object.md)

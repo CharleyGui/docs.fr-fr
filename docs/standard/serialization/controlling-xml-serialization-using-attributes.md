@@ -12,18 +12,18 @@ helpviewer_keywords:
 - arrays, serializing
 - XML serialization, attributes
 - preventing serialization
-- attributes [.NET Framework], XML serialization
+- attributes [.NET], XML serialization
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 79c5541b4c384e91fbec8c8f1b2130887e79a252
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 36456d373b7482c4a4267b69e031c1e45baa9abb
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289679"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281780"
 ---
-# <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
+# <a name="control-xml-serialization-using-attributes"></a>Contrôler la sérialisation XML avec des attributs
 
 Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
@@ -322,6 +322,6 @@ Dans certains cas, une propriété ou un champ public ne doit pas être sériali
 - [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
 - [Exemples de sérialisation XML](examples-of-xml-serialization.md)
-- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Comment : spécifier un nom d'élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
-- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)
+- [Comment : désérialiser un objet](how-to-deserialize-an-object.md)

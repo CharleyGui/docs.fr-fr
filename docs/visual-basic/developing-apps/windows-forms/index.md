@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 9d061aeccb914cce80e02bb7df44dae2edf25412
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ef02662a5492f117b252e464e92ec46e7484ef66
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557017"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282164"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Concepts de base de l'application Windows Forms (Visual Basic)
 
@@ -18,7 +18,7 @@ Une partie importante de Visual Basic est la possibilité de créer des applicat
 
 ## <a name="designing-windows-forms-applications"></a>Conception d’applications Windows Forms
 
-Vous pouvez créer des Windows Forms et des applications de service Windows avec Visual Studio. Pour plus d'informations, voir les rubriques suivantes :
+Vous pouvez créer des Windows Forms et des applications de service Windows avec Visual Studio. Pour plus d'informations, consultez les rubriques suivantes :
 
 - [Prise en main avec Windows Forms](/dotnet/desktop/winforms/getting-started-with-windows-forms). Fournit des informations sur la façon de créer et de programmer des Windows Forms.
 
@@ -28,7 +28,7 @@ Vous pouvez créer des Windows Forms et des applications de service Windows avec
 
 ## <a name="building-rich-interactive-user-interfaces"></a>Création d'interfaces utilisateur interactives et enrichies
 
-Windows Forms est le composant de client intelligent de l' .NET Framework, un ensemble de bibliothèques managées qui permettent des tâches d’application courantes telles que la lecture et l’écriture dans le système de fichiers. À l’aide d’un environnement de développement tel que Visual Studio, vous pouvez créer des applications Windows Forms qui affichent des informations, demandent une entrée d’utilisateurs et communiquent avec des ordinateurs distants sur un réseau.
+Windows Forms est le composant de client intelligent du .NET Framework et .NET Core (depuis .NET Core 3,0). Il s’agit d’un ensemble de bibliothèques managées qui permettent des tâches d’application courantes, telles que la lecture et l’écriture dans le système de fichiers. À l’aide d’un environnement de développement tel que Visual Studio, vous pouvez créer des applications Windows Forms qui affichent des informations, demandent une entrée d’utilisateurs et communiquent avec des ordinateurs distants sur un réseau.
 
 Dans Windows Forms, un formulaire est une surface visuelle sur laquelle vous présentez des informations à l'utilisateur. Vous générez généralement des applications Windows Forms en plaçant des contrôles sur des formulaires et en développant des réponses aux actions de l’utilisateur, telles que des clics de souris ou des frappes de touches. Un *contrôle* est un élément d’interface utilisateur discret qui affiche des données ou accepte l’entrée de données.
 
@@ -63,7 +63,7 @@ De nombreuses applications doivent afficher des données provenant d’une base 
 
 La connexion à des sources de données sur un réseau est une tâche simple avec les clients intelligents Windows Forms. Le <xref:System.Windows.Forms.BindingSource> composant, nouveau avec Windows Forms dans Visual Studio 2005 et le .NET Framework 2,0, représente une connexion à une source de données et expose des méthodes pour lier des données aux contrôles, naviguer vers les enregistrements précédents et suivants, modifier des enregistrements et enregistrer les modifications dans la source d’origine. Le contrôle <xref:System.Windows.Forms.BindingNavigator> fournit une interface simple sur le composant <xref:System.Windows.Forms.BindingSource> permettant aux utilisateurs de naviguer parmi les enregistrements.
 
-### <a name="data-bound-controls"></a>Contrôles liés aux données
+### <a name="data-bound-controls"></a>Contrôles Data-Bound
 
 Vous pouvez créer facilement des contrôles liés aux données à l’aide de la fenêtre sources de données, qui affiche des sources de données telles que des bases de données, des services Web et des objets dans votre projet. Pour créer des contrôles liés aux données, vous pouvez faire glisser des éléments depuis cette fenêtre vers des formulaires dans votre projet. Vous pouvez également lier des contrôles existants à des données en faisant glisser des objets depuis la fenêtre Sources de données vers des contrôles existants.
 
@@ -97,7 +97,7 @@ Pour une présentation complète de ClickOnce, consultez [sécurité et déploie
 
 ## <a name="other-controls-and-features"></a>Autres contrôles et fonctionnalités
 
-Il existe de nombreuses autres fonctionnalités dans Windows Forms qui simplifient et accélèrent l'implémentation des tâches courantes, par exemple la prise en charge de la création de boîtes de dialogue, de l'impression, de l'ajout d'aide et de documentation et de la localisation de votre application en plusieurs langues. En outre, Windows Forms s’appuie sur le système de sécurité fiable du .NET Framework, ce qui vous permet de publier des applications plus sécurisées pour vos clients.
+Il existe de nombreuses autres fonctionnalités dans Windows Forms qui facilitent et accélèrent l’implémentation des tâches courantes, telles que la prise en charge de la création de boîtes de dialogue, l’impression, l’ajout de documentation et la localisation de votre application dans plusieurs langues. En outre, Windows Forms s’appuie sur le système de sécurité robuste de .NET, ce qui vous permet de publier des applications plus sécurisées pour vos clients.
 
 Pour obtenir des informations pas à pas sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes :
 

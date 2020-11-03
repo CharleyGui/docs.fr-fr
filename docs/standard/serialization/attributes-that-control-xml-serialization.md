@@ -6,16 +6,16 @@ helpviewer_keywords:
 - classes, serializing
 - XmlSerializer class, serializing
 - XML serialization, attributes
-- attributes [.NET Framework], XML serialization
+- attributes [.NET], XML serialization
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: fbc42ff696107f4a1b06d3611fc97a09cc4a3542
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 032843728c74799d7ee78257b21243b31cb4f99c
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84276697"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281984"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Attributs qui contrôlent la sérialisation XML
 Vous pouvez appliquer les attributs du tableau suivant à des classes et des membres de classe pour contrôler la manière dont <xref:System.Xml.Serialization.XmlSerializer> sérialise ou désérialise une instance de la classe. Pour comprendre comment ces attributs contrôlent la sérialisation XML, consultez [Contrôle de la sérialisation XML à l’aide d’attributs](controlling-xml-serialization-using-attributes.md).  
@@ -48,7 +48,7 @@ Vous pouvez appliquer les attributs du tableau suivant à des classes et des mem
 
 - [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Contrôle de la sérialisation XML à l’aide d’attributs](controlling-xml-serialization-using-attributes.md)
-- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Contrôle de la sérialisation XML à l'aide d'attributs](controlling-xml-serialization-using-attributes.md)
+- [Comment : spécifier un nom d'élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
-- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)
+- [Comment : désérialiser un objet](how-to-deserialize-an-object.md)

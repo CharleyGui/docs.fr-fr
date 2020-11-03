@@ -4,18 +4,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-ms.openlocfilehash: e4d4fa092363a5e76658f2770c0d655bb225f3f3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 106b8791ee5cb3db95759ccca2fddd799661ef3c
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544581"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282071"
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants en Visual Basic
 
-Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. Un composant .NET Framework est un objet réutilisable, qui peut interagir avec d’autres objets et permet de contrôler les ressources externes et la prise en charge au moment du Design.  
+Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. Un composant .NET est un objet réutilisable, qui peut interagir avec d’autres objets et permet de contrôler les ressources externes et la prise en charge au moment du Design.  
   
- Une caractéristique importante des composants est qu’ils peuvent servir au design, ce qui signifie qu’une classe qui est un composant peut être utilisée dans l’environnement de développement intégré (IDE) de Visual Studio. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. Notez que la prise en charge de base au moment du design pour les composants est intégrée au .NET Framework ; un développeur de composants n’a pas à effectuer de travail supplémentaire pour tirer parti des fonctionnalités de base au moment de la conception.  
+ Une caractéristique importante des composants est qu’ils peuvent servir au design, ce qui signifie qu’une classe qui est un composant peut être utilisée dans l’environnement de développement intégré (IDE) de Visual Studio. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. La prise en charge au moment de la conception de base pour les composants est intégrée à .NET. Un développeur de composants n’a pas à effectuer de travail supplémentaire pour tirer parti des fonctionnalités de base au moment de la conception.  
   
  Un *contrôle* est similaire à un composant dans la mesure où tous les deux peuvent servir au design. Toutefois, un contrôle fournit une interface utilisateur, ce qui n’est pas le cas d’un composant. Un contrôle doit dériver de l’une des classes de contrôle de base : <xref:System.Windows.Forms.Control> ou <xref:System.Web.UI.Control>.  
   

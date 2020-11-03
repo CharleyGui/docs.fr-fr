@@ -2,12 +2,12 @@
 title: Instructions de niveau supérieur-didacticiel C#
 description: Ce didacticiel montre comment vous pouvez utiliser des instructions de niveau supérieur pour expérimenter et prouver des concepts tout en explorant vos idées
 ms.date: 10/28/2020
-ms.openlocfilehash: 210fbd83bf4677061cab303089d0b27f1a4a7d01
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 5e5dc6cec382baa69ac8cb4625684315bb2cd5e0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189393"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282261"
 ---
 # <a name="tutorial-explore-ideas-using-top-level-statements-to-build-code-as-you-learn"></a>Didacticiel : Explorez des idées à l’aide d’instructions de niveau supérieur pour générer du code à mesure que vous en Apprenez
 
@@ -19,7 +19,7 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - Utilisez les instructions de niveau supérieur pour explorer les algorithmes.
 > - Refactorisez les explorations dans des composants réutilisables.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez configurer votre ordinateur pour exécuter .NET 5, qui comprend le compilateur C# 9. Le compilateur C# 9 est disponible à partir de [Visual Studio 2019 version 16,9 Preview 1](https://visualstudio.microsoft.com/vs/preview/) ou [.net 5,0 SDK](https://dot.net/get-dotnet5).
 
@@ -210,7 +210,7 @@ Les instructions de niveau supérieur ne peuvent figurer que dans un seul fichie
 
 Enfin, vous pouvez nettoyer le code de l’animation pour supprimer des doublons :
 
-:::code language="csharp" source="snippets/top-level-statements/Utiliities.cs" ID="Animation":::
+:::code language="csharp" source="snippets/top-level-statements/Utilities.cs" ID="Animation":::
 
 Vous disposez maintenant d’une application complète et vous avez refactorisé les parties réutilisables pour une utilisation ultérieure.
 

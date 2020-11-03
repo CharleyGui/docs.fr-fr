@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-ms.openlocfilehash: 2afab44eec0c7bcc9809b458be0348093cb6dd07
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 1fb2efc9b12680e95767746c7e4e1ddacbdd2594
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91196817"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281504"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (Options du compilateur C#)
 
@@ -41,7 +41,7 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
   
 - Les informations de version concernant votre compilateur, votre runtime et votre système d’exploitation.  
   
-- Les assemblys et modules référencés, enregistrés sous la forme de chiffres hexadécimaux, sauf les assemblys qui sont fournis avec le .NET Framework et le SDK.  
+- Les assemblys et les modules référencés, enregistrés sous forme de chiffres hexadécimaux, à l’exception des assemblys qui sont fournis avec .NET et le kit de développement logiciel (SDK) .NET.  
   
 - Les résultats de la compilation, le cas échéant.  
   
@@ -49,7 +49,7 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
   
 - Une description de vos suggestions de résolution du problème, qui vous sera demandée.  
   
- Si cette option est utilisée avec **-errorreport:prompt** ou **-errorreport:send**, les informations figurant dans le fichier seront envoyées à Microsoft Corporation.  
+ Si cette option est utilisée avec **-errorreport:prompt** ou **-errorreport:send** , les informations figurant dans le fichier seront envoyées à Microsoft Corporation.  
   
  Étant donné qu’une copie de tous les fichiers de code source sera placée dans `file`, vous souhaiterez peut-être reproduire l’erreur de code suspecte dans le programme le plus court possible.  
   

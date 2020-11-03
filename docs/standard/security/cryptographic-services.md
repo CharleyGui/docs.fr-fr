@@ -25,12 +25,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 651231dcc41926307e3a46b67c80ba3df1fb25e9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 463ccec5f60ff10331d501d39144a979d95eff95
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549978"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281725"
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 
@@ -56,7 +56,7 @@ Le chiffrement vise à atteindre les objectifs suivants :
 
 Pour atteindre ces objectifs, vous pouvez utiliser une combinaison d'algorithmes et de pratiques appelés primitives de chiffrement pour créer un modèle de chiffrement. Le tableau suivant répertorie les primitives de chiffrement et leurs fonctions.
 
-|Primitive de chiffrement|Utiliser|
+|Primitive de chiffrement|Utilisation|
 |-----------------------------|---------|
 |Chiffrement à clé secrète (chiffrement symétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une clé partagée, secrète et unique pour chiffrer et déchiffrer des données.|
 |Chiffrement à clé publique (chiffrement asymétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une paire de clés publique/privée pour chiffrer et déchiffrer les données.|
@@ -71,7 +71,7 @@ Le chiffrement à clé secrète est aussi appelé chiffrement symétrique, car l
 
 Un type d'algorithme à clé secrète appelé chiffrement par blocs est utilisé pour chiffrer un bloc de données à la fois. Les chiffrements par blocs tels que Data Encryption Standard (DES), TripleDES et Advanced Encryption Standard (AES) transforment par chiffrement un bloc d'entrée de *n* octets en un bloc d'octets chiffrés de sortie. Si vous voulez chiffrer ou déchiffrer une séquence d'octets, vous devez le faire bloc par bloc. Sachant que la valeur *n* est faible (8 octets pour DES et TripleDES ; 16 octets [par défaut], 24 octets ou 32 octets pour AES), les valeurs de données supérieures à *n* doivent être chiffrées un bloc à la fois. Les valeurs de données inférieures à *n* doivent être étendues à *n* afin d'être traitées.
 
-Il existe une forme simple de chiffrement par blocs, qui est appelée « mode ECB » (Electronic Codebook, livre de codes électronique). Le mode ECB n'est pas considéré comme sécurisé, car il n'utilise pas de vecteur d'initialisation pour initialiser le premier bloc de texte en clair. Pour une clé secrète donnée *k*, un simple chiffrement par blocs qui n'utilise pas de vecteur d'initialisation chiffrera-t-il un même bloc d'entrée de texte en clair en bloc de sortie de texte chiffré équivalent. Par conséquent, si vous avez des blocs en double dans votre flux de texte en clair d'entrée, vous aurez des blocs en double dans votre flux de texte chiffré de sortie. La présence de ces blocs de sortie en double alerteront les utilisateurs non autorisés sur la faiblesse du chiffrement utilisé, sur les algorithmes qui ont pu être utilisés et sur les modes d'attaque possibles. Le mode de chiffrement ECB est donc assez vulnérable à l'analyse et, en fin de compte, à la découverte de clés.
+Il existe une forme simple de chiffrement par blocs, qui est appelée « mode ECB » (Electronic Codebook, livre de codes électronique). Le mode ECB n'est pas considéré comme sécurisé, car il n'utilise pas de vecteur d'initialisation pour initialiser le premier bloc de texte en clair. Pour une clé secrète donnée *k* , un simple chiffrement par blocs qui n'utilise pas de vecteur d'initialisation chiffrera-t-il un même bloc d'entrée de texte en clair en bloc de sortie de texte chiffré équivalent. Par conséquent, si vous avez des blocs en double dans votre flux de texte en clair d'entrée, vous aurez des blocs en double dans votre flux de texte chiffré de sortie. La présence de ces blocs de sortie en double alerteront les utilisateurs non autorisés sur la faiblesse du chiffrement utilisé, sur les algorithmes qui ont pu être utilisés et sur les modes d'attaque possibles. Le mode de chiffrement ECB est donc assez vulnérable à l'analyse et, en fin de compte, à la découverte de clés.
 
 Les classes de chiffrement par blocs fournies dans la bibliothèque de classes de base utilisent un mode de chaînage par défaut appelé CBC (Cipher-Block Chaining, chaînage de blocs de chiffrement), mais vous pouvez éventuellement modifier ce mode par défaut.
 
@@ -123,7 +123,7 @@ La liste suivante propose une comparaison entre les algorithmes de chiffrement �
 
 - <xref:System.Security.Cryptography.DSA>
 
-RSA autorise à la fois le chiffrement et la signature, mais DSA ne peut être utilisé que pour la signature. DSA n’est pas aussi sécurisé que RSA et nous vous recommandons d’utiliser RSA. Diffie-Hellman peut être utilisé uniquement pour la génération de clés. En général, les algorithmes à clé publique sont plus limités dans leurs utilisations que les algorithmes à clé privée.
+RSA autorise à la fois le chiffrement et la signature, mais DSA ne peut être utilisé que pour la signature. DSA n’est pas aussi sécurisé que RSA et nous vous recommandons d’utiliser RSA. Diffie-Hellman ne peut être utilisé que pour la génération de clés. En général, les algorithmes à clé publique sont plus limités dans leurs utilisations que les algorithmes à clé privée.
 
 ## <a name="digital-signatures"></a>Signatures numériques
 
@@ -178,13 +178,13 @@ Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d
 
 ## <a name="random-number-generation"></a>génération de nombres aléatoires
 
-La génération de nombres aléatoires est un élément indispensable de nombreuses opérations de chiffrement. Par exemple, les clés de chiffrement doivent être aussi aléatoires que possible de sorte qu'il soit impossible de les reproduire. Les générateurs de nombres aléatoires de chiffrement doivent générer des sorties qu'il est impossible de prédire du point de vue informatique avec une probabilité de plus de 50 %. Par conséquent, toute méthode de prédiction du bit de sortie suivant ne doit pas pas se montrer plus performante que le hasard. Les classes du .NET Framework utilisent des générateurs de nombres aléatoires pour générer des clés de chiffrement.
+La génération de nombres aléatoires est un élément indispensable de nombreuses opérations de chiffrement. Par exemple, les clés de chiffrement doivent être aussi aléatoires que possible de sorte qu'il soit impossible de les reproduire. Les générateurs de nombres aléatoires de chiffrement doivent générer des sorties qu'il est impossible de prédire du point de vue informatique avec une probabilité de plus de 50 %. Par conséquent, toute méthode de prédiction du bit de sortie suivant ne doit pas pas se montrer plus performante que le hasard. Les classes dans .NET utilisent des générateurs de nombres aléatoires pour générer des clés de chiffrement.
 
 La classe <xref:System.Security.Cryptography.RandomNumberGenerator> est une implémentation d'un algorithme de génération de nombres aléatoires.
 
 ## <a name="clickonce-manifests"></a>Manifestes ClickOnce
 
-Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent d’obtenir et de vérifier des informations sur les signatures de manifeste pour les applications qui sont déployées à l’aide de la [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+Les classes de chiffrement suivantes vous permettent d’obtenir et de vérifier des informations sur les signatures de manifeste pour les applications qui sont déployées à l’aide de la [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
 - La classe <xref:System.Security.Cryptography.ManifestSignatureInformation> obtient des informations sur une signature de manifeste quand vous utilisez ses surcharges de méthode <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> .
 
@@ -192,7 +192,7 @@ Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent
 
 - La classe <xref:System.Security.Cryptography.ManifestSignatureInformationCollection> fournit une collection en lecture seule d'objets <xref:System.Security.Cryptography.ManifestSignatureInformation> des signatures vérifiées.
 
- De plus, les classes suivantes fournissent des informations de signature spécifiques :
+De plus, les classes suivantes fournissent des informations de signature spécifiques :
 
 - <xref:System.Security.Cryptography.StrongNameSignatureInformation> contient les informations de signature de nom fort d'un manifeste.
 
@@ -204,11 +204,11 @@ Dans la .NET Framework 3,5, les classes de chiffrement suivantes vous permettent
 
 ## <a name="cryptography-next-generation-cng-classes"></a>Classes CNG (Cryptography Next Generation)
 
-Dans le .NET Framework 3,5 et versions ultérieures, les classes CNG (Cryptography Next Generation) fournissent un wrapper managé autour des fonctions CNG natives. (CNG est le remplacement de CryptoAPI.) Ces classes ont « CNG » dans leur nom. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
+Les classes CNG fournissent un wrapper managé autour des fonctions CNG natives. (CNG est le remplacement de CryptoAPI.) Ces classes ont « CNG » dans leur nom. Au cœur des classes du wrapper CNG se trouve la classe de conteneur de clés <xref:System.Security.Cryptography.CngKey> , qui s'approprie le stockage et l'utilisation des clés CNG. Cette classe vous permet de stocker une paire de clés ou une clé publique en toute sécurité et d'y faire référence en utilisant un nom de chaîne simple. La classe de signature <xref:System.Security.Cryptography.ECDsaCng> à courbe elliptique et la classe de chiffrement <xref:System.Security.Cryptography.ECDiffieHellmanCng> peuvent utiliser des objets <xref:System.Security.Cryptography.CngKey> .
 
 La classe <xref:System.Security.Cryptography.CngKey> sert à diverses autres opérations, notamment à ouvrir, créer, supprimer et exporter des clés. Elle permet aussi d'accéder au handle de clé sous-jacent à utiliser quand il s'agit d'appeler des fonctions natives directement.
 
-Le .NET Framework 3,5 comprend également diverses classes CNG de prise en charge, telles que les suivantes :
+.NET comprend également diverses classes CNG de prise en charge, telles que les suivantes :
 
 - <xref:System.Security.Cryptography.CngProvider> dispose d'un fournisseur de stockage de clés.
 

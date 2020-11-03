@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c256c03831ac759bc45467f38e85fd3a2884dda4
-ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
+ms.openlocfilehash: c65f7220c44e86fac7e8beba28277bf43af95088
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92526590"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282334"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -34,7 +34,7 @@ C# 9,0 est pris en charge sur **.net 5**. Pour plus d’informations, consultez 
 
 ## <a name="record-types"></a>Types d’enregistrements
 
-C# 9,0 introduit **_types d’enregistrements_*_, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
+C# 9,0 introduit * *_types d’enregistrements_* _, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
 
 Les types d’enregistrements facilitent la création de types référence immuables dans .NET. Historiquement, les types .NET sont largement classés comme types référence (y compris les classes et les types anonymes) et les types valeur (y compris les structs et les tuples). Bien que les types de valeurs immuables soient recommandés, les types valeur mutables n’introduisent pas souvent des erreurs. Les variables de type valeur contiennent les valeurs afin que les modifications soient apportées à une copie des données d’origine lorsque les types valeur sont passés aux méthodes.
 
@@ -106,7 +106,7 @@ La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` pro
 
 ## <a name="init-only-setters"></a>Setter init uniquement
 
-*Les **Setters init uniquement**_ fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
+*Les **Setters init uniquement** _ fournissent une syntaxe cohérente pour initialiser les membres d’un objet. Les initialiseurs de propriété permettent de savoir clairement quelle valeur définit la propriété. L’inconvénient est que ces propriétés doivent pouvoir être définies. À compter de C# 9,0, vous pouvez créer des `init` accesseurs au lieu d' `set` accesseurs pour les propriétés et les indexeurs. Les appelants peuvent utiliser la syntaxe de l’initialiseur de propriété pour définir ces valeurs dans les expressions de création, mais ces propriétés sont en lecture seule une fois que la construction est terminée. Les Setters init uniquement fournissent une fenêtre pour modifier l’État. Cette fenêtre se ferme à la fin de la phase de construction. La phase de construction se termine effectivement après toute initialisation, y compris les initialiseurs de propriété et les expressions with-.
 
 Vous pouvez déclarer `init` uniquement des accesseurs set dans n’importe quel type que vous écrivez. Par exemple, le struct suivant définit une structure d’observation météorologique :
 
@@ -168,7 +168,7 @@ C# 9 comprend de nouvelles améliorations de la mise en correspondance des modè
 - Les _*_modèles entre parenthèses_*_ appliquent ou mettent en évidence la précédence des combinaisons de modèles
 - _*_Les `and` modèles conjonctives_*_ nécessitent que les deux modèles correspondent
 - _*_Les `or` modèles disjonctive_*_ nécessitent un modèle de correspondance
-- Les _*_ `not` modèles de négation_*_ requièrent qu’un modèle ne corresponde pas
+- Les _*_`not` modèles de négation_*_ requièrent qu’un modèle ne corresponde pas
 - Les _*_modèles relationnels_*_ requièrent que l’entrée soit inférieure à, supérieure à, inférieure ou égale à une constante donnée, ou supérieure ou égale à celle-ci.
 
 Ces modèles enrichissent la syntaxe des modèles. Prenons les exemples suivants :
@@ -240,9 +240,9 @@ Deux fonctionnalités finales prennent en charge les générateurs de code C#. L
 
 Un générateur de code lit des attributs ou d’autres éléments de code à l’aide des API d’analyse Roslyn. À partir de ces informations, il ajoute un nouveau code à la compilation. Les générateurs de source peuvent uniquement ajouter du code ; ils ne sont pas autorisés à modifier le code existant dans la compilation.
 
-Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la**syntaxe de méthode partielle**_ et les _*_initialiseurs de module_*_. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
+Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la **syntaxe de méthode partielle** _ et les _*_initialiseurs de module_*_. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
 
-La deuxième nouvelle fonctionnalité pour les générateurs de code est _ *_initialiseurs de module_* *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime lors du chargement de l’assembly. Méthode d’initialiseur de module :
+La deuxième nouvelle fonctionnalité pour les générateurs de code est _ * _initialiseurs de module_ * *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime lors du chargement de l’assembly. Méthode d’initialiseur de module :
 
 - Doit être statique
 - Doit être sans paramètre

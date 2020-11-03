@@ -17,12 +17,12 @@ helpviewer_keywords:
 - decryption
 - data [.NET], encryption
 ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
-ms.openlocfilehash: 263a07ddf357734e819fffdd41cdff60657adf15
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: d3fe7ef3ddbc6e75a248101829b11a8abcb3c15a
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557058"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282051"
 ---
 # <a name="how-to-use-data-protection"></a>Procédure : utiliser la protection des données
 
@@ -35,7 +35,7 @@ ms.locfileid: "87557058"
   
 Utilisez la classe <xref:System.Security.Cryptography.ProtectedData> pour chiffrer une copie d'un tableau d'octets. Cette fonctionnalité est disponible dans .NET Framework, .NET Core et .NET 5.  Vous pouvez spécifier que les données chiffrées par le compte d'utilisateur actuel peuvent être déchiffrées uniquement par le même compte d'utilisateur, ou bien par n'importe quel compte de l'ordinateur.  Reportez-vous à l'énumération <xref:System.Security.Cryptography.DataProtectionScope> pour obtenir une description détaillée des options <xref:System.Security.Cryptography.ProtectedData>.  
   
-### <a name="to-encrypt-data-to-a-file-or-stream-using-data-protection"></a>Pour chiffrer les données d'un fichier ou d'un flux à l'aide de la protection des données  
+## <a name="encrypt-data-to-a-file-or-stream-using-data-protection"></a>Chiffrer des données dans un fichier ou un flux à l’aide de la protection des données  
   
 1. Créez une entropie aléatoire.  
   

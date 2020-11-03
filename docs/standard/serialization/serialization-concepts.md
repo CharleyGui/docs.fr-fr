@@ -3,12 +3,12 @@ title: Concepts de la sérialisation
 description: La sérialisation peut être utilisée pour capturer l’état d’un objet afin qu’une copie puisse être créée ou pour envoyer un objet par valeur d’un domaine d’application à un autre.
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
-ms.openlocfilehash: a185855f4b6913c8e1d57bf36fc5c37411123e68
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dcaa3fa0d9080c958e63a3ae9d1e8f951ea1f70b
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541198"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282305"
 ---
 # <a name="serialization-concepts"></a>Concepts de la sérialisation
 Pourquoi utiliser la sérialisation ? L'une des deux raisons majeures est que vous pouvez, d'une part, rendre persistant l'état d'un objet sur un support de stockage afin qu'une copie exacte puisse être recréée ultérieurement. D'autre part, vous pouvez envoyer cet objet par valeur d'un domaine d'application à l'autre. Par exemple, la sérialisation est utilisée pour enregistrer l'état de session dans ASP.NET et copier des objets vers le Presse-papiers dans les Windows Forms. Elle est également utilisée par la communication à distance pour passer des objets par valeur d'un domaine d'application à un autre.
@@ -18,7 +18,7 @@ Pourquoi utiliser la sérialisation ? L'une des deux raisons majeures est que v
 ## <a name="persistent-storage"></a>Stockage persistant
 Il est souvent nécessaire de stocker la valeur des champs d'un objet sur un disque pour pouvoir récupérer ces données ultérieurement. Bien que cela soit facile à accomplir sans utiliser la sérialisation, cette méthode est souvent fastidieuse et susceptible d'entraîner des erreurs. Elle devient en outre de plus en plus complexe lorsque vous devez suivre une hiérarchie d'objets. Imaginez que vous deviez enregistrer des données au sein d'une grande application d'entreprise qui contient des milliers d'objets et que vous deviez écrire du code pour enregistrer et restaurer des champs et propriétés sur et à partir d'un disque pour chaque objet. La sérialisation offre un mécanisme pratique permettant d'atteindre cet objectif.
 
-Le Common Language Runtime gère la manière dont les objets sont stockés en mémoire et fournit un mécanisme de sérialisation automatisé par le biais de la [réflexion](../../framework/reflection-and-codedom/reflection.md). Lorsqu'un objet est sérialisé, le nom de la classe, l'assembly et tous les membres de données de l'instance de classe sont écrits sur le support de stockage. Les objets stockent souvent des références à d'autres instances dans les variables membres. Lorsque la classe est sérialisée, le moteur de sérialisation effectue un suivi des objets référencés et déjà sérialisés, pour garantir qu'un même objet n'est pas sérialisé plusieurs fois. L’architecture de sérialisation fournie avec le .NET Framework gère correctement les graphiques d’objets et les références circulaires. La seule spécification définie pour les graphiques d’objets est que tous les objets référencés par l’objet sérialisé doivent également être marqués comme `Serializable` (pour plus d’informations, consultez [Sérialisation de base](basic-serialization.md)). Si tel n'est pas le cas, une exception est levée lorsque le sérialiseur tente de sérialiser l'objet non marqué.
+Le Common Language Runtime gère la manière dont les objets sont stockés en mémoire et fournit un mécanisme de sérialisation automatisé par le biais de la [réflexion](../../framework/reflection-and-codedom/reflection.md). Lorsqu'un objet est sérialisé, le nom de la classe, l'assembly et tous les membres de données de l'instance de classe sont écrits sur le support de stockage. Les objets stockent souvent des références à d'autres instances dans les variables membres. Lorsque la classe est sérialisée, le moteur de sérialisation effectue un suivi des objets référencés et déjà sérialisés, pour garantir qu'un même objet n'est pas sérialisé plusieurs fois. L’architecture de sérialisation fournie par .NET gère correctement les graphiques d’objets et les références circulaires automatiquement. La seule spécification définie pour les graphiques d’objets est que tous les objets référencés par l’objet sérialisé doivent également être marqués comme `Serializable` (pour plus d’informations, consultez [Sérialisation de base](basic-serialization.md)). Si tel n'est pas le cas, une exception est levée lorsque le sérialiseur tente de sérialiser l'objet non marqué.
 
 Quand la classe sérialisée est désérialisée, elle est recréée et les valeurs de toutes les données membres sont restaurées automatiquement.
 
@@ -29,10 +29,7 @@ Quand un objet dérive de `MarshalByRefObject`, une référence de l’objet (et
 
 ## <a name="related-sections"></a>Sections connexes  
  [Sérialisation binaire](binary-serialization.md)  
- Décrit le mécanisme de sérialisation binaire inclus avec le Common Language Runtime.  
+ Décrit le mécanisme de sérialisation binaire inclus avec le Common Language Runtime.
   
- [.NET Remoting](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
- Décrit les différentes méthodes de communication disponibles dans le .NET Framework pour les communications distantes.  
-  
- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)  
+ [Sérialisation XML et SOAP](xml-and-soap-serialization.md)  
  Décrit le mécanisme de sérialisation XML et SOAP inclus avec le Common Language Runtime.

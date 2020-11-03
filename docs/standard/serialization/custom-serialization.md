@@ -18,23 +18,25 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: 1532c4eeb09e7110d0f369ec47f342256889e576
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8e8d8d38ab8170a9bf9fae098e267be1a38f27d0
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289653"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281792"
 ---
 # <a name="custom-serialization"></a>Sérialisation personnalisée
+
 La sérialisation personnalisée est le processus de contrôle de la sérialisation et désérialisation d'un type. En contrôlant la sérialisation, il est possible de garantir la compatibilité de sérialisation (capacité de sérialisation et désérialisation entre des versions d’un type) sans interrompre la fonctionnalité principale du type. Par exemple, il peut y avoir uniquement deux champs dans la première version d'un type. Dans la version suivante d'un type, plusieurs champs supplémentaires sont ajoutés. La deuxième version d'une application doit néanmoins être en mesure de sérialiser et désérialiser les deux types. Les sections suivantes décrivent comment contrôler la sérialisation.
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
 > [!IMPORTANT]
-> Dans les versions antérieures au .NET Framework 4.0, la sérialisation de données utilisateur personnalisées dans un assembly d’un niveau de confiance partiel était obtenue à l’aide de GetObjectData. Depuis la version 4.0, cette méthode est marquée avec l'attribut <xref:System.Security.SecurityCriticalAttribute>, ce qui empêche l'exécution dans les assemblys d'un niveau de confiance partiel. Pour contourner cette condition, implémentez l'interface <xref:System.Runtime.Serialization.ISafeSerializationData>.  
+> Dans les versions antérieures à .NET Framework 4,0, la sérialisation de données utilisateur personnalisées dans un assembly de confiance partielle était accomplie à l’aide de `GetObjectData` . À partir de la version 4,0, cette méthode est marquée avec l' <xref:System.Security.SecurityCriticalAttribute> attribut, ce qui empêche l’exécution dans les assemblys d’un niveau de confiance partiel. Pour contourner cette condition, implémentez l'interface <xref:System.Runtime.Serialization.ISafeSerializationData>.  
   
-## <a name="running-custom-methods-during-and-after-serialization"></a>Exécution de méthodes personnalisées pendant et après la sérialisation  
- La méthode conseillée la plus simple (présentée dans la version 2.0 du .NET Framework) consiste à appliquer les attributs suivants aux méthodes utilisées pour corriger des données pendant et après la sérialisation :  
+## <a name="running-custom-methods-during-and-after-serialization"></a>Exécution de méthodes personnalisées pendant et après la sérialisation
+
+La méthode recommandée pour exécuter des méthodes personnalisées pendant et après la sérialisation consiste à appliquer les attributs suivants aux méthodes utilisées pour corriger les données pendant et après la sérialisation :  
   
 - <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
   

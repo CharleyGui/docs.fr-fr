@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: 98ea6f23467b85dc270aa323e72a8a9b0934994a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2b75ba6875b2a4430b6776c27dead72476884fff
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83378428"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282073"
 ---
 # <a name="basic-serialization"></a>Sérialisation de base
 
@@ -59,7 +59,7 @@ Console.WriteLine("n2: {0}", obj.n2);
 Console.WriteLine("str: {0}", obj.str);  
 ```  
   
-Le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> utilisé ci-dessus est très efficace et génère un flux d’octets compact. Ce formateur permet aussi bien de sérialiser que de désérialiser des objets, ce qui en fait l'outil idéal pour sérialiser des objets qui seront désérialisés sur le .NET Framework. Il est important de noter que les constructeurs ne sont pas appelés lorsqu'un objet est désérialisé. Pour des raisons de performances, la désérialisation repose sur cette contrainte. Toutefois, cela enfreint les termes de certains contrats habituels que l'exécution passe avec le writer d'objets et les développeurs doivent s'assurer qu'ils comprennent les ramifications lorsqu'ils marquent un objet comme sérialisable.  
+Le <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> utilisé ci-dessus est très efficace et génère un flux d’octets compact. Tous les objets sérialisés avec ce formateur peuvent également être désérialisés avec lui, ce qui en fait un outil idéal pour sérialiser des objets qui seront désérialisés sur .NET. Il est important de noter que les constructeurs ne sont pas appelés lorsqu'un objet est désérialisé. Pour des raisons de performances, la désérialisation repose sur cette contrainte. Toutefois, cela enfreint les termes de certains contrats habituels que l'exécution passe avec le writer d'objets et les développeurs doivent s'assurer qu'ils comprennent les ramifications lorsqu'ils marquent un objet comme sérialisable.  
   
 Si la portabilité est une exigence, utilisez plutôt le <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Remplacez simplement le **BinaryFormatter** dans le code ci-dessus par **SoapFormatter** et appelez **Serialize** et **Deserialize** comme précédemment. Ce formateur génère le résultat suivant pour l'exemple utilisé ci-dessus.  
   
@@ -96,4 +96,4 @@ public class MyStuff : MyObject
 ## <a name="see-also"></a>Voir aussi
 
 - [Sérialisation binaire](binary-serialization.md)
-- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)

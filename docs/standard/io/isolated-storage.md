@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 4289b809d9a401de92c74063a42216f3051543f6
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 3699edda6cce24adb8e932d6e8b8a0a5bb977142
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188560"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282025"
 ---
 # <a name="isolated-storage"></a>Stockage isolé
 
@@ -37,7 +37,7 @@ ms.locfileid: "93188560"
 
 ## <a name="data-compartments-and-stores"></a>Magasins et compartiments de données
 
-Lorsqu'une application stocke des données dans un fichier, le nom de fichier et l'emplacement de stockage doivent être choisis avec soin afin de réduire la possibilité que l'emplacement de stockage soit connu d'une autre application et, par conséquent, vulnérable en termes d'endommagement. Sans un système standard pour gérer ces problèmes, le développement de techniques adéquates qui minimisent les conflits de stockage peut être complexe et les résultats peuvent être incertains.
+Quand une application stocke des données dans un fichier, le nom de fichier et l’emplacement de stockage doivent être choisis avec soin afin de réduire la possibilité que l’emplacement de stockage soit connu d’une autre application et, par conséquent, vulnérable aux dommages. Si vous ne disposez pas d’un système standard pour gérer ces problèmes, les techniques Improvising qui minimisent les conflits de stockage peuvent être complexes et les résultats peuvent ne pas être fiables.
 
 Grâce au stockage isolé, les données sont toujours isolées par utilisateur et par assembly. Les informations d'identification telles que l'origine ou le nom fort de l'assembly déterminent l'identité de l'assembly. Les données peuvent également être isolées par domaine d'application, en utilisant des informations d'identification similaires.
 
@@ -97,7 +97,7 @@ __Cette section s’applique aux frameworks suivants :__
 
 .NET Framework et .NET Core offrent un stockage isolé comme un mécanisme permettant de conserver les données d’un utilisateur, d’une application ou d’un composant. Il s’agit d’un composant hérité principalement conçu pour les scénarios de sécurité d’accès du code dépréciés.
 
-Diverses API et outils de stockage isolé peuvent être utilisés pour lire les données au-delà des limites d’approbation. Par exemple, la lecture de données à partir d’une étendue à l’échelle de l’ordinateur peut agréger des données à partir d’autres comptes d’utilisateurs, éventuellement moins fiables, sur l’ordinateur. Les composants ou les applications qui lisent à partir des étendues de stockage isolé à l’échelle de l’ordinateur doivent être conscients des conséquences de la lecture de ces données.
+Diverses API et outils de stockage isolé peuvent être utilisés pour lire les données au-delà des limites d’approbation. Par exemple, la lecture de données à partir d’une étendue à l’échelle de l’ordinateur peut agréger des données à partir d’autres comptes d’utilisateurs, éventuellement moins fiables, sur l’ordinateur. Les composants ou applications qui lisent à partir des étendues de stockage isolé à l’échelle de l’ordinateur doivent être conscients des conséquences de la lecture de ces données.
 
 ### <a name="security-sensitive-apis-that-can-read-from-the-machine-wide-scope"></a>API sensibles à la sécurité qui peuvent lire à partir de l’étendue à l’échelle de l’ordinateur
 
@@ -134,24 +134,25 @@ Le troisième emplacement est partagé entre tous les comptes d’utilisateur su
 
 Les chemins d’accès précédents peuvent différer selon la version de Windows utilisée.
 
-Considérons maintenant un système multi-utilisateur avec deux utilisateurs inscrits _Mallory_ et _Bob_ . Mallory a la possibilité d’accéder à son répertoire de profil utilisateur `C:\Users\Mallory\` et peut accéder à l’emplacement de stockage partagé à l’ensemble de l’ordinateur `C:\ProgramData\IsolatedStorage\` . Elle ne peut pas accéder au répertoire du profil utilisateur de Bob `C:\Users\Bob\` .
+Considérons maintenant un système multi-utilisateur avec deux utilisateurs inscrits _Mallory_ et _Bob_. Mallory a la possibilité d’accéder à son répertoire de profil utilisateur `C:\Users\Mallory\` et peut accéder à l’emplacement de stockage partagé à l’ensemble de l’ordinateur `C:\ProgramData\IsolatedStorage\` . Elle ne peut pas accéder au répertoire du profil utilisateur de Bob `C:\Users\Bob\` .
 
 Si Mallory souhaite attaquer Bob, il peut écrire des données dans l’emplacement de stockage à l’intérieur de l’ordinateur, puis tenter d’influencer Bob dans la lecture à partir du magasin à l’intérieur de l’ordinateur. Quand Bob exécute une application qui lit à partir de ce magasin, cette application fonctionnera sur les données que Mallory y a placées, mais à partir du contexte du compte d’utilisateur de Bob. Le reste de ce document présente différents vecteurs d’attaque et les étapes que les applications peuvent effectuer pour réduire les risques liés à ces attaques.
 
-__Remarque :__ Pour qu’une telle attaque ait lieu, Mallory requiert :
-
-* Un compte d’utilisateur sur l’ordinateur.
-* Capacité de placer un fichier dans un emplacement connu sur le système de fichiers.
-* Savoir que Bob va à un moment donné exécuter une application qui tente de lire ces données.
-
-Il ne s’agit pas de vecteurs de menace qui s’appliquent aux environnements de bureau à utilisateur unique standard, tels que les ordinateurs personnels ou les stations de travail d’entreprise à un seul employé.
+> [!NOTE]
+> Pour qu’une telle attaque ait lieu, Mallory requiert :
+>
+> * Un compte d’utilisateur sur l’ordinateur.
+> * Capacité de placer un fichier dans un emplacement connu sur le système de fichiers.
+> * Savoir que Bob va à un moment donné exécuter une application qui tente de lire ces données.
+>
+> Il ne s’agit pas de vecteurs de menace qui s’appliquent à des environnements de postes de travail à utilisateur unique standard, tels que les ordinateurs personnels ou les stations de travail d’entreprise à un seul employé.
 
 #### <a name="elevation-of-privilege"></a>Élévation de privilège
 
 Une attaque par __élévation de privilèges__ se produit lorsque l’application de Bob lit le fichier de Mallory et tente automatiquement d’entreprendre une action en fonction du contenu de cette charge utile. Prenons l’exemple d’une application qui lit le contenu d’un script de démarrage à partir du magasin de l’ordinateur et transmet ce contenu à `Process.Start` . Si Mallory peut placer un script malveillant à l’intérieur du magasin de l’ordinateur, quand Bob lance son application :
 
-* Son application analyse et lance le script malveillant de Mallory _dans le contexte du profil utilisateur de Bob_ .
-* Mallory accède au compte de Bob sur l’ordinateur local.
+* Son application analyse et lance le script malveillant de Mallory _dans le contexte du profil utilisateur de Bob_.
+* Mallory obtient l’accès au compte de Bob sur l’ordinateur local.
 
 #### <a name="denial-of-service"></a>Déni de service
 
@@ -174,7 +175,7 @@ Lorsque l’application de Bob lit à partir du magasin de l’ordinateur, elle 
 
 __Important :__ Si votre environnement a plusieurs utilisateurs mutuellement non approuvés, __n’appelez pas__ l’API `IsolatedStorageFile.GetEnumerator(IsolatedStorageScope.Machine)` ou appelez l’outil `storeadm.exe /machine /list` . Les deux partent du principe qu’ils fonctionnent avec des données approuvées. Si une personne malveillante peut amorcer une charge malveillante dans le magasin de l’ordinateur, cette charge utile peut mener à une attaque par élévation de privilège dans le contexte de l’utilisateur qui exécute ces commandes.
 
-En cas de fonctionnement dans un environnement multi-utilisateur, reconsidérez l’utilisation des fonctionnalités de stockage isolé qui ciblent la portée de l' _ordinateur_ . Si une application doit lire les données à partir d’un emplacement au niveau de l’ordinateur, préférez lire les données à partir d’un emplacement accessible en écriture uniquement par les comptes d’administrateur. Le `%PROGRAMFILES%` répertoire et la `HKLM` ruche de Registre sont des exemples d’emplacements accessibles en écriture par les administrateurs et accessibles en lecture par tout le monde. Les données lues à partir de ces emplacements sont donc considérées comme dignes de confiance.
+En cas de fonctionnement dans un environnement multi-utilisateur, reconsidérez l’utilisation des fonctionnalités de stockage isolé qui ciblent la portée de l' _ordinateur_ . Si une application doit lire les données à partir d’un emplacement au niveau de l’ordinateur, préférez lire les données à partir d’un emplacement accessible en écriture uniquement par des comptes d’administrateur. Le `%PROGRAMFILES%` répertoire et la `HKLM` ruche de Registre sont des exemples d’emplacements accessibles en écriture par les administrateurs et accessibles en lecture par tout le monde. Les données lues à partir de ces emplacements sont donc considérées comme dignes de confiance.
 
 Si une application doit utiliser la portée de l' _ordinateur_ dans un environnement multi-utilisateur, validez le contenu des fichiers que vous lisez à partir du magasin de l’ordinateur. Si l’application désérialise des graphiques d’objets à partir de ces fichiers, envisagez d’utiliser des sérialiseurs plus sûrs comme `XmlSerializer` au lieu de sérialiseurs dangereux comme `BinaryFormatter` ou `NetDataContractSerializer` . Soyez vigilant avec les graphiques d’objets profondément imbriqués ou les graphiques d’objets qui effectuent l’allocation des ressources en fonction du contenu du fichier.
 
@@ -221,7 +222,7 @@ Le stockage isolé est utile dans de nombreuses situations, notamment dans ces q
 
 - Profil itinérant. Les applications peuvent également utiliser le stockage isolé avec des profils d'utilisateur itinérant. Ainsi, les magasins isolés d'un utilisateur peuvent être itinérants avec le profil.
 
-Vous ne devez pas utiliser le stockage isolé dans les situations suivantes :
+N’utilisez pas le stockage isolé dans les situations suivantes :
 
 - Pour stocker des secrets de grande valeur, tels que des clés ou des mots de passe non chiffrés, car le stockage isolé n'est pas protégé contre le code à niveau de confiance extrêmement élevé, contre le code non managé ou contre les utilisateurs de confiance de l'ordinateur.
 
@@ -235,7 +236,7 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Types d'isolation](types-of-isolation.md)|Décrit les divers types d'isolation.|
 |[Procédure : obtenir des magasins pour le stockage isolé](how-to-obtain-stores-for-isolated-storage.md)|Donne un exemple d'utilisation de la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> pour obtenir un magasin isolé par utilisateur et par assembly.|

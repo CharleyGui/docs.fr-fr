@@ -2,18 +2,18 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: 5ecfa24905537a663cd967142b765c258495fb22
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6805564ccd8a8b4911c7c687d97a06df2910c015
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537733"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281608"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet test` - Pilote de test .NET utilisée pour exécuter des tests unitaires.
 
@@ -77,7 +77,13 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`--blame-crash`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
-  Exécute les tests en mode de responsabilité et collecte un vidage sur incident lorsque l’hôte de test s’arrête de manière inattendue. Cette option est uniquement prise en charge sur Windows. Un répertoire qui contient *procdump.exe* et *procdump64.exe* doit se trouver dans la variable d’environnement PATH ou PROCDUMP_PATH. [Téléchargez les outils](/sysinternals/downloads/procdump). Implique `--blame` .
+  Exécute les tests en mode de responsabilité et collecte un vidage sur incident lorsque l’hôte de test s’arrête de manière inattendue. Cette option dépend de la version de .NET utilisée, du type d’erreur et du système d’exploitation.
+  
+  Pour les exceptions dans le code managé, un vidage est automatiquement collecté sur .NET 5,0 et versions ultérieures. Il génère un vidage pour testhost ou tout processus enfant qui s’est également exécuté sur .NET 5,0 et s’est bloqué. Les incidents en code natif ne génèrent pas de vidage. Cette option fonctionne sur Windows, macOS et Linux.
+  
+  Les vidages sur incident en code natif, ou lorsque vous utilisez .NET Core 3,1 ou des versions antérieures, peuvent uniquement être collectés sur Windows, à l’aide de Procdump. Un répertoire qui contient *procdump.exe* et *procdump64.exe* doit se trouver dans la variable d’environnement PATH ou PROCDUMP_PATH. [Téléchargez les outils](/sysinternals/downloads/procdump). Implique `--blame` .
+  
+  Pour collecter un vidage sur incident à partir d’une application native s’exécutant sur .NET 5,0 ou une version ultérieure, vous pouvez forcer l’utilisation de Procdump en affectant à la variable d’environnement la valeur `VSTEST_DUMP_FORCEPROCDUMP` `1` .
 
 - **`--blame-crash-dump-type <DUMP_TYPE>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
@@ -97,14 +103,14 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`--blame-hang-timeout <TIMESPAN>`** (Disponible depuis le kit de développement logiciel (SDK) .NET 5,0 Preview)
 
-  Délai d’attente par test, après lequel un vidage sur le blocage est déclenché et le processus hôte de test est terminé. La valeur du délai d’attente est spécifiée dans l’un des formats suivants :
+  Délai d’attente par test, après lequel un vidage sur le blocage est déclenché et le processus hôte de test et tous ses processus enfants sont vidés et terminés. La valeur du délai d’attente est spécifiée dans l’un des formats suivants :
   
-  - 1.5 h
-  - 90m
-  - 5400
-  - 5400000ms
+  - 1.5 h, 1,5 heure, 1,5 heure
+  - 90m, 90min, 90minute, 90minutes
+  - 5400, 5400sec, 5400second, 5400seconds
+  - 5400000ms, 5400000mil, 5400000millisecond, 5400000milliseconds
 
-  Quand aucune unité n’est utilisée (par exemple, 5,4 millions), la valeur est supposée être en millisecondes. Lorsqu’il est utilisé avec les tests pilotés par les données, le comportement du délai d’attente dépend de l’adaptateur de test utilisé. Pour xUnit et NUnit, le délai d’attente est renouvelé après chaque cas de test. Pour MSTest, le délai d’attente est utilisé pour tous les cas de test. Cette option est prise en charge sur Windows avec netcoreapp 2.1 et versions ultérieures, et sur Linux avec netcoreapp 3.1 et versions ultérieures. macOS n’est pas pris en charge.
+  Quand aucune unité n’est utilisée (par exemple, 5,4 millions), la valeur est supposée être en millisecondes. Lorsqu’il est utilisé avec les tests pilotés par les données, le comportement du délai d’attente dépend de l’adaptateur de test utilisé. Pour xUnit et NUnit, le délai d’attente est renouvelé après chaque cas de test. Pour MSTest, le délai d’attente est utilisé pour tous les cas de test. Cette option est prise en charge sur Windows avec netcoreapp 2.1 et versions ultérieures, sur Linux avec netcoreapp 3.1 et versions ultérieures, et sur macOS avec net 5.0 ou version ultérieure. Implique `--blame` et `--blame-hang` .
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -124,7 +130,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Force l’utilisation de `dotnet` ou .NET Framework hôte de test pour les binaires de test. Cette option détermine uniquement le type d’hôte à utiliser. La version de .NET Framework à utiliser est déterminée par le *runtimeconfig.js* du projet de test. Lorsqu’il n’est pas spécifié, l' [attribut d’assembly TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) est utilisé pour déterminer le type d’hôte. Lorsque cet attribut est supprimé du *fichier. dll*, l’hôte .NET Framework est utilisé.
+  Force l’utilisation de `dotnet` ou .NET Framework hôte de test pour les binaires de test. Cette option détermine uniquement le type d’hôte à utiliser. La version de .NET Framework à utiliser est déterminée par le *runtimeconfig.js* du projet de test. Lorsqu’il n’est pas spécifié, l' [attribut d’assembly TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) est utilisé pour déterminer le type d’hôte. Lorsque cet attribut est supprimé du *fichier. dll* , l’hôte .NET Framework est utilisé.
 
 - **`--filter <EXPRESSION>`**
 
@@ -243,9 +249,9 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 | Framework de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorité</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priority</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 
@@ -264,7 +270,7 @@ Les expressions peuvent être associées à des opérateurs conditionnels :
 
 | Opérateur            | Fonction |
 | ------------------- | -------- |
-| <code>&#124;</code> | OR       |
+| <code>&#124;</code> | OR       |
 | `&`                 | AND      |
 
 Vous pouvez mettre des expressions entre parenthèses quand vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: aa63e7d23641ad71b135f15236e29399a535784f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e77a56b2be33555bc02157c8e643ac655b083bc3
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398251"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93282214"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
 
@@ -60,7 +60,7 @@ Ce tableau affiche le niveau de gravité requis pour le journal afin d’écrire
 |---|---|
 |`Critical`|`Critical`|
 |`Error`|`Critical` ou `Error`|
-|`Warning`|`Critical`, `Error` ou `Warning`|
+|`Warning`|`Critical`, `Error`ou `Warning`|
 |`Information`|`Critical`, `Error`, `Warning` ou `Information`|
 |`Verbose`|`Critical`, `Error`, `Warning`, `Information` ou`Verbose`|
 |`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume` ou`Transfer`|
@@ -74,7 +74,7 @@ Ce tableau explique la sortie de journal affichée dans l’exemple précédent�
 
 #### <a name="to-log-only-activity-tracing-events"></a>Pour enregistrer uniquement les événements de traçage d’activités
 
-1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.
+1. Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions** et sélectionnez **Ouvrir**.
 
      -ou-
 
@@ -138,7 +138,7 @@ Ce tableau explique la sortie de journal affichée dans l’exemple précédent�
 9. Rétablissez la valeur « Information » de l’attribut `value`.
 
     > [!NOTE]
-    > Le paramètre de commutateur `DefaultSwitch` contrôle uniquement `My.Application.Log`. Il ne modifie pas le comportement des classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType> et <xref:System.Diagnostics.Debug?displayProperty=nameWithType> .NET Framework.
+    > Le paramètre de commutateur `DefaultSwitch` contrôle uniquement `My.Application.Log`. Elle ne modifie pas la manière dont <xref:System.Diagnostics.Trace?displayProperty=nameWithType> les <xref:System.Diagnostics.Debug?displayProperty=nameWithType> classes .net et se comportent.
 
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Filtrage individuel des écouteurs My.Application.Log
 
@@ -150,7 +150,7 @@ Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de dé
 
 #### <a name="to-log-only-activity-tracing-events"></a>Pour enregistrer uniquement les événements de traçage d’activités
 
-1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.
+1. Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions** et sélectionnez **Ouvrir**.
 
      \- ou -
 
@@ -162,7 +162,7 @@ Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de dé
 
     3. Cliquez sur **Add**.
 
-2. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions**. Choisissez **Ouvrir**.
+2. Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions**. Choisissez **Ouvrir**.
 
 3. Recherchez la section `<listeners>`, dans la section `<source>` avec l’attribut `name` « DefaultSource » sous la section `<sources>`. La section `<sources>` est sous la section `<system.diagnostics>`, dans la section `<configuration>` de niveau supérieur.
 

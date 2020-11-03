@@ -2,18 +2,18 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
 ms.date: 02/13/2020
-ms.openlocfilehash: 4476dcf36455e0dc1b89712409818cf7e0352f2c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4e182e1b8dff725c479297f7f1587ceaccf2942f
+ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537663"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281621"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet` -Pilote générique pour le CLI .NET Core.
 
@@ -262,7 +262,7 @@ dotnet myapp.dll
 
   Spécifie l’emplacement des runtimes .NET Core, s’ils ne sont pas installés à l’emplacement par défaut. L’emplacement par défaut sur Windows est `C:\Program Files\dotnet` . L’emplacement par défaut sur Linux et macOS est `/usr/share/dotnet` . Cette variable d’environnement est utilisée uniquement lors de l’exécution d’applications via des exécutables générés (apphosts). `DOTNET_ROOT(x86)` est utilisé à la place lors de l’exécution d’un fichier exécutable 32 bits sur un système d’exploitation 64 bits.
 
-- `DOTNET_PACKAGES`
+- `NUGET_PACKAGES`
 
   Le dossier de packages global. S’il n’est pas défini, les valeurs par défaut sont `~/.nuget/packages` sous Unix et `%userprofile%\.nuget\packages` sous Windows.
 
