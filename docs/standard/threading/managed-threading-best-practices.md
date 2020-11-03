@@ -7,22 +7,23 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- threading [.NET Framework], design guidelines
-- threading [.NET Framework], best practices
+- threading [.NET], design guidelines
+- threading [.NET], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 8d5c37bf2ed80e9b6ea071fcd2080c43be8f6247
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 88e1f34388cd58fef59bc4005bcaf630c59a661e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546365"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189002"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
+
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
   
 > [!NOTE]
-> À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui atténuent une partie de la complexité et des risques de la programmation multithread. Pour plus d’informations, consultez la page [Programmation parallèle dans .NET](../parallel-programming/index.md).  
+> À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui réduisent la complexité et les risques de la programmation multithread. Pour plus d’informations, consultez la page [Programmation parallèle dans .NET](../parallel-programming/index.md).  
   
 ## <a name="deadlocks-and-race-conditions"></a>Interblocages et conditions de concurrence  
  Le multithreading résout les problèmes de débit et de réactivité, mais, ce faisant, occasionne de nouveaux problèmes : les interblocages et les conditions de concurrence.  
@@ -61,7 +62,7 @@ else {
 ### <a name="race-conditions"></a>Conditions de concurrence  
  Une condition de concurrence est un bogue qui survient lorsque le résultat d’un programme dépend du thread qui atteint le premier un bloc de code spécifique. L’exécution du programme à plusieurs reprises produit des résultats différents, et le résultat d’une exécution donnée n’est donc pas prévisible.  
   
- Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé (**Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
+ Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé ( **Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
   
  Dans une application multithread, il est possible qu’un thread ayant chargé et incrémenté la valeur soit devancé par un autre thread qui exécute ces trois étapes ; lorsque le premier thread reprend l’exécution et stocke sa valeur, il remplace alors la valeur de `objCt` sans tenir compte du fait qu’elle a changé dans l’intervalle.  
   
@@ -95,7 +96,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
   
 - Procédez avec précaution lorsque vous utilisez des verrous sur des instances, par exemple `lock(this)` en C# ou `SyncLock(Me)` en Visual Basic. Si un autre code de votre application, externe au type, utilise un verrou sur l’objet, des interblocages risquent de se produire.  
   
-- Assurez-vous qu’un thread entré dans un moniteur quitte toujours ce dernier, même si une exception se produit pendant que le thread se trouve dans le moniteur. L’instruction C# [lock](../../csharp/language-reference/keywords/lock-statement.md) et l’instruction Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) assurent automatiquement ce comportement, en employant un bloc **finally** pour garantir l’appel de la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>. Si vous n’êtes pas en mesure de garantir l’appel de la méthode **Exit**, vous pouvez modifier votre conception de façon à utiliser **Mutex**. Un mutex est automatiquement libéré lorsque le thread auquel il appartient a terminé.  
+- Assurez-vous qu’un thread entré dans un moniteur quitte toujours ce dernier, même si une exception se produit pendant que le thread se trouve dans le moniteur. L’instruction C# [lock](../../csharp/language-reference/keywords/lock-statement.md) et l’instruction Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) assurent automatiquement ce comportement, en employant un bloc **finally** pour garantir l’appel de la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>. Si vous n’êtes pas en mesure de garantir l’appel de la méthode **Exit** , vous pouvez modifier votre conception de façon à utiliser **Mutex** . Un mutex est automatiquement libéré lorsque le thread auquel il appartient a terminé.  
   
 - Utilisez plusieurs threads pour les tâches qui nécessitent des ressources différentes, et évitez d’attribuer plusieurs threads à une même ressource. Par exemple, vous tirerez avantage du fait que les tâches impliquant des E/S disposent de leur propre thread, car ce thread se bloquera lors des opérations d’E/S et permettra ainsi à d’autres threads de s’exécuter. L’entrée utilisateur est une autre ressource tirant profit d’un thread dédié. Sur un ordinateur monoprocesseur, une tâche qui exige de multiples calculs coexiste avec l’entrée utilisateur et avec les tâches qui impliquent des E/S, mais plusieurs tâches nécessitant de nombreux calculs entrent en concurrence les unes avec les autres.  
   
@@ -125,7 +126,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
     ```  
   
     > [!NOTE]
-    > Dans .NET Framework 2.0 et les versions ultérieures, utilisez la méthode <xref:System.Threading.Interlocked.Add%2A> pour les incréments atomiques supérieurs à 1.  
+    > Utilisez la <xref:System.Threading.Interlocked.Add%2A> méthode pour les incréments atomiques supérieurs à 1.  
   
      Dans le second exemple, une variable de type référence est uniquement mise à jour s’il s’agit d’une référence null (`Nothing` en Visual Basic).  
   
@@ -160,7 +161,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
     ```  
   
     > [!NOTE]
-    > À compter de .NET Framework 2.0, la surcharge de méthode <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> fournit une alternative de type sécurisé pour les types référence.
+    > La <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> surcharge de méthode fournit une alternative de type sécurisé pour les types référence.
   
 ## <a name="recommendations-for-class-libraries"></a>Recommandations relatives aux bibliothèques de classes  
  Lorsque vous concevez des bibliothèques de classes pour le multithreading, tenez compte des recommandations suivantes :  
@@ -169,7 +170,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
   
 - Définissez les données static (`Shared` en Visual Basic) comme thread-safe par défaut.  
   
-- Ne définissez pas les données d’instance comme thread-safe par défaut. L’ajout de verrous pour créer un code thread-safe diminue les performances, multiplie les conflits de verrou et occasionne un risque d’interblocages. Dans les modèles d’application communs, le code utilisateur n’est exécuté que par un seul thread à la fois, ce qui minimise la nécessité d’une cohérence de thread. C’est la raison pour laquelle les bibliothèques de classes .NET Framework ne sont pas thread-safe par défaut.  
+- Ne définissez pas les données d’instance comme thread-safe par défaut. L’ajout de verrous pour créer un code thread-safe diminue les performances, multiplie les conflits de verrou et occasionne un risque d’interblocages. Dans les modèles d’application communs, le code utilisateur n’est exécuté que par un seul thread à la fois, ce qui minimise la nécessité d’une cohérence de thread. Pour cette raison, les bibliothèques de classes .NET ne sont pas thread-safe par défaut.  
   
 - Évitez de fournir des méthodes statiques qui modifient l’état statique. Dans les scénarios de serveur courants, l’état statique est partagé entre les requêtes, ce qui signifie que plusieurs threads peuvent exécuter ce code en même temps. Ceci occasionne un risque de bogues de threading. Envisagez d’utiliser un modèle de conception qui encapsule les données dans des instances non partagées entre les requêtes. En outre, si les données static sont synchronisées, les appels entre les méthodes statiques qui modifient l’état peuvent entraîner des interblocages ou une synchronisation redondante et dégrader ainsi les performances.  
   

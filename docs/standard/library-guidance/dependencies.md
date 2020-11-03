@@ -2,12 +2,12 @@
 title: Dépendances et bibliothèques .NET
 description: Meilleures pratiques suggérées pour la gestion des dépendances NuGet dans les bibliothèques .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 344d5dff564b64b9d70bbd61afb0b7bc057c8f21
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d189a3364b501272e29de72b6018844877bf2128
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291368"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189301"
 ---
 # <a name="dependencies"></a>Les dépendances
 
@@ -23,9 +23,9 @@ Lors du build, NuGet analyse tous les packages dont dépend un projet, y compris
 
 La plupart des dépendances en losange sont facilement résolues ; toutefois, elles peuvent créer des problèmes dans certaines circonstances :
 
-1. **Les conflits de références de packages NuGet** empêchent la résolution d’une version pendant la restauration du package.
-2. **Les modifications avec rupture entre les versions** entraînent des bogues et des exceptions au moment de l’exécution.
-3. **Un nom fort est attribué à l’assembly de package**, la version d’assembly est modifiée et l’application exécutée sur .NET Framework. Des redirection des liaisons d'assembly sont requises.
+- **Les conflits de références de packages NuGet** empêchent la résolution d’une version pendant la restauration du package.
+- **Les modifications avec rupture entre les versions** entraînent des bogues et des exceptions au moment de l’exécution.
+- L' **assembly de package a un nom fort** , la version de l’assembly a changé et l’application s’exécute sur .NET Framework. Des redirection des liaisons d'assembly sont requises.
 
 Il n’est pas possible de savoir quels packages seront utilisées en même temps que le vôtre. Un bon moyen de réduire la probabilité d’une dépendance en losange avec arrêt de votre bibliothèque consiste à limiter le nombre de packages dont vous dépendez.
 
@@ -56,11 +56,11 @@ Des limites de versions supérieures entraîneront l’échec de NuGet en cas de
 
 ![Conflit de dépendances Diamond](./media/dependencies/diamond-dependency-conflict.png "Conflit de dépendances Diamond")
 
-❌N’ont pas de références de package NuGet sans version minimale.
+❌ N’ont pas de références de package NuGet sans version minimale.
 
-❌Évitez les références de package NuGet qui demandent une version exacte.
+❌ Évitez les références de package NuGet qui demandent une version exacte.
 
-❌Évitez les références de package NuGet avec une limite supérieure de version.
+❌ Évitez les références de package NuGet avec une limite supérieure de version.
 
 ## <a name="nuget-shared-source-packages"></a>Packages NuGet à code source partagé
 
@@ -86,11 +86,11 @@ Les packages à code source partagé ont certaines limitations. Ils ne peuvent �
 
 > Ce paramètre indique à NuGet que le package ne doit être utilisée que lors du développement et ne doit pas être exposé en tant que dépendance publique.
 
-❌N’ont pas de types de packages sources partagés dans votre API publique.
+❌ N’ont pas de types de packages sources partagés dans votre API publique.
 
 > Les types à code source partagé sont compilés dans l’assembly de référencement et ne peuvent pas être échangés au-delà des limites de l’assembly. Par exemple, un type de `IRepository` à code source partagé dans un projet est un type distinct du même `IRepository` à code source partagé dans un autre projet. Les types de packages à code source partagé doivent avoir une visibilité `internal`.
 
-❌NE publiez pas de packages source partagés sur NuGet.org.
+❌ NE publiez pas de packages source partagés sur NuGet.org.
 
 > Les packages à code source partagé contiennent du code source et ne peuvent être utilisés que par des projets ayant le même type de langage. Par exemple, un package à code source partagé C# ne peut pas être utilisé par une application F#.
 >

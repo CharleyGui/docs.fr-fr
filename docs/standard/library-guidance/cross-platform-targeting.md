@@ -2,12 +2,12 @@
 title: Ciblage multiplateforme pour les bibliothèques .NET
 description: Meilleures pratiques recommandées pour la création de bibliothèques .NET multiplateformes.
 ms.date: 08/12/2019
-ms.openlocfilehash: 6309e300861ab286dcaba3256267b3459e6e0d10
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 038a03904c4cfe49758562b5748fef06ae1afa4b
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223338"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189249"
 ---
 # <a name="cross-platform-targeting"></a>Ciblage multiplateforme
 
@@ -33,7 +33,7 @@ Le ciblage .NET Standard et la compilation avec succès de votre projet ne garan
 
 ❌ Évitez d’inclure une `netstandard1.x` cible.
 
-> .NET Standard 1.x est distribué sous la forme d’un ensemble précis de packages NuGet, qui crée un grand graphique des dépendances de package et amène les développeurs à télécharger un grand nombre de packages lors de la génération. Les plateformes .NET modernes, y compris .NET Framework 4.6.1, UWP et Xamarin, prennent toutes en charge .NET Standard 2.0. Vous devez uniquement cibler .NET Standard 1.x si vous avez besoin de cibler une plateforme plus ancienne.
+> .NET Standard 1.x est distribué sous la forme d’un ensemble précis de packages NuGet, qui crée un grand graphique des dépendances de package et amène les développeurs à télécharger un grand nombre de packages lors de la génération. Les implémentations .NET modernes prennent en charge .NET Standard 2,0. Vous devez uniquement cibler .NET Standard 1.x si vous avez besoin de cibler une plateforme plus ancienne.
 
 ✔️ À FAIRE  : Inclure une cible `netstandard2.0` si vous avez besoin d’une cible `netstandard1.x`.
 
@@ -115,7 +115,7 @@ public static class GpsLocation
 
 ## <a name="older-targets"></a>Anciennes cibles
 
-.NET prend en charge le ciblage de versions .NET Framework qui ne sont plus prises en charge depuis longtemps, ainsi que les plateformes qui ne sont plus couramment utilisées. Bien qu'il soit utile de faire fonctionner votre bibliothèque sur autant de cibles que possible, le fait de devoir contourner des API manquantes peut entraîner d’importants frais généraux. Nous estimons que certaines infrastructures ne valent plus la peine d'être ciblées, compte tenu de leur portée et de leurs limites.
+.NET prend en charge le ciblage de versions de .NET Framework qui ne sont pas prises en charge, ainsi que les plateformes qui ne sont plus couramment utilisées. Bien qu'il soit utile de faire fonctionner votre bibliothèque sur autant de cibles que possible, le fait de devoir contourner des API manquantes peut entraîner d’importants frais généraux. Nous estimons que certaines infrastructures ne valent plus la peine d'être ciblées, compte tenu de leur portée et de leurs limites.
 
 ❌ N’incluez pas une cible de bibliothèque de classes portable (PCL). Par exemple : `portable-net45+win8+wpa81+wp8`.
 

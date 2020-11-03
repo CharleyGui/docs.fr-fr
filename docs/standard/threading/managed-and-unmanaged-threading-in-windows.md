@@ -3,18 +3,18 @@ title: Threading managé et non managé dans Windows
 ms.date: 10/24/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- threading [.NET Framework], unmanaged
-- threading [.NET Framework], managed
+- threading [.NET], unmanaged
+- threading [.NET], managed
 - threading [.NET], managed
 - threads and fibers [.NET]
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-ms.openlocfilehash: de823297540d5ce3740a26614dbb9a82881decf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 7b2eca1275aba5139bd19662674cd76d95e92fd0
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924381"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189158"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Threading managé et non managé dans Windows
 
@@ -52,7 +52,7 @@ Un thread managé peut être marqué pour indiquer qu’il hébergera un [thread
  Si l'état de cloisonnement n'est pas défini avant que le thread n'ait démarré, celui-ci est initialisé en tant que cloisonnement multithread (MTA). Le thread finaliseur et tous les threads contrôlés par <xref:System.Threading.ThreadPool> sont des threads MTA.  
   
 > [!IMPORTANT]
-> Pour le code de démarrage d'application, la seule façon de contrôler l'état de cloisonnement consiste à appliquer les attributs <xref:System.MTAThreadAttribute> ou <xref:System.STAThreadAttribute> à la procédure de point d'entrée. Dans .NET Framework 1.0 et 1.1, la propriété <xref:System.Threading.Thread.ApartmentState%2A> peut être définie en tant que première ligne de code. Cette opération n'est pas autorisée dans .NET Framework 2.0.  
+> Pour le code de démarrage d'application, la seule façon de contrôler l'état de cloisonnement consiste à appliquer les attributs <xref:System.MTAThreadAttribute> ou <xref:System.STAThreadAttribute> à la procédure de point d'entrée.
   
  Les objets managés exposés à COM se comportent comme s'ils avaient agrégé le marshaleur libre de threads. En d'autres termes, ils peuvent être appelés depuis n'importe quel cloisonnement COM d'une manière libre de threads. Les seuls objets managés qui ne présentent pas ce comportement libre de threads sont les objets qui dérivent de <xref:System.EnterpriseServices.ServicedComponent> ou <xref:System.Runtime.InteropServices.StandardOleMarshalObject>.  
   

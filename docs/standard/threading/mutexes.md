@@ -4,18 +4,19 @@ ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - wait handles
-- threading [.NET Framework], Mutex class
+- threading [.NET], Mutex class
 - Mutex class, about Mutex class
-- threading [.NET Framework], cross-process synchronization
+- threading [.NET], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: f9267bdd19a14995851f2689651c001815812912
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ba31fff03cfffda7cf2a40a3a82b2222e8951035
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291173"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188989"
 ---
 # <a name="mutexes"></a>Mutex
+
 Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un droit d’accès exclusif à une ressource. La classe <xref:System.Threading.Mutex> utilise davantage de ressources système que la classe <xref:System.Threading.Monitor>. Cependant, elle peut être marshalée au-delà des limites du domaine d’application et utilisée avec plusieurs attentes, ainsi que pour synchroniser des threads dans différents processus. Pour consulter une comparaison des mécanismes de synchronisation gérés, consultez [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md).  
   
  Pour obtenir des exemples de code, consultez la documentation de référence destinée aux constructeurs <xref:System.Threading.Mutex.%23ctor%2A>.  
@@ -30,10 +31,7 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
  Si un thread possède un <xref:System.Threading.Mutex>, il peut spécifier le même <xref:System.Threading.Mutex> dans les appels d’attente-demande répétés sans en bloquer l’exécution. Toutefois, il doit libérer le <xref:System.Threading.Mutex> à chaque fois pour libérer la propriété.  
   
 ## <a name="abandoned-mutexes"></a>Mutex abandonnés  
- Si un thread se termine sans libérer un <xref:System.Threading.Mutex>, le mutex est considéré comme abandonné. Cela indique souvent une grave erreur de programmation, car la ressource que le mutex protège peut être laissée dans un état incohérent. Dans la version 2.0 de .NET Framework, une <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.  
-  
-> [!NOTE]
-> Dans les versions 1.0 et 1.1 de .NET Framework, un <xref:System.Threading.Mutex>abandonné est signalé et le thread en attente suivant en obtient la propriété. Si aucun thread n’est en attente, le <xref:System.Threading.Mutex> reste signalé. Aucune exception n'est levée.  
+ Si un thread se termine sans libérer un <xref:System.Threading.Mutex>, le mutex est considéré comme abandonné. Cela indique souvent une grave erreur de programmation, car la ressource que le mutex protège peut être laissée dans un état incohérent. Une <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.
   
  Si le mutex est développé au niveau système, et qu’il est abandonné, cela peut indiquer qu’une application a été arrêtée soudainement (par exemple, à l’aide du Gestionnaire des tâches de Windows).  
   
@@ -43,7 +41,8 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
  Un mutex local existe uniquement dans votre processus. Il peut être utilisé par tout thread de votre processus qui a une référence à l’objet <xref:System.Threading.Mutex> local. Chaque objet <xref:System.Threading.Mutex> est un mutex local séparé.  
   
 ### <a name="access-control-security-for-system-mutexes"></a>Sécurité du contrôle d'accès pour les mutex système  
- La version 2.0 de .NET Framework permet de demander et de définir la sécurité de contrôle d’accès Windows pour les objets système nommé. Il est recommandé de protéger les mutex système dès leur création, car les objets système sont globaux et peuvent donc être verrouillés par un code autre que le vôtre.  
+
+.NET offre la possibilité d’interroger et de définir la sécurité du contrôle d’accès Windows pour les objets système nommés. Il est recommandé de protéger les mutex système dès leur création, car les objets système sont globaux et peuvent donc être verrouillés par un code autre que le vôtre.  
   
  Pour plus d’informations sur la sécurité du contrôle d’accès pour les mutex, consultez les classes <xref:System.Security.AccessControl.MutexSecurity> et <xref:System.Security.AccessControl.MutexAccessRule>, l’énumération <xref:System.Security.AccessControl.MutexRights>, les méthodes <xref:System.Threading.Mutex.GetAccessControl%2A>, <xref:System.Threading.Mutex.SetAccessControl%2A> et <xref:System.Threading.Mutex.OpenExisting%2A> de la classe <xref:System.Threading.Mutex> et le constructeur <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29>.  
   
@@ -54,6 +53,6 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
 - <xref:System.Security.AccessControl.MutexSecurity?displayProperty=nameWithType>
 - <xref:System.Security.AccessControl.MutexAccessRule?displayProperty=nameWithType>
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
-- [Fonctionnalités et objets de threading](threading-objects-and-features.md)
-- [Threads et threading](threads-and-threading.md)
-- [Threads](index.md)
+- [Objets et fonctionnalités de Threading](threading-objects-and-features.md)
+- [Threads et threads](threads-and-threading.md)
+- [Thread](index.md)

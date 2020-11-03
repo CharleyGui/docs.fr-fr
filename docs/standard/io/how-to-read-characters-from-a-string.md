@@ -10,18 +10,19 @@ dev_langs:
 helpviewer_keywords:
 - reading characters from strings
 - data streams, reading characters from string
-- I/O [.NET Framework], reading characters from strings
+- I/O [.NET], reading characters from strings
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-ms.openlocfilehash: fa03d13036e9e245b8ca3f8c3218ae80a2762a12
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c613f8170655601b72b87de4a20c295b1054bd1a
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553946"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189340"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Comment : lire les caractères d’une chaîne
+
 Les exemples de code suivants montrent comment lire des caractères de façon synchrone et asynchrone à partir d’une chaîne.  
   
 ## <a name="example-read-characters-synchronously"></a>Exemple : lire des caractères de façon synchrone
@@ -47,4 +48,4 @@ Les exemples de code suivants montrent comment lire des caractères de façon sy
 - [Comment : lire du texte à partir d’un fichier](how-to-read-text-from-a-file.md)  
 - [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)  
 - [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md)  
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

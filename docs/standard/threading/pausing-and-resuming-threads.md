@@ -8,15 +8,15 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - interrupting threads
-- threading [.NET Framework], pausing
+- threading [.NET], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: f7f414ec716bac5f1e840c5e8a0946024e059fb6
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 07fe374acb3d2a3de3a1b51861feb5f8551ecc2e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769117"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188963"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Suspension et interruption de threads
 
@@ -53,6 +53,6 @@ Les méthodes les plus courantes permettant de synchroniser les activités de th
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>
 - <xref:System.Threading.ThreadAbortException>
-- [Threads](index.md)
-- [Utilisation des threads et du threading](using-threads-and-threading.md)
+- [Thread](index.md)
+- [Utilisation de threads et de threads](using-threads-and-threading.md)
 - [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)

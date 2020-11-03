@@ -7,20 +7,20 @@ helpviewer_keywords:
 - IO namespace
 - files, I/O
 - System.IO namespace
-- I/O [.NET Framework]
+- I/O [.NET]
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 2f7da6bd967abce8c2fefdc54a0043b5505e22e3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: aced59995c8d0f478d0565c8fb8faa4f40c32968
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558938"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189197"
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
 
-E/S de fichier et de flux (entrées/sorties) fait référence au transfert de données vers ou depuis un support de stockage. Dans le .NET Framework, les espaces de noms `System.IO` contiennent des types qui permettent la lecture et l'écriture, de façon synchrone ou asynchrone, sur les flux de données et les fichiers. Ces espaces de noms contiennent également les types qui exécutent la compression et la décompression sur les fichiers, et ceux qui permettent la communication via des canaux et des ports série.
+E/S de fichier et de flux (entrées/sorties) fait référence au transfert de données vers ou depuis un support de stockage. Dans .NET, les `System.IO` espaces de noms contiennent des types qui permettent la lecture et l’écriture, à la fois de façon synchrone et asynchrone, sur les flux de données et les fichiers. Ces espaces de noms contiennent également les types qui exécutent la compression et la décompression sur les fichiers, et ceux qui permettent la communication via des canaux et des ports série.
 
 Un fichier est une collection ordonnée et nommée d'octets ayant un stockage persistant. Lorsque vous travaillez sur des fichiers, vous manipulez des chemins d'accès aux répertoires, du stockage disque et des noms de fichiers et de répertoires. En revanche, un flux est une séquence d'octets que vous pouvez lire et écrire dans un magasin de stockage, qui peut être l'un des nombreux supports de stockage (par exemple, des disques ou de la mémoire). De même qu'il existe d'autres magasins de stockage que les disques, il existe d'autres flux que les flux de fichiers, tels que les flux de réseau, de mémoire et de canaux.
 
@@ -28,7 +28,7 @@ Un fichier est une collection ordonnée et nommée d'octets ayant un stockage pe
 
 Utilisez les types de l'espace de noms <xref:System.IO?displayProperty=nameWithType> pour interagir avec les fichiers et les répertoires. Par exemple, obtenez et définissez les propriétés des fichiers et des répertoires, et extrayez les collections de fichiers et de répertoires en fonction de critères de recherche.
 
-Pour les conventions de nommage des chemins et les nouvelles méthodes pour exprimer un chemin de fichier pour les systèmes Windows, notamment avec la syntaxe des appareils DOS prise en charge dans .NET Core 1.1 et ultérieur et le .NET Framework 4.6.2 et ultérieur, consultez [Formats de chemin de fichier sur les systèmes Windows](file-path-formats.md).
+Pour connaître les conventions d’appellation des chemins d’accès et les façons d’exprimer un chemin d’accès aux fichiers pour les systèmes Windows, notamment avec la syntaxe de périphérique DOS prise en charge dans .NET Core 1,1 et versions ultérieures et .NET Framework 4.6.2 et versions ultérieures, consultez [formats de chemin d’accès aux fichiers sur les systèmes Windows](file-path-formats.md).
 
 Voici quelques classes de fichiers et de répertoires couramment utilisées :
 
@@ -142,7 +142,7 @@ Voir [Stockage isolé](isolated-storage.md).
 
 ## <a name="io-operations-in-windows-store-apps"></a>Opérations d’E/S dans les applications Windows Store
 
-Le .NET pour les applications du Windows 8. x Store contient un grand nombre des types pour la lecture et l’écriture dans les flux. Toutefois, cet ensemble n’inclut pas tous les types d’e/s .NET Framework.
+.NET pour les applications du Windows 8. x Store contient un grand nombre des types pour la lecture et l’écriture dans les flux. Toutefois, cet ensemble n’inclut pas tous les types d’e/s .NET.
 
 Voici quelques différences importantes à noter lors de l’utilisation d’opérations d’e/s dans les applications du Windows 8. x Store :
 
@@ -162,7 +162,7 @@ Pour plus d’informations sur les opérations d’e/s dans une application du W
 
 Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](how-to-add-or-remove-access-control-list-entries.md).
 
-Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Au lieu de cela, utilisez le [stockage isolé](isolated-storage.md) pour les applications de .NET Framework traditionnelles ou utilisez les [données d’application](/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications du Windows 8. x Store.
+Les stratégies de sécurité par défaut empêchent les applications Internet ou intranet d’accéder aux fichiers sur l’ordinateur de l’utilisateur. Par conséquent, n’utilisez pas les classes d’e/s qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Au lieu de cela, utilisez le [stockage isolé](isolated-storage.md) pour les applications .net.
 
 La vérification de sécurité n'est exécutée qu'à la création du flux. Par conséquent, n'ouvrez pas de flux pour le passer ensuite à du code ou à des domaines d'application d'un niveau de sécurité inférieur.
 
@@ -178,7 +178,7 @@ Décrit les opérations élémentaires des E/S asynchrones et leurs avantages en
 Décrit un dispositif de stockage des données qui assure l'isolation et la sécurité en définissant des solutions standardisées visant à associer le code aux données enregistrées.
 
 - [Canaux](pipe-operations.md)\
-Décrit des opérations de canal nommé et anonyme dans le .NET Framework.
+Décrit les opérations de canal nommé et anonyme dans .NET.
 
 - [Fichiers mappés en mémoire](memory-mapped-files.md)\
 Décrit les fichiers mappés en mémoire, qui contiennent le contenu de fichiers stockés sur le disque dans la mémoire virtuelle. Vous pouvez utiliser des fichiers mappés en mémoire afin de modifier des fichiers très volumineux et de créer la mémoire partagée pour la communication entre processus.

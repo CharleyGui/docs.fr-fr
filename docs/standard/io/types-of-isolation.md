@@ -9,8 +9,8 @@ dev_langs:
 helpviewer_keywords:
 - storing data using isolated storage, accessing isolated storage
 - storing data using isolated storage, isolation types
-- authentication [.NET Framework], isolated storage
-- assemblies [.NET Framework], identity
+- authentication [.NET], isolated storage
+- assemblies [.NET], identity
 - isolated storage, accessing
 - data storage using isolated storage, isolation types
 - data storage using isolated storage, accessing isolated storage
@@ -18,14 +18,15 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 244bd9c25040b39c9349d28f57981f29d7a32d0a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a1d64f0dfe8a457ae551792a852bd816941f2777
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542032"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189030"
 ---
-# <a name="types-of-isolation"></a>Types d'isolation
+# <a name="types-of-isolation"></a>Types d’isolation
+
 L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a créé. Pour implémenter ce type d’isolation, le Common Language Runtime utilise la même notion d’identité de l’utilisateur reconnue par le système d’exploitation, c’est-à-dire l’identité associée au processus par lequel le code s’exécute lorsque le magasin est ouvert. Cette identité est l’identité d’un utilisateur, mais l’emprunt d’identité peut provoquer un changement dynamique de l’identité actuelle de l’utilisateur.  
   
  L’accès au stockage isolé est également limité en fonction de l’identité associée au domaine et à l’assembly de l’application, ou à l’assembly uniquement. Le runtime obtient ces identités des façons suivantes :  

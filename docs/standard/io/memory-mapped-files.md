@@ -10,17 +10,18 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: 74d821aff8308618f7c0efeb1b453db8214b877e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e6f9a760d7673eecf161b1d84d890cc14d09235e
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555944"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189015"
 ---
 # <a name="memory-mapped-files"></a>Fichiers mappés en mémoire
-Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtuelle. Ce mappage entre un fichier et un espace mémoire permet à une application incluant plusieurs processus de modifier le fichier en lisant et en écrivant directement dans la mémoire. À compter de .NET Framework 4, vous pouvez utiliser du code managé pour accéder aux fichiers mappés en mémoire de la même façon que les fonctions Windows natives accèdent à des fichiers mappés en mémoire, comme décrit dans [Gestion des fichiers mappés en mémoire](/previous-versions/ms810613(v=msdn.10)).  
+
+Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtuelle. Ce mappage entre un fichier et un espace mémoire permet à une application incluant plusieurs processus de modifier le fichier en lisant et en écrivant directement dans la mémoire. Vous pouvez utiliser du code managé pour accéder aux fichiers mappés en mémoire de la même façon que les fonctions Windows natives accèdent aux fichiers mappés en mémoire, comme décrit dans [gestion des fichiers Memory-Mapped](/previous-versions/ms810613(v=msdn.10)).  
   
- Il existe deux types de fichiers mappés en mémoire :  
+Il existe deux types de fichiers mappés en mémoire :  
   
 - Fichiers mappés en mémoire persistants  
   
@@ -35,11 +36,11 @@ Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtu
   
  Pour utiliser un fichier mappé en mémoire, vous devez créer une vue de l’intégralité du fichier mappé en mémoire ou une partie de celui-ci. Vous pouvez également créer plusieurs vues dans la même partie du fichier mappé en mémoire et créer ainsi une mémoire simultanée. Pour que deux vues restent simultanées, elles doivent être créées à partir du même fichier mappé en mémoire.  
   
- Plusieurs vues peuvent également être nécessaires si le fichier est supérieur à la taille de l’espace de mémoire logique de l’application disponible pour le mappage de mémoire (2 Go sur un ordinateur 32 bits).  
+ Plusieurs vues peuvent également être nécessaires si le fichier est supérieur à la taille de l’espace mémoire logique de l’application disponible pour le mappage de la mémoire (2 Go sur un ordinateur 32 bits).  
   
  Il existe deux types de vues : une vue d’accès à Stream et une vue d’accès aléatoire. Utilisez les vues d’accès à Stream pour un accès séquentiel à un fichier ; c’est recommandé pour les fichiers non persistants et pour IPC. Les vues d’accès aléatoire sont privilégiées pour l’utilisation de fichiers persistants.  
   
- Les fichiers mappés en mémoire sont accessibles via le gestionnaire de mémoire du système d’exploitation. Le fichier est alors automatiquement partitionné en un nombre de pages et consulté en fonction des besoins. Vous n’avez pas à gérer vous-même la mémoire.  
+ Les fichiers mappés en mémoire sont accessibles par le biais du gestionnaire de mémoire du système d’exploitation, ce qui signifie que le fichier est automatiquement partitionné en plusieurs pages et accessible en fonction des besoins. Vous n’avez pas à gérer vous-même la mémoire.  
   
  L’illustration suivante montre comment plusieurs processus peuvent avoir simultanément plusieurs vues qui se chevauchent dans le même fichier mappé en mémoire.
 
@@ -148,4 +149,4 @@ Process C says: True
   
 ## <a name="see-also"></a>Voir aussi
 
-- [E/s de fichier et de flux](index.md)
+- [Fichier et flux de données E/S](index.md)

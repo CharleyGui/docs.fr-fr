@@ -4,17 +4,17 @@ description: 'En savoir plus sur les opérations de canal dans .NET. Les canaux 
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- pipes [.NET Framework]
-- pipe operations [.NET Framework]
-- interprocess communication [.NET Framework], pipes
-- I/O [.NET Framework], pipes
+- pipes [.NET]
+- pipe operations [.NET]
+- interprocess communication [.NET], pipes
+- I/O [.NET], pipes
 ms.assetid: 7b964ebd-7a4f-4d28-8194-7841f9e4c702
-ms.openlocfilehash: 35a3910bbab1b34f085a55524be0b18b3fa81958
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 8d954d55e07a7cbb2b09843afe7f45b1ff5abcc7
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768883"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188859"
 ---
 # <a name="pipe-operations-in-net"></a>Opérations de canal dans .NET
 Les canaux sont un moyen de communication entre processus. Il existe deux types de canaux :  
@@ -37,6 +37,6 @@ Les canaux sont un moyen de communication entre processus. Il existe deux types 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [E/s de fichier et de flux](index.md)
+- [Fichier et flux de données E/S](index.md)
 - [Procédure : utiliser des canaux anonymes pour la communication entre processus en local](how-to-use-anonymous-pipes-for-local-interprocess-communication.md)
 - [Procédure : utiliser des canaux nommés pour la communication entre processus en réseau](how-to-use-named-pipes-for-network-interprocess-communication.md)

@@ -11,20 +11,21 @@ helpviewer_keywords:
 - reading text files
 - reading data, text files
 - data streams, reading text from files
-- I/O [.NET Framework], reading text from files
+- I/O [.NET], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-ms.openlocfilehash: fafd1cda13b46e56183489aa15d3c4df9051ae06
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0e90887c2cc4a54355c51facf91c9cc3da7e4320
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553933"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189327"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Comment : lire du texte à partir d’un fichier
+
 Les exemples suivants montrent comment lire le texte de façon synchrone et asynchrone à partir d'un fichier texte à l'aide du .NET pour les applications de bureau. Dans les deux exemples, lorsque vous créez l’instance de la classe <xref:System.IO.StreamReader>, vous fournissez le chemin d’accès relatif ou absolu au fichier.
   
 > [!NOTE]
-> Ces exemples de code ne s’appliquent pas au développement d’applications UWP, car le Windows Runtime fournit des types de flux différents pour la lecture et l’écriture des fichiers. Pour obtenir un exemple qui montre comment lire le texte d’un fichier dans une application UWP, consultez [démarrage rapide : lecture et écriture de fichiers](/previous-versions/windows/apps/hh758325(v=win.10)). Pour obtenir des exemples qui montrent comment effectuer une conversion entre des flux de .NET Framework et des flux de Windows Runtime, consultez [Comment : effectuer une conversion entre des flux de .NET Framework et des](how-to-convert-between-dotnet-streams-and-winrt-streams.md)flux de Windows Runtime.  
+> Ces exemples de code ne s’appliquent pas aux applications Windows universelles, car le Windows Runtime fournit différents types de flux pour la lecture et l’écriture dans des fichiers. Pour obtenir un exemple qui montre comment lire le texte d’un fichier dans une application UWP, consultez [démarrage rapide : lecture et écriture de fichiers](/previous-versions/windows/apps/hh758325(v=win.10)). Pour obtenir des exemples qui montrent comment effectuer une conversion entre des flux de .NET Framework et des flux de Windows Runtime, consultez [Comment : effectuer une conversion entre des flux de .NET Framework et des](how-to-convert-between-dotnet-streams-and-winrt-streams.md)flux de Windows Runtime.  
   
 ## <a name="example-synchronous-read-in-a-console-app"></a>Exemple : lecture synchrone dans une application console  
 L’exemple suivant montre une opération de lecture synchrone dans une application console. Cet exemple ouvre le fichier texte à l’aide d’un lecteur de flux, copie le contenu dans une chaîne, puis retourne une chaîne dans la console.  
@@ -58,4 +59,4 @@ L’exemple suivant montre une opération de lecture synchrone dans une applicat
 - [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)  
 - [Comment : lire les caractères d’une chaîne](how-to-read-characters-from-a-string.md)  
 - [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md)  
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

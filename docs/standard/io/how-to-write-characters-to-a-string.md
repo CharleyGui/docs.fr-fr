@@ -9,16 +9,17 @@ helpviewer_keywords:
 - data streams, writing characters to string
 - writing characters to strings
 - streams, writing characters to strings
-- I/O [.NET Framework], writing characters to strings
+- I/O [.NET], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: 04fc21c452258a88292a886d952353ac55573121
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5b0e20b911237739c143576d9a7be660f5da58c0
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288249"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189223"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Comment : écrire des caractères dans une chaîne
+
 Les exemples de code suivants écrivent les caractères d’un tableau dans une chaîne de façon synchrone et asynchrone.  
   
 ## <a name="example-write-characters-synchronously-in-a-console-app"></a>Exemple : écrire des caractères de façon synchrone dans une application console  
@@ -38,7 +39,7 @@ Les exemples de code suivants écrivent les caractères d’un tableau dans une 
 - <xref:System.IO.StringWriter>  
 - <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  
 - <xref:System.Text.StringBuilder>  
-- [E/S de fichier et de flux](index.md)  
+- [E/s de fichier et de flux](index.md)  
 - [E/S sur fichier asynchrones](asynchronous-file-i-o.md)  
 - [Comment : énumérer des répertoires et des fichiers](how-to-enumerate-directories-and-files.md)  
 - [Comment : lire et écrire dans un fichier de données nouvellement créé](how-to-read-and-write-to-a-newly-created-data-file.md)  

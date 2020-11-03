@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - SpinLock, how to use
 ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
-ms.openlocfilehash: ad254cb6208bff868e5fc689c502b7ddcc175ad5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3fb19c2b36d97710685cac4ecd10f47a119814ce
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73137955"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189184"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Guide pratique pour utiliser le verrouillage SpinLock pour une synchronisation de bas niveau
 
@@ -24,12 +24,12 @@ L'exemple suivant montre comment utiliser un verrouillage <xref:System.Threading
   
  <xref:System.Threading.SpinLock> peut être utile quand vous avez besoin d’un verrouillage de courte durée sur une ressource partagée. Dans ce cas, sur les ordinateurs multicœurs, le thread bloqué peut efficacement tourner pendant quelques cycles jusqu'à ce que le verrouillage soit libéré. En tournant, le thread ne se bloque pas. Ce processus est exigeant en ressources. <xref:System.Threading.SpinLock> cesse de tourner sous certaines conditions pour empêcher toute défaillance des processeurs logiques ou toute inversion des priorités sur les systèmes avec Hyper-Threading.  
   
- Cet exemple utilise la classe <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, qui exige la synchronisation utilisateur pour l’accès multithread. Dans les applications qui ciblent .NET Framework version 4, il est également possible d’utiliser le verrouillage <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>, qui ne nécessite aucun verrouillage utilisateur.  
+ Cet exemple utilise la classe <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, qui exige la synchronisation utilisateur pour l’accès multithread. Une autre option consiste à utiliser <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> , qui ne requiert pas de verrous utilisateur.  
   
- Notez l’utilisation de `false` (`False` en Visual Basic) dans l’appel à <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType>. Cela fournit les meilleures performances. Dans les architectures IA64, spécifiez `true` (`True` dans Visual Basic) pour utiliser la barrière mémoire, qui vide les tampons d’écriture pour garantir que le verrouillage est disponible pour la sortie des autres threads.  
+ Notez l’utilisation de `false` dans l’appel à <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType> . Cela fournit les meilleures performances. Spécifiez `true` sur les architectures IA64 pour utiliser la barrière de mémoire, qui vide les mémoires tampons d’écriture pour vous assurer que le verrou est maintenant disponible pour la fermeture des autres threads.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctionnalités et objets de threading](threading-objects-and-features.md)
+- [Objets et fonctionnalités de Threading](threading-objects-and-features.md)
 - [instruction lock (C#)](../../csharp/language-reference/keywords/lock-statement.md)
 - [instruction SyncLock (Visual Basic)](../../visual-basic/language-reference/statements/synclock-statement.md)

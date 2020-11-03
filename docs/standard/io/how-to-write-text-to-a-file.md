@@ -8,18 +8,19 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - writing text to files
-- I/O [.NET Framework], writing text to files
+- I/O [.NET], writing text to files
 - streams, writing text to files
 - data streams, writing text to files
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
-ms.openlocfilehash: 52d3d07f4ffdbdc6510425a65fc173d36e674d06
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: df057856385c8e9c63140e45512a97e492130396
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447210"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189236"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Comment : écrire du texte dans un fichier
+
 Cette rubrique présente différentes façons d’écrire du texte dans un fichier pour une application .NET.
 
 Les classes et méthodes suivantes sont généralement utilisées pour écrire du texte dans un fichier :  
@@ -72,4 +73,4 @@ L’exemple suivant montre comment écrire du texte dans un nouveau fichier et a
 - [Comment : lire et écrire dans un fichier de données nouvellement créé](how-to-read-and-write-to-a-newly-created-data-file.md)
 - [Procédure : ouvrir un fichier journal et y ajouter des éléments](how-to-open-and-append-to-a-log-file.md)
 - [Comment : lire du texte à partir d’un fichier](how-to-read-text-from-a-file.md)
-- [E/S de fichier et de flux](index.md)
+- [E/s de fichier et de flux](index.md)

@@ -5,33 +5,33 @@ ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - multiple threads
-- threading [.NET Framework], multiple threads
-- threading [.NET Framework], about threading
+- threading [.NET], multiple threads
+- threading [.NET], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: d4a4ceabf29bd0f6f537e59ba477f9da686b1ef5
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ca3073cca9887265b4bacb4f8dfeb01203f82621
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769091"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93189132"
 ---
 # <a name="managed-threading-basics"></a>Éléments fondamentaux du threading managé
 
-Les cinq premières rubriques de cette section sont conçues pour vous aider à déterminer quand utiliser le threading managé et pour expliquer des fonctionnalités de base. Pour plus d’informations sur les classes qui fournissent des fonctionnalités supplémentaires, consultez [Fonctionnalités et objets de Threading](threading-objects-and-features.md) et [Vue d’ensemble des Primitives de synchronisation](overview-of-synchronization-primitives.md).  
+Les cinq premiers Articles de cette section sont conçus pour vous aider à déterminer quand utiliser le threading managé et à expliquer certaines fonctionnalités de base. Pour plus d’informations sur les classes qui fournissent des fonctionnalités supplémentaires, consultez [Fonctionnalités et objets de Threading](threading-objects-and-features.md) et [Vue d’ensemble des Primitives de synchronisation](overview-of-synchronization-primitives.md).  
   
- Le reste des rubriques de cette section traitent des sujets avancés, y compris l’interaction du threading managé avec le système d’exploitation Windows.  
+ Les autres Articles de cette section traitent des sujets avancés, y compris l’interaction du threading managé avec le système d’exploitation Windows.  
   
 > [!NOTE]
-> Dans .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API pour le parallélisme des tâches et des données dans les programmes multithreads. Pour plus d’informations, consultez [programmation parallèle](../parallel-programming/index.md).  
+> À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API pour le parallélisme des tâches et des données dans les programmes multithread. Pour plus d’informations, consultez [programmation parallèle](../parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>Dans cette section
 
- [Threads et threads](threads-and-threading.md)  
+ [Threads et threading](threads-and-threading.md)  
  Explique les avantages et les inconvénients de plusieurs threads et présente les scénarios dans lesquels vous pouvez créer des threads ou utiliser des threads du pool de threads.  
   
  [Exceptions dans les threads managés](exceptions-in-managed-threads.md)  
- Décrit le comportement des exceptions non prises en charge dans les threads pour différentes versions de .NET Framework, notamment lorsqu’elles entraînent l’arrêt de l’application.  
+ Décrit le comportement des exceptions non gérées dans les threads pour les différentes versions de .NET, en particulier dans les situations où elles entraînent l’arrêt de l’application.  
   
  [Synchronisation des données pour le multithreading](synchronizing-data-for-multithreading.md)  
  Décrit les stratégies de synchronisation des données dans des classes qui seront utilisées avec plusieurs threads.  
@@ -62,4 +62,4 @@ Les cinq premières rubriques de cette section sont conçues pour vous aider à 
  Décrit les problèmes courants avec le multithreading et les stratégies pour les éviter.  
   
  [Programmation parallèle](../parallel-programming/index.md)  
- Décrit la bibliothèque parallèle de tâches et PLINQ, qui simplifient considérablement le travail de création d’applications .NET Framework asynchrones et multithreads.
+ Décrit la bibliothèque parallèle de tâches et PLINQ, qui simplifient de façon considérable le travail de création d’applications .NET asynchrones et multithread.

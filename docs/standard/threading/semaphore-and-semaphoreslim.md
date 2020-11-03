@@ -6,19 +6,20 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - counting semaphores
 - semaphores
-- threading [.NET Framework], cross-process synchronization
+- threading [.NET], cross-process synchronization
 - Semaphore class, about Semaphore class
 - SemaphoreSlim class, about SemaphoreSlim class
-- threading [.NET Framework], Semaphore class
+- threading [.NET], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-ms.openlocfilehash: 21f0d7e3fb446a7b750c45cfe8ef3f087a77888a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b9c13ace086b4df08108a844aea78e5d550e6958
+ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600449"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93188937"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semaphore et SemaphoreSlim
+
 La classe <xref:System.Threading.Semaphore?displayProperty=nameWithType> représente un sémaphore local ou nommé (visible à l'échelle du système). Il s'agit d'un wrapper mince entourant l'objet sémaphore Win32. Les sémaphores Win32 sont des sémaphores de comptage qui peuvent être utilisés pour contrôler l'accès à un pool de ressources.  
   
  La classe <xref:System.Threading.SemaphoreSlim> représente un sémaphore léger et rapide qui peut être utilisé pour l'attente dans un processus unique quand les temps d'attente sont censés être très courts. <xref:System.Threading.SemaphoreSlim> repose autant que possible sur les primitives de synchronisation fournies par le Common Language Runtime (CLR). Toutefois, il fournit également des handles d'attente initialisés tardivement et basés sur le noyau qui permettent l'attente de plusieurs sémaphores. <xref:System.Threading.SemaphoreSlim> prend également en charge l'utilisation de jetons d'annulation, mais il ne prend pas en charge les sémaphores nommés ni l'utilisation d'un handle d'attente pour la synchronisation.  
@@ -49,4 +50,4 @@ La classe <xref:System.Threading.Semaphore?displayProperty=nameWithType> représ
 
 - <xref:System.Threading.Semaphore>
 - <xref:System.Threading.SemaphoreSlim>
-- [Objets et fonctionnalités de Threading](threading-objects-and-features.md)
+- [Fonctionnalités et objets de threading](threading-objects-and-features.md)
