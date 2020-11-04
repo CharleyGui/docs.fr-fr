@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: 87d0103e90d46ae83b23c9cc05e9efcaa51c831f
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 7b367fe694c9dd153372fadfe29461ea8b6a0415
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063987"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342590"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 
@@ -44,23 +44,23 @@ L’utilisation de ICU au lieu de NLS peut entraîner des différences de compor
 
 - Dans le fichier projet :
 
-```xml
-<ItemGroup>
-  <RuntimeHostConfigurationOption Include="System.Globalization.UseNls" Value="true" />
-</ItemGroup>
-```
+  ```xml
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.UseNls" Value="true" />
+  </ItemGroup>
+  ```
 
 - Dans le fichier `runtimeconfig.json` :
 
-```json
-{
-  "runtimeOptions": {
-     "configProperties": {
-       "System.Globalization.UseNls": true
-      }
+  ```json
+  {
+    "runtimeOptions": {
+       "configProperties": {
+         "System.Globalization.UseNls": true
+        }
+    }
   }
-}
-```
+  ```
 
 - En affectant à la variable `DOTNET_SYSTEM_GLOBALIZATION_USENLS` d’environnement la valeur `true` ou `1` .
 
@@ -77,29 +77,29 @@ Les applications peuvent s’abonner à un mode d’implémentation ICU local d�
 
 - Dans le fichier projet :
 
-```xml
-<ItemGroup>
-  <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="<suffix>:<version> or <version>" />
-</ItemGroup>
-```
+  ```xml
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="<suffix>:<version> or <version>" />
+  </ItemGroup>
+  ```
 
 - Dans le fichier `runtimeconfig.json` :
 
-```json
-{
-  "runtimeOptions": {
-     "configProperties": {
-       "System.Globalization.AppLocalIcu": "<suffix>:<version> or <version>"
-      }
+  ```json
+  {
+    "runtimeOptions": {
+       "configProperties": {
+         "System.Globalization.AppLocalIcu": "<suffix>:<version> or <version>"
+       }
+    }
   }
-}
-```
+  ```
 
 - En affectant à la variable `DOTNET_SYSTEM_GLOBALIZATION_APPLOCALICU` d’environnement la valeur `<suffix>:<version>` ou `<version>` .
 
-`<suffix>`: Le suffixe facultatif d’une longueur inférieure à 36 caractères, conformément aux conventions d’empaquetage ICU publiques. Lorsque vous créez une bibliothèque ICU personnalisée, vous pouvez la personnaliser pour produire les noms lib et les noms de symboles exportés pour contenir un suffixe, par exemple, `libicuucmyapp` , où `myapp` est le suffixe.
+  `<suffix>`: Le suffixe facultatif d’une longueur inférieure à 36 caractères, conformément aux conventions d’empaquetage ICU publiques. Lorsque vous créez une bibliothèque ICU personnalisée, vous pouvez la personnaliser pour produire les noms lib et les noms de symboles exportés pour contenir un suffixe, par exemple, `libicuucmyapp` , où `myapp` est le suffixe.
 
-`<version>`: Version ICU valide, par exemple 67,1. Cette version est utilisée pour charger les binaires et pour récupérer les symboles exportés.
+  `<version>`: Version ICU valide, par exemple 67,1. Cette version est utilisée pour charger les binaires et pour récupérer les symboles exportés.
 
 Pour charger ICU lorsque le commutateur local de l’application est défini, .NET utilise la <xref:System.Runtime.InteropServices.NativeLibrary.TryLoad%2A?displayProperty=nameWithType> méthode, qui sonde plusieurs chemins d’accès. La méthode essaie d’abord de trouver la bibliothèque dans la `NATIVE_DLL_SEARCH_DIRECTORIES` propriété, qui est créée par l’hôte dotnet en fonction du `deps.json` fichier de l’application. Pour plus d’informations, consultez [détection par défaut](../../core/dependency-loading/default-probing.md).
 
@@ -137,21 +137,21 @@ Certaines directives pour le chargeur, comme `@loader_path` , indiquent au charg
 
 - `install_name_tool -change`
 
-  Exécutez les commandes suivantes :
+  Exécutez les commandes suivantes :
 
-```bash
-install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dylib" /path/to/libicuuc.67.1.dylib
-install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dylib" /path/to/libicui18n.67.1.dylib
-install_name_tool -change "libicuuc.67.dylib" "@loader_path/libicuuc.67.dylib" /path/to/libicui18n.67.1.dylib
-```
+  ```bash
+  install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dylib" /path/to/libicuuc.67.1.dylib
+  install_name_tool -change "libicudata.67.dylib" "@loader_path/libicudata.67.dylib" /path/to/libicui18n.67.1.dylib
+  install_name_tool -change "libicuuc.67.dylib" "@loader_path/libicuuc.67.dylib" /path/to/libicui18n.67.1.dylib
+  ```
 
 - Mise à jour corrective de la bibliothèque pour produire les noms d’installation `@loader_path`
 
   Avant d’exécuter autoconf ( `./runConfigureICU` ), remplacez [ces lignes](https://github.com/unicode-org/icu/blob/ef91cc3673d69a5e00407cda94f39fcda3131451/icu4c/source/config/mh-darwin#L32-L37) par :
 
-```
-LD_SONAME = -Wl,-compatibility_version -Wl,$(SO_TARGET_VERSION_MAJOR) -Wl,-current_version -Wl,$(SO_TARGET_VERSION) -install_name @loader_path/$(notdir $(MIDDLE_SO_TARGET))
-```
+  ```
+  LD_SONAME = -Wl,-compatibility_version -Wl,$(SO_TARGET_VERSION_MAJOR) -Wl,-current_version -Wl,$(SO_TARGET_VERSION) -install_name @loader_path/$(notdir $(MIDDLE_SO_TARGET))
+  ```
 
 ## <a name="icu-on-webassembly"></a>ICU sur webassembly
 

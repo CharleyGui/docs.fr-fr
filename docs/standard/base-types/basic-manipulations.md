@@ -9,26 +9,26 @@ dev_langs:
 helpviewer_keywords:
 - strings [.NET], examples
 ms.assetid: 121d1eae-251b-44c0-8818-57da04b8215e
-ms.openlocfilehash: cc04f0c874b732668b4813f8325bd7060927f22a
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 659f01cc1d7ae03e12e83329e4fd2446b7512475
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889125"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342616"
 ---
 # <a name="how-to-perform-basic-string-manipulations-in-net"></a>Guide pratique pour effectuer des manipulations de chaînes de base dans .NET
 
-L’exemple suivant utilise certaines des méthodes décrites dans les rubriques [Opérations de chaînes de base](basic-string-operations.md) pour construire une classe qui effectue des manipulations de chaînes éventuellement comme dans une application réelle. La classe `MailToData` stocke le nom et l’adresse d’une personne dans des propriétés séparées et fournit un moyen de combiner les champs `City`, `State` et `Zip` dans une seule chaîne à montrer à l’utilisateur. De plus, la classe permet à l’utilisateur d’entrer la ville, l’état et le code postal dans une chaîne unique ; l’application analyse automatiquement la chaîne unique et entre les informations appropriées dans la propriété correspondante.  
-  
-Pour plus de simplicité, cet exemple utilise une application console avec une interface de ligne de commande.  
-  
-## <a name="example"></a>Exemple  
+L’exemple suivant utilise certaines des méthodes décrites dans les rubriques [Opérations de chaînes de base](basic-string-operations.md) pour construire une classe qui effectue des manipulations de chaînes éventuellement comme dans une application réelle. La classe `MailToData` stocke le nom et l’adresse d’une personne dans des propriétés séparées et fournit un moyen de combiner les champs `City`, `State` et `Zip` dans une seule chaîne à montrer à l’utilisateur. En outre, la classe permet à l’utilisateur d’entrer les informations relatives à la ville, à l’État et au code postal sous la forme d’une chaîne unique. L’application analyse automatiquement la chaîne unique et entre les informations appropriées dans la propriété correspondante.
+
+Pour plus de simplicité, cet exemple utilise une application console avec une interface de ligne de commande.
+
+## <a name="example"></a>Exemple
 
 [!code-csharp[Conceptual.String.BasicOps#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/basicops.cs#1)]
-[!code-vb[Conceptual.String.BasicOps#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/basicops.vb#1)]  
-  
-Lorsque le code précédent est exécuté, l’utilisateur est invité à entrer son nom et son adresse. L’application place les informations dans les propriétés appropriées et les montre à l’utilisateur, en créant une chaîne unique qui affiche la ville, l’état et le code postal.  
-  
-## <a name="see-also"></a>Voir aussi
+[!code-vb[Conceptual.String.BasicOps#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/basicops.vb#1)]
+
+Lorsque le code précédent est exécuté, l’utilisateur est invité à entrer son nom et son adresse. L’application place les informations dans les propriétés appropriées et affiche les informations à l’utilisateur, en créant une chaîne unique qui affiche la ville, l’État et le code postal.
+
+## <a name="see-also"></a>Voir également
 
 - [Opérations de chaînes de base](basic-string-operations.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: 7c5d8fa462775c6f3a9981693129997dda6c2286
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ee0921c4d3c931e2f677ec0bb8458992afc57d57
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324138"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342642"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-in-c"></a>Comment analyser des chaînes à l’aide de String. Split en C\#
 
@@ -48,8 +48,9 @@ Les instances consécutives d’un séparateur produisent une chaîne vide dans 
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet5":::
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
+- [Extraire des éléments d’une chaîne](../../standard/base-types/parse-strings.md)
 - [Guide de programmation C#](../programming-guide/index.md)
 - [Chaînes](../programming-guide/strings/index.md)
 - [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)

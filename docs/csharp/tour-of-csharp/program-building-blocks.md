@@ -2,33 +2,33 @@
 title: Les blocs de construction des programmes C#»
 description: En savoir plus sur les membres, les expressions et les instructions C#. Les types contiennent des membres que vous écrivez. Ces membres sont générés à partir d’instructions et d’expressions.
 ms.date: 08/06/2020
-ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: e4350f2c2b6005fb59dd868f0f7f628bd07b0053
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358815"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342694"
 ---
 # <a name="program-building-blocks"></a>Blocs de construction de programme
 
-Les types décrits dans l’article précédent sont générés à l’aide de ces blocs de construction : [***les membres, les***](../programming-guide/classes-and-structs/members.md) [ ***expressions***et les ***instructions***](../programming-guide/statements-expressions-operators/index.md).
+Les types décrits dans l’article précédent sont générés à l’aide des blocs de construction suivants : [ * **members** _](../programming-guide/classes-and-structs/members.md), [ _*_expressions_*_ et _*_instructions_*_](../programming-guide/statements-expressions-operators/index.md).
 
 ## <a name="members"></a>Membres
 
-Les membres d’un `class` sont soit des membres ***statiques*** , soit des ***membres d’instance***. Les membres statiques appartiennent à des classes, et les membres d’instance appartiennent à des objets (instances de classes).
+Les membres d’un `class` sont soit des membres _*_statiques_*_ , soit des _*_membres d’instance_*_. Les membres statiques appartiennent à des classes, et les membres d’instance appartiennent à des objets (instances de classes).
 
 La liste suivante fournit une vue d’ensemble des types de membres qu’une classe peut contenir.
 
-- **Constantes**: valeurs constantes associées à la classe
-- **Fields**: variables associées à la classe
-- **Méthodes**: actions qui peuvent être effectuées par la classe
-- **Propriétés**: actions associées à la lecture et à l’écriture des propriétés nommées de la classe
-- **Indexeurs**: actions associées à l’indexation d’instances de la classe comme un tableau
-- **Événements**: notifications qui peuvent être générées par la classe
-- **Opérateurs**: conversions et opérateurs d’expression pris en charge par la classe
-- **Constructeurs**: actions requises pour initialiser des instances de la classe ou la classe elle-même
-- **Finaliseurs**: actions effectuées avant que les instances de la classe soient définitivement ignorées
-- **Types**: types imbriqués déclarés par la classe
+- _ * Constantes * * : valeurs constantes associées à la classe
+- **Fields** : variables associées à la classe
+- **Méthodes** : actions qui peuvent être effectuées par la classe
+- **Propriétés** : actions associées à la lecture et à l’écriture des propriétés nommées de la classe
+- **Indexeurs** : actions associées à l’indexation d’instances de la classe comme un tableau
+- **Événements** : notifications qui peuvent être générées par la classe
+- **Opérateurs** : conversions et opérateurs d’expression pris en charge par la classe
+- **Constructeurs** : actions requises pour initialiser des instances de la classe ou la classe elle-même
+- **Finaliseurs** : actions effectuées avant que les instances de la classe soient définitivement ignorées
+- **Types** : types imbriqués déclarés par la classe
 
 ## <a name="accessibility"></a>Accessibilité
 
@@ -49,7 +49,7 @@ Un champ déclaré avec le modificateur static définit un champ statique. Un ch
 
 Un champ déclaré sans le modificateur static définit un champ d’instance. Chaque instance d’une classe contient une copie distincte de tous les champs d’instance de cette classe.
 
-Dans l’exemple suivant, chaque instance de la `Color` classe a une copie distincte des `r` champs d' `g` instance, et `b` , mais il n’existe qu’une seule copie des `Black` `White` `Red` `Green` `Blue` champs statiques,,, et :
+Dans l’exemple suivant, chaque instance de la `Color` classe a une copie distincte des `R` champs d' `G` instance, et `B` , mais il n’existe qu’une seule copie des `Black` `White` `Red` `Green` `Blue` champs statiques,,, et :
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ColorClassDefinition":::
 
@@ -59,7 +59,7 @@ Comme indiqué dans l’exemple précédent, les *champs en lecture seule* peuve
 
 Une *méthode* est un membre qui implémente un calcul ou une action qui peut être effectuée par un objet ou une classe. Les *méthodes statiques* sont accessibles à travers la classe. Les *méthodes d’instance* sont accessibles via des instances de la classe.
 
-Les méthodes peuvent avoir une liste de *paramètres*, qui représentent des valeurs ou des références variables passées à la méthode. Les méthodes ont un *type de retour*, qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` s’il ne retourne pas de valeur.
+Les méthodes peuvent avoir une liste de *paramètres* , qui représentent des valeurs ou des références variables passées à la méthode. Les méthodes ont un *type de retour* , qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` s’il ne retourne pas de valeur.
 
 Comme les types, les méthodes peuvent également être un jeu de paramètres de type pour lesquels les arguments de type doivent être spécifiés lorsque la méthode est appelée. Contrairement aux types, les arguments de type peuvent souvent être déduits à partir des arguments d’un appel de méthode et n’ont pas à être fournis explicitement.
 
@@ -68,7 +68,7 @@ La *signature* d’une méthode doit être unique dans la classe dans laquelle l
 Quand un corps de méthode est une expression unique, la méthode peut être définie à l’aide d’un format d’expression compact, comme indiqué dans l’exemple suivant :
 
 ```csharp
-public override ToString() => "This is an object";
+public override string ToString() => "This is an object";
 ```
 
 ### <a name="parameters"></a>Paramètres
@@ -189,7 +189,7 @@ Contrairement aux autres membres, les constructeurs d’instance ne sont pas hé
 
 Les *propriétés* sont une extension naturelle des champs. Les deux sont des membres nommés avec des types associés, et la syntaxe pour accéder aux champs et propriétés est la même. Toutefois, contrairement aux champs, les propriétés ne désignent pas les emplacements de stockage. Au lieu de cela, les propriétés ont des *accesseurs* qui spécifient les instructions exécutées lorsque leurs valeurs sont lues ou écrites.
 
-Une propriété est déclarée comme un champ, sauf que la déclaration se termine par un accesseur Get ou un accesseur Set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture*, une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule*, et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
+Une propriété est déclarée comme un champ, sauf que la déclaration se termine par un accesseur Get ou un accesseur Set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture* , une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule* , et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
 
 Un accesseur get correspond à une méthode sans paramètre avec une valeur de retour du type de la propriété. Un accesseur set correspond à une méthode avec un paramètre unique nommé valeur et aucun type de retour. L’accesseur Get calcule la valeur de la propriété. L’accesseur Set fournit une nouvelle valeur pour la propriété. Lorsque la propriété est la cible d’une assignation, ou l’opérande de `++` ou `--` , l’accesseur Set est appelé. Dans les autres cas où la propriété est référencée, l’accesseur Get est appelé.
 
@@ -205,7 +205,7 @@ Le ou les accesseurs d’une propriété peuvent être virtuels. Lorsqu’une d�
 
 Un *indexeur* est un membre qui permet l’indexation des objets de la même façon en tant que tableau. Un indexeur est déclaré comme une propriété, sauf que le nom du membre est `this`, suivi d’une liste de paramètres écrits entre les délimiteurs `[` et `]`. Les paramètres sont disponibles dans le ou les accesseurs de l’indexeur. Similaires aux propriétés, les indexeurs peuvent être en lecture-écriture, en lecture seule et en écriture seule, et les accesseurs d’un indexeur peuvent être virtuels.
 
-La classe `MyList<T>` déclare un indexeur en lecture-écriture unique qui prend un paramètre `int`. L’indexeur rend possible l’indexation des instances `MyList<T>` avec des valeurs `int`. Par exemple :
+La classe `MyList<T>` déclare un indexeur en lecture-écriture unique qui prend un paramètre `int`. L’indexeur rend possible l’indexation des instances `MyList<T>` avec des valeurs `int`. Exemple :
 
 :::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAccess":::
 
@@ -251,8 +251,8 @@ Quand une expression contient plusieurs opérateurs, la *priorité* des opérate
 
 Lorsqu’un opérande se produit entre deux opérateurs de même priorité, *l’associativité* des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
 
-* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche*, ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
-* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=` l’opérateur conditionnel `?:` sont *associatifs à droite*, ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche* , ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
+* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=` l’opérateur conditionnel `?:` sont *associatifs à droite* , ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
 
 La priorité et l’associativité peuvent être contrôlées à l’aide de parenthèses. Par exemple, `x + y * z` multiplie d’abord `y` par `z`, puis ajoute le résultat à `x`, mais `(x + y) * z` ajoute d’abord `x` et `y`, puis multiplie le résultat par `z`.
 
