@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 10/31/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 770ac24feababcfc840ae26196ba8b6180d378a0
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: ba9111efccceca03fda43ff11c3f111610541595
+ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282012"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93342681"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -86,11 +86,12 @@ dotnet fsi Script.fsx
 [1; 9; 25; 49; 81]
 ```
 
-Les scripts F # sont pris en charge en mode natif dans [Visual Studio](../../get-started/get-started-visual-studio.md), [Visual Studio code](../../get-started/get-started-vscode.md)et [Visual Studio pour Mac](../../get-started/get-started-visual-studio-for-mac.md).
+Les scripts F # sont pris en charge en mode natif dans [Visual Studio](../../get-started/get-started-visual-studio.md), [Visual Studio code](../../get-started/get-started-vscode.md)et [Visual Studio pour Mac](../../get-started/get-started-with-visual-studio-for-mac.md).
 
 ## <a name="referencing-packages-in-f-interactive"></a>Référencement de packages dans F# Interactive
 
-> [!NOTE] La gestion des packages est une fonctionnalité F # 5 qui est actuellement disponible à l’aide du dernier Kit de développement logiciel (SDK) .NET 5.
+> [!NOTE]
+> La gestion des packages est une fonctionnalité F # 5 qui est actuellement disponible à l’aide du dernier Kit de développement logiciel (SDK) .NET 5.
 
 F# Interactive prend en charge le référencement de packages NuGet avec la `#r "nuget:"` syntaxe et une version facultative :
 
