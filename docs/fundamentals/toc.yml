@@ -1442,6 +1442,8 @@ items:
                 href: ../standard/base-types/comparing.md
               - name: Changer la casse
                 href: ../standard/base-types/changing-case.md
+              - name: Extraire des éléments d’une chaîne
+                href: ../standard/base-types/parse-strings.md
               - name: Utiliser la classe StringBuilder
                 href: ../standard/base-types/stringbuilder.md
               - name: "Procédure\_: effectuer des manipulations de chaînes de base"
