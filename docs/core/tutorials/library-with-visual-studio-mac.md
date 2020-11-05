@@ -2,12 +2,12 @@
 title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio pour Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 433f6e0e2d784878c9a1616139b39ec56d695bcf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a78cc68d29095e4fefcaf1d3b2158d673b8892ec
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537637"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400563"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio pour Mac
 
@@ -18,8 +18,8 @@ Une *bibliothèque de classes* définit des types et des méthodes qui peuvent �
 > [!NOTE]
 > Vos commentaires sont extrêmement précieux. Il existe deux moyens de transmettre vos commentaires à l’équipe de développement sur Visual Studio pour Mac :
 >
-> - Dans Visual Studio pour Mac, sélectionnez **aide**  >  **signaler un problème** dans le menu ou **signaler un problème** dans l’écran d’accueil, qui ouvre une fenêtre pour l’enregistrement d’un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/41/index.html).
-> - Pour faire une suggestion, sélectionnez **aide**  >  **fournir une suggestion** dans le menu ou **fournissez une suggestion** sur l’écran d’accueil, qui vous amène à la [page Web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> - Dans Visual Studio pour Mac, sélectionnez **aide**  >  **signaler un problème** dans le menu ou **signaler un problème** dans l’écran d’accueil, qui ouvre une fenêtre pour l’enregistrement d’un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://aka.ms/feedback/report?space=41).
+> - Pour faire une suggestion, sélectionnez **aide**  >  **fournir une suggestion** dans le menu ou **fournissez une suggestion** sur l’écran d’accueil, qui vous amène à la [page Web de la communauté des développeurs Visual Studio pour Mac](https://aka.ms/feedback/suggest?space=41).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -37,7 +37,7 @@ Une solution Visual Studio sert de conteneur pour un ou plusieurs projets. Crée
 
 1. Dans la fenêtre Démarrer, sélectionnez **nouveau projet**.
 
-1. Dans la boîte de dialogue **nouveau projet** , sous le nœud **multiplateforme** , sélectionnez **bibliothèque**, puis sélectionnez le modèle de **bibliothèque .NET standard** , puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **nouveau projet** , sous le nœud **multiplateforme** , sélectionnez **bibliothèque** , puis sélectionnez le modèle de **bibliothèque .NET standard** , puis sélectionnez **suivant**.
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project.png" alt-text="Boîte de dialogue Nouveau projet":::
 
@@ -49,7 +49,7 @@ Une solution Visual Studio sert de conteneur pour un ou plusieurs projets. Crée
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project-options.png" alt-text="Options de la boîte de dialogue Nouveau projet dans Visual Studio pour Mac":::
 
-1. Dans le menu principal, sélectionnez **Afficher**  >  les**Pad**  >  **solution**, puis sélectionnez l’icône d’ancrage pour maintenir le pavé ouvert.
+1. Dans le menu principal, sélectionnez **Afficher**  >  les **Pad**  >  **solution** , puis sélectionnez l’icône d’ancrage pour maintenir le pavé ouvert.
 
    :::image type="content" source="media/library-with-visual-studio-mac/solution-dock-icon.png" alt-text="Icône d’ancrage du panneau solution":::
 
@@ -63,7 +63,7 @@ Une solution Visual Studio sert de conteneur pour un ou plusieurs projets. Crée
 
    :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-error-button.png" alt-text="Marge inférieure de l’IDE Visual Studio pour Mac montrant le bouton Erreurs":::
 
-1. **Build**  >  Dans le menu, sélectionnez Générer**générer tout** .
+1. **Build**  >  Dans le menu, sélectionnez Générer **générer tout** .
 
    La solution se génère. Le panneau de sortie de la build indique que la build a réussi.
 
@@ -97,7 +97,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
 1. Dans la boîte de dialogue **références** , sélectionnez **StringLibrary** , puis cliquez sur **OK**.
 
-## <a name="run-the-app"></a>Exécuter l'application
+## <a name="run-the-app"></a>Exécuter l’application
 
 1. <kbd>ctrl</kbd>cliquez sur le projet Showcase et sélectionnez Exécuter le **projet** dans le menu contextuel.
 

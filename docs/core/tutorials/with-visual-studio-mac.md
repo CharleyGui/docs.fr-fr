@@ -2,12 +2,12 @@
 title: Créer une application console .NET Core à l’aide de Visual Studio pour Mac
 description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio pour Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: ca933bc9322109ba7d1f808fcc44696a9766a6d4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0248e48865541a7c73b9e219a06a57996c5cf601
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537598"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400524"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac
 
@@ -16,8 +16,8 @@ Ce didacticiel montre comment créer et exécuter une application console .NET C
 > [!NOTE]
 > Vos commentaires sont extrêmement précieux. Il existe deux moyens de transmettre vos commentaires à l’équipe de développement sur Visual Studio pour Mac :
 >
-> * Dans Visual Studio pour Mac, sélectionnez **aide**  >  **signaler un problème** dans le menu ou **signaler un problème** dans l’écran d’accueil, qui ouvre une fenêtre pour l’enregistrement d’un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/8/index.html).
-> * Pour faire une suggestion, sélectionnez **aide**  >  **fournir une suggestion** dans le menu ou **fournissez une suggestion** à partir de l’écran d’accueil, qui vous permet de vous rendre sur la [page Web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> * Dans Visual Studio pour Mac, sélectionnez **aide**  >  **signaler un problème** dans le menu ou **signaler un problème** dans l’écran d’accueil, qui ouvre une fenêtre pour l’enregistrement d’un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://aka.ms/feedback/report?space=41).
+> * Pour faire une suggestion, sélectionnez **aide**  >  **fournir une suggestion** dans le menu ou **fournissez une suggestion** à partir de l’écran d’accueil, qui vous permet de vous rendre sur la [page Web de la communauté des développeurs Visual Studio pour Mac](https://aka.ms/feedback/suggest?space=41).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -41,11 +41,11 @@ Créez un projet d’application console .NET Core nommé « HelloWorld ».
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-dialog.png" alt-text="Liste des modèles Nouveau projet":::
 
-1. Dans la liste déroulante **Framework cible** de la boîte de dialogue **configurer votre nouvelle application console** , sélectionnez **.net Core 3,1**, puis sélectionnez **suivant**.
+1. Dans la liste déroulante **Framework cible** de la boîte de dialogue **configurer votre nouvelle application console** , sélectionnez **.net Core 3,1** , puis sélectionnez **suivant**.
 
    :::image type="content" source="media/with-visual-studio-mac/target-framework.png" alt-text="Sélectionner la version cible de .NET Framework":::
 
-1. Tapez « HelloWorld » comme **nom de projet**, puis sélectionnez **créer**.
+1. Tapez « HelloWorld » comme **nom de projet** , puis sélectionnez **créer**.
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-options.png" alt-text="Boîte de dialogue de configuration de votre nouvelle application console":::
 
@@ -70,7 +70,7 @@ namespace HelloWorld
 
 `Main` est le point d’entrée de l’application. Cette méthode est appelée automatiquement par le runtime lors du lancement de l’application. Les arguments de ligne de commande fournis lorsque l’application est lancée sont disponibles dans le `args` tableau.
 
-## <a name="run-the-app"></a>Exécuter l'application
+## <a name="run-the-app"></a>Exécuter l’application
 
 1. Appuyez sur <kbd>⌥</kbd><kbd>⌘</kbd><kbd>↵</kbd> (<kbd>option</kbd> + <kbd>commande</kbd> + <kbd>entrée</kbd>) pour exécuter l’application sans débogage.
 
@@ -82,7 +82,7 @@ namespace HelloWorld
 
 Améliorez l’application pour inviter l’utilisateur à entrer son nom et l’afficher avec la date et l’heure.
 
-1. Dans *Program.cs*, remplacez le contenu de la `Main` méthode, qui est la ligne qui appelle `Console.WriteLine` , par le code suivant :
+1. Dans *Program.cs* , remplacez le contenu de la `Main` méthode, qui est la ligne qui appelle `Console.WriteLine` , par le code suivant :
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 

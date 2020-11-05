@@ -1,6 +1,6 @@
 ---
-title: Analyser des chaînes à l’aide de String. Split (Guide C#)
-description: La méthode Split retourne un tableau de chaînes fractionnées à partir d’un ensemble de délimiteurs. Il s’agit d’un moyen simple pour analyser des chaînes.
+title: Diviser des chaînes à l’aide de String. Split (Guide C#)
+description: La méthode Split retourne un tableau de chaînes fractionnées à partir d’un ensemble de délimiteurs. Il s’agit d’un moyen simple d’extraire des sous-chaînes d’une chaîne.
 ms.date: 01/03/2018
 helpviewer_keywords:
 - splitting strings [C#]
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: ee0921c4d3c931e2f677ec0bb8458992afc57d57
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 5361a3c60905edd19b180c5ddb14064a85f64337
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342642"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400498"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-in-c"></a>Comment analyser des chaînes à l’aide de String. Split en C\#
+# <a name="how-to-separate-strings-using-stringsplit-in-c"></a>Comment séparer des chaînes à l’aide de String. Split en C\#
 
 La méthode <xref:System.String.Split%2A?displayProperty=nameWithType> crée un tableau de sous-chaînes en fractionnant la chaîne d’entrée en fonction d’un ou plusieurs délimiteurs. Cette méthode est souvent le moyen le plus simple de séparer une chaîne sur les limites de mots. Il est également utilisé pour fractionner des chaînes sur d’autres caractères ou chaînes spécifiques.
 
@@ -48,9 +48,9 @@ Les instances consécutives d’un séparateur produisent une chaîne vide dans 
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet5":::
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
-- [Extraire des éléments d’une chaîne](../../standard/base-types/parse-strings.md)
+- [Extraire des éléments d’une chaîne](../../standard/base-types/divide-up-strings.md)
 - [Guide de programmation C#](../programming-guide/index.md)
 - [Chaînes](../programming-guide/strings/index.md)
 - [Expressions régulières .NET](../../standard/base-types/regular-expressions.md)

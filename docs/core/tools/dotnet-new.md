@@ -4,13 +4,13 @@ description: La commande dotnet new crée des projets .NET Core basés sur le mo
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 09/01/2020
-ms.openlocfilehash: 4a4c8e2806fee663b5f6aa255a6f24250a072a85
-ms.sourcegitcommit: 532b03d5bbab764d63356193b04cd2281bc01239
+ms.date: 09/04/2020
+ms.openlocfilehash: 2ee06c37cd950f3b9771db2f30fe353435641d67
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92526618"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400589"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -58,7 +58,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Introduit |
+| Modèles                                    | Nom court                      | Language     | Étiquettes                                  | Introduit |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -78,7 +78,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 | ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Blazor Application serveur                            | [blazorserver](#blazorserver)   | [C#]         | InternetBlazor                            | 3.0        |
-| BlazorWebAssemblyApplication                       | `blazorwasm`                    | [C#]         | InternetBlazor/WebAssembly                | 3.1.300    |
+| BlazorWebAssemblyApplication                       | [blazorwasm](#blazorwasm)       | [C#]         | InternetBlazor/WebAssembly                | 3.1.300    |
 | ASP.NET Core vide                           | [web](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
 | Application web ASP.NET Core (Model-View-Controller) | [MVC](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
 | Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
@@ -108,7 +108,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`-h|--help`**
 
-  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple : `dotnet new mvc --help`.
+  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple, `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
@@ -127,7 +127,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
 
   > [!NOTE]
-  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple : `dotnet new console -lang "F#"`.
+  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple, `dotnet new console -lang "F#"`.
 
 - **`-n|--name <OUTPUT_NAME>`**
 
@@ -194,7 +194,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="classlib"></a>classlib
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp<version>` pour créer une bibliothèque de classes .NET Core ou `netstandard<version>` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
 
@@ -212,7 +212,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a> WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
@@ -230,7 +230,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="winforms-winformslib"></a><a name="winforms"></a> WinForms, winformslib
 
-- _*`--langVersion <VERSION_NUMBER>`**
+- _ *`--langVersion <VERSION_NUMBER>`**
 
   Définit la `LangVersion` propriété dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3.
 
@@ -244,7 +244,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="worker-grpc"></a><a name="web-others"></a> Worker, GRPC
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
@@ -260,7 +260,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="mstest-xunit"></a><a name="test"></a> MSTest, xUnit
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option disponible depuis le kit de développement logiciel (SDK) .NET Core 3,0.
 
@@ -283,7 +283,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="nunit"></a>nunit
 
-- _*`-f|--framework <FRAMEWORK>`**
+- _ *`-f|--framework <FRAMEWORK>`**
 
   Spécifie le [Framework](../../standard/frameworks.md) à cibler.
 
@@ -308,7 +308,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="page"></a>page
 
-- _*`-na|--namespace <NAMESPACE_NAME>`**
+- _ *`-na|--namespace <NAMESPACE_NAME>`**
 
   Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
@@ -320,7 +320,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="viewimports-proto"></a><a name="namespace"></a> viewimports, proto
 
-- _*`-na|--namespace <NAMESPACE_NAME>`**
+- _ *`-na|--namespace <NAMESPACE_NAME>`**
 
   Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
@@ -328,7 +328,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="blazorserver"></a>blazorserver
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -397,9 +397,113 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 **_
 
+### <a name="blazorwasm"></a>blazorwasm
+
+- _ *`-f|--framework <FRAMEWORK>`**
+
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler.
+
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
+
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 5.0         | `net5.0`        |
+  | 3.1         | `netcoreapp3.1` |
+
+- **`--no-restore`**
+
+  N’exécute pas de restauration implicite pendant la création du projet.
+
+- **`-ho|--hosted`**
+
+  Comprend un hôte de ASP.NET Core pour l' Blazor WebAssembly application.
+
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
+
+  Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
+
+  - `None` : aucune authentification (configuration par défaut).
+  - `Individual` : authentification individuelle.
+  - `IndividualB2C` : authentification individuelle avec Azure AD B2C.
+  - `SingleOrg` : authentification d’organisation pour un seul abonné.
+
+- **`--authority <AUTHORITY>`**
+
+  Autorité du fournisseur OIDC. À utiliser avec l’authentification `Individual`. La valeur par défaut est `https://login.microsoftonline.com/`.
+
+- **`--aad-b2c-instance <INSTANCE>`**
+
+  Instance Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://aadB2CInstance.b2clogin.com/`.
+
+- **`-ssp|--susi-policy-id <ID>`**
+
+  ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+
+- **`--aad-instance <INSTANCE>`**
+
+  Instance Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+
+- **`--client-id <ID>`**
+
+  ID client pour ce projet. Utilisez avec `IndividualB2C` `SingleOrg` `Individual` l’authentification, ou dans des scénarios autonomes. La valeur par défaut est `33333333-3333-3333-33333333333333333`.
+
+- **`--domain <DOMAIN>`**
+
+  Domaine du locataire d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+
+- **`--app-id-uri <URI>`**
+
+  URI ID d’application de l’API serveur que vous souhaitez appeler. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `api.id.uri`.
+
+- **`--api-client-id <ID>`**
+
+  ID client de l’API que le serveur héberge. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+
+- **`-s|--default-scope <SCOPE>`**
+
+  Étendue de l’API que le client doit demander pour approvisionner un jeton d’accès. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `user_impersonation`.
+
+- **`--tenant-id <ID>`**
+
+  ID TenantId de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+
+- **`-r|--org-read-access`**
+
+  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement à `SingleOrg` l’authentification.
+
+- **`--exclude-launch-settings`**
+
+  Exclut *launchSettings.js* du modèle généré.
+
+- **`-p|--pwa`**
+
+  produit une application Web progressive (PWA) qui prend en charge l’installation et l’utilisation hors connexion.
+
+- **`--no-https`**
+
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si `Individual` , `IndividualB2C` ou `SingleOrg` ne sont pas utilisés pour `--auth` .
+
+- **`-uld|--use-local-db`**
+
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+
+- **`--called-api-url <URL>`**
+
+  URL de l’API à appeler à partir de l’application Web. S’applique uniquement à `SingleOrg` ou à `IndividualB2C` l’authentification sans ASP.net Core hôte spécifié. La valeur par défaut est `https://graph.microsoft.com/v1.0/me`.
+
+- **`--calls-graph`**
+
+  Spécifie si l’application Web appelle Microsoft Graph. S’applique uniquement à `SingleOrg` l’authentification.
+
+- **`--called-api-scopes <SCOPES>`**
+
+  Étendues à demander pour appeler l’API à partir de l’application Web. S’applique uniquement à `SingleOrg` ou à `IndividualB2C` l’authentification sans ASP.net Core hôte spécifié. La valeur par défaut est `user.read`.
+
+**_
+
 ### <a name="web"></a>web
 
-- _*`--exclude-launch-settings`**
+- _ *`--exclude-launch-settings`**
 
   Exclut *launchSettings.js* du modèle généré.
 
@@ -427,7 +531,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="mvc-webapp"></a><a name="web-options"></a> MVC, WebApp
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -517,7 +621,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="angular-react"></a><a name="spa"></a> angulaire, réaction
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Option disponible à partir du kit SDK .NET Core 3.0.
   
@@ -558,7 +662,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="reactredux"></a>reactredux
 
-- _*`--exclude-launch-settings`**
+- _ *`--exclude-launch-settings`**
 
   Exclut *launchSettings.js* du modèle généré.
 
@@ -586,7 +690,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="razorclasslib"></a>razorclasslib
 
-- _*`--no-restore`**
+- _ *`--no-restore`**
 
   N’exécute pas de restauration implicite pendant la création du projet.
 
@@ -598,7 +702,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
   
 ### <a name="webapi"></a>webapi
 
-- _*`-au|--auth <AUTHENTICATION_TYPE>`**
+- _ *`-au|--auth <AUTHENTICATION_TYPE>`**
 
   Type d’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
@@ -667,7 +771,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ### <a name="globaljson"></a>globaljson
 
-- _*`--sdk-version <VERSION_NUMBER>`**
+- _ *`--sdk-version <VERSION_NUMBER>`**
 
   Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global.js* .
 

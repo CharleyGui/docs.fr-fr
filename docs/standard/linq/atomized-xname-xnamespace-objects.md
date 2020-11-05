@@ -6,16 +6,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
-ms.openlocfilehash: bc2be4d408385936598d94d34f9b452d950516d3
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 05df7b5348fecebb7504ebb4e2623f688b6549e1
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553543"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400836"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml"></a>Objets XName et XNamespace atomisés (LINQ to XML)
 
-Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> sont *atomisés* ; autrement dit, s’ils contiennent le même nom qualifié, ils font référence au même objet. Cela offre des avantages en matière de performances pour les requêtes : lorsque vous comparez deux noms atomisés pour l’égalité, le langage intermédiaire sous-jacent doit seulement déterminer si les deux références pointent vers le même objet. Le code sous-jacent n’a pas à effectuer de comparaisons de chaînes, ce qui prendra plus de temps.
+Les objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace> sont *atomisés*  ; autrement dit, s’ils contiennent le même nom qualifié, ils font référence au même objet. Cela offre des avantages en matière de performances pour les requêtes : lorsque vous comparez deux noms atomisés pour l’égalité, le langage intermédiaire sous-jacent doit seulement déterminer si les deux références pointent vers le même objet. Le code sous-jacent n’a pas à effectuer de comparaisons de chaînes, ce qui prendra plus de temps.
 
 ## <a name="atomization-semantics"></a>Sémantique d’atomisation
 
@@ -30,7 +30,7 @@ Pour qu'une classe autorise les objets atomisés, le constructeur de cette class
 Le code suivant crée certains objets <xref:System.Xml.Linq.XElement> et démontre que des noms identiques partagent la même instance.
 
 ```csharp
-XElement r1 = new XElement("Root", "data1");
+var r1 = new XElement("Root", "data1");
 XElement r2 = XElement.Parse("<Root>data2</Root>");
 
 if ((object)r1.Name == (object)r2.Name)
@@ -77,7 +77,7 @@ Comme indiqué précédemment, l'avantage des objets atomisés est que lorsque v
 L'exemple suivant passe un <xref:System.Xml.Linq.XName> à l'appel de méthode <xref:System.Xml.Linq.XContainer.Descendants%2A>, qui a ensuite une meilleure performance grâce au modèle d'atomisation.
 
 ```csharp
-XElement root = new XElement("Root",
+var root = new XElement("Root",
     new XElement("C1", 1),
     new XElement("Z1",
         new XElement("C1", 2),
@@ -96,9 +96,9 @@ foreach (var z in query)
 ```vb
 Dim root As New XElement("Root", New XElement("C1", 1), New XElement("Z1", New XElement("C1", 2), New XElement("C1", 1)))
 
-Dim query = From e In root.Descendants("C1") Where CInt(e) = 1e
+Dim query = From e In root.Descendants("C1") Where CInt(e) = 1
 
-For Each z As var In query
+For Each z In query
     Console.WriteLine(z)
 Next
 ```

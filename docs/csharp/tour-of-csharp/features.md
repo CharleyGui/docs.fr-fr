@@ -2,12 +2,12 @@
 title: Visite guidée de C#-zones de langage majeures
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 08/06/2020
-ms.openlocfilehash: 9069bb194169a7743f12d998b2842186ed0ef404
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a73399643ada05a4bfb17fadd17bf3267514e99d
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558173"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400746"
 ---
 # <a name="major-language-areas"></a>Principales zones de langue
 
@@ -17,30 +17,30 @@ C# et .NET fournissent de nombreux types de collections différents. Les tableau
 
 ### <a name="arrays"></a>Tableaux
 
-Un [***tableau***](../programming-guide/arrays/index.md) est une structure de données qui contient un certain nombre de variables accessibles par le biais d’index calculés. Les variables contenues dans un tableau, également appelées ***éléments*** du tableau, sont toutes du même type. Ce type est appelé le ***type d’élément*** du tableau.
+Un [ * **tableau** _](../programming-guide/arrays/index.md) est une structure de données qui contient un certain nombre de variables accessibles par le biais d’index calculés. Les variables contenues dans un tableau, également appelées _*_éléments_*_ du tableau, sont toutes du même type. Ce type est appelé le _*_type d’élément_*_ du tableau.
 
-Les types tableau sont des types référence, et la déclaration d’une variable tableau réserve simplement un espace pour une référence à une instance de tableau. Les instances de tableau réelles sont créées dynamiquement au moment de l’exécution à l’aide de l' `new` opérateur. L' `new` opération spécifie la ***longueur*** de la nouvelle instance de tableau, qui est ensuite résolue pour la durée de vie de l’instance. Les indices des éléments d’un tableau vont de `0` à `Length - 1`. L’opérateur `new` initialise automatiquement les éléments d’un tableau à leur valeur par défaut, c'est-à-dire, par exemple, zéro pour tous les types numériques et `null` pour tous les types référence.
+Les types tableau sont des types référence, et la déclaration d’une variable tableau réserve simplement un espace pour une référence à une instance de tableau. Les instances de tableau réelles sont créées dynamiquement au moment de l’exécution à l’aide de l' `new` opérateur. L' `new` opération spécifie la _*_longueur_*_ de la nouvelle instance de tableau, qui est ensuite résolue pour la durée de vie de l’instance. Les indices des éléments d’un tableau vont de `0` à `Length - 1`. L’opérateur `new` initialise automatiquement les éléments d’un tableau à leur valeur par défaut, c'est-à-dire, par exemple, zéro pour tous les types numériques et `null` pour tous les types référence.
 
 L’exemple suivant crée un tableau de `int` éléments, initialise le tableau et imprime le contenu du tableau.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ArraysSample":::
 
-Cet exemple crée et utilise un ***tableau unidimensionnel***. C# prend également en charge les ***tableaux multidimensionnels***. Le nombre de dimensions d’un type tableau, également appelé ***rang*** du type tableau, est de un plus le nombre de virgules entre les crochets du type tableau. L’exemple suivant alloue respectivement des tableaux à une seule, deux et trois dimensions, respectivement.
+Cet exemple crée et opère sur un _*_tableau unidimensionnel_*_. C# prend également en charge _*_les tableaux multidimensionnels_*_. Le nombre de dimensions d’un type tableau, également appelé _*_rang_*_ du type tableau, est un plus le nombre de virgules écrites entre les crochets du type tableau. L’exemple suivant alloue respectivement des tableaux à une seule, deux et trois dimensions, respectivement.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="DeclareArrays":::
 
 Le tableau `a1` contient 10 éléments, le tableau `a2` en contient 50 (10 x 5) et le tableau `a3` en contient 100 (10 × 5 × 2).
-Le type d’élément d’un tableau peut être de n’importe quel type, y compris un type tableau. Un tableau avec des éléments d’un type tableau est parfois appelé ***tableau en escalier*** , car les longueurs des tableaux d’éléments ne doivent pas nécessairement être identiques. L’exemple suivant alloue un tableau de tableaux de `int` :
+Le type d’élément d’un tableau peut être de n’importe quel type, y compris un type tableau. Un tableau avec des éléments d’un type tableau est parfois appelé _*_tableau en escalier_*_ , car les longueurs des tableaux d’éléments ne doivent pas nécessairement être identiques. L’exemple suivant alloue un tableau de tableaux de `int` :
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ArrayOfArrays":::
 
 La première ligne crée un tableau avec trois éléments, chacun de type `int[]` et chacun avec une valeur initiale de `null`. Les lignes suivantes initialisent ensuite les trois éléments avec des références à des instances de tableau individuelles de longueurs différentes.
 
-L' `new` opérateur permet de spécifier les valeurs initiales des éléments du tableau à l’aide d’un ***initialiseur de tableau***, qui est une liste d’expressions écrites entre les délimiteurs `{` et `}` . L’exemple suivant alloue et initialise un `int[]` avec trois éléments.
+L' `new` opérateur permet de spécifier les valeurs initiales des éléments du tableau à l’aide d’un _*_initialiseur de tableau_*_ , qui est une liste d’expressions écrites entre les délimiteurs `{` et `}` . L’exemple suivant alloue et initialise un `int[]` avec trois éléments.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeArray":::
 
-La longueur du tableau est déduite du nombre d’expressions entre `{` et `}` . Les déclarations de variables locales et de champs peuvent être raccourcies de façon à ce que le type de tableau n’ait pas besoin d’être retraité.
+La longueur du tableau est déduite du nombre d’expressions entre `{` et `}` . L’initialisation de tableau peut être raccourcie de manière à ce que le type de tableau n’ait pas à être retraité.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeShortened":::
 
@@ -56,19 +56,19 @@ L' `foreach` instruction utilise l' <xref:System.Collections.Generic.IEnumerable
 
 ## <a name="string-interpolation"></a>Interpolation de chaîne
 
-L' [***interpolation de chaîne***](../language-reference/tokens/interpolated.md) C# vous permet de mettre en forme des chaînes en définissant des expressions dont les résultats sont placés dans une chaîne de format. Par exemple, l’exemple suivant imprime la température d’un jour donné à partir d’un ensemble de données météorologiques :
+L' [_*_interpolation de chaîne_*_](../language-reference/tokens/interpolated.md) C# vous permet de mettre en forme des chaînes en définissant des expressions dont les résultats sont placés dans une chaîne de format. Par exemple, l’exemple suivant imprime la température d’un jour donné à partir d’un ensemble de données météorologiques :
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="StringInterpolation":::
 
-Une chaîne interpolée est déclarée à l’aide du `$` jeton. L’interpolation de chaîne évalue les expressions comprises entre `{` et `}` , puis convertit le résultat en `string` et remplace le texte entre crochets par le résultat de chaîne de l’expression. `:`Dans la première expression, `{weatherData.Date:MM-DD-YYYY}` spécifie la *chaîne de format*. Dans l’exemple précédent, il spécifie que la date doit être imprimée au format « MM-jj-aaaa ».
+Une chaîne interpolée est déclarée à l’aide du `$` jeton. L’interpolation de chaîne évalue les expressions comprises entre `{` et `}` , puis convertit le résultat en `string` et remplace le texte entre crochets par le résultat de chaîne de l’expression. `:`Dans la première expression, `{weatherData.Date:MM-DD-YYYY}` spécifie le _Format chaîne *. Dans l’exemple précédent, il spécifie que la date doit être imprimée au format « MM-jj-aaaa ».
 
 ## <a name="pattern-matching"></a>Critères spéciaux
 
-Le langage C# fournit des expressions de [***critères spéciaux***](../pattern-matching.md) pour interroger l’état d’un objet et exécuter du code en fonction de cet État. Vous pouvez inspecter les types et les valeurs des propriétés et des champs pour déterminer l’action à entreprendre. L' `switch` expression est l’expression principale pour les critères spéciaux.
+Le langage C# fournit des expressions de [ * **critères spéciaux**](../pattern-matching.md) pour interroger l’état d’un objet et exécuter du code en fonction de cet État. Vous pouvez inspecter les types et les valeurs des propriétés et des champs pour déterminer l’action à entreprendre. L' `switch` expression est l’expression principale pour les critères spéciaux.
 
 ## <a name="delegates-and-lambda-expressions"></a>Délégués et expressions lambda
 
-Un [***type délégué***](../delegates-overview.md) représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction trouvés dans d’autres langages. Contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
+Un [_*_type délégué_*_](../delegates-overview.md) représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction trouvés dans d’autres langages. Contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 
 L’exemple suivant déclare et utilise un type délégué nommé `Function`.
 
@@ -98,7 +98,7 @@ Ce petit exemple illustre les principales fonctionnalités de la programmation a
 
 ## <a name="attributes"></a>Attributs
 
-Les types, membres et autres entités d’un programme C# prennent en charge les modificateurs qui contrôlent certains aspects de leur comportement. Par exemple, l’accessibilité d’une méthode est contrôlée à l’aide des modificateurs `public`, `protected`, `internal` et `private`. C# généralise cette fonctionnalité pour que les types d’informations déclaratives définis par l’utilisateur puissent être associés aux entités de programme et récupérés au moment de l’exécution. Les programmes spécifient ces informations déclaratives supplémentaires en définissant et en utilisant des [***attributs***](../programming-guide/concepts/attributes/index.md).
+Les types, membres et autres entités d’un programme C# prennent en charge les modificateurs qui contrôlent certains aspects de leur comportement. Par exemple, l’accessibilité d’une méthode est contrôlée à l’aide des modificateurs `public`, `protected`, `internal` et `private`. C# généralise cette fonctionnalité pour que les types d’informations déclaratives définis par l’utilisateur puissent être associés aux entités de programme et récupérés au moment de l’exécution. Les programmes spécifient ces informations déclaratives supplémentaires en définissant et en utilisant [_ *_attributes_* *](../programming-guide/concepts/attributes/index.md).
 
 L’exemple suivant déclare un attribut `HelpAttribute` qui peut être placé sur des entités de programme pour fournir des liens vers leur documentation associée.
 

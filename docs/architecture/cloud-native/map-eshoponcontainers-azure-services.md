@@ -2,12 +2,12 @@
 title: Mappage d’eShopOnContainers aux services Azure
 description: Mappage de eShopOnContainers à des services Azure comme Azure Kubernetes service, API Gateway et Azure Service Bus.
 ms.date: 05/13/2020
-ms.openlocfilehash: e938bf9a8f93f9e375a22ffb94395b9e85b0fe63
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: c4627a4b6d9d8b62737984b507e638019544ab67
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91155261"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400446"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mappage d’eShopOnContainers aux services Azure
 
@@ -24,7 +24,7 @@ Les composants côté serveur de cette architecture sont tous mappés facilement
 
 Les services hébergés dans les conteneurs de l’application, du ASP.NET Core des applications MVC aux microservices de catalogue et de tri individuels, peuvent être hébergés et gérés dans Azure Kubernetes service (AKS). L’application peut s’exécuter localement sur docker et Kubernetes, et les mêmes conteneurs peuvent ensuite être déployés dans des environnements intermédiaires et de production hébergés dans AKS. Ce processus peut être automatisé comme nous le verrons dans la section suivante.
 
-AKS fournit des services de gestion pour les clusters individuels de conteneurs. L’application déploie des clusters AKS distincts pour chaque microservice présenté dans le diagramme d’architecture ci-dessus. Cette approche permet à chaque service individuel d’évoluer indépendamment en fonction de ses besoins en ressources. Chaque microservice peut également être déployé indépendamment, et dans l’idéal, ces déploiements doivent entraîner un temps d’arrêt du système nul.
+AKS fournit des services de gestion pour les clusters individuels de conteneurs. L’application déploie des conteneurs distincts pour chaque microservice dans le cluster AKS, comme indiqué dans le diagramme d’architecture ci-dessus. Cette approche permet à chaque service individuel d’évoluer indépendamment en fonction de ses besoins en ressources. Chaque microservice peut également être déployé indépendamment, et dans l’idéal, ces déploiements doivent entraîner un temps d’arrêt du système nul.
 
 ## <a name="api-gateway"></a>API Gateway
 
