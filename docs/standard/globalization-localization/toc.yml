@@ -12,16 +12,15 @@
     - name: Opérations de chaînes indépendantes de la culture
       href: culture-insensitive-string-operations.md
       items:
-        - name: Effectuer des opérations de chaînes indépendantes de la culture
+        - name: Vue d’ensemble
           href: performing-culture-insensitive-string-operations.md
-          items:
-            - name: Comparaisons de chaînes
-              href: performing-culture-insensitive-string-comparisons.md
-            - name: Changements de casse
-              href: performing-culture-insensitive-case-changes.md
-            - name: Opérations de chaînes dans les collections
-              href: performing-culture-insensitive-string-operations-in-collections.md
-            - name: Opérations de chaînes dans les tableaux
-              href: performing-culture-insensitive-string-operations-in-arrays.md
+        - name: Comparaisons de chaînes
+          href: performing-culture-insensitive-string-comparisons.md
+        - name: Changements de casse
+          href: performing-culture-insensitive-case-changes.md
+        - name: Opérations de chaînes dans les collections
+          href: performing-culture-insensitive-string-operations-in-collections.md
+        - name: Opérations de chaînes dans les tableaux
+          href: performing-culture-insensitive-string-operations-in-arrays.md
     - name: Bonnes pratiques de développement d’applications mondialisables
       href: best-practices-for-developing-world-ready-apps.md
