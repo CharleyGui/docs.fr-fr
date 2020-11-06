@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 10/31/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: ba9111efccceca03fda43ff11c3f111610541595
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 89570a54ecebe625a1612e4b97b01c3693e4707c
+ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342681"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93400864"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -17,7 +17,7 @@ F# Interactive (dotnet FSI) est utilisé pour exécuter le code F # de manière 
 
 Pour exécuter F# Interactive à partir de la console, exécutez `dotnet fsi` . Vous y trouverez `dotnet fsi` tous les kits de développement logiciel (SDK) .net.
 
-Pour plus d’informations sur les options de ligne de commande disponibles, consultez [Options de F# Interactive](../../language-reference/fsharp-interactive-options.md).
+Pour plus d’informations sur les options de ligne de commande disponibles, consultez [options de F# Interactive](../../language-reference/fsharp-interactive-options.md).
 
 ## <a name="executing-code-directly-in-f-interactive"></a>Exécution de code directement dans F# Interactive
 
@@ -62,7 +62,7 @@ val it : unit = ()
 >
 ```
 
-La mise en forme du code est préservée et il existe un double semiclon ( `;;` ) qui termine l’entrée. F# Interactive ensuite évalué le code et imprimé les résultats !
+La mise en forme du code est préservée et un double point-virgule ( `;;` ) termine l’entrée. F# Interactive ensuite évalué le code et imprimé les résultats !
 
 ## <a name="scripting-with-f"></a>Écriture de scripts avec F\#
 
@@ -152,7 +152,7 @@ Vous pouvez spécifier autant de références d’assembly que vous le souhaitez
 
 ## <a name="loading-other-scripts"></a>Chargement d’autres scripts
 
-Lors de l’écriture de scripts, il peut souvent être utile d’utiliser différents scripts pour différentes tâches. Parfois, vous souhaiterez peut-être réutiliser le code de sur un script dans un autre. Au lieu de copier-coller son contenu dans votre fichier, vous pouvez le charger et l’évaluer facilement avec `#load` .
+Lors de l’écriture de scripts, il peut souvent être utile d’utiliser différents scripts pour différentes tâches. Il peut arriver que vous souhaitiez réutiliser du code à partir d’un script dans un autre. Au lieu de copier-coller son contenu dans votre fichier, vous pouvez le charger et l’évaluer facilement avec `#load` .
 
 Tenez compte des points suivants `Script1.fsx` :
 
@@ -204,7 +204,7 @@ from
 fsi
 ```
 
-Notez que vous pouvez également utiliser `System.Environment.GetCommandLineArgs()` pour accéder aux mêmes arguments.
+Vous pouvez également utiliser `System.Environment.GetCommandLineArgs()` pour accéder aux mêmes arguments.
 
 ## <a name="f-interactive-directive-reference"></a>Informations de référence sur la directive F# Interactive
 
@@ -245,10 +245,10 @@ Le code entré dans la même session ayant accès à toutes les constructions en
 
 Comme lors de l'exécution dans Visual Studio, F# Interactive s'exécute indépendamment de votre projet, vous ne pouvez pas, par exemple, utiliser les constructions définies dans votre projet F# Interactive, sauf si vous copiez le code de la fonction dans la fenêtre interactive.
 
-Vous pouvez contrôler les arguments de ligne de commande F# Interactive (options) en réglant les paramètres. Dans le menu **Outils** , sélectionnez **Options** , puis développez **Outils F#**. Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits** , qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de **fsi.exe** ou **fsianycpu.exe** , qui utilise l’architecture de l’ordinateur pour déterminer s’il doit s’exécuter en tant que processus 32 bits ou 64 bits.
+Vous pouvez contrôler les F# Interactive arguments de ligne de commande (options) en ajustant les paramètres. Dans le menu **Outils** , sélectionnez **Options** , puis développez **Outils F#**. Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits** , qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de **fsi.exe** ou **fsianycpu.exe** , qui utilise l’architecture de l’ordinateur pour déterminer s’il doit s’exécuter en tant que processus 32 bits ou 64 bits.
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----|-----------|
 |[Options F# Interactive](../../language-reference/fsharp-interactive-options.md)|Décrit la syntaxe et les options de ligne de commande pour le F# Interactive, fsi.exe.|
