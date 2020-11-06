@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: d008fbeabf58a3dddf1ee96fc655b6a685f8edfd
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 5c600ca999089d005f4f8eb2db332e938df7bfcb
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223581"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329792"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -23,9 +23,9 @@ ms.locfileid: "92223581"
   * [WPF Windows](/dotnet/desktop/wpf/)
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Plateforme Windows universelle (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
-* [Joueur](https://dotnet.microsoft.com/learn/games/unity-tutorial/intro)
+* [Joueur](https://dotnet.microsoft.com/apps/games)
 * [Internet des objets (IoT)](https://dotnet.microsoft.com/apps/iot)
-* [Apprentissage machine](../machine-learning/index.yml)
+* [Machine Learning](../machine-learning/index.yml)
 * [Applications console](tutorials/with-visual-studio-code.md)
 * [Services Windows](/aspnet/core/host-and-deploy/windows-service)
 
@@ -132,7 +132,7 @@ Les environnements de développement intégrés pour .NET incluent :
 
 Le [Kit de développement logiciel (SDK) .net](sdk.md) est un ensemble de bibliothèques et d’outils permettant de développer et d’exécuter des applications .net.
 
-Lorsque vous [Téléchargez .net](https://dotnet.microsoft.com/download/dotnet-core/), vous pouvez choisir le kit de développement logiciel (SDK) ou un *Runtime*, tel que le Runtime .net ou le runtime ASP.net core. Installez un Runtime sur un ordinateur que vous souhaitez préparer pour l’exécution des applications .NET. Installez le kit de développement logiciel (SDK) sur un ordinateur que vous souhaitez utiliser pour le développement. Lorsque vous téléchargez le kit de développement logiciel (SDK), vous en recevez automatiquement les runtimes.
+Lorsque vous [Téléchargez .net](https://dotnet.microsoft.com/download/dotnet-core/), vous pouvez choisir le kit de développement logiciel (SDK) ou un *Runtime* , tel que le Runtime .net ou le runtime ASP.net core. Installez un Runtime sur un ordinateur que vous souhaitez préparer pour l’exécution des applications .NET. Installez le kit de développement logiciel (SDK) sur un ordinateur que vous souhaitez utiliser pour le développement. Lorsque vous téléchargez le kit de développement logiciel (SDK), vous en recevez automatiquement les runtimes.
 
 Le téléchargement du kit de développement logiciel (SDK) comprend les composants suivants :
 
@@ -153,7 +153,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 ### <a name="project-system-and-msbuild"></a>Système de projet et MSBuild
 
-Une application .NET est générée à partir du code source à l’aide de [MSBuild](/visualstudio/msbuild/msbuild). Un fichier projet (*. csproj*, *. fsproj*ou *. vbproj*) spécifie des [cibles](/visualstudio/msbuild/msbuild-targets) et des [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication du code. Il existe des identificateurs de kit de développement logiciel (SDK) qui font référence aux collections standard de cibles et de tâches. L’utilisation de ces identificateurs permet de réduire la taille des fichiers projet et de les utiliser facilement. Par exemple, voici un fichier projet pour une application console :
+Une application .NET est générée à partir du code source à l’aide de [MSBuild](/visualstudio/msbuild/msbuild). Un fichier projet ( *. csproj* , *. fsproj* ou *. vbproj* ) spécifie des [cibles](/visualstudio/msbuild/msbuild-targets) et des [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication du code. Il existe des identificateurs de kit de développement logiciel (SDK) qui font référence aux collections standard de cibles et de tâches. L’utilisation de ces identificateurs permet de réduire la taille des fichiers projet et de les utiliser facilement. Par exemple, voici un fichier projet pour une application console :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -221,7 +221,7 @@ Les langages .NET de haut niveau, tels que C#, se compilent en un jeu d’instru
 
 Dans la mesure où la compilation JIT se produit pendant l’exécution de l’application, la durée de compilation fait partie du temps d’exécution. Par conséquent, les compilateurs JIT doivent équilibrer le temps passé à optimiser le code par rapport aux économies que le code résultant peut produire. Toutefois, un compilateur JIT connaît le matériel réel et peut permettre aux développeurs d’avoir à fournir des implémentations différentes pour différentes plateformes.
 
-Le compilateur JIT .NET peut effectuer une *compilation hiérarchisée*, ce qui signifie qu’il peut recompiler des méthodes individuelles au moment de l’exécution. Cette fonctionnalité permet au service informatique de se compiler rapidement, tout en étant en mesure de générer une version hautement optimisée du code pour les méthodes fréquemment utilisées.
+Le compilateur JIT .NET peut effectuer une *compilation hiérarchisée* , ce qui signifie qu’il peut recompiler des méthodes individuelles au moment de l’exécution. Cette fonctionnalité permet au service informatique de se compiler rapidement, tout en étant en mesure de générer une version hautement optimisée du code pour les méthodes fréquemment utilisées.
 
 Pour plus d’informations, consultez [processus d’exécution managée](../standard/managed-execution-process.md) et [compilation à plusieurs niveaux](whats-new/dotnet-core-3-0.md#tiered-compilation).
 
@@ -340,7 +340,7 @@ Une partie de la terminologie pour .NET peut être déroutante, car le même mot
 
   |Context  | signification de « Framework » |
   |---------|---------------------|
-  | .NET Framework | Implémentation originale de Windows de .NET. « Framework » est en majuscules. |
+  | .NET Framework | Implémentation originale de Windows de .NET. « Framework » est en majuscules. |
   | version cible de .NET Framework | Ensemble d’API sur lequel repose une bibliothèque ou une application .NET. Exemples : .NET Core 3,1, .NET Standard 2,0 |
   | Moniker du Framework cible  | Un TFM est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET. Exemple : `net462` pour .NET Framework 4.6.2. |
   | application dépendante du Framework | Application qui peut s’exécuter uniquement sur un ordinateur sur lequel vous avez installé le runtime à partir de la [page de téléchargement de .net](https://dotnet.microsoft.com/download/dotnet-core). « Framework » dans cette utilisation est la même chose que le « runtime » que vous téléchargez à partir de la page de téléchargement de .NET. |

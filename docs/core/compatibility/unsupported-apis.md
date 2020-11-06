@@ -3,12 +3,12 @@ title: API non prises en charge sur .NET Core et .NET 5 +
 titleSuffix: ''
 description: Découvrez les API .NET qui lèvent toujours une exception sur .NET Core et .NET 5,0 et versions ultérieures.
 ms.date: 10/13/2020
-ms.openlocfilehash: 0164ebff51de82d548a02f9fde754c1052a9c2b5
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 51d73557a48910d9cb1c4d3cdced34dfe4d849d8
+ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92159337"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94329779"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core-and-net-5"></a>API qui lèvent toujours des exceptions sur .NET Core et .NET 5 +
 
@@ -223,7 +223,7 @@ Cet article organise les API affectées par espace de noms.
 
 | Membre | Plateformes qui lèvent |
 | - | - |
-| <xref:System.Security.Claims.ClaimsPrincipal.%23ctor> | Tous |
+| <xref:System.Security.Claims.ClaimsPrincipal.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Tous |
 | <xref:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Tous |
 | <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Runtime.Serialization.SerializationInfo)> | Tous |
 | <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> | Tous |
