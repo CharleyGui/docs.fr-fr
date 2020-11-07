@@ -63,7 +63,7 @@
         - name: Types références Nullables - Proposition
           href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
         - name: Types référence Nullable - Spécification
-          href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
+          href: ../../../../_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md
         - name: Critères spéciaux récursifs
           href: ../../../../_csharplang/proposals/csharp-8.0/patterns.md
         - name: Méthodes d’interface par défaut
@@ -88,6 +88,8 @@
           href: ../../../../_csharplang/proposals/csharp-9.0/records.md
         - name: Instructions de niveau supérieur
           href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: Types référence Nullable - Spécification
+          href: ../../../../_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md
         - name: Améliorations des critères spéciaux
           href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
         - name: Setter init uniquement
