@@ -1167,6 +1167,8 @@ items:
                         href: code-analysis/style-rules/ide0081.md
                       - name: IDE0100
                         href: code-analysis/style-rules/ide0100.md
+                      - name: IDE0110
+                        href: code-analysis/style-rules/ide0110.md
                   - name: Règles diverses
                     items:
                       - name: IDE0076
@@ -1419,14 +1421,20 @@ items:
                 href: ../standard/base-types/how-to-display-milliseconds-in-date-and-time-values.md
               - name: Afficher les dates dans des calendriers non grégoriens
                 href: ../standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md
-      - name: Manipuler des chaînes
+      - name: Chaînes
         items:
           - name: Encodage de caractères dans .NET
             href: ../standard/base-types/character-encoding-introduction.md
           - name: Utilisation des classes d’encodage des caractères
             href: ../standard/base-types/character-encoding.md
-          - name: Bonnes pratiques pour l’utilisation de chaînes
-            href: ../standard/base-types/best-practices-strings.md
+          - name: Meilleures pratiques
+            items:
+              - name: Comparaison de chaînes
+                href: ../standard/base-types/best-practices-strings.md
+              - name: Affichage et persistance des données mises en forme
+                href: ../standard/base-types/best-practices-display-data.md
+          - name: Modifications du comportement dans la version 5 et les versions ultérieures de .NET (Windows)
+            href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Opérations de chaînes de base
             items:
               - name: Vue d'ensemble
@@ -1438,12 +1446,12 @@ items:
                 href: ../standard/base-types/trimming.md
               - name: Remplir des chaînes
                 href: ../standard/base-types/padding.md
-              - name: Comparer des chaînes
+              - name: Méthodes de comparaison
                 href: ../standard/base-types/comparing.md
               - name: Changer la casse
                 href: ../standard/base-types/changing-case.md
-              - name: Extraire des éléments d’une chaîne
-                href: ../standard/base-types/parse-strings.md
+              - name: Séparer les parties d’une chaîne
+                href: ../standard/base-types/divide-up-strings.md
               - name: Utiliser la classe StringBuilder
                 href: ../standard/base-types/stringbuilder.md
               - name: "Procédure\_: effectuer des manipulations de chaînes de base"
@@ -1503,16 +1511,16 @@ items:
                     href: ../standard/base-types/how-to-strip-invalid-characters-from-a-string.md
                   - name: Vérifier que des chaînes sont dans un format d’adresse e-mail valide
                     href: ../standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md
-      - name: Analyser des chaînes
-        items:
-          - name: Vue d'ensemble
-            href: ../standard/base-types/parsing-strings.md
-          - name: Analyser des chaînes numériques
-            href: ../standard/base-types/parsing-numeric.md
-          - name: Analyser des chaînes de date et heure
-            href: ../standard/base-types/parsing-datetime.md
-          - name: Analyser d’autres chaînes
-            href: ../standard/base-types/parsing-other.md
+          - name: Analyser (convertir) des chaînes
+            items:
+              - name: Vue d'ensemble
+                href: ../standard/base-types/parsing-strings.md
+              - name: Analyser des chaînes numériques
+                href: ../standard/base-types/parsing-numeric.md
+              - name: Analyser des chaînes de date et heure
+                href: ../standard/base-types/parsing-datetime.md
+              - name: Analyser d’autres chaînes
+                href: ../standard/base-types/parsing-other.md
       - name: Attributs
         items:
           - name: Vue d'ensemble
