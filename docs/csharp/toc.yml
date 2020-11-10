@@ -48,6 +48,8 @@
               href: tutorials/intro-to-csharp/object-oriented-programming.md
     - name: Explorer les instructions de niveau supérieur
       href: tutorials/exploration/top-level-statements.md
+    - name: Explorer les modèles dans les objets
+      href: tutorials/exploration/patterns-objects.md
     - name: "Explorer C#\_6"
       href: tutorials/exploration/csharp-6.yml
     - name: Explorer l’interpolation de chaîne - interactif
@@ -224,7 +226,7 @@
     - name: Index de l’article
       displayName: how to's
       href: how-to/index.md
-    - name: Analyser des chaînes à l’aide de `String.Split`
+    - name: Fractionner des chaînes en sous-chaînes
       href: how-to/parse-strings-using-split.md
     - name: Concaténer des chaînes
       href: how-to/concatenate-multiple-strings.md
@@ -234,7 +236,7 @@
       href: how-to/modify-string-contents.md
     - name: Comparer des chaînes
       href: how-to/compare-strings.md
-    - name: 'Caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as'
+    - name: Effectuer des casts sécurisés avec les critères spéciaux et les opérateurs is/as
       href: how-to/safely-cast-using-pattern-matching-is-and-as-operators.md
 - name: Kit SDK .NET Compiler Platform (API Roslyn)
   items:
