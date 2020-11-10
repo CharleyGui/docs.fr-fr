@@ -4,12 +4,12 @@ description: Découvrez comment déconstruire des tuples et d’autres types.
 ms.technology: csharp-fundamentals
 ms.date: 11/23/2017
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 8defd75a7cdff3490d2b0a6097ec2a898576e113
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 96168b729ae3ec11d7a38444b8c100bdbff4efbf
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174164"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439701"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types
 
@@ -57,7 +57,7 @@ Notez que vous ne pouvez pas mélanger des déclarations et des affectations à 
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Déconstruction d’éléments d’un tuple en ignorant des éléments
 
-Souvent, lors de la déconstruction d’un tuple, vous êtes intéressé seulement par les valeurs de certains éléments. À compter de C# 7.0, vous pouvez tirer parti de la prise en charge des *éléments ignorés*, qui sont des variables en écriture seule dont vous avez choisi d’ignorer les valeurs. Un élément ignoré est désigné par un caractère de soulignement (« \_ ») dans une affectation. Vous pouvez ignorer autant de valeurs que vous le souhaitez ; pour représenter toutes les valeurs, utilisez l’élément ignoré unique, `_`.
+Souvent, lors de la déconstruction d’un tuple, vous êtes intéressé seulement par les valeurs de certains éléments. À compter de C# 7.0, vous pouvez tirer parti de la prise en charge des *éléments ignorés* , qui sont des variables en écriture seule dont vous avez choisi d’ignorer les valeurs. Un élément ignoré est désigné par un caractère de soulignement (« \_ ») dans une affectation. Vous pouvez ignorer autant de valeurs que vous le souhaitez ; pour représenter toutes les valeurs, utilisez l’élément ignoré unique, `_`.
 
 L’exemple suivant illustre l’utilisation de tuples avec des éléments ignorés. La méthode `QueryCityDataForYears` retourne un tuple de 6 éléments avec le nom d’une ville, sa région, une année, la population de la ville pour cette année, une seconde année et la population de la ville pour cette seconde année. L’exemple montre la différence de population entre ces deux années. Parmi les données disponibles dans le tuple, nous ne sommes pas intéressés par la région de la ville, et nous connaissons le nom de la ville et les deux dates au moment du design. Par conséquent, nous sommes intéressés seulement par les deux valeurs de la population stockées dans le tuple et nous pouvons gérer ses valeurs restantes comme éléments ignorés.  
 
@@ -76,7 +76,7 @@ Vous pouvez alors déconstruire une instance de la classe `Person` nommée `p` a
 L’exemple suivant surcharge la méthode `Deconstruct` de façon retourner différentes combinaisons des propriétés d’un objet `Person`. Les différentes surcharges retournent :
 
 - Un prénom et un nom.
-- Un prénom, un nom et un deuxième nom.
+- Prénom, deuxième prénom et nom de famille.
 - Un prénom, un nom, un nom de ville et un nom d’état.
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class2.cs)]

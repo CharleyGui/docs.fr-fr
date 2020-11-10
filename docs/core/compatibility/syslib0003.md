@@ -3,12 +3,12 @@ title: AVERTISSEMENT SYSLIB0003
 description: En savoir plus sur les obsoletions qui génèrent un avertissement au moment de la compilation SYSLIB0003.
 ms.topic: reference
 ms.date: 10/20/2020
-ms.openlocfilehash: ca774f3e4b5132cf40c632f7c49d3f183f5d578f
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: a9f925904641a1aa4fd229c81ff680850e4f84bd
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92333291"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439961"
 ---
 # <a name="syslib0003-code-access-security-is-not-supported"></a>SYSLIB0003 : la sécurité d’accès du code n’est pas prise en charge
 
@@ -209,6 +209,8 @@ La liste complète des API obsolètes de l’autorité de certification est la s
   ```
 
 - Si vous en avez <xref:System.Security.Permissions.PrincipalPermission> l’exigence, consultez les conseils pour [SYSLIB0002 : PrincipalPermissionAttribute est obsolète](syslib0002.md#workarounds). Ces instructions s’appliquent à la fois à <xref:System.Security.Permissions.PrincipalPermission> et <xref:System.Security.Permissions.PrincipalPermissionAttribute> .
+
+[!INCLUDE [suppress-syslib-warning](../../../includes/suppress-syslib-warning.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

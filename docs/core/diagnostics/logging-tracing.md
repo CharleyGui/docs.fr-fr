@@ -2,12 +2,12 @@
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: 33c78ecc839b552267ad43dd00b7d627e756a939
-ms.sourcegitcommit: e078b7540a8293ca1b604c9c0da1ff1506f0170b
+ms.openlocfilehash: e3f809dab64d66d8b4ba16ca55fc426309614715
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997696"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439922"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -17,11 +17,11 @@ La journalisation et le suivi sont en fait deux noms pour la même technique. La
 
 Cette technique simple est étonnamment puissante. Il peut être utilisé dans les situations où un débogueur échoue :
 
-- Les problèmes survenant sur de longues périodes de temps peuvent être difficiles à déboguer avec un débogueur traditionnel. Les journaux permettent d’obtenir des informations détaillées sur de longues périodes de temps. En revanche, les débogueurs sont limités à l’analyse en temps réel.
-- Les applications multithread et les applications distribuées sont souvent difficiles à déboguer.  L’attachement d’un débogueur tend à modifier les comportements. Les journaux détaillés peuvent être analysés en fonction des besoins pour comprendre les systèmes complexes.
-- Les problèmes dans les applications distribuées peuvent provenir d’une interaction complexe entre de nombreux composants et il n’est pas judicieux de connecter un débogueur à chaque partie du système.
-- De nombreux services ne doivent pas être bloqués. L’attachement d’un débogueur provoque souvent des échecs de dépassement de délai.
-- Les problèmes ne sont pas toujours prévus. La journalisation et le suivi sont conçus pour une faible surcharge, afin que les programmes puissent toujours être enregistrées en cas de problème.
+- Les problèmes survenant sur de longues périodes peuvent être difficiles à déboguer avec un débogueur traditionnel. Les journaux permettent d’obtenir des informations détaillées sur de longues périodes. En revanche, les débogueurs se limitent à une analyse en temps réel.
+- Les applications multithread et les applications distribuées sont souvent difficiles à déboguer.  Attacher un débogueur tend à modifier les comportements. Les journaux détaillés peuvent être analysés en fonction des besoins pour comprendre les systèmes complexes.
+- Les problèmes dans les applications distribuées peuvent provenir d’une interaction complexe entre de nombreux composants, et il n’est pas judicieux de connecter un débogueur à chaque partie du système.
+- De nombreux services ne devraient pas être bloqués. Attacher un débogueur provoque souvent des échecs de dépassement de délai.
+- Les problèmes ne sont pas toujours anticipés. La journalisation et le suivi sont conçus pour entraîner une faible surcharge, afin que les programmes puissent toujours enregistrer les données en cas de problème.
 
 ## <a name="net-core-apis"></a>API .NET Core
 
@@ -32,18 +32,18 @@ Les <xref:System.Console?displayProperty=nameWithType> <xref:System.Diagnostics.
 Vous avez le choix de l’API de style d’impression à utiliser. :
 
 - <xref:System.Console?displayProperty=nameWithType>
-  - Toujours activé et écrit toujours sur la console.
-  - Utile pour les informations que votre client peut avoir besoin de voir dans la version.
-  - Étant donné qu’il s’agit de l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Ce code de débogage n’est souvent jamais archivé dans le contrôle de code source.
+  - Toujours activé et toujours écrire dans la console.
+  - C’est approche est utile pour les informations dont votre client peut avoir besoin lors de la mise en production.
+  - Comme il s’agit de l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Souvent, ce code de débogage n’est jamais archivé dans le contrôle de code source.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Activé uniquement lorsque `TRACE` est défini.
+  - Activé uniquement quand `TRACE` est défini.
   - Écrit dans attaché <xref:System.Diagnostics.Trace.Listeners> , par défaut <xref:System.Diagnostics.DefaultTraceListener> .
   - Utilisez cette API lors de la création de journaux qui seront activés dans la plupart des builds.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Activé uniquement lorsque `DEBUG` est défini.
+  - Activé uniquement quand `DEBUG` est défini.
   - Écrit dans un débogueur attaché.
   - Lors de l' `*nix` écriture dans stderr si `COMPlus_DebugWriteToStdErr` est défini.
-  - Utilisez cette API lors de la création de journaux qui seront activés uniquement dans les versions Debug.
+  - Utilisez cette API lors de la création de journaux qui seront activés uniquement dans les builds de débogage.
 
 ### <a name="logging-events"></a>Journalisation des événements
 
@@ -53,11 +53,12 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
   - EventSource est l’API principale de suivi .NET Core racine.
   - Disponible dans toutes les versions de .NET Standard.
   - Autorise uniquement le suivi des objets sérialisables.
-  - Écrit dans les [écouteurs d’événements](xref:System.Diagnostics.Tracing.EventListener)attachés.
-  - .NET Core fournit des écouteurs pour :
+  - Peut être consommé dans le processus via n’importe quelle instance [EventListener](xref:System.Diagnostics.Tracing.EventListener) configurée pour utiliser EventSource.
+  - Peut être consommé hors processus via :
     - EventPipe de .NET Core sur toutes les plateformes
     - [Suivi d’événements pour Windows (ETW)](/windows/win32/etw/event-tracing-portal)
     - [Infrastructure de suivi LTTng pour Linux](https://lttng.org/)
+      - Procédure pas à pas : [collecte d’une trace LTTng à l’aide de PerfCollect](trace-perfcollect-lttng.md).
 
 - <xref:System.Diagnostics.DiagnosticSource?displayProperty=nameWithType>
   - Inclus dans .NET Core et en tant que [package NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource) pour .NET Framework.

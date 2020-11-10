@@ -1,27 +1,27 @@
 ---
 title: Frameworks cibles dans des projets de type SDK-.NET
 description: En savoir plus sur les frameworks cibles pour les applications et les bibliothèques .NET.
-ms.date: 09/08/2020
+ms.date: 11/06/2020
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 85bc05f07cfcc5f59a8a27790ee3d78a497cecdc
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: a37634bc9f4cbee5f7901fcb085d3801a7452573
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223466"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441035"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
-Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez la version cible de .NET Framework dans votre fichier projet à l’aide des monikers du Framework cible (TFM).
+Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez la version cible de .NET Framework dans votre fichier projet à l’aide d’un moniker de Framework cible (TFM).
 
 Une application ou une bibliothèque peut cibler une version de [.NET Standard](net-standard.md). Les versions .NET Standard représentent des ensembles d’API standard sur toutes les implémentations de .NET. Par exemple, une bibliothèque peut cibler .NET Standard 1.6 et accéder aux API qui fonctionnent sur .NET Core et .NET Framework en utilisant la même base de code.
 
 Une application ou une bibliothèque peut également cibler une implémentation spécifique de .NET pour accéder aux API spécifiques à l’implémentation. Par exemple, une application qui cible Xamarin. iOS (par exemple, `Xamarin.iOS10` ) a accès aux wrappers d’API iOS fournis par Xamarin pour iOS 10, ou une application qui cible plateforme Windows universelle (UWP `uap10.0` ) a accès aux API qui se compilent pour les appareils qui exécutent Windows 10.
 
-Pour certains frameworks cibles (par exemple, .NET Framework), les API sont définies par les assemblys que le Framework installe sur un système et peuvent inclure des API de Framework d’application (par exemple, ASP.NET).
+Pour certains frameworks cibles, tels que .NET Framework, les API sont définies par les assemblys que le Framework installe sur un système et peuvent inclure des API de Framework d’application (par exemple, ASP.NET).
 
-Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et .NET Core), les API sont définies par les packages inclus dans l’application ou la bibliothèque. Un *métapackage* est un package NuGet qui n’a aucun contenu propre, mais qui est une liste de dépendances (autres packages). Un framework cible basé sur un package NuGet spécifie implicitement un métapackage qui référence tous les packages constituant le framework.
+Pour les frameworks cibles basés sur les packages (par exemple, .NET 5, .NET Core et .NET Standard), les API sont définies par les packages inclus dans l’application ou la bibliothèque. Un *métapackage* est un package NuGet qui n’a aucun contenu propre, mais qui est une liste de dépendances (autres packages). Un framework cible basé sur un package NuGet spécifie implicitement un métapackage qui référence tous les packages constituant le framework.
 
 ## <a name="latest-versions"></a>Dernières versions
 
@@ -29,9 +29,10 @@ Le tableau suivant définit les frameworks cibles les plus courants, la façon d
 
 | Version cible de .NET Framework      | Latest <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
 | :-: | :-: | :-: | :-: |
+| .NET 5                | 5.0                         | .net 5.0                         | N/A                                     |
 | .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |
 | .NET Core             | 3.1                         | netcoreapp 3.1                  | 2.1                                     |
-| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
+| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
 
 ## <a name="supported-target-frameworks"></a>Frameworks cibles pris en charge
 
@@ -41,7 +42,7 @@ Un framework cible est généralement référencé par un TFM. Le tableau suivan
 | -------------------------- | --- |
 | .NET 5 (et .NET Core)     | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1<br>netcoreapp2.2<br>netcoreapp 3.0<br>netcoreapp 3.1<br>.net 5.0 * |
 | .NET Standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0<br>netstandard 2.1 |
-| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472<br>net48 |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472<br>net48 |
 | Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
@@ -63,13 +64,54 @@ Pour chaque TFM .NET 5,0 et versions ultérieures, par exemple, `net5.0` il exis
 | \<base-tfm>-Watchos | net 5.0-Watchos |
 | \<base-tfm>7.5.0 | .net 5.0-Windows |
 
-Vous pouvez également spécifier une version de système d’exploitation facultative, par exemple `net5.0-ios12.0` .
+Le `net5.0` TFM comprend uniquement des technologies qui fonctionnent sur plusieurs plateformes. La spécification d’un TFM spécifique au système d’exploitation rend les API spécifiques à un système d’exploitation disponibles pour votre application, par exemple, les liaisons Windows Forms ou iOS. Les TFM spécifiques au système d’exploitation héritent également de toutes les API disponibles pour le `net5.0` TFM.
 
-Pour plus d’informations sur les TFM de .NET 5, consultez [Target Framework Names in .net 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md).
+Pour que votre application soit portable sur différentes plateformes, vous pouvez cibler plusieurs TFM spécifiques au système d’exploitation et ajouter des protecteurs de plateforme autour des appels d’API spécifiques au système d’exploitation à l’aide de `#if` directives de préprocesseur.
+
+Le tableau suivant montre la compatibilité de .NET 5 TFM avec TFM pour les versions antérieures de .NET.
+
+| TFM             | Compatible avec                                            | Notes |
+|-----------------|------------------------------------------------------------|-|
+| .net 5.0          | net1.. 4 (avec avertissement NU1701)<br />netcoreapp1.. 3,1 (avertissement quand WinForms ou WPF est référencé)<br />netstandard1.. 2,1 | |
+| .net 5.0-Android  | xamarin. Android (plus tout le reste hérité de `net5.0` ) | |
+| net 5.0-iOS      | xamarin. iOS (plus tout le reste hérité de `net5.0` ) | |
+| .net 5.0-MacOS    | xamarin. Mac (plus tout le reste hérité de `net5.0` ) | |
+| .net 5.0-TVos     | xamarin. TVos (plus tout le reste hérité de `net5.0` ) | |
+| net 5.0-Watchos  | xamarin. Watchos (plus tout le reste hérité de `net5.0` ) | |
+| .net 5.0-Windows  | netcoreapp1.. 3,1 (plus tout le reste hérité de `net5.0` ) | Comprend les API WinForms, WPF et UWP.<br />Pour plus d’informations, consultez [appeler des api Windows Runtime dans les applications de bureau](/windows/apps/desktop/modernize/desktop-to-uwp-enhance). |
+
+#### <a name="suggested-targets"></a>Cibles suggérées
+
+Utilisez ces instructions pour déterminer les TFM à utiliser dans votre application :
+
+- Les applications portables sur plusieurs plateformes doivent cibler `net5.0` . Cela comprend la plupart des bibliothèques, mais également ASP.NET Core et Entity Framework.
+
+- Les bibliothèques spécifiques à la plateforme doivent cibler des versions spécifiques à la plateforme. Par exemple, les projets WinForms et WPF doivent cibler `net5.0-windows` .
+
+- Les modèles d’application multiplateforme (Xamarin Forms, ASP.NET Core) et les packs de pont (Xamarin Essentials) doivent être au moins ciblés `net5.0` , mais ils peuvent également cibler des versions supplémentaires spécifiques à la plateforme pour éclairer davantage d’API ou de fonctionnalités.
+
+#### <a name="os-version-in-tfms"></a>Version du système d’exploitation dans TFM
+
+Vous pouvez également spécifier une version de système d’exploitation facultative à la fin du TFM, par exemple, `net5.0-ios13.0` , qui indique les API disponibles pour votre application. (Le kit de développement logiciel (SDK) .NET 5 sera mis à jour pour inclure la prise en charge des versions plus récentes du système d’exploitation.) Pour accéder aux API récemment publiées, incrémentez la version du système d’exploitation dans le TFM. Vous pouvez toujours rendre votre application compatible avec les versions antérieures du système d’exploitation (et ajouter des protections des appels aux API de version ultérieure) en ajoutant l' `SupportedOSPlatformVersion` élément à votre fichier projet. L' `SupportedOSPlatformVersion` élément indique la version minimale du système d’exploitation requise pour exécuter votre application.
+
+Par exemple, l’extrait de fichier de projet suivant spécifie que les API iOS 14 sont disponibles pour l’application, mais elles peuvent s’exécuter sur des ordinateurs iOS 13 ou version ultérieure.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-ios14.0</TargetFramework>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion> (minimum os platform version)
+  </PropertyGroup>
+
+  ...
+
+</Project>
+```
 
 ## <a name="how-to-specify-a-target-framework"></a>Comment spécifier une version cible de .NET Framework
 
-Les frameworks cibles sont spécifiés dans un fichier projet. Quand vous spécifiez un framework cible unique, utilisez l’élément **TargetFramework**. Le fichier de projet d’application console suivant montre comment cibler .NET 5,0 :
+Les frameworks cibles sont spécifiés dans un fichier projet. Quand un Framework cible unique est spécifié, utilisez l' [élément TargetFramework](../core/project-sdk/msbuild-props.md#targetframework). Le fichier de projet d’application console suivant montre comment cibler .NET 5,0 :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -84,7 +126,7 @@ Les frameworks cibles sont spécifiés dans un fichier projet. Quand vous spéci
 
 Quand vous spécifiez plusieurs frameworks cibles, vous pouvez référencer conditionnellement des assemblys pour chaque framework cible. Dans votre code, vous pouvez effectuer une compilation conditionnelle par rapport à ces assemblys en utilisant des symboles de préprocesseur avec la structure logique *if-then-else*.
 
-Le projet de bibliothèque suivant cible les API de .NET Standard ( `netstandard1.4` ) et .NET Framework ( `net40` et `net45` ). Utilisez l’élément pluriel **TargetFrameworks** avec plusieurs frameworks cibles. Les `Condition` attributs incluent des packages spécifiques à l’implémentation lorsque la bibliothèque est compilée pour les deux .NET Framework TFM :
+Le projet de bibliothèque suivant cible les API de .NET Standard ( `netstandard1.4` ) et .NET Framework ( `net40` et `net45` ). Utilisez l' [élément TargetFrameworks](../core/project-sdk/msbuild-props.md#targetframeworks) pluriel avec plusieurs frameworks cibles. Les `Condition` attributs incluent des packages spécifiques à l’implémentation lorsque la bibliothèque est compilée pour les deux .NET Framework TFM :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -148,9 +190,11 @@ Les frameworks cibles suivants sont dépréciés. Les packages qui ciblent ces f
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Noms des frameworks cibles dans .NET 5](https://github.com/dotnet/designs/blob/master/accepted/2020/net5/net5.md)
 - [Développer des bibliothèques avec des outils multiplateformes](../core/tutorials/libraries.md)
 - [.NET Standard](net-standard.md)
 - [Gestion des versions de .NET Core](../core/versions/index.md)
 - [dotnet/standard GitHub repository](https://github.com/dotnet/standard) (Dépôt GitHub dotnet/standard)
 - [NuGet Tools GitHub Repository](https://github.com/joelverhagen/NuGetTools) (Dépôt GitHub des outils NuGet)
 - [Framework Profiles in .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (Profils de framework dans .NET)
+- [Analyseur de compatibilité de plateforme](analyzers/platform-compat-analyzer.md)

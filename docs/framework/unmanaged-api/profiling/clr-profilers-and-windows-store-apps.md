@@ -12,12 +12,12 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-ms.openlocfilehash: 8922f057cb59258e2dd002cec4015af518dc255f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 04b4b529a5a1adaa40e804988dee506942c863c4
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553354"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440078"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profileurs CLR et applications du Windows Store
 
@@ -25,7 +25,7 @@ Cette rubrique explique ce que vous devez savoir lorsque vous écrivez des outil
 
 ## <a name="introduction"></a>Introduction
 
-Si vous l’avez fait au-delà du paragraphe d’introduction, vous êtes familiarisé avec l’API de profilage CLR. Vous avez déjà écrit un outil de diagnostic qui fonctionne bien sur les applications de bureau gérées. À présent, vous êtes curieux de savoir ce que vous devez faire pour que votre outil fonctionne avec une application Windows Store gérée. Peut-être avez-vous déjà essayé de faire ce travail et découvert qu’il ne s’agit pas d’une tâche simple. En effet, il existe un certain nombre de considérations qui peuvent ne pas être évidentes pour tous les développeurs d’outils. Exemple :
+Si vous l’avez fait au-delà du paragraphe d’introduction, vous êtes familiarisé avec l’API de profilage CLR. Vous avez déjà écrit un outil de diagnostic qui fonctionne bien sur les applications de bureau gérées. À présent, vous êtes curieux de savoir ce que vous devez faire pour que votre outil fonctionne avec une application Windows Store gérée. Peut-être avez-vous déjà essayé de faire ce travail et découvert qu’il ne s’agit pas d’une tâche simple. En effet, il existe un certain nombre de considérations qui peuvent ne pas être évidentes pour tous les développeurs d’outils. Par exemple :
 
 - Les applications du Windows Store s’exécutent dans un contexte avec des autorisations extrêmement réduites.
 
@@ -302,7 +302,7 @@ Pendant ce temps, votre DLL de profileur peut faire la même chose, bien qu’il
 
 Si vous souhaitez une sémantique de signalisation simple entre votre interface utilisateur du profileur et la DLL du profileur, vous pouvez utiliser des événements dans les applications du Windows Store ainsi que les applications de bureau.
 
-À partir de votre DLL du profileur, vous pouvez simplement appeler la fonction [CreateEventEx](/windows/desktop/api/synchapi/nf-synchapi-createeventexa) pour créer un événement nommé portant le nom de votre choix. Exemple :
+À partir de votre DLL du profileur, vous pouvez simplement appeler la fonction [CreateEventEx](/windows/desktop/api/synchapi/nf-synchapi-createeventexa) pour créer un événement nommé portant le nom de votre choix. Par exemple :
 
 ```cpp
 // Profiler DLL in Windows Store app (C++).
@@ -356,7 +356,7 @@ Votre DLL du profileur peut faire la distinction entre les fichiers WinMD et d�
 
 ### <a name="reading-metadata-from-winmds"></a>Lecture des métadonnées à partir de Winmd
 
-Les fichiers WinMD, comme les modules standard, contiennent des métadonnées qui peuvent être lues via les [API de métadonnées](../metadata/index.md). Toutefois, le CLR mappe Windows Runtime types aux types de .NET Framework lorsqu’il lit les fichiers WinMD afin que les développeurs qui programment dans du code managé et consomment le fichier WinMD peuvent avoir une expérience de programmation plus naturelle. Pour obtenir des exemples de ces mappages, consultez [.NET Framework la prise en charge des applications et des Windows Runtime du Windows Store](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
+Les fichiers WinMD, comme les modules standard, contiennent des métadonnées qui peuvent être lues via les [API de métadonnées](../metadata/index.md). Toutefois, le CLR mappe Windows Runtime types aux types de .NET Framework lorsqu’il lit les fichiers WinMD afin que les développeurs qui programment dans du code managé et consomment le fichier WinMD peuvent avoir une expérience de programmation plus naturelle. Pour obtenir des exemples de ces mappages, consultez [.NET Framework la prise en charge des applications et des Windows Runtime du Windows Store](../../cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
 
 Par conséquent, quelle vue votre profileur obtiendra-t-il lorsqu’il utilise les API de métadonnées : la vue brute Windows Runtime ou la vue de .NET Framework mappée ?  Réponse : c’est à vous de faire.
 
@@ -406,7 +406,7 @@ Il est possible d’utiliser l’API de profilage CLR pour analyser le code mana
 
 **L’interaction du CLR avec le Windows Runtime**
 
-- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 
 **Applications du Windows Store**
 

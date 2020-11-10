@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET Core dans un répertoire.
 ms.date: 02/24/2020
-ms.openlocfilehash: 2c33f99ce652dadc6e0c1a4c5e9e78fff9f54254
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: e35a0671cb964e7d9b68ed5bbe261045038229aa
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654892"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440567"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -45,7 +45,7 @@ La sortie de la commande `dotnet publish` est prête pour le déploiement sur un
 
 ### <a name="implicit-restore"></a>Restauration implicite
 
-[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
+[!INCLUDE[dotnet restore note](../../../includes/dotnet-restore-note.md)]
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -59,7 +59,7 @@ Vous pouvez également définir des propriétés relatives à la publication en 
 dotnet publish -p:PublishProfile=FolderProfile
 ```
 
-L’exemple précédent utilise le fichier *FolderProfile. pubxml* qui se trouve dans le dossier * \<project_folder> /Properties/PublishProfiles* . Si vous spécifiez un chemin d’accès et une extension de fichier lors de la définition de la `PublishProfile` propriété, ils sont ignorés. MSBuild par défaut examine le dossier *Properties/PublishProfiles* et suppose l’extension de fichier *pubxml* . Pour spécifier le chemin d’accès et le nom de fichier, y compris l’extension, définissez la propriété à la `PublishProfileFullPath` place de la `PublishProfile` propriété.
+L’exemple précédent utilise le fichier *FolderProfile. pubxml* qui se trouve dans le dossier *\<project_folder> /Properties/PublishProfiles* . Si vous spécifiez un chemin d’accès et une extension de fichier lors de la définition de la `PublishProfile` propriété, ils sont ignorés. MSBuild par défaut examine le dossier *Properties/PublishProfiles* et suppose l’extension de fichier *pubxml* . Pour spécifier le chemin d’accès et le nom de fichier, y compris l’extension, définissez la propriété à la `PublishProfileFullPath` place de la `PublishProfile` propriété.
 
 Pour plus d’informations, consultez les ressources suivantes :
 
@@ -125,7 +125,7 @@ Pour plus d’informations, consultez les ressources suivantes :
   
   S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du Framework et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
 
-  Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject*et que le dossier de sortie de publication est *MyProject/Publish*, et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput*, ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
+  Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject* et que le dossier de sortie de publication est *MyProject/Publish* , et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput* , ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
 
   ```xml
   <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>

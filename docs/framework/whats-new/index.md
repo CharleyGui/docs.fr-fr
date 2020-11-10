@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 13346836b6cc1c9db4a1b6fd93a11615c2a843c0
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: da0e92f394507a37b0b6c163b41a575abc1c1a2b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687565"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441107"
 ---
 # <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
 
@@ -71,7 +71,7 @@ L’amélioration de l’accessibilité, pour qu’une application puisse fourni
 
 #### <a name="base-classes"></a>Classes de base
 
-**Impact FIPS réduit sur le chiffrement** . Dans les versions précédentes de .NET Framework, les classes de fournisseur de services de chiffrement managées telles que <xref:System.Security.Cryptography.SHA256Managed> lèvent une <xref:System.Security.Cryptography.CryptographicException> lorsque les bibliothèques de chiffrement du système sont configurées en « mode FIPS ». Ces exceptions étaient levées car les versions managées des classes de fournisseur de services de chiffrement, contrairement aux bibliothèques de chiffrement du système, ne disposaient pas de la certification de normes FIPS (Federal Information Processing Standard) 140-2. Peu de développeurs disposant de machines de développement en mode FIPS, les exceptions étaient généralement levées dans des systèmes de production.
+**Impact FIPS réduit sur le chiffrement**. Dans les versions précédentes de .NET Framework, les classes de fournisseur de services de chiffrement managées telles que <xref:System.Security.Cryptography.SHA256Managed> lèvent une <xref:System.Security.Cryptography.CryptographicException> lorsque les bibliothèques de chiffrement du système sont configurées en « mode FIPS ». Ces exceptions étaient levées car les versions managées des classes de fournisseur de services de chiffrement, contrairement aux bibliothèques de chiffrement du système, ne disposaient pas de la certification de normes FIPS (Federal Information Processing Standard) 140-2. Peu de développeurs disposant de machines de développement en mode FIPS, les exceptions étaient généralement levées dans des systèmes de production.
 
 Par défaut, dans les applications ciblant .NET Framework 4.8, les classes de chiffrement managées suivantes ne lèvent plus une exception <xref:System.Security.Cryptography.CryptographicException> dans ce cas :
 
@@ -190,11 +190,11 @@ Pour activer la prise en charge de la mise à l’échelle de la haute résoluti
 
 Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et améliorations suivantes :
 
-**Améliorations apportées au compilateur JIT** . Le compilateur juste-à-temps (JIT) de .NET Framework 4.8 est basé sur le compilateur JIT de .NET Core 2.1. La plupart des optimisations et tous les correctifs de bogues apportés au compilateur JIT de .NET Core 2.1 sont inclus dans le compilateur JIT de .NET Framework 4.8.
+**Améliorations apportées au compilateur JIT**. Le compilateur juste-à-temps (JIT) de .NET Framework 4.8 est basé sur le compilateur JIT de .NET Core 2.1. La plupart des optimisations et tous les correctifs de bogues apportés au compilateur JIT de .NET Core 2.1 sont inclus dans le compilateur JIT de .NET Framework 4.8.
 
-**Améliorations apportées à NGEN** . La gestion de la mémoire du runtime a été améliorée pour les images [Native Image Generator](../tools/ngen-exe-native-image-generator.md) (NGEN) afin que les données mappées à partir d’images NGEN ne résident pas en mémoire. Cela réduit la surface d’exposition aux attaques qui tentent d’exécuter du code arbitraire en modifiant la mémoire qui sera exécutée.
+**Améliorations apportées à NGEN**. La gestion de la mémoire du runtime a été améliorée pour les images [Native Image Generator](../tools/ngen-exe-native-image-generator.md) (NGEN) afin que les données mappées à partir d’images NGEN ne résident pas en mémoire. Cela réduit la surface d’exposition aux attaques qui tentent d’exécuter du code arbitraire en modifiant la mémoire qui sera exécutée.
 
-**Analyse de logiciel anti-programme malveillant pour tous les assemblys** . Dans les versions précédentes de .NET Framework, le runtime analyse tous les assemblys chargés à partir du disque à l’aide de Windows Defender ou d’un logiciel anti-programme malveillant tiers. Les assemblys chargés à partir d’autres sources, via la méthode <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> par exemple, ne sont toutefois pas analysés et sont susceptibles de contenir des programmes malveillants non détectés. À compter de .NET Framework 4.8 exécuté sur Windows 10, le runtime déclenche une analyse via des solutions anti-programme malveillant qui implémentent l’[interface d’analyse anti-programme malveillant (AMSI)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
+**Analyse de logiciel anti-programme malveillant pour tous les assemblys**. Dans les versions précédentes de .NET Framework, le runtime analyse tous les assemblys chargés à partir du disque à l’aide de Windows Defender ou d’un logiciel anti-programme malveillant tiers. Les assemblys chargés à partir d’autres sources, via la méthode <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> par exemple, ne sont toutefois pas analysés et sont susceptibles de contenir des programmes malveillants non détectés. À compter de .NET Framework 4.8 exécuté sur Windows 10, le runtime déclenche une analyse via des solutions anti-programme malveillant qui implémentent l’[interface d’analyse anti-programme malveillant (AMSI)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
 
 <a name="v472"></a>
 
@@ -204,7 +204,7 @@ Le runtime de .NET Framework 4.8 comprend les nouvelles modifications et amélio
 
 - [Classes de base](#core-472)
 - [ASP.NET](#asp-net472)
-- [Mise en réseau](#net472)
+- [Réseau](#net472)
 - [SQL](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
@@ -592,7 +592,7 @@ Pour une application Windows Forms, la solution de contournement précédente co
 
 - [Classes de base](#core471)
 - [CLR (Common Language Runtime)](#clr)
-- [Mise en réseau](#net471)
+- [Réseau](#net471)
 - [ASP.NET](#asp-net471)
 
 .NET Framework 4.7.1 met également l’accent sur l’amélioration de l’accessibilité pour qu’une application puisse fournir une expérience appropriée aux utilisateurs de technologies d’assistance. Pour plus d’informations sur les améliorations apportées à l’accessibilité dans .NET Framework 4.7.1, consultez [Nouveautés de l’accessibilité dans .NET Framework](whats-new-in-accessibility.md).
@@ -674,7 +674,7 @@ Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux dévelo
 .NET Framework 4.7 apporte de nouvelles fonctionnalités dans les domaines suivants :
 
 - [Classes de base](#Core47)
-- [Mise en réseau](#net47)
+- [Réseau](#net47)
 - [ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
 - [Windows Forms](#wf47)
@@ -720,11 +720,11 @@ _ *Extensibilité du cache d’objets**
 
 À compter de .NET Framework 4.7, ASP.NET ajoute un nouvel ensemble d’API permettant aux développeurs de remplacer les implémentations ASP.NET par défaut pour la mise en cache d’objets en mémoire et la surveillance de la mémoire. Les développeurs peuvent maintenant remplacer un des trois composants suivants si l’implémentation ASP.NET n’est pas appropriée :
 
-- **Object Cache Store** . À l’aide de la nouvelle section de configuration des fournisseurs de cache, les développeurs peuvent incorporer de nouvelles implémentations d’un cache d’objets pour une application ASP.NET en utilisant la nouvelle interface **ICacheStoreProvider** .
+- **Object Cache Store**. À l’aide de la nouvelle section de configuration des fournisseurs de cache, les développeurs peuvent incorporer de nouvelles implémentations d’un cache d’objets pour une application ASP.NET en utilisant la nouvelle interface **ICacheStoreProvider**.
 
 - **Surveillance** de la mémoire. Le moniteur de mémoire par défaut dans ASP.NET avertit les applications lorsqu’elles approchent la limite en octets privés définie pour le processus, ou lorsque la machine manque de mémoire RAM physique disponible. Lorsque ces limites sont proches, des notifications sont déclenchées. Pour certaines applications, les notifications sont déclenchées trop près des limites configurées pour permettre des réactions opportunes. Les développeurs peuvent désormais écrire leurs propres moniteurs de mémoire pour remplacer le moniteur par défaut en utilisant la propriété <xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType>.
 
-- **Memory Limit Reactions** . Par défaut, ASP.NET tente de tronquer le cache d’objets et appelle régulièrement <xref:System.GC.Collect%2A?displayProperty=nameWithType> quand la limite en octets privés du processus est proche. Pour certaines applications, la fréquence des appels à <xref:System.GC.Collect%2A?displayProperty=nameWithType> ou la quantité de mémoire cache tronquée sont inefficaces. Les développeurs peuvent maintenant remplacer ou compléter le comportement par défaut en souscrivant des implémentations **IObserver** auprès du moniteur de mémoire de l’application.
+- **Memory Limit Reactions**. Par défaut, ASP.NET tente de tronquer le cache d’objets et appelle régulièrement <xref:System.GC.Collect%2A?displayProperty=nameWithType> quand la limite en octets privés du processus est proche. Pour certaines applications, la fréquence des appels à <xref:System.GC.Collect%2A?displayProperty=nameWithType> ou la quantité de mémoire cache tronquée sont inefficaces. Les développeurs peuvent maintenant remplacer ou compléter le comportement par défaut en souscrivant des implémentations **IObserver** auprès du moniteur de mémoire de l’application.
 
 <a name="wcf47"></a>
 
@@ -746,10 +746,10 @@ Windows Communication Foundation (WCF) ajoute les fonctionnalités et les modifi
 
 WCF inclut plusieurs modifications du code qui éliminent la concurrence critique, améliorant ainsi les performances et la fiabilité des options de sérialisation. notamment :
 
-- Meilleure prise en charge pour le mélange de code synchrone et asynchrone dans les appels à **SocketConnection.BeginRead** et à **SocketConnection.Read** .
-- Meilleure fiabilité lors de l’abandon d’une connexion avec **SharedConnectionListener** et **DuplexChannelBinder** .
+- Meilleure prise en charge pour le mélange de code synchrone et asynchrone dans les appels à **SocketConnection.BeginRead** et à **SocketConnection.Read**.
+- Meilleure fiabilité lors de l’abandon d’une connexion avec **SharedConnectionListener** et **DuplexChannelBinder**.
 - Meilleure fiabilité des opérations de sérialisation lors de l’appel de la méthode <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=nameWithType>.
-- Meilleure fiabilité lors de la suppression d’un objet waiter en appelant la méthode **ChannelSynchronizer.RemoveWaiter** .
+- Meilleure fiabilité lors de la suppression d’un objet waiter en appelant la méthode **ChannelSynchronizer.RemoveWaiter**.
 
 <a name="wf47"></a>
 
@@ -819,7 +819,7 @@ Les validateurs d’annotations de données vous permettent d’effectuer une va
 
 2. Le fichier de ressources est stocké dans le dossier App_LocalResources.
 
-3. Le nom du fichier de ressources localisées se présente sous la forme `DataAnnotation.Localization.{` *nom* `}.resx` , où *nom* est un nom de culture au format *languagecode* `-` *pays/regionCode* ou *languagecode* .
+3. Le nom du fichier de ressources localisées se présente sous la forme `DataAnnotation.Localization.{` *nom* `}.resx` , où *nom* est un nom de culture au format *languagecode* `-` *pays/regionCode* ou *languagecode*.
 
 4. Le nom de clé de la ressource est la chaîne assignée à l’attribut <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType>, et sa valeur correspond au message d’erreur localisé.
 
@@ -1585,9 +1585,9 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
     Il est préférable d'utiliser un format homogène pour les commutateurs, car ils constituent un contrat formel exposé par une bibliothèque. Voici les deux formats évidents.
 
-    - *Commutateur* . *espace de noms* . *nom_commutateur*
+    - *Commutateur*. *espace de noms*. *nom_commutateur*
 
-    - *Commutateur* . *bibliothèque* . *nom_commutateur*
+    - *Commutateur*. *bibliothèque*. *nom_commutateur*
 
   - **Changements apportés au modèle asynchrone basé sur les tâches (TAP)**
 
@@ -1712,7 +1712,7 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
   La valeur par défaut est `false`.
 
-- **Mise en réseau**
+- **Réseau**
 
   - **Réutilisation de socket**
 
@@ -1758,7 +1758,7 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
 - **Packages du .NET Framework open source**
 
-  Les packages .NET Core, tels que les collections immuables, les [API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd)et les API de mise en réseau telles que celles qui se trouvent dans l' <xref:System.Net.Http> espace de noms, sont désormais disponibles en tant que packages Open source sur [GitHub](https://github.com/). Pour accéder au code, consultez [.net sur GitHub](https://github.com/dotnet/runtime). Pour plus d’informations, notamment sur la manière de contribuer à ces packages, consultez [.NET Core et Open-Source](../get-started/net-core-and-open-source.md), la [page d’accueil .NET sur GitHub](https://github.com/dotnet/home).
+  Les packages .NET Core, tels que les collections immuables, les [API SIMD](https://www.nuget.org/packages/Microsoft.Bcl.Simd)et les API de mise en réseau telles que celles qui se trouvent dans l' <xref:System.Net.Http> espace de noms, sont désormais disponibles en tant que packages Open source sur [GitHub](https://github.com/). Pour accéder au code, consultez [.net sur GitHub](https://github.com/dotnet/runtime). Pour plus d’informations et pour savoir comment contribuer à ces packages, consultez [Introduction to .net](../../core/introduction.md), [.net, page d’GitHub](https://github.com/dotnet/home).
 
 <a name="v452"></a>
 
@@ -2081,13 +2081,13 @@ Dans .NET Framework 4,5, plusieurs nouvelles fonctionnalités ont été ajoutée
 
 - Fonctionnalités améliorées du Concepteur de flux de travail, dont notamment :
 
-  - Fonctions de recherche de flux de travail améliorées dans Visual Studio, notamment **Recherche rapide** et **Rechercher dans les fichiers** .
+  - Fonctions de recherche de flux de travail améliorées dans Visual Studio, notamment **Recherche rapide** et **Rechercher dans les fichiers**.
 
   - Possibilité de créer automatiquement une activité de séquence lorsqu'une deuxième activité enfant est ajoutée à une activité de conteneur, et d'inclure les deux activités dans l'activité de séquence.
 
   - Prise en charge des panoramiques, ce qui permet à la partie visible d'un flux de travail d'être modifiée sans utiliser les barres de défilement.
 
-  - Nouvelle vue **Structure du document** qui affiche les composants d’un flux de travail en mode Plan sous forme d’arborescence et vous permet de sélectionner un composant dans la vue **Structure du document** .
+  - Nouvelle vue **Structure du document** qui affiche les composants d’un flux de travail en mode Plan sous forme d’arborescence et vous permet de sélectionner un composant dans la vue **Structure du document**.
 
   - Possibilité d'ajouter des annotations aux activités.
 

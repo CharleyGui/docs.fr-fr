@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cryptography [.NET], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 8a8b5988a13ab571284b08c7aaece3542467aa71
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 75bb0fa52b8002efe0027f026de8c0910735e55e
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556967"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440970"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 
@@ -41,23 +41,23 @@ CryptoStream cryptStream = new CryptoStream(myStream, aes.CreateEncryptor(key, i
   
 Une fois ce code exécuté, toutes les données écrites dans l’objet **CryptoStream** sont chiffrées à l’aide de l’algorithme AES.  
   
-L'exemple suivant montre l'intégralité des processus de création de flux, de chiffrement de flux, d'écriture au sein de flux et de fermeture de flux. Cet exemple crée un flux de fichier qui est chiffré à l’aide de la classe **CryptoStream** et de la classe **AES** . Un message est écrit dans le flux chiffré avec la classe <xref:System.IO.StreamWriter> .
+L'exemple suivant montre l'intégralité des processus de création de flux, de chiffrement de flux, d'écriture au sein de flux et de fermeture de flux. Cet exemple crée un flux de fichier qui est chiffré à l’aide de la classe **CryptoStream** et de la classe **AES** . Le vecteur d’enregistrement généré est écrit au début de et <xref:System.IO.FileStream> peut donc être lu et utilisé pour le déchiffrement. Un message est ensuite écrit dans le flux chiffré avec la <xref:System.IO.StreamWriter> classe. Même si la même clé peut être utilisée plusieurs fois pour chiffrer et déchiffrer des données, il est recommandé de générer à chaque fois un nouveau code de fin aléatoire. Ainsi, les données chiffrées sont toujours différentes, même si le texte brut est le même.
   
 :::code language="csharp" source="snippets/encrypting-data/csharp/aes-encrypt.cs":::
 :::code language="vb" source="snippets/encrypting-data/vb/aes-encrypt.vb":::
 
-Le code chiffre le flux à l’aide de l’algorithme symétrique AES et écrit « Hello World ! » dans le flux. Si le code réussit, il crée un fichier chiffré nommé *TestData.txt* et affiche le texte suivant dans la console :  
+Le code chiffre le flux à l’aide de l’algorithme symétrique AES et écrit IV, puis « Hello World ! » chiffré. dans le flux. Si le code réussit, il crée un fichier chiffré nommé *TestData.txt* et affiche le texte suivant dans la console :
   
 ```console  
-The text was encrypted.  
+The text was encrypted.
 ```  
 
-Vous pouvez déchiffrer le fichier à l’aide de l’exemple de déchiffrement symétrique dans [déchiffrement des données](decrypting-data.md). Cet exemple et cet exemple spécifient la même clé et le même vecteur d’en-dessus.
+Vous pouvez déchiffrer le fichier à l’aide de l’exemple de déchiffrement symétrique dans [déchiffrement des données](decrypting-data.md). Cet exemple et cet exemple spécifient la même clé.
 
-Toutefois, si une exception est levée, le code affiche le texte suivant dans la console :  
+Toutefois, si une exception est levée, le code affiche le texte suivant dans la console :
   
 ```console  
-The encryption failed.  
+The encryption failed.
 ```
 
 ## <a name="asymmetric-encryption"></a>Chiffrement asymétrique

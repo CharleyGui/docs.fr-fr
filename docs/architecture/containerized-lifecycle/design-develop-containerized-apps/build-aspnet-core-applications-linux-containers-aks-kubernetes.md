@@ -2,12 +2,12 @@
 title: Créer des applications ASP.NET Core déployées en tant que conteneurs Linux dans des clusters AKS/Kubernetes
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 ms.date: 08/06/2020
-ms.openlocfilehash: 8b3141d79eeb252ec3721d57293bed0e335b41d3
-ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
+ms.openlocfilehash: 831d2372131e20788d0f48190eb8c600aa02485c
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91844561"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440827"
 ---
 # <a name="build-aspnet-core-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Créez ASP.NET Core applications déployées en tant que conteneurs Linux dans un AKS/Kubernetes Orchestrator
 
@@ -33,7 +33,7 @@ Cet exemple utilise deux projets simples basés sur des modèles Visual Studio. 
 
 **Figure 4-35**. Création d’une application Web ASP.NET Core dans Visual Studio 2019.
 
-Pour créer l’exemple de projet dans Visual Studio, sélectionnez **fichier**  >  **nouveau**  >  **projet**, sélectionnez le type de projet **Web** , puis le modèle d' **application Web ASP.net Core** . Vous pouvez également rechercher le modèle si vous en avez besoin.
+Pour créer l’exemple de projet dans Visual Studio, sélectionnez **fichier**  >  **nouveau**  >  **projet** , sélectionnez le type de projet **Web** , puis le modèle d' **application Web ASP.net Core** . Vous pouvez également rechercher le modèle si vous en avez besoin.
 
 Entrez ensuite le nom et l’emplacement de l’application, comme indiqué dans l’image suivante.
 
@@ -51,7 +51,7 @@ Notez que la prise en charge de l’ancrage n’est pas activée pour l’instan
 
 Si vous disposez d’une version antérieure de .NET Core, vous pouvez télécharger et installer la version 3,1 à partir de <https://dotnet.microsoft.com/download> .
 
-Pour vous montrer que vous pouvez « Dockeriser » votre projet à tout moment, vous allez ajouter la prise en charge de l’ancrage maintenant. Cliquez avec le bouton droit sur le nœud du projet dans Explorateur de solutions puis sélectionnez **Ajouter**  >  la**prise en charge** de l’ancrage dans le menu contextuel.
+Pour vous montrer que vous pouvez « Dockeriser » votre projet à tout moment, vous allez ajouter la prise en charge de l’ancrage maintenant. Cliquez avec le bouton droit sur le nœud du projet dans Explorateur de solutions puis sélectionnez **Ajouter**  >  la **prise en charge** de l’ancrage dans le menu contextuel.
 
 ![Option de menu contextuel pour ajouter la prise en charge de l’ancrage à un projet existant : cliquez avec le bouton droit (sur le projet) > ajoutez > prise en charge de l’ancrage.](media/build-aspnet-core-applications-linux-containers-aks-kubernetes/add-docker-support-to-project.png)
 
@@ -193,24 +193,24 @@ Vous pouvez télécharger les images vers le [Azure Container Registry (ACR)](ht
 
 ### <a name="create-an-acr-instance"></a>Créer une instance ACR
 
-Exécutez la commande suivante à partir de la commande **AZ CLI**:
+Exécutez la commande suivante à partir de la commande **AZ CLI** :
 
 ```powershell
 az acr create --name exploredocker --resource-group explore-docker-aks-rg --sku basic --admin-enabled
 ```
 
 > [!NOTE]
-> Le nom du registre de conteneurs (par exemple `exploredocker` ,) doit être unique dans Azure et contenir des caractères alphanumériques 5-50. Pour plus d’informations, consultez [créer un registre de conteneurs](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
+> Le nom du registre de conteneurs (par exemple `exploredocker` ,) doit être unique dans Azure et contenir des caractères alphanumériques 5-50. Pour plus d’informations, consultez [créer un registre de conteneurs](/azure/container-registry/container-registry-get-started-azure-cli#create-a-container-registry)
 
 ### <a name="create-the-image-in-release-mode"></a>Créer l’image en mode Mise en production
 
-Vous allez maintenant créer l’image en mode de **mise** en production (prêt pour la production) en passant à la **version Release**, comme illustré dans la figure 4-46, et en exécutant l’application comme vous l’avez fait précédemment.
+Vous allez maintenant créer l’image en mode de **mise** en production (prêt pour la production) en passant à la **version Release** , comme illustré dans la figure 4-46, et en exécutant l’application comme vous l’avez fait précédemment.
 
 ![Option de barre d’outils dans Visual Studio pour créer en mode Mise en production.](media/build-aspnet-core-applications-linux-containers-aks-kubernetes/select-release-mode.png)
 
 **Figure 4-46**. Sélection du mode Mise en production
 
-Si vous exécutez la `docker images` commande, vous verrez les deux images créées, une pour `debug` (**dev**) et l’autre pour le `release` mode (le**plus récent**).
+Si vous exécutez la `docker images` commande, vous verrez les deux images créées, une pour `debug` ( **dev** ) et l’autre pour le `release` mode (le **plus récent** ).
 
 ### <a name="create-a-new-tag-for-the-image"></a>Créer une balise pour l’image
 
@@ -371,7 +371,7 @@ spec:
 > [!TIP]
 > Vous pouvez voir comment créer le cluster AKS pour cet exemple dans la section [**Déployer sur Azure Kubernetes Service (AKS)**](deploy-azure-kubernetes-service.md) de ce guide.
 
-Maintenant, vous êtes presque prêt à déployer à l’aide de **kubectl**, mais vous devez d’abord récupérer les informations d’identification du cluster AKS avec cette commande :
+Maintenant, vous êtes presque prêt à déployer à l’aide de **kubectl** , mais vous devez d’abord récupérer les informations d’identification du cluster AKS avec cette commande :
 
 ```console
 az aks get-credentials --resource-group explore-docker-aks-rg --name explore-docker-aks

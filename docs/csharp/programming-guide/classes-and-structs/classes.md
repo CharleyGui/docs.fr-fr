@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 68b41eef0b604b80a9659eddf45d6512eac44fd6
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 8fa8d33ce9ece20a18c5c1542bc44cf569e9fa2e
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91607731"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440404"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
@@ -27,7 +27,7 @@ MyClass mc = new MyClass();
 MyClass mc2 = mc;
 ```
 
-Quand l’objet est créé, une quantité de mémoire suffisante est allouée sur le tas managé de l’objet spécifié, et la variable contient uniquement une référence à l’emplacement de cet objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé et, dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../../../standard/garbage-collection/fundamentals.md).  
+Quand l’objet est créé, une quantité de mémoire suffisante est allouée sur le tas managé de l’objet spécifié, et la variable contient uniquement une référence à l’emplacement de cet objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection* ). Toutefois, le garbage collection est également optimisé et, dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../../../standard/garbage-collection/fundamentals.md).  
   
 ## <a name="declaring-classes"></a>Déclaration de classes
 
@@ -41,7 +41,7 @@ Quand l’objet est créé, une quantité de mémoire suffisante est allouée su
  }
 ```
 
- Le mot clé `class` est précédé du niveau d’accès. Comme [public](../../language-reference/keywords/public.md) est utilisé dans ce cas, n’importe qui peut créer des instances de cette classe. Le nom de la classe suit le mot clé `class`. Le nom de la classe doit être un [nom d’identificateur](../inside-a-program/identifier-names.md) C# valide. Le reste de la définition est le corps de la classe, où le comportement et les données sont définis. Les champs, propriétés, méthodes et événements d’une classe sont désignés collectivement par le terme « *membres de classe* ».  
+ Le mot clé `class` est précédé du niveau d’accès. Comme [public](../../language-reference/keywords/public.md) est utilisé dans ce cas, n’importe qui peut créer des instances de cette classe. Le nom de la classe suit le mot clé `class`. Le nom de la classe doit être un [nom d’identificateur](../inside-a-program/identifier-names.md) C# valide. Le reste de la définition est le corps de la classe, où le comportement et les données sont définis. Les champs, propriétés, méthodes et événements d’une classe sont désignés collectivement par le terme «  *membres de classe*  ».  
   
 ## <a name="creating-objects"></a>Création d'objets
 
@@ -59,7 +59,7 @@ Bien qu’ils soient parfois employés indifféremment, une classe et un objet s
  Customer object2;
 ```
 
- Nous vous déconseillons de créer des références d’objet comme celle-ci, sans référence à un objet, car toute tentative d’accès à un objet à l’aide d’une telle référence échoue au moment de l’exécution. Vous pouvez toutefois créer une telle référence pour faire référence à un objet : soit en créant un objet, soit en l’assignant à un objet existant, comme suit :  
+ Nous vous déconseillons de créer des références d’objet comme celle-ci, sans référence à un objet, car toute tentative d’accès à un objet à l’aide d’une telle référence échoue au moment de l’exécution. Toutefois, une telle référence peut être faite pour faire référence à un objet, soit en créant un nouvel objet, soit en lui assignant un objet existant, tel que celui-ci :  
 
  ```csharp
  Customer object3 = new Customer();
@@ -70,9 +70,9 @@ Bien qu’ils soient parfois employés indifféremment, une classe et un objet s
   
 ## <a name="class-inheritance"></a>Héritage de classe  
 
-Les classes prennent entièrement en charge l’*héritage*, caractéristique fondamentale de la programmation orientée objet. Quand vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n’est pas définie comme [sealed](../../language-reference/keywords/sealed.md), et d’autres classes peuvent hériter de votre classe et substituer des méthodes virtuelles de la classe.
+Les classes prennent entièrement en charge l’ *héritage* , caractéristique fondamentale de la programmation orientée objet. Lorsque vous créez une classe, vous pouvez hériter de toute autre classe qui n’est pas définie comme [sealed](../../language-reference/keywords/sealed.md), et d’autres classes peuvent hériter de votre classe et remplacer les méthodes virtuelles de la classe. En outre, vous pouvez implémenter une ou plusieurs interfaces.
 
-L’héritage se fait par le biais d’une *dérivation*, ce qui signifie qu’une classe est déclarée à l’aide d’une *classe de base* dont elle hérite les données et le comportement. Pour spécifier une classe de base, ajoutez deux-points et le nom de la classe de base après le nom de la classe dérivée, comme suit :  
+L’héritage se fait par le biais d’une *dérivation* , ce qui signifie qu’une classe est déclarée à l’aide d’une *classe de base* dont elle hérite les données et le comportement. Pour spécifier une classe de base, ajoutez deux-points et le nom de la classe de base après le nom de la classe dérivée, comme suit :  
 
  ```csharp
  public class Manager : Employee
@@ -84,13 +84,13 @@ L’héritage se fait par le biais d’une *dérivation*, ce qui signifie qu’u
 
 Quand une classe déclare une classe de base, elle hérite de tous les membres de la classe de base à l’exception des constructeurs. Pour plus d’informations, consultez [Héritage](inheritance.md).
   
-Contrairement à C++, une classe en C# ne peut hériter directement que d’une classe de base. Toutefois, une classe de base pouvant elle-même hériter d’une autre classe, une classe peut hériter indirectement de plusieurs classes de base. En outre, une classe peut implémenter directement plusieurs interfaces. Pour plus d'informations, consultez [Interfaces](../interfaces/index.md).  
+Contrairement à C++, une classe en C# ne peut hériter directement que d’une classe de base. Toutefois, une classe de base pouvant elle-même hériter d’une autre classe, une classe peut hériter indirectement de plusieurs classes de base. En outre, une classe peut implémenter directement une ou plusieurs interfaces. Pour plus d'informations, consultez [Interfaces](../interfaces/index.md).  
   
 Une classe peut être déclarée [abstract](../../language-reference/keywords/abstract.md). Une classe abstraite contient des méthodes abstraites qui ont une définition de signature, mais aucune implémentation. Les classes abstraites ne peuvent pas être instanciées. Elles peuvent être utilisées uniquement à travers des classes dérivées qui implémentent les méthodes abstraites. En revanche, une classe [sealed](../../language-reference/keywords/sealed.md) ne permet pas à d’autres classes de dériver d’elle. Pour plus d’informations, consultez [Classes abstract et sealed, et membres de classe](abstract-and-sealed-classes-and-class-members.md).  
   
 Les définitions de classe peuvent être fractionnées entre différents fichiers sources. Pour plus d’informations, consultez la page [Classes et méthodes partielles](partial-classes-and-methods.md).  
   
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant définit une classe publique qui contient une [propriété implémentée automatiquement](auto-implemented-properties.md), une méthode et une méthode spéciale appelée un constructeur. Pour plus d’informations, consultez les rubriques [Propriétés](properties.md), [Méthodes](methods.md) et [Constructeurs](constructors.md). Les instances de la classe sont ensuite instanciées à l’aide du mot clé `new`.  
   
@@ -103,7 +103,7 @@ L’exemple suivant définit une classe publique qui contient une [propriété i
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Programmation orientée objet dans Visual Basic](../../tutorials/intro-to-csharp/object-oriented-programming.md)
+- [Programmation orientée objet](../../tutorials/intro-to-csharp/object-oriented-programming.md)
 - [Polymorphisme](polymorphism.md)
 - [Noms d’identificateurs](../inside-a-program/identifier-names.md)
 - [Members](members.md) (Membres)

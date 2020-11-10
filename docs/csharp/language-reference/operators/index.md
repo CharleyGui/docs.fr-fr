@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 854d7c1278319869104e1758ba91eb3594741126
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9e7ca2087938317f7369043e21fd455dbad7f07b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063183"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439659"
 ---
 # <a name="c-operators-and-expressions-c-reference"></a>Opérateurs et expressions c# (référence C#)
 
@@ -81,9 +81,10 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \! x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-expression), [await](await.md), [&x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true et false](true-false-operators.md) | Unaire |
 | [x.. y](member-access-operators.md#range-operator-) | Plage |
 | [switch](switch-expression.md) | Expression `switch` |
+| [with](with-expression.md) | Expression `with` |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x / y](arithmetic-operators.md#division-operator-), [x % y](arithmetic-operators.md#remainder-operator-) | Multiplicatif|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Additive |
-| [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Shift |
+| [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Maj |
 | [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-), [est](type-testing-and-cast.md#is-operator), [comme](type-testing-and-cast.md#as-operator) | Relations et test de type |
 | [x = = y](equality-operators.md#equality-operator-), [x ! = y](equality-operators.md#inequality-operator-) | Égalité |
 | `x & y` | [Logique booléen AND](boolean-logical-operators.md#logical-and-operator-) ou [logique bitwise AND](bitwise-and-shift-operators.md#logical-and-operator-) |
@@ -93,7 +94,7 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | [x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) | OR conditionnel |
 | [x ?? y](null-coalescing-operator.md) | Opérateur de fusion de Null |
 | [c ? t : f](conditional-operator.md) | Opérateur conditionnel |
-| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x &= y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>= y](bitwise-and-shift-operators.md#compound-assignment), x [?? = y](null-coalescing-operator.md),[=>](lambda-operator.md) | Affectation et déclaration lambda |
+| [x = y](assignment-operator.md), [x + = y](arithmetic-operators.md#compound-assignment), [x-= y](arithmetic-operators.md#compound-assignment), [x * = y](arithmetic-operators.md#compound-assignment), [x/= y](arithmetic-operators.md#compound-assignment), [x% = y](arithmetic-operators.md#compound-assignment), [x &= y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^ = y](boolean-logical-operators.md#compound-assignment), [x <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>= y](bitwise-and-shift-operators.md#compound-assignment), x [?? = y](null-coalescing-operator.md), [=>](lambda-operator.md) | Affectation et déclaration lambda |
 
 ## <a name="operator-associativity"></a>Associativité des opérateurs
 
@@ -134,4 +135,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 - [Informations de référence sur C#](../index.md)
 - [Surcharge d’opérateur](operator-overloading.md)
-- [Arborescences de l’expression](../../programming-guide/concepts/expression-trees/index.md)
+- [Arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md)

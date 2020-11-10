@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: b70eb44c3d92e03ab4b33f81b87d48c70797cec5
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917027"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441009"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -70,7 +70,7 @@ L'allocation de mémoire à partir du tas managé est plus rapide que l'allocati
 
 ### <a name="memory-release"></a>Mise en mémoire
 
-Le moteur d'optimisation du « garbage collector » détermine le meilleur moment pour lancer une opération garbage collection sur base des allocations de mémoire effectuées. Lorsque le « garbage collector » effectue une opération garbage collection, il libère la mémoire pour les objets qui ne sont plus utilisées par l'application. Il détermine les objets qui ne sont plus utilisés en examinant les *racines*de l’application. Les racines de l’application comprennent des champs statiques, des variables et des paramètres locaux sur la pile d’un thread et des Registres du processeur. Chaque racine fait référence à un objet du tas managé ou, à défaut, a la valeur Null. Le Garbage collector a accès à la liste des racines actives entretenues par le compilateur juste-à-temps (JIT) et le runtime. À l’aide de cette liste, le garbage collector crée un graphique qui contient tous les objets accessibles à partir des racines.
+Le moteur d'optimisation du « garbage collector » détermine le meilleur moment pour lancer une opération garbage collection sur base des allocations de mémoire effectuées. Lorsque le « garbage collector » effectue une opération garbage collection, il libère la mémoire pour les objets qui ne sont plus utilisées par l'application. Il détermine les objets qui ne sont plus utilisés en examinant les *racines* de l’application. Les racines d’une application incluent des champs statiques, des variables locales sur la pile d’un thread, des registres de l’UC, des handles GC et la file d’attente Finalize. Chaque racine fait référence à un objet du tas managé ou, à défaut, a la valeur Null. Le garbage collector peut demander le reste du runtime pour ces racines. À l’aide de cette liste, le garbage collector crée un graphique qui contient tous les objets accessibles à partir des racines.
 
 Les objets non compris dans le graphique ne sont pas accessibles à partir des racines de l'application. Le garbage collector considère que les objets inaccessibles sont nettoyés et libère la mémoire qui leur est allouée. Au cours d'une opération garbage collection, le « garbage collector » examine le tas managé pour y détecter les blocs de mémoire occupés par des objets inaccessibles. Chaque fois qu'il détecte un objet inaccessible, il utilise une fonction de copie de mémoire pour compacter les objets accessibles en mémoire et libérer les blocs d'espaces d'adressage alloués aux objets inaccessibles. Lorsque la mémoire allouée aux objets accessibles a été réduite, le « garbage collector » procède aux corrections de pointeurs nécessaires pour que les racines des applications pointent vers les nouveaux emplacements des objets. Il positionne aussi le pointeur du tas managé après le dernier objet accessible.
 
@@ -138,7 +138,7 @@ Le garbage collection se produit principalement avec la récupération d’objet
 
   Les objets de génération 2 qui survivent à une collection restent dans la génération 2 jusqu’à ce qu’ils soient considérés comme inaccessibles dans une prochaine collection.
   
-  Les objets sur le tas d’objets volumineux (parfois appelé *génération 3*) sont également collectés dans la génération 2.
+  Les objets sur le tas d’objets volumineux (parfois appelé *génération 3* ) sont également collectés dans la génération 2.
 
 Les opérations garbage collection se produisent sur des générations spécifiques, selon les conditions spécifiées. La collecte d'une génération signifie la collecte des objets de cette génération et de toutes ses générations plus jeunes. Une garbage collection de génération 2 est également appelée garbage collection complète, car elle libère des objets dans toutes les générations (autrement dit, tous les objets du tas managé).
 
@@ -160,7 +160,7 @@ Les générations éphémères sont allouées dans le segment de mémoire appel�
 
 La taille du segment éphémère varie selon qu’il s’agit d’un système 32 bits ou 64 bits et du type de garbage collector en cours d’exécution (station de[travail ou GC de serveur](workstation-server-gc.md)). Le tableau suivant indique les tailles par défaut du segment éphémère.
 
-|GC station de travail/serveur|32 bits|64 bits|
+|GC station de travail/serveur|32 bits|64 bits|
 |-|-------------|-------------|
 |Garbage collector pour station de travail|16 Mo|256 octets|
 |Garbage collector pour serveur|64 Mo|4 Go|

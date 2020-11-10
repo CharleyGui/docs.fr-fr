@@ -3,12 +3,12 @@ title: AVERTISSEMENT SYSLIB0006
 description: En savoir plus sur les obsoletions qui génèrent un avertissement au moment de la compilation SYSLIB0006.
 ms.topic: reference
 ms.date: 10/20/2020
-ms.openlocfilehash: 45d2d8ec6ad99996f8b8f46d0c2e0ac2e02cf450
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: 222b669a8a0260713e85721e6031144bb7bda5cc
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92333303"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440658"
 ---
 # <a name="syslib0006-threadabort-is-not-supported"></a>SYSLIB0006 : thread. Abort n’est pas pris en charge
 
@@ -17,7 +17,7 @@ Les API suivantes sont marquées comme obsolètes, à partir de .NET 5,0. L’ut
 - <xref:System.Threading.Thread.Abort?displayProperty=nameWithType>
 - <xref:System.Threading.Thread.Abort(System.Object)?displayProperty=nameWithType>
 
-## <a name="workaround"></a>Solution de contournement
+## <a name="workarounds"></a>Solutions de contournement
 
 Utilisez un <xref:System.Threading.CancellationToken> pour abandonner le traitement d’une unité de travail au lieu d’appeler <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> . L’exemple suivant illustre l’utilisation de <xref:System.Threading.CancellationToken> .
 
@@ -35,6 +35,8 @@ void ProcessPendingWorkItemsNew(CancellationToken cancellationToken)
     }
 }
 ```
+
+[!INCLUDE [suppress-syslib-warning](../../../includes/suppress-syslib-warning.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

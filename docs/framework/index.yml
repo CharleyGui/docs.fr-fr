@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 376eeb8d1a195bed959e04a715ca9661d2f14db2
-  ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
+  ms.openlocfilehash: 54133d7cd73c9a4d097b601f92b685c27575dc8b
+  ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/08/2020
-  ms.locfileid: "91844587"
+  ms.lasthandoff: 11/10/2020
+  ms.locfileid: "94439506"
 landingContent:
 - title: En savoir plus sur .NET Framework
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
     links:
     - text: Présentation de .NET Framework
       url: get-started/overview.md
-    - text: Configuration requise
+    - text: Configuration système requise
       url: get-started/system-requirements.md
   - linkListType: concept
     links:
@@ -37,12 +37,12 @@ landingContent:
   - linkListType: reference
     links:
     - text: API .NET Framework
-      url: /dotnet/api/?view=netframework-4.8
+      url: ../../api/index.md?view=netframework-4.8
 - title: Installer .NET Framework
   linkLists:
   - linkListType: download
     links:
-    - text: Télécharger le kit de développement logiciel (SDK) .NET
+    - text: Télécharger le Kit de développement logiciel (SDK) .NET
       url: https://dotnet.microsoft.com/download
   - linkListType: overview
     links:

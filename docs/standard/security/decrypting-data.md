@@ -12,12 +12,12 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-ms.openlocfilehash: 2ba4c3ba43d688aeb66c67ec3f94f4a503d47892
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7e8fe5a8b7ed7c217a31a8ee91a5d111257fed45
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556980"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440983"
 ---
 # <a name="decrypting-data"></a>Déchiffrement de données
 
@@ -27,7 +27,7 @@ Le déchiffrement est l'opération inverse du chiffrement. Pour le chiffrement �
 
 Le déchiffrement de données chiffrées à l'aide d'algorithmes symétriques est similaire au processus utilisé pour chiffrer les données à l'aide d'algorithmes symétriques. La <xref:System.Security.Cryptography.CryptoStream> classe est utilisée avec les classes de chiffrement symétrique fournies par .net pour déchiffrer les données lues à partir de n’importe quel objet de flux managé.
 
-L’exemple suivant illustre la création d’une nouvelle instance de la classe d’implémentation par défaut pour l' <xref:System.Security.Cryptography.Aes> algorithme. L’instance est utilisée pour effectuer un déchiffrement sur un <xref:System.Security.Cryptography.CryptoStream> objet. Cet exemple crée d’abord une nouvelle instance de la classe d’implémentation **AES** . Ensuite, il crée un objet **CryptoStream** et l'initialise à la valeur d'un flux managé appelé `myStream`. Ensuite, la méthode **CreateDecryptor** de la classe **AES** reçoit les mêmes clé et vecteur d’utilisation que pour le chiffrement et est ensuite transmise au constructeur **CryptoStream** .
+L’exemple suivant illustre la création d’une nouvelle instance de la classe d’implémentation par défaut pour l' <xref:System.Security.Cryptography.Aes> algorithme. L’instance est utilisée pour effectuer un déchiffrement sur un <xref:System.Security.Cryptography.CryptoStream> objet. Cet exemple crée d’abord une nouvelle instance de la <xref:System.Security.Cryptography.Aes> classe d’implémentation. Il lit la valeur du vecteur d’initialisation (IV) à partir d’une variable de flux managée, `myStream` . Ensuite, il instancie un <xref:System.Security.Cryptography.CryptoStream> objet et l’initialise à la valeur de l' `myStream` instance. La <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor%2A?displayProperty=nameWithType> méthode de l' <xref:System.Security.Cryptography.Aes> instance reçoit la valeur IV et la même clé que celle utilisée pour le chiffrement.
 
 ```vb
 Dim aes As Aes = Aes.Create()
@@ -39,98 +39,12 @@ Aes aes = Aes.Create();
 CryptoStream cryptStream = new CryptoStream(myStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read);
 ```
 
-L'exemple suivant montre l'intégralité des processus de création de flux, de déchiffrement de flux, de lecture depuis un flux et de fermeture de flux. Un objet de flux de fichier qui lit un fichier nommé *TestData.txt*est créé. Le flux de fichier est ensuite déchiffré à l’aide de la classe **CryptoStream** et de la classe **AES** . Cet exemple spécifie les valeurs Key et IV utilisées dans l’exemple de chiffrement symétrique pour le [chiffrement des données](encrypting-data.md). Il ne montre pas le code nécessaire pour chiffrer et transférer ces valeurs.
+L'exemple suivant montre l'intégralité des processus de création de flux, de déchiffrement de flux, de lecture depuis un flux et de fermeture de flux. Un objet de flux de fichier qui lit un fichier nommé *TestData.txt* est créé. Le flux de fichier est ensuite déchiffré à l’aide de la classe **CryptoStream** et de la classe **AES** . Cet exemple spécifie la valeur de clé utilisée dans l’exemple de chiffrement symétrique pour le [chiffrement des données](encrypting-data.md). Il ne montre pas le code nécessaire pour chiffrer et transférer ces valeurs.
 
-```vb
-Imports System
-Imports System.IO
-Imports System.Security.Cryptography
+:::code language="csharp" source="snippets/decrypting-data/csharp/aes-decrypt.cs":::
+:::code language="vb" source="snippets/decrypting-data/vb/aes-decrypt.vb":::
 
-Module Module1
-    Sub Main()
-            'The key and IV must be the same values that were used
-            'to encrypt the stream.
-            Dim key As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}
-            Dim iv As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}
-        Try
-            'Create a file stream.
-            Dim myStream As FileStream = new FileStream("TestData.txt", FileMode.Open)
-
-            'Create a new instance of the default Aes implementation class
-            'and decrypt the stream.
-            Dim aes As Aes = Aes.Create()
-
-            'Create an instance of the CryptoStream class, pass it the file stream, and decrypt
-            'it with the Rijndael class using the key and IV.
-            Dim cryptStream As New CryptoStream(myStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read)
-
-            'Read the stream.
-            Dim sReader As New StreamReader(cryptStream)
-
-            'Display the message.
-            Console.WriteLine("The decrypted original message: {0}", sReader.ReadToEnd())
-
-            'Close the streams.
-            sReader.Close()
-            myStream.Close()
-            'Catch any exceptions.
-        Catch
-            Console.WriteLine("The decryption Failed.")
-            Throw
-        End Try
-    End Sub
-End Module
-```
-
-```csharp
-using System;
-using System.IO;
-using System.Security.Cryptography;
-
-class Class1
-{
-    static void Main(string[] args)
-    {
-        //The key and IV must be the same values that were used
-        //to encrypt the stream.
-        byte[] key = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
-        byte[] iv = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
-        try
-        {
-            //Create a file stream.
-            FileStream myStream = new FileStream("TestData.txt", FileMode.Open);
-
-            //Create a new instance of the default Aes implementation class
-            Aes aes = Aes.Create();
-
-            //Create a CryptoStream, pass it the file stream, and decrypt
-            //it with the Aes class using the key and IV.
-            CryptoStream cryptStream = new CryptoStream(
-               myStream,
-               aes.CreateDecryptor(key, iv),
-               CryptoStreamMode.Read);
-
-            //Read the stream.
-            StreamReader sReader = new StreamReader(cryptStream);
-
-            //Display the message.
-            Console.WriteLine("The decrypted original message: {0}", sReader.ReadToEnd());
-
-            //Close the streams.
-            sReader.Close();
-            myStream.Close();
-        }
-        //Catch any exceptions.
-        catch
-        {
-            Console.WriteLine("The decryption failed.");
-            throw;
-        }
-    }
-}
-```
-
-L’exemple précédent utilise la même clé, le même vecteur d’aide et le même algorithme que ceux utilisés dans l’exemple de chiffrement symétrique pour le [chiffrement des données](encrypting-data.md). Il déchiffre le fichier *TestData.txt* créé par cet exemple et affiche le texte d’origine sur la console.
+L’exemple précédent utilise la même clé, et l’algorithme utilisé dans l’exemple de chiffrement symétrique pour le [chiffrement des données](encrypting-data.md). Il déchiffre le fichier *TestData.txt* créé par cet exemple et affiche le texte d’origine sur la console.
 
 ## <a name="asymmetric-decryption"></a>Déchiffrement asymétrique
 

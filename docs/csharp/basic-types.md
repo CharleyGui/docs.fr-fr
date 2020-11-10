@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 18a73e62bf45cdc4a4eaa0985c3fe036ac3b55a8
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 1ddc6b51e48758d203fa570a664fe06d0a5b52c5
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465258"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439714"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -23,8 +23,10 @@ Un type peut stocker les informations suivantes :
   
 - Membres (méthodes, champs, événements, etc.) que le type contient.  
   
-- Type de base dont le type est hérité.  
-  
+- Type de base dont le type est hérité.
+
+- Interface (s) qu’il implémente.
+
 - Emplacement où sera allouée la mémoire pour les variables au moment de l’exécution.  
   
 - Sortes d’opérations autorisées.  
@@ -62,7 +64,7 @@ Vous utilisez les constructions [struct](language-reference/builtin-types/struct
   
 ## <a name="generic-types"></a>Types génériques
 
-Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, <xref:System.Collections.Generic.List%601> a un paramètre de type qui, par Convention, reçoit le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets que la liste doit contenir, par exemple String :  
+Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret* ) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, <xref:System.Collections.Generic.List%601> a un paramètre de type qui, par Convention, reçoit le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets que la liste doit contenir, par exemple String :  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   

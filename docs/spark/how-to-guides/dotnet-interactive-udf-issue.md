@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: d07d757f9e47a84c75f46b190bdb613b8d2db7c1
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 8fb729a0b8220d15af641f916383bbd6146e2e33
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224137"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441074"
 ---
 # <a name="write-and-call-udfs-in-net-for-apache-spark-interactive-environments"></a>Écrire et appeler des fonctions définies par l’utilisateur dans .NET pour Apache Spark environnements interactifs
 
@@ -49,7 +49,7 @@ Voyons maintenant ce qui se passe si nous appelons la fonction UDF dans la même
 
 L’erreur en surbrillance ci-dessus est due au fait que les assemblys UDF doivent d’abord être compilés et expédiés aux Workers avant de pouvoir être appelés sur un tableau.
 
-Voici quelques points importants à prendre en compte lors de l’implémentation de fonctions définies par l’utilisateur dans .NET pour Apache Spark une expérience interactive (comme les [Notebooks Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)).
+Voici quelques points importants à prendre en compte lors de l’implémentation de fonctions définies par l’utilisateur dans .NET pour Apache Spark une expérience interactive (comme les [Notebooks Azure Synapse](/azure/synapse-analytics/spark/apache-spark-development-using-notebooks)).
 
 ## <a name="faqs"></a>FAQ
 

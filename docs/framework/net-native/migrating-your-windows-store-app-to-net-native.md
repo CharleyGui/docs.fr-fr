@@ -2,12 +2,12 @@
 title: Migration de votre application du Windows Store vers .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: cef985200efaf2ed7488d5e99394a5f01cc38594
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ee17e50590a80d8973197b46910d5e22296c265f
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556926"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440892"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>Migrer votre application du Windows Store vers .NET Native
 
@@ -208,7 +208,9 @@ Dans .NET Native :
 - L'en-tête `SetCookie2` dans les réponses est ignoré, car considéré comme obsolète.
 
 <a name="Interop"></a>
+
 ### <a name="interop-differences"></a>Différences concernant l'interopérabilité
+
  **API déconseillées**
 
  Un certain nombre d'API peu utilisées pour l'interopérabilité avec du code managé ont été déconseillées. En cas d’utilisation avec .NET Native, ces API peuvent lever une <xref:System.NotImplementedException> <xref:System.PlatformNotSupportedException> exception ou, ou entraîner une erreur du compilateur. Dans .NET pour les applications du Windows Store, ces API sont marquées comme obsolètes, même si les appeler génère un avertissement, plutôt qu'une erreur, du compilateur.
@@ -645,7 +647,7 @@ Quand vous exécutez des applications compilées à l’aide de .NET Native dans
 
 - <xref:System.TypeAccessException>
 
-**Génération d'applications**
+**Création d’applications**
 
 Recourez aux outils de génération x86 qui sont utilisés par défaut par Visual Studio. Nous vous déconseillons d'utiliser les outils MSBuild AMD64, qui se trouvent dans C:\Program Files (x86)\MSBuild\12.0\bin\amd64, car ils peuvent créer des problèmes de génération.
 
@@ -666,4 +668,4 @@ L’activation de .NET Native sur une bibliothèque de tests unitaires pour un p
 - [Prise en main](getting-started-with-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Vue d’ensemble de .NET pour les applications du Windows Store](/previous-versions/windows/apps/br230302(v=vs.140))
-- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

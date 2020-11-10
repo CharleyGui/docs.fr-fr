@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 02480641af5ad2c973f7dbbbc233d3d89ff4617e
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 3ab1c502508dd042940a6c5d2a73a5b71af6a9f4
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471667"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440840"
 ---
 # <a name="get-started-with-net-framework"></a>Prise en main de .NET Framework
 
@@ -40,6 +40,7 @@ ms.locfileid: "92471667"
 - Multiciblage. En ciblant [.NET Standard](../../standard/net-standard.md), les développeurs créent des bibliothèques de classes qui fonctionnent sur plusieurs plateformes .NET Framework prises en charge par cette version de la norme. Par exemple, les bibliothèques qui ciblent .NET Standard 2,0 peuvent être utilisées par les applications qui ciblent .NET Framework 4.6.1, .NET Core 2,0 et UWP 10.0.16299.
 
 <a name="ForUsers"></a>
+
 ## <a name="net-framework-for-users"></a>.NET Framework pour les utilisateurs
 
 Si vous ne développez pas d’applications .NET Framework, mais que vous les utilisez, vous n’êtes pas obligé d’avoir des connaissances spécifiques sur .NET Framework ou son fonctionnement. Pour l’essentiel, le Framework est totalement transparent pour les utilisateurs.
@@ -78,13 +79,12 @@ Pour plus d’informations sur le développement d’applications qui ciblent de
 | [Guide d'installation](../install/index.md) | Fournit des informations sur l’installation de .NET Framework. |
 | [Versions .NET Framework et hors plage](the-net-framework-and-out-of-band-releases.md) | Décrit les versions finales hors plage du .NET Framework et leur utilisation dans votre application. |
 | [Configuration requise](system-requirements.md) | Répertorie la configuration matérielle et logicielle requise pour l’exécution de .NET Framework. |
-| [.NET Core et Open-Source](net-core-and-open-source.md) | Décrit .NET Core par rapport à .NET Framework et comment accéder aux projets .NET Core Open source. |
 | [Documentation .NET Core](../../core/introduction.md) | Fournit la documentation de référence sur les concepts et les API de .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | Décrit .NET Standard, une spécification avec version que les implémentations de .NET individuelles prennent en charge pour garantir qu’un ensemble cohérent d’API est disponible sur plusieurs plateformes.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide .NET Framework](../index.yml)
+- [Guide de .NET Framework](../index.yml)
 - [Nouveautés](../whats-new/index.md)
 - [Navigateur d’API .NET](../../../api/index.md)
 - [Guide de développement](../development-guide.md)

@@ -2,12 +2,12 @@
 title: Marshaling de types - .NET
 description: Découvrez comment .NET marshale vos types en une représentation native.
 ms.date: 01/18/2019
-ms.openlocfilehash: bedaf49a5f7c5274f5e1bc7774490fec73651259
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 7fc3dfe950ecd3ed0ff5e4eb0e101c1596a831e1
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188391"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440996"
 ---
 # <a name="type-marshaling"></a>Marshaling de types
 
@@ -65,7 +65,7 @@ Le tableau suivant présente les règles de marshaling par défaut propres à Wi
 | `System.ArgIterator` | `va_list` | Non autorisé |
 | `System.Collections.IEnumerator` | `IEnumVARIANT*` | Non autorisé |
 | `System.Collections.IEnumerable` | `IDispatch*` | Non autorisé |
-| `System.DateTimeOffset` |  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit ||  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit |
+| `System.DateTimeOffset` |  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit |  représentant le nombre de cycles depuis le 1er janvier 1601 à minuit |
 
 Certains types ne peuvent être marshalés que comme paramètres, et non comme champs. :
 

@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 00d6bb513a6bd8ee511b69c07272f605c39e5619
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 7719742294c04aadbfd2e5f223040d3b5b485b5b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063239"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439740"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -119,4 +119,4 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 - [Migration de ASP.NET vers ASP.NET Core](/aspnet/core/migration/proper-to-2x)
 - [Migrer des applications WPF vers .NET Core](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)
-- [Migrer des applications Windows Forms vers .NET Core](winforms.md)
+- [Migrer des applications Windows Forms .NET Framework vers .NET](/dotnet/desktop/winforms/migration/?view=netdesktop-5.0&preserve-view=true)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: e0ca78871d1ddf851148096c8c6cfd10076763ab
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: ca579e837b801de237859963ede0e5a9a4bfbcbf
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400877"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439467"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 
@@ -37,6 +37,29 @@ La mise à jour de Windows 10 mai 2019 et les versions ultérieures incluent [ic
 
 > [!NOTE]
 > Même quand vous utilisez ICU, `CurrentCulture` les `CurrentUICulture` membres, et `CurrentRegion` continuent d’utiliser les API du système d’exploitation Windows pour honorer les paramètres utilisateur.
+
+### <a name="behavioral-differences"></a>Différences de comportement
+
+Si vous mettez à niveau votre application pour cibler .NET 5, vous pouvez voir les modifications apportées à votre application, même si vous ne vous rendez pas compte que vous utilisez des fonctionnalités de globalisation. Cette section répertorie l’une des modifications comportementales que vous pouvez voir, mais il en existe d’autres.
+
+##### <a name="stringindexof"></a>String.IndexOf
+
+Prenons le code suivant qui appelle <xref:System.String.IndexOf(System.String)?displayProperty=nameWithType> pour Rechercher l’index du caractère de saut de ligne dans une chaîne.
+
+```csharp
+string s = "Hello\r\nworld!";
+int idx = s.IndexOf("\n");
+Console.WriteLine(idx);
+```
+
+- Dans les versions précédentes de .NET sur Windows, l’extrait de code s’imprime `6` .
+- Dans .NET 5,0 et versions ultérieures sur Windows 10 mai 2019 Update et versions ultérieures, l’extrait de code s’imprime `-1` .
+
+Pour corriger ce code en effectuant une recherche ordinale au lieu d’une recherche dépendante de la culture, appelez la <xref:System.String.IndexOf(System.String,System.StringComparison)> surcharge et transmettez-la <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> en tant qu’argument.
+
+Vous pouvez exécuter les règles [d’analyse du code CA1307 : spécifiez StringComparison pour plus de clarté](../../../docs/fundamentals/code-analysis/quality-rules/ca1307.md) et [Ca1309 : utiliser StringComparison](../../../docs/fundamentals/code-analysis/quality-rules/ca1309.md) avec la valeur ordinale pour rechercher ces sites d’appel dans votre code.
+
+Pour plus d’informations, consultez [changements de comportement lors de la comparaison de chaînes sur .net 5 +](../base-types/string-comparison-net-5-plus.md).
 
 ### <a name="use-nls-instead-of-icu"></a>Utiliser NLS au lieu de ICU
 

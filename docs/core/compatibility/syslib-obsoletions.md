@@ -2,12 +2,12 @@
 title: Fonctionnalités obsolètes dans .NET 5 +
 description: Découvrez les API qui sont marquées comme obsolètes dans .NET 5,0 et versions ultérieures qui génèrent des avertissements du compilateur SYSLIB.
 ms.date: 10/20/2020
-ms.openlocfilehash: 13f5fb10cfe693ed621b3f45fc22e024875890c8
-ms.sourcegitcommit: dfcbc096ad7908cd58a5f0aeabd2256f05266bac
+ms.openlocfilehash: aa5716ba8fe46c7c4ae2faafe7cc963551eecef7
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92333297"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440762"
 ---
 # <a name="obsolete-features-in-net-5"></a>Fonctionnalités obsolètes dans .NET 5
 
@@ -36,7 +36,7 @@ Le tableau suivant fournit un index des `SYSLIBxxxx` obsoletions dans .net 5 +.
 | [SYSLIB0009](syslib0009.md) | Les <xref:System.Net.AuthenticationManager.Authenticate%2A?displayProperty=nameWithType> méthodes et ne <xref:System.Net.AuthenticationManager.PreAuthenticate%2A?displayProperty=nameWithType> sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
 | [SYSLIB0010](syslib0010.md) | Certaines API de communication à distance ne sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
 | [SYSLIB0011](syslib0011.md) | <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> la sérialisation est obsolète et ne doit pas être utilisée. |
-| [SYSLIB0012](syslib0012.md) | <xref:System.Reflection.Assembly.CodeBase?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.EscapedCodeBase?displayProperty=nameWithType> sont uniquement inclus pour la compatibilité .NET Framework. Utilisez plutôt <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType>. |
+| [SYSLIB0012](syslib0012.md) | <xref:System.Reflection.Assembly.CodeBase?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.EscapedCodeBase?displayProperty=nameWithType> sont uniquement inclus pour la compatibilité .NET Framework. Utilisez <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType> à la place. |
 
 ## <a name="suppress-warnings"></a>Supprimer les avertissements
 
@@ -61,9 +61,14 @@ Fichier projet :
    <TargetFramework>net5.0</TargetFramework>
    <!-- NoWarn below suppresses SYSLIB0001 project-wide -->
    <NoWarn>$(NoWarn);SYSLIB0001</NoWarn>
+   <!-- To suppress multiple warnings, you can use multiple NoWarn elements -->
+   <NoWarn>$(NoWarn);SYSLIB0002</NoWarn>
+   <NoWarn>$(NoWarn);SYSLIB0003</NoWarn>
+   <!-- Alternatively, you can suppress multiple warnings by using a semicolon-delimited list -->
+   <NoWarn>$(NoWarn);SYSLIB0001;SYSLIB0002;SYSLIB0003</NoWarn>
   </PropertyGroup>
 </Project>
 ```
 
 > [!NOTE]
-> La suppression d’un avertissement de cette façon ne désactive que cet avertissement obsoletion spécifique. Il ne désactive pas les autres avertissements, y compris les autres avertissements obsoletion.
+> La suppression des avertissements de cette façon ne désactive que les avertissements obsoletion que vous spécifiez. Il ne désactive pas les autres avertissements, y compris les avertissements obsoletion avec différents ID de diagnostic.

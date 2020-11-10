@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: c65f7220c44e86fac7e8beba28277bf43af95088
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: e1c297cd0ff75d6a6fb4a9d38c9a241e216f500b
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282334"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94440866"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -66,7 +66,7 @@ Le compilateur synthétise différentes versions des méthodes ci-dessus. Les si
 
 En plus des `Equals` surcharges familières, `operator ==` et `operator !=` , le compilateur synthétise une nouvelle `EqualityContract` propriété. La propriété retourne un `Type` objet qui correspond au type de l’enregistrement. Si le type de base est `object` , la propriété est `virtual` . Si le type de base est un autre type d’enregistrement, la propriété est un `override` . Si le type d’enregistrement est `sealed` , la propriété est `sealed` . La synthèse `GetHashCode` utilise le `GetHashCode` de toutes les propriétés et les champs déclarés dans le type de base et le type d’enregistrement. Ces méthodes synthétisées appliquent l’égalité basée sur les valeurs dans une hiérarchie d’héritage. Cela signifie qu’un `Student` ne sera jamais considéré comme égal à un `Person` portant le même nom. Les types des deux enregistrements doivent correspondre, et toutes les propriétés partagées entre les types d’enregistrements sont égales.
 
-Les enregistrements ont également un constructeur synthétisé et une méthode de clonage pour créer des copies. Le constructeur synthétisé a un argument du type d’enregistrement. Il génère un nouvel enregistrement avec les mêmes valeurs pour toutes les propriétés de l’enregistrement. Ce constructeur est privé si l’enregistrement est sealed, sinon il est protégé. La méthode « Clone » synthétisée prend en charge la construction de copie pour les hiérarchies d’enregistrement. Le terme « clone » est placé entre guillemets, car le nom réel est généré par le compilateur. Vous ne pouvez pas créer une méthode nommée `Clone` dans un type d’enregistrement. La méthode « Clone » synthétisée renvoie le type d’enregistrement copié à l’aide de la répartition virtuelle. Le compilateur ajoute des modificateurs différents pour la méthode « Clone » en fonction des modificateurs d’accès sur le `record` :
+Les enregistrements ont également un constructeur synthétisé et une méthode de clonage pour créer des copies. Le constructeur synthétisé a un seul paramètre du type d’enregistrement. Il génère un nouvel enregistrement avec les mêmes valeurs pour toutes les propriétés de l’enregistrement. Ce constructeur est privé si l’enregistrement est sealed, sinon il est protégé. La méthode « Clone » synthétisée prend en charge la construction de copie pour les hiérarchies d’enregistrement. Le terme « clone » est placé entre guillemets, car le nom réel est généré par le compilateur. Vous ne pouvez pas créer une méthode nommée `Clone` dans un type d’enregistrement. La méthode « Clone » synthétisée renvoie le type d’enregistrement copié à l’aide de la répartition virtuelle. Le compilateur ajoute des modificateurs différents pour la méthode « Clone » en fonction des modificateurs d’accès sur le `record` :
 
 - Si le type d’enregistrement est `abstract` , la méthode « Clone » est également `abstract` . Si le type de base n’est pas `object` , la méthode est également `override` .
 - Pour les types d’enregistrements qui ne sont pas `abstract` lorsque le type de base est `object` :
@@ -98,11 +98,13 @@ Le compilateur produit une `Deconstruct` méthode pour les enregistrements posit
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="DeconstructRecord":::
 
-Enfin, les enregistrements prennent en charge _*_les expressions-_*_. Une instruction _*_with-expression_*_ demande au compilateur de créer une copie d’un enregistrement, mais les propriétés spécifiées _with * sont modifiées :
+Enfin, les enregistrements prennent en charge les [ `with` expressions](../language-reference/operators/with-expression.md). Un _*_ `with` expression_ *_ indique au compilateur de créer une copie d’un enregistrement, mais _with* propriétés spécifiées ont été modifiées :
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
-La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` propriété est une copie de `person` , et le `FirstName` est « Paul ». Vous pouvez définir n’importe quel nombre de propriétés dans une expression with.  Tous les membres synthétisés, à l’exception de la méthode « Clone », peuvent être écrits par vous-même. Si un type d’enregistrement a une méthode qui correspond à la signature d’une méthode synthétisée, le compilateur ne synthétise pas cette méthode. L' `Dog` exemple d’enregistrement précédent contient une méthode codée à la main <xref:System.String.ToString> à titre d’exemple.
+La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` propriété est une copie de `person` , et `FirstName` est `"Paul"` . Vous pouvez définir n’importe quel nombre de propriétés dans une `with` expression.
+
+Tous les membres synthétisés, à l’exception de la méthode « Clone », peuvent être écrits par vous-même. Si un type d’enregistrement a une méthode qui correspond à la signature d’une méthode synthétisée, le compilateur ne synthétise pas cette méthode. L' `Dog` exemple d’enregistrement précédent contient une méthode codée à la main <xref:System.String.ToString> à titre d’exemple.
 
 ## <a name="init-only-setters"></a>Setter init uniquement
 
@@ -242,7 +244,7 @@ Un générateur de code lit des attributs ou d’autres éléments de code à l�
 
 Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la **syntaxe de méthode partielle** _ et les _*_initialiseurs de module_*_. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
 
-La deuxième nouvelle fonctionnalité pour les générateurs de code est _ * _initialiseurs de module_ * *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime lors du chargement de l’assembly. Méthode d’initialiseur de module :
+La deuxième nouvelle fonctionnalité pour les générateurs de code est _ * _initialiseurs de module_ * *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime avant tout autre accès aux champs ou appel de méthode dans le module entier. Méthode d’initialiseur de module :
 
 - Doit être statique
 - Doit être sans paramètre

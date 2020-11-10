@@ -7,12 +7,12 @@ author: luisquintanilla
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc, how-to
-ms.openlocfilehash: 38263c5ce4d1686777f33f5a9742d530eafa9d89
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: eb285465fcacc3e7d4ee60765c30497dcefbc737
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955713"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441061"
 ---
 # <a name="use-net-for-apache-spark-in-jupyter-notebooks"></a>Utiliser .NET pour Apache Spark dans les blocs-notes Jupyter
 
@@ -26,7 +26,7 @@ Dans le contexte de .NET, [.net interactive](https://github.com/dotnet/interacti
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [SDK .NET Core 3,1](https://docs.microsoft.com/dotnet/core/install/)
+- [Kit SDK .NET Core 3.1](../../core/install/index.yml)
 - [Apache Spark](https://spark.apache.org/downloads.html)
 - [Apache Spark Worker .NET](https://github.com/dotnet/spark/releases)
 
