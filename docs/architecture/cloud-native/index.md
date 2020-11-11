@@ -2,18 +2,21 @@
 title: Architecture des applications .NET natives Cloud pour Azure
 description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
-ms.date: 05/13/2020
-ms.openlocfilehash: 172097b4915deb2d6f0b06441d7c4ca389bbca25
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.date: 11/10/2020
+ms.openlocfilehash: 673bfef27c3767f68b1c30d4383cee010ba377f0
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051504"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506647"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
 ![image de couverture](./media/cover.png)
 
-**ÉDITION v. 1.0**
+**ÉDITION v 1.0**
+
+Reportez-vous à [Journal des modifications](https://aka.ms/cn-ebook-changelog) pour les mises à jour de livres et les contributions de la communauté.
 
 PUBLIÉ PAR
 
@@ -43,23 +46,23 @@ Toutes les autres marques et tous les autres logos sont la propriété de leurs 
 
 Auteurs :
 
-> **Rob**distribuateur, architecte du système Cloud principal/architecte IP- [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
+> **Rob** distribuateur, architecte du système Cloud principal/architecte IP- [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
 >
-> **Steve « ardalis » Smith**, architecte logiciel et formateur- [Ardalis.com](https://ardalis.com)
+> **Steve « ardalis » Smith** , architecte logiciel et formateur- [Ardalis.com](https://ardalis.com)
 
 Participants et réviseurs :
 
-> **Cesar de la Torre**, responsable de programme principal, équipe .net, Microsoft
+> **Cesar de la Torre** , responsable de programme principal, équipe .net, Microsoft
 >
-> **Nish Anile**, responsable de programme senior, équipe .net, Microsoft
+> **Nish Anile** , responsable de programme senior, équipe .net, Microsoft
 >
-> **Jeremy Likness**, responsable de programme senior, équipe .net, Microsoft
+> **Jeremy Likness** , responsable de programme senior, équipe .net, Microsoft
 >
-> **Cecil Phillip**, avocat du Cloud senior, Microsoft
+> **Cecil Phillip** , avocat du Cloud senior, Microsoft
 
 Rédacteurs :
 
-> **Maira Wenzel**, responsable de programme, équipe .net, Microsoft
+> **Maira Wenzel** , responsable de programme, équipe .net, Microsoft
 
 ## <a name="version"></a>Version
 
@@ -90,4 +93,4 @@ Ce guide est disponible au format [PDF](https://dotnet.microsoft.com/download/e-
 Ce livre et les exemples associés sont en constante évolution. vos commentaires sont donc accueillis ! Si vous avez des commentaires sur la façon dont ce livre peut être amélioré, utilisez la section commentaires au bas de toute page reposant sur les [problèmes GitHub](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
->[Suivant](introduction.md)
+>[Next](introduction.md)

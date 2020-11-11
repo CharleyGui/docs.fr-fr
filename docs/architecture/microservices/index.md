@@ -1,19 +1,21 @@
 ---
 title: Microservices .NET. Architecture pour les applications .NET en conteneur
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Les microservices sont des services modulables qui peuvent se déployer indépendamment. Les conteneurs Docker (pour Linux et Windows) simplifient le déploiement et les tests en regroupant un service et ses dépendances dans une seule unité, laquelle est ensuite exécutée dans un environnement isolé.
-ms.date: 09/02/2020
-ms.openlocfilehash: aea5012fee102f388827d146043e69592e14f22b
-ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
+ms.date: 11/10/2020
+ms.openlocfilehash: 2055dacd46f90ba3714edb1437bcacad4c175e65
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379133"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507265"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET : Architecture pour les applications .NET en conteneur
 
 ![Couverture de livre](./media/cover-small.png)
 
-**Édition v 3.1.2** -mise à jour vers ASP.net Core 3,1
+**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
+
+Reportez-vous à [Journal des modifications](https://aka.ms/MicroservicesEbookChangelog) pour les mises à jour de livres et les contributions de la communauté.
 
 Ce guide est une introduction au développement d’applications basées sur les microservices et à la gestion de celles-ci au moyen de conteneurs. Il traite de la conception architecturale et des approches d’implémentation utilisant .NET Core et les conteneurs Docker.
 
@@ -53,7 +55,7 @@ Ce guide a été révisé pour couvrir la version **3,1 de .net Core** , ainsi q
 
 Ce guide ne traite pas du cycle de vie des applications, de DevOps, des pipelines CI/CD, ni du travail d’équipe. Le guide complémentaire intitulé [Containerized Docker Application Lifecycle with Microsoft Platform and Tools](https://aka.ms/dockerlifecycleebook) (Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft) porte essentiellement sur ce sujet. Le présent guide ne fournit pas non plus de détails sur l’implémentation de l’infrastructure Azure, notamment sur les orchestrateurs spécifiques.
 
-### <a name="additional-resources"></a>Ressources complémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Containerized Docker Application Lifecycle with Microsoft Platform and Tools** (livre électronique téléchargeable)  
     <https://aka.ms/dockerlifecycleebook>
@@ -84,11 +86,11 @@ Nous avons rédigé ce guide pour vous aider à comprendre l’architecture des 
 
 Coauteurs :
 
-> **Cesar de la Torre**, chef de produit, équipe produit .NET, Microsoft Corp.
+> **Cesar de la Torre** , chef de produit, équipe produit .NET, Microsoft Corp.
 >
-> **Bill Wagner**, développeur de contenu en chef, C+E, Microsoft Corp.
+> **Bill Wagner** , développeur de contenu en chef, C+E, Microsoft Corp.
 >
-> **Mike Rousos**, ingénieur logiciel principal, équipe DevDiv CAT, Microsoft
+> **Mike Rousos** , ingénieur logiciel principal, équipe DevDiv CAT, Microsoft
 
 Rédacteurs :
 
@@ -98,57 +100,57 @@ Rédacteurs :
 
 Participants et réviseurs :
 
-> **Jeffrey Richter**, ingénieur logiciel partenaire, équipe Azure, Microsoft
+> **Jeffrey Richter** , ingénieur logiciel partenaire, équipe Azure, Microsoft
 >
-> **Jimmy Bogard**, architecte en chef chez Headspring
+> **Jimmy Bogard** , architecte en chef chez Headspring
 >
-> **Udi Dahan**, fondateur et PDG, Particular Software
+> **Udi Dahan** , fondateur et PDG, Particular Software
 >
-> **Jimmy Nilsson**, co-fondateur et PDG de Factor10
+> **Jimmy Nilsson** , co-fondateur et PDG de Factor10
 >
-> **Glenn Condron**, gestionnaire de programmes en chef, équipe ASP.NET
+> **Glenn Condron** , gestionnaire de programmes en chef, équipe ASP.NET
 >
-> **Mark Fussell**, responsable principal de la gestion de projets, équipe Azure Service Fabric, Microsoft
+> **Mark Fussell** , responsable principal de la gestion de projets, équipe Azure Service Fabric, Microsoft
 >
-> **Diego Vega**, responsable de la gestion de projets, équipe Entity Framework, Microsoft
+> **Diego Vega** , responsable de la gestion de projets, équipe Entity Framework, Microsoft
 >
-> **Barry Dorrans**, gestionnaire de programmes de sécurité en chef
+> **Barry Dorrans** , gestionnaire de programmes de sécurité en chef
 >
-> **Rowan Miller**, gestionnaire de programmes en chef, Microsoft
+> **Rowan Miller** , gestionnaire de programmes en chef, Microsoft
 >
-> **Ankit Asthana**, responsable principal de la gestion de projets, équipe .NET, Microsoft
+> **Ankit Asthana** , responsable principal de la gestion de projets, équipe .NET, Microsoft
 >
-> **Scott Hunter**, chef de projet directeur partenaire, équipe .NET, Microsoft
+> **Scott Hunter** , chef de projet directeur partenaire, équipe .NET, Microsoft
 >
-> **Nish Anil**, responsable de programme senior, équipe .NET, Microsoft
+> **Nish Anil** , responsable de programme senior, équipe .NET, Microsoft
 >
-> **Dylan Reisenberger**, architecte et responsable de développement chez Polly
+> **Dylan Reisenberger** , architecte et responsable de développement chez Polly
 >
 > **Steve « ardalis » Smith** - Architecte et formateur logiciel - [Ardalis.com](https://ardalis.com)
 >
-> **Ian Cooper**, architecte développement chez Brighter
+> **Ian Cooper** , architecte développement chez Brighter
 >
-> **Unai Zorrilla**, architecte et responsable de développement chez Plain Concepts
+> **Unai Zorrilla** , architecte et responsable de développement chez Plain Concepts
 >
-> **Eduard Tomas**, responsable de développement chez Plain Concepts
+> **Eduard Tomas** , responsable de développement chez Plain Concepts
 >
-> **Ramon Tomas**, développeur chez Plain Concepts
+> **Ramon Tomas** , développeur chez Plain Concepts
 >
-> **David Sanz**, développeur chez Plain Concepts
+> **David Sanz** , développeur chez Plain Concepts
 >
-> **Javier Valero**, chef des opérations chez Grupo Solutio
+> **Javier Valero** , chef des opérations chez Grupo Solutio
 >
-> **Pierre Millet**, consultant en chef, Microsoft
+> **Pierre Millet** , consultant en chef, Microsoft
 >
-> **Michael Friis**, chef de produit, Docker Inc.
+> **Michael Friis** , chef de produit, Docker Inc.
 >
-> **Charles Lowell**, ingénieur logiciel, équipe VS CAT, Microsoft
+> **Charles Lowell** , ingénieur logiciel, équipe VS CAT, Microsoft
 >
-> **Miguel Veloso**, ingénieur de développement logiciel chez des concepts simples
+> **Miguel Veloso** , ingénieur de développement logiciel chez des concepts simples
 >
-> **Sumit Ghosh**, consultant principal chez Neudesic
+> **Sumit Ghosh** , consultant principal chez Neudesic
 
-## <a name="copyright"></a>Copyright
+## <a name="copyright"></a>copyright
 
 PUBLIÉ PAR
 

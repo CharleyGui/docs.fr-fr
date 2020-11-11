@@ -2,12 +2,12 @@
 title: Installer des fichiers IntelliSense localisés
 description: Découvrez comment configurer votre ordinateur de développement pour utiliser des fichiers IntelliSense localisés pour des projets .NET 5 + (y compris .NET Core) dans Visual Studio.
 ms.date: 11/06/2020
-ms.openlocfilehash: 121439199f0de6d29a18ea55031976680fc1f833
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 45eeae12ca79179cacb3d48fca28118de70e0a4f
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439818"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506764"
 ---
 # <a name="how-to-install-localized-intellisense-files-for-net"></a>Comment installer des fichiers IntelliSense localisés pour .NET
 
@@ -37,13 +37,13 @@ ms.locfileid: "94439818"
    1. Accédez au dossier d’installation de .NET. Par défaut, il se trouve sous *%ProgramFiles%\dotnet\packs*.
    1. Choisissez le kit de développement logiciel (SDK) pour lequel vous souhaitez installer IntelliSense et accédez au chemin d’accès associé. Les options suivantes s’offrent à vous :
 
-      | Type de kit de développement logiciel (SDK)              | Chemin d’accès                               |
+      | Type de kit de développement logiciel (SDK)              | Path                               |
       |-----------------------|------------------------------------|
       | .NET 5 + et .NET Core | *Microsoft. Netcore. app. Ref*        |
       | Bureau Windows       | *Microsoft. WindowsDesktop. app. Ref* |
       | .NET Standard         | *Netstandard. Library. Ref*          |
 
-   1. Accédez à la version pour laquelle vous souhaitez installer la fonctionnalité IntelliSense localisée. Par exemple, *3.1.0*.
+   1. Accédez à la version pour laquelle vous souhaitez installer la fonctionnalité IntelliSense localisée. Par exemple, *5.0.0*.
    1. Ouvrez le dossier *ref* .
    1. Ouvrez le dossier moniker. Par exemple, *net 5.0*.
 

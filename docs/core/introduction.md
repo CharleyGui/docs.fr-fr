@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 09/28/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 5c600ca999089d005f4f8eb2db332e938df7bfcb
-ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
+ms.openlocfilehash: c3626ed223f66622b65cca888b1b043de275f950
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329792"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506738"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -24,7 +24,7 @@ ms.locfileid: "94329792"
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Plateforme Windows universelle (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * [Joueur](https://dotnet.microsoft.com/apps/games)
-* [Internet des objets (IoT)](https://dotnet.microsoft.com/apps/iot)
+* [Internet des objets (IoT)](/dotnet/iot)
 * [Machine Learning](../machine-learning/index.yml)
 * [Applications console](tutorials/with-visual-studio-code.md)
 * [Services Windows](/aspnet/core/host-and-deploy/windows-service)
@@ -328,7 +328,7 @@ Pour plus d’informations, consultez composants de l' [architecture .net](../st
 
 Une partie de la terminologie pour .NET peut être déroutante, car le même mot est utilisé de différentes façons dans différents contextes. Voici quelques-unes des instances les plus importantes :
 
-* **Language**
+* **runtime**
 
   |Context  |signification de « Runtime » |
   |---------|---------|

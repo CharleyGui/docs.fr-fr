@@ -1,21 +1,21 @@
 ---
-title: Vérifier les versions installées de .NET Core sur Windows, Linux et macOS-.NET Core
-description: Découvrez comment répertorier les versions de .NET Core qui sont installées sur votre ordinateur. Cela comprend le Runtime .NET Core et le kit de développement logiciel (SDK).
+title: Vérifier les versions installées de .NET sur Windows, Linux et macOS-.NET
+description: Découvrez comment répertorier les versions de .NET qui sont installées sur votre ordinateur. Cela comprend le Runtime .NET et le kit de développement logiciel (SDK).
 author: adegeo
 ms.author: adegeo
-ms.date: 12/04/2019
+ms.date: 11/10/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: b8825dee595c601e8adef0a52e651ac4a4f04831
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: d924e5bc58052cd760f367e906666d68ab79b764
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416042"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94507213"
 ---
-# <a name="how-to-check-that-net-core-is-already-installed"></a>Comment vérifier que .NET Core est déjà installé
+# <a name="how-to-check-that-net-is-already-installed"></a>Comment vérifier que .NET est déjà installé
 
-Cet article vous explique comment vérifier quelles versions du Runtime .NET Core et du kit de développement logiciel (SDK) sont installées sur votre ordinateur. .NET Core a peut-être déjà été installé si vous disposez d’un environnement de développement intégré, tel que Visual Studio ou Visual Studio pour Mac.
+Cet article explique comment vérifier quelles versions du Runtime .NET et du kit de développement logiciel (SDK) sont installées sur votre ordinateur. .NET a peut-être déjà été installé si vous disposez d’un environnement de développement intégré, tel que Visual Studio ou Visual Studio pour Mac.
 
 L’installation d’un kit de développement logiciel installe le runtime correspondant.
 
@@ -23,7 +23,7 @@ En cas d’échec d’une commande de cet article, le runtime ou le kit de déve
 
 ## <a name="check-sdk-versions"></a>Vérifier les versions du SDK
 
-Vous pouvez voir quelles versions du kit SDK .NET Core sont actuellement installées avec un terminal. Ouvrez un terminal et exécutez la commande suivante.
+Vous pouvez voir les versions du kit de développement logiciel (SDK) .NET actuellement installées avec un terminal. Ouvrez un terminal et exécutez la commande suivante.
 
 ```dotnetcli
 dotnet --list-sdks
@@ -39,9 +39,8 @@ Vous recevez une sortie similaire à ce qui suit.
 2.1.504 [C:\program files\dotnet\sdk]
 2.1.600 [C:\program files\dotnet\sdk]
 2.1.602 [C:\program files\dotnet\sdk]
-2.2.101 [C:\program files\dotnet\sdk]
-3.0.100 [C:\program files\dotnet\sdk]
 3.1.100 [C:\program files\dotnet\sdk]
+5.0.100 [C:\program files\dotnet\sdk]
 ```
 
 ::: zone-end
@@ -54,9 +53,8 @@ Vous recevez une sortie similaire à ce qui suit.
 2.1.504 [/home/user/dotnet/sdk]
 2.1.600 [/home/user/dotnet/sdk]
 2.1.602 [/home/user/dotnet/sdk]
-2.2.101 [/home/user/dotnet/sdk]
-3.0.100 [/home/user/dotnet/sdk]
 3.1.100 [/home/user/dotnet/sdk]
+5.0.100 [/home/user/dotnet/sdk]
 ```
 
 ::: zone-end
@@ -69,16 +67,15 @@ Vous recevez une sortie similaire à ce qui suit.
 2.1.504 [/usr/local/share/dotnet/sdk]
 2.1.600 [/usr/local/share/dotnet/sdk]
 2.1.602 [/usr/local/share/dotnet/sdk]
-2.2.101 [/usr/local/share/dotnet/sdk]
-3.0.100 [/usr/local/share/dotnet/sdk]
 3.1.100 [/usr/local/share/dotnet/sdk]
+5.0.100 [/usr/local/share/dotnet/sdk]
 ```
 
 ::: zone-end
 
 ## <a name="check-runtime-versions"></a>Vérifier les versions du Runtime
 
-Vous pouvez voir quelles versions du Runtime .NET Core sont actuellement installées avec la commande suivante.
+Vous pouvez voir quelles versions du Runtime .NET sont actuellement installées avec la commande suivante.
 
 ```dotnetcli
 dotnet --list-runtimes
@@ -91,25 +88,17 @@ Vous recevez une sortie similaire à ce qui suit.
 ```console
 Microsoft.AspNetCore.All 2.1.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.3 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.App 2.1.6 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.13 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 3.0.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
+Microsoft.AspNetCore.App 5.0.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.App]
 Microsoft.NETCore.App 2.1.7 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.13 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.0 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.3 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.7 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
-Microsoft.NETCore.App 3.0.0 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
 Microsoft.NETCore.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
+Microsoft.NETCore.App 5.0.0 [c:\program files\dotnet\shared\Microsoft.NETCore.App]
 Microsoft.WindowsDesktop.App 3.0.0 [c:\program files\dotnet\shared\Microsoft.WindowsDesktop.App]
 Microsoft.WindowsDesktop.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.WindowsDesktop.App]
+Microsoft.WindowsDesktop.App 5.0.0 [c:\program files\dotnet\shared\Microsoft.WindowsDesktop.App]
 ```
 
 ::: zone-end
@@ -119,23 +108,14 @@ Microsoft.WindowsDesktop.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.Win
 ```bash
 Microsoft.AspNetCore.All 2.1.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.3 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.App 2.1.6 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.13 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 3.0.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.AspNetCore.App 5.0.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.NETCore.App 2.1.7 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.13 [/home/user/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.3 [/home/user/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.7 [/home/user/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 3.0.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
+Microsoft.NETCore.App 5.0.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 ```
 
 ::: zone-end
@@ -145,32 +125,23 @@ Microsoft.NETCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 ```bash
 Microsoft.AspNetCore.All 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.3 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.All 2.2.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
-Microsoft.AspNetCore.App 2.1.6 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 2.2.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.AspNetCore.App 3.0.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.AspNetCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.AspNetCore.App 5.0.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.NETCore.App 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.3 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 2.2.7 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
-Microsoft.NETCore.App 3.0.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+Microsoft.NETCore.App 5.0.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 ```
 
 ::: zone-end
 
 ## <a name="check-for-install-folders"></a>Rechercher les dossiers d’installation
 
-Il est possible que .NET Core soit installé mais pas ajouté à la `PATH` variable pour votre système d’exploitation ou profil utilisateur. L’exécution des commandes des sections précédentes peut ne pas fonctionner. Vous pouvez également vérifier que les dossiers d’installation de .NET Core existent.
+Il est possible que .NET soit installé mais pas ajouté à la `PATH` variable pour votre système d’exploitation ou profil utilisateur. L’exécution des commandes des sections précédentes peut ne pas fonctionner. Vous pouvez également vérifier que les dossiers d’installation .NET existent.
 
-Lorsque vous installez .NET Core à partir d’un programme d’installation ou d’un script, il est installé dans un dossier standard. La plupart du temps, le programme d’installation ou le script que vous utilisez pour installer .NET Core vous donne la possibilité d’installer dans un autre dossier. Si vous choisissez d’installer dans un autre dossier, ajustez le début du chemin d’accès au dossier.
+Lorsque vous installez .NET à partir d’un programme d’installation ou d’un script, il est installé dans un dossier standard. La plupart du temps, le programme d’installation ou le script que vous utilisez pour installer .NET vous donne la possibilité d’installer dans un autre dossier. Si vous choisissez d’installer dans un autre dossier, ajustez le début du chemin d’accès au dossier.
 
 ::: zone pivot="os-windows"
 
@@ -211,10 +182,12 @@ _/usr/local/share/dotnet/shared/{runtime-type}/{version}/_
 
 ::: zone-end
 
-## <a name="more-information"></a>Informations complémentaires
+## <a name="more-information"></a>Plus d’informations
 
 Vous pouvez voir les versions du kit de développement logiciel (SDK) et les versions du runtime à l’aide de la commande `dotnet --info` . Vous obtiendrez également d’autres informations relatives à l’environnement, telles que la version du système d’exploitation et l’identificateur de Runtime (RID).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Installez le runtime et le kit de développement logiciel (SDK) .net Core](windows.md).
+- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Windows](windows.md).
+- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour MacOS](linux.md).
+- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Linux](macos.md).

@@ -1,19 +1,19 @@
 ---
-title: Installer .NET Core sur openSUSE-.NET Core
-description: Montre les différentes façons d’installer kit SDK .NET Core et le Runtime .NET Core sur openSUSE.
+title: Installer .NET sur openSUSE-.NET
+description: Montre les différentes façons d’installer le kit de développement logiciel (SDK) .NET et le Runtime .NET sur openSUSE.
 author: adegeo
 ms.author: adegeo
-ms.date: 06/04/2020
-ms.openlocfilehash: ccdb23ca1838d2c15c9a95b45c8505efe7a6df0e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 11/10/2020
+ms.openlocfilehash: 17012f3689e5834fd1629946767e931cb22a2c1b
+ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539228"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94506899"
 ---
-# <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>Installer kit SDK .NET Core ou le Runtime .NET Core sur openSUSE
+# <a name="install-the-net-sdk-or-the-net-runtime-on-opensuse"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur openSUSE
 
-.NET Core est pris en charge sur openSUSE. Cet article explique comment installer .NET Core sur openSUSE.
+.NET est pris en charge sur openSUSE. Cet article explique comment installer .NET sur openSUSE.
 
 [!INCLUDE [linux-intro-sdk-vs-runtime](includes/linux-intro-sdk-vs-runtime.md)]
 
@@ -21,17 +21,17 @@ ms.locfileid: "90539228"
 
 ## <a name="supported-distributions"></a>Distributions prises en charge
 
-Le tableau suivant répertorie les versions de .NET Core actuellement prises en charge sur openSUSE 15. Ces versions restent prises en charge jusqu’à ce que la version de [.net Core ait atteint la fin du support](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) ou que la version de openSUSE ne soit plus prise en charge.
+Le tableau suivant répertorie les versions .NET actuellement prises en charge sur openSUSE 15. Ces versions restent prises en charge jusqu’à ce que la version de [.net ait atteint la fin du support](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) ou que la version de openSUSE ne soit plus prise en charge.
 
-- Une ✔️ indique que la version de openSUSE ou de .NET Core est toujours prise en charge.
-- Une ❌ indique que la version de openSUSE ou de .net Core n’est pas prise en charge sur cette version de openSUSE.
-- Quand une version de openSUSE et une version de .NET Core ont ✔️, cette combinaison de système d’exploitation et .NET sont prises en charge.
+- Une ✔️ indique que la version de openSUSE ou .NET est toujours prise en charge.
+- Une ❌ indique que la version de openSUSE ou .net n’est pas prise en charge sur cette version de openSUSE.
+- Quand une version de openSUSE et une version de .NET sont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
 
-| OpenSUSE                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5 Preview (installation manuelle uniquement) |
+| OpenSUSE                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
 |----------------------------|---------------|---------------|----------------|
-| ✔️ [15](#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ version préliminaire 5,0 |
+| ✔️ [15](#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
-Les versions suivantes de .NET Core ne sont plus prises en charge. Les téléchargements sont toujours publiés :
+Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
 - 3.0
 - 2.2
@@ -53,11 +53,11 @@ sudo mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
 sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 ```
 
-[!INCLUDE [linux-zyp-install-31](includes/linux-install-31-zyp.md)]
+[!INCLUDE [linux-zyp-install-50](includes/linux-install-50-zyp.md)]
 
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
-Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET.
 
 ### <a name="unable-to-find-package"></a>Impossible de trouver le package
 
@@ -71,9 +71,9 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
-Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
+Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
 
 - krb5
 - libicu
@@ -83,7 +83,7 @@ Si la version OpenSSL de l’environnement d’exécution cible est 1,1 ou une v
 
 Pour plus d’informations sur les dépendances, consultez [applications Linux autonomes](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
 
-Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
+Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* , vous avez également besoin de la dépendance suivante :
 
 - [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
@@ -100,4 +100,4 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Didacticiel : créer une application console avec kit SDK .NET Core à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)
+- [Didacticiel : créer une application console avec le kit de développement logiciel (SDK) .NET à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)
