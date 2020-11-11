@@ -8,12 +8,12 @@ metadata:
   author: cartermp
   ms.author: phcart
   ms.date: 08/29/2020
-  ms.openlocfilehash: 7d7f9492bcd41975616ddd4d8f552aea5217b2d7
-  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+  ms.openlocfilehash: 09276206df31b239c49a8fc3ec8e15927d674e37
+  ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/01/2020
-  ms.locfileid: "89271852"
+  ms.lasthandoff: 11/10/2020
+  ms.locfileid: "94440918"
 landingContent:
 - title: 'Apprendre à programmer en F #'
   linkLists:
@@ -57,6 +57,8 @@ landingContent:
   linkLists:
   - linkListType: whats-new
     links:
+    - text: 'Nouveautés de F # 5,0'
+      url: whats-new/fsharp-50.md
     - text: 'Nouveautés de F # 4,7'
       url: whats-new/fsharp-47.md
     - text: 'Nouveautés de F # 4,6'

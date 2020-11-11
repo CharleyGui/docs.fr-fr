@@ -1,26 +1,25 @@
 ---
 title: Qu’est-ce que F# ?
-description: En savoir plus sur F# le langage de programmation et F# la programmation. En savoir plus sur les types de données riches, les fonctions et la façon dont elles s’adaptent.
+description: 'En savoir plus sur le langage de programmation F # et sur la programmation F #. En savoir plus sur les types de données riches, les fonctions et la façon dont elles s’adaptent.'
 ms.date: 08/03/2018
-ms.openlocfilehash: 3cba509f59a8e81e1a0264de7451e9d80304d768
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 37dc2f472d65a046e4bf67e672e2a96f4d4afded
+ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332734"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94439650"
 ---
-# <a name="what-is-f"></a>Qu’est-ce que F\#
+# <a name="what-is-f"></a>Présentation de F\#
 
-F#est un langage de programmation fonctionnelle qui facilite l’écriture de code correct et facile à gérer.
+F # est un langage de programmation fonctionnelle qui facilite l’écriture de code correct et facile à gérer.
 
-F#la programmation implique principalement la définition de types et de fonctions qui sont déduits et généralisés automatiquement. Vous pouvez ainsi vous concentrer sur le domaine du problème et manipuler ses données, plutôt que sur les détails de la programmation.
+La programmation F # implique principalement de définir des types et des fonctions qui sont déduits et généralisés automatiquement. Vous pouvez ainsi vous concentrer sur le domaine du problème et manipuler ses données, plutôt que sur les détails de la programmation.
 
 ```fsharp
 open System // Gets access to functionality in System namespace.
 
 // Defines a function that takes a name and produces a greeting.
-let getGreeting name =
-    sprintf "Hello, %s! Isn't F# great?" name
+let getGreeting name = $"Hello, {name}! Isn't F# great?"
 
 [<EntryPoint>]
 let main args =
@@ -35,7 +34,7 @@ let main args =
     0
 ```
 
-F#possède de nombreuses fonctionnalités, notamment :
+F # propose de nombreuses fonctionnalités, notamment :
 
 * Syntaxe simplifiée
 * Immuable par défaut
@@ -45,7 +44,7 @@ F#possède de nombreuses fonctionnalités, notamment :
 * Critères spéciaux
 * Programmation asynchrone
 
-Un jeu complet de fonctionnalités est documenté dans la [ F# référence du langage](./language-reference/index.md).
+Un jeu complet de fonctionnalités est documenté dans la [Référence du langage F #](./language-reference/index.md).
 
 ## <a name="rich-data-types"></a>Types de données enrichis
 
@@ -72,11 +71,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-F#les enregistrements et les unions discriminées sont non null, immuables et comparables par défaut, ce qui les rend très faciles à utiliser.
+Les enregistrements F # et les unions discriminées sont non null, immuables et comparables par défaut, ce qui les rend très faciles à utiliser.
 
 ## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Exactitude appliquée avec les fonctions et les critères spéciaux
 
-F#les fonctions sont faciles à déclarer et puissantes dans la pratique. Lorsqu’elles sont combinées avec des [critères spéciaux](./language-reference/pattern-matching.md), elles vous permettent de définir le comportement dont l’exactitude est appliquée par le compilateur.
+Les fonctions F # sont faciles à déclarer et puissantes dans la pratique. Lorsqu’elles sont combinées avec des [critères spéciaux](./language-reference/pattern-matching.md), elles vous permettent de définir le comportement dont l’exactitude est appliquée par le compilateur.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -93,11 +92,11 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown :("
 ```
 
-F#les fonctions sont également de première classe, ce qui signifie qu’elles peuvent être passées en tant que paramètres et retournées à partir d’autres fonctions.
+Les fonctions F # sont également de première classe, ce qui signifie qu’elles peuvent être passées en tant que paramètres et retournées à partir d’autres fonctions.
 
 ## <a name="functions-to-define-operations-on-objects"></a>Fonctions permettant de définir des opérations sur des objets
 
-F#offre une prise en charge complète des objets, qui sont des types de données utiles lorsque vous devez mélanger des données et des fonctionnalités. F#les fonctions sont utilisées pour manipuler des objets.
+F # offre une prise en charge complète des objets, qui sont des types de données utiles lorsque vous devez mélanger des données et des fonctionnalités. Les fonctions F # sont utilisées pour manipuler des objets.
 
 ```fsharp
 type Set<'T when 'T: comparison>(elements: seq<'T>) =
@@ -118,8 +117,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Plutôt que d’écrire du code orienté objet, dans, F#vous écrirez souvent du code qui traite les objets comme un autre type de données pour les fonctions à manipuler. Les fonctionnalités telles que les [interfaces génériques](./language-reference/interfaces.md), les [expressions d’objet](./language-reference/object-expressions.md)et l’utilisation judicieuse des [membres](./language-reference/members/index.md) sont F# communes aux programmes plus volumineux.
+Plutôt que d’écrire du code orienté objet, en F #, vous écrirez souvent du code qui traite les objets comme un autre type de données pour les fonctions à manipuler. Les fonctionnalités telles que les [interfaces génériques](./language-reference/interfaces.md), les [expressions d’objet](./language-reference/object-expressions.md)et l’utilisation judicieuse des [membres](./language-reference/members/index.md) sont courantes dans des programmes F # plus volumineux.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
-Pour en savoir plus sur un plus grand F# ensemble de fonctionnalités, consultez la [ F# visite guidée](tour.md).
+Pour en savoir plus sur un plus grand ensemble de fonctionnalités F #, consultez la [visite guidée de f #](tour.md).
