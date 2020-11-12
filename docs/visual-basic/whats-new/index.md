@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: e9ab745a60cd9eb646bee57a9a6838c30add77c5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: ada336ee5fce317315bb5f3974e0366f7bca3985
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495840"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557101"
 ---
 # <a name="whats-new-for-visual-basic"></a>Nouveautés de Visual Basic
 
@@ -23,6 +23,8 @@ Cette rubrique liste les noms des principales fonctionnalités de chaque version
 
 Visual Basic 16,0/Visual Studio 2019 version 16,0 \
 Pour les nouvelles fonctionnalités, consultez [Visual Basic 16,0](#visual-basic-160).
+
+Vous pouvez télécharger le dernier Kit de développement logiciel (SDK) .NET à partir de la [page de téléchargements .net](https://dotnet.microsoft.com/download).
 
 ## <a name="previous-versions"></a>Versions précédentes
 
@@ -292,4 +294,4 @@ End Interface
 ## <a name="see-also"></a>Voir aussi
 
 - [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
-- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: a3a753ccea45193c57f31453d7318c14f4898864
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 51bf44af5ec3478f2b2557b047df270c0c22990d
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247707"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556840"
 ---
 # <a name="lambda-expressions-c-reference"></a>Expressions lambda (référence C#)
 
@@ -56,7 +56,7 @@ Une expression lambda comportant une expression à droite de l’opérateur `=>`
 (input-parameters) => expression
 ```
 
-Le corps d’une expression lambda peut se composer d’un appel de méthode. Toutefois, si vous créez des [arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md) qui sont évaluées en dehors du contexte de l’Common Language Runtime .net, par exemple dans SQL Server, vous ne devez pas utiliser les appels de méthode dans les expressions lambda. Les méthodes n'auront aucune signification en dehors du contexte du Common Language Runtime .NET.
+Le corps d’une expression lambda peut se composer d’un appel de méthode. Toutefois, si vous créez des [arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md) qui sont évaluées en dehors du contexte du Common Language Runtime (CLR) .net, par exemple dans SQL Server, vous ne devez pas utiliser les appels de méthode dans les expressions lambda. Les méthodes n’auront aucune signification en dehors du contexte du Common Language Runtime (CLR) .NET.
 
 ## <a name="statement-lambdas"></a>Instructions lambda
 
@@ -251,6 +251,6 @@ Pour plus d’informations sur les fonctionnalités ajoutées dans C# 9,0, consu
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs et expressions C#](index.md)
 - [LINQ (Language Integrated Query)](../../programming-guide/concepts/linq/index.md)
-- [Arborescences de l’expression](../../programming-guide/concepts/expression-trees/index.md)
+- [Arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md)
 - [Fonctions locales et expressions lambda](../../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)

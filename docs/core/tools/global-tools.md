@@ -1,21 +1,21 @@
 ---
-title: " Outils .NET Core"
-description: Comment installer, utiliser, mettre à jour et supprimer les outils .NET Core. Décrit les outils globaux, les outils de chemin d’accès d’outil et les outils locaux.
+title: Outils .NET
+description: Comment installer, utiliser, mettre à jour et supprimer des outils .NET. Décrit les outils globaux, les outils de chemin d’accès d’outil et les outils locaux.
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 08277ed791036201d1dfa30c21799db1c21a924e
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 3669ed17d58542aab0435ccea22700c82ba8ea26
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598123"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556899"
 ---
-# <a name="how-to-manage-net-core-tools"></a>Comment gérer les outils .NET Core
+# <a name="how-to-manage-net-tools"></a>Comment gérer les outils .NET
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-Un outil .NET Core est un package NuGet spécial qui contient une application console. Un outil peut être installé sur votre ordinateur de l’une des manières suivantes :
+Un outil .NET est un package NuGet spécial qui contient une application console. Un outil peut être installé sur votre ordinateur de l’une des manières suivantes :
 
 * Comme un outil Global.
 
@@ -29,24 +29,25 @@ Un outil .NET Core est un package NuGet spécial qui contient une application co
 
   Les fichiers binaires de l’outil sont installés dans un répertoire par défaut. Vous appelez l’outil à partir du répertoire d’installation ou de l’un de ses sous-répertoires. Différents répertoires peuvent utiliser différentes versions du même outil.
   
-  L’interface CLI .NET utilise des fichiers manifeste pour suivre les outils qui sont installés en tant qu’outils locaux dans un répertoire. Lorsque le fichier manifeste est enregistré dans le répertoire racine d’un référentiel de code source, un contributeur peut cloner le référentiel et appeler une seule commande CLI .NET Core qui installe tous les outils listés dans les fichiers manifeste.
+  L’interface CLI .NET utilise des fichiers manifeste pour suivre les outils qui sont installés en tant qu’outils locaux dans un répertoire. Lorsque le fichier manifeste est enregistré dans le répertoire racine d’un référentiel de code source, un contributeur peut cloner le référentiel et appeler une seule commande CLI .NET qui installe tous les outils listés dans les fichiers manifeste.
 
 > [!IMPORTANT]
-> Les outils .NET Core s’exécutent en mode confiance totale. N’installez pas d’outil .NET Core, sauf si vous faites confiance à l’auteur.
+> Les outils .NET s’exécutent en mode confiance totale. N’installez pas d’outil .NET, sauf si vous faites confiance à l’auteur.
 
 ## <a name="find-a-tool"></a>Rechercher un outil
 
-Actuellement, .NET Core ne dispose pas d’une fonctionnalité de recherche d’outils. Voici quelques méthodes pour trouver des outils :
+Voici quelques méthodes pour trouver des outils :
 
+* Utilisez la commande de recherche de l' [outil dotnet](dotnet-tool-search.md) pour rechercher un outil qui est publié sur NuGet.org.
 * Recherchez le site Web [NuGet](https://www.nuget.org) à l’aide du filtre de type de package « outil .net ». Pour plus d’informations, consultez [Recherche et sélection des packages](/nuget/consume-packages/finding-and-choosing-packages).
 * Consultez la liste des outils dans le référentiel GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Utilisez [ToolGet](https://www.toolget.net/) pour rechercher des outils .net.
 * Consultez le code source des outils créés par l’équipe ASP.NET Core dans le [répertoire Tools du référentiel GitHub dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
-* Découvrez les outils de diagnostics dans les [outils de diagnostic dotnet .net Core](../diagnostics/index.md#net-core-diagnostic-global-tools).
+* Découvrez les outils de diagnostics dans les [outils de diagnostic .net](../diagnostics/index.md#net-core-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Vérifier l’auteur et les statistiques
 
-Étant donné que les outils .NET Core s’exécutent en mode de confiance totale et que les outils globaux sont ajoutés à la variable d’environnement PATH, ils peuvent être très puissants. Par conséquent, ne téléchargez pas d’outils provenant de personnes en qui vous n’avez pas confiance.
+Étant donné que les outils .NET s’exécutent en mode de confiance totale et que les outils globaux sont ajoutés à la variable d’environnement PATH, ils peuvent être très puissants. Par conséquent, ne téléchargez pas d’outils provenant de personnes en qui vous n’avez pas confiance.
 
 Si l’outil est hébergé sur NuGet, vous pouvez vérifier l’auteur et les statistiques en recherchant l’outil.
 
@@ -67,7 +68,7 @@ Tool 'dotnetsay' (version '2.1.4') was successfully installed.
 
 L’emplacement par défaut des binaires d’un outil dépend du système d’exploitation :
 
-| Système d''exploitation          | Chemin d’accès                          |
+| Système d’exploitation          | Path                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -92,7 +93,7 @@ Sur Linux ou macOS :
 dotnet tool install dotnetsay --tool-path ~/bin
 ```
 
-La kit SDK .NET Core n’ajoute pas cet emplacement automatiquement à la variable d’environnement PATH. Pour [appeler un outil de chemin d’accès d’outil](#invoke-a-tool-path-tool), vous devez vous assurer que la commande est disponible à l’aide de l’une des méthodes suivantes :
+Le kit de développement logiciel (SDK) .NET n’ajoute pas cet emplacement automatiquement à la variable d’environnement PATH. Pour [appeler un outil de chemin d’accès d’outil](#invoke-a-tool-path-tool), vous devez vous assurer que la commande est disponible à l’aide de l’une des méthodes suivantes :
 
 * Ajoutez le répertoire d’installation à la variable d’environnement PATH.
 * Spécifiez le chemin d’accès complet à l’outil lorsque vous l’appelez.
@@ -273,10 +274,10 @@ Pour obtenir des instructions sur l’utilisation de l’outil, entrez l’une d
 dotnet <command> --help
 ```
 
-En cas d’échec de l’installation ou de l’exécution d’un outil, consultez [résoudre les problèmes d’utilisation de l’outil .net Core](troubleshoot-usage-issues.md).
+En cas d’échec de l’installation ou de l’exécution d’un outil, consultez [résoudre les problèmes d’utilisation des outils .net](troubleshoot-usage-issues.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : créer un outil .NET Core à l’aide de l’CLI .NET Core](global-tools-how-to-create.md)
-- [Didacticiel : installer et utiliser un outil Global .NET Core à l’aide de l’CLI .NET Core](global-tools-how-to-use.md)
-- [Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core](local-tools-how-to-use.md)
+- [Didacticiel : créer un outil .NET à l’aide de l’interface de commande .NET](global-tools-how-to-create.md)
+- [Didacticiel : installer et utiliser un outil .NET global à l’aide de l’interface de commande .NET](global-tools-how-to-use.md)
+- [Didacticiel : installer et utiliser un outil local .NET à l’aide de l’interface de commande .NET](local-tools-how-to-use.md)

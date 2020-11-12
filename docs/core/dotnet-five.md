@@ -5,12 +5,12 @@ ms.date: 11/06/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 43d7a2baa75f3d71de8bbbf1d0bff7d1beb3d7cd
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: efce75159cd631ad64ba03d4b65aaeb64ccdc809
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440533"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557028"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -46,7 +46,7 @@ ASP.NET Core 5,0 est basé sur .NET 5,0, mais conserve le nom « Core » pour 
 
 Il n’est pas prévu de porter les technologies suivantes de .NET Framework vers .NET 5,0, mais il existe des alternatives dans .NET 5,0 :
 
-| Technologie                             | Alternative recommandée                                                                         |
+| Technology                             | Alternative recommandée                                                                         |
 |----------------------------------------|-------------------------------------------------------------------------------------------------|
 | Web Forms                              | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
 | Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
@@ -175,3 +175,4 @@ Pour plus d’informations, consultez la feuille de [route .net Maui](https://gi
 
 - [Le trajet vers un .NET](https://channel9.msdn.com/Events/Build/2020/BOD106)
 - [Améliorations des performances dans .NET 5](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5)
+- [Télécharger le Kit de développement logiciel (SDK) .NET](https://dotnet.microsoft.com/download)

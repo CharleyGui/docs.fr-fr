@@ -1,18 +1,18 @@
 ---
 title: avec expression-référence C#
 description: En savoir plus sur une expression with qui effectue une mutation non destructrice d’enregistrements C#
-ms.date: 11/10/2020
+ms.date: 11/12/2020
 f1_keywords:
 - with_CSharpKeyword
 helpviewer_keywords:
 - with expression [C#]
 - with operator [C#]
-ms.openlocfilehash: 7948df3c6260e297cdb2fa380f1790a55e0abb58
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 8412dfe8663703d3b201fe98b5f4752da1b344cf
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445817"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556710"
 ---
 # <a name="with-expression-c-reference"></a>with, expression (référence C#)
 
@@ -21,6 +21,10 @@ Disponible en C# 9,0 et versions ultérieures, une `with` expression génère un
 :::code language="csharp" source="snippets/with-expression/BasicExample.cs" :::
 
 Comme le montre l’exemple précédent, vous utilisez la syntaxe de l' [initialiseur d’objet](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) pour spécifier les membres à modifier et leurs nouvelles valeurs. Dans une `with` expression, un opérande de gauche doit être d’un type d’enregistrement.
+
+Le résultat d’une `with` expression a le même type au moment de l’exécution que l’opérande de l’expression, comme le montre l’exemple suivant :
+
+:::code language="csharp" source="snippets/with-expression/InheritanceExample.cs" :::
 
 Dans le cas d’un membre de type référence, seule la référence à une instance est copiée lors de la copie d’un enregistrement. La copie et l’enregistrement d’origine ont accès à la même instance de type référence. L’exemple suivant illustre ce comportement :
 

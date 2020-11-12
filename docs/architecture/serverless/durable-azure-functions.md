@@ -1,17 +1,17 @@
 ---
-title: Fonctions Azure durables-applications sans serveur
-description: Les fonctions Azure durables étendent le runtime Azure Functions pour activer les flux de travail avec état dans le code.
+title: Applications sans serveur Azure Functions durables
+description: Durable Azure Functions étendre le runtime Azure Functions pour activer les flux de travail avec état dans le code.
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
-ms.openlocfilehash: 1498b5a19bc92b7db16f7422a35ac3afffb82b60
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: c3ee628b5c2239cd13395fda7714b38b06efa058
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91171791"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557153"
 ---
-# <a name="durable-azure-functions"></a>Fonctions Azure durables
+# <a name="durable-azure-functions"></a>Azure Functions durables
 
 Lorsque vous créez des applications sans serveur avec Azure Functions, vos opérations sont généralement conçues pour s’exécuter sans État. La raison de ce choix de conception est que, à mesure que la plateforme évolue, il devient difficile de savoir quels serveurs le code s’exécute. Il devient également difficile de savoir combien d’instances sont actives à un point donné. Toutefois, il existe des classes d’applications qui requièrent que l’état actuel d’un processus soit connu. Envisagez le processus d’envoi d’une commande à un magasin en ligne. L’opération d’extraction peut être un flux de travail composé de plusieurs opérations qui doivent connaître l’état du processus. Ces informations peuvent inclure l’inventaire des produits, si le client a un crédit sur son compte, ainsi que les résultats du traitement de la carte de crédit. Ces opérations peuvent facilement être leurs propres flux de travail internes, voire des services de systèmes tiers.
 

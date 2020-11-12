@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: e1c297cd0ff75d6a6fb4a9d38c9a241e216f500b
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 5b3695dee8fc26f69e713d1d6811acdf0cfa9764
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440866"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557218"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -31,6 +31,8 @@ C# 9,0 ajoute les fonctionnalités et améliorations suivantes au langage C# :
 - Nouvelles fonctionnalités pour les méthodes partielles
 
 C# 9,0 est pris en charge sur **.net 5**. Pour plus d’informations, consultez contrôle de [version du langage C#](../language-reference/configure-language-version.md).
+
+Vous pouvez télécharger le dernier Kit de développement logiciel (SDK) .NET à partir de la [page de téléchargements .net](https://dotnet.microsoft.com/download).
 
 ## <a name="record-types"></a>Types d’enregistrements
 
@@ -158,7 +160,7 @@ System.Console.WriteLine("Hello World!");
 
 Un seul fichier de votre application peut utiliser des instructions de niveau supérieur. Si le compilateur trouve des instructions de niveau supérieur dans plusieurs fichiers sources, il s’agit d’une erreur. C’est également une erreur si vous combinez des instructions de niveau supérieur avec une méthode de point d’entrée de programme déclarée, généralement une `Main` méthode. Dans un sens, vous pouvez penser qu’un fichier contient les instructions qui seraient normalement dans la `Main` méthode d’une `Program` classe.  
 
-L’une des utilisations les plus courantes de cette fonctionnalité est la création de documents pédagogiques. Les développeurs C# débutants peuvent écrire le « Hello World ! » canonique dans une ou deux lignes de code. Aucune des cérémonie supplémentaires n’est nécessaire. Toutefois, les développeurs chevronnés trouveront de nombreuses utilisations pour cette fonctionnalité également. Les instructions de niveau supérieur permettent une expérience de type script pour les expérimentations similaires à celles fournies par les blocs-notes Jupyter. Les instructions de niveau supérieur sont idéales pour les petits programmes et utilitaires de console. Azure Functions est un cas d’usage idéal pour les instructions de niveau supérieur.
+L’une des utilisations les plus courantes de cette fonctionnalité est la création de documents pédagogiques. Les développeurs C# débutants peuvent écrire le « Hello World ! » canonique dans une ou deux lignes de code. Aucune des cérémonie supplémentaires n’est nécessaire. Toutefois, les développeurs chevronnés trouveront de nombreuses utilisations pour cette fonctionnalité également. Les instructions de niveau supérieur permettent une expérience de type script pour les expérimentations similaires à celles fournies par les blocs-notes Jupyter. Les instructions de niveau supérieur sont idéales pour les petits programmes et utilitaires de console. Les Azure Functions sont un cas d’usage idéal pour les instructions de niveau supérieur.
 
 Plus important encore, les instructions de niveau supérieur ne limitent pas la portée ou la complexité de votre application. Ces instructions peuvent accéder ou utiliser n’importe quelle classe .NET. Ils ne limitent pas non plus l’utilisation des arguments de ligne de commande ou des valeurs de retour. Les instructions de niveau supérieur peuvent accéder à un tableau de chaînes nommées args. Si les instructions de niveau supérieur retournent une valeur entière, cette valeur devient le code de retour de l’entier d’une méthode synthétisée `Main` . Les instructions de niveau supérieur peuvent contenir des expressions Async. Dans ce cas, le point d’entrée synthétisé retourne un `Task` , ou `Task<int>` .
 
