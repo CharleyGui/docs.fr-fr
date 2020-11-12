@@ -1,0 +1,26 @@
+- name: Documentation sur les bibliothèques IoT .NET
+  href: index.yml
+- name: Vue d’ensemble
+  href: intro.md
+- name: Démarrage rapide (Sense HAT)
+  href: quickstarts/sensehat.md
+- name: Tutoriels
+  expanded: true
+  items:
+    - name: Faire clignoter une LED
+      href: tutorials/blink-led.md
+    - name: Lire les conditions environnementales d’un capteur
+      href: tutorials/temp-sensor.md
+    - name: Afficher du texte sur un écran LCD
+      href: tutorials/lcd-display.md
+    - name: Lire les valeurs d’un convertisseur analogique-numérique
+      href: tutorials/adc.md
+- name: Guides pratiques
+  expanded: true
+  items:
+    - name: Déploiement
+      href: deployment.md
+    - name: Débogage
+      href: debugging.md
+- name: Informations de référence sur les API
+  href: /dotnet/api?view=iot-dotnet-1.1
