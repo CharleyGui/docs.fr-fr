@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: dab532fbf87cc70a860a9e3e814c081a1e11a1f5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8e09fe46bf896b62f136bac92acde017f4788b3c
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538451"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594608"
 ---
 
-<span data-ttu-id="14a25-101">_Les installations du gestionnaire de package sont uniquement prises en charge sur l’architecture **x64** _.</span><span class="sxs-lookup"><span data-stu-id="14a25-101">_Package manager installs are only supported on the **x64** architecture_.</span></span> <span data-ttu-id="14a25-102">D’autres architectures, telles que **ARM**, doivent installer manuellement le kit SDK .net Core ou le Runtime .net core.</span><span class="sxs-lookup"><span data-stu-id="14a25-102">Other architectures, such as **ARM**, must manually install the .NET Core SDK or .NET Core Runtime.</span></span> <span data-ttu-id="14a25-103">Pour plus d’informations, consultez la [section Installation manuelle](#manual-install).</span><span class="sxs-lookup"><span data-stu-id="14a25-103">For more information, see the [manually install section](#manual-install).</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="e0ce7-101">Les installations du gestionnaire de package sont uniquement prises en charge sur l’architecture **x64** .</span><span class="sxs-lookup"><span data-stu-id="e0ce7-101">Package manager installs are only supported on the **x64** architecture.</span></span> <span data-ttu-id="e0ce7-102">D’autres architectures, telles que **ARM** , doivent installer manuellement .net.</span><span class="sxs-lookup"><span data-stu-id="e0ce7-102">Other architectures, such as **ARM** , must manually install .NET.</span></span> <span data-ttu-id="e0ce7-103">Pour plus d’informations, consultez la [section Installation manuelle](#manual-install).</span><span class="sxs-lookup"><span data-stu-id="e0ce7-103">For more information, see the [manually install section](#manual-install).</span></span>
