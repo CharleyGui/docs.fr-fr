@@ -4,12 +4,12 @@ description: En savoir plus sur les distributions Linux qui prennent en charge l
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 898def653811007438184b187fc71ab013a44210
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 6354ef6f0f9af2126312683893d6705b3b4c70f4
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506725"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594517"
 ---
 # <a name="install-net-on-linux"></a>Installer .NET sur Linux
 
@@ -101,7 +101,7 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 | ✔️ [33](linux-fedora.md#fedora-33-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [32](linux-fedora.md#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌[31](linux-fedora.md#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
-| ❌[30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌ [30](linux-fedora.md#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌[29](linux-fedora.md#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌[28](linux-fedora.md#fedora-28-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ❌[27](linux-fedora.md#fedora-27-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
@@ -133,7 +133,7 @@ Le tableau suivant répertorie les versions .NET actuellement prises en charge s
 | RHEL                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [8](linux-rhel.md#rhel-8-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ✔️ [7](linux-rhel.md#rhel-7-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
+| ✔️ [7](linux-rhel.md#rhel-7--net-50) | ✔️ 2,1        | ✔️ [3,1](linux-rhel.md#rhel-7--net-core-31)        | ✔️ [5,0](linux-rhel.md#rhel-7--net-50) |
 
 Pour plus d’informations, consultez [installer .net sur RHEL](linux-rhel.md).
 

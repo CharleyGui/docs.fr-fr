@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: d0f5d38de0f505d62f2a35c5d1c3f7161c91a96b
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: b2ed62d024c6f0d78a4ec64693f1dafeabd8f47b
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507093"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594630"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-centos"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur CentOS
 
@@ -46,7 +46,14 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 
 ## <a name="centos-8-"></a>CentOS 8 ✔️
 
-.NET 5,0 est disponible dans les référentiels de packages par défaut pour CentOS 8.
+> [!TIP]
+> .NET 5,0 n’est pas encore disponible dans les référentiels de packages par défaut, mais .NET Core 3,1 est. Pour installer .NET Core 3,1, utilisez la `dnf install` commande avec le package approprié, tel que `aspnetcore-runtime-3.1` ou `dotnet-sdk-3.1` . Les instructions suivantes concernent .NET 5,0.
+
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/8/packages-microsoft-prod.rpm
+```
 
 [!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
@@ -76,7 +83,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 

@@ -2,12 +2,12 @@
 title: Interfaces
 description: 'Découvrez comment les interfaces F # spécifient des jeux de membres connexes que d’autres classes implémentent.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 36272b52fcff83e8e8a54ccc4e6ecd1252a91819
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 0cef2932045dae401f5aa069107815543457ca4a
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558125"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557049"
 ---
 # <a name="interfaces"></a>Interfaces
 
@@ -100,6 +100,67 @@ Les expressions d’objet fournissent un bref moyen d’implémenter une interfa
 Les interfaces peuvent hériter d’une ou de plusieurs interfaces de base.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
+
+## <a name="implementing-interfaces-with-default-implementations"></a>Implémentation d’interfaces avec des implémentations par défaut
+
+C# prend en charge la définition d’interfaces avec des implémentations par défaut, comme suit :
+
+```csharp
+using System;
+
+namespace CSharp
+{
+    public interface MyDim
+    {
+        public int Z => 0;
+    }
+}
+```
+
+Celles-ci sont directement consommables à partir de F # :
+
+```fsharp
+open CSharp
+
+// You can implement the interface via a class
+type MyType() =
+    member _.M() = ()
+
+    interface MyDim
+
+let md = MyType() :> MyDim
+printfn $"DIM from C#: %d{md.Z}"
+
+// You can also implement it via an object expression
+let md' = { new MyDim }
+printfn $"DIM from C# but via Object Expression: %d{md'.Z}"
+```
+
+Vous pouvez substituer une implémentation par défaut avec `override` , comme remplacer n’importe quel membre virtuel.
+
+Les membres d’une interface qui n’ont pas d’implémentation par défaut doivent tout de même être implémentés de manière explicite.
+
+## <a name="implementing-the-same-interface-at-different-generic-instantiations"></a>Implémentation de la même interface à différentes instanciations génériques
+
+F # prend en charge l’implémentation de la même interface à différentes instanciations génériques, comme ceci :
+
+```fsharp
+type IA<'T> =
+    abstract member Get : unit -> 'T
+
+type MyClass() =
+    interface IA<int> with
+        member x.Get() = 1
+    interface IA<string> with
+        member x.Get() = "hello"
+
+let mc = MyClass()
+let iaInt = mc :> IA<int>
+let iaString = mc :> IA<string>
+
+iaInt.Get() // 1
+iaString.Get() // "hello"
+```
 
 ## <a name="see-also"></a>Voir aussi
 

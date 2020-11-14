@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: dab532fbf87cc70a860a9e3e814c081a1e11a1f5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8e09fe46bf896b62f136bac92acde017f4788b3c
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538451"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594608"
 ---
 
-_Les installations du gestionnaire de package sont uniquement prises en charge sur l’architecture **x64** _. D’autres architectures, telles que **ARM**, doivent installer manuellement le kit SDK .net Core ou le Runtime .net core. Pour plus d’informations, consultez la [section Installation manuelle](#manual-install).
+> [!IMPORTANT]
+> Les installations du gestionnaire de package sont uniquement prises en charge sur l’architecture **x64** . D’autres architectures, telles que **ARM** , doivent installer manuellement .net. Pour plus d’informations, consultez la [section Installation manuelle](#manual-install).

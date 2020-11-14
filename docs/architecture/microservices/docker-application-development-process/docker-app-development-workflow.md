@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 04b59a6c30b4fb8f34fe1d0e5cd5328ac77ecb4e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 1ae4e3cda71676caeab849a92207477652050e25
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172552"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594591"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -77,13 +77,13 @@ Vous avez besoin d’un fichier Dockerfile pour chaque image personnalisée que 
 
 Le fichier Dockerfile est créé dans le dossier racine de votre application ou service. Il contient les commandes qui indiquent à Docker comment configurer et exécuter votre application ou service dans un conteneur. Vous pouvez créer manuellement un fichier Dockerfile dans le code et l’ajouter à votre projet, avec vos dépendances .NET.
 
-Avec Visual Studio et ses outils pour Docker, cette tâche se fait en quelques clics de souris seulement. Lorsque vous créez un projet dans Visual Studio 2019, il existe une option nommée **activer la prise en charge**de l’ancrage, comme illustré à la figure 5-3.
+Avec Visual Studio et ses outils pour Docker, cette tâche se fait en quelques clics de souris seulement. Lorsque vous créez un projet dans Visual Studio 2019, il existe une option nommée **activer la prise en charge** de l’ancrage, comme illustré à la figure 5-3.
 
 ![Capture d’écran montrant la case à cocher Activer la prise en charge de l’ancrage.](./media/docker-app-development-workflow/enable-docker-support-check-box.png)
 
 **Figure 5-3**. Activation de la prise en charge de l’ancrage lors de la création d’un projet de ASP.NET Core dans Visual Studio 2019
 
-Vous pouvez également activer la prise en charge de l’ancrage sur un projet d’application Web ASP.net Core existant en cliquant avec le bouton droit sur le projet dans **Explorateur de solutions** et en sélectionnant **Ajouter**la  >  **prise en charge de l’ancrage...**, comme illustré à la figure 5-4.
+Vous pouvez également activer la prise en charge de l’ancrage sur un projet d’application Web ASP.net Core existant en cliquant avec le bouton droit sur le projet dans **Explorateur de solutions** et en sélectionnant **Ajouter** la  >  **prise en charge de l’ancrage...** , comme illustré à la figure 5-4.
 
 ![Capture d’écran montrant l’option prise en charge de l’ancrage dans le menu Ajouter.](./media/docker-app-development-workflow/add-docker-support-option.png)
 
@@ -242,7 +242,7 @@ Voyons maintenant les optimisations possibles pour améliorer les performances d
 
 Vous allez tirer parti de la fonctionnalité de cache de couches de Docker, qui est assez simple : si l’image de base et les commandes sont les mêmes que certaines exécutées précédemment, vous pouvez gagner du temps en utilisant simplement la couche qui en résulte sans avoir à exécuter les commandes.
 
-Par conséquent, prenons l’étape **build**, les lignes 5 et 6 sont quasiment les mêmes, mais les lignes 7 à 17 sont différentes pour chaque service d’eShopOnContainers, et doivent donc être exécutées à chaque fois, mais si vous remplacez les lignes 7 à 16 par :
+Par conséquent, prenons l’étape **build** , les lignes 5 et 6 sont quasiment les mêmes, mais les lignes 7 à 17 sont différentes pour chaque service d’eShopOnContainers, et doivent donc être exécutées à chaque fois, mais si vous remplacez les lignes 7 à 16 par :
 
 ```dockerfile
 COPY . .
@@ -264,7 +264,7 @@ Les packages sont restaurés pour l’ensemble de la solution, mais une fois enc
 
 Toutefois, `dotnet restore` s’exécute uniquement si le dossier contient un seul fichier projet ou solution. Les choses se compliquent donc un peu et vous pouvez résoudre le problème, sans rentrer dans les détails, de la façon suivante :
 
-1. Ajoutez les lignes suivantes à **.dockerignore ** :
+1. Ajoutez les lignes suivantes à **.dockerignore**  :
 
    - `*.sln`, pour ignorer tous les fichiers solution dans l’arborescence de dossiers principale
 
@@ -290,7 +290,7 @@ Le fichier résultant est alors :
 11
 12  FROM base AS final
 13  WORKDIR /app
-14  COPY --from=publish /app
+14  COPY --from=publish /app .
 15  ENTRYPOINT ["dotnet", "Catalog.API.dll"]
 ```
 
@@ -336,7 +336,7 @@ Vous pouvez rechercher les images existantes dans votre dépôt local avec la co
 
 ### <a name="creating-docker-images-with-visual-studio"></a>Création d’images Docker avec Visual Studio
 
-Quand vous utilisez Visual Studio pour créer un projet avec la prise en charge de Docker, vous ne créez pas une image explicitement. En fait, l’image est créée quand vous appuyez sur **F5** (ou **Ctrl-F5**) pour exécuter l’application ou le service dockerisé. Cette étape est automatique dans Visual Studio. Vous ne la verrez donc pas à l’écran, mais il est important d’en comprendre le mécanisme.
+Quand vous utilisez Visual Studio pour créer un projet avec la prise en charge de Docker, vous ne créez pas une image explicitement. En fait, l’image est créée quand vous appuyez sur **F5** (ou **Ctrl-F5** ) pour exécuter l’application ou le service dockerisé. Cette étape est automatique dans Visual Studio. Vous ne la verrez donc pas à l’écran, mais il est important d’en comprendre le mécanisme.
 
 ![Image pour l’étape 4 facultative.](./media/docker-app-development-workflow/step-4-define-services-docker-compose-yml.png)
 

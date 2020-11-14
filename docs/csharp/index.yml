@@ -6,12 +6,12 @@ metadata:
   description: Développeurs débutants, développeurs débutants en C# et développeurs C#/.NET expérimentés, découvrez la programmation C#.
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: 7a9818ea24af237242ddd55afb53d691400ce008
-  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+  ms.openlocfilehash: f31d24add06b958f6c5bc00baf4c09601616604e
+  ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/15/2020
-  ms.locfileid: "90537377"
+  ms.lasthandoff: 11/12/2020
+  ms.locfileid: "94556814"
 landingContent:
 - title: Apprendre à programmer en C#
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
       url: https://aka.ms/dotnet3-csharp
   - linkListType: download
     links:
-    - text: Télécharger le kit SDK .NET Core
+    - text: Télécharger le Kit de développement logiciel (SDK) .NET
       url: https://dotnet.microsoft.com/download
 - title: Notions de base C#
   linkLists:

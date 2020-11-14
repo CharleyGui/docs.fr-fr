@@ -5,12 +5,12 @@ ms.date: 11/06/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: efce75159cd631ad64ba03d4b65aaeb64ccdc809
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 10c1345f4a0a37e04377250da9a7b6df7df3a105
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557028"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594538"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -137,7 +137,6 @@ Il existe de nouvelles fonctionnalités dans et pour [System.Text.Jssur](../stan
 - [champs de support](../standard/serialization/system-text-json-how-to.md#include-fields)
 - [Ignorer conditionnellement les propriétés](../standard/serialization/system-text-json-how-to.md#ignore-properties)
 - [Prise en charge des dictionnaires non-clés-chaîne](../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md#dictionary-with-non-string-key)
-- [Prendre en charge les accesseurs de propriété non publics](../standard/serialization/system-text-json-how-to.md#non-public-property-accessors)
 - [Autoriser les convertisseurs personnalisés à gérer la valeur null](../standard/serialization/system-text-json-converters-how-to.md#handle-null-values)
 - [Copier JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
 - [Créer des JsonSerializerOptions avec des valeurs par défaut Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)

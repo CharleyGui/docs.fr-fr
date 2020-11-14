@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 1b1f2e383e270e646436f8aa1ce19edd8da262b3
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: fe18cda64e0c9986884486298adf4a83b604f323
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506751"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594533"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -79,7 +79,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net.
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
@@ -204,7 +204,7 @@ La configuration requise précédente est également requise si vous rencontrez 
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation d’intégration continue et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 5,0. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le kit de développement logiciel (SDK).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 3,1. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le kit de développement logiciel (SDK).
 
 ```powershell
 dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore

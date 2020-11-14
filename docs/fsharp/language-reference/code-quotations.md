@@ -2,16 +2,16 @@
 title: Quotations de code
 description: 'En savoir plus sur les Quotations de code F #, une fonctionnalité de langage qui vous permet de générer et d’utiliser des expressions de code F # par programmation.'
 ms.date: 08/13/2020
-ms.openlocfilehash: 070e127397a5da7d70281d08ef7cafdb9b4f4fe5
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: dc37fdbd6cd29e5ee94e5c0186dfe2bfeb666f32
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558333"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557192"
 ---
 # <a name="code-quotations"></a>Quotations de code
 
-Cet article décrit les *Quotations de code*, une fonctionnalité de langage qui vous permet de générer et d’utiliser des expressions de code F # par programmation. Cette fonctionnalité vous permet de générer une arborescence de syntaxe abstraite qui représente le code F #. L’arborescence de syntaxe abstraite peut ensuite être parcourue et traitée en fonction des besoins de votre application. Par exemple, vous pouvez utiliser l’arborescence pour générer du code F # ou générer du code dans un autre langage.
+Cet article décrit les *Quotations de code* , une fonctionnalité de langage qui vous permet de générer et d’utiliser des expressions de code F # par programmation. Cette fonctionnalité vous permet de générer une arborescence de syntaxe abstraite qui représente le code F #. L’arborescence de syntaxe abstraite peut ensuite être parcourue et traitée en fonction des besoins de votre application. Par exemple, vous pouvez utiliser l’arborescence pour générer du code F # ou générer du code dans un autre langage.
 
 ## <a name="quoted-expressions"></a>Expressions entre guillemets
 
@@ -37,6 +37,21 @@ Toutefois, les expressions suivantes sont valides.
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet502.fs)]
 
 Pour évaluer les guillemets F #, vous devez utiliser l' [évaluateur de guillemets f #](https://github.com/fsprojects/FSharp.Quotations.Evaluator). Il prend en charge l’évaluation et l’exécution des objets d’expression F #.
+
+Les guillemets F # conservent également les informations de contrainte de type. Prenons l’exemple suivant :
+
+```fsharp
+open FSharp.Linq.RuntimeHelpers
+
+let eval q = LeafExpressionConverter.EvaluateQuotation q
+
+let inline negate x = -x
+// val inline negate: x: ^a ->  ^a when  ^a : (static member ( ~- ) :  ^a ->  ^a)
+
+<@ negate 1.0 @>  |> eval
+```
+
+La contrainte générée par la `inline` fonction est conservée dans le code qutoation. Le `negate` formulaire quotated de la fonction peut maintenant être évalué.
 
 ## <a name="expr-type"></a>Expr (type)
 
@@ -66,7 +81,7 @@ L’exemple suivant illustre l’utilisation de quotations de code pour placer d
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet601.fs)]
 
-### <a name="output"></a>Output
+### <a name="output"></a>Sortie
 
 ```fsharp
 fun (x:System.Int32) -> x + 1
@@ -88,7 +103,7 @@ Le code dans les autres branches de modèles actifs régénère simplement la m�
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet701.fs)]
 
-### <a name="output"></a>Output
+### <a name="output"></a>Sortie
 
 ```fsharp
 1 + Module1.add(2,Module1.add(3,4))

@@ -2,18 +2,20 @@
 title: 'Nouveautés du guide F # 5,0-F #'
 description: 'Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 0c4c9f42c63a1dc8c90213c43edbadd4061c132d
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 51d6dd2457ee9966a86d0d9ac686f2af15772999
+ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445831"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94557140"
 ---
 # <a name="whats-new-in-f-50"></a>Nouveautés de F # 5,0
 
 F # 5,0 ajoute plusieurs améliorations au langage F # et F# Interactive. Il est publié avec **.net 5**.
 
-## <a name="get-started"></a>Prise en main
+Vous pouvez télécharger le dernier Kit de développement logiciel (SDK) .NET à partir de la [page de téléchargements .net](https://dotnet.microsoft.com/download).
+
+## <a name="get-started"></a>Bien démarrer
 
 F # 5,0 est disponible dans toutes les distributions .NET Core et les outils Visual Studio. Pour plus d’informations, consultez la page [prise en main de F #](../get-started/index.md) pour en savoir plus.
 
@@ -149,7 +151,6 @@ nameof op_Addition // "op_Addition"
 L’utilisation du nom d’un paramètre de type requiert une syntaxe légèrement différente :
 
 ```fsharp
-
 type C<'TType> =
     member _.TypeName = nameof<'TType>
 ```
@@ -228,16 +229,16 @@ F # 5,0 offre une prise en charge du découpage avec un index fixe dans les type
 Pour illustrer cela, examinez le tableau 3D suivant :
 
 *z = 0*
-|x\y|0|1|
-|---|-|-|
-|**0**|0|1|
-|**1**|2|3|
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 0 | 1 |
+| **1** | 2 | 3 |
 
 *z = 1*
-|x\y|0|1|
-|---|-|-|
-|**0**|4|5|
-|**1**|6|7|
+| x\y   | 0 | 1 |
+|-------|---|---|
+| **0** | 4 | 5 |
+| **1** | 6 | 7 |
 
 Que se passe-t-il si vous souhaitez extraire la tranche `[| 4; 5 |]` du tableau ? C’est maintenant très simple !
 
@@ -258,6 +259,23 @@ for z in 0..dim-1 do
 // Now let's get the [4;5] slice!
 m.[*, 0, 1]
 ```
+
+## <a name="f-quotations-improvements"></a>Améliorations des guillemets F #
+
+Les [citations de code](../language-reference/code-quotations.md) F # peuvent désormais conserver les informations de contrainte de type. Prenons l’exemple suivant :
+
+```fsharp
+open FSharp.Linq.RuntimeHelpers
+
+let eval q = LeafExpressionConverter.EvaluateQuotation q
+
+let inline negate x = -x
+// val inline negate: x: ^a ->  ^a when  ^a : (static member ( ~- ) :  ^a ->  ^a)
+
+<@ negate 1.0 @>  |> eval
+```
+
+La contrainte générée par la `inline` fonction est conservée dans le code qutoation. Le `negate` formulaire quotated de la fonction peut maintenant être évalué.
 
 ## <a name="applicative-computation-expressions"></a>Expressions de calcul applicative
 

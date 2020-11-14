@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: c5b98767388937ba1e06b0e856a9a923d4a18b3c
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 983c5d2c04b87759b898f449bc092161b03c8ace
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506777"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594454"
 ---
 # <a name="install-net-on-macos"></a>Installer .NET sur macOS
 
@@ -67,7 +67,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les deux [runtimes](#runtime-information): ASP.net Core et .net.
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 .NET est pris en charge sur les versions macOS suivantes :
 
@@ -143,7 +143,7 @@ export PATH=$PATH:$HOME/dotnet
 > [!TIP]
 > Les `export` commandes précédentes rendent uniquement les commandes de l’interface de commande .net CLI disponibles pour la session Terminal dans laquelle elle a été exécutée.
 >
-> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Par exemple :
+> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Exemple :
 >
 > - **Interpréteur** de commandes bash : *~/.bash_profile* , *~ fichier/.bashrc*
 > - **Shell Korn** : *~/.kshrc* ou *. Profile*
@@ -181,7 +181,7 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 5,0. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](./windows.md).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 3,1. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](./windows.md).
 
 ```bash
 ./dotnet-install.sh --channel 5.0 --runtime aspnetcore

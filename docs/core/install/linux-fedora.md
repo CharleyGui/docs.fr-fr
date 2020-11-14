@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: d5b5886f8b29e0f8e935850686cc84f78c55be02
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 9e96773e30fb8ee395e37dca7a4794cd42359bb2
+ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507064"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94594609"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-fedora"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Fedora
 
@@ -32,7 +32,7 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 | ✔️ [33](#fedora-33-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [32](#fedora-32-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌[31](#fedora-31-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
-| ❌[30](#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌ [30](#fedora-30-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌[29](#fedora-29-) | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌[28](#fedora-28-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ❌[27](#fedora-27-) | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
@@ -49,15 +49,31 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 
 ## <a name="fedora-33-"></a>Fedora 33 ✔️
 
-.NET 5 et .NET Core 3,1 sont disponibles dans les référentiels de packages par défaut pour Fedora 33.
+> [!TIP]
+> .NET Core 3,1 est disponible dans les référentiels de packages par défaut pour Fedora 33. Pour installer .NET Core 3,1, utilisez la `dnf install` commande avec le package approprié, tel que `aspnetcore-runtime-3.1` ou `dotnet-sdk-3.1` . .NET 5,0 n’est pas encore disponible dans les référentiels de packages par défaut.
 
-[!INCLUDE [linux-dnf-install-31](includes/linux-install-50-dnf.md)]
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/33/prod.repo
+```
+
+[!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
 ## <a name="fedora-32-"></a>Fedora 32 ✔️
 
-.NET Core 3,1 est disponible dans les référentiels de packages par défaut pour Fedora 32.
+> [!TIP]
+> .NET Core 3,1 est disponible dans les référentiels de packages par défaut pour Fedora 32. Pour installer .NET Core 3,1, utilisez la `dnf install` commande avec le package approprié, tel que `aspnetcore-runtime-3.1` ou `dotnet-sdk-3.1` . .NET 5,0 n’est pas encore disponible dans les référentiels de packages par défaut.
 
-[!INCLUDE [linux-dnf-install-31](includes/linux-install-31-dnf.md)]
+[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/32/prod.repo
+```
+
+[!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
 ## <a name="fedora-31-"></a>Fedora 31 ❌
 
@@ -140,7 +156,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
