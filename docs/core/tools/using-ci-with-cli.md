@@ -1,17 +1,17 @@
 ---
-title: Intégration continue (CI) avec des kit SDK .NET Core et des outils
-description: Découvrez comment utiliser la kit SDK .NET Core et ses outils sur le serveur de builds avec intégration continue.
+title: Intégration continue (CI) avec le kit de développement logiciel (SDK) et les outils .NET
+description: Découvrez comment utiliser le kit de développement logiciel (SDK) .NET et ses outils sur le serveur de builds avec intégration continue.
 ms.date: 05/18/2017
-ms.openlocfilehash: 724cc639a2588b085b31ff4590acce34d2380655
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6d92bf7250ab4aea33325b1a23e7661a296e9756
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537715"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633816"
 ---
-# <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
+# <a name="using-the-net-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du kit de développement logiciel (SDK) et des outils .NET dans l’intégration continue (CI)
 
-Ce document décrit l’utilisation du SDK .NET Core et de ses outils sur un serveur de builds. L’ensemble d’outils .NET Core fonctionne à la fois de manière interactive, où un développeur saisit des commandes dans une invite de commandes, et de manière automatique, où un serveur d’intégration continue (CI) exécute un script de build. Les commandes, les options, les entrées et les sorties sont identiques, et les seuls éléments que vous fournissez sont un moyen d’acquérir les outils et un système pour générer votre application. Ce document se concentre sur les scénarios d’acquisition d’outils pour l’intégration continue. Il contient également des recommandations sur la façon de concevoir et de structurer vos scripts de build.
+Ce document décrit l’utilisation du kit de développement logiciel (SDK) .NET et de ses outils sur un serveur de builds. L’ensemble d’outils .NET fonctionne de manière interactive, où un développeur tape des commandes à une invite de commandes, et automatiquement, où un serveur d’intégration continue (CI) exécute un script de génération. Les commandes, les options, les entrées et les sorties sont identiques, et les seuls éléments que vous fournissez sont un moyen d’acquérir les outils et un système pour générer votre application. Ce document se concentre sur les scénarios d’acquisition d’outils pour l’intégration continue. Il contient également des recommandations sur la façon de concevoir et de structurer vos scripts de build.
 
 ## <a name="installation-options-for-ci-build-servers"></a>Options d’installation pour les serveurs de builds avec intégration continue
 
@@ -32,7 +32,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/windows.md#dependencies).
+> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Dependencies and Requirements](../install/windows.md#dependencies).
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 
@@ -42,9 +42,9 @@ Cette section décrit une configuration manuelle à l’aide d’un script Power
 
 Chaque service SaaS dispose de ses propres méthodes pour créer et configurer un processus de génération. Si vous utilisez une solution SaaS différente de celles répertoriées ou si vous avez besoin d’une personnalisation qui va au-delà de la prise en charge prédéfinie, vous devez effectuer une configuration manuelle.
 
-En règle générale, une configuration manuelle vous oblige à acquérir une version des outils (ou les versions les plus récentes des outils générées de nuit) et à exécuter votre script de build. Vous pouvez utiliser un script PowerShell ou bash pour orchestrer les commandes .NET Core ou vous pouvez utiliser un fichier projet qui décrit le processus de génération. La [section sur l’orchestration](#orchestrating-the-build) fournit plus de détails sur ces options.
+En règle générale, une configuration manuelle vous oblige à acquérir une version des outils (ou les versions les plus récentes des outils générées de nuit) et à exécuter votre script de build. Vous pouvez utiliser un script PowerShell ou bash pour orchestrer les commandes .NET ou utiliser un fichier projet qui présente le processus de génération. La [section sur l’orchestration](#orchestrating-the-build) fournit plus de détails sur ces options.
 
-Après avoir créé un script qui exécute une configuration manuelle du serveur de builds CI, utilisez-le sur votre machine de développement afin de générer votre code localement à des fins de test. Après avoir confirmé que le script s’exécute correctement localement, déployez-le sur votre serveur de builds CI. Un script PowerShell relativement simple illustre comment obtenir le kit SDK .NET Core et l’installer sur un serveur de builds Windows :
+Après avoir créé un script qui exécute une configuration manuelle du serveur de builds CI, utilisez-le sur votre machine de développement afin de générer votre code localement à des fins de test. Après avoir confirmé que le script s’exécute correctement localement, déployez-le sur votre serveur de builds CI. Un script PowerShell relativement simple montre comment obtenir le kit de développement logiciel (SDK) .NET et l’installer sur un serveur de builds Windows :
 
 ```powershell
 $ErrorActionPreference="Stop"
@@ -120,15 +120,15 @@ LOCALDOTNET="$INSTALLDIR/dotnet"
 
 ### <a name="travis-ci"></a>Travis CI
 
-Vous pouvez configurer [CI Travis](https://travis-ci.org/) pour installer le kit SDK .NET Core à l’aide du langage `csharp` et de la clé `dotnet`. Pour plus d’informations, consultez les documents officiels sur CI Travis sous [Building a C#, F#, or Visual Basic Project](https://docs.travis-ci.com/user/languages/csharp/) (Générer un projet C#, F# ou Visual Basic). Remarque : lorsque vous accédez aux informations sur CI Travis, l’identificateur de langage `language: csharp` entretenu par la communauté fonctionne pour tous les langages .NET, notamment F# et Mono.
+Vous pouvez configurer [Travis ci](https://travis-ci.org/) pour installer le kit de développement logiciel (SDK) .net à l’aide du `csharp` langage et de la `dotnet` clé. Pour plus d’informations, consultez les documents officiels sur CI Travis sous [Building a C#, F#, or Visual Basic Project](https://docs.travis-ci.com/user/languages/csharp/) (Générer un projet C#, F# ou Visual Basic). Remarque : lorsque vous accédez aux informations sur CI Travis, l’identificateur de langage `language: csharp` entretenu par la communauté fonctionne pour tous les langages .NET, notamment F# et Mono.
 
-CI Travis exécute à la fois les travaux macOS et Linux dans une *matrice de builds*, où vous spécifiez une combinaison de runtime, d’environnement et d’exclusions/inclusions pour couvrir les combinaisons de build pour votre application. Pour plus d’informations, consultez l’article [Personnalisation de la build](https://docs.travis-ci.com/user/customizing-the-build) dans la documentation CI Travis. Les outils MSBuild incluent les runtimes LTS (1.0.x) et Current (1.1.x) dans le package ; donc, en installant le kit SDK, vous recevez tout ce dont vous avez besoin pour la génération.
+CI Travis exécute à la fois les travaux macOS et Linux dans une *matrice de builds* , où vous spécifiez une combinaison de runtime, d’environnement et d’exclusions/inclusions pour couvrir les combinaisons de build pour votre application. Pour plus d’informations, consultez l’article [Personnalisation de la build](https://docs.travis-ci.com/user/customizing-the-build) dans la documentation CI Travis. Les outils MSBuild incluent les runtimes LTS (1.0.x) et Current (1.1.x) dans le package ; donc, en installant le kit SDK, vous recevez tout ce dont vous avez besoin pour la génération.
 
 ### <a name="appveyor"></a>AppVeyor
 
-[AppVeyor](https://www.appveyor.com/) installe le kit SDK .NET Core 1.0.1 avec l’image de travail de la build `Visual Studio 2017`. D’autres images de la build avec différentes versions du SDK .NET Core sont disponibles. Pour plus d’informations, consultez l’[exemple appveyor.yml](https://github.com/dotnet/docs/blob/master/appveyor.yml) et l’article [Build worker images](https://www.appveyor.com/docs/build-environment/#build-worker-images) dans la documentation AppVeyor.
+[AppVeyor](https://www.appveyor.com/) installe le kit SDK .NET Core 1.0.1 avec l’image de travail de la build `Visual Studio 2017`. D’autres images de build avec différentes versions du kit de développement logiciel (SDK) .NET sont disponibles. Pour plus d’informations, consultez l’[exemple appveyor.yml](https://github.com/dotnet/docs/blob/master/appveyor.yml) et l’article [Build worker images](https://www.appveyor.com/docs/build-environment/#build-worker-images) dans la documentation AppVeyor.
 
-Les fichiers binaires du kit SDK .NET Core sont téléchargés et décompressés dans un sous-répertoire à l’aide du script d’installation, puis ils sont ajoutés à la variable d’environnement `PATH`. Ajoutez une matrice de builds pour exécuter des tests d’intégration avec plusieurs versions du SDK .NET Core :
+Les fichiers binaires du kit de développement logiciel (SDK) .NET sont téléchargés et décompressés dans un sous-répertoire à l’aide du script d’installation, puis ils sont ajoutés à la `PATH` variable d’environnement. Ajoutez une matrice de génération pour exécuter des tests d’intégration avec plusieurs versions du kit de développement logiciel (SDK) .NET :
 
 ```yaml
 environment:
@@ -142,10 +142,10 @@ install:
 
 ### <a name="azure-devops-services"></a>Azure DevOps Services
 
-Configurez Azure DevOps Services pour générer des projets .NET Core à l’aide de l’une des méthodes suivantes :
+Configurez Azure DevOps Services pour générer des projets .NET à l’aide de l’une de ces approches :
 
 1. Exécutez le script à partir de [l’étape de configuration manuelle](#manual-setup) en utilisant vos commandes.
-1. Créez une build composée de plusieurs tâches de build intégrées Azure DevOps Services qui sont configurées pour utiliser les outils .NET Core.
+1. Créez une build composée de plusieurs Azure DevOps Services tâches de génération intégrées qui sont configurées pour utiliser les outils .NET.
 
 Les deux solutions sont valides. À l’aide d’un script de configuration manuelle, vous contrôlez la version des outils que vous recevez, car vous les téléchargez dans le cadre de la génération. La build est exécutée à partir d’un script que vous devez créer. Cet article couvre uniquement l’option manuelle. Pour plus d’informations sur la composition d’une build avec les tâches de génération Azure DevOps Services, consultez la documentation [Azure Pipelines](/azure/devops/pipelines/index).
 
@@ -155,7 +155,7 @@ Pour utiliser un script de configuration manuelle dans Azure DevOps Services, cr
 
    ![Sélection d’une définition de build vide](./media/using-ci-with-cli/select-empty-build-definition.png)
 
-1. Après avoir configuré le référentiel à générer, vous êtes dirigé vers les définitions de la build. Sélectionnez **Ajouter une étape de génération**:
+1. Après avoir configuré le référentiel à générer, vous êtes dirigé vers les définitions de la build. Sélectionnez **Ajouter une étape de génération** :
 
    ![Ajout d’une étape de build](./media/using-ci-with-cli/add-build-step.png)
 
@@ -169,9 +169,9 @@ Pour utiliser un script de configuration manuelle dans Azure DevOps Services, cr
 
 ## <a name="orchestrating-the-build"></a>Orchestration de la build
 
-Ce document décrit principalement comment obtenir les outils .NET Core et configurer différents services d’intégration continue sans fournir d’informations sur la façon d’orchestrer ou de *réellement générer* votre code avec .NET Core. Les choix sur la façon de structurer le processus de génération dépendent de nombreux facteurs qui ne peuvent pas être traités ici d’une manière générale. Pour plus d’informations sur l’orchestration de vos builds avec chaque technologie, explorez les ressources et les exemples fournis dans la documentation de [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](/azure/devops/pipelines/index).
+La majeure partie de ce document décrit comment acquérir les outils .NET et configurer divers services d’élément de configuration sans fournir d’informations sur la façon d’orchestrer ou de *générer* votre code avec .net core. Les choix sur la façon de structurer le processus de génération dépendent de nombreux facteurs qui ne peuvent pas être traités ici d’une manière générale. Pour plus d’informations sur l’orchestration de vos builds avec chaque technologie, explorez les ressources et les exemples fournis dans la documentation de [CI Travis](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/) et [Azure Pipelines](/azure/devops/pipelines/index).
 
-L’utilisation directe de MSBuild ou l’utilisation des commandes de ligne de commande .NET Core constituent les deux méthodes générales que vous utilisez afin de structurer le processus de génération pour le code .NET Core à l’aide des outils .NET Core. La méthode que vous choisissez dépend de votre niveau d’assurance et des compromis en matière de complexité. MSBuild vous permet d’exprimer votre processus de génération sous la forme de tâches et de cibles, mais vous devez vous familiariser avec la syntaxe de fichier projet MSBuild complexe. L’utilisation des outils de ligne de commande .NET Core est peut-être plus simple, mais vous devez écrire une logique d’orchestration dans un langage de script comme `bash` ou PowerShell.
+Deux approches générales que vous devez suivre pour structurer le processus de génération pour le code .NET à l’aide des outils .NET utilisent MSBuild directement ou à l’aide des commandes de ligne de commande .NET. La méthode que vous choisissez dépend de votre niveau d’assurance et des compromis en matière de complexité. MSBuild vous permet d’exprimer votre processus de génération sous la forme de tâches et de cibles, mais vous devez vous familiariser avec la syntaxe de fichier projet MSBuild complexe. L’utilisation des outils en ligne de commande .NET est peut-être plus simple, mais vous devez écrire la logique d’orchestration dans un langage de script comme `bash` ou PowerShell.
 
 ## <a name="see-also"></a>Voir aussi
 

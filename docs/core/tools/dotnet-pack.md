@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet pack
-description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
+description: La commande dotnet Pack crée des packages NuGet pour votre projet .NET.
 ms.date: 04/28/2020
-ms.openlocfilehash: 409b946d93cf73fec38941740a446c3ee3402490
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4312ea64a75fa89eae58cdb41a6dc3463cdd215c
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537825"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634231"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -39,7 +39,7 @@ Si vous souhaitez générer un package qui contient les symboles de débogage, d
 - `--include-symbols` -Il crée le package de symboles.
 - `--include-source` -Il crée le package de symboles avec un `src` dossier contenant les fichiers sources.
 
-Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
+Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec* , pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
 Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Cette option s’avère souvent utile dans les scénarios de build d’intégration continue (CI), pour lesquels vous savez que le code a déjà été créé.
 
@@ -48,7 +48,7 @@ Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comport
 
 Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). La section [Exemples](#examples) montre comment utiliser le commutateur MSBuild -p pour deux scénarios différents.
 
-Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour remplacer le comportement par défaut, ajoutez la propriété suivante à votre fichier *.csproj* :
+Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour remplacer le comportement par défaut, ajoutez la propriété suivante à votre fichier *.csproj*  :
 
 ```xml
 <PropertyGroup>
@@ -154,7 +154,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   dotnet pack --no-build --output nupkgs
   ```
 
-- Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
+- Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj* , empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
 
   ```dotnetcli
   dotnet pack --version-suffix "ci-1234"
@@ -188,4 +188,4 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   
   - [Compression à l’aide d’un fichier .nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
   - [Points d’extension avancés pour créer un package personnalisé](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
-  - [Propriétés globales](/visualstudio/msbuild/msbuild-properties?view=vs-2019#global-properties)
+  - [Propriétés globales](/visualstudio/msbuild/msbuild-properties#global-properties)

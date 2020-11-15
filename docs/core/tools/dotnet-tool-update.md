@@ -1,21 +1,21 @@
 ---
 title: Commande dotnet tool update
-description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET Core spécifié sur votre ordinateur.
+description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET spécifié sur votre ordinateur.
 ms.date: 07/08/2020
-ms.openlocfilehash: a212fbb40af68019c1bc9a63963d960292be6b08
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 18b153e53a6dbcb32e50ae4a7d06a1c2f53d1eb5
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308869"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634075"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet tool update`-Met à jour l' [outil .net Core](global-tools.md) spécifié sur votre ordinateur.
+`dotnet tool update` -Met à jour l' [outil .net](global-tools.md) spécifié sur votre ordinateur.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -44,7 +44,7 @@ dotnet tool update -h|--help
 
 ## <a name="description"></a>Description
 
-La `dotnet tool update` commande vous permet de mettre à jour les outils .net Core sur votre ordinateur vers la dernière version stable du package. La commande désinstalle et réinstalle un outil en le mettant à jour. Pour utiliser la commande, vous spécifiez l’une des options suivantes :
+La `dotnet tool update` commande vous permet de mettre à jour les outils .net sur votre ordinateur vers la dernière version stable du package. La commande désinstalle et réinstalle un outil en le mettant à jour. Pour utiliser la commande, vous spécifiez l’une des options suivantes :
 
 * Pour mettre à jour un outil global qui a été installé à l’emplacement par défaut, utilisez l' `--global` option
 * Pour mettre à jour un outil global qui a été installé dans un emplacement personnalisé, utilisez l' `--tool-path` option.
@@ -56,7 +56,7 @@ La `dotnet tool update` commande vous permet de mettre à jour les outils .net C
 
 - **`PACKAGE_ID`**
 
-  Nom/ID du package NuGet qui contient l’outil Global .NET Core à mettre à jour. Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).
+  Nom/ID du package NuGet qui contient l’outil .NET global à mettre à jour. Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).
 
 ## <a name="options"></a>Options
 
@@ -66,7 +66,7 @@ La `dotnet tool update` commande vous permet de mettre à jour les outils .net C
 
 - **`--configfile <FILE>`**
 
-  Fichier de configuration NuGet (*nuget.config*) à utiliser.
+  Fichier de configuration NuGet ( *nuget.config* ) à utiliser.
 
 - **`--disable-parallel`**
 
@@ -144,7 +144,7 @@ La `dotnet tool update` commande vous permet de mettre à jour les outils .net C
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils .NET Core](global-tools.md)
+- [Outils .NET](global-tools.md)
 - [Gestion sémantique de version](https://semver.org)
-- [Didacticiel : installer et utiliser un outil Global .NET Core à l’aide de l’CLI .NET Core](global-tools-how-to-use.md)
-- [Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core](local-tools-how-to-use.md)
+- [Didacticiel : installer et utiliser un outil .NET global à l’aide de l’interface de commande .NET](global-tools-how-to-use.md)
+- [Didacticiel : installer et utiliser un outil local .NET à l’aide de l’interface de commande .NET](local-tools-how-to-use.md)

@@ -3,19 +3,19 @@ title: Utiliser l’injection de dépendances dans .NET
 description: Découvrez comment utiliser l’injection de dépendances dans vos applications .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/23/2020
+ms.date: 11/13/2020
 ms.topic: tutorial
 no-loc:
 - Transient
 - Scoped
 - Singleton
 - Example
-ms.openlocfilehash: 589e15736c07b465fda308b04c91384a2502755c
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: b1e84685ad95372c4b2038e913199f7283135b71
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888584"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634517"
 ---
 # <a name="tutorial-use-dependency-injection-in-net"></a>Didacticiel : utiliser l’injection de dépendances dans .NET
 
@@ -37,7 +37,7 @@ Dans ce tutoriel, vous allez apprendre à :
 
 ## <a name="create-a-new-console-application"></a>Créer une application console
 
-À l’aide de la commande [dotnet New](../tools/dotnet-new.md) ou de l’Assistant Nouveau projet IDE, créez une nouvelle application console .NET nommée **ConsoleDI. Example** . Ajoutez le package NuGet [Microsoft. extensions. Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) au projet.
+À l’aide de la commande [dotnet New](../tools/dotnet-new.md) ou de l’Assistant Nouveau projet IDE, créez une nouvelle application console .NET nommée **ConsoleDI. Example**. Ajoutez le package NuGet [Microsoft. extensions. Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) au projet.
 
 ## <a name="add-interfaces"></a>Ajouter des interfaces
 
@@ -88,6 +88,11 @@ Le `OperationLogger` définit un constructeur qui requiert chacune des interface
 Mettez à jour *Program.cs* avec le code suivant :
 
 :::code language="csharp" source="snippets/configuration/console-di/Program.cs" range="1-18,35-60" highlight="22-26":::
+
+> Chaque `services.Add{SERVICE_NAME}` méthode d’extension ajoute et configure éventuellement des services. Il est recommandé que les applications suivent cette convention. Placez les méthodes d’extension dans l’espace de noms <xref:Microsoft.Extensions.DependencyInjection?displayProperty=fullName> pour encapsuler des groupes d’inscriptions de service. L’inclusion de la partie espace `Microsoft.Extensions.DependencyInjection` de noms pour les méthodes d’extension di est également :
+>
+> - Permet de les afficher dans [IntelliSense](/visualstudio/ide/using-intellisense) sans ajouter de `using` blocs supplémentaires.
+> - Empêche `using` des instructions excessives dans les `Program` `Startup` classes ou où ces méthodes d’extension sont généralement appelées.
 
 L’application :
 

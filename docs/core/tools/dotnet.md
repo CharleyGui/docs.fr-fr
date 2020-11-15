@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour l’interface CLI .NET) et son utilisation.
 ms.date: 11/11/2020
-ms.openlocfilehash: a2b4b026e7c89536a6a7eaf69b31e3f62bf5adfc
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 7a0c8f2eb7ab407bd725db56cbf31da4689970e4
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556825"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634023"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -239,7 +239,7 @@ Pour plus d’informations sur chaque outil, tapez `dotnet <tool-name> --help`.
 
 ## <a name="examples"></a>Exemples
 
-Créez une application de console .NET Core :
+Créez une application de console .NET :
 
 ```dotnetcli
 dotnet new console

@@ -1,16 +1,16 @@
 ---
-title: 'Didacticiel : installer et utiliser les outils locaux .NET Core'
+title: 'Didacticiel : installer et utiliser les outils locaux .NET'
 description: Découvrez comment installer et utiliser un outil .NET comme un outil local.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 555497a71d54713e62e54f8f293afdf74ead1743
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 2cb25443706293b66325d43136afcd3fd886294d
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062673"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633879"
 ---
-# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core
+# <a name="tutorial-install-and-use-a-net-local-tool-using-the-net-cli"></a>Didacticiel : installer et utiliser un outil local .NET à l’aide de l’interface de commande .NET
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
@@ -199,9 +199,9 @@ dotnet tool uninstall microsoft.botsay
 dotnet tool uninstall dotnetsay
 ```
 
-## <a name="troubleshoot"></a>Dépannage
+## <a name="troubleshoot"></a>Dépanner
 
-Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation de l’outil .net Core](troubleshoot-usage-issues.md).
+Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation des outils .net](troubleshoot-usage-issues.md).
 
 ## <a name="see-also"></a>Voir aussi
 

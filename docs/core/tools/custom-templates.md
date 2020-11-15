@@ -3,16 +3,16 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 62d98adab0122936957301ee737c366541b0cfe6
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 3995fad864b80d024209c723a0197281e1b0f523
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471548"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634179"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
-Le [SDK .NET Core](https://dotnet.microsoft.com/download) est fourni avec de nombreux modèles déjà installés et prêts à l’emploi. La [ `dotnet new` commande](dotnet-new.md) n’est pas le seul moyen d’utiliser un modèle, mais également comment installer et désinstaller des modèles. À compter de .NET Core 2.0, vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
+Le [Kit de développement logiciel (SDK) .net](https://dotnet.microsoft.com/download) est fourni avec de nombreux modèles déjà installés et prêts à être utilisés. La [ `dotnet new` commande](dotnet-new.md) n’est pas le seul moyen d’utiliser un modèle, mais également comment installer et désinstaller des modèles. Vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
 
 Vous pouvez installer des modèles personnalisés à partir d’un package NuGet sur tout flux NuGet, en référençant directement un fichier NuGet *. nupkg* ou en spécifiant un répertoire de système de fichiers qui contient le modèle. Le moteur de modèle offre des fonctionnalités qui vous permettent de remplacer des valeurs, d’inclure et d’exclure des fichiers, ainsi que d’exécuter des opérations de traitement personnalisées quand votre modèle est utilisé.
 
@@ -25,7 +25,7 @@ Pour suivre une procédure pas à pas et créer un modèle, consultez le didacti
 
 ### <a name="net-default-templates"></a>Modèles par défaut .NET
 
-Quand vous installez le [SDK .NET Core](https://dotnet.microsoft.com/download), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://reactjs.org/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
+Lorsque vous installez le [Kit de développement logiciel (SDK) .net](https://dotnet.microsoft.com/download), vous recevez plus d’une douzaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.net Core (y compris des projets [angulaires](https://angular.io/) et des projets de [réaction](https://reactjs.org/) ) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
 
 ```dotnetcli
 dotnet new --list
@@ -36,7 +36,7 @@ dotnet new --list
 Un modèle est constitué des éléments suivants :
 
 - Dossiers et fichiers sources.
-- Un fichier de configuration (*template.jssur*).
+- Un fichier de configuration ( *template.jssur* ).
 
 ### <a name="source-files-and-folders"></a>Dossiers et fichiers sources
 
@@ -66,11 +66,11 @@ Le fichier *template.json* est placé dans un dossier *.template.config* dans le
 | `sourceName`       | string        | Nom de l’arborescence source à remplacer par le nom que l’utilisateur spécifie. Le moteur de modèle recherchera toutes les occurrences des `sourceName` éléments mentionnés dans le fichier de configuration et les remplacera dans les noms de fichiers et les fichiers. La valeur à remplacer par peut être donnée à l’aide `-n` des `--name` options ou lors de l’exécution d’un modèle. Si aucun nom n’est spécifié, le répertoire actif est utilisé.|
 | `preferNameDirectory`       | boolean        | Indique s’il faut créer un répertoire pour le modèle si nom est spécifié, mais qu’aucun répertoire de sortie n’est défini (au lieu de créer le contenu directement dans le répertoire actif). La valeur par défaut est false.|
 
-Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
+Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json* , consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
 #### <a name="example"></a>Exemple
 
-Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config*, qui contient le fichier *template.json*.
+Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config* , qui contient le fichier *template.json*.
 
 ```text
 └───mytemplate
@@ -108,7 +108,7 @@ Le fichier *.csproj* est légèrement différent d’un fichier de projet de cod
 01. Les paramètres de métadonnées génériques doivent être définis : `<Title>`, `<Authors>`, `<Description>` et `<PackageTags>`.
 01. Le paramètre `<TargetFramework>` doit être défini, même si le fichier binaire généré par le processus de modèle n’est pas utilisé. Dans l’exemple ci-dessous, il est défini sur `netstandard2.0`.
 
-Un pack de modèle, sous la forme d’un package NuGet *.nupkg*, requiert que tous les modèles soient stockés dans le dossier *content* du package. Il existe quelques paramètres supplémentaires à ajouter à un fichier *.csproj* pour vous assurer que le *.nupkg* généré peut être installé en tant que pack de modèle :
+Un pack de modèle, sous la forme d’un package NuGet *.nupkg* , requiert que tous les modèles soient stockés dans le dossier *content* du package. Il existe quelques paramètres supplémentaires à ajouter à un fichier *.csproj* pour vous assurer que le *.nupkg* généré peut être installé en tant que pack de modèle :
 
 01. Le paramètre `<IncludeContentInPack>` est défini sur `true` pour inclure n’importe quel fichier que le projet définit comme **contenu** dans le package NuGet.
 01. Le paramètre `<IncludeBuildOutput>` est défini sur `false` pour exclure tous les fichiers binaires générés par le compilateur à partir du package NuGet.
@@ -189,7 +189,7 @@ dotnet new -i <PATH_TO_NUPKG_FILE>
 
 ### <a name="to-install-a-template-from-a-file-system-directory"></a>Pour installer un modèle à partir d’un répertoire de système de fichiers
 
-Les modèles peuvent être installés à partir d’un dossier de modèles, comme le dossier *mytemplate1*, à partir de l’exemple ci-dessus. Spécifiez le chemin du dossier *.template.config*. Le chemin d’accès au répertoire du modèle n’a pas besoin d’être absolu. Toutefois, un chemin d’accès absolu est requis pour désinstaller un modèle qui est installé à partir d’un dossier.
+Les modèles peuvent être installés à partir d’un dossier de modèles, comme le dossier *mytemplate1* , à partir de l’exemple ci-dessus. Spécifiez le chemin du dossier *.template.config*. Le chemin d’accès au répertoire du modèle n’a pas besoin d’être absolu. Toutefois, un chemin d’accès absolu est requis pour désinstaller un modèle qui est installé à partir d’un dossier.
 
 ```dotnetcli
 dotnet new -i <FILE_SYSTEM_DIRECTORY>
@@ -206,7 +206,7 @@ dotnet new -u
 Cette commande renvoie quelque chose de similaire à la sortie suivante :
 
 ```console
-Template Instantiation Commands for .NET Core CLI
+Template Instantiation Commands for .NET CLI
 
 Currently installed items:
   Microsoft.DotNet.Common.ItemTemplates
@@ -239,7 +239,7 @@ Si le package a été installé par un flux NuGet ou par un fichier *.nupkg* dir
 dotnet new -u <NUGET_PACKAGE_ID>
 ```
 
-Si le package a été installé en spécifiant un chemin d’accès au dossier *.template.config*, utilisez ce chemin **absolu** pour désinstaller le package. Vous pouvez voir le chemin d’accès absolu du modèle dans la sortie fournie par la commande `dotnet new -u`. Pour plus d’informations, consultez la section [Obtenir la liste des modèles installés](#get-a-list-of-installed-templates) ci-dessus.
+Si le package a été installé en spécifiant un chemin d’accès au dossier *.template.config* , utilisez ce chemin **absolu** pour désinstaller le package. Vous pouvez voir le chemin d’accès absolu du modèle dans la sortie fournie par la commande `dotnet new -u`. Pour plus d’informations, consultez la section [Obtenir la liste des modèles installés](#get-a-list-of-installed-templates) ci-dessus.
 
 ```dotnetcli
 dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>

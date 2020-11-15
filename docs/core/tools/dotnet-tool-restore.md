@@ -1,21 +1,21 @@
 ---
 title: commande de restauration de l’outil dotnet
-description: La commande de restauration de l’outil dotnet installe sur votre machine les outils locaux .NET Core qui sont dans l’étendue du répertoire actif.
+description: La commande de restauration de l’outil dotnet installe sur votre machine les outils locaux .NET qui sont dans l’étendue du répertoire actif.
 ms.date: 02/14/2020
-ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1b7fd10102f2c957b3eb235f6897b60bc8ca9c07
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302670"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634270"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
-`dotnet tool restore`-Installe sur votre machine les outils locaux .NET Core qui sont dans l’étendue du répertoire actif.
+`dotnet tool restore` -Installe sur votre machine les outils locaux .NET qui sont dans l’étendue du répertoire actif.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -37,7 +37,7 @@ La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil
 
 - **`--configfile <FILE>`**
 
-  Fichier de configuration NuGet (*nuget.config*) à utiliser.
+  Fichier de configuration NuGet ( *nuget.config* ) à utiliser.
 
 - **`--add-source <SOURCE>`**
 
@@ -79,5 +79,5 @@ La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils .NET Core](global-tools.md)
-- [Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core](local-tools-how-to-use.md)
+- [Outils .NET](global-tools.md)
+- [Didacticiel : installer et utiliser un outil local .NET à l’aide de l’interface de commande .NET](local-tools-how-to-use.md)

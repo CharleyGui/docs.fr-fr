@@ -1,13 +1,13 @@
 ---
 title: commande de recherche d’outil dotnet
-description: La commande de recherche de l’outil dotnet recherche les outils .NET Core qui sont publiés sur NuGet.org.
+description: La commande de recherche de l’outil dotnet recherche les outils .NET qui sont publiés sur NuGet.org.
 ms.date: 11/11/2020
-ms.openlocfilehash: 4357ce4864cad386968e4a76466066fbf2ce4060
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: e0289e651ec4a439c791c8c948bef2d85d9c3794
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94558073"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634140"
 ---
 # <a name="dotnet-tool-search"></a>recherche d’outils dotnet
 
@@ -15,7 +15,7 @@ ms.locfileid: "94558073"
 
 ## <a name="name"></a>Name
 
-`dotnet tool search` -Recherche tous les [outils .net Core](global-tools.md) qui sont publiés dans NuGet.
+`dotnet tool search` -Recherche tous les [outils .net](global-tools.md) publiés dans NuGet.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -100,6 +100,6 @@ La commande utilise l' [API de recherche NuGet](/nuget/api/search-query-service-
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Outils .NET Core](global-tools.md)
-- [Didacticiel : installer et utiliser un outil Global .NET Core à l’aide de l’CLI .NET Core](global-tools-how-to-use.md)
-- [Didacticiel : installer et utiliser un outil local .NET Core à l’aide de l’CLI .NET Core](local-tools-how-to-use.md)
+- [Outils .NET](global-tools.md)
+- [Didacticiel : installer et utiliser un outil .NET global à l’aide de l’interface de commande .NET](global-tools-how-to-use.md)
+- [Didacticiel : installer et utiliser un outil local .NET à l’aide de l’interface de commande .NET](local-tools-how-to-use.md)

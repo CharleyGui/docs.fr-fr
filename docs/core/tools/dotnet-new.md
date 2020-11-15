@@ -1,22 +1,22 @@
 ---
 title: Commande dotnet new
-description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
+description: La commande dotnet New crée de nouveaux projets .NET basés sur le modèle spécifié.
 no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/04/2020
-ms.openlocfilehash: 2ee06c37cd950f3b9771db2f30fe353435641d67
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 3ee644f05ea5929ffc7b11054ef1d974b811f418
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400589"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634453"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
@@ -35,7 +35,7 @@ dotnet new -h|--help
 
 ## <a name="description"></a>Description
 
-La `dotnet new` commande crée un projet .net Core ou d’autres artefacts basés sur un modèle.
+La `dotnet new` commande crée un projet .net ou d’autres artefacts basés sur un modèle.
 
 La commande appelle le [moteur de modèles](https://github.com/dotnet/templating) pour créer les artefacts sur le disque en fonction du modèle et des options spécifiés.
 
@@ -56,9 +56,9 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   - Si l’interface CLI ne peut pas trouver de correspondance de modèle lors de l’appel `dotnet new` de, pas encore partiel.
   - Si une version plus récente du modèle est disponible. Dans ce cas, le projet ou l’artefact est créé, mais l’interface CLI vous avertit d’une version mise à jour du modèle.
 
-  Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
+  Le tableau suivant présente les modèles qui sont préinstallés avec le kit de développement logiciel (SDK) .NET. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Language     | Étiquettes                                  | Introduit |
+| Modèles                                    | Nom court                      | Langage     | Étiquettes                                  | Introduit |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -108,7 +108,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`-h|--help`**
 
-  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple, `dotnet new mvc --help`.
+  Affiche l’aide pour la commande. Elle peut être appelée pour la `dotnet new` commande elle-même ou pour n’importe quel modèle. Par exemple : `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
@@ -127,7 +127,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
   Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
 
   > [!NOTE]
-  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple, `dotnet new console -lang "F#"`.
+  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple : `dotnet new console -lang "F#"`.
 
 - **`-n|--name <OUTPUT_NAME>`**
 
@@ -135,7 +135,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 - **`--nuget-source <SOURCE>`**
 
-  Spécifie une source NuGet à utiliser pendant l’installation. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,1.
+  Spécifie une source NuGet à utiliser pendant l’installation.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -177,6 +177,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -196,7 +197,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - _ *`-f|--framework <FRAMEWORK>`**
 
-  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp<version>` pour créer une bibliothèque de classes .NET Core ou `netstandard<version>` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Valeurs : `net5.0` ou `netcoreapp<version>` pour créer une bibliothèque de classes .net ou `netstandard<version>` pour créer une bibliothèque de classes .NET standard. La valeur par défaut pour le kit de développement logiciel (SDK) .NET 5,0 est `net5.0` .
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -214,7 +215,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - _ *`-f|--framework <FRAMEWORK>`**
 
-  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `net5.0`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -268,6 +269,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -291,6 +293,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.2         | `netcoreapp2.2` |
@@ -515,6 +518,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
@@ -602,6 +606,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
 
@@ -654,6 +659,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
@@ -674,6 +680,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.0` |
@@ -759,6 +766,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   | Version du SDK | Valeur par défaut   |
   |-------------|-----------------|
+  | 5.0         | `net5.0`        |
   | 3.1         | `netcoreapp3.1` |
   | 3.0         | `netcoreapp3.0` |
   | 2.1         | `netcoreapp2.1` |
@@ -773,7 +781,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - _ *`--sdk-version <VERSION_NUMBER>`**
 
-  Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global.js* .
+  Spécifie la version du kit de développement logiciel (SDK) .NET à utiliser dans le fichier *global.js* .
 
 ***
 

@@ -1,17 +1,18 @@
 ---
 ms.custom: updateeachrelease
-ms.openlocfilehash: d30d6ee2dae332895697b2fd1b931b7ec47d14bc
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 20d4434bc25fbd55cf2bbb309558395dd980d398
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656204"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634496"
 ---
 | Valeur                     | Signification                                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | `preview`                 | Le compilateur accepte toute la syntaxe de langage valide de la dernière préversion.                         |
 | `latest`                  | Le compilateur accepte la syntaxe de la dernière version publiée du compilateur (versions mineures incluses). |
 | `latestMajor` (`default`) | Le compilateur accepte la syntaxe de la dernière version principale publiée du compilateur.                     |
+| `9.0`                     | Le compilateur accepte uniquement la syntaxe qui est incluse dans C# 9,0 ou une partie antérieure.                                   |
 | `8.0`                     | Le compilateur accepte uniquement la syntaxe incluse dans C# 8.0 ou une version antérieure.                                   |
 | `7.3`                     | Le compilateur accepte uniquement la syntaxe incluse dans C# 7.3 ou une version antérieure.                                   |
 | `7.2`                     | Le compilateur accepte uniquement la syntaxe incluse dans C# 7.2 ou une version antérieure.                                   |

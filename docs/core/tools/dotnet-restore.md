@@ -2,18 +2,18 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 7b456e28505a07c03936c9006c8631848fd4672c
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: dcb68d6c690f2e12b61cfdfa6dc288bd474721c1
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925474"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634401"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet restore` : Restaure les dépendances et les outils d’un projet.
 
@@ -46,7 +46,7 @@ Parfois, il peut être gênant d’exécuter la restauration NuGet implicite ave
 
 ### <a name="specify-feeds"></a>Spécifier les flux
 
-Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du kit SDK .NET Core. Pour spécifier des flux supplémentaires, effectuez l’une des opérations suivantes :
+Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lorsque le kit de développement logiciel (SDK) .NET est installé. Pour spécifier des flux supplémentaires, effectuez l’une des opérations suivantes :
 
 - Créez votre propre *nuget.config* fichier dans le répertoire du projet. Pour plus d’informations, consultez [configurations NuGet courantes](/nuget/consume-packages/configuring-nuget-behavior) et [nuget.config différences](#nugetconfig-differences) plus loin dans cet article.
 - Utilisez des `dotnet nuget` commandes telles que [`dotnet nuget add source`](dotnet-nuget-add-source.md) .
@@ -65,17 +65,17 @@ Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer 
 
 ### <a name="nugetconfig-differences"></a>Différences dans nuget.config
 
-Le comportement de la commande `dotnet restore` est affecté par les paramètres du fichier *nuget.config*, s’il est présent. Par exemple, si vous définissez `globalPackagesFolder` dans *nuget.config*, les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur nuget.config](/nuget/schema/nuget-config-file).
+Le comportement de la commande `dotnet restore` est affecté par les paramètres du fichier *nuget.config* , s’il est présent. Par exemple, si vous définissez `globalPackagesFolder` dans *nuget.config* , les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur nuget.config](/nuget/schema/nuget-config-file).
 
 Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
 - [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
 
-  Les redirections de liaison ne fonctionnent pas avec les éléments `<PackageReference>` et .NET Core prend en charge seulement les éléments `<PackageReference>` pour les packages NuGet.
+  Les redirections de liaison ne fonctionnent pas avec les `<PackageReference>` éléments et .net ne prend en charge que `<PackageReference>` les éléments des packages NuGet.
 
 - [Solution](/nuget/schema/nuget-config-file#solution-section)
 
-  Ce paramètre est spécifique à Visual Studio et ne s’applique pas à .NET Core. .NET Core n’utilise pas de fichier `packages.config` et utilise à la place des éléments `<PackageReference>` pour les packages NuGet.
+  Ce paramètre est spécifique à Visual Studio et ne s’applique pas à .NET. .NET n’utilise pas de `packages.config` fichier et utilise `<PackageReference>` à la place des éléments pour les packages NuGet.
 
 - [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
 
@@ -91,7 +91,7 @@ Trois paramètres spécifiques sont ignorés par `dotnet restore` :
 
 - **`--configfile <FILE>`**
 
-  Fichier de configuration NuGet (*nuget.config*) à utiliser pour l’opération de restauration.
+  Fichier de configuration NuGet ( *nuget.config* ) à utiliser pour l’opération de restauration.
 
 - **`--disable-parallel`**
 

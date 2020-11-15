@@ -1,20 +1,20 @@
 ---
-title: 'Didacticiel : créer un outil .NET Core'
-description: Découvrez comment créer un outil .NET Core. Un outil est une application console installée à l’aide de l’CLI .NET Core.
+title: 'Didacticiel : créer un outil .NET'
+description: Découvrez comment créer un outil .NET. Un outil est une application console installée à l’aide de l’interface CLI .NET.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: c1c17368d8efdece73f5312899553bacf884cfb3
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 93d0567f3d73707f828f84fad6128804debf6579
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062780"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633776"
 ---
-# <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Didacticiel : créer un outil .NET Core à l’aide de l’CLI .NET Core
+# <a name="tutorial-create-a-net-tool-using-the-net-cli"></a>Didacticiel : créer un outil .NET à l’aide de l’interface de commande .NET
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-Ce didacticiel vous apprend à créer et à empaqueter un outil .NET Core. La CLI .NET Core vous permet de créer une application console en tant qu’outil, que d’autres peuvent installer et exécuter. Les outils .NET Core sont des packages NuGet qui sont installés à partir du CLI .NET Core. Pour plus d’informations sur les outils, consultez [vue d’ensemble des outils .net Core](global-tools.md).
+Ce didacticiel vous apprend à créer et à empaqueter un outil .NET. L’interface de commande .NET vous permet de créer une application console en tant qu’outil, que d’autres peuvent installer et exécuter. Les outils .NET sont des packages NuGet qui sont installés à partir de l’interface CLI .NET. Pour plus d’informations sur les outils, consultez [vue d’ensemble des outils .net](global-tools.md).
 
 L’outil que vous allez créer est une application console qui accepte un message comme entrée et affiche le message avec des lignes de texte qui créent l’image d’un robot.
 
@@ -28,7 +28,7 @@ Il s’agit de la première d’une série de trois didacticiels. Dans ce didact
   
 - Un éditeur de texte ou un éditeur de code de votre choix.
 
-## <a name="create-a-project"></a>Création d’un projet
+## <a name="create-a-project"></a>Créer un projet
 
 1. Ouvrez une invite de commandes et créez un dossier nommé *repository*.
 
@@ -132,7 +132,7 @@ Il s’agit de la première d’une série de trois didacticiels. Dans ce didact
 
 1. Enregistrez vos modifications.
 
-## <a name="test-the-application"></a>Tester l’application
+## <a name="test-the-application"></a>Test de l’application
 
 Exécutez le projet et observez le résultat. Essayez ces variations sur la ligne de commande pour afficher des résultats différents :
 
@@ -156,9 +156,9 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
    <PackageOutputPath>./nupkg</PackageOutputPath>
    ```
 
-   `<ToolCommandName>`est un élément facultatif qui spécifie la commande qui appellera l’outil après son installation. Si cet élément n’est pas fourni, le nom de commande de l’outil est le nom du fichier projet sans l’extension *. csproj* .
+   `<ToolCommandName>` est un élément facultatif qui spécifie la commande qui appellera l’outil après son installation. Si cet élément n’est pas fourni, le nom de commande de l’outil est le nom du fichier projet sans l’extension *. csproj* .
 
-   `<PackageOutputPath>`est un élément facultatif qui détermine où le package NuGet sera produit. Le package NuGet est ce que le CLI .NET Core utilise pour installer votre outil.
+   `<PackageOutputPath>` est un élément facultatif qui détermine où le package NuGet sera produit. Le package NuGet est ce que le CLI .NET Core utilise pour installer votre outil.
 
    Le fichier projet se présente maintenant comme dans l’exemple suivant :
 
@@ -189,9 +189,9 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
   
    Lorsque vous souhaitez libérer un outil publiquement, vous pouvez le télécharger sur `https://www.nuget.org` . Une fois que l’outil est disponible sur NuGet, les développeurs peuvent installer l’outil à l’aide de la commande d’installation de l' [outil dotnet](dotnet-tool-install.md) . Pour ce didacticiel, vous installez le package directement à partir du dossier local *nupkg* . il n’est donc pas nécessaire de charger le package dans NuGet.
 
-## <a name="troubleshoot"></a>Dépannage
+## <a name="troubleshoot"></a>Dépanner
 
-Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation de l’outil .net Core](troubleshoot-usage-issues.md).
+Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation des outils .net](troubleshoot-usage-issues.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

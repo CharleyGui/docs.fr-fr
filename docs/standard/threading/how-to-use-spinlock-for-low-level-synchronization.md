@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - SpinLock, how to use
 ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
-ms.openlocfilehash: 3fb19c2b36d97710685cac4ecd10f47a119814ce
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 8f81df527f83183804132ce09ae713fbbcf6f3ce
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189184"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634244"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Guide pratique pour utiliser le verrouillage SpinLock pour une synchronisation de bas niveau
 
@@ -26,7 +26,7 @@ L'exemple suivant montre comment utiliser un verrouillage <xref:System.Threading
   
  Cet exemple utilise la classe <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, qui exige la synchronisation utilisateur pour l’accès multithread. Une autre option consiste à utiliser <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> , qui ne requiert pas de verrous utilisateur.  
   
- Notez l’utilisation de `false` dans l’appel à <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType> . Cela fournit les meilleures performances. Spécifiez `true` sur les architectures IA64 pour utiliser la barrière de mémoire, qui vide les mémoires tampons d’écriture pour vous assurer que le verrou est maintenant disponible pour la fermeture des autres threads.  
+ Notez l’utilisation de `false` dans l’appel à <xref:System.Threading.SpinLock.Exit%2A?displayProperty=nameWithType> . Cela fournit les meilleures performances. Spécifiez `true` sur les architectures IA64 pour utiliser la barrière de mémoire, qui vide les mémoires tampons d’écriture pour vous assurer que le verrou est maintenant disponible pour les autres threads.
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,18 +2,18 @@
 title: Commande dotnet store
 description: La commande « dotnet store » stocke les assemblys spécifiés dans le magasin de packages de runtime.
 ms.date: 02/14/2020
-ms.openlocfilehash: 2f28a9bc287a87f600bda385c579e8070cbaa5ab
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 8efb11c6bf648bc7787d5627e02b180abb8a0afd
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463394"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634335"
 ---
 # <a name="dotnet-store"></a>dotnet store
 
-**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet store` : stocke les assemblys spécifiés dans le [magasin de packages de runtime](../deploying/runtime-store.md).
 
@@ -45,13 +45,13 @@ dotnet store -h|--help
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  [L’identifiant de temps d’exécution](../rid-catalog.md) à cibler.
+  [Identificateur du runtime](../rid-catalog.md) à cibler.
 
 ## <a name="optional-options"></a>Options facultatives
 
 - **`--framework-version <FRAMEWORK_VERSION>`**
 
-  Spécifie la version du SDK .NET Core. Cette option vous permet de sélectionner une version de framework spécifique en plus du framework indiqué par l’option `-f|--framework`.
+  Spécifie la version du kit de développement logiciel (SDK) .NET. Cette option vous permet de sélectionner une version de framework spécifique en plus du framework indiqué par l’option `-f|--framework`.
 
 - **`-h|--help`**
 
@@ -59,7 +59,7 @@ dotnet store -h|--help
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Spécifie le chemin du magasin de packages de runtime. Si ce chemin n’est pas spécifié, le sous-répertoire *store* du répertoire d’installation de .NET Core du profil de l’utilisateur est choisi par défaut.
+  Spécifie le chemin du magasin de packages de runtime. S’il n’est pas spécifié, le sous-répertoire *Store* du répertoire d’installation .net du profil utilisateur est utilisé par défaut.
 
 - **`--skip-optimization`**
 

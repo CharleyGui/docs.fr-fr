@@ -3,12 +3,12 @@ title: Accès de niveau élevé pour les commandes dotnet
 description: Découvrez les bonnes pratiques concernant les commandes dotnet qui nécessitent un accès de niveau élevé.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: f99e0b257772e0a73d4945f1129997d1d3308ed2
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: b34a4d631ec0e5ef641e1ffbc91e081d25645157
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805792"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634049"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Accès de niveau élevé pour les commandes dotnet
 
@@ -22,11 +22,11 @@ Les commandes suivantes peuvent être exécutées avec des privilèges élevés�
 
 Il est déconseillé d’exécuter les autres commandes avec des privilèges élevés. Plus précisément, il est déconseillé d’utiliser des privilèges élevés avec les commandes qui utilisent MSBuild, telles que [dotnet restore](dotnet-restore.md), [dotnet build](dotnet-build.md) et [dotnet run](dotnet-run.md). Le problème le plus courant est celui qui est lié à la gestion des autorisations, lorsqu’un utilisateur passe régulièrement d’un compte racine à un compte restreint, après l’émission de commandes dotnet. Vous pouvez vous rendre compte, qu’en tant qu’utilisateur restreint, que vous ne pouvez pas accéder au fichier créé par un utilisateur racine. Il existe des moyens de résoudre ce problème, mais nous n’avons pas besoin de nous y intéresser tout de suite.
 
-Vous pouvez exécuter des commandes avec un compte racine, du moment que vous ne passez constamment d’un compte racine à un compte restreint. Par exemple, les conteneurs Docker sont exécutés par défaut avec un compte racine. Ils ont donc cette caractéristique.
+Vous pouvez exécuter des commandes en tant que racine tant que vous n’effectuez pas de transition entre la racine et un compte restreint. Par exemple, les conteneurs Docker sont exécutés par défaut avec un compte racine. Ils ont donc cette caractéristique.
 
 ## <a name="global-tool-installation"></a>Installation de l’outil global
 
-Les instructions suivantes montrent la méthode recommandée pour installer, exécuter et désinstaller les outils .NET Core dont l’exécution nécessite des autorisations élevées.
+Les instructions suivantes illustrent la méthode recommandée pour installer, exécuter et désinstaller des outils .NET qui nécessitent des autorisations élevées pour s’exécuter.
 
 <!-- markdownlint-disable MD025 -->
 
@@ -36,8 +36,8 @@ Les instructions suivantes montrent la méthode recommandée pour installer, ex�
 
 Si le dossier `%ProgramFiles%\dotnet-tools` existe déjà, effectuez les étapes suivantes pour vérifier si le groupe « Utilisateurs » est autorisé à écrire ou à modifier ce répertoire :
 
-- Cliquez à `%ProgramFiles%\dotnet-tools` droite sur le dossier et sélectionnez **les propriétés**. La boîte de dialogue **Propriétés communes** s’ouvre.
-- Sélectionnez l’onglet **Sécurité.** Sous **nom de groupe ou d’utilisateur,** vérifiez si le groupe "Utilisateurs" a la permission d’écrire ou de modifier l’annuaire.
+- Cliquez avec le bouton droit sur le `%ProgramFiles%\dotnet-tools` dossier et sélectionnez **Propriétés**. La boîte de dialogue **Propriétés communes** s’ouvre.
+- Sélectionnez l’onglet **sécurité** . Sous **groupes ou noms d’utilisateurs** , vérifiez si le groupe « utilisateurs » a l’autorisation d’écrire ou de modifier le répertoire.
 - Si le groupe « Utilisateurs » peut modifier le répertoire ou y écrire des données, utilisez un nom de répertoire autre que *dotnet-tools* lorsque vous installez les outils.
 
 Pour installer les outils, exécutez la commande suivante dans l’invite de commandes avec élévation de privilèges. Cela va créer le dossier *dotnet-tools* pendant l’installation.
@@ -108,4 +108,4 @@ Pendant le développement, vous aurez peut-être besoin de privilèges élevés 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des outils globaux .NET Core](global-tools.md)
+- [Vue d’ensemble des outils .NET](global-tools.md)

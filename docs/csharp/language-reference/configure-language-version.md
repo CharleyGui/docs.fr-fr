@@ -3,12 +3,12 @@ title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet et des raisons qui sous-tendent ce choix. Découvrez comment remplacer manuellement la valeur par défaut.
 ms.custom: updateeachrelease
 ms.date: 08/11/2020
-ms.openlocfilehash: 327a98da37b97830ac7f752a3621a92d8cb161e0
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: a06aa8812dad6f4b9a9254eef9f7c678c22af860
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495458"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94634497"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
@@ -29,15 +29,15 @@ C# 9,0 est pris en charge uniquement sur .NET 5 et les versions plus récentes.
 
 Le compilateur détermine une valeur par défaut en fonction de ces règles :
 
-| Version cible de .NET Framework | version | Version du langage C# par défaut |
+| Version cible de .NET Framework | Version | Version du langage C# par défaut |
 |------------------|---------|-----------------------------|
-| .NET             | 5     | C# 9,0                      |
+| .NET             | 5     | C# 9.0                      |
 | .NET Core        | 3.x     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |
 | .NET Standard    | 2.0     | C# 7.3                      |
 | .NET Standard    | 1.x     | C# 7.3                      |
-| .NET Framework   | all     | C# 7.3                      |
+| .NET Framework   | all     | C# 7.3                      |
 
 Lorsqu’il s’agit d’une préversion cible pour laquelle il existe une préversion du langage correspondante, c’est cette dernière qui est utilisée. Vous utilisez les fonctionnalités les plus récentes avec cette préversion dans n’importe quel environnement, sans affecter les projets qui ciblent une version .NET Core publiée.
 
@@ -80,7 +80,7 @@ Les builds dans tous les sous-répertoires du répertoire contenant ce fichier u
 
 ## <a name="c-language-version-reference"></a>Informations de référence sur la version du langage C#
 
-Le tableau suivant montre toutes les versions actuelles du langage C#. Votre compilateur peut ne pas nécessairement comprendre chaque valeur si elle est plus ancienne. Si vous installez .NET Core 3,0 ou une version ultérieure, vous avez accès à tout ce qui est listé.
+Le tableau suivant montre toutes les versions actuelles du langage C#. Votre compilateur peut ne pas nécessairement comprendre chaque valeur si elle est plus ancienne. Si vous installez le dernier Kit de développement logiciel (SDK) .NET, vous avez accès à tout ce qui est listé.
 
 [!INCLUDE [langversion-table](includes/langversion-table.md)]
 
@@ -106,7 +106,8 @@ Le tableau suivant montre toutes les versions actuelles du langage C#. Votre com
 > 7.1
 > 7.2
 > 7.3
-> 8.0 (default)
+> 8.0
+> 9.0 (default)
 > latestmajor
 > preview
 > latest

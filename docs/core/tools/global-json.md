@@ -1,27 +1,27 @@
 ---
 title: Vue d’ensemble de global.json
-description: Découvrez comment utiliser le fichier global.json pour définir la version du kit SDK .NET Core pendant l’exécution de commandes CLI .NET Core.
+description: Découvrez comment utiliser le global.jsfichier pour définir la version du kit de développement logiciel (SDK) .NET lors de l’exécution des commandes de l’interface CLI .NET.
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 714e32ec841cee214f801de65bccf0041af66b0b
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 02a0ab478a23f7df55a8cc2e872e480b311304fe
+ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281543"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94633997"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-Le fichier *global.json* vous permet de définir la version du kit SDK .NET Core utilisée pendant l’exécution des commandes de l’interface CLI .NET Core. La sélection du kit SDK .NET Core est indépendante de la spécification du runtime ciblé par votre projet. La version de kit SDK .NET Core indique les versions du CLI .NET Core à utiliser.
+Le *global.jssur* fichier vous permet de définir la version du kit de développement logiciel (SDK) .net qui est utilisée lorsque vous exécutez des commandes de l’interface de commande CLI .net. La sélection du kit de développement logiciel (SDK) .NET est indépendante de la spécification du runtime ciblé par votre projet. La version du kit de développement logiciel (SDK) .NET indique les versions de l’interface de commande .NET à utiliser.
 
 En général, vous souhaitez utiliser la dernière version des outils du kit de développement logiciel (SDK), de sorte qu’aucun *global.js* n’est nécessaire. Dans certains scénarios avancés, vous souhaiterez peut-être contrôler la version des outils du kit de développement logiciel (SDK), et cet article explique comment procéder.
 
 Pour plus d’informations sur la spécification du runtime, consultez [Versions cibles de .NET Framework](../../standard/frameworks.md).
 
-Le kit SDK .NET Core recherche un fichier *global.json* dans le répertoire de travail actif (qui n’est pas nécessairement le même que le répertoire du projet) ou dans l’un de ses répertoires parents.
+Le kit de développement logiciel (SDK) .NET recherche une *global.jssur* le fichier dans le répertoire de travail actif (qui n’est pas nécessairement le même que le répertoire du projet) ou l’un de ses répertoires parents.
 
 ## <a name="globaljson-schema"></a>Schéma de global.json
 
@@ -29,15 +29,15 @@ Le kit SDK .NET Core recherche un fichier *global.json* dans le répertoire de t
 
 Entrez : `object`
 
-Spécifie des informations sur le kit SDK .NET Core à sélectionner.
+Spécifie des informations sur le kit de développement logiciel (SDK) .NET à sélectionner.
 
-#### <a name="version"></a>version
+#### <a name="version"></a>Version
 
 - Entrez : `string`
 
 - Disponible depuis : .NET Core 1,0 SDK.
 
-Version du kit SDK .NET Core à utiliser.
+Version du kit de développement logiciel (SDK) .NET à utiliser.
 
 Ce champ :
 
@@ -84,7 +84,7 @@ Le tableau suivant indique les valeurs possibles pour la `rollForward` clé :
 | `latestPatch` | Utilise le dernier niveau de correctif installé qui correspond à la bande principale, mineure et de fonctionnalité demandée avec un niveau de correctif et qui est supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
 | `latestFeature` | Utilise la bande de fonctionnalités et le niveau de correctifs les plus élevés qui correspondent aux principaux et mineurs demandés, avec une bande de fonctionnalités et un niveau de correctif supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
 | `latestMinor` | Utilise le niveau le plus élevé, la bande de fonctionnalités et le niveau de correctif logiciel les plus élevés qui correspond à la valeur principale demandée, avec un niveau de plage de fonctionnalités et de correctifs supérieur ou égal à la valeur spécifiée. <br> S’il est introuvable, échoue. |
-| `latestMajor` | Utilise le kit SDK .NET Core installé le plus élevé avec une version supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échec. |
+| `latestMajor` | Utilise le kit de développement logiciel (SDK) .NET le plus élevé avec une version supérieure ou égale à la valeur spécifiée. <br> S’il est introuvable, échec. |
 | `disable`     | Ne restaure pas par progression. Correspondance exacte requise. |
 
 ### <a name="msbuild-sdks"></a>MSBuild-SDK
@@ -149,11 +149,11 @@ L’exemple suivant montre comment utiliser la version de correctif la plus éle
 }
 ```
 
-## <a name="globaljson-and-the-net-core-cli"></a>global.JSON et l’interface CLI .NET Core
+## <a name="globaljson-and-the-net-cli"></a>global.jssur et l’interface CLI .NET
 
-Il est utile de savoir quelles versions du kit de développement logiciel (SDK) sont installées sur votre ordinateur pour en définir un dans le *global.js* fichier. Pour plus d’informations sur la façon de procéder, consultez [Comment vérifier que .net Core est déjà installé](../install/how-to-detect-installed-versions.md#check-sdk-versions).
+Il est utile de savoir quelles versions du kit de développement logiciel (SDK) sont installées sur votre ordinateur pour en définir un dans le *global.js* fichier. Pour plus d’informations sur la façon de procéder, consultez [Comment vérifier que .net est déjà installé](../install/how-to-detect-installed-versions.md#check-sdk-versions).
 
-Pour installer des versions de kit SDK .NET Core supplémentaires sur votre ordinateur, visitez la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .
+Pour installer des versions supplémentaires du kit de développement logiciel (SDK) .NET sur votre ordinateur, visitez la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .
 
 Vous pouvez créer un fichier *global.json* dans le répertoire actif en exécutant la commande [dotnet new](dotnet-new.md), comme dans l’exemple suivant :
 
@@ -164,7 +164,7 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Règles de correspondance
 
 > [!NOTE]
-> Les règles de correspondance sont régies par le `dotnet.exe` point d’entrée, qui est courant pour tous les runtimes installés .net Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte ou si vous utilisez un *global.jssur le* fichier.
+> Les règles de correspondance sont régies par le `dotnet.exe` point d’entrée, qui est commun à tous les runtimes .net installés. Les règles de correspondance pour la dernière version installée du Runtime .NET sont utilisées lorsque plusieurs runtimes sont installés côte à côte ou si vous utilisez un *global.jssur le* fichier.
 
 ## <a name="net-core-3x"></a>[.NET Core 3.x](#tab/netcore3x)
 
