@@ -13,3 +13,5 @@
       href: ./fs0008.md
     - name: "FS0009\_: code non vérifiable possible"
       href: ./fs0009.md
+    - name: FS0025 - Correspondance incomplète au modèle
+      href: ./fs0025.md
