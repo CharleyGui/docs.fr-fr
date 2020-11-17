@@ -1,6 +1,6 @@
 ---
-description: Opérateur >= - Référence C#
-title: Opérateur >= - Référence C#
+description: Opérateur => - Référence C#
+title: Opérateur => - Référence C#
 ms.date: 01/22/2019
 f1_keywords:
 - =>_CSharpKeyword
@@ -15,7 +15,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 08/30/2020
 ms.locfileid: "89128359"
 ---
-# <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
+# <a name="-operator-c-reference"></a>Opérateur => (référence C#)
 
 Le `=>` jeton est pris en charge sous deux formes : comme [opérateur lambda](#lambda-operator) et comme séparateur d’un nom de membre et l’implémentation de membre dans une [définition de corps d’expression](#expression-body-definition).
 
