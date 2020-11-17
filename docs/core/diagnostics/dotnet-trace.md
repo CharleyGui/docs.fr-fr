@@ -2,64 +2,64 @@
 title: outil dotnet-trace-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-trace.
 ms.date: 11/21/2019
-ms.openlocfilehash: d4175ccad785b21f860044a4fd5d691624ec495e
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 4a3694f6ed748779809ee4c4bfd941bb6f1ac490
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507226"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687627"
 ---
-# <a name="dotnet-trace-performance-analysis-utility"></a><span data-ttu-id="c670e-103">utilitaire d’analyse des performances dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-103">dotnet-trace performance analysis utility</span></span>
+# <a name="dotnet-trace-performance-analysis-utility"></a><span data-ttu-id="eb63d-103">utilitaire d’analyse des performances dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-103">dotnet-trace performance analysis utility</span></span>
 
-<span data-ttu-id="c670e-104">**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="c670e-104">**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions</span></span>
+<span data-ttu-id="eb63d-104">**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="eb63d-104">**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions</span></span>
 
-## <a name="install-dotnet-trace"></a><span data-ttu-id="c670e-105">Installer dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-105">Install dotnet-trace</span></span>
+## <a name="install-dotnet-trace"></a><span data-ttu-id="eb63d-105">Installer dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-105">Install dotnet-trace</span></span>
 
-<span data-ttu-id="c670e-106">Installez `dotnet-trace` le [package NuGet](https://www.nuget.org/packages/dotnet-trace) à l’aide de la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :</span><span class="sxs-lookup"><span data-stu-id="c670e-106">Install `dotnet-trace` [NuGet package](https://www.nuget.org/packages/dotnet-trace) with the [dotnet tool install](../tools/dotnet-tool-install.md) command:</span></span>
+<span data-ttu-id="eb63d-106">Installez `dotnet-trace` le [package NuGet](https://www.nuget.org/packages/dotnet-trace) à l’aide de la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :</span><span class="sxs-lookup"><span data-stu-id="eb63d-106">Install `dotnet-trace` [NuGet package](https://www.nuget.org/packages/dotnet-trace) with the [dotnet tool install](../tools/dotnet-tool-install.md) command:</span></span>
 
 ```dotnetcli
 dotnet tool install --global dotnet-trace
 ```
 
-## <a name="synopsis"></a><span data-ttu-id="c670e-107">Synopsis</span><span class="sxs-lookup"><span data-stu-id="c670e-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="eb63d-107">Synopsis</span><span class="sxs-lookup"><span data-stu-id="eb63d-107">Synopsis</span></span>
 
 ```console
 dotnet-trace [-h, --help] [--version] <command>
 ```
 
-## <a name="description"></a><span data-ttu-id="c670e-108">Description</span><span class="sxs-lookup"><span data-stu-id="c670e-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="eb63d-108">Description</span><span class="sxs-lookup"><span data-stu-id="eb63d-108">Description</span></span>
 
-<span data-ttu-id="c670e-109">L' `dotnet-trace` outil :</span><span class="sxs-lookup"><span data-stu-id="c670e-109">The `dotnet-trace` tool:</span></span>
+<span data-ttu-id="eb63d-109">L' `dotnet-trace` outil :</span><span class="sxs-lookup"><span data-stu-id="eb63d-109">The `dotnet-trace` tool:</span></span>
 
-* <span data-ttu-id="c670e-110">Est un outil .NET Core multiplateforme.</span><span class="sxs-lookup"><span data-stu-id="c670e-110">Is a cross-platform .NET Core tool.</span></span>
-* <span data-ttu-id="c670e-111">Active la collecte des traces .NET Core d’un processus en cours d’exécution sans profileur natif.</span><span class="sxs-lookup"><span data-stu-id="c670e-111">Enables the collection of .NET Core traces of a running process without a native profiler.</span></span>
-* <span data-ttu-id="c670e-112">Repose `EventPipe` sur la technologie multiplateforme du Runtime .net core.</span><span class="sxs-lookup"><span data-stu-id="c670e-112">Is built around the cross-platform `EventPipe` technology of the .NET Core runtime.</span></span>
-* <span data-ttu-id="c670e-113">Offre la même expérience sur Windows, Linux ou macOS.</span><span class="sxs-lookup"><span data-stu-id="c670e-113">Delivers the same experience on Windows, Linux, or macOS.</span></span>
+* <span data-ttu-id="eb63d-110">Est un outil .NET Core multiplateforme.</span><span class="sxs-lookup"><span data-stu-id="eb63d-110">Is a cross-platform .NET Core tool.</span></span>
+* <span data-ttu-id="eb63d-111">Active la collecte des traces .NET Core d’un processus en cours d’exécution sans profileur natif.</span><span class="sxs-lookup"><span data-stu-id="eb63d-111">Enables the collection of .NET Core traces of a running process without a native profiler.</span></span>
+* <span data-ttu-id="eb63d-112">Repose sur [`EventPipe`](./eventpipe.md) le Runtime .net core.</span><span class="sxs-lookup"><span data-stu-id="eb63d-112">Is built on [`EventPipe`](./eventpipe.md) of the .NET Core runtime.</span></span>
+* <span data-ttu-id="eb63d-113">Offre la même expérience sur Windows, Linux ou macOS.</span><span class="sxs-lookup"><span data-stu-id="eb63d-113">Delivers the same experience on Windows, Linux, or macOS.</span></span>
 
-## <a name="options"></a><span data-ttu-id="c670e-114">Options</span><span class="sxs-lookup"><span data-stu-id="c670e-114">Options</span></span>
+## <a name="options"></a><span data-ttu-id="eb63d-114">Options</span><span class="sxs-lookup"><span data-stu-id="eb63d-114">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="c670e-115">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="c670e-115">Shows command-line help.</span></span>
+  <span data-ttu-id="eb63d-115">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="eb63d-115">Shows command-line help.</span></span>
 
 - **`--version`**
 
-  <span data-ttu-id="c670e-116">Affiche la version de l’utilitaire dotnet-trace.</span><span class="sxs-lookup"><span data-stu-id="c670e-116">Displays the version of the dotnet-trace utility.</span></span>
+  <span data-ttu-id="eb63d-116">Affiche la version de l’utilitaire dotnet-trace.</span><span class="sxs-lookup"><span data-stu-id="eb63d-116">Displays the version of the dotnet-trace utility.</span></span>
 
-## <a name="commands"></a><span data-ttu-id="c670e-117">Commandes</span><span class="sxs-lookup"><span data-stu-id="c670e-117">Commands</span></span>
+## <a name="commands"></a><span data-ttu-id="eb63d-117">Commandes</span><span class="sxs-lookup"><span data-stu-id="eb63d-117">Commands</span></span>
 
-| <span data-ttu-id="c670e-118">Commande</span><span class="sxs-lookup"><span data-stu-id="c670e-118">Command</span></span>                                                   |
+| <span data-ttu-id="eb63d-118">Commande</span><span class="sxs-lookup"><span data-stu-id="eb63d-118">Command</span></span>                                                   |
 |-----------------------------------------------------------|
-| [<span data-ttu-id="c670e-119">dotnet-collecte des traces</span><span class="sxs-lookup"><span data-stu-id="c670e-119">dotnet-trace collect</span></span>](#dotnet-trace-collect)             |
-| [<span data-ttu-id="c670e-120">conversion dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-120">dotnet-trace convert</span></span>](#dotnet-trace-convert)             |
-| [<span data-ttu-id="c670e-121">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="c670e-121">dotnet-trace ps</span></span>](#dotnet-trace-ps)                       |
-| [<span data-ttu-id="c670e-122">liste de suivi dotnet-profils</span><span class="sxs-lookup"><span data-stu-id="c670e-122">dotnet-trace list-profiles</span></span>](#dotnet-trace-list-profiles) |
+| [<span data-ttu-id="eb63d-119">dotnet-collecte des traces</span><span class="sxs-lookup"><span data-stu-id="eb63d-119">dotnet-trace collect</span></span>](#dotnet-trace-collect)             |
+| [<span data-ttu-id="eb63d-120">conversion dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-120">dotnet-trace convert</span></span>](#dotnet-trace-convert)             |
+| [<span data-ttu-id="eb63d-121">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="eb63d-121">dotnet-trace ps</span></span>](#dotnet-trace-ps)                       |
+| [<span data-ttu-id="eb63d-122">liste de suivi dotnet-profils</span><span class="sxs-lookup"><span data-stu-id="eb63d-122">dotnet-trace list-profiles</span></span>](#dotnet-trace-list-profiles) |
 
-## <a name="dotnet-trace-collect"></a><span data-ttu-id="c670e-123">dotnet-collecte des traces</span><span class="sxs-lookup"><span data-stu-id="c670e-123">dotnet-trace collect</span></span>
+## <a name="dotnet-trace-collect"></a><span data-ttu-id="eb63d-123">dotnet-collecte des traces</span><span class="sxs-lookup"><span data-stu-id="eb63d-123">dotnet-trace collect</span></span>
 
-<span data-ttu-id="c670e-124">Collecte une trace de diagnostic à partir d’un processus en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="c670e-124">Collects a diagnostic trace from a running process.</span></span>
+<span data-ttu-id="eb63d-124">Collecte une trace de diagnostic à partir d’un processus en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="eb63d-124">Collects a diagnostic trace from a running process.</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="c670e-125">Synopsis</span><span class="sxs-lookup"><span data-stu-id="c670e-125">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="eb63d-125">Synopsis</span><span class="sxs-lookup"><span data-stu-id="eb63d-125">Synopsis</span></span>
 
 ```console
 dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--clrevents <clrevents>]
@@ -69,120 +69,120 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
     [-- <command>] (for target applications running .NET 5.0 or later)
 ```
 
-### <a name="options"></a><span data-ttu-id="c670e-126">Options</span><span class="sxs-lookup"><span data-stu-id="c670e-126">Options</span></span>
+### <a name="options"></a><span data-ttu-id="eb63d-126">Options</span><span class="sxs-lookup"><span data-stu-id="eb63d-126">Options</span></span>
 
 - **`--buffersize <size>`**
 
-  <span data-ttu-id="c670e-127">Définit la taille de la mémoire tampon circulaire en mémoire, en mégaoctets.</span><span class="sxs-lookup"><span data-stu-id="c670e-127">Sets the size of the in-memory circular buffer, in megabytes.</span></span> <span data-ttu-id="c670e-128">256 Mo par défaut.</span><span class="sxs-lookup"><span data-stu-id="c670e-128">Default 256 MB.</span></span>
+  <span data-ttu-id="eb63d-127">Définit la taille de la mémoire tampon circulaire en mémoire, en mégaoctets.</span><span class="sxs-lookup"><span data-stu-id="eb63d-127">Sets the size of the in-memory circular buffer, in megabytes.</span></span> <span data-ttu-id="eb63d-128">256 Mo par défaut.</span><span class="sxs-lookup"><span data-stu-id="eb63d-128">Default 256 MB.</span></span>
 
 - **`--clreventlevel <clreventlevel>`**
 
-  <span data-ttu-id="c670e-129">Commentaires des événements CLR à émettre.</span><span class="sxs-lookup"><span data-stu-id="c670e-129">Verbosity of CLR events to be emitted.</span></span>
+  <span data-ttu-id="eb63d-129">Commentaires des événements CLR à émettre.</span><span class="sxs-lookup"><span data-stu-id="eb63d-129">Verbosity of CLR events to be emitted.</span></span>
 
 - **`--clrevents <clrevents>`**
 
-  <span data-ttu-id="c670e-130">Liste des événements du runtime CLR à émettre.</span><span class="sxs-lookup"><span data-stu-id="c670e-130">List of CLR runtime events to emit.</span></span>
+  <span data-ttu-id="eb63d-130">Liste des événements du runtime CLR à émettre.</span><span class="sxs-lookup"><span data-stu-id="eb63d-130">List of CLR runtime events to emit.</span></span>
 
 - **`--format {Chromium|NetTrace|Speedscope}`**
 
-  <span data-ttu-id="c670e-131">Définit le format de sortie pour la conversion du fichier de trace.</span><span class="sxs-lookup"><span data-stu-id="c670e-131">Sets the output format for the trace file conversion.</span></span> <span data-ttu-id="c670e-132">La valeur par défaut est `NetTrace`.</span><span class="sxs-lookup"><span data-stu-id="c670e-132">The default is `NetTrace`.</span></span>
+  <span data-ttu-id="eb63d-131">Définit le format de sortie pour la conversion du fichier de trace.</span><span class="sxs-lookup"><span data-stu-id="eb63d-131">Sets the output format for the trace file conversion.</span></span> <span data-ttu-id="eb63d-132">La valeur par défaut est `NetTrace`.</span><span class="sxs-lookup"><span data-stu-id="eb63d-132">The default is `NetTrace`.</span></span>
 
 - **`-n, --name <name>`**
 
-  <span data-ttu-id="c670e-133">Nom du processus à partir duquel la trace doit être collectée.</span><span class="sxs-lookup"><span data-stu-id="c670e-133">The name of the process to collect the trace from.</span></span>
+  <span data-ttu-id="eb63d-133">Nom du processus à partir duquel la trace doit être collectée.</span><span class="sxs-lookup"><span data-stu-id="eb63d-133">The name of the process to collect the trace from.</span></span>
 
 - **`-o|--output <trace-file-path>`**
 
-  <span data-ttu-id="c670e-134">Chemin de sortie pour les données de trace collectées.</span><span class="sxs-lookup"><span data-stu-id="c670e-134">The output path for the collected trace data.</span></span> <span data-ttu-id="c670e-135">S’il n’est pas spécifié, la valeur par défaut est `trace.nettrace` .</span><span class="sxs-lookup"><span data-stu-id="c670e-135">If not specified, it defaults to `trace.nettrace`.</span></span>
+  <span data-ttu-id="eb63d-134">Chemin de sortie pour les données de trace collectées.</span><span class="sxs-lookup"><span data-stu-id="eb63d-134">The output path for the collected trace data.</span></span> <span data-ttu-id="eb63d-135">S’il n’est pas spécifié, la valeur par défaut est `trace.nettrace` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-135">If not specified, it defaults to `trace.nettrace`.</span></span>
 
 - **`-p|--process-id <PID>`**
 
-  <span data-ttu-id="c670e-136">ID de processus à partir duquel la trace doit être collectée.</span><span class="sxs-lookup"><span data-stu-id="c670e-136">The process id to collect the trace from.</span></span>
+  <span data-ttu-id="eb63d-136">ID de processus à partir duquel la trace doit être collectée.</span><span class="sxs-lookup"><span data-stu-id="eb63d-136">The process id to collect the trace from.</span></span>
 
 - **`--profile <profile-name>`**
 
-  <span data-ttu-id="c670e-137">Ensemble de configurations de fournisseur nommé prédéfini qui permet de spécifier succinctement des scénarios de suivi courants.</span><span class="sxs-lookup"><span data-stu-id="c670e-137">A named pre-defined set of provider configurations that allows common tracing scenarios to be specified succinctly.</span></span>
+  <span data-ttu-id="eb63d-137">Ensemble de configurations de fournisseur nommé prédéfini qui permet de spécifier succinctement des scénarios de suivi courants.</span><span class="sxs-lookup"><span data-stu-id="eb63d-137">A named pre-defined set of provider configurations that allows common tracing scenarios to be specified succinctly.</span></span>
 
 - **`--providers <list-of-comma-separated-providers>`**
 
-  <span data-ttu-id="c670e-138">Liste séparée par des virgules des `EventPipe` fournisseurs à activer.</span><span class="sxs-lookup"><span data-stu-id="c670e-138">A comma-separated list of `EventPipe` providers to be enabled.</span></span> <span data-ttu-id="c670e-139">Ces fournisseurs complètent tous les fournisseurs implicites par `--profile <profile-name>` .</span><span class="sxs-lookup"><span data-stu-id="c670e-139">These providers supplement any providers implied by `--profile <profile-name>`.</span></span> <span data-ttu-id="c670e-140">S’il existe une incohérence pour un fournisseur particulier, cette configuration est prioritaire par rapport à la configuration implicite à partir du profil.</span><span class="sxs-lookup"><span data-stu-id="c670e-140">If there's any inconsistency for a particular provider, this configuration takes precedence over the implicit configuration from the profile.</span></span>
+  <span data-ttu-id="eb63d-138">Liste séparée par des virgules des `EventPipe` fournisseurs à activer.</span><span class="sxs-lookup"><span data-stu-id="eb63d-138">A comma-separated list of `EventPipe` providers to be enabled.</span></span> <span data-ttu-id="eb63d-139">Ces fournisseurs complètent tous les fournisseurs implicites par `--profile <profile-name>` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-139">These providers supplement any providers implied by `--profile <profile-name>`.</span></span> <span data-ttu-id="eb63d-140">S’il existe une incohérence pour un fournisseur particulier, cette configuration est prioritaire par rapport à la configuration implicite à partir du profil.</span><span class="sxs-lookup"><span data-stu-id="eb63d-140">If there's any inconsistency for a particular provider, this configuration takes precedence over the implicit configuration from the profile.</span></span>
 
-  <span data-ttu-id="c670e-141">Cette liste de fournisseurs se présente sous la forme suivante :</span><span class="sxs-lookup"><span data-stu-id="c670e-141">This list of providers is in the form:</span></span>
+  <span data-ttu-id="eb63d-141">Cette liste de fournisseurs se présente sous la forme suivante :</span><span class="sxs-lookup"><span data-stu-id="eb63d-141">This list of providers is in the form:</span></span>
 
   - `Provider[,Provider]`
-  - <span data-ttu-id="c670e-142">`Provider` se présente sous la forme : `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .</span><span class="sxs-lookup"><span data-stu-id="c670e-142">`Provider` is in the form: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.</span></span>
-  - <span data-ttu-id="c670e-143">`KeyValueArgs` se présente sous la forme : `[key1=value1][;key2=value2]` .</span><span class="sxs-lookup"><span data-stu-id="c670e-143">`KeyValueArgs` is in the form: `[key1=value1][;key2=value2]`.</span></span>
+  - <span data-ttu-id="eb63d-142">`Provider` se présente sous la forme : `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-142">`Provider` is in the form: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]`.</span></span>
+  - <span data-ttu-id="eb63d-143">`KeyValueArgs` se présente sous la forme : `[key1=value1][;key2=value2]` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-143">`KeyValueArgs` is in the form: `[key1=value1][;key2=value2]`.</span></span>
 
-- <span data-ttu-id="c670e-144">**`-- <command>` (pour les applications cibles exécutant .NET 5,0 uniquement)**</span><span class="sxs-lookup"><span data-stu-id="c670e-144">**`-- <command>` (for target applications running .NET 5.0 only)**</span></span>
+- <span data-ttu-id="eb63d-144">**`-- <command>` (pour les applications cibles exécutant .NET 5,0 uniquement)**</span><span class="sxs-lookup"><span data-stu-id="eb63d-144">**`-- <command>` (for target applications running .NET 5.0 only)**</span></span>
 
-  <span data-ttu-id="c670e-145">Après les paramètres de configuration de la collection, l’utilisateur peut ajouter `--` suivi d’une commande pour démarrer une application .net avec au moins un runtime 5,0.</span><span class="sxs-lookup"><span data-stu-id="c670e-145">After the collection configuration parameters, the user can append `--` followed by a command to start a .NET application with at least a 5.0 runtime.</span></span> <span data-ttu-id="c670e-146">Cela peut être utile lors du diagnostic de problèmes qui se produisent tôt dans le processus, tels que le problème de performance de démarrage ou le chargeur d’assembly et les erreurs de Binder.</span><span class="sxs-lookup"><span data-stu-id="c670e-146">This may be helpful when diagnosing issues that happen early in the process, such as startup performance issue or assembly loader and binder errors.</span></span>
+  <span data-ttu-id="eb63d-145">Après les paramètres de configuration de la collection, l’utilisateur peut ajouter `--` suivi d’une commande pour démarrer une application .net avec au moins un runtime 5,0.</span><span class="sxs-lookup"><span data-stu-id="eb63d-145">After the collection configuration parameters, the user can append `--` followed by a command to start a .NET application with at least a 5.0 runtime.</span></span> <span data-ttu-id="eb63d-146">Cela peut être utile lors du diagnostic de problèmes qui se produisent tôt dans le processus, tels que le problème de performance de démarrage ou le chargeur d’assembly et les erreurs de Binder.</span><span class="sxs-lookup"><span data-stu-id="eb63d-146">This may be helpful when diagnosing issues that happen early in the process, such as startup performance issue or assembly loader and binder errors.</span></span>
 
   > [!NOTE]
-  > <span data-ttu-id="c670e-147">L’utilisation de cette option permet de surveiller le premier processus .NET 5,0 qui communique avec l’outil, ce qui signifie que si votre commande lance plusieurs applications .NET, elle ne collecte que la première application.</span><span class="sxs-lookup"><span data-stu-id="c670e-147">Using this option monitors the first .NET 5.0 process that communicates back to the tool, which means if your command launches multiple .NET applications, it will only collect the first app.</span></span> <span data-ttu-id="c670e-148">Par conséquent, il est recommandé d’utiliser cette option sur les applications autonomes ou à l’aide de l' `dotnet exec <app.dll>` option.</span><span class="sxs-lookup"><span data-stu-id="c670e-148">Therefore, it is recommended you use this option on self-contained applications, or using the `dotnet exec <app.dll>` option.</span></span>
+  > <span data-ttu-id="eb63d-147">L’utilisation de cette option permet de surveiller le premier processus .NET 5,0 qui communique avec l’outil, ce qui signifie que si votre commande lance plusieurs applications .NET, elle ne collecte que la première application.</span><span class="sxs-lookup"><span data-stu-id="eb63d-147">Using this option monitors the first .NET 5.0 process that communicates back to the tool, which means if your command launches multiple .NET applications, it will only collect the first app.</span></span> <span data-ttu-id="eb63d-148">Par conséquent, il est recommandé d’utiliser cette option sur les applications autonomes ou à l’aide de l' `dotnet exec <app.dll>` option.</span><span class="sxs-lookup"><span data-stu-id="eb63d-148">Therefore, it is recommended you use this option on self-contained applications, or using the `dotnet exec <app.dll>` option.</span></span>
 
-## <a name="dotnet-trace-convert"></a><span data-ttu-id="c670e-149">conversion dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-149">dotnet-trace convert</span></span>
+## <a name="dotnet-trace-convert"></a><span data-ttu-id="eb63d-149">conversion dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-149">dotnet-trace convert</span></span>
 
-<span data-ttu-id="c670e-150">Convertit les `nettrace` traces en d’autres formats pour les utiliser avec d’autres outils d’analyse de trace.</span><span class="sxs-lookup"><span data-stu-id="c670e-150">Converts `nettrace` traces to alternate formats for use with alternate trace analysis tools.</span></span>
+<span data-ttu-id="eb63d-150">Convertit les `nettrace` traces en d’autres formats pour les utiliser avec d’autres outils d’analyse de trace.</span><span class="sxs-lookup"><span data-stu-id="eb63d-150">Converts `nettrace` traces to alternate formats for use with alternate trace analysis tools.</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="c670e-151">Synopsis</span><span class="sxs-lookup"><span data-stu-id="c670e-151">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="eb63d-151">Synopsis</span><span class="sxs-lookup"><span data-stu-id="eb63d-151">Synopsis</span></span>
 
 ```console
 dotnet-trace convert [<input-filename>] [--format <Chromium|NetTrace|Speedscope>] [-h|--help] [-o|--output <output-filename>]
 ```
 
-### <a name="arguments"></a><span data-ttu-id="c670e-152">Arguments</span><span class="sxs-lookup"><span data-stu-id="c670e-152">Arguments</span></span>
+### <a name="arguments"></a><span data-ttu-id="eb63d-152">Arguments</span><span class="sxs-lookup"><span data-stu-id="eb63d-152">Arguments</span></span>
 
 - **`<input-filename>`**
 
-  <span data-ttu-id="c670e-153">Fichier de trace d’entrée à convertir.</span><span class="sxs-lookup"><span data-stu-id="c670e-153">Input trace file to be converted.</span></span> <span data-ttu-id="c670e-154">La valeur par défaut est *trace. NetTrace*.</span><span class="sxs-lookup"><span data-stu-id="c670e-154">Defaults to *trace.nettrace*.</span></span>
+  <span data-ttu-id="eb63d-153">Fichier de trace d’entrée à convertir.</span><span class="sxs-lookup"><span data-stu-id="eb63d-153">Input trace file to be converted.</span></span> <span data-ttu-id="eb63d-154">La valeur par défaut est *trace. NetTrace*.</span><span class="sxs-lookup"><span data-stu-id="eb63d-154">Defaults to *trace.nettrace*.</span></span>
 
-### <a name="options"></a><span data-ttu-id="c670e-155">Options</span><span class="sxs-lookup"><span data-stu-id="c670e-155">Options</span></span>
+### <a name="options"></a><span data-ttu-id="eb63d-155">Options</span><span class="sxs-lookup"><span data-stu-id="eb63d-155">Options</span></span>
 
 - **`--format <Chromium|NetTrace|Speedscope>`**
 
-  <span data-ttu-id="c670e-156">Définit le format de sortie pour la conversion du fichier de trace.</span><span class="sxs-lookup"><span data-stu-id="c670e-156">Sets the output format for the trace file conversion.</span></span>
+  <span data-ttu-id="eb63d-156">Définit le format de sortie pour la conversion du fichier de trace.</span><span class="sxs-lookup"><span data-stu-id="eb63d-156">Sets the output format for the trace file conversion.</span></span>
 
 - **`-o|--output <output-filename>`**
 
-  <span data-ttu-id="c670e-157">Nom du fichier de sortie.</span><span class="sxs-lookup"><span data-stu-id="c670e-157">Output filename.</span></span> <span data-ttu-id="c670e-158">L’extension du format cible sera ajoutée.</span><span class="sxs-lookup"><span data-stu-id="c670e-158">Extension of target format will be added.</span></span>
+  <span data-ttu-id="eb63d-157">Nom du fichier de sortie.</span><span class="sxs-lookup"><span data-stu-id="eb63d-157">Output filename.</span></span> <span data-ttu-id="eb63d-158">L’extension du format cible sera ajoutée.</span><span class="sxs-lookup"><span data-stu-id="eb63d-158">Extension of target format will be added.</span></span>
 
-## <a name="dotnet-trace-ps"></a><span data-ttu-id="c670e-159">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="c670e-159">dotnet-trace ps</span></span>
+## <a name="dotnet-trace-ps"></a><span data-ttu-id="eb63d-159">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="eb63d-159">dotnet-trace ps</span></span>
 
- <span data-ttu-id="c670e-160">Répertorie les processus dotnet à partir desquels les traces peuvent être collectées.</span><span class="sxs-lookup"><span data-stu-id="c670e-160">Lists the dotnet processes that traces can be collected from.</span></span>
+ <span data-ttu-id="eb63d-160">Répertorie les processus dotnet à partir desquels les traces peuvent être collectées.</span><span class="sxs-lookup"><span data-stu-id="eb63d-160">Lists the dotnet processes that traces can be collected from.</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="c670e-161">Synopsis</span><span class="sxs-lookup"><span data-stu-id="c670e-161">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="eb63d-161">Synopsis</span><span class="sxs-lookup"><span data-stu-id="eb63d-161">Synopsis</span></span>
 
 ```console
 dotnet-trace ps [-h|--help]
 ```
 
-## <a name="dotnet-trace-list-profiles"></a><span data-ttu-id="c670e-162">liste de suivi dotnet-profils</span><span class="sxs-lookup"><span data-stu-id="c670e-162">dotnet-trace list-profiles</span></span>
+## <a name="dotnet-trace-list-profiles"></a><span data-ttu-id="eb63d-162">liste de suivi dotnet-profils</span><span class="sxs-lookup"><span data-stu-id="eb63d-162">dotnet-trace list-profiles</span></span>
 
-<span data-ttu-id="c670e-163">Répertorie les profils de suivi prédéfinis avec une description des fournisseurs et des filtres dans chaque profil.</span><span class="sxs-lookup"><span data-stu-id="c670e-163">Lists pre-built tracing profiles with a description of what providers and filters are in each profile.</span></span>
+<span data-ttu-id="eb63d-163">Répertorie les profils de suivi prédéfinis avec une description des fournisseurs et des filtres dans chaque profil.</span><span class="sxs-lookup"><span data-stu-id="eb63d-163">Lists pre-built tracing profiles with a description of what providers and filters are in each profile.</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="c670e-164">Synopsis</span><span class="sxs-lookup"><span data-stu-id="c670e-164">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="eb63d-164">Synopsis</span><span class="sxs-lookup"><span data-stu-id="eb63d-164">Synopsis</span></span>
 
 ```console
 dotnet-trace list-profiles [-h|--help]
 ```
 
-## <a name="collect-a-trace-with-dotnet-trace"></a><span data-ttu-id="c670e-165">Collecter une trace avec dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-165">Collect a trace with dotnet-trace</span></span>
+## <a name="collect-a-trace-with-dotnet-trace"></a><span data-ttu-id="eb63d-165">Collecter une trace avec dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-165">Collect a trace with dotnet-trace</span></span>
 
-<span data-ttu-id="c670e-166">Pour collecter des traces à l’aide de `dotnet-trace` :</span><span class="sxs-lookup"><span data-stu-id="c670e-166">To collect traces using `dotnet-trace`:</span></span>
+<span data-ttu-id="eb63d-166">Pour collecter des traces à l’aide de `dotnet-trace` :</span><span class="sxs-lookup"><span data-stu-id="eb63d-166">To collect traces using `dotnet-trace`:</span></span>
 
-- <span data-ttu-id="c670e-167">Obtient l’identificateur de processus (PID) de l’application .NET Core à partir duquel collecter les traces.</span><span class="sxs-lookup"><span data-stu-id="c670e-167">Get the process identifier (PID) of the .NET Core application to collect traces from.</span></span>
+- <span data-ttu-id="eb63d-167">Obtient l’identificateur de processus (PID) de l’application .NET Core à partir duquel collecter les traces.</span><span class="sxs-lookup"><span data-stu-id="eb63d-167">Get the process identifier (PID) of the .NET Core application to collect traces from.</span></span>
 
-  - <span data-ttu-id="c670e-168">Sur Windows, vous pouvez utiliser le gestionnaire des tâches ou la `tasklist` commande, par exemple.</span><span class="sxs-lookup"><span data-stu-id="c670e-168">On Windows, you can use Task Manager or the `tasklist` command, for example.</span></span>
-  - <span data-ttu-id="c670e-169">Sur Linux, par exemple, la `ps` commande.</span><span class="sxs-lookup"><span data-stu-id="c670e-169">On Linux, for example, the `ps` command.</span></span>
-  - [<span data-ttu-id="c670e-170">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="c670e-170">dotnet-trace ps</span></span>](#dotnet-trace-ps)
+  - <span data-ttu-id="eb63d-168">Sur Windows, vous pouvez utiliser le gestionnaire des tâches ou la `tasklist` commande, par exemple.</span><span class="sxs-lookup"><span data-stu-id="eb63d-168">On Windows, you can use Task Manager or the `tasklist` command, for example.</span></span>
+  - <span data-ttu-id="eb63d-169">Sur Linux, par exemple, la `ps` commande.</span><span class="sxs-lookup"><span data-stu-id="eb63d-169">On Linux, for example, the `ps` command.</span></span>
+  - [<span data-ttu-id="eb63d-170">dotnet-trace PS</span><span class="sxs-lookup"><span data-stu-id="eb63d-170">dotnet-trace ps</span></span>](#dotnet-trace-ps)
 
-- <span data-ttu-id="c670e-171">Exécutez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="c670e-171">Run the following command:</span></span>
+- <span data-ttu-id="eb63d-171">Exécutez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="eb63d-171">Run the following command:</span></span>
 
   ```console
   dotnet-trace collect --process-id <PID>
   ```
 
-  <span data-ttu-id="c670e-172">La commande précédente génère une sortie similaire à ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="c670e-172">The preceding command generates output similar to the following:</span></span>
+  <span data-ttu-id="eb63d-172">La commande précédente génère une sortie similaire à ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="eb63d-172">The preceding command generates output similar to the following:</span></span>
 
   ```console
   Press <Enter> to exit...
@@ -192,21 +192,21 @@ dotnet-trace list-profiles [-h|--help]
   Recording trace 721.025 (KB)
   ```
 
-- <span data-ttu-id="c670e-173">Arrêtez la collecte en appuyant sur la `<Enter>` touche.</span><span class="sxs-lookup"><span data-stu-id="c670e-173">Stop collection by pressing the `<Enter>` key.</span></span> <span data-ttu-id="c670e-174">`dotnet-trace` terminera la journalisation des événements dans le fichier *trace. NetTrace* .</span><span class="sxs-lookup"><span data-stu-id="c670e-174">`dotnet-trace` will finish logging events to the *trace.nettrace* file.</span></span>
+- <span data-ttu-id="eb63d-173">Arrêtez la collecte en appuyant sur la `<Enter>` touche.</span><span class="sxs-lookup"><span data-stu-id="eb63d-173">Stop collection by pressing the `<Enter>` key.</span></span> <span data-ttu-id="eb63d-174">`dotnet-trace` terminera la journalisation des événements dans le fichier *trace. NetTrace* .</span><span class="sxs-lookup"><span data-stu-id="eb63d-174">`dotnet-trace` will finish logging events to the *trace.nettrace* file.</span></span>
 
-## <a name="launch-a-child-application-and-collect-a-trace-from-its-startup-using-dotnet-trace"></a><span data-ttu-id="c670e-175">Lancer une application enfant et collecter une trace à partir de son démarrage à l’aide de dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-175">Launch a child application and collect a trace from its startup using dotnet-trace</span></span>
+## <a name="launch-a-child-application-and-collect-a-trace-from-its-startup-using-dotnet-trace"></a><span data-ttu-id="eb63d-175">Lancer une application enfant et collecter une trace à partir de son démarrage à l’aide de dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-175">Launch a child application and collect a trace from its startup using dotnet-trace</span></span>
 
-<span data-ttu-id="c670e-176">Remarque : cela fonctionne pour les applications qui exécutent .NET 5,0 ou une version ultérieure uniquement.</span><span class="sxs-lookup"><span data-stu-id="c670e-176">NOTE: This works for apps running .NET 5.0 or later only.</span></span>
+<span data-ttu-id="eb63d-176">Remarque : cela fonctionne pour les applications qui exécutent .NET 5,0 ou une version ultérieure uniquement.</span><span class="sxs-lookup"><span data-stu-id="eb63d-176">NOTE: This works for apps running .NET 5.0 or later only.</span></span>
 
-<span data-ttu-id="c670e-177">Parfois, il peut être utile de collecter une trace d’un processus à partir de son démarrage.</span><span class="sxs-lookup"><span data-stu-id="c670e-177">Sometimes it may be useful to collect a trace of a process from its startup.</span></span> <span data-ttu-id="c670e-178">Pour les applications qui exécutent .NET 5,0 ou une version ultérieure, il est possible de le faire à l’aide de dotnet-trace.</span><span class="sxs-lookup"><span data-stu-id="c670e-178">For apps running .NET 5.0 or later, it is possible to do this by using dotnet-trace.</span></span>
+<span data-ttu-id="eb63d-177">Parfois, il peut être utile de collecter une trace d’un processus à partir de son démarrage.</span><span class="sxs-lookup"><span data-stu-id="eb63d-177">Sometimes it may be useful to collect a trace of a process from its startup.</span></span> <span data-ttu-id="eb63d-178">Pour les applications qui exécutent .NET 5,0 ou une version ultérieure, il est possible de le faire à l’aide de dotnet-trace.</span><span class="sxs-lookup"><span data-stu-id="eb63d-178">For apps running .NET 5.0 or later, it is possible to do this by using dotnet-trace.</span></span>
 
-<span data-ttu-id="c670e-179">Cette opération démarre `hello.exe` avec `arg1` et `arg2` comme ses arguments de ligne de commande et collecte une trace à partir de son démarrage au moment de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="c670e-179">This will launch `hello.exe` with `arg1` and `arg2` as its command line arguments and collect a trace from its runtime startup:</span></span>
+<span data-ttu-id="eb63d-179">Cette opération démarre `hello.exe` avec `arg1` et `arg2` comme ses arguments de ligne de commande et collecte une trace à partir de son démarrage au moment de l’exécution :</span><span class="sxs-lookup"><span data-stu-id="eb63d-179">This will launch `hello.exe` with `arg1` and `arg2` as its command line arguments and collect a trace from its runtime startup:</span></span>
 
 ```console
 dotnet-trace collect -- hello.exe arg1 arg2
 ```
 
-<span data-ttu-id="c670e-180">La commande précédente génère une sortie similaire à ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="c670e-180">The preceding command generates output similar to the following:</span></span>
+<span data-ttu-id="eb63d-180">La commande précédente génère une sortie similaire à ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="eb63d-180">The preceding command generates output similar to the following:</span></span>
 
 ```console
 No profile or providers specified, defaulting to trace profile 'cpu-sampling'
@@ -223,51 +223,51 @@ Output File    : E:\temp\gcperfsim\trace.nettrace
 Press <Enter> or <Ctrl+C> to exit...
 ```
 
-<span data-ttu-id="c670e-181">Vous pouvez arrêter la collecte de la trace en appuyant sur ou sur la `<Enter>` `<Ctrl + C>` touche.</span><span class="sxs-lookup"><span data-stu-id="c670e-181">You can stop collecting the trace by pressing `<Enter>` or `<Ctrl + C>` key.</span></span> <span data-ttu-id="c670e-182">Cela va également se terminer `hello.exe` .</span><span class="sxs-lookup"><span data-stu-id="c670e-182">Doing this will also exit `hello.exe`.</span></span>
+<span data-ttu-id="eb63d-181">Vous pouvez arrêter la collecte de la trace en appuyant sur ou sur la `<Enter>` `<Ctrl + C>` touche.</span><span class="sxs-lookup"><span data-stu-id="eb63d-181">You can stop collecting the trace by pressing `<Enter>` or `<Ctrl + C>` key.</span></span> <span data-ttu-id="eb63d-182">Cela va également se terminer `hello.exe` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-182">Doing this will also exit `hello.exe`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c670e-183">`hello.exe`Le lancement via dotnet-trace rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout.</span><span class="sxs-lookup"><span data-stu-id="c670e-183">Launching `hello.exe` via dotnet-trace will make its input/output to be redirected and you won't be able to interact with its stdin/stdout.</span></span>
-> <span data-ttu-id="c670e-184">La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant.</span><span class="sxs-lookup"><span data-stu-id="c670e-184">Exiting the tool via CTRL+C or SIGTERM will safely end both the tool and the child process.</span></span>
-> <span data-ttu-id="c670e-185">Si le processus enfant se termine avant l’outil, l’outil s’arrête également et la trace doit être visible en toute sécurité.</span><span class="sxs-lookup"><span data-stu-id="c670e-185">If the child process exits before the tool, the tool will exit as well and the trace should be safely viewable.</span></span>
+> <span data-ttu-id="eb63d-183">`hello.exe`Le lancement via dotnet-trace rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout.</span><span class="sxs-lookup"><span data-stu-id="eb63d-183">Launching `hello.exe` via dotnet-trace will make its input/output to be redirected and you won't be able to interact with its stdin/stdout.</span></span>
+> <span data-ttu-id="eb63d-184">La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant.</span><span class="sxs-lookup"><span data-stu-id="eb63d-184">Exiting the tool via CTRL+C or SIGTERM will safely end both the tool and the child process.</span></span>
+> <span data-ttu-id="eb63d-185">Si le processus enfant se termine avant l’outil, l’outil s’arrête également et la trace doit être visible en toute sécurité.</span><span class="sxs-lookup"><span data-stu-id="eb63d-185">If the child process exits before the tool, the tool will exit as well and the trace should be safely viewable.</span></span>
 
-## <a name="view-the-trace-captured-from-dotnet-trace"></a><span data-ttu-id="c670e-186">Afficher la trace capturée à partir de dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="c670e-186">View the trace captured from dotnet-trace</span></span>
+## <a name="view-the-trace-captured-from-dotnet-trace"></a><span data-ttu-id="eb63d-186">Afficher la trace capturée à partir de dotnet-trace</span><span class="sxs-lookup"><span data-stu-id="eb63d-186">View the trace captured from dotnet-trace</span></span>
 
-<span data-ttu-id="c670e-187">Sur Windows, les fichiers *. NetTrace* peuvent être affichés sur [PerfView](https://github.com/microsoft/perfview) pour l’analyse : pour les traces collectées sur d’autres plateformes, le fichier de trace peut être déplacé vers un ordinateur Windows à afficher sur PerfView.</span><span class="sxs-lookup"><span data-stu-id="c670e-187">On Windows, *.nettrace* files can be viewed on [PerfView](https://github.com/microsoft/perfview) for analysis: For traces collected on other platforms, the trace file can be moved to a Windows machine to be viewed on PerfView.</span></span>
+<span data-ttu-id="eb63d-187">Sur Windows, les fichiers *. NetTrace* peuvent être affichés sur [PerfView](https://github.com/microsoft/perfview) pour l’analyse : pour les traces collectées sur d’autres plateformes, le fichier de trace peut être déplacé vers un ordinateur Windows à afficher sur PerfView.</span><span class="sxs-lookup"><span data-stu-id="eb63d-187">On Windows, *.nettrace* files can be viewed on [PerfView](https://github.com/microsoft/perfview) for analysis: For traces collected on other platforms, the trace file can be moved to a Windows machine to be viewed on PerfView.</span></span>
 
-<span data-ttu-id="c670e-188">Sur Linux, la trace peut être affichée en modifiant le format de sortie de `dotnet-trace` en `speedscope` .</span><span class="sxs-lookup"><span data-stu-id="c670e-188">On Linux, the trace can be viewed by changing the output format of `dotnet-trace` to `speedscope`.</span></span> <span data-ttu-id="c670e-189">Le format du fichier de sortie peut être modifié à l’aide de l' `-f|--format` option : crée `-f speedscope` `dotnet-trace` un `speedscope` fichier.</span><span class="sxs-lookup"><span data-stu-id="c670e-189">The output file format can be changed using the `-f|--format` option - `-f speedscope` will make `dotnet-trace` produce a `speedscope` file.</span></span> <span data-ttu-id="c670e-190">Vous pouvez choisir entre `nettrace` (option par défaut) et `speedscope` .</span><span class="sxs-lookup"><span data-stu-id="c670e-190">You can choose between `nettrace` (the default option) and `speedscope`.</span></span> <span data-ttu-id="c670e-191">`Speedscope` les fichiers peuvent être ouverts à l’adresse <https://www.speedscope.app> .</span><span class="sxs-lookup"><span data-stu-id="c670e-191">`Speedscope` files can be opened at <https://www.speedscope.app>.</span></span>
+<span data-ttu-id="eb63d-188">Sur Linux, la trace peut être affichée en modifiant le format de sortie de `dotnet-trace` en `speedscope` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-188">On Linux, the trace can be viewed by changing the output format of `dotnet-trace` to `speedscope`.</span></span> <span data-ttu-id="eb63d-189">Le format du fichier de sortie peut être modifié à l’aide de l' `-f|--format` option : crée `-f speedscope` `dotnet-trace` un `speedscope` fichier.</span><span class="sxs-lookup"><span data-stu-id="eb63d-189">The output file format can be changed using the `-f|--format` option - `-f speedscope` will make `dotnet-trace` produce a `speedscope` file.</span></span> <span data-ttu-id="eb63d-190">Vous pouvez choisir entre `nettrace` (option par défaut) et `speedscope` .</span><span class="sxs-lookup"><span data-stu-id="eb63d-190">You can choose between `nettrace` (the default option) and `speedscope`.</span></span> <span data-ttu-id="eb63d-191">`Speedscope` les fichiers peuvent être ouverts à l’adresse <https://www.speedscope.app> .</span><span class="sxs-lookup"><span data-stu-id="eb63d-191">`Speedscope` files can be opened at <https://www.speedscope.app>.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c670e-192">Le Runtime .NET Core génère des traces au `nettrace` format.</span><span class="sxs-lookup"><span data-stu-id="c670e-192">The .NET Core runtime generates traces in the `nettrace` format.</span></span> <span data-ttu-id="c670e-193">Les suivis sont convertis en speedscope (si spécifié) une fois la trace terminée.</span><span class="sxs-lookup"><span data-stu-id="c670e-193">The traces are converted to speedscope (if specified) after the trace is completed.</span></span> <span data-ttu-id="c670e-194">Étant donné que certaines conversions peuvent entraîner une perte de données, le fichier d’origine `nettrace` est conservé en regard du fichier converti.</span><span class="sxs-lookup"><span data-stu-id="c670e-194">Since some conversions may result in loss of data, the original `nettrace` file is preserved next to the converted file.</span></span>
+> <span data-ttu-id="eb63d-192">Le Runtime .NET Core génère des traces au `nettrace` format.</span><span class="sxs-lookup"><span data-stu-id="eb63d-192">The .NET Core runtime generates traces in the `nettrace` format.</span></span> <span data-ttu-id="eb63d-193">Les suivis sont convertis en speedscope (si spécifié) une fois la trace terminée.</span><span class="sxs-lookup"><span data-stu-id="eb63d-193">The traces are converted to speedscope (if specified) after the trace is completed.</span></span> <span data-ttu-id="eb63d-194">Étant donné que certaines conversions peuvent entraîner une perte de données, le fichier d’origine `nettrace` est conservé en regard du fichier converti.</span><span class="sxs-lookup"><span data-stu-id="eb63d-194">Since some conversions may result in loss of data, the original `nettrace` file is preserved next to the converted file.</span></span>
 
-## <a name="use-dotnet-trace-to-collect-counter-values-over-time"></a><span data-ttu-id="c670e-195">Utiliser dotnet-trace pour collecter des valeurs de compteur au fil du temps</span><span class="sxs-lookup"><span data-stu-id="c670e-195">Use dotnet-trace to collect counter values over time</span></span>
+## <a name="use-dotnet-trace-to-collect-counter-values-over-time"></a><span data-ttu-id="eb63d-195">Utiliser dotnet-trace pour collecter des valeurs de compteur au fil du temps</span><span class="sxs-lookup"><span data-stu-id="eb63d-195">Use dotnet-trace to collect counter values over time</span></span>
 
-<span data-ttu-id="c670e-196">`dotnet-trace` puissiez</span><span class="sxs-lookup"><span data-stu-id="c670e-196">`dotnet-trace` can:</span></span>
+<span data-ttu-id="eb63d-196">`dotnet-trace` puissiez</span><span class="sxs-lookup"><span data-stu-id="eb63d-196">`dotnet-trace` can:</span></span>
 
-* <span data-ttu-id="c670e-197">Utilisez `EventCounter` pour la surveillance de l’intégrité de base dans les environnements sensibles aux performances.</span><span class="sxs-lookup"><span data-stu-id="c670e-197">Use `EventCounter` for basic health monitoring in performance-sensitive environments.</span></span> <span data-ttu-id="c670e-198">Par exemple, en production.</span><span class="sxs-lookup"><span data-stu-id="c670e-198">For example, in production.</span></span>
-* <span data-ttu-id="c670e-199">Collectez les traces afin qu’elles n’aient pas besoin d’être affichées en temps réel.</span><span class="sxs-lookup"><span data-stu-id="c670e-199">Collect traces so they don't need to be viewed in real time.</span></span>
+* <span data-ttu-id="eb63d-197">Utilisez `EventCounter` pour la surveillance de l’intégrité de base dans les environnements sensibles aux performances.</span><span class="sxs-lookup"><span data-stu-id="eb63d-197">Use `EventCounter` for basic health monitoring in performance-sensitive environments.</span></span> <span data-ttu-id="eb63d-198">Par exemple, en production.</span><span class="sxs-lookup"><span data-stu-id="eb63d-198">For example, in production.</span></span>
+* <span data-ttu-id="eb63d-199">Collectez les traces afin qu’elles n’aient pas besoin d’être affichées en temps réel.</span><span class="sxs-lookup"><span data-stu-id="eb63d-199">Collect traces so they don't need to be viewed in real time.</span></span>
 
-<span data-ttu-id="c670e-200">Par exemple, pour collecter les valeurs de compteur de performance du runtime, utilisez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="c670e-200">For example, to collect runtime performance counter values, use the following command:</span></span>
+<span data-ttu-id="eb63d-200">Par exemple, pour collecter les valeurs de compteur de performance du runtime, utilisez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="eb63d-200">For example, to collect runtime performance counter values, use the following command:</span></span>
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1
 ```
 
-<span data-ttu-id="c670e-201">La commande précédente indique aux compteurs Runtime de signaler une fois toutes les secondes pour une surveillance de l’intégrité légère.</span><span class="sxs-lookup"><span data-stu-id="c670e-201">The preceding command tells the runtime counters to report once every second for lightweight health monitoring.</span></span> <span data-ttu-id="c670e-202">Le remplacement d' `EventCounterIntervalSec=1` une valeur supérieure (par exemple, 60) permet la collecte d’une trace plus petite avec moins de granularité dans les données du compteur.</span><span class="sxs-lookup"><span data-stu-id="c670e-202">Replacing `EventCounterIntervalSec=1` with a higher value (for example, 60) allows collection of a smaller trace with less granularity in the counter data.</span></span>
+<span data-ttu-id="eb63d-201">La commande précédente indique aux compteurs Runtime de signaler une fois toutes les secondes pour une surveillance de l’intégrité légère.</span><span class="sxs-lookup"><span data-stu-id="eb63d-201">The preceding command tells the runtime counters to report once every second for lightweight health monitoring.</span></span> <span data-ttu-id="eb63d-202">Le remplacement d' `EventCounterIntervalSec=1` une valeur supérieure (par exemple, 60) permet la collecte d’une trace plus petite avec moins de granularité dans les données du compteur.</span><span class="sxs-lookup"><span data-stu-id="eb63d-202">Replacing `EventCounterIntervalSec=1` with a higher value (for example, 60) allows collection of a smaller trace with less granularity in the counter data.</span></span>
 
-<span data-ttu-id="c670e-203">La commande suivante réduit la surcharge et la taille de trace plus grande que la taille précédente :</span><span class="sxs-lookup"><span data-stu-id="c670e-203">The following command reduces overhead and trace size more than the preceding one:</span></span>
+<span data-ttu-id="eb63d-203">La commande suivante réduit la surcharge et la taille de trace plus grande que la taille précédente :</span><span class="sxs-lookup"><span data-stu-id="eb63d-203">The following command reduces overhead and trace size more than the preceding one:</span></span>
 
 ```console
 dotnet-trace collect --process-id <PID> --providers System.Runtime:0:1:EventCounterIntervalSec=1,Microsoft-Windows-DotNETRuntime:0:1,Microsoft-DotNETCore-SampleProfiler:0:1
 ```
 
-<span data-ttu-id="c670e-204">La commande précédente désactive les événements d’exécution et le profileur de pile managée.</span><span class="sxs-lookup"><span data-stu-id="c670e-204">The preceding command disables runtime events and the managed stack profiler.</span></span>
+<span data-ttu-id="eb63d-204">La commande précédente désactive les événements d’exécution et le profileur de pile managée.</span><span class="sxs-lookup"><span data-stu-id="eb63d-204">The preceding command disables runtime events and the managed stack profiler.</span></span>
 
-## <a name="net-providers"></a><span data-ttu-id="c670e-205">Fournisseurs .NET</span><span class="sxs-lookup"><span data-stu-id="c670e-205">.NET Providers</span></span>
+## <a name="net-providers"></a><span data-ttu-id="eb63d-205">Fournisseurs .NET</span><span class="sxs-lookup"><span data-stu-id="eb63d-205">.NET Providers</span></span>
 
-<span data-ttu-id="c670e-206">Le Runtime .NET Core prend en charge les fournisseurs .NET suivants.</span><span class="sxs-lookup"><span data-stu-id="c670e-206">The .NET Core runtime supports the following .NET providers.</span></span> <span data-ttu-id="c670e-207">.NET Core utilise les mêmes mots clés pour activer `Event Tracing for Windows (ETW)` et les `EventPipe` suivis.</span><span class="sxs-lookup"><span data-stu-id="c670e-207">.NET Core uses the same keywords to enable both `Event Tracing for Windows (ETW)` and `EventPipe` traces.</span></span>
+<span data-ttu-id="eb63d-206">Le Runtime .NET Core prend en charge les fournisseurs .NET suivants.</span><span class="sxs-lookup"><span data-stu-id="eb63d-206">The .NET Core runtime supports the following .NET providers.</span></span> <span data-ttu-id="eb63d-207">.NET Core utilise les mêmes mots clés pour activer `Event Tracing for Windows (ETW)` et les `EventPipe` suivis.</span><span class="sxs-lookup"><span data-stu-id="eb63d-207">.NET Core uses the same keywords to enable both `Event Tracing for Windows (ETW)` and `EventPipe` traces.</span></span>
 
-| <span data-ttu-id="c670e-208">Nom du fournisseur</span><span class="sxs-lookup"><span data-stu-id="c670e-208">Provider name</span></span>                            | <span data-ttu-id="c670e-209">Information</span><span class="sxs-lookup"><span data-stu-id="c670e-209">Information</span></span> |
+| <span data-ttu-id="eb63d-208">Nom du fournisseur</span><span class="sxs-lookup"><span data-stu-id="eb63d-208">Provider name</span></span>                            | <span data-ttu-id="eb63d-209">Information</span><span class="sxs-lookup"><span data-stu-id="eb63d-209">Information</span></span> |
 |------------------------------------------|-------------|
-| `Microsoft-Windows-DotNETRuntime`        | [<span data-ttu-id="c670e-210">Fournisseur de runtime</span><span class="sxs-lookup"><span data-stu-id="c670e-210">The Runtime Provider</span></span>](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[<span data-ttu-id="c670e-211">Mots clés du runtime CLR</span><span class="sxs-lookup"><span data-stu-id="c670e-211">CLR Runtime Keywords</span></span>](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
-| `Microsoft-Windows-DotNETRuntimeRundown` | [<span data-ttu-id="c670e-212">Fournisseur d’arrêt</span><span class="sxs-lookup"><span data-stu-id="c670e-212">The Rundown Provider</span></span>](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[<span data-ttu-id="c670e-213">Mots clés d’arrêt du CLR</span><span class="sxs-lookup"><span data-stu-id="c670e-213">CLR Rundown Keywords</span></span>](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
-| `Microsoft-DotNETCore-SampleProfiler`    | <span data-ttu-id="c670e-214">Active l’exemple de profileur.</span><span class="sxs-lookup"><span data-stu-id="c670e-214">Enables the sample profiler.</span></span> |
+| `Microsoft-Windows-DotNETRuntime`        | [<span data-ttu-id="eb63d-210">Fournisseur de runtime</span><span class="sxs-lookup"><span data-stu-id="eb63d-210">The Runtime Provider</span></span>](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[<span data-ttu-id="eb63d-211">Mots clés du runtime CLR</span><span class="sxs-lookup"><span data-stu-id="eb63d-211">CLR Runtime Keywords</span></span>](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
+| `Microsoft-Windows-DotNETRuntimeRundown` | [<span data-ttu-id="eb63d-212">Fournisseur d’arrêt</span><span class="sxs-lookup"><span data-stu-id="eb63d-212">The Rundown Provider</span></span>](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[<span data-ttu-id="eb63d-213">Mots clés d’arrêt du CLR</span><span class="sxs-lookup"><span data-stu-id="eb63d-213">CLR Rundown Keywords</span></span>](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |
+| `Microsoft-DotNETCore-SampleProfiler`    | <span data-ttu-id="eb63d-214">Active l’exemple de profileur.</span><span class="sxs-lookup"><span data-stu-id="eb63d-214">Enables the sample profiler.</span></span> |
