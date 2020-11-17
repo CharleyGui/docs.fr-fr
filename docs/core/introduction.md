@@ -2,14 +2,14 @@
 title: Présentation et présentation de .NET
 description: Découvrez .NET, une plateforme de développement Open source gratuite pour créer de nombreux types d’applications.
 author: tdykstra
-ms.date: 09/28/2020
+ms.date: 11/16/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: c3626ed223f66622b65cca888b1b043de275f950
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 1fd452ac9b7740c428e92cc6a510bab5f4d2d7d0
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506738"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687515"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -132,7 +132,7 @@ Les environnements de développement intégrés pour .NET incluent :
 
 Le [Kit de développement logiciel (SDK) .net](sdk.md) est un ensemble de bibliothèques et d’outils permettant de développer et d’exécuter des applications .net.
 
-Lorsque vous [Téléchargez .net](https://dotnet.microsoft.com/download/dotnet-core/), vous pouvez choisir le kit de développement logiciel (SDK) ou un *Runtime* , tel que le Runtime .net ou le runtime ASP.net core. Installez un Runtime sur un ordinateur que vous souhaitez préparer pour l’exécution des applications .NET. Installez le kit de développement logiciel (SDK) sur un ordinateur que vous souhaitez utiliser pour le développement. Lorsque vous téléchargez le kit de développement logiciel (SDK), vous en recevez automatiquement les runtimes.
+Lorsque vous [Téléchargez .net](https://dotnet.microsoft.com/download/dotnet-core/), vous pouvez choisir le kit de développement logiciel (SDK) ou un *Runtime*, tel que le Runtime .net ou le runtime ASP.net core. Installez un Runtime sur un ordinateur que vous souhaitez préparer pour l’exécution des applications .NET. Installez le kit de développement logiciel (SDK) sur un ordinateur que vous souhaitez utiliser pour le développement. Lorsque vous téléchargez le kit de développement logiciel (SDK), vous en recevez automatiquement les runtimes.
 
 Le téléchargement du kit de développement logiciel (SDK) comprend les composants suivants :
 
@@ -153,7 +153,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 ### <a name="project-system-and-msbuild"></a>Système de projet et MSBuild
 
-Une application .NET est générée à partir du code source à l’aide de [MSBuild](/visualstudio/msbuild/msbuild). Un fichier projet ( *. csproj* , *. fsproj* ou *. vbproj* ) spécifie des [cibles](/visualstudio/msbuild/msbuild-targets) et des [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication du code. Il existe des identificateurs de kit de développement logiciel (SDK) qui font référence aux collections standard de cibles et de tâches. L’utilisation de ces identificateurs permet de réduire la taille des fichiers projet et de les utiliser facilement. Par exemple, voici un fichier projet pour une application console :
+Une application .NET est générée à partir du code source à l’aide de [MSBuild](/visualstudio/msbuild/msbuild). Un fichier projet (*. csproj*, *. fsproj* ou *. vbproj*) spécifie des [cibles](/visualstudio/msbuild/msbuild-targets) et des [tâches](/visualstudio/msbuild/msbuild-tasks) associées qui sont responsables de la compilation, de l’empaquetage et de la publication du code. Il existe des identificateurs de kit de développement logiciel (SDK) qui font référence aux collections standard de cibles et de tâches. L’utilisation de ces identificateurs permet de réduire la taille des fichiers projet et de les utiliser facilement. Par exemple, voici un fichier projet pour une application console :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -221,7 +221,7 @@ Les langages .NET de haut niveau, tels que C#, se compilent en un jeu d’instru
 
 Dans la mesure où la compilation JIT se produit pendant l’exécution de l’application, la durée de compilation fait partie du temps d’exécution. Par conséquent, les compilateurs JIT doivent équilibrer le temps passé à optimiser le code par rapport aux économies que le code résultant peut produire. Toutefois, un compilateur JIT connaît le matériel réel et peut permettre aux développeurs d’avoir à fournir des implémentations différentes pour différentes plateformes.
 
-Le compilateur JIT .NET peut effectuer une *compilation hiérarchisée* , ce qui signifie qu’il peut recompiler des méthodes individuelles au moment de l’exécution. Cette fonctionnalité permet au service informatique de se compiler rapidement, tout en étant en mesure de générer une version hautement optimisée du code pour les méthodes fréquemment utilisées.
+Le compilateur JIT .NET peut effectuer une *compilation hiérarchisée*, ce qui signifie qu’il peut recompiler des méthodes individuelles au moment de l’exécution. Cette fonctionnalité permet au service informatique de se compiler rapidement, tout en étant en mesure de générer une version hautement optimisée du code pour les méthodes fréquemment utilisées.
 
 Pour plus d’informations, consultez [processus d’exécution managée](../standard/managed-execution-process.md) et [compilation à plusieurs niveaux](whats-new/dotnet-core-3-0.md#tiered-compilation).
 
@@ -264,9 +264,9 @@ Pour plus d’informations, consultez [vue d’ensemble de la publication d’ap
 
 ## <a name="runtime-libraries"></a>Bibliothèques Runtime
 
-.NET possède un ensemble standard de bibliothèques de classes. L’ensemble principal est appelé bibliothèque de classes de base (BCL). Le jeu complet est appelé bibliothèques d’exécution ou bibliothèques d’infrastructure. Ces bibliothèques fournissent des implémentations pour de nombreux types et fonctionnalités d’utilitaire à usage général et spécifiques à la charge de travail.
+.NET possède un ensemble standard de bibliothèques de classes, connu sous le nom de [bibliothèques Runtime](../standard/glossary.md#runtime), de [bibliothèques d’infrastructure](../standard/glossary.md#framework-libraries)ou de la [bibliothèque de classes de base (BCL)](../standard/glossary.md#bcl). Ces bibliothèques fournissent des implémentations pour de nombreux types et fonctionnalités d’utilitaire à usage général et spécifiques à la charge de travail.
 
-Voici quelques exemples de types définis dans les bibliothèques Runtime :
+Voici quelques exemples de types définis dans les bibliothèques Runtime .NET :
 
 * Types primitifs, tels que <xref:System.Boolean?displayProperty=nameWithType> et <xref:System.Int32?displayProperty=nameWithType> .
 * Collections, comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
@@ -276,9 +276,9 @@ Voici quelques exemples de types définis dans les bibliothèques Runtime :
 * Types d’utilitaire de [sérialisation](../standard/serialization/index.md) , tels que <xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> et <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> .
 * Types hautes performances, tels que les <xref:System.Span%601?displayProperty=nameWithType> <xref:System.Numerics.Vector?displayProperty=nameWithType> [pipelines](../standard/io/pipelines.md), et.
 
-Pour plus d’informations, consultez bibliothèques de l' [infrastructure](../standard/framework-libraries.md) et [code source pour les bibliothèques](https://github.com/dotnet/runtime/tree/master/src/libraries).
+Pour plus d’informations, consultez la [vue d’ensemble des bibliothèques Runtime](../standard/runtime-libraries-overview.md). Le code source des bibliothèques se trouve dans [le référentiel GitHub dotnet/Runtime](https://github.com/dotnet/runtime/tree/master/src/libraries).
 
-## <a name="microsoftextensions-libraries"></a>Bibliothèques Microsoft. extensions
+### <a name="extensions-to-the-runtime-libraries"></a>Extensions des bibliothèques Runtime
 
 Les bibliothèques pour certaines fonctionnalités d’application couramment utilisées ne sont pas incluses dans les bibliothèques Runtime, mais sont disponibles dans les packages NuGet, comme suit :
 
@@ -344,6 +344,7 @@ Une partie de la terminologie pour .NET peut être déroutante, car le même mot
   | version cible de .NET Framework | Ensemble d’API sur lequel repose une bibliothèque ou une application .NET. Exemples : .NET Core 3,1, .NET Standard 2,0 |
   | Moniker du Framework cible  | Un TFM est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET. Exemple : `net462` pour .NET Framework 4.6.2. |
   | application dépendante du Framework | Application qui peut s’exécuter uniquement sur un ordinateur sur lequel vous avez installé le runtime à partir de la [page de téléchargement de .net](https://dotnet.microsoft.com/download/dotnet-core). « Framework » dans cette utilisation est la même chose que le « runtime » que vous téléchargez à partir de la page de téléchargement de .NET. |
+  | bibliothèques d’infrastructure | Parfois utilisé comme synonyme pour les [bibliothèques Runtime](#runtime-libraries). |
 
 * **Kit SDK**
 

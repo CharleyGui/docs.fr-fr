@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/10/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: d924e5bc58052cd760f367e906666d68ab79b764
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 39020a32cdea9b82dc9d30e62e663ebc4ee39ebb
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507213"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687440"
 ---
 # <a name="how-to-check-that-net-is-already-installed"></a>Comment vérifier que .NET est déjà installé
 
@@ -189,5 +189,5 @@ Vous pouvez voir les versions du kit de développement logiciel (SDK) et les ver
 ## <a name="next-steps"></a>Étapes suivantes
 
 - [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Windows](windows.md).
-- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour MacOS](linux.md).
-- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Linux](macos.md).
+- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour MacOS](macos.md).
+- [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Linux](linux.md).

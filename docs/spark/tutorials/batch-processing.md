@@ -5,12 +5,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 666292fa2e9cecbd4e0aacd291f1008810eb257e
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c161a0420de9e99478768926e5385dcfda1f9ee7
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955393"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688226"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>Didacticiel : effectuer un traitement par lots avec .NET pour Apache Spark
 
@@ -18,7 +18,7 @@ Dans ce didacticiel, vous allez apprendre à effectuer un traitement par lots à
 
 Le traitement par lots est généralement effectué sur des jeux de données volumineux et plats qui doivent être préparés pour une analyse plus poussée. Le traitement des journaux et l’entreposage des données sont des scénarios courants de traitement par lots. Dans ce scénario, vous analysez des informations sur les projets GitHub, telles que le nombre de fois où différents projets ont été dupliqués ou la manière dont les projets récents ont été mis à jour.
 
-Dans ce tutoriel, vous allez découvrir comment :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >
@@ -158,7 +158,7 @@ L’objectif de cette application est d’obtenir des Insights sur les données 
 1. Exécutez votre application avec `spark-submit` . Veillez à mettre à jour la commande suivante avec les chemins d’accès réels à votre fichier jar Microsoft Spark.
 
    ```console
-   spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /<path>/to/microsoft-spark-<version>.jar dotnet /<path>/to/netcoreapp<version>/GitHubProjects.dll
+   spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /<path>/to/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar dotnet /<path>/to/netcoreapp<version>/mySparkBatchApp.dll
    ```
 
 ## <a name="get-the-code"></a>Obtenir le code

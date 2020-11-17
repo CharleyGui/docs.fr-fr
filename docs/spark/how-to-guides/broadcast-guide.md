@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 55a52754439020bd2a925aa3e987fb4ad99c9c3d
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: ca6dab01cbd639594da0b51f145272a9a150e93c
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224002"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687751"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>Utiliser des variables de diffusion dans .NET pour Apache Spark
 
@@ -96,6 +96,11 @@ Func<Column, Column> udf2 = Udf<string, string>(
 // Calling udf2 works fine as expected
 df.Select(udf2(df["_1"])).Show();
 ```
+
+## <a name="faqs"></a>FAQ
+
+**Pourquoi les variables de diffusion ne fonctionnent-elles pas avec .NET interactive ?**  
+Les variables de diffusion ne fonctionnent pas avec les scénarios interactifs en raison de la conception de .NET interactive qui ajoute chaque objet défini dans une cellule avec sa classe d’envoi de cellules, car n’est pas marqué comme sérialisable, échoue avec la même exception que celle qui est indiquée précédemment. Pour plus d’informations, consultez [cet article](dotnet-interactive-udf-issue.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

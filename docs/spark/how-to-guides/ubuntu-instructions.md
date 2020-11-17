@@ -4,12 +4,12 @@ description: Découvrez comment créer votre application .NET pour Apache Spark 
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: dfe105bb1549560ebdd2526a8441c4e2c5d141bf
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 77daad7298c41d21054db9174f30a8d1ed12648d
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955060"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687790"
 ---
 # <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a>Découvrez comment créer votre application .NET pour Apache Spark sur Ubuntu
 
@@ -19,7 +19,7 @@ Cet article vous apprend à créer votre .NET pour les applications Apache Spark
 
 Si vous disposez déjà de toutes les conditions préalables suivantes, passez aux étapes de [génération](#build) .
 
-1. Télécharger et installer le kit de développement logiciel (SDK) **[.net core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)** ou **[.net Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** -l’installation du kit de développement logiciel (SDK) ajoute `dotnet` chaîne d’outils à votre chemin.  .NET Core 2,1, 2,2 et 3,1 sont pris en charge.
+1. Télécharger et installer le **[Kit de développement logiciel (SDK) .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)** -l’installation du kit de développement logiciel (SDK) ajoute `dotnet` chaîne d’outils à votre chemin.  .NET Core 2,1, 2,2 et 3,1 sont pris en charge.
 
 2. Installez **[openjdk 8](https://openjdk.java.net/install/)**.
 
@@ -75,16 +75,16 @@ Si vous disposez déjà de toutes les conditions préalables suivantes, passez a
        ```
 
 4. Installez **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)**.
-Téléchargez [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) et extrayez-le dans un dossier local (par exemple, `~/bin/spark-2.3.2-bin-hadoop2.7` ). (Les versions Spark prises en charge sont 2,3. *, 2.4.0, 2.4.1, 2.4.3 et 2.4.4)
+Téléchargez [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) et extrayez-le dans un dossier local (par exemple, `~/bin/spark-3.0.1-bin-hadoop2.7` ). (Les versions Spark prises en charge sont 2,3. *, 2.4.0, 2.4.1, 2.4.3, 2.4.4, 2.4.5, 2.4.6, 2.4.7, 3.0.0 et 3.0.1)
 
    ```bash
-   tar -xvzf /path/to/spark-2.3.2-bin-hadoop2.7.tgz -C ~/bin/spark-2.3.2-bin-hadoop2.7
+   tar -xvzf /path/to/spark-3.0.1-bin-hadoop2.7.tgz -C ~/bin/spark-3.0.1-bin-hadoop2.7
    ```
 
-   * Ajoutez les [variables d’environnement](https://www.java.com/en/download/help/path.xml) nécessaires `SPARK_HOME` (par exemple, `~/bin/spark-2.3.2-bin-hadoop2.7/` ) et `PATH` (par exemple, `$SPARK_HOME/bin:$PATH` )
+   * Ajoutez les [variables d’environnement](https://www.java.com/en/download/help/path.xml) nécessaires `SPARK_HOME` (par exemple, `~/bin/spark-3.0.1-bin-hadoop2.7/` ) et `PATH` (par exemple, `$SPARK_HOME/bin:$PATH` )
 
       ```bash
-      export SPARK_HOME=~/bin/spark-2.3.2-hadoop2.7
+      export SPARK_HOME=~/bin/spark-3.0.1-hadoop2.7
       export PATH="$SPARK_HOME/bin:$PATH"
       source ~/.bashrc
       ```
@@ -100,10 +100,10 @@ Téléchargez [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) et e
             ____              __
            / __/__  ___ _____/ /__
           _\ \/ _ \/ _ `/ __/  '_/
-         /___/ .__/\_,_/_/ /_/\_\   version 2.3.2
+         /___/ .__/\_,_/_/ /_/\_\   version 3.0.1
             /_/
 
-      Using Scala version 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_201)
+      Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_201)
       Type in expressions to have them evaluated.
       Type :help for more information.
 
@@ -113,7 +113,7 @@ Téléchargez [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) et e
 
 Assurez-vous que vous êtes en mesure d’exécuter `dotnet` , `java` , `mvn` , `spark-shell` à partir de votre ligne de commande avant de passer à la section suivante. Vous avez l’impression d’avoir une meilleure solution ? Veuillez [ouvrir un problème](https://github.com/dotnet/spark/issues) et n’hésitez pas à contribuer.
 
-## <a name="build"></a>Build
+## <a name="build"></a>Générer
 
 Pour le reste de ce guide, vous devez avoir cloné le .NET pour Apache Spark référentiel sur votre ordinateur, par exemple, `~/dotnet.spark/` .
 
@@ -134,8 +134,9 @@ mvn clean package
 
 Vous devez voir les fichiers jar créés pour les versions Spark prises en charge :
 
-* `microsoft-spark-2.3.x/target/microsoft-spark-2.3.x-<version>.jar`
-* `microsoft-spark-2.4.x/target/microsoft-spark-2.4.x-<version>.jar`
+* `microsoft-spark-2-3\target\microsoft-spark-2-3_2.11-<spark-dotnet-version>.jar`
+* `microsoft-spark-2-4\target\microsoft-spark-2-4_2.11-<spark-dotnet-version>.jar`
+* `microsoft-spark-3-0\target\microsoft-spark-3-0_2.12-<spark-dotnet-version>.jar`
 
 ### <a name="build-net-sample-applications-using-net-core-cli"></a>Générez des exemples d’applications .NET à l’aide de CLI .NET Core
 
@@ -145,58 +146,58 @@ Cette section explique comment créer les [exemples d’applications](https://gi
 
    ```dotnetcli
    cd ~/dotnet.spark/src/csharp/Microsoft.Spark.Worker/
-   dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
+   dotnet publish -f netcoreapp3.1 -r ubuntu.18.04-x64
    ```
 
    Exemple de sortie de console :
 
    ```bash
-   user@machine:/home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker$ dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
-   Microsoft (R) Build Engine version 16.0.462+g62fb89029d for .NET Core
+   user@machine:/home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker$ dotnet publish -f netcoreapp3.1 -r ubuntu.18.04-x64
+   Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
       Restore completed in 36.03 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker/Microsoft.Spark.Worker.csproj.
       Restore completed in 35.94 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark/Microsoft.Spark.csproj.
-      Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.0/Microsoft.Spark.dll
-      Microsoft.Spark.Worker -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/Microsoft.Spark.Worker.dll
-      Microsoft.Spark.Worker -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish/
+      Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.1/Microsoft.Spark.dll
+      Microsoft.Spark.Worker -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish/Microsoft.Spark.Worker.dll
+      Microsoft.Spark.Worker -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish/
    ```
 
 2. Générez les exemples :
 
    ```dotnetcli
    cd ~/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples/
-   dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
+   dotnet publish -f netcoreapp3.1 -r ubuntu.18.04-x64
    ```
 
    Exemple de sortie de console :
 
    ```bash
-   user@machine:/home/user/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples$ dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
-   Microsoft (R) Build Engine version 16.0.462+g62fb89029d for .NET Core
+   user@machine:/home/user/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples$ dotnet publish -f netcoreapp3.1 -r ubuntu.18.04-x64
+   Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
       Restore completed in 37.11 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark/Microsoft.Spark.csproj.
       Restore completed in 281.63 ms for /home/user/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples/Microsoft.Spark.CSharp.Examples.csproj.
-      Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.0/Microsoft.Spark.dll
-      Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/Microsoft.Spark.CSharp.Examples.dll
-      Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish/
+      Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.1/Microsoft.Spark.dll
+      Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish/Microsoft.Spark.CSharp.Examples.dll
+      Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish/
    ```  
 
 ## <a name="run-the-net-for-spark-sample-applications"></a>Exécuter les exemples d’applications Spark .NET
 
 Une fois que vous avez généré les exemples, vous pouvez utiliser `spark-submit` pour envoyer vos applications .net core. Vérifiez que vous avez suivi la section [conditions préalables](#prerequisites) et que vous avez installé Apache Spark.
 
-1. Définissez la `DOTNET_WORKER_DIR` `PATH` variable d’environnement ou pour inclure le chemin d’accès où le `Microsoft.Spark.Worker` fichier binaire a été généré (par exemple, `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish` ).
+1. Définissez la `DOTNET_WORKER_DIR` `PATH` variable d’environnement ou pour inclure le chemin d’accès où le `Microsoft.Spark.Worker` fichier binaire a été généré (par exemple, `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish` ).
 
    ```bash
-   export DOTNET_WORKER_DIR=~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish
+   export DOTNET_WORKER_DIR=~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish
    ```
 
-2. Ouvrez un terminal et accédez au répertoire dans lequel votre fichier binaire d’application a été généré (par exemple, `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish` ).
+2. Ouvrez un terminal et accédez au répertoire dans lequel votre fichier binaire d’application a été généré (par exemple, `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish` ).
 
    ```bash
-   cd ~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish
+   cd ~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp3.1/ubuntu.18.04-x64/publish
    ```
 
 3. L’exécution de votre application suit la structure de base :
@@ -218,7 +219,7 @@ Une fois que vous avez généré les exemples, vous pouvez utiliser `spark-submi
       spark-submit \
       --class org.apache.spark.deploy.dotnet.DotnetRunner \
       --master local \
-      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<version>.jar \
+      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
       Microsoft.Spark.CSharp.Examples Sql.Batch.Basic $SPARK_HOME/examples/src/main/resources/people.json
       ```
 
@@ -228,7 +229,7 @@ Une fois que vous avez généré les exemples, vous pouvez utiliser `spark-submi
       spark-submit \
       --class org.apache.spark.deploy.dotnet.DotnetRunner \
       --master local \
-      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<version>.jar \
+      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredNetworkWordCount localhost 9999
       ```
 
@@ -239,7 +240,7 @@ Une fois que vous avez généré les exemples, vous pouvez utiliser `spark-submi
       --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.2 \
       --class org.apache.spark.deploy.dotnet.DotnetRunner \
       --master local \
-      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<version>.jar \
+      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
       ```
 
@@ -250,6 +251,6 @@ Une fois que vous avez généré les exemples, vous pouvez utiliser `spark-submi
       --jars path/to/net.jpountz.lz4/lz4-1.3.0.jar,path/to/org.apache.kafka/kafka-clients-0.10.0.1.jar,path/to/org.apache.spark/spark-sql-kafka-0-10_2.11-2.3.2.jar,`path/to/org.slf4j/slf4j-api-1.7.6.jar,path/to/org.spark-project.spark/unused-1.0.0.jar,path/to/org.xerial.snappy/snappy-java-1.1.2.6.jar \
       --class org.apache.spark.deploy.dotnet.DotnetRunner \
       --master local \
-      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<version>.jar \
+      ~/dotnet.spark/src/scala/microsoft-spark-<version>/target/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
        ```

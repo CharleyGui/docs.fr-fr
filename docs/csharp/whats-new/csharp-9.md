@@ -2,12 +2,12 @@
 title: Nouveautés de C# 9,0-Guide C#
 description: Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 9,0.
 ms.date: 09/04/2020
-ms.openlocfilehash: 5b3695dee8fc26f69e713d1d6811acdf0cfa9764
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: dbc104cb0bbfc965b0cc055429713538f62ed0e8
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557218"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687358"
 ---
 # <a name="whats-new-in-c-90"></a>Nouveautés dans C# 9.0
 
@@ -36,7 +36,7 @@ Vous pouvez télécharger le dernier Kit de développement logiciel (SDK) .NET �
 
 ## <a name="record-types"></a>Types d’enregistrements
 
-C# 9,0 introduit * *_types d’enregistrements_* _, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
+C# 9,0 introduit **_types d’enregistrements_* _, qui sont un type référence qui fournit des méthodes synthétisées pour fournir une sémantique de valeur pour l’égalité. Les enregistrements sont immuables par défaut.
 
 Les types d’enregistrements facilitent la création de types référence immuables dans .NET. Historiquement, les types .NET sont largement classés comme types référence (y compris les classes et les types anonymes) et les types valeur (y compris les structs et les tuples). Bien que les types de valeurs immuables soient recommandés, les types valeur mutables n’introduisent pas souvent des erreurs. Les variables de type valeur contiennent les valeurs afin que les modifications soient apportées à une copie des données d’origine lorsque les types valeur sont passés aux méthodes.
 
@@ -104,9 +104,13 @@ Enfin, les enregistrements prennent en charge les [ `with` expressions](../langu
 
 :::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="Wither":::
 
-La ligne ci-dessus crée un nouvel `Person` enregistrement où la `LastName` propriété est une copie de `person` , et `FirstName` est `"Paul"` . Vous pouvez définir n’importe quel nombre de propriétés dans une `with` expression.
+La ligne précédente crée un nouvel `Person` enregistrement où la `LastName` propriété est une copie de `person` , et `FirstName` est `"Paul"` . Vous pouvez définir n’importe quel nombre de propriétés dans une `with` expression. Vous pouvez également utiliser des `with` expressions pour créer une copie exacte. Vous spécifiez le jeu vide pour les propriétés à modifier :
+
+:::code language="csharp" source="snippets/whats-new-csharp9/PositionalRecords.cs" ID="WithCopy":::
 
 Tous les membres synthétisés, à l’exception de la méthode « Clone », peuvent être écrits par vous-même. Si un type d’enregistrement a une méthode qui correspond à la signature d’une méthode synthétisée, le compilateur ne synthétise pas cette méthode. L' `Dog` exemple d’enregistrement précédent contient une méthode codée à la main <xref:System.String.ToString> à titre d’exemple.
+
+En savoir plus sur les types d’enregistrements dans ce didacticiel sur l' [exploration des enregistrements](../tutorials/exploration/records.md) .
 
 ## <a name="init-only-setters"></a>Setter init uniquement
 
@@ -246,7 +250,7 @@ Un générateur de code lit des attributs ou d’autres éléments de code à l�
 
 Les deux fonctionnalités ajoutées pour les générateurs de code sont les extensions de la **syntaxe de méthode partielle** _ et les _*_initialiseurs de module_*_. Tout d’abord, les modifications apportées aux méthodes partielles. Avant C# 9,0, les méthodes partielles sont, `private` mais ne peuvent pas spécifier un modificateur d’accès, ont un `void` retour et ne peuvent pas avoir de `out` paramètres. Ces restrictions signifiaient que si aucune implémentation de méthode n’est fournie, le compilateur supprime tous les appels à la méthode partielle. C# 9,0 supprime ces restrictions, mais exige que les déclarations de méthode partielles aient une implémentation. Les générateurs de code peuvent fournir cette implémentation. Pour éviter d’introduire une modification avec rupture, le compilateur considère toute méthode partielle sans modificateur d’accès pour suivre les anciennes règles. Si la méthode partielle comprend le `private` modificateur d’accès, les nouvelles règles gouvernent cette méthode partielle.
 
-La deuxième nouvelle fonctionnalité pour les générateurs de code est _ * _initialiseurs de module_ * *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime avant tout autre accès aux champs ou appel de méthode dans le module entier. Méthode d’initialiseur de module :
+La deuxième nouvelle fonctionnalité pour les générateurs de code est _ *_initialiseurs de module_* *. Les initialiseurs de module sont des méthodes auxquelles l' <xref:System.Runtime.CompilerServices.ModuleInitializerAttribute> attribut est attaché. Ces méthodes sont appelées par le runtime avant tout autre accès aux champs ou appel de méthode dans le module entier. Méthode d’initialiseur de module :
 
 - Doit être statique
 - Doit être sans paramètre

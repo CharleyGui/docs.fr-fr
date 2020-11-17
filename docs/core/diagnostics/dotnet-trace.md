@@ -2,12 +2,12 @@
 title: outil dotnet-trace-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-trace.
 ms.date: 11/21/2019
-ms.openlocfilehash: d4175ccad785b21f860044a4fd5d691624ec495e
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 4a3694f6ed748779809ee4c4bfd941bb6f1ac490
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507226"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687627"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>utilitaire d’analyse des performances dotnet-trace
 
@@ -33,7 +33,7 @@ L' `dotnet-trace` outil :
 
 * Est un outil .NET Core multiplateforme.
 * Active la collecte des traces .NET Core d’un processus en cours d’exécution sans profileur natif.
-* Repose `EventPipe` sur la technologie multiplateforme du Runtime .net core.
+* Repose sur [`EventPipe`](./eventpipe.md) le Runtime .net core.
 * Offre la même expérience sur Windows, Linux ou macOS.
 
 ## <a name="options"></a>Options

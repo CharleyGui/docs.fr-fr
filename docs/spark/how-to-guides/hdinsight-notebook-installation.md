@@ -4,12 +4,12 @@ description: Découvrez comment installer .NET pour Apache Spark sur les blocs-n
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: b5689c9ccdd13209fec33674ad8fc80dcc369660
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: e2319fec833147ce50c7b94dd8ccc84f552f20d2
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955047"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688278"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>Installer .NET pour Apache Spark sur des blocs-notes Jupyter sur des clusters Azure HDInsight Spark
 
@@ -61,7 +61,7 @@ Dans le Portail Azure, sélectionnez le **cluster HDInsight Spark** que vous ave
 
    Créez un nouveau fichier nommé **install-interactive-Notebook.sh** sur votre ordinateur local et collez le contenu du [contenu de install-interactive-Notebook.sh](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh).
 
-   Téléchargez le script vers un [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) accessible à partir du cluster HDInsight. Par exemple : `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
+   Téléchargez le script vers un [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) accessible à partir du cluster HDInsight. Par exemple, `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.
 
 2. Exécutez `install-interactive-notebook.sh` sur le cluster en utilisant des [actions de script HDInsight](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
@@ -73,7 +73,7 @@ Dans le Portail Azure, sélectionnez le **cluster HDInsight Spark** que vous ave
    | Nom | *Installer .NET pour Apache Spark l’expérience du bloc-notes interactif* |
    | URI de script bash | URI vers lequel vous avez chargé `install-interactive-notebook.sh`. |
    | Type(s) de nœud| Tête et Worker |
-   | Paramètres | .NET pour la version de Apache Spark. Vous pouvez vérifier [les versions de Apache Spark dans .net](https://github.com/dotnet/spark/releases). Par exemple, si vous souhaitez installer Sparkdotnet version 0.6.0, il s’agit de `0.6.0` .
+   | Paramètres | .NET pour la version de Apache Spark. Vous pouvez vérifier [les versions de Apache Spark dans .net](https://github.com/dotnet/spark/releases). Par exemple, si vous souhaitez installer Sparkdotnet version 1.0.0, il s’agit de `1.0.0` .
 
    Passer à l’étape suivante quand des coches vertes s’affichent en regard de l’état de l’action de script.
 
@@ -101,7 +101,7 @@ Suivez les instructions de la section [Stop livy Server](#stop-the-livy-server) 
 
    * **Propriété 2** Utilisez la version de .NET pour Apache Spark que vous avez incluse dans l’action de script précédente.
        * Essentiel&ensp;&ensp;`spark.dotnet.packages`
-       * Valeur: `["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`
+       * Valeur: `["nuget: Microsoft.Spark, 1.0.0", "nuget: Microsoft.Spark.Extensions.Delta, 1.0.0"]`
 
    * **Propriété 3**
        * Essentiel&ensp;&ensp;`spark.dotnet.interpreter`

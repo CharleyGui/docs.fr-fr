@@ -2,12 +2,12 @@
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: e3f809dab64d66d8b4ba16ca55fc426309614715
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 9af04cceeef3fbfb8392eb91667c21374511548a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439922"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687581"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -55,7 +55,7 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
   - Autorise uniquement le suivi des objets sérialisables.
   - Peut être consommé dans le processus via n’importe quelle instance [EventListener](xref:System.Diagnostics.Tracing.EventListener) configurée pour utiliser EventSource.
   - Peut être consommé hors processus via :
-    - EventPipe de .NET Core sur toutes les plateformes
+    - [EventPipe de .net Core](./eventpipe.md) sur toutes les plateformes
     - [Suivi d’événements pour Windows (ETW)](/windows/win32/etw/event-tracing-portal)
     - [Infrastructure de suivi LTTng pour Linux](https://lttng.org/)
       - Procédure pas à pas : [collecte d’une trace LTTng à l’aide de PerfCollect](trace-perfcollect-lttng.md).

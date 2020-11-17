@@ -2,12 +2,12 @@
 title: Programmation orientée objet (C#)
 description: C# fournit une prise en charge complète de la programmation orientée objet, notamment l’abstraction, l’encapsulation, l’héritage et le polymorphisme.
 ms.date: 09/30/2020
-ms.openlocfilehash: 353edf8fc68f495f3d875fa678aaaf91f1fd6406
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: 4ae31e18fcd88870f511e77bb0c555f35394fd1b
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471593"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687992"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation Object-Oriented (C#)
 
@@ -48,9 +48,9 @@ public class GiftCardAccount : BankAccount
 }
 ```
 
-Chacune de ces classes *hérite* du comportement partagé de sa *classe de base*partagée, la `BankAccount` classe. Écrivez les implémentations pour les fonctionnalités nouvelles et différentes dans chacune des *classes dérivées*.  Ces classes dérivées ont déjà tout le comportement défini dans la `BankAccount` classe.
+Chacune de ces classes *hérite* du comportement partagé de sa *classe de base* partagée, la `BankAccount` classe. Écrivez les implémentations pour les fonctionnalités nouvelles et différentes dans chacune des *classes dérivées*.  Ces classes dérivées ont déjà tout le comportement défini dans la `BankAccount` classe.
 
-Il est recommandé de créer chaque nouvelle classe dans un fichier source différent. Dans [Visual Studio](https://visualstudio.com), vous pouvez cliquer avec le bouton droit sur le projet, puis sélectionner *Ajouter une classe* pour ajouter une nouvelle classe dans un nouveau fichier. Dans [Visual Studio code](https://code.visualstudio.com), sélectionnez *fichier* , puis *nouveau* pour créer un nouveau fichier source. Dans l’un ou l’autre des outils, nommez le fichier pour qu’il corresponde à la classe : *InterestEarningAccount.cs*, *LineOfCreditAccount.cs*et *GiftCardAccount.cs*.
+Il est recommandé de créer chaque nouvelle classe dans un fichier source différent. Dans [Visual Studio](https://visualstudio.com), vous pouvez cliquer avec le bouton droit sur le projet, puis sélectionner *Ajouter une classe* pour ajouter une nouvelle classe dans un nouveau fichier. Dans [Visual Studio code](https://code.visualstudio.com), sélectionnez *fichier* , puis *nouveau* pour créer un nouveau fichier source. Dans l’un ou l’autre des outils, nommez le fichier pour qu’il corresponde à la classe : *InterestEarningAccount.cs*, *LineOfCreditAccount.cs* et *GiftCardAccount.cs*.
 
 Lorsque vous créez les classes comme indiqué dans l’exemple précédent, vous découvrirez qu’aucune de vos classes dérivées n’est compilée. Un constructeur est chargé d’initialiser un objet. Un constructeur de classe dérivée doit initialiser la classe dérivée et fournir des instructions sur la façon d’initialiser l’objet de classe de base inclus dans la classe dérivée. L’initialisation appropriée se produit normalement sans code supplémentaire. La `BankAccount` classe déclare un constructeur public avec la signature suivante :
 
@@ -173,6 +173,8 @@ Le remplacement retourne une transaction de frais lorsque le compte est redessin
 Exécutez le programme et vérifiez les résultats.
 
 ## <a name="summary"></a>Résumé
+
+Si vous vous êtes bloqué, vous pouvez voir la source de ce didacticiel [dans notre référentiel GitHub](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/intro-to-csharp/snippets/object-oriented-programming).
 
 Ce didacticiel a démontré de nombreuses techniques utilisées dans la programmation de Object-Oriented :
 

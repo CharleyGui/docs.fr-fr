@@ -2,12 +2,12 @@
 title: EventCounters dans .NET Core
 description: Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 ms.date: 08/07/2020
-ms.openlocfilehash: be273776b888f13893fc694a111093cca1fa8a5e
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 212cd6b495785dcd091187f97a1b5e44e5597a4a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955315"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687640"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters dans .NET Core
 
@@ -17,7 +17,7 @@ EventCounters sont des API .NET Core utilisées pour la collecte des métriques 
 
 Le Runtime .NET Core et quelques bibliothèques .NET publient des informations de diagnostic de base à l’aide de EventCounters à partir de .NET Core 3,0. Outre les EventCounters fournies par le Runtime .NET, vous pouvez choisir d’implémenter votre propre EventCounters. EventCounters peut être utilisé pour effectuer le suivi de diverses mesures.
 
-EventCounters en direct dans le cadre d’un <xref:System.Diagnostics.Tracing.EventSource> objet et sont automatiquement poussés vers les outils d’écouteur régulièrement. Comme tous les autres événements sur un <xref:System.Diagnostics.Tracing.EventSource> , ils peuvent être utilisés à la fois en-proc et hors processus via <xref:System.Diagnostics.Tracing.EventListener> et EventPipe. Cet article se concentre sur les fonctionnalités inter-plateformes de EventCounters et exclut intentionnellement PerfView et ETW (Suivi d’v nements pour Windows), bien que les deux puissent être utilisés avec EventCounters.
+EventCounters en direct dans le cadre d’un <xref:System.Diagnostics.Tracing.EventSource> objet et sont automatiquement poussés vers les outils d’écouteur régulièrement. Comme tous les autres événements sur un <xref:System.Diagnostics.Tracing.EventSource> , ils peuvent être utilisés à la fois en-proc et hors processus via <xref:System.Diagnostics.Tracing.EventListener> et [EventPipe](./eventpipe.md). Cet article se concentre sur les fonctionnalités inter-plateformes de EventCounters et exclut intentionnellement PerfView et ETW (Suivi d’v nements pour Windows), bien que les deux puissent être utilisés avec EventCounters.
 
 ![Image de diagramme in-proc et out-of-proc EventCounters](media/event-counters.svg)
 

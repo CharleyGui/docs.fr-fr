@@ -4,12 +4,12 @@ description: Découvrez comment déployer .NET pour les fichiers binaires de fon
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 001798bfda628ce979570bcd89e7c5553347b275
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 19ecd4736baaf789a409229d35a6946c6021db45
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91954956"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688187"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Déployer .NET pour les fichiers binaires de fonctions définies par l’utilisateur et de Apache Spark Worker
 
@@ -60,7 +60,7 @@ Une fois l’application Spark [regroupée](https://spark.apache.org/docs/latest
 ### <a name="after-submitting-my-spark-application-i-get-the-error-systemtypeloadexception-could-not-load-type-systemruntimeremotingcontextscontext"></a>Après avoir envoyé mon application Spark, j’obtiens l’erreur `System.TypeLoadException: Could not load type 'System.Runtime.Remoting.Contexts.Context'` .
 > **Erreur :** [erreur] [TaskRunner] [0] ProcessStream () a échoué avec l’exception : System. TypeLoadException : impossible de charger le type’System. Runtime. Remoting. contextes. Context’à partir de l’assembly’mscorlib, version = 4.0.0.0, culture = neutral, PublicKeyToken =... '.
 
-**Réponse :** Vérifiez la `Microsoft.Spark.Worker` version que vous utilisez. Il existe deux versions : **.NET Framework 4.6.1** et **.net Core 2.1. x**. Dans ce cas, `Microsoft.Spark.Worker.net461.win-x64-<version>` (que vous pouvez [Télécharger](https://github.com/dotnet/spark/releases)) doit être utilisé, car `System.Runtime.Remoting.Contexts.Context` n’est utilisé que pour les .NET Framework.
+**Réponse :** Vérifiez la `Microsoft.Spark.Worker` version que vous utilisez. Il existe deux versions : **.NET Framework 4.6.1** et **.net Core 3.1. x**. Dans ce cas, `Microsoft.Spark.Worker.net461.win-x64-<version>` (que vous pouvez [Télécharger](https://github.com/dotnet/spark/releases)) doit être utilisé, car `System.Runtime.Remoting.Contexts.Context` n’est utilisé que pour les .NET Framework.
 
 ### <a name="how-do-i-run-my-spark-application-with-udfs-on-yarn-which-environment-variables-and-parameters-should-i-use"></a>Comment faire exécuter mon application Spark avec des fonctions définies par l’utilisateur sur le fil ? Quels paramètres et variables d’environnement dois-je utiliser ?
 
@@ -74,7 +74,7 @@ spark-submit \
 --conf spark.yarn.appMasterEnv.DOTNET_WORKER_DIR=./worker/Microsoft.Spark.Worker-<version> \
 --conf spark.yarn.appMasterEnv.DOTNET_ASSEMBLY_SEARCH_PATHS=./udfs \
 --archives hdfs://<path to your files>/Microsoft.Spark.Worker.net461.win-x64-<version>.zip#worker,hdfs://<path to your files>/mySparkApp.zip#udfs \
-hdfs://<path to jar file>/microsoft-spark-2.4.x-<version>.jar \
+hdfs://<path to jar file>/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar \
 hdfs://<path to your files>/mySparkApp.zip mySparkApp
 ```
 

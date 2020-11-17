@@ -1,16 +1,16 @@
 ---
 title: Nouveautés de .NET 5
 description: Découvrez .NET 5, une plateforme de développement multiplateforme et open source qui est la prochaine évolution de .NET Core.
-ms.date: 11/06/2020
+ms.date: 11/16/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 10c1345f4a0a37e04377250da9a7b6df7df3a105
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 04f72675744426f7dbc99e5978a9ea4bbb8015b1
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594538"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687593"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -62,7 +62,7 @@ Pour les applications et les bibliothèques .NET 5,0, le `net5.0` moniker du Fra
 
 Les développeurs qui écrivent des applications .NET 5 auront accès à la version et aux fonctionnalités C# les plus récentes. .NET 5 est associé à C# 9, qui offre de nombreuses nouvelles fonctionnalités au langage. Voici quelques points importants :
 
-- Enregistrements : types référence immuables qui se comportent comme des types valeur et introduisent le nouveau `with` mot clé dans le langage.
+- Enregistrements : types référence avec une sémantique d’égalité basée sur des valeurs et une mutation non destructrice prise en charge par une nouvelle `with` expression.
 - Critères spéciaux relationnels : étend les fonctionnalités de critères spéciaux aux opérateurs relationnels pour les évaluations comparatives et les expressions, y compris les modèles logiques, les nouveaux mots clés `and` , `or` et `not` .
 - Instructions de niveau supérieur : comme un moyen d’accélérer l’adoption et l’apprentissage de C#, la `Main` méthode peut être omise et l’application est aussi simple que les éléments suivants :
 
@@ -140,35 +140,6 @@ Il existe de nouvelles fonctionnalités dans et pour [System.Text.Jssur](../stan
 - [Autoriser les convertisseurs personnalisés à gérer la valeur null](../standard/serialization/system-text-json-converters-how-to.md#handle-null-values)
 - [Copier JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
 - [Créer des JsonSerializerOptions avec des valeurs par défaut Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)
-
-## <a name="net-maui"></a>MAUI .NET
-
-.NET MAUI est une évolution du Xamarin. Forms Toolkit de plus en plus populaire et est open source sur GitHub à l’adresse [dotnet/Maui](https://github.com/dotnet/maui). Avec .NET MAUI, le choix pour les développeurs .NET est simplifié, fournissant une pile unique qui prend en charge toutes les charges de travail modernes : Android, iOS, macOS et Windows. Avec .NET MAUI, vous bénéficiez d’une expérience de développement de projet unique qui cible plusieurs plateformes et appareils.
-
-> [!IMPORTANT]
-> .NET MAUI est en version préliminaire. Vous trouverez un exemple de code source sur [xamarin/net6-Samples](https://github.com/xamarin/net6-samples).
-
-### <a name="model-view-update-pattern"></a>Modèle Model-View-Update
-
-Les développeurs aiment les modèles de développement modernes. Une approche Fluent du développement de l’interface utilisateur, inspirée par « l’architecture Elm », est le modèle [Model-View-Update](https://elmprogramming.com/model-view-update-part-1.html) ou MVU. MVU favorise un traitement unidirectionnel des données et de la gestion de l’État, ainsi qu’une expérience de développement Code First qui met à jour rapidement l’interface utilisateur en appliquant uniquement les modifications nécessaires.
-
-À titre d’exemple, considérez le compteur suivant écrit dans .NET MAUI à l’aide du modèle MVU :
-
-```csharp
-readonly State<int> _count = 0;
-
-[Body]
-View body() => new StackLayout
-{
-    new Label("Welcome to .NET MAUI!"),
-    new Button(
-        () => $"You clicked {_count} times.",
-        () => ++ _count.Value)
-    )
-};
-```
-
-Pour plus d’informations, consultez la feuille de [route .net Maui](https://github.com/dotnet/maui/wiki/Roadmap)et présentation de l’article [.net Maui](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui) .
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,14 +1,13 @@
 ---
 title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
-ms.date: 10/13/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 3de9e0aea253b42d65199dc3d66f026dd023f4c7
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.date: 11/16/2020
+ms.openlocfilehash: 143657b4ec360640c0a43099ca5c1c0d9c863453
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224404"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687777"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -56,11 +55,18 @@ Un assembly peut inclure des types comme des interfaces, des classes, des struct
 
 ## <a name="bcl"></a>BCL
 
-Bibliothèque de classes de base. Également appelées *bibliothèques d’infrastructure*.
+Bibliothèque de classes de base.
 
 Ensemble de bibliothèques qui composent le système. \* (et, dans une certaine mesure, Microsoft. \* ) espaces. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core.
 
-Le code source de la bibliothèque de classes de [base pour .net 5 (et .net Core) et les versions ultérieures](#net-5-and-later-versions) est contenu dans le [référentiel du Runtime .net](https://github.com/dotnet/runtime). La majorité des API BCL pour cette implémentation plus récente de .NET sont également disponibles dans .NET Framework, ce qui vous permet de considérer ce code source comme une fourche du code source BCL .NET Framework.
+Le code source de la bibliothèque de classes de [base pour .net 5 (et .net Core) et les versions ultérieures](#net-5-and-later-versions) est contenu dans le [référentiel du Runtime .net](https://github.com/dotnet/runtime). La plupart de ces API BCL sont également disponibles dans .NET Framework, ce qui vous permet de considérer ce code source comme une fourche du code source de la bibliothèque de classes de base .NET Framework.
+
+Les termes suivants font souvent référence à la collection d’API à laquelle BCL fait référence :
+
+- [bibliothèques .NET principales](../core/compatibility/3.1-5.0.md#core-net-libraries)
+- [bibliothèques d’infrastructure](#framework-libraries)
+- [bibliothèques Runtime](#runtime)
+- [Framework partagé](#shared-framework)
 
 ## <a name="clr"></a>CLR
 
@@ -106,12 +112,18 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le terme « Framework » a une signification différente dans les termes suivants :
 
+- [bibliothèques d’infrastructure](#framework-libraries)
 - [.NET Framework](#net-framework)
+- [Framework partagé](#shared-framework)
 - [Framework cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 - [application dépendante du Framework](../core/deploying/index.md#publish-framework-dependent)
 
-Dans la documentation .NET héritée, « Framework » se réfère parfois à une [implémentation de .net](#implementation-of-net). Par exemple, un article peut appeler .NET 5 a Framework.
+Parfois « Framework » fait référence à une [implémentation de .net](#implementation-of-net). Par exemple, un article peut appeler .NET 5 a Framework.
+
+## <a name="framework-libraries"></a>bibliothèques d’infrastructure
+
+La signification dépend du contexte. Peut faire référence aux bibliothèques d’infrastructure pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions), auquel cas il fait référence aux mêmes bibliothèques que [BCL](#bcl) . Il peut également faire référence aux bibliothèques ASP.NET Core Framework, qui s’appuient sur la BCL et fournissent des API supplémentaires pour Web Apps.
 
 ## <a name="gc"></a>GC
 
@@ -193,7 +205,7 @@ Consultez la section [CLI .net](../core/tools/index.md).
 
 Consultez [.net 5 et versions ultérieures](#net-5-and-later-versions).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Comprend le[CLR](#clr)(Common Language Runtime), la bibliothèque de classes de base ([BCL](#bcl)) et les bibliothèques de l’infrastructure d’application, telles que [ASP.net](#aspnet), Windows Forms et WPF.
 
@@ -258,21 +270,34 @@ En général, l’environnement d’exécution d’un programme managé. Le syst
 - .NET Native (pour la plateforme Windows universelle)
 - Runtime Mono
 
-Le mot « Runtime » a une signification différente dans les contextes suivants :
+Le mot « Runtime » a une signification différente dans certains contextes :
 
-* La [page de téléchargement de .net](https://dotnet.microsoft.com/download).
+* *Runtime .net* sur la [page de téléchargement de .net 5,0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
-  « Runtime » est ici le [CLR](#clr) avec le [BCL](#bcl) (bibliothèques d’infrastructure) que vous pouvez télécharger et installer sur un ordinateur afin de pouvoir exécuter des applications [dépendantes](../core/deploying/index.md#publish-framework-dependent) de l’infrastructure sur l’ordinateur.
+  Vous pouvez télécharger le runtime *.net* ou d’autres runtimes, tels que le *Runtime ASP.net Core*. Dans ce cas, un *Runtime* est l’ensemble des composants qui doivent être installés sur un ordinateur pour exécuter une application [dépendante du Framework](../core/deploying/index.md#publish-framework-dependent) sur l’ordinateur. Le Runtime .NET inclut le [CLR](#clr) et l' [infrastructure partagée](#shared-framework).net, qui fournit la [BCL](#bcl).
 
-* [Identificateur de Runtime (RID)](../core/rid-catalog.md) pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions).
+* *Bibliothèques Runtime .NET*
 
-  « Runtime » correspond à la plateforme du système d’exploitation et à l’architecture du processeur sur laquelle s’exécute une application .NET, par exemple : `linux-x64` .
+  Fait référence aux bibliothèques auxquelles [BCL](#bcl) fait référence. Toutefois, d’autres runtimes, tels que le runtime ASP.NET Core, ont des [frameworks partagés](#shared-framework)différents, avec des bibliothèques supplémentaires qui s’appuient sur la BCL.
 
-La documentation .NET héritée utilise parfois « Runtime » dans le sens d’une [implémentation de .net](#implementation-of-net), comme dans les exemples suivants :
+* [Identificateur du Runtime (RID)](../core/rid-catalog.md).
 
-- « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. »
-- « Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. » (s’applique à .NET Standard)
-- « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. … Chaque version du runtime .NET publie la version .NET Standard la plus élevée qu’elle prend en charge... »
+  Le *Runtime* correspond à la plateforme du système d’exploitation et à l’architecture du processeur sur laquelle s’exécute une application .net, par exemple : `linux-x64` .
+
+* Parfois, le « runtime » est utilisé dans le sens d’une [implémentation de .net](#implementation-of-net), comme dans les exemples suivants :
+
+  - « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. … Chaque version du runtime .NET publie la version .NET Standard la plus élevée qu’elle prend en charge... »
+  - « Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. » (s’applique à .NET Standard)
+
+## <a name="shared-framework"></a>Framework partagé
+
+La signification dépend du contexte. L' *infrastructure partagée .net* fait référence aux bibliothèques incluses dans le [Runtime .net](#runtime). Dans ce cas, l' *infrastructure partagée* pour [.net 5 (et .net Core) et versions ultérieures](#net-5-and-later-versions) fait référence aux mêmes bibliothèques que [BCL](#bcl) .
+
+Il existe d’autres frameworks partagés. L' *infrastructure partagée ASP.net Core* fait référence aux bibliothèques incluses dans le [Runtime ASP.net Core](#runtime), qui inclut la BCL et des API supplémentaires pour une utilisation par Web Apps.
+
+Pour les [applications dépendantes du Framework](../core/deploying/index.md#publish-framework-dependent), l’infrastructure partagée se compose de bibliothèques contenues dans des assemblys installés dans un dossier sur l’ordinateur qui exécute l’application. Pour les [applications autonomes](../core/deploying/index.md#publish-self-contained), les assemblys des frameworks partagés sont inclus avec l’application.
+
+Pour plus d’informations, consultez présentation [approfondie des primitives .net Core, partie 2 : Framework partagé](https://natemcmaster.com/blog/2018/08/29/netcore-primitives-2/).
 
 ## <a name="stack"></a>pile
 
@@ -306,7 +331,7 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 
 ## <a name="workload"></a>charge de travail
 
-Un type d’application créé par une personne. Plus générique que le [modèle d’application](#app-model). Par exemple, en haut de chaque page de documentation .NET, y compris celle-ci, est une liste déroulante pour les **charges de travail**, qui vous permet de basculer vers la documentation des ** \& données** **Web**, **mobile**, **Cloud**, **Desktop**et machine learning.
+Un type d’application créé par une personne. Plus générique que le [modèle d’application](#app-model). Par exemple, en haut de chaque page de documentation .NET, y compris celle-ci, est une liste déroulante pour les **charges de travail**, qui vous permet de basculer vers la documentation des **\& données** **Web**, **mobile**, **Cloud**, **Desktop** et machine learning.
 
 Dans certains contextes, la *charge de travail* fait référence à une collection de fonctionnalités Visual Studio que vous pouvez choisir d’installer pour prendre en charge un type d’application particulier. Pour obtenir un exemple, consultez [Sélectionner une charge de travail](../core/install/windows.md#select-a-workload).
 

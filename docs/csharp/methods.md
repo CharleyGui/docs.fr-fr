@@ -4,12 +4,12 @@ description: Vue d’ensemble des méthodes, des paramètres de méthode et des 
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: d5ca96ab3a07b85fa525dd06c975f8e3221c82e8
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: ea07553d20ea6c18bac048a2e8d697f665bfb949
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223669"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687456"
 ---
 # <a name="methods-in-c"></a>Méthodes dans (C#)
 
@@ -47,7 +47,7 @@ Notez que la classe `Motorcycle` inclut une méthode surchargée, `Drive`. Deux 
 
 Les méthodes peuvent être *d’instance* ou *statiques*. L’appel d’une méthode d’instance nécessite l’instanciation d’un objet et l’appel de la méthode sur cet objet ; une méthode d’instance agit sur cette instance et sur ses données. Vous appelez une méthode statique en référençant le nom du type auquel la méthode appartient ; les méthodes statiques n’agissent pas sur les données d’une instance. Une tentative d’appeler une méthode statique via une instance d’objet génère une erreur du compilateur.
 
-Appeler une méthode est comme accéder à un champ. Après le nom d’objet (si vous appelez une méthode d’instance) ou le nom de type (si vous appelez une méthode `static`), ajoutez un point, le nom de la méthode et des parenthèses. Les arguments sont répertoriés entre les parenthèses et séparés par des virgules.
+Appeler une méthode est comme accéder à un champ. Après le nom d’objet (si vous appelez une méthode d’instance) ou le nom de type (si vous appelez une méthode `static`), ajoutez un point, le nom de la méthode et des parenthèses. Les arguments sont répertoriés entre parenthèses et séparés par des virgules.
 
 La définition de la méthode spécifie les noms et types des paramètres requis. Quand un appelant appelle la méthode, il fournit des valeurs réelles, appelées « arguments », pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom de l’argument, si un nom est utilisé dans le code appelant, ne doit pas nécessairement être le même que celui du paramètre défini dans la méthode. Dans l’exemple suivant, la méthode `Square` comprend un seul paramètre de type `int` nommé *i*. Le premier appel de la méthode passe à la méthode `Square` une variable de type `int` nommée *num*, le deuxième appel passe une constante numérique et le troisième appel passe une expression.
 
@@ -57,7 +57,7 @@ La forme la plus courante des appels de méthode utilise des arguments de positi
 
 [!code-csharp[csSnippets.Methods#41](../../samples/snippets/csharp/concepts/methods/methods40.cs#41)]
 
-Vous pouvez également utiliser des *arguments nommés* au lieu d’arguments positionnels lors de l’appel d’une méthode. Lors de l’utilisation d’arguments nommés, vous spécifiez le nom du paramètre suivi de deux-points (« : ») et de l’argument. Les arguments de la méthode peuvent apparaître dans n’importe quel ordre, dès lors que tous les arguments nécessaires sont présents. L’exemple suivant utilise des arguments nommés pour appeler la méthode `TestMotorcycle.Drive`. Dans cet exemple, les arguments nommés sont passés dans l’ordre inverse de celui de la liste des paramètres de la méthode.
+Vous pouvez également utiliser des *arguments nommés* au lieu des arguments positionnels lors de l’appel d’une méthode. Lors de l’utilisation d’arguments nommés, vous spécifiez le nom du paramètre suivi de deux-points (« : ») et de l’argument. Les arguments de la méthode peuvent apparaître dans n’importe quel ordre, dès lors que tous les arguments nécessaires sont présents. L’exemple suivant utilise des arguments nommés pour appeler la méthode `TestMotorcycle.Drive`. Dans cet exemple, les arguments nommés sont passés dans l’ordre inverse de celui de la liste des paramètres de la méthode.
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/named1.cs#45)]
 
@@ -154,7 +154,7 @@ Si une méthode avec plusieurs arguments facultatifs est appelée en utilisant d
 
 Si une méthode est appelée en utilisant des arguments nommés ou une combinaison d’arguments positionnels et nommés, l’appelant peut omettre les arguments qui suivent le dernier argument positionnel dans l’appel de la méthode.
 
-L’exemple suivant appelle la méthode `ExampleMethod` trois fois.  Les deux premiers appels de la méthode utilisent des arguments positionnels. Le premier omet les deux arguments facultatifs, tandis que le deuxième omet le dernier argument. Le troisième appel de la méthode fournit un argument positionnel pour le paramètre obligatoire, mais utilise un argument nommé pour fournir une valeur au paramètre `description` tout en omettant l’argument `optionalInt`.
+L’exemple suivant appelle la méthode `ExampleMethod` trois fois.  Les deux premiers appels de la méthode utilisent des arguments positionnels. Le premier omet les deux arguments facultatifs, tandis que le deuxième omet le dernier argument. Le troisième appel de méthode fournit un argument positionnel pour le paramètre requis, mais utilise un argument nommé pour fournir une valeur au `description` paramètre tout en omettant l' `optionalInt` argument.
 
 [!code-csharp[csSnippets.Methods#22](../../samples/snippets/csharp/concepts/methods/optional1.cs#22)]
 

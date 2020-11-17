@@ -2,12 +2,12 @@
 title: dotnet-gcdump-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-gcdump.
 ms.date: 07/26/2020
-ms.openlocfilehash: a7b19f4d7487677b975621e7267a17894dae2e3a
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: c73afae9ecdfa907e9655634a0ac355cab4ef558
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656649"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687614"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Outil d’analyse de tas (dotnet-gcdump)
 
@@ -29,7 +29,7 @@ dotnet-gcdump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Description
 
-L' `dotnet-gcdump` outil Global est un moyen de collecter des vidages de mémoire GC (garbage collector) des processus .net en direct. Il utilise la technologie EventPipe, qui est une alternative multiplateforme à ETW sur Windows. Les dumps GC sont créés en déclenchant un GC dans le processus cible, en activant des événements spéciaux et en régénérant le graphique des racines d’objets à partir du flux d’événements. Ce processus permet de collecter des vidages de mémoire GC pendant que le processus est en cours d’exécution et avec une surcharge minimale. Ces vidages sont utiles pour plusieurs scénarios :
+L' `dotnet-gcdump` outil Global collecte les vidages GC (garbage collector) des processus .net en temps réel à l’aide de [EventPipe](./eventpipe.md). Les dumps GC sont créés en déclenchant un GC dans le processus cible, en activant des événements spéciaux et en régénérant le graphique des racines d’objets à partir du flux d’événements. Ce processus permet de collecter des vidages de mémoire GC pendant que le processus est en cours d’exécution et avec une surcharge minimale. Ces vidages sont utiles pour plusieurs scénarios :
 
 - Comparaison du nombre d’objets sur le tas à plusieurs points dans le temps.
 - Analyse des racines d’objets (réponse à des questions telles que « qu’est-ce qui a toujours une référence à ce type ? »).

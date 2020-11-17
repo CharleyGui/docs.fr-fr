@@ -5,18 +5,18 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 47c716db931dc912b80844fe69283b12d030c238
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: 3a02ac52155971f480c7f0c338d4a2a9a7d1d81c
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955575"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688018"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Didacticiel : diffusion en continu structurée avec .NET pour Apache Spark
 
 Ce didacticiel vous apprend à appeler Spark Structured streaming à l’aide de .NET pour Apache Spark. Spark Structured streaming est la prise en charge par Apache Spark du traitement des flux de données en temps réel. Le traitement des flux de données consiste à analyser les données actives à mesure qu’elles sont produites.
 
-Dans ce tutoriel, vous allez découvrir comment :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >
@@ -152,7 +152,7 @@ La diffusion en continu structurée dans Spark traite les données via une séri
 Après avoir démarré une nouvelle session netcat, ouvrez un nouveau terminal et exécutez la `spark-submit` commande, comme dans la commande suivante :
 
 ```powershell
-spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /path/to/microsoft-spark-<version>.jar Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkCharacterCount localhost 9999
+spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /path/to/microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkCharacterCount localhost 9999
 ```
 
 > [!NOTE]
