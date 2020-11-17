@@ -244,6 +244,8 @@ items:
                     href: ../core/tools/dotnet-tool-restore.md
                   - name: dotnet tool run
                     href: ../core/tools/dotnet-tool-run.md
+                  - name: dotnet tool search
+                    href: ../core/tools/dotnet-tool-search.md
                   - name: dotnet tool uninstall
                     href: ../core/tools/dotnet-tool-uninstall.md
                   - name: "dotnet\_tool update"
@@ -1464,7 +1466,7 @@ items:
             href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Opérations de chaînes de base
             items:
-              - name: Vue d'ensemble
+              - name: Vue d’ensemble
                 href: ../standard/base-types/basic-string-operations.md
                 displayName: string operations
               - name: Créer de nouvelles chaînes
@@ -1592,7 +1594,7 @@ items:
                 href: ../standard/serialization/basic-serialization-technology-sample.md
           - name: "Sérialisation\_XML et\_SOAP"
             items:
-              - name: Vue d'ensemble
+              - name: Vue d’ensemble
                 href: ../standard/serialization/xml-and-soap-serialization.md
               - name: Sérialisation XML en profondeur
                 href: ../standard/serialization/introducing-xml-serialization.md
