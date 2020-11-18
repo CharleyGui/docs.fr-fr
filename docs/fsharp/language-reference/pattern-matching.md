@@ -1,13 +1,13 @@
 ---
 title: Critères spéciaux
 description: 'Découvrez comment les modèles sont utilisés en F # pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.'
-ms.date: 08/15/2020
-ms.openlocfilehash: 6d284b941824bc15a8e872a4e28e22c0e159191d
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.date: 11/12/2020
+ms.openlocfilehash: e167712b082b7f587e41a78edcaf0a0db9c7294b
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811507"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94687803"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -29,11 +29,11 @@ Chaque modèle agit comme une règle de transformation d’entrée d’une certa
 
 Les modèles pris en charge sont présentés dans le tableau suivant. Au moment de l’exécution, l’entrée est testée par rapport à chacun des modèles suivants dans l’ordre indiqué dans le tableau, et les modèles sont appliqués de manière récursive, de la première à la dernière telle qu’ils apparaissent dans votre code, et de gauche à droite pour les modèles sur chaque ligne.
 
-|Nom|Description|Exemple|
+|Nom|Description| Exemple|
 |----|-----------|-------|
 |Modèle de constante|Tout littéral numérique, de caractère ou de chaîne, une constante d’énumération ou un identificateur littéral défini|`1.0`, `"test"`, `30`, `Color.Red`|
 |Modèle d’identificateur|Une valeur case d’une union discriminée, une étiquette d’exception ou un cas de modèle actif|`Some(x)`<br /><br />`Failure(msg)`|
-|Modèle de variable|*identificateur*|`a`|
+|Modèle de variable|*identifier*|`a`|
 |`as` répétition|*modèle* en tant qu' *identificateur*|`(a, b) as tuple1`|
 |OU modèle|*pattern1* &#124; *pattern2*|<code>([h] &#124; [h; _])</code>|
 |ET modèle|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
@@ -47,6 +47,7 @@ Les modèles pris en charge sont présentés dans le tableau suivant. Au moment 
 |Modèle avec annotation de type|*modèle* : *type*|`a : int`|
 |Modèle de test de type|:? *type* [ *identificateur* ]|`:? System.DateTime as dt`|
 |Modèle null|null|`null`|
+|Modèle Nameof|*nameof expr*|`nameof str`|
 
 ## <a name="constant-patterns"></a>Modèles de constante
 
@@ -139,7 +140,7 @@ L’exemple suivant est similaire `detectZeroTuple` à celui présenté dans la 
 
 ## <a name="cons-pattern"></a>Modèle cons
 
-Le modèle cons est utilisé pour décomposer une liste en premier élément, l' *en-tête*et une liste qui contient les éléments restants, la *fin*.
+Le modèle cons est utilisé pour décomposer une liste en premier élément, l' *en-tête* et une liste qui contient les éléments restants, la *fin*.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4809.fs)]
 
@@ -214,6 +215,22 @@ Le modèle null correspond à la valeur null qui peut s’afficher lorsque vous 
 L’exemple suivant utilise le modèle null et le modèle de variable.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4817.fs)]
+
+## <a name="nameof-pattern"></a>Modèle Nameof
+
+Le `nameof` modèle correspond à une chaîne lorsque sa valeur est égale à l’expression qui suit le `nameof` mot clé. Par exemple :
+
+```fsharp
+let f (str: string) =
+    match str with
+    | nameof str -> "It's 'str'!"
+    | _ -> "It is not 'str'!"
+
+f "str" // matches
+f "asdf" // does not match
+```
+
+[`nameof`](nameof.md)Pour plus d’informations sur la façon dont vous pouvez prendre un nom, consultez l’opérateur.
 
 ## <a name="see-also"></a>Voir aussi
 

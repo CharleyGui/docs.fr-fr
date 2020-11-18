@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: 'Découvrez les instructions de mise en forme du code F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: 401c0688cd7d0a945dc469f1ab5841b21e1d4ab4
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: af98be75f21cbc594ff9cf779561d49e4965845a
+ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359283"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94688252"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -642,21 +642,17 @@ Dans certains cas, `do...yield` peut contribuer à la lisibilité. Ces cas, bien
 
 ## <a name="formatting-if-expressions"></a>Mettre en forme si des expressions
 
-La mise en retrait des conditions dépend de la taille des expressions qui les composent. Si `cond` `e1` et `e2` sont courts, il vous suffit de les écrire sur une seule ligne :
+La mise en retrait des conditions dépend de la taille et de la complexité des expressions qui les composent.
+Il vous suffit de les écrire sur une seule ligne lorsque :
+
+- `cond`, `e1` et `e2` sont courts
+- `e1` et ne `e2` sont pas des `if/then/else` expressions elles-mêmes.
 
 ```fsharp
 if cond then e1 else e2
 ```
 
-Si l’un ou l’autre `cond` `e1` `e2` est plus long, mais pas sur plusieurs lignes :
-
-```fsharp
-if cond
-then e1
-else e2
-```
-
-Si l’une des expressions est multiligne :
+Si l’une des expressions est multiligne ou `if/then/else` expressions.
 
 ```fsharp
 if cond then
@@ -665,13 +661,26 @@ else
     e2
 ```
 
-Plusieurs conditions avec `elif` et `else` sont mises en retrait à la même portée que `if` :
+Plusieurs conditionnels avec `elif` et `else` sont mis en retrait à la même portée que le `if` lorsqu’ils suivent les règles des expressions d’une ligne `if/then/else` .
 
 ```fsharp
 if cond1 then e1
 elif cond2 then e2
 elif cond3 then e3
 else e4
+```
+
+Si l’une des conditions ou les expressions est multiligne, l’expression entière `if/then/else` est multiligne :
+
+```fsharp
+if cond1 then
+    e1
+elif cond2 then
+    e2
+elif cond3 then
+    e3
+else
+    e4
 ```
 
 ### <a name="pattern-matching-constructs"></a>Constructions de critères spéciaux
@@ -879,6 +888,41 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 
 // Not OK
 let makeStreamReader x = new System.IO.StreamReader(path = x)
+```
+
+### <a name="formatting-constructors-static-members-and-member-invocations"></a>Constructeurs de mise en forme, membres statiques et appels de membres
+
+Si l’expression est de type short, séparez les arguments par des espaces et conservez-les en une seule ligne.
+
+```fsharp
+let person = new Person(a1, a2)
+
+let myRegexMatch = Regex.Match(input, regex)
+
+let untypedRes = checker.ParseFile(file, source, opts)
+```
+
+Si l’expression est longue, utilisez les nouvelles lignes et mettez en retrait une étendue, plutôt que de mettre en retrait le crochet.
+
+```fsharp
+let person =
+    new Person(
+        argument1,
+        argument2
+    )
+
+let myRegexMatch =
+    Regex.Match(
+        "my longer input string with some interesting content in it",
+        "myRegexPattern"
+    )
+
+let untypedRes =
+    checker.ParseFile(
+        fileName,
+        sourceText,
+        parsingOptionsWithDefines
+    )
 ```
 
 ## <a name="formatting-attributes"></a>Attributs de mise en forme
