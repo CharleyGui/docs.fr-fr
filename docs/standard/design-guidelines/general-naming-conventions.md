@@ -2,7 +2,6 @@
 title: Conventions générales d'affectation de noms
 description: Utilisez les conventions d’appellation générales relatives au choix de mots, des instructions sur l’utilisation des abréviations et des acronymes, ainsi que des conseils sur l’évitement des noms spécifiques à une langue.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], conflicts
 - type names, conflicts
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: b7f06a57c57800afcfa7febf9452094b4ad5ddc1
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ff9efd40b630e8e25963b3d69b026feea2823ece
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769078"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821097"
 ---
 # <a name="general-naming-conventions"></a>Conventions générales d'affectation de noms
 
@@ -35,22 +34,22 @@ Cette section décrit les conventions d’affectation de noms générales relati
 
  Le nom de la propriété `CanScrollHorizontally` est mieux que `ScrollableX` (une référence cachée à l’axe X).
 
- ❌N’utilisez pas de traits de soulignement, de traits d’Union ou tout autre caractère non alphanumérique.
+ ❌ N’utilisez pas de traits de soulignement, de traits d’Union ou tout autre caractère non alphanumérique.
 
- ❌N’utilisez pas la notation hongroise.
+ ❌ N’utilisez pas la notation hongroise.
 
- ❌Évitez d’utiliser des identificateurs qui sont en conflit avec des mots clés de langages de programmation largement utilisés.
+ ❌ Évitez d’utiliser des identificateurs qui sont en conflit avec des mots clés de langages de programmation largement utilisés.
 
  Conformément à la règle 4 du Common Language Specification (CLS), tous les langages conformes doivent fournir un mécanisme qui permet d’accéder à des éléments nommés qui utilisent un mot clé de ce langage comme identificateur. C#, par exemple, utilise le signe @ comme mécanisme d’échappement dans ce cas. Toutefois, il est toujours judicieux d’éviter les mots clés courants, car il est bien plus difficile d’utiliser une méthode avec la séquence d’échappement que l’autre sans lui.
 
 ## <a name="using-abbreviations-and-acronyms"></a>Utilisation des abréviations et des acronymes
- ❌N’utilisez pas d’abréviations ou de contractions dans les noms d’identificateurs.
+ ❌ N’utilisez pas d’abréviations ou de contractions dans les noms d’identificateurs.
 
  Par exemple, utilisez `GetWindow` plutôt que `GetWin` .
 
- ❌N’utilisez pas les acronymes qui ne sont pas largement acceptés, et même s’ils le sont, uniquement lorsque cela est nécessaire.
+ ❌ N’utilisez pas les acronymes qui ne sont pas largement acceptés, et même s’ils le sont, uniquement lorsque cela est nécessaire.
 
-## <a name="avoiding-language-specific-names"></a>Éviter les noms spécifiques à une langue
+## <a name="avoiding-language-specific-names"></a>Éviter les noms de Language-Specific
  ✔️ Utilisez des noms sémantiquement intéressants plutôt que des mots clés spécifiques à une langue pour les noms de types.
 
  Par exemple, `GetLength` est un meilleur nom que `GetInt` .
@@ -62,13 +61,13 @@ Cette section décrit les conventions d’affectation de noms générales relati
 |C#|Visual Basic|C++|CLR|
 |---------|------------------|-----------|---------|
 |**sbyte**|**SByte**|**char**|**SByte**|
-|**byte**|**Poids**|**unsigned char**|**Poids**|
+|**byte**|**Byte**|**unsigned char**|**Byte**|
 |**short**|**Résumé**|**short**|**Int16**|
 |**ushort**|**UInt16**|**unsigned short**|**UInt16**|
 |**int**|**Integer**|**int**|**Int32**|
 |**uint**|**UInt32**|**nombre entier non signé**|**UInt32**|
 |**long**|**Long**|**__int64**|**Int64**|
-|**correspondante**|**UInt64**|**unsigned __int64**|**UInt64**|
+|**ulong**|**UInt64**|**unsigned __int64**|**UInt64**|
 |**float**|**Unique**|**float**|**Unique**|
 |**double**|**Double**|**double**|**Double**|
 |**bool**|**Booléen**|**bool**|**Booléen**|
@@ -91,7 +90,7 @@ Cette section décrit les conventions d’affectation de noms générales relati
 
  ✔️ Utilisez un suffixe numérique pour indiquer une nouvelle version d’une API existante, en particulier si le nom existant de l’API est le seul nom pertinent (c’est-à-dire, s’il s’agit d’une norme industrielle) et si l’ajout d’un suffixe significatif (ou la modification du nom) n’est pas une option appropriée.
 
- ❌N’utilisez pas le suffixe « ex » (ou un suffixe similaire) pour un identificateur pour le distinguer d’une version antérieure de la même API.
+ ❌ N’utilisez pas le suffixe « ex » (ou un suffixe similaire) pour un identificateur pour le distinguer d’une version antérieure de la même API.
 
  ✔️ Utilisez le suffixe « 64 » lors de l’introduction de versions d’API qui fonctionnent sur un entier 64 bits (entier long) au lieu d’un entier de 32 bits. Vous devez adopter cette approche uniquement lorsque l’API 32 bits existante existe. ne le faites pas pour les nouvelles API avec une version 64 bits uniquement.
 

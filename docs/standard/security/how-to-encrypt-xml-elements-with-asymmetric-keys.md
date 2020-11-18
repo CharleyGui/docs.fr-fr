@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : chiffrer des éléments XML avec des clés asymétriques'
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - Advanced Encryption Standard algorithm
 - encryption [.NET], asymmetric keys
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
-ms.openlocfilehash: 1c824b00a1df920108cfcd8c4590b680020cdf3e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7254079c12926dbe055ea58f045862afd17bab1e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555785"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820265"
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Procédure : chiffrer des éléments XML avec des clés asymétriques
 
@@ -148,5 +147,5 @@ Quand vous avez terminé d'utiliser une clé de chiffrement, effacez-la de la m�
 - [Modèle de chiffrement](cryptography-model.md)
 - [services de chiffrement](cryptographic-services.md)
 - [Chiffrement multiplateforme](cross-platform-cryptography.md)- <xref:System.Security.Cryptography.Xml>
-- [Procédure : déchiffrer des éléments XML avec des clés asymétriques](how-to-decrypt-xml-elements-with-asymmetric-keys.md)
+- [Comment : déchiffrer des éléments XML avec des clés asymétriques](how-to-decrypt-xml-elements-with-asymmetric-keys.md)
 - [Protection des données ASP.NET Core](/aspnet/core/security/data-protection/introduction)

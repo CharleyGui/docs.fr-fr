@@ -1,18 +1,17 @@
 ---
 title: Conception de champs
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - fields, design guidelines
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-ms.openlocfilehash: 3a5ae985ab161899fbb5e96f9b0ef0cfa90b957c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6e58274f32ea129d3271c11e321bdbd454d2406a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289744"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821110"
 ---
 # <a name="field-design"></a>Conception de champs
 Le principe de l’encapsulation est l’une des notions les plus importantes en matière de conception orientée objet. Ce principe stipule que les données stockées dans un objet ne doivent être accessibles qu’à cet objet.
@@ -21,7 +20,7 @@ Le principe de l’encapsulation est l’une des notions les plus importantes en
 
  Nous excluons les champs constants et statiques en lecture seule de cette restriction stricte, car ces champs, presque par définition, ne sont jamais requis pour la modification.
 
- ❌NE fournissez pas de champs d’instance publics ou protégés.
+ ❌ NE fournissez pas de champs d’instance publics ou protégés.
 
  Vous devez fournir des propriétés pour accéder aux champs au lieu de les rendre publics ou protégés.
 
@@ -33,7 +32,7 @@ Le principe de l’encapsulation est l’une des notions les plus importantes en
 
  S’il existe des instances prédéfinies du type, déclarez-les en tant que champs statiques publics en lecture seule du type lui-même.
 
- ❌N’assignez pas d’instances de types mutables à des `readonly` champs.
+ ❌ N’assignez pas d’instances de types mutables à des `readonly` champs.
 
  Un type mutable est un type dont les instances peuvent être modifiées une fois qu’elles ont été instanciées. Par exemple, les tableaux, la plupart des collections et des flux sont des types mutables, mais <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Uri?displayProperty=nameWithType> et <xref:System.String?displayProperty=nameWithType> sont tous immuables. Le modificateur en lecture seule sur un champ de type référence empêche le remplacement de l’instance stockée dans le champ, mais n’empêche pas la modification des données d’instance du champ en appelant des membres qui modifient l’instance.
 

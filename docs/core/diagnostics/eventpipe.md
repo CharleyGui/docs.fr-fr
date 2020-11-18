@@ -3,12 +3,12 @@ title: Présentation de EventPipe
 description: Découvrez EventPipe et comment l’utiliser pour effectuer le suivi de vos applications .NET afin de diagnostiquer les problèmes de performances.
 ms.date: 11/09/2020
 ms.topic: overview
-ms.openlocfilehash: d30cdf02c3ae300401febe2078dfd3431269c73e
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 00378c4f409b307afa9183e40de6078cdafd3ae7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688572"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820616"
 ---
 # <a name="eventpipe"></a>EventPipe
 
@@ -47,7 +47,7 @@ Le tableau suivant résume les différences entre EventPipe et ETW/LTTng.
 
 Vous pouvez utiliser EventPipe pour effectuer le suivi de votre application .NET de plusieurs façons :
 
-* Utilisez l’un des [outils de diagnostic](#tools-using-eventpipe) basés sur EventPipe.
+* Utilisez l’un des [outils de diagnostic](#tools-that-use-eventpipe) basés sur EventPipe.
 
 * Utilisez la bibliothèque [Microsoft. Diagnostics. Netcore. client](https://github.com/dotnet/diagnostics/blob/master/documentation/diagnostics-client-library-instructions.md) pour écrire votre propre outil afin de configurer et de démarrer vous-même les sessions EventPipe.
 

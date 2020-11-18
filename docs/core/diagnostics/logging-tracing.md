@@ -2,12 +2,12 @@
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: 9af04cceeef3fbfb8392eb91667c21374511548a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 86444f2451079e54050f6698f3e45ddff0700acf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687581"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820577"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -93,6 +93,8 @@ Par exemple, pour vous permettre de choisir le meilleur choix pour votre applica
 - La [journalisation dans .net](../extensions/logging.md) fournit une vue d’ensemble des techniques de journalisation qu’il prend en charge.
 
 - L' [interpolation de chaîne C#](../../csharp/language-reference/tokens/interpolated.md) peut simplifier l’écriture d’un code de journalisation.
+
+- [Liste des événements du fournisseur de Runtime](../../fundamentals/diagnostics/runtime-events.md)
 
 - La <xref:System.Exception.Message?displayProperty=nameWithType> propriété est utile pour la journalisation des exceptions.
 

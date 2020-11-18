@@ -1,28 +1,42 @@
 ---
-title: dotnet-dump-.NET Core
-description: Installation et utilisation de l’outil en ligne de commande dotnet-dump.
-ms.date: 10/14/2019
-ms.openlocfilehash: e008dcfc734a8742c495ea32a7a149c9a55c54c6
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+title: outil de diagnostic dotnet-dump-.NET CLI
+description: Découvrez comment installer et utiliser l’outil CLI dotnet-dump pour collecter et analyser les vidages Windows et Linux sans débogueur natif.
+ms.date: 11/17/2020
+ms.openlocfilehash: ea9a70c4dc47b5006339e9a197712092eb66b241
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598112"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822202"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (dotnet-dump)
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
 > [!NOTE]
-> `dotnet-dump` n’est pas pris en charge sur macOS.
+> `dotnet-dump` pour macOS est pris en charge uniquement avec .NET 5,0 et versions ultérieures.
 
-## <a name="install-dotnet-dump"></a>Installer dotnet-dump
+## <a name="install"></a>Installer
 
-Pour installer la dernière version Release du `dotnet-dump` [package NuGet](https://www.nuget.org/packages/dotnet-dump), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Il existe deux façons de télécharger et d’installer `dotnet-dump` :
 
-```dotnetcli
-dotnet tool install -g dotnet-dump
-```
+- **outil Global dotnet :**
+
+  Pour installer la dernière version Release du `dotnet-dump` [package NuGet](https://www.nuget.org/packages/dotnet-dump), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+
+  ```dotnetcli
+  dotnet tool install --global dotnet-dump
+  ```
+
+- **Téléchargement direct :**
+
+  Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
+
+  | Système d’exploitation  | Plateforme |
+  | --- | -------- |
+  | Windows | [x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [ARM](https://aka.ms/dotnet-dump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-dump/win-arm64) |
+  | macOS   | [x64](https://aka.ms/dotnet-dump/osx-x64) |
+  | Linux   | [x64](https://aka.ms/dotnet-dump/linux-x64) \| [ARM](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64) |
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -58,7 +72,7 @@ Capture un vidage à partir d’un processus.
 ### <a name="synopsis"></a>Synopsis
 
 ```console
-dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag]
+dotnet-dump collect [-h|--help] [-p|--process-id] [-n|--name] [--type] [-o|--output] [--diag]
 ```
 
 ### <a name="options"></a>Options
@@ -69,7 +83,11 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`-p|--process-id <PID>`**
 
-  Spécifie le numéro d’identification du processus à partir duquel une image mémoire doit être collectée.
+  Spécifie le numéro d’identification du processus à partir duquel un vidage doit être collecté.
+
+- **`-n|--name <name>`**
+
+  Spécifie le nom du processus à partir duquel un vidage doit être collecté.
 
 - **`--type <Full|Heap|Mini>`**
 

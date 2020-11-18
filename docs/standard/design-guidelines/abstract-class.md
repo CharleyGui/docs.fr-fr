@@ -1,7 +1,6 @@
 ---
 title: Conception de classes abstraites
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - type design guidelines, abstract classes
 - abstract classes, design guidelines
@@ -10,16 +9,16 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
-ms.openlocfilehash: e6a5923f293ed536fb272f6fe6c805067aede0ab
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6903e10c8695376d8ac5961461796c5413307f90
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280775"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821643"
 ---
 # <a name="abstract-class-design"></a>Conception de classes abstraites
 
-❌NE définissez pas de constructeurs internes publics ou protégés dans les types abstraits.
+❌ NE définissez pas de constructeurs internes publics ou protégés dans les types abstraits.
 
  Les constructeurs doivent être publics uniquement si les utilisateurs doivent créer des instances du type. Étant donné que vous ne pouvez pas créer d’instances d’un type abstrait, un type abstrait avec un constructeur public n’est pas correctement conçu et trompe les utilisateurs.
 
@@ -31,7 +30,7 @@ ms.locfileid: "84280775"
 
  ✔️ fournissez au moins un type concret qui hérite de chaque classe abstraite que vous livrez.
 
- Cela permet de valider la conception de la classe abstraite. Par exemple, <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la <xref:System.IO.Stream?displayProperty=nameWithType> classe abstraite.
+ Cela permet de valider la conception de la classe abstraite. Par exemple,  <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la <xref:System.IO.Stream?displayProperty=nameWithType> classe abstraite.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

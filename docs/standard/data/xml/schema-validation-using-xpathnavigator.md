@@ -1,17 +1,16 @@
 ---
 title: Validation de schéma à l'aide de XPathNavigator
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-ms.openlocfilehash: f6e56616543bf7d2ad2e6be4d7bf7cbc50ba3a23
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 304177ed4cb600aa27142e3b1c3690a3d7053c5d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292005"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822475"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Validation de schéma à l'aide de XPathNavigator
 La classe <xref:System.Xml.XmlDocument> permet de valider le contenu XML d'un objet <xref:System.Xml.XmlDocument> de deux manières. La première consiste à valider le contenu XML à l'aide d'un objet <xref:System.Xml.XmlReader> de validation et la seconde, à utiliser la méthode <xref:System.Xml.XmlDocument.Validate%2A> de la classe <xref:System.Xml.XmlDocument>. Vous pouvez également effectuer une validation en lecture seule du contenu XML à l’aide de la classe <xref:System.Xml.XPath.XPathDocument>.  

@@ -1,17 +1,16 @@
 ---
 title: Mappage de la hiérarchie d'objets à des données XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 8507c4b323f97279c3054b76aaf8d52f14f0d4ad
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 97cc7558f51b7bcbdb5201ef0f0c463da8f2c070
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289133"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822605"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mappage de la hiérarchie d'objets à des données XML
 Quand un document XML est en mémoire, sa représentation conceptuelle est une arborescence. Pour la programmation, vous disposez d’une hiérarchie d’objets pour accéder aux nœuds de l’arborescence. L'exemple suivant illustre la manière dont le contenu XML se transforme en nœuds.  
@@ -20,7 +19,7 @@ Quand un document XML est en mémoire, sa représentation conceptuelle est une a
   
  Supposons l'exemple de code XML simple suivant :  
   
- **Input**  
+ **Entrée**  
   
 ```xml  
 <book>  
@@ -37,7 +36,7 @@ Représentation sous forme d’arborescence de nœuds book et title
   
  L'exemple suivant lit dans les données XML et écrit le texte différent, en fonction du type de nœud. En utilisant comme entrée le fichier de données XML **items.xml** :  
   
- **Input**  
+ **Entrée**  
   
 ```xml  
 <?xml version="1.0"?>  

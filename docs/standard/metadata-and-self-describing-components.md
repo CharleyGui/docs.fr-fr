@@ -1,7 +1,6 @@
 ---
 title: Métadonnées et composants autodescriptifs
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-ms.openlocfilehash: 2ed09882ba722ace0b7f7be2a35fffc362af2742
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: c597c1ae6153050f08ed2976f7ee6102cdd3c797
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92159350"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822345"
 ---
 # <a name="metadata-and-self-describing-components"></a>Métadonnées et composants autodescriptifs
 
@@ -171,6 +170,6 @@ Grâce aux métadonnées, le runtime a accès à toutes les informations dont il
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Attributs](attributes/index.md)|Décrit comment appliquer les attributs, écrire des attributs personnalisés et récupérer les informations stockées dans les attributs.|

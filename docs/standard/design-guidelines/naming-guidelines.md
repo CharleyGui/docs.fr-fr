@@ -2,7 +2,6 @@
 title: Indications concernant l'attribution d'un nom
 description: Dans cette vue d’ensemble, consultez la page relative aux conventions d’affectation de noms à utiliser dans le développement de Framework. Accédez à des articles couvrant les majuscules, les noms généraux et d’autres instructions.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], about naming guidelines
 - naming guidelines [.NET Framework]
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-ms.openlocfilehash: fbcf5ef5eb02a5e45b5c981b4247ffe1c9c2631b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e82b6941d3ea0243f4ae16bc9d42ea8d1f1fccfb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447145"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820876"
 ---
 # <a name="naming-guidelines"></a>Indications concernant l'attribution d'un nom
 À la suite d’un ensemble cohérent de conventions d’affectation de noms dans le développement d’une infrastructure, il peut s’agir d’une contribution majeure à la facilité d’utilisation du Framework. Il permet à un grand nombre de développeurs d’utiliser le Framework sur des projets largement séparés. Au-delà de la cohérence de la forme, les noms des éléments de l’infrastructure doivent être facilement compris et doivent communiquer avec la fonction de chaque élément.  

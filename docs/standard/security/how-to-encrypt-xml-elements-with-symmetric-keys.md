@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : chiffrer des éléments XML avec des clés symétriques'
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - XML encryption
 - Advanced Encryption Standard algorithm
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
-ms.openlocfilehash: dd69ec6a5317f7f6f800cd225d920a1934c77a0c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: cfda1835a1390b025f2ee0509a91c59104a77ae9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555811"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820226"
 ---
 # <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Procédure : chiffrer des éléments XML avec des clés symétriques
 

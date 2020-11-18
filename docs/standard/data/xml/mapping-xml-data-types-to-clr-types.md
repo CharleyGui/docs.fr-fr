@@ -1,14 +1,13 @@
 ---
 title: Mappage entre types de données XML et types CLR
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
-ms.openlocfilehash: f14c8d961fe0934b8e843c39a217e7c2db8237c3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1a79d178a4e027973591061634cfb5904dd3e0cc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822579"
 ---
 # <a name="mapping-xml-data-types-to-clr-types"></a>Mappage entre types de données XML et types CLR
 

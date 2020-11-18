@@ -1,25 +1,24 @@
 ---
 title: Levée d'exceptions
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - exceptions, throwing
 - explicitly throwing exceptions
 - throwing exceptions, design guidelines
 ms.assetid: 5388e02b-52f5-460e-a2b5-eeafe60eeebe
-ms.openlocfilehash: 6bbc6e8fa11759afbd3a1fb2d785f476a6c178ad
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6f22878a9ddfb394f6705a335930ef2cc270895f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289809"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821266"
 ---
 # <a name="exception-throwing"></a>Levée d'exceptions
 Les instructions de levée des exceptions décrites dans cette section nécessitent une bonne définition de la signification de l’échec de l’exécution. L’échec de l’exécution se produit chaque fois qu’un membre ne peut pas faire ce qu’il a prévu (ce que signifie le nom du membre). Par exemple, si la `OpenFile` méthode ne peut pas retourner un descripteur de fichier ouvert à l’appelant, elle est considérée comme un échec d’exécution.
 
  La plupart des développeurs se familiarisent avec l’utilisation d’exceptions pour les erreurs d’utilisation telles que la division par zéro ou les références null. Dans le Framework, les exceptions sont utilisées pour toutes les conditions d’erreur, y compris les erreurs d’exécution.
 
- ❌NE retourne pas de codes d’erreur.
+ ❌ NE retourne pas de codes d’erreur.
 
  Les exceptions sont le principal moyen de signaler les erreurs dans les infrastructures.
 
@@ -27,13 +26,13 @@ Les instructions de levée des exceptions décrites dans cette section nécessit
 
  ✔️ envisagez de mettre fin au processus en appelant `System.Environment.FailFast` (.NET Framework fonctionnalité 2,0) au lieu de lever une exception si votre code rencontre une situation où il n’est pas sûr pour une exécution ultérieure.
 
- ❌N’utilisez pas d’exceptions pour le déroulement normal du contrôle, si possible.
+ ❌ N’utilisez pas d’exceptions pour le déroulement normal du contrôle, si possible.
 
  À l’exception des défaillances système et des opérations avec des conditions de concurrence potentielles, les concepteurs d’infrastructure doivent concevoir des API pour que les utilisateurs puissent écrire du code qui ne lève pas d’exceptions. Par exemple, vous pouvez fournir un moyen de vérifier les conditions préalables avant d’appeler un membre afin que les utilisateurs puissent écrire du code qui ne lève pas d’exceptions.
 
  Le membre utilisé pour vérifier les conditions préalables d’un autre membre est souvent appelé testeur, et le membre qui effectue réellement le travail est appelé Doer.
 
- Dans certains cas, le modèle testeur-Doer peut avoir une surcharge de performance inacceptable. Dans ce cas, le modèle « try-parse » doit être pris en compte (pour plus d’informations, consultez [exceptions et performances](exceptions-and-performance.md) ).
+ Dans certains cas, le modèle de Tester-Doer peut avoir une surcharge de performance inacceptable. Dans ce cas, le modèle appelé Try-Parse doit être pris en considération (pour plus d’informations, consultez [exceptions et performances](exceptions-and-performance.md) ).
 
  ✔️ PRENDRE en compte les implications en matière de performances liées à la levée d’exceptions. Les taux de rejet supérieurs à 100 par seconde sont susceptibles d’avoir un impact notable sur les performances de la plupart des applications.
 
@@ -41,9 +40,9 @@ Les instructions de levée des exceptions décrites dans cette section nécessit
 
  Les exceptions qui font partie du contrat ne doivent pas passer d’une version à l’autre (par exemple, le type d’exception ne doit pas changer et les nouvelles exceptions ne doivent pas être ajoutées).
 
- ❌N’ont pas de membres publics qui peuvent lever ou non en fonction d’une option.
+ ❌ N’ont pas de membres publics qui peuvent lever ou non en fonction d’une option.
 
- ❌N’ont pas de membres publics qui retournent des exceptions comme valeur de retour ou `out` paramètre.
+ ❌ N’ont pas de membres publics qui retournent des exceptions comme valeur de retour ou `out` paramètre.
 
  Le retour d’exceptions à partir d’API publiques au lieu de les lever est à l’encontre de nombreux avantages du rapport d’erreurs basé sur les exceptions.
 
@@ -53,11 +52,11 @@ Les instructions de levée des exceptions décrites dans cette section nécessit
 
  En outre, les membres qui lèvent des exceptions ne sont pas Inline. Le déplacement de l’instruction throw dans le générateur peut permettre au membre d’être Inline.
 
- ❌NE levez pas d’exceptions à partir de blocs de filtre d’exception.
+ ❌ NE levez pas d’exceptions à partir de blocs de filtre d’exception.
 
  Lorsqu’un filtre d’exception lève une exception, l’exception est interceptée par le CLR et le filtre retourne la valeur false. Ce comportement ne peut pas être distingué du filtre en cours d’exécution et retourne explicitement false et est donc très difficile à déboguer.
 
- ❌Évitez de lever explicitement des exceptions à partir de blocs finally. Les exceptions levées implicitement qui résultent de l’appel de méthodes qui lèvent sont acceptables.
+ ❌ Évitez de lever explicitement des exceptions à partir de blocs finally. Les exceptions levées implicitement qui résultent de l’appel de méthodes qui lèvent sont acceptables.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

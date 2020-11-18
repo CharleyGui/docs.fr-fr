@@ -2,7 +2,6 @@
 title: Bonnes pratiques pour les expressions régulières dans .NET
 description: Découvrez comment créer des expressions régulières effectives et efficaces dans .NET.
 ms.date: 06/30/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - .NET regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 727c3f2b8465c5d69244abe0f441d2a24e84dc5f
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: ae74d263034de4d402520d751fe97af9e33a2a48
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162919"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820590"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -273,7 +272,7 @@ Vous pouvez désactiver les captures de l'une des façons suivantes :
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Aborde l’implémentation du moteur d’expression régulière dans .NET. Cette rubrique traite de la flexibilité des expressions régulières. Elle explique la responsabilité du développeur pour que le fonctionnement efficace et fiable du moteur des expressions régulières soit garanti.|
 |[Rétroaction](backtracking-in-regular-expressions.md)|Aborde la rétroaction et la façon dont elle affecte les performances des expressions régulières, ainsi que les éléments de langage, qui offrent des alternatives à la rétroaction.|

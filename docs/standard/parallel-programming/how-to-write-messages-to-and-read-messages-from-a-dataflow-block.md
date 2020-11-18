@@ -1,7 +1,6 @@
 ---
 title: 'Comment : écrire et lire des messages à partir d’un bloc de flux de données'
 ms.date: 09/10/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, reading and writing messages
 ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
-ms.openlocfilehash: 8eb92d917bb2b03c2a505a2ba238598e0c1a450c
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: be0e78989105cc59bd041ceb8c6f31073a702f83
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022855"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820785"
 ---
 # <a name="how-to-write-and-read-messages-from-a-dataflow-block"></a>Comment : écrire et lire des messages à partir d’un bloc de flux de données
 

@@ -1,7 +1,6 @@
 ---
 title: Opérateurs d'égalité
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], Equals method
 - class library design guidelines [.NET Framework], equality operator
@@ -9,23 +8,23 @@ helpviewer_keywords:
 - Equals method
 - == operator (equality) [.NET Framework]
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
-ms.openlocfilehash: bd36b98af25db2921c164ac359188997d379a270
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 85a9e81d28995229e6b47d7fe4d0b541265999f8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280048"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821344"
 ---
 # <a name="equality-operators"></a>Opérateurs d'égalité
 Cette section décrit la surcharge des opérateurs d’égalité et fait référence à `operator==` et à des `operator!=` opérateurs d’égalité.
 
- ❌NE surchargez pas l’un des opérateurs d’égalité et non l’autre.
+ ❌ NE surchargez pas l’un des opérateurs d’égalité et non l’autre.
 
  ✔️ Assurez-vous que <xref:System.Object.Equals%2A?displayProperty=nameWithType> et les opérateurs d’égalité ont exactement la même sémantique et les mêmes caractéristiques de performances similaires.
 
  Cela signifie souvent que `Object.Equals` doit être substitué lorsque les opérateurs d’égalité sont surchargés.
 
- ❌Évitez de lever des exceptions à partir d’opérateurs d’égalité.
+ ❌ Évitez de lever des exceptions à partir d’opérateurs d’égalité.
 
  Par exemple, retourne false si l’un des arguments a la valeur null au lieu de lever `NullReferenceException` .
 
@@ -35,13 +34,13 @@ Cette section décrit la surcharge des opérateurs d’égalité et fait référ
  Dans la plupart des langages de programmation, il n’y a pas d’implémentation par défaut de `operator==` pour les types valeur.
 
 ## <a name="equality-operators-on-reference-types"></a>Opérateurs d’égalité sur les types référence
- ❌Évitez de surcharger les opérateurs d’égalité sur les types référence mutables.
+ ❌ Évitez de surcharger les opérateurs d’égalité sur les types référence mutables.
 
  De nombreux langages ont des opérateurs d’égalité intégrés pour les types référence. Les opérateurs intégrés implémentent généralement l’égalité des références, et de nombreux développeurs sont surpris lorsque le comportement par défaut est remplacé par l’égalité de la valeur.
 
  Ce problème est atténué pour les types référence immuables, car l’immuabilité rend beaucoup plus difficile la différence entre l’égalité des références et l’égalité des valeurs.
 
- ❌Évitez de surcharger les opérateurs d’égalité sur les types référence si l’implémentation est beaucoup plus lente que celle de l’égalité de référence.
+ ❌ Évitez de surcharger les opérateurs d’égalité sur les types référence si l’implémentation est beaucoup plus lente que celle de l’égalité de référence.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

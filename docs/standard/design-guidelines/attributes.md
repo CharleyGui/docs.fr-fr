@@ -1,20 +1,19 @@
 ---
 title: Attributs
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - attributes [.NET Framework], about
 - class library design guidelines [.NET Framework], attributes
 ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
-ms.openlocfilehash: 3c0e1b8c20042c085d4ace996a084cbd464d3b21
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: cc4752066124a0ea8081390bfb5f3791d21ec96d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617559"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821617"
 ---
 # <a name="attributes"></a>Attributs
-<xref:System.Attribute?displayProperty=nameWithType>est une classe de base utilisée pour définir des attributs personnalisés.
+<xref:System.Attribute?displayProperty=nameWithType> est une classe de base utilisée pour définir des attributs personnalisés.
 
  Les attributs sont des annotations qui peuvent être ajoutées aux éléments de programmation tels que les assemblys, les types, les membres et les paramètres. Elles sont stockées dans les métadonnées de l’assembly et sont accessibles au moment de l’exécution à l’aide des API de réflexion. Par exemple, le Framework définit <xref:System.ObsoleteAttribute> , qui peut être appliqué à un type ou à un membre pour indiquer que le type ou le membre a été déconseillé.
 
@@ -34,11 +33,11 @@ ms.locfileid: "85617559"
 
  ✔️ fournissez des paramètres de constructeur pour initialiser les propriétés correspondant aux arguments requis. Chaque paramètre doit avoir le même nom (mais avec une casse différente) que la propriété correspondante.
 
- ❌Évitez de fournir des paramètres de constructeur pour initialiser les propriétés correspondant aux arguments facultatifs.
+ ❌ Évitez de fournir des paramètres de constructeur pour initialiser les propriétés correspondant aux arguments facultatifs.
 
  En d’autres termes, les propriétés ne peuvent pas être définies avec un constructeur et un accesseur Set. Cette recommandation rend très explicite les arguments facultatifs et obligatoires, et évite d’avoir deux façons de faire la même chose.
 
- ❌Évitez de surcharger les constructeurs d’attributs personnalisés.
+ ❌ Évitez de surcharger les constructeurs d’attributs personnalisés.
 
  Le fait de n’avoir qu’un seul constructeur communique clairement à l’utilisateur les arguments requis et ceux qui sont facultatifs.
 

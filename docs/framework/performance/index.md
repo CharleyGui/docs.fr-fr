@@ -6,12 +6,12 @@ helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-ms.openlocfilehash: 50ba2f51ea2fb935c2a5db27ad6249e87cb86dc7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e24d3bc07c7292625813828d598ed43952155e4f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554656"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822358"
 ---
 # <a name="net-framework-performance"></a>Performances .NET Framework
 Si vous voulez créer des applications dotées de hautes performances, vous devez concevoir et planifier les performances comme vous concevez n'importe quelle autre fonctionnalité de votre application. Vous pouvez utiliser les outils fournis par Microsoft pour mesurer les performances de votre application et, si nécessaire, apporter des améliorations à l'utilisation de la mémoire, au débit de code et à la réactivité. Cette rubrique répertorie les outils d'analyse de performance fournis par Microsoft et fournit des liens vers d'autres rubriques qui couvrent les performances dans des domaines spécifiques du développement d'applications.  
@@ -34,7 +34,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
 |Analyse des performances Visual Studio|Utilisez cet outil pour analyser l'utilisation de l'UC de vos applications .NET Framework qui seront déployées sur des ordinateurs exécutant le système d'exploitation Windows.<br /><br /> Vous trouverez cet outil dans le menu **Débogage** de Visual Studio après avoir ouvert votre projet. Pour plus d’informations, consultez [Explorateur de performances](/visualstudio/profiling/performance-explorer). **Remarque** : Utilisez l’analyse de l’application Windows Phone (voir ligne suivante) quand vous ciblez Windows Phone.|  
 |Analyse de l'application Windows Phone|Utilisez cet outil pour analyser l'UC et la mémoire, le taux de transfert des données réseau, la réactivité de l'application et la consommation de la batterie dans vos applications Windows Phone.<br /><br /> Vous trouverez cet outil dans le menu **Débogage** de votre projet Windows Phone dans Visual Studio après avoir installé [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773). Pour plus d’informations, consultez [profilage d’application pour Windows Phone 8](/previous-versions/windows/apps/jj215908(v=vs.105)).|  
 |[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Utilisez ces outils pour identifier des problèmes de performances liés à l'UC et à la mémoire. Cet outil utilise le suivi d’événements pour Windows et des API de profilage du CLR pour assurer des investigations avancées de la mémoire et de l’UC, et pour fournir des informations sur le garbage collection et la compilation JIT. Pour plus d’informations sur l’utilisation de PerfView, consultez le didacticiel et les fichiers d’aide fournis dans l’application, les [didacticiels vidéo sur Channel 9](https://channel9.msdn.com/Series/PerfView-Tutorial) et les [billets de blog](/archive/blogs/vancem/).<br /><br /> Pour plus d’informations sur les problèmes de mémoire, consultez le didacticiel sur l’[utilisation de PerfView pour l’examen de la mémoire](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
-|[Windows Performance Analyzer](https://www.microsoft.com/download/details.aspx?id=30652)|Utilisez cet outil pour déterminer les performances globales du système telles que l'utilisation de la mémoire et du stockage par votre application quand plusieurs applications s'exécutent sur le même ordinateur. Cet outil est disponible dans le centre de téléchargement dans le cadre du kit de déploiement et d’évaluation Windows (ADK) pour Windows 8. Pour plus d’informations, consultez [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|
+|[Windows Performance Analyzer](https://www.microsoft.com/p/windows-performance-analyzer/9n0w1b2bxgnz?activetab=pivot:overviewtab)|Utilisez cet outil pour déterminer les performances globales du système telles que l'utilisation de la mémoire et du stockage par votre application quand plusieurs applications s'exécutent sur le même ordinateur. Cet outil est disponible dans le centre de téléchargement dans le cadre du kit de déploiement et d’évaluation Windows (ADK) pour Windows 8. Pour plus d’informations, consultez [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|
   
 ### <a name="event-tracing-for-windows-etw"></a>Suivi d'événements pour Windows (ETW)  
  Le suivi d'événements pour Windows est une technique qui vous permet d'obtenir des informations de diagnostic sur le code en cours d'exécution et qui est essentielle pour un grand nombre des outils de performance mentionnés précédemment. Il crée des journaux lorsque des événements particuliers sont déclenchés par des applications .NET Framework et par Windows. Le suivi d'événements pour Windows vous permet d'activer et désactiver la journalisation de façon dynamique, et vous pouvez effectuer un traçage détaillé dans un environnement de production sans redémarrer votre application. .NET Framework propose la prise en charge des événements ETW, et le suivi d'événements pour Windows est utilisé par de nombreux outils de profilage et de performance pour générer des données de performance. Ces outils activent et désactivent souvent des événements ETW et il est utile de se familiariser avec eux. Vous pouvez utiliser des événements ETW spécifiques pour collecter des informations de performance sur des composants particuliers de votre application. Pour plus d’informations sur la prise en charge du suivi d’événements pour Windows (ETW) dans .NET Framework, consultez [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md) et [Événements ETW dans la bibliothèque parallèle de tâches et PLINQ](etw-events-in-task-parallel-library-and-plinq.md).  
@@ -51,7 +51,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Mise en cache dans les applications .NET Framework](caching-in-net-framework-applications.md)|Décrit des techniques de mise en cache des données pour améliorer les performances dans votre application.|  
 |[Initialisation tardive](lazy-initialization.md)|Décrit comment initialiser des objets selon vos besoins pour améliorer les performances, notamment au démarrage de l'application.|  

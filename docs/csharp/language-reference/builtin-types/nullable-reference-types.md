@@ -2,19 +2,19 @@
 title: Types référence Nullable-référence C#
 description: En savoir plus sur les types de référence Nullable C# et leur utilisation
 ms.date: 04/06/2020
-ms.openlocfilehash: 274a613a8381a2b7718c9025f51aadb2eb32af36
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: d961af9ba3b4776e6b4ec3eeea5392fb0d0394ce
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471861"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822423"
 ---
 # <a name="nullable-reference-types-c-reference"></a>Types référence Nullable (référence C#)
 
 > [!NOTE]
 > Cet article traite des types de référence Nullable. Vous pouvez également déclarer des [types valeur Nullable](nullable-value-types.md).
 
-Les types référence Nullable sont disponibles à partir de C# 8,0, dans le code qui a opté pour un *contexte reconnaissant*la valeur null. Les types de référence Nullable, les avertissements d’analyse statique null et l' [opérateur null-indulgent avec](../operators/null-forgiving.md) sont des fonctionnalités de langage facultatives. Tous sont désactivés par défaut. Un *contexte Nullable* est contrôlé au niveau du projet à l’aide des paramètres de génération, ou dans le code à l’aide de pragmas.
+Les types référence Nullable sont disponibles à partir de C# 8,0, dans le code qui a opté pour un *contexte reconnaissant* la valeur null. Les types de référence Nullable, les avertissements d’analyse statique null et l' [opérateur null-indulgent avec](../operators/null-forgiving.md) sont des fonctionnalités de langage facultatives. Tous sont désactivés par défaut. Un *contexte Nullable* est contrôlé au niveau du projet à l’aide des paramètres de génération, ou dans le code à l’aide de pragmas.
 
  Dans un contexte qui prend en charge la valeur NULL :
 
@@ -72,7 +72,7 @@ Il existe deux façons de contrôler le contexte Nullable. Au niveau du projet, 
 Pour plus d’informations, consultez les propositions suivantes pour la [spécification du langage C#](~/_csharplang/spec/introduction.md):
 
 - [Types références Nullables](~/_csharplang/proposals/csharp-8.0/nullable-reference-types.md)
-- [Spécification des types de référence Nullable Draft](~/_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md)
+- [Spécification des types de référence Nullable Draft](~/_csharplang/proposals/csharp-9.0/nullable-reference-types-specification.md)
 
 ## <a name="see-also"></a>Voir aussi
 

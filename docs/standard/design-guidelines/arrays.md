@@ -1,23 +1,22 @@
 ---
 title: Tableaux
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], arrays
 - arrays [.NET Framework], usage guidelines
 - empty arrays
 ms.assetid: 66a1b3d8-6f3f-4715-b235-e1ff95e32d8e
-ms.openlocfilehash: 30277507050091de6b1e9293401d61ac5e351a1f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c3545c609b6544e6528bbae08889d0ef20473802
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280607"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821604"
 ---
 # <a name="arrays"></a>Tableaux
 ✔️ préférez utiliser des collections sur des tableaux dans des API publiques. La section [Collections](guidelines-for-collections.md) fournit des détails sur la manière de choisir entre des collections et des tableaux.
 
- ❌N’utilisez pas de champs de tableau en lecture seule. Le champ lui-même est en lecture seule et ne peut pas être modifié, mais les éléments du tableau peuvent être modifiés.
+ ❌ N’utilisez pas de champs de tableau en lecture seule. Le champ lui-même est en lecture seule et ne peut pas être modifié, mais les éléments du tableau peuvent être modifiés.
 
  ✔️ envisagez d’utiliser des tableaux en escalier à la place de tableaux multidimensionnels.
 

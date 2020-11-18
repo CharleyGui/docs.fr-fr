@@ -1,17 +1,16 @@
 ---
 title: Classes de base pour l'implémentation d'abstractions
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - abstractions [.NET Framework]
 - base classes, abstractions
 ms.assetid: 37a2d9a4-9721-482a-a40f-eee2c1d97875
-ms.openlocfilehash: 6af63373b7cbb571265f14ac36028953525fcc7f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 314fcd0e1e91d1fc869453dd442ecaa72f91955d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280567"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821591"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>Classes de base pour l'implémentation d'abstractions
 Strictement parlant, une classe devient une classe de base lorsqu’une autre classe en est dérivée. Dans le cadre de cette section, toutefois, une classe de base est une classe conçue principalement pour fournir une abstraction commune ou pour d’autres classes afin de réutiliser une implémentation par défaut via l’héritage. Les classes de base se trouvent généralement au milieu des hiérarchies d’héritage, entre une abstraction à la racine d’une hiérarchie et plusieurs implémentations personnalisées en bas.
@@ -26,7 +25,7 @@ Strictement parlant, une classe devient une classe de base lorsqu’une autre cl
 
  ✔️ envisagez de placer les classes de base dans un espace de noms distinct des types de scénario principaux. Par définition, les classes de base sont destinées aux scénarios d’extensibilité avancée et, par conséquent, ne sont pas intéressantes pour la majorité des utilisateurs.
 
- ❌Évitez de nommer les classes de base avec un suffixe « base » si la classe est destinée à être utilisée dans les API publiques.
+ ❌ Évitez de nommer les classes de base avec un suffixe « base » si la classe est destinée à être utilisée dans les API publiques.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

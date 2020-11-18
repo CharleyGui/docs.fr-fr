@@ -2,7 +2,6 @@
 title: Conception d'énumérations
 description: Conception pour les enums, qui sont un genre spécial de type valeur. Les énumérations simples contiennent de petits ensembles de choix fermés. Les énumérations d’indicateur prennent en charge les opérations au niveau du bit sur les valeurs enum.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - type design guidelines, enumerations
 - simple enumerations
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-ms.openlocfilehash: 40a9faf53dc8a03674cd59074244c15cd304bdd2
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: a2e19197b114daa2a0956a6fc87231a6a81de916
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768535"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821357"
 ---
 # <a name="enum-design"></a>Conception d'énumérations
 
@@ -29,17 +28,17 @@ Les enums d’indicateur sont conçus pour prendre en charge des opérations au 
 
 ✔️ préférez l’utilisation d’une énumération plutôt que de constantes statiques.
 
-❌N’utilisez pas d’énumération pour les jeux ouverts (tels que la version du système d’exploitation, les noms de vos amis, etc.).
+❌ N’utilisez pas d’énumération pour les jeux ouverts (tels que la version du système d’exploitation, les noms de vos amis, etc.).
 
-❌NE fournissez pas de valeurs enum réservées destinées à un usage ultérieur.
+❌ NE fournissez pas de valeurs enum réservées destinées à un usage ultérieur.
 
 Vous pouvez toujours simplement ajouter des valeurs à l’énumération existante à un moment ultérieur. Pour plus d’informations sur l’ajout de valeurs aux enums, consultez [Ajout de valeurs aux enums](#add_value) . Les valeurs réservées polluent simplement l’ensemble des valeurs réelles et ont tendance à entraîner des erreurs de l’utilisateur.
 
-❌Évitez d’exposer publiquement des enums avec une seule valeur.
+❌ Évitez d’exposer publiquement des enums avec une seule valeur.
 
 Une pratique courante pour garantir une extensibilité future des API C consiste à ajouter des paramètres réservés aux signatures de méthode. Ces paramètres réservés peuvent être exprimés comme des enums avec une seule valeur par défaut. Cela ne doit pas être fait dans les API managées. La surcharge de méthode permet d’ajouter des paramètres dans les versions ultérieures.
 
-❌N’incluez pas de valeurs Sentinel dans les enums.
+❌ N’incluez pas de valeurs Sentinel dans les enums.
 
 Bien qu’elles soient parfois utiles pour les développeurs d’infrastructure, les valeurs sentinelles sont confuses pour les utilisateurs de l’infrastructure. Ils sont utilisés pour suivre l’état de l’enum au lieu d’être l’une des valeurs de l’ensemble représenté par l’enum.
 
@@ -65,9 +64,9 @@ Pour l’utilisation en mémoire, sachez que les objets managés sont toujours `
 
 ✔️ Nommez les énumérations d’indicateur avec des noms au pluriel ou des expressions nominales et des énumérations simples avec des noms au singulier ou des expressions nominales.
 
-❌N’étendez pas <xref:System.Enum?displayProperty=nameWithType> directement.
+❌ N’étendez pas <xref:System.Enum?displayProperty=nameWithType> directement.
 
-<xref:System.Enum?displayProperty=nameWithType>est un type spécial utilisé par le CLR pour créer des énumérations définies par l’utilisateur. La plupart des langages de programmation fournissent un élément de programmation qui vous permet d’accéder à cette fonctionnalité. Par exemple, en C#, le `enum` mot clé est utilisé pour définir une énumération.
+<xref:System.Enum?displayProperty=nameWithType> est un type spécial utilisé par le CLR pour créer des énumérations définies par l’utilisateur. La plupart des langages de programmation fournissent un élément de programmation qui vous permet d’accéder à cette fonctionnalité. Par exemple, en C#, le `enum` mot clé est utilisé pour définir une énumération.
 
 <a name="design"></a>
 
@@ -79,11 +78,11 @@ Pour l’utilisation en mémoire, sachez que les objets managés sont toujours `
 
 ✔️ envisagez de fournir des valeurs d’énumération spéciales pour les combinaisons d’indicateurs couramment utilisées.
 
-Les opérations au niveau du bit sont un concept avancé qui ne doit pas être nécessaire pour les tâches simples. <xref:System.IO.FileAccess.ReadWrite>est un exemple de cette valeur spéciale.
+Les opérations au niveau du bit sont un concept avancé qui ne doit pas être nécessaire pour les tâches simples. <xref:System.IO.FileAccess.ReadWrite> est un exemple de cette valeur spéciale.
 
-❌Évitez de créer des énumérations d’indicateur lorsque certaines combinaisons de valeurs ne sont pas valides.
+❌ Évitez de créer des énumérations d’indicateur lorsque certaines combinaisons de valeurs ne sont pas valides.
 
-❌Évitez d’utiliser des valeurs d’énumération d’indicateur de zéro, sauf si la valeur représente « tous les indicateurs sont désactivés » et s’il est nommé de manière appropriée, comme indiqué par l’instruction suivante.
+❌ Évitez d’utiliser des valeurs d’énumération d’indicateur de zéro, sauf si la valeur représente « tous les indicateurs sont désactivés » et s’il est nommé de manière appropriée, comme indiqué par l’instruction suivante.
 
 ✔️ Nommez la valeur zéro des énumérations d’indicateur `None` . Pour une énumération d’indicateur, la valeur doit toujours signifier que « tous les indicateurs sont effacés ».
 

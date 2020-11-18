@@ -1,19 +1,18 @@
 ---
 title: Conception en vue de l'extensibilité
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - extending class libraries
 - extensibility with class libraries in .NET Framework
 - class library design guidelines [.NET Framework], extensibility
 - class library extensibility [.NET Framework]
 ms.assetid: 1cdb8740-871a-456c-9bd9-db96ca8d79b3
-ms.openlocfilehash: 406c15b6ce42b637ed1bbb61761d05e040995579
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9e75ef433f3bd9af34e8dd40331a8267755e59fe
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280242"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821383"
 ---
 # <a name="designing-for-extensibility"></a>Conception en vue de l'extensibilité
 Un aspect important de la conception d’une infrastructure consiste à s’assurer que l’extensibilité de l’infrastructure a été soigneusement étudiée. Cela nécessite que vous compreniez les coûts et les avantages associés à différents mécanismes d’extensibilité. Ce chapitre vous aide à choisir les mécanismes d’extensibilité (sous-classe, événements, membres virtuels, rappels, etc.) qui répondent le mieux aux besoins de votre infrastructure.  

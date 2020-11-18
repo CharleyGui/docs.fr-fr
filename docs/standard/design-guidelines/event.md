@@ -1,7 +1,6 @@
 ---
 title: Conception d'événements
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - pre-events
 - events [.NET Framework], design guidelines
@@ -10,15 +9,15 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: 852c99b1a41691911f7ae82d3b8104526811757d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eee4b1a9e72c167b9b1e48a73dbb3f0528744bdc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289822"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821331"
 ---
 # <a name="event-design"></a>Conception d'événements
-Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). Parmi les autres mécanismes de rappel, citons les membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur des interfaces. les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’avec les autres mécanismes de rappel. Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.
+Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). D’autres mécanismes de rappel incluent des membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur une interface. Les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’ils utilisent les autres mécanismes de rappel. Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.
 
  Il est important de noter qu’il existe deux groupes d’événements : les événements déclenchés avant un état des modifications du système, appelés pré-événements et les événements déclenchés après la modification d’un État, appelés événements postérieurs à. Un exemple d’un pré-événement serait `Form.Closing` , qui est déclenché avant la fermeture d’un formulaire. Un exemple d’événement de publication est `Form.Closed` , qui est déclenché après la fermeture d’un formulaire.
 
@@ -40,11 +39,11 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
 
  Le paramètre doit être nommé `e` et doit être typé en tant que classe d’argument d’événement.
 
- ❌NE transmettez pas NULL comme expéditeur lors du déclenchement d’un événement non statique.
+ ❌ NE transmettez pas NULL comme expéditeur lors du déclenchement d’un événement non statique.
 
  ✔️ passer NULL comme expéditeur lors du déclenchement d’un événement statique.
 
- ❌NE transmettez pas de valeur null en tant que paramètre de données d’événement lors du déclenchement d’un événement.
+ ❌ NE transmettez pas de valeur null en tant que paramètre de données d’événement lors du déclenchement d’un événement.
 
  Vous devez passer `EventArgs.Empty` si vous ne souhaitez pas transmettre de données à la méthode de gestion des événements. Les développeurs s’attendent à ce que ce paramètre ne soit pas null.
 
@@ -63,7 +62,7 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
 
  ✔️ Utilisez <xref:System.EventArgs?displayProperty=nameWithType> ou sa sous-classe comme type du deuxième paramètre du gestionnaire d’événements et appelez-le `e` .
 
- ❌Il n’y a pas plus de deux paramètres sur les gestionnaires d’événements.
+ ❌ Il n’y a pas plus de deux paramètres sur les gestionnaires d’événements.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

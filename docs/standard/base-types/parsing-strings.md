@@ -2,7 +2,6 @@
 title: Convertir des chaînes en types
 description: Comprendre l’analyse des chaînes dans .NET. L’analyse convertit une chaîne représentant un type de base .NET en ce type de base. L’analyse est l’opération inverse de la mise en forme.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - parsing strings, about parsing strings
 - IFormatProvider interface, parsing strings
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Parse method
 - parsing strings
 ms.assetid: 5e758b41-db93-456b-8999-99b7304b090d
-ms.openlocfilehash: 3d23fa9c7ecc3593f03f70dbd5ea7bda841e8f4f
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 8fbfe8596e49ed101ea7d6bb65298e432a6fac13
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400851"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821903"
 ---
 # <a name="parse-strings-in-net"></a>Analyser des chaînes dans .NET
 
@@ -29,7 +28,7 @@ Une opération d' *analyse* convertit une chaîne qui représente un type de bas
  Explique comment convertir des chaînes en types **DateTime** .NET.
 
  [Analyse d’autres chaînes](parsing-other.md)\
- Explique comment convertir des chaînes en types **Char** , **Boolean** et **Enum**.
+ Explique comment convertir des chaînes en types **Char**, **Boolean** et **Enum**.
 
 ## <a name="related-sections"></a>Sections connexes
  [Mise en forme des types](formatting-types.md)\

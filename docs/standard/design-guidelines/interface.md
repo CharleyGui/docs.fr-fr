@@ -1,18 +1,17 @@
 ---
 title: Conception d'interfaces
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - interfaces [.NET Framework], design guidelines
 - type design guidelines, interfaces
 - class library design guidelines [.NET Framework], interfaces
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
-ms.openlocfilehash: f589d47d5b945179430275598996b2fb77e92848
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9f8ff38d5825091d4d5d3716ed6025a8d04c592d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289029"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821006"
 ---
 # <a name="interface-design"></a>Conception d'interfaces
 Bien que la plupart des API soient mieux modélisées à l’aide de classes et de structs, il existe des cas dans lesquels les interfaces sont plus appropriées ou sont la seule option.
@@ -25,7 +24,7 @@ Bien que la plupart des API soient mieux modélisées à l’aide de classes et 
 
  ✔️ envisagez de définir une interface si vous devez prendre en charge ses fonctionnalités sur les types qui héritent déjà d’un autre type.
 
- ❌Évitez d’utiliser des interfaces de marqueur (interfaces sans membres).
+ ❌ Évitez d’utiliser des interfaces de marqueur (interfaces sans membres).
 
  Si vous avez besoin de marquer une classe comme ayant une caractéristique spécifique (marqueur), en général, utilisez un attribut personnalisé plutôt qu’une interface.
 
@@ -37,7 +36,7 @@ Bien que la plupart des API soient mieux modélisées à l’aide de classes et 
 
  Cela permet de valider la conception de l’interface. Par exemple, <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> utilise l' <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> interface.
 
- ❌N’ajoutez pas de membres à une interface qui a déjà été expédiée.
+ ❌ N’ajoutez pas de membres à une interface qui a déjà été expédiée.
 
  Cela entraînerait l’arrêt des implémentations de l’interface. Vous devez créer une nouvelle interface afin d’éviter les problèmes de Versioning.
 

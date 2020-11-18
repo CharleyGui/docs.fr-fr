@@ -1,14 +1,13 @@
 ---
 title: Propriétés de dépendance
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-ms.openlocfilehash: 476ef1bb1ac5ec1f551979c64a41cbae55c554bc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c6cebd7c6c630af6a1a439b48faccad2aea74a91
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280255"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821370"
 ---
 # <a name="dependency-properties"></a>Propriétés de dépendance
 Une propriété de dépendance (DP) est une propriété normale qui stocke sa valeur dans un magasin de propriétés au lieu de la stocker dans une variable de type (champ), par exemple.
@@ -26,15 +25,15 @@ Une propriété de dépendance (DP) est une propriété normale qui stocke sa va
 
  ✔️ Nommez le champ statique de la propriété de dépendance en suffixant le nom de la propriété avec « Property ».
 
- ❌NE définissez pas explicitement les valeurs par défaut des propriétés de dépendance dans le code ; Définissez-les plutôt dans les métadonnées.
+ ❌ NE définissez pas explicitement les valeurs par défaut des propriétés de dépendance dans le code ; Définissez-les plutôt dans les métadonnées.
 
  Si vous définissez une propriété par défaut explicitement, vous pouvez empêcher la définition de cette propriété par certains moyens implicites, tels qu’un style.
 
- ❌NE placez pas de code dans les accesseurs de propriété autres que le code standard pour accéder au champ statique.
+ ❌ NE placez pas de code dans les accesseurs de propriété autres que le code standard pour accéder au champ statique.
 
  Ce code ne s’exécute pas si la propriété est définie par des moyens implicites, tels qu’un style, car le style utilise directement le champ statique.
 
- ❌N’utilisez pas de propriétés de dépendance pour stocker des données sécurisées. Même les propriétés de dépendance privées sont accessibles publiquement.
+ ❌ N’utilisez pas de propriétés de dépendance pour stocker des données sécurisées. Même les propriétés de dépendance privées sont accessibles publiquement.
 
 ## <a name="attached-dependency-property-design"></a>Conception de propriété de dépendance attachée
  Les propriétés de dépendance décrites dans la section précédente représentent des propriétés intrinsèques du type déclarant. par exemple, la `Text` propriété est une propriété de `TextButton` , qui la déclare. La propriété de dépendance attachée est un type spécial de propriété de dépendance.
@@ -80,15 +79,15 @@ public class Grid {
 
  Malheureusement, les accesseurs de propriété de dépendance ne peuvent pas contenir de code de validation arbitraire. Au lieu de cela, la logique de validation de la propriété de dépendance doit être spécifiée lors de l’inscription de la propriété.
 
- ❌NE placez pas la logique de validation de la propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passer un rappel de validation à la `DependencyProperty.Register` méthode.
+ ❌ NE placez pas la logique de validation de la propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passer un rappel de validation à la `DependencyProperty.Register` méthode.
 
 ## <a name="dependency-property-change-notifications"></a>Notifications de modification de propriété de dépendance
- ❌N’implémentez pas la logique de notification de modification dans les accesseurs de propriété de dépendance. Les propriétés de dépendance possèdent une fonctionnalité de notifications de modifications intégrée qui doit être utilisée en fournissant un rappel de notification de modification à <xref:System.Windows.PropertyMetadata> .
+ ❌ N’implémentez pas la logique de notification de modification dans les accesseurs de propriété de dépendance. Les propriétés de dépendance possèdent une fonctionnalité de notifications de modifications intégrée qui doit être utilisée en fournissant un rappel de notification de modification à <xref:System.Windows.PropertyMetadata> .
 
 ## <a name="dependency-property-value-coercion"></a>Contrainte de valeur de propriété de dépendance
  La contrainte de propriété a lieu lorsque la valeur donnée à un accesseur Set de propriété est modifiée par l’accesseur Set avant la modification réelle de la Banque de propriétés.
 
- ❌N’implémentez pas la logique de contrainte dans les accesseurs de propriété de dépendance.
+ ❌ N’implémentez pas la logique de contrainte dans les accesseurs de propriété de dépendance.
 
  Les propriétés de dépendance ont une fonctionnalité de contrainte intégrée, et elles peuvent être utilisées en fournissant un rappel de contrainte à `PropertyMetadata` .
 

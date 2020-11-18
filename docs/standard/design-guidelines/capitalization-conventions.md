@@ -2,7 +2,6 @@
 title: Conventions de mise en majuscules
 description: Appliquer des conventions de mise en majuscules pour les identificateurs, les mots composés et les termes courants. Comprendre le fonctionnement du respect de la casse dans .NET.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - camel-case names [.NET Framework]
 - class library design guidelines [.NET Framework], capitalization
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - case sensitivity, capitalization conventions
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-ms.openlocfilehash: 4903dc587d84ef36bfaa641cfbda59484266c23c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 8df136fb57ad61ddfd87f4dec1f6490c63c3d977
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767791"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821526"
 ---
 # <a name="capitalization-conventions"></a>Conventions de mise en majuscules
 Les instructions de ce chapitre présentent une méthode simple pour l’utilisation de cas qui, lorsqu’elle est appliquée de manière cohérente, facilite la lecture des identificateurs des types, des membres et des paramètres.
@@ -63,11 +62,11 @@ Les instructions de ce chapitre présentent une méthode simple pour l’utilisa
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Mettre en majuscules les mots composés et les termes courants
  La plupart des termes composés sont traités comme des mots simples à des fins de mise en majuscules.
 
- ❌NE pas mettre en majuscules chaque mot dans les mots composés « fermés ».
+ ❌ NE pas mettre en majuscules chaque mot dans les mots composés « fermés ».
 
  Il s’agit de mots composés écrits sous la forme d’un mot unique, tel qu’un point de terminaison. Dans le cadre des instructions de la casse, traitez un mot composé fermé comme un mot unique. Utilisez un dictionnaire actuel pour déterminer si un mot composé est écrit sous forme fermée.
 
-|Casse|mixte|Not|
+|Casse|mixte|not|
 |------------|-----------|---------|
 |`BitFlag`|`bitFlag`|`Bitflag`|
 |`Callback`|`callback`|`CallBack`|
@@ -98,7 +97,7 @@ Les instructions de ce chapitre présentent une méthode simple pour l’utilisa
 ## <a name="case-sensitivity"></a>Respect de la casse
  Les langages qui peuvent s’exécuter sur le CLR ne sont pas requis pour prendre en charge le respect de la casse, bien que d’autres. Même si votre langage le prend en charge, les autres langages qui peuvent accéder à votre infrastructure ne le sont pas. Par conséquent, toutes les API qui sont accessibles de l’extérieur ne peuvent pas s’appuyer uniquement sur la casse pour faire la distinction entre deux noms dans le même contexte.
 
- ❌NE partez pas du principe que tous les langages de programmation respectent la casse. mais ils ne le sont pas. Les noms ne peuvent pas différer uniquement par la casse.
+ ❌ NE partez pas du principe que tous les langages de programmation respectent la casse. mais ils ne le sont pas. Les noms ne peuvent pas différer uniquement par la casse.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

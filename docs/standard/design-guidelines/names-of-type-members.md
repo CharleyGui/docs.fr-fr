@@ -2,7 +2,6 @@
 title: Noms de membres de type
 description: Découvrez les instructions pour nommer des membres de type dans .NET, tels que les méthodes, les propriétés, les événements et les champs.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - events [.NET Framework], names
 - methods [.NET Framework], names
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: de613673989bd174ac80adda566d04600059642d
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 85f3137b4a8d75de92b12d6535415743395db890
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662496"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820911"
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
 Les types se composent de membres, de méthodes, de propriétés, d’événements, de constructeurs et de champs. Les sections suivantes décrivent les règles de nommage des membres de type.
@@ -41,7 +40,7 @@ public class String {
 
  ✔️ Nommez les propriétés à l’aide d’un nom, d’une expression nominale ou d’un adjectif.
 
- ❌N’avez pas de propriétés qui correspondent au nom des méthodes « obtenir » comme dans l’exemple suivant :
+ ❌ N’avez pas de propriétés qui correspondent au nom des méthodes « obtenir » comme dans l’exemple suivant :
 
  `public string TextWriter { get {...} set {...} }` `public string GetTextWriter(int value) { ... }`
 
@@ -73,7 +72,7 @@ public class Control {
 
  Par exemple, un événement de fermeture déclenché avant la fermeture d’une fenêtre serait nommé `Closing`, tandis qu’un événement déclenché après la fermeture de la fenêtre serait nommé `Closed`.
 
- ❌N’utilisez pas les préfixes ou les suffixes « Before » ou « after » pour indiquer les pré-et post-événements. Utilisez les temps du présent et du passé, comme nous venons de le décrire.
+ ❌ N’utilisez pas les préfixes ou les suffixes « Before » ou « after » pour indiquer les pré-et post-événements. Utilisez les temps du présent et du passé, comme nous venons de le décrire.
 
  ✔️ Nommez les gestionnaires d’événements (délégués utilisés comme types d’événements) avec le suffixe « EventHandler », comme indiqué dans l’exemple suivant :
 
@@ -92,7 +91,7 @@ public class Control {
 
  ✔️ Nommez les champs à l’aide d’un nom, d’une expression nominale ou d’un adjectif.
 
- ❌N’utilisez pas de préfixe pour les noms de champs.
+ ❌ N’utilisez pas de préfixe pour les noms de champs.
 
  Par exemple, n’utilisez pas « g_ » ou « s_ » pour indiquer des champs statiques.
 

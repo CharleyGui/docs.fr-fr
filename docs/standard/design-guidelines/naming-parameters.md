@@ -2,17 +2,16 @@
 title: Attribution d'un nom à des paramètres
 description: Découvrez les instructions relatives à la dénomination des paramètres. Par exemple, utilisez des noms de paramètres descriptifs & casse mixte, & envisagez d’attribuer un nom en fonction de la signification au lieu de type.
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: 54f37c4d6a0f9a6931fa69d612bf0e45bf1f2ce7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b62cfbd58f671745054c557041e5d60af345c8d3
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583516"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820837"
 ---
 # <a name="naming-parameters"></a>Attribution d'un nom à des paramètres
 Au-delà de la raison évidente de la lisibilité, il est important de suivre les instructions pour les noms de paramètres, car les paramètres sont affichés dans la documentation et dans le concepteur quand les outils de conception visuelle proposent IntelliSense et la fonctionnalité de navigation des classes.
@@ -30,7 +29,7 @@ Au-delà de la raison évidente de la lisibilité, il est important de suivre le
 
  ✔️ CONSIDÉRez les noms significatifs pour les paramètres de surcharge d’opérateur si cela ajoute une valeur significative.
 
- ❌N’utilisez pas d’abréviations ou d’index numériques pour les noms de paramètre de surcharge d’opérateur.
+ ❌ N’utilisez pas d’abréviations ou d’index numériques pour les noms de paramètre de surcharge d’opérateur.
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

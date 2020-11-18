@@ -2,7 +2,6 @@
 title: 'Comment : remplir un nombre avec des zéros non significatifs'
 description: Apprenez à remplir un nombre avec des zéros non significatifs. Ajoutez des zéros non significatifs à des entiers ou des valeurs numériques à une longueur totale spécifique ou à un nombre spécifique de zéros non significatifs.
 ms.date: 02/25/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - number formatting [.NET]
 - numbers [.NET], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: 7c3ee376fde34663ee0599c0b1ae654871a71206
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 911d6059d3594ca35eb1c1c3e2d29a5684bce738
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888454"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822046"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Comment : remplir un nombre avec des zéros non significatifs
 
@@ -29,9 +28,9 @@ Vous pouvez ajouter des zéros non significatifs à un entier en utilisant la [c
 
 1. Déterminez si vous souhaitez afficher l'entier en tant que valeur décimale ou que valeur hexadécimale.
 
-    - Pour afficher l’entier comme valeur décimale, appelez sa méthode `ToString(String)`, puis passez la chaîne « D *n*  » comme valeur du paramètre `format`, où *n* représente la longueur minimale de la chaîne.
+    - Pour afficher l’entier comme valeur décimale, appelez sa méthode `ToString(String)`, puis passez la chaîne « D *n* » comme valeur du paramètre `format`, où *n* représente la longueur minimale de la chaîne.
 
-    - Pour afficher l’entier comme valeur hexadécimale, appelez sa méthode `ToString(String)`, puis transmettez la chaîne « X *n*  » comme valeur du paramètre de format, où *n* représente la longueur minimale de la chaîne.
+    - Pour afficher l’entier comme valeur hexadécimale, appelez sa méthode `ToString(String)`, puis transmettez la chaîne « X *n* » comme valeur du paramètre de format, où *n* représente la longueur minimale de la chaîne.
 
 Vous pouvez également utiliser la chaîne de format dans une chaîne interpolée dans [C#](../../csharp/language-reference/tokens/interpolated.md) et [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md), ou vous pouvez appeler une méthode, telle que <xref:System.String.Format%2A?displayProperty=nameWithType> ou <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, qui utilise la [mise en forme composite](composite-formatting.md).
 
@@ -54,7 +53,7 @@ L'exemple suivant met en forme plusieurs valeurs entières avec des zéros non s
 
 1. Ajoutez le nombre de zéros non significatifs à inclure dans la chaîne mise en forme à la longueur de la chaîne numérique non remplie. L’ajout du nombre de zéros non significatifs définit la longueur totale de la chaîne remplie.
 
-1. Appelez la méthode `ToString(String)` de la valeur entière, puis transmettez la chaîne « D *n*  » pour les chaînes décimales et la chaîne « X *n*  » pour les chaînes hexadécimales, où *n* représente la longueur totale de la chaîne remplie. Vous pouvez également utiliser la chaîne de format « D *n*  » ou « X *n*  » dans une méthode qui prend en charge la mise en forme composite.
+1. Appelez la méthode `ToString(String)` de la valeur entière, puis transmettez la chaîne « D *n* » pour les chaînes décimales et la chaîne « X *n* » pour les chaînes hexadécimales, où *n* représente la longueur totale de la chaîne remplie. Vous pouvez également utiliser la chaîne de format « D *n* » ou « X *n* » dans une méthode qui prend en charge la mise en forme composite.
 
 L'exemple suivant remplit une valeur entière avec cinq zéros non significatifs.
 

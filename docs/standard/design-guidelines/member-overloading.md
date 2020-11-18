@@ -1,7 +1,6 @@
 ---
 title: Surcharge de membre
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - default arguments
 - members [.NET Framework], overloaded
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - overloaded members
 - signatures, members
 ms.assetid: 964ba19e-8b94-4b5b-b1e3-5a0b531a0bb1
-ms.openlocfilehash: 6a2cd6d4dd293a7f4a408e1ee97a125c9454be41
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 16e84f06ec388fe7e3c221f35c3e970b9b483ba5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289003"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820967"
 ---
 # <a name="member-overloading"></a>Surcharge de membre
 La surcharge de membre consiste à créer deux membres ou plus sur le même type qui diffèrent uniquement par le nombre ou le type de paramètres, mais qui portent le même nom. Par exemple, dans le code suivant, la `WriteLine` méthode est surchargée :
@@ -34,17 +33,17 @@ public static class Console {
 
  ✔️ essayez d’utiliser des noms de paramètres descriptifs pour indiquer la valeur par défaut utilisée par les surcharges plus courtes.
 
- ❌Évitez la variation arbitraire des noms de paramètres dans les surcharges. Si un paramètre d’une surcharge représente la même entrée qu’un paramètre dans une autre surcharge, les paramètres doivent avoir le même nom.
+ ❌ Évitez la variation arbitraire des noms de paramètres dans les surcharges. Si un paramètre d’une surcharge représente la même entrée qu’un paramètre dans une autre surcharge, les paramètres doivent avoir le même nom.
 
- ❌Évitez d’être incohérent dans l’ordre des paramètres dans les membres surchargés. Les paramètres portant le même nom doivent apparaître à la même position dans toutes les surcharges.
+ ❌ Évitez d’être incohérent dans l’ordre des paramètres dans les membres surchargés. Les paramètres portant le même nom doivent apparaître à la même position dans toutes les surcharges.
 
  ✔️ Effectuez uniquement la surcharge virtuelle la plus longue (si l’extensibilité est requise). Les surcharges plus courtes doivent simplement appeler une surcharge plus longue.
 
- ❌N’utilisez pas `ref` `out` les modificateurs ou pour surcharger des membres.
+ ❌ N’utilisez pas `ref` `out` les modificateurs ou pour surcharger des membres.
 
  Certains langages ne peuvent pas résoudre les appels aux surcharges de ce type. En outre, ces surcharges ont généralement une sémantique complètement différente et ne doivent probablement pas être des surcharges, mais deux méthodes distinctes à la place.
 
- ❌N’ont pas de surcharges avec des paramètres à la même position et des types similaires encore avec une sémantique différente.
+ ❌ N’ont pas de surcharges avec des paramètres à la même position et des types similaires encore avec une sémantique différente.
 
  ✔️ autoriser `null` à être passé pour des arguments facultatifs.
 

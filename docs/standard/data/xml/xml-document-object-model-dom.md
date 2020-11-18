@@ -1,14 +1,13 @@
 ---
 title: DOM (Document Object Model) XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
-ms.openlocfilehash: dbc53d713d77cfdc9d0dbb8a201f2b5627a76921
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5e7c4e62b7bb19b1ddab61f78b360fed0b6752ef
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283388"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94821773"
 ---
 # <a name="xml-document-object-model-dom"></a>DOM (Document Object Model) XML
 
@@ -56,7 +55,7 @@ Les objets **Node** comportent un ensemble de méthodes et de propriétés, ains
 
   - **EntityReference**
 
-  - **Élément**
+  - **Element**
 
   - **Attribut**
 

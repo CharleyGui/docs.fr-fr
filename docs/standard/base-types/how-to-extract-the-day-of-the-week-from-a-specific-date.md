@@ -2,7 +2,6 @@
 title: 'Procédure : extraire le jour de la semaine d’une date spécifique'
 description: Découvrez comment déterminer le jour ordinal de la semaine pour une date particulière dans .NET. Découvrez comment afficher le nom du jour de la semaine localisé pour une date particulière.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -23,12 +22,12 @@ helpviewer_keywords:
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-ms.openlocfilehash: f7a18a3ab414a07fa4908c67c5ec9334ce63953f
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 329a099411651310cf77fa94e9a66b6ac113fdc2
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888519"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822072"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Procédure : extraire le jour de la semaine d’une date spécifique
 
@@ -102,5 +101,5 @@ ms.locfileid: "92888519"
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)
 - [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
