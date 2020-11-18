@@ -1,20 +1,19 @@
 ---
 title: Threading managé et non managé dans Windows
 ms.date: 10/24/2018
-ms.technology: dotnet-standard
-helpviewer_keywords:
+elpviewer_keywords:
 - threading [.NET], unmanaged
 - threading [.NET], managed
 - threading [.NET], managed
 - threads and fibers [.NET]
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-ms.openlocfilehash: 7b2eca1275aba5139bd19662674cd76d95e92fd0
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 67d8fdb5f2e49930b25328c1dfd30a6105fd636f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189158"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826324"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Threading managé et non managé dans Windows
 

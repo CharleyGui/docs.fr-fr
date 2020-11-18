@@ -2,7 +2,6 @@
 title: 'Procédure : utiliser des canaux nommés pour la communication entre processus en réseau'
 description: Consultez deux exemples d’utilisation de canaux nommés pour la communication entre processus entre un serveur de canal et un ou plusieurs clients de canal dans un réseau.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - impersonation [.NET], named pipes
 - full duplex communication [.NET], named pipes
 ms.assetid: 4e4d7e64-9f1b-4026-98f7-20488ac7b42b
-ms.openlocfilehash: 8657597bee5855061bb5529d80d2fa5f0318e817
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: aad9ede3fb257899eec7bff95b6d77eaec5b97ca
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189314"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829737"
 ---
 # <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Procédure : utiliser des canaux nommés pour la communication entre processus en réseau
 

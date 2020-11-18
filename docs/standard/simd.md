@@ -4,13 +4,12 @@ description: Cet article décrit les types SIMD-Enable dans .NET et montre comme
 author: FIVIL
 ms.author: tagoo
 ms.date: 04/28/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 5c1ad01ea15a9c4352cf7f87e5fba3bf74b4679c
-ms.sourcegitcommit: 2987e241e2f76c9248d2146bf2761a33e2c7a882
+ms.openlocfilehash: 9ac437fd78ed81cd4c2d786f52bac80c5cf22e8f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228734"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826622"
 ---
 # <a name="use-simd-accelerated-numeric-types"></a>Utiliser des types numériques SIMD accélérés
 

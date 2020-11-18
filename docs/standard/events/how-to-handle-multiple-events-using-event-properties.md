@@ -2,7 +2,6 @@
 title: "Comment : gérer plusieurs événements à l'aide des propriétés d'événements"
 description: Découvrez comment gérer de nombreux événements à l’aide des propriétés d’événement. Définir des collections déléguées, des clés d’événement & des propriétés d’événement. Implémentez les méthodes d’accesseur Add & Remove.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - event handling [.NET], with multiple events
 - events [.NET], multiple
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
-ms.openlocfilehash: fa0bdc26eba872a62cd5f7a773df0d7a53c83975
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: c62073e26ff0831bb582c9e64c16b7ec7c05b26e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064234"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828373"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Comment : gérer plusieurs événements à l'aide des propriétés d'événements
 Pour utiliser des propriétés d'événements, définissez les propriétés d'événements dans la classe qui déclenche les événements, puis affectez les délégués pour les propriétés d'événements dans les classes qui gèrent les événements. Pour implémenter plusieurs propriétés d'événements dans une classe, la classe doit stocker et maintenir le délégué défini pour chaque événement en interne. Une approche courante consiste à implémenter une collection de délégués indexée par une clé d’événement.  

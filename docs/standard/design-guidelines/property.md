@@ -1,17 +1,16 @@
 ---
 title: Conception des propriétés
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: c49b42ab369ace582c76d7f326da309415e8c45b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1cf41a08c641e9251084e5dcac6c46bc54857717
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291940"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828736"
 ---
 # <a name="property-design"></a>Conception des propriétés
 Bien que les propriétés soient techniquement très similaires aux méthodes, elles sont très différentes en termes de scénarios d’utilisation. Elles doivent être considérées comme des champs intelligents. Ils ont la syntaxe d’appel des champs et la flexibilité des méthodes.
@@ -20,7 +19,7 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  Gardez à l’esprit que si le type de la propriété est un type référence mutable, la valeur de la propriété peut être modifiée même si la propriété est en extraction seule.
 
- ❌NE fournissez pas de propriétés ou de propriétés définies uniquement avec la méthode setter dont l’accessibilité est plus étendue que l’accesseur Get.
+ ❌ NE fournissez pas de propriétés ou de propriétés définies uniquement avec la méthode setter dont l’accessibilité est plus étendue que l’accesseur Get.
 
  Par exemple, n’utilisez pas de propriétés avec un accesseur Set public et un accesseur Get protégé.
 
@@ -34,7 +33,7 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  ✔️ conserver la valeur précédente si un accesseur Set de propriété lève une exception.
 
- ❌Évitez de lever des exceptions à partir des accesseurs get de propriété.
+ ❌ Évitez de lever des exceptions à partir des accesseurs get de propriété.
 
  Les accesseurs get de propriété doivent être des opérations simples et ne doivent pas avoir de conditions préalables. Si un accesseur Get peut lever une exception, il doit probablement être remanié pour être une méthode. Notez que cette règle ne s’applique pas aux indexeurs, où nous attendons des exceptions en raison de la validation des arguments.
 
@@ -47,11 +46,11 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  ✔️ envisagez de fournir des indexeurs sur des types représentant des collections d’éléments.
 
- ❌Évitez d’utiliser des propriétés indexées avec plusieurs paramètres.
+ ❌ Évitez d’utiliser des propriétés indexées avec plusieurs paramètres.
 
  Si la conception requiert plusieurs paramètres, reconsidérez si la propriété représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez plutôt des méthodes. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set` .
 
- ❌Évitez les indexeurs avec des types de paramètres autres que <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> ,, <xref:System.String?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> ou une énumération.
+ ❌ Évitez les indexeurs avec des types de paramètres autres que <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> ,, <xref:System.String?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> ou une énumération.
 
  Si la conception requiert d’autres types de paramètres, réévaluez fortement si l’API représente vraiment un accesseur à une collection logique. Si ce n’est pas le cas, utilisez une méthode. Envisagez de démarrer le nom de la méthode avec `Get` ou `Set` .
 
@@ -59,13 +58,13 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
 
  En C#, les indexeurs sont par défaut un élément nommé. Le <xref:System.Runtime.CompilerServices.IndexerNameAttribute> peut être utilisé pour personnaliser ce nom.
 
- ❌NE fournissez pas à la fois un indexeur et des méthodes sémantiquement équivalentes.
+ ❌ NE fournissez pas à la fois un indexeur et des méthodes sémantiquement équivalentes.
 
- ❌NE fournissez pas plusieurs familles d’indexeurs surchargés dans un même type.
+ ❌ NE fournissez pas plusieurs familles d’indexeurs surchargés dans un même type.
 
  Cela est appliqué par le compilateur C#.
 
- ❌N’utilisez pas de propriétés indexées qui ne sont pas des valeurs par défaut.
+ ❌ N’utilisez pas de propriétés indexées qui ne sont pas des valeurs par défaut.
 
  Cela est appliqué par le compilateur C#.
 

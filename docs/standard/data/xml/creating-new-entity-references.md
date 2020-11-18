@@ -1,14 +1,13 @@
 ---
 title: Création de nouvelles références d'entité
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: a42f81b3-0403-4e34-b346-7d2129804e54
-ms.openlocfilehash: 7c94d121d00c169f0d74bc9b12c8710fb6055250
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5d1411b38ee79705cad3375aea1b95265c1ab61a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283349"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829321"
 ---
 # <a name="creating-new-entity-references"></a>Création de nouvelles références d'entité
 La méthode **CreateEntityReference** crée un nouveau nœud **XmlEntityReference**. Le DOM (Document Object Model) XML vérifie si le nom de l'entité référencée a déjà été déclaré. Si tel est le cas, les nœuds enfants du nœud **XmlEntityReference** sont copiés à partir du nœud de la déclaration d'entité. Si aucune déclaration d'entité ne correspond, un nœud de texte vide est joint en tant qu'unique enfant du nœud de référence d'entité. Les nœuds enfants du nœud **XmlEntityReference** étant des copies d'autres nœuds, ils sont en lecture seule et ne peuvent pas être modifiés.  

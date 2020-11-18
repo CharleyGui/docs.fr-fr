@@ -2,19 +2,18 @@
 title: Exceptions dans les threads managés
 description: Découvrez comment les exceptions non gérées sont gérées dans .NET. La plupart des exceptions de thread non gérées se poursuivent naturellement et mènent à l’arrêt de l’application.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - unhandled exceptions,in managed threads
 - threading [.NET],unhandled exceptions
 - threading [.NET],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: b7cf7e94156eedc82c7ec5c863ee013b75d22e73
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: e5acda4137d020d35d3144e9cc61e174024e165a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188326"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826467"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 

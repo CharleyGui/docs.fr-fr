@@ -2,19 +2,18 @@
 title: Gestion des exceptions (bibliothèque parallèle de tâches)
 description: Explorez la gestion des exceptions à l’aide de la bibliothèque parallèle de tâches (TPL) dans .NET. Consultez exceptions d’agrégats imbriquées, exceptions internes, exceptions de tâches non prises en & plus.
 ms.date: 04/20/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-ms.openlocfilehash: f1c1a994f4b3a8df0556a0190bc4eacb63f2921e
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: fd16fd4263c092f8678589e1a8dd9544955e798a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662535"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827332"
 ---
 # <a name="exception-handling-task-parallel-library"></a>Gestion des exceptions (bibliothèque parallèle de tâches)
 
@@ -64,7 +63,7 @@ Même si vous utilisez une continuation pour observer une exception dans une tâ
 
 ## <a name="exceptions-that-indicate-cooperative-cancellation"></a>Exceptions indiquant une annulation coopérative
 
-Lorsque le code utilisateur d’une tâche répond à une demande d’annulation, la procédure correcte consiste à lever une exception <xref:System.OperationCanceledException> qui passe le jeton d’annulation sur lequel la demande a été communiquée. Avant d’essayer de propager l’exception, l’instance de tâche compare le jeton de l’exception à celui qui lui a été passé lors de sa création. S’ils sont identiques, la tâche propage une exception <xref:System.Threading.Tasks.TaskCanceledException> encapsulée dans l’exception <xref:System.AggregateException>, et cette dernière peut être affichée au moment d’examiner les exceptions internes. Toutefois, si le thread appelant n’est pas en attente sur la tâche, cette exception spécifique n’est pas propagée. Pour plus d'informations, consultez [Task Cancellation](task-cancellation.md).
+Lorsque le code utilisateur d’une tâche répond à une demande d’annulation, la procédure correcte consiste à lever une exception <xref:System.OperationCanceledException> qui passe le jeton d’annulation sur lequel la demande a été communiquée. Avant d’essayer de propager l’exception, l’instance de tâche compare le jeton de l’exception à celui qui lui a été passé lors de sa création. S’ils sont identiques, la tâche propage une exception <xref:System.Threading.Tasks.TaskCanceledException> encapsulée dans l’exception <xref:System.AggregateException>, et cette dernière peut être affichée au moment d’examiner les exceptions internes. Toutefois, si le thread appelant n’est pas en attente sur la tâche, cette exception spécifique n’est pas propagée. Pour plus d’informations, voir [Annulation de tâches](task-cancellation.md).
 
 [!code-csharp[TPL_Exceptions#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptions.cs#4)]
 [!code-vb[TPL_Exceptions#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/tpl_exceptions.vb#4)]

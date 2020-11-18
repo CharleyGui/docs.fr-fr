@@ -2,7 +2,6 @@
 title: Détruire des threads
 description: Identifiez vos options lorsque vous devez détruire un thread dans .NET, par exemple l’annulation coopérative ou la méthode Thread. Abort. Apprenez à gérer ThreadAbortException.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: caf7e29742bd7c0481badeeace91b7851520ad12
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: be31b0232889227fa5d4990c9481305eea343f11
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188365"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826480"
 ---
 # <a name="destroying-threads"></a>Détruire des threads
 

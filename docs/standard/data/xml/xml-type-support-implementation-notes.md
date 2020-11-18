@@ -1,14 +1,13 @@
 ---
 title: Remarques pour l'implémentation de la prise en charge du type XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
-ms.openlocfilehash: 91a685f122ff846217ea7a8677b29df430b65363
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5087562753d20e5662522a57b22e2d7f3cc43613
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290277"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828788"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Remarques pour l'implémentation de la prise en charge du type XML
 Cette rubrique décrit certains détails de l'implémentation que vous souhaitez connaître.  

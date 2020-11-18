@@ -1,7 +1,6 @@
 ---
 title: Globalisation et ICU
 ms.date: 05/21/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - globalization [.NET], about globalization
 - global applications, globalization
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 - icu, icu on windows, ms-icu
-ms.openlocfilehash: ca579e837b801de237859963ede0e5a9a4bfbcbf
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: d0361ba41b3a10d6a316341fcdacb869e7a35d26
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94439467"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827111"
 ---
 # <a name="net-globalization-and-icu"></a>Globalisation et ICU .NET
 

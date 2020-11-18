@@ -3,13 +3,12 @@ title: Didacticiels pour la prise en main de .NET
 description: Choisissez un didacticiel pour apprendre le développement d’applications .NET ou l’un des langages de programmation .NET.
 author: tdykstra
 ms.date: 09/30/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: da98bda4a6a2d637a8a899c9d7315d5cbfcb18fa
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 3002b23dcae44b38c9e4dbc2679a2919f1a8d1ce
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755874"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827176"
 ---
 # <a name="tutorials-for-getting-started-with-net"></a>Didacticiels pour la prise en main de .NET
 
@@ -54,7 +53,7 @@ Les didacticiels pas à pas suivants s’exécutent sur Windows, Linux ou macOS,
 Les ressources suivantes concernent la prise en main du développement d’applications .NET, mais pas les didacticiels pas à pas :
 
 * [Internet des objets (IoT)](https://dotnet.microsoft.com/apps/iot)
-* [Apprentissage machine](../machine-learning/index.yml)
+* [Machine Learning](../machine-learning/index.yml)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

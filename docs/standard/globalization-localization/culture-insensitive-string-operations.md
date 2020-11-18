@@ -1,7 +1,6 @@
 ---
 title: Opérations de chaînes indépendantes de la culture
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - culture, culture-insensitive string operations
 - case-sensitive comparisons
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - culture-sensitive string operations
 - culture-insensitive string operations
 ms.assetid: e6e2bb94-a95d-44e2-b68c-cfdd1db77784
-ms.openlocfilehash: 3a6085d15dbaa30144436b163a6ecb777698f4f1
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 2cfd4bf3428832c204124637fbbe3de2edd554f9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064000"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827124"
 ---
 # <a name="culture-insensitive-string-operations"></a>Opérations de chaînes indépendantes de la culture
 

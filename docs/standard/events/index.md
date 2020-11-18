@@ -2,7 +2,6 @@
 title: Gestion et déclenchement d'événements
 description: Apprenez à gérer et à déclencher des événements .NET, qui sont basés sur le modèle délégué. Ce modèle permet aux abonnés de s’inscrire auprès des fournisseurs ou de recevoir des notifications.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: a2bfbe9a411d3099d02df7a43a42baaad2bb32da
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: e0b8de574475490cd3b15383b6ebc2ace4b74663
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064091"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828268"
 ---
 # <a name="handle-and-raising-events"></a>Gérer et déclencher des événements
 
@@ -28,7 +27,7 @@ Les événements dans .NET Framework sont basés sur le modèle délégué. Le m
   
 ## <a name="events"></a>Événements
 
-Un événement est un message envoyé par un objet pour signaler la présence d’une action. L’action peut être provoquée par une intervention de l’utilisateur, par exemple un clic sur un bouton, ou elle peut résulter d’une autre logique de programme, telle que la modification de la valeur d’une propriété. L’objet qui déclenche l’événement est appelé *l’émetteur d’événements* . L'émetteur d'événements ne connaît pas l'objet, ni la méthode qui recevront (géreront) les événements qu'il déclenche. L'événement est généralement un membre de l'émetteur d'événements ; par exemple, l'événement <xref:System.Web.UI.WebControls.Button.Click> est membre de la classe <xref:System.Web.UI.WebControls.Button>, et l'événement <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> est membre de la classe qui implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
+Un événement est un message envoyé par un objet pour signaler la présence d’une action. L’action peut être provoquée par une intervention de l’utilisateur, par exemple un clic sur un bouton, ou elle peut résulter d’une autre logique de programme, telle que la modification de la valeur d’une propriété. L’objet qui déclenche l’événement est appelé *l’émetteur d’événements*. L'émetteur d'événements ne connaît pas l'objet, ni la méthode qui recevront (géreront) les événements qu'il déclenche. L'événement est généralement un membre de l'émetteur d'événements ; par exemple, l'événement <xref:System.Web.UI.WebControls.Button.Click> est membre de la classe <xref:System.Web.UI.WebControls.Button>, et l'événement <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> est membre de la classe qui implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
 Pour définir un événement, vous utilisez le [`event`](../../csharp/language-reference/keywords/event.md) mot clé C# ou Visual Basic [`Event`](../../visual-basic/language-reference/statements/event-statement.md) dans la signature de votre classe d’événements, puis vous spécifiez le type de délégué pour l’événement. Les délégués sont décrits dans la section suivante.  
   
@@ -88,7 +87,7 @@ L'exemple suivant présente une méthode de gestionnaire d'événements nommée 
   
 ## <a name="related-articles"></a>Articles connexes
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Comment : déclencher et utiliser des événements](how-to-raise-and-consume-events.md)|Contient des exemples de déclenchement et de consommation d'événements.|  
 |[Comment : gérer plusieurs événements à l'aide des propriétés d'événements](how-to-handle-multiple-events-using-event-properties.md)|Montre comment utiliser des propriétés d'événement pour gérer plusieurs événements.|  

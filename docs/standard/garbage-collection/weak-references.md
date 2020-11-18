@@ -2,19 +2,18 @@
 title: Références faibles
 description: En savoir plus sur les références faibles, qui permettent au garbage collector .NET de collecter un objet tout en permettant à l’application d’accéder à l’objet.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - weak references, short
 - weak references, using
 - weak references, long
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
-ms.openlocfilehash: 1c18b4fa979058893e0683620ec6cff8e7b15b9b
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 40d17009c98a73b7cb51779663360726c5fc7403
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768181"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827358"
 ---
 # <a name="weak-references"></a>Références faibles
 Le Garbage collector ne peut pas collecter un objet actuellement utilisé par une application, tandis que le code de l’application peut accéder à cet objet. On dit de l’application qu’elle a une référence forte à l’objet.  

@@ -2,18 +2,17 @@
 title: Séparer les chaînes en sous-chaînes
 description: Découvrez les différentes techniques permettant d’extraire des parties d’une chaîne, notamment String. Split, les expressions régulières et String. Substring.
 ms.date: 10/30/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - strings [.NET], breaking up
-ms.openlocfilehash: 88947c4576b0496e4b4e45042d665e3ca5857c53
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: b753476b7d8e5808fdcacc6f28bd1de5f8b232bb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93403615"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829647"
 ---
 # <a name="extract-substrings-from-a-string"></a>Extraire les sous-chaînes d’une chaîne
 
@@ -44,7 +43,7 @@ Les points sont supprimés des sous-chaînes, mais maintenant deux sous-chaînes
 
 ## <a name="regular-expressions"></a>Expressions régulières
 
-Si votre chaîne est conforme à un modèle fixe, vous pouvez utiliser une expression régulière pour extraire et gérer ses éléments. Par exemple, si les chaînes prennent la forme « *Number* *Operand* *Number* », vous pouvez utiliser une [expression régulière](regular-expressions.md) pour extraire et gérer les éléments de la chaîne. Voici un exemple :
+Si votre chaîne est conforme à un modèle fixe, vous pouvez utiliser une expression régulière pour extraire et gérer ses éléments. Par exemple, si les chaînes prennent la forme «*Number* *Operand* *Number*», vous pouvez utiliser une [expression régulière](regular-expressions.md) pour extraire et gérer les éléments de la chaîne. Voici un exemple :
 
 :::code language="csharp" source="snippets/parse-strings/csharp/regex.cs" id="1" interactive="try-dotnet":::
 :::code language="vb" source="snippets/parse-strings/vb/regex.vb" id="1":::

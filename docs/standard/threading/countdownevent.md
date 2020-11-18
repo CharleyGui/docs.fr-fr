@@ -1,19 +1,18 @@
 ---
 title: CountdownEvent
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-ms.openlocfilehash: de9b49de86eb6489181afc8d8f5fbb1222bf877d
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 82fe4844728702e91190b55a833848c1c9ece40c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188404"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826571"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 

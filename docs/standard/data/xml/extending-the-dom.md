@@ -1,17 +1,16 @@
 ---
 title: Extension du DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-ms.openlocfilehash: 4a1a7af0e841601542a30c7bd3f71395faa6cb57
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 173d36f534f951cfafefd3bd69b7ab245d575747
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287790"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829503"
 ---
 # <a name="extending-the-dom"></a>Extension du DOM
 

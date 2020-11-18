@@ -1,7 +1,6 @@
 ---
 title: Gestion des exceptions COM Interop
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - unmanaged code, exceptions
 - exceptions, unmanaged code
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - exceptions, COM interop
 - COM interop, exceptions
 ms.assetid: e6104aa8-8e5f-4069-b864-def85579c96c
-ms.openlocfilehash: 9c8eb374058ddbd2ba3d866079f0f40b292b69ea
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 058fb6446f69c2e10cb136ce5b5ad73b14d82647
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286104"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828138"
 ---
 # <a name="handling-com-interop-exceptions"></a>Gestion des exceptions COM Interop
 Le code managé et le code non managé peuvent collaborer pour gérer les exceptions. Si une méthode lève une exception dans du code managé, le common language runtime peut passer HRESULT à un objet COM. Si une méthode échoue dans du code non managé en retournant un échec HRESULT, le runtime lève une exception qui peut être interceptée par du code managé.  

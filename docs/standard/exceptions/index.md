@@ -2,7 +2,6 @@
 title: Gestion et levée d’exceptions dans .NET
 description: Apprenez à gérer et à lever des exceptions dans .NET. Les opérations .NET indiquent l’échec des applications en cas d’exceptions.
 ms.date: 06/19/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - exceptions [.NET], handling
 - runtime, exceptions
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - exceptions [.NET]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
-ms.openlocfilehash: 89d88e3128917125d1a09466ed4e230604d6978c
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: c18482335947c8d24ba7ed6552bb78c70a0a054f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662769"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827995"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Gestion et levée d’exceptions dans .NET
 
@@ -63,7 +62,7 @@ Le tableau suivant répertorie certaines exceptions courantes avec des exemples 
 - [Guide pratique pour utiliser le bloc try/catch pour intercepter des exceptions](how-to-use-the-try-catch-block-to-catch-exceptions.md)
 - [Comment : utiliser des exceptions spécifiques dans un bloc catch](how-to-use-specific-exceptions-in-a-catch-block.md)
 - [Comment : lever explicitement des exceptions](how-to-explicitly-throw-exceptions.md)
-- [Comment : créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md)
+- [Comment : créer des exceptions de User-Defined](how-to-create-user-defined-exceptions.md)
 - [Utilisation de gestionnaires filtrés par l'utilisateur](using-user-filtered-exception-handlers.md)
 - [Comment : utiliser des blocs finally](how-to-use-finally-blocks.md)
 - [Gestion des exceptions COM Interop](handling-com-interop-exceptions.md)

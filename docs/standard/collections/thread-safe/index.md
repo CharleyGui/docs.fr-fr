@@ -2,16 +2,15 @@
 title: Collections thread-safe
 description: Prise en main des collections thread-safe à l’aide de l’espace de noms System. Collections. concurrent dans .NET, qui comprend des classes de collection à thread sécurisée et évolutives.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 27b0e887d7dcff6a6c792cf2dfab6a449f59646f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5f64d7b6a9b3564248a2b6113724e948066bf45c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547686"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827748"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
@@ -44,15 +43,15 @@ ms.locfileid: "90547686"
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Vue d'ensemble de BlockingCollection](blockingcollection-overview.md)|Décrit la fonctionnalité fournie par le type <xref:System.Collections.Concurrent.BlockingCollection%601>.|  
-|[Procédure : ajouter et supprimer des éléments d’un ConcurrentDictionary](how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
+|[Comment : ajouter et supprimer des éléments d'un ConcurrentDictionary](how-to-add-and-remove-items.md)|Décrit comment ajouter et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.|  
 |[Procédure : ajouter et prendre des éléments individuellement dans un BlockingCollection](how-to-add-and-take-items.md)|Décrit comment ajouter et récupérer des éléments dans une collection de blocage sans utiliser l’énumérateur en lecture seule.|  
 |[Procédure : ajouter des fonctionnalités de délimitation et de blocage à une collection](how-to-add-bounding-and-blocking.md)|Décrit comment utiliser une classe de collection comme mécanisme de stockage sous-jacent pour une collection <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.|  
 |[Procédure : utiliser la boucle ForEach pour supprimer les éléments d’un BlockingCollection](how-to-use-foreach-to-remove.md)|Décrit comment utiliser `foreach`, (`For Each` dans Visual Basic) pour supprimer tous les éléments d’une collection de blocage.|  
 |[Procédure : utiliser des tableaux de collections de blocage dans un pipeline](how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
 |[Procédure : créer un pool d’objets à l’aide d’un ConcurrentBag](how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

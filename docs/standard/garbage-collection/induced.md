@@ -1,16 +1,15 @@
 ---
 title: Collections forcées
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-ms.openlocfilehash: 36dff45587c6c28ba17fd7389dc3863893ff8f61
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 637ba9b3b73d685ee2263315a08f982d862efb35
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286039"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827722"
 ---
 # <a name="induced-collections"></a>Collections forcées
 Dans la plupart des cas, le Garbage collector peut déterminer le meilleur moment pour exécuter une collection. En outre, vous devez lui permettre de s’exécuter de façon indépendante. Dans de rares cas, une collection forcée peut toutefois améliorer les performances de votre application. Vous pouvez alors induire le garbage collection à l’aide de la méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> pour forcer un garbage collection.  

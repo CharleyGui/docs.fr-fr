@@ -1,18 +1,17 @@
 ---
 title: Membres virtuels
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - overridable members
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 918208bb44f84988b7fe903c589e82c7bf1f59e3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 22eb71ccfc1b9a3d359b0453e4ff47f3f41827f5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620766"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828398"
 ---
 # <a name="virtual-members"></a>Membres virtuels
 Les membres virtuels peuvent être remplacés, ce qui modifie le comportement de la sous-classe. Elles sont assez similaires aux rappels en termes d’extensibilité, mais elles sont préférables en termes de performances d’exécution et de consommation de mémoire. En outre, les membres virtuels s’apaisent plus naturellement dans les scénarios qui requièrent la création d’un type spécial de type existant (spécialisation).
@@ -23,7 +22,7 @@ Les membres virtuels peuvent être remplacés, ce qui modifie le comportement de
 
  Les membres virtuels, comme les rappels (et peut-être plus que les rappels), sont coûteux pour la conception, le test et la maintenance, car tout appel à un membre virtuel peut être substitué de manière imprévisible et peut exécuter du code arbitraire. En outre, un plus grand nombre d’efforts est généralement requis pour définir clairement le contrat des membres virtuels, de sorte que le coût de la conception et de la documentation est plus élevé.
 
- ❌N’effectuez pas de membres virtuels, sauf si vous avez une bonne raison de le faire et que vous connaissez tous les coûts liés à la conception, au test et à la maintenance des membres virtuels.
+ ❌ N’effectuez pas de membres virtuels, sauf si vous avez une bonne raison de le faire et que vous connaissez tous les coûts liés à la conception, au test et à la maintenance des membres virtuels.
 
  Les membres virtuels sont moins indulgent avec en termes de modifications qui peuvent être apportées sans interrompre la compatibilité. En outre, ils sont plus lents que les membres non virtuels, principalement parce que les appels aux membres virtuels ne sont pas Inline.
 

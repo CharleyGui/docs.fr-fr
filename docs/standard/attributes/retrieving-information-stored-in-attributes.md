@@ -2,7 +2,6 @@
 title: Récupération des informations stockées dans les attributs
 description: Apprenez à récupérer des informations stockées dans des attributs, par exemple pour une instance d’attribut, de nombreuses instances pour la même portée, & de nombreuses instances pour différentes étendues.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: 710f3e3d1051bad4a61e59e330204d622b9fd683
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 8f58648f5cc73b911f0393f2a631b8976ac097b4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889203"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829022"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
 La récupération d’un attribut personnalisé est un processus simple. Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer. Ensuite, utilisez la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer. Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  
@@ -71,7 +70,7 @@ The attribute was not found.
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>
 ## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a>Récupération de plusieurs instances d’un attribut appliqué à différentes étendues  
- Les méthodes <xref:System.Attribute.GetCustomAttributes%2A> et <xref:System.Attribute.GetCustomAttribute%2A> ne recherchent pas une classe entière et retournent toutes les instances d’un attribut dans cette classe. Elles recherchent plutôt une seule méthode spécifiée ou un membre à la fois. Si vous utilisez une classe avec le même attribut appliqué à chaque membre et que vous souhaitez récupérer les valeurs de tous les attributs appliqués à ces membres, vous devez fournir chaque méthode ou membre individuellement à **GetCustomAttributes** et à **GetCustomAttribute** .  
+ Les méthodes <xref:System.Attribute.GetCustomAttributes%2A> et <xref:System.Attribute.GetCustomAttribute%2A> ne recherchent pas une classe entière et retournent toutes les instances d’un attribut dans cette classe. Elles recherchent plutôt une seule méthode spécifiée ou un membre à la fois. Si vous utilisez une classe avec le même attribut appliqué à chaque membre et que vous souhaitez récupérer les valeurs de tous les attributs appliqués à ces membres, vous devez fournir chaque méthode ou membre individuellement à **GetCustomAttributes** et à **GetCustomAttribute**.  
   
  L’exemple de code suivant prend une classe en tant que paramètre et recherche l’attribut `DeveloperAttribute` (défini précédemment) au niveau de la classe et dans chaque méthode individuelle de cette classe.  
   

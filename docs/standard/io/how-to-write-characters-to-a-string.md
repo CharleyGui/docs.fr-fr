@@ -1,7 +1,6 @@
 ---
 title: 'Comment : écrire des caractères dans une chaîne'
 ms.date: 01/21/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - streams, writing characters to strings
 - I/O [.NET], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: 5b0e20b911237739c143576d9a7be660f5da58c0
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: d4a6bbc77a9feb16293fc88e1598d124d8d2d75d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189223"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829724"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Comment : écrire des caractères dans une chaîne
 

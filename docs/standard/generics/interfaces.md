@@ -1,19 +1,18 @@
 ---
 title: Interfaces génériques
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - generic interfaces [.NET]
 - equality comparisons [.NET]
 - generics [.NET], interfaces
 - ordering comparisons [.NET]
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
-ms.openlocfilehash: 6e107250cef38d532310cd193c9324d1d39c096a
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 429aa3c4d48fa6805b498206bcb699b56f522409
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064052"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827189"
 ---
 # <a name="generic-interfaces"></a>Interfaces génériques
 

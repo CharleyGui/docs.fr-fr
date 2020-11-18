@@ -2,7 +2,6 @@
 title: Covariance et contravariance dans les génériques
 description: En savoir plus sur la covariance, qui vous permet d’utiliser un type plus dérivé, et la contravariance, qui vous permet d’utiliser un type moins dérivé, dans des génériques .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 1606238b22bd355b997b54cf94e0c28d16ec5cac
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 1ad8f72f80e88971e2bbf672bd92d9c607134783
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063174"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827410"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
 
@@ -59,7 +58,7 @@ Lorsque vous faites référence à un système de type, la covariance, la contra
   
  En général, un paramètre de type covariant peut être utilisé comme type de retour d'un délégué et les paramètres de type contravariant peuvent être utilisés comme types de paramètres. Pour une interface, les paramètres de type covariant peuvent être utilisés comme types de retour des méthodes de l'interface et les paramètres de type contravariant peuvent être utilisés comme types de paramètres des méthodes de l'interface.  
   
- La covariance et la contravariance sont désignées collectivement sous le nom de *variation* . Un paramètre de type générique qui n'est marqué ni comme étant covariant, ni comme étant contravariant, est appelé *indifférent* . Récapitulatif des informations relatives à la variance dans le common language runtime :  
+ La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Un paramètre de type générique qui n'est marqué ni comme étant covariant, ni comme étant contravariant, est appelé *indifférent*. Récapitulatif des informations relatives à la variance dans le common language runtime :  
   
 - Les paramètres de type Variant sont limités aux types d’interfaces génériques et aux types délégués génériques.  
   

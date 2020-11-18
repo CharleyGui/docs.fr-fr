@@ -1,14 +1,13 @@
 ---
 title: Traitement des données XML à l'aide du modèle de données XPath
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 536c6fce-1453-4654-9c72-bca54d47e081
-ms.openlocfilehash: d449fe19640b19b1417c41b3a1ac7bd3a4de907a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cc35b570c592557658cd3dda0c844847c8b23763
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291290"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829282"
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>Traitement des données XML à l'aide du modèle de données XPath
 L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une représentation par programme de documents XML, de fragments, de nœuds ou de collections de nœuds en mémoire à l'aide des classes <xref:System.Xml.XmlDocument> ou <xref:System.Xml.XPath.XPathDocument>.  

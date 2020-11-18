@@ -1,16 +1,15 @@
 ---
 title: Indications relatives à l'utilisation
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-ms.openlocfilehash: 03eaba3e52cb25619f65637efb4f414c22770440
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d6ea7c7b9ada95e3d0c425aaea18be6cdbb4ce35
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291342"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828502"
 ---
 # <a name="usage-guidelines"></a>Indications relatives à l'utilisation
 
@@ -27,7 +26,7 @@ L' <xref:System.IDisposable?displayProperty=nameWithType> interface n’est pas 
 [Attributs](attributes.md)  
 [Regroupements](guidelines-for-collections.md)  
 [Sérialisation](serialization.md)  
-[Utilisation de System. Xml](system-xml-usage.md)  
+[ Utilisation deSystem.Xml](system-xml-usage.md)  
 [Opérateurs d’égalité](equality-operators.md)  
 
 *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*

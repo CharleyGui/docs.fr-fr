@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : spécifier un planificateur de tâches dans un bloc de dataflow'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-ms.openlocfilehash: 76c9e75f787c28657af143b46bb22d08039e2dc4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 716892940bf8387cbe3d39fd36258c5ede02ee8b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288132"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826903"
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Procédure : spécifier un planificateur de tâches dans un bloc de dataflow
 Ce document montre comment associer un planificateur de tâches spécifique lorsque vous utilisez le flux de données dans votre application. L’exemple utilise la classe <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> dans une application Windows Forms pour indiquer lorsque les tâches de lecture sont actives et lorsqu’une tâche d’écriture est active. Il utilise également la méthode <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> pour permettre à un bloc de flux de données de s'exécuter sur le thread de l'interface utilisateur.
@@ -28,7 +27,7 @@ Ce document montre comment associer un planificateur de tâches spécifique lors
   
 2. Dans le concepteur de formulaires pour le formulaire principal, Form1.cs (Form1.vb pour Visual Basic), ajoutez quatre contrôles <xref:System.Windows.Forms.CheckBox>. Définissez la propriété <xref:System.Windows.Forms.Control.Text%2A> sur **Lecteur 1** pour `checkBox1`, **Lecteur 2** pour `checkBox2`, **Lecteur 3** pour `checkBox3`, et **Enregistreur** pour `checkBox4`. Définissez la propriété <xref:System.Windows.Forms.Control.Enabled%2A> pour chaque contrôle sur `False`.  
   
-3. Ajoutez un contrôle <xref:System.Windows.Forms.Timer> au formulaire. Attribuez à la propriété <xref:System.Windows.Forms.Timer.Interval%2A> la valeur `2500`.  
+3. Ajoutez un contrôle <xref:System.Windows.Forms.Timer> au formulaire. Affectez à la propriété <xref:System.Windows.Forms.Timer.Interval%2A> la valeur `2500`.  
   
 ## <a name="adding-dataflow-functionality"></a>Ajout de fonctionnalités de flux de données  
  Cette section décrit comment créer des blocs de flux de données participant à l'application et comment associer chacun d'entre eux à un planificateur de tâches.  

@@ -2,7 +2,6 @@
 title: Mise en forme des types dans .NET
 description: Découvrez comment mettre en forme des types dans .NET. Comprendre comment utiliser ou substituer la méthode ToString. En savoir plus sur la mise en forme dépendante de la culture, composite et personnalisé.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -26,12 +25,12 @@ helpviewer_keywords:
 - custom formatting [.NET]
 - strings [.NET], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: f100c1abcb32e907b92c42f8cfa460d2c1927803
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a23df3ecfd3042927636813cdb94eecbb71438f0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888493"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828957"
 ---
 # <a name="format-types-in-net"></a>Types de format dans .NET
 
@@ -216,11 +215,11 @@ Tous les types numériques (c’est-à-dire, les types <xref:System.Byte>, <xref
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
-|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations courantes de valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset> sous forme de chaînes.|
-|[Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats propres à l'application pour les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.|
-|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
+|[Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations courantes de valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset> sous forme de chaînes.|
+|[Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats propres à l'application pour les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.|
+|[Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
 |[Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
-|[Chaînes de format d’énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
+|[Chaînes de format d'énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
 |<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|Décrit les chaînes de format standard pour les valeurs <xref:System.Guid> .|
 
 ## <a name="culture-sensitive-formatting-with-format-providers"></a>Mise en forme dépendante de la culture avec les fournisseurs de format
@@ -354,15 +353,15 @@ L'exemple suivant utilise la classe `ByteByByteFormatter` pour mettre en forme d
 |-----------|----------------|
 |[Chaînes de format numériques standard](standard-numeric-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs numériques.|
 |[Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs numériques.|
-|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs <xref:System.DateTime> .|
-|[Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs <xref:System.DateTime> .|
-|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
+|[Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées de valeurs <xref:System.DateTime> .|
+|[Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les valeurs <xref:System.DateTime> .|
+|[Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)|Décrit des chaînes de format standard qui créent des représentations sous forme de chaîne couramment utilisées d'intervalles de temps.|
 |[Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|Décrit des chaînes de format personnalisées qui créent des formats spécifiques à l'application pour les intervalles de temps.|
-|[Chaînes de format d’énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
+|[Chaînes de format d'énumération](enumeration-format-strings.md)|Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.|
 |[Mise en forme composite](composite-formatting.md)|Explique comment incorporer une ou plusieurs valeurs mises en forme dans une chaîne. La chaîne peut ensuite être affichée dans la console ou écrite dans un flux.|
 |[Analyse de chaînes](parsing-strings.md)|Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets. L'analyse est l'opération inverse de la mise en forme.|
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - <xref:System.IFormattable?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>

@@ -2,7 +2,6 @@
 title: Modèle de design observateur
 description: En savoir plus sur le modèle de conception observateur dans .NET. Ce modèle permet à un abonné de s’inscrire auprès d’un fournisseur et de recevoir des notifications d’un fournisseur.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,16 +12,16 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: e1f8dad2c19d3e11281cda5ef749730c5c6334d7
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 1fda2b692d7bbaeedcf881801eb224f114da41e8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064065"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828242"
 ---
 # <a name="observer-design-pattern"></a>Modèle de design observateur
 
-Le modèle de design Observateur permet à un abonné de s’inscrire auprès d’un fournisseur et d’en recevoir des notifications. Il convient pour les scénarios nécessitant des notifications selon le modèle push. Le modèle définit un *fournisseur* (également appelé un *sujet* ou un *observable* ) et zéro, un ou plusieurs *observateurs* . Les observateurs s'inscrivent auprès du fournisseur et, chaque fois qu'une condition prédéfinie, un événement ou un changement d'état se produit, le fournisseur notifie automatiquement tous les observateurs en appelant l'une de leurs méthodes. Dans cet appel de méthode, le fournisseur peut également fournir des informations sur l'état actuel aux observateurs. Dans .NET, le modèle de conception observateur est appliqué en implémentant <xref:System.IObservable%601?displayProperty=nameWithType> les <xref:System.IObserver%601?displayProperty=nameWithType> interfaces et génériques. Le paramètre de type générique représente le type qui fournit les informations de notification.
+Le modèle de design Observateur permet à un abonné de s’inscrire auprès d’un fournisseur et d’en recevoir des notifications. Il convient pour les scénarios nécessitant des notifications selon le modèle push. Le modèle définit un *fournisseur* (également appelé un *sujet* ou un *observable*) et zéro, un ou plusieurs *observateurs*. Les observateurs s'inscrivent auprès du fournisseur et, chaque fois qu'une condition prédéfinie, un événement ou un changement d'état se produit, le fournisseur notifie automatiquement tous les observateurs en appelant l'une de leurs méthodes. Dans cet appel de méthode, le fournisseur peut également fournir des informations sur l'état actuel aux observateurs. Dans .NET, le modèle de conception observateur est appliqué en implémentant <xref:System.IObservable%601?displayProperty=nameWithType> les <xref:System.IObserver%601?displayProperty=nameWithType> interfaces et génériques. Le paramètre de type générique représente le type qui fournit les informations de notification.
 
 ## <a name="applying-the-pattern"></a>Application du modèle
 
@@ -92,7 +91,7 @@ L'exemple suivant contient le point d'entrée de l'application qui instancie la 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Meilleures pratiques du modèle de design observateur](observer-design-pattern-best-practices.md)|Décrit les meilleures pratiques à adopter lors du développement d'applications qui implémentent le modèle de design Observateur.|
 |[Comment : implémenter un fournisseur](how-to-implement-a-provider.md)|Fournit une implémentation pas à pas d'un fournisseur pour une application de surveillance de la température.|

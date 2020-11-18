@@ -2,7 +2,6 @@
 title: Options des expressions régulières
 description: Découvrez comment utiliser les options des expressions régulières dans .NET, telles que la correspondance non sensible à la casse, le mode multiligne et le mode de droite à gauche.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 5687d1e5a11e69cc9ecf2bd34067329cc52955d2
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a77409476c8b2c1b32429118edbe6ad6542a7b09
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888995"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828944"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
@@ -358,7 +357,7 @@ Le comportement des expressions régulières ECMAScript et canoniques diffère d
 
 Par défaut, quand le moteur d'expression régulière effectue des comparaisons sans respect de la casse, il utilise les conventions de gestion de la casse de la culture actuelle pour déterminer les caractères majuscules et minuscules équivalents.
 
-Toutefois, ce comportement n'est pas souhaitable pour certains types de comparaisons, notamment celles entre les entrées utilisateur et les noms de ressources système, comme les mots de passe, les fichiers ou les URL. L'exemple suivant illustre un scénario de ce type. Le code est destiné à bloquer l’accès à toute ressource dont l’URL commence par **FILE://** . Le moteur d'expression régulière essaie d'effectuer une mise en correspondance sans respect de la casse avec la chaîne en utilisant l'expression régulière `$FILE://`. Toutefois, quand la culture système actuelle est tr-TR (Turc-Turquie), « I » n'est pas l'équivalent en majuscule de « i ». L'appel de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> renvoie donc `false`, et l'accès au fichier est autorisé.
+Toutefois, ce comportement n'est pas souhaitable pour certains types de comparaisons, notamment celles entre les entrées utilisateur et les noms de ressources système, comme les mots de passe, les fichiers ou les URL. L'exemple suivant illustre un scénario de ce type. Le code est destiné à bloquer l’accès à toute ressource dont l’URL commence par **FILE://**. Le moteur d'expression régulière essaie d'effectuer une mise en correspondance sans respect de la casse avec la chaîne en utilisant l'expression régulière `$FILE://`. Toutefois, quand la culture système actuelle est tr-TR (Turc-Turquie), « I » n'est pas l'équivalent en majuscule de « i ». L'appel de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> renvoie donc `false`, et l'accès au fichier est autorisé.
 
 [!code-csharp[Conceptual.Regex.Language.Options#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#14)]
 [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]

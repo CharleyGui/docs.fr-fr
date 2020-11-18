@@ -1,19 +1,18 @@
 ---
 title: Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, partitioners
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
-ms.openlocfilehash: 50553aab30d5a1bc5880ae0fe39c34508e57d0e5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2268df2eb5cae4dcd7adde491b42c86c546aa1fc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276723"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829230"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)
 

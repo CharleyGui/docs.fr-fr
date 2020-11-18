@@ -2,7 +2,6 @@
 title: Notions de base du garbage collection
 description: Découvrez comment fonctionne le récupérateur de mémoire et comment le configurer pour optimiser ses performances.
 ms.date: 11/15/2019
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, generations
 - garbage collection, background
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: b70eb44c3d92e03ab4b33f81b87d48c70797cec5
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 1536aaf936eb8d55aa56b80b50639541e89c9d2c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441009"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827813"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
@@ -138,7 +137,7 @@ Le garbage collection se produit principalement avec la récupération d’objet
 
   Les objets de génération 2 qui survivent à une collection restent dans la génération 2 jusqu’à ce qu’ils soient considérés comme inaccessibles dans une prochaine collection.
   
-  Les objets sur le tas d’objets volumineux (parfois appelé *génération 3* ) sont également collectés dans la génération 2.
+  Les objets sur le tas d’objets volumineux (parfois appelé *génération 3*) sont également collectés dans la génération 2.
 
 Les opérations garbage collection se produisent sur des générations spécifiques, selon les conditions spécifiées. La collecte d'une génération signifie la collecte des objets de cette génération et de toutes ses générations plus jeunes. Une garbage collection de génération 2 est également appelée garbage collection complète, car elle libère des objets dans toutes les générations (autrement dit, tous les objets du tas managé).
 

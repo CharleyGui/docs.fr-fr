@@ -1,19 +1,18 @@
 ---
 title: Annulation de threads de façon coopérative
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - threads, cancellation
 ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
-ms.openlocfilehash: 36de18e976401dd0cde878852c064aa982b8acde
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9e9224e9dc9ac57defe75e916dd6b9844bba7f12
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188495"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826610"
 ---
 # <a name="canceling-threads-cooperatively"></a>Annulation de threads de façon coopérative
 

@@ -2,14 +2,15 @@
 title: Frameworks cibles dans des projets de type SDK-.NET
 description: En savoir plus sur les frameworks cibles pour les applications et les bibliothèques .NET.
 ms.date: 11/06/2020
+ms.prod: dotnet
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: a37634bc9f4cbee5f7901fcb085d3801a7452573
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 1a0d6ef9d31b85fd6c083604dd11b9ca9ff09c79
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441035"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827917"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 

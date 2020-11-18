@@ -2,7 +2,6 @@
 title: Génériques en .NET
 description: En savoir plus sur les génériques dans .NET. Définissez & utiliser des génériques, Découvrez leurs avantages & les inconvénients, Découvrez la prise en charge des langages & de la bibliothèque de classes, et bien plus encore.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -27,12 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: 6455de8e6b874547be7838090fc0527a6ce72b71
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 40a789d9eaa835b1c464f25b5a33a7c1d766d2f8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063154"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827254"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -56,15 +55,15 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
   
 - Une *définition de type générique* est une déclaration de classe, de structure ou d'interface qui fonctionne comme un modèle, avec des espaces réservés pour les types qu'elle peut contenir ou utiliser. Par exemple, la classe <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> peut contenir deux types : des clés et des valeurs. Étant donné qu'une définition de type générique n'est qu'un modèle, vous ne pouvez pas créer d'instances d'une classe, d'une structure ou d'une interface qui correspond à une définition de type générique.  
   
-- Les *paramètres de type générique* , ou *paramètres de type* , sont des espaces réservés compris dans une définition de type ou de méthode générique. Le type générique <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> possède deux paramètres de type, `TKey` et `TValue`, qui représentent les types de ses clés et de ses valeurs.  
+- Les *paramètres de type générique*, ou *paramètres de type*, sont des espaces réservés compris dans une définition de type ou de méthode générique. Le type générique <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> possède deux paramètres de type, `TKey` et `TValue`, qui représentent les types de ses clés et de ses valeurs.  
   
-- Un *type générique construit* , ou *type construit* , est le résultat de la spécification de types pour les paramètres de type générique d'une définition de type générique.  
+- Un *type générique construit*, ou *type construit*, est le résultat de la spécification de types pour les paramètres de type générique d'une définition de type générique.  
   
 - Un *argument de type générique* correspond à tout type substitué par un paramètre de type générique.  
   
 - Le terme général *type générique* correspond à la fois aux types construits et aux définitions de type générique.  
   
-- La *covariance* et la *contravariance* des paramètres de type générique permettent d'utiliser des types génériques construits dont les arguments de type sont plus dérivés (covariance) ou moins dérivés (contravariance) qu'un type construit cible. La covariance et la contravariance sont désignées collectivement sous le nom de *variation* . Pour plus d’informations, consultez [Covariance et contravariance](covariance-and-contravariance.md).  
+- La *covariance* et la *contravariance* des paramètres de type générique permettent d'utiliser des types génériques construits dont les arguments de type sont plus dérivés (covariance) ou moins dérivés (contravariance) qu'un type construit cible. La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Pour plus d’informations, consultez [Covariance et contravariance](covariance-and-contravariance.md).  
   
 - Les *contraintes* sont des limites appliquées aux paramètres de type générique. Par exemple, vous pouvez limiter un paramètre de type aux types qui implémentent l'interface générique <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> afin que les instances de ce type puissent être classées. Vous pouvez également limiter les paramètres de type à des types qui ont une classe de base particulière, qui ont un constructeur sans paramètre, ou qui sont des types référence ou des types valeur. Les utilisateurs du type générique ne peuvent pas remplacer les arguments de type qui ne respectent pas les contraintes.  
   
@@ -132,7 +131,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Collections génériques dans .NET](collections.md)|Aborde les classes de collection générique et d’autres types génériques de .NET.|  
 |[Délégués génériques pour la manipulation de tableaux et de listes](delegates-for-manipulating-arrays-and-lists.md)|Aborde les délégués génériques pour les conversions, les prédicats de recherche et les actions à effectuer sur les éléments d'un tableau ou d'une collection.|  
@@ -145,7 +144,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 |[Introduction aux génériques](../../csharp/programming-guide/generics/index.md)|Fournit une vue d'ensemble de la définition et de l'utilisation des types génériques pour les utilisateurs de C#.|  
 |[Vue d’ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Explique la fonction des génériques pour les utilisateurs C++, y compris les différences entre les génériques et les modèles.|  
 
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

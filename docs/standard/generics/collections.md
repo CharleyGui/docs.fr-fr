@@ -1,7 +1,6 @@
 ---
 title: Collections génériques dans .NET
 ms.date: 02/15/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - generic collections [.NET]
 - generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-ms.openlocfilehash: 956db9ace4ae00062accdd6e80c7911aaac7523f
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 256fddd6c35cb78e8e22562960580929e1230c34
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064247"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94827345"
 ---
 # <a name="generic-collections-in-net"></a>Collections génériques dans .NET
 

@@ -1,21 +1,20 @@
 ---
-title: "Comment : écouter les demandes d'annulation avec des handles d'attente"
+title: 'Procédure : écouter les requêtes d’annulation qui ont des handles d’attente'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation, waiting with wait handles
 ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
-ms.openlocfilehash: e44b10b88bef61edcf3f547f56b4020740530e26
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec5bc796532381b3e21e4dddc037a927b7e68833
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279541"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826441"
 ---
-# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Comment : écouter les demandes d'annulation avec des handles d'attente
+# <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Procédure : écouter les requêtes d’annulation qui ont des handles d’attente
 Si une méthode est bloquée pendant qu’elle attend qu’un événement soit signalé, elle ne peut pas vérifier la valeur du jeton d’annulation ni répondre en temps voulu. Le premier exemple montre comment résoudre ce problème quand vous travaillez avec des événements tels que <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> qui ne prennent pas en charge l’infrastructure d’annulation unifiée. Le deuxième exemple montre une approche plus simple qui utilise <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, qui prend en charge l’annulation unifiée.  
   
 > [!NOTE]

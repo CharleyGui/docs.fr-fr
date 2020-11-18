@@ -1,7 +1,6 @@
 ---
 title: Membres protégés
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - members [.NET Framework], protected
 - protected members
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - unsealed classes
 - customizing class behavior
 ms.assetid: aa0b58ee-3956-494d-ab48-471ae5db8740
-ms.openlocfilehash: afcb92e48996d594fcedc5b579922b179f754b9d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3cc2ab3e605cfb5382f107dead0c95495858fc6b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286117"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94828723"
 ---
 # <a name="protected-members"></a>Membres protégés
 Les membres protégés par eux-mêmes ne fournissent pas d’extensibilité, mais ils peuvent rendre l’extensibilité à l’aide d’une sous-classe plus puissante. Ils peuvent être utilisés pour exposer des options de personnalisation avancées sans compliquer inutilement l’interface publique principale.

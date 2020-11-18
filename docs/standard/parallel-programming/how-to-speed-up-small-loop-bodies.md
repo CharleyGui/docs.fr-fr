@@ -1,24 +1,23 @@
 ---
 title: 'Procédure : accélérer les petits corps de boucles'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel loops, how to speed up
 ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
-ms.openlocfilehash: c91aecee226b52d9045f3bd95a05c234abac8c96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0e6e32386992a5dc4ac4556bc9d0489d0fd9d289
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548310"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826825"
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>Procédure : accélérer les petits corps de boucles
 Une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> dont le corps est court risque de s'exécuter plus lentement que la boucle séquentielle équivalente, notamment la boucle [for](../../csharp/language-reference/keywords/for.md) en C# et la boucle [For](/previous-versions/visualstudio/visual-studio-2008/44kykk21(v=vs.90)) en Visual Basic. La baisse des performances est provoquée par les surcharges impliquées dans le partitionnement des données et par le coût de l'appel d'un délégué sur chaque itération de boucle. Pour résoudre ces scénarios, la classe <xref:System.Collections.Concurrent.Partitioner> offre la méthode <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType>, ce qui vous permet de fournir une boucle séquentielle pour le corps du délégué, afin que celui-ci soit appelé une seule fois par partition, au lieu d'une fois par itération. Pour plus d’informations, consultez [Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)](custom-partitioners-for-plinq-and-tpl.md).  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  [!code-csharp[TPL_Partitioners#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioner01.cs#01)]
  [!code-vb[TPL_Partitioners#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_partitioners/vb/partitionercreate01.vb#01)]  
   
@@ -27,7 +26,7 @@ Une boucle <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWith
 ## <a name="see-also"></a>Voir aussi
 
 - [Parallélisme des données](data-parallelism-task-parallel-library.md)
-- [Partitionneurs personnalisés pour PLINQ et TPL](custom-partitioners-for-plinq-and-tpl.md)
+- [Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)](custom-partitioners-for-plinq-and-tpl.md)
 - [Itérateurs (C#)](../../csharp/programming-guide/concepts/iterators.md)
 - [Itérateurs (Visual Basic)](../../visual-basic/programming-guide/concepts/iterators.md)
 - [Expressions lambda dans PLINQ et TPL](lambda-expressions-in-plinq-and-tpl.md)
