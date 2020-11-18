@@ -99,6 +99,8 @@
       href: language-reference/unit-type.md
     - name: Chaînes
       href: language-reference/strings.md
+    - name: Chaînes interpolées
+      href: language-reference/interpolated-strings.md
     - name: Tuples
       href: language-reference/tuples.md
     - name: "Types de collection\_F#"
@@ -248,6 +250,8 @@
       href: language-reference/byrefs.md
     - name: Cellules de référence
       href: language-reference/reference-cells.md
+    - name: nameof
+      href: language-reference/nameof.md
     - name: Directives de compilateur
       href: language-reference/compiler-directives.md
     - name: Options du compilateur
