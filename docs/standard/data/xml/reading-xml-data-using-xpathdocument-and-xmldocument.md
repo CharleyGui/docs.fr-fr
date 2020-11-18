@@ -1,17 +1,16 @@
 ---
 title: Lecture de données XML à l’aide de XPathDocument et XmlDocument
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
-ms.openlocfilehash: da1cb81c819e55f572e9faaabef4dd49ee7397de
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cd95d2331f9f178b916cf22ec4b1ead7d7c4a116
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288678"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824348"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Lecture de données XML à l’aide de XPathDocument et XmlDocument
 Il existe deux manières de lire un document XML dans l'espace de noms <xref:System.Xml.XPath?displayProperty=nameWithType>. La première consiste à lire un document XML à l'aide de la classe <xref:System.Xml.XPath.XPathDocument> en lecture seule et la seconde à lire un document XML à l'aide de la classe <xref:System.Xml.XmlDocument> modifiable dans l'espace de noms <xref:System.Xml?displayProperty=nameWithType>.  
@@ -65,7 +64,7 @@ document.Load("books.xml");
   
  Le tableau suivant décrit la valeur de la propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> pour chaque classe.  
   
-|Implémentation <xref:System.Xml.XPath.IXPathNavigable>|<xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> Valeur|  
+|Implémentation <xref:System.Xml.XPath.IXPathNavigable>|Valeur <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A>|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Xml.XPath.XPathDocument>|`false`|  
 |<xref:System.Xml.XmlDocument>|`true`|  

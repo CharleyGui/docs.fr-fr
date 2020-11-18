@@ -2,19 +2,18 @@
 title: Manipulations de chaînes de base dans .NET
 description: Consultez un exemple qui appelle plusieurs méthodes de chaîne.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - strings [.NET], examples
 ms.assetid: 121d1eae-251b-44c0-8818-57da04b8215e
-ms.openlocfilehash: 659f01cc1d7ae03e12e83329e4fd2446b7512475
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: e3e969520e068bde234c13d45ad790b76ecf8fdb
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342616"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825155"
 ---
 # <a name="how-to-perform-basic-string-manipulations-in-net"></a>Guide pratique pour effectuer des manipulations de chaînes de base dans .NET
 
@@ -29,6 +28,6 @@ Pour plus de simplicité, cet exemple utilise une application console avec une i
 
 Lorsque le code précédent est exécuté, l’utilisateur est invité à entrer son nom et son adresse. L’application place les informations dans les propriétés appropriées et affiche les informations à l’utilisateur, en créant une chaîne unique qui affiche la ville, l’État et le code postal.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 - [Opérations de chaînes de base](basic-string-operations.md)

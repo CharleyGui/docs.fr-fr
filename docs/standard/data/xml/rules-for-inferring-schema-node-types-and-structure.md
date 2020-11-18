@@ -1,14 +1,13 @@
 ---
 title: Règles pour l'inférence de types et de structure de nœud de schéma
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
-ms.openlocfilehash: 381c5fbd3823514de98b38840b8259a417e48fb8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 16636460c6635852bb68b4821fab5aa99b07413c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289081"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823574"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Règles pour l'inférence de types et de structure de nœud de schéma
 Cette rubrique décrit comment le processus d'inférence de schéma convertit les types de nœuds d'un document XML en une structure en langage XSD (XML Schema Definition).  
@@ -136,7 +135,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 |Type de nœud|Traduction|  
 |---------------|-----------------|  
 |Instruction de traitement|Ignoré.|  
-|Commentaire|Ignoré.|  
+|Comment|Ignoré.|  
 |Référence d'entité|La classe <xref:System.Xml.Schema.XmlSchemaInference> ne gère pas les références d'entité. Si un document XML contient des références d’entité, vous devez utiliser un lecteur qui développe les entités. Par exemple, vous pouvez passer un objet <xref:System.Xml.XmlTextReader> avec la propriété <xref:System.Xml.XmlTextReader.EntityHandling%2A> définie à <xref:System.Xml.EntityHandling.ExpandEntities> comme paramètre. Si des références d'entité sont rencontrées et que le lecteur n'étend pas les entités, une exception est levée.|  
 |CDATA|Toute section `<![CDATA[ … ]]` dans un document XML sera déduite en tant que `xs:string`.|  
 |Type du document|Ignoré.|  

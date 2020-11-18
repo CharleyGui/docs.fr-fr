@@ -2,7 +2,6 @@
 title: Création de nouvelles chaînes dans .NET
 description: Apprenez à créer des chaînes à l’aide d’affectations, de constructeurs de classe ou de méthodes System. String qui combinent plusieurs chaînes, tableaux de chaînes ou objets dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - strings [.NET], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: 7dedaf61f56f19343299c841bb4cee70fb9c767a
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a00274b7b6b7e7a54d8546f2176109688a4c4678
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889437"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824881"
 ---
 # <a name="creating-new-strings-in-net"></a>Création de nouvelles chaînes dans .NET
 
@@ -43,7 +42,7 @@ ms.locfileid: "92889437"
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|Copie des caractères spécifiés dans une chaîne à une position spécifiée dans un tableau de caractères.|  
   
 ### <a name="format"></a>Format  
- Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format** . Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](composite-formatting.md).  
+ Vous pouvez utiliser la méthode **String.Format** pour créer des chaînes mises en forme et concaténer des chaînes représentant plusieurs objets. Cette méthode convertit automatiquement tout objet passé en une chaîne. Par exemple, si votre application doit afficher une valeur **Int32** et une valeur **DateTime** à l’utilisateur, vous pouvez aisément construire une chaîne représentant ces valeurs à l’aide de la méthode **Format**. Pour plus d’informations sur les conventions de mise en forme utilisées avec cette méthode, consultez la section relative à la [mise en forme composite](composite-formatting.md).  
   
  L’exemple suivant utilise la méthode **Format** pour créer une chaîne utilisant une variable de type integer.  
   
@@ -53,7 +52,7 @@ ms.locfileid: "92889437"
  Dans cet exemple, <xref:System.DateTime.Now%2A?displayProperty=nameWithType> affiche la date et l’heure actuelles de la manière spécifiée par la culture associée au thread actuel.  
   
 ### <a name="concat"></a>Concat  
- La méthode **String.Concat** peut être utilisée pour créer facilement un objet chaîne à partir de deux ou de plusieurs objets existants. Elle offre un moyen de concaténer des chaînes indépendamment du langage. Cette méthode accepte toute classe qui dérive de **System.Object** . L’exemple suivant crée une chaîne à partir de deux objets String existants et d’un caractère à utiliser comme séparateur.  
+ La méthode **String.Concat** peut être utilisée pour créer facilement un objet chaîne à partir de deux ou de plusieurs objets existants. Elle offre un moyen de concaténer des chaînes indépendamment du langage. Cette méthode accepte toute classe qui dérive de **System.Object**. L’exemple suivant crée une chaîne à partir de deux objets String existants et d’un caractère à utiliser comme séparateur.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  

@@ -1,25 +1,39 @@
 ---
-title: dotnet-SOS-.NET Core
-description: Découvrez comment installer et utiliser l’outil en ligne de commande dotnet-SOS.
-ms.date: 08/26/2020
-ms.openlocfilehash: ba83105718909038ca56129ed8a5063aeff12e89
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+title: outil de diagnostic dotnet-SOS-interface de commande .NET
+description: Découvrez comment installer et utiliser l’outil CLI dotnet-SOS pour gérer l’extension de débogueur SOS, qui est utilisée avec les débogueurs natifs sur Windows et Linux.
+ms.date: 11/17/2020
+ms.openlocfilehash: 59512c42a778f68bb3cd092dc854dcc727fd2881
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065082"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825440"
 ---
 # <a name="sos-installer-dotnet-sos"></a>Programme d’installation SOS (dotnet-SOS)
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="install-dotnet-sos"></a>Installer dotnet-SOS
+## <a name="install"></a>Installer
 
-Pour installer la dernière version Release du `dotnet-sos` [package NuGet](https://www.nuget.org/packages/dotnet-sos), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Il existe deux façons de télécharger et d’installer `dotnet-sos` :
 
-```dotnetcli
-dotnet tool install -g dotnet-sos
-```
+- **outil Global dotnet :**
+
+  Pour installer la dernière version Release du `dotnet-sos` [package NuGet](https://www.nuget.org/packages/dotnet-sos), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+
+  ```dotnetcli
+  dotnet tool install --global dotnet-sos
+  ```
+
+- **Téléchargement direct :**
+
+  Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
+
+  | Système d’exploitation  | Plateforme |
+  | --- | -------- |
+  | Windows | [x86](https://aka.ms/dotnet-sos/win-x86) \| [x64](https://aka.ms/dotnet-sos/win-x64) \| [ARM](https://aka.ms/dotnet-sos/win-arm) \| [ARM-x64](https://aka.ms/dotnet-sos/win-arm64) |
+  | macOS   | [x64](https://aka.ms/dotnet-sos/osx-x64) |
+  | Linux   | [x64](https://aka.ms/dotnet-sos/linux-x64) \| [ARM](https://aka.ms/dotnet-sos/linux-arm) \| [arm64](https://aka.ms/dotnet-sos/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-sos/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-sos/linux-musl-arm64) |
 
 ## <a name="synopsis"></a>Synopsis
 

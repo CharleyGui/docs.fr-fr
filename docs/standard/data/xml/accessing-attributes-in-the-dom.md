@@ -1,17 +1,16 @@
 ---
 title: Accès aux attributs dans le DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-ms.openlocfilehash: a77780621032e2ce59b9db04a179c7086588219b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b7a1e64c8661e97966b8d0bb84e2d330c1e06b86
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291641"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822865"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Accès aux attributs dans le DOM
 

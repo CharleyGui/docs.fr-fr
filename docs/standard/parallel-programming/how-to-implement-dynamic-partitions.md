@@ -1,19 +1,18 @@
 ---
 title: 'Procédure : implémenter des partitions dynamiques'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, how to create a dynamic partitioner
 ms.assetid: c875ad12-a161-43e6-ad1c-3d6927c536a7
-ms.openlocfilehash: 197e71cf4f00c98891e58e5f72974c0ec407e6ce
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1120d846743ac3b89d2d110b4d1abdd0083f9eab
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288444"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825739"
 ---
 # <a name="how-to-implement-dynamic-partitions"></a>Procédure : implémenter des partitions dynamiques
 
@@ -30,5 +29,5 @@ Il s’agit d’un exemple de partitionnement par segments, chaque segment se co
   
 ## <a name="see-also"></a>Voir aussi
 
-* [Partitionneurs personnalisés pour PLINQ et TPL](custom-partitioners-for-plinq-and-tpl.md)
+* [Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)](custom-partitioners-for-plinq-and-tpl.md)
 * [Procédure : implémenter un partitionneur pour un partitionnement statique](how-to-implement-a-partitioner-for-static-partitioning.md)

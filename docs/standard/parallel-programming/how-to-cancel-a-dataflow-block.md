@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : annuler un bloc de dataflow'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-ms.openlocfilehash: 530c231deeaba007975849ab6dc41f4da6a859ea
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3dbe0675b73f902a7da0fb4f7881c1ee15022b36
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285545"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825856"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Procédure : annuler un bloc de dataflow
 Ce document montre comment activer l’annulation dans votre application. Cet exemple utilise des Windows Forms pour montrer où les éléments de travail sont actifs dans un pipeline de flux de données, ainsi que les effets de l’annulation.  

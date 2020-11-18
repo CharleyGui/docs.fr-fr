@@ -1,19 +1,18 @@
 ---
 title: 'Procédure : désencapsuler une tâche imbriquée'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
-ms.openlocfilehash: 9a69fa42da41ee4a071a6571042fd96fb5a009d2
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cda42dbc88d73eadf04720c0faaf98151d371127
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288028"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825557"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>Procédure : désencapsuler une tâche imbriquée
 Vous pouvez retourner une tâche à partir d’une méthode, puis attendre ou poursuivre à partir de cette tâche, comme indiqué dans l’exemple suivant :  

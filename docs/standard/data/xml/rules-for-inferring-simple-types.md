@@ -1,14 +1,13 @@
 ---
 title: Règles relatives à l'inférence de types simples
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 571019d13433312a5d31f581c3527aae901bbba7
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 817a35c607f810da0a3e2dc681d27ea997c5fcc7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289068"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823548"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Règles relatives à l'inférence de types simples
 Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.  

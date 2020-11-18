@@ -2,7 +2,6 @@
 title: Comparer des chaînes dans . NET
 description: En savoir plus sur les méthodes de comparaison de chaînes dans .NET. En savoir plus sur les méthodes compare, CompareOrdinal, CompareTo, StartsWith, EndsWith, Equals, IndexOf, & LastIndexOf.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -19,12 +18,12 @@ helpviewer_keywords:
 - Equals method
 - StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-ms.openlocfilehash: 0efad4364d7d0070dd9c755234975e11ad524fbd
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: 08a92e314ad0900679d46cc759c80db89b43f0f0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400733"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823145"
 ---
 # <a name="compare-strings-in-net"></a>Comparer des chaînes dans .NET
 

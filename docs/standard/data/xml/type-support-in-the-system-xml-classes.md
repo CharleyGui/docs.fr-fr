@@ -1,14 +1,13 @@
 ---
 title: Prise en charge du type dans les classes System.Xml
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
-ms.openlocfilehash: 8ceda15cb8463db3e81260529ebb1e3a67a0c1af
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8e4ef15980f488c473129f4f7c02be1778bcafea
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283297"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824621"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Prise en charge du type dans les classes System.Xml
 Dans .NET Framework version 2.0, les classes XML noyau ont été améliorées pour inclure des fonctions de prise en charge du type. Les classes <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter> et <xref:System.Xml.XPath.XPathNavigator> comprennent des fonctionnalités de prise en charge du type, notamment la possibilité de conversion entre des types de schémas XML et des types CLR (Common Language Runtime).  

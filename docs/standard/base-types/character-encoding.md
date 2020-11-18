@@ -2,7 +2,6 @@
 title: Guide pratique pour utiliser des classes d’encodage de caractères dans .NET
 description: Découvrez comment utiliser des classes d’encodage de caractères dans .NET.
 ms.date: 12/22/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: c626e79e7bbcd71c90775df8ee8c4d6570c29125
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 520316c0733d5c56b5ab77fbec7d4dd838af6338
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290576"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823288"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>Guide pratique pour utiliser des classes d’encodage de caractères dans .NET
 
@@ -45,7 +44,7 @@ Vous pouvez récupérer des informations sur les encodages disponibles dans .NET
 
 |Classe d’encodage|Description|
 |--------------|-----------|
-|[R](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
+|[ASCII](xref:System.Text.ASCIIEncoding)|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet. Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
 |[UTF-7](xref:System.Text.UTF7Encoding)|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII. UTF-7 prend en charge les protocoles tels que le courrier électronique et le groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
 |[UTF-8](xref:System.Text.UTF8Encoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un à quatre octets. UTF-8 prend en charge des tailles de données de 8 bits et fonctionne bien avec de nombreux systèmes d'exploitation. Pour la plage de caractères ASCII, UTF-8 est identique à l'encodage ASCII et permet un ensemble de caractères plus large. Toutefois, pour les scripts chinois-japonais-coréen (CJC), UTF-8 peut nécessiter trois octets pour chaque caractère et peut entraîner des tailles de données supérieures à celles d’UTF-16. Parfois, la quantité de données ASCII, telles que les balises HTML, justifie l’augmentation de la taille de la plage CJC.|
 |[UTF-16](xref:System.Text.UnicodeEncoding)|Représente chaque point de code Unicode sous la forme d'une séquence de un ou deux entiers sur 16 bits. La plupart des caractères Unicode courants ne nécessitent qu'un seul point de code UTF-16, tandis que les caractères Unicode additionnels (U+10000 et supérieurs) nécessitent deux points de code de substitution UTF-16. Les ordres des octets Little Endian et Big Endian sont pris en charge. L'encodage UTF-16 est utilisé par le common language runtime pour représenter les valeurs <xref:System.Char> et <xref:System.String> , et il est utilisé par le système d'exploitation Windows pour représenter les `WCHAR` .|

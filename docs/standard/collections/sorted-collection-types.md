@@ -1,7 +1,6 @@
 ---
 title: Types de collections triées
 ms.date: 04/30/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - SortedDictionary collection type
 - SortedList class, grouping data in collections
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - SortedList collection type
 - collections [.NET], SortedList collection type
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
-ms.openlocfilehash: 339d247f3b7e775de740c6c1ce786b078441c699
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 62e0ffde31d91ea2b0bbe3b5c37cddb87349b5a3
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889320"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823821"
 ---
 # <a name="sorted-collection-types"></a>Types de collections triées
 

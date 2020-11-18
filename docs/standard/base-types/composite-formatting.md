@@ -2,7 +2,6 @@
 title: Mise en forme composite
 description: En savoir plus sur la mise en forme composite .NET, qui prend comme entrée une liste d’objets et une chaîne de format composite, contenant du texte fixe avec des espaces réservés indexés.
 ms.date: 10/26/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,19 +13,19 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: e15452016aa61cf44950e8b9e7fca58f23471ae7
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 588efff637359586630554decf57072597365d32
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889463"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823093"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
 La fonctionnalité de mise en forme composite du .NET utilise une liste d’objets et une chaîne de format composite comme entrée. Une chaîne de format composite se compose de texte fixe mélangé à des espaces réservés indexés, appelés éléments de format, qui correspondent aux objets de la liste. L'opération de mise en forme produit une chaîne résultante qui se compose du texte fixe d'origine mélangé à la représentation sous forme de chaîne des objets de la liste.  
   
 > [!IMPORTANT]
-> Au lieu d’utiliser des chaînes de format composite, vous pouvez utiliser des *chaînes interpolées* si le langage et la version du langage que vous utilisez les prennent en charge. Une chaîne interpolée est une chaîne contenant des *expressions interpolées* . Chaque expression interpolée est résolue avec la valeur de l’expression et incluse dans la chaîne du résultat quand la chaîne est affectée. Pour plus d’informations, consultez [interpolation de chaîne (référence C#)](../../csharp/language-reference/tokens/interpolated.md) et [chaînes interpolées (référence Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Au lieu d’utiliser des chaînes de format composite, vous pouvez utiliser des *chaînes interpolées* si le langage et la version du langage que vous utilisez les prennent en charge. Une chaîne interpolée est une chaîne contenant des *expressions interpolées*. Chaque expression interpolée est résolue avec la valeur de l’expression et incluse dans la chaîne du résultat quand la chaîne est affectée. Pour plus d’informations, consultez [interpolation de chaîne (référence C#)](../../csharp/language-reference/tokens/interpolated.md) et [chaînes interpolées (référence Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 La fonctionnalité de mise en forme composite est prise en charge par les méthodes suivantes :  
   
@@ -56,12 +55,12 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 ## <a name="format-item-syntax"></a>Syntaxe des éléments de format  
  Chaque élément de format prend la forme suivante et comprend les composants suivants :  
   
- `{`*index* [ `,` *alignement* ] [ `:` *FormatString* ]`}`  
+ `{`*index*[ `,` *alignement*] [ `:` *FormatString*]`}`  
   
  Les accolades correspondantes (« { » et « } ») sont nécessaires.  
   
 ### <a name="index-component"></a>Composant d'index  
- Le composant obligatoire *index* , également appelé « spécificateur de paramètre », est un nombre à partir de 0 qui permet d’identifier un élément correspondant dans la liste des objets. En d'autres termes, l'élément de format dont le spécificateur de format est 0 met en forme le premier objet de la liste, l'élément de format dont le spécificateur de paramètres est 1 met en forme le deuxième objet de la liste, etc. L’exemple suivant comprend quatre spécificateurs de paramètres, numérotés de 0 à 3, pour représenter les nombres premiers inférieurs à 10 :  
+ Le composant obligatoire *index*, également appelé « spécificateur de paramètre », est un nombre à partir de 0 qui permet d’identifier un élément correspondant dans la liste des objets. En d'autres termes, l'élément de format dont le spécificateur de format est 0 met en forme le premier objet de la liste, l'élément de format dont le spécificateur de paramètres est 1 met en forme le deuxième objet de la liste, etc. L’exemple suivant comprend quatre spécificateurs de paramètres, numérotés de 0 à 3, pour représenter les nombres premiers inférieurs à 10 :  
   
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
@@ -88,11 +87,11 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 |Type ou catégorie de type|Consultez|  
 |---------------------------|---------|  
-|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|  
-|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d’énumération](enumeration-format-strings.md)|  
+|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)|  
+|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d'énumération](enumeration-format-strings.md)|  
 |Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Chaînes de format numériques standard](standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
-|<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|  
+|<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>Accolades d'échappement  
  Les accolades ouvrantes et fermantes sont interprétées comme le début et la fin d'un élément de format. Par conséquent, vous devez utiliser une séquence d'échappement pour afficher une accolade ouvrante ou fermante littérale. Spécifiez deux accolades ouvrantes (« {{ ») dans le texte fixe pour afficher une accolade ouvrante (« { ») ou deux accolades fermantes (« }} ») pour afficher une accolade fermante (« } »). Les accolades d'un élément de format sont interprétées séquentiellement dans l'ordre dans lequel elles sont rencontrées. L'interprétation des accolades imbriquées n'est pas prise en charge.  
@@ -123,7 +122,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 2. Si une implémentation de <xref:System.ICustomFormatter> est disponible, le runtime appelle sa méthode <xref:System.ICustomFormatter.Format%2A>. Il passe à la méthode la valeur *formatString* de l’élément de mise en forme, s’il en existe une, ou `null` si ce n’est pas le cas, ainsi que l’implémentation de <xref:System.IFormatProvider>. Si l’appel à la méthode <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> retourne `null`, l’exécution se poursuit à l’étape suivante. Sinon, le résultat de l’appel à <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> est retourné.
   
-3. Si la valeur implémente l'interface <xref:System.IFormattable>, la méthode de l'interface <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> est appelée. La valeur *formatString* , s’il en existe une dans l’élément de mise en forme, est passée à la méthode, ou bien la valeur `null` si ce n’est pas le cas. L'argument <xref:System.IFormatProvider> est déterminé comme suit :  
+3. Si la valeur implémente l'interface <xref:System.IFormattable>, la méthode de l'interface <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> est appelée. La valeur *formatString*, s’il en existe une dans l’élément de mise en forme, est passée à la méthode, ou bien la valeur `null` si ce n’est pas le cas. L'argument <xref:System.IFormatProvider> est déterminé comme suit :  
   
     - Pour une valeur numérique, si une méthode de mise en forme composite avec l’argument non null <xref:System.IFormatProvider> est appelée, le runtime demande un objet <xref:System.Globalization.NumberFormatInfo> de sa méthode <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>. S’il ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre <xref:System.IFormatProvider>, l’objet <xref:System.Globalization.NumberFormatInfo> de la culture actuelle du thread est utilisé.  
   
@@ -167,8 +166,8 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 - [Mise en forme des types](formatting-types.md)
 - [Chaînes de format numériques standard](standard-numeric-format-strings.md)
 - [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)
-- [Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
-- [Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)
+- [Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)
 - [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)
-- [Chaînes de format d’énumération](enumeration-format-strings.md)
+- [Chaînes de format d'énumération](enumeration-format-strings.md)

@@ -2,18 +2,17 @@
 title: Opérations de chaînes de base dans .NET
 description: Découvrez plus en détail les opérations de base que vous pouvez effectuer sur les chaînes.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - strings [.NET], basic string operations
 - custom strings
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
 ms.custom: seadec18
-ms.openlocfilehash: 4ab087435880c6a5357bc161899cd585982622f4
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 30f325a414e0912086b5d36630e77ea754db4956
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342603"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825128"
 ---
 # <a name="basic-string-operations-in-net"></a>Opérations de chaînes de base dans .NET
 

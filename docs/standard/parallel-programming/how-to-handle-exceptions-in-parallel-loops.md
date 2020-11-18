@@ -2,19 +2,18 @@
 title: 'Procédure : gérer des exceptions dans des boucles parallèles'
 description: Découvrez comment gérer les exceptions dans les boucles parallèles dans .NET. Consultez un exemple d’encapsulation de toutes les exceptions de la boucle dans un System. AggregateException.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel loops, how to handle exceptions
 ms.assetid: 512f0d5a-4636-4875-b766-88f20044f143
-ms.openlocfilehash: 61c22d6e82282f8aeb54818c813d4489e3bc9641
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: e8478f27b21b9b9dbf85d68f766c24aa5b9cf600
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768974"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825752"
 ---
 # <a name="how-to-handle-exceptions-in-parallel-loops"></a>Procédure : gérer des exceptions dans des boucles parallèles
 Les surcharges <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ne possèdent pas de mécanisme permettant de gérer les exceptions. À cet égard, elles ressemblent à des `for` boucles normales et `foreach` ( `For` et `For Each` dans Visual Basic); une exception non gérée entraîne l’arrêt de la boucle dès que toutes les itérations en cours se terminent.

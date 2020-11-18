@@ -1,26 +1,25 @@
 ---
 title: Fonctionnalités et objets de threading
 ms.date: 10/01/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], features
 - managed threading
 ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
-ms.openlocfilehash: 98fb9238b7cf9d11641628de1413e911985a87c3
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 8a66904a6db3fa45d8a42dec4e1e42883c1c3e98
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188144"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826168"
 ---
 # <a name="threading-objects-and-features"></a>Fonctionnalités et objets de threading
 
 En plus de la classe <xref:System.Threading.Thread?displayProperty=nameWithType>, .NET fournit plusieurs classes qui facilitent le développement des applications multithread. Les articles suivants présentent ces différentes classes :
 
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Pool de threads managés](the-managed-thread-pool.md)|Décrit la classe <xref:System.Threading.ThreadPool?displayProperty=nameWithType>, qui fournit un pool de threads de travail managés par .NET.|  
-|[Minuteurs](timers.md)|Décrit les minuteurs .NET qui peuvent être utilisés dans un environnement multithread.|
+|[Minuteries](timers.md)|Décrit les minuteurs .NET qui peuvent être utilisés dans un environnement multithread.|
 |[Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md)|Décrit les types qui peuvent être utilisés pour synchroniser l’accès à une ressource partagée ou contrôler les interactions de threads.|
 |[EventWaitHandle](eventwaithandle.md)|Décrit la classe <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>, qui représente un événement de synchronisation de threads.|
 |[CountdownEvent](countdownevent.md)|Décrit la classe <xref:System.Threading.CountdownEvent?displayProperty=nameWithType>, qui représente un événement de synchronisation de threads défini quand son nombre est égal à zéro.|

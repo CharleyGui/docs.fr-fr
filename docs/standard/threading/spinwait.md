@@ -1,23 +1,22 @@
 ---
 title: SpinWait
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - synchronization primitives, SpinWait
 ms.assetid: 36012f42-34e5-4f86-adf4-973f433ed6c6
-ms.openlocfilehash: fb70697fd14f9f8734ca1a7896fc06c6bca5a71d
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 2031ebc30d0789181786053d401e69da782a619f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188924"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826207"
 ---
 # <a name="spinwait"></a>SpinWait
 
-<xref:System.Threading.SpinWait?displayProperty=nameWithType> est un type de synchronisation léger que vous pouvez utiliser dans des scénarios de bas niveau pour éviter des changements de contexte onéreux et des transitions de noyau requises pour les événements de noyau. Sur les ordinateurs multicœurs, lorsqu’une ressource n’est pas censée être maintenue pendant de longues périodes, il peut être plus efficace pour un thread en attente de tourner en mode utilisateur pendant quelques douzaines ou centaines de cycles, puis de réessayer d’acquérir la ressource. Si la ressource est disponible après la rotation, vous aurez économisé plusieurs milliers de cycles. Si la ressource n’est toujours pas disponible, vous n’aurez utilisé que quelques cycles et pourrez toujours entrer une attente basée sur le noyau. Cette combinaison de rotation et d’attente est parfois appelée *une opération d’attente en deux phases* .  
+<xref:System.Threading.SpinWait?displayProperty=nameWithType> est un type de synchronisation léger que vous pouvez utiliser dans des scénarios de bas niveau pour éviter des changements de contexte onéreux et des transitions de noyau requises pour les événements de noyau. Sur les ordinateurs multicœurs, lorsqu’une ressource n’est pas censée être maintenue pendant de longues périodes, il peut être plus efficace pour un thread en attente de tourner en mode utilisateur pendant quelques douzaines ou centaines de cycles, puis de réessayer d’acquérir la ressource. Si la ressource est disponible après la rotation, vous aurez économisé plusieurs milliers de cycles. Si la ressource n’est toujours pas disponible, vous n’aurez utilisé que quelques cycles et pourrez toujours entrer une attente basée sur le noyau. Cette combinaison de rotation et d’attente est parfois appelée *une opération d’attente en deux phases*.  
   
  <xref:System.Threading.SpinWait> est conçu pour être utilisé conjointement avec les types .NET qui encapsulent des événements de noyau tels que <xref:System.Threading.ManualResetEvent> . <xref:System.Threading.SpinWait> peut également être utilisé par lui-même pour la fonctionnalité de rotation de base dans un seul programme.  
   

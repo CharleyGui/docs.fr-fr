@@ -1,14 +1,13 @@
 ---
 title: Conservation des références d'entité
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 000a6cae-5972-40d6-bd6c-a9b7d9649b3c
-ms.openlocfilehash: e4c902df1b0cd2bd9e97b49c0ec1d10df91ef1c7
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2cc2fcf3fdc2a89e4f72ae65e6e7385cb83f168c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290342"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823834"
 ---
 # <a name="entity-references-are-preserved"></a>Conservation des références d'entité
 Si une référence d’entité n’est pas développée, mais préservée, le DOM (Document Object Model) XML crée un nœud **XmlEntityReference** quand il rencontre une référence d’entité.  

@@ -1,17 +1,16 @@
 ---
 title: Quand utiliser les collections génériques
 ms.date: 04/30/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - collections [.NET], generic
 - generic collections [.NET]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: e528c712aaddfdc4182940c36e52b968a071daa7
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: eeee207d7fe70cc736ca962ef99f3dac2295902b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888532"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822891"
 ---
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
 

@@ -1,23 +1,22 @@
 ---
 title: Vue d’ensemble de LINQ-.NET
-description: LINQ (Language-Integrated Query) fournit des fonctions d’interrogation au niveau du langage et une API de fonction d’ordre supérieur pour C# et Visual Basic, qui vous permettent d’écrire du code déclaratif expressif.
+description: Language-Integrated query (LINQ) fournit des fonctions d’interrogation au niveau du langage et une API de fonction d’ordre supérieur pour C# et Visual Basic, qui vous permettent d’écrire du code déclaratif expressif.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 65370a2bd21e2474af4cb070bb8d82a167f10070
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ed78082c97511a8dbcc48d413a75a46c9da906a9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554994"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825830"
 ---
 # <a name="linq-overview"></a>Vue d’ensemble de LINQ
 
-LINQ (Language-Integrated Query) fournit des fonctions d’interrogation au niveau du langage et une API de [fonction d’ordre supérieur](https://en.wikipedia.org/wiki/Higher-order_function) pour C# et Visual Basic, qui vous permettent d’écrire du code déclaratif expressif.
+Language-Integrated query (LINQ) fournit des fonctions d’interrogation au niveau du langage et une API de [fonction d’ordre supérieur](https://en.wikipedia.org/wiki/Higher-order_function) pour C# et Visual Basic, qui vous permettent d’écrire du code déclaratif expressif.
 
 ## <a name="language-level-query-syntax"></a>Syntaxe de requête au niveau du langage
 

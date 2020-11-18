@@ -1,24 +1,24 @@
 ---
-title: dotnet-symbol-.NET Core
-description: Installation et utilisation de l’outil en ligne de commande dotnet-symbol.
-ms.date: 08/26/2020
-ms.openlocfilehash: 5a96306fc96525b00e57eda089a45b730a7e3e8c
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+title: outil de diagnostic dotnet-Symbol-interface de commande .NET
+description: Découvrez comment installer et utiliser l’outil CLI dotnet-Symbol pour télécharger les fichiers requis pour le débogage des dumps .NET et des minidumps.
+ms.date: 11/17/2020
+ms.openlocfilehash: 8ea694e5331f1e4e75b3b3ad644428568e515331
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679186"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825336"
 ---
 # <a name="symbol-downloader-dotnet-symbol"></a>Téléchargeur de symboles (dotnet-Symbol)
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="install-dotnet-symbol"></a>Installer dotnet-Symbol
+## <a name="install"></a>Installer
 
-Pour installer la dernière version Release du `dotnet-symbol` [package NuGet](https://www.nuget.org/packages/dotnet-symbol), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Pour installer la dernière version Release du `dotnet-trace` [package NuGet](https://www.nuget.org/packages/dotnet-trace), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
-dotnet tool install -g dotnet-symbol
+dotnet tool install --global dotnet-symbol
 ```
 
 ## <a name="synopsis"></a>Synopsis

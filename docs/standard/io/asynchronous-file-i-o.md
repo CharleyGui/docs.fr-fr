@@ -2,7 +2,6 @@
 title: E/S sur fichier asynchrones
 description: En savoir plus sur les e/s de fichier asynchrones dans .NET. Découvrez les méthodes Async pour simplifier les opérations asynchrones, telles que ReadAsync, WriteAsync, etc.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-ms.openlocfilehash: a148e6e13ec0ee4ee469a0630f150199c5a3af13
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: aaf722c4af1598b639ffc56e30639e93dbc8a514
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188599"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823457"
 ---
 # <a name="asynchronous-file-io"></a>E/S sur fichier asynchrones
 

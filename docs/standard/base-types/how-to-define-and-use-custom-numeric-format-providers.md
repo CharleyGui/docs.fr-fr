@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -15,12 +14,12 @@ helpviewer_keywords:
 - format providers [.NET]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-ms.openlocfilehash: 38c1890684bd89b2bc4719637209569f01bd17a2
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 9676e43582afb550152d2694f9548e9f1f0d326e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888480"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94822969"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Procédure : définir et utiliser des fournisseurs de formats numériques personnalisés
 

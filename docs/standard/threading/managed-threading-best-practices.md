@@ -2,7 +2,6 @@
 title: Meilleures pratiques pour le threading managé
 description: Découvrez les meilleures pratiques de Threading managé dans .NET. Travaillez avec des situations difficiles, telles que la coordination de nombreux threads ou la gestion des threads de blocage.
 ms.date: 10/15/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - threading [.NET], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 88e1f34388cd58fef59bc4005bcaf630c59a661e
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: b2a3f2efc12392316f6d90242ef0a9224e7d13a4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189002"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826311"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 
@@ -62,7 +61,7 @@ else {
 ### <a name="race-conditions"></a>Conditions de concurrence  
  Une condition de concurrence est un bogue qui survient lorsque le résultat d’un programme dépend du thread qui atteint le premier un bloc de code spécifique. L’exécution du programme à plusieurs reprises produit des résultats différents, et le résultat d’une exécution donnée n’est donc pas prévisible.  
   
- Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé ( **Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
+ Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé (**Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
   
  Dans une application multithread, il est possible qu’un thread ayant chargé et incrémenté la valeur soit devancé par un autre thread qui exécute ces trois étapes ; lorsque le premier thread reprend l’exécution et stocke sa valeur, il remplace alors la valeur de `objCt` sans tenir compte du fait qu’elle a changé dans l’intervalle.  
   
@@ -96,7 +95,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
   
 - Procédez avec précaution lorsque vous utilisez des verrous sur des instances, par exemple `lock(this)` en C# ou `SyncLock(Me)` en Visual Basic. Si un autre code de votre application, externe au type, utilise un verrou sur l’objet, des interblocages risquent de se produire.  
   
-- Assurez-vous qu’un thread entré dans un moniteur quitte toujours ce dernier, même si une exception se produit pendant que le thread se trouve dans le moniteur. L’instruction C# [lock](../../csharp/language-reference/keywords/lock-statement.md) et l’instruction Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) assurent automatiquement ce comportement, en employant un bloc **finally** pour garantir l’appel de la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>. Si vous n’êtes pas en mesure de garantir l’appel de la méthode **Exit** , vous pouvez modifier votre conception de façon à utiliser **Mutex** . Un mutex est automatiquement libéré lorsque le thread auquel il appartient a terminé.  
+- Assurez-vous qu’un thread entré dans un moniteur quitte toujours ce dernier, même si une exception se produit pendant que le thread se trouve dans le moniteur. L’instruction C# [lock](../../csharp/language-reference/keywords/lock-statement.md) et l’instruction Visual Basic [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) assurent automatiquement ce comportement, en employant un bloc **finally** pour garantir l’appel de la méthode <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>. Si vous n’êtes pas en mesure de garantir l’appel de la méthode **Exit**, vous pouvez modifier votre conception de façon à utiliser **Mutex**. Un mutex est automatiquement libéré lorsque le thread auquel il appartient a terminé.  
   
 - Utilisez plusieurs threads pour les tâches qui nécessitent des ressources différentes, et évitez d’attribuer plusieurs threads à une même ressource. Par exemple, vous tirerez avantage du fait que les tâches impliquant des E/S disposent de leur propre thread, car ce thread se bloquera lors des opérations d’E/S et permettra ainsi à d’autres threads de s’exécuter. L’entrée utilisateur est une autre ressource tirant profit d’un thread dédié. Sur un ordinateur monoprocesseur, une tâche qui exige de multiples calculs coexiste avec l’entrée utilisateur et avec les tâches qui impliquent des E/S, mais plusieurs tâches nécessitant de nombreux calculs entrent en concurrence les unes avec les autres.  
   

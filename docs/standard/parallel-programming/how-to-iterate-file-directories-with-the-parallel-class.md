@@ -1,19 +1,18 @@
 ---
 title: 'Procédure : Itérer les répertoires de fichiers avec la classe parallèle'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-ms.openlocfilehash: fa67e3b94bc7b2f9afac749e50204138e9a041f0
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: e29769a0dc40e88a53b0a3f063f79c8c89edbce6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925257"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825700"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>Procédure : Itérer les répertoires de fichiers avec la classe parallèle
 Dans de nombreux cas, l’itération de fichiers est une opération facile à mettre en parallèle. La rubrique [Guide pratique : itérer les répertoires de fichiers avec PLINQ](how-to-iterate-file-directories-with-plinq.md) présente le moyen le plus simple d’effectuer cette tâche dans de nombreux scénarios. Toutefois, des problèmes risquent de survenir si le code doit gérer les différents types d’exceptions susceptibles de se produire avec l’accès au système de fichiers. L'exemple suivant montre une approche du problème. Il utilise une itération de type pile pour parcourir tous les fichiers et tous les dossiers situés sous un répertoire spécifié, et permet au code d’intercepter et de gérer différentes exceptions. Bien entendu, vous pouvez gérer les exceptions comme vous le souhaitez.  

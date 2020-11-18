@@ -4,12 +4,12 @@ description: Cet article fournit une brève présentation des concepts de test, 
 author: IEvangelist
 ms.author: dapine
 ms.date: 10/19/2020
-ms.openlocfilehash: 36e88cc059447a98931593e0535c70cbc92a2cf4
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 137a8f4e3bc9e3be529d5034c233d283cf158b31
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223469"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824855"
 ---
 # <a name="testing-in-net"></a>Test dans .NET
 
@@ -43,7 +43,7 @@ Gardez à l’esprit qu’il existe des [pratiques recommandées](unit-testing-b
 
 ### <a name="xunit"></a>xUnit
 
-[xUnit](https://xunit.net) est un outil de test d’unités libre, open source et axé sur la communauté pour .net. Écrit par l’inventeur d’origine de NUnit v2, xUnit.net est la technologie la plus récente pour le test unitaire des applications .NET. xUnit.net fonctionne avec resharper, CodeRush, TestDriven.NET et [Xamarin](/apps/xamarin). Il s’agit d’un projet de [.net Foundation](https://dotnetfoundation.org) qui fonctionne dans le cadre de son code de réalisation.
+[xUnit](https://xunit.net) est un outil de test d’unités libre, open source et axé sur la communauté pour .net. Écrit par l’inventeur d’origine de NUnit v2, xUnit.net est la technologie la plus récente pour le test unitaire des applications .NET. xUnit.net fonctionne avec resharper, CodeRush, TestDriven.NET et [Xamarin](https://dotnet.microsoft.com/apps/xamarin). Il s’agit d’un projet de [.net Foundation](https://dotnetfoundation.org) qui fonctionne dans le cadre de son code de réalisation.
 
 Pour plus d’informations, consultez les ressources suivantes :
 

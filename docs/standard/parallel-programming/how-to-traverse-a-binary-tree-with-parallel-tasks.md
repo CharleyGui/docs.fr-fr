@@ -1,19 +1,18 @@
 ---
 title: 'Procédure : parcourir un arbre binaire avec des tâches parallèles'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, how to traverse a tree
 ms.assetid: 4265d169-6c69-4f36-b10d-b7ae7f72f4df
-ms.openlocfilehash: 5ac81a61691ec20daafc9e18978ba5814a150383
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ca70021c7d071abe480cb4ed866e34f171cc3b45
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288067"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825531"
 ---
 # <a name="how-to-traverse-a-binary-tree-with-parallel-tasks"></a>Procédure : parcourir un arbre binaire avec des tâches parallèles
 L’exemple suivant montre deux façons d’utiliser des tâches parallèles pour parcourir une arborescence de données. La création de l’arborescence en soi est considérée comme un exercice.  

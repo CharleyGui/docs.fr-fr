@@ -1,18 +1,17 @@
 ---
-title: 'Comment : ajouter des fonctionnalités de liaison et de blocage à une collection'
+title: 'Procédure : ajouter des fonctionnalités de délimitation et de blocage à une collection'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, custom blocking collections
 ms.assetid: 4c2492de-3876-4873-b5a1-000bb404d770
-ms.openlocfilehash: 57a01726e897f4ddbf8df5ede53609c198012d80
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 52ba264c5a0fc9cfffb00ee30b50f6b89dc1e660
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287872"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825037"
 ---
-# <a name="how-to-add-bounding-and-blocking-functionality-to-a-collection"></a>Comment : ajouter des fonctionnalités de liaison et de blocage à une collection
+# <a name="how-to-add-bounding-and-blocking-functionality-to-a-collection"></a>Procédure : ajouter des fonctionnalités de délimitation et de blocage à une collection
 Cet exemple indique comment ajouter des fonctionnalités de délimitation et de blocage à une classe de collection personnalisée en implémentant l’interface <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType> dans la classe, puis en utilisant une instance de classe comme mécanisme de stockage interne pour un <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>. Pour plus d’informations sur la délimitation et le blocage, consultez [Vue d’ensemble de BlockingCollection](blockingcollection-overview.md).  
   
 ## <a name="example"></a>Exemple  

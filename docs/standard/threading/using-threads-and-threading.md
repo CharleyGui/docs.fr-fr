@@ -2,21 +2,20 @@
 title: Utilisation des threads et du threading
 description: En savoir plus sur l’utilisation des threads et du Threading dans .NET, vous pouvez écrire des applications pour effectuer de nombreuses opérations en même temps (multithreading).
 ms.date: 08/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 127ea9e28d9ce303270512bf86bf4eecf2f86437
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 85968cfb1a228826429876e525f0c8452f97cfc4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188703"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826090"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
 
-Avec .NET, vous pouvez écrire des applications qui effectuent plusieurs opérations en même temps. Les opérations présentant le risque d’accaparer les ressources d’autres opérations peuvent s’exécuter sur des threads distincts : ce processus est appelé *multithreading* ou *threading libre* .  
+Avec .NET, vous pouvez écrire des applications qui effectuent plusieurs opérations en même temps. Les opérations présentant le risque d’accaparer les ressources d’autres opérations peuvent s’exécuter sur des threads distincts : ce processus est appelé *multithreading* ou *threading libre*.  
   
 Les applications qui utilisent le multithreading sont plus réactives aux entrées utilisateur, car l’interface utilisateur reste active pendant que les tâches sollicitant beaucoup le processeur s’exécutent sur des threads distincts. Le multithreading est également utile quand vous créez des applications scalables, car vous pouvez ajouter des threads au fil de l’augmentation de la charge de travail.
 

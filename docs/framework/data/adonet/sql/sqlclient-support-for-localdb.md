@@ -2,20 +2,18 @@
 title: Prise en charge de SqlClient pour LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 841c455605b0b32668d26cab16a6207dc1c0f716
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 55ab1346de6f5c14f15d01344a984c18edf30e02
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91203421"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824478"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Prise en charge de SqlClient pour LocalDB
 
-À compter du nom de code SQL Server Denali, une version légère de SQL Server, appelée LocalDB, sera disponible. Cette rubrique explique comment se connecter à une base de données LocalDB.  
+Cet article explique comment se connecter à une base de données de base de données locale. La base de données locale est une version allégée de SQL Server.
   
-## <a name="remarks"></a>Notes  
-
- Pour plus d’informations sur LocalDB, notamment comment installer LocalDB et configurer votre instance LocalDB, consultez la Documentation en ligne de SQL Server.  
+## <a name="remarks"></a>Notes
   
  Pour résumer ce que vous pouvez faire avec LocalDB :  
   
@@ -31,7 +29,7 @@ ms.locfileid: "91203421"
   
  `User Instance=True` n’est pas autorisé lors de la connexion à une base de données LocalDB.  
   
- Vous pouvez télécharger LocalDB à partir de [Microsoft SQL Server 2012 Feature Pack](https://www.microsoft.com/download/en/details.aspx?id=29065). Si vous devez utiliser sqlcmd.exe pour modifier des données dans votre instance de LocalDB, vous aurez besoin du sqlcmd de SQL Server 2012, que vous pouvez également obtenir dans SQL Server 2012 Feature Pack.  
+Pour plus d’informations sur l’installation de la base de données locale, consultez [SQL Server Express](/sql/database-engine/configure-windows/sql-server-express-localdb)de base.
   
 ## <a name="programmatically-create-a-named-instance"></a>Créer par programme une instance nommée  
 

@@ -2,7 +2,6 @@
 title: Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)
 description: En savoir plus sur le modèle asynchrone basé sur les tâches (TAP). TAP est le modèle de conception asynchrone recommandé pour le développement dans .NET.
 ms.date: 02/26/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: 2987e7baa52f627d1da41af21d05bfa22a247fbb
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: f194a0bafa0ab7b9606d72f091dbb12e94f31099
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889242"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824016"
 ---
 # <a name="task-based-asynchronous-pattern"></a>Modèle asynchrone basé sur les tâches
 
@@ -31,7 +30,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
   
  Les paramètres d’une méthode TAP doivent correspondre à ceux de son équivalent synchrone, dans le même ordre.  Toutefois, les paramètres `out` et `ref` sont exempts de cette règle et doivent être évités entièrement. Les données qui auraient dû être retournées par un paramètre `out` ou `ref` doivent être retournées comme faisant partie du `TResult` retourné par <xref:System.Threading.Tasks.Task%601>, et doivent utiliser un tuple ou une structure de données personnalisée pour s’adapter à plusieurs valeurs. Envisagez également d’ajouter un <xref:System.Threading.CancellationToken> paramètre même si l’équivalent synchrone de la méthode TAP n’en offre pas.
 
- Les méthodes qui sont consacrées exclusivement à la création, la manipulation ou la combinaison de tâches (où l’intention asynchrone de la méthode est clairement indiquée dans le nom de la méthode ou dans le nom du type auquel la méthode appartient) n’ont pas besoin de suivre ce modèle d’affectation de noms. Ces types de méthodes sont souvent appelés *combinateurs* . Les exemples de combinateurs incluent <xref:System.Threading.Tasks.Task.WhenAll%2A> et <xref:System.Threading.Tasks.Task.WhenAny%2A>, et sont traités dans la section [Utilisation des combinateurs intégrés basés sur des tâches](consuming-the-task-based-asynchronous-pattern.md#combinators) de l'article [Utilisation du modèle asynchrone basé sur les tâches](consuming-the-task-based-asynchronous-pattern.md).  
+ Les méthodes qui sont consacrées exclusivement à la création, la manipulation ou la combinaison de tâches (où l’intention asynchrone de la méthode est clairement indiquée dans le nom de la méthode ou dans le nom du type auquel la méthode appartient) n’ont pas besoin de suivre ce modèle d’affectation de noms. Ces types de méthodes sont souvent appelés *combinateurs*. Les exemples de combinateurs incluent <xref:System.Threading.Tasks.Task.WhenAll%2A> et <xref:System.Threading.Tasks.Task.WhenAny%2A>, et sont traités dans la section [Utilisation des combinateurs intégrés basés sur des tâches](consuming-the-task-based-asynchronous-pattern.md#combinators) de l'article [Utilisation du modèle asynchrone basé sur les tâches](consuming-the-task-based-asynchronous-pattern.md).  
   
  Pour obtenir des exemples de la façon dont la syntaxe du TAP diffère de celle utilisée dans les modèles de programmation asynchrones hérités tels que le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP), consultez [Modèles de programmation asynchrone](index.md).  
   
@@ -53,7 +52,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  L’appelant de la méthode TAP peut bloquer l’attente de l’exécution de la méthode TAP par une attente synchrone sur la tâche obtenue, ou il peut exécuter du code supplémentaire (continuation) quand l’opération asynchrone est terminée. Le créateur du code de continuation a le contrôle sur l'endroit où ce code s'exécute. Il est possible de créer le code de continuation explicitement, via des méthodes sur la classe <xref:System.Threading.Tasks.Task> (par exemple, <xref:System.Threading.Tasks.Task.ContinueWith%2A>) ou implicitement, à l'aide de la prise en charge des langages par les continuations (par exemple, `await` en C#, `Await` en Visual Basic, `AwaitValue` en F#).  
   
 ## <a name="task-status"></a>État des tâches  
- La classe <xref:System.Threading.Tasks.Task> fournit un cycle de vie pour les opérations asynchrones, et ce cycle est représenté par l'énumération <xref:System.Threading.Tasks.TaskStatus>. Pour prendre en charge les cas extrêmes de types qui dérivent de <xref:System.Threading.Tasks.Task> et de <xref:System.Threading.Tasks.Task%601>, et pour prendre en charge la séparation de la construction et de la planification, la classe <xref:System.Threading.Tasks.Task> expose une méthode <xref:System.Threading.Tasks.Task.Start%2A>. Les tâches créées par les constructeurs <xref:System.Threading.Tasks.Task> publics sont connues sous le nom de *tâches passives* , car elles démarrent leur cycle de vie dans l'état <xref:System.Threading.Tasks.TaskStatus.Created> non planifié et sont planifiées uniquement quand la méthode <xref:System.Threading.Tasks.Task.Start%2A> est appelée sur ces instances.
+ La classe <xref:System.Threading.Tasks.Task> fournit un cycle de vie pour les opérations asynchrones, et ce cycle est représenté par l'énumération <xref:System.Threading.Tasks.TaskStatus>. Pour prendre en charge les cas extrêmes de types qui dérivent de <xref:System.Threading.Tasks.Task> et de <xref:System.Threading.Tasks.Task%601>, et pour prendre en charge la séparation de la construction et de la planification, la classe <xref:System.Threading.Tasks.Task> expose une méthode <xref:System.Threading.Tasks.Task.Start%2A>. Les tâches créées par les constructeurs <xref:System.Threading.Tasks.Task> publics sont connues sous le nom de *tâches passives*, car elles démarrent leur cycle de vie dans l'état <xref:System.Threading.Tasks.TaskStatus.Created> non planifié et sont planifiées uniquement quand la méthode <xref:System.Threading.Tasks.Task.Start%2A> est appelée sur ces instances.
 
  Toutes les autres tâches démarrent leur cycle de vie dans un état réactif, ce qui signifie que les opérations asynchrones qu’elles représentent ont déjà été initialisées et que leur état de tâche est une valeur d’énumération autre que <xref:System.Threading.Tasks.TaskStatus.Created?displayProperty=nameWithType>. Toutes les tâches qui sont retournées par les méthodes TAP doivent être activées. **Si une méthode TAP utilise en interne le constructeur d’une tâche pour instancier la tâche à retourner, la méthode TAP doit appeler <xref:System.Threading.Tasks.Task.Start%2A> sur l' <xref:System.Threading.Tasks.Task> objet avant de la retourner.** Les consommateurs d’une méthode TAP peuvent sans risque supposer que la tâche retournée est active et ne doivent pas essayer d’appeler la méthode <xref:System.Threading.Tasks.Task.Start%2A> sur une <xref:System.Threading.Tasks.Task> qui est retournée à partir d’une méthode TAP. L'appel de la méthode <xref:System.Threading.Tasks.Task.Start%2A> sur une tâche active entraîne la levée d'une exception <xref:System.InvalidOperationException>.  
   

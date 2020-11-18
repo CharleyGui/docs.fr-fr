@@ -1,17 +1,16 @@
 ---
 title: Validation XmlSchemaValidator de type push
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-ms.openlocfilehash: d5b2fe4325000023acc98580a2a6d014f56fecbd
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 9daf6f416d22cd06932cdaba1276889e319d3d90
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824894"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Validation XmlSchemaValidator de type push
 
@@ -440,10 +439,10 @@ Le tableau suivant décrit la transition d'état de la classe <xref:System.Xml.S
 
 |State|Transition|
 |-----------|----------------|
-|Validate|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel*) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
+|Valider|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; TopLevel*) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
 |TopLevel|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
 |Élément|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* ( <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> Contenu \* ) ? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A><xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> &#124; de contenu \* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|
-|Content|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
+|Contenu|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A> &#124; Element|
 
 > [!NOTE]
 > Un objet <xref:System.InvalidOperationException> est levé par chacune des méthodes dans le tableau ci-dessus lorsque l'appel à la méthode est effectué dans l'ordre incorrect d'après l'état actuel d'un objet <xref:System.Xml.Schema.XmlSchemaValidator>.
@@ -476,7 +475,7 @@ Le tableau suivant décrit les résultats de l'appel de ces méthodes après l'u
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|Si le contentType de l'élément de contexte est Mixed, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> retourne la séquence d'éléments attendus à la position suivante.<br /><br /> Si le contentType de l'élément de contexte est TextOnly ou Empty, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> retourne un tableau vide.<br /><br /> Si le contentType de l’élément de contexte est ElementOnly, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> retourne la séquence d’éléments attendus à la position suivante, mais une erreur de validation s’est déjà produite.|La méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> retourne la liste d'attributs non validés de l'élément de contexte.|Identique à ce qui précède.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A>|Si l'espace blanc de contexte est un espace blanc de niveau supérieur, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> retourne un tableau vide.<br /><br /> Sinon, le comportement de la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> est le même que dans <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Si l'espace blanc de contexte est un espace blanc de niveau supérieur, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> retourne un tableau vide.<br /><br /> Sinon, le comportement de la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> est le même que dans <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>.|Identique à ce qui précède.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>|La méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> retourne la séquence d'éléments attendus après l'élément de contexte (frères possibles).|La méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> retourne la liste d'attributs non validés de l'élément de contexte.<br /><br /> Si l'élément de contexte n'a pas de parent, la méthode <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedAttributes%2A> retourne une liste vide (l'élément de contexte est le parent de l'élément actuel pour lequel la méthode <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> a été appelée).|Identique à ce qui précède.|
-|<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Identique à <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Identique à <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Identique à ce qui précède.|
+|<xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>|Comme pour <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Comme pour <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A>.|Identique à ce qui précède.|
 |<xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|Retourne un tableau vide.|Retourne un tableau vide.|Identique à ce qui précède.|
 
 > [!NOTE]

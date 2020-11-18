@@ -1,17 +1,16 @@
 ---
 title: Création de nouveaux attributs pour des éléments du DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
-ms.openlocfilehash: 79a3390933256ed862d35c90db0aab2177cdfc41
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1cb37e47bedf955ea2c6f9faad628df2175fb703
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711010"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94826025"
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Création de nouveaux attributs pour des éléments du DOM
 
@@ -114,7 +113,7 @@ Pour obtenir l’exemple de code complet, consultez <xref:System.Xml.XmlDocument
 
 Vous pouvez également créer un nœud **XmlAttribute** et utiliser la méthode **InsertBefore** ou **InsertAfter** pour le placer à la position voulue dans la collection. Si un attribut de même nom figure déjà dans la collection d’attributs, le nœud **XmlAttribute** existant est supprimé de la collection et le nouveau nœud **XmlAttribute** est inséré. Ce comportement est le même qu'avec la méthode **SetAttribute**. Ces méthodes prennent comme paramètre un nœud existant comme point de référence pour réaliser les opérations **InsertBefore** et **InsertAfter**. Si vous ne fournissez pas de nœud de référence indiquant la position d’insertion du nouveau nœud, la méthode **InsertAfter**, par défaut, place ce dernier au début de la collection. Pour la méthode **InsertBefore**, la position par défaut si aucun nœud de référence n’est fourni est la fin de la collection.
 
-Si vous avez créé un **XmlNamedNodeMap** d’attributs, vous pouvez ajouter un attribut par nom à <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A> l’aide de la méthode. Pour plus d’informations, consultez [Collections de nœuds dans NamedNodeMap et NodeList](node-collections-in-namednodemaps-and-nodelists.md).
+Si vous avez créé un **XmlNamedNodeMap** d’attributs, vous pouvez ajouter un attribut par nom à l’aide de la <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A> méthode. Pour plus d’informations, consultez [Collections de nœuds dans NamedNodeMap et NodeList](node-collections-in-namednodemaps-and-nodelists.md).
 
 ## <a name="default-attributes"></a>Attributs par défaut
 

@@ -1,18 +1,17 @@
 ---
 title: Créer des applications console dans .NET
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - .NET, creating console applications
 - application development [.NET], console
 - console applications
 ms.assetid: c21fb997-9f0e-40a5-8741-f73bba376bd8
-ms.openlocfilehash: b9c38e1311379037695879565b33ade29c6bf632
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 8046b1b8cb50476860fee53654de93c924d23346
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687551"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823970"
 ---
 # <a name="console-apps-in-net"></a>Applications console dans .NET
 
@@ -23,7 +22,7 @@ La valeur de la propriété <xref:System.Console.In%2A?displayProperty=nameWithT
 > [!NOTE]
 > Pour plus d'informations sur la génération d'applications de console, notamment des exemples dans C#, Visual Basic et C++, consultez la documentation relative à la classe <xref:System.Console>.
 
-Si la console n’existe pas, par exemple dans une application Windows Forms, la sortie écrite dans le flux de sortie standard n’est pas visible, car il n’y a aucune console dans laquelle écrire les informations. L'écriture d'informations sur une console inaccessible ne déclenche pas d'exception. (Vous pouvez toujours changer le type d’application en **application console** , par exemple, dans les pages de propriétés du projet dans Visual Studio).
+Si la console n’existe pas, par exemple dans une application Windows Forms, la sortie écrite dans le flux de sortie standard n’est pas visible, car il n’y a aucune console dans laquelle écrire les informations. L'écriture d'informations sur une console inaccessible ne déclenche pas d'exception. (Vous pouvez toujours changer le type d’application en **application console**, par exemple, dans les pages de propriétés du projet dans Visual Studio).
 
 La classe **System.Console** possède des méthodes qui peuvent lire des caractères ou des lignes complètes à partir de la console. D'autres méthodes convertissent des données et mettent en forme des chaînes, puis écrivent les chaînes mises en forme sur la console. Pour plus d’informations sur la mise en forme des chaînes, consultez [mise en forme des types](base-types/formatting-types.md).
 

@@ -3,7 +3,6 @@ title: Vue d’ensemble du CLR (Common Language Runtime)-.NET
 titleSuffix: ''
 description: Prise en main de common language runtime (CLR),. Environnement d’exécution du réseau. Le CLR exécute du code et fournit des services pour faciliter le processus de développement.
 ms.date: 10/22/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - compiling source code, runtime functionality
 - code, execution
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: 39543a511e8f405d9205df2697bcf4fd1194bd7a
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 917649475271c288516f9eb0913a0959601427af
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687507"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823873"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Vue d’ensemble du Common Language Runtime (CLR)
 

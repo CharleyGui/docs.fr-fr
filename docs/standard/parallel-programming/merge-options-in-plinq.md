@@ -1,19 +1,18 @@
 ---
 title: Options de fusion en PLINQ
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: a2c238cb66c5018cd1dd4085c6541ef3c9371beb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e6690a600b7b00272471362bc087633d52a98f25
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290640"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824842"
 ---
 # <a name="merge-options-in-plinq"></a>Options de fusion en PLINQ
 Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence source pour que plusieurs threads puissent fonctionner simultanément sur différentes parties, généralement sur des threads distincts. Si les résultats doivent être utilisés sur un thread, par exemple, dans une boucle `foreach` (`For Each` en Visual Basic), les résultats de chaque thread doivent être fusionnés de nouveau en une séquence. Le type de fusion que PLINQ exécute dépend des opérateurs présents dans la requête. Par exemple, les opérateurs qui imposent un nouvel ordre des résultats doivent mettre en mémoire tampon tous les éléments de tous les threads. Du point de vue du thread utilisateur (qui est également celui de l’utilisateur de l’application), une requête entièrement mise en mémoire tampon peut s’exécuter pendant un certain temps avant qu’elle ne génère son premier résultat. D’autres opérateurs, par défaut, sont partiellement mis en mémoire tampon. Ils transmettent leurs résultats par lots. L’opérateur <xref:System.Linq.ParallelEnumerable.ForAll%2A> n’est pas mis en mémoire tampon par défaut. Il transmet immédiatement tous les éléments à partir de tous les threads.  

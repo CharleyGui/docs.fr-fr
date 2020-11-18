@@ -1,14 +1,13 @@
 ---
 title: Intégration de XML aux données relationnelles et à ADO.NET
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: f54c7a890ada01f2cffdd54c024cfbc98777200d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1f2ad78df3bb1a8c8b02a771c69152e785bec88f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289016"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824315"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Intégration de XML aux données relationnelles et à ADO.NET
 LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et contient des données XML. L'avantage de **XmlDataDocument** est de fournir une passerelle entre les données relationnelles et hiérarchiques. Il s’agit d’un **XmlDocument** qui peut être lié à un **DataSet** et les deux classes peuvent synchroniser des changements apportés aux données contenues dans ces deux classes. Un **XmlDocument** lié à un **DataSet** permet à du XML de s'intégrer à des données relationnelles, et il n'est pas nécessaire que vos données soient représentées soit sous la forme XML, soit dans un format relationnel. Vous pouvez effectuer les deux sans être limité à une représentation unique des données.  
@@ -19,9 +18,9 @@ LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et c
   
 - Transformations, validation et navigation peuvent s’effectuer de manière efficace par l’intermédiaire d’un modèle de curseur sur les données XML stockées de manière relationnelle. Il est parfois possible d'effectuer cette opération plus efficacement par rapport à des structures relationnelles que lorsque le XML est stocké dans un modèle **XmlDocument**.  
   
-- Le **DataSet** peut stocker une portion du XML. Vous pouvez donc utiliser**XPath** ou **XslTransform** pour ne stocker dans un **DataSet** que les éléments et attributs présentant un intérêt. À partir de là, il est possible d'apporter des changements au sous-ensemble, plus petit et filtré, des données, les changements se propageant aux données plus volumineuses dans **XmlDataDocument**.  
+- Le **DataSet** peut stocker une portion du XML. Vous pouvez donc utiliser **XPath** ou **XslTransform** pour ne stocker dans un **DataSet** que les éléments et attributs présentant un intérêt. À partir de là, il est possible d'apporter des changements au sous-ensemble, plus petit et filtré, des données, les changements se propageant aux données plus volumineuses dans **XmlDataDocument**.  
   
- Vous pouvez également effectuer une transformation sur des données chargées dans le**DataSet** à partir de SQL Server. Une autre option consiste à lier des contrôles WebForm et WinForm managés par style de classes .NET Framework à un **DataSet** qui a été rempli à partir d'un flux d'entrée XML.  
+ Vous pouvez également effectuer une transformation sur des données chargées dans le **DataSet** à partir de SQL Server. Une autre option consiste à lier des contrôles WebForm et WinForm managés par style de classes .NET Framework à un **DataSet** qui a été rempli à partir d'un flux d'entrée XML.  
   
  En plus de prendre en charge **XslTransform**, un **XmlDataDocument** expose des données relationnelles à des requêtes et validation **XPath**.  Autrement dit, tous les services XML sont disponibles pour les données relationnelles, et les fonctionnalités relationnelles, comme la liaison de contrôle, codegen, etc., sont disponibles sur une projection structurée de XML sans compromettre la fidélité du XML.  
   

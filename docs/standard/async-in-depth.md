@@ -4,20 +4,19 @@ description: Découvrez comme il est simple d’écrire du code asynchrone utili
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 91fd37ce329c03b43b5472e4579be7f5ef961738
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7fcc41c4ea5037d643402fc722e8f16f28d560ee
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70169107"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823327"
 ---
 # <a name="async-in-depth"></a>Async en détail
 
-L’écriture de code asynchrone utilisant des E/S et le processeur est simple avec le modèle asynchrone .NET basé sur des tâches. Le modèle est exposé par les types `Task` et `Task<T>` et les mots clés `async` et `await` en C# et Visual Basic. (Des ressources spécifiques à la langue se trouvent également dans la section [Voir.)](#see-also) Cet article explique comment utiliser .NET async et fournit un aperçu du cadre async utilisé sous les couvertures.
+L’écriture de code asynchrone utilisant des E/S et le processeur est simple avec le modèle asynchrone .NET basé sur des tâches. Le modèle est exposé par les types `Task` et `Task<T>` et les mots clés `async` et `await` en C# et Visual Basic. (Les ressources spécifiques à une langue se trouvent dans la section [Voir aussi](#see-also) .) Cet article explique comment utiliser .NET Async et fournit des informations sur l’environnement Async utilisé en coulisses.
 
-## <a name="task-and-taskt"></a>Task et Task\<T>
+## <a name="task-and-taskt"></a>Tâche et tâche\<T>
 
 Les tâches sont des constructions utilisées pour implémenter ce que l’on appelle le [modèle de promesses de concurrence](https://en.wikipedia.org/wiki/Futures_and_promises).  En bref, elles vous offrent la « promesse » que le travail sera terminé à un moment ultérieur, ce qui vous permet de coordonner la promesse et une nouvelle API.
 
@@ -147,6 +146,6 @@ Une fois que `await` a été trouvé, l’exécution de `CalculateResult()` est 
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation asynchrone en C#](../csharp/async.md)
-- [Programmation asynchrone avec async et attente (C)](../csharp/programming-guide/concepts/async/index.md)
+- [Programmation asynchrone avec Async et await (C#)](../csharp/programming-guide/concepts/async/index.md)
 - [Programmation asynchrone en F#](../fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../visual-basic/programming-guide/concepts/async/index.md)

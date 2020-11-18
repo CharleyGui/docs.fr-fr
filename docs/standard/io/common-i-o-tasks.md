@@ -2,16 +2,15 @@
 title: Tâches d’E/S courantes
 description: Découvrez comment effectuer des tâches de fichiers courantes & des tâches de répertoire courantes à l’aide de classes & méthodes dans l’espace de noms System.IO dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-ms.openlocfilehash: 4b97b4e464622e482a9ef45e143865ee82e6b5d4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: baabfc477ff8df30c9cac4db1b6d47e0e12f2f37
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598604"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823392"
 ---
 # <a name="common-io-tasks"></a>Tâches d’E/S courantes
 L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'exécuter différentes actions, telles que la lecture et l'écriture, sur des fichiers, des répertoires et des flux de données. Pour plus d’informations, consultez [e/s de fichier et de flux](index.md).  
@@ -27,7 +26,7 @@ L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'ex�
 |Renommer ou déplacer un fichier|Méthode <xref:System.IO.File.Move%2A?displayProperty=nameWithType><br /><br /> Méthode <xref:System.IO.FileInfo.MoveTo%2A?displayProperty=nameWithType>|  
 |Supprimer un fichier|Méthode <xref:System.IO.File.Delete%2A?displayProperty=nameWithType><br /><br /> Méthode <xref:System.IO.FileInfo.Delete%2A?displayProperty=nameWithType>|  
 |Copier un fichier|Méthode <xref:System.IO.File.Copy%2A?displayProperty=nameWithType><br /><br /> Méthode <xref:System.IO.FileInfo.CopyTo%2A?displayProperty=nameWithType>|  
-|Obtenir la taille d'un fichier|Propriété <xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Obtenir la taille d'un fichier|Propriété<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
 |Obtenir les attributs d'un fichier|Méthode <xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
 |Définir les attributs d'un fichier|Méthode <xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
 |Déterminer si un fichier existe|Méthode <xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
@@ -43,7 +42,7 @@ L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'ex�
 |Action à réaliser...|Consultez l'exemple décrit dans cette rubrique...|  
 |-------------------|--------------------------------------|  
 |Accéder à un fichier dans un dossier spécial comme Mes documents|[Procédure : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)|  
-|Créer un répertoire|Méthode <xref:System.IO.Directory.CreateDirectory%2A?displayProperty=nameWithType><br /><br /> Propriété <xref:System.IO.FileInfo.Directory%2A?displayProperty=nameWithType>|  
+|Créer un répertoire|Méthode <xref:System.IO.Directory.CreateDirectory%2A?displayProperty=nameWithType><br /><br /> Propriété<xref:System.IO.FileInfo.Directory%2A?displayProperty=nameWithType>|  
 |Créer un sous-répertoire|Méthode <xref:System.IO.DirectoryInfo.CreateSubdirectory%2A?displayProperty=nameWithType>|  
 |Renommer ou déplacer un répertoire|Méthode <xref:System.IO.Directory.Move%2A?displayProperty=nameWithType><br /><br /> Méthode <xref:System.IO.DirectoryInfo.MoveTo%2A?displayProperty=nameWithType>|  
 |Copier un répertoire|[Procédure : Copier des répertoires](how-to-copy-directories.md)|  
@@ -54,6 +53,6 @@ L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'ex�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [E/s de fichier et de flux](index.md)
+- [Fichier et flux de données E/S](index.md)
 - [Composition de flux](composing-streams.md)
 - [E/s de fichier asynchrones](asynchronous-file-i-o.md)

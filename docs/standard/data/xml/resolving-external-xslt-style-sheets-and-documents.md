@@ -1,14 +1,13 @@
 ---
 title: Résolution de feuilles de style XSLT externes et de documents
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-ms.openlocfilehash: 8e7f66d67f2520b47c30307a98ed2f3fb08455df
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 370d1df296666e5b5c162db34bd7fb35ae8a2e0e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291472"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94823587"
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>Résolution de feuilles de style XSLT externes et de documents
 Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.  
@@ -48,7 +47,7 @@ Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressou
 - [Sorties à partir de XslTransform](outputs-from-an-xsltransform.md)
 - [Transformations XSLT sur différents magasins](xslt-transformations-over-different-stores.md)
 - [XsltArgumentList pour les paramètres de feuille de style et les objets d'extension](xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)
-- [Écriture de scripts de feuille de style XSLT à l’aide de\<msxsl:script>](xslt-stylesheet-scripting-using-msxsl-script.md)
+- [Écriture de scripts de feuille de style XSLT à l’aide de \<msxsl:script>](xslt-stylesheet-scripting-using-msxsl-script.md)
 - [Prise en charge de la fonction msxsl:node-set()](support-for-the-msxsl-node-set-function.md)
 - [XPathNavigator dans les transformations](xpathnavigator-in-transformations.md)
 - [XPathNodeIterator dans les transformations](xpathnodeiterator-in-transformations.md)

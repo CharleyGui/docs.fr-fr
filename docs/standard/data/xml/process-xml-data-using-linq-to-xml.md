@@ -1,14 +1,13 @@
 ---
 title: Traitement des données XML à l'aide de LINQ to XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 059d6b9d-63f7-4011-9ba8-8406f0bbae7d
-ms.openlocfilehash: 5afa9fc84b7f41023eceb5c0734b0667dc55514e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b3aa4e160ed04fd713f46349f11970fdd7ea8bb9
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556497"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824712"
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>Traitement des données XML à l'aide de LINQ to XML
 LINQ to XML est le nouveau modèle du .NET Framework version 3.5 pour le traitement des données XML. LINQ to XML permet aux développeurs d'effectuer toutes les opérations qu'ils souhaitent avec les données XML : interrogation, modification, création et sérialisation de documents XML, mais les avantages réels se situe dans les fonctions de requête et de création.  

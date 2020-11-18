@@ -2,7 +2,6 @@
 title: Modèle de programmation asynchrone
 description: En savoir plus sur le modèle de programmation asynchrone (APM) dans .NET. Découvrez comment commencer et terminer une opération asynchrone.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - ending asynchronous operations
 - starting asynchronous operations
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - asynchronous programming, beginning operations
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
-ms.openlocfilehash: 5ab5d15d24aac80ef4a31c039f7af9dacce4a8d8
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 7b976cf48214fb623563b09aab8a991a5a05d3ca
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769182"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94824439"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Modèle de programmation asynchrone
 Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsyncResult> est implémentée sous la forme de deux méthodes nommées `BeginOperationName` et `EndOperationName` qui commencent et terminent respectivement l’opération asynchrone *OperationName*. Par exemple, la classe <xref:System.IO.FileStream> fournit les méthodes <xref:System.IO.FileStream.BeginRead%2A> et <xref:System.IO.FileStream.EndRead%2A> pour lire les octets d’un fichier de façon asynchrone. Ces méthodes implémentent la version asynchrone de la méthode <xref:System.IO.FileStream.Read%2A> .  
@@ -67,5 +66,5 @@ Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsy
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle asynchrone basé sur les événements (EAP)](event-based-asynchronous-pattern-eap.md)
-- [Appel de méthodes synchrones de manière asynchrone](calling-synchronous-methods-asynchronously.md)
+- [Appel de méthodes synchrones de façon asynchrone](calling-synchronous-methods-asynchronously.md)
 - [Utilisation d'un délégué AsyncCallback et objet d'état](using-an-asynccallback-delegate-and-state-object.md)

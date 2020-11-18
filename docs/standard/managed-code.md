@@ -2,14 +2,13 @@
 title: Qu’est-ce que le code managé ?
 description: Découvrez dans quelle mesure le code managé est du code dont l’exécution est gérée par un runtime, le Common Language Runtime (CLR).
 ms.date: 06/20/2016
-ms.technology: dotnet-standard
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 950dd5c32663b0716247c2a31a2f729fcf85f97b
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 3e2a6576f84890afd35d74b2f0f5fb352a90236a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92163101"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94825895"
 ---
 # <a name="what-is-managed-code"></a>Qu’est-ce que le code managé ?
 
