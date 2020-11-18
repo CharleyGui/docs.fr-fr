@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : enregistrer des fuseaux horaires dans une ressource incorporée'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - time zone objects [.NET], serializing
 - time zone objects [.NET], saving
 ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
-ms.openlocfilehash: 3d355003b3e6309644fa1ccaf779b2e63b0523d2
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 23f86076b2858404f3dbc900d8c40a6509abe8db
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063402"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817599"
 ---
 # <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Procédure : enregistrer des fuseaux horaires dans une ressource incorporée
 
@@ -55,7 +54,7 @@ En plus d’un fichier de ressources compilé avec l’application, plusieurs au
 
 9. Ajoutez le fichier. resx généré au projet Visual Studio de l’application.
 
-10. À l’aide de la fenêtre **Propriétés** dans Visual Studio, assurez-vous que la propriété **action de génération** du fichier. resx est définie sur **ressource incorporée** .
+10. À l’aide de la fenêtre **Propriétés** dans Visual Studio, assurez-vous que la propriété **action de génération** du fichier. resx est définie sur **ressource incorporée**.
 
 ## <a name="example"></a>Exemple
 
@@ -68,7 +67,7 @@ Cet exemple sérialise <xref:System.TimeZoneInfo> les objets afin qu’ils soien
 
 Étant donné que la <xref:System.Resources.ResXResourceWriter.Generate%2A?displayProperty=nameWithType> méthode ajoute des informations d’en-tête complètes à un fichier de ressources XML .net, elle ne peut pas être utilisée pour ajouter des ressources à un fichier existant. L’exemple gère cela en recherchant le fichier SerializedTimeZones. resx et, le cas échéant, en stockant toutes ses ressources autres que les fuseaux horaires sérialisées dans un <xref:System.Collections.Generic.Dictionary%602> objet générique. Le fichier existant est ensuite supprimé et les ressources existantes sont ajoutées à un nouveau fichier SerializedTimeZones. resx. Les données de fuseau horaire sérialisées sont également ajoutées à ce fichier.
 
-Les champs de clé (ou de **nom** ) des ressources ne doivent pas contenir d’espaces incorporés. La <xref:System.String.Replace%28System.String%2CSystem.String%29> méthode est appelée pour supprimer tous les espaces incorporés dans les identificateurs de fuseau horaire avant de les assigner au fichier de ressources.
+Les champs de clé (ou de **nom**) des ressources ne doivent pas contenir d’espaces incorporés. La <xref:System.String.Replace%28System.String%2CSystem.String%29> méthode est appelée pour supprimer tous les espaces incorporés dans les identificateurs de fuseau horaire avant de les assigner au fichier de ressources.
 
 ## <a name="compiling-the-code"></a>Compilation du code
 

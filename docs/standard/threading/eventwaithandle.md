@@ -1,19 +1,18 @@
 ---
 title: EventWaitHandle
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], EventWaitHandle class
 - EventWaitHandle class
 - event wait handles [.NET]
 - threading [.NET], cross-process synchronization
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
-ms.openlocfilehash: d8c4745af9c5336d013dc0ca7ef1030b208c8b68
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 5e448397e4aabe0acb4144abe1469af6a631aeaa
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188339"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819914"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 

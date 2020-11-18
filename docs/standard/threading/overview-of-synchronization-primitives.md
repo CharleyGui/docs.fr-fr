@@ -2,18 +2,17 @@
 title: Vue d’ensemble des primitives de synchronisation
 description: En savoir plus sur les primitives de synchronisation de thread .NET utilisées pour synchroniser l’accès à une ressource partagée ou contrôler l’interaction des threads
 ms.date: 10/01/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET],synchronizing threads
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
-ms.openlocfilehash: d5ae0fe5813952742950582a4282cd1c6ab6a870
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9dfaaa6050cc6e9a6b86f991aa6d2ce2a815959a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188976"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819654"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Vue d’ensemble des primitives de synchronisation
 

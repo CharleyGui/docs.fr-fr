@@ -1,7 +1,6 @@
 ---
 title: Emprunt et restauration d'identité
 ms.date: 07/15/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - security [.NET], impersonating Windows accounts
 - impersonating Windows accounts
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
-ms.openlocfilehash: 7eecc7d6cb3fa4cc1c1bd971d36f9d3ca47a7144
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 90f43510eb0e71fb324012fa00ac08f9ee3292ac
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555671"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820057"
 ---
 # <a name="impersonating-and-reverting"></a>Emprunt et restauration d'identité
 
@@ -28,7 +27,7 @@ Parfois, vous devez obtenir un jeton de compte Windows pour emprunter l’identi
   
  Dans les situations où votre application doit emprunter l’identité d’un compte Windows qui n’a pas été attaché au thread actuel par IIS, vous devez extraire le jeton du compte et l’utiliser pour activer le compte. Pour cela, procédez comme suit :  
   
-1. Récupérez le jeton de compte pour un utilisateur particulier en appelant la méthode **LogonUser** non managée. Cette méthode n’est pas dans la bibliothèque de classes de base .NET, mais elle se trouve dans le **advapi32.dll**non managé. L’accès aux méthodes dans du code non managé est une opération complexe qui dépasse le cadre de cette discussion. Pour plus d’informations, consultez [Interopération avec du code non managé](../../framework/interop/index.md). Pour plus d’informations sur la méthode **LogonUser** et **advapi32.dll**, consultez la documentation du SDK de la plateforme.  
+1. Récupérez le jeton de compte pour un utilisateur particulier en appelant la méthode **LogonUser** non managée. Cette méthode n’est pas dans la bibliothèque de classes de base .NET, mais elle se trouve dans le **advapi32.dll** non managé. L’accès aux méthodes dans du code non managé est une opération complexe qui dépasse le cadre de cette discussion. Pour plus d’informations, consultez [Interopération avec du code non managé](../../framework/interop/index.md). Pour plus d’informations sur la méthode **LogonUser** et **advapi32.dll**, consultez la documentation du SDK de la plateforme.  
   
 2. Créez une nouvelle instance de la classe **WindowsIdentity**, qui passe le jeton. Le code suivant illustre cet appel, où `hToken` désigne un jeton Windows.  
   

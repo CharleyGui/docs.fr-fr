@@ -1,7 +1,6 @@
 ---
 title: Recherche des fuseaux horaires définis sur un système local
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - time zones [.NET], local
 - time zones [.NET], finding local system time zones
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - UTC times, finding local system time zones
 - time zones [.NET], UTC
 ms.assetid: 3f63b1bc-9a4b-4bde-84ea-ab028a80d3e1
-ms.openlocfilehash: c968c7891a4fc9b77ed6224a9fc5f8f6d8f5d80b
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 02467e10494e72c83ad9521228f6c4151c4a6bd1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063688"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817937"
 ---
 # <a name="finding-the-time-zones-defined-on-a-local-system"></a>Recherche des fuseaux horaires définis sur un système local
 

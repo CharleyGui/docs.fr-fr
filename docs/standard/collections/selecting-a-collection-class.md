@@ -2,7 +2,6 @@
 title: Sélection d’une classe de collection
 description: Découvrez comment choisir la classe de collection de .NET à choisir. L’utilisation d’un type incorrect peut limiter votre utilisation de la collection.
 ms.date: 03/18/2019
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - last-in-first-out collections
 - first-in-first-out collections
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-ms.openlocfilehash: 2a3615d5bb404247ec9280ff3c88e2c10a75768b
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 7af08949df999ab80fce1308927d87a8935e3b5d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889333"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818724"
 ---
 # <a name="selecting-a-collection-class"></a>Sélection d’une classe de collection
 
@@ -25,7 +24,7 @@ Veillez à choisir votre classe de collection avec soin. L’utilisation d’un 
 > [!IMPORTANT]
 > Éviter d’utiliser les types dans l’espace de noms <xref:System.Collections>. Les versions génériques et simultanées des collections sont recommandées en raison de la sécurité supérieure des types et d'autres améliorations.
 
-Posez-vous les questions suivantes :
+Considérez les questions suivantes :
 
 - Avez-vous besoin d'une liste séquentielle où l'élément est en général abandonné une fois sa valeur récupérée ?
 

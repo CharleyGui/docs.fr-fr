@@ -1,16 +1,15 @@
 ---
 title: Pour obtenir des informations supplémentaires (programmation parallèle)
 ms.date: 04/26/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - tasks, further reading
 ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
-ms.openlocfilehash: a9a18d5709a1e157d4454362758d4a622880ea72
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 583f4f0cc6a6b188f588403721a0dd4f2d0a852e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553647"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817430"
 ---
 # <a name="for-further-reading-parallel-programming"></a>Pour obtenir des informations supplémentaires (programmation parallèle)
 

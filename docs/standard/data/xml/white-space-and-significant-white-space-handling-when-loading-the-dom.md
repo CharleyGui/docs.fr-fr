@@ -1,14 +1,13 @@
 ---
 title: Gestion des espaces blancs significatifs ou non lors du chargement du DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 1b141a0a-50d8-4ebd-83cd-a84449bb22b2
-ms.openlocfilehash: 520d965737b82fda082aa44029f2a4042d948deb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: dbb0962dc47ff5847ac78ed4f6252bf8ab9674aa
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281769"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818477"
 ---
 # <a name="white-space-and-significant-white-space-handling-when-loading-the-dom"></a>Gestion des espaces blancs significatifs ou non lors du chargement du DOM
 Durant le chargement du document, vous pouvez définir une option qui préserve les espaces blancs et crée des nœuds **XmlWhitespace** dans l'arborescence du document. Pour créer des nœuds d'espaces blancs, attribuez la valeur true à la propriété **PreserveWhitespace**. Si cette propriété a pour valeur **false** (la valeur par défaut), les nœuds d'espaces blancs ne sont pas créés. Les nœuds d'espaces blancs significatifs sont toujours préservés et des nœuds **XmlSignificantWhitespace** sont toujours créés en mémoire pour représenter ces données, quelle que soit la valeur de l'indicateur **PreserveWhitespace**.  

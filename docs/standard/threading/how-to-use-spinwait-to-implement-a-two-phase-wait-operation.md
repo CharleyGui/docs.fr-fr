@@ -1,19 +1,18 @@
 ---
 title: "Comment : utiliser SpinWait pour implémenter une opération d'attente en deux phases"
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - SpinWait, how to synchronize two-phase wait
 ms.assetid: b2ac4e4a-051a-4f65-b4b9-f8e103aff195
-ms.openlocfilehash: 4b2bc79a7b652c34334d5a78d9c9af328993ff44
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0a8ece86d71823eb78a9ebbec661722f0e249790
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279204"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819719"
 ---
 # <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Comment : utiliser SpinWait pour implémenter une opération d'attente en deux phases
 L’exemple suivant montre comment utiliser un objet <xref:System.Threading.SpinWait?displayProperty=nameWithType> pour implémenter une opération d’attente en deux phases. Durant la première phase, l’objet de synchronisation (`Latch`) tourne pendant quelques cycles, le temps de vérifier si le verrou est disponible. Durant la deuxième phase, si le verrou est enfin disponible, la méthode `Wait` est retournée sans utiliser le <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> pour exécuter son attente. Dans le cas contraire, `Wait` exécute l’attente.  
@@ -31,4 +30,4 @@ L’exemple suivant montre comment utiliser un objet <xref:System.Threading.Spin
 ## <a name="see-also"></a>Voir aussi
 
 - [SpinWait](spinwait.md)
-- [Objets et fonctionnalités de Threading](threading-objects-and-features.md)
+- [Fonctionnalités et objets de threading](threading-objects-and-features.md)

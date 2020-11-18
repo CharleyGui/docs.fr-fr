@@ -1,17 +1,16 @@
 ---
 title: Compilation de schéma XmlSchemaCollection
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-ms.openlocfilehash: 3d517652665d6d0693e141d623483ff8946bbbf4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7e93331d106dc74878e4d211c4dc6458c37088a3
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290238"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819121"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>Compilation de schéma XmlSchemaCollection
 La classe **XmlSchemaCollection** est un cache ou une bibliothèque où des schémas XDR (XML-Data Reduced) et des schémas de langage XSD (XML Schema Definition) peuvent être stockés et validés. **XmlSchemaCollection** améliore les performances en mettant les schémas en cache au lieu d'y accéder à partir d'un fichier ou d'une URL.  

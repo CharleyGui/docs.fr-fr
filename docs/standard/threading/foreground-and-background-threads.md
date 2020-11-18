@@ -2,19 +2,18 @@
 title: Threads de premier plan et d'arrière-plan
 description: Déterminez ou modifiez si un thread est un thread d’arrière-plan ou un thread de premier plan à l’aide de la propriété Thread. IsBackground dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], foreground
 - threading [.NET], background
 - foreground threads
 - background threads
 ms.assetid: cfe0d632-dd35-47e0-91ad-f742a444005e
-ms.openlocfilehash: 3b468d2de382719496d5dfaf4c704d43f3e748c3
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9f0ea1d53eb2f96b8a56cacc089cf90eb2f079a0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188066"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819901"
 ---
 # <a name="foreground-and-background-threads"></a>Threads de premier plan et d’arrière-plan
 

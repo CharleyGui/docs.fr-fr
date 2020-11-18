@@ -2,19 +2,18 @@
 title: Annulation dans les threads managés
 description: Comprendre l’annulation dans les threads managés. En savoir plus sur les jetons d’annulation dans l’annulation coopérative des opérations synchrones asynchrones ou à long terme.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: 09c39202f1564ac544fdf30a07952990b309b661
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 578db725458ad5c4a90256a06744a58a6d1918da
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188469"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819953"
 ---
 # <a name="cancellation-in-managed-threads"></a>Annulation dans les threads managés
 
@@ -45,7 +44,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
   
 - L'objet demandeur émet la demande d'annulation vers toutes les copies du jeton à l'aide d'un seul appel de méthode.  
   
-- Un écouteur peut écouter plusieurs jetons simultanément en les rassemblant sous la forme d'un même *jeton lié* .  
+- Un écouteur peut écouter plusieurs jetons simultanément en les rassemblant sous la forme d'un même *jeton lié*.  
   
 - Le code utilisateur peut remarquer et répondre aux demandes d'annulation à partir du code de bibliothèque, et ce dernier peut remarquer et répondre aux demandes d'annulation à partir du code utilisateur.  
   
@@ -142,7 +141,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
   
 - Si le code de bibliothèque fournit des opérations annulables, il doit également fournir des méthodes publiques qui acceptent un jeton d'annulation externe pour que le code utilisateur puisse demander une annulation.  
   
-- Si le code de bibliothèque émet un appel dans le code utilisateur, le code de bibliothèque doit interpréter un OperationCanceledException(externalToken) comme une *annulation coopérative* , et pas nécessairement comme une exception d'échec.  
+- Si le code de bibliothèque émet un appel dans le code utilisateur, le code de bibliothèque doit interpréter un OperationCanceledException(externalToken) comme une *annulation coopérative*, et pas nécessairement comme une exception d'échec.  
   
 - Les délégués utilisateurs doivent tenter de répondre aux demandes d'annulation du code de bibliothèque en temps voulu.  
   

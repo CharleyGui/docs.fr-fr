@@ -1,17 +1,16 @@
 ---
 title: Extraction de nœuds non triés par leur nom ou par l'index
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: 6847f3c5d233b720f8f4c41cfc52ac663e5e810f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e0b3b167dc43710e97a5f67fb0eb54c4742e1572
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288626"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819329"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Extraction de nœuds non triés par leur nom ou par l'index
 **XmlNamedNodeMap**, appelé NamedNodeMap dans la spécification du World Wide Web Consortium (W3C), est requis pour gérer un ensemble non trié de nœuds tout en permettant de référencer les nœuds par leur nom ou sur base de l’index. Le seul moyen d’accéder à un **XmlNamedNodeMap** est le retour de **XmlNamedNodeMap** par une méthode ou une propriété. Trois méthodes ou propriétés retournent **XmlNamedNodeMap** :  

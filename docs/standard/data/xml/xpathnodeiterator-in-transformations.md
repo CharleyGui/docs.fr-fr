@@ -1,17 +1,16 @@
 ---
 title: XPathNodeIterator dans les transformations
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
-ms.openlocfilehash: 88b8f4acbb9fa92d71659ee006ee544275353954
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cd8320071f1de15d503c94c138c02cab5742685c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282751"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818431"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>XPathNodeIterator dans les transformations
 L’objet <xref:System.Xml.XPath.XPathNodeIterator> fournit des méthodes pour itérer sur une collection de nœuds créée à la suite d’une requête XPath ou d’un fragment d’arborescence résultat converti en une collection de nœuds à l’aide de la méthode node-set. L'objet <xref:System.Xml.XPath.XPathNodeIterator> vous permet d'itérer sur les nœuds à l'intérieur de cette collection de nœuds. Dès qu'une collection de nœuds est extraite, la classe <xref:System.Xml.XPath.XPathNodeIterator> fournit un curseur avant uniquement en lecture seule à la collection de nœuds sélectionnée. La collection de nœuds étant créée dans l'ordre du document, l'appel de cette méthode permet un déplacement vers le prochain nœud dans l'ordre du document. <xref:System.Xml.XPath.XPathNodeIterator> ne construit pas une arborescence de nœuds de tous les nœuds de l'ensemble. Elle fournit à la place une seule fenêtre de nœuds dans les données, exposant le nœud sous-jacent vers lequel elle pointe lors du déplacement dans l’arborescence. Les méthodes et propriétés disponibles à partir de la classe <xref:System.Xml.XPath.XPathNodeIterator> vous permettent d'obtenir des informations à partir du nœud actuel. Pour obtenir la liste des méthodes et propriétés disponibles, voir <xref:System.Windows.Forms.ToolBar>.  
@@ -26,7 +25,7 @@ L’objet <xref:System.Xml.XPath.XPathNodeIterator> fournit des méthodes pour i
   
  Lorsque vous examinez une collection de nœuds pour la premières fois, un appel à la méthode <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> doit être effectué pour placer l'objet <xref:System.Xml.XPath.XPathNodeIterator> sur le premier nœud de la collection sélectionnée. Cela permet l'écriture d'une boucle while.  
   
- L'exemple de code suivant illustre le passage d'un objet <xref:System.Xml.XPath.XPathNodeIterator> à un autre objet <xref:System.Xml.Xsl.XslTransform> en tant que paramètre dans l'objet <xref:System.Xml.Xsl.XsltArgumentList>. L'entrée du code est ** books.xm** et la feuille de style est **text.xsl**. Le fichier **test.xml** est l'objet <xref:System.Xml.XPath.XPathDocument>.  
+ L'exemple de code suivant illustre le passage d'un objet <xref:System.Xml.XPath.XPathNodeIterator> à un autre objet <xref:System.Xml.Xsl.XslTransform> en tant que paramètre dans l'objet <xref:System.Xml.Xsl.XsltArgumentList>. L'entrée du code est **books.xm** et la feuille de style est **text.xsl**. Le fichier **test.xml** est l'objet <xref:System.Xml.XPath.XPathDocument>.  
   
 ```vb  
 Imports System  

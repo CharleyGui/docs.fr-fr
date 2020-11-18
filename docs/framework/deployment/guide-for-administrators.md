@@ -6,30 +6,30 @@ helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-ms.openlocfilehash: b358f0909147e52293fd802bc98caa31b284d7b1
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 12076334d3ede0c8ab9b618ba2018f23c9fc6ae4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558717"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817092"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>Guide de déploiement du .NET Framework pour les administrateurs
 
-Cet article décrit étape par étape comment un administrateur système peut déployer le .NET Framework 4,5 et ses dépendances système sur un réseau à l’aide de points de terminaison Microsoft Configuration Manager. Cet article suppose que tous les ordinateurs clients cibles ont la configuration minimale requise pour le .NET Framework. Pour obtenir la liste des configurations logicielle et matérielle requises pour installer .NET Framework 4.5, consultez [Configuration système requise](../get-started/system-requirements.md).
+Cet article décrit étape par étape comment un administrateur système peut déployer .NET Framework 4,5 et ses dépendances système sur un réseau à l’aide de Configuration Manager de point de terminaison Microsoft. Cet article suppose que tous les ordinateurs clients cibles respectent la configuration minimale requise pour .NET Framework. Pour obtenir la liste des configurations logicielle et matérielle requises pour l’installation de .NET Framework 4,5, consultez [Configuration système requise](../get-started/system-requirements.md).
 
 > [!NOTE]
-> Les logiciels référencés dans ce document, y compris, sans limitation, les .NET Framework 4,5, Configuration Manager et Active Directory, sont soumis aux termes et conditions du contrat de licence. Les présentes instructions supposent que lesdits termes et conditions du contrat de licence ont été passés en revue et acceptés par les propriétaires de licences des logiciels concernés. Ces instructions ne remplacent pas les termes et conditions desdits contrats de licence.
+> Les logiciels référencés dans ce document, y compris, sans limitation, .NET Framework 4,5, Configuration Manager et Active Directory, sont soumis aux termes et conditions du contrat de licence. Les présentes instructions supposent que lesdits termes et conditions du contrat de licence ont été passés en revue et acceptés par les propriétaires de licences des logiciels concernés. Ces instructions ne remplacent pas les termes et conditions desdits contrats de licence.
 >
-> Pour plus d’informations sur la prise en charge de la .NET Framework, consultez [.NET Framework stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) sur le site Web Support Microsoft.
+> Pour plus d’informations sur la prise en charge de .NET Framework, consultez [.NET Framework stratégie de support officielle](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) sur le site Web Support Microsoft.
 
 Cette rubrique contient les sections suivantes :
 
 - [Processus de déploiement](#the_deployment_process)
-- [Déployer le .NET Framework](#deploying_in_a_test_environment)
+- [Déploiement de .NET Framework](#deploying_in_a_test_environment)
 - [Création d'une collection](#creating_a_collection)
 - [Créer un package et un programme](#creating_a_package)
 - [Sélectionner un point de distribution](#select_dist_point)
-- [Déployer le package](#deploying_package)
+- [Déploiement du package](#deploying_package)
 - [Ressources](#resources)
 - [Dépannage](#troubleshooting)
 
@@ -39,7 +39,7 @@ Cette rubrique contient les sections suivantes :
 
 Lorsque l’infrastructure de prise en charge est en place, vous utilisez Configuration Manager pour déployer le .NET Framework package redistribuable sur les ordinateurs du réseau. Générer l’infrastructure implique la création et la définition de cinq éléments principaux : les regroupements, un package et un programme pour les logiciels, des points de distribution et des déploiements.
 
-- Les **regroupements** sont des ensembles de ressources de Configuration Manager, tels que des utilisateurs, des groupes d’utilisateurs ou des ordinateurs, sur lesquels le .Net Framework est déployé. Pour plus d’informations, consultez [Présentation des regroupements dans Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
+- Les **regroupements** sont des groupes de ressources de Configuration Manager, tels que des utilisateurs, des groupes d’utilisateurs ou des ordinateurs, sur lesquels .NET Framework est déployé. Pour plus d’informations, consultez [Présentation des regroupements dans Configuration Manager](/configmgr/core/clients/manage/collections/introduction-to-collections) dans la bibliothèque de documentation Configuration Manager.
 
 - Les **packages et programmes** sont généralement les applications logicielles à installer sur un ordinateur client, mais ils peuvent également contenir des fichiers individuels, des mises à jour, ou même des commandes individuelles. Pour plus d’informations, consultez [packages et programmes dans Configuration Manager](/configmgr/apps/deploy-use/packages-and-programs) dans la bibliothèque de documentation Configuration Manager.
 
@@ -52,9 +52,9 @@ Lorsque l’infrastructure de prise en charge est en place, vous utilisez Config
 
 <a name="deploying_in_a_test_environment"></a>
 
-## <a name="deploying-the-net-framework"></a>Déployer le .NET Framework
+## <a name="deploying-net-framework"></a>Déploiement de .NET Framework
 
-Vous pouvez utiliser Configuration Manager pour déployer une installation sans assistance du .NET Framework 4,5, où les utilisateurs n’interagissent pas avec le processus d’installation. Procédez comme suit :
+Vous pouvez utiliser Configuration Manager pour déployer une installation sans assistance de .NET Framework 4,5, où les utilisateurs n’interagissent pas avec le processus d’installation. Procédez comme suit :
 
 1. [Créer une collection](#creating_a_collection).
 
@@ -94,7 +94,7 @@ Pour créer une collection :
 
 ### <a name="create-a-package-and-program-for-the-net-framework-redistributable-package"></a>Créer un package et un programme pour le package redistribuable .Net Framework
 
-Les étapes suivantes permettent de créer manuellement un package pour le package redistribuable .NET Framework. Le package contient les paramètres spécifiés pour l'installation du .Net Framework et l'emplacement à partir duquel le package sera distribué aux ordinateurs cibles.
+Les étapes suivantes permettent de créer manuellement un package pour le package redistribuable .NET Framework. Le package contient les paramètres spécifiés pour l’installation de .NET Framework et l’emplacement à partir duquel le package sera distribué aux ordinateurs cibles.
 
 Pour créer un package :
 
@@ -136,7 +136,7 @@ Le tableau suivant décrit les options de ligne de commande spécifiées dans l'
 |**/norestart**|Empêche le programme d'installation de redémarrer automatiquement. Si vous utilisez cette option, Configuration Manager doit gérer le redémarrage de l'ordinateur.|
 |**/chainingpackage** *nom_package*|Spécifie le nom du package qui effectue le chaînage. Ces informations sont stockées avec d'autres informations de session d'installation pour les personnes inscrites au Programme d'amélioration du produit Microsoft (CEIP). Si le nom du package inclut des espaces, utilisez des guillemets doubles comme délimiteurs. Par exemple : **/chainingpackage "Chaining Product"**.|
 
-Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .Net Framework 4.5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage. Pour plus d’informations, consultez [Getting Progress Information from an Installation Package](/previous-versions/cc825975(v=vs.100)).
+Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .NET Framework 4,5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage. Pour plus d’informations, consultez [Getting Progress Information from an Installation Package](/previous-versions/cc825975(v=vs.100)).
 
 <a name="select_dist_point"></a>
 
@@ -162,7 +162,7 @@ Utilisez les étapes suivantes pour sélectionner un point de distribution pour 
 
 8. Effectuez toutes les étapes de l'Assistant.
 
-Le package contient désormais toutes les informations nécessaires au déploiement sans assistance de .Net Framework 4.5. Avant de déployer le package et le programme, vérifiez qu’il a été installé sur le point de distribution. consultez la section « surveillance de l’état du contenu » de la page [surveiller le contenu que vous distribuez avec Configuration Manager](/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) dans la bibliothèque de documentation Configuration Manager.
+Le package contient désormais toutes les informations dont vous avez besoin pour déployer sans assistance .NET Framework 4,5. Avant de déployer le package et le programme, vérifiez qu’il a été installé sur le point de distribution. consultez la section « surveillance de l’état du contenu » de la page [surveiller le contenu que vous distribuez avec Configuration Manager](/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed) dans la bibliothèque de documentation Configuration Manager.
 
 <a name="deploying_package"></a>
 
@@ -184,12 +184,12 @@ Pour déployer le package et le programme .Net Framework 4.5 :
 
 7. Dans la page **Paramètres de déploiement** de l’Assistant, vérifiez que **Action** est défini sur **Installer**, et **Objectif** sur **Requis**. Cela garantit que le package logiciel est une installation obligatoire sur les ordinateurs ciblés. Choisissez **Suivant**.
 
-8. Dans la page **Planification** de l’Assistant, spécifiez à quel moment vous souhaitez que le .Net Framework soit installé. Choisissez **Nouveau** pour déterminer le moment de l’installation, ou demandez au logiciel d’effectuer l’installation quand l’utilisateur se connecte ou se déconnecte, ou dès que possible. Choisissez **Suivant**.
+8. Sur la page **planification** de l’Assistant, spécifiez quand vous souhaitez installer .NET Framework. Choisissez **Nouveau** pour déterminer le moment de l’installation, ou demandez au logiciel d’effectuer l’installation quand l’utilisateur se connecte ou se déconnecte, ou dès que possible. Choisissez **Suivant**.
 
 9. Dans la page **Expérience utilisateur** de l’Assistant, utilisez les valeurs par défaut et choisissez **Suivant**.
 
     > [!WARNING]
-    > Il est possible que votre environnement de production ait des stratégies qui requièrent des sélections différentes pour la planification de déploiement. Pour plus d’informations sur ces options, consultez [Propriétés du nom de la publication : Onglet Calendrier](/previous-versions/system-center/configuration-manager-2007/bb694016(v=technet.10)).
+    > Il est possible que votre environnement de production ait des stratégies qui requièrent des sélections différentes pour la planification de déploiement.
 
 10. Dans la page **Points de distribution** de l’Assistant, utilisez les valeurs par défaut et choisissez **Suivant**.
 
@@ -221,8 +221,6 @@ Pour plus d’informations sur l’infrastructure pour tester le déploiement du
 
 - [Administration de site pour System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg681983(v=technet.10))
 
-- [Planification et déploiement d’un site unique Configuration Manager](/previous-versions/system-center/configuration-manager-2007/bb680961(v=technet.10))
-
 **Client System Center 2012 Configuration Manager pour ordinateurs Windows :**
 
 - [Déployer des clients pour System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg699391(v=technet.10))
@@ -238,7 +236,7 @@ Les fichiers journaux suivants sont générés lors de l’installation du .NET 
 - %temp%\Microsoft .NET Framework *version* \* . txt
 - %temp%\Microsoft .NET Framework *version* \* . html
 
-où *version* est la version du .NET Framework que vous installez, comme 4.5 ou 4.7.2.
+où *version* est la version de .NET Framework que vous installez, par exemple 4,5 ou 4.7.2.
 
 Vous pouvez également spécifier le répertoire où les fichiers journaux sont écrits avec l’option de ligne de commande `/log` dans la commande d’installation du .NET Framework. Pour plus d’informations, consultez [Guide de déploiement du .NET Framework pour les développeurs](deployment-guide-for-developers.md#command-line-options).
 

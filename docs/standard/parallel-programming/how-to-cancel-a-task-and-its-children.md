@@ -2,19 +2,18 @@
 title: 'Procédure : annuler une tâche et ses enfants'
 description: Consultez des exemples d’annulation d’une tâche et de ses enfants dans .NET. Les exemples couvrent les étapes de la création d’une tâche annulable, à la note que la tâche a été annulée.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, how to cancel
 ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
-ms.openlocfilehash: 66daf00680b65aace1ce6367761e3ed81596d33b
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 578544a910127f41dfdfd577316b23d6d5a60bc4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662678"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817261"
 ---
 # <a name="how-to-cancel-a-task-and-its-children"></a>Procédure : annuler une tâche et ses enfants
 Ces exemples montrent comment effectuer les tâches suivantes :  

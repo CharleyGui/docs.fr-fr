@@ -2,7 +2,6 @@
 title: Chaînes de format numériques standard
 description: Dans cet article, Apprenez à utiliser des chaînes de format numériques standard pour mettre en forme des types numériques communs en représentations textuelles dans .NET.
 ms.date: 06/10/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,24 +16,24 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: e5e1aa16d8df3d0cfce6dac00c91ca8e99e16e3d
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: b8537e8dcfdd45ed8da18b8b82aae5e9fc0cd96e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888969"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818763"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 
 Les chaînes de format numériques standard sont utilisées pour mettre en forme des types numériques courants. Une chaîne de format numérique standard se présente sous la forme `Axx`, où :
 
-- `A` est un caractère alphabétique unique appelé *spécificateur de format* . Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md).
+- `A` est un caractère alphabétique unique appelé *spécificateur de format*. Toute chaîne de format numérique contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format numérique personnalisée. Pour plus d’informations, consultez [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md).
 
-- `xx` est un entier facultatif appelé *spécificateur de précision* . Le spécificateur de précision est compris entre 0 et 99 ; il affecte le nombre de chiffres dans le résultat. Notez que le spécificateur de précision contrôle le nombre de chiffres dans la représentation sous forme de chaîne d'un nombre. Il n'arrondit pas le nombre lui-même. Pour exécuter une opération d'arrondi, utilisez la méthode <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType> ou <xref:System.Math.Round%2A?displayProperty=nameWithType>.
+- `xx` est un entier facultatif appelé *spécificateur de précision*. Le spécificateur de précision est compris entre 0 et 99 ; il affecte le nombre de chiffres dans le résultat. Notez que le spécificateur de précision contrôle le nombre de chiffres dans la représentation sous forme de chaîne d'un nombre. Il n'arrondit pas le nombre lui-même. Pour exécuter une opération d'arrondi, utilisez la méthode <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType> ou <xref:System.Math.Round%2A?displayProperty=nameWithType>.
 
   Quand le *spécificateur de précision* contrôle le nombre de chiffres fractionnaires dans la chaîne de résultat, celle-ci reflète un nombre qui est arrondi à un résultat représentable le plus proche du résultat précis à l’infini. S’il existe deux résultats représentables aussi proches l’un que l’autre :
-  - **Sur .NET Framework et .net Core jusqu’à .net core 2,0** , le runtime sélectionne le résultat avec le chiffre le plus petit significatif (c’est-à-dire, à l’aide de <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType> ).
-  - **Sur .NET Core 2.1 et versions ultérieures** , le runtime sélectionne le résultat ayant un chiffre encore moins significatif (autrement dit, à l’aide de <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>).
+  - **Sur .NET Framework et .net Core jusqu’à .net core 2,0**, le runtime sélectionne le résultat avec le chiffre le plus petit significatif (c’est-à-dire, à l’aide de <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType> ).
+  - **Sur .NET Core 2.1 et versions ultérieures**, le runtime sélectionne le résultat ayant un chiffre encore moins significatif (autrement dit, à l’aide de <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>).
 
   > [!NOTE]
   > Le spécificateur de précision détermine le nombre de chiffres dans la chaîne de résultat. Pour remplir une chaîne de résultat avec des espaces de début ou de fin, utilisez la fonctionnalité de [mise en forme composite](composite-formatting.md) et définissez un *composant d’alignement* dans l’élément de mise en forme.
@@ -48,11 +47,11 @@ Les chaînes de format numériques standard sont prises en charge par :
 - Les [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md) en C# et Visual Basic, qui fournissent une syntaxe simplifiée par rapport aux de chaînes de format composite.
 
 > [!TIP]
-> Vous pouvez télécharger l’ **utilitaire de mise en forme** , application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
+> Vous pouvez télécharger l’**utilitaire de mise en forme**, application .NET Core Windows Forms qui vous permet d’appliquer des chaînes de mise en forme à des valeurs numériques ou à des valeurs de date et d’heure, et d’afficher la chaîne de résultat. Le code source est disponible pour [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) et [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb).
 
 <a name="table"></a> Le tableau suivant décrit les spécificateurs de format numériques standard et affiche un exemple de sortie produite par chaque spécificateur de format. Consultez la section [Remarques](#NotesStandardFormatting) pour plus d’informations sur l’utilisation de chaînes de format numériques standard, et la section [Exemple](#example) pour obtenir une illustration complète de leur utilisation.
 
-|Spécificateur de format|Name|Description|Exemples|
+|Spécificateur de format|Nom|Description|Exemples|
 |----------------------|----------|-----------------|--------------|
 |"C" ou "c"|Devise|Résultat : une valeur monétaire.<br /><br /> Pris en charge par : tous les types numériques.<br /><br /> Spécificateur de précision : nombre de chiffres décimaux.<br /><br /> Spécificateur de précision par défaut : défini par <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Informations supplémentaires : [Spécificateur de format monétaire ("C")](#CFormatString).|123,456 ("C", en-US)-> \\ $123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 &euro;<br /><br /> 123.456 ("C", ja-JP) -> ¥123<br /><br /> -123,456 ("C3", en-US)-> ( \\ $123,456)<br /><br /> -123,456 ("C3", fr-FR)->-123 456 &euro;<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
 |"D" ou "d"|Decimal|Résultat : chiffres entiers avec un signe négatif facultatif.<br /><br /> Pris en charge par : les types intégraux uniquement.<br /><br /> Spécificateur de précision : nombre minimal de chiffres.<br /><br /> Spécificateur de précision par défaut : nombre minimal de chiffres requis.<br /><br /> Informations supplémentaires : [Spécificateur de format décimal ("D")](#DFormatString).|1234 ("D") -> 1234<br /><br /> -1234 ("D6") -> -001234|

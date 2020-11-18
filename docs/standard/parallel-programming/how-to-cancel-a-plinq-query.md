@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : annuler une requête PLINQ'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-ms.openlocfilehash: 09405a8a9f5d96d80454bcc98cbf29db54df6725
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ea30cafc998b8691321bf5e2b9b4bcc897878200
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288210"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817274"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Procédure : annuler une requête PLINQ
 Les exemples suivants montrent deux façons de modifier une requête PLINQ. Le premier exemple montre comment annuler une requête principalement composée de parcours de données. Le deuxième exemple montre comment annuler une requête contenant une fonction d’utilisateur dont les calculs sont onéreux.

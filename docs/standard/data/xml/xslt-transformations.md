@@ -1,14 +1,13 @@
 ---
 title: Transformations XSLT
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 202f8820-224c-494f-b61e-cd127eac6e03
-ms.openlocfilehash: 92d0af1519260d458d3954beaef38e698142367a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b87768b402f92e0e59279aab0f0062e510fda2e6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288301"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818191"
 ---
 # <a name="xslt-transformations"></a>Transformations XSLT
 Les transformations XSLT (Extensible Stylesheet Language Transformation) ont pour but de transformer le contenu d'un document XML source en un autre document dont le format ou la structure diffère. Par exemple, vous pouvez utiliser XSLT pour transformer un document XML en un document HTML pour une utilisation sur un site web ou en un document qui contient uniquement les champs requis par une application. Ce processus de transformation est spécifié par la [recommandation du W3C sur XSLT (XSL Transformations) version 1.0](https://www.w3.org/TR/xslt-10/).  

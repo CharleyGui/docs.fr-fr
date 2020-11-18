@@ -1,7 +1,6 @@
 ---
 title: Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Action delegate, creating with lambda expression
 - lambda expressions, with Action and Func
 ms.assetid: 645b2c17-29d0-4ffa-8684-430743cc2f2d
-ms.openlocfilehash: 469c164630e1dab84b3d54c16c43d031ebf560ed
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9d884bbcb248effa41b24788d530151783280a53
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063768"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817118"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches
 

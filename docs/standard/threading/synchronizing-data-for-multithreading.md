@@ -2,18 +2,17 @@
 title: Synchronisation des données pour le multithreading
 description: Découvrez comment synchroniser des données pour le multithreading dans .NET. Choisissez des stratégies telles que les régions de code synchronisées, la synchronisation manuelle ou les contextes synchronisés.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization, threads
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 63ee85f3d8bab865ce34566ec381d23676b27991
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 188090a968b49bd77279d35dc41f00e808299938
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188586"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819641"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -62,7 +61,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 ### <a name="compiler-support"></a>Prise en charge du compilateur  
  Visual Basic et C# prennent en charge un mot clé de langage qui utilise <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> pour verrouiller l’objet. Visual Basic prend en charge l’instruction [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) et C#, l’instruction [lock](../../csharp/language-reference/keywords/lock-statement.md).  
   
- Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock** , le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
+ Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
   
 ## <a name="synchronized-context"></a>Contexte synchronisé  
 

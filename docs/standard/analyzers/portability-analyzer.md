@@ -2,14 +2,13 @@
 title: Analyseur de portabilité .NET – .NET
 description: Découvrez comment utiliser l’outil Analyseur de portabilité .NET pour évaluer la portabilité de votre code sur les différentes implémentations de .NET, notamment .NET Core, .NET Standard, UWP et Xamarin.
 ms.date: 09/13/2019
-ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d61dd9ebe744686885dad41ef700caaea9853f85
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 03b5f88a17baf8713b06bdd0eac192d9e093b969
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414797"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819706"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -27,7 +26,7 @@ Une fois que vous avez converti votre projet pour cibler la nouvelle plateforme,
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>Comment utiliser l’Analyseur de portabilité .NET
 
-Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Configurez-le dans Visual Studio via **analyser**les  >  paramètres de l'**Analyseur de portabilité** et sélectionnez vos plateformes cibles, qui correspondent aux plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
+Pour commencer à utiliser l’Analyseur de portabilité .NET dans Visual Studio, vous devez d’abord télécharger l’extension à partir du [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) et l’installer. Elle fonctionne sur Visual Studio 2017 et les versions ultérieures. Configurez-le dans Visual Studio via **analyser** les  >  paramètres de l'**Analyseur de portabilité** et sélectionnez vos plateformes cibles, qui correspondent aux plateformes/versions .net dont vous souhaitez évaluer les écarts de portabilité comparés à la plateforme/version avec laquelle votre assembly actuel est généré.
 
 ![Capture d’écran de l’analyseur de portabilité.](./media/portability-analyzer/portability-screenshot.png)
 
@@ -75,7 +74,7 @@ La section sur la synthèse de la portabilité du rapport montre le pourcentage 
 
 ![Capture d’écran des détails de la portabilité.](./media/portability-analyzer/api-catalog-portablility-details.png)
 
-La section **Détails** du rapport répertorie les API manquantes dans les **plateformes ciblées**sélectionnées.
+La section **Détails** du rapport répertorie les API manquantes dans les **plateformes ciblées** sélectionnées.
 
 - Type cible : le type a une API manquante dans une plateforme cible
 - Membre cible : la méthode est manquante dans une plateforme cible

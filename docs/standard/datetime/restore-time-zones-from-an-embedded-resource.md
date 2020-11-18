@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : restaurer des fuseaux horaires à partir d’une ressource incorporée'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - time zones [.NET], deserializing
 - time zones [.NET], restoring
 ms.assetid: 6b7b4de9-da07-47e3-8f4c-823f81798ee7
-ms.openlocfilehash: 1dd3dff2441ac5e21f3ebf97d58919a7c65d42c5
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: a1302f595a0907103bae2695e703e5af6da660a7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063428"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817664"
 ---
 # <a name="how-to-restore-time-zones-from-an-embedded-resource"></a>Procédure : restaurer des fuseaux horaires à partir d’une ressource incorporée
 

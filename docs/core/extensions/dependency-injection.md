@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 10/28/2020
 ms.topic: overview
-ms.openlocfilehash: 3692b9e779d450f07d47599417349bb57f72ac36
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: cc030e32846690b6544b99030800b50055a3113e
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687573"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818827"
 ---
 # <a name="dependency-injection-in-net"></a>Injection de dépendances dans .NET
 
@@ -66,7 +66,7 @@ Cette interface est implémentée par un type concret, `MessageWriter` :
 
 :::code language="csharp" source="snippets/configuration/dependency-injection/MessageWriter.cs":::
 
-L’exemple de code inscrit le `IMessageWriter` service avec le type concret `MessageWriter` . La <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A> méthode enregistre le service avec une durée de vie limitée, la durée de vie d’une requête unique. Les [durées de vie du service](#service-lifetimes) sont décrites plus loin dans cette rubrique.
+L’exemple de code inscrit le `IMessageWriter` service avec le type concret `MessageWriter` . La <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A> méthode enregistre le service avec une durée de vie limitée, la durée de vie d’une requête unique. Les [durées de vie des services](#service-lifetimes) sont décrites plus loin dans cet article.
 
 :::code language="csharp" source="snippets/configuration/dependency-injection/Program.cs" highlight="16":::
 
@@ -166,7 +166,7 @@ Dans les applications qui traitent les demandes, les services transitoires sont 
 
 ### <a name="scoped"></a>Délimité
 
-Pour les applications Web, une durée de vie limitée indique que les services sont créés une seule fois par demande du client (connexion). Inscrire les services délimités avec <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A> .
+Pour les applications Web, une durée de vie limitée indique que les services sont créés une seule fois par demande cliente (connexion). Inscrire les services délimités avec <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped%2A> .
 
 Dans les applications qui traitent les requêtes, les services délimités sont supprimés à la fin de la demande.
 
@@ -220,7 +220,7 @@ L’exemple de code source précédent inscrit deux implémentations du `IMessag
 
 :::code language="csharp" source="snippets/configuration/console-di-ienumerable/ExampleService.cs" highlight="9-18":::
 
-`ExampleService`Définit deux paramètres de constructeur, un unique `IMessageWriter` et un `IEnumerable<IMessageWriter>` . Le seul `IMessageWriter` est le dernier implémentation à être enregistré, tandis que `IEnumerable<IMessageWriter>` représente toutes les implémentations inscrites.
+`ExampleService`Définit deux paramètres de constructeur, un unique `IMessageWriter` et un `IEnumerable<IMessageWriter>` . Le seul `IMessageWriter` est la dernière implémentation de qui a été inscrite, tandis que `IEnumerable<IMessageWriter>` représente toutes les implémentations inscrites.
 
 Le Framework fournit également des `TryAdd{LIFETIME}` méthodes d’extension, qui inscrivent le service uniquement si aucune implémentation n’est déjà inscrite.
 

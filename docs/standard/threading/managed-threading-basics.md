@@ -2,19 +2,18 @@
 title: Éléments fondamentaux du threading managé
 description: Consultez les liens vers d’autres articles sur le Threading géré, couvrant des sujets tels que les exceptions, la synchronisation des données, le premier plan & les threads d’arrière-plan, le stockage local et bien plus encore.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - multiple threads
 - threading [.NET], multiple threads
 - threading [.NET], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: ca3073cca9887265b4bacb4f8dfeb01203f82621
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 16785b1c21c5810e55429f6756dcf591c90d8499
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189132"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819667"
 ---
 # <a name="managed-threading-basics"></a>Éléments fondamentaux du threading managé
 
@@ -45,7 +44,7 @@ Les cinq premiers Articles de cette section sont conçus pour vous aider à dét
  [Stockage local des threads : champs static et emplacements de données relatifs à un thread](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Décrit les mécanismes de stockage relatifs aux threads.  
   
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
  <xref:System.Threading.Thread>  
  Fournit la documentation de référence pour la classe **Thread** qui représente un thread managé, qu’elle provienne de code non managé ou qu’elle ait été créée dans une application managée.  

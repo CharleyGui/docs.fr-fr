@@ -2,18 +2,17 @@
 title: Threads et threading
 description: En savoir plus sur les threads, tels que les processus & threads, quand utiliser plusieurs threads, & Comment utiliser le multithreading pour augmenter la réactivité ou le débit dans .NET.
 ms.date: 11/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - multiple threads
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-ms.openlocfilehash: f7af6e1e73016e67c097b4fdbfb5f5d2d84e00d3
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 20550b597e27c75f00d16528871007988dd6b885
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188131"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819537"
 ---
 # <a name="threads-and-threading"></a>Threads et threading
 
@@ -24,9 +23,9 @@ Le multithreading vous permet d’accélérer la réactivité de votre applicati
 Un *processus* est un programme d’exécution. Un système d’exploitation utilise des processus pour séparer les applications qui sont en cours d’exécution. Un *thread* est l’unité de base à laquelle un système d’exploitation alloue du temps processeur. Chaque thread a une [priorité de planification](scheduling-threads.md) et maintient un ensemble de structures utilisé par le système pour enregistrer le contexte du thread quand l’exécution du thread est en pause. Le contexte du thread comprend toutes les informations dont le thread a besoin pour reprendre l’exécution sans interruption, notamment son ensemble de registres de CPU et de pile. Plusieurs threads peuvent s’exécuter dans le contexte d’un processus. Tous les threads d’un processus partagent son espace d’adressage virtuel. Un thread peut exécuter n’importe quelle partie du code du programme, y compris les parties exécutées par un autre thread.
 
 > [!NOTE]
-> .NET Framework offre un moyen d’isoler les applications au sein d’un processus avec l’utilisation de *domaines d’application* . (Les domaines d’application ne sont pas disponibles sur .NET Core.) Pour plus d’informations, consultez la section [domaines d’application et threads](../../framework/app-domains/application-domains.md#application-domains-and-threads) de l’article [domaines d’application](../../framework/app-domains/application-domains.md) .
+> .NET Framework offre un moyen d’isoler les applications au sein d’un processus avec l’utilisation de *domaines d’application*. (Les domaines d’application ne sont pas disponibles sur .NET Core.) Pour plus d’informations, consultez la section [domaines d’application et threads](../../framework/app-domains/application-domains.md#application-domains-and-threads) de l’article [domaines d’application](../../framework/app-domains/application-domains.md) .
 
-Par défaut, un programme .NET est démarré avec un thread unique, souvent appelé thread *principal* . Toutefois, il peut créer des threads supplémentaires pour exécuter du code en parallèle ou en même temps que le thread principal. Ces threads sont souvent appelés threads *de travail* .
+Par défaut, un programme .NET est démarré avec un thread unique, souvent appelé thread *principal*. Toutefois, il peut créer des threads supplémentaires pour exécuter du code en parallèle ou en même temps que le thread principal. Ces threads sont souvent appelés threads *de travail*.
 
 ## <a name="when-to-use-multiple-threads"></a>Quand utiliser plusieurs threads
 

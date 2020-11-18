@@ -1,14 +1,13 @@
 ---
 title: Utilisation de schémas XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: bbbcc70c-bf9a-4f6a-af72-1bab5384a187
-ms.openlocfilehash: f239d67d959c1f7a0bfebfaaaa49de9cf9c9a111
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: adad77eaefd85abf111a25180b7289af997a7222
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84281685"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818412"
 ---
 # <a name="working-with-xml-schemas"></a>Utilisation de schémas XML
 Pour définir la structure d'un document XML, les relations entre ses éléments, les types de données et les limites de contenu, vous devez utiliser une définition de type de document (DTD) ou un schéma de langage XSD (XML Schema Definition). Bien qu'un document XML soit considéré comme correctement construit s'il répond à toutes les exigences syntaxiques définies par la recommandation du W3C (World Wide Web Consortium) sur le langage XML (Extensible Markup Language) 1.0, il est considéré comme non valide à moins d'être correctement construit et conforme aux limites définies par sa DTD ou son schéma. Par conséquent, même si tous les documents XML valides sont construits correctement, tous les documents XML construits correctement ne sont pas valides.  

@@ -1,7 +1,6 @@
 ---
 title: "Comment : écouter plusieurs demandes d'annulation"
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - cancellation tokens, joining
 - LinkedTokenSource, how to
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
-ms.openlocfilehash: 3f92d1d9e8fec91475886e8bd7bffbc97bb632a0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 37f42ad4de2d468cd14a916ab4e35e6577f8e375
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279393"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819771"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>Comment : écouter plusieurs demandes d'annulation
 Cet exemple montre comment écouter simultanément deux jetons d’annulation afin de pouvoir annuler une opération si un des jetons le demande.  

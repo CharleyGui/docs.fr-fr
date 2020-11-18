@@ -1,18 +1,17 @@
 ---
 title: Indépendance du langage et composants indépendants du langage
 description: Découvrez comment développer dans un des nombreux langages pris en charge dans .NET, tels que C#, C++/CLI, F#, IronPython, VB, Visual COBOL et PowerShell.
-ms.date: 07/22/2016
 dev_langs:
 - csharp
 - vb
-ms.technology: dotnet-standard
+ms.date: 07/22/2016
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 524f8dc9838d7c438e8155da683c4fa5b01f36a3
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 259db1b9d33dd3b068f4d4fa18d2118db34bf0b0
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92162984"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819082"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -2042,9 +2041,9 @@ Les propriétés dans les types conformes à CLS doivent suivre ces règles :
 
 Un événement est défini par son nom et son type. Le type d'événement est un délégué utilisé pour indiquer l'événement. Par exemple, l'événement `DbConnection.StateChange` est de type `StateChangeEventHandler`. Outre l'événement lui-même, trois méthodes avec des noms basés sur le nom de l'événement fournissent une implémentation de l'événement et sont marquées comme `SpecialName` dans les métadonnées de l'assembly :
 
-* Une méthode pour ajouter un gestionnaire d’événements, appelée `add`_*EventName*. Par exemple, la méthode d'abonnement aux événements pour l'événement `DbConnection.StateChange` est nommée `add_StateChange`.
+* Une méthode pour ajouter un gestionnaire d’événements, appelée `add`_ *EventName*. Par exemple, la méthode d'abonnement aux événements pour l'événement `DbConnection.StateChange` est nommée `add_StateChange`.
 
-* Une méthode pour supprimer un gestionnaire d’événements, appelée `remove`_*EventName*. Par exemple, la méthode de suppression pour l'événement `DbConnection.StateChange` est nommée `remove_StateChange`.
+* Une méthode pour supprimer un gestionnaire d’événements, appelée `remove`_ *EventName*. Par exemple, la méthode de suppression pour l'événement `DbConnection.StateChange` est nommée `remove_StateChange`.
 
 * Une méthode pour indiquer que l’événement s’est produit, nommée `raise`\_*NomÉvénement*.
 

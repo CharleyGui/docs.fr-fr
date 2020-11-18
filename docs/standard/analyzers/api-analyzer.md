@@ -3,13 +3,12 @@ title: Analyseur d’API .NET
 description: Découvrez comment l’analyseur d’API .NET peut aider à détecter les problèmes de compatibilité de plateforme et les API déconseillées.
 author: oliag
 ms.date: 02/20/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: a689ae347efbc8c2dd933b2f6920ac6cc06cda7d
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 47ef2368692aee56ebd3db7803cbde7368d38049
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756193"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819602"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -62,18 +61,18 @@ La fenêtre **Liste d’erreurs** contient des avertissements avec un ID unique 
 
 En cliquant sur l’ID, vous accédez à une page web présentant des informations détaillées sur la raison pour laquelle l’API a été déconseillée, ainsi que des suggestions d’autres API utilisables.
 
-Vous pouvez supprimer les avertissements en cliquant avec le bouton droit sur le membre en surbrillance et en sélectionnant **supprimer \<diagnostic ID> **. Il existe deux moyens de supprimer les avertissements :
+Vous pouvez supprimer les avertissements en cliquant avec le bouton droit sur le membre en surbrillance et en sélectionnant **supprimer \<diagnostic ID>**. Il existe deux moyens de supprimer les avertissements :
 
 - [localement (dans la source)](#suppress-warnings-locally) ;
 - [globalement (dans un fichier de suppression)](#suppress-warnings-globally) – recommandé.
 
 ### <a name="suppress-warnings-locally"></a>Supprimer les avertissements localement
 
-Pour supprimer les avertissements localement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID> **  >  **de diagnostic dans la source**. La directive de préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans la portée définie : ![ capture d’écran du code encadré avec #pragma AVERTISSEMENT désactiver.](media/api-analyzer/suppress-in-source.jpg)
+Pour supprimer les avertissements localement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID>**  >  **de diagnostic dans la source**. La directive de préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans la portée définie : ![ capture d’écran du code encadré avec #pragma AVERTISSEMENT désactiver.](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppress-warnings-globally"></a>Supprimer les avertissements globalement
 
-Pour supprimer les avertissements globalement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID> **  >  **de diagnostic dans le fichier de suppression**.
+Pour supprimer les avertissements globalement, cliquez avec le bouton droit sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **actions rapides et refactorisations**  >  **Supprimer l' *ID* \<diagnostic ID>**  >  **de diagnostic dans le fichier de suppression**.
 
 ![Capture d’écran du menu contextuel montrant les options permettant de supprimer un avertissement dans Visual Studio.](media/api-analyzer/suppress-in-sup-file.jpg)
 

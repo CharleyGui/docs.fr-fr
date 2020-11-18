@@ -1,17 +1,16 @@
 ---
 title: Écriture de feuilles de style XSLT avec msxsl:script>
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: b2fd5ac6f03c0c66c05117a882d53af37e3f8665
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 61538656580878da775d4a42dac40165c7941eee
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555931"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818269"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de scripts de feuille de style XSLT à l’aide de \<msxsl:script>
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
@@ -65,7 +64,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
 |Type|Classe .NET Framework équivalente (Type)|Type XPath ou type XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
 |String|System.String|XPath|  
-|Booléen|System.Boolean|XPath|  
+|Boolean|System.Boolean|XPath|  
 |Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
@@ -98,7 +97,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  Cela lève une exception car les signes &amp; ne font pas l'objet d'un échappement. Le document est chargé en tant que XML et aucun traitement spécial n’est appliqué au texte qui se trouve entre les étiquettes d’élément `msxsl:script`.  
   
-## <a name="example"></a> Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -214,7 +213,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  

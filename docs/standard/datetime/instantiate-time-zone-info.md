@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : instancier un objet TimeZoneInfo'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - instantiating time zone objects
 - time zone objects [.NET], instantiation
 ms.assetid: 8cb620e5-c6a6-4267-a52e-beeb73cd1a34
-ms.openlocfilehash: 34606c0e227d7826cd6188f42fc2fb23f17105ca
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: c4e441e793244dfe368fb86c3e77fcf67a685558
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063649"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817820"
 ---
 # <a name="how-to-instantiate-a-timezoneinfo-object"></a>Procédure : instancier un objet TimeZoneInfo
 

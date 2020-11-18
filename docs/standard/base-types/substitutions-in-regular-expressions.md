@@ -2,7 +2,6 @@
 title: Substitutions dans les expressions régulières
 description: Faites en sorte que les substitutions remplacent le texte mis en correspondance à l’aide d’expressions régulières dans .NET. Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: 935fbf573c00aeaec639884888d7e3e6a83c7056
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 0f2fbe7e8b9c13d811a2fe50db0709405dfa1da7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888930"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818815"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 
@@ -29,7 +28,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
 |Substitution|Description|  
 |------------------|-----------------|  
-|$ *certain*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre* , où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
+|$ *certain*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#substituting-a-numbered-group).|  
 |${ *nom* }|Comprend la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<` *nom* `> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).|  
 |$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#substituting-a--character).|  
 |$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#substituting-the-entire-match).|  
@@ -140,7 +139,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"aa1bb2cc3dd4ee5"` contient cinq correspondances. Le tableau suivant illustre comment la substitution ``$` `` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Correspond|Position|Chaîne avant la correspondance|Chaîne de résultat|  
+|Faire correspondre|Position|Chaîne avant la correspondance|Chaîne de résultat|  
 |-----------|--------------|-------------------------|-------------------|  
 |1|2|aa|aa **aa** bb2cc3dd4ee5|  
 |2|5|aa1bb|aaaabb **aa1bb** cc3dd4ee5|  
@@ -158,7 +157,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"aa1bb2cc3dd4ee5"` contient cinq correspondances. Le tableau suivant illustre comment la substitution `$'` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Correspond|Position|Chaîne après la correspondance|Chaîne de résultat|  
+|Faire correspondre|Position|Chaîne après la correspondance|Chaîne de résultat|  
 |-----------|--------------|------------------------|-------------------|  
 |1|2|bb2cc3dd4ee5|aa **bb2cc3dd4ee5** bb2cc3dd4ee5|  
 |2|5|cc3dd4ee5|aabb2cc3dd4ee5bb **cc3dd4ee5** cc3dd4ee5|  
@@ -194,7 +193,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"ABC123DEF456"` contient deux correspondances. Le tableau suivant illustre comment la substitution `$_` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Correspond|Position|Correspond|Chaîne de résultat|  
+|Faire correspondre|Position|Faire correspondre|Chaîne de résultat|  
 |-----------|--------------|-----------|-------------------|  
 |1|3|123|ABC **ABC123DEF456** DEF456|  
 |2|5|456|ABCABC123DEF456DEF **ABC123DEF456**|  

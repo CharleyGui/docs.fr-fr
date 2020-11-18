@@ -1,19 +1,18 @@
 ---
 title: 'Procédure : contrôler l’ordre dans une requête PLINQ'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, how to control ordering
 ms.assetid: c67eccc7-004d-4b2f-987e-919cbbd62ef7
-ms.openlocfilehash: 80e199d75471eba219f1f3da12d307b6cd1d90cf
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 88f19092b06e4dece202e880287bdb95e04d2f2d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285454"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817105"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a>Procédure : contrôler l’ordre dans une requête PLINQ
 Ces exemples montrent comment contrôler le classement d’une requête PLINQ à l’aide de la méthode d’extension <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>.  

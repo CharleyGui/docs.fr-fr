@@ -1,17 +1,16 @@
 ---
 title: 'Procédure : permettre aux utilisateurs de résoudre des heures ambiguës'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - time zones [.NET], ambiguous time
 - ambiguous time [.NET]
 ms.assetid: bca874ee-5b68-4654-8bbd-3711220ef332
-ms.openlocfilehash: 9eb1f576fd10b22383d77b90f63009fef41582d6
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: d543db20161057764749210533f35f7c2a1ec81d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063584"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817794"
 ---
 # <a name="how-to-let-users-resolve-ambiguous-times"></a>Procédure : permettre aux utilisateurs de résoudre des heures ambiguës
 

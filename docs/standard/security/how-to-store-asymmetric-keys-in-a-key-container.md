@@ -2,7 +2,6 @@
 title: 'Comment : stocker des clés asymétriques dans un conteneur de clé'
 description: Découvrez comment stocker des clés asymétriques dans un conteneur de clé dans .NET. Découvrez comment créer une clé asymétrique, l’enregistrer dans un conteneur de clé et récupérer et supprimer la clé.
 ms.date: 05/26/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - encryption [.NET], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-ms.openlocfilehash: c0e0904089c4b7054aa3ef7510c20e40c57dc733
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 946657f0c96aa80705575d8203ff158c63a72780
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554408"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94820148"
 ---
 # <a name="store-asymmetric-keys-in-a-key-container"></a>Stocker des clés asymétriques dans un conteneur de clé
 
@@ -52,7 +51,7 @@ Les clés privées asymétriques ne doivent jamais être stockées textuellement
 
 1. Appelez la `Clear` méthode de la classe qui dérive de `AsymmetricAlgorithm` . Cette méthode libère toutes les ressources de la classe et efface le conteneur de clés.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 L'exemple suivant illustre comment créer une clé asymétrique, l'enregistrer dans un conteneur de clés, récupérer la clé ultérieurement et supprimer la clé du conteneur.
 

@@ -1,14 +1,13 @@
 ---
 title: Directives de feuille de style incorporées dans un document
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
-ms.openlocfilehash: 19e25ab7262bb006144eea71e74bd7454066b3f6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 25946fd14a82428ae4367cd33511df68e9929203
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710152"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818568"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Directives de feuille de style incorporées dans un document
 

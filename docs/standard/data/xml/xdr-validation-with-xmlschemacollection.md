@@ -1,17 +1,16 @@
 ---
 title: Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-ms.openlocfilehash: c1383dbb5419eadbfb7c07f288ee46b1ca11cf5c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9edde2fc0da97b570162775a33c95d472cda974b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709996"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819277"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 
@@ -70,7 +69,7 @@ Namespace ValidationSample
         End Sub
 
         Public Shared Sub ValidationHandler(sender As Object, args As ValidationEventArgs)
-            Console.WriteLine("***Validation error")
+            Console.WriteLine("**_Validation error")
             Console.WriteLine($"Severity:{args.Severity}")
             Console.WriteLine($"Message:{args.Message}")
         End Sub
@@ -123,7 +122,7 @@ namespace ValidationSample
 
         public static void ValidationHandler(object sender, ValidationEventArgs args)
         {
-            Console.WriteLine("***Validation error");
+            Console.WriteLine("_*_Validation error");
             Console.WriteLine($"\tSeverity:{args.Severity}");
             Console.WriteLine($"\tMessage:{args.Message}");
         }
@@ -131,7 +130,7 @@ namespace ValidationSample
 }
 ```
 
-L’exemple suivant présente le contenu du fichier d’entrée, *HeadCount. xml*, à valider :
+L’exemple suivant présente le contenu du fichier d’entrée, _HeadCount.xml *, à valider :
 
 ```xml
 <!--Load HeadCount.xdr in SchemaCollection for Validation-->

@@ -1,7 +1,6 @@
 ---
 title: Prise en charge de DateTime et DateTimeOffset dans System.Text.Json
 description: Vue d’ensemble de la façon dont les types DateTime et DateTimeOffset sont pris en charge dans la System.Text.Jssur la bibliothèque.
-ms.technology: dotnet-standard
 author: layomia
 ms.author: laakinri
 ms.date: 07/22/2019
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 020e6903069da2c5d8761c86e890c4e9575a3fae
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 3f8161c40f21428a4a22bef09582754069f3a2b6
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188755"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817534"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Prise en charge de DateTime et DateTimeOffset dans System.Text.Json
 
@@ -128,8 +127,8 @@ Le profil ISO 8601-1:2019 étendu implémenté dans <xref:System.Text.Json> déf
 | Composant       | Format                      | Description                                                                     |
 |-----------------|-----------------------------|---------------------------------------------------------------------------------|
 | Year            | "yyyy"                      | 0001-9999                                                                       |
-| Month (Mois)           | "MM"                        | 01-12                                                                           |
-| Jour             | "dd"                        | 01-28, 01-29, 01-30, 01-31 sur la base du mois/de l’année                                  |
+| Month           | "MM"                        | 01-12                                                                           |
+| jour             | "dd"                        | 01-28, 01-29, 01-30, 01-31 sur la base du mois/de l’année                                  |
 | Heure            | "HH"                        | 00-23                                                                           |
 | Minute          | "mm"                        | 00-59                                                                           |
 | Seconde          | "ss"                        | 00-59                                                                           |

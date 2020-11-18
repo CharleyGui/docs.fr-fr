@@ -3,13 +3,12 @@ title: Composants architecturaux de .NET
 description: Décrit les composants de l’architecture .NET, tels que les .NET Standard, les implémentations .NET, les runtimes .NET et les outils.
 author: cartermp
 ms.date: 10/05/2020
-ms.technology: dotnet-standard
-ms.openlocfilehash: 316063dbcfba5c92b4a9c6a17051e0a7fc178a3a
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 00d05ee328087042f7603779438436656c45be48
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224393"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819420"
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
@@ -35,7 +34,7 @@ Chaque implémentation de .NET inclut les composants suivants :
 Microsoft prend en charge quatre implémentations .NET :
 
 - .NET 5 (et .NET Core) et versions ultérieures
-- .NET Framework
+- .NET Framework
 - Mono
 - UWP
 
@@ -51,7 +50,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 - [Choix entre .NET 5 et .NET Framework pour les applications serveur](choosing-core-framework-server.md)
 - [.NET 5 et .NET Standard](net-standard.md#net-5-and-net-standard)
 
-### <a name="net-framework"></a>.NET Framework
+### <a name="net-framework"></a>.NET Framework
 
 .NET Framework est l’implémentation .NET originale qui existait depuis 2002. Les versions 4,5 et ultérieures implémentent .NET Standard, de sorte que le code qui cible .NET Standard peut s’exécuter sur ces versions de .NET Framework. Il contient des API supplémentaires spécifiques à Windows, notamment des API pour le développement bureautique Windows avec Windows Forms et WPF. .NET Framework est optimisé pour la génération d’applications de bureau Windows.
 

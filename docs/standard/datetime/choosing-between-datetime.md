@@ -2,7 +2,6 @@
 title: Comparer DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 description: Découvrez les différences entre les types DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo pour représenter les informations de date et d’heure dans .NET.
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - time zones [.NET], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 5d6173642e88165bb52d5d9cfc85c8889ce763a5
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 23c846dfd634e476b60ffd867519a60a0ae6b6cf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063870"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94818093"
 ---
 # <a name="choose-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 

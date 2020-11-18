@@ -1,18 +1,17 @@
 ---
 title: Création de schémas XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
-ms.openlocfilehash: adc1a10bb9acb14ee88589c13e28c49773e42100
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: bb011a8b81d9808c7517ebc2517529af7c4b975a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291589"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819369"
 ---
 # <a name="building-xml-schemas"></a>Création de schémas XML
 Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondent aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML et peuvent permettre de créer des schémas XML en mémoire.  

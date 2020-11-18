@@ -1,18 +1,17 @@
 ---
 title: Validation d'un document XML dans le DOM
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-ms.openlocfilehash: 949dc52c332b17784b0e1851d178465fe4881b6f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db3748d1d0e1a5687219d5b07d1261639a4ef670
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287634"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94819290"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Validation d'un document XML dans le DOM
 

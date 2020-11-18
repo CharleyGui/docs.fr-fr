@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : résoudre des heures ambiguës'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - time zones [.NET], ambiguous time
 - ambiguous time [.NET]
 ms.assetid: 2cf5fb25-492c-4875-9245-98cac8348e97
-ms.openlocfilehash: 467153ad1217e529f52bf90262c4264de069ff00
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 29a549d519bd3b6c10fef8205b30a07a71f01d1a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063519"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817755"
 ---
 # <a name="how-to-resolve-ambiguous-times"></a>Procédure : résoudre des heures ambiguës
 

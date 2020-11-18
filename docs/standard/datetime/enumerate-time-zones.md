@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : énumérer les fuseaux horaires d’un ordinateur'
 ms.date: 04/10/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - time zones [.NET], enumerating
 - enumerating time zones [.NET]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-ms.openlocfilehash: a51e9d0c51968d57e0d79dd80d8619ab11cdbf93
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 276c13bb95685e9588e25238f1a6e45cd57a6c91
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063766"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94817963"
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Procédure : énumérer les fuseaux horaires d’un ordinateur
 
@@ -25,7 +24,7 @@ Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir
 
 ### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>Pour énumérer les fuseaux horaires présents sur le système local
 
-1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection générique d' <xref:System.TimeZoneInfo> objets. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Exemple :
+1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection générique d' <xref:System.TimeZoneInfo> objets. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Par exemple :
 
    [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
    [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]
