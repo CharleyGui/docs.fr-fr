@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : lire et écrire des fichiers dans un stockage isolé'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - data stores, reading and writing to files
 - stores, reading and writing to files
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
-ms.openlocfilehash: d0c95f418ff85654dceed296b7a891c025ab2e62
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eff020ebb1de40f83582bbf872339c7652d1d4b1
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291797"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830699"
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>Procédure : lire et écrire des fichiers dans un stockage isolé
 Pour lire ou écrire dans un fichier dans un magasin isolé, utilisez un objet <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> avec un lecteur de flux (objet <xref:System.IO.StreamReader>) ou un writer de flux (objet <xref:System.IO.StreamWriter>).  
@@ -40,5 +39,5 @@ Pour lire ou écrire dans un fichier dans un magasin isolé, utilisez un objet <
 - <xref:System.IO.FileAccess?displayProperty=nameWithType>
 - <xref:System.IO.StreamReader?displayProperty=nameWithType>
 - <xref:System.IO.StreamWriter?displayProperty=nameWithType>
-- [E/s de fichier et de flux](index.md)
+- [Fichier et flux de données E/S](index.md)
 - [Stockage isolé](isolated-storage.md)

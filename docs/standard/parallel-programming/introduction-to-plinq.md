@@ -2,19 +2,18 @@
 title: Introduction à PLINQ
 description: Découvrez comment créer des requêtes en parallèle à l’aide de PLINQ dans .NET. PLINQ correspond à LINQ (Parallel Language-Integrated Query).
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: 37414c7963a3803518b41a5c6d262740313e2b37
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: 9a6401e8955c51ea72db3ca203365147b00db64f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925348"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830647"
 ---
 # <a name="introduction-to-plinq"></a>Introduction à PLINQ
 

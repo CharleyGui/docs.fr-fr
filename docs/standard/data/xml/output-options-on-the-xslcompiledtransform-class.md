@@ -1,14 +1,13 @@
 ---
 title: Options de sortie de la classe XslCompiledTransform
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
-ms.openlocfilehash: e9ffdc1377dbf124f042802279e7e7a275222eff
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 777324e81ac809866dab68259dceca89c6091a3c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288704"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830088"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>Options de sortie de la classe XslCompiledTransform
 Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez spécifier des options de sortie dans la feuille de style ou dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
@@ -21,7 +20,7 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 |Nom de l’attribut|Comportement|  
 |--------------------|--------------|  
 |method|Pris en charge.|  
-|version|Ignoré. La version est toujours 1.0 pour XML et 4.0 pour HTML.|  
+|Version|Ignoré. La version est toujours 1.0 pour XML et 4.0 pour HTML.|  
 |encodage|Ignoré en cas de sortie vers un objet <xref:System.IO.TextWriter>. La propriété <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> est utilisée à la place.|  
 |omit-xml-declaration|Pris en charge.|  
 |autonomes|Pris en charge.|  
@@ -43,7 +42,7 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 #### <a name="string"></a>String  
  Utilisez ce type de sortie pour spécifier l'URI du fichier de sortie.  
   
-#### <a name="stream"></a>Flux  
+#### <a name="stream"></a>STREAM  
  Un flux est une abstraction d'une séquence d'octets, comme un fichier, un appareil d'entrée/sortie, un canal de communication inter-processus ou un socket TCP/IP. La classe <xref:System.IO.Stream> et ses classes dérivées donnent une vue générique de ces différents types d'entrée et de sortie, isolant ainsi le programmeur des détails propres au système d'exploitation et aux périphériques sous-jacents.  
   
  Utilisez ce type de sortie pour envoyer des données à un objet <xref:System.IO.FileStream>, à un objet <xref:System.IO.MemoryStream> ou à un flux de sortie (`Response.OutputStream`).  

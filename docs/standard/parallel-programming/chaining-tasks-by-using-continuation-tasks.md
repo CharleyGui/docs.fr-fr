@@ -2,25 +2,24 @@
 title: Chaînage de tâches à l’aide de tâches de continuation
 description: Apprenez à chaîner des tâches à l’aide de tâches de continuation dans .NET. Une tâche de continuation est une tâche asynchrone appelée par une autre tâche.
 ms.date: 07/20/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: d42d244e644bf3ee1f45b25a71d60bbb2ef8e590
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: c7afbc1bb22a1743aed8e4ebd0a06c4f3fb57e86
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063833"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830608"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Chaînage de tâches à l’aide de tâches de continuation
 
 En programmation asynchrone, il est courant pour une opération asynchrone, à l’achèvement, d’appeler une deuxième opération. Les continuations autorisent les opérations descendance à consommer les résultats de la première opération. Habituellement, les continuations se faisaient à l’aide de méthodes de rappel. Dans la bibliothèque parallèle de tâches, les mêmes fonctionnalités sont fournies par les _tâches de continuation_. Une tâche de continuation (également appelée continuation) est une tâche asynchrone appelée par une autre tâche, appelée _antécédent_, lorsque l’antécédent se termine.
 
-Les continuations sont relativement faciles à utiliser, tout en étant puissantes et flexibles. Vous pouvez par exemple :
+Les continuations sont relativement faciles à utiliser, tout en étant puissantes et flexibles. Par exemple, vous pouvez :
 
 - passer des données de l'antécédent à la continuation ;
 - spécifier les conditions précises sous lesquelles la continuation doit être ou non appelée ;

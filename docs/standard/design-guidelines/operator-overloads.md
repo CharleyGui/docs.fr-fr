@@ -1,26 +1,25 @@
 ---
 title: Surcharges d'opérateurs
 ms.date: 10/22/2008
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - operators [.NET Framework], overloads
 - names [.NET Framework], overloaded operators
 - member design guidelines, operators
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
-ms.openlocfilehash: 893b7d1f76dfb059a0ddca77dfd8654812e9ae12
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 40e1c6a4a65bfc20c94223e4012e34928b25a2ab
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289731"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830036"
 ---
 # <a name="operator-overloads"></a>Surcharges d'opérateurs
 Les surcharges d’opérateur permettent d’afficher les types de Framework comme s’ils étaient des primitives de langage intégrées.
 
  Bien qu’elles soient autorisées et utiles dans certains cas, les surcharges d’opérateur doivent être utilisées avec prudence. Il existe de nombreux cas dans lesquels la surcharge d’opérateur a été abusée, par exemple quand les concepteurs de Framework ont commencé à utiliser des opérateurs pour les opérations qui doivent être des méthodes simples. Les instructions suivantes doivent vous aider à déterminer quand et comment utiliser la surcharge d’opérateur.
 
- ❌Évitez de définir des surcharges d’opérateur, sauf dans les types qui doivent ressembler à des types primitifs (intégrés).
+ ❌ Évitez de définir des surcharges d’opérateur, sauf dans les types qui doivent ressembler à des types primitifs (intégrés).
 
  ✔️ envisagez de définir des surcharges d’opérateur dans un type qui doit ressembler à un type primitif.
 
@@ -28,11 +27,11 @@ Les surcharges d’opérateur permettent d’afficher les types de Framework com
 
  ✔️ définir des surcharges d’opérateur dans des structs qui représentent des nombres (tels que <xref:System.Decimal?displayProperty=nameWithType> ).
 
- ❌NE soyez pas au fait de définir des surcharges d’opérateur.
+ ❌ NE soyez pas au fait de définir des surcharges d’opérateur.
 
  La surcharge d’opérateur est utile dans les cas où il est immédiatement évident de savoir ce que sera le résultat de l’opération. Par exemple, il est logique de pouvoir soustraire l’un <xref:System.DateTime> d’un autre `DateTime` et d’obtenir un <xref:System.TimeSpan> . Toutefois, il n’est pas approprié d’utiliser l’opérateur d’Union logique pour unir deux requêtes de base de données, ou pour utiliser l’opérateur Shift pour écrire dans un flux.
 
- ❌NE fournissez pas de surcharges d’opérateur sauf si au moins l’un des opérandes est du type définissant la surcharge.
+ ❌ NE fournissez pas de surcharges d’opérateur sauf si au moins l’un des opérandes est du type définissant la surcharge.
 
  ✔️ surchargent les opérateurs de manière symétrique.
 
@@ -91,17 +90,17 @@ Les surcharges d’opérateur permettent d’afficher les types de Framework com
 ### <a name="conversion-operators"></a>Opérateurs de conversion
  Les opérateurs de conversion sont des opérateurs unaires qui autorisent la conversion d’un type en un autre. Les opérateurs doivent être définis en tant que membres statiques sur l’opérande ou le type de retour. Il existe deux types d’opérateurs de conversion : implicites et explicites.
 
- ❌NE fournissez pas d’opérateur de conversion si une telle conversion n’est pas clairement attendue par les utilisateurs finaux.
+ ❌ NE fournissez pas d’opérateur de conversion si une telle conversion n’est pas clairement attendue par les utilisateurs finaux.
 
- ❌NE définissez pas d’opérateurs de conversion en dehors du domaine d’un type.
+ ❌ NE définissez pas d’opérateurs de conversion en dehors du domaine d’un type.
 
  Par exemple, <xref:System.Int32> , <xref:System.Double> et <xref:System.Decimal> sont tous des types numériques, alors que <xref:System.DateTime> n’est pas. Par conséquent, il ne doit y avoir aucun opérateur de conversion pour convertir un `Double(long)` en `DateTime` . Un constructeur est préféré dans ce cas.
 
- ❌NE fournissez pas d’opérateur de conversion implicite si la conversion est potentiellement perdue.
+ ❌ NE fournissez pas d’opérateur de conversion implicite si la conversion est potentiellement perdue.
 
  Par exemple, il ne doit pas y avoir de conversion implicite de `Double` en `Int32` , car `Double` a une plage plus large que `Int32` . Un opérateur de conversion explicite peut être fourni même si la conversion est potentiellement perdue.
 
- ❌NE levez pas d’exceptions à partir de casts implicites.
+ ❌ NE levez pas d’exceptions à partir de casts implicites.
 
  Il est très difficile pour les utilisateurs finaux de comprendre ce qui se passe, car ils n’ont peut-être pas conscience qu’une conversion a lieu.
 

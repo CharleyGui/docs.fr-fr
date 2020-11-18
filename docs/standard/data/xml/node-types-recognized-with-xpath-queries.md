@@ -1,14 +1,13 @@
 ---
 title: Types de nœuds reconnus avec les requêtes XPath
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: 1d33e22d-18e5-43f8-a466-2e3d0a8dd094
-ms.openlocfilehash: b9fc55b11455491406970af2a9232b277160875f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 87f4ed0c8182e250f6926d6c3d82893e6f8b985c
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288730"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830101"
 ---
 # <a name="node-types-recognized-with-xpath-queries"></a>Types de nœuds reconnus avec les requêtes XPath
 Les types de nœuds reconnus dans une requête XPath ne sont pas les mêmes que ceux trouvés dans le DOM (Document Object Model).  

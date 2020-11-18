@@ -1,17 +1,16 @@
 ---
 title: Planification de threads
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET], scheduling
 - scheduling threads
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
-ms.openlocfilehash: 806d6620fd236c69a4f461f1e30f68a3fefc9b17
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: be1b87e9dd811606b1a57f3be39dc94a5c4f4043
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188950"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829880"
 ---
 # <a name="scheduling-threads"></a>Planification de threads
 

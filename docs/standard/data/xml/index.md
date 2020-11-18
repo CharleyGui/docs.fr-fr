@@ -1,14 +1,13 @@
 ---
 title: Documents et données XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-ms.openlocfilehash: 6d2a52567a1fc8bdbbb1d039ac583c889d77d4af
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: db122d1f2fa4ad192bbcc92769873850916a4220
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540132"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830244"
 ---
 # <a name="xml-documents-and-data"></a>Documents et données XML
 
@@ -26,7 +25,7 @@ Le .NET Framework fournit un jeu de classes complet et intégré qui vous perme
 
 Pour obtenir la liste complète, recherchez « System.Xml » sur le [navigateur de l’API .NET](../../../../api/index.md?term=system.xml).
 
-Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Exemple :
+Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Par exemple :
 
 - La classe <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implémente les recommandations du [W3C relatives aux modèles objet de documents (DOM) de niveau 1](https://www.w3.org/TR/REC-DOM-Level-1/) et [2 (standard)](https://www.w3.org/TR/DOM-Level-2-Core/).
 

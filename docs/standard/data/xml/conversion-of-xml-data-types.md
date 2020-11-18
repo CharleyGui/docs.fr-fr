@@ -1,17 +1,16 @@
 ---
 title: Conversion des types de données XML
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-ms.openlocfilehash: d8b60428bc129958355ce5b285662847e9e712c3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d7ee7447ab7a8be1bad0d087dba5fc2afaa878e8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84282413"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830972"
 ---
 # <a name="conversion-of-xml-data-types"></a>Conversion des types de données XML
 La majorité des méthodes présentes dans une classe **XmlConvert** sont utilisées pour convertir des données entre des chaînes et des formats fortement typés. Ces méthodes sont indépendantes des paramètres régionaux. Cela signifie qu'elles ne prennent pas en compte les paramètres régionaux éventuels lors de la conversion.  
@@ -21,7 +20,7 @@ La majorité des méthodes présentes dans une classe **XmlConvert** sont utilis
   
  En supposant l'entrée XML suivante :  
   
- **Input**  
+ **Entrée**  
   
 ```xml  
 <Element>2001-02-27T11:13:23</Element>  
@@ -46,7 +45,7 @@ Console.WriteLine(vDateTime);
   
  En supposant l'entrée XML suivante :  
   
- **Input**  
+ **Entrée**  
   
 ```xml  
 <TestInt32>-2147483648</TestInt32>  

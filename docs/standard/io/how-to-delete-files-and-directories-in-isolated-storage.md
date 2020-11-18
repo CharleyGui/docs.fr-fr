@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : supprimer des fichiers et des répertoires dans un stockage isolé'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-ms.openlocfilehash: 7797f319ca3b143bac6a4e68eaf820e966f1560e
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 9340796c835d91fe5401e467edd82cab80b2e653
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93187942"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830790"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Procédure : supprimer des fichiers et des répertoires dans un stockage isolé
 Vous pouvez supprimer des répertoires et des fichiers dans un fichier de stockage isolé. Dans un magasin, les noms de répertoires et de fichiers dépendent du système d’exploitation et sont spécifiées par rapport à la racine du système de fichiers virtuel. Ils ne sont pas sensibles à la casse sur les systèmes d’exploitation Windows.  

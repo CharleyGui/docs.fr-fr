@@ -2,7 +2,6 @@
 title: Expressions régulières .NET
 description: Utilisez des expressions régulières pour rechercher des modèles de caractères spécifiques, valider du texte, utiliser des sous-chaînes de texte & ajouter des chaînes extraites à une collection dans .NET.
 ms.date: 06/30/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -21,12 +20,12 @@ helpviewer_keywords:
 - .NET regular expressions
 - strings [.NET], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: 6704ab4a99789e2e0bb4c4336f8c73aa8a89671d
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 6fa791005aa9fa9956a3169f8f9ddecfa201bcda
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888982"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831336"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
 
@@ -137,7 +136,7 @@ La classe <xref:System.String> comprend de nombreuses méthodes de recherche et 
 |[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Fournit des informations sur les fonctionnalités et le comportement des expressions régulières .NET.|
 |[Utiliser des expressions régulières dans Visual Studio](/visualstudio/ide/using-regular-expressions-in-visual-studio)||
   
-## <a name="reference"></a>Informations de référence  
+## <a name="reference"></a>Référence  
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  

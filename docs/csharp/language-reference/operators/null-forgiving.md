@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: fb478250aa81e61edb13c9d0e0e65f6f19e6153a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: f2eb57bba462d471a041c17024fa7031c2c7f87d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687423"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830582"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-indulgent avec), opérateur (référence C#)
 

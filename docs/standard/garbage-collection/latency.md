@@ -1,17 +1,16 @@
 ---
 title: Modes de latence
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-ms.openlocfilehash: ee45fe5e8016c7507bc3a873e615fd8379810a8e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2e7b30a50e2513c567abf2116ab5495e717a8e22
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286013"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831193"
 ---
 # <a name="latency-modes"></a>Modes de latence
 
@@ -41,7 +40,7 @@ Le tableau suivant répertorie les scénarios d’application pour l’utilisati
 
 |Mode de latence|Scénarios d’application|
 |------------------|---------------------------|
-|<xref:System.Runtime.GCLatencyMode.Batch>|Pour les applications qui n’ont pas d’interface utilisateur ou d’opérations côté serveur.<br /><br />Lorsque la garbage collection d’arrière-plan est désactivée, il s’agit du mode par défaut pour les garbage collection de station de travail et de serveur. <xref:System.Runtime.GCLatencyMode.Batch>le mode remplace également le paramètre [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , autrement dit, il empêche les collections en arrière-plan ou simultanées.|
+|<xref:System.Runtime.GCLatencyMode.Batch>|Pour les applications qui n’ont pas d’interface utilisateur ou d’opérations côté serveur.<br /><br />Lorsque la garbage collection d’arrière-plan est désactivée, il s’agit du mode par défaut pour les garbage collection de station de travail et de serveur. <xref:System.Runtime.GCLatencyMode.Batch> le mode remplace également le paramètre [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , autrement dit, il empêche les collections en arrière-plan ou simultanées.|
 |<xref:System.Runtime.GCLatencyMode.Interactive>|Pour la plupart des applications qui ont une interface utilisateur.<br /><br />Il s’agit du mode par défaut pour les garbage collection de station de travail et de serveur. Toutefois, si une application est hébergée, les paramètres du garbage collector du processus d’hébergement sont prioritaires.|
 |<xref:System.Runtime.GCLatencyMode.LowLatency>|Pour les applications qui ont des opérations de courte durée pour lesquelles le temps est important, et durant lesquelles les interruptions du garbage collector pourraient provoquer des perturbations. Par exemple, les applications qui restituent des animations ou des fonctions d’acquisition de données.|
 |<xref:System.Runtime.GCLatencyMode.SustainedLowLatency>|Pour les applications qui ont des opérations pour lesquelles le temps est important, pendant une durée définie mais potentiellement longue durant laquelle les interruptions du garbage collector pourraient provoquer des perturbations. Par exemple, les applications nécessitant des temps de réponse rapides en raison du changement des données de marché pendant les heures de négociation.<br /><br />Ce mode augmente davantage la taille du tas managé que les autres modes. Parce qu'il ne compacte pas le tas managé, une fragmentation plus importante est possible. Assurez-vous que suffisamment de mémoire est disponible.|
@@ -65,5 +64,5 @@ Lorsque vous utilisez le mode [GCLatencyMode. LowLatency](xref:System.Runtime.GC
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.GC?displayProperty=nameWithType>
-- [Collections induites](induced.md)
+- [Collections forcées](induced.md)
 - [Garbage collection](index.md)

@@ -2,7 +2,6 @@
 title: Chaînes de format TimeSpan standard
 description: Passez en revue les chaînes de format TimeSpan standard, qui utilisent un spécificateur de format unique pour définir la représentation textuelle d’une valeur TimeSpan dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 99529d480ca32cb8be1e2013ca4551534e10026b
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: ab64b2ef0a87cbad3b3c036d74f4690ff7fdb1f4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888943"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831310"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 
@@ -41,7 +40,7 @@ ms.locfileid: "92888943"
   
 Le tableau suivant répertorie les spécificateurs de format d'intervalle de temps standard.  
   
-|Spécificateur de format|Name|Description|Exemples|  
+|Spécificateur de format|Nom|Description|Exemples|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|Format constant (invariant)|Ce spécificateur ne dépend pas de la culture. Son format est le suivant : `[-][d'.']hh':'mm':'ss['.'fffffff]`.<br /><br /> (les chaînes de format "t" et "T" produisent les mêmes résultats)<br /><br /> Pour plus d’informations, consultez [Spécificateur de format constant ("c")](#the-constant-c-format-specifier).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|Format court général|Ce spécificateur retourne uniquement ce qui est nécessaire. Il dépend de la culture et prend la forme suivante : `[-][d':']h':'mm':'ss[.FFFFFFF]`.<br /><br /> Pour plus d’informations, consultez [Spécificateur de format court général ("g")](#the-general-short-g-format-specifier).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50,5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50,599 (fr-FR)|  
@@ -50,7 +49,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-constant-c-format-specifier"></a>Spécificateur de format constant ("c")  
  Le spécificateur de format "c" retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> au format suivant :  
   
- [-][ *d* .] *hh* : *mm* : *ss* [. *fffffff* ]  
+ [-][*d*.]*hh*:*mm*:*ss*[.*fffffff*]  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le point (.) et les deux-points (:) sont des symboles littéraux. Le tableau suivant décrit les éléments restants.  
   
@@ -76,7 +75,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-general-short-g-format-specifier"></a>Spécificateur de format court général ("g")  
  Le spécificateur de format "g" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> dans un format compact, en incluant uniquement les éléments qui sont nécessaires. Elle a la forme suivante :  
   
- [-][ *d* :] *h* : *mm* : *ss* [. *FFFFFFF* ]  
+ [-][*d*:]*h*:*mm*:*ss*[.*FFFFFFF*]  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:) est un symbole littéral. Le tableau suivant décrit les éléments restants.  
   
@@ -100,7 +99,7 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 ## <a name="the-general-long-g-format-specifier"></a>Spécificateur de format long général ("G")  
  Le spécificateur de format "G" <xref:System.TimeSpan> retourne la représentation sous forme de chaîne d'une valeur <xref:System.TimeSpan> sous une forme longue comprenant toujours les jours et les fractions de secondes. La chaîne qui résulte du spécificateur de format standard "G" est au format suivant :  
   
- [-] *d* : *hh* : *mm* : *SS* . *fffffff*  
+ [-] *d*:*hh*:*mm*:*SS*. *fffffff*  
   
  Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:) est un symbole littéral. Le tableau suivant décrit les éléments restants.  
   

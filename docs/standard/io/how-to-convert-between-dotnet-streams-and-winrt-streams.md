@@ -1,17 +1,16 @@
 ---
 title: 'Procédure : effectuer une conversion entre des flux .NET Framework et Windows Runtime (Windows uniquement)'
 ms.date: 01/14/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-ms.openlocfilehash: 7833dd16cec8d6ef1cbdb51702ea72f50231c52d
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: ee36845f19ef4a7c3923b1032ab6eb45d2f60733
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93187955"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830816"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Procédure : effectuer une conversion entre des flux .NET Framework et Windows Runtime (Windows uniquement)
 

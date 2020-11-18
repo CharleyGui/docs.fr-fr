@@ -2,19 +2,18 @@
 title: 'Comment : énumérer des répertoires et des fichiers'
 description: Apprenez à énumérer des répertoires et des fichiers à l’aide de collections énumérables, qui peuvent fournir de meilleures performances que les tableaux dans .NET.
 ms.date: 12/27/2018
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - I/O [.NET], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
-ms.openlocfilehash: 7a757fc97fd934f02592264c3a495c3efc435fd5
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: da55881b9ca517abd045d4ebd2a5307c67d06560
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93187890"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830894"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a>Comment : énumérer des répertoires et des fichiers
 Les collections énumérables offrent de meilleures performances que les tableaux lorsque vous travaillez avec collections volumineuses de fichiers et de répertoires. Pour énumérer des répertoires et des fichiers, utilisez des méthodes qui retournent une collection énumérable de noms de répertoire ou de fichier ou leurs objets <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo> ou <xref:System.IO.FileSystemInfo>.  

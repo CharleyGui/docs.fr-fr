@@ -1,7 +1,6 @@
 ---
 title: 'Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -17,12 +16,12 @@ helpviewer_keywords:
 - locating directories in isolated storage file
 - storing data using isolated storage, finding files and directories
 ms.assetid: eb28458a-6161-4e7a-9ada-30ef93761b5c
-ms.openlocfilehash: 00d960f536d4094f9f62a37637dfcaec3916fb5b
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: ebd2ae6684e7b3390b29aeebeb2552b4616a69f3
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188742"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830725"
 ---
 # <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé
 

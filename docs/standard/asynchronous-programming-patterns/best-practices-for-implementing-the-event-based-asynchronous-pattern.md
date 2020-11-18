@@ -1,7 +1,6 @@
 ---
 title: Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - Event-based Asynchronous Pattern
 - ProgressChangedEventArgs class
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: 8f2b1b4d6793be3e4de6fbc9fc09e8a7e690762c
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 6c2df4c2877f9191bd2b8190869c359a74de8e8f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888917"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830491"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements
 
@@ -39,7 +38,7 @@ Pour chaque méthode <em>MethodName</em>**Async** distincte, appliquez les spéc
   
 - Définissez un événement <em>MethodName</em>**Completed** sur la même classe que la méthode.  
   
-- Définissez une <xref:System.EventArgs> classe et le délégué associé pour l’événement <em>MethodName</em>**Completed** qui dérive de la <xref:System.ComponentModel.AsyncCompletedEventArgs> classe. Le nom de classe par défaut doit être de la forme <em>NomMéthode</em>**CompletedEventArgs** .  
+- Définissez une <xref:System.EventArgs> classe et le délégué associé pour l’événement <em>MethodName</em>**Completed** qui dérive de la <xref:System.ComponentModel.AsyncCompletedEventArgs> classe. Le nom de classe par défaut doit être de la forme <em>NomMéthode</em>**CompletedEventArgs**.  
   
 - Vérifiez que la classe <xref:System.EventArgs> est spécifique des valeurs de retour de la méthode <em>nom_méthode</em>. Quand vous utilisez la classe <xref:System.EventArgs>, vous ne devez jamais obliger les développeurs à effectuer un transtypage du résultat.  
   
@@ -61,7 +60,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - Ne définissez pas de classe <xref:System.EventArgs> pour les méthodes de retour qui retournent `void`. À la place, utilisez une instance de la classe <xref:System.ComponentModel.AsyncCompletedEventArgs>.  
   
-- Veillez à toujours déclencher l’événement <em>NomMéthode</em>**Completed** . Cet événement doit être déclenché quand l'opération s'est terminée correctement, ou bien en cas d'erreur ou d'annulation. Les applications ne doivent jamais rencontrer de situation dans laquelle elles demeurent inactives sans jamais terminer l'opération en cours.  
+- Veillez à toujours déclencher l’événement <em>NomMéthode</em>**Completed**. Cet événement doit être déclenché quand l'opération s'est terminée correctement, ou bien en cas d'erreur ou d'annulation. Les applications ne doivent jamais rencontrer de situation dans laquelle elles demeurent inactives sans jamais terminer l'opération en cours.  
   
 - Veillez à intercepter toutes les exceptions qui se produisent au cours de l'opération asynchrone et à affecter l'exception interceptée à la propriété <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>.  
   
@@ -75,7 +74,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 ### <a name="simultaneously-executing-operations"></a>Exécution d'opérations simultanément  
   
-- Si votre classe prend en charge plusieurs appels simultanés, autorisez le développeur à effectuer le suivi de chaque appel séparément en définissant la surcharge de <em>NomMéthode</em>**Async** qui prend un paramètre d’état objet, ou un ID de tâche, appelé `userSuppliedState`. Ce paramètre doit toujours être le dernier de la signature de la méthode <em>NomMéthode</em>**Async** .  
+- Si votre classe prend en charge plusieurs appels simultanés, autorisez le développeur à effectuer le suivi de chaque appel séparément en définissant la surcharge de <em>NomMéthode</em>**Async** qui prend un paramètre d’état objet, ou un ID de tâche, appelé `userSuppliedState`. Ce paramètre doit toujours être le dernier de la signature de la méthode <em>NomMéthode</em>**Async**.  
   
 - Si votre classe définit la surcharge de <em>NomMéthode</em>**Async** qui prend un paramètre d’état objet, ou un ID de tâche, veillez à effectuer le suivi de la durée de vie de l’opération avec cet ID de tâche, et à le fournir en retour au gestionnaire d’achèvement. Vous pouvez vous aider de classes d'assistance. Pour plus d’informations sur la gestion de l’accès concurrentiel, consultez [Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](component-that-supports-the-event-based-asynchronous-pattern.md).  
   
@@ -93,7 +92,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - Dans la mesure du possible, prenez en charge le rapport de progression. Cela permet aux développeurs de fournir une meilleure expérience utilisateur d'application quand ils utilisent votre classe.  
   
-- Si vous implémentez un événement **ProgressChanged** ou <em>NomMéthode</em>**ProgressChanged** , vérifiez qu’aucun événement de ce type n’est déclenché pour une opération asynchrone en particulier après que l’événement <em>NomMéthode</em>**Completed** de cette opération a été déclenché.  
+- Si vous implémentez un événement **ProgressChanged** ou <em>NomMéthode</em>**ProgressChanged**, vérifiez qu’aucun événement de ce type n’est déclenché pour une opération asynchrone en particulier après que l’événement <em>NomMéthode</em>**Completed** de cette opération a été déclenché.  
   
 - Si la classe <xref:System.ComponentModel.ProgressChangedEventArgs> standard est remplie, assurez-vous que la propriété <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> peut toujours être interprétée en tant que pourcentage. La valeur de pourcentage n'a pas besoin d'être précise, mais elle doit représenter un pourcentage. Si la mesure du rapport de progression doit être autre chose qu'un pourcentage, dérivez une classe de la classe <xref:System.ComponentModel.ProgressChangedEventArgs> et laissez <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> défini sur 0. Évitez d'utiliser une mesure d'indication autre qu'un pourcentage.  
   

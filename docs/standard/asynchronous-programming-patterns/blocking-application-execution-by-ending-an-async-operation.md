@@ -1,7 +1,6 @@
 ---
 title: Blocage de l'exécution d'applications en mettant fin à une opération asynchrone
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - blocks, asynchronous operations
 - AsyncWaitHandle property
@@ -11,12 +10,12 @@ ms.assetid: cc5e2834-a65b-4df8-b750-7bdb79997fee
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 74976176acc0fbb948c514358b7bd323cc20c134
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 848f3e6e1a421a8edfcd9a5506988bc132d721fe
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289952"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830478"
 ---
 # <a name="blocking-application-execution-by-ending-an-async-operation"></a>Blocage de l'exécution d'applications en mettant fin à une opération asynchrone
 Les applications qui ne peuvent pas continuer à effectuer d’autres tâches en attendant les résultats d’une opération asynchrone doivent se bloquer jusqu'à ce que cette opération se termine. Pour bloquer le thread principal de votre application en attendant la fin d’une opération asynchrone, utilisez l’une des options suivantes :  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 79c60c8dbc29d8985f3cfb2ffc2436539155c555
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: fe28a4bf4a5432d6e33b7ad3238c1d7c0d4e7a84
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440143"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831362"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions du .NET Framework installées
 
@@ -60,7 +60,7 @@ La valeur de REG_DWORD de **version** dans le registre représente la version de
 | .NET Framework 4.7     | Sur Windows 10 Creators Update : 460798<br />Sur tous les autres systèmes d’exploitation Windows (y compris les autres systèmes d’exploitation Windows 10) : 460805 |
 | .NET Framework 4.7.1   | Sur Windows 10 automne Creators Update et Windows Server, version 1709:461308<br/>Sur tous les autres systèmes d’exploitation Windows (y compris les autres systèmes d’exploitation Windows 10) : 461310 |
 | .NET Framework 4.7.2   | Sur Windows 10 avril 2018 mise à jour et Windows Server, version 1803:461808<br/>Sur tous les systèmes d’exploitation Windows autres que Windows 10 avril 2018 Update et Windows Server, version 1803:461814 |
-| .NET Framework 4.8     | Sur Windows 10 mai 2019 mise à jour et Windows 10 novembre 2019 mise à jour : 528040<br/>Sur Windows 10 mai 2020 mise à jour : 528372<br/>Sur tous les autres systèmes d’exploitation Windows (y compris les autres systèmes d’exploitation Windows 10) : 528049 |
+| .NET Framework 4.8     | Sur Windows 10 mai 2019 mise à jour et Windows 10 novembre 2019 mise à jour : 528040<br/>Sur Windows 10 mai 2020 mise à jour et Windows 10 octobre 2020 mise à jour : 528372<br/>Sur tous les autres systèmes d’exploitation Windows (y compris les autres systèmes d’exploitation Windows 10) : 528049 |
 
 ### <a name="minimum-version"></a>Version minimale
 
@@ -81,7 +81,7 @@ Pour déterminer si une version *minimale* de .NET Framework est présente, rech
 
 ### <a name="use-registry-editor"></a>Utiliser l’éditeur du Registre
 
-01. À partir du menu **Démarrer** , choisissez **Exécuter** , entrez *regedit* , puis sélectionnez **OK**.
+01. À partir du menu **Démarrer**, choisissez **Exécuter**, entrez *regedit*, puis sélectionnez **OK**.
 
    (Vous devez disposer d’informations d’identification d’administration pour exécuter regedit.)
 
@@ -151,7 +151,7 @@ Notez que le chemin d’accès au registre de la sous-clé .NET Framework 1,0 es
 
 ### <a name="use-registry-editor-older-framework-versions"></a>Utiliser l’éditeur du Registre (versions antérieures de l’infrastructure)
 
-01. À partir du menu **Démarrer** , choisissez **Exécuter** , entrez *regedit* , puis sélectionnez **OK**.
+01. À partir du menu **Démarrer**, choisissez **Exécuter**, entrez *regedit*, puis sélectionnez **OK**.
 
     Vous devez disposer d’informations d’identification d’administrateur pour exécuter regedit.
 
@@ -209,7 +209,7 @@ La .NET Framework CLR installée avec .NET Framework est gérée séparément. I
 
      L’objet `System.Version` retourné identifie la version du runtime qui est en train d’exécuter le code. Il ne retourne pas les versions d’assembly ni d’autres versions du runtime susceptibles d’avoir été installées sur l’ordinateur.
 
-     Pour les versions .NET Framework 4, 4,5, 4.5.1 et 4.5.2, la représentation sous forme de chaîne de l' <xref:System.Version> objet retourné se présente sous la forme 4.0.30319. *xxxxx* , où *xxxxx* est inférieur à 42000. Pour .NET Framework 4,6 et versions ultérieures, il se présente sous la forme 4.0.30319.42000.
+     Pour les versions .NET Framework 4, 4,5, 4.5.1 et 4.5.2, la représentation sous forme de chaîne de l' <xref:System.Version> objet retourné se présente sous la forme 4.0.30319.*xxxxx*, où *xxxxx* est inférieur à 42000. Pour .NET Framework 4,6 et versions ultérieures, il se présente sous la forme 4.0.30319.42000.
 
   1. Une fois que vous disposez de l’objet de **version** , interrogez-le comme suit :
 
@@ -217,7 +217,7 @@ La .NET Framework CLR installée avec .NET Framework est gérée séparément. I
 
      - Pour l’identificateur de la version mineure (par exemple, *0* pour la version 4.0), utilisez la propriété <xref:System.Version.Minor%2A?displayProperty=nameWithType>.
 
-     - Pour la chaîne de la version entière (par exemple, *4.0.30319.18010* ), utilisez la méthode <xref:System.Version.ToString%2A?displayProperty=nameWithType>. Cette méthode retourne une valeur unique qui reflète la version du runtime qui est en train d’exécuter le code. Elle ne retourne pas les versions d’assembly ni d’autres versions du runtime susceptibles d’être installées sur l’ordinateur.
+     - Pour la chaîne de la version entière (par exemple, *4.0.30319.18010*), utilisez la méthode <xref:System.Version.ToString%2A?displayProperty=nameWithType>. Cette méthode retourne une valeur unique qui reflète la version du runtime qui est en train d’exécuter le code. Elle ne retourne pas les versions d’assembly ni d’autres versions du runtime susceptibles d’être installées sur l’ordinateur.
 
   L’exemple suivant utilise la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType> pour récupérer les informations de version du CLR :
 

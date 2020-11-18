@@ -2,19 +2,18 @@
 title: Pipelines d’e/s-.NET
 description: Apprenez à utiliser efficacement des pipelines d’e/s dans .NET et évitez les problèmes dans votre code.
 ms.date: 08/27/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - Pipelines
 - Pipelines I/O
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: a24d7f5c22c936cd3fd3fdc51f0f3ace56386574
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 508ae0e2b854f81ee639a63063a8f6d73ae84863
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271982"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830634"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. pipelines dans .NET
 

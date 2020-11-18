@@ -1,8 +1,7 @@
 ---
 title: Types collection Hashtable et Dictionary
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
-helpviewer_keywords:
+'\helpviewer_keywords':
 - Hashtable class, grouping data in collections
 - Hashtable collection type
 - hash tables
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - hash function
 - collections [.NET], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-ms.openlocfilehash: 83bc5e8f3f1a55e2c4d1b9853c4974cfe86218f4
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: bb6d0802526db9b6b5673fe7d13b1f12af7acfcf
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889359"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831219"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Types collection Hashtable et Dictionary
 La classe <xref:System.Collections.Hashtable?displayProperty=nameWithType>, ainsi que les classes génériques <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>, implémentent l'interface <xref:System.Collections.IDictionary?displayProperty=nameWithType>. La classe générique <xref:System.Collections.Generic.Dictionary%602> implémente également l'interface générique <xref:System.Collections.Generic.IDictionary%602>. Par conséquent, chaque élément de ces collections est une paire clé-valeur.  

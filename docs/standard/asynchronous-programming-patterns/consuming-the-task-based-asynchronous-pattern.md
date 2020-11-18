@@ -2,7 +2,6 @@
 title: Utilisation du modèle asynchrone basé sur les tâches
 description: Apprenez à utiliser le modèle asynchrone basé sur des tâches (TAP) quand vous travaillez avec des opérations asynchrones.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - .NET and TAP
 - asynchronous design patterns, .NET
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 4a2715ab6572c33a1564986c5cfda112d5fa11db
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 2a24c06e55a5f07f4831b32cf52ea2b5b389d5cc
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888865"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830543"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 

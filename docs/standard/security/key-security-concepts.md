@@ -1,7 +1,6 @@
 ---
 title: Concepts fondamentaux sur la sécurité
 ms.date: 07/15/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - permissions [.NET]
 - security [.NET], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-ms.openlocfilehash: 5dedf6df8e6cf2cf886e68cc132a44abfb201c49
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a9f0703217b55c90c4e98503402d3fbf60a45ea7
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554395"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831063"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 
@@ -54,7 +53,7 @@ Le processus d'authentification consiste à établir et à vérifier l'identité
   
 Un grand nombre de mécanismes d’authentification sont utilisés aujourd’hui, dont la plupart peuvent être utilisés avec la sécurité basée sur les rôles .NET. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  
   
-### <a name="example"></a> Exemple  
+### <a name="example"></a>Exemple  
 
 L'exemple suivant nécessite que le principal actif soit un administrateur. Le paramètre `name` est `null`, qui autorise tout utilisateur ayant la qualité d'administrateur à passer la demande.  
   

@@ -1,14 +1,13 @@
 ---
 title: Conversion de types .NET en chaînes
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 ms.assetid: dc2e2b65-f623-4dc3-938b-d2a054d6832c
-ms.openlocfilehash: ca35af17a402dc901c02edf94099af1377e1160f
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 9744224b4346b865a112b0eb6957f12553e1ec5f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687625"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830985"
 ---
 # <a name="convert-net-types-to-strings"></a>Convertir des types .NET en chaînes
 
@@ -16,7 +15,7 @@ Si vous souhaitez convertir un type .NET en chaîne, utilisez la méthode **ToSt
   
 |Type .NET|Type de chaîne de retour|  
 |-------------------------|--------------------------|  
-|Boolean|"true", "false"|  
+|Booléen|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
 |Single.NegativeInfinity|"-INF"|  
 |Double.PositiveInfinity|"INF"|  

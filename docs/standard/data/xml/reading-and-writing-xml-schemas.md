@@ -2,18 +2,17 @@
 title: Lecture et écriture de schémas XML
 description: Lire et écrire des schémas en langage XSD (XML Schema Definition) à partir de fichiers ou d’autres sources dans .NET, à l’aide de l’API SOM (Schema Object Model).
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-ms.openlocfilehash: 874b0bdb0e13d545cfff4c813881f1398a8f9487
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: ae951efafd68d0ddf4f74876edd4c12564d68dde
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767661"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830881"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Lecture et écriture de schémas XML
 L’API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des schémas de langage XSD (XML Schema Definition) dans des fichiers ou d’autres sources et de générer un cache de schéma XML à l’aide des classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondant aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML.  

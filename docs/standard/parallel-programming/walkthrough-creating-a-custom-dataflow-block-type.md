@@ -1,7 +1,6 @@
 ---
 title: 'Procédure pas à pas : Créer un type de bloc de flux de données personnalisé'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - TPL dataflow library, creating custom dataflow blocks
 - dataflow blocks, creating custom in TPL
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
-ms.openlocfilehash: 37857e465bf4089dbeecc4cfd532d0702f795495
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 71f9002cc13f30bfe7988540472b09979d4e9d0a
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284700"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829958"
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Procédure pas à pas : Créer un type de bloc de flux de données personnalisé
 Bien que la bibliothèque de flux de données TPL fournisse plusieurs types de blocs de flux de données offrant une large gamme de fonctionnalités, vous pouvez aussi créer des types de blocs personnalisés. Ce document décrit comment créer un type de bloc de flux de données qui implémente un comportement personnalisé.  

@@ -2,7 +2,6 @@
 title: Internationalisation et localisation d’applications .NET
 description: Découvrez comment développer une application mondialisable. En savoir plus sur la globalisation, la révision d’adaptabilité et la localisation dans .NET.
 ms.date: 06/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - international applications [.NET]
 - globalization [.NET], encoding
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: a3894b7bf9b8aa013b346c169d21c6db270fe987
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 670a159844cfeb475b26c1d1aa85e7f09a95c21f
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600787"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829854"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Internationalisation et localisation d’applications .NET
 
@@ -71,7 +70,7 @@ Explique comment utiliser les méthodes et les classes .NET dépendantes de la c
 
 Décrit les meilleures pratiques en matière de globalisation, de localisation et de développement d'applications ASP.NET mondialisables.
 
-## <a name="reference"></a>Informations de référence
+## <a name="reference"></a>Référence
 
 - Espace de noms <xref:System.Globalization?displayProperty=nameWithType>
 
@@ -85,10 +84,10 @@ Décrit les meilleures pratiques en matière de globalisation, de localisation e
 
    Contient des classes représentant les encodages de caractères ASCII, ANSI, Unicode et autres.
 
-- [Resgen. exe (générateur de fichier de ressources)](../../framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen.exe (générateur de fichiers de ressources)](../../framework/tools/resgen-exe-resource-file-generator.md)
 
    Explique comment utiliser Resgen.exe pour convertir des fichiers .txt et des fichiers .resx (format de ressource basé sur XML) en fichiers binaires .resources du Common Language Runtime.
 
-- [Winres. exe (Windows Forms éditeur de ressources)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres.exe (éditeur de ressources Windows Forms)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    Explique comment utiliser Winres.exe pour localiser des formulaires Windows Forms.

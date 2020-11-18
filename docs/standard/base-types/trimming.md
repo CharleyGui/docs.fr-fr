@@ -2,7 +2,6 @@
 title: Suppression d’espaces et de caractères dans .NET
 description: Apprenez à supprimer les espaces vides à partir du début ou de la fin d’une chaîne, ou à supprimer un nombre quelconque d’espaces ou de caractères à partir d’une position spécifiée dans la chaîne dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: d0057d503474f3f6ff886acda3ce1d72fb3ebe21
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 8bc2980aa887dc652485e135058b9f6f718e7b45
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888592"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831271"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Suppression d’espaces et de caractères dans .NET
 Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mots incluant des espaces vides (également appelés espaces blancs) à chaque extrémité du mot. Dans ce cas, vous pouvez utiliser l’une des méthodes de suppression de la classe **System.String** pour supprimer n’importe quel nombre d’espaces ou d’autres caractères à partir d’une position spécifiée dans la chaîne. Le tableau suivant décrit les méthodes de suppression disponibles.  
@@ -58,7 +57,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
  Ce code affiche `He` dans la console.  
   
- L’exemple suivant supprime le dernier mot d’une chaîne à l’aide de la méthode **TrimEnd** . Dans ce code, une virgule suit le mot `Hello` et, étant donné que la virgule n’est pas spécifiée dans le tableau de caractères à supprimer, la suppression s’arrête au niveau de la virgule.  
+ L’exemple suivant supprime le dernier mot d’une chaîne à l’aide de la méthode **TrimEnd**. Dans ce code, une virgule suit le mot `Hello` et, étant donné que la virgule n’est pas spécifiée dans le tableau de caractères à supprimer, la suppression s’arrête au niveau de la virgule.  
   
  [!code-cpp[Conceptual.String.BasicOps#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#19)]
  [!code-csharp[Conceptual.String.BasicOps#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#19)]
@@ -68,7 +67,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
 ## <a name="trimstart"></a>TrimStart
 
- La méthode **String.TrimStart** est similaire à la méthode **String.TrimEnd** , si ce n’est qu’elle crée une chaîne en supprimant les caractères à partir du début d’un objet string existant. Un tableau de caractères est passé à la méthode **TrimStart** pour spécifier les caractères à supprimer. Comme avec la méthode **TrimEnd** , l’ordre des éléments dans le tableau de caractères n’affecte pas l’opération de suppression. La suppression s’arrête lorsqu’un caractère non spécifié dans le tableau est trouvé.  
+ La méthode **String.TrimStart** est similaire à la méthode **String.TrimEnd**, si ce n’est qu’elle crée une chaîne en supprimant les caractères à partir du début d’un objet string existant. Un tableau de caractères est passé à la méthode **TrimStart** pour spécifier les caractères à supprimer. Comme avec la méthode **TrimEnd**, l’ordre des éléments dans le tableau de caractères n’affecte pas l’opération de suppression. La suppression s’arrête lorsqu’un caractère non spécifié dans le tableau est trouvé.  
   
  L’exemple suivant supprime le premier mot d’une chaîne. Dans cet exemple, la position du caractère `'l'` et du caractère `'H'` est inversée pour illustrer que l’ordre des caractères dans le tableau n’a pas d’importance.  
   

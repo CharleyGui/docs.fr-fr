@@ -1,18 +1,17 @@
 ---
 title: 'Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms'
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - TPL dataflow library, in Windows Forms
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: 7cd82ffde5fccf938027a6ab6ea15fef226fef6f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c09259afdc5ede32791ba895ca012cdc2a0a1c18
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288431"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829945"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms
 Ce document montre comment créer un réseau de blocs de flux de données qui effectuent un traitement des images dans une application Windows Forms.  
@@ -49,7 +48,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
 4. Ajoutez un deuxième contrôle <xref:System.Windows.Forms.ToolStripButton> au contrôle <xref:System.Windows.Forms.ToolStrip>. Définissez la propriété <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> sur <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>, la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A> sur **Annuler** et la propriété <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> sur `False`.  
   
-5. Ajoutez un objet <xref:System.Windows.Forms.PictureBox> au formulaire principal. Attribuez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.  
+5. Ajoutez un objet <xref:System.Windows.Forms.PictureBox> au formulaire principal. Affectez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.  
   
 <a name="network"></a>
 ## <a name="creating-the-dataflow-network"></a>Création du réseau de flux de données  

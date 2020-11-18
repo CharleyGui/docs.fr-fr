@@ -1,7 +1,6 @@
 ---
 title: Types d'isolation
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: a1d64f0dfe8a457ae551792a852bd816941f2777
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: ce6afc6438060b88e8740eab24ace960f3b78fa3
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189030"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830530"
 ---
 # <a name="types-of-isolation"></a>Types d’isolation
 

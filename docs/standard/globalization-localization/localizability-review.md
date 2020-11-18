@@ -1,7 +1,6 @@
 ---
 title: Révision de l'adaptabilité
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -16,12 +15,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: 6aa0588ea4baa00be476a05c335cf2abaa22aab4
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 30cde57a5c837d9dc324e9cd263d2a1011641af4
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93064156"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829841"
 ---
 # <a name="localizability-review"></a>Révision de l’adaptabilité
 

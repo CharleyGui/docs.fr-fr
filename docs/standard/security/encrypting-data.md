@@ -2,7 +2,6 @@
 title: Chiffrement de données
 description: Découvrez comment chiffrer des données dans .NET, à l’aide d’un algorithme symétrique ou d’un algorithme asymétrique.
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - cryptography [.NET], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 75bb0fa52b8002efe0027f026de8c0910735e55e
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 574ef3f829406d661e19f004e9a7d150954fd9e5
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440970"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830595"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 

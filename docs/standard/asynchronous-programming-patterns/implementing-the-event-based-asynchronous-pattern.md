@@ -2,7 +2,6 @@
 title: Implémentation du modèle asynchrone basé sur des événements
 description: Découvrez comment implémenter le modèle asynchrone basé sur les événements (EAP) dans .NET. EAP est un moyen standard d’empaqueter une classe qui a des fonctionnalités asynchrones.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -18,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: ca4b1b3ff1fb7180250de7436db9a4d642e8118c
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 3f48f5d4f03928f8c9a2db2724e542be2b38fc63
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888787"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830348"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implémentation du modèle asynchrone basé sur des événements
 
@@ -71,11 +70,11 @@ Définissez une méthode _MethodName_**Async** qui :
 
 - Retourne `void`.
 
-- Accepte les mêmes paramètres que la méthode *MethodName* .
+- Accepte les mêmes paramètres que la méthode *MethodName*.
 
 - Accepte plusieurs appels.
 
-Vous pouvez également définir une surcharge _MethodName_**Async** , identique à _MethodName_**Async** , mais avec un paramètre objet supplémentaire appelé `userState` . Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
+Vous pouvez également définir une surcharge _MethodName_**Async** , identique à _MethodName_**Async**, mais avec un paramètre objet supplémentaire appelé `userState` . Procédez ainsi si vous êtes prêt à gérer plusieurs appels simultanés de votre méthode, auquel cas la valeur `userState` est remise à tous les gestionnaires d’événements pour distinguer les appels de la méthode. Vous pouvez également choisir d’en faire un emplacement de stockage de l’état utilisateur pour une récupération ultérieure.
 
 Pour chaque signature de méthode _MethodName_**Async** distincte :
 
@@ -217,7 +216,7 @@ Bien que l’utilisation de `out` et de `ref` soit, en général, déconseillée
 
 Soit une méthode synchrone *MethodName* :
 
-- `out` les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async** . Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
+- `out` les paramètres de *MethodName* ne doivent pas faire partie de _MethodName_**Async**. Au lieu de cela, ils doivent faire partie de _MethodName_**CompletedEventArgs** avec le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 
 - `ref` les paramètres de *MethodName* doivent apparaître dans le cadre de _MethodName_**Async** et dans le cadre de _MethodName_**CompletedEventArgs** portant le même nom que son paramètre équivalent dans *MethodName* (à moins qu’il n’existe un nom plus approprié).
 

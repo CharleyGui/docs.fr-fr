@@ -1,19 +1,18 @@
 ---
 title: Utiliser foreach pour supprimer des éléments dans un BlockingCollection
 ms.date: 05/04/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - thread-safe collections, how to enumerate blocking collection
 ms.assetid: 2096103c-22f7-420d-b631-f102bc33a6dd
-ms.openlocfilehash: 46638d2cd8078fefebc0eacc4b8f7798ffe178ff
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9346ead4bf0aef91a224e0ab11ffd30a7c205294
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288899"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830998"
 ---
 # <a name="use-foreach-to-remove-items-in-a-blockingcollection"></a>Utiliser foreach pour supprimer des éléments dans un BlockingCollection
 

@@ -1,17 +1,16 @@
 ---
 title: Migration depuis la classe XslTransform
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-ms.openlocfilehash: 32fac1b5ab339dd4c71d761cf07fcde99ce1f2fa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b441e23b13983a0fdb54b7785e249a04bf1407c8
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550161"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830205"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migration depuis la classe XslTransform
 
@@ -67,7 +66,7 @@ writer.Close();
 
 ### <a name="debug-option"></a>Option de débogage
 
-La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut générer des informations de débogage, ce qui vous permet de déboguer la feuille de style à l’aide du Débogueur Microsoft Visual Studio. Consultez la rubrique <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29> (éventuellement en anglais) pour plus d'informations.
+La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut générer des informations de débogage, ce qui vous permet de déboguer la feuille de style à l’aide du Débogueur Microsoft Visual Studio. Pour plus d'informations, voir <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>.
 
 ## <a name="behavioral-differences"></a>Différences comportementales
 

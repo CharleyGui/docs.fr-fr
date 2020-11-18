@@ -1,7 +1,6 @@
 ---
 title: Indépendance du langage et composants indépendants du langage
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: 1097d156aad06b7a17141e4d6786e5411cbaa571
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: aeaf58276537fab72fdcde81b0465acbbdb23140
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92160839"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831154"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -191,7 +190,7 @@ Les types intrinsèques répertoriés dans le tableau suivant ne sont pas confor
 |Type non conforme|Description|Alternative à la conformité CLS|
 |-------------------------|-----------------|--------------------------------|
 |<xref:System.SByte>|Type de données entier signé 8 bits|<xref:System.Int16>|
-|<xref:System.TypedReference>|Pointeur vers un objet et son type au moment de l'exécution|Aucun|
+|<xref:System.TypedReference>|Pointeur vers un objet et son type au moment de l'exécution|None|
 |<xref:System.UInt16>|Entier 16 bits non signé|<xref:System.Int32>|
 |<xref:System.UInt32>|Entier non signé 32 bits|<xref:System.Int64>|
 |<xref:System.UInt64>|Entier non signé 64 bits|<xref:System.Int64> (peut dépasser la capacité), <xref:System.Numerics.BigInteger> ou <xref:System.Double>|
@@ -614,7 +613,7 @@ Pour compiler le code Visual Basic, utilisez cette commande :
 vbc example.vb /r:UtilityLib.dll
 ```
 
-Pour compiler avec C#, changez le nom du compilateur **vbc** en **CSC**et changez l’extension de fichier. vb en. cs :
+Pour compiler avec C#, changez le nom du compilateur **vbc** en **CSC** et changez l’extension de fichier. vb en. cs :
 
 ```console
 csc example.cs /r:UtilityLib.dll

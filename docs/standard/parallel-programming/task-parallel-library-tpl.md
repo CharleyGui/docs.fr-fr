@@ -2,18 +2,17 @@
 title: Bibliothèque parallèle de tâches
 description: Explorez la bibliothèque parallèle de tâches (TPL), un ensemble de types publics et d’API pour simplifier le processus d’ajout du parallélisme & la concurrence aux applications dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - .NET, concurrency in
 - .NET, parallel programming in
 - Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
-ms.openlocfilehash: 596671b267484561a8697546caa5a4764242ebd3
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: 5c26799338b46f5f0420c3b082e7d84fade27a26
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925231"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829997"
 ---
 # <a name="task-parallel-library-tpl"></a>Bibliothèque parallèle de tâches
 
@@ -23,7 +22,7 @@ La bibliothèque parallèle de tâches est un ensemble de types publics et d’A
   
 ## <a name="related-articles"></a>Articles connexes  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-|-|  
 |[Parallélisme des données](data-parallelism-task-parallel-library.md)|Décrit comment créer des boucles parallèles `for` et `foreach` (`For` et `For Each` en Visual Basic).|  
 |[Programmation asynchrone basée sur les tâches](task-based-asynchronous-programming.md)|Décrit comment créer et exécuter implicitement des tâches à l’aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> ou explicitement en utilisant des objets <xref:System.Threading.Tasks.Task> directement.|  

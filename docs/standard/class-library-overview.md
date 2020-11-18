@@ -2,7 +2,6 @@
 title: Présentation des bibliothèques de classes .NET
 description: En savoir plus sur la bibliothèque de classes .NET. Les API .NET incluent des classes, des interfaces, des délégués et des types de valeur pour fournir l’accès aux fonctionnalités du système.
 ms.date: 02/08/2018
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - classes [.NET], library overview
 - .NET, library overview
@@ -36,12 +35,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: 95dcbea6e0b3f2cd91bd6955a11ede7c9731caca
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 44a46db4fa7ebf6dd5802cc07e7d18744c72ad68
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687527"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831258"
 ---
 # <a name="net-class-library-overview"></a>Présentation des bibliothèques de classes .NET
 
@@ -69,7 +68,7 @@ Les types .NET sont le fondement sur lequel les applications, composants et cont
   
  Ce modèle d’affectation de noms permet aux développeurs de bibliothèques qui étendent .NET de créer des groupes hiérarchiques de types et de les nommer de manière cohérente et informatif. Il permet également d'identifier clairement les types par leur nom complet (autrement dit, par leur espace de noms et nom de type) et d'empêcher les collisions de nom de type. Les développeurs de bibliothèques sont censés utiliser la convention suivante lors de l'affectation de noms aux nouveaux espaces de noms :  
   
- *NomSociété* . *NomTechnologie*  
+ *NomSociété*.*NomTechnologie*  
   
  Par exemple, l’espace de noms `Microsoft.Word` est conforme à cette indication.  
   
@@ -86,17 +85,17 @@ Les types .NET sont le fondement sur lequel les applications, composants et cont
 |Category|Nom de classe|Description|Type de données Visual Basic|Type de données C#|Type de données C++/CLI|Type de données F#|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |Integer|<xref:System.Byte>|Entier non signé 8 bits.|**Byte**|**byte**|**unsigned char**|**byte**|  
-||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**sbyte**|**char**<br /> -ou-<br /> **signed** **char**|**sbyte**|  
+||<xref:System.SByte>|Entier signé 8 bits.<br /><br /> Non conforme CLS.|**SByte**|**sbyte**|**char**<br /> - ou -<br /> **signed** **char**|**sbyte**|  
 ||<xref:System.Int16>|Entier signé 16 bits.|**Résumé**|**short**|**short**|**int16**|  
-||<xref:System.Int32>|Entier signé 32 bits.|**Integer**|**int**|**int**<br /><br /> -ou-<br /><br /> **long**|**int**|  
+||<xref:System.Int32>|Entier signé 32 bits.|**Integer**|**int**|**int**<br /><br /> - ou -<br /><br /> **long**|**int**|  
 ||<xref:System.Int64>|Entier signé 64 bits.|**Long**|**long**|**__int64**|**int64**|  
 ||<xref:System.UInt16>|Entier non signé 16 bits.<br /><br /> Non conforme CLS.|**UShort**|**ushort**|**unsigned short**|**UInt16**|  
-||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**nombre entier non signé**<br /> -ou-<br /> **unsigned long**|**uint32**|  
+||<xref:System.UInt32>|Entier non signé 32 bits.<br /><br /> Non conforme CLS.|**UInteger**|**uint**|**nombre entier non signé**<br /> - ou -<br /> **unsigned long**|**uint32**|  
 ||<xref:System.UInt64>|Entier 64 bits non signé.<br /><br /> Non conforme CLS.|**Correspondante**|**ulong**|**unsigned __int64**|**uint64**|  
 |Virgule flottante|<xref:System.Single>|Nombre à virgule flottante (32 bits) simple précision.|**Unique**|**float**|**float**|**float32**<br> or<br>**single**|  
 ||<xref:System.Double>|Nombre à virgule flottante (64 bits) double précision.|**Double**|**double**|**double**|**float**<br> or <br> **double**|  
-|Logique|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Booléen**|**bool**|**bool**|**bool**|  
-|Autres|<xref:System.Char>|Caractère Unicode (16 bits).|**Char**|**char**|**wchar_t**|**char**|  
+|Logical|<xref:System.Boolean>|Valeur booléenne (true ou false).|**Booléen**|**bool**|**bool**|**bool**|  
+|Autre|<xref:System.Char>|Caractère Unicode (16 bits).|**Char**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Valeur décimale (128 bits).|**Décimal**|**decimal**|**Décimal**|**decimal**|  
 ||<xref:System.IntPtr>|Entier signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**IntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  
 ||<xref:System.UIntPtr>|Entier non signé dont la taille dépend de la plateforme sous-jacente (valeur 32 bits sur une plateforme 32 bits et valeur 64 bits sur une plateforme 64 bits).<br /><br /> Non conforme CLS.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**UIntPtr**<br /><br /> Pas de type intégré.|**unativeint**|  

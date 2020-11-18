@@ -2,7 +2,6 @@
 title: services de chiffrement
 description: Vue d’ensemble des méthodes et pratiques de chiffrement prises en charge par .NET.
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography [.NET]
 - pattern of derived class inheritance
@@ -25,12 +24,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 463ccec5f60ff10331d501d39144a979d95eff95
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 5558c60768b992984c3800b482961128d3bf5d0b
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281725"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829906"
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 
@@ -71,7 +70,7 @@ Le chiffrement à clé secrète est aussi appelé chiffrement symétrique, car l
 
 Un type d'algorithme à clé secrète appelé chiffrement par blocs est utilisé pour chiffrer un bloc de données à la fois. Les chiffrements par blocs tels que Data Encryption Standard (DES), TripleDES et Advanced Encryption Standard (AES) transforment par chiffrement un bloc d'entrée de *n* octets en un bloc d'octets chiffrés de sortie. Si vous voulez chiffrer ou déchiffrer une séquence d'octets, vous devez le faire bloc par bloc. Sachant que la valeur *n* est faible (8 octets pour DES et TripleDES ; 16 octets [par défaut], 24 octets ou 32 octets pour AES), les valeurs de données supérieures à *n* doivent être chiffrées un bloc à la fois. Les valeurs de données inférieures à *n* doivent être étendues à *n* afin d'être traitées.
 
-Il existe une forme simple de chiffrement par blocs, qui est appelée « mode ECB » (Electronic Codebook, livre de codes électronique). Le mode ECB n'est pas considéré comme sécurisé, car il n'utilise pas de vecteur d'initialisation pour initialiser le premier bloc de texte en clair. Pour une clé secrète donnée *k* , un simple chiffrement par blocs qui n'utilise pas de vecteur d'initialisation chiffrera-t-il un même bloc d'entrée de texte en clair en bloc de sortie de texte chiffré équivalent. Par conséquent, si vous avez des blocs en double dans votre flux de texte en clair d'entrée, vous aurez des blocs en double dans votre flux de texte chiffré de sortie. La présence de ces blocs de sortie en double alerteront les utilisateurs non autorisés sur la faiblesse du chiffrement utilisé, sur les algorithmes qui ont pu être utilisés et sur les modes d'attaque possibles. Le mode de chiffrement ECB est donc assez vulnérable à l'analyse et, en fin de compte, à la découverte de clés.
+Il existe une forme simple de chiffrement par blocs, qui est appelée « mode ECB » (Electronic Codebook, livre de codes électronique). Le mode ECB n'est pas considéré comme sécurisé, car il n'utilise pas de vecteur d'initialisation pour initialiser le premier bloc de texte en clair. Pour une clé secrète donnée *k*, un simple chiffrement par blocs qui n'utilise pas de vecteur d'initialisation chiffrera-t-il un même bloc d'entrée de texte en clair en bloc de sortie de texte chiffré équivalent. Par conséquent, si vous avez des blocs en double dans votre flux de texte en clair d'entrée, vous aurez des blocs en double dans votre flux de texte chiffré de sortie. La présence de ces blocs de sortie en double alerteront les utilisateurs non autorisés sur la faiblesse du chiffrement utilisé, sur les algorithmes qui ont pu être utilisés et sur les modes d'attaque possibles. Le mode de chiffrement ECB est donc assez vulnérable à l'analyse et, en fin de compte, à la découverte de clés.
 
 Les classes de chiffrement par blocs fournies dans la bibliothèque de classes de base utilisent un mode de chaînage par défaut appelé CBC (Cipher-Block Chaining, chaînage de blocs de chiffrement), mais vous pouvez éventuellement modifier ce mode par défaut.
 

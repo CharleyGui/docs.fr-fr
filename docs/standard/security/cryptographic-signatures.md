@@ -1,7 +1,6 @@
 ---
 title: Signatures de chiffrement
 ms.date: 07/14/2020
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -20,12 +19,12 @@ helpviewer_keywords:
 - digital signatures, verifying
 - signing XML
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
-ms.openlocfilehash: ce2be1d509da4e399bf87e1c8df7ba061fc2707c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 453e9d887012826da3f64d199e15a05fd0661191
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557006"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831128"
 ---
 # <a name="cryptographic-signatures"></a>Signatures de chiffrement
 

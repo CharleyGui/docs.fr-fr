@@ -2,7 +2,6 @@
 title: 'Comment : lire les caractères d’une chaîne'
 description: Découvrez comment lire des caractères à partir d’une chaîne dans .NET. Consultez des exemples de lecture de caractères de façon synchrone et asynchrone.
 ms.date: 01/21/2019
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-ms.openlocfilehash: c613f8170655601b72b87de4a20c295b1054bd1a
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: ef545ddd1bebf993db32b1ec450b38defd567f65
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93189340"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830686"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Comment : lire les caractères d’une chaîne
 

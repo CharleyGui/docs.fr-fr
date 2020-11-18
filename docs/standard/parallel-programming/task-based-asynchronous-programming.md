@@ -2,23 +2,22 @@
 title: Programmation asynchrone basée sur les tâches - .NET
 description: Dans cet article, Découvrez la programmation asynchrone basée sur les tâches par le biais de la bibliothèque parallèle de tâches (TPL) dans .NET.
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: d735cb56c5914dd33ba694c95a8e92446ca47088
-ms.sourcegitcommit: 6d09ae36acba0b0e2ba47999f8f1a725795462a2
+ms.openlocfilehash: a1abe474628cd88e0c24f4152d83bd8ed7ad7950
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925244"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830023"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
-La bibliothèque parallèle de tâches (TPL) est basée sur le concept de *tâche* , qui représente une opération asynchrone. À certains égards, une tâche ressemble à un thread ou à un élément de travail <xref:System.Threading.ThreadPool>, mais à un niveau d’abstraction supérieur. Le terme *parallélisme des tâches* fait référence à une ou plusieurs tâches indépendantes qui s’exécutent simultanément. Les tâches présentent deux grands avantages :
+La bibliothèque parallèle de tâches (TPL) est basée sur le concept de *tâche*, qui représente une opération asynchrone. À certains égards, une tâche ressemble à un thread ou à un élément de travail <xref:System.Threading.ThreadPool>, mais à un niveau d’abstraction supérieur. Le terme *parallélisme des tâches* fait référence à une ou plusieurs tâches indépendantes qui s’exécutent simultanément. Les tâches présentent deux grands avantages :
 
 - Une utilisation plus efficace et évolutive des ressources système.
 
@@ -114,13 +113,13 @@ L'exemple suivant illustre cette situation de façon simple. Elle modifie la cul
 :::code language="vbnet" source="snippets/vb/asyncculture1.vb" id="1":::
 
 > [!NOTE]
-> Dans les versions de .NET Framework antérieures à .NET Framework 4,6, la culture d’une tâche est déterminée par la culture du thread sur lequel elle *s’exécute* , et non par la culture du *thread appelant* . Pour les tâches asynchrones, cela signifie que la culture utilisée par la tâche peut être différente de la culture du thread appelant.
+> Dans les versions de .NET Framework antérieures à .NET Framework 4,6, la culture d’une tâche est déterminée par la culture du thread sur lequel elle *s’exécute*, et non par la culture du *thread appelant*. Pour les tâches asynchrones, cela signifie que la culture utilisée par la tâche peut être différente de la culture du thread appelant.
 
 Pour plus d'informations sur les tâches asynchrones et la culture, consultez la section « Culture et opérations asynchrones basées sur les tâches » dans la rubrique <xref:System.Globalization.CultureInfo>.
 
 ## <a name="creating-task-continuations"></a>Création de continuations de tâches
 
-Les méthodes <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> vous permettent de spécifier une tâche à démarrer lorsque l’ *antécédent* est terminé. Une référence à la tâche antécédente est passée au délégué de la tâche de continuation afin qu’il puisse examiner l’état de la tâche antécédente et, en récupérant la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>, utiliser la sortie de l’antécédent comme entrée pour la continuation.
+Les méthodes <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> vous permettent de spécifier une tâche à démarrer lorsque l’*antécédent* est terminé. Une référence à la tâche antécédente est passée au délégué de la tâche de continuation afin qu’il puisse examiner l’état de la tâche antécédente et, en récupérant la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>, utiliser la sortie de l’antécédent comme entrée pour la continuation.
 
 Dans l'exemple suivant, la tâche `getData` est démarrée par un appel à la méthode <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType>. La tâche `processData` démarre automatiquement lorsque `getData` est terminé, et `displayData` commence lorsque `processData` est terminé. `getData` produit un tableau d'entiers, accessible à la tâche `processData` via la propriété `getData` de la tâche <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>. La tâche `processData` traite ce tableau et retourne un résultat dont le type est déduit du type de retour de l'expression lambda passée à la méthode <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType>. La tâche `displayData` s'exécute automatiquement lorsque `processData` est terminé, et l'objet <xref:System.Tuple%603> retourné par l'expression lambda `processData` est accessible à la tâche `displayData` via la propriété `processData` de la tâche <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType>. La tâche `displayData` prend le résultat de la tâche `processData` et produit un résultat dont le type est déduit de façon semblable et mis à disposition du programme dans la propriété <xref:System.Threading.Tasks.Task%601.Result%2A>.
 
@@ -138,7 +137,7 @@ Pour plus d’informations, consultez [Chaînage des tâches à l’aide de tâc
 
 ## <a name="creating-detached-child-tasks"></a>Création de tâches enfants détachées
 
-Lorsque le code utilisateur qui s'exécute dans une tâche crée une tâche sans spécifier l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>, la nouvelle tâche n'est pas synchronisée avec la tâche parent externe. Ce type de tâche non synchronisée est appelé *tâche imbriquée détachée* ou *tâche enfant détachée* . L’exemple suivant montre une tâche qui crée une tâche enfant détachée.
+Lorsque le code utilisateur qui s'exécute dans une tâche crée une tâche sans spécifier l'option <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>, la nouvelle tâche n'est pas synchronisée avec la tâche parent externe. Ce type de tâche non synchronisée est appelé *tâche imbriquée détachée* ou *tâche enfant détachée*. L’exemple suivant montre une tâche qui crée une tâche enfant détachée.
 
 [!code-csharp[TPL_TaskIntro#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#07)]
 [!code-vb[TPL_TaskIntro#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#07)]
@@ -261,7 +260,7 @@ Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Thr
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-|-|
 |[Chaînage des tâches à l’aide de tâches de continuation](chaining-tasks-by-using-continuation-tasks.md)|Décrit le fonctionnement des continuations.|
 |[Tâches enfants attachées et détachées](attached-and-detached-child-tasks.md)|Décrit la différence entre les tâches enfants attachées et les tâches enfants détachées.|

@@ -1,7 +1,6 @@
 ---
 title: Localisation
 ms.date: 03/30/2017
-ms.technology: dotnet-standard
 helpviewer_keywords:
 - culture, localization
 - application development [.NET], localization
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - localization [.NET], about localization
 - localizing resources
 ms.assetid: 49d520d7-92d7-44ee-bb24-8b615db1d41b
-ms.openlocfilehash: e92184f48b2d2255138da5b2a6e7e2977a95e2e3
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 5d47d002c714ea80b6f94c810f2dca726c273134
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93062956"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94829828"
 ---
 # <a name="localization"></a>Localisation
 
