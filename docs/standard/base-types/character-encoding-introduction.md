@@ -184,7 +184,7 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 <span data-ttu-id="2ea0a-184">Le diagramme suivant illustre les points de code de la valeur scalaire.</span><span class="sxs-lookup"><span data-stu-id="2ea0a-184">The following diagram illustrates the scalar value code points.</span></span>
 
-:::image type="content" source="media/No-Loc (Char)acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
+:::image type="content" source="media/No-Loc (Char)acter-Encoding-Introduction/Scalar-values.svg "alt-text ="valeurs scalaires":::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a><span data-ttu-id="2ea0a-186">RuneType en tant que valeur scalaire</span><span class="sxs-lookup"><span data-stu-id="2ea0a-186">The Rune type as a scalar value</span></span>
 
