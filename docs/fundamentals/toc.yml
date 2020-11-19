@@ -312,7 +312,7 @@ items:
             items:
               - name: Vue d'ensemble
                 href: ../core/project-sdk/overview.md
-              - name: Informations de référence
+              - name: Référence
                 items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
@@ -372,6 +372,8 @@ items:
             href: ../core/diagnostics/debug-linux-dumps.md
           - name: EventCounters
             href: ../core/diagnostics/event-counters.md
+          - name: EventPipe
+            href: ../core/diagnostics/eventpipe.md
           - name: Journalisation et suivi
             href: ../core/diagnostics/logging-tracing.md
           - name: Collecter les diagnostics dans les conteneurs
