@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: 'Découvrez les instructions de mise en forme du code F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: af98be75f21cbc594ff9cf779561d49e4965845a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 8f5e333c015f30ae8449c76a3075763370a98e4d
+ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688252"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94830517"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -102,7 +102,7 @@ let myFunBad (a:decimal)(b)c = a + b + c
 
 ### <a name="place-parameters-on-a-new-line-for-long-definitions"></a>Placer des paramètres sur une nouvelle ligne pour les définitions longues
 
-Si vous avez une définition de fonction très longue, placez les paramètres sur de nouvelles lignes et mettez-les en retrait pour qu’ils correspondent au niveau de mise en retrait du paramètre suivant.
+Si vous avez une définition de fonction longue, placez les paramètres sur de nouvelles lignes et mettez-les en retrait pour qu’ils correspondent au niveau de mise en retrait du paramètre suivant.
 
 ```fsharp
 module M =
@@ -308,7 +308,7 @@ Les espaces de noms, les exceptions, les événements et les projets/ `.dll` nom
 
 ### <a name="avoid-underscores-in-names"></a>Éviter les traits de soulignement dans les noms
 
-Historiquement, certaines bibliothèques F # ont utilisé des traits de soulignement dans les noms. Toutefois, cela n’est plus largement accepté, en partie parce qu’il est en conflit avec les conventions de nommage .NET. Cela dit, certains programmeurs F # utilisent des traits de soulignement très largement, en partie pour des raisons historiques, et la tolérance et le respect sont importants. Toutefois, n’oubliez pas que le style est souvent utilisé par d’autres personnes qui ont le choix de l’utiliser ou non.
+Historiquement, certaines bibliothèques F # ont utilisé des traits de soulignement dans les noms. Toutefois, cela n’est plus largement accepté, en partie parce qu’il est en conflit avec les conventions de nommage .NET. Cela dit, certains programmeurs F # utilisent des traits de soulignement très largement, en partie pour des raisons historiques, et la tolérance et le respect sont importants. Toutefois, le style est souvent utilisé par d’autres personnes qui ont le choix de l’utiliser ou non.
 
 Une exception concerne l’interopérabilité avec les composants natifs, où les traits de soulignement sont courants.
 
@@ -643,7 +643,7 @@ Dans certains cas, `do...yield` peut contribuer à la lisibilité. Ces cas, bien
 ## <a name="formatting-if-expressions"></a>Mettre en forme si des expressions
 
 La mise en retrait des conditions dépend de la taille et de la complexité des expressions qui les composent.
-Il vous suffit de les écrire sur une seule ligne lorsque :
+Écrivez-les sur une seule ligne lorsque :
 
 - `cond`, `e1` et `e2` sont courts
 - `e1` et ne `e2` sont pas des `if/then/else` expressions elles-mêmes.
@@ -890,7 +890,7 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 let makeStreamReader x = new System.IO.StreamReader(path = x)
 ```
 
-### <a name="formatting-constructors-static-members-and-member-invocations"></a>Constructeurs de mise en forme, membres statiques et appels de membres
+### <a name="formatting-constructors-static-members-and-member-invocations"></a>Mise en forme des constructeurs, des membres statiques et des appels de membres
 
 Si l’expression est de type short, séparez les arguments par des espaces et conservez-les en une seule ligne.
 
@@ -992,7 +992,7 @@ let MyUrl = "www.mywebsitethatiamworkingwith.com"
 
 ## <a name="formatting-computation-expression-operations"></a>Mise en forme des opérations d’expression de calcul
 
-Lors de la création d’opérations personnalisées pour des [expressions de calcul](../language-reference/computation-expressions.md) , il est recommandé d’utiliser l’affectation de noms la casse mixte :
+Lors de la création d’opérations personnalisées pour des [expressions de calcul](../language-reference/computation-expressions.md), il est recommandé d’utiliser l’affectation de noms la casse mixte :
 
 ```fsharp
 type MathBuilder () =
@@ -1031,5 +1031,5 @@ let myNumber =
     }
 ```
 
-La Convention d’affectation de noms utilisée doit finalement être pilotée par le domaine en cours de modélisation.
+Le domaine qui est modélisé doit finalement conduire la Convention d’affectation de noms.
 S’il est idiomatique d’utiliser une convention différente, cette convention doit être utilisée à la place.
