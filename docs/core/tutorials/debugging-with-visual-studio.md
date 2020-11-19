@@ -1,25 +1,25 @@
 ---
-title: Déboguer une application console .NET Core à l’aide de Visual Studio
-description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio.
+title: Débogage d’une application console .NET à l’aide de Visual Studio
+description: Découvrez comment déboguer une application console .NET à l’aide de Visual Studio.
 ms.date: 06/08/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 4e408d5bd0976d88f368615860ac373142d0fe1e
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: 8a914dc6cf069c011ea5b077ada514bf8cec331d
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957223"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916186"
 ---
-# <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio
+# <a name="tutorial-debug-a-net-console-application-using-visual-studio"></a>Didacticiel : déboguer une application console .NET à l’aide de Visual Studio
 
 Ce didacticiel présente les outils de débogage disponibles dans Visual Studio.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio](with-visual-studio.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net à l’aide de Visual Studio](with-visual-studio.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -31,21 +31,21 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 1. Démarrez Visual Studio.
 
-1. Ouvrez le projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio](with-visual-studio.md).
+1. Ouvrez le projet que vous avez créé dans [créer une application console .net à l’aide de Visual Studio](with-visual-studio.md).
 
    La configuration de build actuelle s’affiche sur la barre d’outils. L’image de barre d’outils suivante montre que Visual Studio est configuré pour compiler la version de débogage de l’application :
 
-   ![Barre d’outils Visual Studio avec débogage mis en surbrillance](./media/debugging-with-visual-studio/visual-studio-toolbar-debug.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/visual-studio-toolbar-debug.png" alt-text="Barre d’outils Visual Studio avec débogage mis en surbrillance":::
 
 ## <a name="set-a-breakpoint"></a>Définir un point d'arrêt
 
 Un *point d’arrêt* interrompt temporairement l’exécution de l’application avant l’exécution de la ligne avec le point d’arrêt.
 
-1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code sur cette ligne. La marge de gauche se trouve à gauche des numéros de ligne.  D’autres façons de définir un point d’arrêt consiste à placer le curseur dans la ligne de code, puis à appuyer sur <kbd>F9</kbd> ou à choisir **Déboguer**le  >  **point d’arrêt** dans la barre de menus.
+1. Définissez un *point d’arrêt* sur la ligne qui affiche le nom, la date et l’heure en cliquant dans la marge de gauche de la fenêtre de code sur cette ligne. La marge de gauche se trouve à gauche des numéros de ligne.  D’autres façons de définir un point d’arrêt consiste à placer le curseur dans la ligne de code, puis à appuyer sur <kbd>F9</kbd> ou à choisir **Déboguer** le  >  **point d’arrêt** dans la barre de menus.
 
    Comme le montre l’illustration suivante, Visual Studio indique la ligne sur laquelle le point d’arrêt est défini en le mettant en surbrillance et en affichant un point rouge dans la marge de gauche.
 
-   ![Fenêtre Programme de Visual Studio avec un point d’arrêt défini](./media/debugging-with-visual-studio/set-breakpoint-in-editor.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/set-breakpoint-in-editor.png" alt-text="Fenêtre Programme de Visual Studio avec un point d’arrêt défini":::
 
 1. Appuyez sur <kbd>F5</kbd> pour exécuter le programme en mode débogage. Une autre façon de démarrer le débogage consiste à choisir **Déboguer**  >  **Démarrer le débogage** dans le menu.
 
@@ -53,13 +53,13 @@ Un *point d’arrêt* interrompt temporairement l’exécution de l’applicatio
 
 1. L’exécution du programme s’arrête lorsqu’il atteint le point d’arrêt et avant l’exécution de la méthode `Console.WriteLine`. La fenêtre **Variables locales** affiche les valeurs des variables définies dans la méthode en cours d’exécution.
 
-   ![Capture d’écran d’un point d’arrêt dans Visual Studio](./media/debugging-with-visual-studio/breakpoint-hit.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/breakpoint-hit.png" alt-text="Capture d’écran d’un point d’arrêt dans Visual Studio":::
 
 ## <a name="use-the-immediate-window"></a>Utiliser la fenêtre exécution
 
 La fenêtre **exécution** vous permet d’interagir avec l’application que vous déboguez. Vous pouvez modifier de manière interactive la valeur des variables pour voir comment elles affectent votre programme.
 
-1. Si la fenêtre **exécution** n’est pas visible, affichez-la en sélectionnant **Déboguer**les  >  **fenêtres**  >  **immédiates**.
+1. Si la fenêtre **exécution** n’est pas visible, affichez-la en sélectionnant **Déboguer** les  >  **fenêtres**  >  **immédiates**.
 
 1. Entrez `name = "Gracie"` dans la fenêtre **exécution** et appuyez sur la touche <kbd>entrée</kbd> .
 
@@ -67,13 +67,13 @@ La fenêtre **exécution** vous permet d’interagir avec l’application que vo
 
    La fenêtre **exécution** affiche la valeur de la variable de chaîne et les propriétés de la <xref:System.DateTime> valeur. En outre, les valeurs des variables sont mises à jour dans la fenêtre variables **locales** .
 
-   ![Variables locales et fenêtres immédiates dans Visual Studio 2019](./media/debugging-with-visual-studio/locals-immediate-window.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/locals-immediate-window.png" alt-text="Variables locales et fenêtres immédiates dans Visual Studio 2019":::
 
 1. Appuyez sur <kbd>F5</kbd> pour continuer l’exécution du programme. Pour continuer, vous pouvez également choisir **Déboguer**  >  **Continuer** dans le menu.
 
    Les valeurs affichées dans la fenêtre de console correspondent aux modifications que vous avez apportées dans la fenêtre **exécution** .
 
-   ![Fenêtre de console présentant les valeurs entrées](./media/debugging-with-visual-studio/console-window.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/console-window.png" alt-text="Fenêtre de console présentant les valeurs entrées":::
 
 1. Appuyez sur n’importe quelle touche pour quitter l’application et arrêter le débogage.
 
@@ -83,7 +83,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
 1. Cliquez avec le bouton droit sur le point rouge qui représente le point d’arrêt. Dans le menu contextuel, sélectionnez **conditions** pour ouvrir la boîte de dialogue **paramètres de point d’arrêt** . Activez la case à cocher des **conditions** si elle n’est pas déjà sélectionnée.
 
-   ![Éditeur montrant le panneau des paramètres de point d’arrêt - C#](./media/debugging-with-visual-studio/breakpoint-settings.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/breakpoint-settings.png" alt-text="Éditeur montrant le panneau des paramètres de point d’arrêt - C#":::
 
 1. Pour l' **expression conditionnelle**, entrez le code suivant dans le champ qui montre un exemple de code qui teste si a la touche `x` 5. Si la langue que vous souhaitez utiliser n’est pas affichée, modifiez le sélecteur de langue en haut de la page.
 
@@ -121,7 +121,7 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
    Le point d’interrogation dirige la fenêtre exécution pour [évaluer une expression](/visualstudio/ide/reference/immediate-window#enter-commands).
 
-   ![Fenêtre Exécution retournant une valeur true après exécution de l’instruction - C#](./media/debugging-with-visual-studio/immediate-window-output.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/immediate-window-output.png" alt-text="Fenêtre Exécution retournant une valeur true après exécution de l’instruction - C#":::
 
 1. Appuyez sur <kbd>F5</kbd> pour continuer l’exécution du programme.
 
@@ -133,17 +133,17 @@ Le programme affiche la chaîne que l’utilisateur entre. Que se passe-t-il si 
 
 Visual Studio vous permet également de parcourir un programme ligne par ligne et de surveiller son exécution. En règle générale, vous définissez un point d’arrêt et suivez le déroulement du programme dans une petite partie de votre code de programme. Étant donné que ce programme est petit, vous pouvez effectuer un pas à pas détaillé dans l’ensemble du programme.
 
-1. Choisissez **Déboguer**  >  **pas à pas**détaillé. Vous pouvez également déboguer une instruction à la fois en appuyant sur <kbd>F11</kbd>.
+1. Choisissez **Déboguer**  >  **pas à pas** détaillé. Vous pouvez également déboguer une instruction à la fois en appuyant sur <kbd>F11</kbd>.
 
    Visual Studio met en surbrillance et affiche une flèche en regard de la ligne suivante de l’exécution.
 
    C#
 
-   ![Méthode pas à pas détaillée dans Visual Studio - C#](./media/debugging-with-visual-studio/step-into-method.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/step-into-method.png" alt-text="Méthode pas à pas détaillée dans Visual Studio - C#":::
 
    Visual Basic
 
-   ![Méthode pas à pas détaillée dans Visual Studio - Visual Basic](./media/debugging-with-visual-studio/vb-step-into-method.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/vb-step-into-method.png" alt-text="Méthode pas à pas détaillée dans Visual Studio - Visual Basic":::
 
    À ce stade, la fenêtre **variables locales** indique que le `args` tableau est vide et `name` possède les `date` valeurs par défaut. En outre, Visual Studio a ouvert une fenêtre de console vide.
 
@@ -151,11 +151,11 @@ Visual Studio vous permet également de parcourir un programme ligne par ligne e
 
    C#
 
-   ![Source de la méthode pas à pas détaillée dans Visual Studio - C#](./media/debugging-with-visual-studio/step-into-source-method.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/step-into-source-method.png" alt-text="Source de la méthode pas à pas détaillée dans Visual Studio - C#":::
 
    Visual Basic
 
-   ![Source de la méthode pas à pas détaillée dans Visual Studio - Visual Basic](./media/debugging-with-visual-studio/vb-step-into-source-method.png)
+   :::image type="content" source="./media/debugging-with-visual-studio/vb-step-into-source-method.png" alt-text="Source de la méthode pas à pas détaillée dans Visual Studio - Visual Basic":::
 
 1. Appuyez sur <kbd>F11</kbd>. Visual Studio met en surbrillance l’instruction qui inclut l’attribution de la variable `name`. La fenêtre **variables locales** affiche la `name` `null` valeur et la fenêtre de console affiche la chaîne « quel est votre nom ? ».
 
@@ -179,7 +179,7 @@ Une fois que vous avez testé la version Debug de votre application, vous devez 
 
 Pour générer et tester la version Release de votre application console, changez la configuration de build dans la barre d’outils de **Debug** en **Release**.
 
-![Barre d’outils par défaut Visual Studio avec débogage mis en surbrillance](./media/debugging-with-visual-studio/visual-studio-toolbar-release.png)
+:::image type="content" source="./media/debugging-with-visual-studio/visual-studio-toolbar-release.png" alt-text="barre d’outils Visual Studio par défaut avec mise en surbrillance":::
 
 Quand vous appuyez sur <kbd>F5</kbd> ou que vous choisissez **générer la solution** dans le menu **générer** , Visual Studio compile la version Release de l’application. Vous pouvez le tester comme vous l’avez fait pour la version de débogage.
 
@@ -188,4 +188,4 @@ Quand vous appuyez sur <kbd>F5</kbd> ou que vous choisissez **générer la solut
 Dans ce didacticiel, vous avez utilisé les outils de débogage de Visual Studio. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core à l’aide de Visual Studio](publishing-with-visual-studio.md)
+> [Publier une application console .NET à l’aide de Visual Studio](publishing-with-visual-studio.md)

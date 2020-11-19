@@ -8,25 +8,23 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 3508f08857f88fd34478f968a71bae0121d54d1c
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: f5c67392705156d6ff05e6f140c7187f41b1d033
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89134508"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915828"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
-L’opérateur `is` vérifie si le résultat d’une expression est compatible avec un type donné, ou (à compter de C# 7.0) teste une expression par rapport à un modèle. Pour plus d’informations sur l’opérateur de test de type `is`, consultez la section [Opérateur is](../operators/type-testing-and-cast.md#is-operator) de l’article [Opérateurs de test et de cast de type](../operators/type-testing-and-cast.md).
+L’opérateur `is` vérifie si le résultat d’une expression est compatible avec un type donné, ou (à compter de C# 7.0) teste une expression par rapport à un modèle. Pour plus d’informations sur l’opérateur de test `is` de type, consultez la section [opérateur is](../operators/type-testing-and-cast.md#is-operator) de l’article relatif aux [opérateurs de test de type et de conversion](../operators/type-testing-and-cast.md) .
 
 ## <a name="pattern-matching-with-is"></a>Utilisation des critères spéciaux avec `is`
 
 À compter de C# 7.0, les instructions `is` et [switch](switch.md) prennent en charge les critères spéciaux. Le mot clé `is` prend en charge les modèles suivants :
 
-- [Modèle de type](#type-pattern), qui permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, caste l’expression en une variable de ce type.
-
+- [Modèle de type](#type-pattern), qui teste si une expression peut être convertie en un type spécifié et, si possible, effectue un cast de la variable en une variable de ce type.
 - [Modèle de constante](#constant-pattern) : teste si une expression correspond à une valeur de constante spécifiée.
-
 - [Modèle de variable](#var-pattern) : correspondance qui réussit toujours et lie la valeur d’une expression à une variable locale.
 
 ### <a name="type-pattern"></a>Modèle de type
@@ -39,19 +37,16 @@ Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux
 
 Où *expr* est une expression qui prend la valeur d’une instance d’un certain type, *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et *varname* est l’objet vers lequel le résultat de *expr* est converti si le `is` test a la valeur `true` .
 
-L’expression `is` est `true` si *expr* n’est pas `null` et que l’une des conditions suivantes est remplie :
+L' `is` expression est `true` si *expr* n’est pas `null` et que l’une des conditions suivantes est vraie :
 
 - *expr* est une instance du même type que *type*.
-
 - *expr* est une instance d’un type qui dérive de *type*. En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.
-
 - *expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*. Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration. Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.
-
 - *expr* est une instance d’un type qui implémente l’interface *type*.
 
 À compter de C# 7.1, *expr* peut avoir un type à la compilation défini par un paramètre de type générique et ses contraintes.
 
-Si *exp* est `true` et que `is` est utilisé avec une instruction `if`, *varname* est assigné dans l’instruction `if` uniquement. La portée de *varname* provient de l’expression `is` à la fin du bloc englobant l’instruction `if`. L’utilisation de *varname* à tout autre emplacement génère une erreur de compilation liée à l’utilisation d’une variable qui n’a pas été attribuée.
+Si *exp* est `true` et que `is` est utilisé avec une instruction `if`, *varname* est assigné dans l’instruction `if` uniquement. La portée de *varname* provient de l’expression `is` à la fin du bloc englobant l’instruction `if`. L’utilisation de *varname* dans un autre emplacement génère une erreur de compilation pour l’utilisation d’une variable qui n’a pas été assignée.
 
 L’exemple suivant utilise le modèle de type `is` pour fournir l’implémentation de la méthode <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> d’un type.
 
@@ -105,6 +100,8 @@ L’exemple suivant illustre une comparaison des vérifications de `null` :
 
 [!code-csharp[is#11](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern11.cs#11)]
 
+L’expression `x is null` est calculée différemment pour les types référence et les types valeur Nullable. Pour les types valeur Nullable, elle utilise <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . Pour les types référence, elle utilise `x == null` .
+
 ### <a name="var-pattern"></a>Modèle de variable
 
 Une correspondance de modèle avec le `var` modèle est toujours réussie. Sa syntaxe est la suivante :
@@ -133,5 +130,5 @@ Pour plus d’informations, consultez la section [L’opérateur is](~/_csharpla
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Mots clés C#](index.md)
+- [Mots clés C#](index.md)
 - [Opérateurs de conversion et de test de type](../operators/type-testing-and-cast.md)

@@ -1,36 +1,36 @@
 ---
-title: Créer une application console .NET Core à l’aide de Visual Studio Code
-description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio Code et du CLI .NET Core.
-ms.date: 05/22/2020
-ms.openlocfilehash: e936c23d8525e42a9d2781cc680067c9da2ce42f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+title: Créer une application console .NET à l’aide de Visual Studio Code
+description: Découvrez comment créer une application console .NET à l’aide de Visual Studio Code et de l’interface CLI .NET.
+ms.date: 11/17/2020
+ms.openlocfilehash: dbbdf88b0c84089249eb7e446c25eddc11543c1a
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811924"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915867"
 ---
-# <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio Code
+# <a name="tutorial-create-a-net-console-application-using-visual-studio-code"></a>Didacticiel : créer une application console .NET à l’aide de Visual Studio Code
 
-Ce didacticiel montre comment créer et exécuter une application console .NET Core à l’aide de Visual Studio Code et du CLI .NET Core. Les tâches de projet, telles que la création, la compilation et l’exécution d’un projet, sont effectuées à l’aide de l’CLI .NET Core. Vous pouvez suivre ce didacticiel avec un autre éditeur de code et exécuter des commandes dans un terminal, si vous le souhaitez.
+Ce didacticiel montre comment créer et exécuter une application console .NET à l’aide de Visual Studio Code et de l’interface CLI .NET. Les tâches de projet, telles que la création, la compilation et l’exécution d’un projet, sont effectuées à l’aide de l’interface CLI .NET. Vous pouvez suivre ce didacticiel avec un autre éditeur de code et exécuter des commandes dans un terminal, si vous le souhaitez.
 
 ## <a name="prerequisites"></a>Prérequis
 
 1. [Visual Studio code](https://code.visualstudio.com/) avec l' [extension C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) installée. Pour plus d’informations sur la façon d’installer des extensions sur Visual Studio Code, consultez [vs code d’extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery).
-2. Le [Kit de développement logiciel (SDK) .net Core 3,1 ou version ultérieure](https://dotnet.microsoft.com/download)
+2. Le [Kit de développement logiciel (SDK) .net 5,0 ou version ultérieure](https://dotnet.microsoft.com/download)
 
 ## <a name="create-the-app"></a>Créer l’application
 
-Créez un projet d’application console .NET Core nommé « HelloWorld ».
+Créez un projet d’application console .NET nommé « HelloWorld ».
 
-1. Démarrer Visual Studio Code
+1. Démarrez Visual Studio Code.
 
-1. **File**  >  Dans le menu principal, sélectionnez fichier**ouvrir le dossier** (**fichier**  >  **Ouvrir..** . sur MacOS).
+1. **File**  >  Dans le menu principal, sélectionnez fichier **ouvrir le dossier** (**fichier**  >  **Ouvrir..** . sur MacOS).
 
 1. Dans la boîte de dialogue **ouvrir un dossier** , créez un dossier *HelloWorld* , puis cliquez sur **Sélectionner un dossier** (**ouvrir** sur MacOS).
 
    Le nom du dossier devient le nom du projet et le nom de l’espace de noms par défaut. Vous ajouterez du code ultérieurement dans le didacticiel qui suppose que l’espace de noms du projet est `HelloWorld` .
 
-1. Ouvrez le **Terminal** dans Visual Studio code en sélectionnant **Afficher**le  >  **Terminal** dans le menu principal.
+1. Ouvrez le **Terminal** dans Visual Studio code en sélectionnant **Afficher** le  >  **Terminal** dans le menu principal.
 
    Le **Terminal** s’ouvre avec l’invite de commandes dans le dossier *HelloWorld* .
 
@@ -110,7 +110,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
 1. Répondez à l’invite en entrant un nom et en appuyant sur la touche <kbd>entrée</kbd> .
 
-   :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="Fenêtre de terminal avec sortie de programme modifiée":::
+   :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="Fenêtre de terminal avec sortie du programme modifiée":::
 
 1. Appuyez sur n’importe quelle touche pour quitter le programme.
 
@@ -120,7 +120,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez créé une application console .NET Core. Dans le didacticiel suivant, vous allez déboguer l’application.
+Dans ce didacticiel, vous avez créé une application console .NET. Dans le didacticiel suivant, vous allez déboguer l’application.
 
 > [!div class="nextstepaction"]
-> [Déboguer une application console .NET Core à l’aide de Visual Studio Code](debugging-with-visual-studio-code.md)
+> [Déboguer une application console .NET à l’aide d’Visual Studio Code](debugging-with-visual-studio-code.md)

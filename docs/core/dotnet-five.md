@@ -1,16 +1,16 @@
 ---
 title: Nouveautés de .NET 5
 description: Découvrez .NET 5, une plateforme de développement multiplateforme et open source qui est la prochaine évolution de .NET Core.
-ms.date: 11/16/2020
+ms.date: 11/18/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 04f72675744426f7dbc99e5978a9ea4bbb8015b1
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 077fb06db40519af2bf8ac2f659488acdf525aec
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687593"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916219"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -46,11 +46,23 @@ ASP.NET Core 5,0 est basé sur .NET 5,0, mais conserve le nom « Core » pour 
 
 Il n’est pas prévu de porter les technologies suivantes de .NET Framework vers .NET 5,0, mais il existe des alternatives dans .NET 5,0 :
 
-| Technology                             | Alternative recommandée                                                                         |
-|----------------------------------------|-------------------------------------------------------------------------------------------------|
-| Web Forms                              | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
-| Windows Communication Foundation (WCF) | [gRPC](/aspnet/core/grpc)                                                                       |
-| Windows Workflow (WF)                  | [CoreWF Open source](https://github.com/UiPath-Open/corewf)                                     |
+| Technology            | Alternative recommandée                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------|
+| Web Forms             | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
+| Windows Workflow (WF) | [CoreWF Open source](https://github.com/UiPath-Open/corewf)                                     |
+
+### <a name="windows-communication-foundation"></a>Windows Communication Foundation
+
+Toutefois, l’implémentation d’origine du [Windows Communication Foundation (WCF)](../framework/wcf/index.md) était uniquement prise en charge sur Windows ; un port client est disponible à partir de .NET Foundation. Il est entièrement [Open source](https://github.com/dotnet/wcf), multiplateforme et pris en charge par Microsoft. Les packages NuGet principaux sont répertoriés ci-dessous :
+
+- [System.ServiceModel.Duplex](https://www.nuget.org/packages/System.ServiceModel.Duplex)
+- [System. ServiceModel. Federation](https://www.nuget.org/packages/System.ServiceModel.Federation)
+- [System.ServiceModel.Http](https://www.nuget.org/packages/System.ServiceModel.Http)
+- [System.ServiceModel.NetTcp](https://www.nuget.org/packages/System.ServiceModel.NetTcp)
+- [System.ServiceModel.Primitives](https://www.nuget.org/packages/System.ServiceModel.Primitives)
+- [System. ServiceModel. Security](https://www.nuget.org/packages/System.ServiceModel.Security)
+
+La Communauté gère les composants serveur qui complètent les bibliothèques clientes mentionnées ci-dessus. Le référentiel GitHub se trouve sur [CoreWCF](https://github.com/CoreWCF/CoreWCF). Les composants serveur ne sont _pas_ officiellement pris en charge par Microsoft. Pour une alternative à WCF, pensez à [gRPC](/aspnet/core/grpc).
 
 ## <a name="net-50-doesnt-replace-net-standard"></a>.NET 5,0 ne remplace pas .NET Standard
 

@@ -1,21 +1,21 @@
 ---
-title: Déboguer une application console .NET Core à l’aide de Visual Studio Code
-description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Code.
+title: Déboguer une application console .NET à l’aide d’Visual Studio Code
+description: Découvrez comment déboguer une application console .NET à l’aide de Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 85095a9e70ee3ff846716ef91239b240d8c42410
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118297"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916227"
 ---
-# <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio Code
+# <a name="tutorial-debug-a-net-console-application-using-visual-studio-code"></a>Didacticiel : déboguer une application console .NET à l’aide d’Visual Studio Code
 
-Ce didacticiel présente les outils de débogage disponibles dans Visual Studio Code pour l’utilisation des applications .NET Core.
+Ce didacticiel présente les outils de débogage disponibles dans Visual Studio Code pour l’utilisation des applications .NET.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -25,9 +25,9 @@ Dans la configuration Debug, un programme est compilé avec des informations de 
 
 Par défaut, Visual Studio Code paramètres de lancement utilisent la configuration de build Debug. vous n’avez donc pas besoin de le modifier avant de procéder au débogage.
 
-1. Démarrer Visual Studio Code
+1. Démarrez Visual Studio Code.
 
-1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio code](with-visual-studio-code.md).
+1. Ouvrez le dossier du projet que vous avez créé dans [créer une application console .net à l’aide de Visual Studio code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Définir un point d'arrêt
 
@@ -43,9 +43,9 @@ Un *point d’arrêt* interrompt temporairement l’exécution de l’applicatio
 
 ## <a name="set-up-for-terminal-input"></a>Configuration des entrées de terminal
 
-Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le **console de débogage** n’accepte pas les entrées de terminal pour un programme en cours d’exécution. Pour gérer l’entrée de terminal pendant le débogage, vous pouvez utiliser le terminal intégré (l’une des Visual Studio Code Windows) ou un terminal externe. Pour ce didacticiel, vous utilisez le terminal intégré.
+Le point d’arrêt se trouve après un `Console.ReadLine` appel de méthode. Le **console de débogage** n’accepte pas les entrées de terminal pour un programme en cours d’exécution. Pour gérer l’entrée de terminal pendant le débogage, vous pouvez utiliser le terminal intégré (l’une des fenêtres Visual Studio Code) ou un terminal externe. Pour ce tutoriel, vous utilisez le terminal intégré.
 
-1. Ouvrez *. vscode/launch.jssur*.
+1. Ouvrez *.vscode/launch.json*.
 
 1. Remplacez le `console` paramètre par `integratedTerminal` .
 
@@ -165,17 +165,17 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
    À ce stade, la fenêtre **variables** indique que le `args` tableau est vide, et `name` possède les `date` valeurs par défaut.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Bouton pas à pas détaillé":::
 
    Visual Studio Code met en surbrillance la ligne suivante.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
-   Visual Studio Code exécute le `Console.WriteLine` pour l’invite de nom et met en surbrillance la ligne suivante d’exécution. La ligne suivante est le `Console.ReadLine` pour le `name` . La fenêtre **variables** est inchangée et l’onglet **Terminal** affiche « quel est votre nom ? ». .
+   Visual Studio Code exécute le `Console.WriteLine` pour l’invite de nom et met en surbrillance la ligne suivante d’exécution. La ligne suivante est le `Console.ReadLine` pour le `name` . La fenêtre **variables** est inchangée et l’onglet **Terminal** affiche « quel est votre nom ? ». prompt.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio met en surbrillance l' `name` attribution de variable. La fenêtre **variables** affiche `name` toujours `null` .
 
@@ -183,19 +183,19 @@ Visual Studio Code vous permet également d’effectuer un pas à pas détaillé
 
    L’onglet **Terminal** peut ne pas afficher la chaîne que vous entrez lors de son entrée, mais la <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> méthode capture votre entrée.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio Code met en surbrillance l' `date` attribution de variable. La fenêtre **variables** affiche la valeur retournée par l’appel à la <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> méthode. L’onglet **Terminal** affiche la chaîne que vous avez entrée à l’invite.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    La fenêtre **variables** affiche la valeur de la `date` variable après l’assignation de la <xref:System.DateTime.Now?displayProperty=nameWithType> propriété.
 
-1. Sélectionnez **exécuter**un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** un  >  **pas à pas** détaillé ou appuyez sur <kbd>F11</kbd>.
 
    Visual Studio Code appelle la <xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> méthode. La fenêtre de console affiche la chaîne mise en forme.
 
-1. Sélectionnez **exécuter**le  >  **pas à pas sortant** ou appuyez sur <kbd>MAJ</kbd> + <kbd>F11</kbd>.
+1. Sélectionnez **exécuter** le  >  **pas à pas sortant** ou appuyez sur <kbd>MAJ</kbd> + <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-out.png" alt-text="Bouton de pas à pas sortant":::
 
@@ -224,4 +224,4 @@ dotnet run --configuration Release
 Dans ce didacticiel, vous avez utilisé Visual Studio Code outils de débogage. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core à l’aide de Visual Studio Code](publishing-with-visual-studio-code.md)
+> [Publier une application console .NET à l’aide de Visual Studio Code](publishing-with-visual-studio-code.md)

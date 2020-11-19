@@ -1,29 +1,29 @@
 ---
-title: Créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio
-description: Découvrez comment créer une bibliothèque de classes .NET Standard à l’aide de Visual Studio.
+title: Créer une bibliothèque de classes .NET à l’aide de Visual Studio
+description: Découvrez comment créer une bibliothèque de classes .NET à l’aide de Visual Studio.
 ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet,contperfq1
-ms.openlocfilehash: 45a44dcd73e1abcc8dfd75cd54da5a2310f027c4
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3af08b5a92c61f29a3700a3417043170f41407bc
+ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118258"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94916123"
 ---
-# <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de .NET Standard à l’aide de Visual Studio
+# <a name="tutorial-create-a-net-class-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de classes .NET à l’aide de Visual Studio
 
 Dans ce didacticiel, vous allez créer une bibliothèque de classes simple qui contient une méthode de gestion de chaîne unique.
 
-Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard.
+Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Si la bibliothèque cible .NET Standard 2,0, elle peut être appelée par n’importe quelle implémentation .NET (y compris .NET Framework) qui prend en charge .NET Standard 2,0. Si la bibliothèque cible .NET 5, elle peut être appelée par n’importe quelle application qui cible .NET 5. Ce didacticiel montre comment cibler .NET 5.
 
-Lorsque vous avez terminé votre bibliothèque de classes, vous pouvez la distribuer en tant que package NuGet ou en tant que composant fourni avec l’application qui l’utilise.
+Lorsque vous créez une bibliothèque de classes, vous pouvez la distribuer en tant que package NuGet ou en tant que composant fourni avec l’application qui l’utilise.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2019 version 16,6 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET Core 3,1 est automatiquement installé lorsque vous sélectionnez cette charge de travail.
+- [Visual Studio 2019 version 16,8 ou une version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement multiplateforme .net Core** installée. Le kit de développement logiciel (SDK) .NET 5,0 est automatiquement installé lorsque vous sélectionnez cette charge de travail. Ce didacticiel part du principe que vous avez activé **l’option Afficher tous les modèles .net core dans le nouveau projet**, comme indiqué dans [Didacticiel : créer une application console .net à l’aide de Visual Studio](with-visual-studio.md).
 
 ## <a name="create-a-solution"></a>Créer une solution
 
@@ -37,27 +37,27 @@ Pour créer la solution vide :
 
 3. Dans la page **créer un nouveau projet** , entrez **solution** dans la zone de recherche. Choisissez le modèle de **solution vide** , puis cliquez sur **suivant**.
 
-   ![Modèle Solution vide dans Visual Studio](media/library-with-visual-studio/blank-solution.png)
+   :::image type="content" source="media/library-with-visual-studio/blank-solution.png" alt-text="Modèle Solution vide dans Visual Studio":::
 
 4. Dans la page **configurer votre nouveau projet** , entrez **ClassLibraryProjects** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
 
 ## <a name="create-a-class-library-project"></a>Créer un projet de bibliothèque de classes
 
-1. Ajoutez un nouveau projet de bibliothèque de classes .NET Standard nommé « StringLibrary » à la solution.
+1. Ajoutez un nouveau projet de bibliothèque de classes .NET nommé « StringLibrary » à la solution.
 
    1. Cliquez avec le bouton droit sur la solution dans **Explorateur de solutions** , puis sélectionnez **Ajouter**  >  **un nouveau projet**.
 
-   1. Dans la page **Ajouter un nouveau projet** , entrez **bibliothèque** dans la zone de recherche. Choisissez **C#** ou **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **bibliothèque de classes (.NET standard)** , puis choisissez **suivant**.
+   1. Dans la page **Ajouter un nouveau projet** , entrez **bibliothèque** dans la zone de recherche. Choisissez **C#** ou **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **bibliothèque de classes** , puis choisissez **suivant**.
 
-   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibrary** dans la zone **nom du projet** . Ensuite, choisissez **créer**.
+   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibrary** dans la zone **nom du projet** , puis choisissez **suivant**.
 
-1. Assurez-vous que la bibliothèque cible la version correcte de .NET Standard. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de bibliothèque, puis sélectionnez **Propriétés**. La zone de texte de la version **cible du .NET Framework** indique que le projet cible .NET standard 2,0.
+   1. Sur la page **informations supplémentaires** , sélectionnez **.net 5,0 (actuel)**, puis cliquez sur **créer**.
 
-   ![Propriétés de projet pour la bibliothèque de classes](./media/library-with-visual-studio/library-project-properties.png)
+1. Assurez-vous que la bibliothèque cible la version correcte de .NET. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de bibliothèque, puis sélectionnez **Propriétés**. La zone de texte **Framework cible** indique que le projet cible .net 5,0.
 
 1. Si vous utilisez Visual Basic, effacez le texte dans la zone de texte **espace de noms racine** .
 
-   ![Propriétés de projet pour la bibliothèque de classes](./media/library-with-visual-studio/vb/library-project-properties.png)
+   :::image type="content" source="./media/library-with-visual-studio/vb/library-project-properties.png" alt-text="Propriétés de projet pour la bibliothèque de classes":::
 
    Pour chaque projet, Visual Basic crée automatiquement un espace de noms qui correspond au nom du projet. Dans ce didacticiel, vous définissez un espace de noms de niveau supérieur à l’aide du [`namespace`](../../visual-basic/language-reference/statements/namespace-statement.md) mot clé dans le fichier de code.
 
@@ -76,15 +76,17 @@ Pour créer la solution vide :
 
 Ajoutez une application console qui utilise la bibliothèque de classes. L’application invite l’utilisateur à entrer une chaîne et signale si la chaîne commence par un caractère majuscule.
 
-1. Ajoutez une nouvelle application console .NET Core nommée « ShowCase » à la solution.
+1. Ajoutez une nouvelle application console .NET nommée « ShowCase » à la solution.
 
    1. Cliquez avec le bouton droit sur la solution dans **Explorateur de solutions** , puis sélectionnez **Ajouter**  >  **un nouveau projet**.
 
    1. Dans la page **Ajouter un nouveau projet** , dans la zone de recherche, entrez **console** . Choisissez **C#** ou **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme.
 
-   1. Choisissez le modèle **application console (.net Core)** , puis choisissez **suivant**.
+   1. Choisissez le modèle **application console** , puis cliquez sur **suivant**.
 
-   1. Dans la page **configurer votre nouveau projet** , entrez **Showcase** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
+   1. Dans la page **configurer votre nouveau projet** , entrez **Showcase** dans la zone **nom du projet** . Ensuite, choisissez **Suivant**.
+
+   1. Sur la page **informations supplémentaires** , sélectionnez **.net 5,0 (actuel)** dans la zone **Framework cible** . Choisissez ensuite **Créer**.
 
 1. Dans la fenêtre de code du fichier *Program.cs* ou *Program. vb* , remplacez tout le code par le code suivant.
 
@@ -101,21 +103,21 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le `ShowCase` nœud **dépendances** du projet, puis sélectionnez **Ajouter une référence de projet**.
 
-   ![Menu contextuel ajouter une référence dans Visual Studio](media/library-with-visual-studio/add-reference-context-menu.png)
+   :::image type="content" source="media/library-with-visual-studio/add-reference-context-menu.png" alt-text="Menu contextuel ajouter une référence dans Visual Studio":::
 
 1. Dans la boîte de dialogue **Gestionnaire de références** , sélectionnez le projet **StringLibrary** , puis cliquez sur **OK**.
 
-   ![Boîte de dialogue Gestionnaire de références avec StringLibrary sélectionné](media/library-with-visual-studio/manage-project-references.png)
+   :::image type="content" source="media/library-with-visual-studio/manage-project-references.png" alt-text="Boîte de dialogue Gestionnaire de références avec StringLibrary sélectionné":::
 
 ## <a name="run-the-app"></a>Exécuter l’application
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **ShowCase**, puis sélectionnez **Définir comme projet de démarrage** dans le menu contextuel.
 
-   ![Menu contextuel du projet Visual Studio pour définir le projet de démarrage](media/library-with-visual-studio/set-startup-project-context-menu.png)
+   :::image type="content" source="media/library-with-visual-studio/set-startup-project-context-menu.png" alt-text="Menu contextuel du projet Visual Studio pour définir le projet de démarrage":::
 
 1. Appuyez sur <kbd>CTRL</kbd> + <kbd>F5</kbd> pour compiler et exécuter le programme sans débogage.
 
-   ![Barre d’outils de projet Visual Studio avec le bouton déboguer](media/library-with-visual-studio/visual-studio-project-toolbar.png)
+   :::image type="content" source="media/library-with-visual-studio/visual-studio-project-toolbar.png" alt-text="Barre d’outils de projet Visual Studio avec le bouton déboguer":::
 
 1. Essayez le programme en entrant des chaînes et en appuyant sur <kbd>entrée</kbd>, puis appuyez sur <kbd>entrée</kbd> pour quitter.
 
@@ -123,15 +125,14 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Développer des bibliothèques avec le CLI .NET Core](libraries.md)
-* [.NET standard versions et les plateformes qu’ils prennent en charge](../../standard/net-standard.md).
+* [Développer des bibliothèques avec l’interface CLI .NET](libraries.md)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce didacticiel, vous avez créé une bibliothèque de classes. Dans le didacticiel suivant, vous allez apprendre à effectuer un test unitaire de la bibliothèque de classes.
 
 > [!div class="nextstepaction"]
-> [Test unitaire d’une bibliothèque de .NET Standard à l’aide de Visual Studio](testing-library-with-visual-studio.md)
+> [Test unitaire d’une bibliothèque de classes .NET à l’aide de Visual Studio](testing-library-with-visual-studio.md)
 
 Vous pouvez également ignorer les tests unitaires automatisés et apprendre à partager la bibliothèque en créant un package NuGet :
 
@@ -141,4 +142,4 @@ Vous pouvez également ignorer les tests unitaires automatisés et apprendre à 
 Ou Découvrez comment publier une application console. Si vous publiez l’application console à partir de la solution que vous avez créée dans ce didacticiel, la bibliothèque de classes y est insérée comme un fichier *. dll* .
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core à l’aide de Visual Studio](publishing-with-visual-studio.md)
+> [Publier une application console .NET à l’aide de Visual Studio](publishing-with-visual-studio.md)
