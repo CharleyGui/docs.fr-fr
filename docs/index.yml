@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 10/9/2020
-  ms.openlocfilehash: 65e2dbf0613a9bdd63bd8695f06b8c931e28268d
-  ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+  ms.openlocfilehash: 6e3cd264dee78ed51ba31e09584850660ec01f30
+  ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94441043"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94819524"
 highlightedContent:
   items:
   - title: Télécharger .NET
@@ -30,7 +30,7 @@ highlightedContent:
     url: core/get-started.md
   - title: Créez votre première application web.
     itemType: learn
-    url: /learn/aspnet/hello-world-tutorial/intro
+    url: https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro
   - title: Créer des applications .NET avec C#
     itemType: learn
     url: /learn/paths/build-dotnet-applications-csharp/
