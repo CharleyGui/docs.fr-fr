@@ -312,7 +312,7 @@ items:
             items:
               - name: Vue d'ensemble
                 href: ../core/project-sdk/overview.md
-              - name: Référence
+              - name: Informations de référence
                 items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
@@ -376,6 +376,26 @@ items:
             href: ../core/diagnostics/eventpipe.md
           - name: Journalisation et suivi
             href: ../core/diagnostics/logging-tracing.md
+          - name: Événements du runtime
+            items:
+              - name: Vue d’ensemble
+                href: ../fundamentals/diagnostics/runtime-events.md
+              - name: Événements de contention
+                href: ../fundamentals/diagnostics/runtime-contention-events.md
+              - name: Événements d’exception
+                href: ../fundamentals/diagnostics/runtime-exception-events.md
+              - name: Événements de garbage collection
+                href: ../fundamentals/diagnostics/runtime-garbage-collection-events.md
+              - name: Événements d’interopérabilité
+                href: ../fundamentals/diagnostics/runtime-interop-events.md
+              - name: Événements de chargeur et de module de liaison
+                href: ../fundamentals/diagnostics/runtime-loader-binder-events.md
+              - name: Événements de méthode
+                href: ../fundamentals/diagnostics/runtime-method-events.md
+              - name: Événements ThreadPool
+                href: ../fundamentals/diagnostics/runtime-thread-events.md
+              - name: Événements de système de type
+                href: ../fundamentals/diagnostics/runtime-type-events.md
           - name: Collecter les diagnostics dans les conteneurs
             href: ../core/diagnostics/diagnostics-in-containers.md
           - name: Outils .NET Core généraux
@@ -1592,8 +1612,6 @@ items:
                 href: ../standard/serialization/how-to-chunk-serialized-data.md
               - name: "Procédure\_: déterminer si un objet .NET Standard est sérialisable"
                 href: ../standard/serialization/how-to-determine-if-netstandard-object-is-serializable.md
-              - name: Exemple
-                href: ../standard/serialization/basic-serialization-technology-sample.md
           - name: "Sérialisation\_XML et\_SOAP"
             items:
               - name: Vue d’ensemble
