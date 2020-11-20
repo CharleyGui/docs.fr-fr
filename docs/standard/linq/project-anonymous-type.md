@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5cb9be13-5ac4-4373-a034-b3520a5b2dec
-ms.openlocfilehash: 5851492f075068337c60316664138dd09c97443b
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: ef0b1c642db055c8c5d4f2275b02119d8ebee8f0
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89553271"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982417"
 ---
-# <a name="how-to-project-an-anonymous-type-linq-to-xml"></a><span data-ttu-id="1dc22-104">Comment projeter un type anonyme (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="1dc22-104">How to project an anonymous type (LINQ to XML)</span></span>
+# <a name="how-to-project-an-anonymous-type-linq-to-xml"></a><span data-ttu-id="6b37d-104">Comment projeter un type anonyme (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6b37d-104">How to project an anonymous type (LINQ to XML)</span></span>
 
-<span data-ttu-id="1dc22-105">Dans certains cas, vous souhaiterez peut-être projeter une requête vers un nouveau type, mais la requête serait votre seule utilisation pour le nouveau type.</span><span class="sxs-lookup"><span data-stu-id="1dc22-105">In some cases, you might want to project a query to a new type, but the query would be your only use for the new type.</span></span> <span data-ttu-id="1dc22-106">Au lieu de créer le type, vous pouvez projeter vers un type anonyme.</span><span class="sxs-lookup"><span data-stu-id="1dc22-106">Rather than create the type, you can project to an anonymous type.</span></span> <span data-ttu-id="1dc22-107">Les types anonymes offrent un moyen pratique d’encapsuler un jeu de propriétés en lecture seule dans un objet sans avoir à définir explicitement un type d’abord.</span><span class="sxs-lookup"><span data-stu-id="1dc22-107">Anonymous types provide a convenient way to encapsulate a set of read-only properties in an object without having to explicitly define a type first.</span></span> <span data-ttu-id="1dc22-108">Si vous écrivez une requête qui crée un objet d’un type anonyme dans la `select` clause, la requête retourne un <xref:System.Collections.IEnumerable> du type.</span><span class="sxs-lookup"><span data-stu-id="1dc22-108">If you write a query that creates an object of an anonymous type in the `select` clause, the query returns an <xref:System.Collections.IEnumerable> of the type.</span></span>
+<span data-ttu-id="6b37d-105">Dans certains cas, vous souhaiterez peut-être projeter une requête vers un nouveau type, mais la requête serait votre seule utilisation pour le nouveau type.</span><span class="sxs-lookup"><span data-stu-id="6b37d-105">In some cases, you might want to project a query to a new type, but the query would be your only use for the new type.</span></span> <span data-ttu-id="6b37d-106">Au lieu de créer le type, vous pouvez projeter vers un type anonyme.</span><span class="sxs-lookup"><span data-stu-id="6b37d-106">Rather than create the type, you can project to an anonymous type.</span></span> <span data-ttu-id="6b37d-107">Les types anonymes offrent un moyen pratique d’encapsuler un jeu de propriétés en lecture seule dans un objet sans avoir à définir explicitement un type d’abord.</span><span class="sxs-lookup"><span data-stu-id="6b37d-107">Anonymous types provide a convenient way to encapsulate a set of read-only properties in an object without having to explicitly define a type first.</span></span> <span data-ttu-id="6b37d-108">Si vous écrivez une requête qui crée un objet d’un type anonyme dans la `select` clause, la requête retourne un <xref:System.Collections.IEnumerable> du type.</span><span class="sxs-lookup"><span data-stu-id="6b37d-108">If you write a query that creates an object of an anonymous type in the `select` clause, the query returns an <xref:System.Collections.IEnumerable> of the type.</span></span>
 
-<span data-ttu-id="1dc22-109">L’exemple suivant illustre la création d’un objet d’un type anonyme qui est initialisé avec deux propriétés, `Amount` et `Message` .</span><span class="sxs-lookup"><span data-stu-id="1dc22-109">The following example shows shows creation of an object of an anonymous type that's initialized with two properties, `Amount` and `Message`.</span></span>
+<span data-ttu-id="6b37d-109">L’exemple suivant illustre la création d’un objet d’un type anonyme qui est initialisé avec deux propriétés, `Amount` et `Message` .</span><span class="sxs-lookup"><span data-stu-id="6b37d-109">The following example shows creation of an object of an anonymous type that's initialized with two properties, `Amount` and `Message`.</span></span>
 
 ```csharp
 var v = new { Amount = 108, Message = "Hello" };
@@ -27,18 +27,18 @@ var v = new { Amount = 108, Message = "Hello" };
 Dim v = New With { .Amount = 108, .Message = "Hello" };
 ```
 
-<span data-ttu-id="1dc22-110">Le type de chaque propriété est déduit par le compilateur.</span><span class="sxs-lookup"><span data-stu-id="1dc22-110">The type of each property is inferred by the compiler.</span></span> <span data-ttu-id="1dc22-111">Le nom du type est généré par le compilateur et n’est pas disponible au niveau du code source.</span><span class="sxs-lookup"><span data-stu-id="1dc22-111">The type name is generated by the compiler and isn't available at the source code level.</span></span>
+<span data-ttu-id="6b37d-110">Le type de chaque propriété est déduit par le compilateur.</span><span class="sxs-lookup"><span data-stu-id="6b37d-110">The type of each property is inferred by the compiler.</span></span> <span data-ttu-id="6b37d-111">Le nom du type est généré par le compilateur et n’est pas disponible au niveau du code source.</span><span class="sxs-lookup"><span data-stu-id="6b37d-111">The type name is generated by the compiler and isn't available at the source code level.</span></span>
 
-<span data-ttu-id="1dc22-112">Pour plus d’informations sur les types anonymes, consultez :</span><span class="sxs-lookup"><span data-stu-id="1dc22-112">For more information about anonymous types, see:</span></span>
+<span data-ttu-id="6b37d-112">Pour plus d’informations sur les types anonymes, consultez :</span><span class="sxs-lookup"><span data-stu-id="6b37d-112">For more information about anonymous types, see:</span></span>
 
-- [<span data-ttu-id="1dc22-113">Types anonymes (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="1dc22-113">Anonymous Types (C# Programming Guide)</span></span>](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
-- [<span data-ttu-id="1dc22-114">Types anonymes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1dc22-114">Anonymous Types (Visual Basic)</span></span>](../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [<span data-ttu-id="6b37d-113">Types anonymes (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="6b37d-113">Anonymous Types (C# Programming Guide)</span></span>](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+- [<span data-ttu-id="6b37d-114">Types anonymes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6b37d-114">Anonymous Types (Visual Basic)</span></span>](../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 
-## <a name="example-project-an-anonymous-type-by-creating-objects-in-the-select-clause"></a><span data-ttu-id="1dc22-115">Exemple : projeter un type anonyme en créant des objets dans la `select` clause</span><span class="sxs-lookup"><span data-stu-id="1dc22-115">Example: Project an anonymous type by creating objects in the `select` clause</span></span>
+## <a name="example-project-an-anonymous-type-by-creating-objects-in-the-select-clause"></a><span data-ttu-id="6b37d-115">Exemple : projeter un type anonyme en créant des objets dans la `select` clause</span><span class="sxs-lookup"><span data-stu-id="6b37d-115">Example: Project an anonymous type by creating objects in the `select` clause</span></span>
 
-<span data-ttu-id="1dc22-116">Dans cet exemple, la clause `select` projette un type anonyme.</span><span class="sxs-lookup"><span data-stu-id="1dc22-116">In this example, the `select` clause projects an anonymous type.</span></span> <span data-ttu-id="1dc22-117">L'exemple utilise ensuite `var` pour créer l'objet `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="1dc22-117">The example then uses `var` to create the `IEnumerable` object.</span></span> <span data-ttu-id="1dc22-118">Dans la boucle `foreach`, la variable d'itération devient une instance du type anonyme créé dans l'expression de la requête.</span><span class="sxs-lookup"><span data-stu-id="1dc22-118">Within the `foreach` loop, the iteration variable becomes an instance of the anonymous type created in the query expression.</span></span>
+<span data-ttu-id="6b37d-116">Dans cet exemple, la clause `select` projette un type anonyme.</span><span class="sxs-lookup"><span data-stu-id="6b37d-116">In this example, the `select` clause projects an anonymous type.</span></span> <span data-ttu-id="6b37d-117">L'exemple utilise ensuite `var` pour créer l'objet `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="6b37d-117">The example then uses `var` to create the `IEnumerable` object.</span></span> <span data-ttu-id="6b37d-118">Dans la boucle `foreach`, la variable d'itération devient une instance du type anonyme créé dans l'expression de la requête.</span><span class="sxs-lookup"><span data-stu-id="6b37d-118">Within the `foreach` loop, the iteration variable becomes an instance of the anonymous type created in the query expression.</span></span>
 
-<span data-ttu-id="1dc22-119">Cet exemple utilise le document XML [exemple de fichier XML : Customers et Orders](sample-xml-file-customers-orders.md).</span><span class="sxs-lookup"><span data-stu-id="1dc22-119">This example uses XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md).</span></span>
+<span data-ttu-id="6b37d-119">Cet exemple utilise le document XML [exemple de fichier XML : Customers et Orders](sample-xml-file-customers-orders.md).</span><span class="sxs-lookup"><span data-stu-id="6b37d-119">This example uses XML document [Sample XML file: Customers and orders](sample-xml-file-customers-orders.md).</span></span>
 
 ```csharp
 XElement custOrd = XElement.Load("CustomersOrders.xml");
@@ -67,7 +67,7 @@ For Each cust In custList
 Next
 ```
 
-<span data-ttu-id="1dc22-120">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1dc22-120">This example produces the following output:</span></span>
+<span data-ttu-id="6b37d-120">Cet exemple produit la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="6b37d-120">This example produces the following output:</span></span>
 
 ```output
 GREAL:Great Lakes Food Market:Howard Snyder
@@ -76,7 +76,7 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1dc22-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1dc22-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6b37d-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6b37d-121">See also</span></span>
 
-- [<span data-ttu-id="1dc22-122">Types anonymes (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="1dc22-122">Anonymous Types (C# Programming Guide)</span></span>](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
-- [<span data-ttu-id="1dc22-123">Types anonymes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1dc22-123">Anonymous Types (Visual Basic)</span></span>](../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [<span data-ttu-id="6b37d-122">Types anonymes (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="6b37d-122">Anonymous Types (C# Programming Guide)</span></span>](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+- [<span data-ttu-id="6b37d-123">Types anonymes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6b37d-123">Anonymous Types (Visual Basic)</span></span>](../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
