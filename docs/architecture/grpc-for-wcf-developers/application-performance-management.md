@@ -2,12 +2,12 @@
 title: Gestion des performances des applications-gRPC pour les développeurs WCF
 description: La journalisation, les métriques et le suivi des applications ASP.NET Core gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: bccb5ba92e2dc8fa2def4dc192b0ca58b332861a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 8a13d1c4df95768e55c90ac491150bfc78ec2bab
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91165908"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982340"
 ---
 # <a name="application-performance-management"></a>Gestion des performances des applications
 
@@ -61,11 +61,11 @@ La plupart des plateformes de métriques prennent en charge les types suivants 
 
 | Type de métrique | Description |
 | ----------- | ----------- |
-| Counter     | Effectue le suivi du nombre de fois où un événement se produit, par exemple les demandes et les erreurs. |
+| Compteur     | Effectue le suivi du nombre de fois où un événement se produit, par exemple les demandes et les erreurs. |
 | Jauge       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
 | Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille d’un jeu de données, compter le nombre d’enregistrements contenus <10, le nombre d’enregistrements 11-100, le nombre d’enregistrements 101-1000 contenus et le nombre d’enregistrements contenus >1000. |
 | Compteur       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
-| Minuterie       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
+| Minuteur       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
 
 En utilisant des *métriques d’application*, une `IMetrics` interface peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de `Get` demandes effectuées dans le temps :
 
@@ -112,7 +112,7 @@ La nature numérique des données de métriques signifie qu’elle est idéaleme
 
 Le traçage distribué est un développement relativement récent dans le monitoring, qui vient de l’utilisation accrue des microservices et des architectures distribuées. Une demande unique d’un navigateur client, d’une application ou d’un appareil peut être divisée en plusieurs étapes et sous-requêtes, et impliquer l’utilisation de nombreux services sur un réseau. Cela complique la mise en corrélation des messages du journal et des métriques avec la demande spécifique qui les a déclenchés. Le traçage distribué applique des identificateurs aux requêtes, ce qui permet de corréler les journaux et les métriques avec une opération particulière. Cela est similaire au [suivi de bout en bout de WCF](../../framework/wcf/diagnostics/tracing/end-to-end-tracing.md), mais il est appliqué sur plusieurs plateformes.
 
-Le suivi distribué a augmenté rapidement et commence à normaliser. La Fondation Cloud Native Computing a créé la [norme Open Tracing](https://opentracing.io), qui tente de fournir des bibliothèques indépendantes du fournisseur pour travailler avec des serveurs back end comme [Jaeger](https://www.jaegertracing.io/) et l' [APM élastique](https://www.elastic.co/products/apm). En même temps, Google a créé le [projet OpenCensus](https://opencensus.io/) pour résoudre le même ensemble de problèmes. Ces deux projets sont fusionnés dans un nouveau projet, [OpenTelemetry](https://opentelemetry.io), qui a pour but d’être la norme du secteur.
+Le suivi distribué a augmenté rapidement et commence à normaliser. La Fondation Cloud Native Computing a créé la [norme Open Tracing](https://opentracing.io), en tentant de fournir des bibliothèques indépendantes du fournisseur pour travailler avec des serveurs back end comme [Jaeger](https://www.jaegertracing.io/) et l' [APM élastique](https://www.elastic.co/products/apm). En même temps, Google a créé le [projet OpenCensus](https://opencensus.io/) pour résoudre le même ensemble de problèmes. Ces deux projets sont fusionnés dans un nouveau projet, [OpenTelemetry](https://opentelemetry.io), qui a pour but d’être la norme du secteur.
 
 ### <a name="how-distributed-tracing-works"></a>Fonctionnement du traçage distribué
 

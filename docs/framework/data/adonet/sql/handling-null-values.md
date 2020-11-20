@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 2ed2a88b91f06bb02c72d3e310ae09d58637205f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 2dda65f605ea9de616f01d6e52eb4e0e5def4db7
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91197467"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982516"
 ---
 # <a name="handling-null-values"></a>Gestion des valeurs null
 
@@ -94,7 +94,7 @@ WHERE TerritoryID IN (1, 2, 3)
   
  En outre, les règles suivantes s’appliquent à une instance des affectations Null `DataRow.["columnName"]` :  
   
-1. La valeur par défaut *default* est `DbNull.Value` pour tout, à l’exception des colonnes null fortement typées contenant la valeur null fortement typée appropriée.  
+1. La valeur *par défaut* est `DbNull.Value` pour toutes les colonnes à l’exception des colonnes null fortement typées où il s’agit de la valeur null fortement typée appropriée.  
   
 2. Les valeurs Null ne sont jamais écrites lors de la sérialisation vers des fichiers XML (comme dans « xsi:nil »).  
   

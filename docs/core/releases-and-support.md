@@ -5,12 +5,12 @@ ms.date: 10/07/2020
 ms.topic: overview
 ms.author: tdykstra
 author: tdykstra
-ms.openlocfilehash: 45286e18c41da7eb6717729360077b64539c3db5
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 896b88cbf1f7f31d2d26d69ec7d219da6b27ceff
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877728"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982292"
 ---
 # <a name="releases-and-support-for-net-core-and-net-5"></a>Versions et prise en charge de .NET Core et de .NET 5
 
@@ -62,7 +62,7 @@ Il existe deux suivis de support pour les mises en production :
 
   Ces versions sont prises en charge jusqu’à 3 mois après l’envoi de la version majeure ou mineure suivante.
 
-  Exemple :
+  Exemple :
 
   * .NET Core 3,0 est fourni en septembre 2019 et a été suivi de .NET Core 3,1 en décembre 2019.
   * La prise en charge de .NET Core 3,0 s’est terminée en mars 2020, 3 mois après 3,1.
@@ -71,7 +71,7 @@ Il existe deux suivis de support pour les mises en production :
 
   Ces versions sont prises en charge pour un minimum de 3 ans, ou 1 an après la sortie de la version LTS suivante, si cette date est ultérieure.
 
-  Exemple :
+  Exemple :
 
   * .NET Core 2,1 a été publié en mai 2018 et a été considéré comme une version LTS en août 2018.
   * .NET Core 3,1 était la prochaine version de LTS et a été publiée en décembre 2019.
@@ -123,4 +123,4 @@ Pour obtenir un support technique de la Communauté, consultez la [page Communau
 
 ## <a name="see-also"></a>Voir aussi
 
-Pour plus d’informations, notamment sur les plages de dates prises en charge pour chaque version de .NET Core et pour .NET 5, consultez la [stratégie de prise en charge](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+Pour plus d’informations, y compris des plages de dates prises en charge pour chaque version de .NET Core et pour .NET 5, consultez la [stratégie de support](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).

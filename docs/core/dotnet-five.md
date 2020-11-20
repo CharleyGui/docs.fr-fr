@@ -5,12 +5,12 @@ ms.date: 11/18/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 077fb06db40519af2bf8ac2f659488acdf525aec
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: 1101e218f225eed2a2013ed9e19b60f4ece57738
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916219"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982299"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -53,7 +53,7 @@ Il n’est pas prévu de porter les technologies suivantes de .NET Framework ver
 
 ### <a name="windows-communication-foundation"></a>Windows Communication Foundation
 
-Toutefois, l’implémentation d’origine du [Windows Communication Foundation (WCF)](../framework/wcf/index.md) était uniquement prise en charge sur Windows ; un port client est disponible à partir de .NET Foundation. Il est entièrement [Open source](https://github.com/dotnet/wcf), multiplateforme et pris en charge par Microsoft. Les packages NuGet principaux sont répertoriés ci-dessous :
+L’implémentation d’origine de [Windows Communication Foundation (WCF)](../framework/wcf/index.md) était uniquement prise en charge sur Windows. Toutefois, il existe un port client disponible à partir de .NET Foundation. Il est entièrement [Open source](https://github.com/dotnet/wcf), multiplateforme et pris en charge par Microsoft. Les packages NuGet principaux sont répertoriés ci-dessous :
 
 - [System.ServiceModel.Duplex](https://www.nuget.org/packages/System.ServiceModel.Duplex)
 - [System. ServiceModel. Federation](https://www.nuget.org/packages/System.ServiceModel.Federation)

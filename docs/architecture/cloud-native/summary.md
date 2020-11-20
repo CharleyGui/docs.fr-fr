@@ -1,13 +1,13 @@
 ---
 title: Résumé
-description: Résumé des principales conclusions tirées de la présentation de l’architecture des applications .NET natives du Cloud pour Azure Guide/e-book.
+description: Résumé des principales conclusions de l’ouvrage architecture Cloud-Native .NET apps pour Azure Guide/e-book.
 ms.date: 05/13/2020
-ms.openlocfilehash: b1a195c0c081565c57f5aac2e234411bb904ca08
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e0325b1bb6961c865e904779496950031db8db0b
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613653"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982353"
 ---
 # <a name="summary"></a>Résumé
 
@@ -17,7 +17,7 @@ En résumé, Voici les conclusions importantes de ce guide :
 
 - **CNCF ( [Cloud Native Computing Foundation](https://www.cncf.io/) )** est un consortium open source influent de plus de 300 entreprises majeures. Il est responsable de la conduite de l’adoption de l’informatique Native Cloud sur la technologie et les piles du Cloud.
 
-- **Les instructions CNCF** recommandent que les applications Cloud natives adoptent six piliers importants, comme illustré dans la figure 11-1 :
+- **Les instructions CNCF** recommandent que les applications Cloud natives englobent six piliers importants, comme illustré dans la figure 11-1 :
 
   ![Piliers natifs du Cloud](./media/cloud-native-foundational-pillars.png)
 

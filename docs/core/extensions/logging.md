@@ -4,12 +4,12 @@ author: IEvangelist
 description: Découvrez comment utiliser le framework de journalisation fourni par le package NuGet Microsoft.Extensions.Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: d409d78698e4e85eaf9f2894ee1ed00cea0c0583
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 5a4d333368082389c4dfc134bb6a9a2e618d47e9
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888557"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982319"
 ---
 # <a name="logging-in-net"></a>Journalisation dans .NET
 
@@ -30,7 +30,7 @@ Les [niveaux](#log-level) et les [catégories](#log-category) sont expliqués pl
 
 ## <a name="configure-logging"></a>Configuration de la journalisation
 
-La configuration de la journalisation est généralement fournie par la `Logging` section de *appSettings* . `{Environment}` fichiers *. JSON* . Leappsettings.Development.jssuivant sur le fichier est généré par les modèles *de service de* travail .net :
+La configuration de la journalisation est généralement fournie par la `Logging` section de *appSettings*. `{Environment}` fichiers *. JSON* . Leappsettings.Development.jssuivant sur le fichier est généré par les modèles *de service de* travail .net :
 
 :::code language="json" source="snippets/configuration/worker-service/appsettings.Development.json":::
 
@@ -64,7 +64,7 @@ Le niveau de journal minimal peut être spécifié pour l’un des éléments su
 - Catégories spécifiques : par exemple, `Logging:LogLevel:Microsoft:Warning`
 - Tous les fournisseurs et toutes les catégories : `Logging:LogLevel:Default:Warning`
 
-Tous les journaux situés en dessous du niveau minimal sont * **not** _ :
+Tous les journaux situés en dessous du niveau minimal sont ***not** _ :
 
 - Passé au fournisseur.
 - Consigné ou affiché.
@@ -130,7 +130,7 @@ L’algorithme suivant est utilisé pour chaque fournisseur quand un objet `ILog
 
 - Sélectionnez toutes les règles qui correspondent au fournisseur ou à son alias. Si aucune correspondance n’est trouvée, sélectionnez toutes les règles avec un fournisseur vide.
 - À partir du résultat de l’étape précédente, sélectionnez les règles ayant le plus long préfixe de catégorie correspondant. Si aucune correspondance n’est trouvée, sélectionnez toutes les règles qui ne spécifient pas de catégorie.
-- Si plusieurs règles sont sélectionnées, prenez la **dernière** .
+- Si plusieurs règles sont sélectionnées, prenez la **dernière**.
 - Si aucune règle n’est sélectionnée, utilisez <xref:Microsoft.Extensions.Logging.LoggingBuilderExtensions.SetMinimumLevel(Microsoft.Extensions.Logging.ILoggingBuilder,Microsoft.Extensions.Logging.LogLevel)?displayProperty=nameWithType> pour spécifier le niveau de journalisation minimale.
 
 ## <a name="log-category"></a>Catégorie de journal
@@ -183,7 +183,7 @@ Le tableau suivant répertorie les <xref:Microsoft.Extensions.Logging.LogLevel> 
 | [Déboguer](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Pour le débogage et le développement. Utilisez avec précaution en production en raison du volume élevé. |
 | [Informations](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Effectue le suivi du déroulement général de l’application. Peut avoir une valeur à long terme. |
 | [Avertissement](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Pour les événements anormaux ou inattendus. Comprend généralement des erreurs ou des conditions qui ne provoquent pas l’échec de l’application. |
-| [Erreur](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | Fournit des informations sur des erreurs et des exceptions qui ne peuvent pas être gérées. Ces messages indiquent un échec dans l’opération ou la demande en cours, et non dans l’ensemble de l’application. |
+| [Error](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | Fournit des informations sur des erreurs et des exceptions qui ne peuvent pas être gérées. Ces messages indiquent un échec dans l’opération ou la demande en cours, et non dans l’ensemble de l’application. |
 | [Critique](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Fournit des informations sur des échecs qui nécessitent un examen immédiat. Exemples : perte de données, espace disque insuffisant. |
 | [Aucun](xref:Microsoft.Extensions.Logging.LogLevel) | 6 |  | Spécifie qu’aucun message ne doit être écrit. |
 
@@ -530,6 +530,6 @@ class Program
 
 - [Fournisseurs de journalisation dans .NET](logging-providers.md)
 - [Implémenter un fournisseur de journalisation personnalisé dans .NET](custom-logging-provider.md)
-- [Mise en forme du journal de la console](console-log-formatter.md)
+- [Mise en forme des journaux de la console](console-log-formatter.md)
 - [Journalisation hautes performances dans .NET](high-performance-logging.md)
 - Les bogues de journalisation doivent être créés dans [github.com/dotnet/extensions](https://github.com/dotnet/extensions/issues) référentiel

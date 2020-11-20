@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: d78b73e53637927ecb877dd69054f75a1f5ac91f
-ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
+ms.openlocfilehash: 3274b72363a3df1dbe1bb29492eedcb134a4f9f2
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91438001"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982307"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -24,7 +24,7 @@ Les [débogueurs managés](managed-debuggers.md) vous permettent d’interagir a
 
 La [journalisation et le suivi](logging-tracing.md) sont des techniques associées. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
 
-## <a name="unit-testing"></a>Effectuer des tests unitaires
+## <a name="unit-testing"></a>Test des unités
 
 Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
 
@@ -62,6 +62,10 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 
 [dotnet-SOS](dotnet-sos.md) est utilisé pour installer l' [extension de débogage SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) sur Linux ou MacOS (ou sur Windows si vous utilisez des outils de débogage plus anciens).
 
+### <a name="perfcollect"></a>PerfCollect
+
+[PerfCollect](trace-perfcollect-lttng.md) est un script bash que vous pouvez utiliser pour collecter des traces avec `perf` et `LTTng` pour une analyse des performances plus approfondie des applications .net s’exécutant sur des distributions Linux.
+
 ## <a name="net-core-diagnostics-tutorials"></a>Tutoriels de diagnostics .NET Core
 
 ### <a name="debug-a-memory-leak"></a>Déboguer une fuite de mémoire
@@ -75,3 +79,7 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 ### <a name="debug-deadlock"></a>Déboguer un interblocage
 
 [Didacticiel : déboguer le blocage](debug-deadlock.md) vous montre comment utiliser l’outil [dotnet-dump](dotnet-dump.md) pour examiner les threads et les verrous.
+
+### <a name="measure-performance-using-eventcounters"></a>Mesurer les performances à l’aide de EventCounters
+
+[Didacticiel : mesurer les performances à l’aide de EventCounters dans .net](event-counter-perf.md) montre comment utiliser l' <xref:System.Diagnostics.Tracing.EventCounter> API pour mesurer les performances dans votre application .net.

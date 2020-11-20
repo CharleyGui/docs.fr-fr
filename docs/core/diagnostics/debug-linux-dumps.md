@@ -2,12 +2,12 @@
 title: Déboguer des vidages Linux
 description: Dans cet article, vous allez apprendre à collecter et à analyser les vidages des environnements Linux.
 ms.date: 08/27/2020
-ms.openlocfilehash: d62295e165f56e32ef73ab628ca9ebd77a4435d1
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: 692d6228fae31de015412c23c4ec5317024faaab
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598340"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982260"
 ---
 # <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
 
@@ -19,7 +19,7 @@ Les deux méthodes recommandées pour collecter des vidages sur Linux sont les [
 
 ### <a name="managed-dumps-with-dotnet-dump"></a>Dumps managés avec `dotnet-dump`
 
-L' [`dotnet-dump`](dotnet-dump.md) outil est simple à utiliser et n’a pas de dépendance sur les débogueurs natifs. `dotnet-dump` fonctionne sur un large éventail de plates-formes Linux (telles que Alpine ou ARM32/ARM64) où les outils de débogage traditionnels ne sont peut-être pas disponibles. Toutefois, `dotnet-dump` ne capture que l’état managé afin qu’il ne puisse pas être utilisé pour déboguer des problèmes en code natif. Les vidages collectés par `dotnet-dump` sont analysés dans un environnement avec le système d’exploitation et l’architecture sur lesquels le vidage a été créé. L' [`dotnet-gcdump`](dotnet-gcdump.md) outil peut être utilisé comme alternative qui capture uniquement les informations du tas GC, mais produit des vidages qui peuvent être analysés sur Windows.
+L' [`dotnet-dump`](dotnet-dump.md) outil est simple à utiliser et n’a pas de dépendance sur les débogueurs natifs. `dotnet-dump` fonctionne sur un large éventail de plates-formes Linux (telles que Alpine ou ARM32/ARM64) où les outils de débogage traditionnels ne sont peut-être pas disponibles. Toutefois, `dotnet-dump` ne capture que l’état managé afin qu’il ne puisse pas être utilisé pour déboguer des problèmes en code natif. Les vidages collectés par `dotnet-dump` sont analysés dans un environnement avec le système d’exploitation et l’architecture sur lesquels le dump a été créé. L' [`dotnet-gcdump`](dotnet-gcdump.md) outil peut être utilisé comme alternative qui capture uniquement les informations du tas GC, mais produit des vidages qui peuvent être analysés sur Windows.
 
 ### <a name="core-dumps-with-createdump"></a>Vidages principaux avec `createdump`
 

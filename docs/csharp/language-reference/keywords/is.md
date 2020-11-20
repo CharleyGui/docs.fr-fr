@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: f5c67392705156d6ff05e6f140c7187f41b1d033
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: d30ebfa2dc47265185a96514efbddc3e4937438c
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915828"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982392"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
@@ -100,7 +100,7 @@ L’exemple suivant illustre une comparaison des vérifications de `null` :
 
 [!code-csharp[is#11](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern11.cs#11)]
 
-L’expression `x is null` est calculée différemment pour les types référence et les types valeur Nullable. Pour les types valeur Nullable, elle utilise <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . Pour les types référence, elle utilise `x == null` .
+L’expression `x is null` est calculée différemment pour les types référence et les types valeur Nullable. Pour les types valeur Nullable, elle utilise <xref:System.Nullable%601.HasValue?displayProperty=nameWithType> . Pour les types référence, elle utilise `(object)x == null` .
 
 ### <a name="var-pattern"></a>Modèle de variable
 
