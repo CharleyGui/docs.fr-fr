@@ -6,13 +6,15 @@ helpviewer_keywords:
 - enumerations [C#]
 - extension methods [C#], for enums
 - enum extensibility [C#]
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-ms.openlocfilehash: 2714b29d64e18250f0fe379aee1c09c242d3f63f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 862eb86a5b0cc6b95302260874222bbc09d98132
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91174262"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099410"
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>Comment créer une nouvelle méthode pour une énumération (Guide de programmation C#)
 

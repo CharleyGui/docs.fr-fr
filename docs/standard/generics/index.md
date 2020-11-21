@@ -26,16 +26,16 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: 40a789d9eaa835b1c464f25b5a33a7c1d766d2f8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eae1b52f5462cdc395504da877e40e62e5417b76
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827254"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098812"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
-Les génériques vous permettent d'adapter une méthode, une classe ou une structure au type de données sur lequel elle agit. Par exemple, au lieu d'utiliser la classe <xref:System.Collections.Hashtable> qui accepte tous les types de clés et de valeurs, vous pouvez utiliser la classe générique <xref:System.Collections.Generic.Dictionary%602> et spécifier le type autorisé pour la clé et pour la valeur. Les génériques présentent plusieurs avantages, notamment une plus grande réutilisabilité du code et une meilleure cohérence des types.  
+Les génériques vous permettent d'adapter une méthode, une classe ou une structure au type de données sur lequel elle agit. Par exemple, au lieu d’utiliser la <xref:System.Collections.Hashtable> classe, qui autorise les clés et les valeurs de n’importe quel type, vous pouvez utiliser la <xref:System.Collections.Generic.Dictionary%602> classe générique et spécifier les types autorisés pour la clé et la valeur. Les génériques présentent plusieurs avantages, notamment une plus grande réutilisabilité du code et une meilleure cohérence des types.  
 
 ## <a name="defining-and-using-generics"></a>Définition et utilisation des génériques
  Les génériques sont des classes, des structures, des interfaces et des méthodes qui possèdent des espaces réservés (ou paramètres de type) pour un ou plusieurs des types qu'ils stockent ou utilisent. Une classe de collection générique peut utiliser un paramètre de type comme espace réservé pour le type des objets qu'elle stocke. Les paramètres de type apparaissent alors comme les types de ses champs, et les types de paramètre, comme ses méthodes. Une méthode générique peut utiliser son paramètre de type comme le type de sa valeur de retour ou comme le type de l'un de ses paramètres formels. Le code suivant montre une définition de classe générique simple.  
@@ -131,7 +131,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Collections génériques dans .NET](collections.md)|Aborde les classes de collection générique et d’autres types génériques de .NET.|  
 |[Délégués génériques pour la manipulation de tableaux et de listes](delegates-for-manipulating-arrays-and-lists.md)|Aborde les délégués génériques pour les conversions, les prédicats de recherche et les actions à effectuer sur les éléments d'un tableau ou d'une collection.|  

@@ -5,13 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: dd8c6469c4d72da5588f0dce5314308bcc7e3b95
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 42ea67e9012fd55fbceb8a7bad4c8df8bf6bf6da
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91199118"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099385"
 ---
 # <a name="how-to-define-constants-in-c"></a>Comment définir des constantes en C\#
 

@@ -4,13 +4,15 @@ description: Découvrez comment utiliser un type anonyme dans une expression de 
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 0ef68921b9d45e58024b37d559ee8291d8744af8
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 3e30793ed16204943e2398984ed200b93db7f86f
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91204019"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098851"
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Comment retourner des sous-ensembles de propriétés d’éléments dans une requête (Guide de programmation C#)
 

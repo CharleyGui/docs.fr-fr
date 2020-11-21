@@ -5,13 +5,15 @@ ms.date: 12/20/2018
 helpviewer_keywords:
 - object initializers [C#], how to use
 - objects [C#], initializing
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: 4b75ebb2-2e29-43de-929c-d736a8f27ce6
-ms.openlocfilehash: 97f537a8361c612580cc9bb41cef327e310287c2
-ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
+ms.openlocfilehash: 032bbbff3ad356f9718053e8ba54a53559ef1ace
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712667"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098682"
 ---
 # <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>Comment initialiser des objets à l’aide d’un initialiseur d’objet (Guide de programmation C#)
 

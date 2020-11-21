@@ -5,13 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - conversions [C#], byte array to int
 - byte arrays [C#], converting to int
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: d6ac20e2-448e-4aea-99b9-faf04c6f1e79
-ms.openlocfilehash: 24037a5e212326cf5e670214a6774eff52bd8faf
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: a339766313678590cb80263ba5b2ff328c018a58
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381565"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099183"
 ---
 # <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>Comment convertir un tableau d’octets en int (Guide de programmation C#)
 

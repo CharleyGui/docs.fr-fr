@@ -5,13 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
+ms.topic: how-to
+ms.custom: contperfq2
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: 52fd5aedea6a0e3b7c22e20db523329a00bba9ad
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 85899d2de05312be921199387cc1155fa8e9d2f1
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91204006"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098981"
 ---
 # <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Comment écrire un constructeur de copie (Guide de programmation C#)
 
