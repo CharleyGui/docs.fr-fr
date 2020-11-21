@@ -2,12 +2,12 @@
 title: 'Nouveautés du guide F # 5,0-F #'
 description: 'Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 51d6dd2457ee9966a86d0d9ac686f2af15772999
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 0b25d48a97792e780515226170151f3bbf2f2301
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557140"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982464"
 ---
 # <a name="whats-new-in-f-50"></a>Nouveautés de F # 5,0
 
@@ -56,7 +56,7 @@ let test p str =
 test pfloat "1.234"
 ```
 
-Pour plus d’informations sur les références de package, consultez le didacticiel [F# Interactive](../tutorials/fsharp-interactive/index.md) .
+Cette fonctionnalité implémente [les outils F # RFC FST-1027](https://github.com/fsharp/fslang-design/blob/master/tooling/FST-1027-fsi-references.md). Pour plus d’informations sur les références de package, consultez le didacticiel [F# Interactive](../tutorials/fsharp-interactive/index.md) .
 
 ## <a name="string-interpolation"></a>Interpolation de chaîne
 
@@ -102,6 +102,8 @@ let str =
 ```
 
 Toutefois, nous vous déconseillons de le faire trop en pratique.
+
+Cette fonctionnalité implémente [F # RFC FS-1001](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1001-StringInterpolation.md).
 
 ## <a name="support-for-nameof"></a>Prise en charge de nameof
 
@@ -176,6 +178,8 @@ let deserialize (e: RecordedEvent) : MyEvent =
 
 Le code précédent utilise « nameof » au lieu du littéral de chaîne dans l’expression de correspondance.
 
+Cette fonctionnalité implémente [F # RFC FS-1003](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1003-nameof-operator.md).
+
 ## <a name="open-type-declarations"></a>Ouvrir les déclarations de type
 
 F # 5 ajoute également la prise en charge des déclarations de type ouvert. Une déclaration de type ouverte est semblable à l’ouverture d’une classe statique en C#, sauf avec une syntaxe différente et un comportement légèrement différent pour l’adapter à la sémantique F #.
@@ -200,6 +204,8 @@ printfn "%A" A
 
 Contrairement à C#, lorsque vous disposez `open type` de deux types qui exposent un membre portant le même nom, le membre du dernier type en cours de création `open` occulte l’autre nom. Cela est cohérent avec la sémantique F # autour de l’occultation qui existe déjà.
 
+Cette fonctionnalité implémente [F # RFC FS-1068](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1068-open-type-declaration.md).
+
 ## <a name="consistent-slicing-behavior-for-built-in-data-types"></a>Comportement de découpage cohérent pour les types de données intégrés
 
 Comportement de découpage des types de `FSharp.Core` données intégrés (tableau, liste, chaîne, tableau 2D, tableau 3D, Tableau 4D) qui ne sont pas cohérents avant F # 5. Un comportement de cas d’arête a levé une exception et d’autres non. Dans F # 5, tous les types intégrés retournent désormais des tranches vides pour les tranches impossibles à générer :
@@ -221,6 +227,8 @@ let emptyArray = a.[-2..(-1)]
 // F# 5: returns empty string
 let emptyString = s.[-2..(-1)]
 ```
+
+Cette fonctionnalité implémente [F # RFC FS-1077](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1077-tolerant-slicing.md).
 
 ## <a name="fixed-index-slices-for-3d-and-4d-arrays-in-fsharpcore"></a>Sections à index fixe pour les tableaux 3D et 4D dans FSharp. Core
 
@@ -260,6 +268,8 @@ for z in 0..dim-1 do
 m.[*, 0, 1]
 ```
 
+Cette fonctionnalité implémente [F # RFC FS-1077b](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1077-3d-4d-fixed-index-slicing.md).
+
 ## <a name="f-quotations-improvements"></a>Améliorations des guillemets F #
 
 Les [citations de code](../language-reference/code-quotations.md) F # peuvent désormais conserver les informations de contrainte de type. Prenons l’exemple suivant :
@@ -276,6 +286,8 @@ let inline negate x = -x
 ```
 
 La contrainte générée par la `inline` fonction est conservée dans le code qutoation. Le `negate` formulaire quotated de la fonction peut maintenant être évalué.
+
+Cette fonctionnalité implémente [F # RFC FS-1071](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1071-witness-passing-quotations.md).
 
 ## <a name="applicative-computation-expressions"></a>Expressions de calcul applicative
 
@@ -326,6 +338,8 @@ let printApplicatives () =
 
 Si vous êtes un auteur de bibliothèque qui expose les EC dans leur bibliothèque aujourd’hui, vous devez prendre en compte certaines considérations supplémentaires.
 
+Cette fonctionnalité implémente [F # RFC FS-1063](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1063-support-letbang-andbang-for-applicative-functors.md).
+
 ## <a name="interfaces-can-be-implemeneted-at-different-generic-instantiations"></a>Les interfaces peuvent être implemeneted à différentes instanciations génériques
 
 Vous pouvez désormais implémenter la même interface à différentes instanciations génériques :
@@ -347,6 +361,8 @@ let iaString = mc :> IA<string>
 iaInt.Get() // 1
 iaString.Get() // "hello"
 ```
+
+Cette fonctionnalité implémente [F # RFC FS-1031](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1031-Allow%20implementing%20the%20same%20interface%20at%20different%20generic%20instantiations%20in%20the%20same%20type.md).
 
 ## <a name="default-interface-member-consumption"></a>Consommation par défaut des membres d’interface
 
@@ -387,6 +403,8 @@ printfn "DIM from C# but via Object Expression: %d" md'.Z
 
 Cela vous permet de tirer en toute sécurité du code C# et des composants .NET écrits en C# moderne lorsqu’ils s’attendent à ce que les utilisateurs soient en mesure d’utiliser une implémentation par défaut.
 
+Cette fonctionnalité implémente [F # RFC FS-1074](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1074-default-interface-member-consumption.md).
+
 ## <a name="simplified-interop-with-nullable-value-types"></a>Interopérabilité simplifiée avec les types valeur Nullable
 
 Les [types Nullable (valeur)](https://docs.microsoft.com/dotnet/api/system.nullable-1) (appelés types Nullable historiquement) ont longtemps été pris en charge par F #, mais l’interaction avec eux a traditionnellement été une douleur puisque vous auriez dû construire un `Nullable` `Nullable<SomeType>` Wrapper ou chaque fois que vous souhaitiez passer une valeur. À présent, le compilateur convertit implicitement un type valeur en un `Nullable<ThatValueType>` si le type cible correspond à. Le code suivant est désormais possible :
@@ -404,6 +422,8 @@ dateTimes.Append(DateTime.Parse("2019/01/01"))
 // The previous line is now equivalent to this line
 dateTimes.Append(Nullable<DateTime>(DateTime.Parse("2019/01/01")))
 ```
+
+Cette fonctionnalité implémente [F # RFC FS-1075](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1075-nullable-interop.md).
 
 ## <a name="preview-reverse-indexes"></a>Aperçu : index inversés
 
@@ -463,6 +483,8 @@ let run () =
 
 run() // Prints the same thing twice
 ```
+
+Cette fonctionnalité implémente [F # RFC FS-1076](https://github.com/fsharp/fslang-design/blob/master/preview/FS-1076-from-the-end-slicing.md).
 
 ## <a name="preview-overloads-of-custom-keywords-in-computation-expressions"></a>Aperçu : surcharges de mots clés personnalisés dans les expressions de calcul
 
@@ -535,3 +557,5 @@ let password =
 ```
 
 Avant cette modification, vous pouviez écrire le `InputBuilder` type tel quel, mais vous ne pouviez pas l’utiliser de la façon dont il est utilisé dans l’exemple. Dans la mesure où les surcharges, les paramètres facultatifs et les `System.ParamArray` types Now sont autorisés, tout fonctionne comme prévu.
+
+Cette fonctionnalité implémente [F # RFC FS-1056](https://github.com/fsharp/fslang-design/blob/master/preview/FS-1056-allow-custom-operation-overloads.md).

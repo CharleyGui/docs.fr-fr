@@ -2,12 +2,12 @@
 title: Documentation XML
 description: 'En savoir plus sur la prise en charge dans F # pour générer la documentation à partir de commentaires.'
 ms.date: 09/15/2020
-ms.openlocfilehash: a5bec20f27c23caee951cda2dc5d17808f69d384
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 8720d66204333eb21dc998655467f9a5745a33f3
+ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679401"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94982477"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
@@ -57,10 +57,10 @@ Si vous utilisez des balises XML, le tableau suivant décrit les balises externe
 |---------------------------------------------|-----------|
 | `<summary>`**_financière_**`</summary>`           | Spécifie que le *texte* est une brève description de l’élément de programme. La description correspond généralement à une ou deux phrases.|
 | `<remarks>`**_financière_**`</remarks>`           | Spécifie que le *texte* contient des informations supplémentaires sur l’élément de programme.|
-| `<param name="`**_nom_** `">` ** _Description_**`</param>` | Spécifie le nom et la description d’un paramètre de fonction ou de méthode.|
-| `<typeparam name="`**_nom_** `">` ** _Description_**`</typeparam>` | Spécifie le nom et la description d’un paramètre de type.|
+| `<param name="`**_nom_** `">` **_Description_**`</param>` | Spécifie le nom et la description d’un paramètre de fonction ou de méthode.|
+| `<typeparam name="`**_nom_** `">` **_Description_**`</typeparam>` | Spécifie le nom et la description d’un paramètre de type.|
 | `<returns>`**_financière_**`</returns>`           | Spécifie que le *texte* décrit la valeur de retour d’une fonction ou d’une méthode.|
-| `<exception cref="`**_type_** `">` ** _Description_**`</exception>` |Spécifie le type d’exception qui peut être généré et les circonstances dans lesquelles il est levé.|
+| `<exception cref="`**_type_** `">` **_Description_**`</exception>` |Spécifie le type d’exception qui peut être généré et les circonstances dans lesquelles il est levé.|
 | `<seealso cref="`**_faire_**`"/>`      | Spécifie un lien Voir également vers la documentation d’un autre type. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Consultez également les liens qui apparaissent généralement en bas d’une page de documentation.|
 
 Le tableau suivant décrit les balises à utiliser dans les sections de Description :
@@ -72,7 +72,7 @@ Le tableau suivant décrit les balises à utiliser dans les sections de Descript
 | `<paramref name="`**_nomme_**`"/>`         | Spécifie une référence à un paramètre dans le même commentaire de documentation.|
 | `<typeparamref name="`**_nomme_**`"/>`     | Spécifie une référence à un paramètre de type dans le même commentaire de documentation.|
 | `<c>`**_financière_**`</c>`                     | Spécifie que le *texte* est un code incorporé. Cette balise peut être utilisée par les générateurs de documentation pour afficher du texte dans une police appropriée pour le code.|
-| `<see cref="`**_référence_** `">` ** _texte_**`</see>` | Spécifie un lien Inline vers un autre élément de programme. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Le *texte* est le texte affiché dans le lien.|
+| `<see cref="`**_référence_** `">` **_texte_**`</see>` | Spécifie un lien Inline vers un autre élément de programme. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Le *texte* est le texte affiché dans le lien.|
 
 ### <a name="user-defined-tags"></a>Balises définies par l’utilisateur
 
