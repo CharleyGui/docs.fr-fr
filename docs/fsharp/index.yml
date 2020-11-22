@@ -8,12 +8,12 @@ metadata:
   author: cartermp
   ms.author: phcart
   ms.date: 08/29/2020
-  ms.openlocfilehash: 09276206df31b239c49a8fc3ec8e15927d674e37
-  ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+  ms.openlocfilehash: 12ae202d3618a35ecb19cad85452f5af98640152
+  ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94440918"
+  ms.lasthandoff: 11/21/2020
+  ms.locfileid: "95099359"
 landingContent:
 - title: 'Apprendre à programmer en F #'
   linkLists:
@@ -79,6 +79,12 @@ landingContent:
       url: language-reference/functions/index.md
     - text: 'Types F #'
       url: language-reference/fsharp-types.md
+- title: F# Tools
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: F# Interactive
+      url: tools/fsharp-interactive/index.md
 - title: 'Référence de la bibliothèque principale F #'
   linkLists:
   - linkListType: reference
