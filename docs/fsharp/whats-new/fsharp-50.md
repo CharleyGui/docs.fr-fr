@@ -2,12 +2,12 @@
 title: 'Nouveautés du guide F # 5,0-F #'
 description: 'Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 0b25d48a97792e780515226170151f3bbf2f2301
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 29b5b110379dec476d7c0aa51540984acb25f26e
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982464"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098695"
 ---
 # <a name="whats-new-in-f-50"></a>Nouveautés de F # 5,0
 
@@ -285,7 +285,7 @@ let inline negate x = -x
 <@ negate 1.0 @>  |> eval
 ```
 
-La contrainte générée par la `inline` fonction est conservée dans le code qutoation. Le `negate` formulaire quotated de la fonction peut maintenant être évalué.
+La contrainte générée par la `inline` fonction est conservée dans le devis de code. Le `negate` formulaire entre guillemets de la fonction peut maintenant être évalué.
 
 Cette fonctionnalité implémente [F # RFC FS-1071](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1071-witness-passing-quotations.md).
 
@@ -293,7 +293,7 @@ Cette fonctionnalité implémente [F # RFC FS-1071](https://github.com/fsharp/fs
 
 Les [expressions de calcul](../language-reference/computation-expressions.md) sont utilisées aujourd’hui pour modéliser les « calculs contextuels », ou dans une terminologie plus fonctionnelle, des calculs monadic.
 
-F # 5 introduit les EC d’applicative, qui offrent un modèle de calcul différent. Les EC d’applicative permettent des calculs plus efficaces, à condition que chaque calcul soit indépendant et que ses résultats soient accumulés à la fin. Lorsque les calculs sont indépendants les uns des autres, ils sont également parallèless de manière triviale, ce qui permet aux auteurs CE d’écrire des bibliothèques plus efficaces. Cet avantage est toutefois une restriction : les calculs qui dépendent de valeurs précédemment calculées ne sont pas autorisés.
+F # 5 introduit les EC d’applicative, qui offrent un modèle de calcul différent. Les EC d’applicative permettent des calculs plus efficaces, à condition que chaque calcul soit indépendant et que ses résultats soient accumulés à la fin. Lorsque les calculs sont indépendants les uns des autres, ils sont également parallèless de manière triviale, ce qui permet aux auteurs CE d’écrire des bibliothèques plus efficaces. Cet avantage est toutefois une restriction : les calculs qui dépendent de valeurs calculées précédemment ne sont pas autorisés.
 
 L’exemple suivant montre un type applicative de base pour le `Result` type.
 
@@ -340,7 +340,7 @@ Si vous êtes un auteur de bibliothèque qui expose les EC dans leur bibliothèq
 
 Cette fonctionnalité implémente [F # RFC FS-1063](https://github.com/fsharp/fslang-design/blob/master/FSharp-5.0/FS-1063-support-letbang-andbang-for-applicative-functors.md).
 
-## <a name="interfaces-can-be-implemeneted-at-different-generic-instantiations"></a>Les interfaces peuvent être implemeneted à différentes instanciations génériques
+## <a name="interfaces-can-be-implemented-at-different-generic-instantiations"></a>Les interfaces peuvent être implémentées à différentes instanciations génériques
 
 Vous pouvez désormais implémenter la même interface à différentes instanciations génériques :
 
@@ -490,7 +490,7 @@ Cette fonctionnalité implémente [F # RFC FS-1076](https://github.com/fsharp/fs
 
 Les expressions de calcul sont une fonctionnalité puissante pour les auteurs de bibliothèques et de frameworks. Elles vous permettent d’améliorer de façon considérable l’expressivité de vos composants en vous permettant de définir des membres connus et de former une DSL pour le domaine dans lequel vous travaillez.
 
-F # 5 ajoute la prise en charge de l’Aperçu pour la surcharge des opérations personnalisées dans les expressions de calcul. Il permet d’écrire et d’utiliser le code suivant :
+F # 5 ajoute la prise en charge de l’Aperçu pour la surcharge des opérations personnalisées dans les expressions de calcul. Il permet l’écriture et la consommation du code suivant :
 
 ```fsharp
 open System

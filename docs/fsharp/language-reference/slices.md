@@ -1,25 +1,25 @@
 ---
 title: Sections
 description: 'Découvrez comment utiliser des tranches pour les types de données F # existants et comment définir vos propres tranches pour d’autres types de données.'
-ms.date: 12/23/2019
-ms.openlocfilehash: a3920ad9e1b205b506aaee92c4606bcebf94feba
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.date: 11/20/2020
+ms.openlocfilehash: 9c072648ed46ae29871f2be5cc64b493f6a9b857
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557075"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95098955"
 ---
 # <a name="slices"></a>Sections
 
-En F #, une tranche est un sous-ensemble de tout type de données qui a une `GetSlice` méthode dans sa définition ou dans une [extension de type](type-extensions.md)dans la portée. Il est le plus couramment utilisé avec les tableaux et les listes F #. Cet article explique comment prendre des tranches à partir de types F # existants et comment définir vos propres tranches.
+Cet article explique comment prendre des tranches à partir de types F # existants et comment définir vos propres tranches.
 
-Les tranches sont similaires aux [indexeurs](./members/indexed-properties.md), mais au lieu de produire une valeur unique à partir de la structure de données sous-jacente, elles produisent plusieurs valeurs.
+En F #, une tranche est un sous-ensemble de n’importe quel type de données.  Les tranches sont similaires aux [indexeurs](./members/indexed-properties.md), mais au lieu de produire une valeur unique à partir de la structure de données sous-jacente, elles produisent plusieurs valeurs. Les tranches utilisent la `..` syntaxe d’opérateur pour sélectionner la plage d’index spécifiée dans un type de données. Pour plus d’informations, consultez l’article de référence sur les [expressions de bouclage](./loops-for-in-expression.md).
 
-F # a actuellement une prise en charge intrinsèque pour le découpage des chaînes, des listes, des tableaux et des tableaux 2D.
+F # prend actuellement en charge la découpage des chaînes, des listes, des tableaux et des tableaux multidimensionnels (2D, 3D, 4D). Le découpage est le plus souvent utilisé avec les tableaux et les listes F #. Vous pouvez ajouter des découpages à vos types de données personnalisés à l’aide `GetSlice` de la méthode dans votre définition de type ou dans une [extension de type](type-extensions.md)dans la portée.
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>Découpage de base avec des listes et des tableaux F #
+## <a name="slicing-f-lists-and-arrays"></a>Découpage des listes et des tableaux F #
 
-Les types de données les plus courants qui sont découpés sont des listes et des tableaux F #. L’exemple suivant montre comment effectuer cette opération avec des listes :
+Les types de données les plus courants qui sont découpés sont des listes et des tableaux F #.  L’exemple suivant montre comment découper des listes :
 
 ```fsharp
 // Generate a list of 100 integers
@@ -89,8 +89,6 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-Actuellement, la bibliothèque principale F # n’est pas définie `GetSlice` pour les tableaux 3D. Si vous souhaitez découper des tableaux 3D ou d’autres tableaux de dimensions supplémentaires, définissez le `GetSlice` membre vous-même.
-
 ## <a name="defining-slices-for-other-data-structures"></a>Définition de tranches pour d’autres structures de données
 
 La bibliothèque principale F # définit des tranches pour un ensemble limité de types. Si vous souhaitez définir des tranches pour davantage de types de données, vous pouvez le faire soit dans la définition de type elle-même, soit dans une extension de type.
@@ -151,9 +149,9 @@ printfn "%A" xs.[2..5] // Includes the 5th index
 
 ## <a name="built-in-f-empty-slices"></a>Tranches vides F # intégrées
 
-Les listes, les tableaux, les séquences, les chaînes, les tableaux 2D, les tableaux 3D et les tableaux 4D de F # produisent tous une tranche vide si la syntaxe peut produire une tranche qui n’existe pas.
+Les listes F #, les tableaux, les séquences, les chaînes, les tableaux multidimensionnels (2D, 3D, 4D) génèrent tous une tranche vide si la syntaxe peut produire une tranche qui n’existe pas.
 
-Tenez compte des éléments suivants :
+Prenons l’exemple suivant :
 
 ```fsharp
 let l = [ 1..10 ]
@@ -165,7 +163,8 @@ let emptyArray = a.[-2..(-1)]
 let emptyString = s.[-2..(-1)]
 ```
 
-Les développeurs C# peuvent s’attendre à ce qu’ils lèvent une exception au lieu de produire une tranche vide. Il s’agit d’une décision de conception enracinée dans le fait que les collections vides composent en F #. Une liste F # vide peut être composée d’une autre liste F #, une chaîne vide peut être ajoutée à une chaîne existante, et ainsi de suite. Il peut être courant de prendre des tranches basées sur des valeurs transmises en tant que paramètres, et d’être tolérantes aux hors limites en produisant une collection vide qui respecte la nature compositionnelle du code F #.
+> [!IMPORTANT]
+> Les développeurs C# peuvent s’attendre à ce qu’ils lèvent une exception au lieu de produire une tranche vide. Il s’agit d’une décision de conception enracinée dans le fait que les collections vides composent en F #. Une liste F # vide peut être composée d’une autre liste F #, une chaîne vide peut être ajoutée à une chaîne existante, et ainsi de suite. Il peut être courant de prendre des tranches basées sur des valeurs transmises en tant que paramètres, et d’être tolérantes aux valeurs hors limites > en produisant une collection vide qui respecte la nature compositionnelle du code F #.
 
 ## <a name="fixed-index-slices-for-3d-and-4d-arrays"></a>Tranches à index fixe pour les tableaux 3D et 4D
 
@@ -174,12 +173,14 @@ Pour les tableaux F # 3D et 4D, vous pouvez « corriger » un index particulie
 Pour illustrer cela, examinez le tableau 3D suivant :
 
 *z = 0*
+
 | x\y   | 0 | 1 |
 |-------|---|---|
 | **0** | 0 | 1 |
 | **1** | 2 | 3 |
 
 *z = 1*
+
 | x\y   | 0 | 1 |
 |-------|---|---|
 | **0** | 4 | 5 |
@@ -203,7 +204,7 @@ for z in 0..dim-1 do
 m.[*, 0, 1]
 ```
 
-La dernière ligne corrige les `y` `z` indices et du tableau 3D et prend le reste des `x` valeurs qui correspondent à la matrice.
+La dernière ligne corrige les `y` `z` index et du tableau 3D et prend le reste des `x` valeurs qui correspondent à la matrice.
 
 ## <a name="see-also"></a>Voir aussi
 

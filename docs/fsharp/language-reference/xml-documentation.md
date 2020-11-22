@@ -2,12 +2,12 @@
 title: Documentation XML
 description: 'En savoir plus sur la prise en charge dans F # pour générer la documentation à partir de commentaires.'
 ms.date: 09/15/2020
-ms.openlocfilehash: 8720d66204333eb21dc998655467f9a5745a33f3
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 24d9dbfb5e28d39e224ef9428f025298464fc7f4
+ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982477"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95099007"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
@@ -33,9 +33,9 @@ Il existe deux façons d’écrire des commentaires de documentation XML : avec
 
 ## <a name="comments-without-xml-tags"></a>Commentaires sans balises XML
 
-Si un `///` commentaire ne commence pas par un `<` , le texte de commentaire entier est pris comme la documentation récapitulative de la construction de code qui suit immédiatement. Utilisez cette méthode lorsque vous souhaitez écrire uniquement un bref résumé pour chaque construction.
+Si un `///` commentaire ne commence pas par un `<` , le texte de commentaire entier est considéré comme la documentation récapitulative de la construction de code qui suit immédiatement. Utilisez cette méthode lorsque vous souhaitez écrire uniquement un bref résumé pour chaque construction.
 
-Le commentaire est encodé au format XML pendant la préparation de la documentation, ce qui signifie que les caractères tels que `<` `>` et `&` n’ont pas besoin d’être échappés. Si vous ne spécifiez pas explicitement une balise Summary, vous ne devez pas spécifier d’autres balises, telles que **param** ou **Return** Tags.
+Le commentaire est encodé au format XML pendant la préparation de la documentation, de sorte que les caractères tels que `<` , `>` et `&` n’ont pas besoin d’être échappés. Si vous ne spécifiez pas explicitement une balise Summary, vous ne devez pas spécifier d’autres balises, telles que **param** ou **Return** Tags.
 
 L’exemple suivant illustre la méthode alternative, sans balises XML. Dans cet exemple, le texte entier du commentaire est considéré comme un résumé.
 
@@ -105,7 +105,7 @@ Certaines fonctionnalités de la documentation XML en C# et d’autres langages 
 
 - En F #, les références croisées doivent utiliser la signature XML complète du symbole correspondant, par exemple `cref="T:System.Console"` .
   Les références croisées de style C# simples telles que `cref="Console"` ne sont pas élaborées vers des signatures XML complètes et ces éléments ne sont pas vérifiés par le compilateur F #. Certains outils de documentation peuvent autoriser l’utilisation de ces références croisées par le traitement suivant, mais les signatures complètes doivent être utilisées.
-  
+
 - Les balises ne `<include>` `<inheritdoc>` sont pas prises en charge par le compilateur F #. Aucune erreur n’est fournie si elles sont utilisées, mais elles sont simplement copiées dans le fichier de documentation généré sans affecter autrement la documentation générée.
 
 - Les références croisées ne sont pas vérifiées par le compilateur F #, même quand `-warnon:3390` est utilisé.
