@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 52c543ab-9ef5-4ee7-b836-c0ffc35cd45b
 topic_type:
 - apiref
-ms.openlocfilehash: da6efae38cd70a68feea56b12e86be23fde7f0cb
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 0e029aa848a6630ae00c834dd2b924dc4ebce537
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762186"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671770"
 ---
 # <a name="iclrruntimeinfoloaderrorstring-method"></a>ICLRRuntimeInfo::LoadErrorString, méthode
+
 Convertit une valeur HRESULT en un message d’erreur approprié pour la culture spécifiée.  
   
  Cette méthode remplace les fonctions suivantes :  
@@ -42,6 +43,7 @@ HRESULT LoadErrorString(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `iResourceID`  
  dans HRESULT à traduire.  
   
@@ -54,7 +56,8 @@ HRESULT LoadErrorString(
  `iLocaleID`  
  dans Identificateur de culture. Pour utiliser la culture par défaut, vous devez spécifier-1.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -63,12 +66,13 @@ HRESULT LoadErrorString(
 |E_POINTER|`pcchBuffer` a la valeur null.|  
 |E_INVALIDARG|`pwzBuffer` a la valeur null.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

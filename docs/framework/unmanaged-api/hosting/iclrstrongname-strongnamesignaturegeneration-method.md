@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4cdb1284-947a-4ed4-94c1-c5ff5cdfce56
 topic_type:
 - apiref
-ms.openlocfilehash: a8c9eab719f6a4f233490e544f67cf779ea10b20
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 9fc517b081a1df48d943d03a9c3ce223a428bde7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763034"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671627"
 ---
 # <a name="iclrstrongnamestrongnamesignaturegeneration-method"></a>Méthode ICLRStrongName::StrongNameSignatureGeneration
+
 Génère une signature de nom fort pour l’assembly spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT StrongNameSignatureGeneration (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszFilePath`  
  dans Chemin d’accès au fichier qui contient le manifeste de l’assembly pour lequel la signature de nom fort sera générée.  
   
@@ -65,20 +67,23 @@ HRESULT StrongNameSignatureGeneration (
  `pcbSignatureBlob`  
  à Taille, en octets, de la signature retournée.  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Spécifiez NULL pour `wszFilePath` pour calculer la taille de la signature sans créer la signature.  
   
  La signature peut être stockée soit directement dans le fichier, soit retournée à l’appelant.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

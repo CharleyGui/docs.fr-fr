@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-ms.openlocfilehash: 8f66369d3ac5ddcfe38fe579cac728eb3a250165
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a15391b63012fec3d0e6a0aa67540c3d2541944c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205627"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671315"
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind, méthode
+
 Fournit une notification d’État pendant le processus de déroulement de l’exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT ExceptionUnwind (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread sur lequel l’exception a été levée.  
   
@@ -49,12 +51,14 @@ HRESULT ExceptionUnwind (
  `dwFlags`  
  dans Valeur de l’énumération [CorDebugExceptionFlags,](cordebugexceptionflags-enumeration.md) qui spécifie des informations supplémentaires sur l’exception.  
   
-## <a name="remarks"></a>Remarks  
- `ExceptionUnwind`est appelé à différents points pendant la phase de déroulement du processus de gestion des exceptions. `ExceptionUnwind`peut être appelé plusieurs fois tout en déroulant une seule exception.  
+## <a name="remarks"></a>Remarques  
+
+ `ExceptionUnwind` est appelé à différents points pendant la phase de déroulement du processus de gestion des exceptions. `ExceptionUnwind` peut être appelé plusieurs fois tout en déroulant une seule exception.  
   
  Si `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, le pointeur d’instruction se trouve dans le frame feuille du thread, au point de séquence avant (il peut s’agir de plusieurs instructions avant) l’instruction qui a mené à l’exception.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00c64533-15dd-47f4-bb97-fe80a1ebadef
 topic_type:
 - apiref
-ms.openlocfilehash: e45b180ac6d943d89740ad7ae10500ea4ad1aa9c
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 101151469e2eece20afe289c9d95387ce6dc7c6a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975964"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672121"
 ---
 # <a name="icordebugexceptionobjectvalueenumerateexceptioncallstack-method"></a>ICorDebugExceptionObjectValue::EnumerateExceptionCallStack, méthode
+
 Obtient un énumérateur de la pile des appels incorporée dans un objet exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT EnumerateExceptionCallStack(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  ppCallStackEnum  
  à Pointeur vers l’adresse d’un objet d’interface [icordebugexceptionobjectcallstackenum,](icordebugexceptionobjectcallstackenum-interface.md) qui est un énumérateur de trace de la pile pour un objet exception managée.  
   
-## <a name="remarks"></a>Notes   
- Si aucune information sur la pile des appels n’est disponible `S_OK`, la méthode retourne, et [icordebugexceptionobjectcallstackenum,](icordebugexceptionobjectcallstackenum-interface.md) est un énumérateur valide dont la longueur est égale à 0. Si la méthode ne peut pas récupérer les informations de trace de la pile, `E_FAIL` la valeur de retour est et aucun énumérateur n’est retourné.  
+## <a name="remarks"></a>Remarques  
+
+ Si aucune information sur la pile des appels n’est disponible, la méthode retourne `S_OK` , et [icordebugexceptionobjectcallstackenum,](icordebugexceptionobjectcallstackenum-interface.md) est un énumérateur valide dont la longueur est égale à 0. Si la méthode ne peut pas récupérer les informations de trace de la pile, la valeur de retour est `E_FAIL` et aucun énumérateur n’est retourné.  
   
- L’objet [icordebugexceptionobjectcallstackenum,](icordebugexceptionobjectcallstackenum-interface.md) est chargé de décoder les données de trace de `_stackTrace` la pile à partir du champ de l’objet exception.  
+ L’objet [icordebugexceptionobjectcallstackenum,](icordebugexceptionobjectcallstackenum-interface.md) est chargé de décoder les données de trace de la pile à partir du `_stackTrace` champ de l’objet exception.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

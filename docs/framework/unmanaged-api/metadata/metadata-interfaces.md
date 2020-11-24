@@ -6,17 +6,19 @@ helpviewer_keywords:
 - metadata interfaces [.NET Framework]
 - interfaces (.NET Framework metadata]
 ms.assetid: f5cdac93-a28c-48ef-8a19-5773376e9e7c
-ms.openlocfilehash: 4d947388afb8d7f8f935ae3b8e8aff81efaf2ee4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5d9b48df740668797a7c901219401e9ea304a8f8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84489590"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672879"
 ---
 # <a name="metadata-interfaces"></a>Interfaces de métadonnées
+
 Cette section décrit les interfaces non managées qui donnent accès aux métadonnées exposées par les types, méthodes, champs, etc. du .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ICeeGen, interface](iceegen-interface.md)  
  Fournit des méthodes pour la compilation de code dynamique.  
   
@@ -36,7 +38,7 @@ Cette section décrit les interfaces non managées qui donnent accès aux métad
  Fournit des méthodes pour mapper des bibliothèques de types à leurs signatures de métadonnées et effectuer la conversion entre les deux.  
   
  [IMetaDataDispenser, interface](imetadatadispenser-interface.md)  
- `IMetaDataDispenser` est obsolète. Utilisez `IMetaDataDispenserEx` à la place.  
+ `IMetaDataDispenser` est obsolète. Utilisez plutôt `IMetaDataDispenserEx`.  
   
  [IMetaDataDispenserEx, interface](imetadatadispenserex-interface.md)  
  Fournit des méthodes qui mappent des zones de mémoire pour créer ou modifier des métadonnées.  
@@ -72,6 +74,7 @@ Cette section décrit les interfaces non managées qui donnent accès aux métad
  Fournit des méthodes à utiliser pour la validation des signatures de métadonnées.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Fonctions statiques globales des métadonnées](metadata-global-static-functions.md)  
   
  [Énumérations de métadonnées](metadata-enumerations.md)  

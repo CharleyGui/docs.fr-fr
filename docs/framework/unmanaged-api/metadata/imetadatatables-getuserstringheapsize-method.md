@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cba9e4d6-9461-4420-9614-96ff7039ec9c
 topic_type:
 - apiref
-ms.openlocfilehash: 1aea017f17e29544e9288e1f57e6f84f9a2f6dae
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 048010f00f6581a29c6b1a3150bf5ae8822b5664
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501103"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672459"
 ---
 # <a name="imetadatatablesgetuserstringheapsize-method"></a>IMetaDataTables::GetUserStringHeapSize, méthode
+
 Obtient la taille, en octets, du tas de la chaîne utilisateur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,17 @@ HRESULT GetUserStringHeapSize (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pcbBlobs`  
  à Pointeur vers la taille, en octets, du tas de la chaîne utilisateur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

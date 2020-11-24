@@ -2,14 +2,15 @@
 title: ICorDebugSymbolProvider, interface
 ms.date: 03/30/2017
 ms.assetid: 85b24196-b6c6-4bda-9de3-47180bd6ff96
-ms.openlocfilehash: 25faad4f4bc67b57c339bc63d1a18ab4d275cd71
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: ff1f39be3d3db43f70cfa4a0711a3f42c180bc1a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379349"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672082"
 ---
 # <a name="icordebugsymbolprovider-interface"></a>ICorDebugSymbolProvider, interface
+
 Fournit des méthodes pouvant être utilisées pour récupérer des informations sur les symboles de débogage.  
   
 ## <a name="methods"></a>Méthodes  
@@ -28,12 +29,13 @@ Fournit des méthodes pouvant être utilisées pour récupérer des informations
 |[GetStaticFieldSymbols, méthode](icordebugsymbolprovider-getstaticfieldsymbols-method.md)|Obtient les symboles de champ statique qui correspondent à une signature typespec.|  
 |[GetTypeProps, méthode](icordebugsymbolprovider-gettypeprops-method.md)|Retourne des informations sur les propriétés d'un type, comme le nombre de signature de ses paramètres génériques, en fonction d'une adresse virtuelle relative (RVA) dans une vtable.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface est uniquement disponible avec .NET Native. Si vous implémentez cette interface pour des scénarios ICorDebug en dehors de .NET Native, le Common Language Runtime ignore cette interface.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1f8b59d0-5b72-45b8-ab74-c2b43ffc806e
 topic_type:
 - apiref
-ms.openlocfilehash: fb18b7b5ac73a1f270af6fae95a23e04b17ca5f1
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 9ba50616b25f9c7c592f19947c82a890ae6b5a4a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763070"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671679"
 ---
 # <a name="iclrstrongnamestrongnamekeygenex-method"></a>Méthode ICLRStrongName::StrongNameKeyGenEx
+
 Génère une nouvelle paire de clés publique/privée avec la taille de clé spécifiée, pour une utilisation avec un nom fort.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,8 +39,9 @@ HRESULT StrongNameKeyGenEx (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszKeyContainer`  
- dans Nom du conteneur de clé demandé. `wszKeyContainer`doit être une chaîne non vide ou null pour générer un nom temporaire.  
+ dans Nom du conteneur de clé demandé. `wszKeyContainer` doit être une chaîne non vide ou null pour générer un nom temporaire.  
   
  `dwFlags`  
  dans Valeur qui spécifie s’il faut conserver la clé inscrite. Les valeurs suivantes sont admises :  
@@ -57,20 +59,23 @@ HRESULT StrongNameKeyGenEx (
  `pcbKeyBlob`  
  à Taille, en octets, de `ppbKeyBlob` .  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Les versions de .NET Framework 1,0 et 1,1 requièrent un `dwKeySize` de 1024 bits pour signer un assembly avec un nom fort ; la version 2,0 ajoute des prises en charge pour les clés 2048 bits.  
   
  Une fois la clé Récupérée, vous devez appeler la méthode [ICLRStrongName :: StrongNameFreeBuffer](iclrstrongname-strongnamefreebuffer-method.md) pour libérer la mémoire allouée.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

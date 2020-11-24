@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: eb4e4ce0-06e7-4469-bbc4-edc2eb5da4b1
 topic_type:
 - apiref
-ms.openlocfilehash: cc8ab6f0c8115da4d74280023dc692b66846ed94
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a029784a28036e531670ad373893b4256c5864c4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497749"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671185"
 ---
 # <a name="icorprofilerinfo-interface"></a>ICorProfilerInfo, interface
+
 Fournit des méthodes à utiliser par les profileurs de code pour communiquer avec le common language runtime (CLR) afin de contrôler la surveillance des événements et les informations de demande.  
   
 > [!NOTE]
@@ -66,6 +67,7 @@ Fournit des méthodes à utiliser par les profileurs de code pour communiquer av
 |[SetILInstrumentedCodeMap, méthode](icorprofilerinfo-setilinstrumentedcodemap-method.md)|Spécifie comment les décalages du MSIL d’origine d’une fonction spécifiée correspondent aux nouveaux décalages du code MSIL modifié par le profileur de la fonction.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Un profileur appelle une méthode dans l' `ICorProfilerInfo` interface pour communiquer avec le CLR afin de contrôler la surveillance des événements et les informations de demande.  
   
  Les méthodes de l' `ICorProfilerInfo` interface sont implémentées par le CLR à l’aide du modèle à thread libre. Chaque méthode retourne un HRESULT pour indiquer la réussite ou l'échec. Pour obtenir la liste des codes de retour possibles, consultez CorError. h.  
@@ -73,6 +75,7 @@ Fournit des méthodes à utiliser par les profileurs de code pour communiquer av
  Le CLR passe, via l’implémentation de [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md)du profileur, une `ICorProfilerInfo` interface à chaque profileur de code pendant l’initialisation. Un profileur de code peut ensuite appeler les méthodes de l' `ICorProfilerInfo` interface pour obtenir des informations sur le code managé en cours d’exécution sous le contrôle du CLR.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 - FormatFromRawValue function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: e7f3e4eef4a7e378529c2097a8fe1a753a98c961
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e678aca5baf82c07ec9fc5c85cef22630af5ab0a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553712"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672329"
 ---
 # <a name="formatfromrawvalue-function"></a>FormatFromRawValue, fonction
+
 Convertit une valeur de données de performances brute au format spécifié, ou deux valeurs de données de performances brutes si la conversion de format est basé sur l’heure.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -47,7 +48,7 @@ dans Type de compteur. Pour obtenir la liste des types de compteurs, consultez [
 `dwFormat`\
 dans Format dans lequel convertir les données de performances brutes. Ce peut être l’une des valeurs suivantes :
 
-|Constante  |Valeur  |Description |
+|Constante  |Value  |Description |
 |---------|---------|---------|
 | `PDH_FMT_DOUBLE` |0x00000200 | Retourne la valeur calculée sous la forme d’une valeur à virgule flottante double précision. |
 | `PDH_FMT_LARGE` | 0x00000400 | Retourne la valeur calculée sous la forme d’un entier 64 bits. |
@@ -55,7 +56,7 @@ dans Format dans lequel convertir les données de performances brutes. Ce peut �
 
 L’une des valeurs précédentes peut être associée à l’un des indicateurs de mise à l’échelle suivants :
 
-|Constante  |Valeur  |Description |
+|Constante  |Value  |Description |
 |---------|---------|---------|
 | `PDH_FMT_NOSCALE` | 0x00001000 | N’appliquez pas les facteurs de mise à l’échelle du compteur. |
 | `PDH_FMT_1000` | 0x00002000 | Multipliez la valeur finale par 1 000. |
@@ -72,21 +73,21 @@ dans Pointeur vers une [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw
 `pFmtValue`\
 à Pointeur vers une [`PDH_FMT_COUNTERVALUE`](/windows/win32/api/pdh/ns-pdh-pdh_fmt_countervalue) structure qui reçoit la valeur de performance mise en forme.
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur de retour
 
 Les valeurs suivantes sont retournées par cette fonction :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `ERROR_SUCCESS` | 0 | L’appel de la fonction a réussi. |
 | `PDH_INVALID_ARGUMENT` | 0xC0000BBD | Un argument requis est manquant ou incorrect. |
 | `PDH_INVALID_HANDLE` | 0xC0000BBC | Le descripteur n’est pas un objet PDH valide. |
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Cette fonction encapsule un appel à la fonction [FormatFromRawValue](/previous-versions/ms231047(v=vs.85)) .
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 

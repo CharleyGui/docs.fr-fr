@@ -2,12 +2,12 @@
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
 ms.date: 05/31/2020
-ms.openlocfilehash: 07e66ece1d1d1b3f252e56789461ae2922d9649a
-ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
+ms.openlocfilehash: 0ca69b71aa7d414a7bc55253b123020d49468dee
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91877572"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672511"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -184,12 +184,12 @@ Visual Studio prend en charge le développement de l’ancrage pour les applicat
 Lorsque cette option est sélectionnée, le projet est créé avec un `Dockerfile` à sa racine, qui peut être utilisé pour générer et héberger l’application dans un conteneur d’ancrage. Un exemple de fichier dockerfile est illustré à la figure 3 -6. git.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["eShopWeb/eShopWeb.csproj", "eShopWeb/"]
 RUN dotnet restore "eShopWeb/eShopWeb.csproj"
@@ -216,7 +216,7 @@ Le comportement par défaut lors de l’exécution de l’application est égale
 
 En plus du développement local, [Azure dev Spaces](/azure/dev-spaces/) offre un moyen pratique à plusieurs développeurs de travailler avec leurs propres configurations Kubernetes dans Azure. Comme vous pouvez le voir dans la figure 3-7, vous pouvez également exécuter l’application dans Azure Dev Spaces.
 
-En outre, à tout moment, vous pouvez ajouter la prise en charge de l’ancrage à une application de ASP.NET Core existante. À partir de l’Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter**la  >  **prise en charge**de l’ancrage, comme illustré à la figure 3-8.
+En outre, à tout moment, vous pouvez ajouter la prise en charge de l’ancrage à une application de ASP.NET Core existante. À partir de l’Explorateur de solutions Visual Studio, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter** la  >  **prise en charge** de l’ancrage, comme illustré à la figure 3-8.
 
 ![Ajout de la prise en charge de l’ancrage à Visual Studio](./media/visual-studio-add-docker-support.png)
 

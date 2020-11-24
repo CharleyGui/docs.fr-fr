@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c66ac57-d751-4de5-af9f-26ceb949af8b
 topic_type:
 - apiref
-ms.openlocfilehash: 34aae3cd913465bc3167d6c5eee9873d212fa4ac
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 68a5b8bb1568f10699653479357b02b2e847cc02
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420685"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671965"
 ---
 # <a name="pfn_clrdatacreateinstance-function-pointer"></a>PFN_CLRDataCreateInstance (pointeur fonction)
+
 Pointe vers une fonction qui crée un objet d’interface pour l’élément cible spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `iid`  
  dans Identificateur de l’interface à instancier.  
   
@@ -44,10 +46,12 @@ typedef HRESULT (STDAPICALLTYPE* PFN_CLRDataCreateInstance) (
  `iface`  
  à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  L' `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl  

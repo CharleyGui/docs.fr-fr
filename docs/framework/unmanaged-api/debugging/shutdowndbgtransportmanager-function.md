@@ -16,27 +16,29 @@ helpviewer_keywords:
 ms.assetid: 6325a782-6862-4346-8e20-d922ca246169
 topic_type:
 - apiref
-ms.openlocfilehash: 732a75a8efeb888501d6b90bb3b3bedf720f1b60
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: a8993a36c082e251231872881653c55e133e8a8a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671900"
 ---
 # <a name="shutdowndbgtransportmanager-function"></a>Fonction ShutdownDbgTransportManager
+
 Arrête le gestionnaire de transport pour une connexion à un ordinateur cible distant.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 void InitDbgTransportManager ();  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
- **Bibliothèque :** mscordbi_macx86. dll  
+ **Bibliothèque :** mscordbi_macx86.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

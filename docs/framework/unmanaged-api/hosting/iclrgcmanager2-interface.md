@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4b5ffd7b-9ad7-41cd-9bba-34030ae3da7e
 topic_type:
 - apiref
-ms.openlocfilehash: 0f3ecc0d497eaee937647df47ba0956335a2fe41
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d2873b5e1f8229e8a16dfaacf1c9737ac47405bb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703946"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672797"
 ---
 # <a name="iclrgcmanager2-interface"></a>ICLRGCManager2, interface
+
 Fournit des méthodes qui permettent à un hôte d’interagir avec le système de garbage collection du common language runtime.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,17 +31,19 @@ Fournit des méthodes qui permettent à un hôte d’interagir avec le système 
 |------------|-----------------|  
 |[SetGCStartupLimitsEx, méthode](iclrgcmanager2-setgcstartuplimitsex-method.md)|Définit la taille d’un segment de garbage collection et la taille maximale de la génération 0 du système garbage collection. Active la génération 0 et la taille des segments supérieure à `DWORD` .|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette interface hérite de l' [interface ICLRGCManager](iclrgcmanager-interface.md).  
   
  Le common language runtime (CLR) implémente son mécanisme de garbage collection avec le <xref:System.GC> type managé. Pour plus d’informations sur le système de garbage collection, consultez [garbage collection](../../../standard/garbage-collection/index.md).  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

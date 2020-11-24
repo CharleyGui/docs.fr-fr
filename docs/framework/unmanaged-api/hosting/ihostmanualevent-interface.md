@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 300c2661-b7d1-4c39-b080-9ebdef0fd523
 topic_type:
 - apiref
-ms.openlocfilehash: 7c46f00063cdf9281a5f1080594e8d6dbc6c101e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 50e37b770e3ee6e0a5cdfca61fc5b09749e5735f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804599"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673196"
 ---
 # <a name="ihostmanualevent-interface"></a>IHostManualEvent, interface
+
 Fournit l’implémentation de l’hôte d’une représentation d’un événement de réinitialisation manuelle.  
   
 ## <a name="methods"></a>Méthodes  
@@ -29,15 +30,16 @@ Fournit l’implémentation de l’hôte d’une représentation d’un événem
 |Méthode|Description|  
 |------------|-----------------|  
 |[Reset, méthode](ihostmanualevent-reset-method.md)|Rétablit l' `IHostManualEvent` État non signalé de l’instance actuelle.|  
-|[Méthode Set](ihostmanualevent-set-method.md)|Définit l' `IHostManualEvent` état signalé de l’instance actuelle.|  
+|[Set, méthode](ihostmanualevent-set-method.md)|Définit l' `IHostManualEvent` état signalé de l’instance actuelle.|  
 |[Wait, méthode](ihostmanualevent-wait-method.md)|Fait en sorte que l' `IHostManualEvent` instance actuelle attende jusqu’à ce qu’elle appartienne ou qu’un laps de temps spécifié se soit écoulé.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Mutex class, about Mutex class
 - threading [.NET], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: 811ee0d2d1068fc1fe8e44aa17f01e2dc243fb98
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: aa5a13b5b1cfcd7305df39c1ff5005deb45eb4ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826233"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672173"
 ---
 # <a name="mutexes"></a>Mutex
 
@@ -21,6 +21,7 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
  Pour obtenir des exemples de code, consultez la documentation de référence destinée aux constructeurs <xref:System.Threading.Mutex.%23ctor%2A>.  
   
 ## <a name="using-mutexes"></a>Utilisation de mutex  
+
  Un thread appelle la méthode <xref:System.Threading.WaitHandle.WaitOne%2A> d’un mutex pour demander la propriété. L’appel est bloqué jusqu'à ce que le mutex soit disponible, ou jusqu'à ce que le délai d’expiration facultatif s’écoule. L’état d’un mutex est signalé si aucun thread ne le possède.  
   
  Un thread libère un mutex en appelant sa méthode <xref:System.Threading.Mutex.ReleaseMutex%2A>. Les mutex ont une affinité de thread. Cela signifie que le mutex ne peut être libéré que par le thread qui le possède. Si un thread libère un mutex qu’il ne possède pas, une exception cas, une <xref:System.ApplicationException> est levée dans le thread.  
@@ -30,11 +31,13 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
  Si un thread possède un <xref:System.Threading.Mutex>, il peut spécifier le même <xref:System.Threading.Mutex> dans les appels d’attente-demande répétés sans en bloquer l’exécution. Toutefois, il doit libérer le <xref:System.Threading.Mutex> à chaque fois pour libérer la propriété.  
   
 ## <a name="abandoned-mutexes"></a>Mutex abandonnés  
+
  Si un thread se termine sans libérer un <xref:System.Threading.Mutex>, le mutex est considéré comme abandonné. Cela indique souvent une grave erreur de programmation, car la ressource que le mutex protège peut être laissée dans un état incohérent. Une <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.
   
  Si le mutex est développé au niveau système, et qu’il est abandonné, cela peut indiquer qu’une application a été arrêtée soudainement (par exemple, à l’aide du Gestionnaire des tâches de Windows).  
   
 ## <a name="local-and-system-mutexes"></a>Mutex système et locaux  
+
  Il existe deux types de mutex : les mutex locaux et les mutex système nommés. Si vous créez un objet <xref:System.Threading.Mutex> à l’aide d’un constructeur qui accepte un nom, le mutex est associé à un objet de système d’exploitation portant ce nom. Les mutex système nommés sont visibles partout dans le système d’exploitation, et peuvent être utilisés pour synchroniser les activités de processus. Vous pouvez créer plusieurs objets <xref:System.Threading.Mutex> qui représentent le même mutex de système nommé, et vous pouvez utiliser la méthode <xref:System.Threading.Mutex.OpenExisting%2A> pour ouvrir un mutex de système nommé existant.  
   
  Un mutex local existe uniquement dans votre processus. Il peut être utilisé par tout thread de votre processus qui a une référence à l’objet <xref:System.Threading.Mutex> local. Chaque objet <xref:System.Threading.Mutex> est un mutex local séparé.  

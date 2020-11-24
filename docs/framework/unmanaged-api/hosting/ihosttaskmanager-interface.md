@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4a0b05b9-3ef1-4607-b7c8-bd4dd43647a0
 topic_type:
 - apiref
-ms.openlocfilehash: 190908c675b96b8ea2d81fb0203aa16a80d6a8b4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: deb14d291bfd511e8f3534f3c5e32787c259c5e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501396"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673109"
 ---
 # <a name="ihosttaskmanager-interface"></a>IHostTaskManager, interface
+
 Fournit des méthodes qui permettent au common language runtime (CLR) d’utiliser des tâches via l’hôte au lieu d’utiliser le thread de système d’exploitation standard ou les fonctions Fiber.  
   
 ## <a name="methods"></a>Méthodes  
@@ -48,14 +49,16 @@ Fournit des méthodes qui permettent au common language runtime (CLR) d’utilis
 |[SwitchToTask, méthode](ihosttaskmanager-switchtotask-method.md)|Indique à l’hôte qu’il doit extraire la tâche actuelle.|  
   
 ## <a name="remarks"></a>Remarques  
- `IHostTaskManager`permet au CLR de créer et de gérer des tâches, de fournir des raccordements pour que l’hôte prenne des mesures lorsque le contrôle est transféré du code managé au code non managé, et vice versa, et de spécifier certaines actions que l’hôte peut et ne peut pas prendre pendant l’exécution du code.  
+
+ `IHostTaskManager` permet au CLR de créer et de gérer des tâches, de fournir des raccordements pour que l’hôte prenne des mesures lorsque le contrôle est transféré du code managé au code non managé, et vice versa, et de spécifier certaines actions que l’hôte peut et ne peut pas prendre pendant l’exécution du code.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

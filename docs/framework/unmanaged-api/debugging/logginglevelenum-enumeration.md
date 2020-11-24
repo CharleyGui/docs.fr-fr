@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
 topic_type:
 - apiref
-ms.openlocfilehash: 62ea982f30a6a73648d9bf36722c0b5a49a68896
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 389edbeb746fbeaf60d88bf9ee2a3a0731822e55
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420745"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95672004"
 ---
 # <a name="logginglevelenum-enumeration"></a>LoggingLevelEnum, énumération
+
 Indique le niveau de gravité d'un message de description qui est écrit dans le journal des événements quand un thread managé consigne un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -63,9 +64,11 @@ typedef enum LoggingLevelEnum {
 |`LPanicLevel`|Le message est un niveau de panique.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le common language runtime (CLR) appelle la méthode [ICorDebugManagedCallback :: LogMessage](icordebugmanagedcallback-logmessage-method.md) pour notifier au débogueur qu’un thread managé a consigné un événement. Le CLR passe une valeur de l' `LoggingLevelEnum` énumération pour indiquer le niveau de gravité du message que le thread managé a écrit dans le journal des événements.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

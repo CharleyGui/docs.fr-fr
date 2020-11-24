@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: fe28a4bf4a5432d6e33b7ad3238c1d7c0d4e7a84
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f4cb85e346e0043a3f28c48845f574afa89548db
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831362"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673356"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions du .NET Framework installées
 
@@ -30,7 +30,7 @@ Des outils gérés par la Communauté sont disponibles pour vous aider à détec
 
 - [https://github.com/jmalarcon/DotNetVersions](https://github.com/jmalarcon/DotNetVersions)
 
-  Outil en ligne de commande .NET 2,0.
+  Un outil de ligne de commande .NET Framework 2,0.
 
 - [https://github.com/EliteLoser/DotNetVersionLister](https://github.com/EliteLoser/DotNetVersionLister)
 
@@ -134,7 +134,7 @@ Chaque version de .NET Framework de 1,1 à 4,0 est indiquée sous la forme d’u
 > [!NOTE]
 > La sous-clé **d’installation** du .NET Framework dans le chemin d’accès du registre ne commence *pas* par un point.
 
-| Version du Framework  | Sous-clé de Registre | Valeur |
+| Version du Framework  | Sous-clé de Registre | Value |
 | ------------------ | --------------- | ----- |
 | 1.0                | **HKLM \\ Software \\ Microsoft \\ . \\Stratégie NETFramework \\ v 1.0 \\ 3705**     | **Installer** REG_SZ est égal à `1` |
 | 1.1                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Installer** REG_DWORD est égal à `1` |
