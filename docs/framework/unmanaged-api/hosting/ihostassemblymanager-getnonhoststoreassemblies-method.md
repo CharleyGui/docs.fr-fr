@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
 topic_type:
 - apiref
-ms.openlocfilehash: 9a1440be7011130b16d7112ae15026eb74856190
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a34b907514376927d8a1aa66b136916108b704d8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501589"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681143"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies, méthode
+
 Obtient un pointeur d’interface vers un [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) qui représente la liste des assemblys que l’hôte attend que le Common Language Runtime (CLR) se charge.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetNonHostStoreAssemblies (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppReferenceList`  
  à Pointeur vers l’adresse d’un `ICLRAssemblyReferenceList` qui contient une liste de références aux assemblys que l’hôte attend que le CLR se charge.  
   
@@ -41,7 +43,7 @@ HRESULT GetNonHostStoreAssemblies (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetNonHostStoreAssemblies`retourné avec succès.|  
+|S_OK|`GetNonHostStoreAssemblies` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,6 +52,7 @@ HRESULT GetNonHostStoreAssemblies (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer la liste des références pour le demandé `ICLRAssemblyReferenceList` .|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR résout les références à l’aide de l’ensemble d’instructions suivant :  
   
 - Tout d’abord, il consulte la liste des références d’assembly retournées par `GetNonHostStoreAssemblies` .  
@@ -66,11 +69,12 @@ HRESULT GetNonHostStoreAssemblies (
 > Lors de l’initialisation, le CLR `GetNonHostStoreAssemblies` n’appelle qu’une seule fois. La méthode n’est pas appelée à nouveau.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

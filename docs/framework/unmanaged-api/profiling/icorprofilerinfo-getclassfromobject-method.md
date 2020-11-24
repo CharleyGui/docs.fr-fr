@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b97493fb-713e-49d5-a73e-5688b2ad0700
 topic_type:
 - apiref
-ms.openlocfilehash: 613267549329d2f48dcd18ae341e47538e414ac0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a7edc6045969861679d1b80c0563e99f48932cf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498529"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680246"
 ---
 # <a name="icorprofilerinfogetclassfromobject-method"></a>ICorProfilerInfo::GetClassFromObject, méthode
+
 Obtient le `ClassID` d’un objet, en fonction de son `ObjectID` .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetClassFromObject(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `objectId`  
  dans ID de l’objet pour lequel obtenir le `ClassID` .  
   
@@ -41,9 +43,11 @@ HRESULT GetClassFromObject(
  à Pointeur vers le retourné `ClassID` .  
   
 ## <a name="remarks"></a>Remarques  
+
  Une valeur null `pClassId` indique que `objectId` a un type qui décharge.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

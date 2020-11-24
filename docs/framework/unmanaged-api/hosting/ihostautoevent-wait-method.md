@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 535d51c5-9112-401b-8c36-85f35d7ee609
 topic_type:
 - apiref
-ms.openlocfilehash: 7baabafc61e14d127ff3f0cdb7453be6f1a2abeb
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: f07958a1a21bb3e93e4ca8202a65407b39188af4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804970"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680779"
 ---
 # <a name="ihostautoeventwait-method"></a>IHostAutoEvent::Wait, méthode
+
 Entraîne l’attente de l’instance [IHostAutoEvent](ihostautoevent-interface.md) actuelle jusqu’à ce qu’elle appartienne ou qu’un laps de temps spécifié se soit écoulé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,17 +36,18 @@ HRESULT Wait (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwMilliseconds`  
  dans Nombre de millisecondes pendant lesquelles l' `IHostAutoEvent` instance actuelle doit attendre avant de retourner, si aucun thread ou aucune fibre ne prend possession de la propriété.  
   
  `option`  
  dans L’une des valeurs [WAIT_OPTION](wait-option-enumeration.md) , en spécifiant l’action que l’hôte doit effectuer si cette opération bloque.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Wait`retourné avec succès.|  
+|S_OK|`Wait` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,12 +55,13 @@ HRESULT Wait (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_DEADLOCK|L’hôte a détecté un blocage pendant l’intervalle d’attente et a choisi l’événement représenté par l' `IHostAutoEvent` instance actuelle comme victime du blocage.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

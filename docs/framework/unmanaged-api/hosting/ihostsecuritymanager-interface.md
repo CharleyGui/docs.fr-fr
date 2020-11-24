@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c3be2cbd-2d93-438b-9888-9a0251b63c03
 topic_type:
 - apiref
-ms.openlocfilehash: 237fe23493460df77a79ba3aed9f0a809cd8aa23
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 37f606a67bef79936c81b2a36f12a00d24bd82f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501467"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680532"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager, interface
+
 Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte de sécurité du thread en cours d’exécution.  
   
 ## <a name="methods"></a>Méthodes  
@@ -36,7 +37,8 @@ Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte 
 |[SetThreadToken, méthode](ihostsecuritymanager-setthreadtoken-method.md)|Définit un handle pour le thread en cours d’exécution.|  
   
 ## <a name="remarks"></a>Remarques  
- Un hôte peut contrôler tout l’accès du code aux jetons de thread à la fois par le common language runtime (CLR) et le code utilisateur. Il peut également s’assurer que les informations de contexte de sécurité complètes sont transmises sur des opérations asynchrones ou des points de code avec accès restreint au code. `IHostSecurityContext`encapsule ces informations de contexte de sécurité, qui sont opaques pour le CLR.  
+
+ Un hôte peut contrôler tout l’accès du code aux jetons de thread à la fois par le common language runtime (CLR) et le code utilisateur. Il peut également s’assurer que les informations de contexte de sécurité complètes sont transmises sur des opérations asynchrones ou des points de code avec accès restreint au code. `IHostSecurityContext` encapsule ces informations de contexte de sécurité, qui sont opaques pour le CLR.  
   
  Le CLR gère le contexte de thread managé en interne. Il interroge la spécifique au processus `IHostSecurityManager` dans les situations suivantes :  
   
@@ -49,11 +51,12 @@ Fournit des méthodes qui autorisent l’accès et le contrôle sur le contexte 
 - Dans la maintenance des ports de terminaison d’e/s.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

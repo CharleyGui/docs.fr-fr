@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0fa34bca-ed18-4626-9e78-d33684d18edb
 topic_type:
 - apiref
-ms.openlocfilehash: 25e931ec17cad3508d548fb4ca7e53b0ade3f119
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: e340dcb5dc093f965e6c08a24a3d65ed0aa6e07a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804954"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95680820"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a>IHostControl::GetHostManager, méthode
+
 Obtient un pointeur d’interface vers l’implémentation de l’hôte de l’interface avec le spécifié `IID` .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,17 +36,18 @@ HRESULT GetHostManager (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `riid`  
- dans `IID`De l’interface pour laquelle le Common Language Runtime (CLR) interroge.  
+ dans `IID` De l’interface pour laquelle le Common Language Runtime (CLR) interroge.  
   
  `ppObject`  
  à Pointeur vers l’interface implémentée par l’hôte, ou null si l’hôte ne prend pas en charge cette interface.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetHostManager`retourné avec succès.|  
+|S_OK|`GetHostManager` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -54,7 +56,8 @@ HRESULT GetHostManager (
 |E_INVALIDARG|Le demandé `IID` n’est pas valide.|  
 |E_NOINTERFACE|L’interface demandée n’est pas prise en charge.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Le CLR interroge l’hôte pour déterminer s’il prend en charge une ou plusieurs des interfaces suivantes :  
   
 - [IHostMemoryManager](ihostmemorymanager-interface.md)  
@@ -79,12 +82,13 @@ HRESULT GetHostManager (
   
  Le CLR n’appelle pas `Release` sur les gestionnaires d’ordinateurs hôtes, même lorsque vous l’arrêtez.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
