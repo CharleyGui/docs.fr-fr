@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: f31185e0-f01d-463a-b392-42163e39bfe9
 topic_type:
 - apiref
-ms.openlocfilehash: 95a4ef3ab77b33c67c63be2c22647075f2f95ce8
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b0defd0a9c4197cf91fde1625794ff0d77c83ea0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421109"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693136"
 ---
-# <a name="icorpublishprocessgetprocessid-method"></a><span data-ttu-id="3b1c4-102">ICorPublishProcess::GetProcessID, méthode</span><span class="sxs-lookup"><span data-stu-id="3b1c4-102">ICorPublishProcess::GetProcessID Method</span></span>
-<span data-ttu-id="3b1c4-103">Obtient l’identificateur de système d’exploitation pour ce processus.</span><span class="sxs-lookup"><span data-stu-id="3b1c4-103">Gets the operating system identifier for this process.</span></span>  
+# <a name="icorpublishprocessgetprocessid-method"></a><span data-ttu-id="512a2-102">ICorPublishProcess::GetProcessID, méthode</span><span class="sxs-lookup"><span data-stu-id="512a2-102">ICorPublishProcess::GetProcessID Method</span></span>
+
+<span data-ttu-id="512a2-103">Obtient l’identificateur de système d’exploitation pour ce processus.</span><span class="sxs-lookup"><span data-stu-id="512a2-103">Gets the operating system identifier for this process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3b1c4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3b1c4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="512a2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="512a2-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetProcessID (  
@@ -33,19 +34,21 @@ HRESULT GetProcessID (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3b1c4-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="3b1c4-105">Parameters</span></span>  
- `pid`  
- <span data-ttu-id="3b1c4-106">à Pointeur vers l’identificateur du processus représenté par cet objet [ICorPublishProcess](icorpublishprocess-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="3b1c4-106">[out] A pointer to the identifier of the process represented by this [ICorPublishProcess](icorpublishprocess-interface.md) object.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="3b1c4-107">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="3b1c4-107">Requirements</span></span>  
- <span data-ttu-id="3b1c4-108">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3b1c4-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="3b1c4-109">**En-tête :** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="3b1c4-109">**Header:** CorPub.idl, CorPub.h</span></span>  
-  
- <span data-ttu-id="3b1c4-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3b1c4-110">**Library:** CorGuids.lib</span></span>  
-  
- <span data-ttu-id="3b1c4-111">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3b1c4-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="3b1c4-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3b1c4-112">See also</span></span>
+## <a name="parameters"></a><span data-ttu-id="512a2-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="512a2-105">Parameters</span></span>  
 
-- [<span data-ttu-id="3b1c4-113">ICorPublishProcess, interface</span><span class="sxs-lookup"><span data-stu-id="3b1c4-113">ICorPublishProcess Interface</span></span>](icorpublishprocess-interface.md)
+ `pid`  
+ <span data-ttu-id="512a2-106">à Pointeur vers l’identificateur du processus représenté par cet objet [ICorPublishProcess](icorpublishprocess-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="512a2-106">[out] A pointer to the identifier of the process represented by this [ICorPublishProcess](icorpublishprocess-interface.md) object.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="512a2-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="512a2-107">Requirements</span></span>  
+
+ <span data-ttu-id="512a2-108">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="512a2-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="512a2-109">**En-tête :** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="512a2-109">**Header:** CorPub.idl, CorPub.h</span></span>  
+  
+ <span data-ttu-id="512a2-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="512a2-110">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="512a2-111">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="512a2-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="512a2-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="512a2-112">See also</span></span>
+
+- [<span data-ttu-id="512a2-113">ICorPublishProcess, interface</span><span class="sxs-lookup"><span data-stu-id="512a2-113">ICorPublishProcess Interface</span></span>](icorpublishprocess-interface.md)
