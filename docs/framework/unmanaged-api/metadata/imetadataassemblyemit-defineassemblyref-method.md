@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b284b18-0084-4b3a-912a-5ebe9f29c88b
 topic_type:
 - apiref
-ms.openlocfilehash: 612463bca18c23fac0b086adde2d208a0fbc5ae5
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: ba53ff30f0b6d0ae7fed7db422b7c0a242204a2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008168"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689429"
 ---
 # <a name="imetadataassemblyemitdefineassemblyref-method"></a>IMetaDataAssemblyEmit::DefineAssemblyRef, méthode
+
 Crée une structure `AssemblyRef` contenant les métadonnées pour l'assembly que cet assembly référence et retourne le jeton de métadonnées associé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ HRESULT DefineAssemblyRef (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbPublicKeyOrToken`  
  dans Clé publique de l’éditeur de l’assembly référencé. La fonction d’assistance [StrongNameTokenFromAssembly (](../strong-naming/strongnametokenfromassembly-function.md) peut être utilisée pour obtenir le hachage de la clé publique à passer comme ce paramètre.  
   
@@ -54,7 +56,7 @@ HRESULT DefineAssemblyRef (
  dans Instance ASSEMBLYMETADATA qui contient les informations de version, de plateforme et de paramètres régionaux de l’assembly référencé.  
   
  `pbHashValue`  
- dans Données de hachage associées à l’assembly référencé. facultatif.  
+ dans Données de hachage associées à l’assembly référencé. Optionnel.  
   
  `cbHashValue`  
  dans Taille en octets de `pbHashValue` .  
@@ -66,16 +68,18 @@ HRESULT DefineAssemblyRef (
  à Pointeur vers le jeton de `AssemblyRef` métadonnées retourné.  
   
 ## <a name="remarks"></a>Remarques  
+
  Une `AssemblyRef` structure de métadonnées doit être définie pour chaque assembly référencé par cet assembly.  
   
  Au moment de l’exécution, les détails d’un assembly référencé sont passés au programme de résolution d’assembly et indiquent qu’ils représentent les informations « comme étant générées ». Le programme de résolution d’assembly applique ensuite la stratégie.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

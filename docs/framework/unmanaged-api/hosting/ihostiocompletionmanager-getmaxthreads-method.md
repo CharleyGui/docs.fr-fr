@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e7a6cadc-2433-4472-a701-58891abcde45
 topic_type:
 - apiref
-ms.openlocfilehash: a97a7abf4f561a5aba41d8019f2ba5bd8e879acd
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 0b16305bc88854f1ab2ab89ab6b0d4d3e6881cf1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804737"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689469"
 ---
 # <a name="ihostiocompletionmanagergetmaxthreads-method"></a>IHostIoCompletionManager::GetMaxThreads, méthode
+
 Obtient le nombre maximal de threads que l’hôte peut allouer aux demandes d’e/s de service.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +35,15 @@ HRESULT GetMaxThreads (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pdwMaxIoCompletionThreads`  
  à Pointeur vers le nombre maximal de threads dans le pool de threads que l’hôte peut allouer aux demandes d’e/s de service.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetMaxThreads`retourné avec succès.|  
+|S_OK|`GetMaxThreads` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -49,15 +51,17 @@ HRESULT GetMaxThreads (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|L’hôte ne fournit pas d’implémentation de `GetMaxThreads` .|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Un hôte peut souhaiter exercer un contrôle exclusif sur le nombre de threads pouvant être alloués pour traiter les demandes d’e/s, pour des raisons telles que l’implémentation, les performances ou l’évolutivité. Pour cette raison, l’hôte n’est pas tenu d’implémenter `GetMaxThreads` . Dans ce cas, l’hôte doit retourner E_NOTIMPL à partir de cette méthode.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
