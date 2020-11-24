@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fbaa0794-a031-4015-8beb-2749e47ac340
 topic_type:
 - apiref
-ms.openlocfilehash: c8914ba1090ec5fd6540e9ead302675cb44f37e6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 29dc87bf465fc9751b5af795f7640b095e535e63
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208601"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690380"
 ---
 # <a name="icordebugframegetcode-method"></a>ICorDebugFrame::GetCode, méthode
+
 Obtient un pointeur vers le code associé à ce frame de pile.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetCode (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppCode`  
  à Pointeur vers l’adresse d’un objet ICorDebugCode qui représente le code associé à ce frame.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

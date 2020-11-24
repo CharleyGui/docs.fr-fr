@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: cf7b7cfa-1c4b-4d8c-be70-4f9ed15a788b
 topic_type:
 - apiref
-ms.openlocfilehash: b00be90316598e458f01f6cd440d0ad0a2e79c50
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 937a2fb322eb63461d90e215635e1b10ab6afd09
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212358"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689782"
 ---
 # <a name="icordebugmanagedcallback2-interface"></a>ICorDebugManagedCallback2, interface
-Fournit des méthodes pour prendre en charge la gestion des exceptions et les Assistants Débogage managé (MDA) du débogueur. `ICorDebugManagedCallback2`est une extension logique de l’interface [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) .  
+
+Fournit des méthodes pour prendre en charge la gestion des exceptions et les Assistants Débogage managé (MDA) du débogueur. `ICorDebugManagedCallback2` est une extension logique de l’interface [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) .  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -37,7 +38,8 @@ Fournit des méthodes pour prendre en charge la gestion des exceptions et les As
 |[FunctionRemapOpportunity, méthode](icordebugmanagedcallback2-functionremapopportunity-method.md)|Notifie le débogueur que l’exécution du code a atteint un point de séquence dans une version antérieure d’une fonction modifiée.|  
 |[MDANotification, méthode](icordebugmanagedcallback2-mdanotification-method.md)|Fournit une notification indiquant que l’exécution du code a rencontré un message de l’Assistant Débogage managé (MDA).|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  L' `ICorDebugManagedCallback2` interface étend l' `ICorDebugManagedCallback` interface pour gérer les nouveaux événements de débogage introduits dans la version 2,0 de .NET Framework.  
   
  Un débogueur doit implémenter `ICorDebugManagedCallback2` s’il débogue des applications .NET Framework 2,0. Une instance de `ICorDebugManagedCallback` ou `ICorDebugManagedCallback2` est passée en tant qu’objet de rappel à [ICorDebug :: SetManagedHandler](icordebug-setmanagedhandler-method.md).  
@@ -45,7 +47,8 @@ Fournit des méthodes pour prendre en charge la gestion des exceptions et les As
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,6 +59,6 @@ Fournit des méthodes pour prendre en charge la gestion des exceptions et les As
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Interfaces de débogage](debugging-interfaces.md)
 - [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

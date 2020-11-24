@@ -2,14 +2,15 @@
 title: ICorDebugProcess6::DecodeEvent, méthode
 ms.date: 03/30/2017
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
-ms.openlocfilehash: 7c163311f9ce8f3d98ce72f45165a5e517c6c0aa
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ed75b3c5657fed805f187285a576b81598be331c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205514"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690276"
 ---
 # <a name="icordebugprocess6decodeevent-method"></a>ICorDebugProcess6::DecodeEvent, méthode
+
 Décode les événements de débogage managés qui ont été encapsulés dans la charge utile des événements de débogage d'exception native conçus à cet effet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ HRESULT DecodeEvent(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRecord`  
  [in] Pointeur vers un tableau d'octets issu d'un événement de débogage d'exception native qui contient des informations sur un événement de débogage managé.  
   
@@ -44,12 +46,13 @@ HRESULT DecodeEvent(
  `ppEvent`  
  à Pointeur vers l’adresse d’un objet [ICorDebugDebugEvent](icordebugdebugevent-interface.md) qui représente un événement de débogage managé décodé.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, creating dataflow pipeline
 ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
-ms.openlocfilehash: 9469bddf381ac33b35234756d4b8538500e55c6b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9efa77062be35dd93e72c88c67cccd06ff485141
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829932"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689847"
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Procédure pas à pas : création d’un pipeline de dataflow
+
 Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> pour recevoir des messages des blocs sources, vous pouvez également connecter des blocs de messages pour former un *pipeline de flux de données*. Un pipeline de flux de données est une série de composants, ou de *blocs de flux de données*, qui effectuent chacun une tâche spécifique qui contribue à un plus grand objectif. Chaque bloc de flux de données d'un pipeline de flux de données effectue un travail lorsqu'il reçoit un message d'un autre bloc de flux de données. Ce processus s'apparente à une chaîne de montage en construction automobile. Comme chaque véhicule passe via la ligne de montage, un poste assemble le châssis, le suivant installe le moteur, et ainsi de suite. Étant donné qu'une ligne d'assemblage permet à plusieurs véhicules d'être assemblés en même temps, cela fournit une productivité supérieure à l'assemblage un par un des véhicules.
 
  Ce document montre un pipeline de flux de données qui télécharge le livre *L’Illiade d’Homère* à partir d’un site web et recherche dans le texte les mots dont l’inversion des caractères permet d’obtenir un autre mot. La formation du pipeline de flux de données dans ce document comprend les étapes suivantes :  
@@ -35,9 +36,11 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
 6. Attendez que le pipeline termine tous les travaux.  
   
 ## <a name="prerequisites"></a>Prérequis  
+
  Lisez la rubrique [Flux de données](dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
   
 ## <a name="creating-a-console-application"></a>Création d'une application console  
+
  Dans Visual Studio, créez un projet Application console en Visual C# ou en Visual Basic. Installez le package NuGet System.Threading.Tasks.Dataflow.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -48,6 +51,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  [!code-vb[TPLDataflow_Palindromes#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromesemptymain.vb#2)]  
   
 ## <a name="creating-the-dataflow-blocks"></a>Création des blocs de flux de données  
+
  Ajoutez le code suivant à la méthode `Main` pour créer des blocs de flux de données qui participent au pipeline. Le tableau suivant résume le rôle de chaque membre du pipeline.  
   
  [!code-csharp[TPLDataflow_Palindromes#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#3)]
@@ -64,6 +68,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  Bien que vous puissiez combiner plusieurs étapes de cet exemple dans le pipeline de flux de données en une étape, l’exemple illustre le concept de composition de plusieurs tâches distinctes de flux de données pour effectuer une plus grande tâche. L'exemple utilise <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> pour permettre à chaque membre du pipeline d'exécuter une opération sur les données d'entrée et d'envoyer les résultats à l'étape suivante dans le pipeline. Le membre `findReversedWords` du pipeline est un objet <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> car il génère des sorties multiples indépendantes pour chaque entrée. La queue du pipeline, `printReversedWords`, est un objet <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> car elle exécute une action sur son entrée, et ne produit aucun résultat.  
   
 ## <a name="forming-the-pipeline"></a>Formation du pipeline  
+
  Ajoutez le code suivant pour adapter chaque bloc au bloc suivant dans le pipeline.  
   
  Lorsque vous appelez la méthode <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> pour adapter un bloc source de flux de données à un bloc cible de flux de données, le bloc source de flux de données se propage au bloc cible lorsque les données sont disponibles. Si vous spécifiez également <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions> avec <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions.PropagateCompletion> défini sur true, la réussite ou l’échec de l’achèvement d’un bloc dans le pipeline entraînera l’achèvement du bloc suivant dans le pipeline.
@@ -72,6 +77,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  [!code-vb[TPLDataflow_Palindromes#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#4)]  
   
 ## <a name="posting-data-to-the-pipeline"></a>Publication des données du pipeline  
+
  Ajoutez le code suivant pour publier l'URL du livre de *l'Iliade d'Homère* au début du pipeline de flux de données.  
   
  [!code-csharp[TPLDataflow_Palindromes#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#6)]
@@ -80,6 +86,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  Cet exemple utilise <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A?displayProperty=nameWithType> pour envoyer des données de façon synchrone au début du pipeline. Utilisez la méthode <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> lorsque vous devez envoyer de manière asynchrone des données à un nœud de flux de données.  
   
 ## <a name="completing-pipeline-activity"></a>Fermeture de l'activité du pipeline  
+
  Ajoutez le code suivant pour indiquer que le début du pipeline est terminé. Le début du pipeline propage son achèvement lorsqu’il a traité tous les messages mis en mémoire tampon.
   
  [!code-csharp[TPLDataflow_Palindromes#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#7)]
@@ -88,6 +95,7 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  Cet exemple envoie une URL via le pipeline de flux de données à traiter. Si vous devez envoyer plusieurs entrées par un pipeline, appelez la méthode <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A?displayProperty=nameWithType> après avoir soumis toutes les entrées. Vous pouvez omettre cette étape si votre application n'a pas de points bien définis à partir desquels les données ne sont plus disponibles ou si l'application n'a pas à attendre que le pipeline se termine.  
   
 ## <a name="waiting-for-the-pipeline-to-finish"></a>Attente de la fermeture du pipeline  
+
  Ajoutez le code suivant pour attendre que le pipeline se termine. L’opération globale se termine lorsque la fin du pipeline est atteinte.  
   
  [!code-csharp[TPLDataflow_Palindromes#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#8)]
@@ -96,12 +104,14 @@ Bien que vous puissiez utiliser les méthodes <xref:System.Threading.Tasks.Dataf
  Vous pouvez attendre la fin de flux de données de tous les threads ou de plusieurs threads simultanément.  
   
 ## <a name="the-complete-example"></a>Exemple complet  
+
  L'exemple suivant présente le code complet pour cette visite.  
   
  [!code-csharp[TPLDataflow_Palindromes#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#1)]
  [!code-vb[TPLDataflow_Palindromes#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#1)]  
   
 ## <a name="next-steps"></a>Étapes suivantes  
+
  Cet exemple envoie une URL à traiter via le pipeline de flux de données. Si vous devez envoyer plusieurs valeurs d'entrée via le pipeline, vous pouvez introduire un forme de parallélisme dans votre application similaire à la façon dont des parties peuvent parcourir une fabrique d'automobiles. Lorsque le premier membre du pipeline envoie son résultat au deuxième membre, il peut traiter un autre élément en parallèle alors que le deuxième membre traite le premier résultat.  
   
  Le parallélisme qui est effectué à l’aide de pipelines de flux de données s’appelle *le parallélisme de granularité grossière* parce qu’il comprend généralement moins de tâches, mais plus grosses. Vous pouvez également utiliser *le parallélisme de granularité fine* de plus petites tâches de courte durée dans un pipeline de flux de données. Dans cet exemple, le membre `findReversedWords` du pipeline utilise [PLINQ](introduction-to-plinq.md) pour traiter plusieurs éléments dans la liste des travaux en parallèle. L'utilisation du parallélisme de granularité fine dans un pipeline de granularité grossière peut améliorer le débit global.  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bfdc946b-8238-4eb9-8a85-884049fb0fd4
 topic_type:
 - apiref
-ms.openlocfilehash: b29de0b70daa783197e78fe985d379d4124bc140
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: b52499e509bf172b03b5e4d2b1e4c677dc800281
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205145"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690471"
 ---
 # <a name="icordebugframegetcaller-method"></a>ICorDebugFrame::GetCaller, méthode
+
 Obtient un pointeur vers l’objet ICorDebugFrame dans la chaîne actuelle qui a appelé ce frame.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetCaller (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppFrame`  
  à Pointeur vers l’adresse d’un `ICorDebugFrame` objet qui représente le frame appelant. Cette valeur est null si le frame appelé est le frame le plus à l’extérieur dans la chaîne actuelle.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

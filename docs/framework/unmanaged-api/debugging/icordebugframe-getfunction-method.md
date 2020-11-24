@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 879d2311-0ff1-4616-a8b3-959ea5868b2e
 topic_type:
 - apiref
-ms.openlocfilehash: 7bf73266f0269cfcd5371c5155856800036cc066
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9f9a6238057f56459eb8dca2375da412c3cd569d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209836"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690315"
 ---
 # <a name="icordebugframegetfunction-method"></a>ICorDebugFrame::GetFunction, méthode
+
 Obtient la fonction qui contient le code associé à ce frame de pile.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT GetFunction (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppFunction`  
  à Pointeur vers l’adresse d’un objet ICorDebugFunction qui représente la fonction contenant le code associé à ce frame de pile.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La `GetFunction` méthode peut échouer si le frame n’est pas associé à une fonction particulière.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

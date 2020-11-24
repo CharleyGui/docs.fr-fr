@@ -6,24 +6,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: c09259afdc5ede32791ba895ca012cdc2a0a1c18
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: da42358007b887f6bab05c35e0f7542f1069abd4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829945"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689808"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms
+
 Ce document montre comment créer un réseau de blocs de flux de données qui effectuent un traitement des images dans une application Windows Forms.  
   
  Dans cet exemple, on charge des fichiers image à partir du dossier spécifié, on crée une image composite, et on affiche le résultat. L’exemple utilise le modèle de flux de données pour acheminer les images via le réseau. Dans le modèle de flux de données, les composants indépendants d’un programme communiquent entre eux en envoyant des messages. Lorsqu’un composant reçoit un message, il effectue une action, puis transmet le résultat à un autre composant. Comparez cela avec le modèle de flux de contrôle, dans lequel une application utilise des structures de contrôle (par exemple, des instructions conditionnelles, des boucles, etc.) pour contrôler l’ordre des opérations dans un programme.  
   
 ## <a name="prerequisites"></a>Prérequis  
+
  Lisez la rubrique [Flux de données](dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="sections"></a>Sections  
+
  Cette procédure pas à pas contient les sections suivantes :  
   
 - [Création de l’application Windows Forms](#winforms)  
@@ -35,7 +38,9 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 - [Exemple complet](#complete)  
   
 <a name="winforms"></a>
+
 ## <a name="creating-the-windows-forms-application"></a>Création de l’application Windows Forms  
+
  Cette section décrit comment créer l’application Windows Forms de base et ajouter des contrôles au formulaire principal.  
   
 ### <a name="to-create-the-windows-forms-application"></a>Pour créer une Application Windows Forms  
@@ -51,7 +56,9 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 5. Ajoutez un objet <xref:System.Windows.Forms.PictureBox> au formulaire principal. Affectez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.  
   
 <a name="network"></a>
+
 ## <a name="creating-the-dataflow-network"></a>Création du réseau de flux de données  
+
  Cette section décrit comment créer le réseau de flux de données qui effectue le traitement des images.  
   
 ### <a name="to-create-the-dataflow-network"></a>Pour créer le réseau de flux de données  
@@ -101,7 +108,9 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
  Cet exemple utilise un jeton d’annulation partagé au lieu de définir la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>, car cette dernière annule définitivement l’exécution du bloc de flux de données<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>. Cet exemple explique comment un jeton d’annulation permet de réutiliser un réseau de flux de données plusieurs fois, même lorsque l’utilisateur annule une ou plusieurs opérations. Vous trouverez un exemple utilisant <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> pour annuler définitivement l’exécution d’un bloc de flux de données sur la page [Guide pratique : annuler un bloc de flux de données](how-to-cancel-a-dataflow-block.md).  
   
 <a name="ui"></a>
+
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Connexion du réseau de flux de données à l’interface utilisateur  
+
  Cette section décrit comment connecter le réseau de flux de données à l’interface utilisateur. La création de l’image composite et l’annulation de l’opération sont lancées à partir des boutons **Choisir le dossier** et **Annuler**. Lorsque l’utilisateur clique sur l’un de ces boutons, l’action appropriée est lancée de manière asynchrone.  
   
 ### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>Connecter le réseau de flux de données à l’interface utilisateur  
@@ -119,7 +128,9 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
 <a name="complete"></a>
+
 ## <a name="the-complete-example"></a>Exemple complet  
+
  L'exemple suivant présente le code complet pour cette visite.  
   
  [!code-csharp[TPLDataflow_CompositeImages#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#100)]  

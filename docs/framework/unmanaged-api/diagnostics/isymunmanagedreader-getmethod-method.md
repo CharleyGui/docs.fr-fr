@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ae6cfb29-bc2c-4606-af86-1d32ebd31020
 topic_type:
 - apiref
-ms.openlocfilehash: 864acb07797676c825afe62321b0d65e37938fa6
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3f0d0e060bba832080dd8fbfab62f3115fec0aab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615005"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689639"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod, méthode
+
 Obtient une méthode de lecteur de symboles, en fonction d’un jeton de méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,16 +35,19 @@ HRESULT GetMethod (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `token`  
  dans Jeton de méthode.  
   
  `pRetVal`  
  à Pointeur vers l’interface retournée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
