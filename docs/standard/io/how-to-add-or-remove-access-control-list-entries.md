@@ -12,12 +12,12 @@ helpviewer_keywords:
 - I/O [.NET Framework], access control list entries
 - access control lists [.NET Framework]
 ms.assetid: 53758b39-bd9b-4640-bb04-cad5ed8d0abf
-ms.openlocfilehash: 49cbb27c1b9d7ae0b05077c7f4fe01a2dfe87ccb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 53daa88b761f46dab26b1c12c73741e880512d8d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820798"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682690"
 ---
 # <a name="how-to-add-or-remove-access-control-list-entries-net-framework-only"></a>Procédure : ajouter ou supprimer des entrées de liste Access Control (.NET Framework uniquement)
 
@@ -40,6 +40,7 @@ Pour ajouter ou supprimer des entrées de la liste de contrôle d’accès (ACL)
 3. Pour appliquer les modifications, passez l’objet <xref:System.Security.AccessControl.DirectorySecurity> à la méthode <xref:System.IO.Directory.SetAccessControl%2A?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Exemple  
+
  Vous devez utiliser un compte d’utilisateur ou de groupe valide pour exécuter cet exemple. Cet exemple utilise un objet <xref:System.IO.File>. Utilisez la même procédure pour les classes <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo>.
 
  [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]

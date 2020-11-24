@@ -9,17 +9,19 @@ helpviewer_keywords:
 - .NET regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-ms.openlocfilehash: c9abccd6c93bad89cc737822fce3990c77b1b96e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ef8f126559b51aa9b918f04e27f5599fba519b43
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821942"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683795"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
+
 Les expressions régulières dans .NET incluent trois constructions de langage diverses. L’une d’elles vous permet d’activer ou de désactiver des options de mise en correspondance particulières au milieu d’un modèle d’expression régulière. Grâce aux deux autres, vous pouvez inclure des commentaires dans une expression régulière.  
   
 ## <a name="inline-options"></a>Options inline  
+
  Vous pouvez définir ou désactiver des options de mise en correspondance de modèle spécifiques pour une partie d’une expression régulière en utilisant la syntaxe suivante :  
   
 `(?imnsx-imnsx)`  
@@ -56,6 +58,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
 |`\b`|Mettre en correspondance la limite d'un mot.|  
   
 ## <a name="inline-comment"></a>Commentaire inline  
+
  La `(?#` *comment* `)` construction comment vous permet d’inclure un commentaire inline dans une expression régulière. Le moteur d’expression régulière n’utilise aucune partie du commentaire dans la mise en correspondance du modèle, bien que le commentaire soit inclus dans la chaîne retournée par la méthode <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType>. Le commentaire se termine à la première parenthèse fermante.  
   
  L’exemple suivant répète le premier modèle d’expression régulière de l’exemple de la section précédente. Il ajoute deux commentaires inline à l’expression régulière pour indiquer si la comparaison respecte la casse. Le modèle d’expression régulière, `\b((?# case-sensitive comparison)D\w+)\s(?ixn)((?#case-insensitive comparison)d\w+)\b`, est défini comme suit.  
@@ -75,6 +78,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
  [!code-vb[RegularExpressions.Language.Miscellaneous#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.miscellaneous/vb/miscellaneous2.vb#2)]  
   
 ## <a name="end-of-line-comment"></a>Commentaire de fin de ligne  
+
  Un signe dièse (`#`) marque un commentaire en mode x, lequel démarre au caractère # sans séquence d’échappement à la fin du modèle d’expression régulière et continue jusqu’à la fin de la ligne. Pour utiliser cette construction, vous devez activer l’option `x` (par le biais d’options inline) ou fournir la valeur <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> au paramètre `option` au moment de l’instanciation de l’objet <xref:System.Text.RegularExpressions.Regex> ou de l’appel de la méthode <xref:System.Text.RegularExpressions.Regex> statique.  
   
  L’exemple suivant illustre la construction du commentaire de fin de ligne. Il détermine si une chaîne est une chaîne de format composite qui inclut au moins un élément de format. Le tableau suivant décrit les constructions dans le modèle d’expression régulière :  

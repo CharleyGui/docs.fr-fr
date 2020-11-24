@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b8d1def7-0ebc-4314-a3a2-fd36a75973e7
 topic_type:
 - apiref
-ms.openlocfilehash: 17bf4c92b1e1347a8fe790c8df5937de0f95df4d
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: b315f38dc306727e33b52b84d17951a91ccdc39f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895083"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684471"
 ---
 # <a name="icordebugappdomainenumnext-method"></a>ICorDebugAppDomainEnum::Next, méthode
+
 Obtient le nombre spécifié de domaines d’application à partir de la collection, en commençant à la position actuelle du curseur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  dans Nombre de domaines d’application à récupérer.  
   
@@ -46,7 +48,8 @@ HRESULT Next (
  `pceltFetched`  
  à Pointeur vers le nombre de domaines d’application réellement retournés. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

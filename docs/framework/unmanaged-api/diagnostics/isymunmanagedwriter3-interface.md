@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a034c21e-e371-4360-b470-29e88288948f
 topic_type:
 - apiref
-ms.openlocfilehash: 006045ce101884119f676e4f6324815eb21a10a4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: dfc2e39a6a39e7386bd7358d422d5c6978ec42ec
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614654"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683288"
 ---
 # <a name="isymunmanagedwriter3-interface"></a>ISymUnmanagedWriter3, interface
+
 Représente un writer de symboles et fournit des méthodes pour définir des documents, des points de séquence, des étendues lexicales et des variables. Cette interface étend l’interface [ISymUnmanagedWriter](isymunmanagedwriter-interface.md) .  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,7 +32,8 @@ Représente un writer de symboles et fournit des méthodes pour définir des doc
 |[Commit, méthode](isymunmanagedwriter3-commit-method.md)|Valide les modifications écrites jusqu’à présent dans le flux.|  
 |[OpenMethod2, méthode](isymunmanagedwriter3-openmethod2-method.md)|Ouvre une méthode et fournit son décalage de section réel dans l’image.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 08dff60c-f01b-4050-8865-ea3f95361c9f
 topic_type:
 - apiref
-ms.openlocfilehash: 6a5b3f1e9bf1444feb73949ef7133fbd9ae35134
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 445c833d10631341ef7ad579eaff8ddd96be3428
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446470"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684848"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes, méthode
+
 Récupère des attributs personnalisés au niveau de l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumCustomAttributes(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hEnum`  
  Handle de l’énumérateur.  
   
@@ -48,15 +50,17 @@ HRESULT EnumCustomAttributes(
  Reçoit des jetons d’attributs personnalisés.  
   
  `cMax`  
- Spécifie la taille de `rCustomValues` tableau.  
+ Spécifie la taille du `rCustomValues` tableau.  
   
  `pcCustomValues`  
  Reçoit éventuellement le nombre de valeurs de jeton.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 36997e04-f9f6-4254-a041-6767ac6c51d9
 topic_type:
 - apiref
-ms.openlocfilehash: ff3103a46390c880a56ff443bfe20744f2ba0bfd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 03f6c97b4a5bbbdc0aeaf7b3f07277e66d7d0e9a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430685"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684510"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob, méthode
+
 Récupère l’objet blob de ressources Win32. Appelez cette méthode après avoir défini les options d’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT GetWin32ResBlob(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly.  
   
@@ -56,10 +58,12 @@ HRESULT GetWin32ResBlob(
  `pcbResBlob`  
  Reçoit la taille de l’objet BLOB.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -1,25 +1,20 @@
 ---
 title: Modifications avec rupture de chiffrement
-description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core.
+description: Répertorie les modifications avec rupture liées au chiffrement dans .NET Core 2.1-3.0.
 ms.date: 04/22/2020
-ms.openlocfilehash: b755876624a7709cfe08b5993655e78be9f8e1f2
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: a4801bb4d5a859e2c8c2b536ee0597cb4db2f65d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682651"
 ---
-# <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
+# <a name="cryptography-breaking-changes-for-net-core-21-30"></a>Modifications avec rupture de chiffrement pour .NET Core 2.1-3.0
 
 Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
-| [Valeur FeedbackSize par défaut pour les instances créées par TripleDES. Create Changed](#default-feedbacksize-value-for-instances-created-by-tripledescreate-changed) | 5.0 |
-| [L’instanciation des implémentations par défaut des abstractions de chiffrement n’est pas prise en charge](#instantiating-default-implementations-of-cryptographic-abstractions-is-not-supported) | 5.0 |
-| [Suites de chiffrement TLS par défaut pour .NET sur Linux](#default-tls-cipher-suites-for-net-on-linux) | 5.0 |
-| [API System. Security. Cryptography non prises en charge sur le webassembly éblouissant](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly) | 5.0 |
-| [System. Security. Cryptography. OID est fonctionnellement init-only](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
 | [La syntaxe de début de certificat approuvé n’est plus prise en charge sur Linux](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
 | [La valeur par défaut de EnvelopedCms est le chiffrement AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
 | [La taille minimale de la génération de la clé de RSAOpenSsl a augmenté](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
@@ -27,37 +22,15 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 | [CryptoStream. dispose transforme le bloc final uniquement lors de l’écriture](#cryptostreamdispose-transforms-final-block-only-when-writing) | 3.0 |
 | [Le paramètre booléen de SignedCms. ComputeSignature est respecté](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
-## <a name="net-50"></a>.NET 5,0
-
-[!INCLUDE [tripledes-default-feedback-size-change](../../../includes/core-changes/cryptography/5.0/tripledes-default-feedback-size-change.md)]
-
-***
-
-[!INCLUDE [instantiating-default-implementations-of-cryptographic-abstractions-not-supported](../../../includes/core-changes/cryptography/5.0/instantiating-default-implementations-of-cryptographic-abstractions-not-supported.md)]
-
-**_
-
-[!INCLUDE [default-cipher-suites-for-tls-on-linux](../../../includes/core-changes/cryptography/5.0/default-cipher-suites-for-tls-on-linux.md)]
-
-_*_
-
-[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
-
-_*_
-
-[!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
-
-_*_
-
 ## <a name="net-core-30"></a>.NET Core 3.0
 
 [!INCLUDE [begin-trusted-cert-linux](~/includes/core-changes/cryptography/3.0/begin-trusted-cert-linux.md)]
 
-_*_
+***
 
 [!INCLUDE[EnvelopedCms defaults to AES-256 encryption](~/includes/core-changes/cryptography/3.0/envelopedcms-defaults-to-aes256.md)]
 
-_*_
+**_
 
 [!INCLUDE[Minimum size for RSAOpenSsl key generation has increased](~/includes/core-changes/cryptography/3.0/minimum-rsaopenssl-key-size-change.md)]
 

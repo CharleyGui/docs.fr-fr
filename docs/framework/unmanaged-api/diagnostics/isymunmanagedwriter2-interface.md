@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8e78faa4-cf43-44fb-a91d-94d6df692a25
 topic_type:
 - apiref
-ms.openlocfilehash: 1fe6055d930c6d30e947d6bc774d0520a9e175ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6feb48b7c78dda64ba372e470b83ffb14f21f2f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614680"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683327"
 ---
 # <a name="isymunmanagedwriter2-interface"></a>ISymUnmanagedWriter2, interface
+
 Représente un writer de symboles et fournit des méthodes pour définir des documents, des points de séquence, des étendues lexicales et des variables. Cette interface étend l’interface [ISymUnmanagedWriter](isymunmanagedwriter-interface.md) .  
   
 ## <a name="methods"></a>Méthodes  
@@ -32,7 +33,8 @@ Représente un writer de symboles et fournit des méthodes pour définir des doc
 |[DefineGlobalVariable2, méthode](isymunmanagedwriter2-defineglobalvariable2-method.md)|Définit une variable globale unique.|  
 |[DefineLocalVariable2, méthode](isymunmanagedwriter2-definelocalvariable2-method.md)|Définit une variable unique dans la portée lexicale actuelle.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

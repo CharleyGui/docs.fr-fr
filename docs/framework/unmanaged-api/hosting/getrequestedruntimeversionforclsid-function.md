@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5bb12f9a-0612-434b-b4ed-2db636a20bec
 topic_type:
 - apiref
-ms.openlocfilehash: 899d6e74902e47f1f41b849bd5c25048baa175f7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3afb89a42d7e26c5e89e6f9458ef3406cc0102ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617137"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684185"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID, fonction
+
 Obtient les informations de version de common language runtime (CLR) appropriées pour la classe avec le spécifié `CLSID` .  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -39,8 +40,9 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `rclsid`  
- dans  `CLSID`Du composant.  
+ dans  `CLSID` Du composant.  
   
  `pVersion`  
  à  Mémoire tampon qui contient la chaîne de numéro de version en cas de réussite.  
@@ -58,7 +60,7 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
   
 - CLSID_RESOLUTION_REGISTERED : (0x1) spécifie que la recherche doit être effectuée dans le registre et que la stratégie de shim doit être appliquée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -66,9 +68,10 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
 |E_INVALIDARG|Le type ou le format de l’un des paramètres n’est pas valide.|  
 |ERROR_INSUFFICIENT_BUFFER|La `pVersion` mémoire tampon n’est pas assez grande pour contenir la chaîne de version entière.|  
 |REGDB_E_CLASSNOTREG|Aucune classe n’est inscrite avec le spécifié `CLSID` .|  
-|E_POINTER|`dwLength`a la valeur null ou `cchBuffer` est suffisamment grand pour contenir la chaîne de version, mais `pVersion` a la valeur null.|  
+|E_POINTER|`dwLength` a la valeur null ou `cchBuffer` est suffisamment grand pour contenir la chaîne de version, mais `pVersion` a la valeur null.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1d03bb15-a2c8-4a04-8fc6-b126c89c3778
 topic_type:
 - apiref
-ms.openlocfilehash: cacf7eab1e53f590ad46fd98ed2f5dcbd14cd30a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ed4ac7b12caa0dd78b79554258de62b8752553e0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434407"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684926"
 ---
 # <a name="endmerge-method"></a>EndMerge, méthode
+
 Indique que tous les attributs personnalisés ont été fusionnés dans la portée d’émission.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT EndMerge(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

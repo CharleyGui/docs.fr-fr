@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2644f48b-db3c-429f-ae62-76f1c98a1af5
 topic_type:
 - apiref
-ms.openlocfilehash: 878a57514af34730049864f17f4853c1237904c2
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 1cb9729f175a2e82e88386b0694467c6fe05636a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379956"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684458"
 ---
 # <a name="icordebugtypegetclass-method"></a>ICorDebugType::GetClass, méthode
+
 Obtient un pointeur d’interface vers une ICorDebugClass qui représente le type générique non instancié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT GetClass (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppClass`  
  à Pointeur vers l’adresse d’une `ICorDebugClass` interface qui représente le type générique non instancié.  
   
-## <a name="remarks"></a>Remarks  
- `GetClass`peut être appelé uniquement sous certaines conditions. Appelez [ICorDebugType :: GetType](icordebugtype-gettype-method.md) avant d’appeler `GetClass` . Si `ICorDebugType::GetType` retourne une valeur CorElementType qui est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, `GetClass` peut être appelé pour obtenir le type non instancié d’un type générique.  
+## <a name="remarks"></a>Remarques  
+
+ `GetClass` peut être appelé uniquement sous certaines conditions. Appelez [ICorDebugType :: GetType](icordebugtype-gettype-method.md) avant d’appeler `GetClass` . Si `ICorDebugType::GetType` retourne une valeur CorElementType qui est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, `GetClass` peut être appelé pour obtenir le type non instancié d’un type générique.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

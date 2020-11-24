@@ -9,18 +9,19 @@ helpviewer_keywords:
 - Parse method
 - parsing strings
 ms.assetid: 5e758b41-db93-456b-8999-99b7304b090d
-ms.openlocfilehash: 8fbfe8596e49ed101ea7d6bb65298e432a6fac13
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a5c38c29a45a9ce6f8aed7205c5bd44bebb023c2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821903"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683717"
 ---
 # <a name="parse-strings-in-net"></a>Analyser des chaînes dans .NET
 
 Une opération d' *analyse* convertit une chaîne qui représente un type de base .net en ce type de base. Par exemple, une opération d’analyse est utilisée pour convertir une chaîne en nombre à virgule flottante ou en valeur de date et d’heure. La méthode la plus couramment utilisée pour effectuer une opération d’analyse est la méthode `Parse`. Étant donné que l’analyse est l’opération inverse de la mise en forme (qui consiste à convertir un type de base en sa représentation sous forme de chaîne), de nombreuses règles et conventions identiques s’appliquent. Tout comme la mise en forme utilise un objet qui implémente l’interface <xref:System.IFormatProvider> pour fournir des informations de mise en forme dépendantes de la culture, l’analyse utilise un objet qui implémente l’interface <xref:System.IFormatProvider> pour déterminer comment interpréter une représentation sous forme de chaîne. Pour plus d’informations, consultez [types de format](formatting-types.md).
 
 ## <a name="in-this-section"></a>Dans cette section
+
  [Analyse des chaînes numériques](parsing-numeric.md)\
  Explique comment convertir des chaînes en types numériques .NET.
 
@@ -31,6 +32,7 @@ Une opération d' *analyse* convertit une chaîne qui représente un type de bas
  Explique comment convertir des chaînes en types **Char**, **Boolean** et **Enum**.
 
 ## <a name="related-sections"></a>Sections connexes
+
  [Mise en forme des types](formatting-types.md)\
  Décrit les concepts de mise en forme de base, tels que les spécificateurs de format et les fournisseurs de format.
 

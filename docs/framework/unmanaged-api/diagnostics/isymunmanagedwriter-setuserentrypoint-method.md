@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d4dcc575-3ac8-4453-9be1-2b24f47363d7
 topic_type:
 - apiref
-ms.openlocfilehash: 8b51a9dc3a968c6bd2f5f9b149f13f88dc6a1e05
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a1c3506758221c3a2b578d93488a4377c1b86a21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614745"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683496"
 ---
 # <a name="isymunmanagedwritersetuserentrypoint-method"></a>ISymUnmanagedWriter::SetUserEntryPoint, méthode
+
 Spécifie la méthode définie par l’utilisateur qui est le point d’entrée de ce module. Par exemple, ce point d’entrée peut être la méthode main de l’utilisateur au lieu des stubs générés par le compilateur avant main.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT SetUserEntryPoint(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `entryMethod`  
  dans Jeton de métadonnées pour la méthode qui est le point d’entrée de l’utilisateur.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

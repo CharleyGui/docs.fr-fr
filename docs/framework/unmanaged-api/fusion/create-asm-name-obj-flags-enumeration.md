@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: a5ed2fd0-c7d2-4603-aaca-5d0caad92675
 topic_type:
 - apiref
-ms.openlocfilehash: ee856dbd398d0fa5e3eee7d9b2b2cfc7c7a57ecf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52d5ad3a18c102422e90621c7d1e23b2692c0000
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176589"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683228"
 ---
 # <a name="create_asm_name_obj_flags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS, énumération
-Spécifie les attributs d’un objet [IAssemblyName Interface](iassemblyname-interface.md) lorsqu’il est construit par la fonction [CreateAssemblyNameObject.](createassemblynameobject-function.md)  
+
+Spécifie les attributs d’un objet d' [interface IAssemblyName](iassemblyname-interface.md) lorsqu’il est construit par la fonction [CreateAssemblyNameObject,](createassemblynameobject-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,17 +43,18 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`CANOF_PARSE_DISPLAY_NAME`|Indique que le paramètre adopté est une identité textuelle.|  
+|`CANOF_PARSE_DISPLAY_NAME`|Indique que le paramètre passé est une identité textuelle.|  
 |`CANOF_SET_DEFAULT_VALUES`|Définit quelques valeurs par défaut.|  
-|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Vérifie la règle de l’assemblée des amis (seulement le nom et la clé publique). Ce membre est pour une utilisation interne seulement.|  
-|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Une combinaison `CANOF_PARSE_DISPLAY_NAME` de `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` la et des drapeaux. Ce membre est pour une utilisation interne seulement.|  
+|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Vérifie la règle d’assembly friend (nom et clé publique uniquement). Ce membre est destiné à un usage interne uniquement.|  
+|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Combinaison des `CANOF_PARSE_DISPLAY_NAME` `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` indicateurs et. Ce membre est destiné à un usage interne uniquement.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

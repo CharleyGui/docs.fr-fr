@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 91a7ce63-f5b8-4f16-b2c4-e1d0baa88944
 topic_type:
 - apiref
-ms.openlocfilehash: 84c41e467c57afd2562e7aa8dd72ce4796249667
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b8db08b22765bac0ed2fe058db49d6882b8d22df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438572"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684796"
 ---
 # <a name="exporttype-method"></a>ExportType, méthode
+
 Spécifie qu’un type peut être exportable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT ExportType(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly à partir duquel effectuer l’exportation.  
   
@@ -51,15 +53,17 @@ HRESULT ExportType(
  Nom de type qualifié complet à rendre exportable.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`. Ce paramètre peut être passé à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` indicateurs tels que `tdPublic` ou `tdNested` . Ce paramètre peut être passé à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
  Reçoit le jeton pour le type exporté.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

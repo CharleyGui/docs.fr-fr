@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 55989fa9-ab43-4f08-8eb6-2eb56fa7ca76
 topic_type:
 - apiref
-ms.openlocfilehash: 36c99477e9faead5e24799d5b0ae8901f1dd13c9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4e6ceabf37056bfc25247266be2c7801cb0e13e1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448708"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684770"
 ---
 # <a name="exporttypeforwarder-method"></a>ExportTypeForwarder, méthode
+
 Ajoute un redirecteur de type à la table de types de l’assembly donné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT ExportTypeForwarder(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `tkAssemblyRef`  
  Référence à l’assembly auquel le redirecteur de type fait référence.  
   
@@ -43,15 +45,17 @@ HRESULT ExportTypeForwarder(
  Nom de type qualifié complet à exporter.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`. Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` indicateurs tels que `tdPublic` ou `tdNested` . Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
  Reçoit le jeton du type exporté. Cela est nécessaire uniquement pour l’émission de types imbriqués.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

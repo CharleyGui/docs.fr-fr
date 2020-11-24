@@ -2,12 +2,12 @@
 title: Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 description: Comment spécifier la composition des microservices pour une application multiconteneur avec docker-compose.yml.
 ms.date: 01/30/2020
-ms.openlocfilehash: 47f2bf9bcdbf021ec4232ff9e25f6b2b228aaeaa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c375d328ab9064315682fab91cb5e49e9a384b56
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539305"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682664"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 
@@ -115,7 +115,7 @@ Si vous vous concentrez sur un seul conteneur, le microservice du conteneur de l
 
 Ce service conteneurisé a la configuration de base suivante :
 
-- Il est basé sur l’image personnalisée de l' **API eShop/Catalog-** . Par souci de simplicité, il n’existe pas de paramètre Build : Key dans le fichier. Cela signifie que l’image doit avoir été préalablement générée (avec docker build) ou téléchargée (avec la commande docker pull) à partir du registre Docker.
+- Il est basé sur l’image personnalisée de l' **API eShop/Catalog-** . Par souci de simplicité, il n’existe pas de paramètre Build : Key dans le fichier. Cela signifie que l’image doit avoir été générée (avec docker build) ou téléchargée (avec la commande docker pull) au préalable, depuis n’importe quel registre Docker.
 
 - Il définit une variable d’environnement nommée ConnectionString à l’aide de la chaîne de connexion à utiliser par Entity Framework pour accéder à l’instance SQL Server qui contient le modèle de données du catalogue. Dans le cas présent, le même conteneur SQL Server contient plusieurs bases de données. Vous avez donc besoin de moins de mémoire sur votre machine de développement pour Docker. Toutefois, vous pouvez également déployer un conteneur SQL Server pour chaque base de données de microservice.
 
@@ -143,7 +143,7 @@ Ainsi, à l’aide de la commande docker-compose, vous pouvez cibler les princip
 
 Quand vous développez des applications, il est important de pouvoir les exécuter dans un environnement de développement isolé. Vous pouvez utiliser la commande de l’interface de commande de l’ILC-composer pour créer cet environnement ou Visual Studio, qui utilise l’option dockr-compose sous les couvertures.
 
-Le fichier docker-compose. yml vous permet de configurer et de documenter toutes les dépendances de service de votre application (autres services, cache, bases de données, files d’attente, etc.). À l’aide de la commande CLI docker-compose, vous pouvez créer et démarrer un ou plusieurs conteneurs pour chaque dépendance avec une seule commande (docker-compose up).
+Le fichier docker-compose. yml vous permet de configurer et de documenter toutes les dépendances de service de votre application (autres services, cache, bases de données, files d’attente, etc.). À l’aide de la commande CLI docker-compose, vous pouvez créer et démarrer un ou plusieurs conteneurs pour chaque dépendance avec une seule commande (docker-compose up).
 
 Les fichiers docker-compose.yml sont des fichiers config interprétés par le moteur Docker. Toutefois, ils servent également de fichiers de documentation pratiques sur la composition de votre application à plusieurs conteneurs.
 
@@ -187,7 +187,7 @@ structure du fichier de projet d' **ancrage-compose** :
 - *docker-compose. yml* : utilisé pour composer des microservices
 - *docker-compose. override. yml* : utilisé pour configurer l’environnement des microservices
 
-Vous pouvez modifier les fichiers docker-compose à l’aide de n’importe quel éditeur, comme Visual Studio Code ou Sublime, et exécuter l’application avec la commande docker-compose up.
+Vous pouvez modifier les fichiers docker-compose à l’aide de n’importe quel éditeur, par exemple Visual Studio Code ou Sublime, et lancer l’application avec la commande docker-compose up.
 
 Par convention, le fichier docker-compose.yml contient votre configuration de base et d’autres paramètres statiques. Cela signifie que la configuration du service ne doit pas changer en fonction de l’environnement de déploiement ciblé.
 
@@ -388,7 +388,7 @@ services:
 
 Dans cet exemple, la configuration de substitution de l’environnement de développement expose certains ports à l’hôte, définit les variables d’environnement à l’aide d’URL de redirection et spécifie les chaînes de connexion de l’environnement de développement. Ces paramètres concernent juste l’environnement de développement.
 
-Quand vous exécutez `docker-compose up`, ou quand vous lancez cette commande à partir de Visual Studio, elle lit automatiquement les remplacements comme si elle fusionnait les deux fichiers.
+Quand vous exécutez `docker-compose up`, ou quand vous lancez cette commande à partir de Visual Studio, elle lit automatiquement les remplacements comme si elle fusionnait les deux fichiers.
 
 Supposons que vous souhaitiez un autre fichier compose pour l’environnement de production, avec des valeurs de configuration, des ports ou des chaînes de connexion différents. Vous pouvez créer un autre fichier de substitution, par exemple le fichier nommé `docker-compose.prod.yml`, avec d’autres paramètres et variables d’environnement. Ce fichier peut être stocké dans un autre dépôt Git, ou être géré et sécurisé par une autre équipe.
 
@@ -437,7 +437,7 @@ Les valeurs définies dans l’environnement d’exécution remplacent toujours 
 Si vous recherchez des sources relatives à Docker et .NET Core sur Internet, vous trouverez des fichiers Docker qui illustrent la simplicité de la génération d’une image Docker. En effet, il vous suffit de copier votre source dans un conteneur. Ces exemples suggèrent qu’à l’aide d’une configuration toute simple, vous pouvez disposer d’une image Docker où l’environnement et votre application font partie d’un même package. L’exemple suivant montre un fichier Docker de ce genre.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/sdk:3.1
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
 EXPOSE 80
@@ -458,7 +458,7 @@ L’équipe .NET a effectué un travail important pour faire de .NET Core et d�
 
 3. **Production**: le focus est le déploiement et le démarrage rapides des conteneurs, donc ces images sont limitées aux fichiers binaires et au contenu nécessaires pour exécuter l’application.
 
-L’équipe .NET fournit quatre variantes de base dans [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) (dans le hub d’arrimeur) :
+L’équipe .NET fournit quatre variantes de base dans [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet/) (dans le hub d’arrimeur) :
 
 1. **sdk** : pour les scénarios de développement et de build
 1. **aspnet** : pour les scénarios de production ASP.NET

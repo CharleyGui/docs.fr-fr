@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 348c7c8c-8578-46ae-97cf-480d6015c3c6
 topic_type:
 - apiref
-ms.openlocfilehash: 5ef100680328e9ad6261bb9188d7509efa9ab479
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3197c650b4f167e7a5043270797d2c4a62413d8e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108868"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683197"
 ---
 # <a name="createassemblycache-function"></a>CreateAssemblyCache, fonction
+
 Obtient un pointeur vers une nouvelle instance [IAssemblyCache](iassemblycache-interface.md) qui représente le global assembly cache.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,23 +37,25 @@ HRESULT CreateAssemblyCache (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppAsmCache`  
- à Pointeur de `IAssemblyCache` retourné.  
+ à Pointeur retourné `IAssemblyCache` .  
   
  `dwReserved`  
  dans Réservé pour une future extensibilité. `dwReserved` doit avoir la valeur 0 (zéro).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [IAssemblyCache, interface](iassemblycache-interface.md)
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)
 - [Global Assembly Cache](../../app-domains/gac.md)

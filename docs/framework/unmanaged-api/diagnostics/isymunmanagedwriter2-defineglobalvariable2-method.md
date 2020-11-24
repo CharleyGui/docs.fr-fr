@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 04d569d6-a151-4957-9872-f3f694c3e4a9
 topic_type:
 - apiref
-ms.openlocfilehash: ed3c841c34b71b30f740117899353aa289e478d5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e417854f5f82ba2e0f16848f53b2b605dccf9eb5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614706"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683457"
 ---
 # <a name="isymunmanagedwriter2defineglobalvariable2-method"></a>ISymUnmanagedWriter2::DefineGlobalVariable2, méthode
+
 Définit une variable globale unique.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT DefineGlobalVariable2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Nom de la variable globale.  
   
@@ -60,10 +62,12 @@ HRESULT DefineGlobalVariable2(
  `addr3`  
  dans Troisième adresse de la spécification de paramètre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl  
   
 ## <a name="see-also"></a>Voir aussi

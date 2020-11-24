@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: dec7df60-4d30-47c8-99db-72e0419e5f76
 topic_type:
 - apiref
-ms.openlocfilehash: 9ca2167e66ac3aa5bcc0e92ff357eed18d366c67
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 69c99e2facfcb9077c3fc4131186ba3882c7cef6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179414"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684835"
 ---
 # <a name="exportnestedtype-method"></a>ExportNestedType, méthode
-Spécifie les types imbriqués comme exportables. La [méthode ExportType](exporttype-method.md) peut également exporter des types imbriqués, mais cette méthode est plus rapide.  
+
+Spécifie que les types imbriqués sont exportables. La [méthode ExportType](exporttype-method.md) peut également exporter des types imbriqués, mais cette méthode est plus rapide.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,32 +41,35 @@ HRESULT ExportNestedType(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
- ID d’assemblage à l’exportation à partir de.  
+ ID de l’assembly à partir duquel effectuer l’exportation.  
   
  `FileToken`  
- Jeton de fichier ou Assemblée de fichier qui définit le type à exporter.  
+ Jeton de fichier ou assembly de fichier qui définit le type à rendre exportable.  
   
  `TypeToken`  
- Type de jeton de type à rendre exportable.  
+ Jeton de type de type à rendre exportable.  
   
  `ParentType`  
  Jeton de type parent.  
   
  `pszTypename`  
- Nom de type entièrement qualifié à exporter.  
+ Nom de type qualifié complet à exporter.  
   
  `dwFlags`  
- `ComType`drapeaux tels `tdPublic` `tdNested`que ou . Cette valeur peut être transmise à [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` indicateurs tels que `tdPublic` ou `tdNested` . Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
  Reçoit le jeton pour le type exporté.  
   
-## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ Retourne S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>Spécifications  
- Nécessite alink.h  
+## <a name="requirements"></a>Configuration requise  
+
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0da962a3-ce55-44dd-ab7a-14ad7105af4a
 topic_type:
 - apiref
-ms.openlocfilehash: 22d570711c293dd8c0cc6fefd198dd46d6489bea
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 69b2338e6992c386a3cd34a632d69b73a67f14fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803535"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683002"
 ---
 # <a name="ihostsemaphorewait-method"></a>IHostSemaphore::Wait, méthode
+
 Entraîne l’attente de l’instance [IHostSemaphore](ihostsemaphore-interface.md) actuelle jusqu’à ce qu’elle appartienne ou que la durée spécifiée soit écoulée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,17 +36,18 @@ HRESULT Wait (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwMilliseconds`  
  dans Nombre de millisecondes à attendre avant de retourner, si l’instance actuelle `IHostSemaphore` n’appartient pas.  
   
  `option`  
  dans L’une des valeurs [WAIT_OPTION](wait-option-enumeration.md) , en spécifiant l’action que l’hôte doit effectuer si cette opération bloque.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Wait`retourné avec succès.|  
+|S_OK|`Wait` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,12 +55,13 @@ HRESULT Wait (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_DEADLOCK|L’hôte a détecté un blocage pendant l’intervalle d’attente et a choisi l' `IHostSemaphore` instance actuelle comme victime du blocage.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

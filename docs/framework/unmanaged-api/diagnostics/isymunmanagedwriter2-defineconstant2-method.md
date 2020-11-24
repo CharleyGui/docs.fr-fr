@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd2bc956-7dbe-49fc-a646-daa0d267f2df
 topic_type:
 - apiref
-ms.openlocfilehash: 70ee853ff657a75dcc4df1454c4354f9d3f8202f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d45ab56f081bf0a8802b17e338f7b404809f0f16
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614719"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683470"
 ---
 # <a name="isymunmanagedwriter2defineconstant2-method"></a>ISymUnmanagedWriter2::DefineConstant2, méthode
+
 Définit un nom pour une valeur de constante.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT DefineConstant2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Nom de la constante.  
   
@@ -44,10 +46,12 @@ HRESULT DefineConstant2(
  `sigToken`  
  dans Jeton de métadonnées de la constante.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

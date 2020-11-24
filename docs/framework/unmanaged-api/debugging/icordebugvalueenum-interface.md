@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 88989482-a09f-4bd0-9adb-16f47b0291fd
 topic_type:
 - apiref
-ms.openlocfilehash: 5f95202bd0c8c5045c10378068ae83cad3d93fdd
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e3934cbce76df3997fa07d8fa3a99bd8ddab09a2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396464"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684341"
 ---
 # <a name="icordebugvalueenum-interface"></a>ICorDebugValueEnum, interface
+
 Implémente les méthodes « ICorDebugEnum » et énumère les tableaux « ICorDebugValue ».  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,13 @@ Implémente les méthodes « ICorDebugEnum » et énumère les tableaux « IC
 |------------|-----------------|  
 |[Next, méthode](icordebugvalueenum-next-method.md)|Obtient le nombre d' `ICorDebugValue` instances spécifié à partir de l’énumération, en commençant à la position actuelle.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

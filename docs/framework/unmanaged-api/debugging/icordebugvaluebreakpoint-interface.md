@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c02338fe-da6c-467f-9567-70ebb387e901
 topic_type:
 - apiref
-ms.openlocfilehash: 1183f9f6d1ac221b20767f0a1bab15b3e9665a61
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: cf0a87afd1c0057c054205432fea7aa5844afb53
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684407"
 ---
 # <a name="icordebugvaluebreakpoint-interface"></a>ICorDebugValueBreakpoint, interface
+
 Étend l’interface ICorDebugBreakpoint pour fournir l’accès à des valeurs spécifiques.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,13 @@ ms.locfileid: "83396609"
 |------------|-----------------|  
 |[GetValue, méthode](icordebugvaluebreakpoint-getvalue-method.md)|Obtient un pointeur d’interface vers un objet ICorDebugValue qui représente la valeur de l’objet sur lequel le point d’arrêt est défini.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 886ea6c5-6b26-4b88-8bf6-448d6d191950
 topic_type:
 - apiref
-ms.openlocfilehash: cc81ccd1c754e3d34c54737f4560b4f81d5cc916
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 45adda6551e1cec994f59acbb0e8d2b5c56c4df6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438410"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684809"
 ---
 # <a name="exportnestedtypeforwarder-method"></a>ExportNestedTypeForwarder, méthode
+
 Ajoute un redirecteur de type pour un type imbriqué à la table de types de l’assembly donné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT ExportNestedTypeForwarder(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly à partir duquel effectuer l’exportation.  
   
@@ -55,15 +57,17 @@ HRESULT ExportNestedTypeForwarder(
  Nom de type qualifié complet à exporter.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`.  
+ `ComType` indicateurs tels que `tdPublic` ou `tdNested` .  
   
  `pType`  
  Reçoit le jeton de type d’exportation. Cela est nécessaire uniquement pour l’émission de types imbriqués.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

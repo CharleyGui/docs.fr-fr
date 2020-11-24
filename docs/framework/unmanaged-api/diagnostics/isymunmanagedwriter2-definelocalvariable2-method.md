@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e774eefe-858c-4362-8d2d-28ebf2ba1a24
 topic_type:
 - apiref
-ms.openlocfilehash: ac7559bd5431f45b266602404ddde9081aa2944d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: cdbb09d25f51e479a8a8ddfc23348305ba7c0a71
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614693"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95683418"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2, méthode
+
 Définit une variable unique dans la portée lexicale actuelle. Cette méthode peut être appelée plusieurs fois pour une variable du même nom qui a plusieurs maisons dans une étendue. Dans ce cas, toutefois, les valeurs des `startOffset` paramètres et `endOffset` ne doivent pas se chevaucher.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ HRESULT DefineLocalVariable2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Nom de la variable locale.  
   
@@ -68,10 +70,12 @@ HRESULT DefineLocalVariable2(
  `endOffset`  
  dans Offset de fin de la variable. Ce paramètre est facultatif. Si la valeur est égale à 0, ce paramètre est ignoré et la variable est définie dans l’ensemble de la portée. S’il s’agit d’une valeur différente de zéro, la variable est comprise entre les offsets de la portée actuelle.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl  
   
 ## <a name="see-also"></a>Voir aussi

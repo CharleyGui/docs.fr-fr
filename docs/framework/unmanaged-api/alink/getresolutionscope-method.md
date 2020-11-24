@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5b48ca60-dacd-44b2-9979-4a5122f00812
 topic_type:
 - apiref
-ms.openlocfilehash: f2b78b35db6306c82e389955c4824875bcf25334
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6318890dd6f0259d8d6a7675380684a129c14c8b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447228"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684671"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope, méthode
+
 Récupère la portée d’un type donné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetResolutionScope(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly.  
   
@@ -48,10 +50,12 @@ HRESULT GetResolutionScope(
  `pScope`  
  Reçoit la référence de l’assembly ou du module.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

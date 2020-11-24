@@ -2,14 +2,15 @@
 title: ICorDebugAppDomain4::GetObjectForCCW, méthode
 ms.date: 03/30/2017
 ms.assetid: 2cacdb85-e7b8-42e7-b310-c3e8c22e5d33
-ms.openlocfilehash: a175a6b6c91c284348580e1d9dc9ef0c5f5fc5df
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: f3e64def16fb2817244ef7669ff4bb7fef0bd07c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895115"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684446"
 ---
 # <a name="icordebugappdomain4getobjectforccw-method"></a>ICorDebugAppDomain4::GetObjectForCCW, méthode
+
 Obtient un objet managé à partir d'un pointeur de wrapper CCW (COM Callable Wrapper).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,6 +23,7 @@ HRESULT GetObjectForCCW(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ccwPointer`  
  [in] Pointeur vers un wrapper CCW (COM Callable Wrapper)  
   
@@ -31,6 +33,7 @@ HRESULT GetObjectForCCW(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

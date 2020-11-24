@@ -2,21 +2,21 @@
 title: Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: b561e580f0d7f2d77847d91612e8b06bc57a2a45
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f37938b603d0eec53a37e4f146376e3202f13d7a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558431"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95684133"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreuses nouvelles fonctionnalités, y compris plusieurs améliorations apportées à l’expérience du concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
 
 > [!NOTE]
-> Pour obtenir la liste de toutes les nouvelles fonctionnalités de Windows Workflow Foundation (WF) introduites dans .NET Framework 4,5, y compris celles qui ne sont pas liées au Réhébergement du concepteur, consultez [Nouveautés de Windows Workflow Foundation dans .net 4,5](whats-new-in-wf-in-dotnet.md).
+> Pour obtenir la liste de toutes les nouvelles fonctionnalités de Windows Workflow Foundation (WF) introduites dans .NET Framework 4,5, y compris celles qui ne sont pas liées au Réhébergement du concepteur, consultez [Nouveautés de Windows Workflow Foundation dans .NET Framework 4,5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="activities"></a>Activités
- La bibliothèque d'activités intégrée contient de nouvelles activités et de nouvelles fonctionnalités pour les activités existantes. Toutes ces nouvelles activités sont prises en charge dans le concepteur réhébergé. Pour plus d’informations sur ces nouvelles activités, consultez la section [activités](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) des [Nouveautés de Windows Workflow Foundation dans .net 4,5](whats-new-in-wf-in-dotnet.md).
+ La bibliothèque d'activités intégrée contient de nouvelles activités et de nouvelles fonctionnalités pour les activités existantes. Toutes ces nouvelles activités sont prises en charge dans le concepteur réhébergé. Pour plus d’informations sur ces nouvelles activités, consultez la section [activités](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) des [Nouveautés de Windows Workflow Foundation dans .NET Framework 4,5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="c-expressions"></a>Expressions C#
  Avant .NET Framework 4,5, toutes les expressions dans les workflows pouvaient uniquement être écrites en Visual Basic. Dans .NET Framework 4,5, les expressions Visual Basic sont utilisées uniquement pour les projets créés à l’aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de flux de travail dans Visual Studio 2012, un éditeur d’expressions C# entièrement fonctionnel est fourni avec les fonctionnalités telles que la mise en surbrillance de la grammaire et IntelliSense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
@@ -103,43 +103,43 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Dans .NET Framework 4, les erreurs de validation de workflow n’étaient pas comptabilisées comme des erreurs de build pendant la génération d’un projet de Workflow. Cela signifiait que la génération d’un projet de workflow pouvait réussir même lorsqu’il existait des erreurs de validation de workflow. Dans .NET Framework 4,5, les erreurs de validation de workflow provoquent l’échec de la génération.
 
 > [!WARNING]
-> La validation au moment de la génération n’est pas prise en charge dans le concepteur réhébergé.  
-  
-### <a name="design-time-background-validation"></a>Validation d'arrière-plan au moment du design  
- Dans .NET Framework 4, les flux de travail étaient validés en tant que processus de premier plan, ce qui pourrait potentiellement bloquer l’interface utilisateur pendant les processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.  
-  
- La validation de l'arrière-plan au moment de la génération est prise en charge dans le concepteur réhébergé.  
-  
-### <a name="view-state-located-in-a-separate-location-in-xaml-files"></a>État d'affichage dans un emplacement distinct des fichiers XAML  
- Dans .NET Framework 4, les informations d’état d’affichage d’un workflow sont stockées dans le fichier XAML à de nombreux emplacements différents. Cela n'est pas pratique pour les développeurs qui souhaitent lire le XAML directement, ou écrire du code pour supprimer les informations d'état d'affichage. Dans .NET Framework 4,5, les informations d’état d’affichage dans le fichier XAML sont sérialisées en tant qu’élément distinct dans le fichier XAML.  Les développeurs peuvent facilement localiser et modifier les informations d’état d’affichage d’une activité, ou supprimer complètement l’état d’affichage.  
-  
- Cette fonctionnalité est prise en charge dans le concepteur de workflow réhébergé.  
-  
-### <a name="opt-in-for-workflow-45-features-in-rehosted-designer"></a>Opter pour les fonctionnalités de workflow 4.5 dans le concepteur réhébergé  
- Pour préserver la compatibilité descendante, certaines nouvelles fonctionnalités incluses dans .NET Framework 4,5 ne sont pas activées par défaut dans le concepteur réhébergé. Il s'agit de garantir que les applications existantes qui utilisent le concepteur réhébergé ne sont pas interrompues par la mise à jour vers la version la plus récente. Pour activer les nouvelles fonctionnalités du concepteur réhébergé, affectez à <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> la valeur « .Net Framework 4.5 », ou définissez des membres de <xref:System.Activities.Presentation.DesignerConfigurationService> pour activer des fonctionnalités.  
-  
-## <a name="new-workflow-development-models"></a>Nouveaux modèles de développement de workflow  
- Outre les modèles de développement d’organigramme et workflow séquentiel, cette mise en production inclut des workflows Machine à états, et les services de workflow Contrat en premier.  
-  
-### <a name="state-machine-workflows"></a>Workflows de machine à états  
- Les workflows de machine à États ont été introduits dans le cadre de la .NET Framework 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :  
-  
-1. Possibilité de définir des points d'arrêt sur des états  
-  
-2. Possibilité de copier et coller des transitions dans le concepteur de workflow  
-  
-3. Prise en charge du concepteur pour la création de transition de déclencheur partagée  
-  
-4. Les activités utilisées pour créer des workflows Machine à états, notamment : <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State> et <xref:System.Activities.Statements.Transition>  
-  
- La capture d’écran suivante montre le flux de travail de l’ordinateur d’état terminé à partir de l’étape [prise en main didacticiel](getting-started-tutorial.md) [procédure : créer un workflow d’ordinateur d’État](how-to-create-a-state-machine-workflow.md).  
-  
- ![Illustration qui montre le flux de travail de l’ordinateur d’état terminé.](./media/wf-features-in-the-rehosted-workflow-designer/complete-state-machine-workflow.jpg)  
-  
- Pour plus d’informations sur la création de workflows de machine à États, consultez [workflows de machine à États](state-machine-workflows.md). Les workflow de machine à états sont pris en charge dans le concepteur réhébergé.  
-  
-### <a name="contract-first-workflow-development"></a>Développement de workflow « contrat en premier »  
- L’outil de développement de workflow contrat en premier permet au développeur de concevoir un contrat dans le code en premier, puis, en quelques clics dans Visual Studio, de générer automatiquement un modèle d’activité dans la boîte à outils représentant chaque opération. Ces activités sont ensuite utilisées pour créer un workflow qui implémente les opérations définies par le contrat. Le concepteur de workflow validera le service de workflow pour garantir que ces opérations sont implémentées et que la signature du workflow correspond à la signature du contrat. Le développeur peut également associer un service de workflow à une collection de contrats implémentés. Pour plus d’informations sur le développement d’un service de workflow contrat en premier, consultez Guide pratique [pour créer un service de workflow qui utilise un contrat de service existant](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
-  
+> La validation au moment de la génération n’est pas prise en charge dans le concepteur réhébergé.
+
+### <a name="design-time-background-validation"></a>Validation d'arrière-plan au moment du design
+ Dans .NET Framework 4, les flux de travail étaient validés en tant que processus de premier plan, ce qui pourrait potentiellement bloquer l’interface utilisateur pendant les processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.
+
+ La validation de l'arrière-plan au moment de la génération est prise en charge dans le concepteur réhébergé.
+
+### <a name="view-state-located-in-a-separate-location-in-xaml-files"></a>État d'affichage dans un emplacement distinct des fichiers XAML
+ Dans .NET Framework 4, les informations d’état d’affichage d’un workflow sont stockées dans le fichier XAML à de nombreux emplacements différents. Cela n'est pas pratique pour les développeurs qui souhaitent lire le XAML directement, ou écrire du code pour supprimer les informations d'état d'affichage. Dans .NET Framework 4,5, les informations d’état d’affichage dans le fichier XAML sont sérialisées en tant qu’élément distinct dans le fichier XAML.  Les développeurs peuvent facilement localiser et modifier les informations d’état d’affichage d’une activité, ou supprimer complètement l’état d’affichage.
+
+ Cette fonctionnalité est prise en charge dans le concepteur de workflow réhébergé.
+
+### <a name="opt-in-for-workflow-45-features-in-rehosted-designer"></a>Opter pour les fonctionnalités de workflow 4.5 dans le concepteur réhébergé
+ Pour préserver la compatibilité descendante, certaines nouvelles fonctionnalités incluses dans .NET Framework 4,5 ne sont pas activées par défaut dans le concepteur réhébergé. Il s'agit de garantir que les applications existantes qui utilisent le concepteur réhébergé ne sont pas interrompues par la mise à jour vers la version la plus récente. Pour activer les nouvelles fonctionnalités du concepteur réhébergé, affectez à <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> la valeur « .Net Framework 4.5 », ou définissez des membres de <xref:System.Activities.Presentation.DesignerConfigurationService> pour activer des fonctionnalités.
+
+## <a name="new-workflow-development-models"></a>Nouveaux modèles de développement de workflow
+ Outre les modèles de développement d’organigramme et workflow séquentiel, cette mise en production inclut des workflows Machine à états, et les services de workflow Contrat en premier.
+
+### <a name="state-machine-workflows"></a>Workflows de machine à états
+ Les workflows de machine à États ont été introduits dans le cadre de la .NET Framework 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :
+
+1. Possibilité de définir des points d'arrêt sur des états
+
+2. Possibilité de copier et coller des transitions dans le concepteur de workflow
+
+3. Prise en charge du concepteur pour la création de transition de déclencheur partagée
+
+4. Les activités utilisées pour créer des workflows Machine à états, notamment : <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State> et <xref:System.Activities.Statements.Transition>
+
+ La capture d’écran suivante montre le flux de travail de l’ordinateur d’état terminé à partir de l’étape [prise en main didacticiel](getting-started-tutorial.md) [procédure : créer un workflow d’ordinateur d’État](how-to-create-a-state-machine-workflow.md).
+
+ ![Illustration qui montre le flux de travail de l’ordinateur d’état terminé.](./media/wf-features-in-the-rehosted-workflow-designer/complete-state-machine-workflow.jpg)
+
+ Pour plus d’informations sur la création de workflows de machine à États, consultez [workflows de machine à États](state-machine-workflows.md). Les workflow de machine à états sont pris en charge dans le concepteur réhébergé.
+
+### <a name="contract-first-workflow-development"></a>Développement de workflow « contrat en premier »
+ L’outil de développement de workflow contrat en premier permet au développeur de concevoir un contrat dans le code en premier, puis, en quelques clics dans Visual Studio, de générer automatiquement un modèle d’activité dans la boîte à outils représentant chaque opération. Ces activités sont ensuite utilisées pour créer un workflow qui implémente les opérations définies par le contrat. Le concepteur de workflow validera le service de workflow pour garantir que ces opérations sont implémentées et que la signature du workflow correspond à la signature du contrat. Le développeur peut également associer un service de workflow à une collection de contrats implémentés. Pour plus d’informations sur le développement d’un service de workflow contrat en premier, consultez Guide pratique [pour créer un service de workflow qui utilise un contrat de service existant](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).
+
 > [!WARNING]
 > Le développement de workflow « contrat en premier » n'est pas pris en charge dans Workflow Designer.
