@@ -15,16 +15,17 @@ helpviewer_keywords:
 ms.assetid: ec00fbdd-6451-4888-ac6f-08e1e2d9b2fd
 topic_type:
 - apiref
-ms.openlocfilehash: e31522ffcf5dd61c1643a8c60e7573c87b834e6a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: df909b4479f70b27a5385ebd7ecce51b963f0e91
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788761"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677377"
 ---
-# <a name="icordebugeditandcontinuesnapshotsetpesymbolbytes-method"></a><span data-ttu-id="4096d-102">ICorDebugEditAndContinueSnapshot::SetPESymbolBytes, méthode</span><span class="sxs-lookup"><span data-stu-id="4096d-102">ICorDebugEditAndContinueSnapshot::SetPESymbolBytes Method</span></span>
-<span data-ttu-id="4096d-103">`SetPESymbolBytes` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="4096d-103">`SetPESymbolBytes` is obsolete.</span></span> <span data-ttu-id="4096d-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="4096d-104">Do not call this method.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="4096d-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4096d-105">See also</span></span>
+# <a name="icordebugeditandcontinuesnapshotsetpesymbolbytes-method"></a><span data-ttu-id="dbc1a-102">ICorDebugEditAndContinueSnapshot::SetPESymbolBytes, méthode</span><span class="sxs-lookup"><span data-stu-id="dbc1a-102">ICorDebugEditAndContinueSnapshot::SetPESymbolBytes Method</span></span>
 
-- [<span data-ttu-id="4096d-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="4096d-106">Debugging Interfaces</span></span>](debugging-interfaces.md)
+<span data-ttu-id="dbc1a-103">`SetPESymbolBytes` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="dbc1a-103">`SetPESymbolBytes` is obsolete.</span></span> <span data-ttu-id="dbc1a-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="dbc1a-104">Do not call this method.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="dbc1a-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dbc1a-105">See also</span></span>
+
+- [<span data-ttu-id="dbc1a-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="dbc1a-106">Debugging Interfaces</span></span>](debugging-interfaces.md)
