@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: c2321f17-f46f-4815-ae41-b28678753613
 topic_type:
 - apiref
-ms.openlocfilehash: f840438e175790a2b4c97302963b910f98dffb7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b7c10e82aca2b2ece7ea4d7209c1f3c9a456434
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176563"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95670405"
 ---
 # <a name="iassemblycacheitemcommit-method"></a>IAssemblyCacheItem::Commit, méthode
-Engage la référence d’assemblage mise en cache à la mémoire.  
+
+Valide la référence de l’assembly mis en cache dans la mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,18 +36,20 @@ HRESULT Commit (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwFlags`  
- [dans] Drapeaux définis dans Fusion.idl.  
+ dans Indicateurs définis dans fusion. idl.  
   
  `pulDisposition`  
- [out, facultatif] Une valeur qui indique le résultat de l’opération.  
+ [out, optional] Valeur qui indique le résultat de l’opération.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

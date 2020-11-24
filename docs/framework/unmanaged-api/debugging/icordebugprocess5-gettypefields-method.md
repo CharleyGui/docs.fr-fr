@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6a0ad3ee-dacb-47e9-abae-4536bcc4804b
 topic_type:
 - apiref
-ms.openlocfilehash: a2c7f7b722abac6acf71d3b64276862441695a5f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e4eba37487ca2ee0a88caf5a59f86949a6521e40
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212787"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95670938"
 ---
 # <a name="icordebugprocess5gettypefields-method"></a>ICorDebugProcess5::GetTypeFields, méthode
+
 Fournit des informations sur les champs qui appartiennent à un type.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetTypeFields(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `id`  
  dans Identificateur du type dont les informations de champ sont récupérées.  
   
@@ -49,10 +51,12 @@ HRESULT GetTypeFields(
  `pceltNeeded`  
  à Pointeur vers le nombre d’objets [COR_FIELD](cor-field-structure.md) inclus dans `fields` .  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le `celt` paramètre, qui spécifie le nombre de champs dont la méthode utilise les informations de champ pour remplir `fields` , doit correspondre à la valeur du `COR_TYPE_LAYOUT::numFields` champ.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

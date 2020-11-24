@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 973b2c44-8dfc-40c1-9035-10f4846627e9
 topic_type:
 - apiref
-ms.openlocfilehash: 539a8edf6d7248235a6e672edc9464679a2eab82
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 36a2a609e95740ffc45722635a7e1f09e0ed5601
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95670782"
 ---
 # <a name="iassemblycacheuninstallassembly-method"></a>IAssemblyCache::UninstallAssembly, méthode
-Uninstalls the specified assembly from the global assembly cache.  
+
+Désinstalle l’assembly spécifié du Global Assembly Cache.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +38,18 @@ HRESULT UninstallAssembly (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwFlags`  
- [in] Flags defined in Fusion.idl.  
+ dans Indicateurs définis dans fusion. idl.  
   
  `pszAssemblyName`  
- [in] The name of the assembly to uninstall.  
+ dans Nom de l’assembly à désinstaller.  
   
  `pRefData`  
- [in] A [FUSION_INSTALL_REFERENCE](fusion-install-reference-structure.md) structure that contains the installation data for the assembly.  
+ dans Structure [FUSION_INSTALL_REFERENCE](fusion-install-reference-structure.md) qui contient les données d’installation de l’assembly.  
   
  `pulDisposition`  
- [out, optional] One of the disposition values defined in Fusion.idl. Possible values include the following:  
+ [out, optional] L’une des valeurs de disposition définies dans fusion. idl. Il peut prendre les valeurs suivantes :  
   
 - IASSEMBLYCACHE_UNINSTALL_DISPOSITION_UNINSTALLED (1)  
   
@@ -61,12 +63,13 @@ HRESULT UninstallAssembly (
   
 - IASSEMBLYCACHE_UNINSTALL_DISPOSITION_REFERENCE_NOT_FOUND (6)  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **Header:** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0da1ef80-d242-4636-87d0-43e0470b342a
 topic_type:
 - apiref
-ms.openlocfilehash: 9bc6619f3ef383c7bf60a310a87f056cfc43cddf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 75f2db5e5489f02dcae3db0c3e6af19c922e0745
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498672"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95669196"
 ---
 # <a name="icorprofilerinfoforcegc-method"></a>ICorProfilerInfo::ForceGC, méthode
+
 Force garbage collection se produire dans le common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,9 +33,11 @@ HRESULT ForceGC();
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  La `ForceGC` méthode doit être appelée uniquement à partir d’un thread qui n’a jamais exécuté de code managé et qui n’a pas de rappels de profileur sur sa pile. L’implémentation la plus pratique consiste à créer un thread distinct dans le profileur qui appelle lorsqu’il est `ForceGC` signalé.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

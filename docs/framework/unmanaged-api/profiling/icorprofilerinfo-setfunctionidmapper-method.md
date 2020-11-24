@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a6e5dae-d366-4497-9c02-7b5b1f43f9ec
 topic_type:
 - apiref
-ms.openlocfilehash: 5272c5bf256f6e21a83470db094ab79317932018
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3a9ab64730feaa372f9b5d9ad7cefcb86580ca5e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497476"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95671172"
 ---
 # <a name="icorprofilerinfosetfunctionidmapper-method"></a>ICorProfilerInfo::SetFunctionIDMapper, méthode
+
 Spécifie la fonction implémentée par le profileur qui sera appelée pour mapper des valeurs `FunctionID` sur d'autres valeurs, qui sont passées aux raccordements d'entrée/sortie de fonction du profileur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,15 +34,18 @@ HRESULT SetFunctionIDMapper (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pFunc`  
  dans Pointeur vers l’implémentation de [FunctionIDMapper](functionidmapper-function.md) qui sera appelée pour mapper les `FunctionID` valeurs à leurs autres valeurs.  
   
 ## <a name="remarks"></a>Remarques  
+
  Les alternatives pour les `FunctionID` valeurs sont passées aux raccordements d’entrée/sortie de fonction du profileur ([FunctionEnter2](functionenter2-function.md), [FunctionLeave2](functionleave2-function.md)et [FunctionTailcall2](functiontailcall2-function.md)) qui sont spécifiés par la méthode [ICorProfilerInfo2 :: SetEnterLeaveFunctionHooks2,](icorprofilerinfo2-setenterleavefunctionhooks2-method.md) .  
   
  `FunctionIDMapper`Ne peut être défini qu’une seule fois et il est recommandé de le définir dans le rappel [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
