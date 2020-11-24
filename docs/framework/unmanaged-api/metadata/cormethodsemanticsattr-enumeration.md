@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ca2af325-eb9d-4a91-90e4-267e45b98611
 topic_type:
 - apiref
-ms.openlocfilehash: 1572c206f4a5a5fe0fd189ca84d0bcda2249c6d4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 347b323951b0125ffa5f82626b2d9b235079492c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007648"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676944"
 ---
 # <a name="cormethodsemanticsattr-enumeration"></a>CorMethodSemanticsAttr, énumération
+
 Contient des valeurs qui décrivent la relation entre une méthode et une propriété ou un événement associé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -50,7 +51,8 @@ typedef enum CorMethodSemanticsAttr {
 |`msRemoveOn`|Spécifie que la méthode supprime les méthodes de gestionnaire pour un événement.|  
 |`msFire`|Spécifie que la méthode déclenche un événement.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

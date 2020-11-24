@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8f0dd2fe-7df7-464e-91f4-5518c586bb5f
 topic_type:
 - apiref
-ms.openlocfilehash: 07d2de5d12fd769cb5cce243d9e721bb6fc185a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6193d91c8cbe0efa7cd68b97b9262acf72c9ea0b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615473"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675878"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize, méthode
+
 Initialise le lecteur de symboles avec l’interface de l’importateur de métadonnées à laquelle ce lecteur sera associé, ainsi que le nom de fichier du module.  
   
 > [!NOTE]
@@ -39,6 +40,7 @@ HRESULT Initialize (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `importer`  
  dans Interface de l’importateur de métadonnées à laquelle ce lecteur sera associé.  
   
@@ -51,13 +53,16 @@ HRESULT Initialize (
  `pIStream`  
  dans Le flux de fichier, utilisé comme alternative au paramètre filename.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Vous devez spécifier un seul des `filename` paramètres ou, mais `pIStream` pas les deux. Le paramètre `searchPath` est facultatif.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -3,18 +3,18 @@ title: Outil XML Serializer Generator (Sgen.exe)
 description: Le générateur de sérialiseur XML crée un assembly de sérialisation XML pour les types dans un assembly, ce qui améliore les performances de démarrage de XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 80295a9a54b6f9b1970fb65dacdee43b2e938070
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: c2f33236e39f61638118f45f0d5ab5385df27ac3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282352"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676515"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Outil XML Serializer Generator (Sgen.exe)
 
 Le générateur de sérialiseur XML crée un assembly de sérialisation XML pour les types dans un assembly spécifié. L’assembly de sérialisation améliore les performances de démarrage d’un <xref:System.Xml.Serialization.XmlSerializer> lorsqu’il sérialise ou désérialise des objets des types spécifiés.
   
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 Exécutez l’outil à partir de la ligne de commande.
   
@@ -44,7 +44,8 @@ sgen [options]
 |**/v \[ erbose\]**|Affiche la sortie en clair pour le débogage. Répertorie les types à partir de l'assembly cible qui ne peuvent pas être sérialisés avec le <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Lorsque l'outil XML Serializer Generator n'est pas utilisé, un <xref:System.Xml.Serialization.XmlSerializer> génère un code de sérialisation et un assembly de sérialisation pour chacun des types chaque fois qu'une application est exécutée. Pour améliorer les performances de démarrage de la sérialisation XML, utilisez l’outil Sgen.exe pour générer ces assemblys à l’avance. Ces assemblys peuvent ensuite être déployés avec l'application.  
   
  L'outil XML Serializer Generator peut également améliorer les performances des clients qui utilisent des proxies de service Web XML pour communiquer avec les serveurs car le processus de sérialisation n'entraîne pas de dégradation des performances lors du premier chargement du type.  
@@ -54,6 +55,7 @@ sgen [options]
  Si l'assembly qui contient le type à sérialiser est nommé MyType.dll, l'assembly de sérialisation associé sera alors nommé MyType.XmlSerializers.dll.  
   
 ## <a name="examples"></a>Exemples  
+
  La commande suivante crée un assembly nommé Data.XmlSerializers.dll pour sérialiser tous les types contenus dans l'assembly nommé Data.dll.  
   
 ```console  

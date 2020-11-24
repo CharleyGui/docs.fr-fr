@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4e0c3521-e54d-43c1-9857-cc76b49b8ffc
 topic_type:
 - apiref
-ms.openlocfilehash: 779a8f88b7521aa4b0a75594552981b41714ee3f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 6c3e721c24da217eaf2e8857377359e1c51b7b59
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007674"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677010"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr, énumération
+
 Contient des valeurs qui décrivent les fonctionnalités d’une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -79,7 +80,7 @@ typedef enum CorMethodAttr {
 |`mdVirtual`|Spécifie que la méthode peut être substituée.|  
 |`mdHideBySig`|Spécifie que la méthode masque par nom et par signature, plutôt que simplement par nom.|  
 |`mdVtableLayoutMask`|Spécifie la disposition de la table virtuelle.|  
-|`mdReuseSlot`|Spécifie que l’emplacement utilisé pour cette méthode dans la table virtuelle doit être réutilisé. Il s'agit de la valeur par défaut.|  
+|`mdReuseSlot`|Spécifie que l’emplacement utilisé pour cette méthode dans la table virtuelle doit être réutilisé. Il s’agit de la valeur par défaut.|  
 |`mdNewSlot`|Spécifie que la méthode obtient toujours un nouvel emplacement dans la table virtuelle.|  
 |`mdCheckAccessOnOverride`|Spécifie que la méthode peut être substituée par les mêmes types auxquels elle est visible.|  
 |`mdAbstract`|Spécifie que la méthode n’est pas implémentée.|  
@@ -91,7 +92,8 @@ typedef enum CorMethodAttr {
 |`mdHasSecurity`|Spécifie que la méthode est associée à la sécurité.|  
 |`mdRequireSecObject`|Spécifie que la méthode appelle une autre méthode contenant du code de sécurité.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

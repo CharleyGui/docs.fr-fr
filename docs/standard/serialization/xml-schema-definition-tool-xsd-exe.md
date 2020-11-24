@@ -3,12 +3,12 @@ title: Outil XML Schema Definition (Xsd.exe)
 description: Le générateur de sérialiseur XML crée un assembly de sérialisation XML pour les types dans un assembly spécifié, ce qui améliore les performances de démarrage de XmlSerializer.
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: c8ae3e05f2d775cbc4c44ce27e7474d1fcfc06a3
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: a66ebfee3a461bb800e61e4f1d789f497da2f9d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281753"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676606"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Outil XML Schema Definition (Xsd.exe)
 
@@ -17,7 +17,7 @@ L'outil XML Schema Definition Tool (Xsd.exe) génère des classes du Common Lang
 L’outil XML Schema Definition (Xsd.exe) se trouve généralement à l’emplacement suivant : \
 _C : \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {version} \\ bin \\ netfx {version} Tools\\_
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 Exécutez l’outil à partir de la ligne de commande.
 
@@ -50,6 +50,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |**/p \[ arameters \] :** _file.xml_|Options de lecture pour différents modes d'opération à partir du fichier .xml spécifié. La forme abrégée est `/p:`. Pour plus d’informations, consultez la section [Notes](#remarks) .|
 
 ## <a name="xsd-file-options"></a>Options de fichier XSD
+
  Vous ne devez spécifier qu'une seule des options suivantes pour les fichiers .xsd.
 
 |Option|Description|
@@ -78,7 +79,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |------------|-----------------|
 |**/t \[ ype \] :**_TypeName_|Spécifie le nom du type pour lequel créer un schéma. Vous pouvez spécifier plusieurs arguments pour le type. Si *nom_type* ne spécifie pas d’espace de noms, Xsd.exe établit une correspondance entre tous les types de l’assembly et le type spécifié. Si *nom_type* spécifie un espace de noms, une correspondance est établie uniquement avec ce type. Si *nom_type* se termine par un astérisque (\*), l’outil établit une correspondance avec tous les types commençant par la chaîne qui précède \*. Si vous omettez l'option `/type`, Xsd.exe génère alors des schémas pour tous les types de l'assembly.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Le tableau suivant affiche les opérations que Xsd.exe exécute.
 
@@ -105,7 +106,7 @@ Le tableau suivant affiche les opérations que Xsd.exe exécute.
 </xsd>
 ```
 
-Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas.xml, utilisez le `/parameters` commutateur en tapant ce qui suit à l’invite de commandes et en appuyant sur **entrée** :
+Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas.xml, utilisez le `/parameters` commutateur en tapant ce qui suit à l’invite de commandes et en appuyant sur **entrée**:
 
 ```console
  xsd /p:GenerateSchemas.xml
@@ -160,7 +161,7 @@ Le tableau suivant affiche les attributs qui peuvent également être utilisés 
 |Attribut|Description|
 |---------------|-----------------|
 |langage|Spécifie le langage de programmation à utiliser. Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#). Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.|
-|espace de noms|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|
+|namespace|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|
 |options|L’une des valeurs suivantes : `none`, `properties` (génère des propriétés au lieu de champs publics), `order` ou `enableDataBinding` (consultez les commutateurs `/order` et `/enableDataBinding` dans la section Options de fichier XSD précédente).|
 
  Vous pouvez également contrôler comment le code `DataSet` est généré à l'aide de l'élément `<generateDataSet>`. Le code XML suivant spécifie que le code généré utilise `DataSet` des structures (telles que la <xref:System.Data.DataTable> classe) pour créer Visual Basic code pour un élément spécifié. Les structures DataSet générées prendront en charge les requêtes LINQ.
@@ -184,7 +185,7 @@ Les options que vous pouvez définir pour l'élément `<generateDataSet>` inclue
 |---------------|-----------------|
 |enableLinqDataSet|Spécifie que le DataSet généré peut être interrogé par rapport à l'utilisation de LINQ to DataSet. La valeur par défaut est false.|
 |langage|Spécifie le langage de programmation à utiliser. Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#). Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.|
-|espace de noms|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|
+|namespace|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|
 
  Vous pouvez définir certains attributs sur l'élément `<xsd>` de niveau supérieur. Ces options peuvent être utilisées avec n'importe lequel des éléments enfants (`<generateSchemas>`, `<generateClasses>` ou `<generateDataSet>`). Le code XML suivant génère le code pour un élément nommé "IDItems" dans le répertoire de sortie nommé "MyOutputDirectory".
 
@@ -205,6 +206,7 @@ Le tableau suivant affiche les attributs qui peuvent également être utilisés 
 |help|Affiche la syntaxe et les options de commande de l'outil. A la valeur `true` ou `false`.|
 
 ## <a name="examples"></a>Exemples
+
  La commande suivante génère un schéma XML à partir de `myFile.xdr` et l'enregistre dans le répertoire actif.
 
 ```console

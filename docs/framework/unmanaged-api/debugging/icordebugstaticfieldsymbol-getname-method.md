@@ -2,14 +2,15 @@
 title: ICorDebugStaticFieldSymbol::GetName, méthode
 ms.date: 03/30/2017
 ms.assetid: e2be4af2-15d1-4e6a-8b68-1d78c93294a4
-ms.openlocfilehash: 75f5324296f9b42406157d06351f7e680a749444
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 6284a27921e0ba5bd3cedf07ef9f62348460ad06
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378752"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677234"
 ---
 # <a name="icordebugstaticfieldsymbolgetname-method"></a>ICorDebugStaticFieldSymbol::GetName, méthode
+
 Obtient le nom du champ static.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,6 +24,7 @@ HRESULT GetName(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchName`  
  [in] Nombre de caractères dans la mémoire tampon `szName`.  
   
@@ -32,12 +34,13 @@ HRESULT GetName(
  `szName`  
  [out] Tableau de caractères qui stocke le nom retourné.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

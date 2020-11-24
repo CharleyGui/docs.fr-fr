@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: 578db725458ad5c4a90256a06744a58a6d1918da
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9e73be220f3f04ec6bd05b1193d4188825f1b8e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819953"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676502"
 ---
 # <a name="cancellation-in-managed-threads"></a>Annulation dans les threads managés
 
@@ -51,6 +51,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
 - Les écouteurs peuvent être avertis des demandes d'annulation par le biais d'une interrogation, d'une inscription de rappel ou bien en attendant des handles d'attente.  
   
 ## <a name="cancellation-types"></a>Types d'annulation  
+
  L'infrastructure d'annulation est implémentée comme un ensemble de types connexes, qui sont répertoriés dans le tableau suivant.  
   
 |Nom de type|Description|  
@@ -62,6 +63,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Le modèle d’annulation est intégré à .NET dans plusieurs types. Les plus importants sont <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>,<xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> et <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>. Nous vous recommandons d’utiliser ce modèle d’annulation coopérative pour tout nouveau code de bibliothèque et d’application.  
   
 ## <a name="code-example"></a>Exemple de code  
+
  Dans l'exemple suivant, l'objet demandeur crée un objet <xref:System.Threading.CancellationTokenSource>, puis passe sa propriété <xref:System.Threading.CancellationTokenSource.Token%2A> à l'opération annulable. L'opération qui reçoit la demande surveille la valeur de la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> du jeton par le biais d'une interrogation. Quand la valeur devient `true`, l'écouteur peut s'arrêter de quelque manière appropriée que ce soit. Dans cet exemple, la méthode s'arrête, ce qui suffit dans de nombreux cas.  
   
 > [!NOTE]
@@ -71,6 +73,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  
   
 ## <a name="operation-cancellation-versus-object-cancellation"></a>Annulation d'opération et annulation d'objet  
+
  Dans l’infrastructure d’annulation coopérative, l’annulation fait référence aux opérations, et non aux objets. La demande d'annulation signifie que l'opération doit s'arrêter dès que possible après l'exécution de tout nettoyage nécessaire. Un jeton d'annulation doit faire référence à une opération annulable. Toutefois, cette opération peut être implémentée dans votre programme. Après avoir défini la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> du jeton sur `true`, celle-ci ne peut pas être réinitialisée à la valeur `false`. Les jetons d'annulation ne peuvent donc pas être réutilisés après avoir été annulés.  
   
  Si vous avez besoin d'un mécanisme d'annulation d'objets, vous pouvez le baser sur le mécanisme d'annulation d'opérations en appelant la méthode <xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType>, comme indiqué dans l'exemple suivant.  
@@ -81,6 +84,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Si un objet prend en charge plusieurs opérations annulables simultanées, passez un jeton en tant qu'entrée à chaque opération annulable. De cette façon, une opération peut être annulée sans affecter les autres.  
   
 ## <a name="listening-and-responding-to-cancellation-requests"></a>Demandes d'annulation : écoute et réponse  
+
  Dans le délégué utilisateur, l'implémenteur d'une opération annulable détermine la façon de terminer l'opération en réponse à une demande d'annulation. Dans de nombreux cas, le délégué utilisateur peut simplement effectuer le nettoyage nécessaire, puis être immédiatement retourné.  
   
  Toutefois, dans des cas plus complexes, le délégué utilisateur devra notifier le code de bibliothèque qu'une annulation s'est produite. Dans ce cas, il convient de terminer l'opération en appelant le délégué de la méthode <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, ce qui entraînera la levée de <xref:System.OperationCanceledException>. Le code de bibliothèque peut intercepter cette exception sur le thread du délégué utilisateur et examiner le jeton de l'exception pour déterminer si l'exception indique une annulation coopérative ou une autre situation exceptionnelle.  
@@ -88,6 +92,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  La classe <xref:System.Threading.Tasks.Task> gère <xref:System.OperationCanceledException> de cette façon. Pour plus d’informations, voir [Annulation de tâches](../parallel-programming/task-cancellation.md).  
   
 ### <a name="listening-by-polling"></a>Écoute par interrogation  
+
  Pour les calculs de longue durée qui effectuent des boucles récursives ou non, vous pouvez écouter une demande d'annulation en interrogeant régulièrement la valeur de la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType>. Si sa valeur est de `true`, la méthode doit effectuer un nettoyage et se terminer aussi rapidement que possible. La fréquence d'interrogation optimale varie selon le type d'application. Il incombe au développeur de déterminer la meilleure fréquence d'interrogation pour un programme donné. L'interrogation elle-même n'altère pas beaucoup les performances. L'exemple suivant montre une méthode d'interrogation.  
   
  [!code-csharp[Cancellation#3](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#3)]
@@ -96,6 +101,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Pour obtenir un exemple plus complet, voir [Comment : écouter les demandes d'annulation par l'interrogation](how-to-listen-for-cancellation-requests-by-polling.md).  
   
 ### <a name="listening-by-registering-a-callback"></a>Écoute par inscription de rappel  
+
  Certaines opérations peuvent être bloquées et ne plus pouvoir vérifier la valeur des jetons d'annulation en temps voulu. Dans ce cas, vous pouvez inscrire une méthode de rappel qui débloque la méthode quand une demande d'annulation est reçue.  
   
  La méthode <xref:System.Threading.CancellationToken.Register%2A> retourne un objet <xref:System.Threading.CancellationTokenRegistration> utilisé spécialement à cet effet. L'exemple suivant montre comment utiliser la méthode <xref:System.Threading.CancellationToken.Register%2A> pour annuler une requête web asynchrone.  
@@ -116,6 +122,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Pour obtenir un exemple plus complet, voir [Comment : enregistrer des rappels pour les demandes d'annulation](how-to-register-callbacks-for-cancellation-requests.md).  
   
 ### <a name="listening-by-using-a-wait-handle"></a>Écoute à l'aide d'un handle d'attente  
+
  Quand une opération annulable risque de se bloquer en attendant une primitive de synchronisation, telle que <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> ou <xref:System.Threading.Semaphore?displayProperty=nameWithType>, vous pouvez utiliser la propriété <xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> pour que l'opération attende à la fois l'événement et la demande d'annulation. Le handle d'attente du jeton d'annulation sera signalé en réponse à une demande d'annulation et la méthode pourra utiliser la valeur de retour de la méthode <xref:System.Threading.WaitHandle.WaitAny%2A> pour déterminer s'il s'agit de l'annulation du jeton à l'origine du signalement. L'opération peut alors simplement s'arrêter ou lever une <xref:System.OperationCanceledException>, selon le cas.  
   
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
@@ -129,6 +136,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Pour obtenir un exemple plus complet, voir [Comment : écouter les demandes d'annulation avec des handles d'attente](how-to-listen-for-cancellation-requests-that-have-wait-handles.md).  
   
 ### <a name="listening-to-multiple-tokens-simultaneously"></a>Écoute simultanée de plusieurs jetons  
+
  Dans certains cas, un écouteur peut avoir à écouter simultanément plusieurs jetons d'annulation. Par exemple, une opération annulable peut avoir à surveiller un jeton d’annulation interne en plus d’un jeton passé de manière externe comme argument à un paramètre de méthode. Pour ce faire, créez une source de jeton lié rassemblant plusieurs jetons au sein d'un même jeton, comme illustré dans l'exemple suivant.  
   
  [!code-csharp[Cancellation#7](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#7)]
@@ -137,6 +145,7 @@ Le modèle général d’implémentation du modèle d’annulation coopérative 
  Notez que vous devez appeler `Dispose` sur la source de jeton lié quand vous en avez terminé avec lui. Pour obtenir un exemple plus complet, voir [Comment : écouter plusieurs demandes d'annulation](how-to-listen-for-multiple-cancellation-requests.md).  
   
 ## <a name="cooperation-between-library-code-and-user-code"></a>Coopération entre du code de bibliothèque et du code utilisateur  
+
  L'infrastructure d'annulation unifiée permet au code de bibliothèque d'annuler du code utilisateur, et au code utilisateur d'annuler du code de bibliothèque de façon coopérative. Pour une coopération harmonieuse, chaque côté doit respecter les recommandations suivantes :  
   
 - Si le code de bibliothèque fournit des opérations annulables, il doit également fournir des méthodes publiques qui acceptent un jeton d'annulation externe pour que le code utilisateur puisse demander une annulation.  

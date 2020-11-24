@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 16dc49cb-2c60-4ac8-9c35-020e9afba3f8
 topic_type:
 - apiref
-ms.openlocfilehash: 637e1aed003e211654141ab397c9c0b4724753c2
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c4341a5ffe557694473ae505590b57d39a27a721
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615486"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675891"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables, méthode
+
 Retourne une variable non locale, en fonction de son parent et de son nom.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetVariables (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `parent`  
  dans Parent de la variable.  
   
@@ -49,10 +51,12 @@ HRESULT GetVariables (
  `pVars`  
  à Pointeur vers la variable qui reçoit les variables.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

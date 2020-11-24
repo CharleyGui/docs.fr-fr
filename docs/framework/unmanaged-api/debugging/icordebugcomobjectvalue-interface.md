@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 505a7f6c-d92b-42b4-b539-433f5102ea9b
 topic_type:
 - apiref
-ms.openlocfilehash: 528db447df4d71d67441b05ad29e6a900c59afbb
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 40df1416e68c86efe6d404119cb37277fe21ac56
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892821"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677542"
 ---
 # <a name="icordebugcomobjectvalue-interface"></a>Interface ICorDebugComObjectValue
+
 Fournit des méthodes pour récupérer des informations associées à un wrapper RCW (Runtime Callable Wrapper).  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,10 +32,12 @@ Fournit des méthodes pour récupérer des informations associées à un wrapper
 |[GetCachedInterfacePointers, méthode](icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Obtient les pointeurs d’interface bruts mis en cache sur le wrapper RCW actuel.|  
 |[GetCachedInterfaceTypes, méthode](icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Fournit un énumérateur pour les types d’interface dont la casse de l’objet actuel a été ou utilisée.|  
   
-## <a name="remarks"></a>Notes   
- Pour vérifier si une instance d’une interface « ICorDebugValue » représente un wrapper RCW, un débogueur `QueryInterface` appelle sur « ICorDebugValue » `IID_ICorDebugComObjectValue`avec.  
+## <a name="remarks"></a>Remarques  
+
+ Pour vérifier si une instance d’une interface « ICorDebugValue » représente un wrapper RCW, un débogueur appelle `QueryInterface` sur « ICorDebugValue » avec `IID_ICorDebugComObjectValue` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

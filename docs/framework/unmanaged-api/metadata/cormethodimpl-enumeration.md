@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ffbb3caf-20da-4a4b-8983-77376e72b990
 topic_type:
 - apiref
-ms.openlocfilehash: b32e8f0b03ef6d550c384f3d932cc295a7270028
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 40e82997e58292a10f5e960cc9d9785d9ea8946a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007661"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676970"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl, énumération
+
 Contient des valeurs qui décrivent les fonctionnalités d’implémentation d’une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -73,7 +74,8 @@ typedef enum CorMethodImpl {
 |`miNoOptimization`|Spécifie que la méthode ne doit pas être optimisée.|  
 |`miMaxMethodImplVal`|Valeur maximale valide pour `CorMethodImpl` .|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

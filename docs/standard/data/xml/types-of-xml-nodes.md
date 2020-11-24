@@ -2,14 +2,15 @@
 title: Types de nœuds XML
 ms.date: 03/30/2017
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-ms.openlocfilehash: 97458fc26b3c63dd6d7882c180192aef63109e1a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: edf47246782e86cf134ea88d41381bed9ff16f69
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824595"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675631"
 ---
 # <a name="types-of-xml-nodes"></a>Types de nœuds XML
+
 Quand un document XML est lu et chargé en mémoire sous la forme d’une arborescence de nœuds, le type de nœud des nœuds est déterminé lors de la création de ces derniers. Le DOM (Document Object Model) XML propose plusieurs catégories de types de nœuds, déterminés par le World Wide Web Consortium (W3C) et répertoriés dans la section 1.1.1 The DOM Structure Model. Le tableau suivant répertorie les types de nœuds et fournit, pour chaque type, l'objet qui lui est assigné ainsi qu'une brève description.  
   
 |Type de nœud DOM|Object|Description|  
@@ -21,7 +22,7 @@ Quand un document XML est lu et chargé en mémoire sous la forme d’une arbore
 |Élément|<xref:System.Xml.XmlElement>|Représente un nœud d'élément.|  
 |Attr|<xref:System.Xml.XmlAttribute>|Attribut d'un élément.|  
 |ProcessingInstruction ;|<xref:System.Xml.XmlProcessingInstruction>|Nœud d'instruction de traitement.|  
-|Comment|<xref:System.Xml.XmlComment>|Nœud de commentaire.|  
+|Commentaire|<xref:System.Xml.XmlComment>|Nœud de commentaire.|  
 |Texte|<xref:System.Xml.XmlText>|Texte appartenant à un élément ou attribut.|  
 |CDATASection.|<xref:System.Xml.XmlCDataSection>|Représente CDATA.|  
 |Entité|<xref:System.Xml.XmlEntity>|Représente les déclarations `<!ENTITY…>` dans un document XML, soit à partir d'un sous-ensemble de définitions de type de document (DTD) internes, soit à partir de DTD externes et d'entités de paramètre.|  
@@ -36,8 +37,8 @@ Quand un document XML est lu et chargé en mémoire sous la forme d’une arbore
 |<xref:System.Xml.XmlDeclaration>|Représente le nœud de déclaration `<?xml version="1.0"…>`.|  
 |<xref:System.Xml.XmlSignificantWhitespace>|Représente l'espace blanc significatif, qui est l'espace blanc dans du contenu mixte.|  
 |<xref:System.Xml.XmlWhitespace>|Représente l'espace blanc dans le contenu d'un élément.|  
-|EndElement|Est retourné lorsque **XmlReader** arrive à la fin d'un élément.<br /><br /> Exemple de code XML : **\</item>**<br /><br /> Pour plus d'informations, consultez <xref:System.Xml.XmlNodeType>.|  
-|EndEntity|Est retourné quand **XmlReader** arrive à la fin d'un remplacement d'entité à la suite d'un appel à <xref:System.Xml.XmlReader.ResolveEntity%2A>. Pour plus d'informations, consultez <xref:System.Xml.XmlNodeType>.|  
+|EndElement|Est retourné lorsque **XmlReader** arrive à la fin d'un élément.<br /><br /> Exemple de code XML : **\</item>**<br /><br /> Pour plus d’informations, consultez <xref:System.Xml.XmlNodeType>.|  
+|EndEntity|Est retourné quand **XmlReader** arrive à la fin d'un remplacement d'entité à la suite d'un appel à <xref:System.Xml.XmlReader.ResolveEntity%2A>. Pour plus d’informations, consultez <xref:System.Xml.XmlNodeType>.|  
   
  Pour afficher un exemple de code qui lit du code XML et utilise une construction Case sur les types de nœuds afin d'imprimer des informations sur le nœud et son contenu, consultez <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>.  
   

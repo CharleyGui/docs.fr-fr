@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: aba45a99562b67df17e1ff33ecc3c8bbad63ec30
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 1e8c46e11d3a82ca0bce29f9cb7bbc749c219198
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440814"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676723"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -116,6 +116,7 @@ Une <xref:System.Text.Json.JsonSerializer.Serialize%2A> surcharge qui prend un <
 La sérialisation en UTF-8 est environ 5-10% plus rapide que l’utilisation des méthodes basées sur une chaîne. La différence est que les octets (au format UTF-8) n’ont pas besoin d’être convertis en chaînes (UTF-16).
 
 ## <a name="serialization-behavior"></a>Comportements de sérialisation
+
 ::: zone pivot="dotnet-5-0"
 
 * Par défaut, toutes les propriétés publiques sont sérialisées. Vous pouvez [spécifier des propriétés à ignorer](#ignore-properties).
@@ -491,7 +492,7 @@ Pour ignorer toutes les propriétés de valeur null lors de la sérialisation, a
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Property |Valeur  |
+|Propriété |Value  |
 |---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00|
 | TemperatureCelsius| 25 |
@@ -693,7 +694,7 @@ L’exemple suivant montre le code JSON qui résulte du code précédent :
 }
 ```
 
-Pour plus d’informations sur **la sérialisation** polymorphe et sur la **désérialisation** , consultez [Comment migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Pour plus d’informations sur **la sérialisation** polymorphe et sur la **désérialisation**, consultez [Comment migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Autoriser les commentaires et les virgules de fin
 
@@ -761,11 +762,11 @@ Si vous désérialisez le JSON affiché dans le type indiqué, les `DatesAvailab
 
 Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple, les données supplémentaires deviennent des paires clé-valeur de la `ExtensionData` propriété :
 
-|Property |Valeur  |Notes  |
+|Propriété |Valeur  |Notes  |
 |---------|---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00||
 | TemperatureCelsius| 0 | Incompatibilité sensible à la casse ( `temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. |
-| Résumé | Chaud ||
+| Résumé | À chaud ||
 | ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
 || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 | |SummaryWords:<br>Froid<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|

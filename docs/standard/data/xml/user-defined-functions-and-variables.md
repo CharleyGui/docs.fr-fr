@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4772f20e-1e7f-496e-93c2-1484473be555
-ms.openlocfilehash: d4936ec32d54a465803d493048cba2b70ed50db6
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c1f519dd539a266d61945ad221bccceaa1361779
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818503"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675618"
 ---
 # <a name="user-defined-functions-and-variables"></a>Fonctions et variables définies par l'utilisateur
+
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes utilisées pour interagir avec les données <xref:System.Xml.XPath.XPathDocument>. Vous pouvez compléter les fonctions XPath standard en implémentant des fonctions et variables d’extension qui seront utilisées par les expressions de requête XPath. La méthode <xref:System.Xml.XPath.XPathExpression.SetContext%2A> peut accepter un contexte défini par l'utilisateur dérivé de <xref:System.Xml.Xsl.XsltContext>. Les fonctions définies par l'utilisateur sont résolues par le contexte personnalisé.  
   
  Les fonctions et variables d’extension peuvent s’avérer utiles en prévention des attaques par injection de code XML. Dans ces scénarios, l’entrée utilisateur est affectée aux variables personnalisées et traitées par les fonctions d’extension, et non pas comme entrée brute concaténée avec les instructions de traitement. Les fonctions et variables d'extension contiennent l'entrée utilisateur afin qu'elle agisse uniquement sur les données XML comme prévu par le concepteur.  

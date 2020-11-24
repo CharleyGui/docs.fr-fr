@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7ae84d6-81e8-4cb7-a1f9-d48b6cde5d79
 topic_type:
 - apiref
-ms.openlocfilehash: 68a0f9ec8793d465a6fa3b1cb6936eddd7be4c8f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2e7eb183200c6e6de8ee18b58aab457c7e7bf2eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615408"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675748"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument, méthode
+
 Obtient toutes les méthodes qui ont des informations de ligne dans le document fourni.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,11 +38,12 @@ HRESULT GetMethodsInDocument(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `document`  
  dans Pointeur vers le document.  
   
  `cMethod`  
- dans `ULONG32`Qui indique la taille du `pRetVal` tableau.  
+ dans `ULONG32` Qui indique la taille du  `pRetVal` tableau.  
   
  `pcMethod`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les méthodes.  
@@ -49,10 +51,12 @@ HRESULT GetMethodsInDocument(
  `pRetVal`  
  à Pointeur vers la mémoire tampon qui reçoit les méthodes.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

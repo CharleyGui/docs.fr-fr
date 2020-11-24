@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: c94b1b61-045a-4695-bacd-0f18c5acc246
 topic_type:
 - apiref
-ms.openlocfilehash: 3377dcd5d45ca8e31a57a75bd81366d41837c12c
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 1c6ad35cd42760a4d88cf78bb084a25cf58a1064
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860715"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676086"
 ---
 # <a name="getstartupnotificationevent-function"></a>Fonction GetStartupNotificationEvent
+
 Crée ou ouvre un gestionnaire d'événements qui sera signalé par un Common Language Runtime (CLR) qui est chargé dans le processus cible spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,13 +38,15 @@ HRESULT GetStartupNotificationEvent
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `debuggeePID`  
  [in] Identificateur du processus cible à partir duquel les notifications de démarrage du CLR sont reçues.  
   
  `phStartupEvent`  
  [out] Pointeur vers un handle qui sera signalé par un CLR au démarrage.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  Le handle de l'événement de notification de démarrage a été obtenu.  
   
@@ -53,16 +56,18 @@ HRESULT GetStartupNotificationEvent
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'obtenir le handle de l'événement de notification de démarrage.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
   
  L'événement est signalé avant l'exécution de code managé par le CLR ayant signalé l'événement.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim. dll  
+ **Bibliothèque :** dbgshim.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

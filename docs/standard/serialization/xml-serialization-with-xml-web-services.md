@@ -18,21 +18,23 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: 5c986162de19c2cb27edf19ff8e9e80798f36117
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 64b5911ca110ae4ef08f9003898bb817d8b8dd79
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282360"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676541"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Sérialisation XML avec les services Web XML
 
 La sérialisation XML est le mécanisme de transport sous-jacent utilisé dans l'architecture de services Web XML, exécutée par la classe <xref:System.Xml.Serialization.XmlSerializer>. Pour contrôler le code XML généré par un service web XML, vous pouvez appliquer les attributs répertoriés dans [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md) et [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md) aux classes, valeurs de retour, paramètres et champs d’un fichier utilisé pour créer un service web XML (.asmx). Pour plus d’informations sur la création d’un service Web XML, consultez [services Web XML à l’aide de ASP.net](/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Styles littéral et encodé  
+
  Le code XML généré par un service Web XML peut être mis en forme de deux manières : littéral ou encodé, comme expliqué dans personnalisation de la [mise en forme des messages SOAP](/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Par conséquent, il existe deux ensembles d'attributs qui contrôlent la sérialisation XML. Les attributs répertoriés dans [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md) sont conçus pour contrôler le code XML de style littéral. Les attributs répertoriés dans [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](attributes-that-control-encoded-soap-serialization.md) contrôlent le style de code encodé. En appliquant ces attributs de manière sélective, vous pouvez personnaliser une application afin qu'elle retourne l'un ou l'autre de ces styles, voire les deux. En outre, ces attributs peuvent être appliqués (le cas échéant) aux valeurs de retour et aux paramètres.  
   
 ### <a name="example-of-using-both-styles"></a>Exemple d'utilisation des deux styles  
+
  Lorsque vous créez un service Web XML, vous pouvez utiliser les deux ensembles d'attributs sur les méthodes. Dans l'exemple de code suivant, la classe intitulée `MyService` contient deux méthodes de services Web XML, `MyLiteralMethod` et `MyEncodedMethod`. Ces deux méthodes exécutent la même fonction : retourner une instance de la classe `Order`. Dans la classe `Order`, les attributs <xref:System.Xml.Serialization.XmlTypeAttribute> et <xref:System.Xml.Serialization.SoapTypeAttribute> s’appliquent tous deux au champ `OrderID`, mais leur propriété `ElementName` n’a pas la même valeur.  
   
  Pour exécuter l'exemple, collez le code dans un fichier portant une extension .asmx et placez ce fichier dans un répertoire virtuel géré par les Services Internet (IIS). Dans un navigateur HTML, tel qu'Internet Explorer, tapez le nom de l'ordinateur, du répertoire virtuel et du fichier.  
@@ -124,6 +126,7 @@ public class MyService {
 ```  
   
 ### <a name="applying-attributes-to-return-values"></a>Application d'attributs aux valeurs de retour  
+
  Vous pouvez également appliquer des attributs aux valeurs de retour pour contrôler l'espace de noms, le nom d'élément, etc. L'exemple de code suivant applique l'attribut `XmlElementAttribute` à la valeur de retour de la méthode `MyLiteralMethod`. Ainsi, vous pouvez contrôler l'espace de noms et le nom d'élément.  
   
 ```vb  
@@ -163,6 +166,7 @@ public Order MyLiteralMethod(){
 ```  
   
 ### <a name="attributes-applied-to-parameters"></a>Attributs appliqués à des paramètres  
+
  Vous pouvez également appliquer des attributs à des paramètres pour spécifier l'espace de noms, le nom d'élément, etc. L'exemple de code suivant ajoute un paramètre à la méthode `MyLiteralMethodResponse` et applique l'attribut `XmlAttributeAttribute` au paramètre. Le nom d'élément et l'espace de noms sont tous deux définis pour le paramètre.  
   
 ```vb  
@@ -204,6 +208,7 @@ Namespace="http://www.microsoft.com")] string ID){
 ```  
   
 ### <a name="applying-attributes-to-classes"></a>Application d'attributs à des classes  
+
  Si vous devez contrôler l'espace de noms des éléments qui correspondent aux classes, vous pouvez appliquer `XmlTypeAttribute`, `XmlRootAttribute` et `SoapTypeAttribute`, si nécessaire. Les exemples de code suivants s'appliquent tous trois à la classe `Order`.  
   
 ```vb  

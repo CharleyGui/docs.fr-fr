@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 43257761-8cb1-4eaf-8fb5-1f3980cb66cd
 topic_type:
 - apiref
-ms.openlocfilehash: db2137146ded5200e05bbf88e23ae599f3eb7dec
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3fa94094ad066496cc8a1fc4dd2ccb0ee16b5aac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615447"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675839"
 ---
 # <a name="isymunmanagedreaderreplacesymbolstore-method"></a>ISymUnmanagedReader::ReplaceSymbolStore, méthode
+
 Remplace le magasin de symboles existant par un magasin de symboles delta. Cette méthode est similaire à la méthode [UpdateSymbolStore](isymunmanagedreader-updatesymbolstore-method.md) , à ceci près que le delta donné agit comme un remplacement complet plutôt qu’une mise à jour.  
   
 > [!NOTE]
@@ -37,16 +38,19 @@ HRESULT ReplaceSymbolStore (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `filename`  
  dans Nom du fichier contenant le magasin de symboles.  
   
  `pIStream`  
  dans Le flux de fichier, utilisé comme alternative au `filename` paramètre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

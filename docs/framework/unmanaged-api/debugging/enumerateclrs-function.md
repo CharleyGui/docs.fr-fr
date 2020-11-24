@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-ms.openlocfilehash: 1f33fb98712939d1e687798547b784819f164d63
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 8fe0df3ee08f9915ed43990b6f9686e25b183a0b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860723"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95676099"
 ---
 # <a name="enumerateclrs-function"></a>Fonction EnumerateCLRs
+
 Fournit un mécanisme pour énumérer les CLR dans un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumerateCLRs (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `debuggeePID`  
  [in] Identificateur du processus à partir duquel les CLR chargés sont énumérés.  
   
@@ -50,7 +52,8 @@ HRESULT EnumerateCLRs (
  `pdwArrayLengthOut`  
  [out] Pointeur vers une valeur DWORD qui contient la longueur de `ppHandleArrayOut` et `pdwArrayLengthOut` de taille égale.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  Le nombre de CLR dans le processus a été correctement déterminé, et les tableaux de handles et de chemin d’accès correspondants ont été correctement remplis.  
   
@@ -63,7 +66,8 @@ HRESULT EnumerateCLRs (
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'énumérer les CLR chargés.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Pour un processus cible qui est identifié par `debuggeePID`, la fonction retourne un tableau de chemins d’accès, `ppStringArrayOut`, vers les CLR chargés dans le processus ; un tableau de handles d’événement, `ppHandleArrayOut`, qui peut contenir un événement continue-startup pour le CLR au même index ; et la taille des tableaux, `pdwArrayLengthOut`, qui spécifie le nombre de CLR chargés.  
   
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
@@ -72,11 +76,12 @@ HRESULT EnumerateCLRs (
   
  Cette fonction peut être appelée en affectant la valeur null aux deux paramètres de tableau afin de retourner le nombre de CLR dans le processus cible. Avec ce nombre, un appelant peut déduire la taille de la mémoire tampon qui sera créée : `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim. dll  
+ **Bibliothèque :** dbgshim.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

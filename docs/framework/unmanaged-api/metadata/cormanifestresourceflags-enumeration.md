@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1b0306b7-622b-4b57-8edc-3c713bb147ae
 topic_type:
 - apiref
-ms.openlocfilehash: ebdff88e9fdf499b809d56c4c29a906dbef9ec40
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: f8334cb44042e21c086bc05c723e99b0c079fa2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008974"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677061"
 ---
 # <a name="cormanifestresourceflags-enumeration"></a>CorManifestResourceFlags, énumération
+
 Indique la visibilité des ressources encodées dans un manifeste d’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,7 +45,8 @@ typedef enum CorManifestResourceFlags {
 |`mrPublic`|Les ressources sont publiques.|  
 |`mrPrivate`|Les ressources sont privées.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 189c36be-028c-4fba-a002-5edfb8fcd07f
 topic_type:
 - apiref
-ms.openlocfilehash: b89e968e9b12943c8192af3b280f8bd321a02110
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 497dda473e6510cfa31405b2066c63b1a70dd5e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378790"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677321"
 ---
 # <a name="icordebugstackwalknext-method"></a>ICorDebugStackWalk::Next, méthode
+
 Déplace l’objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) vers le frame suivant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,6 +33,7 @@ HRESULT Next();
 ```  
   
 ## <a name="return-value"></a>Valeur de retour  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -43,10 +45,12 @@ HRESULT Next();
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La `Next` méthode avance l' `ICorDebugStackWalk` objet jusqu’au frame appelant uniquement si le runtime peut dérouler le frame actuel. Dans le cas contraire, l’objet passe au frame suivant que le runtime est en mesure de dérouler.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
