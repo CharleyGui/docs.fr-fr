@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dbb1c4dc-269a-459b-ab1d-6c70788782ce
 topic_type:
 - apiref
-ms.openlocfilehash: e494bbb24e8f2245593e7945625e72e70ae1dde5
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 1ca9e55a2183ca4293d30607496b588cbf21d6dd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892766"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679947"
 ---
 # <a name="icordebugcontroller-interface"></a>ICorDebugController, interface
 
@@ -37,16 +37,18 @@ Représente une portée, un <xref:System.Diagnostics.Process> ou un <xref:System
 |[HasQueuedCallbacks, méthode](icordebugcontroller-hasqueuedcallbacks-method.md)|Obtient une valeur qui indique si tous les rappels managés sont actuellement mis en file d’attente pour le thread spécifié.|  
 |[IsRunning, méthode](icordebugcontroller-isrunning-method.md)|Obtient une valeur qui indique si les threads du processus sont en cours d’exécution librement.|  
 |[SetAllThreadsDebugState, méthode](icordebugcontroller-setallthreadsdebugstate-method.md)|Définit l’état de débogage de tous les threads managés dans le processus.|  
-|[Stop, méthode](icordebugcontroller-stop-method.md)|Exécute un arrêt coopératif sur tous les threads qui exécutent du code managé dans le processus.|  
+|[Stop (méthode)](icordebugcontroller-stop-method.md)|Exécute un arrêt coopératif sur tous les threads qui exécutent du code managé dans le processus.|  
 |[Terminate, méthode](icordebugcontroller-terminate-method.md)|Termine le processus avec le code de sortie spécifié.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Si `ICorDebugController` contrôle un processus, l’étendue comprend tous les threads du processus. Si `ICorDebugController` contrôle un domaine d’application, l’étendue comprend uniquement les threads de ce domaine d’application particulier.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

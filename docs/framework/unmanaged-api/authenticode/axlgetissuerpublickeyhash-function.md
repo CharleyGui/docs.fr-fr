@@ -8,14 +8,15 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: fb626b41-b888-4625-84c3-2c02b5e3866f
-ms.openlocfilehash: 6d5ad995b55a3cde6363b297df6b8faf72689468
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 49674e43109108e41b135cecbec061ad61e14865
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132488"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679960"
 ---
-# <a name="_axlgetissuerpublickeyhash-function"></a>\_fonction AxlGetIssuerPublicKeyHash
+# <a name="_axlgetissuerpublickeyhash-function"></a>\_AxlGetIssuerPublicKeyHash fonction)
+
 Récupère le hachage SHA-1 de la clé publique associée à la clé privée utilisée pour signer le certificat spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,13 +29,15 @@ HRESULT _AxlGetIssuerPublicKeyHash (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pChainContext`  
  [en entrée] L'objet blob de clé publique CSP. Consultez la structure [CRYPTOAPI_BLOB](/windows/win32/api/dpapi/ns-dpapi-crypt_integer_blob) .  
   
  `ppwszPublicKeyHash`  
  [en sortie] Un pointeur vers WCHAR * pour recevoir le jeton de clé publique codé en hexadécimal.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  `S_OK` si la fonction réussit ; sinon `S_FALSE`.  
   
 ## <a name="see-also"></a>Voir aussi

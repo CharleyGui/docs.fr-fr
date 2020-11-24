@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6a81c6fe-cc22-4062-ae27-d6eeee03a7b9
 topic_type:
 - apiref
-ms.openlocfilehash: 3611de471001d31c40984e71d49ce376bb3e4607
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 41d049c931091d2cc0b41bd1e9d74b3c15d7878d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504288"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679258"
 ---
 # <a name="iclrassemblyidentitymanager-interface"></a>ICLRAssemblyIdentityManager, interface
+
 Fournit des méthodes qui prennent en charge la communication entre l’hôte et le common language runtime (CLR) à propos des assemblys.  
   
 ## <a name="methods"></a>Méthodes  
@@ -37,14 +38,16 @@ Fournit des méthodes qui prennent en charge la communication entre l’hôte et
 |[IsStronglyNamed, méthode](iclrassemblyidentitymanager-isstronglynamed-method.md)|Obtient une valeur qui indique si l’assembly spécifié porte un nom fort.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Utilisez `ICLRAssemblyIdentityManager` pour récupérer des instances de `ICLRAssemblyReferenceList` et pour énumérer les identités d’assembly.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

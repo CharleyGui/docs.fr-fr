@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0adbbd35-5e8d-4fec-8268-dc70a07c5975
 topic_type:
 - apiref
-ms.openlocfilehash: 02d1ea1ef12fa158ce7ec94aeca4356ac54d4e5f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0049db66d7a753488388c85e87e1f907db56c7cf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503482"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679089"
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport, interface
+
 Fournit des méthodes pour importer et manipuler les métadonnées existantes à partir d'un fichier exécutable portable (PE) ou d'une autre source, comme une bibliothèque de types ou un fichier binaire de métadonnées autonome au moment de l'exécution.  
   
 ## <a name="methods"></a>Méthodes  
@@ -92,6 +93,7 @@ Fournit des méthodes pour importer et manipuler les métadonnées existantes à
 |[ResolveTypeRef, méthode](imetadataimport-resolvetyperef-method.md)|Obtient des informations de type pour le type référencé par le jeton TypeRef spécifié.|  
   
 ## <a name="remarks"></a>Remarques  
+
  La vocation première de la conception de l'interface `IMetaDataImport` est d'être utilisée par les outils et services qui importent des informations de type (par exemple, les outils de développement) ou qui gèrent des composants déployés (par exemple, les services de résolution/d'activation). Les méthodes `IMetaDataImport` appartiennent aux catégories de tâches suivantes :  
   
 - Énumération des collections d'éléments dans la portée des métadonnées.  
@@ -103,11 +105,12 @@ Fournit des méthodes pour importer et manipuler les métadonnées existantes à
 - Les méthodes Get sont conçues spécifiquement pour retourner les propriétés à valeur unique d'un élément de métadonnées. Quand la propriété est une référence à un autre élément, un jeton est retourné pour cet élément. Tout type d'entrée de pointeur peut être NULL pour indiquer que la valeur particulière n'est pas demandée. Pour obtenir les propriétés qui sont essentiellement des objets de collection (par exemple, la collection des interfaces qu’une classe implémente), utilisez les méthodes d’énumération.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

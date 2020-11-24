@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d218554a-bf42-4d88-833d-ede30de67a53
 topic_type:
 - apiref
-ms.openlocfilehash: c60af0ccfb143e68be3b987b0caf92fe3d992b4d
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 92b2a7f7f1dd98f0d847119a6431e3816c16d5da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212709"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679570"
 ---
 # <a name="icordebugmanagedcallbacklogmessage-method"></a>ICorDebugManagedCallback::LogMessage, méthode
+
 Notifie le débogueur qu’un thread managé common language runtime (CLR) a appelé une méthode dans la <xref:System.Diagnostics.EventLog> classe pour enregistrer un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT LogMessage (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread managé qui a enregistré l’événement.  
   
@@ -53,7 +55,8 @@ HRESULT LogMessage (
  `pMessage`  
  dans Pointeur vers le message qui a été écrit dans le journal des événements.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

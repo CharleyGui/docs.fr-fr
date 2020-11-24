@@ -2,12 +2,12 @@
 title: Prise en charge de la diffusion en continu pour SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: a396e3e172c63b0b71b085d4694184c42cc42f3e
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 7ff7feafb0501d5d98a0e692545e6b243c096e10
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609243"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678868"
 ---
 # <a name="sqlclient-streaming-support"></a>Prise en charge de la diffusion en continu pour SqlClient
 
@@ -131,7 +131,7 @@ namespace StreamingFromServer {
          Console.WriteLine("Done");
       }
 
-      // Application retrieving a large BLOB from SQL Server in .NET 4.5 using the new asynchronous capability
+      // Application retrieving a large BLOB from SQL Server in .NET Framework 4.5 using the new asynchronous capability
       private static async Task CopyBinaryValueToFile() {
          string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "binarydata.bin");
 
@@ -159,7 +159,7 @@ namespace StreamingFromServer {
          }
       }
 
-      // Application transferring a large Text File from SQL Server in .NET 4.5
+      // Application transferring a large Text File from SQL Server in .NET Framework 4.5
       private static async Task PrintTextValues() {
          using (SqlConnection connection = new SqlConnection(connectionString)) {
             await connection.OpenAsync();
@@ -194,7 +194,7 @@ namespace StreamingFromServer {
          }
       }
 
-      // Application transferring a large Xml Document from SQL Server in .NET 4.5
+      // Application transferring a large Xml Document from SQL Server in .NET Framework 4.5
       private static async Task PrintXmlValues() {
          using (SqlConnection connection = new SqlConnection(connectionString)) {
             await connection.OpenAsync();
@@ -237,7 +237,7 @@ namespace StreamingFromServer {
          }
       }
 
-      // Application transferring a large Xml Document from SQL Server in .NET 4.5
+      // Application transferring a large Xml Document from SQL Server in .NET Framework 4.5
       // This goes via NVarChar and TextReader to enable asynchronous reading
       private static async Task PrintXmlValuesViaNVarChar() {
          XmlReaderSettings xmlSettings = new XmlReaderSettings() {
@@ -394,7 +394,7 @@ namespace StreamingToServer {
          }
       }
 
-      // Application transferring a large BLOB to SQL Server in .NET 4.5
+      // Application transferring a large BLOB to SQL Server in .NET Framework 4.5
       private static async Task StreamBLOBToServer() {
          using (SqlConnection conn = new SqlConnection(connectionString)) {
             await conn.OpenAsync();
@@ -412,7 +412,7 @@ namespace StreamingToServer {
          }
       }
 
-      // Application transferring a large Text File to SQL Server in .NET 4.5
+      // Application transferring a large Text File to SQL Server in .NET Framework 4.5
       private static async Task StreamTextToServer() {
          using (SqlConnection conn = new SqlConnection(connectionString)) {
             await conn.OpenAsync();

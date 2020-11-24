@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: 8e8d8d38ab8170a9bf9fae098e267be1a38f27d0
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 4ca78c71f464a914c07583825d4a7027ebb11bf6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281792"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679037"
 ---
 # <a name="custom-serialization"></a>Sérialisation personnalisée
 
@@ -51,6 +51,7 @@ La méthode recommandée pour exécuter des méthodes personnalisées pendant et
  De plus, lorsque vous ajoutez un nouveau champ à un type sérialisable existant, appliquez l'attribut <xref:System.Runtime.Serialization.OptionalFieldAttribute> au champ. <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> et <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> ignorent l'absence du champ lorsqu'un flux de données dont le nouveau champ est manquant est traité.  
   
 ## <a name="implementing-the-iserializable-interface"></a>Implémentation de l’interface ISerializable  
+
  L’autre méthode permettant de contrôler la sérialisation s’effectue en implémentant l’interface <xref:System.Runtime.Serialization.ISerializable> sur un objet. Toutefois, notez que la méthode de la section précédente remplace cette méthode pour contrôler la sérialisation.  
   
  De plus, vous ne devez pas utiliser la sérialisation par défaut sur une classe marquée avec l’attribut [Serializable](xref:System.SerializableAttribute) et présentant une sécurité déclarative ou impérative au niveau de la classe ou sur ses constructeurs. En revanche, ces classes doivent toujours implémenter l'interface <xref:System.Runtime.Serialization.ISerializable>.  

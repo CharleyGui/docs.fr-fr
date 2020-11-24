@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fde7e21d-1169-4bed-a34d-792e69652bf9
 topic_type:
 - apiref
-ms.openlocfilehash: 3f6cea68a4379f8769ccbdbc6911cc5c425d3369
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: af4124aed823a0a2475a181efe3fa68e1fae0bfe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614875"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678387"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfo-interface"></a>ISymUnmanagedReaderSymbolSearchInfo, interface
+
 Fournit des méthodes qui obtiennent des informations de recherche de symboles. Obtenez cette interface en appelant `QueryInterface` sur un objet qui implémente l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) .  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,7 +32,8 @@ Fournit des méthodes qui obtiennent des informations de recherche de symboles. 
 |[GetSymbolSearchInfo, méthode](isymunmanagedreadersymbolsearchinfo-getsymbolsearchinfo-method.md)|Obtient les informations de recherche de symboles.|  
 |[GetSymbolSearchInfoCount, méthode](isymunmanagedreadersymbolsearchinfo-getsymbolsearchinfocount-method.md)|Obtient le nombre d’informations de recherche de symboles.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

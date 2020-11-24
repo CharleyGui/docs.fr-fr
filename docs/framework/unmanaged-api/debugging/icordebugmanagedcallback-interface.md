@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b47f1d61-c7dc-4196-b926-0b08c94f7041
 topic_type:
 - apiref
-ms.openlocfilehash: cb2b69c5e6dfed4e0cb4e4e324c4ec6ad664f3e7
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6eebabc3a08027eab4ac55c1e46dd75b1f75bd21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212748"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679700"
 ---
 # <a name="icordebugmanagedcallback-interface"></a>ICorDebugManagedCallback, interface
+
 Fournit des méthodes pour traiter les rappels de débogueur.  
   
 ## <a name="methods"></a>Méthodes  
@@ -36,7 +37,7 @@ Fournit des méthodes pour traiter les rappels de débogueur.
 |[CreateProcess, méthode](icordebugmanagedcallback-createprocess-method.md)|Notifie le débogueur lorsqu’un processus a été attaché ou démarré pour la première fois.|  
 |[CreateThread, méthode](icordebugmanagedcallback-createthread-method.md)|Notifie le débogueur qu’un thread a commencé à exécuter du code managé.|  
 |[DebuggerError, méthode](icordebugmanagedcallback-debuggererror-method.md)|Notifie le débogueur qu’une erreur s’est produite lors de la tentative de gestion d’un événement à partir du CLR.|  
-|[EditAndContinueRemap, méthode](icordebugmanagedcallback-editandcontinueremap-method.md)|Action déconseillée. Notifie le débogueur qu’un événement de remappage a été envoyé à l’IDE.|  
+|[EditAndContinueRemap, méthode](icordebugmanagedcallback-editandcontinueremap-method.md)|Obsolète. Notifie le débogueur qu’un événement de remappage a été envoyé à l’IDE.|  
 |[EvalComplete, méthode](icordebugmanagedcallback-evalcomplete-method.md)|Notifie le débogueur qu’une évaluation est terminée.|  
 |[EvalException, méthode](icordebugmanagedcallback-evalexception-method.md)|Notifie le débogueur qu’une évaluation a été terminée avec une exception non gérée.|  
 |[Exception, méthode](icordebugmanagedcallback-exception-method.md)|Notifie le débogueur qu’une exception a été levée à partir du code managé.|  
@@ -55,7 +56,8 @@ Fournit des méthodes pour traiter les rappels de débogueur.
 |[UnloadModule, méthode](icordebugmanagedcallback-unloadmodule-method.md)|Notifie le débogueur qu’un module CLR (DLL) a été déchargé.|  
 |[UpdateModuleSymbols, méthode](icordebugmanagedcallback-updatemodulesymbols-method.md)|Notifie le débogueur que les symboles d’un module CLR ont changé.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Tous les rappels sont sérialisés, appelés dans le même thread et appelés avec le processus dans l’État Synchronized.  
   
  Chaque implémentation de rappel doit appeler [ICorDebugController :: continue](icordebugcontroller-continue-method.md) pour reprendre l’exécution. Si `ICorDebugController::Continue` n’est pas appelé avant le retour du rappel, le processus restera arrêté et aucun autre rappel d’événement ne se produira tant que `ICorDebugController::Continue` n’est pas appelé.  
@@ -65,7 +67,8 @@ Fournit des méthodes pour traiter les rappels de débogueur.
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

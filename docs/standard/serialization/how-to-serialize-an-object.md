@@ -9,14 +9,15 @@ helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
 ms.assetid: a1207d05-32b2-4953-8582-959607991227
-ms.openlocfilehash: e9c7ba250995db1c7a701de346b18661892e7e23
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce8510a987f75ed4110a44ffa9f2ac813d36a5be
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84291550"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678894"
 ---
 # <a name="how-to-serialize-an-object"></a>Comment : sérialiser un objet
+
 Pour sérialiser un objet, créez tout d'abord l'objet à sérialiser et définissez ses propriétés et champs publics. Pour ce faire, vous devez déterminer le format de transport dans lequel le flux de données XML sera stocké, sous forme de flux de données ou de fichier. Par exemple, si le flux de données XML doit être enregistré dans un formulaire permanent, créez un objet <xref:System.IO.FileStream>.  
   
 > [!NOTE]
@@ -54,4 +55,4 @@ Pour sérialiser un objet, créez tout d'abord l'objet à sérialiser et défini
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
-- [Guide pratique pour désérialiser un objet](how-to-deserialize-an-object.md)
+- [Comment : désérialiser un objet](how-to-deserialize-an-object.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e6121cc3-2f11-42c7-bdae-47808581ff71
 topic_type:
 - apiref
-ms.openlocfilehash: 91f174cab4986882df795eb531baedfc0dd43962
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 74d47b3f55c10f65d47f726a2b96ba5e0b18b749
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615863"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679141"
 ---
 # <a name="iclrassemblyreferencelistisstringassemblyreferenceinlist-method"></a>ICLRAssemblyReferenceList::IsStringAssemblyReferenceInList, méthode
+
 Obtient une valeur qui indique si le nom fourni correspond au nom d’un assembly dans la liste.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,11 @@ HRESULT IsStringAssemblyReferenceInList (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzAssemblyName`  
  dans Nom de l’assembly à rechercher.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -45,12 +47,13 @@ HRESULT IsStringAssemblyReferenceInList (
 |S_FALSE|La chaîne n’apparaît pas dans la liste.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le common language runtime n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

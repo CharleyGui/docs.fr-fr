@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fe9849c1-c3fc-477b-a31f-e8619f5516f5
 topic_type:
 - apiref
-ms.openlocfilehash: 4f06dd7b85446eec986055418d2cf558b9b5bd7a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a5e71d6ca90c8d0aa489176eb5a90bfe6896b1cb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615928"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679315"
 ---
 # <a name="iclrassemblyidentitymanagergetreferencedassembliesfromstream-method"></a>ICLRAssemblyIdentityManager::GetReferencedAssembliesFromStream, méthode
+
 Obtient un pointeur vers un objet [ICLRReferenceAssemblyEnum](iclrreferenceassemblyenum-interface.md) qui contient les données d’identité d’assembly pour les assemblys référencés par l’assembly dans le flux spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetReferencedAssembliesFromStream (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pStream`  
  dans Pointeur d’interface vers un `IStream` contenant l’assembly à évaluer.  
   
@@ -49,7 +51,7 @@ HRESULT GetReferencedAssembliesFromStream (
  `ppReferenceEnum`  
  à Pointeur vers l’adresse d’un `ICLRReferenceAssemblyEnum` objet qui contient les données d’identité de l’assembly pour les assemblys référencés par l’assembly dans, à l' `pStream` exclusion des assemblys dans `pExcludeAssembliesList` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -60,15 +62,17 @@ HRESULT GetReferencedAssembliesFromStream (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  L’appelant peut choisir d’exclure un ensemble de références d’assembly connues de la liste retournée. Cet ensemble est défini par `pExcludeAssembliesList` .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

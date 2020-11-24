@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 954bd386-2076-4d00-9d46-38c728aa9cab
 topic_type:
 - apiref
-ms.openlocfilehash: d388f366671f50c3dcb3bd9d387300dd1bbb168f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9ac3b2ae349a696ba0cea1bad3e3484bb1c113fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615902"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679241"
 ---
 # <a name="iclrassemblyidentitymanagerisstronglynamed-method"></a>ICLRAssemblyIdentityManager::IsStronglyNamed, méthode
+
 Obtient une valeur qui indique si l’assembly spécifié porte un nom fort.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,13 +36,14 @@ RESULT IsStronglyNamed (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzAssemblyIdentity`  
  dans Données d’identité de l’assembly canonique opaque de l’assembly à évaluer.  
   
  `pbIsStronglyNamed`  
  [out] `true` , si l’assembly référencé par le `pwzAssemblyIdentity` paramètre porte un nom fort ; sinon, `false` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -52,12 +54,13 @@ RESULT IsStronglyNamed (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

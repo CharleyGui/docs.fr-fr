@@ -16,14 +16,15 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: 88bdb1cb88a5d6ca5c948d5f3110ddb13bdda6ae
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eb7680607c1def7cdc0dd5670b594e2ee1a6bfff
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830387"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678114"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
+
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  
   
  Le modèle asynchrone basé sur les événements permet de profiter des avantages des applications multithread tout en masquant de nombreux problèmes complexes inhérents à la conception multithread. L’utilisation d’une classe prenant en charge ce modèle peut vous permettre :  
@@ -48,11 +49,13 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
 > Comme il est possible que le téléchargement se termine au moment où la demande <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> est effectuée, <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> peut ne pas refléter la demande d'annulation. C’est ce que l’on appelle une *condition de concurrence*, un problème courant en programmation multithread. Pour plus d'informations sur les problèmes relatifs à la programmation multithread, consultez la page [Meilleures pratiques de threads managés](../threading/managed-threading-best-practices.md).  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Caractéristiques du modèle asynchrone basé sur les événements  
+
  Le modèle asynchrone basé sur les événements peut prendre plusieurs formes selon la complexité des opérations prises en charge par une classe particulière. Les classes les plus simples peuvent avoir une seule méthode _MethodName_**Async** et un événement _MethodName_**Completed** correspondant. Les classes plus complexes peuvent posséder plusieurs méthodes _MethodName_**Async**, chacune assortie de l’événement _MethodName_**Completed** correspondant, ainsi que les versions synchrones de ces méthodes. Les classes peuvent éventuellement prendre en charge l'annulation, le rapport de progression et les résultats incrémentiels pour chaque méthode asynchrone.  
   
  Une méthode asynchrone peut également prendre en charge plusieurs appels en attente (plusieurs appels simultanés), ce qui permet à votre code de l'appeler autant de fois que nécessaire avant de terminer d'autres opérations en attente. La gestion correcte de cette situation peut nécessiter que votre application effectue le suivi de l'achèvement de chaque opération.  
   
 ### <a name="examples-of-the-event-based-asynchronous-pattern"></a>Exemples du modèle asynchrone basé sur les événements  
+
  Les composants <xref:System.Media.SoundPlayer> et <xref:System.Windows.Forms.PictureBox> représentent des implémentations simples du modèle asynchrone basé sur les événements. Les composants <xref:System.Net.WebClient> et <xref:System.ComponentModel.BackgroundWorker> représentent des implémentations plus complexes de ce modèle.  
   
  Voici un exemple de déclaration de classe conforme au modèle :  
@@ -107,17 +110,20 @@ public class AsyncExample
  La classe `AsyncExample` fictive possède deux méthodes qui prennent en charge les appels synchrones et asynchrones. Les surcharges synchrones se comportent comme tout appel de méthode et exécutent l’opération sur le thread appelant ; si l’opération est de longue durée, le délai de retour de l’appel peut être important. Les surcharges asynchrones démarrent l'opération sur un autre thread, puis elles sont retournées immédiatement, permettant au thread appelant de continuer pendant l'exécution de l'opération « en arrière-plan ».  
   
 ### <a name="asynchronous-method-overloads"></a>Surcharges de méthode asynchrone  
+
  Il existe potentiellement deux surcharges pour les opérations asynchrones : l'appel unique et les appels multiples. Ces deux surcharges se distinguent par leurs signatures de méthode : la surcharge d'appels multiples possède un paramètre supplémentaire appelé `userState`. Elle permet à votre code d'appeler `Method1Async(string param, object userState)` plusieurs fois sans attendre que les opérations asynchrones en attente se terminent. En revanche, si vous tentez d'appeler `Method1Async(string param)` avant qu'un appel antérieur soit terminé, la méthode lève une <xref:System.InvalidOperationException>.  
   
  Le paramètre `userState` pour les surcharges d'appels multiples vous permet de différencier les opérations asynchrones. Vous indiquez une valeur unique (par exemple, un GUID ou un code de hachage) pour chaque appel à `Method1Async(string param, object userState)` ; quand chacune des opérations est terminée, votre gestionnaire d'événements peut identifier l'instance de l'opération qui a déclenché l'événement d'achèvement.  
   
 ### <a name="tracking-pending-operations"></a>Suivi des opérations en attente  
+
  Si vous utilisez les surcharges d’appels multiples, votre code doit conserver une trace des objets `userState` (ID de tâche) pour les tâches en attente. Pour chaque appel à `Method1Async(string param, object userState)`, on génère en général un nouvel objet `userState` unique et on l’ajoute à une collection. Quand la tâche correspondant à cet objet `userState` déclenche l’événement d’achèvement, l’implémentation de votre méthode d’achèvement examine <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A?displayProperty=nameWithType> et le supprime de votre collection. Utilisé de cette manière, le paramètre `userState` joue le rôle d'un ID de tâche.  
   
 > [!NOTE]
 > Vous devez fournir une valeur unique pour `userState` dans vos appels aux surcharges d'appels multiples. Les ID de tâche non uniques conduisent la classe asynchrone à lever une <xref:System.ArgumentException>.  
   
 ### <a name="canceling-pending-operations"></a>Annulation des opérations en attente  
+
  Il est important de pouvoir annuler des opérations asynchrones à tout moment avant leur achèvement. Les classes qui implémentent le modèle asynchrone basé sur les événements comportent une méthode `CancelAsync` (s’il n’existe qu’une seule méthode asynchrone) ou une méthode _MethodName_**AsyncCancel** (s’il en existe plusieurs).  
   
  Les méthodes qui autorisent les appels multiples acceptent un paramètre `userState`, qui peut être utilisé pour assurer le suivi de la durée de vie de chaque tâche. `CancelAsync` accepte un paramètre `userState` qui vous permet d'annuler des tâches en attente particulières.  
@@ -125,6 +131,7 @@ public class AsyncExample
  Les méthodes qui prennent en charge une seule opération en attente à la fois, comme `Method1Async(string param)`, ne sont pas annulables.  
   
 ### <a name="receiving-progress-updates-and-incremental-results"></a>Réception des mises à jour de progression et des résultats incrémentiels  
+
  Une classe obéissant au modèle asynchrone basé sur les événements peut éventuellement fournir un événement pour assurer le suivi de la progression et des résultats incrémentiels. Celui-ci est généralement appelé `ProgressChanged` ou _MethodName_**ProgressChanged**, et son gestionnaire d’événements correspondant prend un paramètre <xref:System.ComponentModel.ProgressChangedEventArgs>.  
   
  Le gestionnaire d’événements de l’événement `ProgressChanged` peut examiner la propriété <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A?displayProperty=nameWithType> afin de déterminer le pourcentage d’exécution d’une tâche asynchrone. Cette propriété est comprise entre 0 et 100 et peut être utilisée pour mettre à jour la propriété <xref:System.Windows.Forms.ProgressBar.Value%2A> d'une <xref:System.Windows.Forms.ProgressBar>. Si plusieurs opérations asynchrones sont en attente, vous pouvez utiliser la propriété <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A?displayProperty=nameWithType> pour distinguer l'opération qui signale la progression.  

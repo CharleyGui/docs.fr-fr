@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7e6c54e-7be9-4e52-bbb4-95f52458e8e4
 topic_type:
 - apiref
-ms.openlocfilehash: 366b5124cc66a4e9a1c3bd4e77f604f15ba8d8a8
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: eb8692aebe7b702b5778b3f13e496d81dcd45784
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379674"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678537"
 ---
 # <a name="icordebugthread4getblockingobjects-method"></a>ICorDebugThread4::GetBlockingObjects, méthode
+
 Fournit une énumération ordonnée des structures [CorDebugBlockingObject](cordebugblockingobject-structure.md) qui fournissent des informations sur le blocage des threads.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,10 +34,12 @@ HRESULT GetBlockingObjects (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppBlockingObjectEnum`  
  à Pointeur vers une énumération ordonnée de structures [CorDebugBlockingObject](cordebugblockingobject-structure.md) .  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le premier élément de l’énumération retournée correspond à la première structure qui bloque le thread. Le deuxième élément correspond à un élément bloquant qui est rencontré lors de l’exécution d’un appel de procédure asynchrone (APC) lorsqu’il est bloqué sur le premier, et ainsi de suite.  
   
  L’énumération est valide uniquement pour la durée de l’état synchronisé actuel.  
@@ -47,7 +50,8 @@ HRESULT GetBlockingObjects (
   
  Si un thread est bloqué et que l’erreur ne peut pas être déterminée, la méthode retourne un HRESULT qui indique un échec ; Sinon, elle retourne S_OK.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

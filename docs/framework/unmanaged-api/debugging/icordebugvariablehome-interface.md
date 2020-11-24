@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 76f2bf3b-759f-4eed-bce7-119415b25915
 topic_type:
 - apiref
-ms.openlocfilehash: caf6a24207be98be9afb10be2bd027b51405fa3b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 089e68278113dfdf509ed848f424ad32baa145ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396537"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679544"
 ---
 # <a name="icordebugvariablehome-interface"></a>ICorDebugVariableHome, interface
+
 Représente une variable locale ou un argument d’une fonction.  
   
 ## <a name="methods"></a>Méthodes  
@@ -39,6 +40,7 @@ Représente une variable locale ou un argument d’une fonction.
 |[GetSlotIndex, méthode](icordebugvariablehome-getslotindex-method.md)|Obtient l’index d’emplacement managé d’une variable locale.|  
   
 ## <a name="example"></a>Exemple  
+
  Le fragment de code suivant utilise l’objet [ICorDebugCode4](icordebugcode4-interface.md) nommé `pCode4` .  
   
 ```cpp  
@@ -80,7 +82,8 @@ for (int i = 0; i < celtFetched; i++)
 }  
 ```  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

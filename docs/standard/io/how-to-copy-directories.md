@@ -12,12 +12,12 @@ helpviewer_keywords:
 - copying directories
 - directories [.NET], copying
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
-ms.openlocfilehash: b81723b9ed7067826692e8383bf64058d4295f0c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: dfe45d8529eb927a6b174a7bb411afa8072035f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830829"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679063"
 ---
 # <a name="how-to-copy-directories"></a>Comment : copier des répertoires
 
@@ -28,6 +28,7 @@ Pour obtenir un exemple de copie de fichier asynchrone, consultez [E/S sur fichi
 Cet exemple copie des sous-répertoires en définissant la propriété `copySubDirs` de la méthode `DirectoryCopy` sur `true`. La méthode `DirectoryCopy` copie les sous-répertoires de manière récursive en s’appelant elle-même sur chaque sous-répertoire jusqu’à ce qu’il n’y ait plus rien à copier.  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[System.IO.Directory_Copy#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory_Copy/cs/program.cs#1)]
  [!code-vb[System.IO.Directory_Copy#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory_Copy/vb/Program.vb#1)]  
   
@@ -38,6 +39,6 @@ Cet exemple copie des sous-répertoires en définissant la propriété `copySubD
 - <xref:System.IO.FileInfo>
 - <xref:System.IO.DirectoryInfo>
 - <xref:System.IO.FileStream>
-- [E/s de fichier et de flux](index.md)
+- [E/S de fichier et de flux](index.md)
 - [Tâches d’E/S courantes](common-i-o-tasks.md)
 - [E/S sur fichier asynchrones](asynchronous-file-i-o.md)

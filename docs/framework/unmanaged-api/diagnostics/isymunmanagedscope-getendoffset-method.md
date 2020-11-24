@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1d0b15c9-8059-435f-9fce-346a08b9bd36
 topic_type:
 - apiref
-ms.openlocfilehash: 4d6bd239a15bd196f840007af120cb062499f4c9
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 14e747e81e467019d464212e75513bdf98344916
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614849"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678361"
 ---
 # <a name="isymunmanagedscopegetendoffset-method"></a>ISymUnmanagedScope::GetEndOffset, méthode
+
 Obtient l’offset de fin pour cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT GetEndOffset(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRetVal`  
  à Pointeur vers un `ULONG32` qui reçoit le décalage de fin.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

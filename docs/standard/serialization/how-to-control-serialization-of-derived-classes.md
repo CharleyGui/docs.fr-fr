@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-ms.openlocfilehash: 08900f9e5b735065f97ef705dccd899eebe3bfe0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 72568f897db80f2beb7ed980e850a7b2e13f5ae1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678946"
 ---
 # <a name="how-to-control-serialization-of-derived-classes"></a>Comment : contrôler la sérialisation de classes dérivées
+
 L’utilisation de l’attribut **XmlElementAttribute** pour modifier le nom d’un élément XML ne constitue pas l’unique moyen de personnaliser la sérialisation d’un objet. Vous pouvez également personnaliser le flux de données XML en effectuant une dérivation à partir d'une classe existante et en indiquant à l'instance <xref:System.Xml.Serialization.XmlSerializer> comment sérialiser la nouvelle classe.  
   
  Par exemple, d'après une classe `Book`, vous pouvez effectuer une dérivation et créer une classe `ExpandedBook` qui dispose de quelques propriétés supplémentaires. Toutefois, vous devez demander à **XmlSerializer** d’accepter le type dérivé lors de la sérialisation ou de la désérialisation. Pour ce faire, créez une instance <xref:System.Xml.Serialization.XmlElementAttribute> et affectez à sa propriété **Type** le type de la classe dérivée. Ajoutez **XmlElementAttribute** à une instance <xref:System.Xml.Serialization.XmlAttributes>. Ajoutez ensuite **XmlAttributes** à une instance <xref:System.Xml.Serialization.XmlAttributeOverrides>, en spécifiant le type qui est substitué et le nom du membre qui accepte la classe dérivée. Cela est illustré par l'exemple suivant.  
@@ -241,4 +242,4 @@ public class Run
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
 - [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)
-- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Comment : spécifier un nom d'élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

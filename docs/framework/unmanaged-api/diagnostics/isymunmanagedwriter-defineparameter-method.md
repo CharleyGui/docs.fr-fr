@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8e3dd32-6a44-4371-9a74-f417b11998c8
 topic_type:
 - apiref
-ms.openlocfilehash: c695aa80ea3bf90a29ce7c5d11eda7fae5fe7b2d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c5e36443295395997303cb94202f534a83d086f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614810"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677867"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter, méthode
+
 Définit un paramètre unique dans la méthode en cours. Le type de paramètre est extrait de la position (séquence) du paramètre dans la signature de la méthode.  
   
  Si des paramètres sont définis dans les métadonnées d’une méthode donnée, vous n’avez pas à les redéfinir à l’aide de cette méthode. Les lecteurs de symboles doivent vérifier les métadonnées normales des paramètres avant de vérifier le magasin de symboles.  
@@ -41,6 +42,7 @@ HRESULT DefineParameter(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Nom du paramètre.  
   
@@ -62,10 +64,12 @@ HRESULT DefineParameter(
  `addr3`  
  dans Troisième adresse de la spécification de paramètre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

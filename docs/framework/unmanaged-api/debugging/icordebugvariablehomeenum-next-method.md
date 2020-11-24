@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb9ea96c-5b58-4655-8104-094fc8b393b8
 topic_type:
 - apiref
-ms.openlocfilehash: 980f563d3b11fbfcce48b6d7c05275af520e14f1
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4ef4ed19033b0857b9970ee8103bbd92f383898c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396502"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95679531"
 ---
 # <a name="icordebugvariablehomeenumnext-method"></a>ICorDebugVariableHomeEnum :: Next, méthode
+
 Obtient le nombre spécifié d’instances [ICorDebugVariableHome](icordebugvariablehome-interface.md) qui contiennent des informations sur les variables locales et les arguments d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  [in] Nombre d'objets à récupérer.  
   
@@ -45,7 +47,8 @@ HRESULT Next(
  `pceltFetched`  
  à Nombre d’instances réellement retournées dans les objets.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La méthode retourne les valeurs suivantes.  
   
 |HRESULT|Description|  
@@ -53,10 +56,12 @@ HRESULT Next(
 |`S_OK`|La commande s'est correctement terminée.|  
 |`S_FALSE`|Le nombre réel d’instances récupérées, comme indiqué dans `pceltFetched` , est inférieur au nombre d’instances demandé.|  
   
-## <a name="remarks"></a>Notes  
- La méthode [ICorDebugVariableHomeEnum :: Next](icordebugvariablehomeenum-next-method.md) récupère un nombre maximal d' `celt` objets commençant à la position actuelle de l’énumérateur. Lorsque la méthode est retournée, `pceltFetched` contient le nombre réel d’objets récupérés.  
+## <a name="remarks"></a>Remarques  
+
+ La méthode [ICorDebugVariableHomeEnum :: Next](icordebugvariablehomeenum-next-method.md) récupère un nombre maximal d'  `celt` objets commençant à la position actuelle de l’énumérateur. Lorsque la méthode est retournée, `pceltFetched` contient le nombre réel d’objets récupérés.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fb511c9b-3fe4-41b0-822a-6ba4a079d1f5
 topic_type:
 - apiref
-ms.openlocfilehash: f878e2f1f86bc42c0ff5abada8d7df4feb9ed228
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: dbe3df6bb20e5ad8f9eb534a366405eb9c33984f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504184"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678244"
 ---
 # <a name="iclrgcmanager-interface"></a>ICLRGCManager, interface
+
 Fournit des méthodes qui permettent à un hôte d’interagir avec le système de garbage collection du common language runtime.  
   
 > [!NOTE]
@@ -32,18 +33,20 @@ Fournit des méthodes qui permettent à un hôte d’interagir avec le système 
 |Méthode|Description|  
 |------------|-----------------|  
 |[Collect, méthode](iclrgcmanager-collect-method.md)|Force une garbage collection pour la génération spécifiée.|  
-|[GetStats, méthode](iclrgcmanager-getstats-method.md)|Obtient un ensemble de statistiques actuelles sur le système de garbage collection.|  
+|[GetStats (méthode)](iclrgcmanager-getstats-method.md)|Obtient un ensemble de statistiques actuelles sur le système de garbage collection.|  
 |[SetGCStartupLimits, méthode](iclrgcmanager-setgcstartuplimits-method.md)|Définit la taille d’un segment de garbage collection et la taille maximale de la génération 0 du système garbage collection.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le common language runtime (CLR) implémente son mécanisme de garbage collection avec le <xref:System.GC> type managé. Pour plus d’informations sur le système de garbage collection, consultez [garbage collection](../../../standard/garbage-collection/index.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -54,4 +57,4 @@ Fournit des méthodes qui permettent à un hôte d’interagir avec le système 
 - [ICLRControl, interface](iclrcontrol-interface.md)
 - [Interfaces d'hébergement du CLR](clr-hosting-interfaces.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

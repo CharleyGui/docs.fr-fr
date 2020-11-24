@@ -17,14 +17,15 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: 94bd79bab1e7982ea39b5aa5872a6674033f9ccf
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 36fe8015187833e03c4cc3fc1609ec647daf7278
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830361"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95677997"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Procédure : utiliser des composants qui prennent en charge le modèle asynchrone basé sur des événements
+
 De nombreux composants peuvent effectuer leur travail de façon asynchrone. Les composants <xref:System.Media.SoundPlayer> et <xref:System.Windows.Forms.PictureBox>, par exemple, permettent de charger des sons et des images « en arrière-plan » pendant que le thread principal continue de s’exécuter sans interruption.  
   
  Il peut être aussi simple d’utiliser des méthodes asynchrones sur une classe qui prend en charge la [Vue d’ensemble du modèle asynchrone basé sur les événements](event-based-asynchronous-pattern-overview.md) que d’attacher un gestionnaire d’événements à l’événement _MethodName_**Completed**, comme pour n’importe quel autre événement. Lorsque vous appelez la méthode _MethodName_**Async**, votre application continuera de s’exécuter sans interruption jusqu'à ce que l’événement _MethodName_**Completed** soit déclenché. Dans votre gestionnaire d’événements, vous pouvez examiner le paramètre <xref:System.ComponentModel.AsyncCompletedEventArgs> pour déterminer si l’opération asynchrone s’est terminée avec succès ou si elle a été annulée.  

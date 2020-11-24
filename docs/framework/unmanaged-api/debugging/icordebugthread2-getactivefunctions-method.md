@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 27fae01a-ecec-423a-973e-24f8de55826c
 topic_type:
 - apiref
-ms.openlocfilehash: e064a7db131a671adc4d0b6df522f3456e3a31d5
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 2d5674d6b5962ca539de02cda1e5658daed83622
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377150"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95678751"
 ---
 # <a name="icordebugthread2getactivefunctions-method"></a>ICorDebugThread2::GetActiveFunctions, méthode
+
 Obtient des informations sur la fonction active dans chacun des frames de ce thread.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetActiveFunctions (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cFunctions`  
  [in] Taille du tableau `pFunctions`.  
   
@@ -48,12 +50,14 @@ HRESULT GetActiveFunctions (
   
  Le premier élément sera utilisé pour le frame de feuille, et ainsi de suite jusqu’à la racine de la pile.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si `pFunctions` a la valeur null en entrée, `GetActiveFunctions` retourne uniquement le nombre de fonctions qui se trouvent sur la pile. Autrement dit, si `pFunctions` a la valeur null en entrée, `GetActiveFunctions` retourne une valeur uniquement dans `pcFunctions` .  
   
  La `GetActiveFunctions` méthode est conçue comme une optimisation pour obtenir les mêmes informations à partir de frames dans une trace de la pile, et comprend uniquement les frames qui auraient eu un objet ICorDebugILFrame pour eux dans la trace de la pile complète.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
