@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 76a136b5-e444-417a-8ade-f1596d597dc7
 topic_type:
 - apiref
-ms.openlocfilehash: acbc37d0f49af21c60ff6989932c5d341673512b
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 492d4b727ce507340fec47d30a791aa49d0cecb6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693344"
 ---
 # <a name="icorpublishenum-interface"></a>ICorPublishEnum, interface
+
 Sert d’interface de base abstraite pour les énumérateurs utilisés dans la publication d’informations sur les processus et les domaines d’application.  
   
 ## <a name="methods"></a>Méthodes  
@@ -33,14 +34,16 @@ Sert d’interface de base abstraite pour les énumérateurs utilisés dans la p
 |[Reset, méthode](icorpublishenum-reset-method.md)|Déplace le curseur de au début de l’énumération.|  
 |[Skip, méthode](icorpublishenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Les énumérateurs suivants dérivent de `ICorPublishEnum` :  
   
 - [ICorPublishAppDomainEnum](icorpublishappdomainenum-interface.md)  
   
 - [ICorPublishProcessEnum](icorpublishprocessenum-interface.md)  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
