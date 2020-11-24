@@ -3,12 +3,12 @@ title: Performances de Windows Workflow Foundation 4
 description: Cet article explique les caractéristiques de performances de la révision majeure de Windows Workflow Foundation, qui fait partie de .NET Framework 4.
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 1ad12d9fd69205bde726fe650a2ec28ba6c750ef
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f0a68548a8b5e521fccdb544e318c3091315814f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558340"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682339"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Performances de Windows Workflow Foundation 4
 
@@ -20,7 +20,7 @@ ms.locfileid: "90558340"
 
  La version de [!INCLUDE[wf1](../../../includes/wf1-md.md)] introduite dans .NET Framework 4 sera appelée WF4 dans le reste de cette rubrique. [!INCLUDE[wf1](../../../includes/wf1-md.md)] a été introduite dans .NET Framework 3,0 et a subi quelques révisions mineures via .NET Framework 3,5 SP1. La .NET Framework version 3,5 de Workflow Foundation sera appelée WF3 pour le reste de cette rubrique. WF3 est fourni dans .NET Framework 4 côte à côte avec WF4. Pour plus d’informations sur la migration des artefacts WF3 vers WF4, consultez : [Windows Workflow Foundation 4 Guide de migration](migration-guidance.md).
 
- Windows Communication Foundation (WCF) est le modèle de programmation unifié de Microsoft pour la création d’applications orientées service. Il a été introduit pour la première fois dans le cadre de .NET 3,0 avec WF3 et est maintenant l’un des principaux composants de l' .NET Framework.
+ Windows Communication Foundation (WCF) est le modèle de programmation unifié de Microsoft pour la création d’applications orientées service. Il a été introduit pour la première fois dans le cadre de .NET Framework 3,0 avec WF3 et est désormais l’un des principaux composants du .NET Framework.
 
  Windows Server AppFabric est un jeu de technologies intégrées permettant de générer, mettre à l'échelle et gérer facilement des applications Web et composites qui s'exécutent sur les Services Internet (IIS). Il fournit des outils pour déployer, surveiller et gérer les services et les workflows. Pour plus d’informations, consultez [Windows Server AppFabric 1,0](/previous-versions/appfabric/ff384253(v=azure.10)).
 
@@ -51,7 +51,7 @@ ms.locfileid: "90558340"
  Les performances et l'évolutivité des applications sont généralement meilleures grâce à la programmation asynchrone pour les opérations à durée d'exécution longue et bloquantes telles que les opérations d'E/S ou de traitement distribué. WF4 fournit la prise en charge asynchrone à l'aide des types d'activité de base <xref:System.Activities.AsyncCodeActivity> et <xref:System.Activities.AsyncCodeActivity%601>. Le runtime comprend les activités asynchrones en mode natif et peut donc placer automatiquement l'instance dans une zone sans persistance pendant que le travail asynchrone est en attente. Les activités personnalisées peuvent ainsi dériver de ces types pour effectuer un travail asynchrone sans maintenir le thread du service de planification de workflow. Elles peuvent également bloquer toute activité qui peut s'exécuter en parallèle.
 
 ### <a name="messaging"></a>Messagerie
- Initialement, WF3 offrait une prise en charge de la messagerie limitée au moyen d'événements externes ou d'appels de services Web. Dans .NET 3,5, les flux de travail peuvent être implémentés en tant que clients WCF ou exposés en tant que services WCF via <xref:System.Workflow.Activities.SendActivity> et <xref:System.Workflow.Activities.ReceiveActivity> . Dans WF4, le concept de programmation de messagerie basée sur les workflows a été renforcé grâce à l’intégration étroite de la logique de messagerie WCF dans WF.
+ Initialement, WF3 offrait une prise en charge de la messagerie limitée au moyen d'événements externes ou d'appels de services Web. Dans .NET Framework 3,5, les flux de travail peuvent être implémentés en tant que clients WCF ou exposés en tant que services WCF via <xref:System.Workflow.Activities.SendActivity> et <xref:System.Workflow.Activities.ReceiveActivity> . Dans WF4, le concept de programmation de messagerie basée sur les workflows a été renforcé grâce à l’intégration étroite de la logique de messagerie WCF dans WF.
 
  Le pipeline de traitement des messages unifié fourni dans WCF dans .NET 4 aide les services WF4 à obtenir des performances et une évolutivité nettement supérieures à celles de WF3. WF4 fournit également une prise en charge plus riche de la programmation de messagerie qui peut modéliser des modèles d’échange de messages (MEP, message exchange patterns) complexes. Les développeurs peuvent utiliser des contrats de service typés pour faciliter la programmation ou non typés pour améliorer les performances sans coûts de sérialisation. La prise en charge de la mise en cache côté client à l'aide de la classe <xref:System.ServiceModel.Activities.SendMessageChannelCache> dans WF4 permet aux développeurs de créer des applications rapides avec un minimum d'effort. Pour plus d’informations, consultez [modification des niveaux de partage du cache pour les activités d’envoi](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
 

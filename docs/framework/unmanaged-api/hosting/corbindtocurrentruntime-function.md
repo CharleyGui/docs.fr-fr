@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 9c5d83b5f2ffb06c9fb14f715a3ea7ff12319086
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4a8ab6e1aeedef5b821fc977387b8039f54edd64
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547827"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682495"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime, fonction
+
 Charge le common language runtime (CLR) dans un processus à l’aide des informations de version stockées dans un fichier XML. Le format du fichier XML est modélisé après le fichier de configuration d’application standard. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../configure-apps/file-schema/index.md).  
   
  Cette fonction a été dépréciée dans le .NET Framework 4. Consultez [chargement du Common Language Runtime dans un processus](/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
@@ -39,6 +40,7 @@ HRESULT CorBindToCurrentRuntime (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwszFileName`  
  dans Nom d’un fichier de configuration d’application qui spécifie la version du CLR à charger. Si le nom de fichier n’est pas qualifié complet, il est supposé être dans le même répertoire que l’exécutable qui effectue l’appel.  
   
@@ -55,7 +57,8 @@ HRESULT CorBindToCurrentRuntime (
  `ppv`  
  à Pointeur d’interface retourné.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

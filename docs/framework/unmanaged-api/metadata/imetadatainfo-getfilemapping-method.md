@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2868dfec-c992-4606-88bb-a8e0b6b18271
 topic_type:
 - apiref
-ms.openlocfilehash: 5ef5d9ae3da4dff13a461162f0ba3466d3d8192c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8823f3cc016072d3f20100c29532459da5e97492
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501259"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682387"
 ---
 # <a name="imetadatainfogetfilemapping-method"></a>IMetaDataInfo::GetFileMapping, méthode
+
 Obtient la région de la mémoire du fichier mappé et le type de mappage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetFileMapping (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppvData`  
  à Pointeur vers le début du fichier mappé.  
   
@@ -54,6 +56,7 @@ HRESULT GetFileMapping (
 |`COR_E_NOTSUPPORTED`|L’implémentation du CLR ne peut pas fournir d’informations sur la région de la mémoire. Ceci peut se produire pour les raisons suivantes :<br /><br /> -La portée des métadonnées a été ouverte avec l' `ofWrite` `ofCopyMemory` indicateur ou.<br />-La portée des métadonnées a été ouverte sans l' `ofReadOnly` indicateur.<br />-La méthode [IMetaDataDispenser :: OpenScopeOnMemory](imetadatadispenser-openscopeonmemory-method.md) a été utilisée pour ouvrir uniquement la partie métadonnées du fichier.<br />-Le fichier n’est pas un fichier exécutable portable (PE). **Remarque :**  Ces conditions dépendent de l’implémentation du CLR et sont susceptibles d’être assouplies dans les futures versions du CLR.|  
   
 ## <a name="remarks"></a>Remarques  
+
  La mémoire `ppvData` vers laquelle pointe est valide uniquement tant que la portée des métadonnées sous-jacentes est ouverte.  
   
  Pour que cette méthode fonctionne, lorsque vous mappez les métadonnées d’un fichier sur disque en mémoire en appelant la méthode [IMetaDataDispenser :: OpenScope](imetadatadispenser-openscope-method.md) , vous devez spécifier l' `ofReadOnly` indicateur et vous ne devez pas spécifier l' `ofWrite` `ofCopyMemory` indicateur ou.  
@@ -63,11 +66,12 @@ HRESULT GetFileMapping (
  La transmission de NULL pour l’un des trois paramètres n’est pas prise en charge. La méthode retourne `E_INVALIDARG` , et aucune des sorties n’est remplie. Si vous ignorez le type de mappage ou la taille de la région, vous risquez de provoquer un arrêt anormal du programme.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

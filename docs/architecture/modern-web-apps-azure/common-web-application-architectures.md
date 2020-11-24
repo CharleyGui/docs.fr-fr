@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: dd9cdf3cdda0605d9454fe096be01655e67a0d0a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 86d2e931e6462fb9f6ff5e3cd31b8d3fd188dd5a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91169295"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682040"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -268,7 +268,7 @@ networks:
 Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /app
 
 COPY *.sln .
@@ -278,7 +278,7 @@ RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
 

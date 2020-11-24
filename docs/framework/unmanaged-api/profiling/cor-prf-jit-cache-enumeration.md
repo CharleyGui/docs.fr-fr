@@ -14,18 +14,19 @@ helpviewer_keywords:
 ms.assetid: e7b8f6b4-95bc-4ba5-b9eb-f5590a7326a4
 topic_type:
 - apiref
-ms.openlocfilehash: d19d7ed2262db6d3c6e7f15db0e96da52f86db4a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0bf17e7c9d8ff16dc8f07e4a386f599284828f40
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500856"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682248"
 ---
 # <a name="cor_prf_jit_cache-enumeration"></a>COR_PRF_JIT_CACHE, énumération
+
 Indique le résultat de la recherche d'une fonction mise en cache.  
   
 > [!NOTE]
-> `COR_PRF_CACHED_FUNCTION_FOUND`a une valeur égale à zéro, donc `COR_PRF_JIT_CACHE` ne peut pas être utilisé en tant que substitut booléen.  
+> `COR_PRF_CACHED_FUNCTION_FOUND` a une valeur égale à zéro, donc `COR_PRF_JIT_CACHE` ne peut pas être utilisé en tant que substitut booléen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,6 +45,7 @@ typedef enum {
 |`COR_PRF_FUNCTION_NOT_FOUND`|La recherche n’a pas trouvé la fonction.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

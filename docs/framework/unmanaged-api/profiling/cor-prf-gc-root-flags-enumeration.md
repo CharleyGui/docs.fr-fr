@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4611ee6f-0f05-4d84-91e1-e83d5e7dd7e4
 topic_type:
 - apiref
-ms.openlocfilehash: bbc163c71b47e6fee0db89284d6e3fd27e882768
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6b4c71a099e1ddb03b8a5287b56b750f7119e34e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500884"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682352"
 ---
 # <a name="cor_prf_gc_root_flags-enumeration"></a>COR_PRF_GC_ROOT_FLAGS, énumération
+
 Indique une propriété d’une racine de garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,9 +46,11 @@ typedef enum {
 |`COR_PRF_GC_ROOT_REFCOUNTED`|La racine empêche garbage collection si le décompte de références de l’objet est une certaine valeur.|  
   
 ## <a name="remarks"></a>Remarques  
- `COR_PRF_GC_ROOT_FLAGS`est un masque de données qui fournit des informations supplémentaires sur les racines spéciales. Toutefois, toutes les racines ne sont pas spéciales. Par exemple, certaines racines ne sont pas des références faibles, des pointeurs intérieurs, des épinglés ou des références comptées. Pour ces racines, il n’y a aucun indicateur à transmettre. Par conséquent, les méthodes qui utilisent cette énumération, telles que la méthode [ICorProfilerCallback2 :: RootReferences2](icorprofilercallback2-rootreferences2-method.md) , envoient 0 pour le masque de masque des indicateurs, ce qui indique que tous les indicateurs sont désactivés.  
+
+ `COR_PRF_GC_ROOT_FLAGS` est un masque de données qui fournit des informations supplémentaires sur les racines spéciales. Toutefois, toutes les racines ne sont pas spéciales. Par exemple, certaines racines ne sont pas des références faibles, des pointeurs intérieurs, des épinglés ou des références comptées. Pour ces racines, il n’y a aucun indicateur à transmettre. Par conséquent, les méthodes qui utilisent cette énumération, telles que la méthode [ICorProfilerCallback2 :: RootReferences2](icorprofilercallback2-rootreferences2-method.md) , envoient 0 pour le masque de masque des indicateurs, ce qui indique que tous les indicateurs sont désactivés.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

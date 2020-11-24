@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 91bd49b6-4d12-494f-a8f1-2f251e8c65e3
 topic_type:
 - apiref
-ms.openlocfilehash: 4480fefa51eec2f2751bd71910db87b72a1c32cf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6c146f3deed31601411bef39ab12b52dfec8cd39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496709"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95681575"
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2, interface
+
 Fournit des méthodes utilisées par les profileurs de code pour communiquer avec le common language runtime (CLR) afin de contrôler la surveillance des événements et les informations de demande. L' `ICorProfilerInfo2` interface est une extension de l’interface [ICorProfilerInfo](icorprofilerinfo-interface.md) . Autrement dit, il fournit de nouvelles méthodes prises en charge dans le .NET Framework version 2,0 et les versions ultérieures.  
   
 ## <a name="methods"></a>Méthodes  
@@ -51,6 +52,7 @@ Fournit des méthodes utilisées par les profileurs de code pour communiquer ave
 |[SetEnterLeaveFunctionHooks2, méthode](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)|Spécifie les fonctions implémentées par le profileur à appeler sur les raccordements « Enter », « Leave » et « tailcall » des fonctions managées.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Un profileur appelle une méthode dans l' `ICorProfilerInfo2` interface pour communiquer avec le CLR afin de contrôler la surveillance des événements et les informations de demande.  
   
  Les méthodes de l' `ICorProfilerInfo2` interface sont implémentées par le CLR à l’aide du modèle à thread libre. Chaque méthode retourne un HRESULT pour indiquer la réussite ou l'échec. Pour obtenir la liste des codes de retour possibles, consultez le fichier CorError.h.  
@@ -58,6 +60,7 @@ Fournit des méthodes utilisées par les profileurs de code pour communiquer ave
  Le CLR passe une `ICorProfilerInfo2` interface à chaque profileur de code pendant l’initialisation, à l’aide de l’implémentation de [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md)du profileur. Un profileur de code peut ensuite appeler les méthodes de l' `ICorProfilerInfo2` interface pour obtenir des informations sur le code managé en cours d’exécution sous le contrôle du CLR.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
