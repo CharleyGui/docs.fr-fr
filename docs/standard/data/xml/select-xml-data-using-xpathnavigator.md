@@ -5,20 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c268c49e-32b9-4171-b782-dcb7b065fa73
-ms.openlocfilehash: 791c1d16db6a2079ccccebf4dc33d5a0eb12d3c5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9b12e60fcfac8c8fc4c2f2c80aac7400dfc8d6f2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824972"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673460"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Sélection de données XML à l'aide de XPathNavigator
+
 La classe <xref:System.Xml.XPath.XPathNavigator> offre un ensemble de méthodes permettant de sélectionner une collection de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l’aide d’une expression XPath. Une fois la collection de nœuds sélectionnée, vous pouvez y effectuer des itérations.  
   
 ## <a name="xpathnavigator-selection-methods"></a>Méthodes de sélection de XPathNavigator  
+
  La classe <xref:System.Xml.XPath.XPathNavigator> offre un ensemble de méthodes permettant de sélectionner une collection de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l’aide d’une expression XPath. La classe <xref:System.Xml.XPath.XPathNavigator> fournit également un ensemble de méthodes optimisées permettant une sélection plus rapide des nœuds ancêtres, enfants et descendants qu'avec une expression XPath. La collection de nœuds sélectionnée est retournée dans un objet <xref:System.Xml.XPath.XPathNodeIterator> ou dans un objet <xref:System.Xml.XPath.XPathNavigator> si un seul nœud est sélectionné.  
   
 ### <a name="selecting-nodes-using-xpath-expressions"></a>Sélection de nœuds à l’aide d’expressions XPath  
+
  Pour sélectionner une collection de nœuds à l’aide d’une expression XPath, utilisez l’une des méthodes de sélection suivantes.  
   
 - <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
@@ -57,6 +60,7 @@ while(nodes.MoveNext())
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
 ### <a name="optimized-selection-methods"></a>Méthodes de sélection optimisées  
+
  Les méthodes <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A> et <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> représentent des expressions XPath couramment utilisées pour extraire des nœuds enfants, descendants et ancêtres. Ces méthodes sont optimisées pour offrir de meilleures performances et sont plus rapides que les expressions XPath correspondantes. Les méthodes <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A> et <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> sélectionnent des nœuds ancêtres, enfants et descendants d'après une valeur <xref:System.Xml.XPath.XPathNodeType> ou d'après le nom local et l'URI d'espace de noms des nœuds à sélectionner. Les nœuds ancêtres, enfants et descendants sélectionnés sont retournés dans un objet <xref:System.Xml.XPath.XPathNodeIterator>.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72ea68b4-689f-4733-9416-9664b75e8892
 topic_type:
 - apiref
-ms.openlocfilehash: 8202fe4ec3ae6ef96440f203c5aea6db84744a72
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a3fb9d87b6433d46dad081619e0692a42219408d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616578"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673618"
 ---
 # <a name="_corexemain2-function"></a>_CorExeMain2, fonction
+
 Exécute le point d’entrée dans le code mappé en mémoire spécifié. Cette fonction est appelée par le chargeur du système d’exploitation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pUnmappedPE`  
  dans Pointeur vers le code mappé en mémoire.  
   
@@ -52,12 +54,13 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
  `pCmdLine`  
  dans Paramètres de ligne de commande, le cas échéant.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

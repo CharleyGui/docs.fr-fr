@@ -2,18 +2,18 @@
 title: Commande dotnet pack
 description: La commande dotnet Pack crée des packages NuGet pour votre projet .NET.
 ms.date: 04/28/2020
-ms.openlocfilehash: 4312ea64a75fa89eae58cdb41a6dc3463cdd215c
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 3ca7947b4ed9902b163f09a7b57696f304610cce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634231"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674799"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet pack` : Place le code dans un package NuGet.
 
@@ -39,7 +39,7 @@ Si vous souhaitez générer un package qui contient les symboles de débogage, d
 - `--include-symbols` -Il crée le package de symboles.
 - `--include-source` -Il crée le package de symboles avec un `src` dossier contenant les fichiers sources.
 
-Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec* , pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
+Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
 Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Cette option s’avère souvent utile dans les scénarios de build d’intégration continue (CI), pour lesquels vous savez que le code a déjà été créé.
 
@@ -48,7 +48,7 @@ Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comport
 
 Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). La section [Exemples](#examples) montre comment utiliser le commutateur MSBuild -p pour deux scénarios différents.
 
-Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour remplacer le comportement par défaut, ajoutez la propriété suivante à votre fichier *.csproj*  :
+Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour remplacer le comportement par défaut, ajoutez la propriété suivante à votre fichier *.csproj* :
 
 ```xml
 <PropertyGroup>
@@ -118,7 +118,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`-s|--serviceable`**
 
-  Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).
+  Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez le [blog .net : .NET Framework 4.5.1 prend en charge les mises à jour de sécurité Microsoft pour les bibliothèques NuGet .net](https://aka.ms/nupkgservicing).
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
@@ -154,7 +154,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   dotnet pack --no-build --output nupkgs
   ```
 
-- Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj* , empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
+- Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
 
   ```dotnetcli
   dotnet pack --version-suffix "ci-1234"
@@ -185,7 +185,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   ```
 
   Pour plus d’informations sur l’utilisation de `NuspecFile` , de `NuspecBasePath` et de `NuspecProperties` , consultez les ressources suivantes :
-  
+
   - [Compression à l’aide d’un fichier .nuspec](/nuget/reference/msbuild-targets#packing-using-a-nuspec)
   - [Points d’extension avancés pour créer un package personnalisé](/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)
   - [Propriétés globales](/visualstudio/msbuild/msbuild-properties#global-properties)

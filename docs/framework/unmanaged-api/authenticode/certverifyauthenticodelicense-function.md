@@ -8,14 +8,15 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
-ms.openlocfilehash: 7cd25a24533b04dc45ee734f9e9639391311405a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 388814d1c63f048c0aa231a1d0058a390cba9493
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099740"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674058"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>CertVerifyAuthenticodeLicense, fonction
+
 Vérifie la validité d'une licence XrML Authenticode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,6 +31,7 @@ HRESULT CertVerifyAuthenticodeLicense (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pLicenseBlob`  
  [en entrée] La licence XrML Authenticode à vérifier.  
   
@@ -53,14 +55,15 @@ HRESULT CertVerifyAuthenticodeLicense (
  `pSignerInfo`  
  [en sortie] Pour recevoir les informations du signataire. Si la licence n'était pas signée, `dwError` est défini à TRUST_E_NOSIGNATURE. Il incombe à l’appelant de libérer des ressources à l’aide de la fonction [certfreeauthenticodesignerinfo,](certfreeauthenticodesignerinfo-function.md) après utilisation.  
   
- Consultez [structure AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md).  
+ Consultez [AXL_AUTHENTICODE_SIGNER_INFO structure](axl-authenticode-signer-info-structure.md).  
   
  `pTimestamperInfo`  
  [en sortie] Pour recevoir les informations de l'horodateur, si elles sont disponibles. Si la licence n'était pas horodatée, `dwError` est défini à TRUST_E_NOSIGNATURE. Il incombe à l’appelant de libérer des ressources à l’aide de la fonction [certfreeauthenticodetimestamperinfo,](certfreeauthenticodetimestamperinfo-function.md) après utilisation.  
   
- Consultez [structure AXL_AUTHENTICODE_TIMESTAMPER_INFO](axl-authenticode-timestamper-info-structure.md).  
+ Consultez [AXL_AUTHENTICODE_TIMESTAMPER_INFO structure](axl-authenticode-timestamper-info-structure.md).  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne `S_OK` en cas de réussite. Sinon, retourne un code d'erreur.  
   
 ## <a name="see-also"></a>Voir aussi

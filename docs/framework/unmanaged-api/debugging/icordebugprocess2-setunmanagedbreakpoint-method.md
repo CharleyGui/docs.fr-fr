@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93829d15-d942-4e2d-b7a4-dfc9d7fb96be
 topic_type:
 - apiref
-ms.openlocfilehash: 6b9396d03892f29e3698af90856d0c0023dc628a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 1a883878107569145b97d5793f0628efefb13545
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213463"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95675241"
 ---
 # <a name="icordebugprocess2setunmanagedbreakpoint-method"></a>ICorDebugProcess2::SetUnmanagedBreakpoint, méthode
+
 Définit un point d’arrêt non managé au niveau de l’offset d’image native spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,8 +39,9 @@ HRESULT SetUnmanagedBreakpoint (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `address`  
- dans `CORDB_ADDRESS`Objet qui spécifie le décalage de l’image native.  
+ dans `CORDB_ADDRESS` Objet qui spécifie le décalage de l’image native.  
   
  `bufsize`  
  dans Taille, en octets, du `buffer` tableau.  
@@ -50,10 +52,12 @@ HRESULT SetUnmanagedBreakpoint (
  `bufLen`  
  à Pointeur vers le nombre d’octets retournés dans le `buffer` tableau.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si le décalage de l’image native se trouve dans le common language runtime (CLR), le point d’arrêt est ignoré. Cela permet au CLR d’éviter la distribution d’un point d’arrêt hors bande, lorsque le point d’arrêt est défini par le débogueur.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

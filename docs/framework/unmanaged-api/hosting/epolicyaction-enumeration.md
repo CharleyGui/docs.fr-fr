@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72dd76ba-239e-45ac-9ded-318fb07d6c6d
 topic_type:
 - apiref
-ms.openlocfilehash: 901c62e6f2519fc4f9251f348c77b11bbe0992be
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 72b371d72b2f055f2840da5595d9022ffd7e2507
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504343"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674731"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction, énumération
+
 Décrit les actions de stratégie que l’hôte peut définir pour les opérations décrites par [EClrOperation](eclroperation-enumeration.md) et les échecs décrits par [EClrFailure](eclrfailure-enumeration.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -57,14 +58,16 @@ typedef enum {
 |`eUnloadAppDomain`|Spécifie que <xref:System.AppDomain> doit être déchargé. Le CLR tente d’exécuter des finaliseurs.|  
   
 ## <a name="remarks"></a>Remarques  
+
  L’hôte définit des actions de stratégie en appelant des méthodes de l’interface [ICLRPolicyManager](iclrpolicymanager-interface.md) . Pour plus d’informations sur les abandons brutaux et normaux, consultez l’énumération [EClrOperation](eclroperation-enumeration.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

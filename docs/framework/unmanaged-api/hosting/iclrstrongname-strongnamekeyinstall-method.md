@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c15cf3b-164c-49d1-8e57-e42949d55acf
 topic_type:
 - apiref
-ms.openlocfilehash: e0c60d6e74c48531a223f6dbb35125b5a2017cbb
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 7e0c689dad0c288e3af3a3d64ee1bba1c44053c1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763037"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674526"
 ---
 # <a name="iclrstrongnamestrongnamekeyinstall-method"></a>Méthode ICLRStrongName::StrongNameKeyInstall
+
 Importe une paire de clés publique/privée dans un conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,8 +37,9 @@ HRESULT StrongNameKeyInstall (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszKeyContainer`  
- dans Nom du conteneur de clé. `wszKeyContainer`doit être une chaîne non vide.  
+ dans Nom du conteneur de clé. `wszKeyContainer` doit être une chaîne non vide.  
   
  `pbKeyBlob`  
  dans Paire de clés binaires.  
@@ -45,18 +47,21 @@ HRESULT StrongNameKeyInstall (
  `cbKeyBlob`  
  dans Taille, en octets, de `pbKeyBlob` .  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Utilisez la méthode [ICLRStrongName :: StrongNameKeyDelete (](iclrstrongname-strongnamekeydelete-method.md) pour supprimer le conteneur de clé.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

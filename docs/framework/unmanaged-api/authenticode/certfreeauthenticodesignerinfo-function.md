@@ -8,14 +8,15 @@ api_location:
 api_type:
 - DLLExport
 ms.assetid: 8029633c-b6e4-4665-a7c2-89607c3247ef
-ms.openlocfilehash: a233e0b8d17b9ee61b1991086f794c9fb20f89e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dc6bb5a137a50ec07f89f292e5d9beac4349c3c7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099832"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674175"
 ---
 # <a name="certfreeauthenticodesignerinfo-function"></a>CertFreeAuthenticodeSignerInfo, fonction
+
 Libère les ressources allouées pour la structure [AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,10 +27,12 @@ HRESULT CertFreeAuthenticodeSignerInfo (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pSignerInfo`  
  [en entrée, en sortie] Les informations du signataire à libérer. Consultez la structure [AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md) .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  `S_OK` si la fonction réussit. Sinon, retourne un code d'erreur.  
   
 ## <a name="see-also"></a>Voir aussi

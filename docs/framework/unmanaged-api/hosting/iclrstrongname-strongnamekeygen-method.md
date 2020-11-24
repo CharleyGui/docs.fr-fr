@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ac5c1245-9acf-4271-9c08-3d9b7c670df3
 topic_type:
 - apiref
-ms.openlocfilehash: 69ba58cc8c5235a15749281b3107481be9528f84
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 42a9fc1a05e97bbd893f0a2e77087e6524ad844f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503976"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674539"
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>Méthode ICLRStrongName::StrongNameKeyGen
+
 Crée une nouvelle paire de clés publique/privée pour une utilisation de nom fort.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,8 +38,9 @@ HRESULT StrongNameKeyGen (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszKeyContainer`  
- dans Nom du conteneur de clé demandé. `wszKeyContainer`doit être une chaîne non vide ou null pour générer un nom temporaire.  
+ dans Nom du conteneur de clé demandé. `wszKeyContainer` doit être une chaîne non vide ou null pour générer un nom temporaire.  
   
  `dwFlags`  
  dans Valeur qui spécifie s’il faut conserver la clé inscrite. Les valeurs suivantes sont admises :  
@@ -54,17 +56,20 @@ HRESULT StrongNameKeyGen (
  à Taille, en octets, de `ppbKeyBlob` .  
   
 ## <a name="return-value"></a>Valeur renvoyée  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
 ## <a name="remarks"></a>Remarques  
+
  La méthode [ICLRStrongName :: StrongNameKeyGen (](iclrstrongname-strongnamekeygen-method.md) crée une clé de 1024 bits. Une fois la clé Récupérée, vous devez appeler la méthode [ICLRStrongName :: StrongNameFreeBuffer](iclrstrongname-strongnamefreebuffer-method.md) pour libérer la mémoire allouée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

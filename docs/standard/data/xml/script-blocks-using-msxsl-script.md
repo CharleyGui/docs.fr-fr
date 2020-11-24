@@ -5,23 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: 3cb65142243d1f910ffd0fb85750ba62786d79f0
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 57608ef143e6efd7f59d12d808274fa17961c483
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824694"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673473"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Blocs de scripts utilisant msxsl:script
+
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l’exécution. L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
   
 ## <a name="enable-xslt-script"></a>Activer les scripts XSLT  
+
  La prise en charge des scripts incorporés est un réglage XSLT facultatif de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. La prise en charge des scripts est désactivée par défaut. Pour l'activer, créez un objet <xref:System.Xml.Xsl.XsltSettings> avec la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> définie sur `true` et transmettez l'objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
   
 > [!NOTE]
 > Le script XSLT ne doit être activé que si la prise en charge des scripts est nécessaire et si vous travaillez dans un environnement totalement fiable.  
   
 ## <a name="msxslscript-element-definition"></a>Définition de l'élément msxsl:script  
+
  L’élément `msxsl:script` est une extension Microsoft de la recommandation XSLT 1.0. Il se définit comme suit :  
   
 ```xml  
@@ -46,6 +49,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 ```  
   
 ## <a name="script-functions"></a>Fonctions de script  
+
  Les fonctions peuvent être déclarées dans l'élément `msxsl:script`. Lorsqu'une fonction est déclarée, elle est contenue dans un bloc de script. Les feuilles de style peuvent contenir plusieurs blocs de scripts, chacun fonctionnant indépendamment des autres. Ainsi, si vous êtes en cours d'exécution dans un bloc de script, vous ne pouvez pas appeler une fonction que vous avez définie dans un autre bloc de script, sauf si elle est déclarée comme possédant le même espace de noms et le même langage de script. Puisque chaque bloc de script peut être écrit dans son propre langage et que le bloc est analysé en fonction des règles grammaticales de cet analyseur de langage, il est recommandé d'utiliser la syntaxe correcte pour le langage utilisé. Par exemple, si vous êtes dans un bloc de script Microsoft C#, utilisez la syntaxe de commentaires C#.  
   
  Les arguments fournis et les valeurs retournées par la fonction peuvent être de n’importe quel type. Les types XPath W3C étant un sous-ensemble des types CLR (common language runtime), une conversion de type est appliquée aux types qui ne sont pas considérés comme des types XPath. Le tableau suivant indique les correspondances entre les types W3C et les types CLR.  
@@ -63,9 +67,11 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
  Tous les autres types provoquent une erreur.  
   
 ### <a name="importing-namespaces-and-assemblies"></a>Importation d'espaces de noms et d'assemblys  
+
  La classe <xref:System.Xml.Xsl.XslCompiledTransform> prédéfinit un ensemble d'assemblys et d'espaces de noms qui sont pris en charge par défaut par l'élément `msxsl:script`. Cependant, vous pouvez utiliser des classes et des membres appartenant à un espace de noms qui ne figure pas sur la liste prédéfinie en important l'assembly et l'espace de noms dans un bloc `msxsl:script`.  
   
 #### <a name="assemblies"></a>Assemblys  
+
  Les deux assemblys suivants sont référencés par défaut :  
   
 - System.dll  
@@ -89,6 +95,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
  L'attribut `name` contient le nom de l'assembly et l'attribut `href` contient le chemin de l'assembly. Le nom de l'assembly peut être un nom complet, comme « System.Data, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 », ou un nom court, comme « System.Web ».  
   
 #### <a name="namespaces"></a>Espaces de noms  
+
  Les espaces de noms suivants sont inclus par défaut :  
   
 - Système  
@@ -119,18 +126,21 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 ```  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]
  [!code-vb[XSLT_Script#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Script/VB/xslt_script.vb#1)]  
   
 #### <a name="numberxml"></a>number.xml  
+
  [!code-xml[XSLT_Script#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/number.xml#2)]  
   
 #### <a name="calcxsl"></a>calc.xsl  
+
  [!code-xml[XSLT_Script#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/calc.xsl#3)]  
   
-### <a name="output"></a>Output  
+### <a name="output"></a>Sortie  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  

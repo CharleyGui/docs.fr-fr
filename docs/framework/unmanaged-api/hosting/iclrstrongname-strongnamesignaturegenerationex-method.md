@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c3f34584-c6e2-41fd-bb44-e44da8546309
 topic_type:
 - apiref
-ms.openlocfilehash: 3529eceb179cc4b08d39f83d97d001a16e716918
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 78cc043953e6288df136b43590831569d112afef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763057"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674513"
 ---
 # <a name="iclrstrongnamestrongnamesignaturegenerationex-method"></a>Méthode ICLRStrongName::StrongNameSignatureGenerationEx
+
 Génère une signature de nom fort pour l’assembly spécifié, en fonction des indicateurs spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT StrongNameSignatureGenerationEx (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszFilePath`  
  dans Chemin d’accès au fichier qui contient le manifeste de l’assembly pour lequel la signature de nom fort sera générée.  
   
@@ -67,14 +69,16 @@ HRESULT StrongNameSignatureGenerationEx (
  `dwFlags`  
  dans Une ou plusieurs des valeurs suivantes :  
   
-- `SN_SIGN_ALL_FILES`(0x00000001)-recalcule tous les hachages pour les modules liés.  
+- `SN_SIGN_ALL_FILES` (0x00000001)-recalcule tous les hachages pour les modules liés.  
   
-- `SN_TEST_SIGN`(0x00000002) : testez la signature de l’assembly.  
+- `SN_TEST_SIGN` (0x00000002) : testez la signature de l’assembly.  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Spécifiez NULL pour `wszFilePath` pour calculer la taille de la signature sans créer la signature.  
   
  La signature peut être stockée directement dans le fichier ou être retournée à l’appelant.  
@@ -83,12 +87,13 @@ HRESULT StrongNameSignatureGenerationEx (
   
  Si `SN_TEST_SIGN` est spécifié, l’en-tête Common Language Runtime n’est pas modifié pour indiquer que l’assembly est signé avec un nom fort.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

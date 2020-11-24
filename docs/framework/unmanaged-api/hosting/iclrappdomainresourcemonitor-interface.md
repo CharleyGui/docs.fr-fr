@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72fa83a1-8997-41d7-b355-ab177a24a303
 topic_type:
 - apiref
-ms.openlocfilehash: 08dc0f0891d960cb7b402b30455e606aaff7bcea
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 84c53f0666d0e04b898e28c1d8e146eab566ca1b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616006"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674695"
 ---
 # <a name="iclrappdomainresourcemonitor-interface"></a>ICLRAppDomainResourceMonitor, interface
+
 Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d’un domaine d’application.  
   
 ## <a name="methods"></a>Méthodes  
@@ -32,7 +33,8 @@ Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d�
 |[GetCurrentSurvived, méthode](iclrappdomainresourcemonitor-getcurrentsurvived-method.md)|Obtient le nombre d’octets qui ont survécu au dernier garbage collection de blocage complet et qui sont référencés par le domaine d’application actuel.|  
 |[GetCurrentCpuTime, méthode](iclrappdomainresourcemonitor-getcurrentcputime-method.md)|Obtient le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel, depuis la création du domaine d’application.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  L' `ICLRAppDomainResourceMonitor` interface fournit des fonctionnalités qui sont similaires aux propriétés managées suivantes :  
   
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
@@ -45,18 +47,19 @@ Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d�
   
 - <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<appDomainResourceMonitoring>, élément](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
+- [\<appDomainResourceMonitoring> Appartient](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
 - [Analyse des ressources du domaine d’application](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
 - [Hébergement](index.md)

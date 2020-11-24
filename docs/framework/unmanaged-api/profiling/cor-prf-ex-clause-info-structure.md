@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7d0d6fb7-bc9d-40f0-8163-c0d162eaba7d
 topic_type:
 - apiref
-ms.openlocfilehash: 5c764031f709eefe61022d0662f37bc5d3f3e281
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e8dd9f21803021975f4651ba3e6e5f4d3da0ea82
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500999"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674994"
 ---
 # <a name="cor_prf_ex_clause_info-structure"></a>COR_PRF_EX_CLAUSE_INFO, structure
+
 Stocke des informations sur une instance de clause d'exception spécifique et sa trame associée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,6 +46,7 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
 |`shadowStackPointer`|Pointeur vers la pile cachée. Cette valeur est le contenu du Registre BSP et s’applique uniquement à IA64.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Quand une notification d’exception est reçue, [ICorProfilerInfo2 :: GetNotifiedExceptionClauseInfo,](icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) peut être utilisé pour obtenir les informations d’adresse native et de frame pour la clause d’exception ( `catch` / `finally` /Filter) qui est sur le point d’être exécutée ou qui vient d’être exécutée.  
   
  L’exécution d’une clause d’exception implique ces rappels du common language runtime (CLR) :  
@@ -62,6 +64,7 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
 - [ICorProfilerCallback :: ExceptionSearchFilterLeave,](icorprofilercallback-exceptionsearchfilterleave-method.md)  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

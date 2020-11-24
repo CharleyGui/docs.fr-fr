@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e7e07273-8d10-4a68-807e-59634e3f8c5e
 topic_type:
 - apiref
-ms.openlocfilehash: 91fb902aab678e29c6e74380e3576fa5c4ae62d4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a0ee2c9ce38272caef4960bfe5949c11083c12dd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500889"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95674929"
 ---
 # <a name="cor_prf_gc_generation_range-structure"></a>COR_PRF_GC_GENERATION_RANGE, structure
+
 Décrit une plage (un bloc) de mémoire qui va faire l'objet d'une récupération de mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,9 +46,11 @@ typedef struct COR_PRF_GC_GENERATION_RANGE {
 |`rangeLengthReserved`|Pointeur vers un entier qui spécifie la taille du bloc de mémoire (autrement dit, la quantité de mémoire réservée pour le bloc).|  
   
 ## <a name="remarks"></a>Remarques  
+
  La `rangeLength` précision de la valeur est garantie uniquement si [ICorProfilerInfo2 :: GetGenerationBounds,](icorprofilerinfo2-getgenerationbounds-method.md) ou [ICorProfilerInfo2 :: GetObjectGeneration,](icorprofilerinfo2-getobjectgeneration-method.md), qui utilisent tous les deux la `COR_PRF_GC_GENERATION_RANGE` structure, est appelé à partir de la méthode [ICorProfilerCallback2 :: GarbageCollectionStarted](icorprofilercallback2-garbagecollectionstarted-method.md) ou de la méthode [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

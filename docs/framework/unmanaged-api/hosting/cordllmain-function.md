@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
 topic_type:
 - apiref
-ms.openlocfilehash: 3b2322f708afed08172f87e843c225aa9c60d9d3
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 1b3ebcabc66ee7ca29245bb02d958be311bc65fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616604"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673694"
 ---
 # <a name="_cordllmain-function"></a>\_CorDllMain fonction)
 
@@ -36,6 +36,7 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hInst`  
  dans Handle d’instance du module chargé.  
   
@@ -45,10 +46,12 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  `lpReserved`  
  [in] Inutilisé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne `true` pour réussite et `false` si une erreur se produit.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette fonction est appelée par le chargeur du système d’exploitation pour les assemblys DLL. Pour les assemblys exécutables, le chargeur appelle à la place la fonction [ \_ du CORExeMain](corexemain-function.md) .  
   
  Le chargeur du système d’exploitation appelle cette méthode quel que soit le point d’entrée spécifié dans le fichier DLL.  
@@ -57,13 +60,13 @@ La `_CorDllMain` fonction est appelée directement par le chargeur du système d
   
  Pour plus d’informations, consultez la section Notes de la rubrique [ \_ CorValidateImage](corvalidateimage-function.md) .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
 
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93424a87-ba13-4fa1-b4dc-69d44437b7ae
 topic_type:
 - apiref
-ms.openlocfilehash: 4c83ffaf920abe005ba987e0a744e13aa0d3c016
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 199c130d70cfbf0d383c2e0dc148ffe3dc1242d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615668"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95673556"
 ---
 # <a name="iclrerrorreportingmanagerbegincustomdump-method"></a>ICLRErrorReportingManager::BeginCustomDump, méthode
+
 Spécifie la configuration des dumps de tas personnalisés pour le rapport d’erreurs.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT BeginCustomDump (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwFlavor`  
  dans Valeur [ECustomDumpFlavor,](ecustomdumpflavor-enumeration.md) qui indique le type de dump du tas sur lequel générer le dump du tas personnalisé.  
   
@@ -49,7 +51,7 @@ HRESULT BeginCustomDump (
  `dwReserved`  
  [in] Réservé pour une future utilisation.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -60,18 +62,20 @@ HRESULT BeginCustomDump (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La `BeginCustomDump` méthode définit une configuration de vidage de tas personnalisée. La méthode [EndCustomDump](iclrerrorreportingmanager-endcustomdump-method.md) efface la configuration du dump du tas personnalisé et libère tous les États associés. Elle doit être appelée une fois que le dump du tas personnalisé est terminé.  
   
 > [!IMPORTANT]
 > L’échec de l’appel `EndCustomDump` entraîne une fuite de mémoire.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
