@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 92b926a9-b87e-408a-9036-df7b752c9492
 topic_type:
 - apiref
-ms.openlocfilehash: b93b27957cc715a5b4718dd9ef61cd11f4a39914
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c6d1ace12bd07fa1f14c8570eca1f950a5c22be9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493399"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686330"
 ---
 # <a name="econtexttype-enumeration"></a>EContextType, énumération
+
 Décrit le contexte de sécurité du thread en cours d’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,14 +42,16 @@ typedef enum {
 |`eRestrictedContext`|Indique un contexte sur lequel l’hôte a des privilèges inférieurs, tels que le garbage collector ou des constructeurs de classe ou de module.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR fournit l’une des `EContextType` valeurs en tant que valeur de paramètre dans les appels aux `IHostSecurityManager::GetSecurityContext` `IHostSecurityManager::SetSecurityContext` méthodes et.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

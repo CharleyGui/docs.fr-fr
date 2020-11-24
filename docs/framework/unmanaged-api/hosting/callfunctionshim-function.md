@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 37118465-ddf3-41f0-bf27-335b72777e63
 topic_type:
 - apiref
-ms.openlocfilehash: e8945d40a3761ec51a73a8ae90ddc1d84ccab651
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f72c987294d7768eacf112c622ab15494fb75e34
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616864"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685784"
 ---
 # <a name="callfunctionshim-function"></a>CallFunctionShim, fonction
+
 Effectue un appel à la fonction qui a le nom et les paramètres spécifiés dans la bibliothèque spécifiée.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -40,6 +41,7 @@ HRESULT CallFunctionShim (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szDllName`  
  dans Nom de la bibliothèque contenant la fonction.  
   
@@ -58,12 +60,13 @@ HRESULT CallFunctionShim (
  `pvReserved`  
  [in] Réservé pour une future utilisation. Transmettez zéro dans ce paramètre.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

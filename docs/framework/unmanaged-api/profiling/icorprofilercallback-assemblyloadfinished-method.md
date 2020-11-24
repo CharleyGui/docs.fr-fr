@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 86d98f39-52e6-4c61-a625-9760f695ff12
 topic_type:
 - apiref
-ms.openlocfilehash: ce4a842bc71ff144e46efb0d6f7068dfca9d207d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fd41463af0acac1bbe1a3d4515350905b6784f79
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500440"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685329"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished, méthode
+
 Notifie le profileur qu’un chargement de l’assembly est terminé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,11 +45,13 @@ HRESULT AssemblyLoadFinished(
   \[dans] HRESULT qui indique si le chargement de l’assembly s’est terminé correctement.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `assemblyId` n’est pas valide pour une demande d’informations tant que la `AssemblyLoadFinished` méthode n’est pas appelée.  
   
  Certaines parties du chargement de l’assembly peuvent continuer après le `AssemblyLoadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de l’assembly a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

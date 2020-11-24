@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 52794819-0a59-4bb1-a265-0f158cd5cd65
 topic_type:
 - apiref
-ms.openlocfilehash: 722a1e0adea41a13ca25829c53372c29187b80bd
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ddb2d6eeb75a118a12f681b354f6feccd1231c64
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685377"
 ---
 # <a name="icorprofilercallbackappdomainshutdownfinished-method"></a>ICorProfilerCallback::AppDomainShutdownFinished, méthode
+
 Notifie le profileur qu’un domaine d’application a été déchargé d’un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,11 +45,13 @@ HRESULT AppDomainShutdownFinished(
   \[dans] HRESULT qui indique si le domaine d’application a été déchargé avec succès.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `appDomainId` n’est pas valide pour une demande d’informations après le retour de la méthode [ICorProfilerCallback :: AppDomainShutdownStarted](icorprofilercallback-appdomainshutdownstarted-method.md) .  
   
  Certaines parties du déchargement du domaine d’application peuvent continuer après le `AppDomainCreationFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement du domaine d’application a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

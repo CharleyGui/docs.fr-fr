@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3a59d31c-0ec5-4de6-a2a9-558531c8116e
-ms.openlocfilehash: 67c25015f1127a62c480a8fc09c5945682097124
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5d50711eda266cecdb817c778f04aa845fa4c342
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823678"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686642"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>Résolution de ressources externes lors du traitement XSLT
+
 Lors d'une transformation XSLT, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.  
   
 ## <a name="using-the-xmlresolver-class"></a>Utilisation de la classe XmlResolver  
+
  La classe <xref:System.Xml.XmlResolver> permet de résoudre des ressources externes. Le tableau suivant décrit l'implication de l'objet <xref:System.Xml.XmlResolver> dans le traitement XSLT.  
   
 |Tâche XSLT|Utilité de XmlResolver|  
@@ -36,6 +38,7 @@ Lors d'une transformation XSLT, il peut s'avérer nécessaire de résoudre des r
 - Pour vous assurer qu’aucune ressource externe n’est accessible, vous pouvez spécifier `null` pour l’argument <xref:System.Xml.XmlResolver>.  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple suivant compile une feuille de style stockée sur une ressource réseau. Un objet <xref:System.Xml.XmlUrlResolver> spécifie les informations d'identification nécessaires pour accéder à la feuille de style.  
   
  [!code-csharp[XslCompiledTransform.Load#11](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#11)]

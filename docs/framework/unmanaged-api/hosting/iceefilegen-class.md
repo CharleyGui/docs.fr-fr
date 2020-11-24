@@ -14,22 +14,23 @@ helpviewer_keywords:
 ms.assetid: 90368606-506e-40df-be1f-8d595159203f
 topic_type:
 - apiref
-ms.openlocfilehash: fc0de164b9489c9661bc6cb0ffb681f75e88ea26
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 78de6f91cc5c9de41426ac2e3c200fe14b32ae96
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617007"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685745"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen, classe
+
 Fournit des fonctionnalités pour la création d’un fichier exécutable portable (PE) natif. L’interface est généralement utilisée par les compilateurs pour générer leur exécutable de sortie compilé.  
   
 > [!NOTE]
-> `ICeeFileGen`prend en charge l’infrastructure .NET Framework et n’est pas destiné à être utilisé directement à partir de votre code.  
+> `ICeeFileGen` prend en charge l’infrastructure .NET Framework et n’est pas destiné à être utilisé directement à partir de votre code.  
   
  Cette interface a été dépréciée et sera supprimée dans une version ultérieure.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 class ICeeFileGen {  
@@ -234,7 +235,8 @@ public:
 };  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ICeeFileGen. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: db98608a-e85c-4f50-9d7b-5f57a426ddb6
 topic_type:
 - apiref
-ms.openlocfilehash: 2dbd4559bad54aee69f6980e8baf6441480f482c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 518ee65bc684f643bf4f608223c0fa40ea3f0dd9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84489677"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685525"
 ---
 # <a name="imetadatavalidate-interface"></a>IMetaDataValidate, interface
+
 Fournit des méthodes pour valider les signatures de métadonnées.  
   
 ## <a name="methods"></a>Méthodes  
@@ -32,11 +33,12 @@ Fournit des méthodes pour valider les signatures de métadonnées.
 |[ValidatorInit, méthode](imetadatavalidate-validatorinit-method.md)|Définit un indicateur qui spécifie le type du module dans la portée de métadonnées actuelle et enregistre la méthode de rappel spécifiée pour les erreurs de validation.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

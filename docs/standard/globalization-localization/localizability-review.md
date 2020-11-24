@@ -15,12 +15,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: 30cde57a5c837d9dc324e9cd263d2a1011641af4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ecfba7b6b5908a16bb23860704a35035f58e3ed4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829841"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686018"
 ---
 # <a name="localizability-review"></a>Révision de l’adaptabilité
 
@@ -35,11 +35,13 @@ L'examen de l'adaptabilité inclut les trois contrôles suivants :
 - [Avez-vous testé votre application avec des données internationales ?](#test)
 
 <a name="global"></a>
+
 ## <a name="implement-globalization-recommendations"></a>Implémenter des recommandations de globalisation
 
 Si vous avez conçu et développé votre application en gardant à l'esprit la localisation, et si vous avez suivi les recommandations décrites dans l'article [Globalisation](globalization.md), l'examen de l'adaptabilité sera largement un gage d'assurance qualité. Dans le cas contraire, vous devez passer en revue et mettre en œuvre les recommandations de [globalisation](globalization.md) et corriger les erreurs dans le code source qui empêchent la localisation.
 
 <a name="culture"></a>
+
 ## <a name="handle-culture-sensitive-features"></a>Gérer les fonctionnalités dépendantes de la culture
 
 .NET ne fournit pas de prise en charge de programmation dans plusieurs éléments qui varient considérablement par la culture. Dans la plupart des cas, vous devez écrire un code personnalisé pour gérer les zones de fonctionnalités telles que les suivantes :
@@ -58,6 +60,7 @@ Si vous avez conçu et développé votre application en gardant à l'esprit la l
    [!code-vb[Conceptual.Localizability#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.localizability/vb/ismetric1.vb#1)]
 
 <a name="test"></a>
+
 ## <a name="test-your-application"></a>Tester votre application
 
 Avant de localiser votre application, vous devriez la tester à l'aide des données internationales dans les versions internationales du système d'exploitation. Bien que la plupart des interfaces utilisateur ne pourront pas être localisées à ce stade, vous serez en mesure de détecter les problèmes tels que :

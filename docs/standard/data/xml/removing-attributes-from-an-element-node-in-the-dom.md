@@ -2,14 +2,15 @@
 title: Suppression d'attributs d'un nœud d'élément dans le DOM
 ms.date: 03/30/2017
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-ms.openlocfilehash: bd0e07f9587567de9f3023cdeda9dafde8ce7b26
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 53922c55295e852a1aa62d847313fbd657a42541
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823717"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686759"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Suppression d'attributs d'un nœud d'élément dans le DOM
+
 Il existe plusieurs manières de supprimer des attributs. L’une des techniques consiste à les supprimer de la collection d’attributs. Pour ce faire, procédez comme suit :  
   
 1. Obtenez la collection d’attributs à partir de l’élément à l’aide de `XmlAttributeCollection attrs = elem.Attributes;`.  

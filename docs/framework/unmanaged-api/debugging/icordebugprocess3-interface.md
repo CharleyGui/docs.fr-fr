@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ced9c82e-d7b0-4806-a151-98b6611d3097
 topic_type:
 - apiref
-ms.openlocfilehash: 826736d2db7aa1e618a2e5fe0655cedad9556b17
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ef8dbd5253c02355f85fba626fa7e68ed62df4bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213437"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686441"
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3, interface
+
 Contrôle les notifications de débogueur personnalisées.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,13 +31,15 @@ Contrôle les notifications de débogueur personnalisées.
 |------------|-----------------|  
 |[SetEnableCustomNotification, méthode](icordebugprocess3-setenablecustomnotification-method.md)|Active et désactive les notifications personnalisées du débogueur du type spécifié.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette interface étend logiquement les interfaces ICorDebugProcess et ICorDebugProcess2.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

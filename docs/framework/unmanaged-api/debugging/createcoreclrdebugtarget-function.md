@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 1cf4ca8e-d9bb-4633-9adf-5e24315bf87a
 topic_type:
 - apiref
-ms.openlocfilehash: 2271611b5cbbfe487e5798be0429ed94c227a67f
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: f0188facf0b7d33e6e1ecc12921a139165f777a1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860885"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686629"
 ---
 # <a name="createcoreclrdebugtarget-function"></a>Fonction CreateCoreClrDebugTarget
+
 Crée une connexion à un proxy du débogueur qui s’exécute sur un ordinateur distant et retourne un objet [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) qui peut être utilisé pour interroger les processus en cours d’exécution et les runtimes chargés sur l’ordinateur distant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,13 +37,15 @@ HRESULT CreateCoreClrDebugTarget (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwAddress`  
  [in] Adresse IPv4 d'un ordinateur cible distant.  
   
  `ppTarget`  
  à Pointeur vers un pointeur vers un objet [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) qui sera créé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  Le nombre de CLR dans le processus a été correctement déterminé, et les tableaux de handles et de chemin d’accès correspondants ont été correctement remplis.  
   
@@ -52,11 +55,12 @@ HRESULT CreateCoreClrDebugTarget (
  E_FAIL (ou autres codes de retour E_)  
  Autres échecs.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
- **Bibliothèque :** mscordbi_macx86. dll  
+ **Bibliothèque :** mscordbi_macx86.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

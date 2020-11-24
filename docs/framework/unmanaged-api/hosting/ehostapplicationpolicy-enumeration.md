@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 0be52d90-1976-4bf7-9717-908833a8a78d
 topic_type:
 - apiref
-ms.openlocfilehash: 4ac1bcfa4c9dabfa4f6ff3ef1184c03815de3cf1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a62bf0934159f2337a59020f366a299827068c30
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616253"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686226"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy, énumération
+
 Indique comment modifier un objet d’interface [IHostAssemblyManager](ihostassemblymanager-interface.md) . Cette énumération a été dépréciée.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 typedef enum _HostApplicationPolicy {  
@@ -32,12 +33,13 @@ typedef enum _HostApplicationPolicy {
 } EHostApplicationPolicy;  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

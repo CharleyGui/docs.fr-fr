@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-ms.openlocfilehash: 6f0be433abcebed7f9da70225563a04170426314
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: fe227a2d3efc5c36b818b7f4431896e6f62b1f26
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818204"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685043"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pour les paramètres de feuille de style et les objets d'extension
+
 La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (Extensible Stylesheet Language for Transformations) et des objets d'extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
   
 > [!NOTE]
@@ -31,6 +32,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
 - Prend en charge la transmission de fragments d'arborescence résultat à la feuille de style à l'aide de l'objet <xref:System.Xml.XPath.XPathNodeIterator>.  
   
 ## <a name="xslt-style-sheet-parameters"></a>Paramètres de feuille de style XSLT  
+
  Des paramètres XSLT sont ajoutés à l'objet <xref:System.Xml.Xsl.XsltArgumentList> en utilisant la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>. Un nom qualifié et un URI d'espace de noms sont associés à l'objet paramètre à ce stade.  
   
  L’objet paramètre doit correspondre à un type World Wide Web Consortium (W3C). Le tableau suivant présente les types W3C correspondants, les classes .NET Framework équivalentes (type) et indique si le type W3C est un type XML Path Language (XPath) ou un type XSLT.  
@@ -38,7 +40,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
 |Type W3C|Classe .NET Framework équivalente (type)|Type XPath ou type XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
 |String|System.String|XPath|  
-|Booléen|System.Boolean|XPath|  
+|Boolean|System.Boolean|XPath|  
 |Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
@@ -54,6 +56,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
 3. Transmettez l'objet <xref:System.Xml.Xsl.XsltArgumentList> à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>.  
   
 ### <a name="example"></a>Exemple  
+
  L'exemple suivant utilise la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> pour créer un paramètre destiné à contenir une date de remise calculée. La date de la remise correspond à 20 jours à partir de la date de la commande.  
   
 ```vb  
@@ -137,6 +140,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Entrée  
+
  order.xml  
   
 ```xml  
@@ -168,7 +172,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Output  
+### <a name="output"></a>Sortie  
   
 ```xml  
 <order>  
@@ -178,6 +182,7 @@ public class Sample
 ```  
   
 ## <a name="xslt-extension-objects"></a>Objets d'extension XSLT  
+
  Des objets d’extension XSLT sont ajoutés à l’objet <xref:System.Xml.Xsl.XsltArgumentList> en utilisant la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>. Un nom qualifié et un URI d'espace de noms sont associés à l'objet d'extension à ce stade.  
   
  Lors de l'ajout d'un objet, l'appelant de la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> doit être d'un niveau de confiance suffisant dans la stratégie de sécurité. Si l'appelant est d'un niveau de confiance partiel, l'ajout n'aboutira pas.  
@@ -195,6 +200,7 @@ public class Sample
 3. Transmettez l'objet <xref:System.Xml.Xsl.XsltArgumentList> à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>.  
   
 ### <a name="example"></a>Exemple  
+
  L'exemple suivant calcule la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -305,6 +311,7 @@ public class Sample
 ```  
   
 ### <a name="input"></a>Entrée  
+
  number.xml  
   
 ```xml  
@@ -340,7 +347,8 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Output  
+### <a name="output"></a>Sortie  
+
  `<circles xmlns:myObj="urn:myObj">`  
   
  `<circle>`  

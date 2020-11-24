@@ -2,19 +2,21 @@
 title: Règles relatives à l'inférence de types simples
 ms.date: 03/30/2017
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 817a35c607f810da0a3e2dc681d27ea997c5fcc7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b8fa3037d9ad5af057f477733ffdea74681f5549
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823548"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686538"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Règles relatives à l'inférence de types simples
+
 Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.  
   
  La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit les types de données pour les attributs et les éléments comme types simples. Cette section décrit les types déduits possibles, la manière dont plusieurs valeurs différentes sont rapprochées en un type simple et la manière dont les attributs de définition de schéma `xsi` sont gérés.  
   
 ## <a name="inferred-types"></a>Types déduits  
+
  La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit des valeurs d'éléments et d'attributs comme des types simples et inclut un type d'attribut dans le schéma qui en résulte. Tous les types déduits sont des types simples. Aucun type de base ni aucune facette n'est inclus dans le schéma résultant.  
   
  Les valeurs sont examinées individuellement, au fur et à mesure qu'elles sont rencontrées dans le document XML. Le type est déduit pour une valeur au moment de son examen. Si un type a été déduit pour un attribut ou un élément et si une valeur pour l'attribut ou l'élément est rencontrée, qui ne correspond pas au type actuellement déduit, la classe <xref:System.Xml.Schema.XmlSchemaInference> promeut le type pour chaque ensemble de règles. Ces règles sont présentées dans la section Promotion de type, plus loin dans cette rubrique.  
@@ -44,6 +46,7 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 |string|Un ou plusieurs caractères Unicode.|  
   
 ## <a name="type-promotion"></a>Promotion de type  
+
  La classe <xref:System.Xml.Schema.XmlSchemaInference> examine les valeurs d'attributs et d'éléments l'une après l'autre. Au fur et à mesure que des valeurs sont rencontrées, le type non signé le plus restrictif est déduit. Si un type a été déduit pour un attribut ou un élément et si une nouvelle valeur est rencontrée, qui ne correspond pas au type actuellement déduit, le type déduit est promu au rang de nouveau type qui s'applique au type actuellement déduit et à la nouvelle valeur. La classe <xref:System.Xml.Schema.XmlSchemaInference> ne considère pas les valeurs précédentes lors de la promotion du type déduit.  
   
  Examinons, par exemple, les fragments XML suivants de deux documents XML :  

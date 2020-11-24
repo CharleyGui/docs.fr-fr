@@ -2,14 +2,15 @@
 title: Traitement de données XML à l'aide du modèle DOM
 ms.date: 03/30/2017
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
-ms.openlocfilehash: 2608008f33eb8bc0dd0a9b5fe96e619df6138b51
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b0e24527e0edafee16511ea03a229e049b31126c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830907"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686967"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Traitement de données XML à l'aide du modèle DOM
+
 Le DOM (Document Object Model) XML traite les données XML comme un ensemble standard d'objets et permet de traiter les données XML en mémoire. L'espace de noms `System.Xml` offre une représentation par programme de documents XML, de fragments, de nœuds ou de collections de nœuds. Il se base sur les recommandations du W3C (World Wide Web Consortium) sur les modèles objet de document (DOM), niveaux 1 et 2 (noyau).  
   
  La classe <xref:System.Xml.XmlDocument> représente un document XML. Elle comprend des membres pour la récupération et la création de tous les autres objets XML. L'objet <xref:System.Xml.XmlDocument> et les classes y afférentes permettent de construire des documents XML, de charger et d'accéder à des données, de modifier des données et de sauvegarder des modifications.  
@@ -55,5 +56,6 @@ Le DOM (Document Object Model) XML traite les données XML comme un ensemble sta
 - [Extension du DOM](extending-the-dom.md)  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Traitement des données XML à l'aide du modèle de données XPath](process-xml-data-using-the-xpath-data-model.md)  
  Explique le traitement XML à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.

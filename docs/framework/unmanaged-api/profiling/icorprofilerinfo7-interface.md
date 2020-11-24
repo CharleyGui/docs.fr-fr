@@ -2,14 +2,15 @@
 title: ICorProfilerInfo7, interface
 ms.date: 03/30/2017
 ms.assetid: cf37c462-73c5-412a-a7f8-bb26ca746313
-ms.openlocfilehash: 0e9f76717aeff27e863245faac241927e7495076
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4acafafa284549fe1b078542a88c0818dcde3038
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495487"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95686057"
 ---
 # <a name="icorprofilerinfo7-interface"></a>ICorProfilerInfo7, interface
+
 [Prise en charge dans le .NET Framework 4.6.1 et versions ultérieures]  
   
  Sous-classe de [ICorProfilerInfo6](icorprofilerinfo6-interface.md) qui fournit une méthode pour appliquer des métadonnées nouvellement définies à un module et qui fournit l’accès à un flux de symboles en mémoire.  
@@ -23,6 +24,7 @@ ms.locfileid: "84495487"
 |[ReadInMemorySymbols](icorprofilerinfo7-readinmemorysymbols.md)|Lit les octets d’un flux de symboles en mémoire.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

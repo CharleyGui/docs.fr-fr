@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0451d752-1e5c-4c9a-8bad-6cd35b7ba3df
 topic_type:
 - apiref
-ms.openlocfilehash: 387f5f01f2d2589c0b34e50b69398e1feb0e77e0
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 3005db62bba4089c669a00f62e3c1e62f9e1dae9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008244"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685694"
 ---
 # <a name="iceegentruncatesection-method"></a>ICeeGen::TruncateSection, méthode
+
 Tronque la section de code spécifiée selon la longueur spécifiée.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -37,6 +38,7 @@ HRESULT TruncateSection (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `section`  
  dans Section à tronquer.  
   
@@ -44,14 +46,16 @@ HRESULT TruncateSection (
  dans Longueur, en octets, à laquelle la section doit être tronquée.  
   
 ## <a name="remarks"></a>Remarques  
+
  Appelez `TruncateSection` uniquement si vous avez des exigences de section spéciales qui ne sont pas gérées par d’autres méthodes.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 017c8ab4-4c09-4754-9935-5b0b49cabecb
 topic_type:
 - apiref
-ms.openlocfilehash: 086448248364403b718408ad8bd32e48447742d0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ba694f485d5a51870a1283b6ccbcb7b042a14501
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490379"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95685641"
 ---
 # <a name="imetadatatablesgetnextblob-method"></a>IMetaDataTables::GetNextBlob, méthode
+
 Obtient l’index de l’objet BLOB (Binary Large Object) suivant dans la table.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetNextBlob (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ixBlob`  
  dans Index, tel qu’il est retourné par une colonne d’objets BLOB.  
   
@@ -42,11 +44,12 @@ HRESULT GetNextBlob (
  à Pointeur vers l’index de l’objet BLOB suivant.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

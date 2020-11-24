@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c89abf5b-1120-4437-8b57-4a99fb3ae7f9
 topic_type:
 - apiref
-ms.openlocfilehash: 1dd5ed4c556a5a4d4425a9c0730cebf22ff1785b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: d4c9048c89d55ed048a55a771572823905a056df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804619"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687123"
 ---
 # <a name="ihostmallocfree-method"></a>IHostMAlloc::Free, méthode
+
 Libère de la mémoire qui a été allouée à l’aide de la fonction [Alloc](ihostmalloc-alloc-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +35,15 @@ HRESULT Free (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pMem`  
  dans Pointeur vers la mémoire à libérer.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Free`retourné avec succès.|  
+|S_OK|`Free` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -49,15 +51,17 @@ HRESULT Free (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_INVALIDOPERATION|Une tentative a été effectuée pour libérer de la mémoire qui n’a pas été allouée par le biais de l’hôte.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si le `pMem` paramètre fait référence à une région de mémoire qui n’a pas été allouée à l’aide d’un appel à `Alloc` , l’hôte doit retourner HOST_E_INVALIDOPERATION.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
