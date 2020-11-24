@@ -8,24 +8,25 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: af0c7ab5ebb6980bb0381e46fd38e9470f3a2152
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d8d9a75bb5e07816adaa8d09c96cee8a240130fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536754"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688911"
 ---
 # <a name="protected-c-reference"></a>protected (référence C#)
 
 Le mot clé `protected` est un modificateur d’accès de membre.
 
- > Cette page traite de l’accès `protected`. Le `protected` mot clé fait également partie des [`protected internal`](protected-internal.md) [`private protected`](private-protected.md) modificateurs d’accès et.
+> [!NOTE]
+> Cette page traite de l’accès `protected`. Le `protected` mot clé fait également partie des [`protected internal`](protected-internal.md) [`private protected`](private-protected.md) modificateurs d’accès et.
 
 Un membre protégé est accessible dans sa classe et par les instances de la classe dérivée.
 
 Pour obtenir une comparaison de `protected` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Un membre protégé d’une classe de base est accessible dans une classe dérivée uniquement si l’accès s’effectue par le biais du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -35,7 +36,7 @@ L’instruction `a.x = 10` génère une erreur, car elle est appelée dans la m�
 
 Les membres de struct ne peuvent pas être protégés, car le struct ne peut pas être hérité.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Dans cet exemple, la classe `DerivedPoint` est dérivée de `Point`. Vous pouvez donc accéder aux membres protégés de la classe de base directement à partir de la classe dérivée.
 
@@ -61,5 +62,5 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 - [Modificateurs](index.md)
 - [public](public.md)
 - [private](private.md)
-- [intérieurs](internal.md)
+- [internal](internal.md)
 - [Problèmes de sécurité pour les mots clés virtuels internes](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

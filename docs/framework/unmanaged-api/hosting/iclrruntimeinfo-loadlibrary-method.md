@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4517ada3-4417-4ac5-a150-73da7a87c686
 topic_type:
 - apiref
-ms.openlocfilehash: 09c80c3a56d86943ebe00e5222bb5452ab44e150
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: aa45c814568188a5fe93e3acd2514cb54bb0f984
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762173"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688612"
 ---
 # <a name="iclrruntimeinfoloadlibrary-method"></a>ICLRRuntimeInfo::LoadLibrary, méthode
+
 Charge une bibliothèque .NET Framework à partir du common language runtime (CLR) représenté par une interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) .  
   
  Cette méthode remplace la fonction [LoadLibraryShim](loadlibraryshim-function.md) .  
@@ -36,13 +37,15 @@ HRESULT LoadLibrary(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzDllName`  
  dans Nom de l’assembly à charger.  
   
  `phndModule`  
  à Handle de l’assembly chargé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -51,15 +54,17 @@ HRESULT LoadLibrary(
 |E_POINTER|`pwzDllName` ou `phndModule` est null.|  
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour traiter la demande.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode charge uniquement les dll incluses dans le package redistribuable .NET Framework. Il ne peut pas charger les assemblys générés par l’utilisateur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d8a74304-1cb2-4977-a21d-e1af48c563ff
 topic_type:
 - apiref
-ms.openlocfilehash: 90ba690897abced2d4f6282eedef91712d8ceeca
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 7293528bb119c23f6ef39405a82180252b336735
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976341"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687240"
 ---
 # <a name="icordebugenumgetcount-method"></a>ICorDebugEnum::GetCount, méthode
+
 Obtient le nombre d’éléments dans l’énumération.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetCount (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pcelt`  
  à Pointeur vers le nombre d’éléments dans l’énumération.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

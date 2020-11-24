@@ -2,14 +2,15 @@
 title: Développement sans conservation des références d’entité
 ms.date: 03/30/2017
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-ms.openlocfilehash: a446ef35cc9e22660e66d71a9c9332f80117d1ae
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5a3c93807866c5925696f2d913dfc443d8ff12a4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827670"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687448"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Développement sans conservation des références d’entité
+
 Quand une référence d’entité est développée et remplacée par le texte qu’elle représente, le nœud **XmlEntityReference** n’est pas créé. En revanche, la déclaration d'entité est analysée et les nœuds créés à partir du contenu de la déclaration sont copiés à la place de **XmlEntityReference**. Par conséquent, dans l'exemple `&publisher;`, `&publisher;` n'est pas enregistré, mais un nœud **XmlText** est créé.  
   
  ![arborescence développée](media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  

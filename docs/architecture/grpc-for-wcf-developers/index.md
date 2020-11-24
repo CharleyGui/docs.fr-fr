@@ -2,12 +2,12 @@
 title: ASP.NET Core gRPC pour les développeurs WCF-gRPC pour les développeurs WCF
 description: Introduction à la création de services gRPC dans ASP.NET Core 3,0 pour les développeurs WCF
 ms.date: 09/02/2019
-ms.openlocfilehash: 6e18ecfdb8fcbe20f71fd0a7c77076166451427a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c9cc5ef9c06d5262fb85850f8a3b178d46e5c6fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144355"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689275"
 ---
 # <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pour les développeurs WCF
 
@@ -49,7 +49,7 @@ Auteurs :
 
 ## <a name="introduction"></a>Introduction
 
-gRPC est une infrastructure moderne pour la création de services en réseau et d’applications distribuées. Imaginez les performances Windows Communication Foundation des liaisons NetTCP (WCF), combinées avec l’interopérabilité multiplateforme de SOAP. gRPC s’appuie sur HTTP/2 et le protocole d’encodage de message Protobuf pour fournir une communication haute performance et à faible bande passante entre les applications et les services. Il prend en charge la génération de code serveur et client dans les langages et plateformes de programmation les plus populaires, notamment .NET, Java, Python, node. js, Go et C++. Avec la prise en charge de première classe de gRPC dans ASP.NET Core 3,0, en plus des outils et bibliothèques gRPC existants pour .NET 4. x, il s’agit d’une excellente alternative à WCF pour les équipes de développement souhaitant adopter .NET Core dans leurs organisations.
+gRPC est une infrastructure moderne pour la création de services en réseau et d’applications distribuées. Imaginez les performances Windows Communication Foundation des liaisons NetTCP (WCF), combinées avec l’interopérabilité multiplateforme de SOAP. gRPC s’appuie sur HTTP/2 et le protocole d’encodage de message Protobuf pour fournir une communication haute performance et à faible bande passante entre les applications et les services. Il prend en charge la génération de code serveur et client dans les langages et plateformes de programmation les plus populaires, notamment .NET, Java, Python, Node.js, Go et C++. Avec la prise en charge de première classe de gRPC dans ASP.NET Core 3,0, en plus des outils et bibliothèques gRPC existants pour .NET Framework 4. x, il s’agit d’une excellente alternative à WCF pour les équipes de développement souhaitant adopter .NET Core dans leurs organisations.
 
 ## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
@@ -69,4 +69,4 @@ N’hésitez pas à faire connaître ce guide pour favoriser une compréhension 
   <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
 
 >[!div class="step-by-step"]
->[Suivant](introduction.md)
+>[Next](introduction.md)

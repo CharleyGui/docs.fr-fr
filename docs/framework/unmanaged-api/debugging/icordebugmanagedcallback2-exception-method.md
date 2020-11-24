@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78b0f14f-2fae-4e63-8412-4df119ee8468
 topic_type:
 - apiref
-ms.openlocfilehash: 612b63ba9aa3504cab5196932293946d486955ce
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c5be9231bcd5aaddfa0cf1b0051f8e1184faef04
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210200"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687630"
 ---
 # <a name="icordebugmanagedcallback2exception-method"></a>ICorDebugManagedCallback2::Exception, méthode
+
 Notifie le débogueur qu’une recherche d’un gestionnaire d’exceptions a démarré.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT Exception (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread sur lequel l’exception a été levée.  
   
@@ -57,7 +59,8 @@ HRESULT Exception (
  `dwFlags`  
  dans Valeur de l’énumération [CorDebugExceptionFlags,](cordebugexceptionflags-enumeration.md) qui spécifie des informations supplémentaires sur l’exception.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le `Exception` rappel est appelé à différents moments pendant la phase de recherche du processus de gestion des exceptions. Autrement dit, il peut être appelé plusieurs fois tout en déroulant une exception.  
   
  L’exception en cours de traitement peut être récupérée à partir de l’objet ICorDebugThread référencé par le `pThread` paramètre.  
@@ -71,7 +74,8 @@ HRESULT Exception (
 |DEBUG_EXCEPTION_CATCH_HANDLER_FOUND|Frame qui contient le gestionnaire catch.|Offset MSIL (Microsoft Intermediate Language) du début du gestionnaire catch.|  
 |DEBUG_EXCEPTION_UNHANDLED|NULL|Non défini.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

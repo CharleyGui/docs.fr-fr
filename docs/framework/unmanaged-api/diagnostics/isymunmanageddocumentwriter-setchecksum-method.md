@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7e99879-421f-43ce-b193-34733cf30085
 topic_type:
 - apiref
-ms.openlocfilehash: 06a331e24622e0a155d974ca869818a6532baa1f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 58055d9ea56d7928729d289198965752985d8e0c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615538"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688898"
 ---
 # <a name="isymunmanageddocumentwritersetchecksum-method"></a>ISymUnmanagedDocumentWriter::SetCheckSum, méthode
+
 Définit les informations de la somme de contrôle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,19 +36,22 @@ HRESULT SetCheckSum(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `algorithmId`  
  dans GUID qui représente l’identificateur d’algorithme.  
   
  `checkSumSize`  
- dans `ULONG32`Qui indique la taille, en octets, de la `checkSum` mémoire tampon.  
+ dans `ULONG32` Qui indique la taille, en octets, de la `checkSum` mémoire tampon.  
   
  `checkSum`  
  dans Mémoire tampon qui stocke les informations de somme de contrôle.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

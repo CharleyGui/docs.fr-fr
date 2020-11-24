@@ -10,12 +10,12 @@ helpviewer_keywords:
 - permissions [.NET]
 - security [.NET], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-ms.openlocfilehash: a9f0703217b55c90c4e98503402d3fbf60a45ea7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 73e4d0474810d097c5eee8b99ae30b6096ee1695
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831063"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687545"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 
@@ -49,6 +49,7 @@ Un principal représente l'identité et le rôle d'un utilisateur et agit au nom
 Pour plus d’informations, consultez [Objets Principal et Identity](principal-and-identity-objects.md).  
   
 ## <a name="authentication"></a>Authentification  
+
 Le processus d'authentification consiste à établir et à vérifier l'identité d'un principal en examinant les informations d'identification de l'utilisateur et en les validant auprès de l'autorité appropriée. Votre code peut utiliser directement les informations obtenues au cours de l'authentification. Vous pouvez également utiliser la sécurité basée sur les rôles .NET pour authentifier l’utilisateur actuel et déterminer s’il faut autoriser ce principal à accéder à votre code. Consultez les surcharges de la méthode <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> pour obtenir des exemples d'authentification du principal pour des rôles spécifiques. Par exemple, vous pouvez utiliser la surcharge <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> pour déterminer si l'utilisateur actuel est membre du groupe Administrateurs.  
   
 Un grand nombre de mécanismes d’authentification sont utilisés aujourd’hui, dont la plupart peuvent être utilisés avec la sécurité basée sur les rôles .NET. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  

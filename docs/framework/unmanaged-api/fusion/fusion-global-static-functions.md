@@ -6,17 +6,19 @@ helpviewer_keywords:
 - fusion global static functions [.NET Framework]
 - global static functions [.NET Framework fusion]
 ms.assetid: 229b2188-9168-4b44-a987-e1f515494688
-ms.openlocfilehash: ff94ed23f3e39888b4f7e255feece99898f8aa74
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 691fd50e05cadd3f82196fc6ba5df9bb84a66faa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108268"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688742"
 ---
 # <a name="fusion-global-static-functions"></a>Fonctions statiques globales de la fusion
+
 Cette section décrit les fonctions statiques globales non managées utilisées par l’API de fusion.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ClearDownloadCache, fonction](cleardownloadcache-function.md)  
  Efface le Global Assembly Cache d’assemblys téléchargés.  
   
@@ -38,14 +40,14 @@ Cette section décrit les fonctions statiques globales non managées utilisées 
  [CreateHistoryReader, fonction](createhistoryreader-function.md)  
  Crée un lecteur d’historique pour le fichier spécifié.  
   
- [CreateInstallReferenceEnum, fonction](createinstallreferenceenum-function.md)  
+ [Fonction CreateInstallReferenceEnum](createinstallreferenceenum-function.md)  
  Obtient un pointeur vers une instance [IInstallReferenceEnum](iinstallreferenceenum-interface.md) qui représente une liste des références d’une application à l’assembly spécifié.  
   
  [GetAppIdAuthority, fonction](getappidauthority-function.md)  
  Obtient un pointeur vers une instance [IAppIdAuthority](iappidauthority-interface.md) qui gère les clés pour les identités et les références de l’application.  
   
  [GetAssemblyIdentityFromFile, fonction](getassemblyidentityfromfile-function.md)  
- Obtient un pointeur vers un objet `IUnknown` avec la `IID` spécifiée dans l’assembly au chemin d’accès au fichier spécifié.  
+ Obtient un pointeur vers un `IUnknown` objet avec le spécifié `IID` dans l’assembly dans le chemin d’accès au fichier spécifié.  
   
  [GetCachePath, fonction](getcachepath-function.md)  
  Obtient le chemin d’accès à l’assembly mis en cache, à l’aide des indicateurs spécifiés.  
@@ -62,10 +64,11 @@ Cette section décrit les fonctions statiques globales non managées utilisées 
  [NukeDownloadedCache, fonction](nukedownloadedcache-function.md)  
  Supprime le cache de téléchargement common language runtime.  
   
- [PreBindAssemblyEx, fonction](prebindassemblyex-function.md)  
+ [Fonction PreBindAssemblyEx](prebindassemblyex-function.md)  
  Obtient le nom complet de la stratégie d’un assembly.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
+
  [Interfaces de fusion](fusion-interfaces.md)  
   
  [Énumérations de fusion](fusion-enumerations.md)  

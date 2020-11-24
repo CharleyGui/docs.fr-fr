@@ -2,17 +2,19 @@
 title: Modification de données XML à l'aide de XPathNavigator
 ms.date: 03/30/2017
 ms.assetid: b1f91616-3115-4264-9821-c66589d11d11
-ms.openlocfilehash: 812e8dbd0fce70459e9dd38c8b3889e1c1a88074
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c35c63342548a4eaaf8afe68f542c08998de332b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826005"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687383"
 ---
 # <a name="editing-xml-data-using-xpathnavigator"></a>Modification de données XML à l'aide de XPathNavigator
+
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettant d'insérer, de modifier et de supprimer des nœuds et des valeurs d'un document XML contenu dans un objet <xref:System.Xml.XmlDocument>. Pour pouvoir utiliser ces méthodes afin d'insérer, de modifier et de supprimer des nœuds et des valeurs, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être définie sur true.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Insertion de données XML à l’aide de XPathNavigator](insert-xml-data-using-xpathnavigator.md)  
  Décrit la façon d'insérer des nœuds frères, enfants et d'attribut ainsi que des valeurs dans un objet <xref:System.Xml.XmlDocument> à l'aide de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   

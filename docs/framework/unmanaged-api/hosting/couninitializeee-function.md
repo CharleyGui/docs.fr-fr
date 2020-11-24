@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 5f5a311a-839a-465f-89d9-ff1c74da9736
 topic_type:
 - apiref
-ms.openlocfilehash: fa6297e926d53c02bb0d1af7b59b45b8ee152399
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e6616392eaa23f8ba40247c5aabd12e4d530cea1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616461"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687845"
 ---
 # <a name="couninitializeee-function"></a>CoUninitializeEE, fonction
-`CoUninitializeEE`est obsolète et ne fournit aucune fonctionnalité.  
+
+`CoUninitializeEE` est obsolète et ne fournit aucune fonctionnalité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,6 +35,7 @@ void CoUninitializeEE (
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Le moteur d’exécution de common language runtime ne peut pas être déchargé d’un processus. Pour arrêter l’appel du moteur d’exécution [CorExitProcess,](corexitprocess-function.md).  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: edc8a02b-a0ac-46e3-80c1-fb8b5cef6341
 topic_type:
 - apiref
-ms.openlocfilehash: ba5c8cffcaff38b60be7031a98d4588ec6071d76
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d56ce4d508d9e3c55b70a3a599e98ce5b254352f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615551"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687988"
 ---
 # <a name="isymunmanageddocumentwriter-interface"></a>ISymUnmanagedDocumentWriter, interface
+
 Fournit des méthodes d'écriture dans un document référencé par un magasin de symboles.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,7 +32,8 @@ Fournit des méthodes d'écriture dans un document référencé par un magasin d
 |[SetCheckSum, méthode](isymunmanageddocumentwriter-setchecksum-method.md)|Définit les informations de la somme de contrôle.|  
 |[SetSource, méthode](isymunmanageddocumentwriter-setsource-method.md)|Définit la source incorporée pour un document en cours d’écriture.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: be7ae711-1217-4a44-be40-166e29641b77
 topic_type:
 - apiref
-ms.openlocfilehash: 140e67417f4fad552f972a93bc8c620b440b2370
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 98273a5d4602c023863758045bdb2a6a502ba7a7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895172"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687227"
 ---
 # <a name="icordebugappdomain-interface"></a>ICorDebugAppDomain, interface
 
@@ -40,12 +40,13 @@ Fournit des méthodes pour le débogage de domaines d'application. Cette interfa
 |[GetProcess, méthode](icordebugappdomain-getprocess-method.md)|Obtient le processus qui contient le domaine d’application.|  
 |[IsAttached, méthode](icordebugappdomain-isattached-method.md)|Détermine si le débogueur est attaché au domaine d’application.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ec00bc21-117e-4acd-9301-2cfafd5be8d3
 topic_type:
 - apiref
-ms.openlocfilehash: 711fccd65379bc3e5e178869e7220dd84fd07fbe
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 76b231f00651186518d3bccfafa5780f258c4f75
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379703"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688183"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains, méthode
+
 Obtient un pointeur d’interface vers un énumérateur ICorDebugChainEnum qui contient toutes les chaînes de pile de cet objet ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT EnumerateChains (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppChains`  
  à Pointeur vers l’adresse d’un `ICorDebugChainEnum` objet qui autorise l’énumération de toutes les chaînes de pile dans ce thread, en commençant à la chaîne active (autrement dit, la plus récente).  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La chaîne de pile représente la pile d’appels physique du thread. Les circonstances suivantes créent une limite de chaîne de pile :  
   
 - Transition managée vers non managée ou non managée vers managée.  
@@ -50,7 +53,8 @@ HRESULT EnumerateChains (
   
  Un débogueur peut réorganiser les piles des appels physiques de tous les threads en piles d’appels logiques. Cela implique de trier toutes les chaînes des threads en fonction de leurs relations appelant/appelé, puis de les regrouper.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

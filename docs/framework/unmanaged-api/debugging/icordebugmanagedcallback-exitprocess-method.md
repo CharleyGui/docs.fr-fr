@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63a7d47a-0d54-4e29-9767-9f09feaa38b7
 topic_type:
 - apiref
-ms.openlocfilehash: 7a49bd6626518179c9b5ef008fca28d304537cc8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 67f3e63b58e08a4b9ccfbd555e6edcdef0d00d90
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205263"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688935"
 ---
 # <a name="icordebugmanagedcallbackexitprocess-method"></a>ICorDebugManagedCallback::ExitProcess, méthode
+
 Notifie le débogueur qu’un processus s’est arrêté.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,17 +35,20 @@ HRESULT ExitProcess (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pProcess`  
  dans Pointeur vers un objet ICorDebugProcess qui représente le processus.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Vous ne pouvez pas continuer à partir d’un `ExitProcess` événement. Cet événement peut se déclencher de manière asynchrone vers d’autres événements pendant que le processus semble être arrêté. Cela peut se produire si le processus se termine alors qu’il est arrêté, généralement en raison d’une force externe.  
   
  Si le common language runtime (CLR) est déjà en cours de distribution d’un rappel managé, cet événement est retardé jusqu’à ce que le rappel soit retourné.  
   
  L' `ExitProcess` événement est le seul événement de sortie/déchargement qui est garanti pour être appelé lors de l’arrêt.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,23 +15,25 @@ helpviewer_keywords:
 ms.assetid: 31b8e65b-95e7-4748-ab93-8074cd5556b4
 topic_type:
 - apiref
-ms.openlocfilehash: a0dacdfaf13dd69b26f2ba6e7aa50a283af90d3d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: ea9363cad93cf5daf3cdf8dea0129abde9c3b159
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379308"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688313"
 ---
 # <a name="icordebugthreadclearcurrentexception-method"></a>ICorDebugThread::ClearCurrentException, méthode
+
 Cette méthode n’est pas implémentée. Ne pas l'utiliser.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 HRESULT ClearCurrentException();  
 ```  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

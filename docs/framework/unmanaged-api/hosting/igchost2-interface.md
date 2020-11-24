@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e5323fa4-18ac-424d-859d-a65a550d08d9
 topic_type:
 - apiref
-ms.openlocfilehash: 976673a0caab4e041cc80e5536544c195fcf692a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 7529ecd215d74eb0eedbec8b90eba367ed20d56f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805176"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687741"
 ---
 # <a name="igchost2-interface"></a>IGCHost2, interface
+
 Fournit des méthodes pour obtenir des informations sur le système de garbage collection et pour contrôler certains aspects de garbage collection.  
   
 > [!NOTE]
@@ -33,12 +34,13 @@ Fournit des méthodes pour obtenir des informations sur le système de garbage c
 |------------|-----------------|  
 |[SetGCStartupLimitsEx, méthode](igchost2-setgcstartuplimitsex-method.md)|Définit la taille du segment et la taille maximale de la génération 0. Active la génération 0 et la taille des segments supérieure à `DWORD` .|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

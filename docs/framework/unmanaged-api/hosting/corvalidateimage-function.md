@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 426b39aa3d1ada5ae44565a742b70681a7bcf6d3
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2d49a40610bd0e1a7629594e245bde9eacfcc06d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493433"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95687975"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage, fonction
+
 Valide les images de modules managés et notifie le chargeur du système d’exploitation après qu’elles ont été chargées.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ STDAPI _CorValidateImage (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ImageBase`  
  dans Pointeur vers l’emplacement de départ de l’image à valider comme code managé. L’image doit déjà être chargée dans la mémoire.  
   
@@ -41,6 +43,7 @@ STDAPI _CorValidateImage (
  dans Nom de fichier de l’image.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette fonction retourne les valeurs standard `E_INVALIDARG` , `E_OUTOFMEMORY` , `E_UNEXPECTED` et `E_FAIL` , ainsi que les valeurs suivantes.  
   
 |Valeur de retour|Description|  
@@ -49,7 +52,8 @@ STDAPI _CorValidateImage (
 |`STATUS_SUCCESS`|L’image est valide. Cette valeur a le HRESULT 0x00000000L.|  
   
 ## <a name="remarks"></a>Remarques  
- Dans Windows XP et versions ultérieures, le chargeur du système d’exploitation recherche les modules managés en examinant le bit du répertoire du descripteur COM dans l’en-tête COFF (Common Object File Format). Un bit défini indique un module managé. Si le chargeur détecte un module managé, il charge MsCorEE. dll et appelle `_CorValidateImage` , qui effectue les actions suivantes :  
+
+ Dans Windows XP et versions ultérieures, le chargeur du système d’exploitation recherche les modules managés en examinant le bit du répertoire du descripteur COM dans l’en-tête COFF (Common Object File Format). Un bit défini indique un module managé. Si le chargeur détecte un module managé, il charge MsCorEE.dll et appelle `_CorValidateImage` , qui effectue les actions suivantes :  
   
 - Confirme que l’image est un module managé valide.  
   
@@ -61,7 +65,7 @@ STDAPI _CorValidateImage (
   
  Pour les images exécutables, le chargeur du système d’exploitation appelle ensuite la fonction [_CorExeMain](corexemain-function.md) , quel que soit le point d’entrée spécifié dans le fichier exécutable. Pour les images d’assembly DLL, le chargeur appelle la fonction [_CorDllMain](cordllmain-function.md) .  
   
- `_CorExeMain`ou `_CorDllMain` effectue les actions suivantes :  
+ `_CorExeMain` ou `_CorDllMain` effectue les actions suivantes :  
   
 - Initialise le CLR.  
   
@@ -72,11 +76,12 @@ STDAPI _CorValidateImage (
  Le chargeur appelle la fonction [_CorImageUnloading](corimageunloading-function.md) lorsque les images de modules managés sont déchargées. Toutefois, cette fonction n’exécute aucune action ; elle retourne simplement.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

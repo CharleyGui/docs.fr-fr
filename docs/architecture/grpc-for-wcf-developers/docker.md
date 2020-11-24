@@ -2,12 +2,12 @@
 title: Docker-gRPC pour les développeurs WCF
 description: Création d’images d’ancrage pour les applications ASP.NET Core gRPC
 ms.date: 09/02/2019
-ms.openlocfilehash: 379750edfa1a9fc282e43ffa83e5695425f31a26
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 0a680d0918868829042e521506fa8c1a1628bf5c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152713"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688443"
 ---
 # <a name="create-docker-images"></a>Créer des images d’ancrage
 
@@ -22,8 +22,8 @@ Microsoft fournit une gamme d’images de base pour la création et l’exécuti
 
 | Image | Description |
 | ----- | ----------- |
-| [mcr.microsoft.com/dotnet/core/sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) | Pour créer des applications avec `docker build` . À ne pas utiliser en production. |
-| [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) | Contient le runtime et les dépendances de ASP.NET Core. Pour la production. |
+| [mcr.microsoft.com/dotnet/sdk](https://hub.docker.com/_/microsoft-dotnet-sdk/) | Pour créer des applications avec `docker build` . À ne pas utiliser en production. |
+| [mcr.microsoft.com/dotnet/aspnet](https://hub.docker.com/_/microsoft-dotnet-aspnet/) | Contient le runtime et les dépendances de ASP.NET Core. Pour la production. |
 
 Pour chaque image, il existe quatre variantes basées sur différentes distributions Linux, distinguées par des balises.
 
@@ -45,7 +45,7 @@ Une image de l’ancrage est définie par un *fichier dockerfile*. Il s’agit d
 
 ```dockerfile
 # Application build steps
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0 as builder
+FROM mcr.microsoft.com/dotnet/sdk:3.0 as builder
 
 WORKDIR /src
 
@@ -56,7 +56,7 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o /published src/StockData/StockData.csproj
 
 # Runtime image creation
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+FROM mcr.microsoft.com/dotnet/aspnet:3.0
 
 # Uncomment the line below if running with HTTPS
 # ENV ASPNETCORE_URLS=https://+:443
@@ -95,7 +95,7 @@ Les images de base Microsoft pour l’arrimeur définissent la `ASPNETCORE_URLS`
 
 ```dockerfile
 # Runtime image creation
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+FROM mcr.microsoft.com/dotnet/aspnet:3.0
 
 ENV ASPNETCORE_URLS=https://+:443
 ```

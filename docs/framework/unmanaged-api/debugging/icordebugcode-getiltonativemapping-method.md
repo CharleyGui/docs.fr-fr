@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8ecd8c8-9627-4356-9c6f-bd05e24637c0
 topic_type:
 - apiref
-ms.openlocfilehash: 3de85626be6ae8e4769ac261f4de1479461417ec
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 0adb9e58ca2c6b5b430a0413fa11ba59d79a0539
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82893539"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688105"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping, méthode
+
 Obtient un tableau d’instances de « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent des mappages de décalages MSIL (Microsoft Intermediate Language) aux offsets natifs.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,21 +38,24 @@ HRESULT GetILToNativeMapping (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cMap`  
  [in] Taille du tableau `map`.  
   
  `pcMap`  
- à Pointeur vers le nombre réel d’éléments retournés dans `map` le tableau.  
+ à Pointeur vers le nombre réel d’éléments retournés dans le `map` tableau.  
   
  `map`  
  à Tableau de `COR_DEBUG_IL_TO_NATIVE_MAP` structures, chacune représentant un mappage d’un offset MSIL à un offset natif.  
   
  Il n’y a aucun classement pour le tableau d’éléments retournés.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La `GetILToNativeMapping` méthode retourne des résultats significatifs uniquement si cette instance « ICorDebugCode » représente du code natif qui était compilé juste-à-temps (JIT) à partir du code MSIL.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

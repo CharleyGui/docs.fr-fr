@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 61d2e9ef-5f1f-4771-8847-239616e35d84
 topic_type:
 - apiref
-ms.openlocfilehash: 02a690503d7b6323f19dcb66247d8a552b760b1c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8e94aebc489fff1c81593e54b17c471e7228d810
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499205"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95689288"
 ---
 # <a name="icorprofilercallback5-interface"></a>ICorProfilerCallback5, interface
+
 Complète les informations pour aider un profileur à identifier la fermeture complète d’objets actifs, lorsqu’il est utilisé avec la méthode [ICorProfilerCallback :: RootReferences](icorprofilercallback-rootreferences-method.md) ou [ICorProfilerCallback2 :: RootReferences2](icorprofilercallback2-rootreferences2-method.md) avec les méthodes [ICorProfilerCallback :: ObjectReferences](icorprofilercallback-objectreferences-method.md) et [conditionalweaktableelementreferences,](icorprofilercallback5-conditionalweaktableelementreferences-method.md) .  
   
  `ICorProfilerCallback5` doit être implémentée par un profileur de mémoire managée pour s'abonner aux notifications relatives aux handles dépendants.  
@@ -35,6 +36,7 @@ Complète les informations pour aider un profileur à identifier la fermeture co
 |[ConditionalWeakTableElementReferences, méthode](icorprofilercallback5-conditionalweaktableelementreferences-method.md)|Identifie la fermeture transitive des objets référencés par ces racines via les références des champs des membres directs et via les dépendances de `ConditionalWeakTable`.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

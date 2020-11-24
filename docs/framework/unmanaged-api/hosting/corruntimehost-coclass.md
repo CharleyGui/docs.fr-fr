@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 5833740b-7d67-44b4-865c-b5bf45e291e3
 topic_type:
 - apiref
-ms.openlocfilehash: fe378307ce2bda6e1a267e46433ead70a0e2299e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: cd4e675b4ba50b47146428d204c28cc943c23c69
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616516"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95688001"
 ---
 # <a name="corruntimehost-coclass"></a>CorRuntimeHost, coclasse
+
 Fournit des interfaces pour la gestion des applications exécutées par l’common language runtime.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 coclass CorRuntimeHost {  
@@ -46,12 +47,13 @@ coclass CorRuntimeHost {
 |[IGCHost, interface](igchost-interface.md)|Fournit des méthodes pour obtenir des informations sur le système de garbage collection et pour contrôler certains aspects de garbage collection.|  
 |IValidator|Fournit des méthodes pour la validation des images exécutables portables et un rapport détaillé des erreurs de validation.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
