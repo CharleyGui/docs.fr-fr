@@ -6,14 +6,15 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-ms.openlocfilehash: 2b91a74f7dbb31ee47535dbed7cf5fa5243e364c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 79ffea3831d5f56d73c6974fdf7265c9b00ab8ec
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820438"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95691264"
 ---
 # <a name="post-schema-compilation-infoset"></a>Jeu d'informations de post-compilation de schéma
+
 La [recommandation du World Wide Web Consortium (W3C) sur le schéma XML](https://www.w3.org/XML/Schema) décrit le jeu d'informations qui doit être exposé pour la pré-validation de schéma et la post-compilation de schéma. Le Modèle Objet du schéma (SOM) XML observe cette exposition avant et après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>.  
   
  Le jeu d'informations de pré-validation de schéma est généré pendant la modification du schéma. Le jeu d'informations de post-compilation de schéma est généré après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>, lors de la compilation du schéma et est exposé comme des propriétés.  

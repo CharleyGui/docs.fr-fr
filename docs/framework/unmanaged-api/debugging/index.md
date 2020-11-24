@@ -6,17 +6,19 @@ helpviewer_keywords:
 - debugging [.NET Framework], using the unmanaged API
 - native API reference [.NET Framework], debugging
 ms.assetid: f0bf70be-42ef-4c46-8709-1694b5f99018
-ms.openlocfilehash: 2fc2e3aceae81f3ba976f03bee06993dc98d3b8d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e15472d096102d55464e95b332307a4186d96b8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76790465"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95692187"
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Débogage (Informations de référence sur les API non managées)
+
 L'API de débogage permet à un débogueur de déboguer du code qui s'exécute dans l'environnement du Common Language Runtime (CLR). Le type de code à déboguer doit être pris en charge par le CLR.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Débogage des coclasses](debugging-coclasses.md)  
  Décrit les coclasses non managées utilisées par l’API de débogage.  
   

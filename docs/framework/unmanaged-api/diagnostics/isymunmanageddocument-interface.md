@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c26b366-6e81-467c-9dd0-02dd26fee0a3
 topic_type:
 - apiref
-ms.openlocfilehash: a8ff6d3a925773e58e0713a87b167420c246f85b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 83c683e1f60f13f7cee4ddc6fe5af5a94e36eb93
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615564"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95692174"
 ---
 # <a name="isymunmanageddocument-interface"></a>ISymUnmanagedDocument, interface
+
 Représente un document référencé par un magasin de symboles. Un document est défini par une URL (Uniform Resource Locator) et un GUID de type de document. Vous pouvez localiser le document, quelle que soit la manière dont il est stocké à l’aide de l’URL et du GUID du type de document. Vous pouvez stocker la source du document dans le magasin de symboles et la récupérer par le biais de cette interface.  
   
 ## <a name="methods"></a>Méthodes  

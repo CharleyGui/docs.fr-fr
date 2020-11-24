@@ -12,14 +12,15 @@ api_type:
 ms.assetid: b91765e4-82db-46f9-a6dc-6b80610276af
 topic_type:
 - apiref
-ms.openlocfilehash: b9d27c3e3cd42039aeefcb517ecc81eadeb5c183
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7e9cf760ec609786804a05177349ee2eacd79eaf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557422"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95692239"
 ---
 # <a name="ilcodekind-enumeration"></a>ILCodeKind, énumération
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Fournit des valeurs qui spécifient si le débogueur peut accéder aux variables locales ou au code ajoutés dans l'instrumentation ReJIT du profileur.  
@@ -40,10 +41,12 @@ typedef enum ILCodeKind {
 |`ILCODE_ORIGINAL_IL`|Le débogueur n'a pas accès aux informations de l'instrumentation ReJIT.|  
 |`ILCODE_REJIT_IL`|Le débogueur a accès aux informations de l'instrumentation ReJIT.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Un membre de l' `ILCodeKind` énumération peut être passé aux méthodes [Enumeratelocalvariablesex,](icordebugilframe4-enumeratelocalvariablesex-method.md) et [getlocalvariableex,](icordebugilframe4-getlocalvariableex-method.md) pour déterminer si le débogueur peut accéder aux variables ajoutées dans l’instrumentation ReJIT du profileur, et à la méthode [getcodeex,](icordebugilframe4-getcodeex-method.md) pour déterminer si le débogueur peut accéder au langage intermédiaire instrumenté.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,4 +59,4 @@ typedef enum ILCodeKind {
 
 - [Énumérations de débogage](debugging-enumerations.md)
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
-- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide de How-To](/archive/blogs/davbr/rejit-a-how-to-guide)

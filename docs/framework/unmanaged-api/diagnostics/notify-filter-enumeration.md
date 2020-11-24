@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4789d08f-8683-45d3-ac30-73d48c61e470
 topic_type:
 - apiref
-ms.openlocfilehash: b20e18d5f4314a0ab1442ac7bd5c6514e4db85d5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 365bc0dc73b04d3afd171c40f336432f77552b6d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609480"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95690952"
 ---
 # <a name="notify_filter-enumeration"></a>NOTIFY_FILTER, énumération
+
 Identifie les rappels pour les fonctions du débogueur. Pour plus d’informations, consultez la méthode [INotifySource2 :: SetNotifyFilter,](inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -51,7 +52,8 @@ enum tagNOTIFY_FILTER
 |`NOTIFY_FILTER_ALL`|Active toutes les notifications existantes et futures.|  
 |`NOTIFY_FILTER_NONE`|Indique qu’aucune méthode de notification ne doit être appelée.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
