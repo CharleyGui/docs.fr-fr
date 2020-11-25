@@ -13,12 +13,12 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: 0f2fbe7e8b9c13d811a2fe50db0709405dfa1da7
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f1cab01e7a6ee48bd01f65d4cc8a8a540fbabc61
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818815"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734203"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 
@@ -38,6 +38,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |$\_|Inclut la chaîne d'entrée entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la chaîne d'entrée entière](#substituting-the-entire-input-string).|  
   
 ## <a name="substitution-elements-and-replacement-patterns"></a>Éléments de substitution et modèles de remplacement  
+
  Les substitutions sont les seules constructions particulières acceptées dans un modèle de remplacement. Aucun des autres éléments de langage d'expression régulière, notamment les caractères d'échappement et le point (`.`), qui correspond à n'importe quel caractère, n'est pris en charge. De la même façon, les éléments de langage de substitution sont reconnus uniquement dans les modèles de remplacement et ne sont jamais valides dans les modèles d'expressions régulières.  
   
  Le seul caractère qui peut apparaître dans un modèle d'expression régulière ou dans une substitution est le caractère `$` , bien qu'il ait une signification différente dans chaque contexte. Dans un modèle d'expression régulière, `$` est une ancre qui correspond à la fin de la chaîne. Dans un modèle de remplacement, `$` indique le début d'une substitution.  
@@ -46,6 +47,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 > Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d’informations sur les références arrière, consultez [constructions de backreference](backreference-constructs-in-regular-expressions.md).  
 
 ## <a name="substituting-a-numbered-group"></a>Substitution d'un groupe numéroté  
+
  L' `$` élément de langage *nombre* comprend la dernière sous-chaîne correspondant au groupe de capture *nombre* dans la chaîne de remplacement, où *nombre* est l’index du groupe de capture. Par exemple, le modèle de remplacement `$1` indique que la sous-chaîne correspondante sera remplacée par le premier groupe capturé. Pour plus d’informations sur les groupes de capture numérotés, consultez [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
   
  Tous les chiffres qui suivent `$` sont interprétés comme appartenant au groupe *nombre* . Si ce n'est pas votre intention, vous pouvez remplacer un groupe nommé à la place. Par exemple, vous pouvez utiliser la chaîne de remplacement `${1}1` au lieu de `$11` pour définir la chaîne de remplacement comme la valeur du premier groupe capturé avec le numéro « 1 ». Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).  
@@ -71,6 +73,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |`(\s?\d+[.,]?\d*)`|Mettre en correspondance un espace blanc suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. Il s'agit du premier groupe de capture. Étant donné que le modèle de remplacement est `$1`, l'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace l'intégralité de la sous-chaîne correspondante par ce groupe capturé.|  
 
 ## <a name="substituting-a-named-group"></a>Substitution d'un groupe nommé  
+
  L' `${` *name* `}` élément langage de nom remplace la dernière sous-chaîne correspondant au groupe de capture *nom* , où *nom* est le nom d’un groupe de capture défini par l' `(?<` élément de langage *nom* `>)` . Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
   
  Si le *nom* ne spécifie pas de groupe de capture nommé valide défini dans le modèle d'expression régulière mais se compose de chiffres, `${`*nom*`}` est interprété en tant que groupe numéroté.  
@@ -94,6 +97,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |`(?<amount>\s?\d[.,]?\d*)`|Mettre en correspondance un espace blanc, suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. C'est le groupe de capture nommé `amount`. Étant donné que le modèle de remplacement est `${amount}`, l'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> remplace l'intégralité de la sous-chaîne correspondante par ce groupe capturé.|  
 
 ## <a name="substituting-a--character"></a>Substitution d'un caractère « $ »  
+
  La substitution `$$` insère un caractère « $ » littéral dans la chaîne remplacée.  
   
  L'exemple suivant utilise l'objet <xref:System.Globalization.NumberFormatInfo> pour déterminer le symbole monétaire de la culture actuelle et son positionnement dans une chaîne monétaire. Il génère alors à la fois dynamiquement un modèle d'expression régulière et un modèle de remplacement. Si l'exemple est exécuté sur un ordinateur dont la culture actuelle est en-US, il génère le modèle d'expression régulière `\b(\d+)(\.(\d+))?` et le modèle de remplacement `$$ $1$2`. Le modèle de remplacement remplace le texte correspondant par un symbole monétaire et un espace suivi par les premier et second groupes capturés.  
@@ -112,6 +116,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |`(\.(\d+))?`|Mettre en correspondance zéro ou une occurrence d'un point suivi par un ou plusieurs chiffres décimaux. Il s'agit du deuxième groupe de capture.|  
 
 ## <a name="substituting-the-entire-match"></a>Substitution de la correspondance entière  
+
  La substitution `$&` inclut la correspondance entière dans la chaîne de remplacement. Souvent, elle est utilisée pour ajouter une sous-chaîne au début ou à la fin de la chaîne correspondante. Par exemple, le modèle de remplacement `($&)` ajoute des parenthèses au début et à la fin de chaque correspondance. S'il n'y a pas de correspondance, la substitution `$&` n'a aucun effet.  
   
  L'exemple suivant utilise la substitution `$&` pour ajouter des guillemets au début et à la fin de titres de livres stockés dans un tableau de chaînes.  
@@ -130,6 +135,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
  Le modèle de remplacement `"$&"` ajoute un guillemet littéral au début et à la fin de chaque correspondance.  
 
 ## <a name="substituting-the-text-before-the-match"></a>Substitution du texte avant la correspondance  
+
  La substitution ``$` `` remplace la chaîne correspondante par la chaîne d'entrée entière avant la correspondance. Autrement dit, elle duplique la chaîne d'entrée jusqu'à la correspondance en supprimant le texte correspondant. N'importe quel texte qui suit le texte correspondant est inchangé dans la chaîne de résultat. S'il existe plusieurs correspondances dans une chaîne d'entrée, le texte de remplacement est dérivé de la chaîne d'entrée d'origine, plutôt que de la chaîne dans laquelle le texte a été remplacé par des correspondances précédentes. \(L’exemple fournit une illustration. \) S’il n’y a aucune correspondance, la ``$` `` substitution n’a aucun effet.  
   
  L'exemple suivant utilise le modèle d'expression régulière `\d+` pour faire correspondre une séquence d'un ou de plusieurs chiffres décimaux dans la chaîne d'entrée. La chaîne de remplacement ``$` `` remplace ces chiffres par le texte qui précède la correspondance.  
@@ -148,6 +154,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee **aa1bb2cc3dd4ee**|
 
 ## <a name="substituting-the-text-after-the-match"></a>Substitution du texte après la correspondance  
+
  La substitution `$'` remplace la chaîne correspondante par la chaîne d'entrée entière après la correspondance. Autrement dit, elle duplique la chaîne d'entrée après la correspondance en supprimant le texte correspondant. N'importe quel texte qui précède le texte correspondant est inchangé dans la chaîne de résultat. S'il n'y a pas de correspondance, la substitution  `$'` n'a aucun effet.  
   
  L'exemple suivant utilise le modèle d'expression régulière `\d+` pour faire correspondre une séquence d'un ou de plusieurs chiffres décimaux dans la chaîne d'entrée. La chaîne de remplacement `$'` remplace ces chiffres par le texte qui suit la correspondance.  
@@ -166,6 +173,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |5|14|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
 
 ## <a name="substituting-the-last-captured-group"></a>Substitution du dernier groupe capturé  
+
  La substitution `$+` remplace la chaîne correspondante par le dernier groupe capturé. S'il n'y a pas de groupes capturés ou si la valeur du dernier groupe capturé est <xref:System.String.Empty?displayProperty=nameWithType>, la substitution `$+` n'a aucun effet.  
   
  L'exemple suivant identifie des mots en double dans une chaîne et utilise la substitution `$+` pour les remplacer par une occurrence unique du mot. L'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> est utilisée pour vérifier que les mots, qui diffèrent en termes de casse mais qui sont identiques par ailleurs, sont considérés comme des doublons.  
@@ -184,6 +192,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 |`\b`|Terminer la correspondance à la limite d'un mot.|  
 
 ## <a name="substituting-the-entire-input-string"></a>Substitution de la chaîne d'entrée entière  
+
  La substitution `$_` remplace la chaîne correspondante par la chaîne d'entrée entière. Autrement dit, elle supprime le texte correspondant et le remplace par la chaîne entière, notamment le texte correspondant.  
   
  L'exemple suivant correspond à un ou plusieurs chiffres décimaux dans la chaîne d'entrée. Il utilise la substitution `$_` pour les remplacer par la chaîne d'entrée entière.  

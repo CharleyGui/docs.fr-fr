@@ -9,14 +9,15 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: eee4b1a9e72c167b9b1e48a73dbb3f0528744bdc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d04ffd2cab21177f1342a13259a81df22b65723a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821331"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734411"
 ---
 # <a name="event-design"></a>Conception d'événements
+
 Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). D’autres mécanismes de rappel incluent des membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur une interface. Les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’ils utilisent les autres mécanismes de rappel. Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.
 
  Il est important de noter qu’il existe deux groupes d’événements : les événements déclenchés avant un état des modifications du système, appelés pré-événements et les événements déclenchés après la modification d’un État, appelés événements postérieurs à. Un exemple d’un pré-événement serait `Form.Closing` , qui est déclenché avant la fermeture d’un formulaire. Un exemple d’événement de publication est `Form.Closed` , qui est déclenché après la fermeture d’un formulaire.
@@ -52,6 +53,7 @@ Les événements sont la forme de rappels la plus couramment utilisée (les cons
  Utilisez <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> ou sa sous-classe comme argument d’événement pour permettre à l’utilisateur final d’annuler des événements.
 
 ### <a name="custom-event-handler-design"></a>Conception du gestionnaire d’événements personnalisé
+
  Dans certains cas, il `EventHandler<T>` ne peut pas être utilisé, par exemple quand le Framework doit fonctionner avec des versions antérieures du CLR, qui ne prenait pas en charge les génériques. Dans ce cas, vous devrez peut-être concevoir et développer un délégué de gestionnaire d’événements personnalisé.
 
  ✔️ Utilisez un type de retour void pour les gestionnaires d’événements.

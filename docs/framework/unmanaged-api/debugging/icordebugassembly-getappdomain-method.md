@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 14e18510-23ac-4cba-9f96-c86147a2df9d
 topic_type:
 - apiref
-ms.openlocfilehash: 81936052c3fa2ad4fb77b503341b8b4873b80695
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 55a798bcc575aee3f309c35eb454a0675e0cbd97
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894933"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734073"
 ---
 # <a name="icordebugassemblygetappdomain-method"></a>ICorDebugAssembly::GetAppDomain, méthode
-Obtient un pointeur d’interface vers le domaine d’application qui `ICorDebugAssembly` contient cette instance.  
+
+Obtient un pointeur d’interface vers le domaine d’application qui contient cette `ICorDebugAssembly` instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +35,16 @@ HRESULT GetAppDomain (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppAppDomain`  
  à Pointeur vers l’adresse d’une interface ICorDebugAppDomain qui représente le domaine d’application.  
   
-## <a name="remarks"></a>Notes   
- Si cet assembly est l’assembly `GetAppDomain` système, retourne la valeur null.  
+## <a name="remarks"></a>Remarques  
+
+ Si cet assembly est l’assembly système, `GetAppDomain` retourne la valeur null.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

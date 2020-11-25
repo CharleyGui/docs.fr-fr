@@ -13,12 +13,12 @@ helpviewer_keywords:
 - I/O [.NET], writing data
 - BinaryWriter class, examples
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
-ms.openlocfilehash: 940d720edfde93f8707a4fd7040e5dd3618a2680
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 8ec14ef560ddd69e8c9217298271b7ec715fcb9c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830712"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734580"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>Comment : lire et écrire dans un fichier de données nouvellement créé
 
@@ -30,6 +30,7 @@ L’exemple créé un fichier de données appelé *Test.data* dans le répertoir
 > Si *Test.data* existe déjà dans le répertoire actif, une exception <xref:System.IO.IOException> est levée. Utilisez l’option de mode de fichier <xref:System.IO.FileMode.Create?displayProperty=nameWithType> plutôt que <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> pour toujours créer un fichier sans lever d’exception.  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[System.IO.BinaryReaderWriter#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source6.cs#7)]
  [!code-vb[System.IO.BinaryReaderWriter#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source6.vb#7)]  
   
@@ -46,4 +47,4 @@ L’exemple créé un fichier de données appelé *Test.data* dans le répertoir
 - [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md)  
 - [Comment : lire les caractères d’une chaîne](how-to-read-characters-from-a-string.md)  
 - [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md)  
-- [E/s de fichier et de flux](index.md)
+- [E/S de fichier et de flux](index.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: eea570d9-2e53-4320-9ea0-eb777bf9dcf3
 topic_type:
 - apiref
-ms.openlocfilehash: 9829f57da911b43626516284e4858adc4139a3ca
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: c8d18b78cf0185271eae763892610d13f76e42ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762871"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733995"
 ---
 # <a name="iclrtaskmanagercreatetask-method"></a>ICLRTaskManager::CreateTask, méthode
+
 Demande explicitement que le common language runtime (CLR) crée une nouvelle tâche.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,11 @@ HRESULT CreateTask (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pTask`  
  à Pointeur vers l’adresse d’un [ICLRTask](iclrtask-interface.md)nouvellement créé, ou null, si la tâche n’a pas pu être créée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -49,20 +51,22 @@ HRESULT CreateTask (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|La mémoire disponible est insuffisante pour allouer la ressource demandée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Le CLR crée automatiquement une nouvelle tâche lors de l’initialisation, lorsque le code utilisateur crée un thread à l’aide de types dans l' <xref:System.Threading> espace de noms ou lorsque la taille du pool de threads augmente. Elle crée également des tâches lorsque du code non managé effectue un appel à une fonction managée.  
   
- `CreateTask`permet à l’hôte de faire une demande explicite que le CLR crée une nouvelle tâche. Par exemple, l’hôte peut appeler cette méthode pour préinitialiser les structures de données.  
+ `CreateTask` permet à l’hôte de faire une demande explicite que le CLR crée une nouvelle tâche. Par exemple, l’hôte peut appeler cette méthode pour préinitialiser les structures de données.  
   
 > [!IMPORTANT]
 > La nouvelle tâche est retournée dans un état suspendu et reste suspendue jusqu’à ce que l’hôte appelle explicitement [IHostTask :: Start](ihosttask-start-method.md).  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

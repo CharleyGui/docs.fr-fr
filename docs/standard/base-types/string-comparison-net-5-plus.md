@@ -2,20 +2,20 @@
 title: Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 description: En savoir plus sur les changements de comportement de comparaison de chaînes dans .NET 5 et versions ultérieures sur Windows.
 ms.date: 11/04/2020
-ms.openlocfilehash: 49be2169bb165b8fe0205800415542bea7bf9787
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: fa1a1d12f45e5b41877a674d7b8747bb2b2f9658
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93403621"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734229"
 ---
 # <a name="behavior-changes-when-comparing-strings-on-net-5"></a>Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 
-.NET 5,0 introduit un changement de comportement au moment de l’exécution où les API de globalisation [utilisent désormais ICU par défaut](../../core/compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows) sur toutes les plateformes prises en charge. Il s’agit d’une nouveauté par rapport aux versions antérieures de .NET Core et de .NET Framework, qui utilisent la fonctionnalité NLS (National Language Support) du système d’exploitation lors de l’exécution sous Windows. Pour plus d’informations sur ces modifications, y compris les commutateurs de compatibilité qui peuvent rétablir le changement de comportement, consultez [globalisation et ICU .net](../globalization-localization/globalization-icu.md).
+.NET 5,0 introduit un changement de comportement au moment de l’exécution où les API de globalisation [utilisent désormais ICU par défaut](../../core/compatibility/globalization/5.0/icu-globalization-api.md) sur toutes les plateformes prises en charge. Il s’agit d’une nouveauté par rapport aux versions antérieures de .NET Core et de .NET Framework, qui utilisent la fonctionnalité NLS (National Language Support) du système d’exploitation lors de l’exécution sous Windows. Pour plus d’informations sur ces modifications, y compris les commutateurs de compatibilité qui peuvent rétablir le changement de comportement, consultez [globalisation et ICU .net](../globalization-localization/globalization-icu.md).
 
 ## <a name="reason-for-change"></a>Motif de modification
 
-Cette modification a été introduite pour unifier. Comportement de la globalisation du réseau sur tous les systèmes d’exploitation pris en charge. Il offre également la possibilité pour les applications de regrouper leurs propres bibliothèques de globalisation plutôt que de dépendre des bibliothèques intégrées du système d’exploitation. Pour plus d’informations, consultez [la notification de modification avec rupture](../../core/compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+Cette modification a été introduite pour unifier. Comportement de la globalisation du réseau sur tous les systèmes d’exploitation pris en charge. Il offre également la possibilité pour les applications de regrouper leurs propres bibliothèques de globalisation plutôt que de dépendre des bibliothèques intégrées du système d’exploitation. Pour plus d’informations, consultez [la notification de modification avec rupture](../../core/compatibility/globalization/5.0/icu-globalization-api.md).
 
 ## <a name="behavioral-differences"></a>Différences de comportement
 
@@ -139,9 +139,9 @@ Pour une analyse plus détaillée du comportement par défaut de chaque <xref:Sy
 
 ## <a name="ordinal-vs-linguistic-search-and-comparison"></a>Comparaison entre les comparaisons ordinale et linguistique
 
-La recherche et la comparaison *ordinale* (également appelée *non linguistique* ) décomposent une chaîne en `char` éléments individuels et effectuent une recherche de type char-by-char ou une comparaison. Par exemple, les chaînes `"dog"` et `"dog"` sont considérées comme *égales* sous un `Ordinal` comparateur, étant donné que les deux chaînes se composent exactement de la même séquence de caractères. Toutefois, `"dog"` et `"Dog"` sont considérés comme *n’étant pas égaux* sous un `Ordinal` comparateur, car ils ne se composent pas exactement de la même séquence de caractères. Autrement dit, le `'D'` point de code en majuscules `U+0044` se produit avant le `'d'` point de code en minuscules `U+0064` , ce qui entraîne un `"dog"` Tri avant `"Dog"` .
+La recherche et la comparaison *ordinale* (également appelée *non linguistique*) décomposent une chaîne en `char` éléments individuels et effectuent une recherche de type char-by-char ou une comparaison. Par exemple, les chaînes `"dog"` et `"dog"` sont considérées comme *égales* sous un `Ordinal` comparateur, étant donné que les deux chaînes se composent exactement de la même séquence de caractères. Toutefois, `"dog"` et `"Dog"` sont considérés comme *n’étant pas égaux* sous un `Ordinal` comparateur, car ils ne se composent pas exactement de la même séquence de caractères. Autrement dit, le `'D'` point de code en majuscules `U+0044` se produit avant le `'d'` point de code en minuscules `U+0064` , ce qui entraîne un `"dog"` Tri avant `"Dog"` .
 
-Un `OrdinalIgnoreCase` comparateur continue de fonctionner en fonction du caractère par caractère, mais il élimine les différences de casse lors de l’exécution de l’opération. Sous un `OrdinalIgnoreCase` comparateur, les paires de caractères `'d'` et `'D'` sont considérées comme *égales* , comme les paires de caractères `'á'` et `'Á'` . Toutefois, le caractère non accentué `'a'` *n’est pas* comparé au caractère accentué `'á'` .
+Un `OrdinalIgnoreCase` comparateur continue de fonctionner en fonction du caractère par caractère, mais il élimine les différences de casse lors de l’exécution de l’opération. Sous un `OrdinalIgnoreCase` comparateur, les paires de caractères `'d'` et `'D'` sont considérées comme *égales*, comme les paires de caractères `'á'` et `'Á'` . Toutefois, le caractère non accentué `'a'` *n’est pas* comparé au caractère accentué `'á'` .
 
 Des exemples sont fournis dans le tableau suivant :
 
@@ -210,7 +210,7 @@ Les routines de recherche et de comparaison *prenant en compte la culture* sont 
 
 Par exemple, [dans l’alphabet hongrois](https://en.wikipedia.org/wiki/Hungarian_alphabet), lorsque les deux caractères \<dz\> apparaissent en arrière-plan, ils sont considérés comme des lettres uniques distinctes de \<d\> ou \<z\> . Cela signifie que lorsque \<dz\> est visible dans une chaîne, un comparateur prenant en charge la culture hongrois le traite comme un élément de classement unique.
 
-| String | En tant qu’éléments de classement | Notes |
+| String | En tant qu’éléments de classement | Remarques |
 |---|---|---|
 | `"endz"` | `"e" + "n" + "d" + "z"` | (à l’aide d’un comparateur linguistique standard) |
 | `"endz"` | `"e" + "n" + "dz"` | (à l’aide d’un comparateur prenant en charge la culture hongrois) |
@@ -259,7 +259,7 @@ public bool ContainsHtmlSensitiveCharacters(string input)
 
 Le tableau suivant répertorie les types de comparaison et de recherche par défaut pour diverses API de chaîne et de type chaîne. Si l’appelant fournit un `CultureInfo` paramètre ou explicite `StringComparison` , ce paramètre sera respecté sur n’importe quelle valeur par défaut.
 
-| API | Comportement par défaut | Notes |
+| API | Comportement par défaut | Remarques |
 |---|---|---|
 | `string.Compare` | CurrentCulture | |
 | `string.CompareTo` | CurrentCulture | |
@@ -290,7 +290,7 @@ Le tableau suivant répertorie les types de comparaison et de recherche par déf
 
 Contrairement aux `string` API, toutes les `MemoryExtensions` API effectuent des recherches *ordinales* et des comparaisons par défaut, avec les exceptions suivantes.
 
-| API | Comportement par défaut | Notes |
+| API | Comportement par défaut | Remarques |
 |---|---|---|
 | `MemoryExtensions.ToLower` | CurrentCulture | (lorsqu’un argument null est passé `CultureInfo` ) |
 | `MemoryExtensions.ToLowerInvariant` | InvariantCulture | |

@@ -7,18 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to measure performance
 ms.assetid: 491ba43b-2c10-473d-9aab-e2cb96446711
-ms.openlocfilehash: 43f83a34531b853d108785052f637d9568c45280
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2cbd178d5004d28120ab701a777a474a7e78e09e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826877"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734437"
 ---
 # <a name="how-to-measure-plinq-query-performance"></a>Procédure : mesurer les performances de requêtes PLINQ
 
 Cet exemple montre comment utiliser la <xref:System.Diagnostics.Stopwatch> classe pour mesurer le temps nécessaire à l’exécution d’une requête PLINQ.  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple utilise une boucle `foreach` vide (`For Each` en Visual Basic) pour mesurer le temps nécessaire à l’exécution de la requête. Dans le code réel, la boucle contient généralement des étapes de traitement supplémentaires qui s’ajoutent à la durée d’exécution totale de la requête. Notez que le chronomètre n’est pas démarré avant la boucle, car c’est à ce moment-là que l’exécution de la requête commence. Si vous avez besoin de mesures plus poussées, vous pouvez utiliser la propriété `ElapsedTicks` au lieu de `ElapsedMilliseconds`.  
   
  [!code-csharp[PLINQ#19](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/measure2.cs#19)]

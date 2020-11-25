@@ -13,14 +13,15 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: 52f7efdf5591901602811cba8f2b6c1a4f42f96c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 62de6dc3b6276aab4667c719033ee3b66928ea2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823002"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734372"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Constructions de regroupement dans les expressions régulières
+
 Les constructions de regroupement délimitent les sous-expressions d'une expression régulière et capturent les sous-chaînes d'une chaîne d'entrée. Utilisez les constructions de regroupement pour effectuer les opérations suivantes :  
   
 - Mettre en correspondance une sous-expression qui est répétée dans la chaîne d'entrée.  
@@ -49,7 +50,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
  Pour plus d’informations sur les groupes et le modèle objet d’expression régulière, consultez [constructions de regroupement et objets d’expression régulière](#Objects).  
   
 <a name="matched_subexpression"></a>
+
 ## <a name="matched-subexpressions"></a>Sous-expressions mises en correspondance  
+
  La construction de regroupement suivante capture une sous-expression mise en correspondance :  
   
  `(`sous- *expression*`)`  
@@ -88,7 +91,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`\W`|Mettre en correspondance un caractère n'appartenant pas à un mot, comme un espace blanc ou un signe de ponctuation. Cela empêche le modèle d'expression régulière de mettre en correspondance un mot qui commence par le mot récupéré du premier groupe capturé.|  
   
 <a name="named_matched_subexpression"></a>
+
 ## <a name="named-matched-subexpressions"></a>Sous-expressions mises en correspondance nommées  
+
  La construction de regroupement suivante capture une sous-expression mise en correspondance et vous permet d'y accéder à partir d'un nom ou d'un nombre :  
   
 `(?<name>subexpression)`  
@@ -162,7 +167,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`(?<digit>\d+)?`|Mettre en correspondance zéro ou une occurrence d'un ou plusieurs caractères numériques décimaux. Affecter la correspondance au groupe nommé `digit` .|  
   
 <a name="balancing_group_definition"></a>
+
 ## <a name="balancing-group-definitions"></a>Définitions de groupe d'équilibrage  
+
  Une définition de groupe d'équilibrage supprime la définition d'un groupe précédemment défini et stocke, dans le groupe actuel, l'intervalle entre le groupe précédemment défini et ce dernier. Cette construction de regroupement se présente sous la forme suivante :  
   
 `(?<name1-name2>subexpression)`  
@@ -235,7 +242,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |24|`$`|Met en correspondance la fin de la chaîne d'entrée.|  
   
 <a name="noncapturing_group"></a>
+
 ## <a name="noncapturing-groups"></a>Groupes sans capture  
+
  La construction de regroupement suivante ne capture pas la sous-chaîne mise en correspondance par une sous-expression :  
   
 `(?:subexpression)`
@@ -261,7 +270,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`\.`|Mettre en correspondance un point.|  
   
 <a name="group_options"></a>
+
 ## <a name="group-options"></a>Options de groupe  
+
  La construction de regroupement suivante applique ou désactive les options spécifiées dans une sous-expression :  
   
  `(?imnsx-imnsx:`sous- *expression*`)`  
@@ -285,7 +296,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
 <a name="zerowidth_positive_lookahead_assertion"></a>
+
 ## <a name="zero-width-positive-lookahead-assertions"></a>Assertions de préanalyse positive de largeur nulle  
+
  La construction de regroupement suivante définit une assertion de préanalyse positive de largeur nulle :  
   
  `(?=`sous- *expression*`)`  
@@ -308,7 +321,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`(?=\sis\b)`|Détermine si les caractères alphabétiques sont suivis d'un espace blanc et de la chaîne « is », qui se termine à la limite d'un mot. Si tel est le cas, la recherche de correspondance réussit.|  
   
 <a name="zerowidth_negative_lookahead_assertion"></a>
+
 ## <a name="zero-width-negative-lookahead-assertions"></a>Assertions de préanalyse négative de largeur nulle  
+
  La construction de regroupement suivante définit une assertion de préanalyse négative de largeur nulle :  
   
  `(?!`sous- *expression*`)`  
@@ -346,7 +361,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`\p{P})`|Si le caractère suivant n'est pas un symbole de ponctuation (tel qu'un point ou une virgule), la recherche de correspondance réussit.|  
   
 <a name="zerowidth_positive_lookbehind_assertion"></a>
+
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Assertions de postanalyse positive de largeur nulle  
+
  La construction de regroupement suivante définit une assertion de postanalyse positive de largeur nulle :  
   
  `(?<=`sous- *expression*`)`  
@@ -371,7 +388,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
  Les assertions de postanalyse positive de largeur nulle permettent également de limiter la rétroactivité quand le ou les derniers caractères d'un groupe capturé doivent être une partie des caractères qui correspondent au modèle d'expression régulière de ce groupe. Par exemple, si un groupe capture tous les caractères alphabétiques consécutifs, vous pouvez utiliser une assertion de postanalyse positive de largeur nulle pour imposer que le dernier caractère soit un caractère alphabétique.  
   
 <a name="zerowidth_negative_lookbehind_assertion"></a>
+
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Assertions de postanalyse négative de largeur nulle  
+
  La construction de regroupement suivante définit une assertion de postanalyse négative de largeur nulle :  
   
  `(?<!`sous- *expression*`)`  
@@ -396,7 +415,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |<code>(?<!(Saturday&#124;Sunday) )</code>|Si la correspondance est précédée d'une chaîne autre que « Saturday » ou « Sunday » suivie d'un espace, la mise en correspondance réussit.|  
   
 <a name="atomic_groups"></a>
+
 ## <a name="atomic-groups"></a>Groupes atomiques  
+
  La construction de regroupement suivante représente un groupe atomique (connu dans certains autres moteurs d’expressions régulières comme une sous-expression non rétroactive, une sous-expression atomique ou une sous-expression unique) :
   
  `(?>`sous- *expression*`)`  
@@ -425,7 +446,9 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
 |`(?>(\w)\1+)`|Mettre en correspondance une ou plusieurs occurrences d'un caractère alphabétique en double, mais ne pas effectuer rétroactivement une mise en correspondance du dernier caractère à la limite d'un mot.|  
   
 <a name="Objects"></a>
+
 ## <a name="grouping-constructs-and-regular-expression-objects"></a>Constructions de regroupement et objets d'expression régulière  
+
  Les sous-chaînes mises en correspondance par un groupe de capture d'expression régulière sont représentées par des objets <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> , qui peuvent être récupérés de l'objet <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> . L'objet <xref:System.Text.RegularExpressions.GroupCollection> est rempli comme suit :  
   
 - Le premier objet <xref:System.Text.RegularExpressions.Group> de la collection (l'objet d'index zéro) représente la correspondance entière.  

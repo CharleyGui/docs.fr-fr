@@ -14,14 +14,15 @@ helpviewer_keywords:
 - .NET regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.openlocfilehash: 5a9890f9ada6a4e749c8cf5ee96d9e8668525040
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 820e6cd7fa4a60fa6adfcaf0f0ff4d25fdda0f21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823262"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734385"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Caractères d'échappement dans les expressions régulières
+
 La barre oblique inverse (\\) dans une expression régulière indique une des possibilités suivantes :  
   
 - Le caractère qui la suit est un caractère spécial, comme indiqué dans le tableau de la section suivante. Par exemple, `\b` est une ancre qui indique qu'une correspondance d'expression régulière doit commencer sur une limite de mot, `\t` représente une tabulation et `\x020` représente un espace.  
@@ -32,6 +33,7 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 > Les séquences d'échappement des caractères sont reconnues dans les modèles d'expressions régulières, mais pas dans les modèles de remplacement.  
   
 ## <a name="character-escapes-in-net"></a>Caractères d’échappement dans .NET  
+
  Le tableau suivant répertorie les séquences d’échappement des caractères prises en charge par les expressions régulières dans .NET.  
   
 |Caractère ou séquence|Description|  
@@ -47,11 +49,12 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 |`\e`|Correspond à un caractère d'échappement, `\u001B`.|  
 |`\`*nnn*|Correspond à un caractère ASCII, où *nnn* se compose de deux ou trois chiffres qui représentent le code de caractère octal. Par exemple, `\040` représente un espace. Cette construction est interprétée comme une référence arrière si elle a un seul chiffre (par exemple `\2`) ou si elle correspond au nombre d'un groupe de capture. (Voir [Constructions de référence arrière](backreference-constructs-in-regular-expressions.md).)|  
 |`\x` *nn*|Correspond à un caractère ASCII, où *nn* est un code hexadécimal à deux chiffres d’un caractère.|  
-|`\c` *X*|Correspond à un caractère de contrôle ASCII, où X est la lettre du caractère de contrôle. Par exemple, `\cC` est Ctrl-C.|  
+|`\c`*X*|Correspond à un caractère de contrôle ASCII, où X est la lettre du caractère de contrôle. Par exemple, `\cC` est Ctrl-C.|  
 |`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :** La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. Le caractère d’échappement de Perl 5 a la forme `\x{` *####* `…}` , où *####* `…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn*.|  
 |`\`|Quand ce caractère d'échappement est suivi d'un caractère non reconnu comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
   
 ## <a name="an-example"></a>Exemple  
+
  L'exemple suivant montre l'utilisation de caractères d'échappement dans une expression régulière. Il analyse une chaîne qui contient les noms des plus grandes villes du monde et leur population en 2009. Chaque nom de ville est séparé de sa population par une tabulation (`\t`) ou par une barre verticale (&#124; ou `\u007c`). Les villes individuelles et leur population sont séparées les unes des autres par un retour chariot et un saut de ligne.  
   
  [!code-csharp[RegularExpressions.Language.Escapes#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.escapes/cs/escape1.cs#1)]

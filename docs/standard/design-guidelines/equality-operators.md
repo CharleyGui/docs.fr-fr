@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Equals method
 - == operator (equality) [.NET Framework]
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
-ms.openlocfilehash: 85a9e81d28995229e6b47d7fe4d0b541265999f8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2331a852adb4dd254af85060a5077f454bcfe0eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821344"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734424"
 ---
 # <a name="equality-operators"></a>Opérateurs d'égalité
+
 Cette section décrit la surcharge des opérateurs d’égalité et fait référence à `operator==` et à des `operator!=` opérateurs d’égalité.
 
  ❌ NE surchargez pas l’un des opérateurs d’égalité et non l’autre.
@@ -29,11 +30,13 @@ Cette section décrit la surcharge des opérateurs d’égalité et fait référ
  Par exemple, retourne false si l’un des arguments a la valeur null au lieu de lever `NullReferenceException` .
 
 ## <a name="equality-operators-on-value-types"></a>Opérateurs d’égalité sur les types valeur
+
  ✔️ surchargent les opérateurs d’égalité sur les types valeur, si l’égalité est significative.
 
  Dans la plupart des langages de programmation, il n’y a pas d’implémentation par défaut de `operator==` pour les types valeur.
 
 ## <a name="equality-operators-on-reference-types"></a>Opérateurs d’égalité sur les types référence
+
  ❌ Évitez de surcharger les opérateurs d’égalité sur les types référence mutables.
 
  De nombreux langages ont des opérateurs d’égalité intégrés pour les types référence. Les opérateurs intégrés implémentent généralement l’égalité des références, et de nombreux développeurs sont surpris lorsque le comportement par défaut est remplacé par l’égalité de la valeur.

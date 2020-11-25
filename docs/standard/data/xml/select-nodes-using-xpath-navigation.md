@@ -6,17 +6,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-ms.openlocfilehash: b8a67d1fd508d0674d9230d4b934071a15669599
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b6b68d9351431acc6d9ef20276f51ac4d667d325
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829243"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734684"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Sélection de nœuds à l'aide de la navigation XPath
+
 Le DOM (Document Object Model) XML contient des méthodes permettant d’utiliser la navigation du langage XPath (XML Path) pour demander des informations dans le DOM. Vous pouvez utiliser XPath pour rechercher un nœud simple spécifique ou tous les nœuds qui correspondent à certains critères.  
   
 ## <a name="xpath-select-methods"></a>Méthodes de sélection XPath  
+
  Les classes DOM offrent deux méthodes pour la sélection XPath : la méthode <xref:System.Xml.XmlNode.SelectSingleNode%2A> et la méthode <xref:System.Xml.XmlNode.SelectNodes%2A>. La méthode <xref:System.Xml.XmlNode.SelectSingleNode%2A> retourne le premier nœud qui correspond aux critères de sélection. La méthode <xref:System.Xml.XmlNode.SelectNodes%2A> retourne un objet <xref:System.Xml.XmlNodeList> qui contient les nœuds correspondants.  
   
  L'exemple suivant utilise la méthode <xref:System.Xml.XmlNode.SelectSingleNode%2A> pour sélectionner le premier nœud `book` dans lequel le nom de l'auteur répond aux critères spécifiés. Le fichier bookstore.xml (qui est fourni à la fin de cette rubrique) est utilisé comme fichier d'entrée.  
@@ -122,12 +124,14 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 > En cas de modification du document sous-jacent, il est recommandé de réexécuter la sélection. Si le nœud modifié fait partie de ceux qui peuvent entraîner l'ajout du nœud à la liste dans laquelle il ne figure pas encore ou sa suppression de la liste, il n'est pas garanti que la liste de nœuds est à jour.  
   
 ## <a name="namespaces-in-xpath-expressions"></a>Espaces de noms dans les expressions XPath  
+
  Les expressions XPath peuvent inclure des espaces de noms. La résolution d'espace de noms n'est pas prise en charge par l'objet <xref:System.Xml.XmlNamespaceManager>. Si l'expression XPath comprend un préfixe, celui-ci et l'URI d'espace de noms doivent être ajoutés à l'objet <xref:System.Xml.XmlNamespaceManager> et l'objet <xref:System.Xml.XmlNamespaceManager> est transmis à la méthode <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> ou <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29>. Remarquez que les exemples de code ci-dessus utilisent le <xref:System.Xml.XmlNamespaceManager> pour trouver l'espace de noms du document bookstore.xml.  
   
 > [!NOTE]
 > Si l’expression XPath n’inclut pas de préfixe, l’URI (Uniform Resource Identifier) d’espace de noms est réputé être l’espace de noms vide. Si votre code XML inclut un espace de noms par défaut, vous devez toujours ajouter un préfixe et un URI d'espace de noms à l'objet <xref:System.Xml.XmlNamespaceManager> ; sinon, aucun nœud n'est sélectionné.  
   
 #### <a name="input-file"></a>Fichier d'entrée  
+
  Le fichier bookstore.xml suivant est utilisé comme fichier d'entrée dans les exemples de cette rubrique :  
   
 ```xml  

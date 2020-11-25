@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: afd88ee9-2589-4461-a75a-9b6fe55a2525
 topic_type:
 - apiref
-ms.openlocfilehash: 523d9665ffd2637a0e856d74d4d3b3838cb5e83c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 078e5cb03848564b42e30a079101d5a61e0074bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212124"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734021"
 ---
 # <a name="icordebugprocess3setenablecustomnotification-method"></a>ICorDebugProcess3::SetEnableCustomNotification, méthode
+
 Active et désactive les notifications personnalisées du débogueur du type spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,18 +34,21 @@ HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pClass`  
  dans Type qui spécifie les notifications personnalisées du débogueur.  
   
  `fEnable`  
- [in] `true` pour activer les notifications personnalisées du débogueur ; `false`pour désactiver les notifications. La valeur par défaut est `false`.  
+ [in] `true` pour activer les notifications personnalisées du débogueur ; `false` pour désactiver les notifications. La valeur par défaut est `false`.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Lorsque `fEnable` a la valeur `true` , les appels à la <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> méthode déclenchent un rappel [ICorDebugManagedCallback3 :: CustomNotification,](icordebugmanagedcallback3-customnotification-method.md) . Les notifications sont désactivées par défaut ; par conséquent, le débogueur doit spécifier les types de notification qu’il connaît et souhaite gérer. Étant donné que la classe [ICorDebugClass](icordebug-interface.md) est limitée par le domaine d’application, le débogueur doit appeler `SetEnableCustomNotification` pour chaque domaine d’application dans le processus s’il souhaite recevoir la notification dans tout le processus.  
   
  À partir du .NET Framework 4, la seule notification prise en charge est une notification de dépendance inter-threads.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

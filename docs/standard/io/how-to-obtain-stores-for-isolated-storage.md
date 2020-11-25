@@ -12,14 +12,15 @@ helpviewer_keywords:
 - data stores, obtaining
 - data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
-ms.openlocfilehash: a3803f50c99b8c31030c6afe756e209c9350137f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ac53432374b546a46417e9d3b9de342a7ea2ef81
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830738"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734619"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Procédure : obtenir des magasins pour le stockage isolé
+
 Un magasin isolé expose un système de fichiers virtuel dans un compartiment de données. La classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> fournit plusieurs méthodes pour interagir avec un magasin isolé. Pour créer et récupérer des magasins, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> propose trois méthodes statiques :  
   
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> retourne un stockage isolé par utilisateur et par assembly.  
@@ -45,6 +46,7 @@ Un magasin isolé expose un système de fichiers virtuel dans un compartiment de
  Il n’existe aucun mécanisme qui empêche le code de passer un objet <xref:System.IO.IsolatedStorage.IsolatedStorageFile> vers du code qui n’a pas de droits d’accès suffisants pour obtenir le magasin lui-même. Les identités de domaine et d’assembly et les autorisations pour le stockage isolé sont vérifiées uniquement lorsqu’une référence à un objet <xref:System.IO.IsolatedStorage.IsolatedStorage> est obtenue, en général dans la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> ou <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>. La protection des références aux objets <xref:System.IO.IsolatedStorage.IsolatedStorageFile> est, par conséquent, la responsabilité du code qui utilise ces références.  
   
 ## <a name="example"></a>Exemple  
+
  Le code suivant fournit un exemple simple d’une classe obtenant un magasin isolé par utilisateur et par assembly. Le code peut ensuite être modifié afin de récupérer un magasin isolé par utilisateur, domaine et assembly en ajoutant <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> aux arguments passés par la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
   
  Après avoir exécuté le code, vous pouvez confirmer qu’un magasin a été créé en tapant **StoreAdm /LIST** sur la ligne de commande. Cette commande exécute [l’outil Stockage isolé (Storeadm.exe)](../../framework/tools/storeadm-exe-isolated-storage-tool.md) et répertorie tous les magasins actuellement isolés pour l’utilisateur.  

@@ -2,14 +2,15 @@
 title: Collections de nœuds dans les transformations
 ms.date: 03/30/2017
 ms.assetid: ad034f0e-ff8b-4a71-9a4c-528c754263c4
-ms.openlocfilehash: 72b3af5b471d73cc159dd700ddd29c4ffb5ea639
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2ace103d9721b2adecb08a25ab89cf9b0f05bb93
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830114"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734112"
 ---
 # <a name="node-sets-in-transformations"></a>Collections de nœuds dans les transformations
+
 Les collections de nœuds correspondent à l'un des quatre types de données de base qui sont retournés à partir des expressions XPath (XML Path Language). Une collection de nœuds, qui est une collection non triée de nœuds sans doublons, créée dans l'ordre du document, peut être attribué à une variable dans une feuille de style.  
   
 > [!NOTE]

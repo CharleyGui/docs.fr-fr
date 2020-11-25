@@ -2,14 +2,15 @@
 title: Méthodes d’extension
 ms.date: 10/22/2008
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
-ms.openlocfilehash: d48651e9621beecd3c9a0665ca4be26894b50c45
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 02a421c9a4b73c779474a392e77104d4ccfbb109
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821136"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734710"
 ---
 # <a name="extension-methods"></a>Méthodes d’extension
+
 Les méthodes d’extension sont une fonctionnalité de langage qui permet d’appeler des méthodes statiques à l’aide de la syntaxe d’appel de méthode d’instance. Ces méthodes doivent accepter au moins un paramètre, qui représente l’instance sur laquelle la méthode doit fonctionner.
 
  La classe qui définit ces méthodes d’extension est appelée classe « sponsor » et doit être déclarée comme static. Pour utiliser des méthodes d’extension, vous devez importer l’espace de noms définissant la classe sponsor.

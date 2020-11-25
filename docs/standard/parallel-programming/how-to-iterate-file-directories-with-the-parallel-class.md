@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-ms.openlocfilehash: e29769a0dc40e88a53b0a3f063f79c8c89edbce6
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 75097485c78e9ded67f41d9632f5399c081b3a16
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825700"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734463"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>Procédure : Itérer les répertoires de fichiers avec la classe parallèle
+
 Dans de nombreux cas, l’itération de fichiers est une opération facile à mettre en parallèle. La rubrique [Guide pratique : itérer les répertoires de fichiers avec PLINQ](how-to-iterate-file-directories-with-plinq.md) présente le moyen le plus simple d’effectuer cette tâche dans de nombreux scénarios. Toutefois, des problèmes risquent de survenir si le code doit gérer les différents types d’exceptions susceptibles de se produire avec l’accès au système de fichiers. L'exemple suivant montre une approche du problème. Il utilise une itération de type pile pour parcourir tous les fichiers et tous les dossiers situés sous un répertoire spécifié, et permet au code d’intercepter et de gérer différentes exceptions. Bien entendu, vous pouvez gérer les exceptions comme vous le souhaitez.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant itère les répertoires de manière séquentielle, mais traite les fichiers en parallèle. C’est probablement la meilleure approche en cas de rapport élevé entre les répertoires et les fichiers. Il est également possible de paralléliser l’itération des répertoires et d’accéder à chaque fichier de manière séquentielle. Il n’est probablement pas efficace de paralléliser les deux boucles, sauf si l’ordinateur ciblé comporte un grand nombre de processeurs. Toutefois, comme toujours, vous devez tester votre application de manière approfondie pour déterminer la meilleure approche.  
   
  [!code-csharp[TPL_Parallel#08](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallel_file.cs#08)]
