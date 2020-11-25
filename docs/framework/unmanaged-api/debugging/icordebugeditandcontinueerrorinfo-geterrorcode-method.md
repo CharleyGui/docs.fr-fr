@@ -15,16 +15,17 @@ helpviewer_keywords:
 ms.assetid: 2f82fb2c-a42e-48bf-af41-a15e40f636c6
 topic_type:
 - apiref
-ms.openlocfilehash: 8d3eafd9ca8df71a6644905e5abe6b15b7f180ed
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d81d9e964a4909dee57c3fe3835ed81472b04ad8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793524"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721463"
 ---
-# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="81f55-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode, méthode</span><span class="sxs-lookup"><span data-stu-id="81f55-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
-<span data-ttu-id="81f55-103">`GetErrorCode` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="81f55-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="81f55-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="81f55-104">Do not call this method.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="81f55-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="81f55-105">See also</span></span>
+# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="4642b-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode, méthode</span><span class="sxs-lookup"><span data-stu-id="4642b-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
 
-- [<span data-ttu-id="81f55-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="81f55-106">Debugging Interfaces</span></span>](debugging-interfaces.md)
+<span data-ttu-id="4642b-103">`GetErrorCode` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="4642b-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="4642b-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="4642b-104">Do not call this method.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="4642b-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4642b-105">See also</span></span>
+
+- [<span data-ttu-id="4642b-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="4642b-106">Debugging Interfaces</span></span>](debugging-interfaces.md)
