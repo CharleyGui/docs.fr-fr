@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: c9a26ea3-b8eb-4b8e-854f-9a2ca26b3b39
 topic_type:
 - apiref
-ms.openlocfilehash: 38f49e8fe632e9b38ede8815de6d8865278351f9
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 44ecba99999d04603477f411e68834548f6a7cda
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421200"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95693540"
 ---
-# <a name="icorpublishenumclone-method"></a><span data-ttu-id="5b6cd-102">ICorPublishEnum::Clone, méthode</span><span class="sxs-lookup"><span data-stu-id="5b6cd-102">ICorPublishEnum::Clone Method</span></span>
-<span data-ttu-id="5b6cd-103">Crée une copie de cet objet [ICorPublishEnum](icorpublishenum-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="5b6cd-103">Creates a copy of this [ICorPublishEnum](icorpublishenum-interface.md) object.</span></span>  
+# <a name="icorpublishenumclone-method"></a><span data-ttu-id="b6aa6-102">ICorPublishEnum::Clone, méthode</span><span class="sxs-lookup"><span data-stu-id="b6aa6-102">ICorPublishEnum::Clone Method</span></span>
+
+<span data-ttu-id="b6aa6-103">Crée une copie de cet objet [ICorPublishEnum](icorpublishenum-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="b6aa6-103">Creates a copy of this [ICorPublishEnum](icorpublishenum-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5b6cd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5b6cd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b6aa6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6aa6-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Clone (  
@@ -33,19 +34,21 @@ HRESULT Clone (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5b6cd-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="5b6cd-105">Parameters</span></span>  
- `ppEnum`  
- <span data-ttu-id="5b6cd-106">à Pointeur vers l’adresse d’un `ICorPublishEnum` objet qui est une copie de cet `ICorPublishEnum` objet.</span><span class="sxs-lookup"><span data-stu-id="5b6cd-106">[out] A pointer to the address of an `ICorPublishEnum` object that is a copy of this `ICorPublishEnum` object.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="5b6cd-107">Conditions requises</span><span class="sxs-lookup"><span data-stu-id="5b6cd-107">Requirements</span></span>  
- <span data-ttu-id="5b6cd-108">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5b6cd-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="5b6cd-109">**En-tête :** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="5b6cd-109">**Header:** CorPub.idl, CorPub.h</span></span>  
-  
- <span data-ttu-id="5b6cd-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5b6cd-110">**Library:** CorGuids.lib</span></span>  
-  
- <span data-ttu-id="5b6cd-111">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5b6cd-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="5b6cd-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5b6cd-112">See also</span></span>
+## <a name="parameters"></a><span data-ttu-id="b6aa6-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="b6aa6-105">Parameters</span></span>  
 
-- [<span data-ttu-id="5b6cd-113">ICorPublishEnum, interface</span><span class="sxs-lookup"><span data-stu-id="5b6cd-113">ICorPublishEnum Interface</span></span>](icorpublishenum-interface.md)
+ `ppEnum`  
+ <span data-ttu-id="b6aa6-106">à Pointeur vers l’adresse d’un `ICorPublishEnum` objet qui est une copie de cet `ICorPublishEnum` objet.</span><span class="sxs-lookup"><span data-stu-id="b6aa6-106">[out] A pointer to the address of an `ICorPublishEnum` object that is a copy of this `ICorPublishEnum` object.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="b6aa6-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="b6aa6-107">Requirements</span></span>  
+
+ <span data-ttu-id="b6aa6-108">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b6aa6-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="b6aa6-109">**En-tête :** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="b6aa6-109">**Header:** CorPub.idl, CorPub.h</span></span>  
+  
+ <span data-ttu-id="b6aa6-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b6aa6-110">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="b6aa6-111">**Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b6aa6-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="b6aa6-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b6aa6-112">See also</span></span>
+
+- [<span data-ttu-id="b6aa6-113">ICorPublishEnum, interface</span><span class="sxs-lookup"><span data-stu-id="b6aa6-113">ICorPublishEnum Interface</span></span>](icorpublishenum-interface.md)
