@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: e59fda62-77d5-4e37-89cb-ce7ae4627975
 topic_type:
 - apiref
-ms.openlocfilehash: b86828e01fb00b12feff2ed451793c240e16e240
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3a6f19d9fc90972e767625fadf30cc4af50d9017
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134380"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727885"
 ---
-# <a name="iassemblynamegetproperty-method"></a><span data-ttu-id="86d1b-102">IAssemblyName::GetProperty, méthode</span><span class="sxs-lookup"><span data-stu-id="86d1b-102">IAssemblyName::GetProperty Method</span></span>
-<span data-ttu-id="86d1b-103">Obtient un pointeur vers la propriété référencée par l’identificateur de propriété spécifié.</span><span class="sxs-lookup"><span data-stu-id="86d1b-103">Gets a pointer to the property referenced by the specified property identifier.</span></span>  
+# <a name="iassemblynamegetproperty-method"></a><span data-ttu-id="e8ef2-102">IAssemblyName::GetProperty, méthode</span><span class="sxs-lookup"><span data-stu-id="e8ef2-102">IAssemblyName::GetProperty Method</span></span>
+
+<span data-ttu-id="e8ef2-103">Obtient un pointeur vers la propriété référencée par l’identificateur de propriété spécifié.</span><span class="sxs-lookup"><span data-stu-id="e8ef2-103">Gets a pointer to the property referenced by the specified property identifier.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="86d1b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="86d1b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e8ef2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e8ef2-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetProperty (  
@@ -35,23 +36,25 @@ HRESULT GetProperty (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="86d1b-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="86d1b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e8ef2-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="e8ef2-105">Parameters</span></span>  
+
  `PropertyId`  
- <span data-ttu-id="86d1b-106">dans Identificateur unique de la propriété demandée.</span><span class="sxs-lookup"><span data-stu-id="86d1b-106">[in] The unique identifier for the requested property.</span></span>  
+ <span data-ttu-id="e8ef2-106">dans Identificateur unique de la propriété demandée.</span><span class="sxs-lookup"><span data-stu-id="e8ef2-106">[in] The unique identifier for the requested property.</span></span>  
   
  `pvProperty`  
- <span data-ttu-id="86d1b-107">à Données de propriété retournées.</span><span class="sxs-lookup"><span data-stu-id="86d1b-107">[out] The returned property data.</span></span>  
+ <span data-ttu-id="e8ef2-107">à Données de propriété retournées.</span><span class="sxs-lookup"><span data-stu-id="e8ef2-107">[out] The returned property data.</span></span>  
   
  `pcbProperty`  
- <span data-ttu-id="86d1b-108">[in, out] Taille, en octets, de `pvProperty`.</span><span class="sxs-lookup"><span data-stu-id="86d1b-108">[in, out] The size, in bytes, of `pvProperty`.</span></span>  
+ <span data-ttu-id="e8ef2-108">[in, out] Taille, en octets, de `pvProperty` .</span><span class="sxs-lookup"><span data-stu-id="e8ef2-108">[in, out] The size, in bytes, of `pvProperty`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="86d1b-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="86d1b-109">Requirements</span></span>  
- <span data-ttu-id="86d1b-110">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="86d1b-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="86d1b-111">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="86d1b-111">**Header:** Fusion.h</span></span>  
-  
- <span data-ttu-id="86d1b-112">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="86d1b-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="86d1b-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="86d1b-113">See also</span></span>
+## <a name="requirements"></a><span data-ttu-id="e8ef2-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="e8ef2-109">Requirements</span></span>  
 
-- [<span data-ttu-id="86d1b-114">IAssemblyName, interface</span><span class="sxs-lookup"><span data-stu-id="86d1b-114">IAssemblyName Interface</span></span>](iassemblyname-interface.md)
+ <span data-ttu-id="e8ef2-110">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e8ef2-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="e8ef2-111">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="e8ef2-111">**Header:** Fusion.h</span></span>  
+  
+ <span data-ttu-id="e8ef2-112">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e8ef2-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="e8ef2-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e8ef2-113">See also</span></span>
+
+- [<span data-ttu-id="e8ef2-114">IAssemblyName, interface</span><span class="sxs-lookup"><span data-stu-id="e8ef2-114">IAssemblyName Interface</span></span>](iassemblyname-interface.md)
