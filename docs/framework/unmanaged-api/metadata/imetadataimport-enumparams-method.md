@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 52118dc9-fe6e-4b39-aa48-c3cc3ea4214d
 topic_type:
 - apiref
-ms.openlocfilehash: f9a58a70b5264d7f1eb33fb0e09c702c94a13e85
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b41f9bb05a43ac4c6dd8a89c45ef4826741e5679
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491756"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728262"
 ---
 # <a name="imetadataimportenumparams-method"></a>IMetaDataImport::EnumParams, méthode
+
 Énumère les jetons ParamDef représentant les paramètres de la méthode référencée par le jeton MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumParams (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
@@ -57,15 +59,16 @@ HRESULT EnumParams (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumParams`retourné avec succès.|  
+|`S_OK`|`EnumParams` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

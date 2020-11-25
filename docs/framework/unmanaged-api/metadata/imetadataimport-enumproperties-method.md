@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 60573ad7-8821-4721-a068-3f7a6d25926a
 topic_type:
 - apiref
-ms.openlocfilehash: 39343ffc88fc9b421b916e33e3e75e4e34fc233d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 24ee37a36e34c74258e1c750ba424640c0496f0a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503789"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728249"
 ---
 # <a name="imetadataimportenumproperties-method"></a>IMetaDataImport::EnumProperties, méthode
+
 Énumère les jetons PropertyDef représentant les propriétés du type référencé par le jeton TypeDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumProperties (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
@@ -57,15 +59,16 @@ HRESULT EnumProperties (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties`retourné avec succès.|  
+|`S_OK`|`EnumProperties` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcProperties` est égal à zéro.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

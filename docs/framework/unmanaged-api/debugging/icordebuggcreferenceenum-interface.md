@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5f3c91c9-c035-454f-96cc-011cab1ea06b
 topic_type:
 - apiref
-ms.openlocfilehash: 5650a7e6e6cb0108f0d043914ea94debe2b703bf
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 12ce800cb83ef4f79710aa441b50be860526023c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213099"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728119"
 ---
 # <a name="icordebuggcreferenceenum-interface"></a>ICorDebugGCReferenceEnum, interface
+
 Fournit un énumérateur pour les objets qui sont récupérés par le récupérateur de mémoire.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,7 +31,8 @@ Fournit un énumérateur pour les objets qui sont récupérés par le récupéra
 |------------|-----------------|  
 |[Next, méthode](icordebuggcreferenceenum-next-method.md)|Obtient le nombre spécifié d’instances de [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui feront l’objet d’un garbage collection.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  L' `ICorDebugGCReferenceEnum` interface implémente l’interface « ICorDebugEnum ».  
   
  Une `ICorDebugGCReferenceEnum` instance est remplie avec [COR_GC_REFERENCE](cor-gc-reference-structure.md) instances en appelant la méthode [ICorDebugProcess5 :: enumerategcreferences,](icordebugprocess5-enumerategcreferences-method.md) . Les objets [COR_GC_REFERENCE](cor-gc-reference-structure.md) peuvent être énumérés en appelant la méthode [ICorDebugGCReference :: Next](icordebuggcreferenceenum-next-method.md) .  
@@ -43,7 +45,8 @@ Fournit un énumérateur pour les objets qui sont récupérés par le récupéra
   
 - Objets de la file d’attente du finaliseur. Le finaliseur met les objets racine en file d’attente jusqu’à l’exécution du finaliseur.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

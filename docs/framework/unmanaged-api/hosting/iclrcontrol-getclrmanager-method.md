@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8a11bfa4-cbb0-4082-82b5-f9fba66c93f5
 topic_type:
 - apiref
-ms.openlocfilehash: 04cb45cd021532b6cb3d74a195cbd62e1ab8d31d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d18b3a5c06ac0d3a86f7823f3b140c76c6c9a746
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615850"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728353"
 ---
 # <a name="iclrcontrolgetclrmanager-method"></a>ICLRControl::GetCLRManager, méthode
+
 Obtient un pointeur d’interface vers une instance de l’un des types de gestionnaires que l’hôte peut utiliser pour configurer le common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,8 +36,9 @@ HRESULT GetCLRManager (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `riid`  
- dans `IID`Du type de gestionnaire à retourner. Les `IID` valeurs suivantes sont prises en charge.  
+ dans `IID` Du type de gestionnaire à retourner. Les `IID` valeurs suivantes sont prises en charge.  
   
 - IID_ICLRDebugManager : spécifie que `ppObject` sera de type [ICLRDebugManager](iclrdebugmanager-interface.md).  
   
@@ -55,7 +57,7 @@ HRESULT GetCLRManager (
  `ppObject`  
  à Pointeur d’interface vers le gestionnaire demandé, ou null, si un type de gestionnaire non valide a été demandé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -67,12 +69,13 @@ HRESULT GetCLRManager (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_NOINTERFACE|Le type d’interface n’est pas pris en charge.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

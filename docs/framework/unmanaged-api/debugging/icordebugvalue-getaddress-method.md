@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-ms.openlocfilehash: 467ba53f90081f0c3499fb22acab96b5e380a3f4
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 47c0c4dfa78e85bcc83f0bb2a333955c8e8666fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395842"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728366"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress, méthode
+
 Obtient l’adresse de cet objet « ICorDebugValue », qui est en cours de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT GetAddress (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAddress`  
  à Pointeur vers un `CORDB_ADDRESS` objet qui spécifie l’adresse de cet objet de valeur.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si la valeur n’est pas disponible, 0 (zéro) est retourné. Cela peut se produire si la valeur est au moins partiellement dans les registres ou stockée dans un handle de garbage collector ( `GCHandle` ).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

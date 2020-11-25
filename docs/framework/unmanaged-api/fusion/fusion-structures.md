@@ -6,17 +6,19 @@ helpviewer_keywords:
 - structures [.NET Framework fusion]
 - unmanaged structures [.NET Framework], fusion
 ms.assetid: 3feb4fc5-a1e9-445d-929c-0a7490244114
-ms.openlocfilehash: d20a2eab2c7a9798c87a4431174d6f70f32149e7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0e901ab6c78333a430ca43b01c65bfb01ee1b08e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108140"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728334"
 ---
 # <a name="fusion-structures"></a>Structures de fusion
+
 Cette section décrit les structures non managées utilisées par l’API de fusion.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ASSEMBLY_INFO, structure](assembly-info-structure.md)  
  Contient des informations sur un assembly qui est inscrit dans le Global Assembly Cache.  
   
@@ -29,9 +31,10 @@ Cette section décrit les structures non managées utilisées par l’API de fus
  [IDENTITY_ATTRIBUTE_BLOB, structure](identity-attribute-blob-structure.md)  
  Contient les informations de décalage pour une structure [IDENTITY_ATTRIBUTE](identity-attribute-structure.md) associée.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
+
  [Interfaces de fusion](fusion-interfaces.md)  
   
- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)  
+ [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)  
   
  [Énumérations de fusion](fusion-enumerations.md)

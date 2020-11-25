@@ -9,17 +9,19 @@ helpviewer_keywords:
 - lists [.NET], generic delegates
 - generics [.NET], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-ms.openlocfilehash: b3b18a2efc4dba432ee241d764c1a81101796baf
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5356671b4f1c48c125e49c35a2f8ddc5ea1ca26b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827280"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728509"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes
+
 Cette rubrique donne une vue d’ensemble des délégués génériques pour les conversions, des prédicats de recherche et des actions à effectuer sur les éléments d’un tableau ou d’une collection.  
   
 ## <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes  
+
  Le délégué générique <xref:System.Action%601> représente une méthode qui effectue une action sur un élément du type spécifié. Vous pouvez créer une méthode qui exécute l'action souhaitée sur l'élément, créer une instance du délégué <xref:System.Action%601> pour représenter cette méthode, puis passer le tableau et le délégué à la méthode générique statique <xref:System.Array.ForEach%2A?displayProperty=nameWithType>. La méthode est appelée pour chaque élément du tableau.  
   
  La classe générique <xref:System.Collections.Generic.List%601> fournit également une méthode <xref:System.Collections.Generic.List%601.ForEach%2A> qui utilise le délégué <xref:System.Action%601>. Cette méthode n'est pas générique.  
@@ -36,6 +38,7 @@ Cette rubrique donne une vue d’ensemble des délégués génériques pour les 
  Le délégué générique <xref:System.Converter%602> vous permet de définir une conversion entre deux types et de convertir un tableau d'un type en un tableau de l'autre type, ou de convertir une liste d'un type en une liste de l'autre type. Créez une méthode qui convertit les éléments de la liste existante en un nouveau type, créez une instance de délégué pour représenter la méthode, et utilisez la méthode statique générique <xref:System.Array.ConvertAll%2A?displayProperty=nameWithType> pour générer un tableau du nouveau type à partir du tableau d'origine ou bien la méthode d'instance générique <xref:System.Collections.Generic.List%601.ConvertAll%60%601%28System.Converter%7B%600%2C%60%600%7D%29?displayProperty=nameWithType> pour produire une liste du nouveau type à partir de la liste d'origine.  
   
 ### <a name="chaining-delegates"></a>Chaînage de délégués  
+
  La plupart des méthodes qui utilisent ces délégués retournent un tableau ou une liste, qui peut être passé à une autre méthode. Par exemple, si vous voulez sélectionner certains éléments d'un tableau, convertir ces éléments en un nouveau type, puis les enregistrer dans un nouveau tableau, vous pouvez passer le tableau retourné par la méthode générique <xref:System.Array.FindAll%2A> à la méthode générique <xref:System.Array.ConvertAll%2A>. Si le nouveau type d'élément n'a pas un ordre de tri naturel, vous pouvez passer le tableau retourné par la méthode générique <xref:System.Array.ConvertAll%2A> à la méthode générique <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29>.  
   
 ## <a name="see-also"></a>Voir aussi

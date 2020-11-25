@@ -6,12 +6,12 @@ helpviewer_keywords:
 - threading [.NET], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: 568b93fbfb6f757719d44a07b99ac18375ed539a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 28ba05c345d22b14512d280f3855934d727b3142
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826337"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728444"
 ---
 # <a name="managed-threading"></a>Threading managé
 
@@ -21,6 +21,7 @@ Que vous développiez pour des ordinateurs avec un ou plusieurs processeurs, vou
 > À partir de .NET Framework 4, la programmation multithread est considérablement simplifiée avec <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> les <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> classes et, [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md), les classes de collection simultanée dans l' <xref:System.Collections.Concurrent?displayProperty=nameWithType> espace de noms et un modèle de programmation basé sur le concept de tâches plutôt que sur les threads. Pour plus d’informations, consultez [programmation parallèle](../parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Éléments fondamentaux du threading managé](managed-threading-basics.md)  
  Fournit une vue d’ensemble des threads managés et explique quand utiliser plusieurs threads.  
   
@@ -33,7 +34,8 @@ Que vous développiez pour des ordinateurs avec un ou plusieurs processeurs, vou
  [Fonctionnalités et objets de threading](threading-objects-and-features.md)  
  Décrit les classes managées que vous pouvez utiliser pour synchroniser les activités de threads et les données d’objets ouvertes sur différents threads, et fournit une vue d’ensemble des threads du pool.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
+
  <xref:System.Threading>  
  Contient des classes pour l’utilisation et la synchronisation de threads managés.  
   
@@ -44,6 +46,7 @@ Que vous développiez pour des ordinateurs avec un ou plusieurs processeurs, vou
  Contient des classes pour la création et la planification de tâches de traitement simultanées.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Domaines d'application](../../framework/app-domains/application-domains.md)  
  Fournit une vue d'ensemble des domaines d'application et de leur utilisation dans le Common Language Infrastructure.  
   

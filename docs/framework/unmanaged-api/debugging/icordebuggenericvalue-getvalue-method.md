@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4e95d7cb-144d-4ccf-8a69-d605f4744be2
 topic_type:
 - apiref
-ms.openlocfilehash: 646b2661148e38f3c918fc18fce5c9cd0b1134a1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: dd1c1ba4a976a10d0c38c5295fff838faf072f51
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213021"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728106"
 ---
 # <a name="icordebuggenericvaluegetvalue-method"></a>ICorDebugGenericValue::GetValue, méthode
+
 Copie la valeur de ce générique dans la mémoire tampon spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetValue (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pTo`  
  à Pointeur vers la valeur représentée par cet objet ICorDebugGenericValue. La valeur peut être un type simple ou un type référence (autrement dit, un pointeur).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

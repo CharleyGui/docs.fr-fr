@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 27967230-144f-40d3-9e23-961d0241abd9
 topic_type:
 - apiref
-ms.openlocfilehash: 7a089831c39c36b0f8a0c7746e95a96e4ddfc5d9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 40cb59a2ad0539764702369b13d632eddbab8174
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209394"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728158"
 ---
 # <a name="icordebugfunctiongetclass-method"></a>ICorDebugFunction::GetClass, méthode
+
 Obtient un objet ICorDebugClass qui représente la classe dont cette fonction est membre.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetClass (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppClass`  
  à Pointeur vers l’adresse de l' `ICorDebugClass` objet qui représente la classe, ou null si cette fonction n’est pas membre d’une classe.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

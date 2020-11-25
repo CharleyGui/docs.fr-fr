@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b0c6f19b-d4fd-4971-88f0-12ffb5793da3
 topic_type:
 - apiref
-ms.openlocfilehash: e30b6f2d2254d2d107c4c82a2c5664850ce6ec23
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 828c7660d6c006e700302d119ce4caf7d76e5d84
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123069"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728561"
 ---
 # <a name="isframeworkassembly-function"></a>IsFrameworkAssembly, fonction
+
 Obtient une valeur qui indique si l’assembly spécifié est managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT IsFrameworkAssembly (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzAssemblyReference`  
  dans Nom de l’assembly à vérifier.  
   
@@ -48,16 +50,18 @@ HRESULT IsFrameworkAssembly (
  `pccSize`  
  [in] Taille de `pwzFrameworkAssemblyIdentity`.  
   
-## <a name="remarks"></a>Notes  
- Le paramètre `pwzAssemblyReference` est un pointeur vers une chaîne de caractères qui contient le nom d’un assembly.  
+## <a name="remarks"></a>Remarques  
+
+ Le `pwzAssemblyReference` paramètre est un pointeur vers une chaîne de caractères qui contient le nom d’un assembly.  
   
- Si cet assembly fait partie de la .NET Framework, le paramètre `pbIsFrameworkAssembly` contient une valeur booléenne de `true`.  
+ Si cet assembly fait partie du .NET Framework, le `pbIsFrameworkAssembly` paramètre contient une valeur booléenne `true` .  
   
- Si l’assembly nommé ne fait pas partie de la .NET Framework, ou si le paramètre `pwzAssemblyReference` ne nomme pas un assembly, `pbIsFrameworkAssembly` contient une valeur booléenne de `false`.  
+ Si l’assembly nommé ne fait pas partie de la .NET Framework, ou si le `pwzAssemblyReference` paramètre ne nomme pas d’assembly, `pbIsFrameworkAssembly` contient une valeur booléenne `false` .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)
