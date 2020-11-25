@@ -6,14 +6,15 @@ helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: b62cfbd58f671745054c557041e5d60af345c8d3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9f03eda511c2ef0c9565d270c52fd72bf54692d8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820837"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698349"
 ---
 # <a name="naming-parameters"></a>Attribution d'un nom à des paramètres
+
 Au-delà de la raison évidente de la lisibilité, il est important de suivre les instructions pour les noms de paramètres, car les paramètres sont affichés dans la documentation et dans le concepteur quand les outils de conception visuelle proposent IntelliSense et la fonctionnalité de navigation des classes.
 
  ✔️ Utilisez camelCasing dans les noms de paramètres.
@@ -23,6 +24,7 @@ Au-delà de la raison évidente de la lisibilité, il est important de suivre le
  ✔️ envisagez d’utiliser des noms basés sur la signification d’un paramètre plutôt que sur le type du paramètre.
 
 ### <a name="naming-operator-overload-parameters"></a>Affectation de noms aux paramètres de surcharge d’opérateur
+
  ✔️ Utilisez `left` et `right` pour les noms de paramètre de surcharge d’opérateur binaire s’il n’y a aucune signification pour les paramètres.
 
  ✔️ Utilisez `value` pour les noms de paramètre de surcharge d’opérateur unaire si les paramètres n’ont aucune signification.

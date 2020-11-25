@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2a06ee4-b8ee-49c7-935a-c1031a29eef2
 topic_type:
 - apiref
-ms.openlocfilehash: 1855c73849c35bf709b0af261a88e6cd7a40abfb
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b45b0a59a29a27e7b0a395f3928215959450f9a5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008298"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698466"
 ---
 # <a name="iceegengetsectiondatalen-method"></a>ICeeGen::GetSectionDataLen, méthode
+
 Obtient la longueur de la section spécifiée.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -37,6 +38,7 @@ HRESULT GetSectionDataLen (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `section`  
  dans Section de données dont la longueur sera récupérée.  
   
@@ -44,14 +46,16 @@ HRESULT GetSectionDataLen (
  à Longueur retournée de la section spécifiée.  
   
 ## <a name="remarks"></a>Remarques  
+
  Appelez `GetSectionDataLen` uniquement si vous avez des exigences de section spéciales qui ne sont pas gérées par d’autres méthodes.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

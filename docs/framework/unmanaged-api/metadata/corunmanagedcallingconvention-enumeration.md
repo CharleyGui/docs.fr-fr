@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 83058790-160b-4703-a5eb-74b66acbdfa9
 topic_type:
 - apiref
-ms.openlocfilehash: b4c521489f38360d45c2cf8ff3780e057299f0b4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 9d35f6b1928d714216b669704ec28e53895f6549
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008948"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699064"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention, énumération
+
 Spécifie les conventions d’appel pour le code non managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -56,9 +57,11 @@ typedef enum CorUnmanagedCallingConvention {
 |`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Non utilisé.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR ne prend pas en charge la Convention d’appel « Fast » dans le .NET Framework version 1,0.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

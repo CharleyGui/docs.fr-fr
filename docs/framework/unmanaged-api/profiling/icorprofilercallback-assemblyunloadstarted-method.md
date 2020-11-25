@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6e47b7e5-0335-4dd3-8c42-d3c07d62b102
 topic_type:
 - apiref
-ms.openlocfilehash: 80054a8292c69b957664cb3573b0a8694c7f9fd2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: bb7dade1ccd46cb9e13d45468c2ca2a8b451b70b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500401"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700299"
 ---
 # <a name="icorprofilercallbackassemblyunloadstarted-method"></a>ICorProfilerCallback::AssemblyUnloadStarted, méthode
+
 Notifie le profileur qu’un assembly est en cours de déchargement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,9 +40,11 @@ HRESULT AssemblyUnloadStarted(
   \[in] identifie l’assembly qui est déchargé.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `assemblyId` n’est pas valide pour une demande d’informations après le retour de la `AssemblyUnloadStarted` méthode, c’est la dernière chance du profileur pour obtenir des informations sur cet assembly.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

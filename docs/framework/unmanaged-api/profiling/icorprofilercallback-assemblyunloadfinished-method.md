@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 53fca564-84b1-44d4-9e21-17a492d2aae7
 topic_type:
 - apiref
-ms.openlocfilehash: d00e67d29921edc6b7487ceeb12aaa9e9f9bd0ac
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3f2b4a64b3f17b043f193e054c56601d706a10e1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500414"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700377"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished, méthode
+
 Notifie le profileur qu’un assembly a été déchargé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,11 +45,13 @@ HRESULT AssemblyUnloadFinished(
   \[dans] HRESULT qui indique si l’assembly a été déchargé avec succès.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `assemblyId` n’est pas valide pour une demande d’informations après le retour de la méthode [ICorProfilerCallback :: AssemblyUnloadStarted,](icorprofilercallback-assemblyunloadstarted-method.md) .  
   
  Certaines parties du déchargement de l’assembly peuvent continuer après le `AssemblyUnloadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement de l’assembly a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

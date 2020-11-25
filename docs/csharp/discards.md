@@ -3,16 +3,16 @@ title: Éléments ignorés - Guide C#
 description: Décrit la prise en charge par C# des éléments ignorés, qui sont des variables qui peuvent être ignorées, et les différentes façons dont les éléments ignorés peuvent être utilisés.
 ms.technology: csharp-fundamentals
 ms.date: 09/22/2020
-ms.openlocfilehash: 4de48aebaeb896b198b2e9f2431c6a38ba11469e
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: baa7c559095460cf747cb5c8f7ad581270893bd7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90869326"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698804"
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
 
-À compter de C# 7.0, les éléments ignorés sont pris en charge. Il s’agit de variables temporaires factices, qui sont inutilisées de façon intentionnelle dans le code d’une application. Les éléments ignorés sont équivalents à des variables non affectées : elles n’ont pas de valeur. Comme il n’existe qu’une seule variable d’élément ignoré et qu’un stockage ne peut même pas lui être alloué, les éléments ignorés peuvent réduire les allocations de mémoire. Dans la mesure où elles éclairent l’intention de votre code, elles améliorent sa lisibilité et sa maintenabilité.
+À compter de C# 7,0, C# prend en charge les éléments ignorés, qui sont des variables d’espace réservé qui sont intentionnellement inutilisées dans le code de l’application. Les éléments ignorés sont équivalents à des variables non affectées : elles n’ont pas de valeur. Comme il n’existe qu’une seule variable d’élément ignoré et qu’un stockage ne peut même pas lui être alloué, les éléments ignorés peuvent réduire les allocations de mémoire. Dans la mesure où elles éclairent l’intention de votre code, elles améliorent sa lisibilité et sa maintenabilité.
 
 Vous indiquez qu’une variable est un élément ignoré en lui affectant comme nom le trait de soulignement (`_`). Par exemple, l’appel de méthode suivant retourne un tuple de 3 éléments dans lequel les première et deuxième valeurs sont ignorées et dans lequel *area* est une variable précédemment déclarée à laquelle vous devez affecter le troisième composant correspondant retourné par *GetCityInformation* :
 

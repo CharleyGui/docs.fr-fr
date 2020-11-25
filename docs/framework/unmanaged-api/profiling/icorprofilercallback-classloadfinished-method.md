@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3dd80fbe-d62d-4d4d-acf8-5b7d0efe607e
 topic_type:
 - apiref
-ms.openlocfilehash: 4be2a50664b001e865b5ecdd9aabe8ba727b8c26
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3be00d278a92398ad282a071f3e313e5de0e65a6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500388"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700286"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished, méthode
+
 Notifie le profileur qu’une classe a fini de se charger.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,11 +45,13 @@ HRESULT ClassLoadFinished(
   \[dans] HRESULT qui indique si la classe a été chargée avec succès.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `classId` n’est pas valide pour une demande d’informations tant que la `ClassLoadFinished` méthode n’est pas appelée.  
   
  Certaines parties du chargement de la classe peuvent continuer après le `ClassLoadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de la classe a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

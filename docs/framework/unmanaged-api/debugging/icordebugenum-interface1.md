@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 80be7efe-2c32-4b9f-8c52-40c6f6268219
 topic_type:
 - apiref
-ms.openlocfilehash: 7575be3f5074243b251c80b8dd5bdbb12e5d50fd
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: b208444de3b427329988f27b9d252b54143b7240
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976323"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698791"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum, interface
 
@@ -34,8 +34,9 @@ Sert d’interface de base abstraite pour les énumérateurs utilisés par une a
 |[Reset, méthode](icordebugenum-reset-method.md)|Déplace le curseur au début de l’énumération.|  
 |[Skip, méthode](icordebugenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.|  
   
-## <a name="remarks"></a>Notes   
- Les énumérateurs suivants dérivent de `ICorDebugEnum`:  
+## <a name="remarks"></a>Remarques  
+
+ Les énumérateurs suivants dérivent de `ICorDebugEnum` :  
   
 - ICorDebugAppDomainEnum  
   
@@ -82,7 +83,8 @@ Sert d’interface de base abstraite pour les énumérateurs utilisés par une a
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

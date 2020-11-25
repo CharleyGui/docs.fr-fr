@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: f204d74c-cc79-4092-83bb-60654be95649
 topic_type:
 - apiref
-ms.openlocfilehash: 7a98a0c40f68cef9bab1ea2de0850208aaef77a0
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b72a77fecd15a43efbddd9dfd4618897c3372f88
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615122"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699272"
 ---
 # <a name="isymunmanagedmethod-interface"></a>ISymUnmanagedMethod, interface
+
 Représente une méthode dans le magasin de symboles. Cette interface fournit l’accès uniquement aux attributs liés aux symboles d’une méthode, plutôt qu’aux attributs liés au type.  
   
 ## <a name="methods"></a>Méthodes  
@@ -39,7 +40,8 @@ Représente une méthode dans le magasin de symboles. Cette interface fournit l�
 |[GetSourceStartEnd, méthode](isymunmanagedmethod-getsourcestartend-method.md)|Obtient les positions de début et de fin du document pour la source de cette méthode.|  
 |[GetToken, méthode](isymunmanagedmethod-gettoken-method.md)|Retourne le jeton de métadonnées de cette méthode.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

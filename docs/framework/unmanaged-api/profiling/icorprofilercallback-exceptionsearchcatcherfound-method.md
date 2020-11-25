@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 190f424d-5e37-4163-a191-0895686e9476
 topic_type:
 - apiref
-ms.openlocfilehash: 70c03d34bdf9bd315994b2bfa09631efac2565ef
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ef25d55defee2fdcfc7d744e481060eb7a7782ef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500219"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699870"
 ---
 # <a name="icorprofilercallbackexceptionsearchcatcherfound-method"></a>ICorProfilerCallback::ExceptionSearchCatcherFound, méthode
+
 Notifie le profileur que la phase de recherche de la gestion des exceptions a localisé un gestionnaire pour l’exception qui a été levée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ RESULT ExceptionSearchCatcherFound(
   \[in] ID de la fonction qui contient le gestionnaire d’exceptions.
 
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

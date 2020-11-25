@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d1fb65e1-7e19-4513-85b1-44f87c294d3e
 topic_type:
 - apiref
-ms.openlocfilehash: 64f1e2a8f05616c7ca84bc130428629b1176e985
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 5bc622c013e62fa9c03476cc5927133682020426
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006179"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700598"
 ---
 # <a name="imetadatadispenserexfindassemblymodule-method"></a>IMetaDataDispenserEx::FindAssemblyModule, méthode
+
 Cette méthode n’est pas implémentée. Si elle est appelée, elle retourne E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ HRESULT FindAssemblyModule(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szAppBase`  
  [in] Non utilisé.  
   
@@ -65,12 +67,13 @@ HRESULT FindAssemblyModule(
  `pcName`  
  à Nombre de caractères réellement retournés dans `szName` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

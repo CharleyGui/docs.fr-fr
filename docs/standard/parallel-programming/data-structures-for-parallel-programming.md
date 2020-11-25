@@ -4,18 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-ms.openlocfilehash: c7f974c5626cf1efc6bf62c423043089d5c32e7c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4e0214afe4dba7f838f420907374f1472d6d3911
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829529"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699012"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Structures de données pour la programmation parallèle
 
 .NET fournit plusieurs types qui sont utiles dans la programmation parallèle, y compris un ensemble de classes de collection simultanées, des primitives de synchronisation légères et des types pour l’initialisation tardive. Vous pouvez utiliser ces types avec n’importe quel code d’application multithread, y compris la bibliothèque parallèle de tâches et PLINQ.  
   
 ## <a name="concurrent-collection-classes"></a>Classes de collections simultanées  
+
  Les classes de collections de l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType> fournissent des opérations d’ajout et de suppression thread-safe qui évitent autant que possible les verrous et, là où ils se révèlent nécessaires, utilisent un verrouillage de granularité fine. Une classe de collection simultanée ne requiert pas que le code utilisateur prenne des verrous lorsqu’il accède à des éléments. Les classes de collections simultanées peuvent améliorer considérablement les performances des types comme <xref:System.Collections.ArrayList?displayProperty=nameWithType> et <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> (avec verrouillage implémenté par l’utilisateur) dans le cas où plusieurs threads ajoutent et suppriment des éléments d’une collection.  
   
  Le tableau suivant répertorie les classes de collections simultanées :  
@@ -31,6 +32,7 @@ ms.locfileid: "94829529"
  Pour plus d’informations, consultez [Collections thread-safe](../collections/thread-safe/index.md).  
   
 ## <a name="synchronization-primitives"></a>Primitives de synchronisation  
+
  Les primitives de synchronisation de l' <xref:System.Threading?displayProperty=nameWithType> espace de noms permettent une concurrence fine et des performances plus rapides en évitant les mécanismes de verrouillage coûteux détectés dans le code multithread hérité.
   
  Le tableau suivant répertorie les types de synchronisation :  
@@ -51,6 +53,7 @@ ms.locfileid: "94829529"
 - [Comment : synchroniser des opérations simultanées avec un cloisonnement](../threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   
 ## <a name="lazy-initialization-classes"></a>Classes d’initialisation tardive  
+
  Avec l’initialisation tardive, la mémoire d’un objet n’est pas allouée tant qu’elle n’est pas nécessaire. L’initialisation tardive peut améliorer les performances en répartissant uniformément les allocations d’objets sur toute la durée de vie d’un programme. Vous pouvez l’activer sur n’importe quel type personnalisé en incluant le type <xref:System.Lazy%601> dans un wrapper.  
   
  Le tableau suivant liste les nouveaux types d’initialisation tardive :  
@@ -64,6 +67,7 @@ ms.locfileid: "94829529"
  Pour plus d’informations, consultez [Initialisation tardive](../../framework/performance/lazy-initialization.md).  
   
 ## <a name="aggregate-exceptions"></a>Agréger des exceptions  
+
  Le type <xref:System.AggregateException?displayProperty=nameWithType> permet de capturer plusieurs exceptions levées simultanément sur des threads distincts, et de les retourner au thread de jonction comme une seule exception. Les types <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> ainsi que PLINQ utilisent beaucoup <xref:System.AggregateException> pour cela. Pour plus d’informations, consultez [Gestion des exceptions](exception-handling-task-parallel-library.md) et [Comment gérer des exceptions dans une requête PLINQ](how-to-handle-exceptions-in-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Voir aussi

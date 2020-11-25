@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-ms.openlocfilehash: 88e81779fc9c20c506f3b0aa11ac2da3958dfe86
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 25a90965dc5466b7cf1a07140705424cf2ba4cd9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616695"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699233"
 ---
 # <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS, structure
+
 Contient des statistiques par thread relatives à garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,15 +41,17 @@ typedef struct _COR_GC_THREAD_STATS {
 |`PerThreadAllocation`|Nombre d’octets de mémoire alloués sur le thread associé à l’instance actuelle `COR_GC_THREAD_STATS` . Ce nombre est effacé à zéro chaque fois qu’un garbage collection de génération zéro se produit.|  
 |`Flags`|Nombre d’octets promus à une génération supérieure au garbage collection le plus récent.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  [ICLRTask :: GetMemStats,](iclrtask-getmemstats-method.md) accepte un paramètre de sortie de type `COR_GC_THREAD_STATS` .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

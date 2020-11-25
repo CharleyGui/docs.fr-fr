@@ -1,17 +1,17 @@
 ---
 title: Activer ou désactiver les redirections de liaison générées automatiquement
-description: Lisez comment activer ou désactiver la redirection de liaison automatique. Cette fonctionnalité affecte les applications de bureau et les applications Web ciblant .NET 4.5.1 ou une version ultérieure.
+description: Lisez comment activer ou désactiver la redirection de liaison automatique. Cette fonctionnalité affecte les applications de bureau et les applications Web ciblant .NET Framework 4.5.1 ou version ultérieure.
 ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: edee95f6c3b2c2d74c4f1b68e0a65e5cb0e85f54
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: b099ab4958b1cf41b76884243e252e19a7a951b7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105392"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698830"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Procédure : Activer et désactiver la redirection de liaison automatique
 
@@ -102,5 +102,5 @@ Pour ajouter des redirections de liaison à un fichier de **web.config** :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [\<bindingRedirect>Appartient](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> Appartient](./file-schema/runtime/bindingredirect-element.md)
 - [Redirection des versions d'assemblys](redirect-assembly-versions.md)

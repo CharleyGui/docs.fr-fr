@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2a420900-01f1-4461-8777-3a34a6dc1426
 topic_type:
 - apiref
-ms.openlocfilehash: 25e797fdf563a01ab727f16e7173eec2552eeb27
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f53afa5f87f1502f287b25e3d9756f9a54ad6869
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614420"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699285"
 ---
 # <a name="isymunmanagedmethodgetsourcestartend-method"></a>ISymUnmanagedMethod::GetSourceStartEnd, méthode
+
 Obtient les positions de début et de fin du document pour la source de cette méthode. La première position de tableau est le début, tandis que la deuxième position de tableau est la fin.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetSourceStartEnd(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `docs`  
  dans Documents source de début et de fin.  
   
@@ -48,10 +50,12 @@ HRESULT GetSourceStartEnd(
  `pRetVal`  
  [out] `true` Si les positions ont été définies ; Sinon, `false` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55674b68-678a-4747-ae06-4e91519c7305
 topic_type:
 - apiref
-ms.openlocfilehash: 14eb90c707618796d6d62ed2ec5710ceba31ba6c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 114d5d58d0d9098944299aefd0cb99a70c5da09d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500375"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700260"
 ---
 # <a name="icorprofilercallbackclassunloadfinished-method"></a>ICorProfilerCallback::ClassUnloadFinished, méthode
+
 Notifie le profileur qu’une classe a terminé le déchargement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,9 +45,11 @@ HRESULT ClassUnloadFinished(
   \[dans] HRESULT qui indique si la classe a été déchargée avec succès.
   
 ## <a name="remarks"></a>Remarques  
+
  Certaines parties du déchargement de la classe peuvent continuer après le `ClassUnloadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement de la classe a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

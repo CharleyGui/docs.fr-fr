@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 275ef87b-0b53-49f9-af6b-58506335dc06
 topic_type:
 - apiref
-ms.openlocfilehash: 9a490299c24f44b59da682f714f4b696fde3cba5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 99499b8717f219616b6b368e6393b4b7ca0a79d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614511"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699584"
 ---
 # <a name="isymunmanagedencupdateupdatemethodlines-method"></a>ISymUnmanagedENCUpdate::UpdateMethodLines, méthode
+
 Autorise la mise à jour des informations de ligne pour une méthode qui n’a pas été recompilée, mais dont les lignes ont été déplacées indépendamment. Un Delta est autorisé pour chaque instruction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT UpdateMethodLines(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mdMethodToken`  
  dans Métadonnées du jeton de la méthode.  
   
@@ -42,12 +44,14 @@ HRESULT UpdateMethodLines(
  dans Tableau de `INT32` valeurs qui indique des deltas pour chaque point de séquence dans la méthode.  
   
  `cDeltas`  
- dans `ULONG`Contenant la taille du `pDeltas` paramètre.  
+ dans `ULONG` Contenant la taille du `pDeltas` paramètre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

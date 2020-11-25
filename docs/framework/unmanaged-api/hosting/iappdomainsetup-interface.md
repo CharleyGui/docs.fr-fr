@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1844da85-c031-40bf-bea4-1a3d12a36c8c
 topic_type:
 - apiref
-ms.openlocfilehash: 1726f8929404e0dde979972d7830a6951dd71891
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d504101747995557ba526c88de451ebab7b3c556
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617059"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698555"
 ---
 # <a name="iappdomainsetup-interface"></a>IAppDomainSetup, interface
+
 Fournit des propriétés qui permettent à l’hôte de configurer un <xref:System.AppDomain?displayProperty=nameWithType> type avant d’appeler la méthode [ICorRuntimeHost :: CreateDomainEx](icorruntimehost-createdomainex-method.md) pour le créer.  
   
 ## <a name="properties"></a>Propriétés  
@@ -39,17 +40,19 @@ Fournit des propriétés qui permettent à l’hôte de configurer un <xref:Syst
 |<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>|Obtient ou définit les noms des répertoires qui contiennent des assemblys pour lesquels des clichés instantanés doivent être définis.|  
 |<xref:System.AppDomainSetup.ShadowCopyFiles%2A>|Obtient ou définit une chaîne qui indique si la copie fictive est activée ou désactivée. Les valeurs valides sont « true » ou « false ».|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  L' `IAppDomainSetup` interface correspond à l’interface managée <xref:System.IAppDomainSetup> , que le <xref:System.AppDomainSetup> type implémente. Pour obtenir une <xref:System.IAppDomainSetup?displayProperty=nameWithType> Description détaillée de ses propriétés, consultez.  
   
- `IAppDomainSetup`représente les informations de liaison d’assembly qui peuvent être ajoutées à une <xref:System.AppDomain> instance avant sa création. Par exemple, un hôte peut définir la <xref:System.AppDomainSetup.ApplicationBase%2A> propriété pour établir un répertoire racine, que le Common Language Runtime (CLR) sonde pour les assemblys managés.  
+ `IAppDomainSetup` représente les informations de liaison d’assembly qui peuvent être ajoutées à une <xref:System.AppDomain> instance avant sa création. Par exemple, un hôte peut définir la <xref:System.AppDomainSetup.ApplicationBase%2A> propriété pour établir un répertoire racine, que le Common Language Runtime (CLR) sonde pour les assemblys managés.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
