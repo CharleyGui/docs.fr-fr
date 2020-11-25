@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 30a39d79-1f10-4328-9c5d-094ed824e2ba
 topic_type:
 - apiref
-ms.openlocfilehash: 1953a3e0492e4cfcdaea761b68ea22cf5a4a8ed7
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cef69ac7e3572b67dd676ce8408e4210d93accf0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205516"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717576"
 ---
 # <a name="icordebugprocess5-interface"></a>ICorDebugProcess5, interface
+
 Étend l’interface ICorDebugProcess pour prendre en charge l’accès au tas managé, pour fournir des informations sur garbage collection d’objets managés et pour déterminer si un débogueur charge des images à partir du cache des images natives locales de l’application.  
   
 ## <a name="methods"></a>Méthodes  
@@ -41,13 +42,15 @@ ms.locfileid: "83205516"
 |[GetTypeID, méthode](icordebugprocess5-gettypeid-method.md)|Obtient l’identificateur de type pour l’objet à une adresse spécifiée.|  
 |[GetTypeLayout, méthode](icordebugprocess5-gettypelayout-method.md)|Obtient des informations sur la disposition d’un objet en mémoire en fonction de son identificateur de type.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette interface étend logiquement les interfaces ICorDebugProcess, ICorDebugProcess2 et [ICorDebugProcess3](icordebugprocess3-interface.md) .  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l’appel à distance, à partir d’un autre ordinateur ou d’un autre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

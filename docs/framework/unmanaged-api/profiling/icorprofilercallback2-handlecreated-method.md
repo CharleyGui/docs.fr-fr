@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6bbb7786-7c38-490f-9834-91aa2795c355
 topic_type:
 - apiref
-ms.openlocfilehash: 772f0c00bb850e35a6f5bf7fa4df2b3052999df5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6cd931f6c680a07327915ab4680702af298ca1ef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499790"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717308"
 ---
 # <a name="icorprofilercallback2handlecreated-method"></a>ICorProfilerCallback2::HandleCreated, méthode
+
 Notifie le profileur de code qu’un handle de garbage collection a été créé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT HandleCreated(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `handleId`  
  dans ID du descripteur pour le garbage collection.  
   
@@ -41,6 +43,7 @@ HRESULT HandleCreated(
  dans ID de l’objet pour lequel le handle de garbage collection a été créé.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

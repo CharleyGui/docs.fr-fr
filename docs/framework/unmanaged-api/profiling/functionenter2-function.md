@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ce7a21f9-0ca3-4b92-bc4b-bb803cae3f51
 topic_type:
 - apiref
-ms.openlocfilehash: 8c88e97f8187ac347f4ff39890c8d87ee80c8f9e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e8466970a1c137276e842b37f0305fdfd9169be6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500713"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717239"
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 (fonction)
+
 Notifie le profileur que le contrôle est passé à une fonction et fournit des informations sur le frame de pile et les arguments de fonction. Cette fonction remplace la fonction [FunctionEnter](functionenter-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,6 +59,7 @@ void __stdcall FunctionEnter2 (
   Pour accéder aux informations d’argument, l' `COR_PRF_ENABLE_FUNCTION_ARGS` indicateur doit être défini. Le profileur peut utiliser la méthode [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md) pour définir les indicateurs d’événement.
 
 ## <a name="remarks"></a>Remarques  
+
  Les valeurs des `func` paramètres et ne `argumentInfo` sont pas valides après le retour de la `FunctionEnter2` fonction, car les valeurs peuvent changer ou être détruites.  
   
  La `FunctionEnter2` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec` `naked` attribut de classe de stockage ().  
@@ -73,6 +75,7 @@ void __stdcall FunctionEnter2 (
  En outre, la `FunctionEnter2` fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

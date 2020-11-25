@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
 topic_type:
 - apiref
-ms.openlocfilehash: d7e78dfc4beba67cc376b221d0cd49f7200f5d23
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c14e27b67fc600e2684f8c967af30bb9a5cee126
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501701"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716737"
 ---
 # <a name="cor_gc_stat_types-enumeration"></a>COR_GC_STAT_TYPES (énumération)
+
 Spécifie les statistiques à enregistrer pour un garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Cette énumération spécifie les statistiques de la structure [COR_GC_STATS](cor-gc-stats-structure.md) qui doivent être définies par la méthode [ICLRGCManager :: GetStats](iclrgcmanager-getstats-method.md) .  
   
 ## <a name="members"></a>Membres  
@@ -44,6 +46,7 @@ typedef enum {
 |`COR_GC_MEMORYUSAGE`|Enregistre l’utilisation de la mémoire et les statistiques de taille de garbage collection.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  

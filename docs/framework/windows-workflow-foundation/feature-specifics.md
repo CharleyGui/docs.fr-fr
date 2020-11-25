@@ -3,12 +3,12 @@ title: Fonctionnalités spécifiques à Windows Workflow Foundation
 description: Cet article décrit les nouvelles fonctionnalités que .NET Framework 4 ajoute aux Windows Workflow Foundation et aux scénarios dans lesquels les fonctionnalités peuvent être utiles.
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: ae15f3ed536967cb15d1a5913f9ca1eab8a510d9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6c508e184aee0e4aa0634d128de94ac45ef78f45
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554604"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716289"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 
@@ -114,7 +114,7 @@ Le schéma de configuration WCF est complexe et offre aux utilisateurs de nombre
 
 ## <a name="data-contract-resolver"></a>Programme de résolution de contrat de données
 
-Dans .NET 3.5, il existait quelques limitations à la conception de types connus :
+Dans .NET Framework 3,5, il existe quelques limitations dans la conception des types connus :
 
 - L’ajout de types connus de manière dynamique pendant la sérialisation ou la désérialisation était impossible.
 
@@ -122,7 +122,7 @@ Dans .NET 3.5, il existait quelques limitations à la conception de types connu
 
 - Il n'était pas possible pour les utilisateurs de spécifier le xsi:type qu'ils souhaitaient voir apparaître sur le câble pour, par exemple, réduire la taille d'une instance de sérialisation sur ce dernier.
 
-Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces problèmes dans .net 4,5.
+Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces problèmes dans .NET Framework 4,5.
 
 ### <a name="getting-started"></a>Mise en route
 
@@ -144,7 +144,7 @@ Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces pr
 
 ## <a name="flowchart"></a>Organigramme
 
-Un organigramme est un paradigme connu permettant la représentation visuelle de problèmes liés à un domaine. Il s’agit d’un nouveau style de workflow de contrôle que nous allons introduire dans .NET 4. La principale caractéristique d'un organigramme tient dans le fait qu'une seule activité est exécutée à un moment donné. Les organigrammes peuvent représenter des boucles et des alternatives possibles, mais ne peuvent pas, de manière native, représenter l'exécution simultanée de plusieurs nœuds.
+Un organigramme est un paradigme connu permettant la représentation visuelle de problèmes liés à un domaine. Il s’agit d’un nouveau style de flow de contrôle que nous allons introduire dans .NET Framework 4. La principale caractéristique d'un organigramme tient dans le fait qu'une seule activité est exécutée à un moment donné. Les organigrammes peuvent représenter des boucles et des alternatives possibles, mais ne peuvent pas, de manière native, représenter l'exécution simultanée de plusieurs nœuds.
 
 ### <a name="getting-started"></a>Mise en route
 
@@ -264,7 +264,7 @@ Un utilisateur doit être invité à entrer des informations. Dans des circonsta
 
 ## <a name="wcf-routing-service"></a>Service de routage WCF
 
-Le service de routage est conçu pour être un routeur logiciel générique qui vous permet de contrôler la façon dont les messages WCF circulent entre vos clients et services. Le service de routage vous permet de découpler vos clients de vos services, ce qui vous offre une plus grande liberté quant aux configurations que vous pouvez prendre en charge et à la flexibilité dont vous disposez lorsque vous envisagez d’héberger vos services. Dans .NET 3,5, les clients et les services étaient étroitement couplés ; un client devait connaître tous les services dont il a besoin pour communiquer avec l’emplacement où ils se trouvaient. En outre, WCF dans .NET Framework 3,5 comportait les limitations suivantes :
+Le service de routage est conçu pour être un routeur logiciel générique qui vous permet de contrôler la façon dont les messages WCF circulent entre vos clients et services. Le service de routage vous permet de découpler vos clients de vos services, ce qui vous offre une plus grande liberté quant aux configurations que vous pouvez prendre en charge et à la flexibilité dont vous disposez lorsque vous envisagez d’héberger vos services. Dans .NET Framework 3,5, les clients et les services étaient étroitement couplés ; un client devait connaître tous les services dont il a besoin pour communiquer avec l’emplacement où ils se trouvaient. En outre, WCF dans .NET Framework 3,5 comportait les limitations suivantes :
 
 - La gestion des erreurs était complexe car cette logique devait être codée en dur côté client.
 

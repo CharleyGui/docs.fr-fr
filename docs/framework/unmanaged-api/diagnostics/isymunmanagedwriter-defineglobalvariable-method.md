@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 843c904a-8176-4d8f-bd47-b4d4c29f4c5c
 topic_type:
 - apiref
-ms.openlocfilehash: 674089f8a1076342a2479c64e253b7dda53ade87
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bc389b7247a6b1d6ce16cb3cf350f1672213b2e2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615200"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716419"
 ---
 # <a name="isymunmanagedwriterdefineglobalvariable-method"></a>ISymUnmanagedWriter::DefineGlobalVariable, méthode
+
 Définit une variable globale unique.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT DefineGlobalVariable(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Pointeur vers un `WCHAR` qui définit le nom de la variable globale.  
   
@@ -47,7 +49,7 @@ HRESULT DefineGlobalVariable(
  dans Attributs de la variable globale.  
   
  `cSig`  
- dans `ULONG32`Qui indique la taille, en caractères, de la `signature` mémoire tampon.  
+ dans `ULONG32` Qui indique la taille, en caractères, de la `signature` mémoire tampon.  
   
  `signature`  
  dans Signature de la variable globale.  
@@ -64,10 +66,12 @@ HRESULT DefineGlobalVariable(
  `addr3`  
  dans Troisième adresse de la spécification de paramètre.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

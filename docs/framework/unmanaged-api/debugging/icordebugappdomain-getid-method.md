@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 32c27576-71fa-42ee-8230-67b92913ea08
 topic_type:
 - apiref
-ms.openlocfilehash: 63346c679efc083dea9ab0eaa4f983a5308695f8
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 88866d75cc97d40c827359450e8e7bdbe13ef3ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895250"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715886"
 ---
 # <a name="icordebugappdomaingetid-method"></a>ICorDebugAppDomain::GetId, méthode
+
 Obtient l’identificateur unique du domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT GetID (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pId`  
  à Identificateur unique du domaine d’application.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  L’identificateur du domaine d’application est unique au sein du processus conteneur.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

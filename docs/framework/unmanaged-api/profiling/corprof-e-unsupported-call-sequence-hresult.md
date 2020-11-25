@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-ms.openlocfilehash: d6cba2ec3e82c07ce60f0f2b2199cc97e31a000b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1a75b51b57bdf2923ca6386f42c19c0b2f44fd39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555547"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717472"
 ---
 # <a name="corprof_e_unsupported_call_sequence-hresult"></a>CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT
 
@@ -72,6 +72,7 @@ Ces deux scénarios sont présentés dans les sections suivantes.
  Pour plus d’informations, consultez l’entrée « [pourquoi nous avons CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence) dans le blog de l’API de profilage CLR.  
   
 ## <a name="triggering-garbage-collections"></a>Déclenchement de garbage collection  
+
  Ce scénario implique un profileur qui s’exécute à l’intérieur d’une méthode de rappel (par exemple, l’une des `ICorProfilerCallback` méthodes) qui interdit garbage collection. Si le profileur tente d’appeler une méthode d’information (par exemple, une méthode sur l' `ICorProfilerInfo` interface) qui peut déclencher un garbage collection, la méthode d’information échoue avec un CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
   
  Le tableau suivant présente les méthodes de rappel qui interdisent les garbage collections et les méthodes d’information qui peuvent déclencher des garbage collection. Si le profileur s’exécute à l’intérieur de l’une des méthodes de rappel listées et appelle l’une des méthodes d’information listées, cette méthode d’information échoue avec un CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  

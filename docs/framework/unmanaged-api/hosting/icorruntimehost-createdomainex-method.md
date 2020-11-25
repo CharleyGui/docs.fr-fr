@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1bdde382-f8ba-4cc8-94b2-d1ac919c585e
 topic_type:
 - apiref
-ms.openlocfilehash: 4e5856fbcda83c1dd30559c6f59f63495faea78d
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: d6d9e06b6ed40bb0e5a65fd64f8bca7abe3afa84
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762342"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715678"
 ---
 # <a name="icorruntimehostcreatedomainex-method"></a>ICorRuntimeHost::CreateDomainEx, méthode
+
 Crée un domaine d’application. L’appelant reçoit un pointeur d’interface, de type <xref:System._AppDomain> , à une instance de type <xref:System.AppDomain?displayProperty=nameWithType> . Cette méthode permet à l’appelant de passer une instance IAppDomainSetup pour configurer des fonctionnalités supplémentaires de l’instance retournée <xref:System._AppDomain> .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT CreateDomainEx (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzFriendlyName`  
  dans Paramètre facultatif utilisé pour attribuer un nom convivial au domaine. Ce nom convivial peut être affiché dans les interfaces utilisateur, telles que les débogueurs, pour identifier le domaine.  
   
@@ -49,7 +51,7 @@ HRESULT CreateDomainEx (
  `pAppDomain`  
  à Pointeur d’interface de type <xref:System._AppDomain> vers une instance de <xref:System.AppDomain?displayProperty=nameWithType> qui peut être utilisée pour mieux contrôler le domaine.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -58,15 +60,17 @@ HRESULT CreateDomainEx (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le common language runtime (CLR) n’est plus utilisable dans le processus. Les appels suivants à des API d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
   
-## <a name="remarks"></a>Notes  
- `CreateDomainEx`étend les fonctionnalités de [CreateDomain](icorruntimehost-createdomain-method.md) en permettant à l’appelant de passer une `IAppDomainSetup` instance avec des valeurs de propriété pour configurer le domaine d’application.  
+## <a name="remarks"></a>Remarques  
+
+ `CreateDomainEx` étend les fonctionnalités de [CreateDomain](icorruntimehost-createdomain-method.md) en permettant à l’appelant de passer une `IAppDomainSetup` instance avec des valeurs de propriété pour configurer le domaine d’application.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Version de .NET Framework :** 1,0, 1,1  
   

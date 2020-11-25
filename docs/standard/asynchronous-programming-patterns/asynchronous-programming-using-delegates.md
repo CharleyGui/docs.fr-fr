@@ -11,12 +11,12 @@ helpviewer_keywords:
 - delegates [.NET], asynchronous
 - synchronous calling in asynchronous manner
 ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
-ms.openlocfilehash: da468d3b16ee504317c7de2e216a9be2073d1cf3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 01cdf5acf8f64472c218f35a0b8095aebf8f4571
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830504"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716263"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Programmation asynchrone à l'aide de délégués
 
@@ -26,10 +26,12 @@ Les délégués permettent d’appeler une méthode synchrone de manière asynch
 > Les compilateurs doivent émettre des classes déléguées avec les méthodes `Invoke`, `BeginInvoke` et `EndInvoke` à l’aide de la signature de délégué spécifiée par l’utilisateur. Les méthodes `BeginInvoke` et `EndInvoke` doivent être décorées comme étant natives. Étant donné que ces méthodes sont marquées comme étant natives, le CLR fournit automatiquement l’implémentation au moment du chargement de la classe. Le chargeur garantit qu’elles ne sont pas remplacées.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Appel de méthodes synchrones de façon asynchrone](calling-synchronous-methods-asynchronously.md)  
  Décrit l’utilisation de délégués pour effectuer des appels asynchrones à des méthodes ordinaires et fournit des exemples de code simples qui présentent les quatre façons d’attendre un appel asynchrone à retourner.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Modèle asynchrone basé sur les événements (EAP)](event-based-asynchronous-pattern-eap.md)  
  Décrit la programmation asynchrone dans .NET.  
   

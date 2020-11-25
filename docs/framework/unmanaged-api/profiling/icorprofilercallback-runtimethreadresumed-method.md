@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: da984f89-4f53-4ab0-ae6f-3e2ee6085994
 topic_type:
 - apiref
-ms.openlocfilehash: d3949189a72583ebb50b67a270694a31f1eb23dc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0996d7eb5b7354a67106ec7aa8818d5e4d46232e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503209"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717242"
 ---
 # <a name="icorprofilercallbackruntimethreadresumed-method"></a>ICorProfilerCallback::RuntimeThreadResumed, méthode
+
 Notifie le profileur que le thread spécifié a repris après avoir été suspendu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,10 +34,12 @@ HRESULT RuntimeThreadResumed(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `threadId`  
  dans ID du thread qui a été repris.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
