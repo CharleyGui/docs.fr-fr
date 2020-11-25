@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: 7f230961-23a6-4d56-ad2d-7a876d65705f
 topic_type:
 - apiref
-ms.openlocfilehash: 2a3f5bb0c54935e524cc955a5e11aac75b0c0923
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2608f91a7c5baa935e48fbe58ad4d14aaaad1f0d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497554"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722503"
 ---
-# <a name="icorprofilerinfoisarrayclass-method"></a><span data-ttu-id="31937-102">ICorProfilerInfo::IsArrayClass, méthode</span><span class="sxs-lookup"><span data-stu-id="31937-102">ICorProfilerInfo::IsArrayClass Method</span></span>
-<span data-ttu-id="31937-103">Détermine si la classe spécifiée est une classe de tableau.</span><span class="sxs-lookup"><span data-stu-id="31937-103">Determines whether the specified class is an array class.</span></span>  
+# <a name="icorprofilerinfoisarrayclass-method"></a><span data-ttu-id="21372-102">ICorProfilerInfo::IsArrayClass, méthode</span><span class="sxs-lookup"><span data-stu-id="21372-102">ICorProfilerInfo::IsArrayClass Method</span></span>
+
+<span data-ttu-id="21372-103">Détermine si la classe spécifiée est une classe de tableau.</span><span class="sxs-lookup"><span data-stu-id="21372-103">Determines whether the specified class is an array class.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="31937-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31937-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="21372-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21372-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT IsArrayClass(  
@@ -35,31 +36,34 @@ HRESULT IsArrayClass(
     [out] ULONG          *pcRank);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="31937-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="31937-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="21372-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="21372-105">Parameters</span></span>  
+
  `classId`  
- <span data-ttu-id="31937-106">dans ID de la classe à examiner.</span><span class="sxs-lookup"><span data-stu-id="31937-106">[in] The ID of the class to be examined.</span></span>  
+ <span data-ttu-id="21372-106">dans ID de la classe à examiner.</span><span class="sxs-lookup"><span data-stu-id="21372-106">[in] The ID of the class to be examined.</span></span>  
   
  `pBaseElemType`  
- <span data-ttu-id="31937-107">à Pointeur vers une valeur de l’énumération CorElementType qui indique le type des éléments du tableau.</span><span class="sxs-lookup"><span data-stu-id="31937-107">[out] A pointer to a value of the CorElementType enumeration that indicates the type of the array elements.</span></span>  
+ <span data-ttu-id="21372-107">à Pointeur vers une valeur de l’énumération CorElementType qui indique le type des éléments du tableau.</span><span class="sxs-lookup"><span data-stu-id="21372-107">[out] A pointer to a value of the CorElementType enumeration that indicates the type of the array elements.</span></span>  
   
  `pBaseClassId`  
- <span data-ttu-id="31937-108">à Pointeur vers l’ID de classe des éléments de tableau, le cas échéant.</span><span class="sxs-lookup"><span data-stu-id="31937-108">[out] A pointer to the class ID of the array elements, when available.</span></span>  
+ <span data-ttu-id="21372-108">à Pointeur vers l’ID de classe des éléments de tableau, le cas échéant.</span><span class="sxs-lookup"><span data-stu-id="21372-108">[out] A pointer to the class ID of the array elements, when available.</span></span>  
   
  `pcRank`  
- <span data-ttu-id="31937-109">à Pointeur vers un entier qui indique le rang (autrement dit, le nombre de dimensions) du tableau.</span><span class="sxs-lookup"><span data-stu-id="31937-109">[out] A pointer to an integer that indicates the rank (that is, number of dimensions) of the array.</span></span>  
+ <span data-ttu-id="21372-109">à Pointeur vers un entier qui indique le rang (autrement dit, le nombre de dimensions) du tableau.</span><span class="sxs-lookup"><span data-stu-id="21372-109">[out] A pointer to an integer that indicates the rank (that is, number of dimensions) of the array.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="31937-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="31937-110">Remarks</span></span>  
- <span data-ttu-id="31937-111">Si la classe spécifiée est une classe de tableau, la `IsArrayClass` méthode retourne un S_OK HRESULT et des valeurs pour tous les paramètres de sortie non null.</span><span class="sxs-lookup"><span data-stu-id="31937-111">If the specified class is an array class, the `IsArrayClass` method returns an S_OK HRESULT and values for any non-null output parameters.</span></span> <span data-ttu-id="31937-112">Sinon, elle retourne S_FALSE.</span><span class="sxs-lookup"><span data-stu-id="31937-112">Otherwise, it returns S_FALSE.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="31937-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="31937-113">Requirements</span></span>  
- <span data-ttu-id="31937-114">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="31937-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="31937-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="31937-115">**Header:** CorProf.idl, CorProf.h</span></span>  
-  
- <span data-ttu-id="31937-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="31937-116">**Library:** CorGuids.lib</span></span>  
-  
- <span data-ttu-id="31937-117">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="31937-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="31937-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="31937-118">See also</span></span>
+## <a name="remarks"></a><span data-ttu-id="21372-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="21372-110">Remarks</span></span>  
 
-- [<span data-ttu-id="31937-119">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="31937-119">ICorProfilerInfo Interface</span></span>](icorprofilerinfo-interface.md)
+ <span data-ttu-id="21372-111">Si la classe spécifiée est une classe de tableau, la `IsArrayClass` méthode retourne un S_OK HRESULT et des valeurs pour tous les paramètres de sortie non null.</span><span class="sxs-lookup"><span data-stu-id="21372-111">If the specified class is an array class, the `IsArrayClass` method returns an S_OK HRESULT and values for any non-null output parameters.</span></span> <span data-ttu-id="21372-112">Sinon, elle retourne S_FALSE.</span><span class="sxs-lookup"><span data-stu-id="21372-112">Otherwise, it returns S_FALSE.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="21372-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="21372-113">Requirements</span></span>  
+
+ <span data-ttu-id="21372-114">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="21372-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="21372-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="21372-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+  
+ <span data-ttu-id="21372-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="21372-116">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="21372-117">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="21372-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="21372-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="21372-118">See also</span></span>
+
+- [<span data-ttu-id="21372-119">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="21372-119">ICorProfilerInfo Interface</span></span>](icorprofilerinfo-interface.md)
