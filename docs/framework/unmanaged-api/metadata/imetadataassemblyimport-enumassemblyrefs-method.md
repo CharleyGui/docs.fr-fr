@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8844d0dd-730e-4592-8a7b-c1462d312c70
 topic_type:
 - apiref
-ms.openlocfilehash: 1b9700455da82fc7f4a39d4c208ac0b18ef79722
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 18cd9dd14e615a7e76bfff30c9ae584305bd1907
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009117"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708933"
 ---
 # <a name="imetadataassemblyimportenumassemblyrefs-method"></a>IMetaDataAssemblyImport::EnumAssemblyRefs, méthode
+
 Énumère les `mdAssemblyRef` instances définies dans le manifeste de l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT EnumAssemblyRefs (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL lorsque la `EnumAssemblyRefs` méthode est appelée pour la première fois.  
   
@@ -53,15 +55,16 @@ HRESULT EnumAssemblyRefs (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumAssemblyRefs`retourné avec succès.|  
+|`S_OK`|`EnumAssemblyRefs` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: db499637-7ba9-421e-b8b1-35856995e80b
 topic_type:
 - apiref
-ms.openlocfilehash: 55342c803756aa10c2e7c835d9e1d58b439bb36c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c2aecadf8688e763a69bd40ca877e44bc0ce5c29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212540"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710030"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName, méthode
+
 Obtient le nom de fichier du module.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetName(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchname`  
  [in] Taille du tableau `szName`.  
   
@@ -45,10 +47,12 @@ HRESULT GetName(
  `szName`  
  à Tableau qui stocke le nom retourné.  
   
-## <a name="remarks"></a>Remarks  
- La `GetName` méthode retourne un S_OK HRESULT si le nom de fichier du module correspond au nom sur le disque. `GetName`retourne un S_FALSE HRESULT si le nom est fabriqué, par exemple pour un module dynamique ou en mémoire.  
+## <a name="remarks"></a>Remarques  
+
+ La `GetName` méthode retourne un S_OK HRESULT si le nom de fichier du module correspond au nom sur le disque. `GetName` retourne un S_FALSE HRESULT si le nom est fabriqué, par exemple pour un module dynamique ou en mémoire.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

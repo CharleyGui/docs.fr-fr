@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a2dd5098-3e58-4be5-b7a2-e4160b3b505a
 topic_type:
 - apiref
-ms.openlocfilehash: 20bfb3e48f411524bd4d9798f17dd935595a12bb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 299787ea4eb8a5c25bdab64ad08445839c9f24d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615018"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707540"
 ---
 # <a name="isymunmanagedreadergetglobalvariables-method"></a>ISymUnmanagedReader::GetGlobalVariables, méthode
+
 Retourne toutes les variables globales.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetGlobalVariables(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cVars`  
  dans Longueur de la mémoire tampon vers laquelle pointe `pcVars` .  
   
@@ -45,10 +47,12 @@ HRESULT GetGlobalVariables(
  `pVars`  
  à Mémoire tampon qui contient les variables.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

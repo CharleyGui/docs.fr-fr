@@ -1,6 +1,6 @@
 ---
-title: Fonction EndMethodEnumeration (Référence API non managérée)
-description: La fonction EndMethodEnumeration met fin à une séquence d’énumération de méthode.
+title: Fonction EndMethodEnumeration (référence des API non managées)
+description: La fonction EndMethodEnumeration termine une séquence d’énumération de méthode.
 ms.date: 11/06/2017
 api_name:
 - EndMethodEnumeration
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - EndMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 63667d0668f905ded2aedd961be0d1831faf838c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 82f50530967699427d8a00b1c9f518b639273626
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175003"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708060"
 ---
 # <a name="endmethodenumeration-function"></a>EndMethodEnumeration, fonction
-Termine une séquence de recensement commencée par un appel à la [fonction BeginMethodEnumeration](beginmethodenumeration.md).  
+
+Termine une séquence d’énumération démarrée avec un appel à la [fonction BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -38,32 +39,33 @@ HRESULT EndMethodEnumeration (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-[dans] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`  
-[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constant  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Une erreur interne s’est produite. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Cette fonction enveloppe un appel à [l’IWbemClassObject::EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) méthode.
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
 
-L’appelant commence la séquence de recensement à l’aide de la [fonction BeginMethodEnumeration,](beginmethodenumeration.md)puis appelle la [fonction NextMethod](nextmethod.md )jusqu’à ce que la méthode revient `WBEM_S_NO_MORE_DATA`. L’appelant termine optionnellement `EndMethodEnumeration`la séquence en appelant . L’appelant peut mettre fin à `EndMethodEnumeration` l’énumération tôt en appelant à tout moment.
+L’appelant commence la séquence d’énumération à l’aide de la [fonction BeginMethodEnumeration](beginmethodenumeration.md), puis appelle la [fonction NextMethod](nextmethod.md )jusqu’à ce que la méthode retourne `WBEM_S_NO_MORE_DATA` . L’appelant termine éventuellement la séquence en appelant `EndMethodEnumeration` . L’appelant peut arrêter l’énumération tôt en appelant `EndMethodEnumeration` à tout moment.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

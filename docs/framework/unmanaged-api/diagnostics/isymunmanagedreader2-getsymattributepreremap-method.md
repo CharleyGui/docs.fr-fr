@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7580d546-a709-40c5-ad02-aa70d774fd0b
 topic_type:
 - apiref
-ms.openlocfilehash: e6248aba1c41b2815f2806942d419da869ed94b4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 812c0d08930efff9140c6e897d3f93c4909e8464
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614914"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709087"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a>ISymUnmanagedReader2::GetSymAttributePreRemap, méthode
+
 Obtient un attribut personnalisé en fonction de son nom. Contrairement aux attributs personnalisés des métadonnées, ces attributs sont conservés dans le magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT GetSymAttributePreRemap(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `parent`  
  dans Jeton de métadonnées du parent.  
   
@@ -45,7 +47,7 @@ HRESULT GetSymAttributePreRemap(
  dans Pointeur vers un `WCHAR` qui contient le nom.  
   
  `cBuffer`  
- dans `ULONG32`Qui indique la taille du `buffer` tableau.  
+ dans `ULONG32` Qui indique la taille du `buffer` tableau.  
   
  `pcBuffer`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les octets d’attributs.  
@@ -53,10 +55,12 @@ HRESULT GetSymAttributePreRemap(
  `buffer`  
  à Pointeur vers la mémoire tampon qui reçoit les octets d’attributs.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

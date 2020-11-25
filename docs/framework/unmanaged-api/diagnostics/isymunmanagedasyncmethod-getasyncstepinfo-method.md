@@ -2,14 +2,15 @@
 title: ISymUnmanagedAsyncMethod::GetAsyncStepInfo, méthode
 ms.date: 03/30/2017
 ms.assetid: 3ef5b4b8-4ac7-4906-849b-f932c5e3db07
-ms.openlocfilehash: e3c0d7b8eeded403ce8391cff00ee18dccc38ed5
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: f9392dae4119e59b4eb0fdb87e2b334b32b77109
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707254"
 ---
 # <a name="isymunmanagedasyncmethodgetasyncstepinfo-method"></a>ISymUnmanagedAsyncMethod::GetAsyncStepInfo, méthode
+
 Consultez [méthode defineasyncstepinfo,](isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,10 +29,12 @@ HRESULT GetAsyncStepInfo(    [in] ULONG32 cStepInfo,    [out] ULONG32 *pcStepInf
 |`breakpointOffset`||  
 |`breakpointMethod`||  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne `HRESULT`.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

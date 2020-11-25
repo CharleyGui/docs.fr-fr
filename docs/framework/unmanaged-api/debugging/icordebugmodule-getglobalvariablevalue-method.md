@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bbc0881c-6a59-41a0-b5ee-2f3d1b71684c
 topic_type:
 - apiref
-ms.openlocfilehash: 7e32f3f4f6613d34e2b40946ed3eadb8eb0a7c1f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 94fe7deb10c23ea0bc824bb2244e8d1d87f831e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212566"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710026"
 ---
 # <a name="icordebugmodulegetglobalvariablevalue-method"></a>ICorDebugModule::GetGlobalVariableValue, méthode
+
 Obtient la valeur de la variable globale spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,13 +36,15 @@ HRESULT GetGlobalVariableValue(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `fieldDef`  
- dans `mdFieldDef`Jeton qui fait référence aux métadonnées décrivant la variable globale.  
+ dans `mdFieldDef` Jeton qui fait référence aux métadonnées décrivant la variable globale.  
   
  `ppValue`  
  à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur de la variable globale spécifiée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

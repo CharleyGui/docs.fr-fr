@@ -8,12 +8,12 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 707ae48be3f45d82ed3819f943dc5ba3743172f3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 815075198f34c0c045603b9d377b9d5fbdf1a91d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828801"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707878"
 ---
 # <a name="parameter-design"></a>Conception de paramètres
 
@@ -40,6 +40,7 @@ Cette section fournit des instructions générales sur la conception des paramè
  Cela communique mieux la relation entre les méthodes.
 
 ### <a name="choosing-between-enum-and-boolean-parameters"></a>Choix entre les paramètres enum et Boolean  
+
  ✔️ Utilisez des enums si un membre a sinon deux paramètres booléens ou plus.
 
  ❌ N’utilisez pas de valeurs booléennes sauf si vous êtes absolument sûr qu’il n’y aura jamais besoin de plus de deux valeurs.
@@ -49,6 +50,7 @@ Cette section fournit des instructions générales sur la conception des paramè
  ✔️ envisagez d’utiliser des valeurs booléennes pour les paramètres de constructeur qui sont véritablement des valeurs à deux États et qui sont simplement utilisées pour initialiser des propriétés booléennes.
 
 ### <a name="validating-arguments"></a>Validation des arguments
+
  ✔️ validez les arguments passés aux membres publics, protégés ou implémentés explicitement. Throw <xref:System.ArgumentException?displayProperty=nameWithType> , ou l’une de ses sous-classes, si la validation échoue.
 
  Notez que la validation réelle ne doit pas nécessairement se produire dans le membre public ou protégé lui-même. Cela peut se produire à un niveau inférieur dans une routine privée ou interne. Le point principal est que la surface d’exposition entière exposée aux utilisateurs finaux vérifie les arguments.
@@ -66,6 +68,7 @@ Cette section fournit des instructions générales sur la conception des paramè
  Si le membre est sensible à la sécurité, il est recommandé d’effectuer une copie, puis de valider et de traiter l’argument.
 
 ### <a name="parameter-passing"></a>Passage de paramètres
+
  Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, `ref` les paramètres et les `out` paramètres.
 
  Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires, tels que C#, VB.NET et C++, passent par défaut les paramètres par valeur.
@@ -83,6 +86,7 @@ Cette section fournit des instructions générales sur la conception des paramè
  Il existe quelques exceptions limitées à la règle, comme une méthode qui peut être utilisée pour échanger des références.
 
 ### <a name="members-with-variable-number-of-parameters"></a>Membres avec nombre variable de paramètres
+
  Les membres qui peuvent prendre un nombre variable d’arguments sont exprimés en fournissant un paramètre de tableau. Par exemple, <xref:System.String> fournit la méthode suivante :
 
 ```csharp
@@ -140,6 +144,7 @@ public class String {
  Certains langages CLR, tels que C++, prennent en charge une autre convention pour passer des listes de paramètres de variables appelées `varargs` méthodes. La Convention ne doit pas être utilisée dans les frameworks, car elle n’est pas conforme CLS.
 
 ### <a name="pointer-parameters"></a>Paramètres du pointeur
+
  En général, les pointeurs ne doivent pas apparaître dans la surface d’exposition publique d’un Framework de code géré bien conçu. La plupart du temps, les pointeurs doivent être encapsulés. Toutefois, dans certains cas, les pointeurs sont requis pour des raisons d’interopérabilité et l’utilisation de pointeurs dans de tels cas est appropriée.
 
  ✔️ fournissez une alternative pour tout membre qui accepte un argument de pointeur, car les pointeurs ne sont pas conformes CLS.

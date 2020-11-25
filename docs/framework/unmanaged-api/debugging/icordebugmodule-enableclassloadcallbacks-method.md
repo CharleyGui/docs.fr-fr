@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78dad5e4-8e2e-400f-bec3-92ff0205cd82
 topic_type:
 - apiref
-ms.openlocfilehash: 1ca3adf30ad633fcfb10a4b43a435698d2899597
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 1f6c6ae3b7cb45b049d0fb0d88bbf89121bccfd7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213528"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710413"
 ---
 # <a name="icordebugmoduleenableclassloadcallbacks-method"></a>ICorDebugModule::EnableClassLoadCallbacks, méthode
+
 Contrôle si les rappels [ICorDebugManagedCallback :: LoadClass](icordebugmanagedcallback-loadclass-method.md) et [ICorDebugManagedCallback :: UnloadClass](icordebugmanagedcallback-unloadclass-method.md) sont appelés pour ce module.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT EnableClassLoadCallbacks(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `bClassLoadCallbacks`  
  dans Définissez cette valeur sur `true` pour permettre au Common Language Runtime (CLR) d’appeler les `ICorDebugManagedCallback::LoadClass` `ICorDebugManagedCallback::UnloadClass` méthodes et lorsque leurs événements associés se produisent.  
   
  La valeur par défaut est `false` pour les modules non dynamiques. La valeur est toujours `true` pour les modules dynamiques et ne peut pas être modifiée.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Les `ICorDebugManagedCallback::LoadClass` `ICorDebugManagedCallback::UnloadClass` rappels et sont toujours activés pour les modules dynamiques et ne peuvent pas être désactivés.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

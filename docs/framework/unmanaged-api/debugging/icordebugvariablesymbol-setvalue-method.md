@@ -2,14 +2,15 @@
 title: Méthode ICorDebugVariableSymbol::SetValue
 ms.date: 03/30/2017
 ms.assetid: 4609418d-71fa-44bc-9618-4d529d25cabb
-ms.openlocfilehash: 38afd355938ec1beb1dbfd33de36116d25b07b4e
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 3ef9b9b9a095d6d6026ffc38873661355d660488
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397077"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707839"
 ---
 # <a name="icordebugvariablesymbolsetvalue-method"></a>Méthode ICorDebugVariableSymbol::SetValue
+
 Affecte la valeur d'un tableau d'octets à une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ HRESULT SetValue(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `offset`  
  [in] Offset de démarrage dans la variable au niveau duquel définir la valeur. Ce paramètre est utilisé lors de l'écriture dans des champs membres d'un objet.  
   
@@ -44,12 +46,13 @@ HRESULT SetValue(
  `pValue`  
  [in] Mémoire tampon contenant la valeur à définir.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

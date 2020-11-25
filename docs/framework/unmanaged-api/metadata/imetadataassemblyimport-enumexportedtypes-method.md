@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e5912ed8-e4ce-438b-8ea3-d9e4c288d109
 topic_type:
 - apiref
-ms.openlocfilehash: 514488c6e0d2e89de0d8ee483def485ec9f3ef25
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: a8b2377c48331ff9f0e69876c51fb78c7190f694
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009101"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708892"
 ---
 # <a name="imetadataassemblyimportenumexportedtypes-method"></a>IMetaDataAssemblyImport::EnumExportedTypes, méthode
+
 Énumère les types exportés référencés dans le manifeste de l’assembly dans la portée des métadonnées actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT EnumExportedTypes (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL lorsque la `EnumExportedTypes` méthode est appelée pour la première fois.  
   
@@ -53,15 +55,16 @@ HRESULT EnumExportedTypes (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumExportedTypes`retourné avec succès.|  
+|`S_OK`|`EnumExportedTypes` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

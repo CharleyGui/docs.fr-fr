@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 287f5ecd-863f-4090-a615-077859f0257b
 topic_type:
 - apiref
-ms.openlocfilehash: 7b7b7a42edea775d1aaa850ccfc532ef86749991
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: dbf5c751e84dfd9bf0549e8ce79d07a90fb4a3b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210022"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710387"
 ---
 # <a name="icordebugmetadatalocator-interface"></a>ICorDebugMetaDataLocator, interface
+
 Fournit des informations de métadonnées au débogueur.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,13 @@ Fournit des informations de métadonnées au débogueur.
 |------------|-----------------|  
 |[GetMetaData, méthode](icordebugmetadatalocator-getmetadata-method.md)|Indique au débogueur de retourner le chemin d’accès complet à un module dont les métadonnées sont nécessaires pour effectuer une opération demandée par le débogueur.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

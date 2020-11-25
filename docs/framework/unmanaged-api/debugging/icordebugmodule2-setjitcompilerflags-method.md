@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea574c84-c622-4589-9a14-b55771af5e06
 topic_type:
 - apiref
-ms.openlocfilehash: f73919634ba15dfd16694676d1389875fc2d79bc
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 11ff430c426c93f1c2a5c0582495e089a33995fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210187"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709802"
 ---
 # <a name="icordebugmodule2setjitcompilerflags-method"></a>ICorDebugModule2::SetJITCompilerFlags, méthode
+
 Définit les indicateurs qui contrôlent la compilation juste-à-temps (JIT) de ce ICorDebugModule2.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,17 +35,20 @@ HRESULT SetJITCompilerFlags (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwFlags`  
  dans Combinaison d’opérations de bits des valeurs d’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) .  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si la `dwFlags` valeur n’est pas valide, la `SetJITCompilerFlags` méthode échoue.  
   
  La `SetJITCompilerFlags` méthode peut être appelée uniquement à partir du rappel [ICorDebugManagedCallback :: LoadModule](icordebugmanagedcallback-loadmodule-method.md) pour ce module. Toute tentative de l’appeler une fois que le `ICorDebugManagedCallback::LoadModule` rappel a été remis échouera.  
   
  Modifier & Continuer n’est pas pris en charge sur les plateformes 64 bits ou Win9x. Par conséquent, si vous appelez la `SetJITCompilerFlags` méthode sur l’une de ces deux plateformes avec l’indicateur CORDEBUG_JIT_ENABLE_ENC défini dans `dwFlags` , la `SetJITCompilerFlags` méthode et toutes les méthodes spécifiques à modifier & continuer, telles que [ICorDebugModule2 :: ApplyChanges](icordebugmodule2-applychanges-method.md), échouent.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -1,18 +1,18 @@
 ---
 title: Types obsolètes dans .NET Framework
-description: Consultez la liste des types obsolètes dans .NET Framework 4,5 et .NET 4,6, organisés par assembly. Les alternatives recommandées sont également répertoriées.
+description: Consultez la liste des types obsolètes dans .NET Framework 4,5 et .NET Framework 4,6, organisés par assembly. Les alternatives recommandées sont également répertoriées.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-ms.openlocfilehash: 795735b66c7568dada0196a6426a0a9aaf52398a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ccf39283152ecdc6b7827f2185de215c17ecc845
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558535"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707913"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Types obsolètes dans le .NET Framework
 
@@ -134,8 +134,8 @@ Les tableaux suivants répertorient les types qui ont été déclarés obsolète
 |<xref:System.Runtime.InteropServices.UCOMITypeLib?displayProperty=nameWithType>|Utilisez plutôt <xref:System.Runtime.InteropServices.ComTypes.ITypeLib?displayProperty=nameWithType>.|
 |<xref:System.Runtime.InteropServices.VARDESC?displayProperty=nameWithType>|Utilisez plutôt <xref:System.Runtime.InteropServices.ComTypes.VARDESC?displayProperty=nameWithType>.|
 |<xref:System.Runtime.InteropServices.VARFLAGS?displayProperty=nameWithType>|Utilisez plutôt <xref:System.Runtime.InteropServices.ComTypes.VARFLAGS?displayProperty=nameWithType>.|
-|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalScope> est utilisé uniquement pour la compatibilité de transparence du .NET 2.0.|
-|<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityTreatAsSafeAttribute> est utilisé uniquement pour la compatibilité de transparence du .NET 2.0. Utilisez plutôt le <xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=nameWithType>.|
+|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalScope> est utilisé uniquement pour la compatibilité .NET Framework 2,0 de la transparence.|
+|<xref:System.Security.SecurityTreatAsSafeAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityTreatAsSafeAttribute> est utilisé uniquement pour la compatibilité .NET Framework 2,0 de la transparence. Utilisez plutôt le <xref:System.Security.SecuritySafeCriticalAttribute?displayProperty=nameWithType>.|
 |<xref:System.Security.Policy.FirstMatchCodeGroup?displayProperty=nameWithType>|Ce type est obsolète et sera supprimé dans une prochaine version du .NET Framework.|
 |<xref:System.Security.Policy.PermissionRequestEvidence?displayProperty=nameWithType>|La sécurité déclarative au niveau de l'assembly est obsolète et n'est plus appliquée par le CLR par défaut.|
 |<xref:System.Security.Policy.UnionCodeGroup?displayProperty=nameWithType>|Ce type est obsolète et sera supprimé dans une prochaine version du .NET Framework.|

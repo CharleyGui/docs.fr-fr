@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0c3d4835-e111-4e82-af6d-53f140b8f2c9
 topic_type:
 - apiref
-ms.openlocfilehash: d6f348eb781efdef89926ec1bc267281bf3a5004
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 092c3b328887b7d36ead77c64d31310b614b616a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503105"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707527"
 ---
 # <a name="icorprofilerfunctionenumclone-method"></a>ICorProfilerFunctionEnum::Clone, méthode
+
 Obtient un pointeur d’interface vers une copie de cette interface [ICorProfilerFunctionEnum](icorprofilerfunctionenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,12 @@ HRESULT Clone([out] ICorProfilerFunctionEnum **ppEnum);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppEnum`  
  à Pointeur vers le pointeur d’interface qui, à son tour, pointe vers la copie de cette interface [ICorProfilerFunctionEnum](icorprofilerfunctionenum-interface.md) . La copie de l’énumérateur conserve son propre état d’énumération séparément de cet énumérateur. Toutefois, la position initiale du curseur de la copie est la même que la position actuelle du curseur de cet énumérateur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

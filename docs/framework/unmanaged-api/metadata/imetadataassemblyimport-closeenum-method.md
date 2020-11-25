@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c9df4087-12b3-46d9-b075-9067dd7805df
 topic_type:
 - apiref
-ms.openlocfilehash: 63e81e822eb55b4090aeee6d6be3c72adbd94451
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d2ce26daa5f5c36e4073eee653cc650c1a8d54c9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009130"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708936"
 ---
 # <a name="imetadataassemblyimportcloseenum-method"></a>IMetaDataAssemblyImport::CloseEnum, méthode
+
 Libère une référence à l’instance d’énumération spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,17 @@ void CloseEnum (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hEnum`  
  dans Instance d’énumération à fermer.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

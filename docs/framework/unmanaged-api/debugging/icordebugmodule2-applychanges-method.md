@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 96fa3406-6a6f-41a1-88c6-d9bc5d1a16d1
 topic_type:
 - apiref
-ms.openlocfilehash: 99824e9a7fd759fb30bfa377156fc28eb934a2b4
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a6b1a7c9be821890a3f15d8c3297273607f5bedd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212215"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709698"
 ---
 # <a name="icordebugmodule2applychanges-method"></a>ICorDebugModule2::ApplyChanges, méthode
+
 Applique les modifications apportées aux métadonnées et les modifications apportées au code MSIL (Microsoft Intermediate Language) au processus en cours d’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT ApplyChanges (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cbMetadata`  
  dans Taille, en octets, des métadonnées Delta.  
   
@@ -51,8 +53,9 @@ HRESULT ApplyChanges (
  `pbIL`  
  dans Mémoire tampon qui contient le code MSIL mis à jour.  
   
-## <a name="remarks"></a>Remarks  
- Le `pbMetadata` paramètre est dans un format de métadonnées Delta spécial (comme sortie par [IMetaDataEmit2 :: SaveDeltaToMemory,](../metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata`prend les métadonnées précédentes comme base et décrit les modifications individuelles à appliquer à cette base.  
+## <a name="remarks"></a>Remarques  
+
+ Le `pbMetadata` paramètre est dans un format de métadonnées Delta spécial (comme sortie par [IMetaDataEmit2 :: SaveDeltaToMemory,](../metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` prend les métadonnées précédentes comme base et décrit les modifications individuelles à appliquer à cette base.  
   
  En revanche, le `pbIL[` paramètre] contient le nouveau MSIL pour la méthode mise à jour et est destiné à remplacer complètement le code MSIL précédent pour cette méthode.  
   
@@ -62,7 +65,8 @@ HRESULT ApplyChanges (
   
  Si la `ApplyChanges` méthode échoue, la session de débogage est dans un État non valide et doit être redémarrée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

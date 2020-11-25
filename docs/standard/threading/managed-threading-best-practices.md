@@ -10,12 +10,12 @@ helpviewer_keywords:
 - threading [.NET], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: b2a3f2efc12392316f6d90242ef0a9224e7d13a4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 88cbf266d15a10ff7c56e07a30161e0a800989d5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826311"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708047"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 
@@ -25,9 +25,11 @@ Le multithreading nécessite une programmation attentive. Pour réduire la compl
 > À partir de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui réduisent la complexité et les risques de la programmation multithread. Pour plus d’informations, consultez la page [Programmation parallèle dans .NET](../parallel-programming/index.md).  
   
 ## <a name="deadlocks-and-race-conditions"></a>Interblocages et conditions de concurrence  
+
  Le multithreading résout les problèmes de débit et de réactivité, mais, ce faisant, occasionne de nouveaux problèmes : les interblocages et les conditions de concurrence.  
   
 ### <a name="deadlocks"></a>Blocages  
+
  Un interblocage se produit lorsque chacun des deux threads tente de verrouiller une ressource déjà verrouillée par l’autre thread. Aucun des deux threads ne peut donc poursuivre l’exécution.  
   
  De nombreuses méthodes des classes de threading managé fournissent des délais d’expiration conçus pour faciliter la détection des interblocages. Par exemple, le code ci-après tente d’acquérir un verrou sur un objet nommé `lockObject`. Si le verrou n’est pas obtenu en 300 millisecondes, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> retourne `false`.  
@@ -59,6 +61,7 @@ else {
 ```  
   
 ### <a name="race-conditions"></a>Conditions de concurrence  
+
  Une condition de concurrence est un bogue qui survient lorsque le résultat d’un programme dépend du thread qui atteint le premier un bloc de code spécifique. L’exécution du programme à plusieurs reprises produit des résultats différents, et le résultat d’une exécution donnée n’est donc pas prévisible.  
   
  Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé (**Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
@@ -70,6 +73,7 @@ else {
  Des conditions de concurrence peuvent également survenir lorsque vous synchronisez les activités de plusieurs threads. Chaque fois que vous écrivez une ligne de code, vous devez prendre en compte ce qui peut se produire si un thread est devancé par un autre thread avant d’avoir exécuté la ligne (ou avant toute instruction machine individuelle composant la ligne).  
   
 ## <a name="static-members-and-static-constructors"></a>Membres static et constructeurs static  
+
  Une classe n’est pas initialisée tant que son constructeur de classe (constructeur `static` en C#, `Shared Sub New` en Visual Basic) n’a pas fini de s’exécuter. Pour empêcher l’exécution de code sur un type qui n’est pas initialisé, le common language runtime bloque tous les appels d’autres threads aux membres `static` de la classe (membres `Shared` en Visual Basic) jusqu’à la fin de l’exécution du constructeur de classe.  
   
  Par exemple, si un constructeur de classe démarre un nouveau thread, et que la procédure de thread appelle un membre `static` de la classe, le nouveau thread se bloque jusqu’à la fin du constructeur de classe.  
@@ -83,6 +87,7 @@ Le fait que plusieurs processeurs ou un seul soient disponibles sur un système 
 Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> propriété pour déterminer le nombre de processeurs disponibles au moment de l’exécution.
   
 ## <a name="general-recommendations"></a>Recommandations générales  
+
  Lorsque vous utilisez plusieurs threads, tenez compte des recommandations suivantes :  
   
 - N’utilisez pas <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> pour mettre fin à d’autres threads. L’appel de la méthode **Abort** sur un autre thread équivaut à lever une exception sur ce dernier sans connaître le stade précis du traitement atteint par ce thread.  
@@ -163,6 +168,7 @@ Utilisez la <xref:System.Environment.ProcessorCount?displayProperty=nameWithType
     > La <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> surcharge de méthode fournit une alternative de type sécurisé pour les types référence.
   
 ## <a name="recommendations-for-class-libraries"></a>Recommandations relatives aux bibliothèques de classes  
+
  Lorsque vous concevez des bibliothèques de classes pour le multithreading, tenez compte des recommandations suivantes :  
   
 - Dans la mesure du possible, évitez toute nécessité de synchronisation. Cette consigne s’applique tout particulièrement pour le code très sollicité. Par exemple, un algorithme peut être ajusté de façon à tolérer une condition de concurrence plutôt que de l’éliminer. Une synchronisation inutile dégrade les performances et entraîne un risque d’interblocages et de conditions de concurrence.  

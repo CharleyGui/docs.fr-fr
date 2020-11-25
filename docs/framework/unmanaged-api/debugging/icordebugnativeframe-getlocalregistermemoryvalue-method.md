@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d350f69d-9aff-4f5a-8301-daea22dee2da
 topic_type:
 - apiref
-ms.openlocfilehash: f16150ad7d9ecec4b4aceee5c9266e9a7859f1cb
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 4b77ad2f31f10bd14ce7d8242a584da737428344
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213294"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709299"
 ---
 # <a name="icordebugnativeframegetlocalregistermemoryvalue-method"></a>ICorDebugNativeFrame::GetLocalRegisterMemoryValue, méthode
+
 Obtient la valeur d’un argument ou d’une variable locale dont le mot de poids faible et le mot de poids fort sont stockés respectivement dans l’emplacement de mémoire et dans le registre spécifié pour ce frame natif.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,22 +39,24 @@ HRESULT GetLocalRegisterMemoryValue (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `highWordReg`  
  dans Valeur de l’énumération « CorDebugRegister » qui spécifie le registre contenant le mot de poids fort de la valeur.  
   
  `lowWordAddress`  
- dans `CORDB_ADDRESS`Valeur qui spécifie l’emplacement mémoire contenant le mot de poids faible de la valeur.  
+ dans `CORDB_ADDRESS` Valeur qui spécifie l’emplacement mémoire contenant le mot de poids faible de la valeur.  
   
  `cbSigBlob`  
  dans Entier qui spécifie la taille de la signature de métadonnées binaires référencée par le `pvSigBlob` paramètre.  
   
  `pvSigBlob`  
- dans `PCCOR_SIGNATURE`Valeur qui pointe vers la signature de métadonnées binaires du type de la valeur.  
+ dans `PCCOR_SIGNATURE` Valeur qui pointe vers la signature de métadonnées binaires du type de la valeur.  
   
  `ppValue`  
  à Pointeur vers l’adresse d’un objet « ICorDebugValue » représentant la valeur récupérée qui est stockée dans le registre et l’emplacement de mémoire spécifiés.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

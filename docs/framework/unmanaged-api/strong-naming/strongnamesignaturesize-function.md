@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 4fde4cd0-f53e-4411-a2fe-fc5c54472f95
 topic_type:
 - apiref
-ms.openlocfilehash: a19d875b8fb81f2af3821e69452f0f0ed591cd22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6a2b3afe66f1eaa358c5f80de50f14ceb730048b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708476"
 ---
 # <a name="strongnamesignaturesize-function"></a>StrongNameSignatureSize, fonction
-Retourne la taille de la signature de nom fort. `StrongNameSignatureSize`est généralement utilisé par les compilateurs pour déterminer combien d’espace réserver dans le fichier lors de la création d’un assemblage signé retard.  
+
+Retourne la taille de la signature de nom fort. `StrongNameSignatureSize` est généralement utilisé par les compilateurs pour déterminer la quantité d’espace à réserver dans le fichier lors de la création d’un assembly à signature différée.  
   
- Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName::StrongNameSignatureSize](../hosting/iclrstrongname-strongnamesignaturesize-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameSignatureSize (](../hosting/iclrstrongname-strongnamesignaturesize-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +38,33 @@ BOOLEAN StrongNameSignatureSize (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbPublicKeyBlob`  
- [dans] Une structure de type [PublicKeyBlob](publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
+ dans Structure de type [publicKeyBlob](publickeyblob-structure.md) qui contient la partie publique de la paire de clés utilisée pour générer la signature de nom fort.  
   
  `cbPublicKeyBlob`  
- [dans] La taille, dans les `pbPublicKeyBlob`octets, de .  
+ dans Taille, en octets, de `pbPublicKeyBlob` .  
   
  `pcbSize`  
- [dans] Le nombre d’octets requis pour stocker la signature du nom fort.  
+ dans Nombre d’octets requis pour stocker la signature de nom fort.  
   
-## <a name="return-value"></a>Valeur de retour  
- `true`à la réussite; autrement, `false`.  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `true` en cas de réussite de l’opération ; Sinon, `false` .  
   
-## <a name="remarks"></a>Notes   
- Si `StrongNameSignatureSize` la fonction ne se termine pas avec succès, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+## <a name="remarks"></a>Remarques  
+
+ Si la `StrongNameSignatureSize` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** StrongName.h (en)  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

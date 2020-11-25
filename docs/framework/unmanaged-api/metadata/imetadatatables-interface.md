@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 31272cce-506a-4f18-bcbf-01ee45e36356
 topic_type:
 - apiref
-ms.openlocfilehash: 2105033e684ec172e24adfb14bcab7668b388af3
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 073e73f082416308b893974471e39cbf5243d01c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501119"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708853"
 ---
 # <a name="imetadatatables-interface"></a>IMetaDataTables, interface
+
 Fournit des méthodes pour le stockage et la récupération d'informations de métadonnées dans des tables.  
   
 ## <a name="methods"></a>Méthodes  
@@ -49,11 +50,12 @@ Fournit des méthodes pour le stockage et la récupération d'informations de m�
 |[GetUserStringHeapSize, méthode](imetadatatables-getuserstringheapsize-method.md)|Obtient la taille, en octets, du tas de la chaîne utilisateur.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

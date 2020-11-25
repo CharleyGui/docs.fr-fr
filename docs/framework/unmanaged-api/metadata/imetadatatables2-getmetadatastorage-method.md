@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 667a6d1e-753d-4ea2-8fd8-a8337d1bb9cd
 topic_type:
 - apiref
-ms.openlocfilehash: 55fcde6c47705e515eb2d20f25ac870e257b92c0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 775b3919d1468f26fc3c374dd8ca143aa17853ce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501129"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708736"
 ---
 # <a name="imetadatatables2getmetadatastorage-method"></a>IMetaDataTables2::GetMetaDataStorage, méthode
+
 Obtient la taille et le contenu des métadonnées stockées dans la section spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetMetaDataStorage (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppvMd`  
  [in, out] Pointeur vers une section de métadonnées.  
   
@@ -42,11 +44,12 @@ HRESULT GetMetaDataStorage (
  à Taille du flux de métadonnées.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

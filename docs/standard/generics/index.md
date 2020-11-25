@@ -26,18 +26,19 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: eae1b52f5462cdc395504da877e40e62e5417b76
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: f361e0e250368694d7afa078183b1e5cb7ef1464
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95098812"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707865"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
 Les génériques vous permettent d'adapter une méthode, une classe ou une structure au type de données sur lequel elle agit. Par exemple, au lieu d’utiliser la <xref:System.Collections.Hashtable> classe, qui autorise les clés et les valeurs de n’importe quel type, vous pouvez utiliser la <xref:System.Collections.Generic.Dictionary%602> classe générique et spécifier les types autorisés pour la clé et la valeur. Les génériques présentent plusieurs avantages, notamment une plus grande réutilisabilité du code et une meilleure cohérence des types.  
 
 ## <a name="defining-and-using-generics"></a>Définition et utilisation des génériques
+
  Les génériques sont des classes, des structures, des interfaces et des méthodes qui possèdent des espaces réservés (ou paramètres de type) pour un ou plusieurs des types qu'ils stockent ou utilisent. Une classe de collection générique peut utiliser un paramètre de type comme espace réservé pour le type des objets qu'elle stocke. Les paramètres de type apparaissent alors comme les types de ses champs, et les types de paramètre, comme ses méthodes. Une méthode générique peut utiliser son paramètre de type comme le type de sa valeur de retour ou comme le type de l'un de ses paramètres formels. Le code suivant montre une définition de classe générique simple.  
   
  [!code-cpp[Conceptual.Generics.Overview#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#2)]
@@ -51,6 +52,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
  [!code-vb[Conceptual.Generics.Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#3)]  
 
 ### <a name="generics-terminology"></a>Terminologie relative aux génériques  
+
  Les termes suivants sont employés quand on aborde le sujet des génériques de .NET :  
   
 - Une *définition de type générique* est une déclaration de classe, de structure ou d'interface qui fonctionne comme un modèle, avec des espaces réservés pour les types qu'elle peut contenir ou utiliser. Par exemple, la classe <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> peut contenir deux types : des clés et des valeurs. Étant donné qu'une définition de type générique n'est qu'un modèle, vous ne pouvez pas créer d'instances d'une classe, d'une structure ou d'une interface qui correspond à une définition de type générique.  
@@ -80,6 +82,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
  [!code-vb[Conceptual.Generics.Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#5)]  
   
 ## <a name="advantages-and-disadvantages-of-generics"></a>Avantages et inconvénients des génériques
+
  Il existe de nombreux avantages à l'utilisation de collections et de délégués génériques :  
   
 - Sécurité de type. Grâce aux génériques, le compilateur se charge de la cohérence des types à votre place. Il est inutile d'écrire du code pour tester le type de données nécessaire, car il est appliqué au moment de la compilation. Ainsi, le besoin d'un cast de type et le risque d'erreurs au moment de l'exécution sont réduits.  
@@ -112,6 +115,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
      Pour plus d'informations, consultez "Types imbriqués" dans <xref:System.Type.MakeGenericType%2A>.  
 
 ## <a name="class-library-and-language-support"></a>Bibliothèque de classes et prise en charge des langages  
+
  .NET fournit plusieurs classes de collection génériques dans les espaces de noms suivants :  
   
 - L'espace de noms <xref:System.Collections.Generic> contient la plupart des types de collections génériques fournis par .NET, comme les classes génériques <xref:System.Collections.Generic.List%601> et <xref:System.Collections.Generic.Dictionary%602>.  
@@ -127,6 +131,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
  Visual C++, C# et Visual Basic fournissent une prise en charge complète de la définition et de l'utilisation des génériques. Pour plus d'informations sur la prise en charge des langages, consultez [Types génériques en Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Introduction aux génériques](../../csharp/programming-guide/generics/index.md) et [Vue d'ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).
 
 ## <a name="nested-types-and-generics"></a>Types imbriqués et génériques  
+
  Un type qui est imbriqué dans un type générique peut dépendre des paramètres de type du type générique englobant. Le Common Language Runtime considère que les types imbriqués sont génériques, même s'ils n'ont pas leurs propres paramètres de type générique. Lorsque vous créez une instance d'un type imbriqué, vous devez spécifier les arguments de type pour tous les types génériques englobants.  
 
 ## <a name="related-topics"></a>Rubriques connexes  
@@ -145,6 +150,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 |[Vue d’ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Explique la fonction des génériques pour les utilisateurs C++, y compris les différences entre les génériques et les modèles.|  
 
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

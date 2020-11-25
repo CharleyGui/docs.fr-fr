@@ -1,6 +1,6 @@
 ---
-title: CloneEnumWbemClassObject fonction (référence API non géré)
-description: La fonction CloneEnumWbemClassObject fait une copie logique d’un enumérateur.
+title: Fonction CloneEnumWbemClassObject (référence des API non managées)
+description: La fonction CloneEnumWbemClassObject effectue une copie logique d’un énumérateur.
 ms.date: 11/06/2017
 api_name:
 - CloneEnumWbemClassObject
@@ -14,14 +14,15 @@ helpviewer_keywords:
 - CloneEnumWbemClassObject function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: f2a3a7e848108e50c04f0ec70cf42586755a0a88
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa8a7f436c018e3e083be452d300eb21e17f93f3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175016"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708125"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>CloneEnumWbemClassObject, fonction
+
 Effectue une copie logique d’un énumérateur, en conservant sa position actuelle dans une énumération.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -43,56 +44,57 @@ HRESULT CloneEnumWbemClassObject (
 ## <a name="parameters"></a>Paramètres
 
 `ppEnum`\
-[out] Reçoit un pointeur à un nouveau [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject).
+à Reçoit un pointeur vers un nouveau [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject).
 
 `authLevel`\
-[dans] Le niveau d’autorisation.
+dans Niveau d’autorisation.
 
 `impLevel`\
-[dans] Le niveau d’usurpation d’identité.
+dans Niveau d’emprunt d’identité.
 
 `pCurrentEnumWbemClassObject`\
-[out] Un pointeur à l’instance [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) à cloner.
+à Pointeur vers l’instance [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) à cloner.
 
 `strUser`\
-[dans] Le nom d’utilisateur. Consultez la fonction [ConnectServerWmi](connectserverwmi.md) pour plus d’informations.
+dans Nom d’utilisateur. Pour plus d’informations, consultez la fonction [ConnectServerWmi](connectserverwmi.md) .
 
 `strPassword`\
-[dans] Le mot de passe. Consultez la fonction [ConnectServerWmi](connectserverwmi.md) pour plus d’informations.
+dans Mot de passe. Pour plus d’informations, consultez la fonction [ConnectServerWmi](connectserverwmi.md) .
 
 `strAuthority`\
-[dans] Le nom de domaine de l’utilisateur. Consultez la fonction [ConnectServerWmi](connectserverwmi.md) pour plus d’informations.
+dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la fonction [ConnectServerWmi](connectserverwmi.md) .
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constant  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Il y a eu un échec général. |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre est invalide. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible compléter l’opération. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Le lien d’appel à distance (RPC) entre le processus actuel et WMI a échoué. |
-| `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
+| `WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Le lien de l’appel de procédure distante (RPC) entre le processus en cours et WMI a échoué. |
+| `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Cette fonction enveloppe un appel à [l’IEnumWbemClassObject::Méthode Clone.](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone)
+Cette fonction encapsule un appel à la méthode [IEnumWbemClassObject :: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) .
 
-Cette méthode ne fait qu’une copie du « meilleur effort ». En raison de la nature dynamique de nombreux objets CIM, il est possible que le nouvel énumérateur n’énumère pas le même ensemble d’objets que l’enumérateur source.
+Cette méthode effectue uniquement une copie « meilleur effort ». En raison de la nature dynamique de nombreux objets CIM, il est possible que le nouvel énumérateur n’énumère pas le même jeu d’objets que l’énumérateur source.
 
-Si l’appel de fonction échoue, vous pouvez obtenir des informations d’erreur supplémentaires en appelant la fonction [GetErrorInfo.](geterrorinfo.md)
+Si l’appel de fonction échoue, vous pouvez obtenir des informations supplémentaires sur l’erreur en appelant la fonction [GetErrorInfo](geterrorinfo.md) .
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
-Par exemple, voir la méthode [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) méthode.
+Pour obtenir un exemple, consultez la méthode [IEnumWbemClassObject :: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) .
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête:** WMINet_Utils.idl
+ **En-tête :** WMINet_Utils. idl
 
- **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

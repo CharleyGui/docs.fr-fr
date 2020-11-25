@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e3b73a3f-d089-4101-a9a9-5e0765d05b61
 topic_type:
 - apiref
-ms.openlocfilehash: b8a3a74888a3caae03da6f88a003bd277939ae59
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 757b7fecbbb187da079c8a5c51462ec58431966f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615044"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707618"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments, méthode
+
 Retourne un tableau de tous les documents définis dans le magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetDocuments (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cDocs`  
  [in] Taille du tableau `pDocs`.  
   
@@ -45,10 +47,12 @@ HRESULT GetDocuments (
  `pDocs`  
  à Pointeur vers une variable qui reçoit le tableau de documents.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

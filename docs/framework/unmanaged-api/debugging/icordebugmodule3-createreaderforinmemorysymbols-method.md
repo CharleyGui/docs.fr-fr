@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: af317171-d66d-4114-89eb-063554c74940
 topic_type:
 - apiref
-ms.openlocfilehash: 2a8200f942405395429db182b7501a07fc1f930a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 44f4c59f95c28f9982d67875584e2f9803c0ed3b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212319"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709568"
 ---
 # <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a>ICorDebugModule3::CreateReaderForInMemorySymbols, méthode
+
 Crée un lecteur de symboles de débogage pour un module dynamique.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,15 @@ HRESULT CreateReaderForInMemorySymbols (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  riid  
  dans IID de l’interface COM à retourner. En règle générale, il s’agit d’une [interface ISymUnmanagedReader](../diagnostics/isymunmanagedreader-interface.md).  
   
  ppObj  
  à Pointeur vers un pointeur vers l’interface retournée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  Le lecteur a été créé avec succès.  
   
@@ -53,14 +56,16 @@ HRESULT CreateReaderForInMemorySymbols (
  E_FAIL (ou autres codes de retour E_)  
  Impossible de créer le lecteur.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode peut également être utilisée pour créer un objet lecteur de symboles pour les modules en mémoire (non dynamiques), mais uniquement une fois que les symboles sont disponibles pour la première fois (indiqué par le rappel de la [méthode UpdateModuleSymbols,](icordebugmanagedcallback-updatemodulesymbols-method.md) ).  
   
  Cette méthode retourne une nouvelle instance de lecteur à chaque fois qu’elle est appelée (comme [CComPtrBase :: CoCreateInstance](/cpp/atl/reference/ccomptrbase-class#cocreateinstance)). Par conséquent, le débogueur doit mettre en cache le résultat et demander une nouvelle instance uniquement lorsque les données sous-jacentes ont été modifiées (autrement dit, lors de la réception d’un rappel de [méthode loadClass](icordebugmanagedcallback-loadclass-method.md) ).  
   
  Les modules dynamiques n’ont aucun symbole disponible tant que le premier type n’a pas été chargé (comme indiqué par le rappel de la [méthode loadClass](icordebugmanagedcallback-loadclass-method.md) ).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

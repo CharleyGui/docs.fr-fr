@@ -2,12 +2,12 @@
 title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
 ms.date: 01/30/2020
-ms.openlocfilehash: 16aaaa2df0f68434b766d4d1cc96974e83449953
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: b30ea26ee174caf3484931945c832c72a1acf93d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199896"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707762"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
 
@@ -35,7 +35,7 @@ docker build
 
 **Registre (registry)** : service qui fournit l’accès aux dépôts. Le registre par défaut utilisé pour la plupart des images publiques est [Docker Hub](https://hub.docker.com/) (propriété de l’organisation Docker). Un registre contient généralement des dépôts de plusieurs équipes. Les entreprises utilisent souvent des registres privés pour stocker et gérer les images qu’elles ont créées. Azure Container Registry est un autre exemple de registre.
 
-**Image multi-** architecture : pour l’architecture mutualisée, il s’agit d’une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle l’outil de connexion est en cours d’exécution. Par exemple, lorsqu’un fichier dockerfile demande une image **de base de MCR.Microsoft.com/dotnet/Core/SDK :3.1** à partir du Registre, il obtient en fait **3,1-SDK-**-1909, **3,1-SDK-Server-1809** ou **3,1-SDK-Buster-Slim**, en fonction du système d’exploitation et de la version du service d’installation.
+**Image multi-** architecture : pour l’architecture mutualisée, il s’agit d’une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle l’outil de connexion est en cours d’exécution. Par exemple, lorsqu’un fichier dockerfile demande une image **de base de MCR.Microsoft.com/dotnet/SDK :3.1** à partir du Registre, il obtient en fait **3,1-SDK-**-1909, **3,1-SDK-Server-1809** ou **3,1-SDK-Buster-Slim**, en fonction du système d’exploitation et de la version du service d’installation.
 
 **Docker Hub** : registre public dans lequel vous pouvez charger et manipuler des images. Docker Hub fournit un hébergement d’images Docker, des registres publics ou privés, des déclencheurs de build et des webhooks, et l’intégration avec GitHub et Bitbucket.
 
@@ -54,5 +54,5 @@ docker build
 **Orchestrator** : outil qui simplifie la gestion des clusters et des hôtes Docker. Les orchestrateurs vous permettent de gérer les images, les conteneurs et les hôtes à l’aide d’une interface de ligne de commande (CLI) ou d’une interface graphique utilisateur. Vous pouvez gérer la mise en réseau des conteneurs, les configurations, l’équilibrage de charge, la découverte des services, la haute disponibilité, la configuration des hôtes Docker, et bien plus encore. Un orchestrateur gère l’exécution, la distribution, la mise à l’échelle et la réparation des charges de travail dans une collection de nœuds. En règle générale, les produits Orchestrator sont les mêmes produits qui fournissent l’infrastructure de cluster, comme Kubernetes et Azure Service Fabric, entre autres offres sur le marché.
 
 >[!div class="step-by-step"]
->[Précédent](docker-defined.md)
->[suivant](docker-containers-images-registries.md)
+>[Précédent](docker-defined.md) 
+> [Suivant](docker-containers-images-registries.md)

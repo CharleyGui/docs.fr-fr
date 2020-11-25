@@ -1,6 +1,6 @@
 ---
-title: Fonction Supprimermethod (référence API non managérisée)
-description: La fonction DeleteMethod supprime la méthode spécifiée à partir d’une définition de classe CIM.
+title: Fonction DeleteMethod (référence des API non managées)
+description: La fonction DeleteMethod supprime la méthode spécifiée d’une définition de classe CIM.
 ms.date: 11/06/2017
 api_name:
 - DeleteMethod
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - DeleteMethod function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 4059555d74c0b0f151332ddcf9faedecf238e795
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ca58ed3510360b20577890055e4284869d1bf94
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174990"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708099"
 ---
 # <a name="deletemethod-function"></a>DeleteMethod, fonction
-Supprime la méthode spécifiée à partir d’une définition de classe de l’ICM.
+
+Supprime la méthode spécifiée d’une définition de classe CIM.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -39,36 +40,37 @@ HRESULT Delete (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-[dans] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`  
-[dans] Un pointeur à une instance [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`  
-[dans] Le nom de la méthode à retirer de la table de classe. `wszName`doit être un pointeur à un valide `LPCWSTR`.
+dans Nom de la méthode à supprimer de la table de classes. `wszName` doit être un pointeur vers un valide `LPCWSTR` .
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli.h,* ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constant  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer cette opération. |
-| `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a été réussi.  |
+| `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Cette fonction enveloppe un appel à la méthode [IWbemClassObject::DeleteMethod.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-deletemethod)
+Cette fonction encapsule un appel à la méthode [IWbemClassObject ::D eletemethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-deletemethod) .
 
-La suppression de la méthode n’est pas prise en charge pour les pointeurs [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) qui pointent vers les instances de l’ICM.
+La suppression de méthode n’est pas prise en charge pour les pointeurs [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) qui pointent vers des instances CIM.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** WMINet_Utils.idl  
+ **En-tête :** WMINet_Utils. idl  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
