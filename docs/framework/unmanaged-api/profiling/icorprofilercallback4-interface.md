@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 665f3cfc-cd6f-4880-906c-ea65ad384783
 topic_type:
 - apiref
-ms.openlocfilehash: 295d3d440529623f4569fd6c5f4debe7e4558990
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 942ee8234b79c6579acc009960f4571801fc3185
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730290"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4, interface
+
 Fournit des méthodes de rappel que le common language runtime (CLR) utilise pour communiquer des informations au profileur.  
   
 ## <a name="methods"></a>Méthodes  
@@ -38,6 +39,7 @@ Fournit des méthodes de rappel que le common language runtime (CLR) utilise pou
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

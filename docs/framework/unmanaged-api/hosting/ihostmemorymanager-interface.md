@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a945d439-3b34-4aa4-b575-8413dd7806ce
 topic_type:
 - apiref
-ms.openlocfilehash: 09b4a06892cdc450eed9dead503a990b6f19804e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0f71e4c45e43c2027b12998532f2b04401a51951
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501506"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731330"
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager, interface
+
 Fournit des méthodes qui permettent au common language runtime (CLR) de faire des demandes de mémoire virtuelle via l’hôte, au lieu d’utiliser les fonctions de mémoire virtuelle Win32 standard.  
   
 ## <a name="methods"></a>Méthodes  
@@ -40,14 +41,16 @@ Fournit des méthodes qui permettent au common language runtime (CLR) de faire d
 |[VirtualQuery, méthode](ihostmemorymanager-virtualquery-method.md)|Sert de wrapper logique pour la fonction Win32 correspondante, qui récupère des informations sur une plage de pages dans l’espace d’adressage virtuel du processus appelant.|  
   
 ## <a name="remarks"></a>Remarques  
- `IHostMemoryManager`fournit également des méthodes pour que le CLR obtienne un pointeur permettant d’effectuer des demandes de mémoire sur le tas et d’obtenir le niveau de sollicitation de la mémoire dans le processus, comme indiqué par l’hôte.  
+
+ `IHostMemoryManager` fournit également des méthodes pour que le CLR obtienne un pointeur permettant d’effectuer des demandes de mémoire sur le tas et d’obtenir le niveau de sollicitation de la mémoire dans le processus, comme indiqué par l’hôte.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

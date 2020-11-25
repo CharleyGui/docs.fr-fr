@@ -6,17 +6,19 @@ helpviewer_keywords:
 - native API reference [.NET Framework], hosting
 - hosting [.NET Framework], using the unmanaged API
 ms.assetid: 14295c28-1da8-408b-a656-9584abcd9896
-ms.openlocfilehash: 550b663ec7fc41309c000d7c616d94c846b0cb40
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2abb23e53284440b68e139c6807007fad10f20c9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555690"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730644"
 ---
 # <a name="hosting-unmanaged-api-reference"></a>Hébergement (Informations de référence sur les API non managées)
+
 L'API d'hébergement permet aux hôtes non managés d'intégrer le Common Language Runtime (CLR) dans leurs applications.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Hébergement des coclasses](hosting-coclasses.md)  
  Décrit les coclasses non managées utilisées par l’API d’hébergement.  
   
@@ -33,5 +35,6 @@ L'API d'hébergement permet aux hôtes non managés d'intégrer le Common Langua
  Décrit les structures non managées utilisées par l'API d'hébergement.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Hôtes du runtime](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))  
  Décrit les hôtes du runtime inclus avec le .NET Framework.

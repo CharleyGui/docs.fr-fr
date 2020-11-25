@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: e6690a600b7b00272471362bc087633d52a98f25
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e6212abbc0d9f64765b03c3dd2e9132e9ca96ab7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824842"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730615"
 ---
 # <a name="merge-options-in-plinq"></a>Options de fusion en PLINQ
+
 Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence source pour que plusieurs threads puissent fonctionner simultanément sur différentes parties, généralement sur des threads distincts. Si les résultats doivent être utilisés sur un thread, par exemple, dans une boucle `foreach` (`For Each` en Visual Basic), les résultats de chaque thread doivent être fusionnés de nouveau en une séquence. Le type de fusion que PLINQ exécute dépend des opérateurs présents dans la requête. Par exemple, les opérateurs qui imposent un nouvel ordre des résultats doivent mettre en mémoire tampon tous les éléments de tous les threads. Du point de vue du thread utilisateur (qui est également celui de l’utilisateur de l’application), une requête entièrement mise en mémoire tampon peut s’exécuter pendant un certain temps avant qu’elle ne génère son premier résultat. D’autres opérateurs, par défaut, sont partiellement mis en mémoire tampon. Ils transmettent leurs résultats par lots. L’opérateur <xref:System.Linq.ParallelEnumerable.ForAll%2A> n’est pas mis en mémoire tampon par défaut. Il transmet immédiatement tous les éléments à partir de tous les threads.  
   
  À l’aide de la méthode <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A>, comme indiqué dans l’exemple suivant, vous pouvez fournir un indicateur à PLINQ spécifiant le type de fusion à exécuter.  
@@ -27,6 +28,7 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
  Si la requête ne peut pas prendre en charge l’option demandée, cette dernière sera simplement ignorée. Dans la plupart des cas, il n’est pas nécessaire de spécifier une option de fusion pour une requête PLINQ. Toutefois, dans certains cas, après avoir effectué des tests et des mesures, vous pouvez trouver qu’une requête s’exécute mieux dans un mode non défini par défaut. Cette option est souvent utilisée pour forcer un opérateur de fusion de blocs à diffuser ses résultats en continu afin de fournir une interface utilisateur plus réactive.  
   
 ## <a name="parallelmergeoptions"></a>ParallelMergeOptions  
+
  L’énumération <xref:System.Linq.ParallelMergeOptions> inclut les options suivantes qui spécifient, pour les formes de requête prises en charge, la manière dont la sortie finale de la requête est transmise quand les résultats sont utilisés sur un thread :  
   
 - `Not Buffered`  
@@ -42,6 +44,7 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
      Avec l’option <xref:System.Linq.ParallelMergeOptions.FullyBuffered>, la sortie de la requête entière est mise en mémoire tampon avant que l’un des éléments ne soit transmis. Cette option peut nécessiter plus de temps pour que le premier élément soit disponible sur le thread utilisateur, mais les résultats complets peuvent toujours être générés plus rapidement qu’avec les autres options.  
   
 ## <a name="query-operators-that-support-merge-options"></a>Opérateurs de requête prenant en charge les options de fusion  
+
  Le tableau suivant répertorie les opérateurs qui prennent en charge tous les modes d’options de fusion, qui sont soumis aux restrictions spécifiées.  
   
 |Opérateur|Restrictions|  

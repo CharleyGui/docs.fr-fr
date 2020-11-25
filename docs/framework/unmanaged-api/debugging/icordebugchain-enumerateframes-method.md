@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9fcefa98-750d-4168-8915-8173a43accf2
 topic_type:
 - apiref
-ms.openlocfilehash: c8a62d8b4a4db0f36d991c32dbfc5bad68780f1b
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: ae6d81e6fdab0f8e3346d8a08a3b5ebc329a542a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894694"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730147"
 ---
 # <a name="icordebugchainenumerateframes-method"></a>ICorDebugChain::EnumerateFrames, méthode
+
 Obtient un énumérateur qui contient tous les frames de pile managés dans la chaîne, en commençant par le frame le plus récent.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT EnumerateFrames (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppFrames`  
  à Pointeur vers l’adresse d’un objet ICorDebugFrameEnum qui est l’énumérateur des frames de pile.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La chaîne représente la pile d’appels physique du thread.  
   
  La `EnumerateFrames` méthode doit être appelée uniquement pour les chaînes managées. L’API de débogage ne fournit pas de méthodes permettant d’obtenir des frames contenus dans des chaînes non managées. Le débogueur doit utiliser d’autres moyens pour obtenir ces informations.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

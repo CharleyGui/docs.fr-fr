@@ -2,14 +2,15 @@
 title: ICorDebugSymbolProvider::GetMethodLocalSymbols, méthode
 ms.date: 03/30/2017
 ms.assetid: 8b989e38-e779-49d1-9e90-f1f920484b08
-ms.openlocfilehash: 7e9aa01a3fa1c90b0ab4f85970c4eb294b9a4904
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: c5a21436c939ddfca0219618efe64d9e0e40aef4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379611"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730849"
 ---
 # <a name="icordebugsymbolprovidergetmethodlocalsymbols-method"></a>ICorDebugSymbolProvider::GetMethodLocalSymbols, méthode
+
 Obtient les symboles locaux d'une méthode selon l'adresse virtuelle relative (RVA) de cette méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,6 +25,7 @@ HRESULT GetMethodLocalSymbols(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `nativeRVA`  
  [in] Adresse virtuelle relative native de la méthode.  
   
@@ -36,12 +38,13 @@ HRESULT GetMethodLocalSymbols(
  `pcFetchedSymbols`  
  à Pointeur vers un tableau [méthode icordebugvariablesymbol](icordebugvariablesymbol-interface.md) qui contient les symboles locaux de la méthode.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

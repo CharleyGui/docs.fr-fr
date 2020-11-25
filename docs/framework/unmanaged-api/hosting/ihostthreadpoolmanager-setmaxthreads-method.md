@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 77cfd347-95c2-4425-b807-4ecc2a8d4578
 topic_type:
 - apiref
-ms.openlocfilehash: 53d42afda6668acc6462c419fcefd6bc1435a34c
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 68e806daa63d13ad6c1f3b5de634c20ca02e8eb4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842450"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730711"
 ---
 # <a name="ihostthreadpoolmanagersetmaxthreads-method"></a>IHostThreadPoolManager::SetMaxThreads, méthode
+
 Définit le nombre maximal de threads que l’hôte peut conserver dans le pool de threads.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT SetMaxThreads (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `MaxThreads`  
  Nombre maximal de threads de travail dans le pool de threads.  
   
@@ -41,7 +43,7 @@ HRESULT SetMaxThreads (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SetMaxThreads`retourné avec succès.|  
+|S_OK|`SetMaxThreads` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,14 +52,16 @@ HRESULT SetMaxThreads (
 |E_NOTIMPL|L’hôte ne fournit pas d’implémentation de `SetMaxThreads` .|  
   
 ## <a name="remarks"></a>Remarques  
+
  Aucun hôte n’est requis pour autoriser le CLR à configurer la taille du pool de threads. Certains hôtes peuvent souhaiter un contrôle exclusif sur le pool de threads, pour des raisons telles que l’implémentation, les performances ou l’évolutivité. Dans ce cas, un hôte doit retourner une valeur HRESULT de E_NOTIMPL.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

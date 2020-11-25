@@ -5,14 +5,15 @@ helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: 1cf41a08c641e9251084e5dcac6c46bc54857717
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ed287b98c012622caa5f8f1cc90fced90dda3e62
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828736"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730966"
 ---
 # <a name="property-design"></a>Conception des propriétés
+
 Bien que les propriétés soient techniquement très similaires aux méthodes, elles sont très différentes en termes de scénarios d’utilisation. Elles doivent être considérées comme des champs intelligents. Ils ont la syntaxe d’appel des champs et la flexibilité des méthodes.
 
  ✔️ créer des propriétés d’extraction uniquement si l’appelant ne doit pas être en mesure de modifier la valeur de la propriété.
@@ -38,6 +39,7 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
  Les accesseurs get de propriété doivent être des opérations simples et ne doivent pas avoir de conditions préalables. Si un accesseur Get peut lever une exception, il doit probablement être remanié pour être une méthode. Notez que cette règle ne s’applique pas aux indexeurs, où nous attendons des exceptions en raison de la validation des arguments.
 
 ### <a name="indexed-property-design"></a>Conception des propriétés indexées
+
  Une propriété indexée est une propriété spéciale qui peut avoir des paramètres et qui peut être appelée avec une syntaxe spéciale similaire à l’indexation de tableau.
 
  Les propriétés indexées sont communément appelées indexeurs. Les indexeurs ne doivent être utilisés que dans les API qui permettent d’accéder aux éléments d’une collection logique. Par exemple, une chaîne est une collection de caractères, et l’indexeur sur <xref:System.String?displayProperty=nameWithType> a été ajouté pour accéder à ses caractères.
@@ -69,6 +71,7 @@ Bien que les propriétés soient techniquement très similaires aux méthodes, e
  Cela est appliqué par le compilateur C#.
 
 ### <a name="property-change-notification-events"></a>Événements de notification de modification de propriété
+
  Parfois, il est utile de fournir un événement pour notifier l’utilisateur des modifications apportées à une valeur de propriété. Par exemple, `System.Windows.Forms.Control` déclenche un `TextChanged` événement après la modification de la valeur de sa `Text` propriété.
 
  ✔️ envisagez de déclencher des événements de notification de modification lorsque des valeurs de propriété dans des API de haut niveau (généralement des composants de concepteur) sont modifiées.

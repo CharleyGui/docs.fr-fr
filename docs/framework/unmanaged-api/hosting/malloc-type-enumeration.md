@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c02476f9-23a2-4af7-9282-aa9c42c7429b
 topic_type:
 - apiref
-ms.openlocfilehash: 630fe4e79b369bfdefc19be72780f1893090895e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: fe58a519d0feac0da49e7778247da1ef538f8b83
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008454"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730030"
 ---
 # <a name="malloc_type-enumeration"></a>MALLOC_TYPE (énumération)
+
 Contient des valeurs qui spécifient les caractéristiques de la mémoire qui est allouée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,12 +41,13 @@ typedef enum {
 |`MALLOC_EXECUTABLE`|La mémoire allouée peut contenir un fichier exécutable.|  
 |`MALLOC_THREADSAFE`|La mémoire allouée est thread-safe. Autrement dit, la mémoire est accessible par plusieurs threads sans aucune synchronisation.<br /><br /> Si cet indicateur n’est pas défini, les appels sur l’objet doivent être sérialisés.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

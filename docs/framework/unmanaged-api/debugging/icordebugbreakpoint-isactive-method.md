@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06e583d6-d88a-4ff5-bb95-5c48618a461c
 topic_type:
 - apiref
-ms.openlocfilehash: 64a30ca85a75ebd11918ff630daffbb85c97f6dc
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 064f9727b221dd64a58f8cd5e103271e37020786
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894722"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730173"
 ---
 # <a name="icordebugbreakpointisactive-method"></a>ICorDebugBreakpoint::IsActive, méthode
+
 Obtient une valeur qui indique si ce `ICorDebugBreakpoint` est actif.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT IsActive (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbActive`  
- à `true` si ce point d’arrêt est actif ; Sinon, `false`.  
+ [out] `true` Si ce point d’arrêt est actif ; Sinon, `false` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

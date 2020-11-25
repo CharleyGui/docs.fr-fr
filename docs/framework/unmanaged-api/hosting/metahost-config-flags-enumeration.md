@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6f1e389f-ed99-4d6a-a0ba-72d7d869a01d
 topic_type:
 - apiref
-ms.openlocfilehash: 6b37fcfc04e3ec880c67f102ec12d7f3e4b06a43
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 01e55659bf2a348ec763f51112cbdcd706f27c84
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493160"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730004"
 ---
 # <a name="metahost_config_flags-enumeration"></a>METAHOST_CONFIG_FLAGS, énumération
+
 Décrit les indicateurs possibles retournés dans le `pdwConfigFlags` paramètre de la méthode [ICLRMetaHostPolicy :: GetRequestedRuntime](iclrmetahostpolicy-getrequestedruntime-method.md) , indiquant la présence et le paramétrage de l' `useLegacyV2RuntimeActivationPolicy` attribut dans l' [ \<startup> élément](../../configure-apps/file-schema/startup/startup-element.md) du fichier de configuration.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,11 +48,12 @@ typedef enum {
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
@@ -59,4 +61,4 @@ typedef enum {
 
 - [Énumérations d'hébergement](hosting-enumerations.md)
 - [GetRequestedRuntime, méthode](iclrmetahostpolicy-getrequestedruntime-method.md)
-- [\<startup>Appartient](../../configure-apps/file-schema/startup/startup-element.md)
+- [\<startup> Appartient](../../configure-apps/file-schema/startup/startup-element.md)

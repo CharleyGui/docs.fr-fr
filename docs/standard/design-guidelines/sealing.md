@@ -7,14 +7,15 @@ helpviewer_keywords:
 - preventing customization
 - sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-ms.openlocfilehash: 29023ad431f9d05caf44e59f66eccee24bfa0433
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bf8aad5d79e659ad9a767c2b0992eb9ee05fd531
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828684"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730940"
 ---
 # <a name="sealing"></a>Sceller
+
 L’une des fonctionnalités des frameworks orientés objet est que les développeurs peuvent les étendre et les personnaliser de manière inattendue par les concepteurs de Framework. Il s’agit de la puissance et du danger de la conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement l’extensibilité quand vous le souhaitez, et de limiter l’extensibilité quand elle est dangereuse.
 
  Mécanisme puissant qui empêche la fermeture de l’extensibilité. Vous pouvez sceller la classe ou des membres individuels. La fermeture d’une classe empêche les utilisateurs d’hériter de la classe. La fermeture d’un membre empêche les utilisateurs de se substituer à un membre particulier.

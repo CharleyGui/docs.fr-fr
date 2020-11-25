@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 87277e1a-1595-4729-9e25-d1c3ac18ce5f
 topic_type:
 - apiref
-ms.openlocfilehash: fb198782bb91a8301507fd6cadcffb0378230f0e
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4d66d09e02b907281f64400b0c605a7b5c44d476
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396585"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731044"
 ---
 # <a name="icordebugvariablehomegetliverange-method"></a>IcorDebugVariableHome :: GetLiveRange, méthode
+
 Obtient la plage native sur laquelle cette variable est active.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,13 +36,15 @@ HRESULT GetLiveRange(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pStartOffset`  
  à Décalage logique auquel la variable est active en premier.  
   
  `pEndOffset`  
  à Décalage logique qui suit immédiatement le point de la dernière activité de la variable.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-ms.openlocfilehash: 59d32f8801a1429718f39ab912f55cfcc5788a0e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 997bb80b6e30d4769613c4a1df647e6cd475a8ed
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820772"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730602"
 ---
 # <a name="order-preservation-in-plinq"></a>Conservation de l'ordre en PLINQ
+
 Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant l’exactitude. Une requête doit s’exécuter aussi rapidement que possible, mais toujours générer des résultats corrects. Dans certains cas, l’exactitude requiert que l’ordre de la séquence source soit conservé ; toutefois, le classement peut coûter cher en calcul. Par conséquent, par défaut, PLINQ ne conserve pas l’ordre de la séquence source. À cet égard, PLINQ est similaire à [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], mais pas à LINQ to Objects, qui conserve le classement.  
   
  Pour remplacer le comportement par défaut, vous pouvez activer la conservation de l’ordre à l’aide de l’opérateur <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> sur la séquence source. Vous pouvez désactiver la préservation de l’ordre plus loin dans la requête à l’aide de la méthode <xref:System.Linq.ParallelEnumerable.AsUnordered%2A>. Ces deux méthodes permettent de traiter la requête en fonction des paramètres heuristiques, qui déterminent s’il faut exécuter la requête en parallèle ou de manière séquentielle. Pour plus d’informations, consultez [Fonctionnement de l’accélération dans PLINQ](understanding-speedup-in-plinq.md).  
@@ -39,6 +40,7 @@ Dans PLINQ, l’objectif est d’augmenter les performances tout en préservant 
  Notez que PLINQ conserve le classement d’une séquence produite par des opérateurs imposant un ordre pour le reste de la requête. En d’autres termes, les opérateurs tels que <xref:System.Linq.ParallelEnumerable.OrderBy%2A> et <xref:System.Linq.ParallelEnumerable.ThenBy%2A> sont traités comme s’ils étaient suivis d’un appel à <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>.  
   
 ## <a name="query-operators-and-ordering"></a>Opérateurs de requête et de classement  
+
  Les opérateurs de requête suivants présentent la conservation de l’ordre dans toutes les opérations suivantes d’une requête, ou jusqu'à ce que <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> soit appelée :  
   
 - <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  

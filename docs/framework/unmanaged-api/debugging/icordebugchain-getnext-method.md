@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8d9744a5-e08b-4ab2-9855-5c22711cc1e6
 topic_type:
 - apiref
-ms.openlocfilehash: 47a90ed63ae217cb150f392ad9196f8d0d5764e3
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 75b97f4333f3e81533b1f10b8c3c7ba6197ac94a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894640"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730082"
 ---
 # <a name="icordebugchaingetnext-method"></a>ICorDebugChain::GetNext, méthode
+
 Obtient la chaîne suivante de frames pour le thread.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetNext (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppChain`  
  à Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne suivante de frames pour le thread. Si cette chaîne est la dernière chaîne, `ppChain` a la valeur null.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

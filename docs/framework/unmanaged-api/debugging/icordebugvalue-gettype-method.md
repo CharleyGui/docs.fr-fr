@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 41e2d503-e1f1-407b-abe0-6a29adb3e0d1
 topic_type:
 - apiref
-ms.openlocfilehash: a3cd62384ad87d072cd715d23d0e9ee9dac23270
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 06f403f0b653866428a41240f99833ec1180eb86
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396741"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731070"
 ---
 # <a name="icordebugvaluegettype-method"></a>ICorDebugValue::GetType, méthode
+
 Obtient le type primitif de cet objet « ICorDebugValue ».  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT GetType (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pType`  
  à Pointeur vers une valeur de l’énumération "CorElementType" qui indique le type de la valeur.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si l’objet est un type au moment de l’exécution complexe, ce type peut être examiné par le biais des sous-classes appropriées de l' `ICorDebugValue` interface. Par exemple, « ICorDebugObjectValue », qui hérite de `ICorDebugValue` , représente un type complexe.  
   
  Les `GetType` méthodes et [ICorDebugObjectValue :: GetClass](icordebugobjectvalue-getclass-method.md) retournent toutes les informations relatives au type d’une valeur. Elles sont remplacées par la méthode [ICorDebugValue2 :: GetExactType,](icordebugvalue2-getexacttype-method.md) qui prend en charge les génériques.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

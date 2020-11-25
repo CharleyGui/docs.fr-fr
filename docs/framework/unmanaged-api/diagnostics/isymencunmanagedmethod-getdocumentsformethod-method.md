@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bd6ccde5-d578-48d8-abed-b474fbd48d13
 topic_type:
 - apiref
-ms.openlocfilehash: 89be772ee3d8a6fc5acb74d5ebe6d3c691764f89
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: d9fe18225dc27e93d4e97940cba878e4d73b4ed2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441953"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730524"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethod-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethod, méthode
+
 Obtient les documents dans lesquels cette méthode contient des lignes.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetDocumentsForMethod(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cDocs`  
  dans Longueur de la mémoire tampon vers laquelle pointe `pcDocs` .  
   
@@ -44,10 +46,12 @@ HRESULT GetDocumentsForMethod(
  `documents`  
  dans Mémoire tampon qui contient les documents.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, un code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

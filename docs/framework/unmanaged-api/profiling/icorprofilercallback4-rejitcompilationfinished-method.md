@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
 topic_type:
 - apiref
-ms.openlocfilehash: ff06c285bf5306977b520ed9ff845e70fb25989a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a6c2209433a652523fd8e3a7cc2db1272600e1bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499374"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730264"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished, méthode
+
 Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la recompilation d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT ReJITCompilationFinished(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `functionId`  
  dans ID de la fonction qui a été recompilée.  
   
@@ -45,11 +47,12 @@ HRESULT ReJITCompilationFinished(
  dans Valeur qui indique si la recompilation JIT a réussi.  
   
  `fIsSafeToBlock`  
- [in] `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false`pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
+ [in] `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime.  
   
  Une valeur de `true` n’endommage pas le runtime, mais peut affecter les résultats de profilage.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

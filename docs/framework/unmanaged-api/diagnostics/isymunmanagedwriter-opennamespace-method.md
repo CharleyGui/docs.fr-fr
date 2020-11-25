@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 426f4e4f-e60d-4ad1-b546-a10e3c55c283
 topic_type:
 - apiref
-ms.openlocfilehash: ab248c6a624fbed1a6783383566be093c449ff97
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2f64f9f4bde3119f9f089becec5a36d69ed43596
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609883"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730059"
 ---
 # <a name="isymunmanagedwriteropennamespace-method"></a>ISymUnmanagedWriter::OpenNamespace, méthode
+
 Ouvre un nouvel espace de noms. Appelez cette méthode avant de définir des méthodes ou des variables qui occupent un espace de noms. Les espaces de noms peuvent être imbriqués.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT OpenNamespace(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Pointeur vers le nom du nouvel espace de noms.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

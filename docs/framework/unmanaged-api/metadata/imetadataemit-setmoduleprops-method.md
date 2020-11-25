@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b74d7629-5f46-458f-8d67-2456a1e7030c
 topic_type:
 - apiref
-ms.openlocfilehash: aee258c49e6726ebef990257456fd273b01b9ef0
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 1757662d2004dce3156182c35b37237ff91bae7f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007843"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730339"
 ---
 # <a name="imetadataemitsetmoduleprops-method"></a>IMetaDataEmit::SetModuleProps, méthode
+
 Met à jour les références à un module défini par un appel antérieur à [IMetaDataEmit ::D efinemoduleref](imetadataemit-definemoduleref-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,17 @@ HRESULT SetModuleProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szName`  
  dans Nom du module en Unicode. Il s’agit du nom de fichier uniquement, et non du nom de chemin d’accès complet.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

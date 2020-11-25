@@ -2,14 +2,15 @@
 title: Sérialisation
 ms.date: 10/22/2008
 ms.assetid: bebb27ac-9712-4196-9931-de19fc04dbac
-ms.openlocfilehash: 85481e9d759a71346d83c66f67d9623fc32e76ec
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 58ed937df5b60daf9fcbcb7610d6026c5e9805fc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828671"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730927"
 ---
 # <a name="serialization"></a>Sérialisation
+
 La sérialisation est le processus de conversion d’un objet en un format qui peut être facilement rendu persistant ou transporté. Par exemple, vous pouvez sérialiser un objet, le transporter sur Internet à l’aide de HTTP et le désérialiser sur l’ordinateur de destination.
 
  Le .NET Framework offre trois technologies de sérialisation principales, optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types Framework qui leur sont associés.
@@ -23,6 +24,7 @@ La sérialisation est le processus de conversion d’un objet en un format qui p
  ✔️ Pensez à la sérialisation quand vous concevez de nouveaux types.
 
 ## <a name="choosing-the-right-serialization-technology-to-support"></a>Sélection de la technologie de sérialisation appropriée à prendre en charge
+
  ✔️ envisagez de prendre en charge la sérialisation de contrat de données si des instances de votre type doivent être persistantes ou utilisées dans les services Web.
 
  ✔️ envisagez de prendre en charge la sérialisation XML au lieu de ou en plus de la sérialisation de contrat de données si vous avez besoin de davantage de contrôle sur le format XML qui est généré lorsque le type est sérialisé.
@@ -34,6 +36,7 @@ La sérialisation est le processus de conversion d’un objet en un format qui p
  ❌ Évitez de prendre en charge la sérialisation du runtime ou la sérialisation XML uniquement pour des raisons générales de persistance. Préférez la sérialisation du contrat de données à la place.
 
 ## <a name="supporting-data-contract-serialization"></a>Prise en charge de la sérialisation du contrat de données
+
  Les types peuvent prendre en charge la sérialisation de contrat de données en appliquant au <xref:System.Runtime.Serialization.DataContractAttribute> type et <xref:System.Runtime.Serialization.DataMemberAttribute> aux membres (champs et propriétés) du type.
 
  ✔️ envisagez de marquer des membres de données de votre type public si le type peut être utilisé en confiance partielle.
@@ -63,6 +66,7 @@ La sérialisation est le processus de conversion d’un objet en un format qui p
  L'interface permet au sérialiseur de garantir qu'aucune donnée n'est perdue lors de l'aller-retour. La <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A?displayProperty=nameWithType> propriété est utilisée pour stocker toutes les données de la version future du type qui est inconnu de la version actuelle et ne peut donc pas la stocker dans ses membres de données. Lorsque la version actuelle est par la suite sérialisée et désérialisée dans une version future, les données supplémentaires sont disponibles dans le flux sérialisé.
 
 ## <a name="supporting-xml-serialization"></a>Prise en charge de la sérialisation XML
+
  La sérialisation de contrat de données est la technologie de sérialisation principale (par défaut) dans le .NET Framework, mais il existe des scénarios de sérialisation que la sérialisation de contrat de données ne prend pas en charge. Par exemple, vous n'avez pas le contrôle total sur la forme du XML généré ou consommé par le sérialiseur. Si ce contrôle précis est requis, la sérialisation XML doit être utilisée, et vous devez concevoir vos types pour prendre en charge cette technologie de sérialisation.
 
  ❌ Évitez de concevoir vos types spécifiquement pour la sérialisation XML, sauf si vous avez une raison très importante de contrôler la forme du code XML produit. Cette technologie de sérialisation a été remplacée par la sérialisation du contrat de données présentée dans la section précédente.
@@ -70,6 +74,7 @@ La sérialisation est le processus de conversion d’un objet en un format qui p
  ✔️ envisagez d’implémenter l' <xref:System.Xml.Serialization.IXmlSerializable> interface si vous souhaitez encore plus de contrôle sur la forme du code XML sérialisé que ce qui est proposé en appliquant les attributs de SÉRIALISATION XML. Deux méthodes de l’interface, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> et <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> , vous permettent de contrôler entièrement le flux XML sérialisé. Vous pouvez également contrôler le schéma XML qui est généré pour le type en appliquant `XmlSchemaProviderAttribute` .
 
 ## <a name="supporting-runtime-serialization"></a>Prise en charge de la sérialisation du runtime
+
  La sérialisation du runtime est une technologie utilisée par .NET Remoting. Si vous pensez que vos types seront transportés à l’aide de .NET Remoting, vous devez vous assurer qu’ils prennent en charge la sérialisation du Runtime.
 
  La prise en charge de base de la sérialisation du runtime peut être fournie en appliquant <xref:System.SerializableAttribute> , et des scénarios plus avancés impliquent l’implémentation d’un modèle sérialisable simple du Runtime (implémenter <xref:System.Runtime.Serialization.ISerializable> et fournir un constructeur de sérialisation).

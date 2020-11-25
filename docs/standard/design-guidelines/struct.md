@@ -10,14 +10,15 @@ helpviewer_keywords:
 - type design guidelines, structures
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-ms.openlocfilehash: da831d1477b451131bb27372d65ad7229fcf3f77
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7bb7e63004df2eb7541ba8d4f1118ea2272db126
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828619"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730901"
 ---
 # <a name="struct-design"></a>Conception de structures
+
 Le type de valeur à usage général est le plus souvent appelé struct, son mot clé C#. Cette section fournit des instructions pour la conception générale des structs.
 
  ❌ NE fournissez pas de constructeur sans paramètre pour un struct.

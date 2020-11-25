@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9cd2fe75-408a-400f-a6b1-9979624a2fe2
 topic_type:
 - apiref
-ms.openlocfilehash: a04f72fff9a88c8689821131b08b35500c23b3d9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6fbd009b5785c5dc78df81e4411fbdf8e8eadf71
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503352"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730329"
 ---
 # <a name="icorprofilercallbackmoduleloadstarted-method"></a>ICorProfilerCallback::ModuleLoadStarted, méthode
+
 Notifie le profileur qu’un module est en cours de chargement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT ModuleLoadStarted(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  dans ID du module en cours de chargement.  
   
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `moduleId` n’est pas valide pour une demande d’informations tant que la méthode [ICorProfilerCallback :: ModuleLoadFinished](icorprofilercallback-moduleloadfinished-method.md) n’est pas appelée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

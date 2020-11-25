@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc07232b-b2e4-4dab-87e2-3c955974ab48
 topic_type:
 - apiref
-ms.openlocfilehash: a05cfb43b5b4a328d22c4df04049a7fa156ca080
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 54dfa2741d3b4c1b2eada75ee8d214a2d0b250a0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841930"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730771"
 ---
 # <a name="ihostthreadpoolmanagergetminthreads-method"></a>IHostThreadPoolManager::GetMinThreads, méthode
+
 Obtient le nombre minimal de threads inactifs que l’hôte gère dans le pool de threads en prévision des demandes.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetMinThreads (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `MinThreads`  
  à Pointeur vers le nombre minimal de threads de travail inactifs que l’hôte gère actuellement.  
   
@@ -41,7 +43,7 @@ HRESULT GetMinThreads (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetMinThreads`retourné avec succès.|  
+|S_OK|`GetMinThreads` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,14 +52,16 @@ HRESULT GetMinThreads (
 |E_NOTIMPL|L’hôte ne fournit pas d’implémentation de `GetMinThreads` .|  
   
 ## <a name="remarks"></a>Remarques  
+
  L’hôte n’est pas requis pour fournir une implémentation de `GetMinThreads` . Dans ce cas, elle doit retourner une valeur HRESULT de E_NOTIMPL.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

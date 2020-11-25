@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fb8c14f7-d461-43d1-8b47-adb6723b9b93
 topic_type:
 - apiref
-ms.openlocfilehash: 517e0ae7fb5d5151f94f82d9146ebbf40bad2ef9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8e88d90e3291d21888fae7aa162f84b6377658c5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503859"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730017"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo, structure
+
 Fournit des détails sur l' `Event_MDAFired` événement, qui déclenche la création d’un Assistant Débogage managé (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ typedef struct _MDAInfo {
 |`lpMDAMessage`|Message de sortie fourni par l’Assistant Débogage managé actuel.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Les Assistants Débogage managé (MDA) sont des aides au débogage qui fonctionnent conjointement avec le common language runtime (CLR) pour effectuer des tâches telles que l’identification de conditions non valides dans le moteur d’exécution du runtime ou le vidage d’informations supplémentaires sur l’état du moteur. Les MDA génèrent des messages XML sur les événements qui, sinon, sont difficiles à intercepter. Ils sont particulièrement utiles pour déboguer des transitions entre du code managé et du code non managé.  
   
  Le Runtime effectue les étapes suivantes lorsqu’un événement qui déclenche la création d’un Assistant Débogage managé est déclenché :  
@@ -52,15 +54,16 @@ typedef struct _MDAInfo {
  L’hôte peut choisir d’activer les MDA et de recevoir une notification lorsqu’un Assistant Débogage managé est activé. Cela donne à l’hôte la possibilité de substituer le comportement par défaut et d’abandonner le thread managé qui a déclenché l’événement, afin de l’empêcher de corrompre l’état du processus. Pour plus d’informations sur l’utilisation des MDA, consultez [diagnostic des erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Structures d'hébergement](hosting-structures.md)
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
