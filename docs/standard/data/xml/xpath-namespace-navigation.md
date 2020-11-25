@@ -2,19 +2,21 @@
 title: Navigation entre espaces de noms XPath
 ms.date: 03/30/2017
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
-ms.openlocfilehash: 4d2ef71a41d19fd5bb573afab66dc8a15e19c393
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d5350f0c8f73c5efb0f7d9e4c492a841b4978c36
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831206"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720891"
 ---
 # <a name="xpath-namespace-navigation"></a>Navigation entre espaces de noms XPath
+
 Pour utiliser les requêtes XPath avec des documents XML, vous devez adresser correctement les espaces de noms XML et les éléments contenus dans ces espaces de noms. Les espaces de noms empêchent toute ambiguïté pouvant survenir lorsque des noms sont utilisés dans plusieurs contextes ; par exemple, le nom `ID` peut faire référence à plusieurs identificateurs associés à différents éléments d'un document XML. La syntaxe des espaces de noms spécifie des URI, des noms et des préfixes qui distinguent les éléments d'un document XML.  
   
  L'exemple fourni dans cette rubrique illustre l'utilisation des préfixes pour la navigation dans un document XML avec <xref:System.Xml.XPath.XPathNavigator>. Pour plus d’informations sur les espaces de noms et la syntaxe, consultez [fichiers XML : présentation des espaces de noms XML](/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
   
 ## <a name="namespace-declarations"></a>Déclarations d'espace de noms  
+
  Les déclarations d'espaces de noms permettent de distinguer et d'adresser les éléments d'un document XML lors de l'utilisation d'une instance de <xref:System.Xml.XPath.XPathNavigator>. Les préfixes d'espaces de noms fournissent une syntaxe courte pour l'adressage des espaces de noms.  
   
  Les préfixes sont définis par la forme : `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` Dans cette syntaxe, le préfixe « `e` » est une abréviation de l'URI formel de l'espace de noms. Vous pouvez identifier l'élément `Body` en tant que membre de l'espace de noms `Envelope` à l'aide de la syntaxe suivante : `e:Body`.  
@@ -35,6 +37,7 @@ Pour utiliser les requêtes XPath avec des documents XML, vous devez adresser co
 ```  
   
 ## <a name="navigation-by-namespace-prefix"></a>Navigation par préfixe d'espace de noms  
+
  Le code fourni dans cette section utilise les objets <xref:System.Xml.XPath.XPathNavigator> et <xref:System.Xml.XmlNamespaceManager> pour sélectionner l'élément `Search` à partir du document XML dans la section précédente. La requête `xpath` inclut des préfixes d’espaces de noms dans chaque élément du chemin d’accès. La spécification de l'identité précise des espaces de noms qui contiennent chaque élément permet d'assurer une navigation correcte jusqu'à l'élément `Search` par la méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>.  
   
 ```csharp  

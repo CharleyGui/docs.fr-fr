@@ -6,17 +6,19 @@ helpviewer_keywords:
 - unmanaged API reference [.NET Framework], diagnostics symbol store
 - native API reference [.NET Framework], diagnostics symbol store
 ms.assetid: ee1fbb7a-b0f9-482f-8cd0-6df37e6586a2
-ms.openlocfilehash: 044ed9caaf0633e84c783103a338891017fd1ac1
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: f53c9dfce6b2e962a355fedf805e612345b4f381
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442096"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720072"
 ---
 # <a name="diagnostics-symbol-store-unmanaged-api-reference"></a>Magasin de symboles de diagnostics (Informations de référence sur les API non managées)
+
 L'API du magasin de symboles des diagnostics permet à un compilateur de générer des informations de symbole utilisables par un débogueur.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Interfaces du magasin de symboles de diagnostics](diagnostics-symbol-store-interfaces.md)  
  Décrit les interfaces non managées que l'API du magasin de symboles des diagnostics utilise.  
   

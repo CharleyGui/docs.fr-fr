@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: df7083d2-fd43-44c7-9ce5-912c25cef0ff
 topic_type:
 - apiref
-ms.openlocfilehash: bab52d9179d7454cab4a47e1a2bfe80a49b00c2a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f365a95b0859f4f97dab96ec85af6d7dfb96d8e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502832"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721614"
 ---
 # <a name="icorprofilerinfo3getfunctionleave3info-method"></a>ICorProfilerInfo3::GetFunctionLeave3Info, méthode
+
 Fournit le frame de pile et la valeur de retour de la fonction qui est signalée au profileur par la fonction [FunctionLeave3WithInfo](functionleave3withinfo-function.md) . Cette méthode peut être appelée uniquement pendant le rappel de `FunctionLeave3WithInfo`.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,8 +37,9 @@ HRESULT GetFunctionLeave3Info(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `functionId`  
- dans `FunctionID`De la fonction qui retourne.  
+ dans `FunctionID` De la fonction qui retourne.  
   
  `eltInfo`  
  [in] Handle opaque qui représente des informations sur un frame de pile donné. Le profileur doit fournir le même `eltInfo` fourni au profileur par la fonction [FunctionLeave3WithInfo](functionleave3withinfo-function.md) .  
@@ -51,6 +53,7 @@ HRESULT GetFunctionLeave3Info(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

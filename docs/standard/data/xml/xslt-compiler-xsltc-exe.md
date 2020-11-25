@@ -2,19 +2,20 @@
 title: XSLT Compiler (xsltc.exe)
 ms.date: 03/30/2017
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-ms.openlocfilehash: cfeebc3ac0c0259c975439dc93c3c5f003b60c40
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 89e2291cb4eafe9ca9e5001061b960f348fe4719
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818321"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720826"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
+
 Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. La feuille de style compilée peut être passée directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Vous ne pouvez pas générer d'assemblys signés avec xsltc.exe.  
   
  L’outil xsltc.exe est inclus dans Visual Studio. Pour plus d’informations, consultez les [Téléchargements Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]  
@@ -40,7 +41,8 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`@` `file`|Vous permet de spécifier un fichier qui contient les options du compilateur.|  
 |`?`|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Les solutions XSLT peuvent être constituées de plusieurs modules de feuilles de style. L'outil xsltc.exe génère des assemblys à partir des feuilles de style. Les assemblys peuvent ensuite être passés dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Cela peut permettre de réduire le coût des performances dans certains scénarios de déploiement XSLT.  
   
 > [!NOTE]
@@ -49,6 +51,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
  L’outil xsltc.exe ne valide pas les noms de classe (`/class:`*nom*) ou les noms d’assembly (`/out:`*nom_assembly*). Si les noms ne sont pas valides, le Common Language Runtime lève des erreurs.  
   
 ## <a name="examples"></a>Exemples  
+
  La commande suivante compile la feuille de style et crée un assembly nommé booksort.dll.  
   
 ```console  

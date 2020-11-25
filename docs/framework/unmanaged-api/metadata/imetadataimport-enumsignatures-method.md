@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0d65060-6f90-42a2-95cf-6ffb04352996
 topic_type:
 - apiref
-ms.openlocfilehash: 652ebf1be6a58e08da27aaed5b2e84a8f2aee98a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3021124184ab0491337a07144e6f77b5bfea3681
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503768"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721970"
 ---
 # <a name="imetadataimportenumsignatures-method"></a>IMetaDataImport::EnumSignatures, méthode
+
 Énumère les jetons Signature représentant des signatures autonomes dans la portée actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT EnumSignatures (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
@@ -53,18 +55,20 @@ HRESULT EnumSignatures (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumSignatures`retourné avec succès.|  
+|`S_OK`|`EnumSignatures` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcSignatures` est égal à zéro.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Les jetons de signature sont créés par la méthode [IMetaDataEmit :: GetTokenFromSig,](imetadataemit-gettokenfromsig-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a9f7f824-64a1-408d-8607-91c7f19d21fe
 topic_type:
 - apiref
-ms.openlocfilehash: fbaf45da0902ded8a2f7bf0d470aaed3b5f531aa
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: da0d159da6eef7745c1fa7f7320d5e1355f6e413
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617124"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721879"
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess, fonction
+
 Obtient le numéro de version du common language runtime (CLR) associé au handle de processus spécifié.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -39,6 +40,7 @@ HRESULT GetVersionFromProcess (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hProcess`  
  dans Handle d’un processus.  
   
@@ -51,22 +53,24 @@ HRESULT GetVersionFromProcess (
  `pdwLength`  
  à Pointeur vers la longueur de la chaîne de numéro de version.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`pVersion`a la valeur null et `cchBuffer` n’est pas null, ou vice versa.<br /><br /> -ou-<br /><br /> `hProcess`n’est pas un handle valide pour un processus.<br /><br /> -ou-<br /><br /> Le CLR n’est pas chargé.|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer`est null ou inférieur à la longueur de la chaîne de version.|  
+|E_INVALIDARG|`pVersion` a la valeur null et `cchBuffer` n’est pas null, ou vice versa.<br /><br /> - ou -<br /><br /> `hProcess` n’est pas un handle valide pour un processus.<br /><br /> - ou -<br /><br /> Le CLR n’est pas chargé.|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` est null ou inférieur à la longueur de la chaîne de version.|  
 |E_NOTIMPL|Cette méthode n’est pas disponible sur le système d’exploitation Microsoft Windows 95, Microsoft Windows 98 ou Microsoft Windows Millennium Edition.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

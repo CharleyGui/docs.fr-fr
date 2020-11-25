@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f1f6b8f3-dcfc-49e8-be76-ea50ea90d5a7
 topic_type:
 - apiref
-ms.openlocfilehash: d2b7e93866bf0aa79849925234a4d6e4cc9b5b52
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2213b674cce27c77156b8de1bbf20d2975e3e55c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502819"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721593"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2, méthode
+
 Étant donné un ID de module, retourne le nom de fichier du module, l'ID de l'assembly parent du module et un masque de bits qui décrit les propriétés du module.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT GetModuleInfo2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  [in] ID du module pour lequel les informations sont récupérées.  
   
@@ -62,6 +64,7 @@ HRESULT GetModuleInfo2(
  à Masque de masque des valeurs de l’énumération [COR_PRF_MODULE_FLAGS](cor-prf-module-flags-enumeration.md) qui spécifient les propriétés du module.  
   
 ## <a name="remarks"></a>Remarques  
+
  Pour les modules dynamiques, le paramètre `szName` est le nom de métadonnées du module et l'adresse de base est 0 (zéro). Le nom de métadonnées est la valeur figurant dans la colonne Nom de la table Module dans les métadonnées. Cela est également exposé en tant que <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> propriété au code managé, et en tant que `szName` paramètre de la méthode [IMetaDataImport :: GetScopeProps,](../metadata/imetadataimport-getscopeprops-method.md) au code client des métadonnées non managées.  
   
  Bien que la `GetModuleInfo2` méthode puisse être appelée dès que l’ID du module existe, l’ID de l’assembly parent n’est pas disponible tant que le profileur n’a pas reçu le rappel [ICorProfilerCallback :: ModuleAttachedToAssembly,](icorprofilercallback-moduleattachedtoassembly-method.md) .  
@@ -71,6 +74,7 @@ HRESULT GetModuleInfo2(
  Vous pouvez également commencer par appeler `GetModuleInfo2` avec un tampon `szName` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite affecter à la taille de la mémoire tampon la valeur retournée dans `pcchName` et rappeler `GetModuleInfo2`.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

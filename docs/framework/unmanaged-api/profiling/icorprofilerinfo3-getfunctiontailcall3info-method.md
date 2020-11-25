@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: afdb5ac9-5bf5-4b91-b7cb-f81db23d7da3
 topic_type:
 - apiref
-ms.openlocfilehash: e4d0d9ed07c707e51e5833483b71079f2c330505
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 27bbb1aac376866be7458a3737af9d89bf761411
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496527"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721607"
 ---
 # <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a>ICorProfilerInfo3::GetFunctionTailcall3Info, méthode
+
 Fournit le frame de pile de la fonction qui est signalée au profileur par la fonction [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md) . Cette méthode peut être appelée uniquement pendant le rappel de `FunctionTailcall3WithInfo`.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,8 +36,9 @@ HRESULT GetFunctionTailcall3Info(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `functionId`  
- dans `FunctionID`De la fonction qui retourne.  
+ dans `FunctionID` De la fonction qui retourne.  
   
  `eltInfo`  
  [in] Handle opaque qui représente des informations sur un frame de pile donné. Le profileur doit fournir la même `eltInfo` valeur que celle donnée au profileur par la `FunctionTailcall3WithInfo` fonction.  
@@ -47,6 +49,7 @@ HRESULT GetFunctionTailcall3Info(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

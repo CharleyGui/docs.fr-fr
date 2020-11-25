@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: e88a844a7f79f14c717a5966b345588b3b3b9f81
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 39235c5c26cb168dfc995de97f72b80dccb6b818
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609415"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720293"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2, méthode
+
 Ouvre une méthode et fournit son décalage de section réel dans l’image.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT OpenMethod2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `method`  
  dans Jeton de métadonnées de la méthode à ouvrir.  
   
@@ -44,10 +46,12 @@ HRESULT OpenMethod2(
  `offset`  
  dans Décalage dans l’image.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

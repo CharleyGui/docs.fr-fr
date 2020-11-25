@@ -6,17 +6,19 @@ helpviewer_keywords:
 - enumerations [.NET Framework hosting]
 - hosting enumerations [.NET Framework]
 ms.assetid: e09131eb-1f7d-4f52-ae42-7393e9b62ef6
-ms.openlocfilehash: 8edace3191ee4477b19f199d5db6c891c993dcd5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 907b1343ddbfa28b97ac2210e28b99cd38aa6fd4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504301"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721827"
 ---
 # <a name="hosting-enumerations"></a>Énumérations d'hébergement
+
 Cette section décrit les énumérations non managées utilisées par l’API d’hébergement.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [CLSID_RESOLUTION_FLAGS, énumération](clsid-resolution-flags-enumeration.md)  
  Contient des valeurs qui indiquent comment le common language runtime (CLR) doit résoudre un `CLSID` .  
   
@@ -83,7 +85,7 @@ Cette section décrit les énumérations non managées utilisées par l’API d�
  [HOST_TYPE, énumération](host-type-enumeration.md)  
  Contient des valeurs qui spécifient le type d’hôte qui lance une application.  
   
- [MALLOC_TYPE, énumération](malloc-type-enumeration.md)  
+ [MALLOC_TYPE (énumération)](malloc-type-enumeration.md)  
  Contient des valeurs qui spécifient les caractéristiques de la mémoire qui est allouée.  
   
  [METAHOST_CONFIG_FLAGS, énumération](metahost-config-flags-enumeration.md)  
@@ -108,6 +110,7 @@ Cette section décrit les énumérations non managées utilisées par l’API d�
  Indique l’action qu’un hôte doit effectuer si une opération demandée par le CLR est bloquée.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Hébergement des coclasses](hosting-coclasses.md)  
   
  [Interfaces d'hébergement](hosting-interfaces.md)  

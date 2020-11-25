@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 85667d38-611c-45a9-938d-930ac7a7b681
 topic_type:
 - apiref
-ms.openlocfilehash: 9990daea1b097532de53684921d3f10c520a3b1a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 9cf5f3d926c1e742dd9134e7bf292df53e1a4909
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720176"
 ---
 # <a name="imetadataassemblyemitsetfileprops-method"></a>IMetaDataAssemblyEmit::SetFileProps, méthode
+
 Modifie la structure de métadonnées `File` spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT SetFileProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `file`  
  dans Jeton de métadonnées qui spécifie la `File` structure de métadonnées à modifier.  
   
@@ -50,14 +52,16 @@ HRESULT SetFileProps (
  dans Combinaison d’opérations de bits de valeurs [CorFileFlags,](corfileflags-enumeration.md) qui spécifient différents attributs du fichier.  
   
 ## <a name="remarks"></a>Remarques  
+
  Pour créer une `File` structure de métadonnées, utilisez la méthode [IMetaDataAssemblyEmit ::D efinefile](imetadataassemblyemit-definefile-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

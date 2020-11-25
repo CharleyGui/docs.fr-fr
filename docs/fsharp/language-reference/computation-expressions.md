@@ -4,12 +4,12 @@ description: 'Découvrez comment créer une syntaxe pratique pour écrire des ca
 ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: bc3842b6f1075d68d1997e78c8bd8485731fca52
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812157"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705304"
 ---
 # <a name="computation-expressions"></a>Expressions de calcul
 
@@ -181,7 +181,7 @@ Contrairement `yield` `yield!` à, doit être spécifié explicitement. Son comp
 Le `return` mot clé encapsule une valeur dans le type correspondant à l’expression de calcul. Outre les expressions de calcul utilisant `yield` , il est utilisé pour « terminer » une expression de calcul :
 
 ```fsharp
-let req = // 'req' is of type is 'Async<data>'
+let req = // 'req' is of type 'Async<data>'
     async {
         let! data = fetch url
         return data
@@ -198,7 +198,7 @@ let result = Async.RunSynchronously req
 Le `return!` mot clé réalise la valeur d’une expression de calcul et encapsule le résultat dans le type correspondant à l’expression de calcul :
 
 ```fsharp
-let req = // 'req' is of type is 'Async<data>'
+let req = // 'req' is of type 'Async<data>'
     async {
         return! fetch url
     }

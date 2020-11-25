@@ -2,14 +2,15 @@
 title: Chargement de données à partir d'un lecteur
 ms.date: 03/30/2017
 ms.assetid: 7e74918c-bc72-4977-a49b-e1520a6d8f60
-ms.openlocfilehash: ea125e57dd6251a4fbd401bac8f37826083965b8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 345b6e35c84fe531e131d27bd09fbd8a87b4521a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822670"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720137"
 ---
 # <a name="load-data-from-a-reader"></a>Chargement de données à partir d'un lecteur
+
 Si un document XML est chargé à l'aide de la méthode <xref:System.Xml.XmlDocument.Load%2A> et d'un paramètre d'objet <xref:System.Xml.XmlReader>, il existe des différences entre le comportement qui se produit et celui du chargement de données d'autres formats. Si le lecteur est dans son état initial, <xref:System.Xml.XmlDocument.Load%2A> utilise l'ensemble du contenu du lecteur et crée le DOM (Document Object Model) XML à partir de toutes les données du lecteur.  
   
  Si le lecteur est déjà positionné sur un nœud du document et s’il est ensuite transmis à la méthode <xref:System.Xml.XmlDocument.Load%2A>, <xref:System.Xml.XmlDocument.Load%2A> essaie de lire le nœud actuel et tous ses frères, jusqu’à l’étiquette finale qui clôture la profondeur actuelle en mémoire. La réussite de la tentative <xref:System.Xml.XmlDocument.Load%2A> dépend du nœud sur lequel le lecteur est situé au moment du chargement, tandis que <xref:System.Xml.XmlDocument.Load%2A> vérifie que le XML provenant du lecteur est correctement construit. Si le XML n'est pas correctement construit, <xref:System.Xml.XmlDocument.Load%2A> lève une exception. Par exemple, la collection de nœuds suivante comporte deux éléments de niveau racine, le XML n'est pas correctement construit et <xref:System.Xml.XmlDocument.Load%2A> lève une exception.  

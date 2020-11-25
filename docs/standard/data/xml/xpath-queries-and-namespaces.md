@@ -6,19 +6,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-ms.openlocfilehash: a97ff5afef23c361b1f675d2f07f43b3bc5df299
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 74dbe6b84c8d9400790f763f811da5542c732892
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818386"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720878"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Requêtes et espaces de noms XPath
+
 Les requêtes XPath reconnaissent les espaces de noms d’un document XML et peuvent utiliser les préfixes d’espace de noms pour qualifier des noms d’éléments et d’attributs. Le fait de qualifier des noms d’éléments et d’attributs avec un préfixe d’espace de noms permet de limiter les nœuds retournés par une requête XPath aux nœuds qui appartiennent à un espace de noms spécifique.  
   
  Par exemple, si le préfixe `books` correspond à l’espace de noms `http://www.contoso.com/books`, la requête XPath suivante `/books:books/books:book` sélectionne uniquement les éléments `book` se trouvant dans l’espace de noms `http://www.contoso.com/books`.  
   
 ## <a name="the-xmlnamespacemanager"></a>La classe XmlNamespaceManager  
+
  Pour qu'il soit possible d'utiliser des espaces de noms dans une requête XPath, un objet dérivé de l'interface <xref:System.Xml.IXmlNamespaceResolver> comme la classe <xref:System.Xml.XmlNamespaceManager> est construit avec l'URI d'espace de noms et le préfixe à utiliser dans la requête XPath.  
   
  L'objet <xref:System.Xml.XmlNamespaceManager> peut être utilisé dans la requête de chacune des manières suivantes.  
@@ -36,6 +38,7 @@ Les requêtes XPath reconnaissent les espaces de noms d’un document XML et peu
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
 ### <a name="the-default-namespace"></a>L'espace de noms par défaut  
+
  Dans le document XML suivant, l'espace de noms par défaut, avec un préfixe vide, est utilisé pour déclarer l'espace de noms `http://www.contoso.com/books`.  
   
 ```xml  

@@ -6,17 +6,19 @@ helpviewer_keywords:
 - unmanaged structures [.NET Framework], hosting
 - structures [.NET Framework hosting]
 ms.assetid: 492e010f-7493-4134-9505-f7008ccdaae6
-ms.openlocfilehash: fb117352299a93aface6e58837307284ec4b8340
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9d0349e4801c550731b6d126197003917c4a46e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616084"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721788"
 ---
 # <a name="hosting-structures"></a>Structures d'hébergement
+
 Cette section décrit les structures non managées utilisées par l’API d’hébergement.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [AssemblyBindInfo, structure](assemblybindinfo-structure.md)  
  Fournit des informations détaillées sur l’assembly référencé.  
   
@@ -42,6 +44,7 @@ Cette section décrit les structures non managées utilisées par l’API d’h�
  Stocke le type de dépassement qui s’est produit et les informations sur l’exception levée en raison du dépassement de capacité.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Hébergement des coclasses](hosting-coclasses.md)  
   
  [Interfaces d'hébergement](hosting-interfaces.md)  

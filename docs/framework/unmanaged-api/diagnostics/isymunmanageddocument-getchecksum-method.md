@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9bc881b3-e2ce-48a7-ad69-17eaaa304120
 topic_type:
 - apiref
-ms.openlocfilehash: 543bd208e5492460435663c32f276472a763f613
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 4030da31400b7075952d146e5d6740306863e9ad
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441095"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721086"
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum, méthode
+
 Obtient la somme de contrôle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetCheckSum(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cData`  
  dans Longueur de la mémoire tampon fournie par le `data` paramètre.  
   
@@ -44,7 +46,8 @@ HRESULT GetCheckSum(
  `data`  
  à Mémoire tampon qui reçoit la somme de contrôle.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, un code d’erreur.  
   
 ## <a name="see-also"></a>Voir aussi

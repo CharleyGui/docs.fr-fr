@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d9d7600e-a8f5-443a-96de-67d26e130f2d
 topic_type:
 - apiref
-ms.openlocfilehash: f81ef3f5959e279b3fbbd94d6c5e8a2d86a38e7f
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 9049cd42e9c10cdcff62b005094b56c9df9ce975
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442018"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719994"
 ---
 # <a name="inotifysink2onsynccallexit-method"></a>INotifySink2::OnSyncCallExit, méthode
+
 Est appelé lors de la sortie d’un appel.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT OnSyncCallExit
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `in_CallID`  
  dans ID de l’appel en cours de sortie. Consultez [call_id structure](call-id-structure.md).  
   
@@ -46,10 +48,12 @@ HRESULT OnSyncCallExit
  `out_pBufferSize`  
  à Taille de la mémoire tampon d’appel, en octets.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi

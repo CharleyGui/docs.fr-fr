@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 70f07c9e-0614-4bee-ac34-09fe6c51c5a9
 topic_type:
 - apiref
-ms.openlocfilehash: 6f66e4a903be2e9b12a573f74638a62c58005689
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 609cd557db71fac53aadf613534a23e988b14bde
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82893452"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720754"
 ---
 # <a name="icordebugcode3-interface"></a>ICorDebugCode3, interface
+
 Fournit une méthode qui étend « ICorDebugCode » et « ICorDebugCode2 » pour fournir des informations sur une valeur de retour managée.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,13 @@ Fournit une méthode qui étend « ICorDebugCode » et « ICorDebugCode2 » 
 |------------|-----------------|  
 |[GetReturnValueLiveOffset, méthode](icordebugcode3-getreturnvalueliveoffset-method.md)|Pour un offset IL spécifié, obtient les offsets natifs où un point d’arrêt doit être placé afin que le débogueur puisse obtenir la valeur de retour d’une fonction.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -9,40 +9,40 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-ms.openlocfilehash: 714715968388325713a12027fb0ab89415e1d60c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f8830b13cb64c737525f5399beb244aeb6d9817f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544282"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721892"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Outil d'optimisation guidée par profil managé)
 
-L’outil d’optimisation guidée par profil managé (Mpgo.exe) est un outil en ligne de commande qui utilise des scénarios d’utilisateurs finaux communs afin d’optimiser les assemblys d’images natives créés par le [générateur d’images natives (Ngen.exe)](ngen-exe-native-image-generator.md). Cet outil vous permet d’exécuter les scénarios de formation qui génèrent des données de profil. Le [générateur d’images natives (Ngen.exe)](ngen-exe-native-image-generator.md) utilise ces données pour optimiser ses assemblys d’applications d’images natives générées. Un scénario de formation est une tentative d’exécution d’une utilisation prévue de votre application. Mpgo.exe est disponible dans Visual Studio Ultimate 2012 Ultimate et versions ultérieures. À partir de Visual Studio 2013, vous pouvez également utiliser Mpgo.exe pour optimiser les applications du Windows 8. x Store.  
-  
-L'optimisation guidée par profil améliore le temps de démarrage de l'application, l'utilisation de la mémoire (taille de la plage de travail), et le débit en collectant les données des scénarios d'apprentissage et en les utilisant pour optimiser la disposition des images natives.  
-  
-Lorsque vous rencontrez des problèmes de performance en matière de temps de démarrage et de taille de la plage de travail pour les assemblys Intermediate Language (IL), il est recommandé d'utiliser d'abord Ngen.exe pour éliminer les coûts de compilation juste-à-temps et de simplifier le partage de code. Si vous avez besoin d'autres améliorations, vous pouvez utiliser ensuite Mpgo.exe pour optimiser davantage votre application. Vous pouvez utiliser les données de performance des assemblys d'images natives non optimisés comme une référence pour évaluer les gains de performance. L'utilisation de Mpgo.exe peut entraîner des temps de démarrage à froid plus rapides et une plus petite taille de la plage de travail. Mpgo.exe ajoute des informations aux assemblys IL que Ngen.exe utilise pour créer des assemblys optimisés d'images natives. Pour plus d’informations, consultez l’entrée [Improving Launch Performance for your Desktop Applications](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/) dans le blog .NET.  
-  
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec les informations d’identification d’administrateur, puis tapez la commande suivante à l’invite de commandes. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
-  
-Pour les applications de bureau :  
-  
-```console  
-mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <assembly2> ... -OutDir <directory> [options]  
-```  
-  
-Pour les applications du Windows 8. x Store :  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```console  
-mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>  
-```  
-  
-## <a name="parameters"></a>Paramètres  
- Tous les arguments à Mpgo.exe sont insensibles à la casse. Les commandes sont préfixées avec un tiret.  
-  
+L’outil d’optimisation guidée par profil managé (Mpgo.exe) est un outil en ligne de commande qui utilise des scénarios d’utilisateurs finaux communs afin d’optimiser les assemblys d’images natives créés par le [générateur d’images natives (Ngen.exe)](ngen-exe-native-image-generator.md). Cet outil vous permet d’exécuter les scénarios de formation qui génèrent des données de profil. Le [générateur d’images natives (Ngen.exe)](ngen-exe-native-image-generator.md) utilise ces données pour optimiser ses assemblys d’applications d’images natives générées. Un scénario de formation est une tentative d’exécution d’une utilisation prévue de votre application. Mpgo.exe est disponible dans Visual Studio Ultimate 2012 Ultimate et versions ultérieures. À partir de Visual Studio 2013, vous pouvez également utiliser Mpgo.exe pour optimiser les applications du Windows 8. x Store.
+
+L'optimisation guidée par profil améliore le temps de démarrage de l'application, l'utilisation de la mémoire (taille de la plage de travail), et le débit en collectant les données des scénarios d'apprentissage et en les utilisant pour optimiser la disposition des images natives.
+
+Lorsque vous rencontrez des problèmes de performance en matière de temps de démarrage et de taille de la plage de travail pour les assemblys Intermediate Language (IL), il est recommandé d'utiliser d'abord Ngen.exe pour éliminer les coûts de compilation juste-à-temps et de simplifier le partage de code. Si vous avez besoin d'autres améliorations, vous pouvez utiliser ensuite Mpgo.exe pour optimiser davantage votre application. Vous pouvez utiliser les données de performance des assemblys d'images natives non optimisés comme une référence pour évaluer les gains de performance. L'utilisation de Mpgo.exe peut entraîner des temps de démarrage à froid plus rapides et une plus petite taille de la plage de travail. Mpgo.exe ajoute des informations aux assemblys IL que Ngen.exe utilise pour créer des assemblys optimisés d'images natives. Pour plus d’informations, consultez l’entrée [Improving Launch Performance for your Desktop Applications](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/) dans le blog .NET.
+
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec les informations d’identification d’administrateur, puis tapez la commande suivante à l’invite de commandes. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
+
+Pour les applications de bureau :
+
+```console
+mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <assembly2> ... -OutDir <directory> [options]
+```
+
+Pour les applications du Windows 8. x Store :
+
+## <a name="syntax"></a>Syntaxe
+
+```console
+mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
+```
+
+## <a name="parameters"></a>Paramètres
+ Tous les arguments à Mpgo.exe sont insensibles à la casse. Les commandes sont préfixées avec un tiret.
+
 > [!NOTE]
 > Vous pouvez utiliser `–Scenario` ou `–Import` comme commande obligatoire, mais pas les deux. Aucun des paramètres requis n'est utilisé si vous spécifiez l'option `–Reset`.
 
@@ -64,7 +64,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 |`-LeaveNativeImages`|Spécifie que les images natives instrumentées ne doivent pas être supprimées après l'exécution du scénario. Cette option est principalement utilisée lorsque vous exécutez l'application que avez spécifiée pour le scénario. Cela empêchera la recréation d'images natives pour les exécutions suivantes de Mpgo.exe. Lorsque vous avez terminé d'exécuter votre application, il peut y avoir des images natives orphelines dans le cache si vous spécifiez cette option. Dans ce cas, exécutez Mpgo.exe avec le même scénario et la même liste des assemblys, et utilisez le paramètre `–RemoveNativeImages` pour supprimer ces images natives.|
 |`-RemoveNativeImages`|Nettoie dans une exécution où `–LeaveNativeImages` a été spécifié. Si vous spécifiez `-RemoveNativeImages`, Mpgo.exe ignore tous les arguments sauf `-64bit` et `–AssemblyList`, et s'arrête après avoir supprimé toutes les images natives instrumentées.|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
  Vous pouvez utiliser `–AssemblyList` et `- AssemblyListFile` plusieurs fois sur la ligne de commande.
 
  Si vous ne spécifiez pas de chemins d'accès complets en spécifiant des assemblys, Mpgo.exe recherche dans le répertoire actif. Si vous spécifiez un chemin d'accès incorrect, Mpgo.exe affiche un message d'erreur mais continue à générer des données pour les autres assemblys. Si vous spécifiez un assembly qui n'est pas chargé pendant le scénario d'apprentissage, aucune donnée d'apprentissage n'est générée pour cet assembly.
@@ -74,60 +74,60 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
  L'utilisation de Ngen.exe et de Mpgo.exe est recommandée uniquement pour les grandes applications managées, car l'avantage des images natives précompilées est généralement uniquement observé dans le cadre d'élimination de compilations JIT importantes au moment de l'exécution. L’exécution de Mpgo.exe sur des applications de style « Hello World » qui ne sollicitent pas trop le jeu de travail ne présente aucun avantage et Mpgo.exe peut même échouer à rassembler des données de profil.
 
 > [!NOTE]
-> Ngen.exe et Mpgo.exe ne sont pas recommandés pour les applications ASP.NET et pour les services Windows Communication Foundation (WCF).  
-  
-## <a name="to-use-mpgoexe"></a>Pour utiliser Mpgo.exe  
-  
-1. Utilisez un ordinateur sur lequel Visual Studio Ultimate 2012 et votre application sont installés.  
-  
-2. Exécutez Mpgo.exe en tant qu'administrateur avec les paramètres nécessaires.  Consultez la section suivante pour les exemples de commande.  
-  
-     Les assemblys IL (Intermediate Language) optimisés sont créés dans le dossier spécifié par le paramètre `–OutDir` (dans les exemples, il s'agit du dossier `C:\Optimized`).  
-  
-3. Remplacez les assemblys IL que vous avez utilisés pour Ngen.exe par les nouveaux assemblys IL contenant les informations de profil du répertoire spécifié par `–OutDir`.  
-  
-4. La configuration de l'application (à l'aide des images fournies par Mpgo.exe) installera des images natives optimisées.  
-  
-## <a name="suggested-workflow"></a>Flux de travail proposé  
-  
-1. Créez un jeu d'assemblys IL optimisés à l'aide de Mpgo.exe avec le paramètre `–Scenario`.  
-  
-2. Vérifiez les assemblys IL optimisés dans le contrôle de code source.  
-  
-3. Dans le processus de génération, appelez Mpgo.exe avec le paramètre `–Import` comme une étape après génération pour générer des images IL optimisées pour passer à Ngen.exe.  
-  
- Ce processus garantit que tous les assemblys ont des données d'optimisation. Si vous enregistrez des assemblys optimisés mis à jour (étapes 1 et 2) plus fréquemment, les nombres de performance seront plus homogènes durant le développement du produit.  
-  
-## <a name="using-mpgoexe-from-visual-studio"></a>Utiliser Mpgo.exe depuis Visual Studio  
- Vous pouvez exécuter Mpgo.exe depuis Visual Studio (consultez l’article [Guide pratique pour spécifier des événements de build (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) avec les restrictions suivantes :  
-  
-- Vous ne pouvez pas utiliser les chemins d’accès entre guillemets avec des marques de barre oblique finales, car les macros Visual Studio utilisent également des marques de barre oblique finales par défaut. (Par exemple, `–OutDir "C:\Output Folder\"` n’est pas valide.) Pour contourner cette restriction, vous pouvez placer dans une séquence d’échappement la barre oblique finale. (Par exemple, utilisez `-OutDir "$(OutDir)\"` à la place.)  
-  
-- Par défaut, Mpgo.exe n'est pas dans le chemin d'accès de build de Visual Studio. Vous devez soit ajouter le chemin d'accès à Visual Studio, soit spécifier le chemin d'accès complet sur la ligne de commande du Mpgo. Vous pouvez utiliser le paramètre `–Scenario` ou `–Import` dans l'événement après génération dans Visual Studio. Toutefois, le processus habituel consiste à utiliser `–Scenario` une seule fois à partir de l’invite de commandes développeur pour Visual Studio, puis à utiliser `–Import` pour mettre à jour les assemblys optimisés après chaque génération, par exemple : `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.  
-  
+> Ngen.exe et Mpgo.exe ne sont pas recommandés pour les applications ASP.NET et pour les services Windows Communication Foundation (WCF).
+
+## <a name="to-use-mpgoexe"></a>Pour utiliser Mpgo.exe
+
+1. Utilisez un ordinateur sur lequel Visual Studio Ultimate 2012 et votre application sont installés.
+
+2. Exécutez Mpgo.exe en tant qu'administrateur avec les paramètres nécessaires.  Consultez la section suivante pour les exemples de commande.
+
+     Les assemblys IL (Intermediate Language) optimisés sont créés dans le dossier spécifié par le paramètre `–OutDir` (dans les exemples, il s'agit du dossier `C:\Optimized`).
+
+3. Remplacez les assemblys IL que vous avez utilisés pour Ngen.exe par les nouveaux assemblys IL contenant les informations de profil du répertoire spécifié par `–OutDir`.
+
+4. La configuration de l'application (à l'aide des images fournies par Mpgo.exe) installera des images natives optimisées.
+
+## <a name="suggested-workflow"></a>Flux de travail proposé
+
+1. Créez un jeu d'assemblys IL optimisés à l'aide de Mpgo.exe avec le paramètre `–Scenario`.
+
+2. Vérifiez les assemblys IL optimisés dans le contrôle de code source.
+
+3. Dans le processus de génération, appelez Mpgo.exe avec le paramètre `–Import` comme une étape après génération pour générer des images IL optimisées pour passer à Ngen.exe.
+
+ Ce processus garantit que tous les assemblys ont des données d'optimisation. Si vous enregistrez des assemblys optimisés mis à jour (étapes 1 et 2) plus fréquemment, les nombres de performance seront plus homogènes durant le développement du produit.
+
+## <a name="using-mpgoexe-from-visual-studio"></a>Utiliser Mpgo.exe depuis Visual Studio
+ Vous pouvez exécuter Mpgo.exe depuis Visual Studio (consultez l’article [Guide pratique pour spécifier des événements de build (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) avec les restrictions suivantes :
+
+- Vous ne pouvez pas utiliser les chemins d’accès entre guillemets avec des marques de barre oblique finales, car les macros Visual Studio utilisent également des marques de barre oblique finales par défaut. (Par exemple, `–OutDir "C:\Output Folder\"` n’est pas valide.) Pour contourner cette restriction, vous pouvez placer dans une séquence d’échappement la barre oblique finale. (Par exemple, utilisez `-OutDir "$(OutDir)\"` à la place.)
+
+- Par défaut, Mpgo.exe n'est pas dans le chemin d'accès de build de Visual Studio. Vous devez soit ajouter le chemin d'accès à Visual Studio, soit spécifier le chemin d'accès complet sur la ligne de commande du Mpgo. Vous pouvez utiliser le paramètre `–Scenario` ou `–Import` dans l'événement après génération dans Visual Studio. Toutefois, le processus habituel consiste à utiliser `–Scenario` une seule fois à partir de l’invite de commandes développeur pour Visual Studio, puis à utiliser `–Import` pour mettre à jour les assemblys optimisés après chaque génération, par exemple : `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.
+
 <a name="samples"></a>
-## <a name="examples"></a>Exemples  
- La commande Mpgoe.exe suivante d’une invite de commandes développeur pour Visual Studio optimise une application pour les taxes :  
-  
-```console  
-mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15  
-```  
-  
- La commande Mpgo.exe suivante optimise une application pour le son :  
-  
-```console  
-mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15  
-```  
-  
- La commande Mpgo.exe suivante utilise des données d'assemblys précédemment optimisés pour optimiser des versions plus récentes des assemblys :  
-  
-```console  
-mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized  
-```  
-  
+## <a name="examples"></a>Exemples
+ La commande Mpgoe.exe suivante d’une invite de commandes développeur pour Visual Studio optimise une application pour les taxes :
+
+```console
+mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15
+```
+
+ La commande Mpgo.exe suivante optimise une application pour le son :
+
+```console
+mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15
+```
+
+ La commande Mpgo.exe suivante utilise des données d'assemblys précédemment optimisés pour optimiser des versions plus récentes des assemblys :
+
+```console
+mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized
+```
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Ngen.exe (générateur d’images natives)](ngen-exe-native-image-generator.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)
 - [Amélioration des performances de lancement pour vos applications de bureau](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
-- [Vue d’ensemble des améliorations apportées aux performances de .NET 4.5](/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)
+- [Vue d’ensemble des améliorations des performances dans .NET Framework 4,5](/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)

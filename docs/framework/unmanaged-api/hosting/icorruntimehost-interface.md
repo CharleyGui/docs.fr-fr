@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: 420f22a242a20f8bdf5d5b84f47a297a2f503db0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9fcb5e189af9f72de7635aad550a5e8ab5522dbd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546019"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720618"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost, interface
+
 Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter explicitement le common language runtime (CLR) pour créer et configurer des domaines d’application, pour accéder au domaine par défaut et pour énumérer tous les domaines qui s’exécutent dans le processus.  
   
  Dans le .NET Framework version 2,0, cette interface est remplacée par [ICLRRuntimeHost](iclrruntimehost-interface.md).  
@@ -50,7 +51,8 @@ Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter e
 |[SwitchOutLogicalThreadState, méthode](icorruntimehost-switchoutlogicalthreadstate-method.md)|Ne pas utiliser.|  
 |[UnloadDomain, méthode](icorruntimehost-unloaddomain-method.md)|Décharge le domaine d’application spécifié du processus en cours.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
@@ -62,7 +64,7 @@ Fournit des méthodes qui permettent à l’hôte de démarrer et d’arrêter e
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.AppDomain>
-- [Hosting](index.md)
+- [Hébergement](index.md)
 - [ICLRRuntimeHost, interface](iclrruntimehost-interface.md)
 - [Hôtes du runtime](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
 - [Interfaces d'hébergement](hosting-interfaces.md)

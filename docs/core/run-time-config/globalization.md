@@ -3,12 +3,12 @@ title: Paramètres de configuration de la globalisation
 description: En savoir plus sur les paramètres d’exécution qui configurent les aspects de la globalisation d’une application .NET Core, par exemple la façon dont elle analyse les dates japonaises.
 ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 56228e9a6cb6dbab6a22bdc00d11212e1019776b
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: fc98e965093c28b75b9b66e4f1c9f147abd4680e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761965"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721910"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Options de configuration au moment de l’exécution pour la globalisation
 
@@ -20,13 +20,13 @@ ms.locfileid: "83761965"
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Globalization.Invariant` | `false`-accès aux données culturelles<br/>`true`-exécuter en mode invariant |
-| **MSBuild, propriété** | `InvariantGlobalization` | `false`-accès aux données culturelles<br/>`true`-exécuter en mode invariant |
-| **Variable d’environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`-accès aux données culturelles<br/>`1`-exécuter en mode invariant |
+| **runtimeconfig.js** | `System.Globalization.Invariant` | `false` -accès aux données culturelles<br/>`true` -exécuter en mode invariant |
+| **MSBuild, propriété** | `InvariantGlobalization` | `false` -accès aux données culturelles<br/>`true` -exécuter en mode invariant |
+| **Variable d'environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0` -accès aux données culturelles<br/>`1` -exécuter en mode invariant |
 
 ### <a name="examples"></a>Exemples
 
-fichier *runtimeconfig. JSON* :
+*runtimeconfig.jssur le* fichier :
 
 ```json
 {
@@ -58,8 +58,8 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false`-vérifications de plage souples<br/>`true`-les dépassements de capacité provoquent une exception |
-| **Variable d’environnement** | N/A | N/A |
+| **runtimeconfig.js** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false` -vérifications de plage souples<br/>`true` -les dépassements de capacité provoquent une exception |
+| **Variable d'environnement** | N/A | N/A |
 
 ## <a name="japanese-date-parsing"></a>Analyse de date japonaise
 
@@ -69,8 +69,8 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false`-« Gannen » ou « 1 » est pris en charge<br/>`true`seule « 1 » est pris en charge |
-| **Variable d’environnement** | N/A | N/A |
+| **runtimeconfig.js** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false` -« Gannen » ou « 1 » est pris en charge<br/>`true` seule « 1 » est pris en charge |
+| **Variable d'environnement** | N/A | N/A |
 
 ## <a name="japanese-year-format"></a>Format d’année japonaise
 
@@ -80,16 +80,16 @@ Fichier projet :
 
 | | Nom du paramètre | Valeurs |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false`-format comme « gannen »<br/>`true`-format comme nombre |
-| **Variable d’environnement** | N/A | N/A |
+| **runtimeconfig.js** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false` -format comme « gannen »<br/>`true` -format comme nombre |
+| **Variable d'environnement** | N/A | N/A |
 
 ## <a name="nls"></a>NLS
 
 - Détermine si .NET utilise les API de globalisation NLS (National Language Support) ou International Components for Unicode (ICU) pour les applications Windows. .NET 5,0 et les versions ultérieures utilisent les API de globalisation ICU par défaut sur Windows 10 mai 2019 Update et les versions ultérieures.
 - Si vous omettez ce paramètre, .NET utilise les API de globalisation ICU par défaut. Cela équivaut à définir la valeur sur `false` .
-- Pour plus d’informations, consultez [API de globalisation utiliser des bibliothèques ICU sur Windows](../compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+- Pour plus d’informations, consultez [API de globalisation utiliser des bibliothèques ICU sur Windows](../compatibility/globalization/5.0/icu-globalization-api.md).
 
-| | Nom du paramètre | Valeurs | Présent |
+| | Nom du paramètre | Valeurs | Introduit |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.Globalization.UseNls` | `false`-Utiliser les API de globalisation ICU<br/>`true`-Utiliser les API de globalisation NLS | .NET 5,0 |
-| **Variable d’environnement** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false`-Utiliser les API de globalisation ICU<br/>`true`-Utiliser les API de globalisation NLS | .NET 5,0 |
+| **runtimeconfig.js** | `System.Globalization.UseNls` | `false` -Utiliser les API de globalisation ICU<br/>`true` -Utiliser les API de globalisation NLS | .NET 5,0 |
+| **Variable d'environnement** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false` -Utiliser les API de globalisation ICU<br/>`true` -Utiliser les API de globalisation NLS | .NET 5,0 |

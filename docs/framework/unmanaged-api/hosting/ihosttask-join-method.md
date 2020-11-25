@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2cffcc52-19e0-4ced-a440-fc7375078ac9
 topic_type:
 - apiref
-ms.openlocfilehash: 20919bd9889408821cf57817082e3c7d5cebc240
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 37156b03b184d06e0c7b03d7d7a9a018793bbb98
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503913"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721632"
 ---
 # <a name="ihosttaskjoin-method"></a>IHostTask::Join, méthode
+
 Bloque la tâche appelante jusqu’à ce que la tâche représentée par l’instance [IHostTask](ihosttask-interface.md) en cours se termine, que l’intervalle de temps spécifié s’écoule, ou que la méthode [IHostTask :: Alert](ihosttask-alert-method.md) soit appelée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT Join (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `milliseconds`  
  dans Intervalle de temps, en millisecondes, à attendre que la tâche se termine. Si cet intervalle s’écoule avant la fin de la tâche, la tâche appelante est débloquée.  
   
@@ -45,7 +47,7 @@ HRESULT Join (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Join`retourné avec succès.|  
+|S_OK|`Join` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,11 +55,12 @@ HRESULT Join (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

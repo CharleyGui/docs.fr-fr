@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3feb4796-2fab-45ce-beca-6f5bc530b971
 topic_type:
 - apiref
-ms.openlocfilehash: 44f9284f0a89f0941940cf379c48b2b138149122
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c90cd0d21eca6875d3dae32e4ca80cf42e6140b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614940"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720592"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces, méthode
+
 Obtient les espaces de noms définis au niveau de la portée globale dans ce magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetNamespaces (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cNameSpaces`  
  dans Taille du tableau d’espaces de noms.  
   
@@ -46,10 +48,12 @@ HRESULT GetNamespaces (
  `namespaces`  
  à Pointeur vers une variable qui reçoit la liste d’espaces de noms.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3a3a9446-7a4e-4836-9b27-5c536c15993d
 topic_type:
 - apiref
-ms.openlocfilehash: f72a66354bfc907dab7ebc24de515bdfb20ddfb2
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 9840217abdf8b3e1d0917b7447572b6860c181c8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703595"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720306"
 ---
 # <a name="iclrhostbindingpolicymanagerevaluatepolicy-method"></a>ICLRHostBindingPolicyManager::EvaluatePolicy, méthode
+
 Évalue la stratégie de liaison pour le compte de l’hôte.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT EvaluatePolicy (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzReferenceIdentity`  
  dans Référence à l’assembly avant l’évaluation de la stratégie.  
   
@@ -57,7 +59,7 @@ HRESULT EvaluatePolicy (
  `pdwPoliciesApplied`  
  à Pointeur vers une combinaison logique ou de valeurs [EBindPolicyLevels,](ebindpolicylevels-enumeration.md) , indiquant les stratégies qui ont été appliquées.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
@@ -70,15 +72,17 @@ HRESULT EvaluatePolicy (
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois que la méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La `EvaluatePolicy` méthode permet à l’hôte d’influencer la stratégie de liaison pour tenir à jour les exigences en matière de contrôle de version des assemblys spécifiques à l’hôte. Le moteur de stratégie lui-même reste à l’intérieur du CLR.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

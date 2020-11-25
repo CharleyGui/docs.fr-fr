@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c1018789-4206-455d-aacc-2d876fc0d0bb
 topic_type:
 - apiref
-ms.openlocfilehash: c7afe074afb9b38d6fefa1192799120dbb50b403
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 255fe51f86157842a5807145bf7c58ae1ff5ba8a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442057"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720020"
 ---
 # <a name="inotifysink2-interface"></a>INotifySink2, interface
+
 Déclare des méthodes pour la notification du récepteur.  
   
 ## <a name="methods"></a>Méthodes  
@@ -33,7 +34,8 @@ Déclare des méthodes pour la notification du récepteur.
 |[OnSyncCallOut, méthode](inotifysink2-onsynccallout-method.md)|Est appelé quand un appel est en sortie.|  
 |[OnSyncCallReturn, méthode](inotifysink2-onsynccallreturn-method.md)|Est appelé quand un appel est retourné.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi

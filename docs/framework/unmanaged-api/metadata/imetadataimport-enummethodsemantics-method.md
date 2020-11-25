@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e7e3c630-9691-46d6-94df-b5593a7bb08a
 topic_type:
 - apiref
-ms.openlocfilehash: 213cbd955e3d47a49abde579a54af48641e225ec
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3d14aea92633c944d21d867c8152767ae6f1f291
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491912"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720969"
 ---
 # <a name="imetadataimportenummethodsemantics-method"></a>IMetaDataImport::EnumMethodSemantics, méthode
+
 Énumère les propriétés et les événements de modification de propriétés auxquels la méthode spécifiée est associée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumMethodSemantics (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
@@ -57,18 +59,20 @@ HRESULT EnumMethodSemantics (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSemantics`retourné avec succès.|  
+|`S_OK`|`EnumMethodSemantics` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun événement ou propriété à énumérer. Dans ce cas, `pcEventProp` est égal à zéro.|  
   
 ## <a name="remarks"></a>Remarques  
+
  De nombreux types de common language runtime définissent les événements de *propriété* `Changed` et `On` *Property* `Changed` les méthodes de propriétés associées à leurs propriétés. Par exemple, le <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type définit une <xref:System.Windows.Forms.Control.Font%2A> propriété, un <xref:System.Windows.Forms.Control.FontChanged> événement et une <xref:System.Windows.Forms.Control.OnFontChanged%2A> méthode. La méthode d’accesseur Set de la <xref:System.Windows.Forms.Control.Font%2A> propriété appelle la <xref:System.Windows.Forms.Control.OnFontChanged%2A> méthode, qui à son tour déclenche l' <xref:System.Windows.Forms.Control.FontChanged> événement. Vous appelez à `EnumMethodSemantics` l’aide du MethodDef pour <xref:System.Windows.Forms.Control.OnFontChanged%2A> pour obtenir des références à la <xref:System.Windows.Forms.Control.Font%2A> propriété et à l' <xref:System.Windows.Forms.Control.FontChanged> événement.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

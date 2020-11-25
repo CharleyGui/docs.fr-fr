@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5d798088-7992-48a0-ae55-d2a7ee31913f
 topic_type:
 - apiref
-ms.openlocfilehash: 456d9a0e8236948ac69ed069495b1999ebf7e80a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8eaf36579bb82d66ff356aa68afc38c70d7eaca3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720384"
 ---
 # <a name="functionleave3-function"></a>FunctionLeave3, fonction
+
 Indique au profileur que le contrôle est retourné à partir d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);
   \[in] identificateur de la fonction à partir de laquelle le contrôle est retourné.
   
 ## <a name="remarks"></a>Remarques  
+
  La `FunctionLeave3` fonction de rappel indique au profileur que les fonctions sont appelées, mais ne prend pas en charge l’inspection des valeurs de retour. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
   
  La `FunctionLeave3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec(naked)` attribut de classe de stockage.  
@@ -52,6 +54,7 @@ void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);
  La `FunctionLeave3` fonction ne doit pas appeler dans du code managé ou provoquer une allocation de mémoire managée de quelque manière que ce soit.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

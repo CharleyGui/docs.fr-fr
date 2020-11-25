@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b159c712-00f4-4fc7-a990-40bf9f642e8f
 topic_type:
 - apiref
-ms.openlocfilehash: 462fc7222243f8cad4e1d03d1717eedace549836
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 376b9fc637993f00722c48db7f51650e0a22d931
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502936"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720917"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody, méthode
+
 Remplace le corps de la fonction spécifiée dans le module spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT SetILFunctionBody(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  dans ID du module dans lequel la fonction réside.  
   
@@ -45,6 +47,7 @@ HRESULT SetILFunctionBody(
  dans Nouvel en-tête de la fonction.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `SetILFunctionBody` méthode remplace l’adresse virtuelle relative de la fonction dans les métadonnées afin qu’elle pointe vers le nouveau corps de la fonction, et ajuste toutes les structures de données internes selon les besoins.  
   
  La `SetILFunctionBody` méthode peut être appelée uniquement sur les fonctions qui n’ont jamais été compilées par un compilateur juste-à-temps (JIT, Just-in-Time).  
@@ -52,6 +55,7 @@ HRESULT SetILFunctionBody(
  Utilisez la méthode [ICorProfilerInfo :: GetILFunctionBodyAllocator,](icorprofilerinfo-getilfunctionbodyallocator-method.md) pour allouer de l’espace pour la nouvelle méthode afin de garantir la compatibilité de la mémoire tampon.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

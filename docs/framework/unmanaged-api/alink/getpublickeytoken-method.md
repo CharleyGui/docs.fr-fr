@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4a16374c-94b0-47b0-9fed-88c2b0cdccd4
 topic_type:
 - apiref
-ms.openlocfilehash: 2e7ed4e1529104db30b0b06665f74342d9ca9a01
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e41be6407076a2609a83a5be3b0c42d28914ec38
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447242"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720340"
 ---
 # <a name="getpublickeytoken-method"></a>GetPublicKeyToken, méthode
+
 Récupère le jeton de clé publique pour un KeyFile ou un conteneur de clé donné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetPublicKeyToken(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszKeyFile`  
  Nom de fichier de la clé.  
   
@@ -46,12 +48,14 @@ HRESULT GetPublicKeyToken(
  Adresse à laquelle le jeton de clé doit être stocké.  
   
  `pcbPublicKeyToken`  
- Spécifie la taille, en octets, de la mémoire tampon indiquée par `pvPublicKeyToken`. Lors du retour, contient le nombre réel d’octets utilisés.  
+ Spécifie la taille, en octets, de la mémoire tampon indiquée par `pvPublicKeyToken` . Lors du retour, contient le nombre réel d’octets utilisés.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

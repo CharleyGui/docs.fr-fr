@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: cc3bc5140da0634b5172f6253de3de37bff487f1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 92503df60ae44dfd44819fe3eda8e6a0549b2b66
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492032"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720986"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers, méthode
+
 Énumère les jetons MemberRef représentant les membres du type spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumMembers (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur.  
   
@@ -57,20 +59,22 @@ HRESULT EnumMembers (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMembers`retourné avec succès.|  
+|`S_OK`|`EnumMembers` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton MemberDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Lors de l’énumération des collections de membres pour une classe, `EnumMembers` retourne uniquement les membres (champs et méthodes, mais **pas** les propriétés ou les événements) définis directement sur la classe. Elle ne retourne pas les membres que la classe hérite, même si la classe fournit une implémentation pour ces membres hérités. Pour énumérer les membres hérités, l’appelant doit parcourir explicitement la chaîne d’héritage. Notez que les règles de la chaîne d’héritage peuvent varier selon le langage ou le compilateur qui a émis les métadonnées d’origine.
 
  Les propriétés et les événements ne sont pas énumérés par `EnumMembers` . Pour les énumérer, utilisez [EnumProperties,](imetadataimport-enumproperties-method.md) ou [EnumEvents,](imetadataimport-enumevents-method.md).
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8960332f-c98a-405a-ba92-7003de0c1187
 topic_type:
 - apiref
-ms.openlocfilehash: 014bd4f2b12c84790065f76a67765aaf35e8b2d8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 14286970a4f7093d72b47b780ea880f5ccb1bca5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131679"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721073"
 ---
 # <a name="iinstallreferenceitemgetreference-method"></a>IInstallReferenceItem::GetReference, méthode
+
 Obtient un pointeur vers la structure [FUSION_INSTALL_REFERENCE](fusion-install-reference-structure.md) représentée par cet objet [IInstallReferenceItem](iinstallreferenceitem-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,8 +37,9 @@ HRESULT GetReference (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppRefData`  
- à Pointeur de `FUSION_INSTALL_REFERENCE` retourné.  
+ à Pointeur retourné `FUSION_INSTALL_REFERENCE` .  
   
  `dwFlags`  
  dans Réservé pour une future extensibilité. `dwFlags` doit avoir la valeur 0 (zéro).  
@@ -45,12 +47,13 @@ HRESULT GetReference (
  `pvReserved`  
  dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
