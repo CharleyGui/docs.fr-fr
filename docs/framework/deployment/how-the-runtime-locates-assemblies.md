@@ -11,11 +11,11 @@ helpviewer_keywords:
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622625"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031707"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -233,7 +233,7 @@ Les exemples donnés sont basés sur les informations suivantes :
 
 - Répertoire racine de l’application : `http://www.code.microsoft.com`
 
-- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md)l’élément dans le fichier de configuration spécifie : bin
+- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) l’élément dans le fichier de configuration spécifie : bin
 
 - Culture : de
 
@@ -267,5 +267,5 @@ Par exemple, si Assembly1 référence Assembly2 et qu’Assembly1 a été charg�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bonnes pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)
+- [Meilleures pratiques pour le chargement d'assembly](best-practices-for-assembly-loading.md)
 - [Déploiement](index.md)

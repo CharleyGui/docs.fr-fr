@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8395428e1729a00fc1af72cf53fe689ee95b5fdf
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721325"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032614"
 ---
 ### <a name="mvc-precompilation-tool-deprecated"></a>MVC : outil de précompilation déconseillé
 
@@ -38,7 +38,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucune
+None
 
 <!-- 
 

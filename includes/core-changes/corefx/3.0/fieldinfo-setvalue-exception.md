@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 02c9305a36f47dfaf0b1fa8d19b07cd2d34badae
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721541"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032021"
 ---
 ### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>FieldInfo. SetValue lève une exception pour les champs statiques, en initialisation seule
 

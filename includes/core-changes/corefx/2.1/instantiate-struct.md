@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: b55de00188d92623c493dfc5f9aca915890ae5df
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021464"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032007"
 ---
-### <a name="private-fields-added-to-built-in-struct-types"></a>Champs privés ajoutés aux types de struct intégrés
+### <a name="private-fields-added-to-built-in-struct-types"></a>Champs privés ajoutés aux types struct intégrés
 
-Des champs privés ont été ajoutés à [certains types de struct](#affected-apis) dans [les assemblages de référence.](../../../../docs/standard/assembly/reference-assemblies.md) Par conséquent, dans le C, ces types de struct doivent toujours être instantanés en utilisant le [nouvel opérateur](../../../../docs/csharp/language-reference/operators/new-operator.md) ou par [défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Des champs privés ont été ajoutés à [certains types struct](#affected-apis) dans des [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md). Par conséquent, en C#, ces types struct doivent toujours être instanciés à l’aide du [nouvel opérateur](../../../../docs/csharp/language-reference/operators/new-operator.md) ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans .NET Core 2.0 et les versions précédentes, <xref:System.ConsoleKeyInfo>certains types de struct `new` fournis, par exemple, pourraient être instantanés sans utiliser l’opérateur ou [par défaut littéral](../../../../docs/csharp/language-reference/operators/default.md#default-literal) dans C. C’est parce que les [assemblages de référence](../../../../docs/standard/assembly/reference-assemblies.md) utilisés par le compilateur C ne contenait pas les champs privés pour les structs. Tous les champs privés pour les types de struct .NET sont ajoutés aux assemblages de référence à partir de .NET Core 2.1.
+Dans .NET Core 2,0 et versions antérieures, certains types de struct fournis, par exemple, <xref:System.ConsoleKeyInfo> peuvent être instanciés sans utiliser l' `new` opérateur ou le [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal) en C#. Cela était dû au fait que les [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md) utilisés par le compilateur C# ne contenaient pas de champs privés pour les structs. Tous les champs privés pour les types struct .NET sont ajoutés aux assemblys de référence à partir de .NET Core 2,1.
 
-Par exemple, le code Cmd suivant compile en .NET Core 2.0, mais pas en .NET Core 2.1 :
+Par exemple, le code C# suivant est compilé dans .NET Core 2,0, mais pas dans .NET Core 2,1 :
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,7 +25,7 @@ if (key.ToString() == "y")
 }
 ```
 
-Dans .NET Core 2.1, le code précédent se traduit par l’erreur compilateur suivante: **CS0165 - Utilisation de la variable locale non assignée 'clé'**
+Dans .NET Core 2,1, le code précédent génère l’erreur de compilateur suivante : **CS0165-utilisation d’une variable locale non assignée’key'**
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -33,7 +33,7 @@ Dans .NET Core 2.1, le code précédent se traduit par l’erreur compilateur su
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Instantiate struct types `new` en utilisant l’opérateur ou [par défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Instanciez des types struct à l’aide de l' `new` opérateur ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
 Par exemple :
 
@@ -53,7 +53,7 @@ if (key.ToString() == "y")
 
 #### <a name="category"></a>Category
 
-Core .NET bibliothèques
+Bibliothèques .NET Core
 
 #### <a name="affected-apis"></a>API affectées
 

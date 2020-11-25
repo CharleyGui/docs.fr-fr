@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 015696d8687dddc144c1dee3804e9ac3393cde4d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539584"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032635"
 ---
 ### <a name="obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed"></a>Anti-contrefaçon, CORS, diagnostics, MVC et API de routage obsolètes supprimés
 

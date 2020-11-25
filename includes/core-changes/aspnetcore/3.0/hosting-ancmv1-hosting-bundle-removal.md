@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 82103d82a6f68c62f3532608718bc71b0ba126bf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901959"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032504"
 ---
 ### <a name="hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle"></a>Hébergement : AspNetCoreModule v1 supprimé du bundle d’hébergement Windows
 
@@ -38,8 +38,8 @@ Si ANCM v1 est requis, il peut être installé à l’aide de l’offre groupée
 
 Cette modification s’interrompt ASP.NET Core applications 3,0 qui :
 
-- Optez explicitement pour l’utilisation de `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>`ANCM v1 avec.
-- Avoir un fichier *Web. config* personnalisé avec `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />`.
+- Optez explicitement pour l’utilisation de ANCM v1 avec `<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>` .
+- Avoir un fichier de *web.config* personnalisé avec `<add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" />` .
 
 #### <a name="category"></a>Category
 
@@ -47,7 +47,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucun
+None
 
 <!-- 
 

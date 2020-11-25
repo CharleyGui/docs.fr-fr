@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: b2ed62d024c6f0d78a4ec64693f1dafeabd8f47b
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: b30aa206057107aa17fcd62e0f042f9fe3ad56dc
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594630"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031928"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-centos"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur CentOS
 
@@ -39,6 +39,10 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 - 2.0
 
 [!INCLUDE [linux-install-package-manager-x64-vs-arm](includes/linux-install-package-manager-x64-vs-arm.md)]
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -83,7 +87,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 

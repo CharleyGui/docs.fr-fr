@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: c634c43e72d345721f2d8f2e9f45760e927a86ab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394143"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032325"
 ---
 ### <a name="authentication-google-deprecated-and-replaced"></a>Authentification : Google + déconseillé et remplacé
 
@@ -32,7 +32,7 @@ L’atténuation dans [Owin avec ASP.NET Web Forms et MVC](#owin-with-aspnet-web
 
 ##### <a name="aspnet-core-2x"></a>ASP.NET Core 2.x
 
-Pour `Microsoft.AspNetCore.Authentication.Google` la version 2. x, remplacez votre appel existant `AddGoogle` à `Startup.ConfigureServices` dans par le code suivant :
+Pour `Microsoft.AspNetCore.Authentication.Google` la version 2. x, remplacez votre appel existant à `AddGoogle` dans `Startup.ConfigureServices` par le code suivant :
 
 ```csharp
 .AddGoogle(o =>
@@ -54,7 +54,7 @@ Les correctifs de février 2,1 et 2,2 incorporaient la reconfiguration précéde
 
 ##### <a name="aspnet-core-30"></a>ASP.NET Core 3,0
 
-L’atténuation donnée pour ASP.NET Core 2. x peut également être utilisée pour ASP.NET Core 3,0. Dans les prochaines versions préliminaires de 3,0 `Microsoft.AspNetCore.Authentication.Google` , le package peut être supprimé. Les utilisateurs sont dirigés `Microsoft.AspNetCore.Authentication.OpenIdConnect` vers à la place. Le code suivant montre comment remplacer `AddGoogle` par `AddOpenIdConnect` dans. `Startup.ConfigureServices` Ce remplacement peut être utilisé avec ASP.NET Core 2,0 et versions ultérieures et peut être adapté pour ASP.NET Core 1. x si nécessaire.
+L’atténuation donnée pour ASP.NET Core 2. x peut également être utilisée pour ASP.NET Core 3,0. Dans les prochaines versions préliminaires de 3,0, le `Microsoft.AspNetCore.Authentication.Google` package peut être supprimé. Les utilisateurs sont dirigés vers à la `Microsoft.AspNetCore.Authentication.OpenIdConnect` place. Le code suivant montre comment remplacer `AddGoogle` par `AddOpenIdConnect` dans `Startup.ConfigureServices` . Ce remplacement peut être utilisé avec ASP.NET Core 2,0 et versions ultérieures et peut être adapté pour ASP.NET Core 1. x si nécessaire.
 
 ```csharp
 .AddOpenIdConnect("Google", o =>

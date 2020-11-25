@@ -3,12 +3,12 @@ title: Vue d’ensemble de la génération de certificats Self-Signed
 description: Vue d’ensemble de l’outil Microsoft dotnet dev-certs qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, ainsi que d’autres options pour l’utilisation de certificats auto-signés.
 author: angee
 ms.date: 11/19/2020
-ms.openlocfilehash: 15bbe3997ca34b503074595fa027bc6dfff1c0a7
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: b5bf4b719495c2d6ec248e8592367ac452be91c1
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95760911"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032175"
 ---
 # <a name="generate-self-signed-certificates-with-the-net-cli"></a>Générer des certificats auto-signés avec l’interface CLI .NET
 
@@ -18,23 +18,23 @@ Vous pouvez ensuite valider le chargement du certificat à l’aide d’un exemp
 
 ## <a name="prerequisites"></a>Prérequis
 
-Dans l’exemple, vous pouvez utiliser `.netcore 3.1` ou `.net 5` .
+Dans l’exemple, vous pouvez utiliser .NET Core 3,1 ou .NET 5.
 
-Pour `dotnet dev-certs` , assurez-vous que la version appropriée de est `dotnet` installée :
+Pour `dotnet dev-certs` , assurez-vous que la version appropriée de .net est installée :
 
-* [Installer dotnet sur Windows](../install/windows.md)
-* [Installer dotnet sur Linux](../install/linux.md)
-* [Installer dotnet sur macOS](../install/macos.md)
+* [Installer .NET sur Windows](../install/windows.md)
+* [Installer .NET sur Linux](../install/linux.md)
+* [Installer .NET sur macOS](../install/macos.md)
 
 Cet exemple requiert l' [ancrage 17,06](https://docs.docker.com/release-notes/docker-ce) ou une version ultérieure du [client dockr](https://www.docker.com/products/docker).
 
 ## <a name="prepare-sample-app"></a>Préparer l’exemple d’application
 
-Vous devez préparer l’exemple d’application en fonction du runtime que vous souhaitez utiliser pour le test.
+Vous devez préparer l’exemple d’application en fonction du runtime que vous souhaitez utiliser pour le test, [.net Core 3,1](#net-core-31-sample-app) ou [.net 5](#net-5-sample-app).
 
 Pour ce guide, vous allez utiliser un [exemple d’application](https://hub.docker.com/_/microsoft-dotnet-samples) et y apporter des modifications, le cas échéant.
 
-### <a name="prepare-net-core-31-sample-app"></a>Préparer l’exemple d’application .NET Core 3,1
+### <a name="net-core-31-sample-app"></a>Exemple d’application .NET Core 3,1
 
 Obtenir l’exemple d’application.
 
@@ -61,7 +61,7 @@ Assurez-vous que le `aspnetapp.csproj` comprend le Framework cible approprié :
 </Project>
 ```
 
-Modifiez le fichier dockerfile pour vous assurer que le runtime pointe vers. Netcore 3,1 :
+Modifiez le fichier dockerfile pour vous assurer que le runtime pointe vers .NET Core 3,1 :
 
 ```Dockerfile
 # https://hub.docker.com/_/microsoft-dotnet-core
@@ -97,13 +97,13 @@ Créez le conteneur pour le test local.
 docker build -t aspnetapp:my-sample -f Dockerfile .
 ```
 
-### <a name="prepare-net-5-sample-app"></a>Préparer l’exemple d’application .NET 5
+### <a name="net-5-sample-app"></a>Exemple d’application .NET 5
 
 Pour ce guide, l' [exemple de aspnetapp](https://hub.docker.com/_/microsoft-dotnet-samples) doit être vérifié pour .net 5.
 
 Vérifiez que l’exemple d’application [fichier dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/Dockerfile) utilise .net 5.
 
-Selon le système d’exploitation hôte, le runtime ASPNET devra peut-être être mis à jour. Par exemple, le passage de la `mcr.microsoft.com/dotnet/aspnet:5.0-nanoservercore-2009 AS runtime` valeur à `mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019 AS runtime` dans le fichier dockerfile permet de cibler le Windows Runtime approprié.
+Selon le système d’exploitation hôte, le runtime ASP.NET devra peut-être être mis à jour. Par exemple, le passage de la `mcr.microsoft.com/dotnet/aspnet:5.0-nanoservercore-2009 AS runtime` valeur à `mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019 AS runtime` dans le fichier dockerfile permet de cibler le Windows Runtime approprié.
 
 Par exemple, cela vous aidera à tester les certificats sur Windows :
 
@@ -147,7 +147,7 @@ Assurez-vous que le `aspnetapp.csproj` comprend le Framework cible approprié :
 ```
 
 > [!NOTE]
-> Si vous envisagez d’utiliser des paramètres de dotnet publish pour *réduire* le déploiement, vous devez vous assurer que les dépendances appropriées sont incluses pour la prise en charge des certificats SSL.
+> Si vous souhaitez utiliser `dotnet publish` des paramètres pour *réduire* le déploiement, assurez-vous que les dépendances appropriées sont incluses pour la prise en charge des certificats SSL.
 Mettez à jour le [dotnet-docker\samples\aspnetapp\aspnetapp.csproj](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/aspnetapp/aspnetapp.csproj) pour vous assurer que les assemblys appropriés sont inclus dans le conteneur. Pour référence, consultez Comment mettre à jour le fichier. csproj pour [prendre en charge les certificats SSL](../deploying/trim-self-contained.md#support-for-ssl-certificates) lors de l’utilisation du filtrage pour les déploiements autonomes.
 
 Assurez-vous que vous pointez sur l’exemple d’application.
@@ -162,7 +162,15 @@ Créez le conteneur pour le test local.
 docker build -t aspnetapp:my-sample -f Dockerfile .
 ```
 
-## <a name="create-a-self-signed-certificate-with-dotnet-dev-certs"></a>Créer un certificat auto-signé avec dotnet dev-certs
+## <a name="create-a-self-signed-certificate"></a>Créer un certificat auto-signé
+
+Vous pouvez créer un certificat auto-signé :
+
+- [Avec dotnet dev-certs](#with-dotnet-dev-certs)
+- À l’aide de [PowerShell](#with-powershell)
+- [Avec OpenSSL](#with-openssl)
+
+### <a name="with-dotnet-dev-certs"></a>Avec dotnet dev-certs
 
 Vous pouvez utiliser `dotnet dev-certs` pour travailler avec des certificats auto-signés. Cet exemple utilise une console PowerShell.
 
@@ -191,7 +199,7 @@ docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://
 
 Une fois l’application démarrée, accédez à `https://localhost:8001` dans votre navigateur Web.
 
-### <a name="clean-up"></a>Nettoyage
+#### <a name="clean-up"></a>Nettoyer
 
 Si les secrets et les certificats ne sont pas utilisés, veillez à les nettoyer.
 
@@ -200,7 +208,7 @@ dotnet user-secrets remove "Kestrel:Certificates:Development:Password" -p aspnet
 dotnet dev-certs https --clean
 ```
 
-## <a name="create-a-self-signed-certificate-with-powershell"></a>Créer un certificat auto-signé avec PowerShell
+### <a name="with-powershell"></a>Avec PowerShell
 
 Vous pouvez utiliser PowerShell pour générer des certificats auto-signés. Le [client PKI](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps&preserver-view=true) peut être utilisé pour générer un certificat auto-signé.
 
@@ -238,7 +246,7 @@ Une fois l’application terminée, accédez à contoso.com :8001 dans un navig
 
 Assurez-vous que les entrées de l’hôte sont mises à jour pour `contoso.com` répondre à l’adresse IP appropriée (par exemple, 127.0.0.1). Si le certificat n’est pas reconnu, assurez-vous que le certificat chargé avec le conteneur est également approuvé sur l’hôte, et qu’il existe des entrées SAN/DNS appropriées pour `contoso.com` .
 
-### <a name="clean-up"></a>Nettoyage
+#### <a name="clean-up"></a>Nettoyer
 
 ```powershell
 $cert | Remove-Item
@@ -246,7 +254,7 @@ Get-ChildItem $certFilePath | Remove-Item
 $rootCert | Remove-item
 ```
 
-## <a name="create-a-self-signed-certificate-with-openssl"></a>Créer un certificat auto-signé avec OpenSSL
+### <a name="with-openssl"></a>Avec OpenSSL
 
 Vous pouvez utiliser [OpenSSL](https://www.openssl.org/) pour créer des certificats auto-signés. Cet exemple utilise WSL/Ubuntu et un interpréteur de commandes bash avec `OpenSSL` .
 
@@ -336,7 +344,7 @@ Une fois l’application terminée, accédez à contoso.com :8001 dans un navig
 
 Assurez-vous que les entrées de l’hôte sont mises à jour pour `contoso.com` répondre à l’adresse IP appropriée (par exemple, 127.0.0.1). Si le certificat n’est pas reconnu, assurez-vous que le certificat chargé avec le conteneur est également approuvé sur l’hôte, et qu’il existe des entrées SAN/DNS appropriées pour `contoso.com` .
 
-### <a name="clean-up"></a>Nettoyage
+#### <a name="clean-up"></a>Nettoyer
 
 Veillez à nettoyer les certificats auto-signés une fois le test terminé.
 

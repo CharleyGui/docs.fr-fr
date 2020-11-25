@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 298cb441bf9fe7daddb30c85f9d7366dc972628c
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721624"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032028"
 ---
 ### <a name="replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines"></a>Le remplacement des séquences d’octets UTF-8 incorrectes suit les instructions Unicode
 
@@ -22,7 +22,7 @@ Le tableau suivant illustre l’impact de cette modification sur une entrée non
 
 | Entrée de 3 octets incorrecte | Sortie avant .NET Core 3,0          | Sortie à partir de .NET Core 3,0        |
 |-------------------------|--------------------------------------|-------------------------------------------|
-| `[ ED A0 90 ]`          | `[ FFFD FFFD ]`(sortie à 2 caractères) | `[ FFFD FFFD FFFD ]`(sortie à 3 caractères) |
+| `[ ED A0 90 ]`          | `[ FFFD FFFD ]` (sortie à 2 caractères) | `[ FFFD FFFD FFFD ]` (sortie à 3 caractères) |
 
 La sortie de 3 caractères est la sortie par défaut, selon la _Table 3-9_ du fichier PDF standard Unicode lié précédemment.
 

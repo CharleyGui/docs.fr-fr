@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: f6e4c3d5c5fd020562e48515554136e0f8b6785c
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440421"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032495"
 ---
 ### <a name="data-protection-dataprotectionblobs-uses-new-azure-storage-apis"></a>Protection des données : DataProtection. blob utilise les nouvelles API de stockage Azure
 
@@ -50,7 +50,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucun
+None
 
 <!-- 
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: d598d8d3203e804e5e935c3564b0053f9fc2e9a6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144999"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032652"
 ---
 ### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Framework partagé : assemblys supprimés de Microsoft. AspNetCore. app
 
@@ -54,7 +54,7 @@ Il n’est pas nécessaire que les projets utilisent des assemblys dans `Microso
 
 Cette modification ne s’applique pas à tous les fichiers binaires référencés via `Microsoft.AspNetCore.App` dans ASP.net Core 2. x. Les exceptions notables sont les suivantes :
 
-- `Microsoft.Extensions`les bibliothèques qui continuent de cibler .NET Standard seront disponibles en tant que packages NuGet (consultez <https://github.com/dotnet/extensions> ).
+- `Microsoft.Extensions` les bibliothèques qui continuent de cibler .NET Standard seront disponibles en tant que packages NuGet (consultez <https://github.com/dotnet/extensions> ).
 - API produites par l’équipe ASP.NET Core qui ne font pas partie de `Microsoft.AspNetCore.App` . Par exemple, les composants suivants sont disponibles sous forme de packages NuGet :
   - Entity Framework Core
   - API fournissant une intégration tierce

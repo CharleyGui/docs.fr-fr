@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 3274b72363a3df1dbe1bb29492eedcb134a4f9f2
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: c43e661ad8c9f665151e0240bf6b54e61b9acfef
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982307"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031915"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -27,6 +27,10 @@ La [journalisation et le suivi](logging-tracing.md) sont des techniques associé
 ## <a name="unit-testing"></a>Test des unités
 
 Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
+
+## <a name="dumps"></a>Vidages
+
+Un [dump](./dumps.md) est un fichier qui contient un instantané du processus au moment de la création. Elles peuvent être utiles pour examiner l’état de votre application à des fins de débogage.
 
 ## <a name="collect-diagnostics-in-containers"></a>Collecter les diagnostics dans les conteneurs
 

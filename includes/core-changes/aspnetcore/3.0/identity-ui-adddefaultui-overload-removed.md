@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: e77312605ee367c159171e305d8f69429f9ac58b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539583"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032555"
 ---
 ### <a name="identity-adddefaultui-method-overload-removed"></a>Identité : surcharge de la méthode AddDefaultUI supprimée
 

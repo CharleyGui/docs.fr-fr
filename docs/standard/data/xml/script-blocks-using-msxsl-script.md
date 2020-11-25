@@ -5,14 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: 57608ef143e6efd7f59d12d808274fa17961c483
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 1a2d1f0972bc610cb4943dacc74c1bae8c54012b
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95673473"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032214"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Blocs de scripts utilisant msxsl:script
+
+> [!NOTE]
+> Les blocs de script ne sont pris en charge que dans .NET Framework. Ils ne sont _pas_ pris en charge sur .net Core ou .net 5,0 ou version ultérieure.
 
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l’exécution. L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
   

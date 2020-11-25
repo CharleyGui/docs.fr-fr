@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 31e7f84a787d255a474f4c2b1fa3068903dbed52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901909"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032534"
 ---
 ### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP : les constantes HeaderNames ont été modifiées en ReadOnly statique
 
-À partir de ASP.NET Core 3,0 Preview 5, les champs <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> de ont `const` été `static readonly`remplacés par.
+À partir de ASP.NET Core 3,0 Preview 5, les champs de <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> ont été remplacés par `const` `static readonly` .
 
 Pour plus d’informations, consultez [dotnet/aspnetcore # 9514](https://github.com/dotnet/aspnetcore/issues/9514).
 
@@ -18,11 +18,11 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 9514](https://github.
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Ces champs sont `const`utilisés comme.
+Ces champs sont utilisés comme `const` .
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces champs sont maintenant `static readonly`.
+Ces champs sont maintenant `static readonly` .
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -36,8 +36,8 @@ La modification :
 Recompilation sur 3,0. Le code source qui utilise ces champs de la manière suivante ne peut plus le faire :
 
 * En tant qu’argument d’attribut
-* En tant `case` que dans `switch` une instruction
-* Lors de la définition d’un autre`const`
+* En tant que `case` dans une `switch` instruction
+* Lors de la définition d’un autre `const`
 
 Pour contourner la modification avec rupture, basculez vers à l’aide de constantes de nom d’en-tête ou de littéraux de chaîne définis automatiquement.
 

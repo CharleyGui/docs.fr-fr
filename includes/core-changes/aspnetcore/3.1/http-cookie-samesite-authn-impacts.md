@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8b6d334677991382d235fd53cd3c98e3a77d650d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539585"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032319"
 ---
 ### <a name="http-browser-samesite-changes-impact-authentication"></a>HTTP : le navigateur SameSite les modifications d’impact sur l’authentification
 
@@ -22,7 +22,7 @@ Pour plus d’informations sur ce problème, consultez [dotnet/aspnetcore # 1499
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Google a proposé un nouveau standard de norme qui n’est pas compatible avec les versions antérieures. La norme remplace le mode par défaut par `Lax` et ajoute une nouvelle entrée `None` pour la désactivation. est suffisant `Lax` pour la plupart des cookies d’application ; Toutefois, il divise les scénarios inter-sites tels que OpenID Connect et WS-Federation login. La plupart des connexions OAuth ne sont pas affectées en raison de différences de flux de demande. Le nouveau `None` paramètre provoque des problèmes de compatibilité avec les clients qui ont implémenté la norme préliminaire précédente (par exemple, IOS 12). Chrome 80 inclut les modifications. Consultez [mises à jour SameSite](https://www.chromium.org/updates/same-site) pour la chronologie de lancement du produit chrome.
+Google a proposé un nouveau standard de norme qui n’est pas compatible avec les versions antérieures. La norme remplace le mode par défaut par `Lax` et ajoute une nouvelle entrée `None` pour la désactivation. est suffisant `Lax` pour la plupart des cookies d’application ; Toutefois, il arrête les scénarios inter-sites tels que OpenID Connect et WS-Federation connexion. La plupart des connexions OAuth ne sont pas affectées en raison de différences de flux de demande. Le nouveau `None` paramètre provoque des problèmes de compatibilité avec les clients qui ont implémenté la norme préliminaire précédente (par exemple, IOS 12). Chrome 80 inclut les modifications. Consultez [mises à jour SameSite](https://www.chromium.org/updates/same-site) pour la chronologie de lancement du produit chrome.
 
 ASP.NET Core 3,1 a été mis à jour pour implémenter le nouveau `SameSite` comportement. La mise à jour redéfinit le comportement de `SameSiteMode.None` pour émettre `SameSite=None` et ajoute une nouvelle valeur `SameSiteMode.Unspecified` pour omettre l' `SameSite` attribut. Toutes les API de cookie sont désormais par défaut `Unspecified` , bien que certains composants qui utilisent des cookies définissent des valeurs plus spécifiques à leurs scénarios, tels que la corrélation OpenID Connect et les cookies à usage unique.
 

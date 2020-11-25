@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ab2fc0645f76870dead99b5f45eef763643fb27
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 83808f2f3a05333ed5d9e3809cbc2fd6e230d02c
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506898"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031760"
 ---
 
 [.NET Core est disponible dans le magasin d’instantanés.](https://snapcraft.io/dotnet-sdk)
@@ -15,7 +15,7 @@ Seules les versions prises en charge de .NET Core sont disponibles par le biais 
 
 ### <a name="install-the-sdk"></a>Installer le SDK
 
-Les packages Snap pour le kit de développement logiciel (SDK) .NET sont tous publiés sous le même identificateur : `dotnet-sdk` . Une version spécifique du kit de développement logiciel (SDK) peut être installée en spécifiant le canal. Le kit de développement logiciel (SDK) comprend le runtime de cofacette. Le tableau suivant répertorie les canaux :
+Les packages Snap pour le kit de développement logiciel (SDK) .NET sont tous publiés sous le même identificateur : `dotnet-sdk` . Une version spécifique du kit de développement logiciel (SDK) peut être installée en spécifiant le canal. Le kit de développement logiciel (SDK) comprend le runtime correspondant. Le tableau suivant répertorie les canaux :
 
 | Version de .NET | Package d’alignement             |
 |--------------|--------------------------|
@@ -76,7 +76,7 @@ Running 'dotnet restore' on /home/myhome/test/test.csproj...
 /snap/dotnet-sdk/27/sdk/2.2.103/NuGet.targets(114,5): error :   The remote certificate is invalid according to the validation procedure. [/home/myhome/test/test.csproj]
 ```
 
-Pour résoudre ce problème, définissez quelques variables environnement :
+Pour résoudre ce problème, définissez quelques variables d’environnement :
 
 ```bash
 export SSL_CERT_FILE=[path-to-certificate-file]

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 2c1362d6982206b14475f77700add0bae61da173
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901633"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032474"
 ---
 ### <a name="caching-compactonmemorypressure-property-removed"></a>Caching : propriété CompactOnMemoryPressure supprimée
 
@@ -20,7 +20,7 @@ Cette modification est un suivi de [ASPNET/Caching # 221](https://github.com/asp
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`MemoryCacheOptions.CompactOnMemoryPressure`la propriété était disponible.
+`MemoryCacheOptions.CompactOnMemoryPressure` la propriété était disponible.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
@@ -32,7 +32,7 @@ Le compactage automatique du cache a provoqué des problèmes. Pour éviter un c
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Pour compacter le cache, les `MemoryCache` casts `Compact` aval et appellent quand cela est nécessaire.
+Pour compacter le cache, les casts aval `MemoryCache` et appellent quand cela est `Compact` nécessaire.
 
 #### <a name="category"></a>Category
 

@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: ae5a5fbf97ed4a03de7d35b9d5d5ca8de3aebc39
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394039"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032464"
 ---
 ### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Mise en cache : les types « pubternal » ResponseCaching sont devenus internes
 
-Dans ASP.NET Core 3,0, les types « pubternal » `ResponseCaching` dans ont été remplacés `internal`par.
+Dans ASP.NET Core 3,0, les types « pubternal » dans `ResponseCaching` ont été remplacés par `internal` .
 
-En outre, les implémentations par `IResponseCachingPolicyProvider` défaut `IResponseCachingKeyProvider` de et de ne sont plus ajoutées aux services dans `AddResponseCaching` le cadre de la méthode.
+En outre, les implémentations par défaut de `IResponseCachingPolicyProvider` et de `IResponseCachingKeyProvider` ne sont plus ajoutées aux services dans le cadre de la `AddResponseCaching` méthode.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public` , mais résident dans un espace de `.Internal`noms avec le suffixe. Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
+Dans ASP.NET Core, les types « pubternal » sont déclarés comme, `public` mais résident dans un espace de noms avec le suffixe `.Internal` . Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -26,7 +26,7 @@ Ces types étaient visibles publiquement, mais ne sont pas pris en charge.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces types sont maintenant `internal`.
+Ces types sont maintenant `internal` .
 
 #### <a name="reason-for-change"></a>Motif de modification
 

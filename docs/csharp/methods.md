@@ -5,11 +5,11 @@ ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
 ms.openlocfilehash: ea07553d20ea6c18bac048a2e8d697f665bfb949
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687456"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031674"
 ---
 # <a name="methods-in-c"></a>Méthodes dans (C#)
 

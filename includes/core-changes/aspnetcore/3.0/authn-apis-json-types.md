@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 9bdfcca2fd03e24a636be3340f5057dc3f39358e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539582"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032494"
 ---
 ### <a name="authentication-newtonsoftjson-types-replaced"></a>Authentification : Newtonsoft.Jssur les types remplacés
 

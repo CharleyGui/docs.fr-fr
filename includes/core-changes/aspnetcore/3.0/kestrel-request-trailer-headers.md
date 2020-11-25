@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: b0e1d6d720a1c9b827fb4585606e64b545d395d7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72393925"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032594"
 ---
 ### <a name="kestrel-request-trailer-headers-moved-to-new-collection"></a>Kestrel : les en-têtes de demande de code de fin sont déplacés vers la nouvelle collection
 
@@ -24,16 +24,16 @@ Les codes de fin HTTP/2 sont disponibles une fois qu’ils sont reçus du client
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Les en-têtes de demande de fin sont `HttpRequest.Headers` ajoutés à la collection.
+Les en-têtes de demande de fin sont ajoutés à la `HttpRequest.Headers` collection.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Les en-têtes de demande de fin `HttpRequest.Headers` **ne sont pas présents** dans la collection. Utilisez les méthodes d’extension suivantes `HttpRequest` sur pour y accéder :
+Les en-têtes de demande de fin **ne sont pas présents** dans la `HttpRequest.Headers` collection. Utilisez les méthodes d’extension suivantes sur `HttpRequest` pour y accéder :
 
-- `GetDeclaredTrailers()`-Obtient l’en-tête « code de fin » de la demande qui répertorie les codes de fin à attendre après le corps.
-- `SupportsTrailers()`-Indique si la demande prend en charge la réception des en-têtes de code de fin.
-- `CheckTrailersAvailable()`: Détermine si la requête prend en charge les codes de fin et si elles sont disponibles pour la lecture.
-- `GetTrailer(string trailerName)`: Obtient l’en-tête de fin demandé de la réponse.
+- `GetDeclaredTrailers()` -Obtient l’en-tête « code de fin » de la demande qui répertorie les codes de fin à attendre après le corps.
+- `SupportsTrailers()` -Indique si la demande prend en charge la réception des en-têtes de code de fin.
+- `CheckTrailersAvailable()` : Détermine si la requête prend en charge les codes de fin et si elles sont disponibles pour la lecture.
+- `GetTrailer(string trailerName)` : Obtient l’en-tête de fin demandé de la réponse.
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -41,7 +41,7 @@ Les codes de fin sont une fonctionnalité clé dans des scénarios tels que gRPC
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Utilisez les méthodes d’extension liées `HttpRequest` à la remorque pour accéder aux codes de fin.
+Utilisez les méthodes d’extension liées à la remorque `HttpRequest` pour accéder aux codes de fin.
 
 #### <a name="category"></a>Category
 

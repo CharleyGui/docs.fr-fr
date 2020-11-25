@@ -4,12 +4,12 @@ description: Référence pour les propriétés et les éléments MSBuild compris
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: ecd1cf405f661d0025553974f92fa1401b13220d
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 14603ba98f00d46d0f167652500979f94de0ec9a
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687469"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031687"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Référence MSBuild pour les projets SDK .NET
 
@@ -81,10 +81,24 @@ Vous pouvez spécifier des propriétés telles que `PackageId` , `PackageVersion
 
 ## <a name="publish-properties-and-items"></a>Publier les propriétés et les éléments
 
+- [CopyLocalLockFileAssemblies](#copylocallockfileassemblies)
 - [RuntimeIdentifier](#runtimeidentifier)
 - [RuntimeIdentifiers](#runtimeidentifiers)
 - [TrimmerRootAssembly](#trimmerrootassembly)
 - [UseAppHost](#useapphost)
+
+### <a name="copylocallockfileassemblies"></a>CopyLocalLockFileAssemblies
+
+La `CopyLocalLockFileAssemblies` propriété est utile pour les projets de plug-in qui ont des dépendances sur d’autres bibliothèques. Si vous affectez à cette propriété `true` la valeur, toutes les dépendances de package NuGet sont copiées dans le répertoire de sortie. Cela signifie que vous pouvez utiliser la sortie de `dotnet build` pour exécuter votre plug-in sur n’importe quel ordinateur.
+
+```xml
+<PropertyGroup>
+  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Vous pouvez également utiliser `dotnet publish` pour publier la bibliothèque de classes. Pour plus d’informations, consultez [dotnet Publish](../tools/dotnet-publish.md).
 
 ### <a name="runtimeidentifier"></a>RuntimeIdentifier
 
@@ -398,7 +412,7 @@ L’extrait de code du fichier projet dans l’exemple suivant fait référence 
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Référence
+### <a name="reference"></a>Informations de référence
 
 L' `Reference` élément définit une référence à un fichier d’assembly.
 

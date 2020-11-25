@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 6be98e7ced6608ba0793c635adfe61c8b1a7e9d9
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81275077"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032659"
 ---
 ### <a name="signalr-hubconnectioncontext-constructors-changed"></a>Signalr : les constructeurs HubConnectionContext ont été modifiés
 
-Les constructeurs de `HubConnectionContext` signalr ont été modifiés pour accepter un type d’options, plutôt que plusieurs paramètres, pour les options d’ajout à la prochaine épreuve. Cette modification remplace deux constructeurs par un constructeur unique qui accepte un type d’options.
+Les constructeurs de signalr `HubConnectionContext` ont été modifiés pour accepter un type d’options, plutôt que plusieurs paramètres, pour les options d’ajout à la prochaine épreuve. Cette modification remplace deux constructeurs par un constructeur unique qui accepte un type d’options.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -16,7 +16,7 @@ Les constructeurs de `HubConnectionContext` signalr ont été modifiés pour acc
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`HubConnectionContext`a deux constructeurs :
+`HubConnectionContext` a deux constructeurs :
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAliveInterval, ILoggerFactory loggerFactory);
@@ -33,7 +33,7 @@ public HubConnectionContext(ConnectionContext connectionContext, HubConnectionCo
 
 #### <a name="reason-for-change"></a>Motif de modification
 
-Le nouveau constructeur utilise un nouvel objet d’options. Par conséquent, les fonctionnalités `HubConnectionContext` de peuvent être développées à l’avenir sans créer plus de constructeurs et de modifications avec rupture.
+Le nouveau constructeur utilise un nouvel objet d’options. Par conséquent, les fonctionnalités de `HubConnectionContext` peuvent être développées à l’avenir sans créer plus de constructeurs et de modifications avec rupture.
 
 #### <a name="recommended-action"></a>Action recommandée
 

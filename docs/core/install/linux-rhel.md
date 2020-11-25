@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: cb03f84cf84557d467f0a067b8d5629a843ec7e3
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 931cad51ff8e35ff16b67ff9b795feb36010a66b
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594570"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031761"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-rhel"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur RHEL
 
@@ -39,6 +39,10 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 - 3.0
 - 2.2
 - 2.0
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -117,7 +121,7 @@ Comme alternative au runtime ASP.NET Core, vous pouvez installer le Runtime .NET
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 

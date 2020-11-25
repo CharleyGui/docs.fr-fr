@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ec6724ab378dd614c55a024ede18d997d27be3a3
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79549606"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032684"
 ---
 ### <a name="target-framework-net-framework-support-dropped"></a>Framework cible : la prise en charge de .NET Framework a été supprimée
 
@@ -18,7 +18,7 @@ Les clients qui utilisent ASP.NET Core avec .NET Framework peuvent continuer de 
 
 Pour plus d’informations sur le portage à partir de .NET Framework vers .NET Core, consultez [portage vers .net Core](~/docs/core/porting/index.md).
 
-`Microsoft.Extensions`les packages (tels que la journalisation, l’injection de dépendances et la configuration) et les Entity Framework Core ne sont pas affectés. Ils continueront de prendre en charge .NET Standard.
+`Microsoft.Extensions` les packages (tels que la journalisation, l’injection de dépendances et la configuration) et les Entity Framework Core ne sont pas affectés. Ils continueront de prendre en charge .NET Standard.
 
 Pour plus d’informations sur la motivation de cette modification, consultez le billet de [blog d’origine](https://devblogs.microsoft.com/aspnet/a-first-look-at-changes-coming-in-asp-net-core-3-0/).
 
@@ -47,7 +47,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucun
+None
 
 <!-- 
 

@@ -1,18 +1,18 @@
 ---
 ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901640"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032485"
 ---
 ### <a name="authentication-httpcontextauthentication-property-removed"></a>Authentification : propriété HttpContext. Authentication supprimée
 
-La `Authentication` propriété déconseillée `HttpContext` sur a été supprimée.
+La propriété déconseillée `Authentication` sur `HttpContext` a été supprimée.
 
 #### <a name="change-description"></a>Description de la modification
 
-Dans le cadre de [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504), la `Authentication` propriété déconseillée sur `HttpContext` a été supprimée. La `Authentication` propriété a été dépréciée depuis 2,0. Un [Guide de migration](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) a été publié pour migrer le code à l’aide de cette propriété déconseillée vers les nouvelles API de remplacement. Les autres classes/API inutilisées associées à l’ancienne pile d’authentification ASP.NET Core 1. x ont été [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)supprimées dans la validation.
+Dans le cadre de [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504), la propriété déconseillée `Authentication` sur `HttpContext` a été supprimée. La `Authentication` propriété a été dépréciée depuis 2,0. Un [Guide de migration](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) a été publié pour migrer le code à l’aide de cette propriété déconseillée vers les nouvelles API de remplacement. Les autres classes/API inutilisées associées à l’ancienne pile d’authentification ASP.NET Core 1. x ont été supprimées dans la validation [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65) .
 
 Pour plus d’informations, consultez [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).
 
@@ -22,7 +22,7 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 6533](https://github.
 
 #### <a name="reason-for-change"></a>Motif de modification
 
-Les API ASP.NET Core 1,0 ont été remplacées par des <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>méthodes d’extension dans.
+Les API ASP.NET Core 1,0 ont été remplacées par des méthodes d’extension dans <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName> .
 
 #### <a name="recommended-action"></a>Action recommandée
 

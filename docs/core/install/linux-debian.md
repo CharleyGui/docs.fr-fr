@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 6dad4e1779600b22b8301e03ffb8fb2c16786ead
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 683d0a9c47edf3cf9c47426d659e778eeb6f84df
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506968"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031889"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-debian"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Debian
 
@@ -31,13 +31,17 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌[8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 
 Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
 - 3.0
 - 2.2
 - 2.0
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -150,7 +154,7 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 53d2c989120c92f4e2d18f50ce4b364bd4c9b604
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901871"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032545"
 ---
 ### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP : e/s synchrone désactivée sur tous les serveurs
 
@@ -12,7 +12,7 @@ ms.locfileid: "75901871"
 
 #### <a name="change-description"></a>Description de la modification
 
-`AllowSynchronousIO`est une option dans chaque serveur qui active ou désactive les API d’e/s `HttpRequest.Body.Read`synchrones telles que, `HttpResponse.Body.Write`et `Stream.Flush`. Ces API ont longtemps été une source d’insuffisance de thread et de blocages d’application. À partir de ASP.NET Core 3,0 Preview 3, ces opérations synchrones sont désactivées par défaut.
+`AllowSynchronousIO` est une option dans chaque serveur qui active ou désactive les API d’e/s synchrones telles que `HttpRequest.Body.Read` , `HttpResponse.Body.Write` et `Stream.Flush` . Ces API ont longtemps été une source d’insuffisance de thread et de blocages d’application. À partir de ASP.NET Core 3,0 Preview 3, ces opérations synchrones sont désactivées par défaut.
 
 Serveurs affectés :
 
@@ -27,7 +27,7 @@ Des erreurs similaires à celles-ci sont attendues :
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-Chaque serveur dispose d' `AllowSynchronousIO` une option qui contrôle ce comportement et la valeur par défaut pour tous les `false`éléments est maintenant.
+Chaque serveur dispose d’une `AllowSynchronousIO` option qui contrôle ce comportement et la valeur par défaut pour tous les éléments est maintenant `false` .
 
 Le comportement peut également être remplacé en fonction de la demande comme une atténuation temporaire. Par exemple :
 
@@ -39,7 +39,7 @@ if (syncIOFeature != null)
 }
 ```
 
-Si vous rencontrez des problèmes avec `TextWriter` un ou un autre flux appelant une API `Dispose`synchrone dans, appelez `DisposeAsync` plutôt la nouvelle API.
+Si vous rencontrez des problèmes avec un `TextWriter` ou un autre flux appelant une API synchrone dans `Dispose` , appelez `DisposeAsync` plutôt la nouvelle API.
 
 Pour plus d’informations, consultez [dotnet/aspnetcore # 7644](https://github.com/dotnet/aspnetcore/issues/7644).
 
@@ -49,7 +49,7 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 7644](https://github.
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-`HttpRequest.Body.Read`, `HttpResponse.Body.Write`et `Stream.Flush` étaient autorisés par défaut.
+`HttpRequest.Body.Read`, `HttpResponse.Body.Write` et `Stream.Flush` étaient autorisés par défaut.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 

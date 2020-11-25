@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 17012f3689e5834fd1629946767e931cb22a2c1b
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: eb31e3109ccd40999c22a27607d48544bf117dc2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506899"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031863"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-opensuse"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur openSUSE
 
@@ -36,6 +36,10 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 - 3.0
 - 2.2
 - 2.0
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -88,7 +92,7 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

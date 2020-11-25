@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 558574116aac2a3c755481069641e81a435a2a43
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: f351a9b11ab16910963a1db88d88b6949b56ae11
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506869"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031798"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-sles"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur SLES
 
@@ -35,6 +35,10 @@ Les versions suivantes de .NET Core ne sont plus prises en charge. Les télécha
 - 3.0
 - 2.2
 - 2.0
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -93,7 +97,7 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

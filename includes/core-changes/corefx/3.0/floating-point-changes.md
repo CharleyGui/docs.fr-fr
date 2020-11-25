@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 719f336e1b38597674d6ee8f0c5429dd965054b1
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721681"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032010"
 ---
 ### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Modification du comportement de l’analyse et de la mise en forme à virgule flottante
 

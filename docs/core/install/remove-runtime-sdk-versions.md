@@ -1,38 +1,38 @@
 ---
-title: Supprimer le SDK et le runtime .NET Core
-description: Cet article explique comment déterminer quelles versions du runtime .NET Core et du SDK sont actuellement installées, puis comment les supprimer sous Windows, Mac et Linux.
+title: Supprimer le Runtime .NET et le kit de développement logiciel (SDK)
+description: Cet article explique comment déterminer quelles versions du Runtime .NET et du kit de développement logiciel (SDK) sont actuellement installées, puis comment les supprimer sur Windows, Mac et Linux.
 author: adegeo
 ms.author: adegeo
-ms.date: 04/28/2020
+ms.date: 11/20/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 1e4a846cf5e3d0209f5ade873520ef64abc12e7c
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: f07a9acdc5be310d38da18602dde2ebf678e9a1b
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324651"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031720"
 ---
-# <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Guide pratique pour supprimer un SDK et un Runtime .NET Core
+# <a name="how-to-remove-the-net-runtime-and-sdk"></a>Comment supprimer le Runtime .NET et le kit de développement logiciel (SDK)
 
-Si vous avez installé plusieurs versions mises à jour du SDK et du Runtime .NET Core au fil du temps, vous voulez peut-être maintenant supprimer les versions anciennes de .NET Core installées sur votre machine. La suppression de versions antérieures du Runtime peut entraîner un changement de Runtime sélectionné pour exécuter les applications de framework partagé, comme cela est expliqué dans l’article sur la [sélection de la version de .NET Core](../versions/selection.md).
+Au fil du temps, lorsque vous installez des versions mises à jour du Runtime .NET et du kit de développement logiciel (SDK), vous souhaiterez peut-être supprimer de votre ordinateur les versions obsolètes de .NET. La suppression des anciennes versions du runtime peut modifier le runtime choisi pour exécuter des applications d’infrastructure partagées, comme indiqué dans l’article sur la [sélection des versions .net](../versions/selection.md).
 
 ## <a name="should-i-remove-a-version"></a>Dois-je supprimer une version ?
 
-Compte tenu des comportements de [sélection de la version de .NET Core](../versions/selection.md) et de la compatibilité des Runtimes .NET Core entre les mises à jour, vous pouvez supprimer en toute sécurité les versions précédentes. Les mises à jour du Runtime .NET Core sont toutes compatibles au sein d’une même version principale (par exemple, 1.x et 2.x). De plus, avec les versions récentes du SDK .NET Core, vous pouvez généralement continuer à créer des applications qui ciblent des versions précédentes du Runtime de manière compatible.
+Les comportements de [sélection de version .net](../versions/selection.md) et la compatibilité du runtime de .net entre les mises à jour permettent la suppression sécurisée des versions précédentes. Les mises à jour du Runtime .NET sont compatibles dans une **bande** de version majeure telle que 1. x et 2. x. En outre, les versions plus récentes du kit de développement logiciel (SDK) .NET maintiennent généralement la possibilité de créer des applications qui ciblent des versions antérieures du runtime de manière compatible.
 
-En règle générale, vous avez uniquement besoin de la dernière version du SDK et de la dernière version des correctifs pour les Runtimes requis par votre application. Les instances dans lesquelles vous pouvez conserver des versions antérieures du kit de développement logiciel (SDK) ou du runtime incluent la gestion *desproject.js*applications basées sur. Si votre application ne nécessite pas de versions antérieures du SDK ou du Runtime pour une raison particulière, vous pouvez supprimer les versions antérieures en toute sécurité.
+En règle générale, vous avez uniquement besoin de la dernière version du SDK et de la dernière version des correctifs pour les Runtimes requis par votre application. Les instances dans lesquelles vous pouvez conserver des versions antérieures du kit de développement logiciel (SDK) ou du runtime incluent la gestion *desproject.js* applications basées sur. Si votre application ne nécessite pas de versions antérieures du SDK ou du Runtime pour une raison particulière, vous pouvez supprimer les versions antérieures en toute sécurité.
 
 ## <a name="determine-what-is-installed"></a>Déterminer ce qui est installé
 
-À compter de .NET Core 2.1, l’interface CLI .NET fournit des commandes qui vous permettent de répertorier toutes les versions du SDK et du Runtime installées sur votre machine.  Utilisez [`dotnet --list-sdks`](../tools/dotnet.md#options) pour afficher la liste des kits de développement logiciel (SDK) installés sur votre ordinateur. Utilisez [`dotnet --list-runtimes`](../tools/dotnet.md#options) pour afficher la liste des runtimes installés sur votre ordinateur. Pour plus d’informations, consultez [Comment vérifier que .net Core est déjà installé](how-to-detect-installed-versions.md).
+L’interface CLI .NET propose des options que vous pouvez utiliser pour répertorier les versions du kit de développement logiciel (SDK) et du runtime installées sur votre ordinateur.  Utilisez [`dotnet --list-sdks`](../tools/dotnet.md#options) pour afficher la liste des kits de développement logiciel (SDK) installés sur votre ordinateur. Utilisez [`dotnet --list-runtimes`](../tools/dotnet.md#options) pour afficher la liste des runtimes installés sur votre ordinateur. Pour plus d’informations, consultez [Comment vérifier que .net est déjà installé](how-to-detect-installed-versions.md).
 
-## <a name="uninstall-net-core"></a>Désinstaller .NET Core
+## <a name="uninstall-net"></a>Désinstaller .NET
 
 ::: zone pivot="os-windows"
 
-.NET Core utilise la boîte de dialogue **applications Windows &** pour supprimer les versions du runtime et du kit de développement logiciel (SDK) .net core. La figure suivante illustre la boîte de dialogue **applications & fonctionnalités** . Vous pouvez rechercher le **Kit de développement logiciel (SDK) principal** pour filtrer et afficher les versions installées de .net core.
+.NET utilise la boîte de dialogue **& des fonctionnalités des applications** Windows pour supprimer les versions du kit de développement logiciel (SDK) et du Runtime .net. La figure suivante illustre la boîte de dialogue **applications & fonctionnalités** . Vous pouvez rechercher le **Kit de développement logiciel (** SDK) principal ou le **SDK .net** pour filtrer et afficher les versions installées de .net.
 
-![Ajout/Suppression de programmes pour supprimer .NET Core](./media/remove-runtime-sdk-versions/programs-and-features.png)
+![Ajout/suppression de programmes pour supprimer .NET](./media/remove-runtime-sdk-versions/programs-and-features.png)
 
 Sélectionnez la version que vous souhaitez supprimer de votre machine et cliquez sur **Désinstaller**.
 
@@ -40,14 +40,14 @@ Sélectionnez la version que vous souhaitez supprimer de votre machine et clique
 
 ::: zone pivot="os-linux"
 
-Sur Linux, il y a davantage d’options pour désinstaller le SDK ou le Runtime .NET Core. La meilleure méthode pour désinstaller .NET Core est de reprendre celle que vous aviez utilisée pour installer .NET Core. Les différences de processus sont fonction de la distribution que vous avez choisie et de la méthode d’installation.
+Il existe d’autres options pour désinstaller .NET (kit de développement logiciel (SDK) ou Runtime) sur Linux. La meilleure façon de désinstaller .NET est de mettre en miroir l’action que vous avez utilisée pour installer .NET. Les différences de processus sont fonction de la distribution que vous avez choisie et de la méthode d’installation.
 
 > [!IMPORTANT]
-> Pour les installations Red Hat, consultez le [guide de prise en main de Red Hat](https://access.redhat.com/documentation/en-us/net_core/2.0/html/getting_started_guide/gs_install_dotnet#install_register_rehel) afin d’obtenir des informations sur l’installation et la désinstallation de .NET Core.
+> Pour les installations Red Hat, consultez la [documentation du produit Red Hat pour .net](https://access.redhat.com/documentation/en-us/net/5.0/).
 
-À compter de .NET Core 2,1, il n’est pas nécessaire de désinstaller le kit SDK .NET Core lors de sa mise à niveau à l’aide d’un gestionnaire de package. Les commandes `update` ou `refresh` du gestionnaire de package suppriment automatiquement l’ancienne version une fois l’installation d’une version plus récente terminée.
+Il est inutile de désinstaller le kit de développement logiciel (SDK) .NET lors de sa mise à niveau à l’aide d’un gestionnaire de package, sauf si vous effectuez une mise à niveau à partir d’une version préliminaire. Les commandes `update` ou `refresh` du gestionnaire de package suppriment automatiquement l’ancienne version une fois l’installation d’une version plus récente terminée. Si vous disposez d’une version préliminaire installée, désinstallez-la.
 
-Si vous avez utilisé un gestionnaire de package pour installer .NET Core, réutilisez-le pour désinstaller le SDK ou le Runtime .NET. Les installations .NET Core prennent en charge la plupart des gestionnaires de package courants. Consultez la documentation du gestionnaire de package de votre distribution pour obtenir une syntaxe précise dans votre environnement :
+Si vous avez installé .NET à l’aide d’un gestionnaire de package, utilisez le même gestionnaire de package pour désinstaller le kit de développement logiciel (SDK) .NET ou le Runtime. Les installations .NET prennent en charge les gestionnaires de packages les plus populaires. Consultez la documentation du gestionnaire de package de votre distribution pour obtenir une syntaxe précise dans votre environnement :
 
 - [apt-get(8)](https://linux.die.net/man/8/apt-get) est utilisé sur les systèmes Debian, y compris Ubuntu.
 - [yum(8)](https://linux.die.net/man/8/yum) est utilisé sur les systèmes Fedora, CentOS et Oracle Linux.
@@ -56,19 +56,20 @@ Si vous avez utilisé un gestionnaire de package pour installer .NET Core, réut
 
 Dans presque tous les cas, la commande de suppression d’un package est `remove`.
 
-Avec la plupart des gestionnaires de package, le nom du package utilisé pour installer le SDK .NET Core est `dotnet-sdk`, suivi du numéro de version. À partir de la version 2.1.300 du SDK .NET Core et de la version `2.1` du Runtime, il suffit d’indiquer les numéros des versions principale et mineure. Par exemple, le SDK .NET Core version 2.1.300 peut être référencé en tant que package `dotnet-sdk-2.1`. Pour les versions antérieures, la chaîne de version complète doit être indiquée. Par exemple, le SDK .NET Core version 2.1.200 doit être référencé par `dotnet-sdk-2.1.200`.
+Le nom du package pour l’installation du kit de développement logiciel (SDK) .NET pour la plupart des gestionnaires de package est `dotnet-sdk` , suivi du numéro de version. À partir de la version 2.1.300 du kit de développement logiciel (SDK) .NET et de la version `2.1` du runtime, seuls les numéros de version majeure et mineure sont nécessaires : par exemple, la version 2.1.300 du kit de développement logiciel (SDK) .net peut être référencée en tant que package `dotnet-sdk-2.1` . Les versions antérieures requièrent l’intégralité de la chaîne de version : par exemple, elle `dotnet-sdk-2.1.200` est requise pour la version 2.1.200 du kit de développement logiciel (SDK) .net.
 
-Sur les machines où est installé le Runtime uniquement, sans le SDK, le nom du package est `dotnet-runtime-<version>` pour le Runtime .NET Core, et `aspnetcore-runtime-<version>` pour la pile de Runtime entière.
+Pour les ordinateurs qui n’ont installé que le runtime, et non le kit de développement logiciel (SDK), le nom du package est `dotnet-runtime-<version>` pour le Runtime .net et `aspnetcore-runtime-<version>` pour la pile Runtime entière.
 
-Les installations de .NET Core antérieures à 2,0 n’ont pas désinstallé l’application hôte lors de la désinstallation du kit de développement logiciel (SDK) à l’aide du gestionnaire de package. Avec `apt-get`, la commande est la suivante :
+> [!TIP]
+> Les installations de .NET Core antérieures à 2,0 n’ont pas désinstallé l’application hôte lors de la désinstallation du kit de développement logiciel (SDK) à l’aide du gestionnaire de package. Avec `apt-get`, la commande est la suivante :
+>
+> ```bash
+> apt-get remove dotnet-host
+> ```
+>
+> Aucune version n’est attachée à `dotnet-host` .
 
-```bash
-apt-get remove dotnet-host
-```
-
-Notez qu’aucune version n’est attachée à `dotnet-host` .
-
-Si vous avez effectué l’installation à l’aide d’un tarball, vous devez supprimer .NET Core manuellement.
+Si vous avez installé à l’aide d’un tarball, vous devez supprimer .NET à l’aide de la méthode manuelle.
 
 Sur Linux, vous devez supprimer les kits de développement logiciel (SDK) et les runtimes séparément, en supprimant les répertoires avec version. Leur suppression supprime le kit de développement logiciel (SDK) et le runtime du disque. Par exemple, pour supprimer la version 1.0.1 du SDK et du Runtime, utilisez les commandes bash suivantes :
 
@@ -102,15 +103,15 @@ Les répertoires parents du SDK et du Runtime sont répertoriés dans la sortie 
 
 ::: zone-end
 
-## <a name="net-core-uninstall-tool"></a>Outil de désinstallation de .NET Core
+## <a name="net-uninstall-tool"></a>Outil de désinstallation .NET
 
-L' [outil de désinstallation de .net Core](../additional-tools/uninstall-tool.md) ( `dotnet-core-uninstall` ) vous permet de supprimer des kits de développement logiciel (SDK) .net Core et des runtimes d’un système. Une collection d’options est disponible pour spécifier les versions à désinstaller.
+L' [outil de désinstallation de .net](../additional-tools/uninstall-tool.md) ( `dotnet-core-uninstall` ) vous permet de supprimer les kits de développement logiciel (SDK) et runtimes .net d’un système. Une collection d’options est disponible pour spécifier les versions à désinstaller.
 
 ## <a name="visual-studio-dependency-on-net-core-sdk-versions"></a>Dépendance Visual Studio sur les versions de kit SDK .NET Core
 
 Avant Visual Studio 2019 version 16,3, les programmes d’installation Visual Studio appelaient le programme d’installation de kit SDK .NET Core autonome. Par conséquent, les versions du kit de développement logiciel (SDK) s’affichent dans la boîte de dialogue **applications Windows & fonctionnalités** . La suppression des kits de développement logiciel (SDK) .NET Core qui ont été installés par Visual Studio à l’aide du programme d’installation autonome peut arrêter Visual Studio. Si Visual Studio rencontre des problèmes après avoir désinstallé les kits de développement logiciel (SDK), exécutez la réparation sur cette version spécifique de Visual Studio. Le tableau suivant présente certaines des dépendances Visual Studio sur les versions de kit SDK .NET Core :
 
-| Version de Visual Studio           | Version de kit SDK .NET Core          |
+| Version de Visual Studio           | Version de kit SDK .NET Core          |
 |---------------------------------|--------------------------------|
 | Visual Studio 2019 version 16.2 | Kit SDK .NET Core 2.2.4 XX, 2.1.8 XX |
 | Visual Studio 2019 version 16.1 | Kit SDK .NET Core 2.2.3 XX, 2.1.7 XX |
@@ -118,7 +119,7 @@ Avant Visual Studio 2019 version 16,3, les programmes d’installation Visual St
 | Visual Studio 2017 version 15,9 | Kit SDK .NET Core 2.2.1 XX, 2.1.5 XX |
 | Visual Studio 2017 version 15.8 | Kit SDK .NET Core 2.1.4 XX          |
 
-À compter de Visual Studio 2019 version 16,3, Visual Studio est payant de sa propre copie du kit SDK .NET Core. Pour cette raison, vous ne voyez plus ces versions du kit de développement logiciel (SDK) dans la boîte de dialogue **applications & fonctionnalités** .
+À compter de Visual Studio 2019 version 16,3, Visual Studio est en facturation de sa propre copie du kit de développement logiciel (SDK) .NET. Pour cette raison, vous ne voyez plus ces versions du kit de développement logiciel (SDK) dans la boîte de dialogue **applications & fonctionnalités** .
 
 ## <a name="remove-the-nuget-fallback-folder"></a>Supprimer le dossier NuGet Fallback
 
@@ -126,7 +127,7 @@ Avant le kit de développement logiciel (SDK) .NET Core 3,0, les programmes d’
 
 Vous souhaiterez peut-être supprimer ce dossier, si :
 
-- Vous développez uniquement à l’aide du kit de développement logiciel (SDK) .NET Core 3,0 ou des versions ultérieures.
+- Vous développez uniquement à l’aide du kit de développement logiciel (SDK) .NET Core 3,0 ou de .NET 5,0 ou versions ultérieures.
 - Vous développez à l’aide de kit SDK .NET Core versions antérieures à 3,0, mais vous pouvez travailler en ligne.
 
 Si vous souhaitez supprimer le dossier NuGet Fallback, vous pouvez le supprimer, mais vous aurez besoin de privilèges d’administrateur pour le faire.

@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 419bcf3ccd011cadba8f8c64e195d7dbdbf7e241
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 22ce3379e028f065528e1f507a2d8c1ae598f0e8
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507016"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031842"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-ubuntu"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Ubuntu
 
@@ -46,15 +46,27 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 - 2.2
 - 2.0
 
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
+
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
 ## <a name="2010-"></a>20,10 ✔️
 
-Les flux de packages .NET 5 et .NET Core 3,1 pour Ubuntu 20,10 présentent actuellement un problème. Pour plus d’informations sur le problème, consultez [GitHub issue dotnet/Core # 5549](https://github.com/dotnet/core/issues/5549). Cet article sera mis à jour lorsque le problème est résolu.
+> [!IMPORTANT]
+> .NET Core 2,1 n’est pas encore disponible dans le flux de package.
 
-Pour installer .NET 5 ou .NET Core 3,1 sur Ubuntu 20,10, suivez les instructions pour [20,04](#2004-).
+[!INCLUDE [linux-prep-intro-apt](includes/linux-prep-intro-apt.md)]
+
+```bash
+wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+```
+
+[!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
 ## <a name="2004-"></a>20,04 ✔️
 
@@ -231,7 +243,7 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 

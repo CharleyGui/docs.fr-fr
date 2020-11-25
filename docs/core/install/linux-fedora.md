@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 9e96773e30fb8ee395e37dca7a4794cd42359bb2
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: f7422941af7e39d69d286a0f79920b025c1bf9c0
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594609"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031902"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-fedora"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Fedora
 
@@ -42,6 +42,10 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 - 3.0
 - 2.2
 - 2.0
+
+## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
@@ -156,7 +160,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 

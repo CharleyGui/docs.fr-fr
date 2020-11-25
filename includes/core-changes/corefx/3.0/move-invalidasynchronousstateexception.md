@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 78678b4b352bb063d1521e9aee3492c0cee059b8
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83720937"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032027"
 ---
 ### <a name="invalidasynchronousstateexception-moved-to-another-assembly"></a>InvalidAsynchronousStateException déplacé vers un autre assembly
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: bb264e406c6604c3606e564d99018eda0f9e8d89
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721661"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032036"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>API qui signalent la version du produit et non de la version du fichier
 
@@ -14,7 +14,7 @@ La plupart des API qui retournent des versions dans .NET Core retournent désorm
 
 Dans .NET Core 2,2 et versions antérieures, les méthodes telles que <xref:System.Environment.Version?displayProperty=nameWithType> , <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType> et la boîte de dialogue des propriétés de fichier pour les assemblys .net Core reflètent la version de fichier. À compter de .NET Core 3,0, ils reflètent la version du produit.
 
-La figure suivante illustre la différence dans les informations de version de l’assembly *System. Runtime. dll* pour .net Core 2,2 (à gauche) et .net Core 3,0 (à droite), tel qu’affiché dans la boîte de dialogue des propriétés du fichier de l' **Explorateur Windows** .
+La figure suivante illustre la différence dans les informations de version de l’assembly *System.Runtime.dll* pour .net Core 2,2 (à gauche) et .net Core 3,0 (à droite) comme indiqué dans la boîte de dialogue Propriétés du fichier de l' **Explorateur Windows** .
 
 ![Différence dans les informations sur la version du produit](~/docs/images/core-changes/corefx/version-information-changes/file-details.png)
 
