@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6ef78d3c-1c69-4141-b687-dcb065b7a74d
 topic_type:
 - apiref
-ms.openlocfilehash: a11b7d5939c4c20504b1ff3dfb4613f85bca0db4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 15f573ebc07bcf08a1ab8f5a5bbb88e940c5c8dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007973"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724167"
 ---
 # <a name="cor_native_link-structure"></a>COR_NATIVE_LINK, structure
+
 Contient des informations utilisées pour lier du code natif.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,12 +44,13 @@ typedef struct
 |`m_flags`|Indicateurs utilisés par l’éditeur de liens lors de la liaison de code natif. Cette valeur est l’une des valeurs [CorNativeLinkFlags,](cornativelinkflags-enumeration.md) .|  
 |`m_entryPoint`|Jeton de métadonnées MemberRef qui représente le point d’entrée. Le format est `lib:entrypoint`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

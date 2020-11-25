@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 99cbc1eb-d539-4f76-a0d8-b93348112f14
 topic_type:
 - apiref
-ms.openlocfilehash: ff290cd8ad331ff109c3bbbf87638d22b9b183bc
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 312052fcd683acbccb9ca616992bd635490aa2a5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208536"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724362"
 ---
 # <a name="icordebugheapenum-interface"></a>ICorDebugHeapEnum, interface
+
 Fournit un énumérateur pour les objets sur le tas managé. Cette interface est une sous-classe de l'interface ICorDebugEnum.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,14 @@ Fournit un énumérateur pour les objets sur le tas managé. Cette interface est
 |------------|-----------------|  
 |[Next, méthode](icordebugheapenum-next-method.md)|Obtient le nombre spécifié d’instances [COR_HEAPOBJECT](cor-heapobject-structure.md) qui contiennent des informations sur les objets sur le tas managé.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  L' `ICorDebugHeapEnum` interface implémente l’interface ICorDebugEnum.  
   
  Une `ICorDebugHeapEnum` instance est remplie avec [COR_HEAPOBJECT](cor-heapobject-structure.md) instances en appelant la méthode [ICorDebugProcess5 :: enumerateheap,](icordebugprocess5-enumerateheap-method.md) . Chaque [COR_HEAPOBJECT](cor-heapobject-structure.md) instance de la collection représente soit un objet actif sur le tas, soit un objet qui n’est associé à aucun objet, mais n’a pas encore été collecté par le récupérateur de mémoire. Les objets [COR_HEAPOBJECT](cor-heapobject-structure.md) de la collection peuvent être énumérés en appelant la méthode [Icordebugheapenum, :: Next](icordebugheapenum-next-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

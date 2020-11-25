@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: e5acda4137d020d35d3144e9cc61e174024e165a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 740cd1b78b96c2fcaecf39a725973d738037f403
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826467"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723751"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 
@@ -35,6 +35,7 @@ Le common language runtime représente une protection pour certaines exceptions 
 > Il est possible que le runtime lève une exception non prise en charge avant que du code managé ait pu installer un gestionnaire d’exceptions. Bien que le code managé n’ait pas eu la possibilité de traiter cette exception, elle est autorisée à poursuivre naturellement.  
   
 ## <a name="exposing-threading-problems-during-development"></a>Mettre en lumière des problèmes de threads au cours du développement  
+
  Lorsque les threads sont autorisés à s’interrompre de façon silencieuse, sans arrêter l’application, de graves problèmes de programmation risquent de passer inaperçus. Il s’agit d’un problème particulier pour les services et d’autres applications qui s’exécutent pendant des périodes prolongées. Au fur et à mesure des échecs de threads, le programme s’endommage progressivement. L’application risque de voir ses performances se dégrader ou de ne plus répondre.  
   
  Le fait d’autoriser les exceptions non prises en charge dans les threads à poursuivre naturellement, jusqu’à ce que le système d’exploitation arrête le programme, expose à de tels problèmes lors du développement et des tests. Les rapports d’erreurs sur les arrêts du programme prennent en charge le débogage.  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f93cc2ec-0a12-4499-9bf6-405dc58c9a81
 topic_type:
 - apiref
-ms.openlocfilehash: a338116f6eae670cad785807ed580039fbd7fb78
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a166648252215e49b206aae1c3ab1e08985fde2d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207406"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724635"
 ---
 # <a name="icordebugobjectvalue2-interface"></a>ICorDebugObjectValue2, interface
 
@@ -29,14 +29,15 @@ ms.locfileid: "83207406"
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetVirtualMethodAndType, méthode](icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType`n’est pas encore implémenté.|  
+|[GetVirtualMethodAndType, méthode](icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType` n’est pas encore implémenté.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

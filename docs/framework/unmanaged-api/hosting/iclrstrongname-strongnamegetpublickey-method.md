@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a31dcaa9-a404-4c1d-8cc7-081827c52935
 topic_type:
 - apiref
-ms.openlocfilehash: 5a20bde64830617090c92afe5fae3a603cf9103b
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 5bd314b2b63474d2a1d159f74564e2d4ca13aef6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763126"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725545"
 ---
 # <a name="iclrstrongnamestrongnamegetpublickey-method"></a>Méthode ICLRStrongName::StrongNameGetPublicKey
+
 Obtient la clé publique à partir d’une paire de clés publique/privée. La paire de clés peut être fournie en tant que nom de conteneur de clé dans un fournisseur de services de chiffrement (CSP) ou en tant que collection brute d’octets.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT StrongNameGetPublicKey (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szKeyContainer`  
  dans Nom du conteneur de clé qui contient la paire de clés publique/privée. Si `pbKeyBlob` a la valeur null, `szKeyContainer` doit spécifier un conteneur valide dans le CSP. Dans ce cas, la méthode [ICLRStrongName :: StrongNameGetPublicKey](iclrstrongname-strongnamegetpublickey-method.md) extrait la clé publique de la paire de clés stockée dans le conteneur.  
   
@@ -57,18 +59,21 @@ HRESULT StrongNameGetPublicKey (
  `pcbPublicKeyBlob`  
  à Taille de l’objet BLOB de clé publique retourné.  
   
-## <a name="return-value"></a>Valeur de retour  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La clé publique est contenue dans une structure [publicKeyBlob](../strong-naming/publickeyblob-structure.md) .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

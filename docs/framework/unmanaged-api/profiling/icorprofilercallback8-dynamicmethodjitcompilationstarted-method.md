@@ -8,14 +8,15 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: a4c434c5d458602db8a4d582b239d6e57def6ace
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 46a25fc6e9119481f728275e0569429cc6c46dc9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498997"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725428"
 ---
 # <a name="icorprofilercallback8dynamicmethodjitcompilationstarted-method"></a>ICorProfilerCallback8 ::D méthode ynamicMethodJITCompilationStarted
+
 [Pris en charge dans le .NET Framework 4,7 et versions ultérieures]  
   
 Notifie le profileur chaque fois que la compilation JIT d’une méthode dynamique a démarré.  
@@ -32,6 +33,7 @@ HRESULT DynamicMethodJITCompilationStarted(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
 [in] `functionId`  
 Identificateur de la fonction en mémoire pour laquelle la compilation JIT est démarrée.
 
@@ -47,11 +49,12 @@ Identificateur de la fonction en mémoire pour laquelle la compilation JIT est d
 Ce rappel est déclenché chaque fois qu’une méthode dynamique est compilée juste-à-temps. Cela comprend plusieurs stubs IL et méthodes LCG. Son objectif est de fournir aux rédacteurs de profileur suffisamment d’informations pour identifier la méthode compilée pour les utilisateurs.
 
 > [!NOTE]
-> `functionId`les valeurs ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
+> `functionId` les valeurs ne peuvent pas être utilisées pour la résolution de leurs jetons de métadonnées, car les méthodes dynamiques n’ont pas de métadonnées.
 
 Le `pILHeader` pointeur est valide uniquement pendant le rappel.
 
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

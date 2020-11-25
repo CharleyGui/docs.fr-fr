@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd639ba0-f77b-426d-9ff6-f92706840348
 topic_type:
 - apiref
-ms.openlocfilehash: 43f585417ed52b92c23087c0f02fd188ee09ea7e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 5eb6299526d69624056961cfb7f0387ff8f873cf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210213"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725025"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction, méthode
+
 Remappe une fonction modifiée en spécifiant le nouvel offset MSIL (Microsoft Intermediate Language)  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,12 +35,14 @@ HRESULT RemapFunction (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `newILOffset`  
  dans Nouvel offset MSIL du frame de pile auquel le pointeur d’instruction doit être placé. Cette valeur doit être un point de séquence.  
   
  Il incombe à l’appelant de garantir la validité de cette valeur. Par exemple, l’offset MSIL n’est pas valide s’il est en dehors des limites de la fonction.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Quand la fonction d’un frame a été modifiée, le débogueur peut appeler la `RemapFunction` méthode pour échanger la version la plus récente de la fonction du frame afin de pouvoir l’exécuter. L’exécution du code commence à l’offset MSIL donné.  
   
 > [!NOTE]
@@ -51,7 +54,8 @@ HRESULT RemapFunction (
   
 - Pendant l’arrêt de l’exécution du code en raison d’un événement [ICorDebugManagedCallback :: EditAndContinueRemap,](icordebugmanagedcallback-editandcontinueremap-method.md) pour ce frame.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

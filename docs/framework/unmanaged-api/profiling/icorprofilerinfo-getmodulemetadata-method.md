@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
 topic_type:
 - apiref
-ms.openlocfilehash: 62b34128be99ce7750d45e6c19e26bef7fcc98c5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 74df0fb412e7fb3d9f779391ec84f07a0379a2cc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502949"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724115"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData, méthode
+
 Obtient une instance d’interface de métadonnées mappée au module spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetModuleMetaData(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  dans ID du module auquel l’instance d’interface sera mappée.  
   
@@ -49,11 +51,13 @@ HRESULT GetModuleMetaData(
  à Pointeur vers l’adresse de l’instance de l’interface de métadonnées.  
   
 ## <a name="remarks"></a>Remarques  
+
  Vous pouvez demander que les métadonnées soient ouvertes en mode lecture/écriture, mais cela entraîne une exécution plus lente des métadonnées du programme, car les modifications apportées aux métadonnées ne peuvent pas être optimisées comme elles le faisaient du compilateur.  
   
  Certains modules (tels que les modules de ressources) n’ont pas de métadonnées. Dans ce cas, `GetModuleMetaData` retourne une valeur HRESULT de S_FALSE et une valeur null dans * `ppOut` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

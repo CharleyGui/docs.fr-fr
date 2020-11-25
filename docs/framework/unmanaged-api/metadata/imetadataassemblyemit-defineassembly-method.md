@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
 topic_type:
 - apiref
-ms.openlocfilehash: 17c91200730431c4c6e230b8c1561ce7c4863868
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 6d783e27c60db7381025f3b2382728e3996323ae
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008181"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725727"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly, méthode
+
 Crée une `Assembly` structure contenant les métadonnées pour l’assembly spécifié et retourne le jeton de métadonnées associé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT DefineAssembly (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbPublicKey`  
  dans Clé publique qui identifie le serveur de publication de l’assembly, ou NULL si l’assembly n’a pas un nom fort.  
   
@@ -62,14 +64,16 @@ HRESULT DefineAssembly (
  à Pointeur vers le jeton de métadonnées.  
   
 ## <a name="remarks"></a>Remarques  
+
  Une seule `Assembly` structure de métadonnées peut être définie dans un manifeste.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

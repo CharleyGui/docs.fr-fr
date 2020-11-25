@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5c834aa1-f2db-408a-b230-c7bec093d364
 topic_type:
 - apiref
-ms.openlocfilehash: 631301a10aee96bb00aeda6b0b8695f0aea186a8
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 7092a1c792fee7f6173dcde211b8e807f6ab02a3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703474"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725584"
 ---
 # <a name="iclrpolicymanager-interface"></a>ICLRPolicyManager, interface
+
 Fournit des méthodes qui permettent à l’hôte de spécifier des actions de stratégie à prendre en cas d’échecs et de délais d’attente.  
   
 ## <a name="methods"></a>Méthodes  
@@ -35,12 +36,13 @@ Fournit des méthodes qui permettent à l’hôte de spécifier des actions de s
 |[SetTimeoutAndAction, méthode](iclrpolicymanager-settimeoutandaction-method.md)|Définit une valeur de délai d’attente pour l’opération spécifiée et spécifie l’action de stratégie que le CLR doit prendre lorsque l’opération se produit.|  
 |[SetUnhandledExceptionPolicy, méthode](iclrpolicymanager-setunhandledexceptionpolicy-method.md)|Spécifie le comportement du CLR lorsqu’une exception non gérée se produit.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

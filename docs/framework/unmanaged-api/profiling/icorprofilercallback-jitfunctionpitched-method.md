@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 116085df-7a77-404a-afac-d0557a12b986
 topic_type:
 - apiref
-ms.openlocfilehash: 2715a5b6b03a5ad33a6f18fb736fce3911bfbef0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 51fec26837b3c7f0a0328a7b64ff4a02148283da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500024"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725507"
 ---
 # <a name="icorprofilercallbackjitfunctionpitched-method"></a>ICorProfilerCallback::JITFunctionPitched, méthode
+
 Notifie le profileur qu’une fonction qui a été compilée juste-à-temps (JIT) a été supprimée de la mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,15 +34,18 @@ HRESULT JITFunctionPitched(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `functionId`  
  dans ID de la fonction qui a été supprimée.  
   
 ## <a name="remarks"></a>Remarques  
+
  Si la fonction supprimée est appelée, le profileur reçoit de nouveaux événements de compilation JIT lorsque la fonction est recompilée. Actuellement, le compilateur JIT (CLR) common language runtime ne supprime pas les fonctions de la mémoire, ce rappel n’est donc pas utilisé pour le moment et n’est pas reçu par le profileur.  
   
  La valeur de `functionId` n’est pas valide tant que la fonction n’est pas recompilée. Lorsque la fonction est recompilée, la même `functionId` valeur est utilisée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

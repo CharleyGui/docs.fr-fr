@@ -6,20 +6,23 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
-ms.openlocfilehash: bb011a8b81d9808c7517ebc2517529af7c4b975a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 177c52ea7217821735250b297974ac0ebaa1eb2e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819369"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725376"
 ---
 # <a name="building-xml-schemas"></a>Création de schémas XML
+
 Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondent aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML et peuvent permettre de créer des schémas XML en mémoire.  
   
 ## <a name="building-an-xml-schema"></a>Création d'un schéma XML  
+
  Dans les exemples de code suivants, l'API du SOM permet de créer un schéma XML client en mémoire.  
   
 ### <a name="creating-element-and-attributes"></a>Création d'éléments et d'attributs  
+
  Les exemples de codes génèrent le schéma client à partir de rien en créant les attributs et les éléments enfants, puis les types qui leur correspondent et enfin les éléments de niveau supérieur.  
   
  Dans l'exemple de code suivant, les éléments `FirstName` et `LastName` ainsi que l'attribut `CustomerId` du schéma client sont créés à l'aide des classes <xref:System.Xml.Schema.XmlSchemaElement> et <xref:System.Xml.Schema.XmlSchemaAttribute> du SOM. Exception faite des propriétés <xref:System.Xml.Schema.XmlSchemaElement.Name%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> et <xref:System.Xml.Schema.XmlSchemaAttribute>, qui correspondent à l'attribut « name » des éléments `<xs:element />` et `<xs:attribute />` d'un schéma XML, tous les autres attributs autorisés par le schéma (`defaultValue`, `fixedValue`, `form`, etc.) possèdent des propriétés correspondantes dans les classes <xref:System.Xml.Schema.XmlSchemaElement> et <xref:System.Xml.Schema.XmlSchemaAttribute>.  
@@ -29,6 +32,7 @@ Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWith
  [!code-vb[XmlSchemaCreateExample#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCreateExample/VB/XmlSchemaCreateExample.vb#2)]  
   
 ### <a name="creating-schema-types"></a>Création de types de schéma  
+
  Le contenu des éléments et des attributs est défini par leurs types. Pour créer des éléments et des attributs dont les types sont l'un des types de schéma intégrés, la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute> sont définies sur le nom qualifié correspondant du type intégré à l'aide de la classe <xref:System.Xml.XmlQualifiedName>. Pour créer un type défini par l'utilisateur pour les éléments et les attributs, un nouveau type simple ou complexe est créé à l'aide de la classe <xref:System.Xml.Schema.XmlSchemaSimpleType> ou <xref:System.Xml.Schema.XmlSchemaComplexType>.  
   
 > [!NOTE]
@@ -46,6 +50,7 @@ Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWith
  [!code-vb[XmlSchemaCreateExample#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCreateExample/VB/XmlSchemaCreateExample.vb#3)]  
   
 ### <a name="creating-and-compiling-schemas"></a>Création et compilation de schémas  
+
  À ce stade, les attributs et les éléments enfants, les types qui leur correspondent et les éléments `Customer` de niveau supérieur ont été créés en mémoire à l'aide de l'API du SOM. Dans l'exemple de code suivant, l'élément de schéma est créé à l'aide de la classe <xref:System.Xml.Schema.XmlSchema>, les éléments de niveau supérieur et les types y sont ajoutés à l'aide de la propriété <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> et le schéma complet est compilé à l'aide de la classe <xref:System.Xml.Schema.XmlSchemaSet> et écrit dans la console.  
   
  [!code-cpp[XmlSchemaCreateExample#4](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#4)]

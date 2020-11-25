@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
 topic_type:
 - apiref
-ms.openlocfilehash: c0b6d53ce3be3aed6a577bf6e38a281928499848
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 585a9e39f529294841cd11389f03d763968a0f5e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009026"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723816"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps, méthode
+
 Obtient le jeu de propriétés de la ressource de manifeste avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,8 +41,9 @@ HRESULT GetManifestResourceProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mdmr`  
- dans `mdManifestResource`Jeton qui représente la ressource pour laquelle obtenir les propriétés.  
+ dans `mdManifestResource` Jeton qui représente la ressource pour laquelle obtenir les propriétés.  
   
  `szName`  
  à Nom de la ressource.  
@@ -61,12 +63,13 @@ HRESULT GetManifestResourceProps (
  `pdwResourceFlags`  
  à Pointeur vers des indicateurs qui décrivent les métadonnées appliquées à une ressource. La valeur flags est une combinaison d’une ou plusieurs valeurs [CorManifestResourceFlags,](cormanifestresourceflags-enumeration.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 73332138-5fea-441f-b893-61af87d45a42
 topic_type:
 - apiref
-ms.openlocfilehash: 1a57b7ceb6da961fba1f0d6e8e0ba1aa88ca0541
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f1a30c197373928ec10c2b84de4e805b94ea2384
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213489"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724505"
 ---
 # <a name="icordebugprocess2-interface"></a>ICorDebugProcess2, interface
+
 Extension logique de l’interface ICorDebugProcess, qui représente un processus exécutant du code managé.  
   
 ## <a name="methods"></a>Méthodes  
@@ -36,12 +37,13 @@ Extension logique de l’interface ICorDebugProcess, qui représente un processu
 |[SetDesiredNGENCompilerFlags, méthode](icordebugprocess2-setdesiredngencompilerflags-method.md)|Définit les indicateurs requis pour que le compilateur juste-à-temps (JIT) charge une image dans le processus en cours de débogage.|  
 |[SetUnmanagedBreakpoint, méthode](icordebugprocess2-setunmanagedbreakpoint-method.md)|Définit un point d’arrêt non managé au niveau de l’offset d’image native spécifié.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

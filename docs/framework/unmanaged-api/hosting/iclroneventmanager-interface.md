@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9e15a0c1-8ab6-43d0-ae28-6ec7a4edd913
 topic_type:
 - apiref
-ms.openlocfilehash: 30312e6e09535cee2968b1f9e8ac87b461c5ff40
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 1948075d87b5a44397a1eaab3adb4edbc96d7143
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703516"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725629"
 ---
 # <a name="iclroneventmanager-interface"></a>ICLROnEventManager, interface
+
 Fournit des méthodes qui permettent à l’hôte d’inscrire et d’annuler l’enregistrement des rappels pour les événements common language runtime (CLR).  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,18 +32,20 @@ Fournit des méthodes qui permettent à l’hôte d’inscrire et d’annuler l�
 |[RegisterActionOnEvent, méthode](iclroneventmanager-registeractiononevent-method.md)|Inscrit un pointeur de rappel pour l’événement spécifié.|  
 |[UnregisterActionOnEvent, méthode](iclroneventmanager-unregisteractiononevent-method.md)|Annule l’inscription d’un pointeur de rappel précédemment inscrit pour l’événement spécifié.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Pour inscrire et désinscrire des rappels d’événements, l’hôte obtient une référence à `ICLROnEventManager` en appelant la méthode [ICLRControl :: GetCLRManager](iclrcontrol-getclrmanager-method.md) .  
   
 > [!NOTE]
 > Les événements décrits par [EClrEvent](eclrevent-enumeration.md) peuvent être déclenchés plusieurs fois et à partir de différents threads pour signaler un déchargement ou la désactivation du CLR.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

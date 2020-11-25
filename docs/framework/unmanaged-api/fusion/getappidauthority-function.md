@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f968dad-0d09-47fb-bebc-94c39a0d16ad
 topic_type:
 - apiref
-ms.openlocfilehash: 22a6af61251942f068676daaee2bdfa868e32a97
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e731ac1c652b8b4505073a3a10463ae0ce21ac0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134557"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724492"
 ---
 # <a name="getappidauthority-function"></a>GetAppIdAuthority, fonction
+
 Obtient un pointeur vers une instance [IAppIdAuthority](iappidauthority-interface.md) qui gère les clés pour les identités et les références de l’application.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,17 +35,19 @@ HRESULT GetAppIdAuthority (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppIAppIdAuthority`  
- à Pointeur de `IAppIdAuthority` retourné.  
+ à Pointeur retourné `IAppIdAuthority` .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [IAppIdAuthority, interface](iappidauthority-interface.md)
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)

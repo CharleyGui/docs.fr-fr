@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 907a2b43-68db-44a7-acac-89e792e7bb3c
 topic_type:
 - apiref
-ms.openlocfilehash: 240712296254e02f4d268a00e1c15ef34f4519f1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0c74e073d55ab7dc98620052a0cfd68c294f7a1c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501542"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724271"
 ---
 # <a name="ihostiocompletionmanagercreateiocompletionport-method"></a>IHostIoCompletionManager::CreateIoCompletionPort, méthode
+
 Demande que l’hôte crée un port de terminaison d’e/s.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT CreateIoCompletionPort (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phPort`  
  à Pointeur vers un handle vers le port de terminaison d’e/s nouvellement créé, ou 0 (zéro), si le port n’a pas pu être créé.  
   
@@ -41,7 +43,7 @@ HRESULT CreateIoCompletionPort (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`CreateIoCompletionPort`retourné avec succès.|  
+|S_OK|`CreateIoCompletionPort` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,14 +52,16 @@ HRESULT CreateIoCompletionPort (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour allouer la ressource demandée.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR appelle la `CreateIoCompletionPort` méthode pour demander que l’hôte crée un port de terminaison d’e/s. Il lie les opérations d’e/s à ce port via un appel à la méthode [IHostIoCompletionManager :: bind](ihostiocompletionmanager-bind-method.md) . L’hôte signale l’État au CLR en appelant [ICLRIoCompletionManager :: OnComplete](iclriocompletionmanager-oncomplete-method.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

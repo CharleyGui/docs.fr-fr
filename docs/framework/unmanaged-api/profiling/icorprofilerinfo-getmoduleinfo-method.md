@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5a90d16f-7929-4987-8f83-a631becf564d
 topic_type:
 - apiref
-ms.openlocfilehash: 751f2ac44e543fed76c7031791bb57d75ed0fd48
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 863fa1bf50830bb46e5c2939c99fe1e15897ac3d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498100"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724128"
 ---
 # <a name="icorprofilerinfogetmoduleinfo-method"></a>ICorProfilerInfo::GetModuleInfo, méthode
+
 Pour un ID de module donné, retourne le nom de fichier du module et l'ID de l'assembly parent du module.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT GetModuleInfo(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  [in] ID du module pour lequel les informations sont récupérées.  
   
@@ -58,6 +60,7 @@ HRESULT GetModuleInfo(
  [out] Pointeur vers l'ID de l'assembly parent du module.  
   
 ## <a name="remarks"></a>Remarques  
+
  Pour les modules dynamiques, le paramètre `szName` est une chaîne vide et l'adresse de base est 0 (zéro).  
   
  Bien que la `GetModuleInfo` méthode puisse être appelée dès que l’ID du module existe, l’ID de l’assembly parent n’est pas disponible tant que le profileur n’a pas reçu le rappel [ICorProfilerCallback :: ModuleAttachedToAssembly,](icorprofilercallback-moduleattachedtoassembly-method.md) .  
@@ -67,6 +70,7 @@ HRESULT GetModuleInfo(
  Vous pouvez également commencer par appeler `GetModuleInfo` avec un tampon `szName` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite affecter à la taille de la mémoire tampon la valeur retournée dans `pcchName` et rappeler `GetModuleInfo`.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ee8d058-ffc8-4967-9133-a5adfef4e518
 topic_type:
 - apiref
-ms.openlocfilehash: 51c8f9a2b66d7b2553949056f7cdbedcf5ea37d6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 05a9ab58acb3bf5829fd231ae6d8bcc96ae06da6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209914"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724869"
 ---
 # <a name="icordebuginternalframe2getframeaddress-method"></a>ICorDebugInternalFrame2::GetFrameAddress, méthode
+
 Retourne l’adresse de la pile du frame interne.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,12 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAddress`  
  à Pointeur vers le `CORDB_ADDRESS` pour le frame interne.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -44,10 +47,12 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 |E_FAIL|L’adresse du frame interne n’a pas pu être retournée.|  
 |E_INVALIDARG|`pAddress` a la valeur `null`.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La valeur retournée dans `pAddress` peut être utilisée pour déterminer l’emplacement du frame interne par rapport à d’autres frames sur la pile. Même sur les ordinateurs IA-64, le frame interne se trouve sur la pile uniquement et il n’y a aucun pointeur correspondant vers un magasin de stockage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

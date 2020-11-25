@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-ms.openlocfilehash: fcf46a0716d79fd27cb06924bf74c119b8435147
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7051aeb8cdc25518f99fe093045e7e769ae7f6f5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822826"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725415"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Accès à des données XML fortement typées à l'aide de XPathNavigator
+
 En tant qu’instance du modèle de données XPath 2,0, la <xref:System.Xml.XPath.XPathNavigator> classe peut contenir des données fortement typées qui sont mappées à des types Common Language Runtime (CLR). Selon le modèle de données XPath 2,0, seuls les éléments et les attributs peuvent contenir des données fortement typées. La <xref:System.Xml.XPath.XPathNavigator> classe fournit des mécanismes pour accéder aux données dans <xref:System.Xml.XPath.XPathDocument> un <xref:System.Xml.XmlDocument> objet ou en tant que données fortement typées, ainsi que des mécanismes de conversion d’un type de données en un autre.  
   
 ## <a name="type-information-exposed-by-xpathnavigator"></a>Informations sur le type exposées par XPathNavigator  
+
  D'un point de vue technique, les données XML 1.0 ne présentent pas de type, sauf si elles sont traitées avec une DTD, un schéma de langage XSD (XML schema definition) ou un autre mécanisme. Un certain nombre de catégories d'informations sur le type peuvent être associées à un attribut ou un élément XML.  
   
 - Types CLR simples : aucun des langages de schéma XML ne prend directement en charge les types CLR (Common Language Runtime). Puisqu'il est utile de pouvoir afficher du contenu d'attribut ou d'élément simple en tant que type CLR le plus approprié, tout contenu simple peut être typé <xref:System.String> en l'absence d'informations de schéma avec des informations complémentaires sur le schéma qui redéfinissent potentiellement ce contenu en type plus approprié. La propriété <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> permet de trouver le type CLR le plus adapté à un contenu d'attribut ou d'élément simple. Pour plus d'informations sur le mappage de types de schéma intégrés à des types CLR, consultez [Prise en charge du type dans les classes System.Xml](type-support-in-the-system-xml-classes.md).  
@@ -29,6 +31,7 @@ En tant qu’instance du modèle de données XPath 2,0, la <xref:System.Xml.XPat
 - Réflexion du type spécifique au langage du schéma : dans d'autres cas, il se peut que vous souhaitiez obtenir d'autres détails sur le type spécifique au schéma appliqué à un document XML. Par exemple, lors de la lecture d'un fichier XML; il se peut que vous souhaitiez extraire l'attribut `maxOccurs` pour chaque nœud valide du document XML pour effectuer certains calculs personnalisés. Étant donné que ces informations ne sont définies que via la validation de schéma, elles sont accessibles par le biais de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>. Pour plus d'informations, consultez la section ci-dessous sur le jeu d'informations de post-validation de schéma (PSVI).  
   
 ## <a name="xpathnavigator-typed-accessors"></a>Accesseurs typés XPathNavigator  
+
  Le tableau suivant illustre les différentes propriétés et méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> pouvant être utilisées pour accéder aux informations sur le type à propos d'un nœud.  
   
 |Propriété|Description|  
@@ -47,6 +50,7 @@ En tant qu’instance du modèle de données XPath 2,0, la <xref:System.Xml.XPat
  Pour plus d'informations sur le mappage de types de schéma intégrés à des types CLR, consultez [Prise en charge du type dans les classes System.Xml](type-support-in-the-system-xml-classes.md).  
   
 ## <a name="the-post-schema-validation-infoset-psvi"></a>Jeu d'informations de post-validation de schéma (PSVI)  
+
  Un processeur de schéma XML accepte un jeu d'informations XML et le convertit en jeu d'informations de post-validation de schéma (PSVI). Un PSVI est le jeu d'informations XML d'entrée original auquel sont ajoutés les nouveaux éléments d'informations et les nouvelles propriétés, elles-mêmes ajoutées aux éléments d'informations existants. Trois grandes classes d'informations sont ajoutées au jeu d'informations XML du PSVI exposé par l'objet <xref:System.Xml.XPath.XPathNavigator>.  
   
 1. Résultats de validation : informations indiquant si un élément ou un attribut a été correctement validé ou non. Ces informations sont exposées par la propriété <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
@@ -137,6 +141,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
 ```  
   
 ## <a name="obtain-typed-values-using-valueas-properties"></a>Obtention de valeurs typées à l'aide des propriétés ValueAs  
+
  Vous pouvez récupérer la valeur typée d'un nœud en accédant à la propriété <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> de l'objet <xref:System.Xml.XPath.XPathNavigator>. Dans certains cas, il se peut que vous souhaitiez convertir la valeur typée d'un nœud en un type différent. Un exemple courant consiste à obtenir une valeur numérique à partir d'un nœud XML. Considérez par exemple le document XML non typé et non validé suivant.  
   
 ```xml  

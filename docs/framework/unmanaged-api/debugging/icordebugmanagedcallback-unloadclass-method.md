@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 66a59b18-ce9a-41f4-b23b-4dd6753d6d36
 topic_type:
 - apiref
-ms.openlocfilehash: a7b71170f58ddfe0295da28b8c9fc73286b074e6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6efd451c6895e8fef443e2e86afa6e98279c6493
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212267"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723998"
 ---
 # <a name="icordebugmanagedcallbackunloadclass-method"></a>ICorDebugManagedCallback::UnloadClass, méthode
+
 Notifie le débogueur qu’une classe est en cours de déchargement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,16 +36,19 @@ HRESULT UnloadClass (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant la classe.  
   
  `c`  
  dans Pointeur vers un objet ICorDebugClass qui représente la classe.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La classe ne doit pas être référencée après cet appel.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

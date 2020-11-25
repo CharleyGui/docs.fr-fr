@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d2ca20db-df22-4528-a0dd-a09ea62c8998
 topic_type:
 - apiref
-ms.openlocfilehash: 5bcced647af6436bd8f5b1f3779d9368b6173d11
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 213bee96531fa0bbc9bf0ae76b2505019833abfc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213034"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724700"
 ---
 # <a name="icordebugnativeframe2ismatchingparentframe-method"></a>ICorDebugNativeFrame2::IsMatchingParentFrame, méthode
+
 Détermine si le frame spécifié est le parent du frame actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,15 @@ HRESULT IsMatchingParentFrame([in] ICorDebugNativeFrame2
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pPotentialParentFrame`  
  dans Pointeur vers l’objet Frame que vous souhaitez évaluer pour l’état parent.  
   
  `pIsParent`  
  [out] `true` Si `pPotentialParentFrame` est le parent du frame actuel ; sinon, `false` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -51,10 +54,12 @@ HRESULT IsMatchingParentFrame([in] ICorDebugNativeFrame2
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarks  
- `IsMatchingParentFrame`retourne `true` si l’objet Frame que vous transmettez à la méthode est le parent de l’objet Frame sur lequel la méthode a été appelée. Si vous appelez la méthode sur un frame qui n’est pas un enfant du frame spécifié, elle retourne une erreur.  
+## <a name="remarks"></a>Remarques  
+
+ `IsMatchingParentFrame` retourne `true` si l’objet Frame que vous transmettez à la méthode est le parent de l’objet Frame sur lequel la méthode a été appelée. Si vous appelez la méthode sur un frame qui n’est pas un enfant du frame spécifié, elle retourne une erreur.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

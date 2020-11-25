@@ -9,17 +9,19 @@ helpviewer_keywords:
 - debugging interfaces [.NET Framework]
 - interfaces [.NET Framework debugging]
 ms.assetid: f96987d5-e6a5-478b-ac5e-302e16545cce
-ms.openlocfilehash: 34eee8c05e1c356d4c431245c6837bd2b3a89b32
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e376544a9d428ce5110a7e38b92a8e830f574664
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504470"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725181"
 ---
 # <a name="diagnostics-symbol-store-interfaces"></a>Interfaces du magasin de symboles de diagnostics
+
 Cette rubrique décrit les interfaces non managées qui permettent à un compilateur de générer des informations de symbole pour une utilisation par un débogueur.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [IBindingDisplay, interface](ibindingdisplay-interface.md)  
  Fournit des méthodes qui affichent les informations de liaison actuelles sur l’application en cours d’exécution.  
   
@@ -45,7 +47,7 @@ Cette rubrique décrit les interfaces non managées qui permettent à un compila
  Autorise la définition d’informations de méthode Async facultatives par symbole de méthode. Doit utiliser avec une méthode ouverte (c’est-à-dire entre les appels à la [méthode OpenMethod,](isymunmanagedwriter-openmethod-method.md)et la [méthode CloseMethod,](isymunmanagedwriter-closemethod-method.md)).  
   
  [ISymUnmanagedBinder, interface](isymunmanagedbinder-interface.md)  
- Représente un Binder de symboles pour du code non managé.  
+ Représente un binder de symboles pour du code non managé.  
   
  [ISymUnmanagedBinder2, interface](isymunmanagedbinder2-interface.md)  
  Représente un Binder de symboles pour du code non managé et étend l' `ISymUnmanagedBinder` interface.  
@@ -75,7 +77,7 @@ Cette rubrique décrit les interfaces non managées qui permettent à un compila
  Représente un espace de noms.  
   
  [ISymUnmanagedReader, interface](isymunmanagedreader-interface.md)  
- Représente un lecteur de symboles qui fournit l’accès aux documents, aux méthodes et aux variables dans un magasin de symboles.  
+ Représente un lecteur de symboles qui fournit l’accès aux documents, aux méthodes et aux variables d’un magasin de symboles.  
   
  [ISymUnmanagedReader2, interface](isymunmanagedreader2-interface.md)  
  Obtient une méthode de lecteur de symboles en fonction d’un jeton de méthode et d’un numéro de version de modification et de copie.  
@@ -96,7 +98,7 @@ Cette rubrique décrit les interfaces non managées qui permettent à un compila
  Fournit des méthodes qui obtiennent des informations sur le chemin de recherche.  
   
  [ISymUnmanagedVariable, interface](isymunmanagedvariable-interface.md)  
- Représente une variable, telle qu’un paramètre, une variable locale ou un champ.  
+ Représente une variable, comme un paramètre, une variable locale ou un champ.  
   
  [ISymUnmanagedWriter, interface](isymunmanagedwriter-interface.md)  
  Représente un writer de symboles et fournit des méthodes pour définir des documents, des points de séquence, des étendues lexicales et des variables.  
@@ -114,6 +116,7 @@ Cette rubrique décrit les interfaces non managées qui permettent à un compila
  Interface ISymUnmanagedWriter5.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Énumérations du magasin de symboles de diagnostics](diagnostics-symbol-store-enumerations.md)  
   
  [Structures du magasin de symboles de diagnostics](diagnostics-symbol-store-structures.md)  

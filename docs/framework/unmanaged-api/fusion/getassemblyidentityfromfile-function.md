@@ -16,15 +16,16 @@ helpviewer_keywords:
 ms.assetid: 2c32da53-76c7-4048-84d0-d05207333004
 topic_type:
 - apiref
-ms.openlocfilehash: 50ec5a23db4d2460480bcc3e463ecd88e7470bde
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9580dd3bc5a7279549e8deadac95d35a33da74f8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724479"
 ---
 # <a name="getassemblyidentityfromfile-function"></a>GetAssemblyIdentityFromFile, fonction
-Gets a pointer to an `IUnknown` object with the specified `IID` in the assembly at the specified file path.  
+
+Obtient un pointeur vers un `IUnknown` objet avec le spécifié `IID` dans l’assembly dans le chemin d’accès au fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +38,25 @@ HRESULT GetAssemblyIdentityFromFile (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzFilePath`  
- [in] A valid path to the requested assembly.  
+ dans Chemin d’accès valide à l’assembly demandé.  
   
  `riid`  
- [in] The `IID` of the interface to return.  
+ dans `IID` De l’interface à retourner.  
   
  `ppIdentity`  
- [out] The returned interface pointer.  
+ à Pointeur d’interface retourné.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **Header:** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [IUnknown](/cpp/atl/iunknown)
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)

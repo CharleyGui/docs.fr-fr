@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: b913affb4728dc80ba67438384cbeac87265f76d
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 4d0cf22b4b0644d6b25d6b3ef884718cb9ca1e42
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860540"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723777"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request, méthode
+
 Appelée par les services d’accès aux données common language runtime (CLR) pour demander une opération, comme défini par l’implémentation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT Request (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `reqCode`  
  dans Défini par l’utilisateur.  
   
@@ -55,12 +57,14 @@ HRESULT Request (
  `outBuffer`  
  à Mémoire tampon contenant la réponse.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La `Request` méthode facilite l’ajout d’opérations personnalisées non spécifiées. Autrement dit, cette méthode fournit l’extensibilité sans nécessiter de révision de la définition de l’interface.  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

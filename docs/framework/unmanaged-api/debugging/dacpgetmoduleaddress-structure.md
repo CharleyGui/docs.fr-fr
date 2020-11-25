@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: e460264e2393858c028ba51aec4a4f2c01649994
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: a65fa9974165fa36e59a7fb83dca6dd902f7d8dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860825"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724392"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>DacpGetModuleAddress, structure
 
@@ -49,11 +49,12 @@ struct DacpGetModuleAddress
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | [Requête](dacpgetmoduleaddress-request-method.md) | Exécute une requête pour remplir la structure à partir de la structure d’exécution donnée. |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus `CLRDATA_ADDRESS` , où est un entier non signé 64 bits.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus, où `CLRDATA_ADDRESS` est un entier non signé 64 bits.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
+
 **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  

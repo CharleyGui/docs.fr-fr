@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 67fefd89-28d6-4588-84ea-dc7a5870e014
 topic_type:
 - apiref
-ms.openlocfilehash: ef7851ddb33003b0b4b51065cf1fea3696ca6abd
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 4d5bc66cdc292d390cb4ea187277fda8b8a071fc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005945"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724206"
 ---
 # <a name="coiniticor-enumeration"></a>COINITICOR, énumération
+
 Spécifie les constantes utilisées par [CoInitializeCor,](../hosting/coinitializecor-function.md) lors de l’initialisation du Common Language Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,12 +40,13 @@ typedef enum tagCOINITCOR
 |------------|-----------------|  
 |`COINITCOR`|Indique le mode d’initialisation par défaut.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

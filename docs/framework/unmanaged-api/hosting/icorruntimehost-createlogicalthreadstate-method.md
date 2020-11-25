@@ -15,28 +15,30 @@ helpviewer_keywords:
 ms.assetid: 90f5e791-038b-4b05-9bc5-8d4367d0173e
 topic_type:
 - apiref
-ms.openlocfilehash: 468a235e990aec6ed21b2e5f35335cc020fba54a
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 8c212f57d5f7a5658ba3dd6c6ddc84b336a42c2e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762303"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723849"
 ---
 # <a name="icorruntimehostcreatelogicalthreadstate-method"></a>ICorRuntimeHost::CreateLogicalThreadState, méthode
+
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 HRESULT CreateLogicalThreadState ( );  
 ```  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Version de .NET Framework :** 1,0, 1,1  
   

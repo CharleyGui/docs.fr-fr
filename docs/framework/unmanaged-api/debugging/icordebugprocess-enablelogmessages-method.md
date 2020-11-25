@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14a4e5a3-3eaf-4f53-9dd1-762726963a23
 topic_type:
 - apiref
-ms.openlocfilehash: 3b850a462ce354b81f4406fce7fd9d8d9b6013d8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 86cb1a2eb18840419d2a4e8ee4f6475edafe8397
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207901"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724622"
 ---
 # <a name="icordebugprocessenablelogmessages-method"></a>ICorDebugProcess::EnableLogMessages, méthode
+
 Active et désactive la transmission des messages du journal au débogueur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,13 +33,16 @@ HRESULT EnableLogMessages([in]BOOL fOnOff);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `fOnOff`  
- [in] `true` active la transmission des messages du journal ; `false`désactive la transmission.  
+ [in] `true` active la transmission des messages du journal ; `false` désactive la transmission.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est valide uniquement après l’exécution du rappel [ICorDebugManagedCallback :: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

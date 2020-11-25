@@ -2,14 +2,15 @@
 title: ICorDebugInstanceFieldSymbol::GetOffset, méthode
 ms.date: 03/30/2017
 ms.assetid: 7e470150-2b92-4425-989c-315f48964fd2
-ms.openlocfilehash: 7d553c1a446e06f34c20da18c0edfe6773cfb597
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 2d73de46bbb1023f20dd9023076630611c74be5d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209979"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724921"
 ---
 # <a name="icordebuginstancefieldsymbolgetoffset-method"></a>ICorDebugInstanceFieldSymbol::GetOffset, méthode
+
 Obtient l'offset en octets de ce champ d'instance dans sa classe parente.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -21,15 +22,17 @@ HRESULT GetOffset(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pcbOffset`  
  Pointeur vers le nombre d'octets correspondant à l'offset de ce champ d'instance dans sa classe parente.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

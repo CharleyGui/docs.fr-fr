@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e835062c-c7d6-4945-8a44-2de7ebf3928e
 topic_type:
 - apiref
-ms.openlocfilehash: 653c8d1d3edd38e646b4e90c0e48dbe15bed102a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3836bd349423670a19a19dda67eba75419507a29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504262"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724284"
 ---
 # <a name="iclrdebugmanager-interface"></a>ICLRDebugManager, interface
+
 Fournit des méthodes qui permettent à un hôte d’associer un ensemble de tâches à un identificateur et un nom convivial.  
   
 ## <a name="methods"></a>Méthodes  
@@ -37,7 +38,8 @@ Fournit des méthodes qui permettent à un hôte d’associer un ensemble de tâ
 |[SetSymbolReadingPolicy, méthode](iclrdebugmanager-setsymbolreadingpolicy-method.md)|Définit la stratégie de lecture des fichiers de base de données du programme (PDB). La stratégie détermine si les informations sur les numéros de ligne et les fichiers sont incluses dans les piles des appels.|  
   
 ## <a name="remarks"></a>Remarques  
- Dans les scénarios de débogage, un hôte peut souhaiter regrouper des tâches en fonction de sa propre logique de programmation. Par exemple, un regroupement permettrait à un développeur de voir uniquement les tâches requises par les API du développeur, au lieu de voir toutes les tâches en cours d’exécution dans le processus. `ICLRDebugManager`permet à l’hôte d’implémenter ce type de regroupement.  
+
+ Dans les scénarios de débogage, un hôte peut souhaiter regrouper des tâches en fonction de sa propre logique de programmation. Par exemple, un regroupement permettrait à un développeur de voir uniquement les tâches requises par les API du développeur, au lieu de voir toutes les tâches en cours d’exécution dans le processus. `ICLRDebugManager` permet à l’hôte d’implémenter ce type de regroupement.  
   
 > [!IMPORTANT]
 > Trois `ICLRDebugManager` méthodes, `BeginConnection` `SetConnectionTasks` et `EndConnection` sont dépendantes les unes des autres. Elles doivent être appelées dans l’ordre donné pour fonctionner comme prévu.  
@@ -45,11 +47,12 @@ Fournit des méthodes qui permettent à un hôte d’associer un ensemble de tâ
  Le regroupement, les identificateurs et les noms conviviaux que l’hôte assigne au regroupement n’ont aucune signification pour le common language runtime (CLR). Le CLR transmet simplement les informations au débogueur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

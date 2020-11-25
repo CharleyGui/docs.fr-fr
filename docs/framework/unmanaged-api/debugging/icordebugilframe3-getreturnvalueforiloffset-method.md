@@ -13,14 +13,15 @@ api_type:
 ms.assetid: 06522727-5f64-4391-9331-11386883c352
 topic_type:
 - apiref
-ms.openlocfilehash: f6a54ab9efa7ca97bcdb64afcde8812f2b5e44e9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 11207298b071527151535144330790df767c2101
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210070"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724999"
 ---
 # <a name="icordebugilframe3getreturnvalueforiloffset-method"></a>ICorDebugILFrame3::GetReturnValueForILOffset, méthode
+
 Obtient un objet « ICorDebugValue » qui encapsule la valeur de retour d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,15 @@ HRESULT GetReturnValueForILOffset(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ILOffset`  
  Offset IL. Consultez la section Notes.  
   
  `ppReturnValue`  
  Pointeur vers l’adresse d’un objet d’interface « ICorDebugValue » qui fournit des informations sur la valeur de retour d’un appel de fonction.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est utilisée avec la méthode [ICorDebugCode3 :: GetReturnValueLiveOffset](icordebugcode3-getreturnvalueliveoffset-method.md) pour obtenir la valeur de retour d’une méthode. Elle est particulièrement utile dans le cas des méthodes dont les valeurs de retour sont ignorées, comme dans les deux exemples de code suivants. Le premier exemple appelle la <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> méthode, mais ignore la valeur de retour de la méthode.  
   
  [!code-csharp[Unmanaged.Debugging.MRV#1](../../../../samples/snippets/csharp/VS_Snippets_CLR/unmanaged.debugging.mrv/cs/mrv1.cs#1)]
@@ -61,7 +64,8 @@ HRESULT GetReturnValueForILOffset(
   
  La `ICorDebugILFrame3::GetReturnValueForILOffset` méthode est disponible uniquement sur les systèmes x86 et amd64.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 6f60aae6-70ec-4c4c-963a-138df98c4668
 topic_type:
 - apiref
-ms.openlocfilehash: 3149318a1dc20c96bccc9b81347192bfa2e4bfdf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 86a3b22851aa07a546cba5a0c0b69c81ec580cee
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554825"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724973"
 ---
 # <a name="icordebugilframe4enumeratelocalvariablesex-method"></a>ICorDebugILFrame4::EnumerateLocalVariablesEx, méthode
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Obtient un énumérateur pour la variable locale dans le frame, et peut inclure des variables ajoutées dans l'instrumentation ReJIT du profileur.  
@@ -34,18 +35,21 @@ HRESULT EnumerateLocalVariablesEx(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `flags`  
  dans Membre de l’énumération [ILCodeKind](ilcodekind-enumeration.md) qui spécifie si les variables ajoutées dans l’instrumentation ReJIT du profileur sont incluses dans le frame.  
   
  `ppValueEnum`  
  à Pointeur vers l’adresse d’un objet « ICorDebugValueEnum » qui est l’énumérateur pour les variables locales dans ce frame.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est similaire à la méthode [EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md) , à ceci près qu’elle accède éventuellement aux variables ajoutées dans l’instrumentation ReJIT du profileur. Affecter `flags` à `ILCODE_ORIGINAL_IL` équivaut à appeler [ICorDebugILFrame :: EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md). La définition de `flags` à `ILCODE_REJIT_IL` autorise le débogueur à accéder aux variables locales ajoutées dans l'instrumentation ReJIT du profileur. Si le langage intermédiaire n'est pas instrumenté, l'énumération est vide et la méthode retourne `S_OK`.  
   
  L'énumérateur peut ne pas inclure toutes les variables locales dans la méthode en cours d'exécution, car il est possible que certaines d'entre elles ne soient pas actives.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -58,4 +62,4 @@ HRESULT EnumerateLocalVariablesEx(
 
 - [ICorDebugILFrame4, interface](icordebugilframe4-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
-- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide de How-To](/archive/blogs/davbr/rejit-a-how-to-guide)

@@ -11,14 +11,15 @@ api_type:
 ms.assetid: edc420b7-96d1-4dec-ace0-36d907f644bc
 topic_type:
 - apiref
-ms.openlocfilehash: 0156a7dfa2a67ce9e62b502df00fc6bc5fccf925
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2176b624a427994b9d2af4b5eba31a64c9288a0e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499179"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725467"
 ---
 # <a name="icorprofilercallback6-interface"></a>ICorProfilerCallback6, interface
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Sous-classe de [ICorProfilerCallback5](icorprofilercallback5-interface.md) qui fournit une méthode de rappel que le Common Language Runtime utilise pour notifier à un profileur qu’un assembly est en cours de chargement.  
@@ -32,6 +33,7 @@ ms.locfileid: "84499179"
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

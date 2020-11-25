@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bd285233-a4a2-4b52-bbca-0025a60e4864
 topic_type:
 - apiref
-ms.openlocfilehash: db3ba3380d1fc30a8f34683618b5cc326d7d1906
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a729249f7b0681941a0b1a478dbe2c0d9d6cd01c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123054"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723959"
 ---
 # <a name="prebindassemblyex-function"></a>Fonction PreBindAssemblyEx
+
 Obtient le nom complet de la stratégie d’un assembly.  
   
  Cette fonction prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement à partir de votre code.  
@@ -40,6 +41,7 @@ HRESULT PreBindAssemblyEx (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAppCtx`  
  dans Identifie le contexte de l’application.  
   
@@ -58,18 +60,20 @@ HRESULT PreBindAssemblyEx (
  `pvReserved`  
  dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
-## <a name="remarks"></a>Notes  
- Le paramètre de sortie `ppNamePostPolicy` est défini uniquement si la fonction retourne HRESULT FUSION_E_REF_DEF_MISMATCH. Dans le cas contraire, la valeur est null.  
+## <a name="remarks"></a>Remarques  
+
+ Le `ppNamePostPolicy` paramètre de sortie est défini uniquement si la fonction retourne HRESULT FUSION_E_REF_DEF_MISMATCH. Sinon, sa valeur est null.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)

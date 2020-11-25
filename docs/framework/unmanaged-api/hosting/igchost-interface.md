@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9ad70ffd-6963-4ab2-8c84-3d86c3fb8deb
 topic_type:
 - apiref
-ms.openlocfilehash: 6b6f2dbaa49c29f6614e9c39a3f408d4d1453983
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8965797321e68443c01d05f97d147f2320a76739
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501623"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724294"
 ---
 # <a name="igchost-interface"></a>IGCHost, interface
+
 Fournit des méthodes pour obtenir des informations sur le système de garbage collection et pour contrôler certains aspects de garbage collection.  
   
 > [!NOTE]
@@ -35,17 +36,18 @@ Fournit des méthodes pour obtenir des informations sur le système de garbage c
 |Méthode|Description|  
 |------------|-----------------|  
 |[Collect, méthode](igchost-collect-method.md)|Force une collection à se produire pour la génération donnée, quel que soit l’état du garbage collection actuel.|  
-|[GetStats, méthode](igchost-getstats-method.md)|Obtient les statistiques de l’état actuel du système de garbage collection.|  
+|[GetStats (méthode)](igchost-getstats-method.md)|Obtient les statistiques de l’état actuel du système de garbage collection.|  
 |[GetThreadStats, méthode](igchost-getthreadstats-method.md)|Obtient les statistiques par thread pour garbage collection.|  
 |[SetGCStartupLimits, méthode](igchost-setgcstartuplimits-method.md)|Définit la taille du segment et la taille maximale de la génération 0.|  
 |[SetVirtualMemLimit, méthode](igchost-setvirtualmemlimit-method.md)|Définit la taille maximale de la mémoire virtuelle du Runtime.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl, GCHost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

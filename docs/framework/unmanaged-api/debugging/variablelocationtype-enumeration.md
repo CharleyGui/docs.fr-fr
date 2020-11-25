@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8635ee3a-c84b-4626-876c-416bee54f787
 topic_type:
 - apiref
-ms.openlocfilehash: 455fd06dbdbfd5d9753f3d7270647a742751d804
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1c65efa006a8b2f4fb4db257b4ad2cde99c4e75e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420654"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725259"
 ---
 # <a name="variablelocationtype-enumeration"></a>VariableLocationType, énumération
+
 Indique le type d’emplacement natif d’une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,10 +44,12 @@ typedef enum VariableLocationType
 |`VLT_REGISTER_RELATIVE`|La variable se trouve dans un emplacement de mémoire relatif à un registre.|  
 |`VLT_INVALID`|La variable n’est pas stockée dans un registre ou un emplacement de mémoire relatif à un registre.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Un membre de l' `VariableLocationType` énumération est retourné par la méthode [ICorDebugVariableHome :: GetLocationType](icordebugvariablehome-getlocationtype-method.md) .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

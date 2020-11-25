@@ -10,14 +10,15 @@ api_type:
 ms.assetid: 1e739183-3e05-49e5-846f-4075256e41de
 topic_type:
 - apiref
-ms.openlocfilehash: d0b1c31d45efea4892182c43c801112530361994
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 7d0f3661c7941c5f2f85fa5b0b67af213de75f05
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213700"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724947"
 ---
 # <a name="icordebugilframe4-interface"></a>ICorDebugILFrame4, interface
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Fournit des méthodes qui vous permettent d'accéder aux variables locales et au code dans un frame de pile de code de langage intermédiaire. Un paramètre spécifie si le débogueur a accès aux variables et au code ajoutés dans l'instrumentation ReJIT du profileur.  
@@ -30,10 +31,12 @@ ms.locfileid: "83213700"
 |[GetCodeEx, méthode](icordebugilframe4-getcodeex-method.md)|Retourne le code exécuté par ce frame de pile.|  
 |[GetLocalVariableEx, méthode](icordebugilframe4-getlocalvariableex-method.md)|Retourne la valeur d'une variable locale du frame de langage intermédiaire.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Ces méthodes offrent des fonctionnalités en plus de celles fournies par les méthodes [EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md), [GetCode](icordebugframe-getcode-method.md)et [GetLocalVariable](icordebugilframe-getlocalvariable-method.md) . Chaque méthode comprend un paramètre `flags` qui spécifie si des variables locales ou du code supplémentaires définis par une demande ReJIT du profileur sont visibles.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

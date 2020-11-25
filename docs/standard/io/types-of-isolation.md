@@ -17,12 +17,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: ce6afc6438060b88e8740eab24ace960f3b78fa3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4e2ba53a285649f8081c4836661ad3d70739aa64
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830530"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725324"
 ---
 # <a name="types-of-isolation"></a>Types d’isolation
 
@@ -54,7 +54,9 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
 > Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.  
   
 <a name="UserAssembly"></a>
+
 ## <a name="isolation-by-user-and-assembly"></a>Isolation par utilisateur et par assembly  
+
  Lorsque l’assembly qui utilise les données du magasin doit être accessible depuis n’importe quel domaine d’application, l’isolation par utilisateur et par assembly est recommandée. Dans ce cas, le stockage isolé sert généralement à stocker les données qui s’appliquent à plusieurs applications et qui ne sont pas liées à une application spécifique, par exemple le nom d’utilisateur ou des informations de licence. Pour accéder au stockage isolé par utilisateur et par assembly, le code doit être approuvé pour transférer des informations entre les applications. En règle générale, l’isolation par utilisateur et par assembly est autorisée sur les intranets mais pas sur Internet. L’appel de la méthode statique <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A?displayProperty=nameWithType> et le passage d’un utilisateur et d’un assembly <xref:System.IO.IsolatedStorage.IsolatedStorageScope> génèrent un stockage avec ce type d’isolation.  
   
  L’exemple de code suivant extrait un magasin isolé par utilisateur et par assembly. Le magasin est accessible via l’objet `isoFile`.  
@@ -72,7 +74,9 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
  [!code-vb[Conceptual.IsolatedStorage#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source11.vb#18)]  
   
 <a name="UserDomainAssembly"></a>
+
 ## <a name="isolation-by-user-domain-and-assembly"></a>Isolation par utilisateur, par domaine et par assembly  
+
  Si votre application utilise un assembly tiers qui nécessite une banque de données privée, vous pouvez utiliser le stockage isolé pour stocker ces données privées. L’isolation par utilisateur, domaine et assembly garantit que seul le code d’un assembly donné peut accéder aux données et uniquement lorsque cet assembly est utilisé par l’application en cours d’exécution lors de la création du magasin, et lorsque l’utilisateur pour lequel le magasin a été créé exécute l’application. L’isolation par utilisateur, domaine et assembly empêche l’assembly tiers de transmettre des données à d’autres applications. Ce type d’isolation devrait être votre choix par défaut si vous savez que vous utiliserez le stockage isolé, mais que vous hésitez sur le type d’isolation adéquat. L’appel de la méthode statique <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> de <xref:System.IO.IsolatedStorage.IsolatedStorageFile> et le passage d’un utilisateur, d’un domaine et d’un assembly <xref:System.IO.IsolatedStorage.IsolatedStorageScope> génèrent un stockage avec ce type d’isolation.  
   
  L’exemple de code suivant extrait un magasin isolé par utilisateur, domaine et assembly. Le magasin est accessible via l’objet `isoFile`.  
@@ -88,7 +92,9 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
  [!code-vb[Conceptual.IsolatedStorage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source10.vb#15)]  
   
 <a name="Roaming"></a>
+
 ## <a name="isolated-storage-and-roaming"></a>Stockage et profil itinérant isolé  
+
  Les profils utilisateur itinérants représentent une fonctionnalité Windows qui permet à un utilisateur de configurer une identité sur un réseau et d’utiliser cette identité pour se connecter à n’importe quel ordinateur du réseau, en conservant tous les réglages personnalisés. Un assembly qui utilise le stockage isolé peut spécifier que le stockage isolé de l’utilisateur devra accompagner le profil utilisateur itinérant. L’itinérance peut être utilisée conjointement avec l’isolation par utilisateur et par assembly, ou avec l’isolation par utilisateur, domaine et assembly. Si aucune portée d’itinérance n’est définie, les magasins ne bénéficieront d’aucune itinérance, même si un profil utilisateur itinérant est utilisé.  
   
  L’exemple de code suivant récupère un magasin itinérant isolé par utilisateur et assembly. Le magasin est accessible via l’objet `isoFile`.  

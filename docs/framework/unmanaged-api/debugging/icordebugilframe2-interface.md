@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f94b9d53-d8f8-4424-a95e-53a1bfd26e4a
 topic_type:
 - apiref
-ms.openlocfilehash: 2e0f284625e99215900c6aaab94e4eae611787ed
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3ada9e19bb1a92b3bd7e41340b99bf81b651dd37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212098"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725012"
 ---
 # <a name="icordebugilframe2-interface"></a>ICorDebugILFrame2, interface
 
@@ -32,12 +32,13 @@ Extension logique de l’interface ICorDebugILFrame.
 |[EnumerateTypeParameters, méthode](icordebugilframe2-enumeratetypeparameters-method.md)|Obtient un objet ICorDebugTypeEnum qui contient les <xref:System.Type> paramètres de ce frame.|  
 |[RemapFunction, méthode](icordebugilframe2-remapfunction-method.md)|Remappe une fonction modifiée en spécifiant le nouvel offset MSIL.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

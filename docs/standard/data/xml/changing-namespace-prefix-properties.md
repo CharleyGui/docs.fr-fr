@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
-ms.openlocfilehash: 14a59a9fdc602e63822a62c102cbffa32d6ba850
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a4ba378620d0c5ec01aaa5d87020c33fdbffcf01
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830270"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725350"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Modification des propriétés de préfixe d'espace de noms
+
 La classe **XmlNode** vous permet de modifier le préfixe d'espace de noms associé à un nœud précis. Par exemple, le code suivant montre la modification du préfixe d'un élément.  
   
 ```vb  

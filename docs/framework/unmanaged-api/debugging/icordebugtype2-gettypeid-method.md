@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b933686-226e-4373-92b7-fac579ee7b1a
 topic_type:
 - apiref
-ms.openlocfilehash: 1c11946bc5ea69a090091c014aba859935b48b36
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 2a4a0bfae6f9a1970f0d4aca8b37f8fc68194462
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396676"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725688"
 ---
 # <a name="icordebugtype2gettypeid-method"></a>Méthode icordebugtype2 :: GetTypeID, méthode
+
 Obtient une [COR_TYPEID](cor-typeid-structure.md) pour ce type.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetTypeID(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `id`  
  à Pointeur vers le [COR_TYPEID](cor-typeid-structure.md) pour ce ICorDebugType.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La valeur de retour est `S_OK` en cas de réussite ou un code d'échec `HRESULT` en cas d'échec. Les `HRESULT` codes sont les suivants :  
   
 |Code de retour|Description|  
@@ -46,12 +49,14 @@ HRESULT GetTypeID(
 |`CORDBG_E_CLASS_NOT_LOADED`|Le type n’a pas été chargé.|  
 |`CORDBG_E_UNSUPPORTED`|Le type n'est pas pris en charge.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode fournit un mappage à partir de ICorDebugType, qui représente un type qui peut ou non avoir été chargé dans le runtime, à un [COR_TYPEID](cor-typeid-structure.md), qui sert de handle opaque qui identifie un type chargé dans le Runtime.  
   
  Lorsque le type représenté par l’ICorDebugType n’a pas encore été chargé, cette méthode retourne `CORDBG_E_CLASS_NOT_LOADED` .  Si le type n’est pas pris en charge, il retourne `CORDBG_E_UNSUPPORTED` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

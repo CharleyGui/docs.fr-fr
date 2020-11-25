@@ -13,14 +13,15 @@ helpviewer_keywords:
 ms.assetid: 08dbd558-bd39-4263-94c2-71e70687aaf0
 topic_type:
 - apiref
-ms.openlocfilehash: fa22c17ed7d5bcd689f21d2d855d9be7a6a8e164
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: c3120a0dd859f581e6356fc260043cb83250ae9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892806"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724830"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacepointers-method"></a>ICorDebugComObjectValue::GetCachedInterfacePointers, méthode
+
 Obtient les pointeurs d’interface bruts mis en cache sur le wrapper RCW (Runtime Callable Wrapper) actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +35,15 @@ HRESULT GetCachedInterfacePointers(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `bIInspectableOnly`  
- dans Valeur qui indique si la méthode retourne uniquement Windows Runtime interfaces (`IInspectable` interfaces) ou toutes les interfaces com mises en cache par le wrapper RCW (Runtime Callable Wrapper).  
+ dans Valeur qui indique si la méthode retourne uniquement Windows Runtime interfaces ( `IInspectable` interfaces) ou toutes les interfaces com mises en cache par le wrapper RCW (Runtime Callable Wrapper).  
   
  `celt`  
  dans Nombre d’objets dont les adresses doivent être récupérées.  
   
  `pceltFetched`  
- à Pointeur vers le nombre de `CORDB_ADDRESS` valeurs réellement retournées `ptrs`dans.  
+ à Pointeur vers le nombre de `CORDB_ADDRESS` valeurs réellement retournées dans `ptrs` .  
   
  `ptrs`  
  Pointeur vers l’adresse de début d’un tableau de `CORDB_ADDRESS` valeurs qui contiennent les adresses des objets d’interface mis en cache.  
@@ -49,6 +51,7 @@ HRESULT GetCachedInterfacePointers(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -12,14 +12,15 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 478f786995cfc4b57f0b18b2159775db104e9cfb
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 919e4f4cf467e8fc28c3d007963393dad134ab57
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687697"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724050"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Comment : référencer un assembly avec nom fort
+
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
   
 Une référence au moment de la compilation se produit lorsque vous indiquez au compilateur que l’assembly à compiler fait explicitement référence à un autre assembly. Quand vous utilisez le référencement au moment de la compilation, le compilateur obtient automatiquement la clé publique de l’assembly avec nom fort ciblé et la place dans la référence d’assembly de l’assembly compilé.
@@ -33,9 +34,9 @@ Saisissez ensuite la commande suivante dans une invite de commandes :
 
 \<*compiler command*>**/Reference :**\<*assembly name*>  
 
-Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library** , qui permet de créer un assembly de bibliothèque.  
+Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library**, qui permet de créer un assembly de bibliothèque.  
 
-L’exemple suivant crée un assembly appelé *myAssembly.dll* qui référence un assembly avec nom fort appelé *myLibAssembly.dll* à partir d’un module de code appelé *myAssembly.cs* .  
+L’exemple suivant crée un assembly appelé *myAssembly.dll* qui référence un assembly avec nom fort appelé *myLibAssembly.dll* à partir d’un module de code appelé *myAssembly.cs*.  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  

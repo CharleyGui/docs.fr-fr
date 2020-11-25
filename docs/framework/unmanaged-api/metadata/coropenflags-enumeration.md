@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e27a83b5-2698-4996-9032-1e0fed8b91ca
 topic_type:
 - apiref
-ms.openlocfilehash: e474cac6437413565a1ebddfa88c3e228fe59d41
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e676547d20dc9535241150d24b65e1fbaf9e89ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556347"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725103"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags, énumération
+
 Contient des valeurs d'indicateurs qui contrôlent le comportement des métadonnées après ouverture des fichiers manifeste.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -64,7 +65,8 @@ typedef enum CorOpenFlags
 |`ofReserved2`|Réservé à un usage interne.|  
 |`ofReserved`|Réservé à un usage interne.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

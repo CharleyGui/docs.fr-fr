@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c2f45801-dd38-4b78-b6b7-64397dc73f83
 topic_type:
 - apiref
-ms.openlocfilehash: 13ce44c9c7a04b870278bc8926dd9fe5daf10bc3
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cf68594620b24f2a5823aa423c5911f2d9d6b328
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500011"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725493"
 ---
 # <a name="icorprofilercallbackjitinlining-method"></a>ICorProfilerCallback::JITInlining, méthode
+
 Indique au profileur que le compilateur juste-à-temps (JIT) est sur le point d’insérer une fonction en ligne avec une autre fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT JITInlining(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `callerId`  
  dans ID de la fonction dans laquelle la `calleeId` fonction sera insérée.  
   
@@ -45,11 +47,13 @@ HRESULT JITInlining(
  [out] `true` pour permettre l’insertion ; Sinon, `false` .  
   
 ## <a name="remarks"></a>Remarques  
+
  Le profileur peut avoir la valeur pour `pfShouldInline` `false` empêcher l’insertion de la `calleeId` fonction dans la `callerId` fonction. En outre, le profileur peut désactiver globalement l’insertion inline à l’aide de la COR_PRF_DISABLE_INLINING valeur de l’énumération [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
   
  Les fonctions insérées Inline ne déclenchent pas d’événements pour l’entrée ou la sortie. Par conséquent, le profileur doit définir sur afin de `pfShouldInline` `false` produire un graphique des appels précis. La définition de la valeur `pfShouldInline` sur `false` affecte les performances, car l’insertion inline augmente généralement la vitesse et réduit le nombre d’événements de compilation JIT distincts pour la méthode insérée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

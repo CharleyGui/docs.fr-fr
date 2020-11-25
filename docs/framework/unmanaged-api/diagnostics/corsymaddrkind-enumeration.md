@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3ef841c2-cade-42ee-ba34-2ef91d6d0879
 topic_type:
 - apiref
-ms.openlocfilehash: 5991b0abaedabe2337cd754c7bd19f96c5e9b685
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f71d8956e8706cdc71b94b6e6e2e8210e5b9161e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420615"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725233"
 ---
 # <a name="corsymaddrkind-enumeration"></a>CorSymAddrKind, énumération
+
 Indique le type d’adresse mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -57,7 +58,8 @@ typedef enum CorSymAddrKind
 |`ADDR_BITFIELD`|Indique que la première adresse est le début d’un champ et la deuxième adresse la longueur du champ.|  
 |`ADDR_NATIVE_ISECTOFFSET`|Indique que la première adresse est la section et que la deuxième adresse est un décalage.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: df51f2bb-6d15-44a9-a48c-22db700a5766
 topic_type:
 - apiref
-ms.openlocfilehash: 63d445d6231ee579bbd635ee5b54bdbf5b339e59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c58f4e8b29ca5e46751230c19b8861599f522a7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128780"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724557"
 ---
 # <a name="icordebugprocessgetobject-method"></a>ICorDebugProcess::GetObject, méthode
+
 Cette méthode n’a pas encore été implémentée.  
   
 ## <a name="syntax"></a>Syntaxe  

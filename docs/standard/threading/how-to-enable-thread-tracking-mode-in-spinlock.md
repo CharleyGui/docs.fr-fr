@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - SpinLock, how to enable thread-tracking
 ms.assetid: 62ee2e68-0bdd-4869-afc9-f0a57a11ae01
-ms.openlocfilehash: 83aebc45cdeaa2330c49ef6e90dcbedcd36de6b5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c33978226a02f65fdc495762af9286ba2daf9454
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826454"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723738"
 ---
 # <a name="how-to-enable-thread-tracking-mode-in-spinlock"></a>Comment : activer le mode de suivi des threads dans le verrouillage Spinlock
+
 <xref:System.Threading.SpinLock?displayProperty=nameWithType> est un verrou d’exclusion mutuelle de bas niveau que vous pouvez utiliser dans des scénarios avec des temps d’attente très courts. <xref:System.Threading.SpinLock> n’est pas réentrant. Quand un thread a accédé au verrou, il doit le quitter correctement avant de pouvoir y accéder de nouveau. En règle générale, toute nouvelle tentative d’accès au verrou risque de provoquer un interblocage, qui peut être très difficile à déboguer. En guide d’aide au développement, <xref:System.Threading.SpinLock?displayProperty=nameWithType> prend en charge un mode de suivi des threads qui lève une exception quand un thread tente d’accéder de nouveau à un verrou qu’il détient déjà. Cela vous permet de localiser plus facilement le point auquel un élément n’a pas correctement quitté le verrou. Vous pouvez activer le mode de suivi des threads en utilisant le constructeur <xref:System.Threading.SpinLock> qui accepte un paramètre d’entrée booléen et en passant un argument de `true`. Une fois les phases de développement et de test terminées, désactivez le mode de suivi des threads pour optimiser les performances.  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant illustre le mode de suivi des threads. Les lignes qui quittent correctement le verrou sont commentées pour simuler une erreur de codage donnant lieu à l’un des résultats suivants :  
   
 - Une exception est levée si le <xref:System.Threading.SpinLock> a été créé à l’aide d’un argument de `true` (`True` en Visual Basic).  

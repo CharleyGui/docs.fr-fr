@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 59417acb-4e59-46ad-acfe-d827e6ab6078
 topic_type:
 - apiref
-ms.openlocfilehash: 8645878132359b6218cd62b1ff707208de53704b
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: f9e65b49c9a3b506cba3493d81a40f2759dca781
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442148"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725143"
 ---
 # <a name="ibindingdisplayinitializeforprocess-method"></a>IBindingDisplay::InitializeForProcess, méthode
+
 Initialise l’objet [IBindingDisplay](ibindingdisplay-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT InitializeForProcess (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pid`  
  dans Identificateur du processus.  
   
-## <a name="remarks"></a>Notes  
- Le débogueur appelle la `InitializeForProcess` méthode au moment de la création pour initialiser l’affichage de liaison. `InitializeForProcess`doit être appelé au moment de la création avant que toute autre méthode sur `IBindingDisplay` ne soit appelée.  
+## <a name="remarks"></a>Remarques  
+
+ Le débogueur appelle la `InitializeForProcess` méthode au moment de la création pour initialiser l’affichage de liaison. `InitializeForProcess` doit être appelé au moment de la création avant que toute autre méthode sur `IBindingDisplay` ne soit appelée.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** BindingDisplay. h  

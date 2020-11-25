@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3367166f-31fe-43d0-8107-2e786f984e50
 topic_type:
 - apiref
-ms.openlocfilehash: e1b8cf3e8d78c8ef4715467760805cc50975d014
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: d3bbdea3b2f23ddd2207ff2a036f32978cd837e8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442135"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725129"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay, interface
+
 Fournit des méthodes qui affichent les informations de liaison actuelles sur l’application en cours d’exécution.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,7 +32,8 @@ Fournit des méthodes qui affichent les informations de liaison actuelles sur l�
 |[GetCurrentDisplay, méthode](ibindingdisplay-getcurrentdisplay-method.md)|Retourne les informations d’affichage de liaison actuelles.|  
 |[InitializeForProcess, méthode](ibindingdisplay-initializeforprocess-method.md)|Initialise l'objet `IBindingDisplay`.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** BindingDisplay. h  

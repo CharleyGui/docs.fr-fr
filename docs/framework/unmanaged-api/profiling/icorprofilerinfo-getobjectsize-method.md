@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9f02e763-73f7-42cb-a41c-f78499d9482c
 topic_type:
 - apiref
-ms.openlocfilehash: 15c843fe138be55a3480f46e0ef8b37bcb445ad0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4abcf9f4575b32dd125fd8a00783043900993c3e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497970"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724102"
 ---
 # <a name="icorprofilerinfogetobjectsize-method"></a>ICorProfilerInfo::GetObjectSize, méthode
+
 Obtient la taille d’un objet spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetObjectSize(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `objectId`  
  dans ID de l’objet.  
   
@@ -43,7 +45,7 @@ HRESULT GetObjectSize(
 ## <a name="remarks"></a>Remarques  
   
 > [!IMPORTANT]
-> Cette méthode est obsolète. Elle retourne COR_E_OVERFLOW pour les objets supérieurs à 4 Go sur les plateformes 64 bits. Utilisez la méthode [ICorProfilerInfo4 :: getobjectsize2,](icorprofilerinfo4-getobjectsize2-method.md) à la place.  
+> Cette méthode est obsolète. Elle retourne COR_E_OVERFLOW pour les objets supérieurs à 4 Go sur les plateformes 64 bits. Utilisez la méthode  [ICorProfilerInfo4 :: getobjectsize2,](icorprofilerinfo4-getobjectsize2-method.md) à la place.  
   
  Les différents objets des mêmes types ont souvent la même taille. Toutefois, certains types, tels que les tableaux ou les chaînes, peuvent avoir une taille différente pour chaque objet.  
   
@@ -54,6 +56,7 @@ HRESULT GetObjectSize(
 - Sur Windows 64 bits, l’alignement est toujours de 8 octets.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

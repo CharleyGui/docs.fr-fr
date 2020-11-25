@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d28eeea4-c4e0-40d4-91de-198d98cfa13c
 topic_type:
 - apiref
-ms.openlocfilehash: db2474741012c4fd1734adafed112821c42c099c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d52f089923d16f93345444c07ff8e0619644f2eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541706"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725150"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay, méthode
+
 Retourne les informations d’affichage de liaison actuelles.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT GetCurrentDisplay (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `display`  
  [out, retval] Pointeur vers un SafeArray contenant les informations d’affichage de liaison.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La méthode [IBindingDisplay :: InitializeForProcess,](ibindingdisplay-initializeforprocess-method.md) doit avoir déjà réussi et le programme doit être arrêté par un débogueur.  
   
  L’appelant doit libérer la mémoire retournée `SAFEARRAY` à l’aide de [SafeArrayDestroy](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** BindingDisplay. h  

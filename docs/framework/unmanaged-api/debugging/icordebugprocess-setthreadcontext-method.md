@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
 topic_type:
 - apiref
-ms.openlocfilehash: c9e403dc8cbb75a1e93c426a9e0b3a2083f1f10e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 5b4052485a6d420eb83578d135ce51f8a918aab0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210460"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724518"
 ---
 # <a name="icordebugprocesssetthreadcontext-method"></a>ICorDebugProcess::SetThreadContext, méthode
+
 Définit le contexte du thread donné dans ce processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT SetThreadContext(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `threadID`  
  dans ID du thread pour lequel définir le contexte.  
   
@@ -47,14 +49,16 @@ HRESULT SetThreadContext(
   
  Le contexte spécifie l’architecture du processeur sur lequel le thread s’exécute.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le débogueur doit appeler cette méthode plutôt que la `SetThreadContext` fonction Win32, car le thread peut être dans un État « détourné », dans lequel son contexte a été modifié temporairement. Cette méthode doit être utilisée uniquement quand un thread est en code natif. Utilisez [ICorDebugRegisterSet](icordebugregisterset-interface.md) pour les threads dans le code managé. Vous ne devez jamais modifier le contexte d’un thread pendant un événement de débogage hors bande (OOB).  
   
  Les données passées doivent être une structure de contexte pour la plateforme actuelle.  
   
  Cette méthode peut endommager le runtime si elle est utilisée de manière incorrecte.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

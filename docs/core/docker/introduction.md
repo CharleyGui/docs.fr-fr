@@ -3,12 +3,12 @@ title: Présentation de Docker
 description: Cet article présente Docker et en brosse une vue d’ensemble dans le contexte d’une application .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: 16ad49c39d588aac8f8a7a918eb4d799f37823ac
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 6303c16e914c86f3a431a9e5367e6feb8ff88c9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654820"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724740"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
@@ -26,7 +26,7 @@ Une image est une collection ordonnée de modifications du système de fichiers 
 
 Les conteneurs étant créés à partir d’images, celles-ci comportent un ensemble de paramètres d’exécution (par exemple, un exécutable de démarrage) qui s’exécutent au démarrage du conteneur.
 
-### <a name="containers"></a>Conteneurs
+### <a name="containers"></a>Containers
 
 Un conteneur est une instance exécutable d’une image. Lorsque vous générez votre image, vous déployez votre application et ses dépendances. Il est ensuite possible d’instancier plusieurs conteneurs, tous isolés les uns des autres. Chaque instance de conteneur possède son propre système de fichiers, sa propre mémoire et sa propre interface réseau.
 
@@ -34,9 +34,9 @@ Un conteneur est une instance exécutable d’une image. Lorsque vous générez 
 
 Les registres de conteneurs sont une collection de référentiels d’images. Vous pouvez baser vos images sur une image de registre. Il est possible de créer directement des conteneurs à partir d’une image d’un registre. La [relation entre les conteneurs, les images et les Registres Docker](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) est un concept important pour la [conception et création d’applications ou de microservices en conteneur](../../architecture/microservices/architect-microservice-container-applications/index.md). Cette approche réduit considérablement le temps nécessaire entre le développement et le déploiement.
 
-Docker offre un registre public hébergé sur [Docker Hub](https://hub.docker.com/), où sont listées les [images associées à .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/).
+Docker offre un registre public hébergé sur [Docker Hub](https://hub.docker.com/), où sont listées les [images associées à .NET Core](https://hub.docker.com/_/microsoft-dotnet/).
 
-La [Container Registry Microsoft](/azure/container-registry) est la source officielle des images de conteneur fournies par Microsoft. Il repose sur Azure CDN pour offrir des images répliquées de façon globale. Toutefois, il n’a pas de site web public ; le meilleur moyen d’en savoir plus sur les images conteneur fournie par Microsoft consiste à passer par les [pages Microsoft Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
+La [Container Registry Microsoft](/azure/container-registry) est la source officielle des images de conteneur fournies par Microsoft. Il repose sur Azure CDN pour offrir des images répliquées de façon globale. Toutefois, il n’a pas de site web public ; le meilleur moyen d’en savoir plus sur les images conteneur fournie par Microsoft consiste à passer par les [pages Microsoft Docker Hub](https://hub.docker.com/_/microsoft-dotnet/).
 
 ### <a name="dockerfile"></a>Dockerfile
 
@@ -44,9 +44,9 @@ Un **Dockerfile** est un fichier définissant un ensemble d’instructions qui c
 
 ## <a name="net-core-images"></a>Images .NET Core
 
-Les images Docker .NET Core officielles sont publiées dans Microsoft Container Registry (MCR) et détectables dans le [référentiel Docker Hub Microsoft .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/). Chaque référentiel contient des images pour différentes combinaisons possibles de .NET (kit de développement logiciel ou runtime) et du système d’exploitation.
+Les images Docker .NET Core officielles sont publiées dans Microsoft Container Registry (MCR) et détectables dans le [référentiel Docker Hub Microsoft .NET Core](https://hub.docker.com/_/microsoft-dotnet/). Chaque référentiel contient des images pour différentes combinaisons possibles de .NET (kit de développement logiciel ou runtime) et du système d’exploitation.
 
-Microsoft fournit des images adaptées à des scénarios particuliers. Par exemple, celles du [référentiel ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) sont conçues pour exécuter des applications ASP.NET Core en production.
+Microsoft fournit des images adaptées à des scénarios particuliers. Par exemple, celles du [référentiel ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-aspnet/) sont conçues pour exécuter des applications ASP.NET Core en production.
 
 ## <a name="azure-services"></a>Services Azure
 

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 64264238-3b68-4bac-a887-36b552426a6c
 topic_type:
 - apiref
-ms.openlocfilehash: f4d1c2f105abb64bf196d0dd8371c2788c97336e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 673450bb8209abede15e3cb65dd764b418073bc2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005906"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724193"
 ---
 # <a name="coinitiee-enumeration"></a>COINITIEE, énumération
+
 Spécifie les constantes utilisées par [CoInitializeEE,](../hosting/coinitializeee-function.md) lors de l’initialisation du Common Language Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,12 +43,13 @@ typedef enum tagCOINITEE {
 |`COINITEE_DLL`|Initialise pour exécuter une DLL managée.|  
 |`COINITEE_MAIN`|Initialise pour exécuter un EXE managé. Cela initialise le runtime, mais ne crée pas la valeur par défaut <xref:System.AppDomain> , qui est créée après l’entrée de la routine principale de l’exe.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
