@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: be86f4b5-418a-4c5c-a67c-97148c65ed8c
 topic_type:
 - apiref
-ms.openlocfilehash: ab48efccc88787f099a182627777db95304cdc3e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 7f9d4ac99234545ef75d9b91e6e84f79a133ffef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212072"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694917"
 ---
 # <a name="icordebugprocess-interface"></a>ICorDebugProcess, interface
+
 Représente un processus qui exécute le code managé. Cette interface est une sous-classe de ICorDebugController.  
   
 ## <a name="methods"></a>Méthodes  
@@ -43,15 +44,16 @@ Représente un processus qui exécute le code managé. Cette interface est une s
 |[ModifyLogSwitch, méthode](icordebugprocess-modifylogswitch-method.md)|Définit le niveau de gravité du commutateur de journalisation spécifié.|  
 |[ReadMemory, méthode](icordebugprocess-readmemory-method.md)|Lit la mémoire à partir du processus.|  
 |[SetThreadContext, méthode](icordebugprocess-setthreadcontext-method.md)|Définit le contexte du thread donné.|  
-|[ThreadForFiberCookie, méthode](icordebugprocess-threadforfibercookie-method.md)|Action déconseillée.|  
+|[ThreadForFiberCookie, méthode](icordebugprocess-threadforfibercookie-method.md)|Obsolète.|  
 |[WriteMemory, méthode](icordebugprocess-writememory-method.md)|Écrit des données dans une zone de mémoire dans le processus.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

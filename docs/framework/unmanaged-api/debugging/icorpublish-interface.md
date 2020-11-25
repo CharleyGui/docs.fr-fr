@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 87c4fcb2-7703-4a2e-afb6-42973381b960
 topic_type:
 - apiref
-ms.openlocfilehash: 1bd2f537cfa6a27c24ba91ea7caa29dc9e71a74e
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 3ff4efe8b3e2932da7f65246bf4ad614a4dd86cd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396321"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694410"
 ---
 # <a name="icorpublish-interface"></a>ICorPublish, interface
+
 Sert d’interface générale pour la publication d’informations sur les processus et les informations sur les domaines d’application de ces processus.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,7 +32,8 @@ Sert d’interface générale pour la publication d’informations sur les proce
 |[EnumProcesses, méthode](icorpublish-enumprocesses-method.md)|Obtient une instance [ICorPublishProcessEnum](icorpublishprocessenum-interface.md) qui contient les processus managés en cours d’exécution sur cet ordinateur.|  
 |[GetProcess, méthode](icorpublish-getprocess-method.md)|Obtient une instance de [ICorPublishProcess](icorpublishprocess-interface.md) qui représente le processus avec l’identificateur spécifié.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  

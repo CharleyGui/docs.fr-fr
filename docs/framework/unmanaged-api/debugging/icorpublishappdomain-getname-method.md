@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-ms.openlocfilehash: e95f96847c6e069758362fb6febc28dc31911bc9
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: d6b05333b9e02c4202c0fd9bdee9b5c055aa4da3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396299"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694358"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName, méthode
+
 Obtient le nom du domaine d’application représenté par ce [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetName (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchName`  
  [in] Taille du tableau `szName`.  
   
@@ -46,12 +48,14 @@ HRESULT GetName (
  `szName`  
  à Tableau dans lequel stocker le nom.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si `szName` n’a pas la valeur null, la `GetName` méthode copie jusqu’à `cchName` caractères (y compris la marque de fin null) dans `szName` . Si une valeur non null est retournée dans `pcchName` , le nombre réel de caractères dans le nom (y compris la marque de fin null) est stocké dans le `szName` tableau.  
   
  La `GetName` méthode retourne un S_OK HRESULT quel que soit le nombre de caractères copiés.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  

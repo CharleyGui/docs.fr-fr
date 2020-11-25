@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d508981f-e2b2-445b-a649-69951c22702d
 topic_type:
 - apiref
-ms.openlocfilehash: 748a44075f7f73e54bab689bcb8865dee2b14946
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 408658a0abcba9daf4c3046476e21fd4325c7144
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207842"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695138"
 ---
 # <a name="icordebugprocessenumerateappdomains-method"></a>ICorDebugProcess::EnumerateAppDomains, méthode
+
 Énumère tous les domaines d’application dans ce processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT EnumerateAppDomains(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppAppDomains`  
  à Pointeur vers l’adresse d’un [ICorDebugAppDomainEnum](icordebugappdomainenum-interface.md) qui est un énumérateur pour les domaines d’application dans ce processus.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode peut être utilisée avant le rappel [ICorDebugManagedCallback :: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

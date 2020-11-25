@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 621b4543-a8f7-4117-98e4-930992cd688a
 topic_type:
 - apiref
-ms.openlocfilehash: 17cb3440c5b33d461b1624608ce115e1942d6beb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2a74688b90fbce63c9107d9389ddfd7bf5cd717b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129716"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695177"
 ---
 # <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a>ICorDebugObjectValue2::GetVirtualMethodAndType, méthode
+
 Cette méthode n'est pas encore implémentée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetVirtualMethodAndType (
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Obtient des pointeurs d’interface vers les instances « ICorDebugFunction » et « ICorDebugType » qui représentent la méthode et le type les plus dérivés pour la référence de membre spécifiée.  
   
 ## <a name="see-also"></a>Voir aussi

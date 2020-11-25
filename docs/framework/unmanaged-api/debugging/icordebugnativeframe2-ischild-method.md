@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e2aae09-49cb-4fbd-81e5-e29cd864a88b
 topic_type:
 - apiref
-ms.openlocfilehash: 759ba7bd46f8231143e743aa5ffcabffeb99c3b6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 0d65849aba08c7d143a6977e7dfb8cff85274a64
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205109"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695567"
 ---
 # <a name="icordebugnativeframe2ischild-method"></a>ICorDebugNativeFrame2::IsChild, méthode
+
 Détermine si le frame actuel est un Frame enfant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,12 @@ HRESULT IsChild([out] BOOL * pIsChild);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pIsChild`  
  à Valeur booléenne qui spécifie si le frame actuel est un Frame enfant.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -46,10 +49,12 @@ HRESULT IsChild([out] BOOL * pIsChild);
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La `IsChild` méthode retourne `true` si l’objet Frame sur lequel vous appelez la méthode est un enfant d’un autre Frame. Si c’est le cas, utilisez la méthode [IsMatchingParentFrame,](icordebugnativeframe2-ismatchingparentframe-method.md) pour vérifier si un frame est son parent.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
