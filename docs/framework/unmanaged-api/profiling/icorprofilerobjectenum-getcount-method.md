@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: 166b0761-ed80-4ccd-9973-dc20e61bf8fa
 topic_type:
 - apiref
-ms.openlocfilehash: 4c867a9e263f022fc6f8d90a883562e2560ad1b2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a0777797870a707c0d0f00bc0b4c986448118231
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494655"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702392"
 ---
-# <a name="icorprofilerobjectenumgetcount-method"></a><span data-ttu-id="1d780-102">ICorProfilerObjectEnum::GetCount, méthode</span><span class="sxs-lookup"><span data-stu-id="1d780-102">ICorProfilerObjectEnum::GetCount Method</span></span>
-<span data-ttu-id="1d780-103">Obtient le nombre total d’objets figés dans la collection.</span><span class="sxs-lookup"><span data-stu-id="1d780-103">Gets the total number of frozen objects in the collection.</span></span>  
+# <a name="icorprofilerobjectenumgetcount-method"></a><span data-ttu-id="27b96-102">ICorProfilerObjectEnum::GetCount, méthode</span><span class="sxs-lookup"><span data-stu-id="27b96-102">ICorProfilerObjectEnum::GetCount Method</span></span>
+
+<span data-ttu-id="27b96-103">Obtient le nombre total d’objets figés dans la collection.</span><span class="sxs-lookup"><span data-stu-id="27b96-103">Gets the total number of frozen objects in the collection.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1d780-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1d780-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="27b96-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="27b96-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCount (  
@@ -33,21 +34,23 @@ HRESULT GetCount (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1d780-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="1d780-105">Parameters</span></span>  
- `pcelt`  
- <span data-ttu-id="1d780-106">à Pointeur vers le nombre d’objets figés dans la collection.</span><span class="sxs-lookup"><span data-stu-id="1d780-106">[out] A pointer to the number of frozen objects in the collection.</span></span>  
-  
- <span data-ttu-id="1d780-107">Cette méthode retournera toujours zéro dans le .NET Framework version 3,5 Service Pack 1 (SP1) et les versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="1d780-107">This method will always return zero in the .NET Framework version 3.5 Service Pack 1 (SP1) and later versions.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="1d780-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="1d780-108">Requirements</span></span>  
- <span data-ttu-id="1d780-109">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1d780-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="1d780-110">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1d780-110">**Header:** CorProf.idl, CorProf.h</span></span>  
-  
- <span data-ttu-id="1d780-111">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1d780-111">**Library:** CorGuids.lib</span></span>  
-  
- <span data-ttu-id="1d780-112">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1d780-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="1d780-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1d780-113">See also</span></span>
+## <a name="parameters"></a><span data-ttu-id="27b96-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="27b96-105">Parameters</span></span>  
 
-- [<span data-ttu-id="1d780-114">ICorProfilerObjectEnum, interface</span><span class="sxs-lookup"><span data-stu-id="1d780-114">ICorProfilerObjectEnum Interface</span></span>](icorprofilerobjectenum-interface.md)
+ `pcelt`  
+ <span data-ttu-id="27b96-106">à Pointeur vers le nombre d’objets figés dans la collection.</span><span class="sxs-lookup"><span data-stu-id="27b96-106">[out] A pointer to the number of frozen objects in the collection.</span></span>  
+  
+ <span data-ttu-id="27b96-107">Cette méthode retournera toujours zéro dans le .NET Framework version 3,5 Service Pack 1 (SP1) et les versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="27b96-107">This method will always return zero in the .NET Framework version 3.5 Service Pack 1 (SP1) and later versions.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="27b96-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="27b96-108">Requirements</span></span>  
+
+ <span data-ttu-id="27b96-109">**Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="27b96-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="27b96-110">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="27b96-110">**Header:** CorProf.idl, CorProf.h</span></span>  
+  
+ <span data-ttu-id="27b96-111">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="27b96-111">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="27b96-112">**Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="27b96-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="27b96-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="27b96-113">See also</span></span>
+
+- [<span data-ttu-id="27b96-114">ICorProfilerObjectEnum, interface</span><span class="sxs-lookup"><span data-stu-id="27b96-114">ICorProfilerObjectEnum Interface</span></span>](icorprofilerobjectenum-interface.md)
