@@ -7,22 +7,24 @@ helpviewer_keywords:
 - Tlbexp.exe
 - Type Library Exporter
 ms.assetid: 5c0a3d14-5f26-4267-94a9-82c30f8db09a
-ms.openlocfilehash: cbde2af9c8a03e6c41f571120027030713f1b8d5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9386918f3574720d90bda7e8da592fa0c91160e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73104127"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708242"
 ---
-# <a name="tlbexp-helper-functions-unmanaged-api-reference"></a><span data-ttu-id="093ad-102">Fonctions d'assistance de Tlbexp (Informations de référence sur les API non managées)</span><span class="sxs-lookup"><span data-stu-id="093ad-102">Tlbexp Helper Functions (Unmanaged API Reference)</span></span>
-<span data-ttu-id="093ad-103">L’[outil Type Library Exporter](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) charge une bibliothèque de liens dynamiques nommée TlbRef.dll.</span><span class="sxs-lookup"><span data-stu-id="093ad-103">The [Type Library Exporter tool](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) loads a dynamic link library named TlbRef.dll.</span></span> <span data-ttu-id="093ad-104">Cette DLL contient deux fonctions d’assistance et une interface que l’outil exportateur utilise pendant le processus de conversion de l’assembly à la bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="093ad-104">This DLL contains two helper functions and an interface that the exporter tool uses during the assembly-to-type-library conversion process.</span></span>  
+# <a name="tlbexp-helper-functions-unmanaged-api-reference"></a><span data-ttu-id="79615-102">Fonctions d'assistance de Tlbexp (Informations de référence sur les API non managées)</span><span class="sxs-lookup"><span data-stu-id="79615-102">Tlbexp Helper Functions (Unmanaged API Reference)</span></span>
+
+<span data-ttu-id="79615-103">L’[outil Type Library Exporter](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) charge une bibliothèque de liens dynamiques nommée TlbRef.dll.</span><span class="sxs-lookup"><span data-stu-id="79615-103">The [Type Library Exporter tool](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) loads a dynamic link library named TlbRef.dll.</span></span> <span data-ttu-id="79615-104">Cette DLL contient deux fonctions d’assistance et une interface que l’outil exportateur utilise pendant le processus de conversion de l’assembly à la bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="79615-104">This DLL contains two helper functions and an interface that the exporter tool uses during the assembly-to-type-library conversion process.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="093ad-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="093ad-105">In This Section</span></span>  
- [<span data-ttu-id="093ad-106">Fonction GetTypeLibInfo</span><span class="sxs-lookup"><span data-stu-id="093ad-106">GetTypeLibInfo Function</span></span>](gettypelibinfo-function.md)  
- <span data-ttu-id="093ad-107">Fournit des informations sur la localisation et le système d’exploitation pour une bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="093ad-107">Provides localization and operating system information for a type library.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="79615-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="79615-105">In This Section</span></span>  
+
+ [<span data-ttu-id="79615-106">Fonction GetTypeLibInfo</span><span class="sxs-lookup"><span data-stu-id="79615-106">GetTypeLibInfo Function</span></span>](gettypelibinfo-function.md)  
+ <span data-ttu-id="79615-107">Fournit des informations sur la localisation et le système d’exploitation pour une bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="79615-107">Provides localization and operating system information for a type library.</span></span>  
   
- [<span data-ttu-id="093ad-108">LoadTypeLibWithResolver, fonction</span><span class="sxs-lookup"><span data-stu-id="093ad-108">LoadTypeLibWithResolver Function</span></span>](loadtypelibwithresolver-function.md)  
- <span data-ttu-id="093ad-109">Charge une bibliothèque de types à l’aide d’une implémentation de l’[interface ITypeLibResolver](itypelibresolver-interface.md) pour résoudre tous les types de bibliothèques référencés.</span><span class="sxs-lookup"><span data-stu-id="093ad-109">Loads a type library by using an implementation of the [ITypeLibResolver interface](itypelibresolver-interface.md) to resolve any referenced type libraries.</span></span>  
+ [<span data-ttu-id="79615-108">LoadTypeLibWithResolver, fonction</span><span class="sxs-lookup"><span data-stu-id="79615-108">LoadTypeLibWithResolver Function</span></span>](loadtypelibwithresolver-function.md)  
+ <span data-ttu-id="79615-109">Charge une bibliothèque de types à l’aide d’une implémentation de l’[interface ITypeLibResolver](itypelibresolver-interface.md) pour résoudre tous les types de bibliothèques référencés.</span><span class="sxs-lookup"><span data-stu-id="79615-109">Loads a type library by using an implementation of the [ITypeLibResolver interface](itypelibresolver-interface.md) to resolve any referenced type libraries.</span></span>  
   
- [<span data-ttu-id="093ad-110">ITypeLibResolver, interface</span><span class="sxs-lookup"><span data-stu-id="093ad-110">ITypeLibResolver Interface</span></span>](itypelibresolver-interface.md)  
- <span data-ttu-id="093ad-111">Fournit la [méthode ResolveTypeLib](resolvetypelib-method.md), qui retourne le chemin d’accès complet d’une bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="093ad-111">Provides the [ResolveTypeLib method](resolvetypelib-method.md), which returns the fully qualified path of a type library.</span></span>
+ [<span data-ttu-id="79615-110">ITypeLibResolver, interface</span><span class="sxs-lookup"><span data-stu-id="79615-110">ITypeLibResolver Interface</span></span>](itypelibresolver-interface.md)  
+ <span data-ttu-id="79615-111">Fournit la [méthode ResolveTypeLib](resolvetypelib-method.md), qui retourne le chemin d’accès complet d’une bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="79615-111">Provides the [ResolveTypeLib method](resolvetypelib-method.md), which returns the fully qualified path of a type library.</span></span>
