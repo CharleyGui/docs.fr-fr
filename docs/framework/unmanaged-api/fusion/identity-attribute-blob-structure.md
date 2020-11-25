@@ -16,15 +16,16 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-ms.openlocfilehash: 8f838d5c812842e2a637065b25182b6a12609231
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a59e70257064220e8138f9d267a815fcdbf3929
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176550"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729029"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB, structure
-Contient des informations sur un attribut unique `DWORD`dans un assemblage, et se compose de trois s. Chacun `DWORD` est un décalage dans un `CurrentIntoBuffer` tampon de caractère produit par la méthode de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
+
+Contient des informations sur un attribut unique dans un assembly et se compose de trois `DWORD` s. Chaque `DWORD` est un offset dans une mémoire tampon de caractères produite par la `CurrentIntoBuffer` méthode de l’interface [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +41,21 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ofsNamespace`|Le premier décalage dans le tampon de caractère. Ce décalage n’est pas suivi par l’espace de nom de l’attribut, mais par une série de caractères nuls. Par conséquent, il n’est pas utilisé.|  
-|`ofsName`|Le second compensé dans le tampon de caractère. Cet emplacement marque le début du nom de l’attribut.|  
-|`ofsValue`|Le troisième décalage dans le tampon de caractère. Cet emplacement marque le début de la valeur de l’attribut.|  
+|`ofsNamespace`|Premier offset dans la mémoire tampon de caractères. Cet offset n’est pas suivi de l’espace de noms de l’attribut, mais d’une série de caractères null. Par conséquent, il n’est pas utilisé.|  
+|`ofsName`|Deuxième offset dans la mémoire tampon de caractères. Cet emplacement marque le début du nom de l’attribut.|  
+|`ofsValue`|Troisième offset dans la mémoire tampon de caractères. Cet emplacement marque le début de la valeur de l’attribut.|  
   
 ## <a name="sample"></a>Exemple  
- L’exemple suivant illustre plusieurs étapes de base, `IDENTITY_ATTRIBUTE_BLOB` qui finissent par aboutir à une structure peuplée :  
+
+ L’exemple suivant illustre plusieurs étapes de base, ce qui finit par aboutir à une `IDENTITY_ATTRIBUTE_BLOB` structure remplie :  
   
-1. Obtenir une [IReferenceIdentity](ireferenceidentity-interface.md) pour l’assemblée.  
+1. Obtenez un [IReferenceIdentity](ireferenceidentity-interface.md) pour l’assembly.  
   
-2. Appelez `IReferenceIdentity::EnumAttributes` la méthode, et obtenir un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
+2. Appelez la `IReferenceIdentity::EnumAttributes` méthode et obtenez un [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Créez un tampon de caractère, `IDENTITY_ATTRIBUTE_BLOB` et jetez-le comme une structure.  
+3. Créez une mémoire tampon de caractères et effectuez un cast de celle-ci en `IDENTITY_ATTRIBUTE_BLOB` structure.  
   
-4. Appelez `CurrentIntoBuffer` la méthode `IEnumIDENTITY_ATTRIBUTE` de l’interface. Cette méthode copie `Namespace`les `Name`attributs , , et `Value` dans le tampon de caractère. Les trois compensations à ces cordes `IDENTITY_ATTRIBUTE_BLOB` seront disponibles dans la structure.  
+4. Appelez la `CurrentIntoBuffer` méthode de l' `IEnumIDENTITY_ATTRIBUTE` interface. Cette méthode copie les attributs `Namespace` , `Name` et `Value` dans la mémoire tampon de caractères. Les trois décalages de ces chaînes deviennent disponibles dans la `IDENTITY_ATTRIBUTE_BLOB` structure.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -220,25 +222,28 @@ Exit:
 ```  
   
 ### <a name="to-run-the-sample"></a>Exécution de l'exemple  
- D:\\> EnumAssemblyAttributes.exe C: 'WINDOWS’Microsoft.NET’Framework’v2.0.50727-System.dll  
+
+ C : \\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Exemple de sortie  
- Culture neutre  
+
+ Culture = neutral  
   
- nom - Système  
+ Name = System  
   
- processeurArchitecture - MSIL  
+ processorArchitecture = MSIL  
   
- PublicKeyToken - b77a5c561934e089  
+ PublicKeyToken = b77a5c561934e089  
   
- Version 2.0.0.0  
+ Version = 2.0.0.0  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** Isolation.h  
+ **En-tête :** Isolation. h  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

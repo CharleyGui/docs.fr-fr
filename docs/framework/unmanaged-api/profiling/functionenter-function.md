@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-ms.openlocfilehash: 52870c7446987817ff00b90db26c3265bccdd096
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9bc88d7dd5b00213da634dc9f511cfe0d39b42f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500726"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729835"
 ---
 # <a name="functionenter-function"></a>FunctionEnter (fonction)
+
 Indique au profileur que le contrôle est passé à une fonction.  
   
 > [!NOTE]
@@ -42,6 +43,7 @@ void __stdcall FunctionEnter (
   \[in] identificateur de la fonction vers laquelle le contrôle est passé.
 
 ## <a name="remarks"></a>Remarques  
+
  La `FunctionEnter` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec` `naked` attribut de classe de stockage ().  
   
  Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
@@ -55,6 +57,7 @@ void __stdcall FunctionEnter (
  En outre, la `FunctionEnter` fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9c421bb0-e647-4b2d-a986-f3d578cc7f20
 topic_type:
 - apiref
-ms.openlocfilehash: 5add6da1ace372ecf6e513902bbf98f5f79c6778
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a1f4964c89aa3b658c57946d4b5a0327797118f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210395"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728704"
 ---
 # <a name="icordebugheapvalue3-interface"></a>ICorDebugHeapValue3, interface
+
 Expose les propriétés du verrou du moniteur d'objets. Cette interface étend les interfaces ICorDebugHeapValue et ICorDebugHeapValue2.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,12 +32,13 @@ Expose les propriétés du verrou du moniteur d'objets. Cette interface étend l
 |[GetThreadOwningMonitorLock, méthode](icordebugheapvalue3-getthreadowningmonitorlock-method.md)|Retourne le thread managé qui détient le verrou du moniteur sur cet objet.|  
 |[GetMonitorEventWaitList, méthode](icordebugheapvalue3-getmonitoreventwaitlist-method.md)|Fournit une liste triée des threads mis en file d’attente sur l’événement associé à un verrou d’analyse.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

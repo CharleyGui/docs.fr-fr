@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fce34531-2687-406d-9131-d6ad94f2ce0e
 topic_type:
 - apiref
-ms.openlocfilehash: b597d95b5b25e5ebf04fac48e4f3fda312a9594c
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 090b587ef509795609250914ce8883ad96d28c18
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976120"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729679"
 ---
 # <a name="icordebugeval2-interface"></a>ICorDebugEval2, interface
 
@@ -35,14 +35,15 @@ ms.locfileid: "82976120"
 |[NewParameterizedObject, méthode](icordebugeval2-newparameterizedobject-method.md)|Instancie un nouvel objet de type paramétré et appelle la méthode de constructeur de l’objet.|  
 |[NewParameterizedObjectNoConstructor, méthode](icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Instancie un nouvel objet de type paramétrable de la classe spécifiée sans tenter d’appeler une méthode de constructeur|  
 |[NewStringWithLength, méthode](icordebugeval2-newstringwithlength-method.md)|Crée une nouvelle chaîne de la longueur spécifiée avec le contenu spécifié.|  
-|[RudeAbort, méthode](icordebugeval2-rudeabort-method.md)|Abandonne le calcul `ICorDebugEval2` en cours d’exécution.|  
+|[RudeAbort, méthode](icordebugeval2-rudeabort-method.md)|Abandonne le calcul en cours d' `ICorDebugEval2` exécution.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

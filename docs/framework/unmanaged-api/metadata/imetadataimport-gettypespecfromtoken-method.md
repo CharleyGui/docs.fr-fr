@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
 topic_type:
 - apiref
-ms.openlocfilehash: 43e9671afa92d36966e51bbdc630db4a9d9083b7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 62495aa4280bb1799af09fea2e550ae6107e09e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729146"
 ---
 # <a name="imetadataimportgettypespecfromtoken-method"></a>IMetaDataImport::GetTypeSpecFromToken, méthode
+
 Obtient la signature de métadonnées binaires de la spécification de type représentée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetTypeSpecFromToken (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `typespec`  
  dans Jeton TypeSpec associé à la signature de métadonnées demandée.  
   
@@ -46,14 +48,16 @@ HRESULT GetTypeSpecFromToken (
  à Taille, en octets, de la signature de métadonnées.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  HRESULT qui indique la réussite ou l’échec. Les échecs peuvent être testés à l’aide de la macro FAILed.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

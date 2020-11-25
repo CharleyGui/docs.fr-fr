@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 8263e75d-251b-4abc-8a1a-c62884142232
 topic_type:
 - apiref
-ms.openlocfilehash: 09c6431ec885c8b797dc9bb5f5c3ffe21890ccc7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3872a2b03d3b22d695af1c104e9ae8ba8856990
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107940"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729003"
 ---
 # <a name="ienumdefinitionidentity-interface"></a>IEnumDefinitionIdentity, interface
-Sert d’énumérateur pour une collection d’objets `IDefinitionIdentity`.  
+
+Sert d’énumérateur pour une collection d' `IDefinitionIdentity` objets.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 IEnumDefinitionIdentity : IUnknown {  
@@ -53,17 +54,18 @@ IEnumDefinitionIdentity : IUnknown {
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`IEnumDefinitionIdentity::Clone`|Obtient un pointeur d’interface vers un nouvel objet `IEnumDefinitionIdentity` qui contient les mêmes membres que ce `IEnumDefinitionIdentity`.|  
-|`IEnumDefinitionIdentity::Next`|Obtient le nombre spécifié d’objets `IDefinitionIdentity`, en commençant à la position actuelle.|  
-|`IEnumDefinitionIdentity::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumDefinitionIdentity`.|  
+|`IEnumDefinitionIdentity::Clone`|Obtient un pointeur d’interface vers un nouvel `IEnumDefinitionIdentity` objet qui contient les mêmes membres que ce `IEnumDefinitionIdentity` .|  
+|`IEnumDefinitionIdentity::Next`|Obtient le nombre spécifié d' `IDefinitionIdentity` objets, en commençant à la position actuelle.|  
+|`IEnumDefinitionIdentity::Reset`|Déplace le pointeur d’instruction au début de ce `IEnumDefinitionIdentity` .|  
 |`IEnumDefinitionIdentity::Skip`|Déplace le pointeur d’instruction vers l’avant par le nombre d’éléments spécifié, en commençant à la position actuelle.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

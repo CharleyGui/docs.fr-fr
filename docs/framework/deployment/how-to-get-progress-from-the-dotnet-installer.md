@@ -1,6 +1,6 @@
 ---
-title: Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
-description: Découvrez comment obtenir la progression à partir du programme d’installation de .NET 4,5. Si vous développez des applications pour cette version .NET, vous pouvez inclure (chaîner) le programme d’installation de .NET 4,5 dans le programme d’installation de votre application.
+title: 'Procédure : suivre la progression du programme d’installation de .NET Framework 4.5'
+description: Découvrez comment obtenir la progression à partir du programme d’installation .NET Framework 4,5. Si vous développez des applications pour cette version .NET, vous pouvez inclure (chaîner) .NET Framework Configuration 4,5 dans le programme d’installation de votre application.
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - progress information, .NET Framework installer
 - .NET Framework, installing
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
-ms.openlocfilehash: 501fcaa7636d586ddfff8606768d4639fdc010d7
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 7e21a376c5a7551ecadeaa70c0a70968dc5752fd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904258"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729120"
 ---
-# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
+# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Procédure : suivre la progression du programme d’installation de .NET Framework 4.5
 
 .NET Framework 4.5 est un runtime redistribuable. Si vous développez des applications pour cette version du .NET Framework, vous pouvez inclure (chaîner) le programme d’installation de .NET Framework 4.5 en tant que composant requis du programme d’installation de votre application. Pour présenter une expérience d’installation unifiée ou personnalisée, vous souhaiterez peut-être lancer le programme d’installation de .NET Framework 4.5 en mode silencieux et suivre sa progression tout en affichant la progression de l’installation de votre application. Pour activer le suivi en mode silencieux, le programme d’installation de .NET Framework 4.5 (qui peut être observé) définit un protocole en utilisant un segment d’E/S mappées en mémoire (MMIO) pour communiquer avec votre programme d’installation (l’observateur ou le programme de chaînage). Ce protocole définit un moyen pour un programme de chaînage d’obtenir des informations sur la progression, d’obtenir des résultats détaillés, de répondre aux messages et d’annuler l’installation de .NET Framework 4.5.
 

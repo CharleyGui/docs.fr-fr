@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5f28cc4e-7176-4e00-aa1f-58ae6ee52fe4
 topic_type:
 - apiref
-ms.openlocfilehash: 924d032c42dca95b253acea167d55dd6e2b811e5
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: ef043dd2308c4b76e975bd2ad1f68725579e8fc9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703337"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728905"
 ---
 # <a name="iclrruntimehostexecuteapplication-method"></a>ICLRRuntimeHost::ExecuteApplication, méthode
+
 Utilisé dans les scénarios de déploiement ClickOnce basés sur un manifeste pour spécifier l’application à activer dans un nouveau domaine. Pour plus d’informations sur ces scénarios, consultez [sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT ExecuteApplication(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzAppFullName`  
  dans Nom complet de l’application, tel que défini pour <xref:System.ApplicationIdentity> .  
   
@@ -57,31 +59,33 @@ HRESULT ExecuteApplication(
  `pReturnValue`  
  à Valeur retournée par le point d’entrée de l’application.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`ExecuteApplication`retourné avec succès.|  
+|S_OK|`ExecuteApplication` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
- `ExecuteApplication`est utilisé pour activer des applications ClickOnce dans un domaine d’application nouvellement créé.  
+## <a name="remarks"></a>Remarques  
+
+ `ExecuteApplication` est utilisé pour activer des applications ClickOnce dans un domaine d’application nouvellement créé.  
   
  Le `pReturnValue` paramètre de sortie est défini sur la valeur retournée par l’application. Si vous spécifiez une valeur null pour `pReturnValue` , `ExecuteApplication` n’échoue pas, mais elle ne retourne pas de valeur.  
   
 > [!IMPORTANT]
 > N’appelez pas la méthode [Start méthode](iclrruntimehost-start-method.md) avant d’appeler la `ExecuteApplication` méthode pour activer une application basée sur un manifeste. Si la `Start` méthode est appelée en premier, l’appel de la `ExecuteApplication` méthode échoue.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

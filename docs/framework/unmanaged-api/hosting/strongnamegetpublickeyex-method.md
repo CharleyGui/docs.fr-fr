@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
 topic_type:
 - apiref
-ms.openlocfilehash: 1904a98f254a988ce035847a4cdeede182aa07bf
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8cc28d9ccd40c65d225a96b269562c9d3dfa2124
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006371"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729887"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx, méthode
+
 Obtient la clé publique à partir d’une paire de clés publique/privée et spécifie un algorithme de hachage et un algorithme de signature.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT StrongNameGetPublicKey (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzKeyContainer`  
  dans Nom du conteneur de clé qui contient la paire de clés publique/privée. Si `pbKeyBlob` a la valeur null, `szKeyContainer` doit spécifier un conteneur valide dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la `StrongNameGetPublicKeyEx` méthode extrait la clé publique de la paire de clés stockée dans le conteneur.  
   
@@ -66,15 +68,18 @@ HRESULT StrongNameGetPublicKey (
  dans Réservé à une utilisation ultérieure ; la valeur par défaut est null.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
- `S_OK`Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
+
+ `S_OK` Si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
 ## <a name="remarks"></a>Remarques  
+
  La clé publique est contenue dans une structure [publicKeyBlob](../strong-naming/publickeyblob-structure.md) .  
   
 ## <a name="remarks"></a>Remarques  
+
  Le tableau suivant présente l’ensemble des valeurs acceptées pour le `uHashAlgId` paramètre.  
   
-|Nom|Valeur|  
+|Nom|Value|  
 |----------|-----------|  
 |None|0|  
 |SHA-1|0x8004|  
@@ -82,12 +87,13 @@ HRESULT StrongNameGetPublicKey (
 |SHA-384|0x800d|  
 |SHA-512|0x800e|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   

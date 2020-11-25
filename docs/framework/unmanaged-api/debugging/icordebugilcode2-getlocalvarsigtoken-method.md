@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 17665b77-1342-4115-94fd-9f45b0ecfb0f
 topic_type:
 - apiref
-ms.openlocfilehash: 3b9c2f0e20488826aca202b3ef454104964b8bb9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 33533c9e3bfbe78abeddb5ed591f741219826127
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210343"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728631"
 ---
 # <a name="icordebugilcode2getlocalvarsigtoken-method"></a>ICorDebugILCode2::GetLocalVarSigToken, méthode
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Obtient le jeton de métadonnées de la signature de variable locale pour la fonction représentée par cette instance.  
@@ -33,12 +34,14 @@ HRESULT GetLocalVarSigToken(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pmdSig`  
  [en sortie] Un pointeur vers le jeton `mdSignature` pour la signature de variable globale pour cette fonction, ou `mdSignatureNil` s'il n'y a pas de signature (c'est-à-dire si la fonction n'a aucune variable locale).  
   
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

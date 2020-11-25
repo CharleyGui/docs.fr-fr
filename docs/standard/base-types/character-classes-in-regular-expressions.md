@@ -11,12 +11,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: 69cece42c5d7c92eb1af5e31f4fd83f5384b1d8e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 35ffe3f338897bc7b24a6c274b5458dd2e19918c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823314"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728769"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -50,7 +50,9 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
 > Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères. Dans .NET Framework 4.6.2 et versions ultérieures, les catégories de caractères sont basées sur [la norme Unicode, version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/).
   
 <a name="PositiveGroup"></a>
+
 ## <a name="positive-character-group--"></a>Groupe de caractères positif : [ ]  
+
  Un groupe de caractères positif spécifie une liste de caractères, chacun d'entre eux pouvant apparaître dans une chaîne d'entrée pour produire une correspondance. Cette liste de caractères peut être spécifiée individuellement, comme une plage, ou les deux à la fois.  
   
  La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
@@ -106,7 +108,9 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
 |`\b`|Mettre en correspondance la limite d'un mot.|  
   
 <a name="NegativeGroup"></a>
+
 ## <a name="negative-character-group-"></a>Groupe de caractères négatif : [^]  
+
  Un groupe de caractères négatifs spécifie une liste de caractères qui ne doivent pas s'afficher dans une chaîne d'entrée pour produire une correspondance. La liste de caractères peut être spécifiée individuellement, comme une plage, ou les deux à la fois.  
   
 La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
@@ -154,7 +158,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 |`\b`|Terminer à une limite de mot.|  
   
 <a name="AnyCharacter"></a>
+
 ## <a name="any-character-"></a>N’importe quel caractère : .  
+
  Le point (.) correspond à n'importe quel caractère à l'exception de `\n` (caractère de saut de ligne, \u000A), avec les deux qualifications suivantes :  
   
 - Si un modèle d'expression régulière est modifié par l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> ou si la partie du modèle qui contient la classe de caractères `.` est modifiée par l'option `s`, `.` correspond à n'importe quel caractère. Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).  
@@ -176,12 +182,14 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 > Étant donné qu'il correspond à n'importe quel caractère, l'élément de langage `.` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère. Pour plus d’informations, consultez [Quantificateurs](quantifiers-in-regular-expressions.md).  
   
 <a name="CategoryOrBlock"></a>
+
 ## <a name="unicode-category-or-unicode-block-p"></a>Catégorie Unicode ou bloc Unicode : \p{}  
+
  La norme Unicode assigne une catégorie générale à chaque caractère. Par exemple, un caractère particulier peut être une lettre majuscule (représenté par la catégorie `Lu`), un chiffre décimal (catégorie `Nd`), un symbole mathématique (catégorie `Sm`) ou un séparateur de paragraphe (catégorie `Zl`). Les jeux de caractères spécifiques de la norme Unicode occupent également une plage spécifique ou un bloc de points de code consécutifs. Par exemple, l'alphabet latin de base se trouve de \u0000 à \u007F, alors que le jeu de caractères arabe se trouve de \u0600 à \u06FF.  
   
  La construction d'expression régulière  
   
- `\p{`*nom*`}`  
+ `\p{` *name* `}`  
   
  correspond à n’importe quel caractère qui appartient à une catégorie Unicode générale ou à un bloc nommé, où *nom* est l’abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
   
@@ -205,12 +213,14 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 |`(\p{IsBasicLatin}+(\s)?)+`|Mettre en correspondance un ou plusieurs caractères latins de base suivis de zéro ou d’un espace blanc, une ou plusieurs fois.|  
   
 <a name="NegativeCategoryOrBlock"></a>
+
 ## <a name="negative-unicode-category-or-unicode-block-p"></a>Catégorie Unicode négative ou bloc Unicode : \P{}  
+
  La norme Unicode assigne une catégorie générale à chaque caractère. Par exemple, un caractère particulier peut être une lettre majuscule (représenté par la catégorie `Lu`), un chiffre décimal (catégorie `Nd`), un symbole mathématique (catégorie `Sm`) ou un séparateur de paragraphe (catégorie `Zl`). Les jeux de caractères spécifiques de la norme Unicode occupent également une plage spécifique ou un bloc de points de code consécutifs. Par exemple, l'alphabet latin de base se trouve de \u0000 à \u007F, alors que le jeu de caractères arabe se trouve de \u0600 à \u06FF.  
   
  La construction d'expression régulière  
   
- `\P{`*nom*`}`  
+ `\P{` *name* `}`  
   
  correspond à n'importe quel caractère qui n'appartient pas à une catégorie générale Unicode ou à un bloc nommé, où *nom* est l'abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
   
@@ -222,7 +232,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  Le modèle d'expression régulière `(\P{Sc})+` correspond à un ou plusieurs caractères qui ne sont pas des symboles monétaires ; il supprime efficacement tout symbole monétaire de la chaîne du résultat.  
   
 <a name="WordCharacter"></a>
+
 ## <a name="word-character-w"></a>Caractère de mot : \w  
+
  `\w` correspond à n'importe quel caractère alphabétique. Un caractère de mot est un membre d'une des catégories Unicode répertoriées dans le tableau suivant.  
   
 |Category|Description|  
@@ -252,7 +264,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/wordchar1.vb#8)]  
   
 <a name="NonWordCharacter"></a>
+
 ## <a name="non-word-character-w"></a>Caractère autre qu’un mot : \W  
+
  `\W` correspond à tout caractère autre qu'un caractère alphabétique. L'élément de langage \W est équivalent à la classe de caractères suivante :  
   
 `[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`  
@@ -289,7 +303,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  Étant donné que l'objet <xref:System.Text.RegularExpressions.Group> du deuxième groupe de capture ne contient qu'un seul caractère autre qu'un mot capturé, l'exemple extrait tous les caractères autres que des mots capturés de l'objet <xref:System.Text.RegularExpressions.CaptureCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.  
   
 <a name="WhitespaceCharacter"></a>
+
 ## <a name="whitespace-character-s"></a>Espace : \s  
+
  `\s` correspond à n'importe quel espace. Il est équivalent aux séquences d'échappement et catégories Unicode répertoriées dans le tableau suivant.  
   
 |Category|Description|  
@@ -318,7 +334,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/whitespace1.vb#10)]  
   
 <a name="NonWhitespaceCharacter"></a>
+
 ## <a name="non-whitespace-character-s"></a>Caractère autre qu’un espace : \S  
+
  `\S` correspond à tout caractère autre qu'un espace. Il est équivalent au modèle d'expression régulière `[^\f\n\r\t\v\x85\p{Z}]` ou à l'opposé du modèle d'expression régulière qui est équivalent à `\s`, qui met en correspondance des espaces. Pour plus d'informations, consultez [Espace blanc : \s](#WhitespaceCharacter).  
   
  Si un comportement conforme à ECMAScript est spécifié, `\S` est équivalent à `[^ \f\n\r\t\v]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « comportement de correspondance ECMAScript » dans [Options des expressions régulières](regular-expression-options.md).  
@@ -335,7 +353,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nonwhitespace1.vb#11)]  
   
 <a name="DigitCharacter"></a>
+
 ## <a name="decimal-digit-character-d"></a>Caractère numérique décimal : \d  
+
  `\d` correspond à n'importe quel chiffre décimal. Il est équivalent au modèle d'expression régulière `\p{Nd}`, qui inclut les chiffres décimaux standard de 0 à 9, ainsi que les chiffres décimaux de plusieurs autres jeux de caractères.  
   
  Si un comportement conforme à ECMAScript est spécifié, `\d` est équivalent à `[0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « comportement de correspondance ECMAScript » dans [Options des expressions régulières](regular-expression-options.md).  
@@ -357,7 +377,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/digit1.vb#12)]  
   
 <a name="NonDigitCharacter"></a>
+
 ## <a name="non-digit-character-d"></a>Caractère autre qu’un chiffre : \D  
+
  `\D` correspond à n'importe quel caractère autre qu'un chiffre. Il est équivalent au modèle d'expression régulière `\P{Nd}`.  
   
  Si un comportement conforme à ECMAScript est spécifié, `\D` est équivalent à `[^0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « comportement de correspondance ECMAScript » dans [Options des expressions régulières](regular-expression-options.md).  
@@ -376,7 +398,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nondigit1.vb#13)]  
   
 <a name="SupportedUnicodeGeneralCategories"></a>
+
 ## <a name="supported-unicode-general-categories"></a>Catégories générales Unicode prises en charge  
+
  La norme Unicode définit les catégories générales répertoriées dans le tableau suivant. Pour plus d’informations, consultez les sous-rubriques « Format de fichier UCD » et « Valeurs des catégories générales » dans la [Base de données de caractères Unicode](https://www.unicode.org/reports/tr44/).  
   
 |Category|Description|  
@@ -425,6 +449,7 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/getunicodecategory1.vb#14)]  
   
 <a name="SupportedNamedBlocks"></a>
+
 ## <a name="supported-named-blocks"></a>Blocs nommés pris en charge
 
 .NET fournit les blocs nommés répertoriés dans le tableau suivant. Le jeu de blocs nommés pris en charge est basé sur Unicode 4.0 et Perl 5.6. Pour une expression régulière qui utilise des blocs nommés, consultez la section [Catégorie Unicode ou bloc Unicode : \\p{}](#unicode-category-or-unicode-block-p).  
@@ -538,7 +563,9 @@ où *premiercaractère* est le caractère qui commence la plage et *derniercarac
 |FFF0 - FFFF|`IsSpecials`|  
   
 <a name="CharacterClassSubtraction"></a>
+
 ## <a name="character-class-subtraction-base_group---excluded_group"></a>Soustraction de classe de caractères : [groupe_base - [groupe_exclu]]  
+
  Une classe de caractères définit un jeu de caractères. La soustraction de classe de caractères produit un jeu de caractères qui est le résultat de l'exclusion des caractères d'une classe de caractères d'une autre classe de caractères.  
   
  Une expression de soustraction de classe de caractères a la forme suivante :  

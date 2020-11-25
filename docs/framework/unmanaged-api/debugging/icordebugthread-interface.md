@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3930fd9b-2bc3-4b72-80a0-b6eeb94d60c6
 topic_type:
 - apiref
-ms.openlocfilehash: edcc0ebcadc1bd95574b0276bfd0e2d42e5474fd
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 5165ef081aad849c11747807d8cc76b2df0a6c74
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379818"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729315"
 ---
 # <a name="icordebugthread-interface"></a>ICorDebugThread, interface
+
 Représente un thread de processus. La durée de vie d'une instance `ICorDebugThread` est la même que la durée de vie du thread qu'elle représente.  
   
 ## <a name="methods"></a>Méthodes  
@@ -45,12 +46,13 @@ Représente un thread de processus. La durée de vie d'une instance `ICorDebugTh
 |[GetUserState, méthode](icordebugthread-getuserstate-method.md)|Obtient une combinaison d’opérations de bits de valeurs CorDebugUserState, qui décrivent l’état actuel de ce `ICorDebugThread` .|  
 |[SetDebugState, méthode](icordebugthread-setdebugstate-method.md)|Définit une combinaison d’opérations de bits de `CorDebugThreadState` valeurs qui décrivent l’état de débogage de ce `ICorDebugThread` .|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

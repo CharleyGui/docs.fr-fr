@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4a261dba-450d-4f1f-8d98-865b58bfc992
 topic_type:
 - apiref
-ms.openlocfilehash: 3b0e60602d2f36552c3e0e85ec51205b4128486b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 597a3dfecd42e206c98974093fa2417eba570f6a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499764"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729462"
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2, interface
+
 Fournit des méthodes qui sont utilisées par le common language runtime (CLR) pour notifier un profileur de code lorsque les événements auxquels le profileur s’est abonné se produisent. L' `ICorProfilerCallback2` interface est une extension de l’interface [ICorProfilerCallback](icorprofilercallback-interface.md) . Autrement dit, il fournit de nouveaux rappels introduits dans la version 2,0 de .NET Framework.  
   
 > [!NOTE]
@@ -41,6 +42,7 @@ Fournit des méthodes qui sont utilisées par le common language runtime (CLR) p
 |[ThreadNameChanged, méthode](icorprofilercallback2-threadnamechanged-method.md)|Notifie le profileur de code que le nom d’un thread a changé.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR appelle une méthode dans l' `ICorProfilerCallback` interface (ou `ICorProfilerCallback2` ) pour notifier le profileur lorsqu’un événement auquel le profileur s’est abonné se produit. Il s’agit de l’interface de rappel principale par le biais de laquelle le CLR communique avec le profileur de code.  
   
  Un profileur de code doit implémenter les méthodes de l' `ICorProfilerCallback` interface. Pour le .NET Framework 2,0 et les versions ultérieures, le profileur doit également implémenter les `ICorProfilerCallback2` méthodes. Chaque implémentation de méthode doit retourner un HRESULT ayant la valeur S_OK en cas de réussite ou E_FAIL en cas d’échec. Actuellement, le CLR ignore le HRESULT retourné par chaque rappel, à l’exception de [ICorProfilerCallback :: ObjectReferences](icorprofilercallback-objectreferences-method.md).  
@@ -51,6 +53,7 @@ Fournit des méthodes qui sont utilisées par le common language runtime (CLR) p
 > Le profileur inscrit un objet COM unique. Si le profileur cible .NET Framework version 1,0 ou 1,1, cet objet COM n’a besoin que d’implémenter les méthodes de `ICorProfilerCallback` . Si elle cible .NET Framework version 2,0 et les versions ultérieures, l’objet COM doit également implémenter les méthodes de `ICorProfilerCallback2` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

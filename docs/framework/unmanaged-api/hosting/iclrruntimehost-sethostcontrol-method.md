@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6136be87-e631-4756-81ed-74b66581bad4
 topic_type:
 - apiref
-ms.openlocfilehash: 644b31ae8e8f0c51c08bcad57220a028406cfd3a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 32483be43d4d4fe9d185c091e15a13c6feb95600
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504071"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728821"
 ---
 # <a name="iclrruntimehostsethostcontrol-method"></a>ICLRRuntimeHost::SetHostControl, méthode
+
 Définit le pointeur d’interface que le common language runtime (CLR) peut utiliser pour accéder à l’implémentation de l’hôte de l' [interface IHostControl](ihostcontrol-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT SetHostControl(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pHostControl`  
  dans Pointeur d’interface vers l’implémentation de l’hôte de l' [interface IHostControl](ihostcontrol-interface.md).  
   
@@ -41,7 +43,7 @@ HRESULT SetHostControl(
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SetHostControl`retourné avec succès.|  
+|S_OK|`SetHostControl` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,14 +52,16 @@ HRESULT SetHostControl(
 |E_CLR_ALREADY_STARTED|Le CLR a déjà été initialisé.|  
   
 ## <a name="remarks"></a>Remarques  
+
  `SetHostControl`Avant d’initialiser le CLR, vous devez appeler avant d’appeler la [méthode Start](iclrruntimehost-start-method.md) ou d’utiliser l’une des [interfaces de métadonnées](../metadata/metadata-interfaces.md). Il est recommandé d’appeler `SetHostControl` immédiatement après l’appel de la [fonction CorBindToCurrentRuntime,](corbindtocurrentruntime-function.md) ou de la [fonction CorBindToRuntimeEx](corbindtoruntimeex-function.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

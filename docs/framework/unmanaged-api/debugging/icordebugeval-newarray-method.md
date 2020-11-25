@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
 topic_type:
 - apiref
-ms.openlocfilehash: 496a6a7e01dec8aa90ba4e849c431ccd499ef53d
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: ef6cbe2cef3c52d9a4b47ff77e8aeb5159e89c76
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976198"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729757"
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray, méthode
+
 Alloue un nouveau tableau du type d’élément et des dimensions spécifiés.  
   
  Cette méthode est obsolète dans la version 2,0 de .NET Framework. Utilisez [ICorDebugEval2 :: NewParameterizedArray,](icordebugeval2-newparameterizedarray-method.md) à la place.  
@@ -40,6 +41,7 @@ HRESULT NewArray (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `elementType`  
  dans Valeur de l’énumération CorElementType qui spécifie le type d’élément du tableau.  
   
@@ -55,10 +57,12 @@ HRESULT NewArray (
  `lowBounds`  
  [in] Facultatif. Limite inférieure de chaque dimension du tableau. Si cette valeur est omise, une limite inférieure de zéro est utilisée pour chaque dimension.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Le tableau est toujours créé dans le domaine d’application dans lequel le thread est en cours d’exécution.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 02468edf-d32b-4cb3-aaa8-3dd2abfc8b25
 topic_type:
 - apiref
-ms.openlocfilehash: e901c65824ee8d6949c79c7778944148c0d9eb28
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 478772925dfb7ca7389b5267433f9b06ace3d5a3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976055"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729614"
 ---
 # <a name="icordebugeval2rudeabort-method"></a>ICorDebugEval2::RudeAbort, méthode
-Abandonne le calcul `ICorDebugEval2` en cours d’exécution.  
+
+Abandonne le calcul en cours d' `ICorDebugEval2` exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,10 +32,12 @@ Abandonne le calcul `ICorDebugEval2` en cours d’exécution.
 HRESULT RudeAbort ();  
 ```  
   
-## <a name="remarks"></a>Notes   
- `RudeAbort`ne libère pas les verrous détenus par l’évaluateur, il laisse donc la session de débogage dans un État non sécurisé. Appelez cette méthode avec une extrême prudence.  
+## <a name="remarks"></a>Notes  
+
+ `RudeAbort` ne libère pas les verrous détenus par l’évaluateur, il laisse donc la session de débogage dans un État non sécurisé. Appelez cette méthode avec une extrême prudence.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

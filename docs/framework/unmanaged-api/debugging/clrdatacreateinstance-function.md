@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 440bad90-5a88-45e7-9157-4596801d8d19
 topic_type:
 - apiref
-ms.openlocfilehash: c24963a6e56adfb9f763c6521027744db82cc357
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ffc575cfcef1089a70ef3b6d38787a5b4c50443
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179359"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729822"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance, fonction
+
 Crée un objet d’interface pour l’élément cible spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,26 +37,29 @@ HRESULT CLRDataCreateInstance (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `iid`  
- [dans] L’identifiant de l’interface à instants.  
+ dans Identificateur de l’interface à instancier.  
   
  `target`  
- [dans] Un pointeur vers un objet [ICLRDataTarget](iclrdatatarget-interface.md) implémenté par l’utilisateur qui représente l’élément cible pour lequel créer l’objet d’interface.  
+ dans Pointeur vers un objet [ICLRDataTarget](iclrdatatarget-interface.md) implémenté par l’utilisateur qui représente l’élément cible pour lequel créer l’objet d’interface.  
   
  `iface`  
- [out] Un pointeur à l’adresse de l’objet d’interface retourné.  
+ à Pointeur vers l’adresse de l’objet d’interface retourné.  
   
-## <a name="remarks"></a>Notes   
- L’objet `ICLRDataTarget` est implémenté par l’auteur de l’application de débogage. La mise en œuvre dépend du type d’élément cible représenté. L’élément cible peut être un processus, un dépotoir de mémoire, une machine à distance, et ainsi de suite.  
+## <a name="remarks"></a>Remarques  
+
+ L' `ICLRDataTarget` objet est implémenté par le writer de l’application de débogage. L’implémentation dépend du type d’élément cible représenté. L’élément cible peut être un processus, un vidage de la mémoire, un ordinateur distant, et ainsi de suite.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** ClrData.idl  
+ **En-tête :** ClrData. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8ba42d2-d9fa-43cb-bbc0-f33e1e592cb6
 topic_type:
 - apiref
-ms.openlocfilehash: 0916b6382bb9352616d85e21f423301dc6aa9fa9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a89d1406daa9a2416a708b63d88fd9005234015
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490846"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729198"
 ---
 # <a name="imetadataimportgetscopeprops-method"></a>IMetaDataImport::GetScopeProps, méthode
+
 Obtient le nom et éventuellement l'identificateur de version de l'assembly ou du module dans la portée de métadonnées actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetScopeProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szName`  
  à Mémoire tampon pour le nom de l’assembly ou du module.  
   
@@ -50,14 +52,16 @@ HRESULT GetScopeProps (
  [out, optional] Pointeur vers un GUID qui identifie de façon unique la version de l’assembly ou du module.  
   
 ## <a name="remarks"></a>Remarques  
+
  La méthode [IMetaDataEmit :: SetModuleProps,](imetadataemit-setmoduleprops-method.md) est utilisée pour définir ces propriétés.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9caea662-0167-4267-b14a-2fa42c3be4ea
 topic_type:
 - apiref
-ms.openlocfilehash: 7a2a5080872f49a84e36c53ac337d91738c15e45
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 74804cdc9dc04c3ede5cc26a6310dbb3948cd78a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501337"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729484"
 ---
 # <a name="imetadataconverter-interface"></a>IMetaDataConverter, interface
+
 Fournit des méthodes pour mapper des bibliothèques de types à leurs signatures de métadonnées et effectuer la conversion entre les deux.  
   
 ## <a name="methods"></a>Méthodes  
@@ -33,11 +34,12 @@ Fournit des méthodes pour mapper des bibliothèques de types à leurs signature
 |[GetTypeLibFromMetaData, méthode](imetadataconverter-gettypelibfrommetadata-method.md)|Obtient un pointeur vers une `ITypeLib` instance de qui représente la bibliothèque de types qui contient les noms de module et de bibliothèque spécifiés.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

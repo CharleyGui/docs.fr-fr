@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: cb0c5f65-3791-47bc-b833-2f84f4101ba5
 topic_type:
 - apiref
-ms.openlocfilehash: 72caac0aafe7f9c5919057a6ad2565258aec6a50
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8d88222215eb31e1c63f3b26079517c4b088e81b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504072"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728834"
 ---
 # <a name="iclrruntimehost-interface"></a>ICLRRuntimeHost, interface
+
 Fournit des fonctionnalités similaires à celles de l’interface [ICorRuntimeHost](icorruntimehost-interface.md) fournie dans la .NET Framework version 1, avec les modifications suivantes :  
   
 - Ajout de la méthode [SetHostControl](iclrruntimehost-sethostcontrol-method.md) pour définir l’interface de contrôle hôte.  
@@ -39,21 +40,23 @@ Fournit des fonctionnalités similaires à celles de l’interface [ICorRuntimeH
 |[GetCurrentAppDomainId, méthode](iclrruntimehost-getcurrentappdomainid-method.md)|Obtient l’identificateur numérique du en <xref:System.AppDomain> cours d’exécution.|  
 |[SetHostControl, méthode](iclrruntimehost-sethostcontrol-method.md)|Définit l’interface de contrôle hôte. Vous devez appeler `SetHostControl` avant d’appeler `Start` .|  
 |[Start, méthode](iclrruntimehost-start-method.md)|Initialise le CLR dans un processus.|  
-|[Stop, méthode](iclrruntimehost-stop-method.md)|Arrête l’exécution du code par le Runtime.|  
+|[Stop (méthode)](iclrruntimehost-stop-method.md)|Arrête l’exécution du code par le Runtime.|  
 |[UnloadAppDomain, méthode](iclrruntimehost-unloadappdomain-method.md)|Décharge le <xref:System.AppDomain> qui correspond à l’identificateur numérique spécifié.|  
   
 ## <a name="remarks"></a>Remarques  
+
  À partir du .NET Framework 4, utilisez l’interface [ICLRMetaHost](iclrmetahost-interface.md) pour obtenir un pointeur vers l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) , puis appelez la méthode [ICLRRuntimeInfo :: GetInterface](iclrruntimeinfo-getinterface-method.md) pour obtenir un pointeur vers `ICLRRuntimeHost` . Dans les versions antérieures du .NET Framework, l’hôte obtient un pointeur vers une `ICLRRuntimeHost` instance en appelant [CorBindToRuntimeEx](corbindtoruntimeex-function.md) ou [CorBindToCurrentRuntime,](corbindtocurrentruntime-function.md). Pour fournir des implémentations de l’une des technologies fournies dans le .NET Framework version 2,0, vous devez utiliser `ICLRRuntimeHost` au lieu de `ICorRuntimeHost` .  
   
 > [!IMPORTANT]
 > N’appelez pas la méthode [Start](iclrruntimehost-start-method.md) avant d’appeler la méthode [ExecuteApplication](iclrruntimehost-executeapplication-method.md) pour activer une application basée sur un manifeste. Si la `Start` méthode est appelée en premier, l’appel de la `ExecuteApplication` méthode échoue.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

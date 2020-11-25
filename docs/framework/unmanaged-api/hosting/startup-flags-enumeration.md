@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
 topic_type:
 - apiref
-ms.openlocfilehash: b4694efffa0a3dd6fed1f97fc2359c5eb335d440
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 3c3f4d644bd7073655d2d77fe7f65a3a46cfea24
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006413"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729901"
 ---
 # <a name="startup_flags-enumeration"></a>STARTUP_FLAGS, énumération
+
 Contient des valeurs qui indiquent le comportement de démarrage du common language runtime (CLR). Par défaut, garbage collection n’est pas simultanée et seule la bibliothèque de classes de base est chargée dans la zone indépendante du domaine.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -72,12 +73,13 @@ typedef enum {
 |`STARTUP_ETW`|Spécifie que le suivi d’événements pour Windows (ETW) est activé pour les événements de common language runtime. À partir de Windows Vista, le suivi d’événements est toujours activé, donc cet indicateur n’a aucun effet. Consultez [contrôle de la journalisation des .NET Framework](../../performance/controlling-logging.md).|  
 |`STARTUP_ARM`|Spécifie que l’analyse des ressources du domaine d’application est activée. Consultez la <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> propriété et l' [ \<appDomainResourceMonitoring> élément](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

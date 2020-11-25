@@ -12,14 +12,15 @@ api_type:
 ms.assetid: cf7a0e00-06ae-47a5-8037-598b26196802
 topic_type:
 - apiref
-ms.openlocfilehash: e1fd68cd079b381d941d416831133c54e49ac48a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 38936a57944e9a0920c374f473c4cbe8e8d70abb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210382"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728665"
 ---
 # <a name="icordebugilcodegetehclauses-method"></a>ICorDebugILCode::GetEHClauses, méthode
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Retourne un pointeur vers une liste de clauses de gestion des exceptions qui sont définies pour ce langage intermédiaire.  
@@ -34,8 +35,9 @@ HRESULT GetEHClauses(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cClauses`  
- [en entrée] La capacité de stockage du tableau `clauses`. Pour plus d'informations, consultez la section Remarques.  
+ [en entrée] La capacité de stockage du tableau `clauses`. Pour plus d'informations, consultez la section Notes.  
   
  `pcClauses`  
  [en sortie] Le nombre de clauses à propos desquelles des informations sont écrites dans le tableau `clauses`.  
@@ -43,10 +45,12 @@ HRESULT GetEHClauses(
  clauses  
  à Tableau d’objets [CorDebugEHClause](cordebugehclause-structure.md) qui contiennent des informations sur les clauses de gestion des exceptions définies pour ce langage intermédiaire.  
   
-## <a name="remarks"></a>Remarks  
- Si `cClauses` a la valeur 0 et que `pcClauses` est non**null**, `pcClauses` a pour valeur le nombre de clauses de gestion des exceptions disponibles. Si `cClauses` est différent de zéro, il représente la capacité de stockage du tableau `clauses`. Quand la méthode se termine, `clauses` contient un maximum de `cClauses` éléments et `pcClauses` est défini avec le nombre de clauses réellement écrites dans le tableau `clauses`.  
+## <a name="remarks"></a>Remarques  
+
+ Si `cClauses` a la valeur 0 et que `pcClauses` est non **null**, `pcClauses` a pour valeur le nombre de clauses de gestion des exceptions disponibles. Si `cClauses` est différent de zéro, il représente la capacité de stockage du tableau `clauses`. Quand la méthode se termine, `clauses` contient un maximum de `cClauses` éléments et `pcClauses` est défini avec le nombre de clauses réellement écrites dans le tableau `clauses`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

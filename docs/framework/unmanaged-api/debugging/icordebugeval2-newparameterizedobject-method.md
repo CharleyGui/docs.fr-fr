@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3d705463-e640-4249-8036-4e8206d03cfe
 topic_type:
 - apiref
-ms.openlocfilehash: f6ede42ac90f65f934e285f879bcef62d13b65cb
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 8c91296bd4185fd98962d49f611a3cdcb5f0ad28
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976094"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729653"
 ---
 # <a name="icordebugeval2newparameterizedobject-method"></a>ICorDebugEval2::NewParameterizedObject, méthode
+
 Instancie un nouvel objet de type paramétré et appelle la méthode de constructeur de l’objet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT NewParameterizedObject (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pConstructor`  
  dans Pointeur vers un objet ICorDebugFunction qui représente le constructeur de l’objet à instancier.  
   
@@ -53,10 +55,12 @@ HRESULT NewParameterizedObject (
  `ppArgs`  
  dans Tableau de pointeurs, chacun pointant vers un objet ICorDebugValue qui représente une valeur d’argument passée au constructeur.  
   
-## <a name="remarks"></a>Notes   
- Le constructeur de l’objet peut <xref:System.Type> prendre des paramètres.  
+## <a name="remarks"></a>Remarques  
+
+ Le constructeur de l’objet peut prendre des <xref:System.Type> paramètres.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

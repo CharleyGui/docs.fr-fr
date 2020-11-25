@@ -14,31 +14,33 @@ helpviewer_keywords:
 ms.assetid: a17b3155-7216-4e16-8c9f-abce21f549e7
 topic_type:
 - apiref
-ms.openlocfilehash: 1305b9ebe3cd87ba002ee87610ff309d015a44e6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bea357fe9a154ffb8f69228c7332c026dc2759e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131749"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728968"
 ---
 # <a name="ienumreferenceidentity-interface"></a>IEnumReferenceIdentity, interface
-Sert d’énumérateur pour une collection d’objets `IReferenceIdentity`.  
+
+Sert d’énumérateur pour une collection d' `IReferenceIdentity` objets.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`IEnumReferenceIdentity::Clone`|Obtient un pointeur d’interface vers un nouveau `IEnumReferenceIdentity` qui contient les mêmes membres que ce `IEnumReferenceIdentity`.|  
-|`IEnumReferenceIdentity::Next`|Obtient le nombre spécifié d’objets `IReferenceIdentity`, en commençant à la position actuelle.|  
-|`IEnumReferenceIdentity::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumReferenceIdentity`.|  
+|`IEnumReferenceIdentity::Clone`|Obtient un pointeur d’interface vers un nouveau `IEnumReferenceIdentity` qui contient les mêmes membres que ce `IEnumReferenceIdentity` .|  
+|`IEnumReferenceIdentity::Next`|Obtient le nombre spécifié d' `IReferenceIdentity` objets, en commençant à la position actuelle.|  
+|`IEnumReferenceIdentity::Reset`|Déplace le pointeur d’instruction au début de ce `IEnumReferenceIdentity` .|  
 |`IEnumReferenceIdentity::Skip`|Déplace le pointeur d’instruction vers l’avant par le nombre d’éléments spécifié, en commençant à la position actuelle.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Isolation. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

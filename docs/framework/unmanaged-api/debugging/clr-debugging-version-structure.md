@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4d821186-3ddf-405a-ac44-d79438a9f7f3
 topic_type:
 - apiref
-ms.openlocfilehash: 651b916a0e3ca178432094428611f9bcc8f0fd17
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8a2abe847728a2bb1f1345ef73e55b58e4704001
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132416"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729809"
 ---
 # <a name="clr_debugging_version-structure"></a>CLR_DEBUGGING_VERSION, structure
+
 Définit la version du produit de CLR (Common Language Runtime) à des fins de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,20 +45,22 @@ typedef struct _CLR_DEBUGGING_VERSION
 |`wStructVersion`|Numéro de version de la structure|  
 |`wMajor`|Numéro de version principale.|  
 |`wMinor`|Numéro de version secondaire.|  
-|`wBuild`|Numéro de Build.|  
+|`wBuild`|Numéro de build.|  
 |`wRevision`|Numéro de révision.|  
   
-## <a name="remarks"></a>Notes  
- La structure `CLR_DEBUGGING_VERSION` est identique à la structure COR_VERSION. Toutefois, la structure `CLR_DEBUGGING_VERSION` fournit un champ de version de structure supplémentaire (`wStructVersion`). Actuellement, ce champ doit avoir la valeur zéro.  
+## <a name="remarks"></a>Remarques  
+
+ `CLR_DEBUGGING_VERSION`Toutefois, la structure est identique à la structure COR_VERSION, mais la `CLR_DEBUGGING_VERSION` structure fournit un champ de version de structure supplémentaire ( `wStructVersion` ). Actuellement, ce champ doit avoir la valeur zéro.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
