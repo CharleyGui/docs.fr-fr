@@ -2,14 +2,15 @@
 title: ICorDebugMergedAssemblyRecord::GetPublicKey, méthode
 ms.date: 03/30/2017
 ms.assetid: 6f4e78ba-082b-489d-8b58-4c35fbcc7a5b
-ms.openlocfilehash: 51724aa1ee6101c50c7cdb4b6071fb458814f483
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e89ecca25edb0d7eae3a7e65f9585d71ad4ace4d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213541"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710595"
 ---
 # <a name="icordebugmergedassemblyrecordgetpublickey-method"></a>ICorDebugMergedAssemblyRecord::GetPublicKey, méthode
+
 Obtient la clé publique de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,6 +23,7 @@ HRESULT GetPublicKey(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cbPublicKey`  
  [in] Nombre maximal d'octets dans le tableau `pbPublicKey`.  
   
@@ -31,12 +33,13 @@ HRESULT GetPublicKey(
  `pbPublicKey`  
  [in] Pointeur vers un tableau d'octets contenant la clé publique de l'assembly.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

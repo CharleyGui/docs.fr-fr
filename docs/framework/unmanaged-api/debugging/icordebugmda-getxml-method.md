@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
 topic_type:
 - apiref
-ms.openlocfilehash: 219aa27296dffa525bf3e2b836825437a8ce77b0
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9a088c7e4e9c72c8247ccdd384bc724587210c37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207656"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710868"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML, méthode
+
 Obtient le flux de données XML complet associé à l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetXML (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchName`  
  [in] Taille du tableau `szName`.  
   
@@ -46,10 +48,12 @@ HRESULT GetXML (
  `szName`  
  à Tableau dans lequel stocker le flux XML. Le tableau peut être vide.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La `GetXML` méthode peut potentiellement affecter les performances, en fonction de la taille du flux XML associé.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -61,4 +65,4 @@ HRESULT GetXML (
 ## <a name="see-also"></a>Voir aussi
 
 - [ICorDebugMDA, interface](icordebugmda-interface.md)
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

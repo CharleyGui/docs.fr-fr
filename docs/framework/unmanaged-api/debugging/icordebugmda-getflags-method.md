@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 87ce7c5b-fd82-453e-bf55-c8a32150b183
 topic_type:
 - apiref
-ms.openlocfilehash: 4e5939e9e74899a33f28927c4fda09d0a8fb30a0
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 38a5c2da900530b6bf78f24e224714496ceaa62c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209732"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710959"
 ---
 # <a name="icordebugmdagetflags-method"></a>ICorDebugMDA::GetFlags, méthode
+
 Obtient les indicateurs associés à l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetFlags (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pFlags`  
  dans Combinaison d’opérations de bits des valeurs d’énumération [CorDebugMDAFlags,](cordebugmdaflags-enumeration.md) qui spécifient les paramètres des indicateurs pour cet Assistant Débogage managé.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -49,4 +52,4 @@ HRESULT GetFlags (
 ## <a name="see-also"></a>Voir aussi
 
 - [ICorDebugMDA, interface](icordebugmda-interface.md)
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: 5b58c87f-3f72-40df-9b9a-291076931cc3
 topic_type:
 - apiref
-ms.openlocfilehash: fcdd4a3f07b4499fd2388b5d165c409da9150466
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c97cc0c1d4c022583d0823abeff998e2ed5f719e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176927"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710972"
 ---
 # <a name="strongnamegetpublickey-function"></a>StrongNameGetPublicKey, fonction
-Obtient la clé publique à partir d’une paire de clés publique/privée. La paire de clés peut être fournie soit comme un nom de conteneur clé au sein d’un fournisseur de services cryptographiques (CSP) ou comme une collection brute d’octets.  
+
+Obtient la clé publique à partir d’une paire de clés publique/privée. La paire de clés peut être fournie en tant que nom de conteneur de clé dans un fournisseur de services de chiffrement (CSP) ou en tant que collection brute d’octets.  
   
- Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName::StrongNameGetPublicKey](../hosting/iclrstrongname-strongnamegetpublickey-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameGetPublicKey](../hosting/iclrstrongname-strongnamegetpublickey-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +41,45 @@ BOOLEAN StrongNameGetPublicKey (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szKeyContainer`  
- [dans] Le nom du conteneur clé qui contient la paire de clés public/privé. S’il `pbKeyBlob` `szKeyContainer` est nul, doit spécifier un conteneur valide dans le CSP. Dans ce `StrongNameGetPublicKey` cas, extrait la clé publique de la paire de clés stockée dans le conteneur.  
+ dans Nom du conteneur de clé qui contient la paire de clés publique/privée. Si `pbKeyBlob` a la valeur null, `szKeyContainer` doit spécifier un conteneur valide dans le CSP. Dans ce cas, `StrongNameGetPublicKey` extrait la clé publique de la paire de clés stockée dans le conteneur.  
   
- Si `pbKeyBlob` elle n’est pas nulle, la paire de clés est supposée être contenue dans le grand objet binaire clé (BLOB).  
+ Si `pbKeyBlob` n’a pas la valeur null, la paire de clés est supposée être contenue dans l’objet BLOB (Binary Large Object) clé.  
   
- Les clés doivent être 1024 bits Rivest-Shamir-Adleman (RSA) clés de signature. Aucun autre type de clés n’est pris en charge pour le moment.  
+ Les clés doivent être des clés de signature RSA (Rivest-Shamir-Adleman) 1024 bits. Aucun autre type de clé n’est pris en charge pour l’instant.  
   
  `pbKeyBlob`  
- [dans] Un pointeur à la paire de clés public/privé. Cette paire est dans le format `CryptExportKey` créé par la fonction Win32. S’il `pbKeyBlob` est nul, `szKeyContainer` le conteneur clé spécifié par est supposé contenir la paire de clés.  
+ dans Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par la fonction Win32 `CryptExportKey` . Si `pbKeyBlob` a la valeur null, le conteneur de clé spécifié par `szKeyContainer` est supposé contenir la paire de clés.  
   
  `cbKeyBlob`  
- [dans] La taille, dans les `pbKeyBlob`octets, de .  
+ dans Taille, en octets, de `pbKeyBlob` .  
   
  `ppbPublicKeyBlob`  
- [out] Le BLOB clé publique retourné. Le `ppbPublicKeyBlob` paramètre est attribué par l’heure de l’exécution de la langue commune et retourné à l’appelant. L’appelant doit libérer la mémoire en utilisant la fonction [StrongNameFreeBuffer.](strongnamefreebuffer-function.md)  
+ à Objet BLOB de clé publique retourné. Le `ppbPublicKeyBlob` paramètre est alloué par le Common Language Runtime et retourné à l’appelant. L’appelant doit libérer la mémoire à l’aide de la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) .  
   
  `pcbPublicKeyBlob`  
- [out] La taille de la clé publique retournée BLOB.  
+ à Taille de l’objet BLOB de clé publique retourné.  
   
-## <a name="return-value"></a>Valeur de retour  
- `true`à la réussite; autrement, `false`.  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `true` en cas de réussite de l’opération ; Sinon, `false` .  
   
-## <a name="remarks"></a>Notes   
- La clé publique est contenue dans une structure [PublicKeyBlob.](publickeyblob-structure.md)  
+## <a name="remarks"></a>Remarques  
+
+ La clé publique est contenue dans une structure [publicKeyBlob](publickeyblob-structure.md) .  
   
- Si `StrongNameGetPublicKey` la fonction ne se termine pas avec succès, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si la `StrongNameGetPublicKey` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** StrongName.h (en)  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

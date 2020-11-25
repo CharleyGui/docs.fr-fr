@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f9b0ff22-54db-45eb-9cc3-508000a3141d
 topic_type:
 - apiref
-ms.openlocfilehash: d9269339e8e2ae8d00da701b015aa30cd51cbef3
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 63efb788d8bca84da94921371309704cc7b20ac4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213372"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710439"
 ---
 # <a name="icordebugmetadatalocatorgetmetadata-method"></a>ICorDebugMetaDataLocator::GetMetaData, méthode
+
 Indique au débogueur de retourner le chemin d’accès complet à un module dont les métadonnées sont nécessaires pour effectuer une opération demandée par le débogueur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,8 +41,9 @@ HRESULT GetMetaData(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszImagePath`  
- [in] Chaîne terminée par le caractère null qui représente le chemin d’accès complet au fichier. Si le chemin d’accès complet n’est pas disponible, nom et extension du fichier (*nom_fichier*.* extension*).  
+ [in] Chaîne terminée par le caractère null qui représente le chemin d’accès complet au fichier. Si le chemin d’accès complet n’est pas disponible, nom et extension du fichier (*nom_fichier*.*extension*).  
   
  `dwImageTimeStamp`  
  [in] Horodatage des en-têtes de fichier PE de l'image. Ce paramètre peut potentiellement être utilisé pour une recherche de serveur de symboles ([symsrv](/windows/desktop/debug/using-symsrv)).  
@@ -62,7 +64,8 @@ HRESULT GetMetaData(
   
  L' `ofReadOnly` indicateur de l’énumération [CorOpenFlags](../metadata/coropenflags-enumeration.md) est utilisé pour demander un accès en lecture seule aux métadonnées dans ce fichier.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode. Tous les autres HRESULT d'échec indiquent que le fichier n'est pas récupérable.  
   
 |HRESULT|Description|  
@@ -70,10 +73,12 @@ HRESULT GetMetaData(
 |S_OK|La commande s'est correctement terminée. `wszPathBuffer` contient le chemin d'accès complet au fichier et se termine par le caractère null.|  
 |E_NOT_SUFFICIENT_BUFFER|La taille actuelle de `wszPathBuffer` n’est pas suffisante pour contenir le chemin d’accès complet. Dans ce cas, `pcchPathBuffer` contient le nombre nécessaire de `WCHAR`, y compris le caractère null de fin, et la méthode `GetMetaData` est appelée une deuxième fois avec la taille de mémoire tampon demandée.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si `wszImagePath` contient le chemin d’accès complet d’un module dans un dump, il spécifie le chemin d’accès de l’ordinateur sur lequel le dump a été collecté. Le fichier n'existe peut-être pas à cet emplacement ou un fichier incorrect portant le même nom peut être stocké dans le chemin d'accès.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

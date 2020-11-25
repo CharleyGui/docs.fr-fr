@@ -2,14 +2,15 @@
 title: ICorDebugMergedAssemblyRecord::GetCulture, méthode
 ms.date: 03/30/2017
 ms.assetid: 030b2f8c-8c21-40b7-855d-3afa78975a17
-ms.openlocfilehash: f73aac169cc048a87aca3bfc325cf8c6243012e9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 636d0fd25d345f513e00504b9eb5adb4f0c03b0f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207857"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710647"
 ---
 # <a name="icordebugmergedassemblyrecordgetculture-method"></a>ICorDebugMergedAssemblyRecord::GetCulture, méthode
+
 Obtient la chaîne de nom de culture de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,6 +24,7 @@ HRESULT GetCulture(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchCulture`  
  [in] Nombre de caractères dans la mémoire tampon `szCulture`.  
   
@@ -32,13 +34,15 @@ HRESULT GetCulture(
  `szCulture`  
  [out] Tableau de caractères qui contient le nom de culture.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le nom de culture est une chaîne unique qui identifie une culture, telle que « en-US » (pour la culture Anglais (États-Unis)) ou « neutre » (pour une culture neutre).  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
