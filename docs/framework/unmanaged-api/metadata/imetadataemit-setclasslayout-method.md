@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2576c449-388d-4434-a0e1-9f53991e11b6
 topic_type:
 - apiref
-ms.openlocfilehash: a18583ce807ffa672811f3a0cd1e744233f6eb30
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: ee10907fb7f5d90db1bdce845272cd3de38e35a6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008827"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718694"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout, méthode
+
 Termine la disposition des champs pour une classe qui a été définie par un appel antérieur à la [méthode DefineTypeDef](imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,8 +38,9 @@ HRESULT SetClassLayout (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `td`  
- dans `mdTypeDef`Jeton qui spécifie la classe à mettre en sortie.  
+ dans `mdTypeDef` Jeton qui spécifie la classe à mettre en sortie.  
   
  `dwPackSize`  
  dans Taille de compression : 1, 2, 4, 8 ou 16 octets. La taille de compression est le nombre d’octets entre les champs adjacents.  
@@ -50,6 +52,7 @@ HRESULT SetClassLayout (
  dans Taille, en octets, de la classe.  
   
 ## <a name="remarks"></a>Remarques  
+
  La classe est initialement définie en appelant la méthode [IMetaDataEmit ::D efinetypedef](imetadataemit-definetypedef-method.md) et en spécifiant l’une des trois dispositions pour les champs de la classe : automatique, séquentielle ou explicite. Normalement, vous utilisez la disposition automatique et laissez le runtime choisir la meilleure façon de disposer les champs.  
   
  Toutefois, vous souhaiterez peut-être disposer des champs présentés en fonction de la structure utilisée par le code non managé. Dans ce cas, choisissez une disposition séquentielle ou explicite et appelez `SetClassLayout` pour terminer la disposition des champs :  
@@ -58,12 +61,13 @@ HRESULT SetClassLayout (
   
 - Disposition explicite : spécifiez le décalage de chaque champ ou spécifiez la taille de la classe et la taille de la compression.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

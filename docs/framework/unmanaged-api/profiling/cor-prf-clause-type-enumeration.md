@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: f64c325a-ed3a-4aaf-b847-a88edbc4fefc
 topic_type:
 - apiref
-ms.openlocfilehash: a308017dc80dd973cbf108ba9df824193775f5ff
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c3058229a3c2b3c529136dad70fea35a23708a33
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501051"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718655"
 ---
 # <a name="cor_prf_clause_type-enumeration"></a>COR_PRF_CLAUSE_TYPE, énumération
+
 Indique le type de clause d'exception où le code vient d'entrer ou qu'il vient de quitter.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,6 +46,7 @@ typedef enum {
 |`COR_PRF_CLAUSE_FINALLY`|La clause d’exception est une `finally` instruction.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

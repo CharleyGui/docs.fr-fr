@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: dc2b3281-3820-487e-930d-350b66dc6417
 topic_type:
 - apiref
-ms.openlocfilehash: e22b390271a7813dd1d34aecf5f8a62d7eb81005
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 554f47cc4bd948e2b6106c1d71a2a4b7968d43f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007434"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718863"
 ---
 # <a name="coreventattr-enumeration"></a>CorEventAttr, énumération
+
 Contient des valeurs qui décrivent les métadonnées d'un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,7 +46,8 @@ typedef enum CorEventAttr {
 |`evReservedMask`|Réservé à un usage interne par la common language runtime.|  
 |`evRTSpecialName`|Spécifie que le common language runtime doit vérifier l’encodage du nom de l’événement.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

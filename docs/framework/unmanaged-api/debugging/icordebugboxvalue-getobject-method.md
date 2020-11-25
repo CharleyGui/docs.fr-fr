@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3a867a5b-bf94-493f-a4f5-b28685cf5325
 topic_type:
 - apiref
-ms.openlocfilehash: 401f052b881c1a0cfa065ba60c93aca1706f34f4
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: df151e9fc89214d0851ebe60c7ebdb87224f880c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719071"
 ---
 # <a name="icordebugboxvaluegetobject-method"></a>ICorDebugBoxValue::GetObject, méthode
+
 Obtient la valeur boxed.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetObject (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppObject`  
  à Pointeur vers l’adresse d’un objet ICorDebugObjectValue qui représente la valeur boxed.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

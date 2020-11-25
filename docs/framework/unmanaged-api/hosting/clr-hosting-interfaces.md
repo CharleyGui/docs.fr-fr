@@ -6,19 +6,21 @@ helpviewer_keywords:
 - hosting interfaces [.NET Framework], version 2.0
 - .NET Framework 2.0, hosting interfaces
 ms.assetid: 703b8381-43db-4a4d-9faa-cca39302d922
-ms.openlocfilehash: e6913e18a4ff6e616f357a4ef43fb8b892264943
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 77f2ba64d9bdbe9793d56e88dae46fd506119ab8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616838"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719045"
 ---
 # <a name="clr-hosting-interfaces"></a>Interfaces d'hébergement du CLR
+
 Cette section décrit les interfaces que les hôtes non managés peuvent utiliser pour intégrer le common language runtime (CLR) dans leurs applications. Les informations se rapportent à la version 2,0 de .NET Framework et aux versions ultérieures. Ces interfaces permettent à l’hôte de contrôler beaucoup plus d’aspects du runtime que ce qui était possible dans les versions 1,0 et 1,1, et offrent une intégration plus étroite entre le CLR et le modèle d’exécution de l’hôte.  
   
  Dans les versions 1,0 et 1,1 de .NET Framework, le modèle d’hébergement permettait à un hôte non géré de charger le CLR dans un processus, de configurer certains paramètres et de recevoir des notifications d’événements. Toutefois, en général, l’hôte et le CLR s’exécutaient indépendamment dans ce processus. Dans la .NET Framework version 2,0 et les versions ultérieures, les nouvelles couches d’abstraction permettent à l’hôte de fournir un grand nombre des ressources actuellement fournies par les types dans l’assembly Win32, et d’étendre l’ensemble de fonctionnalités que l’hôte peut configurer.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [IActionOnCLREvent, interface](iactiononclrevent-interface.md)  
  Fournit une méthode qui exécute un rappel pour un événement inscrit.  
   
@@ -185,6 +187,7 @@ Cette section décrit les interfaces que les hôtes non managés peuvent utilise
  Fournit des méthodes pour valider des images exécutables portables (PE) et des erreurs de validation de rapport.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Interfaces d'hébergement du CLR et coclasses déconseillées](deprecated-clr-hosting-interfaces-and-coclasses.md)  
  Contient des rubriques qui décrivent les interfaces d’hébergement fournies dans le .NET Framework version 1,0 et 1,1.  
   

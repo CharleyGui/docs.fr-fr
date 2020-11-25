@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 4ddc37da-5c94-4beb-b61c-b54071c0e749
 topic_type:
 - apiref
-ms.openlocfilehash: 40dbfc60f8bde1198fd56a4a8aeed1dd6879d1ae
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5996393fd1a0504f9c3d3f9f07aa0e3d886a0787
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795623"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719695"
 ---
 # <a name="coreclrdebugprocinfo-structure"></a>Structure CoreClrDebugProcInfo
+
 Représente un processus qui s'exécute sur un ordinateur distant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,11 +45,12 @@ struct  CoreClrDebugProcInfo {
 |`m_dwInternalID`|Identificateur de processus affecté par le proxy de débogage distant en cours d'exécution sur l'ordinateur cible. Cet identificateur est moins souvent recyclé que l'identificateur de système d'exploitation.|  
 |`m_wszName`|Ligne de commande du processus. Ce membre peut être tronqué.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
   
- **Bibliothèque :** mscordbi_macx86. dll  
+ **Bibliothèque :** mscordbi_macx86.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

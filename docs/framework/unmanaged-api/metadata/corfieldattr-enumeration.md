@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6ae2c4be-212c-4e74-9288-40a11dc26522
 topic_type:
 - apiref
-ms.openlocfilehash: dea69e18fc517eddddc5b99950a6f3b16ee3e426
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 4e40f684cc1578672cb8ff474972ce9cdc39efb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007401"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718824"
 ---
 # <a name="corfieldattr-enumeration"></a>CorFieldAttr, énumération
+
 Contient des valeurs qui décrivent les métadonnées concernant un champ.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -80,7 +81,8 @@ typedef enum CorFieldAttr {
 |`fdHasDefault`|Spécifie que le champ a une valeur par défaut.|  
 |`fdHasFieldRVA`|Spécifie que le champ a une adresse virtuelle relative.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d7061343-d0a3-4fd5-b312-61974f98bd62
 topic_type:
 - apiref
-ms.openlocfilehash: 11529ce896f265f2b200fa6e511d4b913e9147c8
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b4db3b115517f0a146aeab469f091008d31efc86
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008220"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718226"
 ---
 # <a name="ihostfiltermarktoken-method"></a>IHostFilter::MarkToken, méthode
+
 Indique que le jeton de métadonnées spécifié sera traité.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,18 +35,21 @@ HRESULT MarkToken (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `tk`  
  dans Jeton de métadonnées à traiter.  
   
 ## <a name="remarks"></a>Remarques  
+
  En général, vous souhaitez qu’un jeton soit traité s’il se trouve dans la portée des métadonnées. La `MarkToken` méthode est passée au moteur de métadonnées via la méthode [IMetaDataEmit :: SetHandler](imetadataemit-sethandler-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1e48243f-5de6-4bd6-a1d0-e1d248bca4b8
 topic_type:
 - apiref
-ms.openlocfilehash: 55955cd47bd32fb4294b0b8e852dd692702bd74f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: dfe1a530ea009300e7cfbf002053d2e2b6034845
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719279"
 ---
 # <a name="functiontailcall3-function"></a>FunctionTailcall3, fonction
+
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
   \[in] identificateur de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
 
 ## <a name="remarks"></a>Remarques  
+
  La `FunctionTailcall3` fonction de rappel indique au profileur que les fonctions sont appelées. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
   
  La `FunctionTailcall3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec(naked)` attribut de classe de stockage.  
@@ -52,6 +54,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
  La `FunctionTailcall3` fonction ne doit pas appeler dans du code managé ou provoquer une allocation de mémoire managée de quelque manière que ce soit.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

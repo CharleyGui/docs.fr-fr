@@ -13,14 +13,15 @@ helpviewer_keywords:
 ms.assetid: 95d2aa0d-8eeb-4a9f-a216-5249f7e2c167
 topic_type:
 - apiref
-ms.openlocfilehash: 65bbae614c8872ab5d78b3855b56ceaf2aad50da
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 84eea78b9c2e73e24238a5ecbc9442f3d63dbd4e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558184"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719786"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib, méthode
+
 Résout le nom simple d’une bibliothèque de types en retournant son chemin d’accès qualifié complet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT ResolveTypeLib(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `bstrSimpleName`  
  dans [BSTR](/previous-versions/windows/desktop/automat/bstr) qui contient le nom simple de la bibliothèque de types.  
   
@@ -58,12 +60,14 @@ HRESULT ResolveTypeLib(
  `pbstrResolvedTlbName`  
  à Pointeur vers un [BSTR](/previous-versions/windows/desktop/automat/bstr) qui contient le chemin d’accès complet de la bibliothèque de types nommée dans le `bstrSimpleName` paramètre.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La `ResolveTypeLib` méthode est appelée par la [fonction LoadTypeLibWithResolver,](loadtypelibwithresolver-function.md) pendant le traitement [ deTlbexp.exe (exportateur de bibliothèques de types)](../../tools/tlbexp-exe-type-library-exporter.md) .  
   
  Les implémentations personnalisées de cette interface doivent retourner un [BSTR](/previous-versions/windows/desktop/automat/bstr) qui contient le chemin d’accès complet de la bibliothèque de types nommée dans le `bstrSimpleName` paramètre.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** TlbRef. idl, TlbRef. h  

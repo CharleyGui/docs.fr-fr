@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: cf30e27c-1f7e-43a2-ba1e-01e4137301db
 topic_type:
 - apiref
-ms.openlocfilehash: 9dbe0219f5932a9d212edaf5181b96335c47db0e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b64e58a79f3dbe0c91b0c0cefc4a9d918c700cf9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501012"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718629"
 ---
 # <a name="cor_prf_code_info-structure"></a>COR_PRF_CODE_INFO, structure
+
 Représente un bloc contigu de code natif stocké en mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ typedef struct _COR_PRF_CODE_INFO {
 |`size`|Taille du bloc.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

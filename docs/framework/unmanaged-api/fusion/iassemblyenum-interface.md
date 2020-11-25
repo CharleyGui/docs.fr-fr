@@ -14,30 +14,32 @@ helpviewer_keywords:
 ms.assetid: 634ef9f9-e94b-4776-a9e1-866df9a76c8f
 topic_type:
 - apiref
-ms.openlocfilehash: b0538a0dec6ed7659898b3a40bd5e36729c7dcb9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 22fcdb834f84bb3a9304e22a4b45ebb340f3590f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134420"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719877"
 ---
 # <a name="iassemblyenum-interface"></a>IAssemblyEnum, interface
-Représente un énumérateur pour un tableau d’objets `IAssemblyName`.  
+
+Représente un énumérateur pour un tableau d' `IAssemblyName` objets.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Clone, méthode](iassemblyenum-clone-method.md)|Crée une copie superficielle de cet objet `IAssemblyEnum`.|  
-|[GetNextAssembly, méthode](iassemblyenum-getnextassembly-method.md)|Obtient un pointeur vers le `IAssemblyName` suivant contenu dans cet objet `IAssemblyEnum`.|  
-|[Reset, méthode](iassemblyenum-reset-method.md)|Réinitialise cet objet `IAssemblyEnum` à sa position de départ.|  
+|[Clone, méthode](iassemblyenum-clone-method.md)|Crée une copie superficielle de cet `IAssemblyEnum` objet.|  
+|[GetNextAssembly, méthode](iassemblyenum-getnextassembly-method.md)|Obtient un pointeur vers le suivant `IAssemblyName` contenu dans cet `IAssemblyEnum` objet.|  
+|[Reset, méthode](iassemblyenum-reset-method.md)|Rétablit cet `IAssemblyEnum` objet à sa position de départ.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

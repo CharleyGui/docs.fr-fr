@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d4755569-85b8-4ff4-bf50-0e608e76429f
 topic_type:
 - apiref
-ms.openlocfilehash: ce3ca4745727a1738fdc1a526480d70ffc55ccf8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a17c46d5ef08963bb0d7fc280ba8b90531e41c5b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209901"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719630"
 ---
 # <a name="icordebuginternalframe2-interface"></a>ICorDebugInternalFrame2, interface
+
 Fournit des informations sur les frames internes, notamment l'adresse et la position de la pile par rapport aux objets ICorDebugFrame.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,13 +32,15 @@ Fournit des informations sur les frames internes, notamment l'adresse et la posi
 |[GetFrameAddress, méthode](icordebuginternalframe2-getframeaddress-method.md)|Retourne l’adresse de la pile du frame interne.|  
 |[IsCloserToLeaf, méthode](icordebuginternalframe2-isclosertoleaf-method.md)|Vérifie si le `this` Frame interne est plus proche de la feuille que l’objet ICorDebugFrame spécifié.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette interface étend l’interface ICorDebugInternalFrame.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 69156fbf-7219-43bf-b4b8-b13f1a2fcb86
 topic_type:
 - apiref
-ms.openlocfilehash: 310319e8fefe80017c58706e2beaee5eb1e78422
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c9b20500a4a9e4649a938e00e3b059d1395da1d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007902"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718928"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention, énumération
+
 Contient des valeurs qui décrivent les types de conventions d’appel effectuées dans le code managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -66,7 +67,8 @@ typedef enum CorCallingConvention
 |`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Indique qu’un `this` paramètre est décrit explicitement dans la signature.|  
 |`IMAGE_CEE_CS_CALLCONV_GENERIC`|Indique une signature de méthode générique avec un nombre explicite d’arguments de type. Cela précède un nombre de paramètres ordinaires.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

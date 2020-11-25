@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 75331c7b-988b-436c-9eb9-a270d37b4f06
 topic_type:
 - apiref
-ms.openlocfilehash: 94b4c3935c949c0c4008e41244713b6bfa4dba84
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 38c9f8df12b0fc83a236d2cb7c32d1198be7096d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503716"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719812"
 ---
 # <a name="imetadataimportenumtypespecs-method"></a>IMetaDataImport::EnumTypeSpecs, méthode
+
 Énumère les jetons TypeSpec définis dans la portée des métadonnées actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT EnumTypeSpecs (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Cette valeur doit être NULL pour le premier appel de cette méthode.  
   
@@ -53,18 +55,20 @@ HRESULT EnumTypeSpecs (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeSpecs`retourné avec succès.|  
+|`S_OK`|`EnumTypeSpecs` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTypeSpecs` est égal à zéro.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Les jetons TypeSpec sont créés par la méthode [IMetaDataEmit :: GetTokenFromTypeSpec,](imetadataemit-gettokenfromtypespec-method.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

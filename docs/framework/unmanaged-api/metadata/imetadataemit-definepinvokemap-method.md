@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 03abf921-5154-4070-88fa-10b7092901fb
 topic_type:
 - apiref
-ms.openlocfilehash: 447ec44ed3efc4eec84d1e4acd6f2ec1a730bf74
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b46d39ab3958227c1fca24ceb3a9934f2778aa2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008025"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719500"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap, méthode
+
 Définit les fonctionnalités de la signature PInvoke de la méthode référencée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT DefinePinvokeMap (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `tk`  
  dans Jeton pour la méthode cible.  
   
@@ -49,12 +51,13 @@ HRESULT DefinePinvokeMap (
  `mrImportDLL`  
  dans Jeton pour la DLL native cible.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

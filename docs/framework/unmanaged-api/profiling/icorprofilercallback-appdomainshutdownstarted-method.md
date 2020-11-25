@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
 topic_type:
 - apiref
-ms.openlocfilehash: 1b973cdeaffbec0dad1f2d082c44e8001647fdcc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cb0b763059c787b8f3e93e6c46b0e7fb2f8f8b2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500453"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718460"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted, méthode
+
 Notifie le profileur qu’un domaine d’application est en cours de déchargement d’un processus.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,9 +40,11 @@ HRESULT AppDomainShutdownStarted(
   \[in] identifie le domaine dans lequel les assemblys de l’application sont stockés.
 
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `appDomainId` n’est pas valide pour toute demande d’informations après le retour de la `AppDomainShutdownStarted` méthode, c’est la dernière chance du profileur pour obtenir des informations sur ce domaine d’application.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 89dc7363-2f29-4eb2-8f23-fccdda6a76a6
 topic_type:
 - apiref
-ms.openlocfilehash: d3d081e389e29833f24063ba75289f3db8c5504a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d6f22d6185f4063078463043a6ffd46e56289267
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504275"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719851"
 ---
 # <a name="iclrdebugmanagerendconnection-method"></a>ICLRDebugManager::EndConnection, méthode
+
 Supprime l’association entre une liste de tâches et un identificateur et un nom convivial.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT EndConnection (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwConnectionId`  
  dans Identificateur spécifique à l’hôte pour la connexion et la liste associée de tâches common language runtime (CLR).  
   
@@ -41,7 +43,7 @@ HRESULT EndConnection (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`EndConnection`retourné avec succès.|  
+|S_OK|`EndConnection` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -50,17 +52,19 @@ HRESULT EndConnection (
 |E_INVALIDARG|[BeginConnection](iclrdebugmanager-beginconnection-method.md) n’a jamais été appelé à l’aide `dwConnectionId` de, ou `dwConnectionId` était égal à zéro.|  
   
 ## <a name="remarks"></a>Remarques  
+
  [ICLRDebugManager](iclrdebugmanager-interface.md) fournit trois méthodes, `BeginConnection` , [SetConnectionTasks](iclrdebugmanager-setconnectiontasks-method.md)et `EndConnection` , pour associer des listes de tâches à des identificateurs et des noms conviviaux.  
   
 > [!IMPORTANT]
-> Ces trois méthodes doivent être appelées dans un ordre spécifique pour chaque ensemble de tâches. `BeginConnection`est appelé en premier pour établir une nouvelle connexion. `SetConnectionTasks`est appelé ensuite pour fournir l’ensemble des tâches à associer à cette connexion. `EndConnection`est appelé en dernier pour supprimer l’association entre la liste des tâches et l’identificateur et le nom convivial. Toutefois, les appels de différentes connexions peuvent être imbriqués.  
+> Ces trois méthodes doivent être appelées dans un ordre spécifique pour chaque ensemble de tâches. `BeginConnection` est appelé en premier pour établir une nouvelle connexion. `SetConnectionTasks` est appelé ensuite pour fournir l’ensemble des tâches à associer à cette connexion. `EndConnection` est appelé en dernier pour supprimer l’association entre la liste des tâches et l’identificateur et le nom convivial. Toutefois, les appels de différentes connexions peuvent être imbriqués.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

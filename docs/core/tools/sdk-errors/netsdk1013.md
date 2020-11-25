@@ -6,16 +6,16 @@ ms.topic: error-reference
 ms.date: 10/9/2020
 f1_keywords:
 - NETSDK1013
-ms.openlocfilehash: bcaed878b663f8bc957e8469ffd78caa9babf710
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 915ac22ad822d17c082498b469acbfb3f1a93efc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445771"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717867"
 ---
 # <a name="netsdk1013-the-targetframework-value-was-not-recognized"></a>NETSDK1013 : la valeur TargetFramework n’a pas été reconnue
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net 3.1.100 et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) 3.1.100 .net Core et versions ultérieures
 
 Le kit de développement logiciel (SDK) tente d’analyser les valeurs fournies dans le fichier projet pour `<TargetFramework>` ou `<TargetFrameworks>` dans une valeur connue.  Si la valeur n’est pas reconnue, `TargetFrameworkIdentifier` la `TargetFrameworkVersion` valeur ou peut être définie sur une chaîne vide ou `Unsupported` .
 

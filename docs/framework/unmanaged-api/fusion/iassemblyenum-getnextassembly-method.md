@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5d7a4ca2-5f46-4ef1-a9a2-257884e9dc11
 topic_type:
 - apiref
-ms.openlocfilehash: ade404557d65fa073b6a0e66fe8234b41223ecde
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: af43d9cf4d5aa790036a13d060fc6ccf113f335d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134434"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719890"
 ---
 # <a name="iassemblyenumgetnextassembly-method"></a>IAssemblyEnum::GetNextAssembly, méthode
+
 Obtient un pointeur vers l' [IAssemblyName](iassemblyname-interface.md) suivant contenu dans cet objet [IAssemblyEnum](iassemblyenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,21 +37,23 @@ HRESULT GetNextAssembly (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pvReserved`  
  dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
  `ppName`  
- à Pointeur de `IAssemblyName` retourné.  
+ à Pointeur retourné `IAssemblyName` .  
   
  `dwFlags`  
  dans Réservé pour une future extensibilité. `dwFlags` doit avoir la valeur 0 (zéro).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

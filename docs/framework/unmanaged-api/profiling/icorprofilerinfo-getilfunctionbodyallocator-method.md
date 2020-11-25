@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5da1bf3d-dddf-4892-b266-578ee54d570b
 topic_type:
 - apiref
-ms.openlocfilehash: 967f38add9ae5996c6ac33388203b55161a84e39
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b18de87cf89985e0f7ec11edf58b43d67720251c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498269"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718018"
 ---
 # <a name="icorprofilerinfogetilfunctionbodyallocator-method"></a>ICorProfilerInfo::GetILFunctionBodyAllocator, méthode
+
 Obtient une interface qui fournit une méthode pour allouer de la mémoire à utiliser pour échanger le corps d’une méthode dans le code MSIL (Microsoft Intermediate Language).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetILFunctionBodyAllocator(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  dans ID du module dans lequel la méthode réside.  
   
@@ -41,9 +43,11 @@ HRESULT GetILFunctionBodyAllocator(
  à Pointeur vers une interface [IMethodMalloc](imethodmalloc-interface.md) qui fournit une méthode pour allouer la mémoire.  
   
 ## <a name="remarks"></a>Remarques  
+
  Un corps de méthode dans le code MSIL doit se trouver sous la forme d’une adresse virtuelle relative (RVA) relative au module chargé, ce qui signifie qu’il suit le module dans un délai de 4 Go. Pour faciliter le remplacement du corps d’une méthode par un outil, la `GetILFunctionBodyAllocator` méthode garantit que la mémoire est allouée dans cette plage.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

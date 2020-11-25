@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ed8364eb-f01b-46f6-b5e3-5dda9cae2dfe
 topic_type:
 - apiref
-ms.openlocfilehash: 622fdfa37c93e406950e73941775828ae4b112fa
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 8b5bbb65034e5b715532397c9ecc650da9aee912
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379423"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718291"
 ---
 # <a name="icordebugstepper-interface"></a>ICorDebugStepper, interface
+
 Représente dans l'exécution du code une étape qui est effectuée par un débogueur, et qui sert d'identificateur entre l'émission et l'achèvement d'une commande tout en offrant un moyen d'annuler une étape.  
   
 ## <a name="methods"></a>Méthodes  
@@ -37,7 +38,8 @@ Représente dans l'exécution du code une étape qui est effectuée par un débo
 |[StepOut, méthode](icordebugstepper-stepout-method.md)|Provoque l' `ICorDebugStepper` exécution d’une étape unique dans le thread conteneur et se termine lorsque le frame actuel retourne le contrôle au frame appelant.|  
 |[StepRange, méthode](icordebugstepper-steprange-method.md)|Provoque `ICorDebugStepper` un pas à pas détaillé dans le thread conteneur et le retourne lorsqu’il atteint le code au-delà de la dernière des plages spécifiées.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  L' `ICorDebugStepper` interface remplit les fonctions suivantes :  
   
 - Il agit comme un identificateur entre une commande d’étape qui est émise et l’achèvement de cette commande.  
@@ -53,7 +55,8 @@ Représente dans l'exécution du code une étape qui est effectuée par un débo
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

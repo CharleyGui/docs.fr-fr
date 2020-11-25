@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0121753f-ebea-48d0-aeb2-ed7fda76dc60
 topic_type:
 - apiref
-ms.openlocfilehash: 0ef49d2d833841eac62b2b964a0fdc902b4fb6a9
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 232068a5fee8f7bd3dfbddf4d9452e80d6fd6170
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894771"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719188"
 ---
 # <a name="icordebugblockingobjectenumnext-method"></a>ICorDebugBlockingObjectEnum::Next, méthode
+
 Obtient le nombre spécifié d’objets [CorDebugBlockingObject](cordebugblockingobject-structure.md) à partir de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT Next([in] ULONG  celt,
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  dans Nombre d’objets à récupérer.  
   
@@ -44,7 +46,8 @@ HRESULT Next([in] ULONG  celt,
  `pceltFetched`  
  à Pointeur vers le nombre d’objets qui ont été récupérés.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants.  
   
 |HRESULT|Description|  
@@ -52,15 +55,17 @@ HRESULT Next([in] ULONG  celt,
 |S_OK|La commande s'est correctement terminée.|  
 |S_FALSE|`pceltFetched` n’est pas égal à `celt`.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette méthode fonctionne comme un énumérateur COM classique.  
   
- Les valeurs du tableau d’entrée doivent être au moins `celt`de la taille. Le tableau sera rempli avec les valeurs suivantes `celt` dans l’énumération ou avec toutes les valeurs restantes si `celt` elles sont inférieures à. Lorsque cette méthode est retournée, `pceltFetched` est rempli avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon `celt`inférieure à, `pceltFetched` ou si est un pointeur non valide, le résultat n’est pas défini.  
+ Les valeurs du tableau d’entrée doivent être au moins de la taille `celt` . Le tableau sera rempli avec les `celt` valeurs suivantes dans l’énumération ou avec toutes les valeurs restantes si elles sont inférieures à `celt` . Lorsque cette méthode est retournée, `pceltFetched` est rempli avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon inférieure à `celt` , ou si `pceltFetched` est un pointeur non valide, le résultat n’est pas défini.  
   
 > [!NOTE]
 > Bien que la structure [CorDebugBlockingObject](cordebugblockingobject-structure.md) n’ait pas besoin d’être libérée, l’interface « ICorDebugValue » à l’intérieur de celle-ci doit être libérée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

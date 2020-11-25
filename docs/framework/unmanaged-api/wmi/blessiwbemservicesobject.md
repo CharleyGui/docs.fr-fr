@@ -1,6 +1,6 @@
 ---
-title: BlessIWbemServicesObject fonction (Référence API non gestion)
-description: La fonction BlessIWbemServicesObject indique si les informations d’identification des utilisateurs permettent l’accès à un objet IWbemServices
+title: Fonction BlessIWbemServicesObject (référence des API non managées)
+description: La fonction BlessIWbemServicesObject indique si les informations d’identification de l’utilisateur autorisent l’accès à un objet IWbemServices
 ms.date: 11/06/2017
 api_name:
 - BlessIWbemServicesObject
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - BlessIWbemServicesObject function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: fd822f78d29ad3a75fb5e57dd7c23b7049d445b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1aab2076f57f938715a3e65481a3540dc52279c6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175029"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719747"
 ---
 # <a name="blessiwbemservicesobject-function"></a>BlessIWbemServicesObject, fonction
-Indique si les informations d’identification de l’utilisateur permettent l’accès à un objet [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) spécifié.
+
+Indique si les informations d’identification de l’utilisateur autorisent l’accès à un objet [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) spécifié.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -42,42 +43,42 @@ HRESULT BlessIWbemServicesObject (
 ## <a name="parameters"></a>Paramètres
 
 `pIWbemServices`\
-[dans] Un pointeur vers un objet de service WMI.
+dans Pointeur vers un objet de service WMI.
 
 `strUser`\
-[dans] Le nom d’utilisateur.
+dans Nom d’utilisateur.
 
 `strPassword`\
-[dans] Le mot `strUser`de passe associé à .
+dans Mot de passe associé à `strUser` .
 
 `strAuthority`\
-[dans] Le nom de domaine de l’utilisateur. Consultez la fonction [ConnectServerWmi](connectserverwmi.md) pour plus d’informations.
+dans Nom de domaine de l’utilisateur. Pour plus d’informations, consultez la fonction [ConnectServerWmi](connectserverwmi.md) .
 
 `impLevel`\
-[dans] Le niveau d’usurpation d’identité.
+dans Niveau d’emprunt d’identité.
 
 `authnLevel`\
-[dans] Le niveau d’autorisation.
+dans Niveau d’autorisation.
 
-## <a name="return-value"></a>Valeur retournée
+## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WinError.h,* ou vous pouvez les définir comme des constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *winerror. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constant  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
-| `E_INVALIDARG` | 0x80070057 | Un ou plusieurs arguments sont invalides. |
+| `E_INVALIDARG` | 0x80070057 | Un ou plusieurs arguments ne sont pas valides. |
 | `E_POINTER` | 0x80004003 | `pIWbemServices` a la valeur `null`. |
 | `E_FAIL` | 0x80000008 | Une erreur inconnue s’est produite. |
-| `E_OUTOFMEMORY` | 0x80000002 | Une mémoire insuffisante est disponible pour effectuer l’opération. |
-| `S_OK` | 0 | L’appel de fonction a été réussi. |
+| `E_OUTOFMEMORY` | 0x80000002 | La mémoire disponible est insuffisante pour effectuer l’opération. |
+| `S_OK` | 0 | L’appel de la fonction a réussi. |
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
- **En-tête:** WMINet_Utils.idl
+ **En-tête :** WMINet_Utils. idl
 
- **.NET Versions-cadre:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

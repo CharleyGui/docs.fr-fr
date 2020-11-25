@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3e2102c5-48b7-4c0e-b805-7e2b5e156e3d
 topic_type:
 - apiref
-ms.openlocfilehash: fbf6ce8c8c9628b08872058a794fb0e005764ab1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a32a1eb850943b84a0d368f883e44fd4ccf32ee9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501298"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719578"
 ---
 # <a name="imetadataemitdefinemethod-method"></a>IMetaDataEmit::DefineMethod, méthode
+
 Crée une définition pour une méthode ou une fonction globale avec la signature spécifiée et retourne un jeton à cette définition de méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,8 +42,9 @@ HRESULT DefineMethod (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `td`  
- dans `mdTypedef`Jeton de la classe parente ou de l’interface parente de la méthode. Affectez `td` `mdTokenNil` la valeur, si vous définissez une fonction globale.  
+ dans `mdTypedef` Jeton de la classe parente ou de l’interface parente de la méthode. Affectez `td` `mdTokenNil` la valeur, si vous définissez une fonction globale.  
   
  `szName`  
  dans Nom du membre au format Unicode.  
@@ -66,11 +68,13 @@ HRESULT DefineMethod (
  à Jeton de membre.  
   
 ## <a name="remarks"></a>Remarques  
+
  L’API de métadonnées garantit de conserver les méthodes dans le même ordre que celui que l’appelant les émet pour une interface ou une classe englobante donnée, spécifiée dans le `td` paramètre.  
   
  Vous trouverez ci-dessous des informations supplémentaires sur l’utilisation de `DefineMethod` et des paramètres de paramètres particuliers.  
   
 ## <a name="slots-in-the-v-table"></a>Emplacements dans le V-table  
+
  Le runtime utilise les définitions de méthode pour configurer des emplacements v-table. Dans le cas où un ou plusieurs emplacements doivent être ignorés, par exemple pour conserver la parité avec une disposition d’interface COM, une méthode factice est définie pour prendre l’emplacement ou les emplacements dans la v-table ; Affectez `dwMethodFlags` à la `mdRTSpecialName` valeur de l’énumération [CorMethodAttr,](cormethodattr-enumeration.md) et spécifiez le nom :  
   
  _VtblGap\<*SequenceNumber*>\<\_*CountOfSlots*>
@@ -78,14 +82,17 @@ HRESULT DefineMethod (
  où *numéro* de séquence est le numéro de séquence de la méthode et *CountOfSlots* est le nombre d’emplacements à ignorer dans la table v. Si *CountOfSlots* est omis, 1 est utilisé. Ces méthodes factices ne peuvent pas être appelées à partir de code managé ou non managé et toute tentative de les appeler à partir de code managé ou non managé génère une exception. Leur seul but est d’occuper de l’espace dans la vtable générée par le runtime pour l’intégration COM.  
   
 ## <a name="duplicate-methods"></a>Méthodes dupliquées  
+
  Vous ne devez pas définir de méthodes en double. Autrement dit, vous ne devez pas appeler `DefineMethod` avec un jeu de valeurs en double dans les `td` `wzName` paramètres, et `pvSig` . (Ces trois paramètres définissent ensemble la méthode de manière unique.). Toutefois, vous pouvez utiliser un triple dupliqué fourni qui, pour l’une des définitions de méthode, vous définissez le `mdPrivateScope` bit dans le `dwMethodFlags` paramètre. (Le `mdPrivateScope` bit signifie que le compilateur n’émet pas de référence à cette définition de méthode.)  
   
 ## <a name="method-implementation-information"></a>Informations d’implémentation de la méthode  
+
  Les informations sur l’implémentation de la méthode sont souvent inconnues au moment où la méthode est déclarée. Par conséquent, vous n’avez pas besoin de passer des valeurs dans les `ulCodeRVA` paramètres et lors de l' `dwImplFlags` appel de `DefineMethod` . Les valeurs peuvent être fournies ultérieurement via [IMetaDataEmit :: SetMethodImplFlags,](imetadataemit-setmethodimplflags-method.md) ou [IMetaDataEmit :: SetRVA](imetadataemit-setrva-method.md), selon le cas.  
   
  Dans certaines situations, telles que l’appel de la plateforme (PInvoke) ou les scénarios de COM Interop, le corps de la méthode n’est pas fourni et `ulCodeRVA` doit être défini sur zéro. Dans ces situations, la méthode ne doit pas être marquée comme abstract, car le runtime localise l’implémentation.  
   
 ## <a name="defining-a-method-for-pinvoke"></a>Définition d’une méthode pour PInvoke  
+
  Pour chaque fonction non managée à appeler par le biais de PInvoke, vous devez définir une méthode managée qui représente la fonction non managée cible. Pour définir la méthode managée, utilisez `DefineMethod` avec certains des paramètres définis sur certaines valeurs, en fonction de la façon dont PInvoke est utilisé :  
   
 - True PInvoke : implique l’appel d’une méthode non managée externe qui réside dans une DLL non managée.  
@@ -102,11 +109,12 @@ HRESULT DefineMethod (
 |`dwImplFlags`|Définissez `miCil` et `miManaged`.|Définissez `miNative` et `miUnmanaged`.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

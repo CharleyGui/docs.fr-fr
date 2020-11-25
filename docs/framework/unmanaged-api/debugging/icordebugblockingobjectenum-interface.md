@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 208e5c2d-3f3f-404e-8b3c-7cccc14ddb16
 topic_type:
 - apiref
-ms.openlocfilehash: 8be4332da77c3fbf4229a3fbeb9ba835a7a13eee
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 221acf9bea714728a81b9f15c8165c1f9eba16a8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894792"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719201"
 ---
 # <a name="icordebugblockingobjectenum-interface"></a>ICorDebugBlockingObjectEnum, interface
+
 Fournit un énumérateur pour une liste de structures [CorDebugBlockingObject](cordebugblockingobject-structure.md) . Cette interface est une sous-classe de l'interface ICorDebugEnum.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,13 +31,15 @@ Fournit un énumérateur pour une liste de structures [CorDebugBlockingObject](c
 |------------|-----------------|  
 |[Next, méthode](icordebugblockingobjectenum-next-method.md)|Énumère une liste de structures [CorDebugBlockingObject](cordebugblockingobject-structure.md) .|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Chaque structure `CorDebugBlockingObject` représente un objet qui bloque un thread.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
