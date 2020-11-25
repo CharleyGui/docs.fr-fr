@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e983d11-eaf3-4741-b936-29ec456384a3
 topic_type:
 - apiref
-ms.openlocfilehash: 8f3697f8b193319ebb7b155ad79b8ec25a0a2266
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: eb95bf779e54742cd2cc4b688c24a49e6d85a40d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205273"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731902"
 ---
 # <a name="icordebugmanagedcallbackdebuggererror-method"></a>ICorDebugManagedCallback::DebuggerError, méthode
+
 Notifie le débogueur qu’une erreur s’est produite lors de la tentative de gestion d’un événement à partir du common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT DebuggerError (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pProcess`  
  dans Pointeur vers un objet « ICorDebugProcess » qui représente le processus dans lequel l’événement s’est produit.  
   
@@ -45,12 +47,14 @@ HRESULT DebuggerError (
  `errorCode`  
  dans Entier qui spécifie l’erreur CLR.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le processus peut être placé en mode de transfert, en fonction de la nature de l’erreur.  
   
  Le `DebugError` rappel indique que les services de débogage ont été désactivés en raison d’une erreur. par conséquent, les débogueurs doivent mettre le message d’erreur à la disposition de l’utilisateur. [ICorDebugProcess :: GetId](icordebugprocess-getid-method.md) peut être appelée sans risque, mais toutes les autres méthodes, y compris [ICorDebug :: Terminate](icordebug-terminate-method.md), ne doivent pas être appelées. Le débogueur doit utiliser des fonctionnalités de système d’exploitation pour terminer les processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

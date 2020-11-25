@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cbaca4e1-4473-459b-ba34-f1f59ce7c0ba
 topic_type:
 - apiref
-ms.openlocfilehash: 2dd70693528904459a34689dbad944c65c971254
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: fca7b11a83b5a695feae82fe5f25218f87afbce2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441641"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732890"
 ---
 # <a name="isymunmanagedconstantgetname-method"></a>ISymUnmanagedConstant::GetName, méthode
+
 Obtient le nom de la constante.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetName(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchName`  
  dans Longueur de la mémoire tampon vers laquelle `szName` pointe le paramètre.  
   
@@ -45,10 +47,12 @@ HRESULT GetName(
  `szName`  
  à Mémoire tampon qui stocke le nom.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

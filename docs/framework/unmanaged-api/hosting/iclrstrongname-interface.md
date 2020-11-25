@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2fac66fd-6b3b-4dbd-8baf-86038bd85526
 topic_type:
 - apiref
-ms.openlocfilehash: 0b6efcbe4458977e8e938afabd7ae59171bc065a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 691cc3cf4ec8d036a4de04247f243d99daa887d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501649"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733631"
 ---
 # <a name="iclrstrongname-interface"></a>ICLRStrongName, interface
+
 Fournit des fonctions statiques globales de base pour la signature d’assemblys avec des noms forts. Toutes les `ICLRStrongName` méthodes retournent des valeurs HRESULT com standard.  
   
 ## <a name="methods"></a>Méthodes  
@@ -55,18 +56,20 @@ Fournit des fonctions statiques globales de base pour la signature d’assemblys
 |[StrongNameTokenFromPublicKey, méthode](iclrstrongname-strongnametokenfrompublickey-method.md)|Obtient un jeton représentant une clé publique.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Vous pouvez récupérer une instance du `ICLRStrongName` en appelant la méthode [ICLRRuntimeInfo :: GetInterface](iclrruntimeinfo-getinterface-method.md) à l’aide `CLSID_CLRStrongName` de et `IID_ICLRStrongName` en tant que paramètres.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

@@ -2,12 +2,12 @@
 title: Fonctionnalités de simplification de WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: d582c075377cf53d75ddf1bb9f37764e24e486ec
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8a818ec0852cfae20ef23fede04b55b08a7449a5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545075"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732916"
 ---
 # <a name="wcf-simplification-features"></a>Fonctionnalités de simplification de WCF
 
@@ -88,7 +88,7 @@ WCF fournit le mode de compatibilité ASP.NET pour accorder aux développeurs l'
 
 - La prise en charge de la diffusion en continu asynchrone a été ajoutée à WCF. Pour activer la diffusion en continu asynchrone, ajoutez le comportement de point de terminaison <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> à l'hôte de service et affectez à sa propriété <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> la valeur `true`. L'extensibilité peut en tirer parti lorsqu'un service envoie des messages transmis en continu à plusieurs clients qui les lisent lentement. WCF ne bloque plus un thread par client et libère le thread pour prendre en charge un autre client.
 
-- Limitations supprimées concernant la mise en mémoire tampon des messages lorsqu'un service est hébergé par IIS. Dans les versions antérieures de WCF, lors de la réception d'un message pour un service hébergé par IIS qui utilisait le transfert de message en continu, ASP.NET plaçait le message entier en mémoire tampon avant de l'envoyer à WCF. Cela entraînait une grande consommation de mémoire. Cette mise en mémoire tampon a été supprimée dans .NET 4.5 et désormais les services WCF hébergés par IIS peuvent traiter le flux entrant avant que le message entier n'ait été reçu, ce qui permet une réelle diffusion en continu. Cela permet à WCF de répondre immédiatement aux messages et améliore les performances. En outre, vous n'avez plus besoin de spécifier une valeur pour `maxRequestLength`, la limite de taille ASP.NET sur les requêtes entrantes. Si cette propriété est définie, elle est ignorée. Pour plus d’informations sur `maxRequestLength` , consultez l' [ \<httpRuntime> élément configuration](/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71)). Vous devrez toujours configurer le maxAllowedContentLength. pour plus d’informations, consultez [limites des demandes IIS](/previous-versions/iis/settings-schema/ms689462(v=vs.90)).
+- Limitations supprimées concernant la mise en mémoire tampon des messages lorsqu'un service est hébergé par IIS. Dans les versions antérieures de WCF, lors de la réception d'un message pour un service hébergé par IIS qui utilisait le transfert de message en continu, ASP.NET plaçait le message entier en mémoire tampon avant de l'envoyer à WCF. Cela entraînait une grande consommation de mémoire. Cette mise en mémoire tampon a été supprimée dans .NET Framework 4,5 et désormais, les services WCF hébergés par IIS peuvent commencer à traiter le flux entrant avant la réception de la totalité du message, ce qui permet d’activer la diffusion en continu. Cela permet à WCF de répondre immédiatement aux messages et améliore les performances. En outre, vous n'avez plus besoin de spécifier une valeur pour `maxRequestLength`, la limite de taille ASP.NET sur les requêtes entrantes. Si cette propriété est définie, elle est ignorée. Pour plus d’informations sur `maxRequestLength` , consultez l' [ \<httpRuntime> élément configuration](/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71)). Vous devrez toujours configurer le maxAllowedContentLength. pour plus d’informations, consultez [limites des demandes IIS](/previous-versions/iis/settings-schema/ms689462(v=vs.90)).
 
 ## <a name="new-transport-default-values"></a>Valeurs par défaut pour le nouveau transport
 

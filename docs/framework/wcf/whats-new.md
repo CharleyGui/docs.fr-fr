@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: b6ce7fe19a8d7cc00823502e322ee53a1bd0a931
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 76b52cedd1e2e64805e2ad47e582d07ca70415cc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245620"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731551"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Nouveautés dans Windows Communication Foundation 4.5
 
@@ -73,7 +73,7 @@ Certaines piles de traitement WSDL tierces ne peuvent pas traiter les documents 
 
 ## <a name="websocket-support"></a>Prise en charge de WebSocket
 
-WebSockets est une technologie qui fournit la véritable communication bidirectionnelle sur les ports 80 et 443 avec des caractéristiques de performances semblables à TCP. Deux nouvelles liaisons ont été ajoutées pour prendre en charge les communications via un transport WebSocket. <xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>. Pour plus d’informations, consultez : [liaisons fournies par le système](system-provided-bindings.md).
+WebSockets est une technologie qui fournit la véritable communication bidirectionnelle sur les ports 80 et 443 avec des caractéristiques de performances semblables à TCP. Deux nouvelles liaisons ont été ajoutées pour prendre en charge les communications via un transport WebSocket. Voir <xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>. Pour plus d’informations, consultez : [liaisons fournies par le système](system-provided-bindings.md).
 
 ## <a name="new-transport-default-values"></a>Valeurs par défaut pour le nouveau transport
 
@@ -93,7 +93,7 @@ Pour aider les développeurs de services WCF nouveaux et existants à configurer
 
 ## <a name="configuring-wcf-services-in-code"></a>Configuration de services WCF dans le code
 
-Windows Communication Foundation (WCF) permet aux développeurs de configurer des services à l’aide de fichiers de configuration ou de code. Les fichiers de configuration sont utiles lorsqu'un service doit être configuré après avoir été déployé. Lorsqu'il utilise des fichiers de configuration, un professionnel de l'informatique doit uniquement mettre à jour le fichier de configuration, aucune recompilation n'est nécessaire. Les fichiers de configuration, toutefois, peuvent être complexes et difficiles à gérer. Il n'existe aucune prise en charge du débogage de fichiers de configuration et les éléments de configuration sont référencés par des noms. La création de fichiers de configuration est donc susceptible d'engendrer des erreurs et difficile. WCF vous permet également de configurer des services dans le code. Dans les versions précédentes de WCF (4,0 et versions antérieures) la configuration des services dans le code était facile dans les scénarios auto-hébergés, la <xref:System.ServiceModel.ServiceHost> classe vous permettait de configurer des points de terminaison et des comportements avant d’appeler ServiceHost. Open. Dans les scénarios hébergés sur le Web, toutefois, vous n'avez pas accès à la classe <xref:System.ServiceModel.ServiceHost>. Pour configurer un service hébergé sur le Web vous deviez créer un `System.ServiceModel.ServiceHostFactory` qui créait le <xref:System.ServiceModel.Activation.ServiceHostFactory> et effectuait la configuration nécessaire. À compter de .NET 4,5, WCF offre un moyen plus simple de configurer des services auto-hébergés et hébergés sur le Web dans le code. Pour plus d’informations, consultez [Configuration des services WCF dans le code](configuring-wcf-services-in-code.md).
+Windows Communication Foundation (WCF) permet aux développeurs de configurer des services à l’aide de fichiers de configuration ou de code. Les fichiers de configuration sont utiles lorsqu'un service doit être configuré après avoir été déployé. Lorsqu'il utilise des fichiers de configuration, un professionnel de l'informatique doit uniquement mettre à jour le fichier de configuration, aucune recompilation n'est nécessaire. Les fichiers de configuration, toutefois, peuvent être complexes et difficiles à gérer. Il n'existe aucune prise en charge du débogage de fichiers de configuration et les éléments de configuration sont référencés par des noms. La création de fichiers de configuration est donc susceptible d'engendrer des erreurs et difficile. WCF vous permet également de configurer des services dans le code. Dans les versions précédentes de WCF (4,0 et versions antérieures) la configuration des services dans le code était facile dans les scénarios auto-hébergés, la <xref:System.ServiceModel.ServiceHost> classe vous permettait de configurer des points de terminaison et des comportements avant d’appeler ServiceHost. Open. Dans les scénarios hébergés sur le Web, toutefois, vous n'avez pas accès à la classe <xref:System.ServiceModel.ServiceHost>. Pour configurer un service hébergé sur le Web vous deviez créer un `System.ServiceModel.ServiceHostFactory` qui créait le <xref:System.ServiceModel.Activation.ServiceHostFactory> et effectuait la configuration nécessaire. À compter de .NET Framework 4,5, WCF offre un moyen plus simple de configurer des services auto-hébergés et hébergés sur le Web dans le code. Pour plus d’informations, consultez [Configuration des services WCF dans le code](configuring-wcf-services-in-code.md).
 
 ## <a name="channelfactory-caching"></a>Mise en cache de ChannelFactory
 

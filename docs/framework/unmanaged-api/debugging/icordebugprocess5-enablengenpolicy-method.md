@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3b8e15ca-3c72-4685-a937-da4c739cb9e9
 topic_type:
 - apiref
-ms.openlocfilehash: fa3cbfee0359b8477f9efe88fe72837b86611bf7
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e3dfd3cae83c7891d246ff3a81427c161cc0e2d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212800"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731386"
 ---
 # <a name="icordebugprocess5enablengenpolicy-method"></a>ICorDebugProcess5::EnableNGENPolicy, méthode
+
 Définit une valeur qui détermine la façon dont une application charge les images natives lors de l’exécution sous un débogueur managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT EnableNGENPolicy(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ePolicy`  
  dans Constante [cordebugngenpolicy,](cordebugngenpolicy-enumeration.md) qui détermine la façon dont une application charge des images natives lors de l’exécution sous un débogueur managé.  
   
-## <a name="remarks"></a>Remarks  
- Si la stratégie est définie avec succès, la méthode retourne `S_OK` . Si `ePolicy` est en dehors de la plage des valeurs énumérées définies par [cordebugngenpolicy,](cordebugngenpolicy-enumeration.md), la méthode retourne `E_INVALIDARG` et l’appel de la méthode n’a aucun effet. Si la stratégie du générateur d’images natives (Ngen. exe) ne peut pas être mise à jour, la méthode retourne `E_FAIL` .  
+## <a name="remarks"></a>Remarques  
+
+ Si la stratégie est définie avec succès, la méthode retourne `S_OK` . Si `ePolicy` est en dehors de la plage des valeurs énumérées définies par [cordebugngenpolicy,](cordebugngenpolicy-enumeration.md), la méthode retourne `E_INVALIDARG` et l’appel de la méthode n’a aucun effet. Si la stratégie du générateur d’images natives (Ngen.exe) ne peut pas être mise à jour, la méthode retourne `E_FAIL` .  
   
  La `ICorDebugProcess5::EnableNGenPolicy` méthode peut être appelée à tout moment pendant la durée de vie du processus. La stratégie est appliquée pour tous les modules qui sont chargés après la définition de la stratégie.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

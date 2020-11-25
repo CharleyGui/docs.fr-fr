@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 124656f6-0dad-4ceb-9043-d3869ab65cde
 topic_type:
 - apiref
-ms.openlocfilehash: 78b30f624bd71234e8f1b56600b3a23d15fdf517
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: f7aa9699e9929608c90020c6b2d66c301fc11955
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006028"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732708"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType, énumération
+
 Fournit des valeurs pour influencer le type d' `reloc` instruction émis dans un appel à [ICeeGen :: AddSectionReloc,](iceegen-addsectionreloc-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -68,12 +69,13 @@ typedef enum  {
 |`srNoBaseReloc`|Spécifie de ne pas émettre de base `reloc` .|  
 |`srRelocPtr`|Valeur indiquant que le contenu de la précorrection de la mémoire est un pointeur plutôt qu’un décalage de section.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

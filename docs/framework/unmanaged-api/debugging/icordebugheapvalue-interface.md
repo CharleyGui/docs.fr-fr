@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1bca66db-0359-4ae8-846e-e35f7e547e8b
 topic_type:
 - apiref
-ms.openlocfilehash: 36a485413490045ca49b99fca4fe5d43edc37114
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ee3ea319360bba1a113c15daf8cf143ea512e5cd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213008"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733319"
 ---
 # <a name="icordebugheapvalue-interface"></a>ICorDebugHeapValue, interface
 
@@ -32,12 +32,13 @@ Sous-classe de « ICorDebugValue » qui représente un objet qui a été colle
 |[CreateRelocBreakpoint, méthode](icordebugheapvalue-createrelocbreakpoint-method.md)|Non implémenté.|  
 |[IsValid, méthode](icordebugheapvalue-isvalid-method.md)|Obtient une valeur qui indique si l’objet représenté par ce `ICorDebugHeapValue` est valide ou a été récupéré par le garbage collector. Cette méthode est déconseillée dans la version 2,0 de .NET Framework.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

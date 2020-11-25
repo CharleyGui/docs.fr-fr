@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 03adaa9a-2beb-49b3-b2c4-6b4fc3f10715
 topic_type:
 - apiref
-ms.openlocfilehash: e6ab7c7af1cf9f30f6708c4e970db619ca071343
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: a426fca1b7ca4bfb9cbb30a221859f7c114db682
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762771"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732422"
 ---
 # <a name="iclrtaskmanagersetuilocale-method"></a>ICLRTaskManager::SetUILocale, méthode
+
 Avertit le common language runtime (CLR) que l’hôte a modifié les paramètres régionaux de l’interface utilisateur (IU), ou culture, sur la tâche en cours d’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,29 +35,32 @@ HRESULT SetUILocale (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `lcid`  
  dans Valeur de l’identificateur de paramètres régionaux qui correspond à la culture géographique et à la langue de l’interface utilisateur nouvellement assignées.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`SetUILocale`retourné avec succès.|  
+|S_OK|`SetUILocale` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le CLR n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="remarks"></a>Notes  
- `SetUILocale`permet à l’hôte d’exécuter tout mécanisme qu’il peut avoir pour la synchronisation des paramètres régionaux.  
+## <a name="remarks"></a>Remarques  
+
+ `SetUILocale` permet à l’hôte d’exécuter tout mécanisme qu’il peut avoir pour la synchronisation des paramètres régionaux.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

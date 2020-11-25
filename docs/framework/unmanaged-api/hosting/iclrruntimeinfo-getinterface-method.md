@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc7b0e5b-48c3-4509-8ebb-611ddb1f7ec2
 topic_type:
 - apiref
-ms.openlocfilehash: 9cf9d48bf50ffc1fc56270c13215acfef6d9c3af
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 192163ed8af680e39f7f3a03aee3f46546bc7450
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504054"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732071"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface, méthode
+
 Charge le CLR dans le processus en cours et retourne des pointeurs d’interface de Runtime, tels que [ICLRRuntimeHost](iclrruntimehost-interface.md), [ICLRStrongName](iclrstrongname-interface.md)et [IMetaDataDispenserEx](../metadata/imetadatadispenser-interface.md).  
   
  Cette méthode remplace toutes les `CorBindTo` fonctions * dans la section [fonctions d’hébergement CLR déconseillées](deprecated-clr-hosting-functions.md) .  
@@ -37,6 +38,7 @@ HRESULT GetInterface(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `rclsid`  
  dans Interface CLSID de la coclasse.  
   
@@ -47,6 +49,7 @@ HRESULT GetInterface(
  à Pointeur vers l’interface interrogée.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -57,6 +60,7 @@ HRESULT GetInterface(
 |CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Un Runtime différent était déjà lié à la stratégie d’activation héritée du CLR version 2.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Cette méthode provoque le chargement du CLR mais pas son initialisation.  
   
  Le tableau suivant indique les combinaisons prises en charge pour `rclsid` et `riid` .  
@@ -73,11 +77,12 @@ HRESULT GetInterface(
 |CLSID_CLRStrongName|IID_ICLRStrongName|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
@@ -85,4 +90,4 @@ HRESULT GetInterface(
 
 - [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

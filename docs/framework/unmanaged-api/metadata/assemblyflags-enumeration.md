@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 40f9bd9e-16ec-447e-81b0-168c875e9866
 topic_type:
 - apiref
-ms.openlocfilehash: 1cb84b94b37a2e9e8dd4d20d09cbca82db290c0f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 561b4d68a574a2859286fb5f2e2d950518a9d29d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009447"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732774"
 ---
 # <a name="assemblyflags-enumeration"></a>AssemblyFlags, énumération
+
 Contient des valeurs qui décrivent les fonctionnalités d’exécution d’un assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,14 +48,16 @@ typedef enum {
 |`afNonSideBySideMachine`|Spécifie que l’assembly ne peut pas s’exécuter avec d’autres versions si elles s’exécutent sur le même ordinateur.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Les valeurs comprises entre 0x0010 et 0x0070, incluses, sont utilisées pour décrire les fonctionnalités de compatibilité côte à côte de l’assembly référencé. Si aucune de ces valeurs n’est définie, l’assembly est supposé être compatible côte à côte.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MsCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

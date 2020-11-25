@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
 topic_type:
 - apiref
-ms.openlocfilehash: 9db583c7064cb910b29e84437f31143dac0d3ec9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8038d0abc93e058e6bde897bbf2261d8f1df885a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175081"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732318"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW, fonction
+
 Génère un hachage sur le contenu du fichier spécifié par une chaîne Unicode.  
   
- Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName::GetHashFromFileW](../hosting/iclrstrongname-gethashfromfilew-method.md) à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: GetHashFromFileW (](../hosting/iclrstrongname-gethashfromfilew-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,32 +40,35 @@ HRESULT GetHashFromFileW (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszFilePath`  
- [dans] Le nom Unicode du fichier au hachage.  
+ dans Nom Unicode du fichier à hacher.  
   
  `piHashAlg`  
- [dans, dehors] L’algorithme à utiliser lors de la génération du hachage. Les algorithmes valides sont ceux définis par le CryptoAPI Win32. Si `piHashAlg` l’algorithme par défaut CALG_SHA-1 est utilisé.  
+ [in, out] Algorithme à utiliser lors de la génération du hachage. Les algorithmes valides sont ceux définis par l’CryptoAPI Win32. Si `piHashAlg` a la valeur 0, l’algorithme par défaut CALG_SHA-1 est utilisé.  
   
  `pbHash`  
- [out] Un tableau d’en-lieu contenant le hachage généré.  
+ à Tableau d’octets contenant le hachage généré.  
   
  `cchHash`  
- [dans] La taille maximale de la `pbHash`mémoire tampon indiquée par .  
+ dans Taille maximale de la mémoire tampon vers laquelle pointe `pbHash` .  
   
  `pchHash`  
- [out] La taille, dans les `pbHash`octets, de .  
+ à Taille, en octets, de `pbHash` .  
   
-## <a name="remarks"></a>Notes   
- Cette fonction est la même que [GetHashFromFile](gethashfromfile-function.md), sauf que la spécification nom de fichier est Unicode au lieu de ANSI.  
+## <a name="remarks"></a>Remarques  
+
+ Cette fonction est identique à [GetHashFromFile (](gethashfromfile-function.md), à ceci près que la spécification de nom de fichier est au format Unicode au lieu de ANSI.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** StrongName.h (en)  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

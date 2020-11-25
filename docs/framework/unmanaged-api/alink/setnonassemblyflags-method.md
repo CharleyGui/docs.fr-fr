@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: f8ba6fc8-f5aa-4066-ac96-56332758f5ec
 topic_type:
 - apiref
-ms.openlocfilehash: 2dcb363a2a84b3c2e0438e45663b96d9a0f83f61
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b7bcf530947c161decc9c01c07df310550d69738
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445555"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733761"
 ---
 # <a name="setnonassemblyflags-method"></a>SetNonAssemblyFlags, méthode
+
 Définit des indicateurs qui ne sont pas spécifiques à l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT SetNonAssemblyFlags(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `afFlags`  
  Indicateurs ALink.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

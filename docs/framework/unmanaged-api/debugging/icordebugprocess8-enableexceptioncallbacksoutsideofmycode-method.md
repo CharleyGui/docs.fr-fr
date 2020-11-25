@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 dev_langs:
 - cpp
 ms.assetid: b3af44ec-7d41-425b-aed9-0c4379e5cbe9
-ms.openlocfilehash: e54dd051f0dbd9c1964d381c2e05189c375fa66d
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 750d2a2d69c74e147c34c9c496079ee48ac04b42
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210135"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732539"
 ---
 # <a name="icordebugprocess8enableexceptioncallbacksoutsideofmycode-method"></a>ICorDebugProcess8::EnableExceptionCallbacksOutsideOfMyCode (méthode)
+
 [Pris en charge dans le .NET Framework 4,6 et versions ultérieures]  
   
  Active ou désactive certains types de rappels d’exception [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .  
@@ -25,10 +26,12 @@ HRESULT EnableExceptionCallbacksOutsideOfMyCode(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `enableExceptionsOutsideOfJMC`  
  [in]  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si la valeur de `enableExceptionsOutsideOfJMC` est `false` :  
   
 - Une exception DEBUG_EXCEPTION_FIRST_CHANCE n'entraîne pas un rappel au débogueur.  
@@ -37,7 +40,8 @@ HRESULT EnableExceptionCallbacksOutsideOfMyCode(
   
  La valeur par défaut de `enableExceptionsOutsideOfJMC` est `true`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

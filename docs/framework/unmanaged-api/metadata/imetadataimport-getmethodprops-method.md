@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-ms.openlocfilehash: 3c7c3525f2f8753241c9a206e4cf5e552bf06efe
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0eb4e9d713581cf32cec18bb02a6bd13542e517a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503623"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733180"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps, méthode
+
 Obtient les métadonnées associées à la méthode référencée par le jeton MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,6 +44,7 @@ HRESULT GetMethodProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mb`  
  dans Jeton MethodDef qui représente la méthode pour laquelle retourner des métadonnées.  
   
@@ -74,11 +76,12 @@ HRESULT GetMethodProps (
  à Pointeur vers tous les indicateurs d’implémentation de la méthode.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0eaa4aa9-9441-444a-920c-e4b2a2db899e
 topic_type:
 - apiref
-ms.openlocfilehash: a90deaf3e9ddf326c6fca558cbb4681fc40e022d
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 1e1a86cdf55812197aae653dca256fb910a7f168
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009052"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733891"
 ---
 # <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps, méthode
+
 Obtient le jeu de propriétés de l’assembly avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,6 +43,7 @@ HRESULT GetAssemblyProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mda`  
  [in]. `mdAssembly`Jeton de métadonnées qui représente l’assembly pour lequel obtenir les propriétés.  
   
@@ -69,12 +71,13 @@ HRESULT GetAssemblyProps (
  `pdwAssemblyFlags`  
  à Indicateurs qui décrivent les métadonnées appliquées à un assembly. Cette valeur est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags,](corassemblyflags-enumeration.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 3b92f3aa8c21cc3d171e14100db190d88f2c0284
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7400d460c4d1ebf5c02d8313f33a5a63de1734d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823847"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733514"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 
@@ -26,6 +26,7 @@ Il existe deux principaux types de collections : les collections génériques e
 À partir de .NET Framework 4, les collections de l' <xref:System.Collections.Concurrent> espace de noms fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads. Les classes de collection immuables de l' <xref:System.Collections.Immutable> espace de noms ([package NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) sont thread-safe, car les opérations sont effectuées sur une copie de la collection d’origine et la collection d’origine ne peut pas être modifiée.
 
 <a name="BKMK_Commoncollectionfeatures"></a>
+
 ## <a name="common-collection-features"></a>Fonctionnalités communes à toutes les collections
 
 Toutes les collections fournissent des méthodes pour l’ajout, la suppression ou la recherche d’éléments dans la collection. De plus, toutes les collections qui implémentent directement ou indirectement l'interface <xref:System.Collections.ICollection> ou <xref:System.Collections.Generic.ICollection%601> partagent les fonctionnalités suivantes :
@@ -57,6 +58,7 @@ De plus, de nombreuses classes de collection comprennent les fonctionnalités su
     Les types de collections non génériques de l'espace de noms <xref:System.Collections> fournissent une certaine cohérence de thread pour la synchronisation, généralement exposée par des membres <xref:System.Collections.ICollection.SyncRoot%2A> et <xref:System.Collections.ICollection.IsSynchronized%2A>. Ces collections ne sont pas thread-safe par défaut. Si vous avez besoin d'un accès multithread évolutif et efficace pour une collection, utilisez l'une des classes de l'espace de noms <xref:System.Collections.Concurrent> ou envisagez d'utiliser une collection immuable. Pour plus d’informations, consultez [Collections thread-safe](thread-safe/index.md).
 
 <a name="BKMK_Choosingacollection"></a>
+
 ## <a name="choose-a-collection"></a>Choisir un regroupement
 
 En règle générale, vous devez utiliser des collections génériques. Le tableau suivant décrit certains scénarios courants concernant les collections, ainsi que les classes de collection que vous pouvez utiliser pour ces scénarios. Si vous ne connaissez pas encore les collections génériques, ce tableau vous aidera à choisir la collection générique qui répond le mieux à vos besoins.
@@ -94,9 +96,10 @@ Un `List<T>` peut être énuméré efficacement à l’aide d’une boucle `for`
 En outre, `SortedSet<T>` a la même complexité que `ImmutableSortedSet<T>` . En effet, ils utilisent tous deux des arborescences binaires. La différence significative est évidemment que `ImmutableSortedSet<T>` utilise une arborescence binaire immuable. Étant donné que `ImmutableSortedSet<T>` offre également une <xref:System.Collections.Immutable.ImmutableSortedSet%601.Builder?displayProperty=nameWithType> classe qui permet la mutation, vous pouvez avoir à la fois une immuabilité et des performances.
 
 <a name="BKMK_RelatedTopics"></a>
+
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Sélection d’une classe de collection](selecting-a-collection-class.md)|Décrit les différentes collections et permet d'en sélectionner une pour votre scénario.|
 |[Types de collections couramment utilisés](commonly-used-collection-types.md)|Décrit les types de collection génériques et non génériques fréquemment utilisés, tels que <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|
@@ -108,7 +111,9 @@ En outre, `SortedSet<T>` a la même complexité que `ImmutableSortedSet<T>` . En
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|
 
 <a name="BKMK_Reference"></a>
+
 ## <a name="reference"></a>Informations de référence
+
 <xref:System.Array?displayProperty=nameWithType>
 <xref:System.Collections?displayProperty=nameWithType>
 <xref:System.Collections.Concurrent?displayProperty=nameWithType>

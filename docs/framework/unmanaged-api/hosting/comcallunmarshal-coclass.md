@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: 2adb5827-2268-4914-a1c6-f62b61880a45
 topic_type:
 - apiref
-ms.openlocfilehash: 939acc0ad47021d5fdffe7b7b71ea6a4a1635a6d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 90bcf4f37631e0246e58cc14bfcd331d981e4713
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616734"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731720"
 ---
 # <a name="comcallunmarshal-coclass"></a>Coclasse ComCallUnmarshal
+
 Fournit des interfaces pour gérer le marshaling des pointeurs d’interface.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 coclass ComCallUnmarshal {  
@@ -38,12 +39,13 @@ coclass ComCallUnmarshal {
 |---------------|-----------------|  
 |`IMarshal`|Fournit des méthodes pour créer, initialiser et gérer un proxy dans un processus client.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

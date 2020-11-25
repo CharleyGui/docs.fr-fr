@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9543b111-5705-40c9-935c-a3ffc7a581aa
 topic_type:
 - apiref
-ms.openlocfilehash: 560a6adf85fab7f421b86cba52224d5b1bfe1089
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c72e5b9544d1d8ae989405ac9bfdb22050b1aaaf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006257"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731606"
 ---
 # <a name="imetadataassemblyimportenummanifestresources-method"></a>IMetaDataAssemblyImport::EnumManifestResources, méthode
+
 Obtient un pointeur vers un énumérateur pour les ressources référencées dans le manifeste de l’assembly actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT EnumManifestResources (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL lorsque la `EnumManifestResources` méthode est appelée pour la première fois.  
   
@@ -53,15 +55,16 @@ HRESULT EnumManifestResources (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumManifestResources`retourné avec succès.|  
+|`S_OK`|`EnumManifestResources` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` a la valeur zéro.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

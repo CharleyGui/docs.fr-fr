@@ -9,16 +9,16 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-ms.openlocfilehash: 4b3bf6f7f6b8cf459a13dd0aca45069f82d01130
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: 365c21c6ea35683d7d3fad777cab3527103903c3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687592"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731512"
 ---
 # <a name="assembly-manifest"></a>Manifeste d'assembly
 
-Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de données qui décrit comment les éléments de l'assembly sont reliés les uns aux autres. Le manifeste d'assembly contient les métadonnées de l'assembly. Un manifeste d'assembly comprend toutes les métadonnées nécessaires pour spécifier la version requise et l'identité de sécurité de l'assembly, ainsi que toutes les métadonnées nécessaires pour définir la portée de l'assembly et résoudre les références aux ressources et aux classes. Le manifeste d’assembly peut être stocké dans un fichier PE ( *. exe* ou *. dll* ) avec le code MSIL (Microsoft Intermediate Language) ou dans un fichier PE autonome qui contient uniquement des informations de manifeste d’assembly.  
+Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de données qui décrit comment les éléments de l'assembly sont reliés les uns aux autres. Le manifeste d'assembly contient les métadonnées de l'assembly. Un manifeste d'assembly comprend toutes les métadonnées nécessaires pour spécifier la version requise et l'identité de sécurité de l'assembly, ainsi que toutes les métadonnées nécessaires pour définir la portée de l'assembly et résoudre les références aux ressources et aux classes. Le manifeste d’assembly peut être stocké dans un fichier PE ( *. exe* ou *. dll*) avec le code MSIL (Microsoft Intermediate Language) ou dans un fichier PE autonome qui contient uniquement des informations de manifeste d’assembly.  
   
  L'illustration ci-dessous indique les différents modes de stockage du manifeste.  
   
@@ -39,6 +39,7 @@ Chaque assembly, qu'il soit statique ou dynamique, comporte une collection de do
 - Il rend l'assembly autodescriptif.  
   
 ## <a name="assembly-manifest-contents"></a>Contenu du manifeste de l’assembly  
+
  Le tableau suivant indique les informations qui figurent dans le manifeste d'assembly. Les quatre premiers éléments suivants : le nom de l’assembly, le numéro de version, la culture et les informations de nom fort constituent l’identité de l’assembly.  
   
 |Information|Description|  

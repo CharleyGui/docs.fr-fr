@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63021fc1-9c2d-4788-811f-fe8ca077206a
 topic_type:
 - apiref
-ms.openlocfilehash: f2996349fd2bf1765a3de5b67d3296a25b1eaa5e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 68d20c33c5ccd554554cae57ee55f6f51d5d980c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610364"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733306"
 ---
 # <a name="isymunmanagedvariablegetstartoffset-method"></a>ISymUnmanagedVariable::GetStartOffset, méthode
+
 Obtient le décalage de début de cette variable dans son parent. S’il s’agit d’une variable locale dans une étendue, le décalage de début se situe dans les décalages définis pour l’étendue.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT GetStartOffset(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRetVal`  
  à Pointeur vers un `ULONG32` qui reçoit le décalage de début.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

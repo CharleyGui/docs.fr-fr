@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 44eef087-f21f-4fe2-b481-f8a0ee022e7d
 topic_type:
 - apiref
-ms.openlocfilehash: f025f4c0bc0ec8e11decddcdf64be50f68955266
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 63a8d212a61bd73f44995f0e057eeff96f9a5554
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499803"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731943"
 ---
 # <a name="icorprofilercallback2garbagecollectionstarted-method"></a>ICorProfilerCallback2::GarbageCollectionStarted, méthode
+
 Notifie le profileur de code que garbage collection a démarré.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GarbageCollectionStarted(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cGenerations`  
  dans Nombre total d’entrées dans le `generationCollected` tableau.  
   
@@ -47,11 +49,13 @@ HRESULT GarbageCollectionStarted(
  dans Valeur de l’énumération [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) qui indique la raison pour laquelle l’garbage collection a été induite.  
   
 ## <a name="remarks"></a>Remarques  
+
  Tous les rappels relatifs à cet garbage collection se produisent entre le `GarbageCollectionStarted` rappel et le rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) correspondant. Ces rappels n’ont pas besoin de se produire sur le même thread.  
   
  Le profileur peut inspecter en toute sécurité les objets dans leurs emplacements d’origine pendant le `GarbageCollectionStarted` rappel. Le garbage collector commence à déplacer les objets après le retour de `GarbageCollectionStarted` . Une fois que le profileur a retourné à partir de ce rappel, le profileur doit considérer tous les ID d’objet comme non valides jusqu’à ce qu’il reçoive un `ICorProfilerCallback2::GarbageCollectionFinished` rappel.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

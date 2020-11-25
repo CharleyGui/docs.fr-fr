@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f9671e5a-7b14-4f5b-8404-58136422c8b2
 topic_type:
 - apiref
-ms.openlocfilehash: 182a82300183046ccb4a93a79af0dd8f23848c20
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2d6f34d88dd79fe350f1c018e3afa55e5b180c46
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503172"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732001"
 ---
 # <a name="icorprofilercallbackthreadassignedtoosthread-method"></a>ICorProfilerCallback::ThreadAssignedToOSThread, méthode
+
 Notifie le profileur qu’un thread managé est implémenté à l’aide d’un thread de système d’exploitation particulier.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT ThreadAssignedToOSThread(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `managedThreadId`  
  dans Identificateur du thread managé.  
   
@@ -41,9 +43,11 @@ HRESULT ThreadAssignedToOSThread(
  dans Identificateur du thread de système d’exploitation.  
   
 ## <a name="remarks"></a>Remarques  
+
  Le `ThreadAssignedToOSThread` rappel existe afin que le profileur puisse maintenir un mappage précis entre les fibres de threads de système d’exploitation et les threads managés.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

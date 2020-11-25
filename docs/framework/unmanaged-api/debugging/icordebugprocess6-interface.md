@@ -2,14 +2,15 @@
 title: ICorDebugProcess6, interface
 ms.date: 03/30/2017
 ms.assetid: 34a10ac2-882c-4797-8369-f120e8e640c7
-ms.openlocfilehash: 4ad350e36ee15d7c1781e03698fbee3fd40c4c12
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ba70bab28eeddad6e3cf3c2b82b196a69ce68647
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212865"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732604"
 ---
 # <a name="icordebugprocess6-interface"></a>ICorDebugProcess6, interface
+
 Étend logiquement l’interface ICorDebugProcess pour activer des fonctionnalités telles que le fractionnement de module virtuel ou le décodage des événements de débogage managés qui sont codés dans des événements de débogage d’exception native.  
   
 ## <a name="methods"></a>Méthodes  
@@ -23,12 +24,13 @@ ms.locfileid: "83212865"
 |[MarkDebuggerAttached, méthode](icordebugprocess6-markdebuggerattached-method.md)|Change l'état interne du programme débogué pour que la méthode <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> de la bibliothèque de classes du .NET Framework retourne `true`.|  
 |[ProcessStateChanged, méthode](icordebugprocess6-processstatechanged-method.md)|Informe [ICorDebug](icordebug-interface.md) que le processus est en cours d’exécution.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > L'interface est uniquement disponible avec .NET Native. Une tentative d'appel à `QueryInterface` pour récupérer un pointeur d'interface retourne `E_NOINTERFACE` pour les scénarios ICorDebug en dehors de .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

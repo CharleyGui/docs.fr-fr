@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 35c2173e-3b0b-4b2a-950d-e0a01c6df052
 topic_type:
 - apiref
-ms.openlocfilehash: 8513787f48ae89632816face386bbcda20555dac
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 2f828a3720f7313ee9cb851c6adae78bd5ea4fe8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732088"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a>ICLRRuntimeInfo::GetDefaultStartupFlags, méthode
+
 Obtient les indicateurs de démarrage et le fichier de configuration d’hôte qui sera utilisé pour démarrer le Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetDefaultStartupFlags(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pdwStartupFlags`  
  à Pointeur vers les indicateurs de démarrage de l’hôte qui sont actuellement définis.  
   
@@ -44,22 +46,25 @@ HRESULT GetDefaultStartupFlags(
  `pcchHostConfigFile`  
  [in, out] En entrée, taille de `pwzHostConfigFile` , pour éviter les dépassements de mémoire tampon. Si `pwzHostConfigFile` a la valeur null, la méthode retourne la taille requise de `pwzHostConfigFile` pour la pré-allocation.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT qui indiquent un échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode retourne les valeurs d’indicateur par défaut ( `STARTUP_CONCURRENT_GC` et `NULL` ), ou les valeurs fournies par un appel précédent à la [méthode ICLRRuntimeInfo :: SetDefaultStartupFlags,](iclrruntimeinfo-setdefaultstartupflags-method.md), ou les valeurs définies par l’une des `CorBind*` méthodes si elles sont liées à ce Runtime.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

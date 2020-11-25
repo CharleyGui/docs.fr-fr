@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 82e9a7da-321b-48b8-b239-52eaffda6be8
 topic_type:
 - apiref
-ms.openlocfilehash: 85ac976daec8fd76ee21012a30611235609f4b34
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c6fab627f21977e85f9885ca4b49a0276faa5ce
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109493"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732162"
 ---
 # <a name="asm_cache_flags-enumeration"></a>ASM_CACHE_FLAGS, énumération
+
 Indique la source d’un assembly qui est représenté par [IAssemblyCacheItem](iassemblycacheitem-interface.md) dans le global assembly cache.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,20 +41,21 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ASM_CACHE_ZAP`|Énumère le cache des assemblys précompilés à l’aide de Ngen. exe.|  
+|`ASM_CACHE_ZAP`|Énumère le cache des assemblys précompilés à l’aide de Ngen.exe.|  
 |`ASM_CACHE_GAC`|Énumère les Global Assembly Cache.|  
 |`ASM_CACHE_DOWNLOAD`|Énumère les assemblys qui ont été téléchargés à la demande ou qui ont été copiés par des clichés instantanés.|  
 |`ASM_CACHE_ROOT`|Indique que la fonction [GetCachePath](getcachepath-function.md) doit retourner le chemin d’accès au global assembly cache pour la Common Language Runtime (CLR) version 2,0. Significatif uniquement dans le contexte d’un appel à [GetCachePath](getcachepath-function.md).|  
 |`ASM_CACHE_ROOT_EX`|Indique que la fonction [GetCachePath](getcachepath-function.md) doit retourner le chemin d’accès au global assembly cache de CLR version 4. Significatif uniquement dans le contexte d’un appel à [GetCachePath](getcachepath-function.md).|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

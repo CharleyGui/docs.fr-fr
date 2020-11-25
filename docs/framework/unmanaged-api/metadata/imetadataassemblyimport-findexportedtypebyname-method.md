@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 46264b2c-574d-4dde-aafc-77187a104fdd
 topic_type:
 - apiref
-ms.openlocfilehash: ac6de9a16fad6ba9d14f3960ddd28c42c111f254
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b1672d98d76241e5af4b6b60a38785f1278e15a8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009390"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731590"
 ---
 # <a name="imetadataassemblyimportfindexportedtypebyname-method"></a>IMetaDataAssemblyImport::FindExportedTypeByName, méthode
+
 Obtient un pointeur vers un type exporté, en fonction de son nom et du type englobant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT FindExportedTypeByName (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szName`  
  dans Nom du type exporté.  
   
@@ -46,14 +48,16 @@ HRESULT FindExportedTypeByName (
  à Pointeur vers le `mdExportedType` jeton qui représente le type exporté.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `FindExportedTypeByName` méthode utilise les règles standard utilisées par le Common Language Runtime pour résoudre les références.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - culture, custom case mappings
 - culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-ms.openlocfilehash: 868f36a1025f0b121a8765edf50bb42679736240
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a418432dfaba9ab070ddb6dc862dcbd798c16343
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829763"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732214"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Exécution d’opérations de chaînes indépendantes de la culture
 
@@ -24,6 +24,7 @@ La plupart des méthodes .NET qui effectuent des opérations de chaînes dépend
  Cette section fournit les articles suivants pour illustrer comment effectuer des opérations de chaînes indépendantes de la culture à l’aide de méthodes .NET qui sont dépendantes de la culture par défaut.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Exécution de comparaisons de chaînes indépendantes de la culture](performing-culture-insensitive-string-comparisons.md)  
  Décrit comment utiliser les méthodes <xref:System.String.Compare%2A?displayProperty=nameWithType> et <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour effectuer des comparaisons de chaînes indépendantes de la culture.  
   
@@ -37,6 +38,7 @@ La plupart des méthodes .NET qui effectuent des opérations de chaînes dépend
  Décrit comment utiliser les méthodes <xref:System.Array.Sort%2A?displayProperty=nameWithType> et <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> pour effectuer des opérations indépendantes de la culture dans des tableaux.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Opérations de chaînes indépendantes de la culture](culture-insensitive-string-operations.md)  
  Décrit pourquoi vous devez connaître la culture lorsque vous exécutez des opérations sur des chaînes et fournit des recommandations sur l’exécution d’opérations dépendantes de la culture et l’exécution d’opérations indépendantes de la culture.
 

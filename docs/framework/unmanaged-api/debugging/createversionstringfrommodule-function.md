@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-ms.openlocfilehash: 60b7d77542a5065fb1e09a98e659cac17fb093e9
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 1b944034251b34350057866b2a52e63e934d72d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860854"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733345"
 ---
 # <a name="createversionstringfrommodule-function"></a>Fonction CreateVersionStringFromModule
+
 Crée une chaîne de version à partir d’un chemin d’accès au Common Language Runtime (CLR) dans un processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT CreateVersionStringFromModule (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pidDebuggee`  
  [in] Identificateur du processus dans lequel le CLR cible est chargé.  
   
@@ -55,7 +57,8 @@ HRESULT CreateVersionStringFromModule (
  `pdwLength`  
  [out] Longueur de la chaîne de version retournée par `pBuffer`.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  La chaîne de version du CLR cible a été retournée dans `pBuffer`.  
   
@@ -71,16 +74,18 @@ HRESULT CreateVersionStringFromModule (
  E_FAIL (ou autres codes de retour E_)  
  `pidDebuggee` ne fait pas référence à un processus valide ou à tout autre échec.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette fonction accepte un processus CLR identifié par `pidDebuggee` et un chemin d'accès de chaîne spécifié par `szModuleName`. La chaîne de version est retournée dans la mémoire tampon vers laquelle pointe `pBuffer`. Cette chaîne est opaque à l'utilisateur de la fonction ; autrement dit, il n'y a aucune signification intrinsèque dans la chaîne de version elle-même. Elle est utilisée uniquement dans le contexte de cette fonction et de la [fonction CreateDebuggingInterfaceFromVersion](createdebugginginterfacefromversion-function-for-silverlight.md).  
   
  Cette fonction doit être appelée deux fois. Quand vous appelez pour la première fois, passez la valeur null pour `pBuffer` et `cchBuffer`. Quand vous procédez ainsi, la taille de la mémoire tampon nécessaire pour `pBuffer` est retournée dans `pdwLength`. Vous pouvez ensuite appeler la fonction une seconde fois et passer la mémoire tampon dans `pBuffer` et sa taille dans `cchBuffer`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** dbgshim. h  
   
- **Bibliothèque :** dbgshim. dll  
+ **Bibliothèque :** dbgshim.dll  
   
  **Versions de .NET Framework :** 3,5 SP1

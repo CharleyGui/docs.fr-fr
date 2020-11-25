@@ -10,14 +10,15 @@ api_type:
 ms.assetid: 31833a2d-a0d6-48a1-b05f-995ca307a08f
 topic_type:
 - apiref
-ms.openlocfilehash: 2e59d02093b9c2e2bda72c45de25975cbbdb7a29
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: cb65663ec1c1562009d0281c2e176b628b6366b6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796013"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732175"
 ---
 # <a name="cordebugcodeinvokepurpose-enumeration"></a>CorDebugCodeInvokePurpose, énumération
+
 Indique pourquoi une fonction exportée appelle du code managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,13 +42,15 @@ typedef enum CorDebugCodeInvokePurpose
 |`CODE_INVOKE_PURPOSE_CLASS_INIT`|Le code managé exécute un constructeur statique.|  
 |`CODE_INVOKE_PURPOSE_INTERFACE_DISPATCH`|Le code managé exécute l'implémentation pour une méthode d'interface qui a été appelée.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette énumération est utilisée par la méthode [ICorDebugProcess6 :: getexportstepinfo,](icordebugprocess6-getexportstepinfo-method.md) pour fournir des informations sur l’exécution pas à pas du code managé.  
   
 > [!NOTE]
 > Cette énumération est destinée à une utilisation dans des scénarios de débogage .NET Native uniquement.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

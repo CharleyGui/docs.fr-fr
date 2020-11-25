@@ -6,12 +6,12 @@ ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: fb1bcfa50ec380f10ab67cc47331f91dc3e4b32d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b78acaad31996f8fc2b965f51f541e99aeceb111
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380144"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731499"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly"></a>Comment : déterminer si un fichier est un assembly
 
@@ -32,6 +32,7 @@ Un fichier est un assembly si et seulement s’il est managé et s’il contient
 2. Si une exception <xref:System.BadImageFormatException> est levée, le fichier n’est pas un assembly.  
   
 ## <a name="example"></a>Exemple  
+
 Cet exemple teste une DLL pour voir s’il s’agit d’un assembly.  
 
 ```csharp

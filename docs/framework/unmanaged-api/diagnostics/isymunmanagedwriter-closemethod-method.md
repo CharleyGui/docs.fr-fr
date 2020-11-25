@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b8025e04-f0e5-40c8-849c-8cd51323420e
 topic_type:
 - apiref
-ms.openlocfilehash: fdf24bb8533da7914128f9477987c427442383bb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: fcf250f10baf4c65cd1c8c918655e4b9f4f5cc4b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610117"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731733"
 ---
 # <a name="isymunmanagedwriterclosemethod-method"></a>ISymUnmanagedWriter::CloseMethod, méthode
+
 Ferme la méthode actuelle. Une fois qu’une méthode est fermée, aucun autre symbole ne peut être défini à l’intérieur de celle-ci.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,9 +33,11 @@ HRESULT CloseMethod();
 ```  
   
 ## <a name="return-value"></a>Valeur de retour  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: f1f2fab1-400b-488f-95f2-d49c4fca3556
 topic_type:
 - apiref
-ms.openlocfilehash: 6bbf8366054c58543444a4b710a687198f365e6e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d48106fca6008955409581ad9ac202aebe785cb4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617189"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733223"
 ---
 # <a name="getrealprocaddress-function"></a>GetRealProcAddress, fonction
+
 Obtient l’adresse de la fonction spécifiée qui est exportée à partir de la dernière version installée du common language runtime (CLR).  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -36,13 +37,15 @@ HRESULT GetRealProcAddress (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwszProcName`  
  dans Nom de la fonction.  
   
  `ppv`  
  à Emplacement qui reçoit un pointeur vers l’adresse de la fonction.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes définies dans CorError. h.  
   
 |Code de retour|Description|  
@@ -51,12 +54,13 @@ HRESULT GetRealProcAddress (
 |E_POINTER|`ppv` n'est pas valide.|  
 |CLR_E_SHIM_RUNTIMEEXPORT|La fonction n’est pas exportée à partir du Runtime.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

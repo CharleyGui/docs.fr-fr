@@ -10,14 +10,15 @@ api_type:
 ms.assetid: 71aee5f3-5e10-44fa-be69-6d8a475f2c14
 topic_type:
 - apiref
-ms.openlocfilehash: a819ca33df962774e69dac0609df1fff2fbdecd3
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6a868cff3a686c29bb596330aeda2955a7f8ff5c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213658"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732565"
 ---
 # <a name="icordebugprocess7-interface"></a>ICorDebugProcess7, interface
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Fournit une méthode qui configure le débogueur afin de gérer les mises à jour de métadonnées en mémoire dans le processus cible.  
@@ -31,6 +32,7 @@ ms.locfileid: "83213658"
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

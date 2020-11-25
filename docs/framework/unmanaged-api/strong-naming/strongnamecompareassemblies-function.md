@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 763f2375-efc6-4219-8806-a3b0567ef72b
 topic_type:
 - apiref
-ms.openlocfilehash: adde52dddb63b83dcd7ff10703a43928d9601c92
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e7292635ea0344f1c77c8d44908a9a811e464ff9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140622"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732305"
 ---
 # <a name="strongnamecompareassemblies-function"></a>StrongNameCompareAssemblies, fonction
+
 Détermine si deux assemblys diffèrent uniquement par leurs signatures avec nom fort.  
   
  Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameCompareAssemblies (](../hosting/iclrstrongname-strongnamecompareassemblies-method.md) à la place.  
@@ -37,6 +38,7 @@ BOOLEAN StrongNameCompareAssemblies (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszAssembly1`  
  dans Chemin d’accès au premier assembly.  
   
@@ -52,22 +54,25 @@ BOOLEAN StrongNameCompareAssemblies (
   
 - `SN_CMP_SIGONLY` (2) : spécifie que les assemblys diffèrent uniquement par la signature et la somme de contrôle.  
   
-## <a name="return-value"></a>Valeur de retour  
- `true` en cas de réussite de l’opération ; Sinon, `false`.  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `true` en cas de réussite de l’opération ; Sinon, `false` .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** StrongName. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La signature de nom fort d’un assembly se compose du nom de texte, de la version, de la culture et du jeton de clé publique de l’assembly.  
   
- Si la fonction `StrongNameCompareAssemblies` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+ Si la `StrongNameCompareAssemblies` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: 4037ffe63d8ebfca67cbd0b3293d36be7481b1bd
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 7fdf25d44bdf630e306cf0f5dcb3387a3b0f7c76
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501415"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731681"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask, méthode
+
 Demande que l’hôte crée une nouvelle tâche.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT CreateTask (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `stacksize`  
  dans Taille demandée, en octets, de la pile demandée, ou 0 (zéro) pour la taille par défaut.  
   
@@ -53,7 +55,7 @@ HRESULT CreateTask (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`CreateTask`retourné avec succès.|  
+|S_OK|`CreateTask` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -62,14 +64,16 @@ HRESULT CreateTask (
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer la tâche demandée.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR appelle `CreateTask` pour demander que l’hôte crée une nouvelle tâche. L’hôte retourne un pointeur d’interface vers une `IHostTask` instance. La tâche retournée doit rester suspendue jusqu’à ce qu’elle soit explicitement démarrée par un appel à `IHostTask::Start` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

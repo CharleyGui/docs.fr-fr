@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f0a4a5e0-4689-474b-b0f4-37ca0639c918
 topic_type:
 - apiref
-ms.openlocfilehash: 604ecb2122cce6e24f0e5168fa286a523d8bb4f7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 53009a1805056b83047299ebdca8f21d98ad5137
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495071"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732981"
 ---
 # <a name="icorprofilermoduleenumgetcount-method"></a>ICorProfilerModuleEnum::GetCount, méthode
+
 Obtient le nombre de modules managés chargés dans l'application.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,12 @@ HRESULT GetCount([out] ULONG * pcelt);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  à Nombre de modules Runtime dans la collection.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

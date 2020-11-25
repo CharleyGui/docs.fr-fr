@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fd5eaa4-1997-4910-82f5-3887480db764
 topic_type:
 - apiref
-ms.openlocfilehash: 5644c20ec5df2606c7258131573691997f424e50
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: a6e5ecee9a89da98a73dfb20935c5ec594d5958f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895014"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732929"
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a>ICorDebugArrayValue::GetElementAtPosition, méthode
+
 Obtient l’élément à la position donnée, en traitant le tableau comme un tableau unidimensionnel de base zéro.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,16 +36,19 @@ HRESULT GetElementAtPosition (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `nPosition`  
  dans Position de l’élément à récupérer.  
   
  `ppValue`  
  à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur de l’élément.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La disposition d’un tableau à plusieurs dimensions suit le style C++ de la disposition du tableau.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

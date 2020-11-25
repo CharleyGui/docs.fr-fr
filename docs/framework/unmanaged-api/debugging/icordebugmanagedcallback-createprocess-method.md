@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e89d5ee-e4e3-4738-8302-0b7d1cf4846e
 topic_type:
 - apiref
-ms.openlocfilehash: 0e9ed8054711297173e880c9eecb12c3f5bd0a68
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cd24e672c65769586dc618c21503dbb344566974
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207138"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731811"
 ---
 # <a name="icordebugmanagedcallbackcreateprocess-method"></a>ICorDebugManagedCallback::CreateProcess, méthode
+
 Notifie le débogueur lorsqu’un processus a été attaché ou démarré pour la première fois.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +35,16 @@ HRESULT CreateProcess (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pProcess`  
  dans Pointeur vers un objet ICorDebugProcess qui représente le processus qui a été attaché ou démarré.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode n’est pas appelée tant que le common language runtime n’est pas initialisé. La plupart des méthodes [ICorDebug](icordebug-interface.md) retournent CORDBG_E_NOTREADY avant le `CreateProcess` rappel.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

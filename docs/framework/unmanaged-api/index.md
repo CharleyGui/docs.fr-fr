@@ -7,17 +7,19 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-ms.openlocfilehash: 0153279608e2359747f1be6b9542d6906c1b3995
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 16b18f4fede11e776e5656843ed9a408dff370eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559302"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732747"
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
+
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Types de données communs](common-data-types-unmanaged-api-reference.md)  
  Répertorie les types de données courants qui sont utilisés, en particulier dans les API de profilage et de débogage non managées.  
   
@@ -42,7 +44,7 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Fusion](./fusion/index.md)  
  Décrit l'API de fusion, qui permet à un hôte de runtime d'accéder aux propriétés des ressources d'une application pour pouvoir localiser les versions correctes de ces ressources pour l'application.  
   
- [Hosting](./hosting/index.md)  
+ [Hébergement](./hosting/index.md)  
  Décrit l'API d'hébergement, qui permet à des hôtes non managés d'intégrer le CLR dans leurs applications.  
   
  [Métadonnées](./metadata/index.md)  
@@ -61,4 +63,5 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  Décrit les deux fonctions et l'interface d'assistance utilisées par l'exportateur de bibliothèques de types (Tlbexp.exe) lors du processus de conversion « assembly vers bibliothèque de types ».  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Guide de développement](../development-guide.md)

@@ -1,17 +1,17 @@
 ---
 title: Compatibilité de la stratégie de sécurité d'accès du code et migration
-description: Lisez un résumé et consultez des liens sur la compatibilité et la migration des stratégies de sécurité d’accès du code dans .NET 4.
+description: Lisez un résumé et consultez des liens sur la compatibilité et la migration des stratégies de sécurité d’accès du code dans .NET Framework 4.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - policy migration, compatibility
 - CLR policy migration
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
-ms.openlocfilehash: e5affd9d16635fa28342b5b7390a083185975f2b
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 389976556175c0b6b300e75d01327d91f94f0db9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281730"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733384"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Compatibilité de la stratégie de sécurité d'accès du code et migration
 
@@ -156,5 +156,5 @@ L' [ \<NetFx40_LegacySecurityPolicy> élément de configuration](../configure-ap
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Comment : exécuter du code de confiance partielle dans un bac à sable (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Instructions de codage sécurisé](../../standard/security/secure-coding-guidelines.md)

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - native API reference [.NET Framework], strong naming
 - unmanaged API reference [.NET Framework], strong naming
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
-ms.openlocfilehash: 7d18513450111d58b5d26fd834addd465cfc4267
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e431f3a41fadb7247f20d7ab9bb9120e827b0cd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140635"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732292"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Nom fort (Informations de référence sur les API non managées)
+
 L’API de nommage fort permet à un client d’administrer la signature avec noms forts pour les assemblys.  
   
  La signature d'un assembly avec un nom fort ajoute un chiffrement à clé publique au fichier contenant le manifeste d'assembly. La signature avec un nom fort permet de vérifier l’unicité du nom, empêche l’usurpation de noms et fournit aux appelants une identité unique quand une référence est résolue. Aucun niveau de confiance n’est toutefois associé à un nom fort.  
@@ -107,4 +108,4 @@ L’API de nommage fort permet à un client d’administrer la signature avec no
 ## <a name="see-also"></a>Voir aussi
 
 - [ICLRStrongName, interface](../hosting/iclrstrongname-interface.md)
-- [Référence API non gestion](../index.md)
+- [Informations de référence sur les API non managées](../index.md)

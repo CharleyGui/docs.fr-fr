@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1af98e57-9145-4d35-bb78-77d1da7c91a5
 topic_type:
 - apiref
-ms.openlocfilehash: 5c7211fc2523b70313a1e4d4d9d2da0dcecd1d32
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8071c3f43775975de37e3255582b6fc8f13f7de3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009429"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732780"
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA, structure
+
 Contient des informations sur l’assembly référencé, y compris sa version et son niveau de prise en charge pour les paramètres régionaux, les processeurs et les systèmes d’exploitation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -56,12 +57,13 @@ typedef struct {
 |`rOS`|Tableau d’instances [OSInfo,](osinfo-structure.md) spécifiant les systèmes d’exploitation pris en charge par l’assembly référencé. Une valeur NULL indique l’indépendance du système d’exploitation.|  
 |`ulOS`|Longueur du tableau `rOS`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

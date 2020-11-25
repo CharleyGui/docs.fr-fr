@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 65a4ad49-fa49-4b36-8ed1-76dd6a185ab4
 topic_type:
 - apiref
-ms.openlocfilehash: 3ef6b89ed6578d77f30d5e53657b962b200b0ed6
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d355e0e3b2461932384ca11d83d46fd1dc63b80e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009316"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732682"
 ---
 # <a name="imetadataemitdeleteclasslayout-method"></a>IMetaDataEmit::DeleteClassLayout, méthode
+
 Détruit la signature des métadonnées de disposition de la classe pour le type représenté par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,17 @@ HRESULT DeleteClassLayout (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `td`  
  dans Un `mdTypeDef` jeton de métadonnées qui représente le type pour lequel la disposition de classe sera supprimée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

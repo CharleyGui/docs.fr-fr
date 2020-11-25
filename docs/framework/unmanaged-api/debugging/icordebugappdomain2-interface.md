@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 314d29f3-feb0-4a92-9530-b569c280cc31
 topic_type:
 - apiref
-ms.openlocfilehash: 1643d91f373ff233540026440ee21aa4c146f3e3
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: f20ae6977504f958b7bfa8e2f073b7db6e8b822b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895137"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731473"
 ---
 # <a name="icordebugappdomain2-interface"></a>ICorDebugAppDomain2, interface
 
@@ -32,12 +32,13 @@ Fournit des méthodes pour utiliser des tableaux, des pointeurs, des pointeurs d
 |[GetArrayOrPointerType, méthode](icordebugappdomain2-getarrayorpointertype-method.md)|Obtient un tableau du type spécifié, ou un pointeur ou une référence au type spécifié.|  
 |[GetFunctionPointerType](icordebugappdomain2-getfunctionpointertype-method.md)|Obtient un pointeur vers une fonction qui a une signature donnée.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

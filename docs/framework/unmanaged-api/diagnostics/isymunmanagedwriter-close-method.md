@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4cce59e1-80b9-4fc4-b3aa-126f1c5876bc
 topic_type:
 - apiref
-ms.openlocfilehash: 0a7ecd475a8031fedb2c8474593b45045fcc6fb9
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 1d684c14f14fcc93040798ae4ee3b8bb1df5354d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610130"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733254"
 ---
 # <a name="isymunmanagedwriterclose-method"></a>ISymUnmanagedWriter::Close, méthode
+
 Ferme le writer de symbole après avoir validé les symboles dans le magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,12 +33,15 @@ HRESULT Close();
 ```  
   
 ## <a name="return-value"></a>Valeur de retour  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Après cet appel, l’enregistreur de symboles devient non valide pour les mises à jour ultérieures. Pour fermer le writer de symbole sans valider les symboles, utilisez la méthode [ISymUnmanagedWriter :: Abort](isymunmanagedwriter-abort-method.md) à la place.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

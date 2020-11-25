@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: 0357444aa8fa38bce5a7175cf6aacfe1a2b2b16e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f01d65a339c77e6af3e768c620f17ef0190c1e58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503638"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733216"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps, méthode
+
 Obtient les informations stockées dans les métadonnées pour une définition de membre spécifiée, y compris le nom, la signature binaire et l’adresse virtuelle relative, du <xref:System.Type> membre référencé par le jeton de métadonnées spécifié. Il s’agit d’une méthode d’assistance simple : si *Mo* est un MethodDef, **GetMethodProps,** est appelé ; Si *Mo* est un FieldDef, **GetFieldProps,** est appelé. Pour plus d’informations, consultez ces autres méthodes.
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,6 +47,7 @@ HRESULT GetMemberProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mb`  
  dans Jeton qui référence le membre pour lequel obtenir les métadonnées associées.  
   
@@ -86,11 +88,12 @@ HRESULT GetMemberProps (
  à Taille en caractères de `ppValue` , ou zéro si `ppValue` ne contient pas de chaîne.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

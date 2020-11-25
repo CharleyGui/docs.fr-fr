@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1fec4aef-0a06-4df0-bae7-d31a9ef9603d
 topic_type:
 - apiref
-ms.openlocfilehash: ee5dd611888ec52e360ef45fab4c01e9c5b2d6bb
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 74256f35804ff59f04952a1ac20ac7866e8f5683
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009446"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732812"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK (pointeur fonction)
+
 Pointe vers une fonction qui avertit l’hôte qu’un handle d’attente ( <xref:System.Threading.WaitHandle> ) a été signalé ou a expiré.  
   
  Ce pointeur de fonction est déconseillé dans le .NET Framework 4.  
@@ -36,6 +37,7 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `lpParameter`  
  dans Pointeur vers un objet qui contient les informations définies par l’hôte.  
   
@@ -43,14 +45,16 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
  [in] `true` Si le handle d’attente a expiré ou `false` s’il a été signalé.  
   
 ## <a name="remarks"></a>Remarques  
+
  La fonction vers laquelle `WAITORTIMERCALLBACK` pointe est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorWks. dll  
+ **Bibliothèque :** MSCorWks.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

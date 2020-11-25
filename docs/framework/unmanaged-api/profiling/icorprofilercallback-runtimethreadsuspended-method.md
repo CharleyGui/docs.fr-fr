@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: de830a8b-6ee1-4900-ace3-4237108f6b12
 topic_type:
 - apiref
-ms.openlocfilehash: 54f7dae511c8bf25dc96451e6477acf26655430a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 33a39cf2781f49ff0e31989831c4c9829889ec3d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503196"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731994"
 ---
 # <a name="icorprofilercallbackruntimethreadsuspended-method"></a>ICorProfilerCallback::RuntimeThreadSuspended, méthode
+
 Indique au profileur que le thread spécifié a été suspendu ou est sur le lieu d’être suspendu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,15 +34,18 @@ HRESULT RuntimeThreadSuspended(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `threadId`  
  dans ID du thread qui a été suspendu.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `RuntimeThreadSuspended` notification peut se produire à tout moment entre [ICorProfilerCallback :: RuntimeSuspendStarted](icorprofilercallback-runtimesuspendstarted-method.md) et les rappels [ICorProfilerCallback :: RuntimeResumeStarted](icorprofilercallback-runtimeresumestarted-method.md) associés. Les notifications qui se produisent entre [ICorProfilerCallback :: RuntimeSuspendFinished](icorprofilercallback-runtimesuspendfinished-method.md) et `RuntimeResumeStarted` sont pour les threads qui étaient exécutés dans du code non managé et qui ont été suspendues lors de l’entrée dans le Runtime.  
   
  En règle générale, ce rappel se produit juste après l’interruption d’un thread. Toutefois, si le thread en cours d’exécution (le thread qui a appelé ce rappel) est celui qui est suspendu, ce rappel se produit juste avant la suspension du thread.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

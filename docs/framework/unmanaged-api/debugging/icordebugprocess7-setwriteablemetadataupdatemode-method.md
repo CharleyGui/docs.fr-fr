@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 8589bba7-7304-45ba-9e31-7bf43dfd5c19
 topic_type:
 - apiref
-ms.openlocfilehash: 6de75e1e27660ac91bd6320a501db47f3b055fb0
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 5671f8cb51210c27dffdedba28b4b145b3fedc55
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212254"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732552"
 ---
 # <a name="icordebugprocess7setwriteablemetadataupdatemode-method"></a>ICorDebugProcess7::SetWriteableMetadataUpdateMode, méthode
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Configure la façon dont le débogueur gère les mises à jour en mémoire des métadonnées dans le processus cible.  
@@ -33,13 +34,16 @@ HRESULT SetWriteableMetadataUpdateMode(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `flags`  
  Valeur d’énumération [writeablemetadataupdatemode,](writeablemetadataupdatemode-enumeration.md) qui spécifie si les mises à jour en mémoire des métadonnées dans le processus cible sont visibles ( `WriteableMetadataUpdateMode::AlwaysShowUpdates` ) ou non visibles ( `WriteableMetadataUpdateMode::LegacyCompatPolicy` ) vers le débogueur.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Les mises à jour apportées aux métadonnées du processus cible peuvent provenir de Modifier et continuer, d'un profileur ou de <xref:System.Reflection.Emit?displayProperty=nameWithType>.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

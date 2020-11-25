@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 63a9ef45-01a6-46da-b958-5c6dc2dc232c
 topic_type:
 - apiref
-ms.openlocfilehash: 1986d5f91a3dcfa31a43f729ee1f50129e083f5f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5e3c2ecd1bdd5c1181223c7500eb7473e20fa5d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501740"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731343"
 ---
 # <a name="isymunmanagedencupdate-interface"></a>ISymUnmanagedENCUpdate, interface
+
 Fournit des fonctions pour la fonctionnalité modifier et continuer.  
   
 ## <a name="methods"></a>Méthodes  
@@ -35,6 +36,7 @@ Fournit des fonctions pour la fonctionnalité modifier et continuer.
 |[UpdateSymbolStore2, méthode](isymunmanagedencupdate-updatesymbolstore2-method.md)|Permet à un compilateur d’omettre les fonctions qui n’ont pas été modifiées à partir du flux de base de données du programme (PDB), à condition que les informations de ligne remplissent les conditions requises. Les informations de ligne correctes peuvent être déterminées par les anciennes informations de ligne PDB et un Delta pour toutes les lignes de la fonction.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a3cea59d-7622-4323-897a-0a464c40f77f
 topic_type:
 - apiref
-ms.openlocfilehash: 7a3ad94a4149d6ebb70e077926771e28d7f82779
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 94c2c159cf386e00dfc0d1df97536d7ade53407e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494837"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732942"
 ---
 # <a name="icorprofilermoduleenumnext-method"></a>ICorProfilerModuleEnum::Next, méthode
+
 Obtient le nombre spécifié de modules contigus dans une collection séquentielle de modules, à commencer par la position actuelle de l'énumérateur dans la séquence.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT Next([in]  ULONG      celt,
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  [in] Nombre de modules à récupérer.  
   
@@ -45,6 +47,7 @@ HRESULT Next([in]  ULONG      celt,
  [out] Pointeur vers le nombre d'éléments réellement retournés dans le tableau `ids`.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -53,6 +56,7 @@ HRESULT Next([in]  ULONG      celt,
 |S_FALSE|Moins de `celt` éléments ont été retournés, ce qui indique que l'énumération est terminée.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

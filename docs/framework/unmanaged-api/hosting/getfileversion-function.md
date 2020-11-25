@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-ms.openlocfilehash: 2dd004a44b20d48dafc72711ac23abcb55739224
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 57b30824c7849127f48d4da61872945366e7141e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617198"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733241"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion, fonction
+
 Obtient les informations de version du common language runtime (CLR) du fichier spécifié, à l’aide de la mémoire tampon spécifiée.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT GetFileVersion (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szFilename`  
  dans Chemin d’accès du fichier à examiner.  
   
@@ -50,7 +52,8 @@ HRESULT GetFileVersion (
  `dwLength`  
  à Taille, en octets, du retourné `szBuffer` .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

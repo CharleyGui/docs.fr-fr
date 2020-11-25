@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ea73055-ece0-4151-a094-414c88ef8941
 topic_type:
 - apiref
-ms.openlocfilehash: 00693f1a87334620442e8865e76183b2dab68878
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3237b67f8f711e9ef213d6fc66f1513c534fbdeb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503612"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733202"
 ---
 # <a name="imetadataimportgetmemberrefprops-method"></a>IMetaDataImport::GetMemberRefProps, méthode
+
 Obtient les métadonnées associées au membre référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT GetMemberRefProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mr`  
  dans Jeton MemberRef pour lequel retourner les métadonnées associées.  
   
@@ -62,11 +64,12 @@ HRESULT GetMemberRefProps (
  à Taille en octets de `ppvSigBlob` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

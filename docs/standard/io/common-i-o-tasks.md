@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-ms.openlocfilehash: baabfc477ff8df30c9cac4db1b6d47e0e12f2f37
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5f9bc3034ec2ae77578db985240e586dd22bd69f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823392"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732201"
 ---
 # <a name="common-io-tasks"></a>Tâches d’E/S courantes
+
 L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'exécuter différentes actions, telles que la lecture et l'écriture, sur des fichiers, des répertoires et des flux de données. Pour plus d’informations, consultez [e/s de fichier et de flux](index.md).  
   
 ## <a name="common-file-tasks"></a>Tâches de fichier courantes  
@@ -53,6 +54,6 @@ L'espace de noms <xref:System.IO> fournit plusieurs classes qui permettent d'ex�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fichier et flux de données E/S](index.md)
+- [E/s de fichier et de flux](index.md)
 - [Composition de flux](composing-streams.md)
 - [E/s de fichier asynchrones](asynchronous-file-i-o.md)

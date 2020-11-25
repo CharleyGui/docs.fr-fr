@@ -18,17 +18,18 @@ helpviewer_keywords:
 ms.assetid: eda21ecf-4734-4f92-aaba-9f34884385db
 topic_type:
 - apiref
-ms.openlocfilehash: 50e3cc6e677de45be9256a2a818ebd6ed7d8b843
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d93bda046a79dbdec2195eee48fefc1e5538b2e4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176914"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732253"
 ---
 # <a name="strongnamefreebuffer-function"></a>StrongNameFreeBuffer, fonction
+
 Libère la mémoire qui a été alloué avec un appel précédent à une fonction de nom fort comme [StrongNameGetPublicKey](strongnamegetpublickey-function.md), [StrongNameTokenFromPublicKey](strongnametokenfrompublickey-function.md) ou [StrongNameSignatureGeneration ](strongnamesignaturegeneration-function.md).  
   
- Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName::StrongNameFreeBuffer](../hosting/iclrstrongname-strongnamefreebuffer-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameFreeBuffer](../hosting/iclrstrongname-strongnamefreebuffer-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,17 +40,19 @@ VOID StrongNameFreeBuffer (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbMemory`  
- [dans] Un pointeur à la mémoire à libérer.  
+ dans Pointeur vers la mémoire à libérer.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête:** StrongName.h (en)  
+ **En-tête :** StrongName. h  
   
- **Bibliothèque:** Inclus comme une ressource dans MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

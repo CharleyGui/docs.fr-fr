@@ -4,12 +4,12 @@ description: Découvrez le format de fichier d’assembly .NET, qui sert à déc
 author: richlander
 ms.date: 08/20/2019
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: 1e98f0beb6756c9a02b2839eb88d6a5b13375786
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b1de3f46f04f24dd4bbb2f695de8741feb29f226
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822189"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731538"
 ---
 # <a name="net-assembly-file-format"></a>Format de fichier d’assembly .NET
 
@@ -17,7 +17,7 @@ ms.locfileid: "94822189"
 
 > Chaque composant CLI inclut les métadonnées des déclarations, implémentations et références spécifiques de ce composant. Par conséquent, les métadonnées spécifiques du composant sont désignées comme les métadonnées de composant, et le composant qui en résulte est autodescriptif (d’après ECMA 335 I.9.1, Components and assemblies).
 
-Le format est entièrement spécifié et normalisé sous [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Tous les compilateurs et les runtimes .NET utilisent ce format. La présence d’un format binaire documenté et rarement mis à jour a été un atout majeur (peut-être même une condition sine qua none) pour l’interopérabilité. Le format a été modifié de manière substantielle en 2005 (.NET 2.0) pour prendre en charge les génériques et l’architecture de processeur.
+Le format est entièrement spécifié et normalisé sous [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Tous les compilateurs et les runtimes .NET utilisent ce format. La présence d’un format binaire documenté et rarement mis à jour a été un atout majeur (peut-être même une condition sine qua none) pour l’interopérabilité. Le format a été mis à jour de façon substantielle dans 2005 (.NET Framework 2,0) pour prendre en charge les génériques et l’architecture du processeur.
 
 Le format est indépendant du processeur et du système d’exploitation. Il a été utilisé dans le cadre des implémentations de .NET qui ciblent plusieurs processeurs. Le format lui-même est hérité de Windows, il peut être implémenté sur n’importe quel système d’exploitation. La raison pour laquelle il est largement adopté pour l’interopérabilité du système d’exploitation est sans doute que la plupart des valeurs sont stockées dans un format Little Endian. Il n’a pas d’affinité particulière avec la taille du pointeur d’ordinateur (par exemple, 32 bits, 64 bits).
 

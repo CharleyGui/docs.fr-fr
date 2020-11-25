@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 15d09166-be00-4696-913f-2c1fbc7ac2e1
 topic_type:
 - apiref
-ms.openlocfilehash: e99346ecca651346b46c220a5e427cbc7f4c4697
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f5cb89294004dfb1f020627ceb1edb58735f72c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095013"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732279"
 ---
 # <a name="strongnamegetblob-function"></a>StrongNameGetBlob, fonction
+
 Remplit la mémoire tampon spécifiée avec la représentation binaire du fichier exécutable à l’adresse spécifiée.  
   
  Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameGetBlob (](../hosting/iclrstrongname-strongnamegetblob-method.md) à la place.  
@@ -37,6 +38,7 @@ BOOLEAN StrongNameGetBlob (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `wszFilePath`  
  dans Chemin d’accès valide au fichier exécutable à charger.  
   
@@ -44,22 +46,25 @@ BOOLEAN StrongNameGetBlob (
  dans Mémoire tampon dans laquelle charger le fichier exécutable.  
   
  `pcbBlob`  
- [in, out] Taille maximale demandée, en octets, de `pbBlob`. Lors du retour, taille réelle, en octets, de `pbBlob`.  
+ [in, out] Taille maximale demandée, en octets, de `pbBlob` . Lors du retour, taille réelle, en octets, de `pbBlob` .  
   
-## <a name="return-value"></a>Valeur de retour  
- `true` en cas de réussite de l’opération ; Sinon, `false`.  
+## <a name="return-value"></a>Valeur renvoyée  
+
+ `true` en cas de réussite de l’opération ; Sinon, `false` .  
   
-## <a name="remarks"></a>Notes  
- Si la fonction `StrongNameGetBlob` ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
+## <a name="remarks"></a>Remarques  
+
+ Si la `StrongNameGetBlob` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** StrongName. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

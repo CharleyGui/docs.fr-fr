@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: f194a0bafa0ab7b9606d72f091dbb12e94f31099
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eae224312d147f3ec68b75824d90e5df40d886e7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824016"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733735"
 ---
 # <a name="task-based-asynchronous-pattern"></a>Modèle asynchrone basé sur les tâches
 
@@ -35,6 +35,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  Pour obtenir des exemples de la façon dont la syntaxe du TAP diffère de celle utilisée dans les modèles de programmation asynchrones hérités tels que le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP), consultez [Modèles de programmation asynchrone](index.md).  
   
 ## <a name="initiating-an-asynchronous-operation"></a>Lancer une opération asynchrone  
+
  Une méthode asynchrone basée sur le TAP peut effectuer une petite quantité de travail de façon synchrone, comme valider les arguments et initialiser l’opération asynchrone, avant de retourner la tâche résultante. Le travail synchrone doit être conservé au minimum afin que la méthode asynchrone puisse retourner rapidement. Les raisons d’un retour rapide sont les suivantes :  
   
 - Les méthodes asynchrones peuvent être appelées par des threads d'interface utilisateur, et tout travail synchrone de longue durée peut nuire à la réactivité de l'application.  
@@ -44,19 +45,23 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  Dans certains cas, la quantité de travail nécessaire pour terminer l'opération est inférieure à la quantité de travail nécessaire pour lancer l'opération de façon asynchrone. La lecture d'un flux où l'opération de lecture peut être satisfaite par les données déjà mises en mémoire tampon est un exemple de ce type de scénario. Dans de tels cas, l'opération peut s'exécuter de façon synchrone et peut retourner une tâche qui a déjà été effectuée.  
   
 ## <a name="exceptions"></a>Exceptions  
+
  Une méthode asynchrone doit lever une exception pour être rejetée de l'appel de méthode asynchrone uniquement en réponse à une erreur d'utilisation. Les erreurs d'utilisation ne doivent jamais se produire dans le code de production. Par exemple, si le passage d’une référence null ( `Nothing` dans Visual Basic) comme arguments de la méthode provoque un état d’erreur (généralement représenté par une <xref:System.ArgumentNullException> exception), vous pouvez modifier le code appelant pour vous assurer qu’une référence null n’est jamais passée. Pour toutes les autres erreurs, les exceptions qui se produisent lorsqu'une méthode asynchrone est en cours d'exécution doivent être assignées à la tâche retournée, même si la méthode asynchrone se termine avant que la tâche ne soit retournée. En général, une tâche contient au plus une exception. Toutefois, si la tâche représente plusieurs opérations (par exemple, <xref:System.Threading.Tasks.Task.WhenAll%2A>), plusieurs exceptions peuvent être associées à une tâche unique.  
   
 ## <a name="target-environment"></a>Environnement cible  
+
  Lorsque vous implémentez une méthode TAP, il est possible de déterminer où l'exécution asynchrone se produit. Vous pouvez choisir d’exécuter la charge de travail sur le pool de threads, de l’implémenter à l’aide d’e/s asynchrones (sans être lié à un thread pour la majorité de l’exécution de l’opération), de l’exécuter sur un thread spécifique (tel que le thread d’interface utilisateur) ou d’utiliser un nombre quelconque de contextes potentiels. Une méthode TAP peut même ne rien avoir à exécuter et simplement retourner une <xref:System.Threading.Tasks.Task> qui représente l’occurrence d’une condition ailleurs dans le système (par exemple, une tâche qui représente des données reçues par une structure de données en file d’attente).
 
  L’appelant de la méthode TAP peut bloquer l’attente de l’exécution de la méthode TAP par une attente synchrone sur la tâche obtenue, ou il peut exécuter du code supplémentaire (continuation) quand l’opération asynchrone est terminée. Le créateur du code de continuation a le contrôle sur l'endroit où ce code s'exécute. Il est possible de créer le code de continuation explicitement, via des méthodes sur la classe <xref:System.Threading.Tasks.Task> (par exemple, <xref:System.Threading.Tasks.Task.ContinueWith%2A>) ou implicitement, à l'aide de la prise en charge des langages par les continuations (par exemple, `await` en C#, `Await` en Visual Basic, `AwaitValue` en F#).  
   
 ## <a name="task-status"></a>État des tâches  
+
  La classe <xref:System.Threading.Tasks.Task> fournit un cycle de vie pour les opérations asynchrones, et ce cycle est représenté par l'énumération <xref:System.Threading.Tasks.TaskStatus>. Pour prendre en charge les cas extrêmes de types qui dérivent de <xref:System.Threading.Tasks.Task> et de <xref:System.Threading.Tasks.Task%601>, et pour prendre en charge la séparation de la construction et de la planification, la classe <xref:System.Threading.Tasks.Task> expose une méthode <xref:System.Threading.Tasks.Task.Start%2A>. Les tâches créées par les constructeurs <xref:System.Threading.Tasks.Task> publics sont connues sous le nom de *tâches passives*, car elles démarrent leur cycle de vie dans l'état <xref:System.Threading.Tasks.TaskStatus.Created> non planifié et sont planifiées uniquement quand la méthode <xref:System.Threading.Tasks.Task.Start%2A> est appelée sur ces instances.
 
  Toutes les autres tâches démarrent leur cycle de vie dans un état réactif, ce qui signifie que les opérations asynchrones qu’elles représentent ont déjà été initialisées et que leur état de tâche est une valeur d’énumération autre que <xref:System.Threading.Tasks.TaskStatus.Created?displayProperty=nameWithType>. Toutes les tâches qui sont retournées par les méthodes TAP doivent être activées. **Si une méthode TAP utilise en interne le constructeur d’une tâche pour instancier la tâche à retourner, la méthode TAP doit appeler <xref:System.Threading.Tasks.Task.Start%2A> sur l' <xref:System.Threading.Tasks.Task> objet avant de la retourner.** Les consommateurs d’une méthode TAP peuvent sans risque supposer que la tâche retournée est active et ne doivent pas essayer d’appeler la méthode <xref:System.Threading.Tasks.Task.Start%2A> sur une <xref:System.Threading.Tasks.Task> qui est retournée à partir d’une méthode TAP. L'appel de la méthode <xref:System.Threading.Tasks.Task.Start%2A> sur une tâche active entraîne la levée d'une exception <xref:System.InvalidOperationException>.  
   
 ## <a name="cancellation-optional"></a>Annulation (facultatif)  
+
  Dans le TAP, l'annulation est facultative pour les implémenteurs de méthodes asynchrones et les consommateurs de méthodes asynchrones. Si une opération autorise l'annulation, elle expose une surcharge de la méthode asynchrone qui accepte un jeton d'annulation (instance de <xref:System.Threading.CancellationToken>). Par convention, le paramètre est nommé `cancellationToken`.  
   
  [!code-csharp[Conceptual.TAP#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap/cs/examples1.cs#1)]
@@ -69,6 +74,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  Pour les méthodes asynchrones qui souhaitent exposer la possibilité d’être annulées en premier et en avant, vous n’avez pas besoin de fournir une surcharge qui n’accepte pas de jeton d’annulation. Pour les méthodes qui ne peuvent pas être annulées, ne fournissez aucune surcharge acceptant un jeton d'annulation ; cela permet d'indiquer à l'appelant si la méthode cible est réellement annulable ou non.  Le code de consommateur qui ne souhaite pas l’annulation peut appeler une méthode qui accepte un <xref:System.Threading.CancellationToken> et fournit <xref:System.Threading.CancellationToken.None%2A> comme valeur d’argument. <xref:System.Threading.CancellationToken.None%2A> est fonctionnellement équivalent au <xref:System.Threading.CancellationToken> par défaut.  
   
 ## <a name="progress-reporting-optional"></a>Rapport de progression (facultatif)  
+
  Certaines opérations asynchrones tirent parti de la fourniture de notifications de progression ; elles sont généralement utilisées pour mettre à jour une interface utilisateur avec des informations sur la progression de l'opération asynchrone.
 
  Dans le TAP, la progression est gérée via une interface <xref:System.IProgress%601>, qui est passée à la méthode asynchrone en tant que paramètre généralement nommé `progress`.  Le fait de fournir l'interface de progression lorsque la méthode asynchrone est appelée aide à éliminer les conditions de concurrence qui résultent d'une utilisation incorrecte (autrement dit, lorsque les gestionnaires d'événements enregistrés de façon incorrecte après le démarrage de l'opération sont susceptibles de manquer des mises à jour).  Plus important encore, l'interface de progression prend en charge diverses implémentations de progression, comme indiqué par le code de consommation.  Par exemple, le code de consommation peut uniquement s’intéresser à la dernière mise à jour de la progression, ou peut vouloir mettre en mémoire tampon toutes les mises à jour, ou peut vouloir appeler une action pour chaque mise à jour, ou peut vouloir vérifier si l’appel est marshalé à un thread particulier. Toutes ces options peuvent être obtenues à l’aide d’une implémentation différente de l’interface, personnalisée en fonction des besoins particuliers du consommateur.  Comme pour l'annulation, les implémentations du TAP doivent fournir un paramètre <xref:System.IProgress%601> uniquement si l'API prend en charge les notifications de progression.
@@ -93,6 +99,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  Si les implémentations du TAP fournissent des surcharges qui acceptent un `progress` paramètre, elles doivent permettre à l’argument d’être `null` , auquel cas aucune progression n’est signalée. Les implémentations de TAP doivent signaler la progression de l' <xref:System.Progress%601> objet de façon synchrone, ce qui permet à la méthode asynchrone de fournir rapidement la progression. Elle permet également au consommateur de la progression de déterminer comment et où il est préférable de gérer les informations. Par exemple, l'instance de progression peut choisir de marshaler les rappels et de déclencher des événements dans un contexte de synchronisation capturé.  
   
 ## <a name="iprogresst-implementations"></a>\<T>Implémentations de IProgress  
+
 .NET fournit la <xref:System.Progress%601> classe, qui implémente <xref:System.IProgress%601> . La classe <xref:System.Progress%601> est déclarée comme suit :  
   
 ```csharp  
@@ -108,6 +115,7 @@ public class Progress<T> : IProgress<T>
  Une instance de <xref:System.Progress%601> expose un événement <xref:System.Progress%601.ProgressChanged>, qui est déclenché chaque fois que l'opération asynchrone signale une mise à jour de la progression. L'événement <xref:System.Progress%601.ProgressChanged> est déclenché sur l'objet <xref:System.Threading.SynchronizationContext> qui a été capturé lorsque l'instance de <xref:System.Progress%601> a été instanciée. Si aucun contexte de synchronisation n’est disponible, un contexte par défaut qui cible le pool de threads est utilisé. Les gestionnaires peuvent être enregistrés avec cet événement. Un gestionnaire unique peut également être fourni au constructeur <xref:System.Progress%601> pour des raisons pratiques, et se comporter comme un gestionnaire d'événements pour l'événement <xref:System.Progress%601.ProgressChanged>. Les mises à jour de progression sont déclenchées de façon asynchrone afin d'éviter de différer l'opération asynchrone alors que les gestionnaires d'événements s'exécutent. Une autre implémentation de <xref:System.IProgress%601> peut choisir d'appliquer une sémantique différente.  
   
 ## <a name="choosing-the-overloads-to-provide"></a>Choisir les surcharges à fournir  
+
  Si une implémentation du TAP utilise des paramètres facultatifs <xref:System.Threading.Tasks.TaskFactory.CancellationToken%2A> et <xref:System.IProgress%601>, elle est susceptible de nécessiter jusqu'à quatre surcharges :  
   
 ```csharp  
@@ -180,7 +188,7 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
 ## <a name="related-articles"></a>Articles connexes
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Modèles de programmation asynchrone](index.md)|Présente les trois modèles permettant d'effectuer des opérations asynchrones : le modèle asynchrone basé sur des tâches (TAP), le modèle de programmation asynchrone (APM) et le modèle asynchrone basé sur des événements (EAP).|  
 |[Implémentation du modèle asynchrone basé sur des tâches](implementing-the-task-based-asynchronous-pattern.md)|Décrit comment implémenter le modèle asynchrone basé sur des tâches (TAP) de trois façons : à l'aide des compilateurs C# et Visual Basic dans Visual Studio, manuellement, ou par une combinaison des méthodes du compilateur et des méthodes manuelles.|  

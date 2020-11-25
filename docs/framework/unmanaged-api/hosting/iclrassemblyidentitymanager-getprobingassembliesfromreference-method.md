@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: aec05744-e8d4-44c6-b4a8-e583229ac34e
 topic_type:
 - apiref
-ms.openlocfilehash: 21ebd0c64d6c8bbdac327258ad4c7ffec83a1ce9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 263058131e63205aa37f81847ed647944fef7540
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504314"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95731387"
 ---
 # <a name="iclrassemblyidentitymanagergetprobingassembliesfromreference-method"></a>ICLRAssemblyIdentityManager::GetProbingAssembliesFromReference, méthode
+
 Obtient un énumérateur [ICLRProbingAssemblyEnum](iclrprobingassemblyenum-interface.md) pour les identités d’assembly référencées par l’assembly avec le type d’identité spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetProbingAssembliesFromReference (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwMachineType`  
  dans Valeur valide qui spécifie l’architecture du processeur, comme défini dans Winnt. h.  
   
@@ -61,11 +63,12 @@ HRESULT GetProbingAssembliesFromReference (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Si une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

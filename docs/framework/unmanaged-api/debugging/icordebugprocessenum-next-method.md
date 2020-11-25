@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ac7077c-8d88-49c4-b360-b3af0c541c63
 topic_type:
 - apiref
-ms.openlocfilehash: d00a5f71ac7e47d78deebca0e46350e465964c72
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6aee88452819a4aabe2a29971ce86079ef7f0008
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210096"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732500"
 ---
 # <a name="icordebugprocessenumnext-method"></a>ICorDebugProcessEnum::Next, méthode
+
 Obtient le nombre spécifié d’instances ICorDebugProcess de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  dans Nombre d' `ICorDebugProcess` instances à récupérer.  
   
@@ -46,7 +48,8 @@ HRESULT Next (
  `pceltFetched`  
  à Pointeur vers le nombre d' `ICorDebugProcess` instances réellement retournées. Cette valeur peut être null si `celt` est un.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

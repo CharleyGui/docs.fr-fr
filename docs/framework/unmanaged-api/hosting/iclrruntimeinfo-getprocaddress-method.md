@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7732bfc-689a-4926-88fd-4f81e6f9ed78
 topic_type:
 - apiref
-ms.openlocfilehash: 2690a5c2e7c499d68ef9e903c62bff8f85e72e8e
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 028cfd51a713d8598598566a5b1edcf3fc70ecfc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703868"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732058"
 ---
 # <a name="iclrruntimeinfogetprocaddress-method"></a>ICLRRuntimeInfo::GetProcAddress, méthode
+
 Obtient l’adresse d’une fonction spécifiée qui a été exportée à partir du common language runtime (CLR) associé à cette interface.  
   
  Cette méthode remplace la fonction [GetRealProcAddress,](getrealprocaddress-function.md) .  
@@ -36,13 +37,15 @@ HRESULT GetProcAddress(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszProcName`  
  dans Nom de la fonction exportée.  
   
  `ppProc`  
  à Adresse de la fonction exportée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -51,15 +54,17 @@ HRESULT GetProcAddress(
 |E_POINTER|`pszProcName` ou `ppProc` est null.|  
 |CLR_E_SHIM_RUNTIMEEXPORT|La fonction spécifiée n’est pas une fonction exportée.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette méthode provoque le chargement du CLR mais pas son initialisation.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a85283d8-379c-417a-9736-ddeeef9bcf50
 topic_type:
 - apiref
-ms.openlocfilehash: cd5d1f2d59d3e55ba454f23d2e5dd4b1316c0df4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8ed492b573215736c82ab6c231cc5f2e188ea013
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732149"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges, méthode
+
 À partir d’une position dans un document, retourne un tableau de paires d’offsets de début et de fin qui correspondent aux plages de langage MSIL (Microsoft Intermediate Language) couvertes par la position dans cette méthode. Le tableau est un tableau d’entiers et a le format [Start, end, Start, end]. Le nombre de paires de plages est la longueur du tableau divisée par 2.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT GetRanges(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `document`  
  dans Document pour lequel l’offset est demandé.  
   
@@ -57,10 +59,12 @@ HRESULT GetRanges(
  `ranges`  
  à Pointeur vers la mémoire tampon qui reçoit les plages.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

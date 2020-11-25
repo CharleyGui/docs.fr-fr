@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3a912787-f139-43ca-a841-8bbda3107ecf
 topic_type:
 - apiref
-ms.openlocfilehash: 1db4c4ab7e47e223a492e08297ac3cedcb3a27eb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 45eed17b91f70d4188d1d89fc91a41455f3e845b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445606"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732643"
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile, méthode
+
 Assigne le nom de l’assembly à générer. Non utilisé lors de la génération de modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT SetAssemblyFile(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszFilename`  
  Nom qualifié complet du fichier manifeste.  
   
@@ -48,10 +50,12 @@ HRESULT SetAssemblyFile(
  `pAssemblyID`  
  Pointeur vers l’ID de l’assembly résultant.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

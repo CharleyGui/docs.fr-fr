@@ -10,14 +10,15 @@ api_type:
 ms.assetid: 6075a6cd-97e6-4472-a090-0dd14860d1f3
 topic_type:
 - apiref
-ms.openlocfilehash: b7db7c9e17d87b91e09d5d010d40431cba5385df
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: e348e0070a5ce619f95dad9ebe4085d17f7ade6d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795987"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733371"
 ---
 # <a name="cordebugdebugeventkind-enumeration"></a>CorDebugDebugEventKind, énumération
+
 Indique le type d’événement dont les informations sont décodées par la méthode [DecodeEvent](icordebugprocess6-decodeevent-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,13 +45,15 @@ typedef enum CorDebugDebugEventKind {
 |`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_CATCH_HANDLER_FOUND`|Exception pour laquelle il existe un gestionnaire `catch`.|  
 |`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED`|Exception non gérée.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Un membre de l' `CorDebugDebugEventKind` énumération est retourné en appelant la méthode [ICorDebugDebugEvent :: GetEventKind](icordebugdebugevent-geteventkind-method.md) .  
   
 > [!NOTE]
 > Cette énumération est destinée à une utilisation dans des scénarios de débogage .NET Native uniquement.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
