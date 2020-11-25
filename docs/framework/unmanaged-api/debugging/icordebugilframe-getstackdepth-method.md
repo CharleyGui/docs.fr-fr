@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: da6a1123-871d-4492-9d35-3bdb49f94c93
 topic_type:
 - apiref
-ms.openlocfilehash: ad0c93dfcb4dc630793a6735ab00de9da6166e9a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4d03d1c3fccf0be7e8d8a79477fc5b48a565cf2a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130969"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703068"
 ---
 # <a name="icordebugilframegetstackdepth-method"></a>ICorDebugILFrame::GetStackDepth, méthode
+
 Cette méthode n’a pas encore été implémentée.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 HRESULT GetStackDepth (  
@@ -33,5 +34,6 @@ HRESULT GetStackDepth (
 );  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorDebug.idl, CorDebug.h

@@ -6,17 +6,19 @@ helpviewer_keywords:
 - enumerations [.NET Framework profiling]
 - unmanaged enumerations [.NET Framework], profiling
 ms.assetid: 8d5f9570-9853-4ce8-8101-df235d5b258e
-ms.openlocfilehash: 1a9781fa1b4b608152faa7d5edc80bd4866f0c81
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8956a09cf76aa54452e8c020239e650e55d8a0d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868133"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701612"
 ---
 # <a name="profiling-enumerations"></a>Énumérations de profilage
+
 Cette section décrit les énumérations non managées utilisées par l'API de profilage.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [COR_PRF_CLAUSE_TYPE, énumération](cor-prf-clause-type-enumeration.md)  
  Indique le type de clause d'exception où le code vient d'entrer ou qu'il vient de quitter.  
   
@@ -68,11 +70,12 @@ Cette section décrit les énumérations non managées utilisées par l'API de p
  [COR_PRF_TRANSITION_REASON, énumération](cor-prf-transition-reason-enumeration.md)  
  Indique la raison d'une transition de code managé en code non managé, ou l'inverse.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
+
  [Vue d’ensemble du profilage](profiling-overview.md)  
   
  [Interfaces de profilage](profiling-interfaces.md)  
   
- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)  
+ [Fonctions statiques globales du profilage](profiling-global-static-functions.md)  
   
  [Structures de profilage](profiling-structures.md)

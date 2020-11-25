@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dda867b5-1050-49ba-b01c-fcc83b7a5617
 topic_type:
 - apiref
-ms.openlocfilehash: bc7f1740d666211b63cd93e6f1c0e6955f61ec5d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 52c35b3bd726d4c83c6745bf99940faa44ea7338
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503456"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702847"
 ---
 # <a name="imetadataimportresetenum-method"></a>IMetaDataImport::ResetEnum Method
+
 Réinitialise l'énumérateur spécifié à la position spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT ResetEnum (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hEnum`  
  dans Énumérateur à réinitialiser.  
   
@@ -42,11 +44,12 @@ HRESULT ResetEnum (
  dans Nouvelle position à laquelle placer l’énumérateur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8dc29c6a-e2ba-41d8-a1e0-0fdd21421e0b
 topic_type:
 - apiref
-ms.openlocfilehash: b48b782b7c8be35bfb815d72758f0bc316fb2114
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6a967f9a50b3220e2d5e206503330a2bab764c4b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494720"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701638"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip, méthode
+
 Fait avancer le curseur de l'énumérateur depuis sa position actuelle de manière à ignorer le nombre spécifié d'éléments.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,21 +33,25 @@ HRESULT Skip([in] ULONG celt);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `celt`  
  dans Nombre d’éléments à ignorer.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`celt`les éléments ont été ignorés.|  
+|S_OK|`celt` les éléments ont été ignorés.|  
 |S_FALSE|Moins de `celt` éléments ont été ignorés, ce qui indique qu’il n’y a plus d’éléments.|  
   
 ## <a name="remarks"></a>Remarques  
+
  La nouvelle position du curseur de cet énumérateur est (position actuelle) + `celt` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

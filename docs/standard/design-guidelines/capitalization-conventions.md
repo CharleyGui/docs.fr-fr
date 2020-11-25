@@ -9,17 +9,19 @@ helpviewer_keywords:
 - case sensitivity, capitalization conventions
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-ms.openlocfilehash: 8df136fb57ad61ddfd87f4dec1f6490c63c3d977
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e416a8346952a41d9c89f526bfce990dfc277fc1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821526"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701261"
 ---
 # <a name="capitalization-conventions"></a>Conventions de mise en majuscules
+
 Les instructions de ce chapitre présentent une méthode simple pour l’utilisation de cas qui, lorsqu’elle est appliquée de manière cohérente, facilite la lecture des identificateurs des types, des membres et des paramètres.
 
 ## <a name="capitalization-rules-for-identifiers"></a>Règles de mise en majuscules pour les identificateurs
+
  Pour différencier les mots dans un identificateur, mettez en majuscule la première lettre de chaque mot dans l’identificateur. N’utilisez pas de traits de soulignement pour différencier des mots, ou à cette question, n’importe où dans les identificateurs. Il existe deux façons de mettre des identificateurs en majuscules, en fonction de l’utilisation de l’identificateur :
 
 - PascalCasing
@@ -60,6 +62,7 @@ Les instructions de ce chapitre présentent une méthode simple pour l’utilisa
 |Paramètre|mixte|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|
 
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Mettre en majuscules les mots composés et les termes courants
+
  La plupart des termes composés sont traités comme des mots simples à des fins de mise en majuscules.
 
  ❌ NE pas mettre en majuscules chaque mot dans les mots composés « fermés ».
@@ -95,6 +98,7 @@ Les instructions de ce chapitre présentent une méthode simple pour l’utilisa
 |`Writable`|`writable`|`Writeable`|
 
 ## <a name="case-sensitivity"></a>Respect de la casse
+
  Les langages qui peuvent s’exécuter sur le CLR ne sont pas requis pour prendre en charge le respect de la casse, bien que d’autres. Même si votre langage le prend en charge, les autres langages qui peuvent accéder à votre infrastructure ne le sont pas. Par conséquent, toutes les API qui sont accessibles de l’extérieur ne peuvent pas s’appuyer uniquement sur la casse pour faire la distinction entre deux noms dans le même contexte.
 
  ❌ NE partez pas du principe que tous les langages de programmation respectent la casse. mais ils ne le sont pas. Les noms ne peuvent pas différer uniquement par la casse.

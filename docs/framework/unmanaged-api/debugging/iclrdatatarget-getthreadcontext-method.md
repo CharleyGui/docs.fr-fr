@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b9d8c3b5-3a2e-4225-95d4-dd052c4532c3
 topic_type:
 - apiref
-ms.openlocfilehash: 5c0fb023dd355f3a9c1ed846913f86b354592ed5
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 35b7bff5d4d778a429ddc1dcd0206e6e8970ee4f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860603"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703497"
 ---
 # <a name="iclrdatatargetgetthreadcontext-method"></a>ICLRDataTarget::GetThreadContext, méthode
+
 Obtient le contexte d’exécution actuel du thread donné dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT GetThreadContext (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `threadID`  
  dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
   
@@ -50,12 +52,14 @@ HRESULT GetThreadContext (
  `context`  
  à Pointeur vers une mémoire tampon dans laquelle placer le contexte.  
   
- Les données de la `context` mémoire tampon doivent être au format de la structure `CONTEXT` Win32. Le contexte spécifie des données de Registre spécifiques au processeur, donc la définition `CONTEXT` de la structure Win32 dépend de l’architecture du processeur. Reportez-vous au fichier d’en-tête Winnt. `CONTEXT` h pour la définition de la structure Win32.  
+ Les données de la `context` mémoire tampon doivent être au format de la `CONTEXT` structure Win32. Le contexte spécifie des données de Registre spécifiques au processeur, donc la définition de la `CONTEXT` structure Win32 dépend de l’architecture du processeur. Reportez-vous au fichier d’en-tête Winnt. h pour la définition de la `CONTEXT` structure Win32.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

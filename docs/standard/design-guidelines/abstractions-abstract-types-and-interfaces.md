@@ -7,14 +7,15 @@ helpviewer_keywords:
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-ms.openlocfilehash: 6acefa2d4a2aed8fca5d0b7db634d393baac6b58
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f5169cf730dc987526765c9538978901d424814b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821630"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701404"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstractions (Types et interfaces abstraits)
+
 Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une implémentation complète du contrat. Les abstractions sont généralement implémentées en tant que classes abstraites ou interfaces, et elles sont fournies avec un ensemble bien défini de documentation de référence décrivant la sémantique requise des types qui implémentent le contrat. Certaines des abstractions les plus importantes dans le .NET Framework incluent <xref:System.IO.Stream> , <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.Object> .
 
  Vous pouvez étendre des frameworks en implémentant un type concret qui prend en charge le contrat d’une abstraction et à l’aide de ce type concret avec les API d’infrastructure consommant (fonctionnant sur) l’abstraction.

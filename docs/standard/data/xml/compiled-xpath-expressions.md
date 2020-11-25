@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-ms.openlocfilehash: 310d5eb01fff02d82ec3762d55ff14e5a6bcd621
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 99f06db3c6f1e634e9c4a677c01d1b0849afe43f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831011"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701508"
 ---
 # <a name="compiled-xpath-expressions"></a>Expressions XPath compilées
+
 Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
 ## <a name="the-xpathexpression-class"></a>La classe XPathExpression  
+
  Une requête XPath compilée représentée par un objet <xref:System.Xml.XPath.XPathExpression> est utile si la même requête XPath doit être utilisée plusieurs fois.  
   
  Par exemple, lorsque la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A> doit être appelée plusieurs fois, au lieu d'utiliser chaque fois une chaîne représentant la requête XPath, utilisez la méthode <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> pour compiler et mettre en cache la requête XPath dans un objet <xref:System.Xml.XPath.XPathExpression> afin de pouvoir la réutiliser et d'améliorer ainsi les performances.  
@@ -45,6 +47,7 @@ Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath 
 > La méthode <xref:System.Xml.XPath.XPathNavigator.Matches%2A> accepte une expression XPath comme paramètre. La méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> retourne un objet <xref:System.Xml.XPath.XPathNavigator>, pas un des types de retours XPath W3C.  
   
 ### <a name="the-returntype-property"></a>La propriété ReturnType  
+
  Une fois qu'une requête XPath a été compilée dans un objet <xref:System.Xml.XPath.XPathExpression>, vous pouvez utiliser la propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de l'objet <xref:System.Xml.XPath.XPathExpression> pour déterminer ce que retourne la requête XPath.  
   
  La propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> retourne une des valeurs d'énumération <xref:System.Xml.XPath.XPathResultType> suivantes, représentant les types de retours XPath W3C.  
@@ -110,6 +113,7 @@ Console.WriteLine(nodes.Current.Value);
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
 ### <a name="higher-performance-xpath-expressions"></a>Expressions XPath plus performantes  
+
  Pour obtenir des performances optimales, utilisez l'expression XPath la plus spécifique possible dans vos requêtes. Par exemple, si le nœud `book` est un enfant du noeud `bookstore` et si le nœud `bookstore` est l'élément de niveau supérieur dans un document XML, il est plus rapide d'utiliser l'expression XPath `/bookstore/book` que `//book`. L’expression XPath `//book` analysera en effet chaque nœud de l’arborescence XML en vue d’identifier les nœuds qui correspondent.  
   
  De plus, l'utilisation des méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator> peut améliorer les performances par rapport aux méthodes de sélection fournies par la classe <xref:System.Xml.XPath.XPathNavigator> lorsque les critères de sélection sont simples. Par exemple, si vous devez sélectionner le premier enfant du nœud actuel, il est plus rapide d’utiliser la méthode <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> que d’utiliser l’expression XPath `child::*[1]` et la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A>.  

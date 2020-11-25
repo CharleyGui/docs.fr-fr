@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 44cf6908-f555-4ae8-b2cf-24bd974bf2fe
 topic_type:
 - apiref
-ms.openlocfilehash: d477976952d2c1875a620d1397fd43e5c5e2836f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0d76abf8a9c923089f367ab4e1786ac8cc92622d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503469"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702971"
 ---
 # <a name="imetadataimportisglobal-method"></a>IMetaDataImport::IsGlobal, méthode
+
 Obtient une valeur qui indique si le champ, la méthode ou le type représenté(e) par le jeton de métadonnées spécifié a une portée globale.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT IsGlobal (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pd`  
  dans Jeton de métadonnées qui représente un type, un champ ou une méthode.  
   
@@ -42,11 +44,12 @@ HRESULT IsGlobal (
  [out] 1 si l’objet a une portée globale ; Sinon, 0 (zéro).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4e2fd423-f643-4c27-ba5f-41b5ebc3b416
 topic_type:
 - apiref
-ms.openlocfilehash: d715f5842bb7f75da5311d34bf7d4596f0801a92
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d17179dbeb9564b16c0c95a43502a53a67d3b9b8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210278"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703159"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument, méthode
+
 Obtient la valeur de l’argument spécifié dans ce frame de pile MSIL (Microsoft Intermediate Language).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,16 +36,19 @@ HRESULT GetArgument (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwIndex`  
  dans Index de l’argument dans ce frame de pile MSIL.  
   
  `ppValue`  
  [en sortie] Un pointeur vers l'adresse d'un objet ICorDebugValue qui représente la valeur extraite.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La `GetArgument` méthode peut être utilisée dans un frame de pile MSIL ou dans un frame compilé juste-à-temps (JIT).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

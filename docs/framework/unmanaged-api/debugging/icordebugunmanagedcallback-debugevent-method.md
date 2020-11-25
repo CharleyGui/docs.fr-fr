@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: be9cab04-65ec-44d5-a39a-f90709fdd043
 topic_type:
 - apiref
-ms.openlocfilehash: 24c316ea6bab11fb55e8e0fc1dc9832a312dbc6a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 75341b1af034972c861b75f29a06eaa2c4e33c3a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397197"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703030"
 ---
 # <a name="icordebugunmanagedcallbackdebugevent-method"></a>ICorDebugUnmanagedCallback::DebugEvent, méthode
+
 Notifie le débogueur qu’un événement natif a été déclenché.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,13 +36,15 @@ HRESULT DebugEvent (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pDebugEvent`  
  dans Pointeur vers l’événement natif.  
   
  `fOutOfBand`  
  [in] `true` , si l’interaction avec l’état de processus managé est impossible après un événement non managé, jusqu’à ce que le débogueur appelle [ICorDebugController :: continue](icordebugcontroller-continue-method.md); sinon, `false` .  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si le thread en cours de débogage est un thread Win32, n’utilisez pas les membres de l’interface de débogage Win32. Vous pouvez appeler `ICorDebugController::Continue` uniquement sur un thread Win32 et uniquement en cas de dépassement d’un événement hors bande.  
   
  Le `DebugEvent` rappel ne suit pas les règles standard pour les rappels. Lorsque vous appelez `DebugEvent` , le processus sera à l’état d’arrêt de débogage du système d’exploitation brut. Le processus ne sera pas synchronisé. Elle entrera automatiquement en état synchronisé si nécessaire pour répondre aux demandes d’informations sur le code managé, ce qui peut entraîner d’autres `DebugEvent` rappels imbriqués.  
@@ -50,7 +53,8 @@ HRESULT DebugEvent (
   
  Dans la version de .NET Framework 2,0, le débogueur doit immédiatement continuer après un événement de point d’arrêt hors plage. Le débogueur doit utiliser les méthodes [ICorDebugProcess2 :: SetUnmanagedBreakpoint,](icordebugprocess2-setunmanagedbreakpoint-method.md) et [ICorDebugProcess2 :: ClearUnmanagedBreakpoint,](icordebugprocess2-clearunmanagedbreakpoint-method.md) pour ajouter et supprimer des points d’arrêt. Ces méthodes ignorent automatiquement les points d’arrêt hors bande. Ainsi, les seuls points d’arrêt hors bande qui sont distribués doivent être des points d’arrêt bruts qui se trouvent déjà dans le flux d’instructions, par exemple un appel à la `DebugBreak` fonction Win32. N’essayez pas d’utiliser `ICorDebugProcess::ClearCurrentException` , [ICorDebugProcess :: GetThreadContext](icordebugprocess-getthreadcontext-method.md), [ICorDebugProcess :: SetThreadContext](icordebugprocess-setthreadcontext-method.md)ni un autre membre de l' [API de débogage](index.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

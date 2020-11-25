@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b3fc1e6c-bcb6-4915-baf8-7dc0a31b8724
 topic_type:
 - apiref
-ms.openlocfilehash: 8f6fbc570e7ea85aca5b365611d58a1700fb27cd
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 26b345567699c5780827ed835cff13069ea8f609
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490716"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702743"
 ---
 # <a name="imetadataimport2enummethodspecs-method"></a>IMetaDataImport2::EnumMethodSpecs, méthode
+
 Obtient un énumérateur pour un tableau de jetons MethodSpec associés au jeton MethodDef ou MemberRef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumMethodSpecs (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur pour `rMethodSpecs` .  
   
@@ -57,15 +59,16 @@ HRESULT EnumMethodSpecs (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSpecs`retourné avec succès.|  
-|`S_FALSE`|`phEnum`n’a aucun élément membre. Dans ce cas, `pcMethodSpecs` a la valeur 0 (zéro).|  
+|`S_OK`|`EnumMethodSpecs` retourné avec succès.|  
+|`S_FALSE`|`phEnum` n’a aucun élément membre. Dans ce cas, `pcMethodSpecs` a la valeur 0 (zéro).|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

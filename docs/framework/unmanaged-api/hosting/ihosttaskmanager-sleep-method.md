@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f67d25f3-9199-4c5f-b1e8-1c819243cfd5
 topic_type:
 - apiref
-ms.openlocfilehash: bb12547155383bb410f592018232ca6f688bab8a
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 372b15a565f8a7484c1c42c387098a38f7bbf428
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841904"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702054"
 ---
 # <a name="ihosttaskmanagersleep-method"></a>IHostTaskManager::Sleep, méthode
+
 Indique à l’hôte que la tâche en cours va se mettre en veille.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT Sleep (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwMilliseconds`  
  dans Intervalle de temps, en millisecondes, pendant lequel le thread est mis en veille.  
   
@@ -45,7 +47,7 @@ HRESULT Sleep (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`Sleep`retourné avec succès.|  
+|S_OK|`Sleep` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,14 +55,16 @@ HRESULT Sleep (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR appelle généralement `IHostTaskManager::Sleep` lorsque <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> est appelé à partir du code utilisateur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

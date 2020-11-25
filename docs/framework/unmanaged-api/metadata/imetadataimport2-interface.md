@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d39b2b87-ba53-4771-ae53-952a68452511
 topic_type:
 - apiref
-ms.openlocfilehash: fe9e87618291218a41e52f80198ce9068c9c56e2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a845ecfde6583d625d2a8f165443344ff9e40d05
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490392"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702548"
 ---
 # <a name="imetadataimport2-interface"></a>IMetaDataImport2, interface
+
 Étend l’interface [IMetaDataImport](imetadataimport-interface.md) pour offrir la possibilité d’utiliser des types génériques.  
   
 ## <a name="methods"></a>Méthodes  
@@ -38,11 +39,12 @@ ms.locfileid: "84490392"
 |[GetVersionString, méthode](imetadataimport2-getversionstring-method.md)|Obtient le numéro de version du runtime qui a été utilisé pour générer l’assembly.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

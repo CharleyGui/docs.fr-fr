@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: 2eee3ff905473d8fd520929c0fe5abfb5d5c42da
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 0cee7481f9c002f860bff7f12b8be0bb763dadb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830959"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701469"
 ---
 # <a name="convert-strings-to-net-data-types"></a>Convertir des chaînes en types de données .NET
 
@@ -22,7 +22,7 @@ Si vous souhaitez convertir une chaîne en type de données .NET, utilisez la m�
   
 |Type .NET|Chaîne retournée|  
 |-------------------------|---------------------|  
-|Booléen|"true", "false"|  
+|Boolean|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
 |Single.NegativeInfinity|"-INF"|  
 |Double.PositiveInfinity|"INF"|  
@@ -72,6 +72,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
  Toutefois, si vous convertissez une chaîne en type **Boolean**, **Single** ou **double**, le type .net retourné n’est pas le même que le type retourné lors de l’utilisation de la classe **System. Convert** .  
   
 ## <a name="string-to-boolean"></a>String vers Boolean  
+
  Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Boolean** à l'aide de la méthode **ToBoolean**.  
   
 |Paramètre d'entrée de chaîne valide|Type de sortie .NET|  
@@ -104,6 +105,7 @@ Console.WriteLine(bvalue);
 ```  
   
 ## <a name="string-to-single"></a>String vers Single  
+
  Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToSingle**.  
   
 |Paramètre d'entrée de chaîne valide|Type de sortie .NET|  
@@ -112,6 +114,7 @@ Console.WriteLine(bvalue);
 |"-INF"|Single.NegativeInfinity|  
   
 ## <a name="string-to-double"></a>String vers Double  
+
  Le tableau suivant indique le type généré pour une chaîne d'entrée donnée durant la conversion d'une chaîne en type **Single** à l'aide de la méthode **ToDouble**.  
   
 |Paramètre d'entrée de chaîne valide|Type de sortie .NET|  

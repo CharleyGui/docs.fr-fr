@@ -12,14 +12,15 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: b1f3d36f4a9b6e44451a8534ca79fb674071a955
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 05ba9abbc9495d927b7f58ebb06f152c0c15772f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821474"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701248"
 ---
 # <a name="choosing-between-class-and-struct"></a>Choix entre classe et structure
+
 L’une des décisions de conception de base de chaque concepteur d’infrastructure est de concevoir un type en tant que classe (type référence) ou en tant que struct (un type valeur). Il est essentiel de bien comprendre les différences de comportement des types de référence et des types de valeur pour faire ce choix.
 
  La première différence entre les types référence et les types valeur est que nous envisageons que les types référence sont alloués sur le tas et récupérés par le garbage collector, tandis que les types valeur sont alloués sur la pile ou inline dans les types contenants et désalloués lorsque la pile se déroule ou lorsque leur type conteneur est libéré. Par conséquent, les allocations et les désallocations de types valeur sont en général moins coûteuses que les allocations et les désallocations de types référence.

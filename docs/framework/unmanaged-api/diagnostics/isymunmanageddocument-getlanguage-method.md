@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6639418-e9f2-4a99-8ce2-ec9876e0bc79
 topic_type:
 - apiref
-ms.openlocfilehash: 084f3ae12d906f5e80fdb86e65b09d2371fd246b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 075d46b0bbc68add0203daf7430afb712c998fe0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614589"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700975"
 ---
 # <a name="isymunmanageddocumentgetlanguage-method"></a>ISymUnmanagedDocument::GetLanguage, méthode
+
 Obtient l’identificateur de langue de ce document  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,10 +34,12 @@ HRESULT GetLanguage(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRetVal`  
  à Pointeur vers une variable qui reçoit l’identificateur de langue.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie.  
   
 ## <a name="see-also"></a>Voir aussi

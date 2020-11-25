@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dbb21e67-712b-49e7-a27c-a1e73ffd46c5
 topic_type:
 - apiref
-ms.openlocfilehash: 7e97b2d4ad1fec4675d1484959b115a4d4b87e90
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 16f69d571ffed87a2e848124ce16ac942d319c37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490612"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702678"
 ---
 # <a name="imetadataimport2getgenericparamprops-method"></a>IMetaDataImport2::GetGenericParamProps, méthode
+
 Obtient les métadonnées associées au paramètre générique représenté par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,6 +42,7 @@ HRESULT GetGenericParamProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `gp`  
  dans Jeton qui représente le paramètre générique pour lequel retourner des métadonnées.  
   
@@ -66,11 +68,12 @@ HRESULT GetGenericParamProps (
  à Taille retournée du nom, en caractères larges.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

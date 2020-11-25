@@ -5,14 +5,15 @@ helpviewer_keywords:
 - abstractions [.NET Framework]
 - base classes, abstractions
 ms.assetid: 37a2d9a4-9721-482a-a40f-eee2c1d97875
-ms.openlocfilehash: 314fcd0e1e91d1fc869453dd442ecaa72f91955d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9e49b79609a2d16a79a80727295d53bb36ec5943
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821591"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701313"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>Classes de base pour l'implémentation d'abstractions
+
 Strictement parlant, une classe devient une classe de base lorsqu’une autre classe en est dérivée. Dans le cadre de cette section, toutefois, une classe de base est une classe conçue principalement pour fournir une abstraction commune ou pour d’autres classes afin de réutiliser une implémentation par défaut via l’héritage. Les classes de base se trouvent généralement au milieu des hiérarchies d’héritage, entre une abstraction à la racine d’une hiérarchie et plusieurs implémentations personnalisées en bas.
 
  Elles servent d’assistance d’implémentation pour l’implémentation d’abstractions. Par exemple, l’une des abstractions de l’infrastructure pour les collections ordonnées d’éléments est l' <xref:System.Collections.Generic.IList%601> interface. <xref:System.Collections.Generic.IList%601>L’implémentation de n’est pas simple et, par conséquent, l’infrastructure fournit plusieurs classes de base, telles que <xref:System.Collections.ObjectModel.Collection%601> et <xref:System.Collections.ObjectModel.KeyedCollection%602> , qui servent d’assistance pour l’implémentation des collections personnalisées.
