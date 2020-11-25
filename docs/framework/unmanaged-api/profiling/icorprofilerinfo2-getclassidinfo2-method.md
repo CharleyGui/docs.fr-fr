@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0141d582-d066-4d49-8d1f-ae82129a1960
 topic_type:
 - apiref
-ms.openlocfilehash: a33e51969dc0579d976f08470ebc6e2bcca04dd7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4b018a329396e0be684c999a33d4ef7c3518cb1c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497164"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703902"
 ---
 # <a name="icorprofilerinfo2getclassidinfo2-method"></a>ICorProfilerInfo2::GetClassIDInfo2, méthode
+
 Obtient le module parent et le jeton de métadonnées pour la définition générique ouverte de la classe spécifiée, `ClassID` de sa classe parente et `ClassID` de chaque argument de type, le cas échéant, de la classe.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT GetClassIDInfo2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `classId`  
  [in] ID de la classe pour laquelle les informations seront récupérées.  
   
@@ -61,6 +63,7 @@ HRESULT GetClassIDInfo2(
  [out] Tableau de valeurs `ClassID`, chacune représentant l’ID d’un argument de type de la classe. Quand la méthode retourne son résultat, `typeArgs` contient une partie ou la totalité des valeurs `ClassID` disponibles.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `GetClassIDInfo2` méthode est semblable à la méthode [ICorProfilerInfo :: GetClassIDInfo,](icorprofilerinfo-getclassidinfo-method.md) , mais `GetClassIDInfo2` obtient des informations supplémentaires sur un type générique.  
   
  Le code du profileur peut appeler [ICorProfilerInfo :: GetModuleMetaData,](icorprofilerinfo-getmodulemetadata-method.md) pour obtenir une interface de [métadonnées](../metadata/index.md) pour un module donné. Le jeton de métadonnées qui est retourné à l'emplacement référencé par `pTypeDefToken` peut alors servir à accéder aux métadonnées pour la classe.  
@@ -70,6 +73,7 @@ HRESULT GetClassIDInfo2(
  Vous pouvez également commencer par appeler `GetClassIDInfo2` avec un tampon `typeArgs` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite définir la taille du tampon `typeArgs` sur la valeur retournée dans `pcNumTypeArgs`, puis appeler `GetClassIDInfo2` à nouveau.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

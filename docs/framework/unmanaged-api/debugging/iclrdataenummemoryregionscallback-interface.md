@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3f1af8b0-8478-48e0-a7ec-3e90e0b97649
 topic_type:
 - apiref
-ms.openlocfilehash: ddcb8064dfb9be30c66404a8762a9ca73cd6afe4
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: f080d852b190346740a3629f3b5d46a9f3808293
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860662"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703627"
 ---
 # <a name="iclrdataenummemoryregionscallback-interface"></a>ICLRDataEnumMemoryRegionsCallback, interface
+
 Fournit une méthode de rappel pour [ICLRDataEnumMemoryRegions :: EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) pour signaler au débogueur le résultat d’une tentative d’énumération d’une région de mémoire spécifiée.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,7 +31,8 @@ Fournit une méthode de rappel pour [ICLRDataEnumMemoryRegions :: EnumMemoryReg
 |------------|-----------------|  
 |[EnumMemoryRegion, méthode](iclrdataenummemoryregionscallback-enummemoryregion-method.md)|Appelé par `ICLRDataEnumMemoryRegions::EnumMemoryRegions` pour signaler au débogueur le résultat d’une tentative d’énumération d’une région de mémoire spécifiée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

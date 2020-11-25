@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd5e9b64-b4a3-4ba6-9be6-ddb540f4ffcf
 topic_type:
 - apiref
-ms.openlocfilehash: 12a0792e8fafc73b480de6bacc86f98470dfedf7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9485e3ca657ab108d2bcc9d00b1c475f8ee3c086
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503287"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703952"
 ---
 # <a name="icorprofilercallbackobjectreferences-method"></a>ICorProfilerCallback::ObjectReferences, méthode
+
 Notifie le profileur des objets en mémoire qui sont référencés par l’objet spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT ObjectReferences(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `objectId`  
  dans ID de l’objet qui référence des objets.  
   
@@ -49,6 +51,7 @@ HRESULT ObjectReferences(
  dans Tableau d’ID des objets référencés par `objectId` .  
   
 ## <a name="remarks"></a>Remarques  
+
  La `ObjectReferences` méthode est appelée pour chaque objet restant dans le tas à la fin d’une garbage collection. Si le profileur retourne une erreur à partir de ce rappel, les services de profilage ne continueront pas à appeler ce rappel jusqu’à la garbage collection suivante.  
   
  Le `ObjectReferences` rappel peut être utilisé conjointement avec le rappel [ICorProfilerCallback :: RootReferences](icorprofilercallback-rootreferences-method.md) pour créer un graphique de référence d’objet complet pour le Runtime. Le common language runtime (CLR) s’assure que chaque référence d’objet est signalée une seule fois par la `ObjectReferences` méthode.  
@@ -58,6 +61,7 @@ HRESULT ObjectReferences(
  Une valeur null `ClassId` indique que `objectId` a un type qui décharge.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

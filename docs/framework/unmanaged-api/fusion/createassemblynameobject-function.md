@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 55c8b41e-fbe4-4ae0-aa29-68fbb2311691
 topic_type:
 - apiref
-ms.openlocfilehash: 00345f6c95c67f0494aa721c662f56a9e98cdd7f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 995f1064c2f40005c4a19ef034d7edfd668b5d51
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108711"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704160"
 ---
 # <a name="createassemblynameobject-function"></a>CreateAssemblyNameObject, fonction
+
 Obtient un pointeur d’interface vers une instance de [IAssemblyName](iassemblyname-interface.md) qui représente l’identité unique de l’assembly avec le nom spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,11 +39,12 @@ HRESULT CreateAssemblyNameObject (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppAssemblyNameObj`  
- à `IAssemblyName`retourné.  
+ à Retourné `IAssemblyName` .  
   
  `szAssemblyName`  
- dans Nom de l’assembly pour lequel la nouvelle instance de `IAssemblyName` doit être créée.  
+ dans Nom de l’assembly pour lequel la nouvelle instance doit être créée `IAssemblyName` .  
   
  `dwFlags`  
  dans Indicateurs à passer au constructeur de l’objet.  
@@ -50,16 +52,17 @@ HRESULT CreateAssemblyNameObject (
  `pvReserved`  
  dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [IAssemblyName, interface](iassemblyname-interface.md)
-- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)
+- [Fonctions statiques globales de la fusion](fusion-global-static-functions.md)

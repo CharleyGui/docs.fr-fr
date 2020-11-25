@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 249f9892-b5a9-41e1-b329-28a925904df6
 topic_type:
 - apiref
-ms.openlocfilehash: cb7e21e0c6aad5ebb328ae5d1a993716f96e8d47
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e1cd3ef78d303aaa325699e1bcdec95f077fef21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500570"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703978"
 ---
 # <a name="functiontailcall2-function"></a>FunctionTailcall2 (fonction)
+
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction et fournit des informations sur le frame de pile.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -51,6 +52,7 @@ void __stdcall FunctionTailcall2 (
   Le profileur doit traiter ceci comme un handle opaque qui peut être retourné au moteur d’exécution dans la méthode [ICorProfilerInfo2 :: GetFunctionInfo2,](icorprofilerinfo2-getfunctioninfo2-method.md) .
 
 ## <a name="remarks"></a>Remarques  
+
  La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave2](functionleave2-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
   
  La valeur du `func` paramètre n’est pas valide après le `FunctionTailcall2` retour de la fonction, car la valeur peut changer ou être détruite.  
@@ -68,6 +70,7 @@ void __stdcall FunctionTailcall2 (
  En outre, la `FunctionTailcall2` fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

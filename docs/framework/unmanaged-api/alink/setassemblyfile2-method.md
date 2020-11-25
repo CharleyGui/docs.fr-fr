@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: eedb9125-1ef1-4000-abfc-7de86e5a1f17
 topic_type:
 - apiref
-ms.openlocfilehash: 4f710ef9741869a2b4fd8473ed3ecf379cfcc56d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 131f5d951e524ef48f2cfe1e3e88ef80ac21c452
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445590"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703679"
 ---
 # <a name="setassemblyfile2-method"></a>SetAssemblyFile2, méthode
+
 Définit le nom et les options d’un nouvel assembly. N’appelez pas cette méthode quand vous produisez des modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT SetAssemblyFile2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszFilename`  
  Nom du fichier manifeste.  
   
@@ -48,10 +50,12 @@ HRESULT SetAssemblyFile2(
  `pAssemblyID`  
  Reçoit l’ID unique de l’assembly en cours de construction.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

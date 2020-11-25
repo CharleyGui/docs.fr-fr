@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b0d25f76-0bd5-4aa6-96cf-bfec0e1de28b
 topic_type:
 - apiref
-ms.openlocfilehash: 1263202c1fe524c924a88b9356e5ab9116cea553
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4ba404692bef84c0522a799c61f07eac341eaab4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502858"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703844"
 ---
 # <a name="icorprofilerinfo2getobjectgeneration-method"></a>ICorProfilerInfo2::GetObjectGeneration, méthode
+
 Obtient le segment du tas qui contient l’objet spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetObjectGeneration(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `objectId`  
  dans ID de l’objet.  
   
@@ -41,9 +43,11 @@ HRESULT GetObjectGeneration(
  à Pointeur vers une structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) , qui décrit une plage (autrement dit, un bloc) de mémoire dans la génération en cours d’garbage collection. Cette plage contient l’objet spécifié.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `GetObjectGeneration` méthode peut être appelée à partir de tout rappel de profileur, à condition que garbage collection ne soit pas en cours. Autrement dit, il peut être appelé à partir de tout rappel, à l’exception de ceux qui se produisent entre [ICorProfilerCallback2 :: GarbageCollectionStarted](icorprofilercallback2-garbagecollectionstarted-method.md) et [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

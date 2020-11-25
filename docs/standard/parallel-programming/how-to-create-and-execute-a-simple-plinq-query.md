@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to create
 ms.assetid: 983b4213-bddd-4a44-9262-cbe59186df4c
-ms.openlocfilehash: 67863346046b0c400529b87355c11f97d0c3f01f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 228a94323c42d7c7a5ecbd295a0db5d73f4f1f49
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827085"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703692"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>Procédure : créer et exécuter une requête PLINQ simple
 
@@ -22,6 +22,7 @@ L’exemple de cet article montre comment créer une requête LINQ (Parallel Lan
 > Cette documentation utilise des expressions lambda pour définir les délégués en PLINQ. Si les expressions lambda en C# ou Visual Basic ne vous sont pas familières, consultez la page [Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](lambda-expressions-in-plinq-and-tpl.md).  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[PLINQ#11](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/create1.cs#11)]
  [!code-vb[PLINQ#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/create1.vb#11)]  
   

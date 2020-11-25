@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 71f362a9-8fe2-47ce-9302-05a645cf3d7d
 topic_type:
 - apiref
-ms.openlocfilehash: 031bfc3d7fcd9f1f04e616e460cb3201813eae55
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: ca427439f03d92b20e7714b9724d90b240e9cecb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616552"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704069"
 ---
 # <a name="corlaunchapplication-function"></a>CorLaunchApplication, fonction
+
 Démarre l’application au chemin d’accès réseau spécifié, à l’aide des manifestes spécifiés et d’autres données d’application.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -42,6 +43,7 @@ HRESULT CorLaunchApplication (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwClickOnceHost`  
  dans Valeur de l’énumération [HOST_TYPE](host-type-enumeration.md) qui spécifie le type d’hôte qui lance l’application.  
   
@@ -63,12 +65,13 @@ HRESULT CorLaunchApplication (
  `lpProcessInformation`  
  à Pointeur vers des informations sur le processus dans lequel l’application a été chargée.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

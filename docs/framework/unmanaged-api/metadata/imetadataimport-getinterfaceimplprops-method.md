@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: be3f5985-b1e4-4036-8602-c16e8508d4af
 topic_type:
 - apiref
-ms.openlocfilehash: 1c9d9647084aa729817eeeb17ee3f5cd320c0d29
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e81816ce2194c2c1862cb997ad2c6e5baf301231
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491238"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703997"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps, méthode
+
 Obtient un pointeur vers les jetons de métadonnées pour le <xref:System.Type> qui implémente la méthode spécifiée, et pour l’interface qui déclare cette méthode.
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetInterfaceImplProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `iiImpl`  
  dans Jeton de métadonnées représentant la méthode pour laquelle retourner la classe et les jetons d’interface.  
   
@@ -70,14 +72,15 @@ Rappelez-vous que le jeton est une valeur de 4 octets :
 - Les 3 octets inférieurs contiennent le numéro de ligne, ou RID.
 - L’octet supérieur contient le type de jeton – 0x09 pour `mdtInterfaceImpl` .
 
-`GetInterfaceImplProps`retourne les informations contenues dans la ligne dont vous indiquez le jeton dans l' `iImpl` argument.
+`GetInterfaceImplProps` retourne les informations contenues dans la ligne dont vous indiquez le jeton dans l' `iImpl` argument.
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
