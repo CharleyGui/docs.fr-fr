@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 41af93c7-e448-4251-8d4d-413d38c635f2
 topic_type:
 - apiref
-ms.openlocfilehash: 4b2689f04228c9ecbbbb18531a0aefd3c40e3072
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 37bf800f27754d1bf80aece962b7cbb85b1cbedc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377978"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712181"
 ---
 # <a name="icordebugremotecreateprocessex-method"></a>ICorDebugRemote::CreateProcessEx, méthode
+
 Lance un processus sur un ordinateur distant sous le débogueur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,6 +47,7 @@ HRESULT CreateProcessEx (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRemoteTarget`  
  dans Pointeur vers une [interface ICorDebugRemoteTarget](icordebugremotetarget-interface.md). Utilisé pour déterminer l’ordinateur distant sur lequel le processus sera lancé.  
   
@@ -85,17 +87,20 @@ HRESULT CreateProcessEx (
  `ppProcess`  
  à Pointeur vers l’adresse d’un objet « interface ICorDebugProcess » qui représente le processus.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK  
  Le processus a été lancé sur l’ordinateur distant et a retourné une « interface ICorDebugProcess » pour le débogage.  
   
  E_FAIL (ou autres codes de retour E_)  
  Impossible de lancer le processus sur l’ordinateur distant et de retourner une « interface ICorDebugProcess » pour le débogage.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Le débogage en mode mixte n’est pas pris en charge dans Silverlight.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug. idl  

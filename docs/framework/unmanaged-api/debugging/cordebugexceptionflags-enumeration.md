@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b22687a8-e9cf-4e65-a1b0-f92a81bc524e
 topic_type:
 - apiref
-ms.openlocfilehash: 45de821dd52f7e153fc79ffde056ed959c654fce
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: a50272bce2e27963a1d684fef40bac30cf44e1f0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795946"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712714"
 ---
 # <a name="cordebugexceptionflags-enumeration"></a>CorDebugExceptionFlags, énumération
+
 Fournit des informations supplémentaires sur une exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,10 +41,12 @@ typedef enum CorDebugExceptionFlags {
 |`DEBUG_EXCEPTION_NONE`|Il n'existe pas d'exception.|  
 |`DEBUG_EXCEPTION_CAN_BE_INTERCEPTED`|L'exception peut être interceptée.<br /><br /> Le moment où se produit l'exception peut néanmoins être tel que le débogueur ne peut pas l'intercepter. Par exemple, s'il n'existe pas de code managé en dessous du rappel actif ou si l'événement d'exception provient d'un attachement juste-à-temps, l'exception ne peut pas être interceptée.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  De nouvelles valeurs sont susceptibles d'être ajoutées dans les versions ultérieures : il est donc recommandé de préparer du code qui utilise `CorDebugExceptionFlags` pour les valeurs inattendues.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

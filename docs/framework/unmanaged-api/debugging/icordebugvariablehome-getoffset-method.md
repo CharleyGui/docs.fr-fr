@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f025c2e5-3f6c-4be8-9ffe-c8b214617dfe
 topic_type:
 - apiref
-ms.openlocfilehash: 75a165e2fd517f36d779a934a5bdd9c41956411a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: c5d491b66e4ec64dffa4e19dabff876c9c473036
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396767"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711791"
 ---
 # <a name="icordebugvariablehomegetoffset-method"></a>ICorDebugVariableHome :: GetOffset,, méthode
+
 Obtient le décalage à partir du registre de base pour une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,18 +35,21 @@ HRESULT GetOffset(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pOffset`  
  à Offset à partir du registre de base.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La méthode retourne les valeurs suivantes :  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|La variable se trouve dans un emplacement de mémoire relatif à un registre.|  
 |`E_FAIL`|La variable n’est pas dans un emplacement de mémoire relatif à un registre.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

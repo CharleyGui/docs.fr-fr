@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 82f596a4-483d-4509-b0c5-a84c53c3da1b
 topic_type:
 - apiref
-ms.openlocfilehash: b7a38d28b55842e9358bd9c7019b84c529526613
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6c16b02a5ae323ba80d44937f322810022dfa9f5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617163"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711635"
 ---
 # <a name="getrequestedruntimeversion-function"></a>GetRequestedRuntimeVersion, fonction
+
 Obtient le numéro de version du common language runtime (CLR) demandé par l’application spécifiée. Si cette version n’est pas installée, obtient la version la plus récente installée avant la version demandée.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -39,6 +40,7 @@ HRESULT GetRequestedRuntimeVersion (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pExe`  
  dans Nom de l’application.  
   
@@ -51,7 +53,8 @@ HRESULT GetRequestedRuntimeVersion (
  `pdwLength`  
  à Pointeur vers la longueur de la chaîne de numéro de version.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
@@ -60,12 +63,13 @@ HRESULT GetRequestedRuntimeVersion (
 |ERROR_INSUFFICIENT_BUFFER|La mémoire tampon de version n’est pas assez grande pour stocker la chaîne de version.|  
 |E_POINTER|`pdwLength` a la valeur null.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

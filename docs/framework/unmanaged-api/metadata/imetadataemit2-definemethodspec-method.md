@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3c24e552-fc69-4971-b65a-a3e4b5f7f1e8
 topic_type:
 - apiref
-ms.openlocfilehash: 8e067dc4943e6847177c13a683703e3a649a49e4
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 817b3a18b047bfca1f3a7c7099920a12e6253f58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503816"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712831"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec, méthode
+
 Crée une instance générique d’une méthode et obtient un jeton pour la définition.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT DefineMethodSpec (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `tkParent`  
  dans Jeton pour la méthode pour laquelle créer l’instance générique. Le jeton doit être de type `mdMethodDef` ou `mdMemberRef` .  
   
@@ -50,11 +52,12 @@ HRESULT DefineMethodSpec (
  à Jeton pour la définition de signature de métadonnées de la méthode.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

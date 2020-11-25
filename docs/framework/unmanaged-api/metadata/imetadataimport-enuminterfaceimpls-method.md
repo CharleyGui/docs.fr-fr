@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: 910c40413075131765a37e00703ac892e3f39641
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0b040a2741a44b9d361dabc38c26b8934659003b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492185"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711518"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls, méthode
+
 Énumère toutes les interfaces implémentées par le spécifié `TypeDef` .
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumInterfaceImpls (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur.  
   
@@ -57,7 +59,7 @@ HRESULT EnumInterfaceImpls (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls`retourné avec succès.|  
+|`S_OK`|`EnumInterfaceImpls` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton MethodDef à énumérer. Dans ce cas, `pcImpls` a la valeur zéro.|  
 
 ## <a name="remarks"></a>Remarques
@@ -65,11 +67,12 @@ HRESULT EnumInterfaceImpls (
 L’énumération retourne une collection de `mdInterfaceImpl` jetons pour chaque interface implémentée par le spécifié `TypeDef` . Les jetons d’interface sont retournés dans l’ordre dans lequel les interfaces ont été spécifiées (par le biais de `DefineTypeDef` ou `SetTypeDefProps` ). Les propriétés des jetons retournés `mdInterfaceImpl` peuvent être interrogées à l’aide de [GetInterfaceImplProps,](imetadataimport-getinterfaceimplprops-method.md).
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

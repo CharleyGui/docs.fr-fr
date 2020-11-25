@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
 topic_type:
 - apiref
-ms.openlocfilehash: a044924810016eea60682b8765aeee448b552f0d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 227d9ab67ab3091508232be3018ca520a6b5dcc6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501194"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711050"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo, méthode
+
 Obtient les données relatives à la colonne spécifiée dans la table spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT GetColumnInfo (
 ```  
   
 ## <a name="parameters"></a>Paramètres
+
 =======
 
  `ixTbl`  
@@ -67,14 +69,14 @@ Le type de colonne retourné est compris dans une plage de valeurs :
 |--------------------------|---------------|-----------------------------------|
 | `0`..`iRidMax`<br>(0.. 63)   | RID           | **IsRidType**<br>**IsRidOrToken** |
 | `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Jeton codé | **IsCodedTokenType** <br>**IsRidOrToken** |
-| `iSHORT`(96)            | Int16         | **IsFixedType**                   |
-| `iUSHORT`(97)           | UInt16        | **IsFixedType**                   |
-| `iLONG`(98)             | Int32         | **IsFixedType**                   |
-| `iULONG`(99)            | UInt32        | **IsFixedType**                   |
-| `iBYTE`(100)            | Byte          | **IsFixedType**                   |
-| `iSTRING`(101)          | String        | **IsHeapType**                    |
-| `iGUID`(102)            | Guid          | **IsHeapType**                    |
-| `iBLOB`(103)            | Objet blob          | **IsHeapType**                    |
+| `iSHORT` (96)            | Int16         | **IsFixedType**                   |
+| `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
+| `iLONG` (98)             | Int32         | **IsFixedType**                   |
+| `iULONG` (99)            | UInt32        | **IsFixedType**                   |
+| `iBYTE` (100)            | Byte          | **IsFixedType**                   |
+| `iSTRING` (101)          | String        | **IsHeapType**                    |
+| `iGUID` (102)            | Guid          | **IsHeapType**                    |
+| `iBLOB` (103)            | Objet blob          | **IsHeapType**                    |
 
 Les valeurs stockées dans le *tas* (autrement dit, `IsHeapType == true` ) peuvent être lues à l’aide de :
 
@@ -86,11 +88,12 @@ Les valeurs stockées dans le *tas* (autrement dit, `IsHeapType == true` ) peuve
 > Pour utiliser les constantes définies dans le tableau ci-dessus, incluez la directive `#define _DEFINE_META_DATA_META_CONSTANTS` fournie par le fichier d’en-tête *Cor. h* .
 
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

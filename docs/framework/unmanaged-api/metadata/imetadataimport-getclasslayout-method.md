@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8f35414d-f40b-4b99-8768-9adb675c622a
 topic_type:
 - apiref
-ms.openlocfilehash: 36c0ffef2d984604be4ae19899e8f3f912cee123
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a442d8d0916b0e86f25c03507de66fc999f2159
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491470"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711258"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout, méthode
+
 Obtient les informations de disposition pour la classe référencée par le jeton TypeDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT GetClassLayout  (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `td`  
  dans Jeton TypeDef pour la classe avec la disposition à retourner.  
   
@@ -58,11 +60,12 @@ HRESULT GetClassLayout  (
  à Taille en octets de la classe représentée par `td` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

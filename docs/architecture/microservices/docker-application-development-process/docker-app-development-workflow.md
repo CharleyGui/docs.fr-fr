@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 1ae4e3cda71676caeab849a92207477652050e25
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 4019eed6b814f4c7e8bc4f32758e8cfd7f4c7ec9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594591"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711173"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -83,7 +83,7 @@ Avec Visual Studio et ses outils pour Docker, cette tâche se fait en quelques c
 
 **Figure 5-3**. Activation de la prise en charge de l’ancrage lors de la création d’un projet de ASP.NET Core dans Visual Studio 2019
 
-Vous pouvez également activer la prise en charge de l’ancrage sur un projet d’application Web ASP.net Core existant en cliquant avec le bouton droit sur le projet dans **Explorateur de solutions** et en sélectionnant **Ajouter** la  >  **prise en charge de l’ancrage...** , comme illustré à la figure 5-4.
+Vous pouvez également activer la prise en charge de l’ancrage sur un projet d’application Web ASP.net Core existant en cliquant avec le bouton droit sur le projet dans **Explorateur de solutions** et en sélectionnant **Ajouter** la  >  **prise en charge de l’ancrage...**, comme illustré à la figure 5-4.
 
 ![Capture d’écran montrant l’option prise en charge de l’ancrage dans le menu Ajouter.](./media/docker-app-development-workflow/add-docker-support-option.png)
 
@@ -97,14 +97,14 @@ De même, Visual Studio peut également ajouter un `docker-compose.yml` fichier 
 
 Le plus souvent, vous créez une image personnalisée pour votre conteneur à partir d’une image de base que vous obtenez dans un dépôt officiel comme le registre [Docker Hub](https://hub.docker.com/). C’est précisément ce qui se passe en arrière-plan quand vous activez la prise en charge de Docker dans Visual Studio. Votre fichier Dockerfile utilise une image `dotnet/core/aspnet` existante.
 
-Précédemment, nous avons expliqué quels images et dépôts Docker vous pouvez utiliser selon le framework et le système d’exploitation que vous avez choisis. Par exemple, si vous souhaitez utiliser ASP.NET Core (Windows ou Linux), l’image à utiliser est `mcr.microsoft.com/dotnet/core/aspnet:3.1`. La seule chose à faire est donc de spécifier l’image Docker de base à utiliser pour votre conteneur. Pour ce faire, ajoutez `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1` à votre fichier Dockerfile. Cette opération est effectuée automatiquement par Visual Studio, mais si vous avez à mettre à jour la version, vous devez modifier cette valeur.
+Précédemment, nous avons expliqué quels images et dépôts Docker vous pouvez utiliser selon le framework et le système d’exploitation que vous avez choisis. Par exemple, si vous souhaitez utiliser ASP.NET Core (Windows ou Linux), l’image à utiliser est `mcr.microsoft.com/dotnet/aspnet:3.1`. La seule chose à faire est donc de spécifier l’image Docker de base à utiliser pour votre conteneur. Pour ce faire, ajoutez `FROM mcr.microsoft.com/dotnet/aspnet:3.1` à votre fichier Dockerfile. Cette opération est effectuée automatiquement par Visual Studio, mais si vous avez à mettre à jour la version, vous devez modifier cette valeur.
 
 L’utilisation d’un dépôt d’images .NET officiel fourni dans le Docker Hub avec un numéro de version garantit que les mêmes fonctionnalités de langage sont disponibles sur toutes les machines (y compris celles de développement, test et production).
 
 L’extrait de code suivant est un exemple de fichier Dockerfile pour un conteneur ASP.NET Core.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+FROM mcr.microsoft.com/dotnet/aspnet:3.1
 ARG source
 WORKDIR /app
 EXPOSE 80
@@ -112,7 +112,7 @@ COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", " MySingleContainerWebApp.dll "]
 ```
 
-Dans ce cas, l’image est basée sur la version 3,1 de l’image officielle de l’ancre ASP.NET Core (multi-arch pour Linux et Windows). Il s’agit du paramètre `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1`. (Pour plus d’informations sur cette image de base, consultez la page image de l' [ancreur .net Core](https://hub.docker.com/_/microsoft-dotnet-core/) .) Dans le fichier dockerfile, vous devez également demander à Dockr d’écouter sur le port TCP que vous allez utiliser lors de l’exécution (dans ce cas, le port 80, tel que configuré avec le paramètre exposer).
+Dans ce cas, l’image est basée sur la version 3,1 de l’image officielle de l’ancre ASP.NET Core (multi-arch pour Linux et Windows). Il s’agit du paramètre `FROM mcr.microsoft.com/dotnet/aspnet:3.1`. (Pour plus d’informations sur cette image de base, consultez la page image de l' [ancreur ASP.net Core](https://hub.docker.com/_/microsoft-dotnet-aspnet/) .) Dans le fichier dockerfile, vous devez également demander à Dockr d’écouter sur le port TCP que vous allez utiliser lors de l’exécution (dans ce cas, le port 80, tel que configuré avec le paramètre exposer).
 
 Vous pouvez spécifier des paramètres de configuration supplémentaires dans le fichier Dockerfile, en fonction du langage et du framework que vous utilisez. Par exemple, la ligne ENTRYPOINT avec `["dotnet", "MySingleContainerWebApp.dll"]` indique à Docker d’exécuter une application .NET Core. Si vous utilisez le SDK et l’interface CLI (dotnet) de .NET Core pour créer et exécuter l’application .NET, ce paramètre est différent. L’essentiel à retenir est que la ligne ENTRYPOINT et certains autres paramètres varient selon le langage et la plateforme choisis pour votre application.
 
@@ -132,19 +132,19 @@ Vous pouvez spécifier des paramètres de configuration supplémentaires dans le
 
 ### <a name="using-multi-arch-image-repositories"></a>Utilisation de dépôts d’images multi-arch
 
-Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows. Cette fonctionnalité permet aux fournisseurs comme Microsoft (créateurs d’images de base) de créer un dépôt commun pour plusieurs plateformes (Linux et Windows). Par exemple, le référentiel [dotnet/core](https://hub.docker.com/_/microsoft-dotnet-core/) disponible dans le registre Docker Hub assure sous le même nom la prise en charge de Linux et Windows Nano Server.
+Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows. Cette fonctionnalité permet aux fournisseurs comme Microsoft (créateurs d’images de base) de créer un dépôt commun pour plusieurs plateformes (Linux et Windows). Par exemple, le référentiel [dotnet/core](https://hub.docker.com/_/microsoft-dotnet/) disponible dans le registre Docker Hub assure sous le même nom la prise en charge de Linux et Windows Nano Server.
 
 Si vous spécifiez une balise, le ciblage d’une plateforme est explicite, comme dans les cas suivants :
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim` \
   Cibles : .NET Core 3,1 Runtime uniquement sur Linux
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1909` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1-nanoserver-1909` \
   Cibles : Runtime .NET Core 3,1 uniquement sur Windows nano Server
 
 Toutefois, si vous spécifiez le même nom d’image avec la même balise, les images multi-architectures (comme l’image `aspnet`) utilisent la version Windows ou Linux selon le système d’exploitation hôte de Docker que vous déployez, comme indiqué dans l’exemple suivant :
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1` \
   Multi-arch : .NET Core 3,1 Runtime uniquement sur Linux ou Windows nano Server en fonction du système d’exploitation hôte de l’ordinateur d’amarrage
 
 Ainsi, quand vous tirez (pull) une image d’un hôte Windows, la variante Windows est tirée et quand vous tirez le même nom d’image d’un hôte Linux, la variante Linux est tirée.
@@ -174,11 +174,11 @@ Vraisemblablement, la meilleure façon de comprendre le concept du multi-étape 
 Le fichier Dockerfile initial peut ressembler à ceci :
 
 ```dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+ 1  FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+ 5  FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
  6  WORKDIR /src
  7  COPY src/Services/Catalog/Catalog.API/Catalog.API.csproj …
  8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks …
@@ -242,7 +242,7 @@ Voyons maintenant les optimisations possibles pour améliorer les performances d
 
 Vous allez tirer parti de la fonctionnalité de cache de couches de Docker, qui est assez simple : si l’image de base et les commandes sont les mêmes que certaines exécutées précédemment, vous pouvez gagner du temps en utilisant simplement la couche qui en résulte sans avoir à exécuter les commandes.
 
-Par conséquent, prenons l’étape **build** , les lignes 5 et 6 sont quasiment les mêmes, mais les lignes 7 à 17 sont différentes pour chaque service d’eShopOnContainers, et doivent donc être exécutées à chaque fois, mais si vous remplacez les lignes 7 à 16 par :
+Par conséquent, prenons l’étape **build**, les lignes 5 et 6 sont quasiment les mêmes, mais les lignes 7 à 17 sont différentes pour chaque service d’eShopOnContainers, et doivent donc être exécutées à chaque fois, mais si vous remplacez les lignes 7 à 16 par :
 
 ```dockerfile
 COPY . .
@@ -264,7 +264,7 @@ Les packages sont restaurés pour l’ensemble de la solution, mais une fois enc
 
 Toutefois, `dotnet restore` s’exécute uniquement si le dossier contient un seul fichier projet ou solution. Les choses se compliquent donc un peu et vous pouvez résoudre le problème, sans rentrer dans les détails, de la façon suivante :
 
-1. Ajoutez les lignes suivantes à **.dockerignore**  :
+1. Ajoutez les lignes suivantes à **.dockerignore** :
 
    - `*.sln`, pour ignorer tous les fichiers solution dans l’arborescence de dossiers principale
 
@@ -277,11 +277,11 @@ Voyons maintenant l’optimisation finale : la ligne 20 est redondante et, com
 Le fichier résultant est alors :
 
 ```dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+ 1  FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS publish
+ 5  FROM mcr.microsoft.com/dotnet/sdk:3.1 AS publish
  6  WORKDIR /src
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
@@ -336,11 +336,11 @@ Vous pouvez rechercher les images existantes dans votre dépôt local avec la co
 
 ### <a name="creating-docker-images-with-visual-studio"></a>Création d’images Docker avec Visual Studio
 
-Quand vous utilisez Visual Studio pour créer un projet avec la prise en charge de Docker, vous ne créez pas une image explicitement. En fait, l’image est créée quand vous appuyez sur **F5** (ou **Ctrl-F5** ) pour exécuter l’application ou le service dockerisé. Cette étape est automatique dans Visual Studio. Vous ne la verrez donc pas à l’écran, mais il est important d’en comprendre le mécanisme.
+Quand vous utilisez Visual Studio pour créer un projet avec la prise en charge de Docker, vous ne créez pas une image explicitement. En fait, l’image est créée quand vous appuyez sur **F5** (ou **Ctrl-F5**) pour exécuter l’application ou le service dockerisé. Cette étape est automatique dans Visual Studio. Vous ne la verrez donc pas à l’écran, mais il est important d’en comprendre le mécanisme.
 
 ![Image pour l’étape 4 facultative.](./media/docker-app-development-workflow/step-4-define-services-docker-compose-yml.png)
 
-## <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application"></a>Étape 4. Définir vos services dans docker-compose.yml lors de la création d’une application Docker multiconteneur
+## <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application"></a>Étape 4. Définir vos services dans docker-compose.yml lors de la création d’une application Docker multiconteneur
 
 Le fichier [docker-compose.yml](https://docs.docker.com/compose/compose-file/) vous permet de définir un ensemble de services à déployer ensemble comme application composée avec les commandes de déploiement. Il configure également ses relations de dépendance et la configuration d’exécution.
 
@@ -566,7 +566,7 @@ RUN powershell -Command Add-WindowsFeature Web-Server
 CMD [ "ping", "localhost", "-t" ]
 ```
 
-Dans ce cas, nous utilisons une image de base Windows Server Core (le paramètre FROM) et nous installons IIS à l’aide d’une commande PowerShell (le paramètre RUN). De la même façon, vous pouvez également utiliser des commandes PowerShell pour configurer des composants supplémentaires comme ASP.NET 4.x, .NET 4.6 ou tout autre logiciel Windows. Par exemple, la commande suivante dans un fichier Dockerfile configure ASP.NET 4.5 :
+Dans ce cas, nous utilisons une image de base Windows Server Core (le paramètre FROM) et nous installons IIS à l’aide d’une commande PowerShell (le paramètre RUN). De la même façon, vous pouvez également utiliser des commandes PowerShell pour configurer des composants supplémentaires comme ASP.NET 4. x, .NET Framework 4,6 ou tout autre logiciel Windows. Par exemple, la commande suivante dans un fichier Dockerfile configure ASP.NET 4.5 :
 
 ```dockerfile
 RUN powershell add-windowsfeature web-asp-net45

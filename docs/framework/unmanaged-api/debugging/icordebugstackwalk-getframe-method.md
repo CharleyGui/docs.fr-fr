@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4083b505-5b59-44fb-8c5d-129db6a96c10
 topic_type:
 - apiref
-ms.openlocfilehash: 5f80125a67e634dda05b9427b5f46db8f21b29f8
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 452635764794e01858baab10464a03c966a55271
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379200"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711935"
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame, méthode
+
 Obtient le frame actuel dans l’objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,10 +33,12 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pFrame`  
  dans Pointeur vers l’adresse de l’objet Frame créé qui représente le frame actuel dans la pile.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -48,10 +51,12 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarks  
- `ICorDebugStackWalk`retourne uniquement les frames de pile réels. Utilisez la méthode [ICorDebugThread3 :: GetActiveInternalFrames,](icordebugthread3-getactiveinternalframes-method.md) pour retourner des frames internes. (Les frames internes sont des structures de données faisant l’objet d’un push dans la pile par le runtime pour stocker des données temporaires.)  
+## <a name="remarks"></a>Remarques  
+
+ `ICorDebugStackWalk` retourne uniquement les frames de pile réels. Utilisez la méthode [ICorDebugThread3 :: GetActiveInternalFrames,](icordebugthread3-getactiveinternalframes-method.md) pour retourner des frames internes. (Les frames internes sont des structures de données faisant l’objet d’un push dans la pile par le runtime pour stocker des données temporaires.)  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

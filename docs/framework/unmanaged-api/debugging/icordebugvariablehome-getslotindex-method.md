@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 966da50d-5665-4fff-bf7b-1c72bbadd9a4
 topic_type:
 - apiref
-ms.openlocfilehash: 0bffd2db0a4a061a8629ff50a03a319feec6d836
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4b071bd8e9d96084848c1553385eec5f8beca624
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396550"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711726"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome :: GetSlotIndex, méthode
+
 Obtient l’index d’emplacement managé d’une variable locale.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,21 +35,25 @@ HRESULT GetSlotIndex(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pSlotIndex`  
  à Pointeur vers l’index d’emplacement d’une variable locale.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La méthode retourne les valeurs suivantes.  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|L’appel de méthode a retourné une valeur d’index d’emplacement dans `pSlotIndex` .|  
 |`E_FAIL`|L’instance [ICorDebugVariableHome](icordebugvariablehome-interface.md) actuelle représente un argument de fonction.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  L’index d’emplacement peut être utilisé pour récupérer les métadonnées de cette variable locale.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

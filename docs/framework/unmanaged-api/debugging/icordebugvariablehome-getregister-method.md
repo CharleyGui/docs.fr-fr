@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a5eecd7b-b04c-4266-bff2-7c8771d519a8
 topic_type:
 - apiref
-ms.openlocfilehash: 6cf66774209bd07426872c29c15b2225421c2b4d
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 7f912f4b13620b567f5aa097604e98112d85f02d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396831"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711752"
 ---
 # <a name="icordebugvariablehomegetregister-method"></a>ICorDebugVariableHome :: GetRegister, méthode
+
 Obtient le Registre qui contient une variable avec un type d’emplacement `VLT_REGISTER` et le registre de base pour une variable avec un type d’emplacement `VLT_REGISTER_RELATIVE` .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,18 +35,21 @@ HRESULT GetRegister(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRegister`  
  à Valeur d’énumération CorDebugRegister qui indique le registre d’une variable avec un type d’emplacement `VLT_REGISTER` et le registre de base pour une variable avec un type d’emplacement `VLT_REGISTER_RELATIVE` .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La méthode retourne les valeurs suivantes :  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|La variable se trouve dans le registre indiqué par l' `pRegister` argument.|  
 |`E_FAIL`|La variable n’est pas dans un registre ou un emplacement relatif à un registre.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 94e02e31-67ea-4b00-8148-a46740a4571d
 topic_type:
 - apiref
-ms.openlocfilehash: 5e88652ff75223e30e6abc454f1e1af91494c7b2
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 9407dda7aab337f667cd5043b562d0eac94f0f04
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396704"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711921"
 ---
 # <a name="icordebugtype-interface"></a>ICorDebugType, interface
+
 Représente un type, de base ou complexe (autrement dit, défini par l’utilisateur). Si le type est générique, `ICorDebugType` représente le type générique instancié.  
   
 ## <a name="methods"></a>Méthodes  
@@ -36,15 +37,17 @@ Représente un type, de base ou complexe (autrement dit, défini par l’utilisa
 |[GetStaticFieldValue, méthode](icordebugtype-getstaticfieldvalue-method.md)|Obtient un pointeur d’interface vers un ICorDebugValue qui contient la valeur du champ statique référencé par le jeton de champ spécifié dans le frame de pile spécifié.|  
 |[GetType, méthode](icordebugtype-gettype-method.md)|Obtient une valeur CorElementType qui décrit le type natif de la common language runtime <xref:System.Type> référencée par ce `ICorDebugType` .|  
   
-## <a name="remarks"></a>Notes  
- Si le type est générique, `ICorDebugClass` représente le type non instancié. L' `ICorDebugType` interface représente un type générique instancié. Par exemple, Hashtable \< K, V> serait représenté par `ICorDebugClass` , alors que Hashtable \< Int32, String> serait représenté par `ICorDebugType` .  
+## <a name="remarks"></a>Remarques  
+
+ Si le type est générique, `ICorDebugClass` représente le type non instancié. L' `ICorDebugType` interface représente un type générique instancié. Par exemple, Hashtable \<K, V> serait représenté par `ICorDebugClass` , alors que Hashtable \<Int32, String> serait représenté par `ICorDebugType` .  
   
  Les types non génériques sont représentés par `ICorDebugClass` et `ICorDebugType` . La dernière interface a été introduite dans la version 2,0 de .NET Framework pour gérer l’instanciation de type.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

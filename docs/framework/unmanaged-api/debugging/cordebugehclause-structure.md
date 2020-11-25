@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 0e350a1b-6997-46d0-bfc5-962a5011ef43
 topic_type:
 - apiref
-ms.openlocfilehash: a889d6ba00c4a0eb96a9923a7dbe52f3b93aaba5
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 225523280a2e1e0d8f51321e9dd865d901e725ba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795959"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712701"
 ---
 # <a name="cordebugehclause-structure"></a>CorDebugEHClause, structure
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Représente une clause de gestion des exceptions pour un bloc spécifié de code de langage intermédiaire.  
@@ -42,7 +43,7 @@ typedef struct _CorDebugEHClause {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`Flags`|Un champ de bits qui décrit les informations de l'exception dans la clause de gestion des exceptions. Pour plus d'informations, consultez la section Notes.|  
+|`Flags`|Un champ de bits qui décrit les informations de l'exception dans la clause de gestion des exceptions. Pour plus d'informations, consultez la section Remarques.|  
 |`TryOffset`|Le décalage en octets du bloc `try` à partir du début du corps de la méthode.|  
 |`TryLength`|La longueur en octets du bloc `try`.|  
 |`HandlerOffset`|L'emplacement du gestionnaire pour ce bloc `try`.|  
@@ -50,7 +51,8 @@ typedef struct _CorDebugEHClause {
 |`ClassToken`|Le jeton de métadonnées pour un gestionnaire d'exceptions basé sur les types.|  
 |`FilterOffset`|Le décalage en octets depuis le début du corps de la méthode pour un gestionnaire d'exceptions basé sur les filtres.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Un tableau de `CoreDebugEHClause` valeurs est retourné par la méthode [getehclauses,](icordebugilcode-getehclauses-method.md) .  
   
  Les informations de la clause du gestionnaire d'exceptions sont définies par la spécification CLI. Pour plus d’informations, consultez [Standard ECMA-355 : Common Language Infrastructure (CLI), sixième édition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
@@ -64,7 +66,8 @@ typedef struct _CorDebugEHClause {
 |`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|Une clause `finally`.|  
 |`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Une clause fault (une clause `finally` qui est appelée seulement quand une exception est levée).|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

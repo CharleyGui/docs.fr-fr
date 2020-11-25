@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4d946ad4-3c19-42cb-bec9-8633325ba769
 topic_type:
 - apiref
-ms.openlocfilehash: d5cdb8c6740970f6a7469be8c763961bf76d6ecc
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: cddcf66939a2ae7ab9e7f63a6fd61b72c56f6c7a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795936"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712727"
 ---
 # <a name="cordebugexceptioncallbacktype-enumeration"></a>CorDebugExceptionCallbackType, énumération
+
 Indique le type de rappel effectué à partir d’un événement [ICorDebugManagedCallback2 :: exception](icordebugmanagedcallback2-exception-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,10 +42,11 @@ typedef enum CorDebugExceptionCallbackType {
 |------------|-----------------|  
 |`DEBUG_EXCEPTION_FIRST_CHANCE`|Une exception a été levée.|  
 |`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|L’exception Windup processus a entré le code utilisateur.|  
-|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Le processus Windup de l’exception `catch` a trouvé un bloc dans le code utilisateur.|  
+|`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Le processus Windup de l’exception a trouvé un `catch` bloc dans le code utilisateur.|  
 |`DEBUG_EXCEPTION_UNHANDLED`|L’exception n’a pas été gérée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

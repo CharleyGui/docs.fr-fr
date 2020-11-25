@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 84296b55-c2c5-424c-ac9c-8e28e2895945
 topic_type:
 - apiref
-ms.openlocfilehash: 2d296c1778e00c4c72e860e0705994518d1481e8
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: a0ec83a5590e184b9ff60449a8147d1a3c90a6a9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795879"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712454"
 ---
 # <a name="cordebughandletype-enumeration"></a>CorDebugHandleType, énumération
+
 Indique le type de handle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,7 +41,8 @@ typedef enum CorDebugHandleType {
 |`HANDLE_STRONG`|Le handle est fort, ce qui empêche la récupération d’un objet par garbage collection.|  
 |`HANDLE_WEAK_TRACK_RESURRECTION`|Le descripteur est faible, ce qui n’empêche pas un objet d’être récupéré par garbage collection.<br /><br /> Le descripteur devient non valide lors de la collecte de l’objet.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
