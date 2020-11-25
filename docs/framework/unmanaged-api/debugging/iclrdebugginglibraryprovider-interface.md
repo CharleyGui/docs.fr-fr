@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 67739617-6add-41a9-9de5-a3200c3109ce
 topic_type:
 - apiref
-ms.openlocfilehash: 77c2011ce677d1bd2823d47740782f48151b408a
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: cd17cbc808b7f8381ac320bb55999c6b0466c3d8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860282"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723533"
 ---
 # <a name="iclrdebugginglibraryprovider-interface"></a>ICLRDebuggingLibraryProvider, interface
+
 Comprend la méthode de [méthode ProvideLibrary,](iclrdebugginglibraryprovider-providelibrary-method.md) , qui obtient une interface de rappel de fournisseur de bibliothèque qui permet à Common Language Runtime bibliothèques de débogage spécifiques à la version d’être localisées et chargées à la demande.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,7 +31,8 @@ Comprend la méthode de [méthode ProvideLibrary,](iclrdebugginglibraryprovider-
 |------------|-----------------|  
 |[ProvideLibrary, méthode](iclrdebugginglibraryprovider-providelibrary-method.md)|Permet au débogueur de fournir un handle à un module qui peut être utilisé pour charger une bibliothèque de débogage.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

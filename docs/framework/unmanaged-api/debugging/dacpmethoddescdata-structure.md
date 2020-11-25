@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: d623fe862eaf5902fd89d0e512dd07f73a03246f
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: dcf01c00a106c131646a16597dca4092a06c5983
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860817"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723062"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData, structure
 
@@ -73,11 +73,12 @@ struct DacpMethodDescData
 | `rejitDataRequested`         | Informations de ReJIT pour l’adresse Native demandée.                                             |
 | `cJittedRejitVersions`       | Nombre de fois que la méthode a été rejitted par l’instrumentation.                           |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
 Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
+
 **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  
@@ -87,4 +88,4 @@ Cette structure se trouve à l’intérieur du runtime et n’est pas exposée v
 
 - [Débogage](index.md)
 - [Structures de débogage](debugging-structures.md)
-- [Types de données courants](../common-data-types-unmanaged-api-reference.md)
+- [Types de données communs](../common-data-types-unmanaged-api-reference.md)

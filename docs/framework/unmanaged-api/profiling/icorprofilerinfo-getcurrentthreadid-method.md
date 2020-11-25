@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 39bbdb30-6a7a-4202-8da3-67ae9a0ab3a8
 topic_type:
 - apiref
-ms.openlocfilehash: fa0fe827300a86a906a254292434e2a56ebb4a47
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 18298c4c726d7d850e67afbf82ca77b7511d8917
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498399"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722586"
 ---
 # <a name="icorprofilerinfogetcurrentthreadid-method"></a>ICorProfilerInfo::GetCurrentThreadID, méthode
+
 Obtient l’ID du thread actuel, s’il s’agit d’un thread managé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT GetCurrentThreadID(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pThreadId`  
  à Pointeur vers l’ID retourné du thread managé.  
   
 ## <a name="remarks"></a>Remarques  
+
  Si le thread actuel est un thread du runtime interne ou un autre thread non managé, `GetCurrentThreadID` retourne CORPROF_E_NOT_MANAGED_THREAD comme HRESULT, et la valeur retournée du `pThreadId` paramètre est null.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

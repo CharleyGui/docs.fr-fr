@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 37fd27af-8062-4904-ace4-51bb78ec600a
 topic_type:
 - apiref
-ms.openlocfilehash: edce5cb93b770fb5730e5a06633ffffacf332f7a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 94ce4443be210fdfeb1bab197c3e603255e1cc4c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004688"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723244"
 ---
 # <a name="imetadataemitdefineimporttype-method"></a>IMetaDataEmit::DefineImportType, méthode
+
 Crée une référence au type spécifié qui est défini en dehors de la portée actuelle et définit un jeton pour cette référence.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,6 +41,7 @@ HRESULT DefineImportType (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAssemImport`  
  dans Interface [IMetaDataAssemblyImport](imetadataassemblyimport-interface.md) qui représente l’assembly à partir duquel le type cible est importé.  
   
@@ -53,23 +55,25 @@ HRESULT DefineImportType (
  dans Interface [IMetaDataImport](imetadataimport-interface.md) qui représente la portée des métadonnées à partir de laquelle le type cible est importé.  
   
  `tdImport`  
- dans `mdTypeDef`Jeton qui spécifie le type de cible.  
+ dans `mdTypeDef` Jeton qui spécifie le type de cible.  
   
  `pAssemEmit`  
  dans Interface [IMetaDataAssemblyEmit](imetadataassemblyemit-interface.md) qui représente l’assembly dans lequel le type cible est importé.  
   
  `ptr`  
- à `mdTypeRef`Jeton qui est défini dans la portée actuelle pour la référence de type.  
+ à `mdTypeRef` Jeton qui est défini dans la portée actuelle pour la référence de type.  
   
 ## <a name="remarks"></a>Remarques  
+
  Avant d’appeler la méthode [IMetaDataEmit ::D efineimportmember](imetadataemit-defineimportmember-method.md) , vous pouvez utiliser la `DefineImportType` méthode pour créer une référence de type, dans la portée actuelle, pour la classe parente ou l’interface parente du membre.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

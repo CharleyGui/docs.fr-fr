@@ -11,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 1ad8f72f80e88971e2bbf672bd92d9c607134783
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9d5d5b27fb77500aa5f6deff3fcb1c739ba8b094
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827410"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722659"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
 
@@ -71,6 +71,7 @@ Lorsque vous faites référence à un système de type, la covariance, la contra
 - À compter de C# 9, les types de retour covariants sont pris en charge. Une méthode de substitution peut déclarer un type de retour plus dérivé comme méthode qu’elle substitue, et une propriété de substitution, en lecture seule peut déclarer un type plus dérivé.
 
 <a name="InterfaceCovariantTypeParameters"></a>
+
 ## <a name="generic-interfaces-with-covariant-type-parameters"></a>Interfaces génériques avec paramètres de type covariant
 
 Plusieurs interfaces génériques ont des paramètres de type covariant, par exemple,,, <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.Generic.IEnumerator%601> <xref:System.Linq.IQueryable%601> et <xref:System.Linq.IGrouping%602> . Tous les paramètres de type de ces interfaces sont covariants, les paramètres de type sont donc uniquement utilisés pour les types de retour des membres.  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3ccdf18-4ec6-494d-9024-48e5c8c724f5
 topic_type:
 - apiref
-ms.openlocfilehash: 9c22ca47a606da0949529cf55655bbcde19cb5c9
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5eee2aee5873fe512136bc5407e395acdc31af29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795662"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722607"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState, énumération
+
 Spécifie l'état d'un thread pour le débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,12 +41,14 @@ typedef enum CorDebugThreadState {
 |`THREAD_RUN`|Le thread s’exécute librement, à moins qu’un événement de débogage se produise.|  
 |`THREAD_SUSPEND`|Le thread ne peut pas s’exécuter.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Le débogueur utilise l' `CorDebugThreadState` énumération pour contrôler l’exécution d’un thread. L’état d’un thread peut être défini à l’aide de la méthode [ICorDebugThread :: SetDebugState,](icordebugthread-setdebugstate-method.md) ou [ICorDebugController :: SetAllThreadsDebugState](icordebugcontroller-setallthreadsdebugstate-method.md) .  
   
  Un rappel fourni à l' [API d’hébergement](../hosting/index.md) active le pompage de messages, ce qui signifie qu’il n’est pas nécessaire d’interrompre l’État.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

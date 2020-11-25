@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fab8a58-3883-490f-8b27-64042c90f104
 topic_type:
 - apiref
-ms.openlocfilehash: 5730cdd910257d762230f5e54576d5e0a7ac1adb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b8b9f8e63a0b52dde0e814f53cfc75e6f6d48e78
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614823"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723023"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable, méthode
+
 Définit une variable unique dans la portée lexicale actuelle. Cette méthode peut être appelée plusieurs fois pour une variable du même nom qui a plusieurs maisons dans une étendue. Dans ce cas, toutefois, les valeurs des `startOffset` paramètres et `endOffset` ne doivent pas se chevaucher.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,6 +43,7 @@ HRESULT DefineLocalVariable(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Pointeur vers un `WCHAR` qui définit le nom de la variable locale.  
   
@@ -49,7 +51,7 @@ HRESULT DefineLocalVariable(
  dans Attributs de la variable locale.  
   
  `cSig`  
- dans `ULONG32`Qui indique la taille, en octets, de la `signature` mémoire tampon.  
+ dans `ULONG32` Qui indique la taille, en octets, de la `signature` mémoire tampon.  
   
  `signature`  
  dans Signature de la variable locale.  
@@ -72,10 +74,12 @@ HRESULT DefineLocalVariable(
  `endOffset`  
  dans Offset de fin de la variable. Ce paramètre est facultatif. Si la valeur est égale à 0, ce paramètre est ignoré et la variable est définie dans l’ensemble de la portée. S’il s’agit d’une valeur différente de zéro, la variable est comprise entre les offsets de la portée actuelle.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

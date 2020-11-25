@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e06fc19d-2cf4-4cad-81a3-137a68af8969
 topic_type:
 - apiref
-ms.openlocfilehash: 9cc68e39dfef096b8ab6a8ba743f7a516cc349be
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: fef0902aedbcd8572d2dc67fae7927f754af4489
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210408"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723309"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock, méthode
+
 Retourne le thread managé qui détient le verrou du moniteur sur cet objet.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,13 +36,15 @@ HRESULT GetThreadOwningMonitorLock (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppThread`  
  à Thread managé qui possède le verrou du moniteur sur cet objet.  
   
  `pAcquisitionCount`  
  à Nombre de fois que ce thread doit libérer le verrou avant qu’il ne soit plus propriétaire.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -51,7 +54,8 @@ HRESULT GetThreadOwningMonitorLock (
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si un thread managé possède le verrou du moniteur sur cet objet :  
   
 - La méthode retourne S_OK.  
@@ -64,7 +68,8 @@ HRESULT GetThreadOwningMonitorLock (
   
  Si une erreur se produit et qu’il est impossible de déterminer le thread qui, le cas échéant, détient le verrou du moniteur sur cet objet, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - COR_ENABLE_PROFILING environment variable
 - profiling API [.NET Framework], enabling
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
-ms.openlocfilehash: adf790e0b2d2b72b5a1f0b2a41b80db6d5026869
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9c712c5efe8d6d79454b70d0bf4f3ca2fa83b637
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494018"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722477"
 ---
 # <a name="setting-up-a-profiling-environment"></a>Configuration d'un environnement de profilage
+
 > [!NOTE]
 > Des modifications substantielles ont été apportées au profilage dans le .NET Framework 4.  
   
@@ -41,6 +42,7 @@ ms.locfileid: "84494018"
 > Pour utiliser .NET Framework les versions 2,0, 3,0 et 3,5 des profileurs dans le .NET Framework 4 et versions ultérieures, vous devez définir la variable d’environnement COMPLUS_ProfAPI_ProfilerCompatibilitySetting.  
   
 ## <a name="environment-variable-scope"></a>Étendue de la variable d'environnement  
+
  La manière dont vous définissez les variables d'environnement COR_ENABLE_PROFILING et COR_PROFILER déterminent leur champ d'influence. Vous pouvez définir ces variables de l'une des manières suivantes :  
   
 - Si vous définissez les variables dans un appel [ICorDebug :: CreateProcess](../debugging/icordebug-createprocess-method.md) , elles s’appliquent uniquement à l’application que vous exécutez à ce moment-là. (Elles s'appliquent également aux autres applications démarrées par l'application qui héritent de l'environnement.)  
@@ -62,6 +64,7 @@ ms.locfileid: "84494018"
 - Étant donné que le profileur est un objet COM instancié in-process, chaque application profilée possède sa propre copie du profileur. Par conséquent, une instance de profileur particulière n'a pas à gérer les données de plusieurs applications. Toutefois, vous devrez ajouter une logique au code de journalisation du profileur pour éviter le remplacement du fichier journal d'autres applications profilées.  
   
 ## <a name="initializing-the-profiler"></a>Initialisation du profileur  
+
  Quand les deux vérifications de variables d'environnement réussissent, le CLR crée une instance du profileur d'une manière similaire à la fonction `CoCreateInstance` COM. Le profileur n'est pas chargé via un appel direct à `CoCreateInstance`. Par conséquent, un appel à `CoInitialize`, qui requiert la définition du modèle de thread, est évité. Le CLR appelle ensuite la méthode [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) dans le profileur. La signature de cette méthode est la suivante.  
   
 ```cpp  
@@ -71,6 +74,7 @@ HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)
  Le profileur doit interroger `pICorProfilerInfoUnk` un pointeur d’interface [ICorProfilerInfo](icorprofilerinfo-interface.md) ou [ICorProfilerInfo2](icorprofilerinfo2-interface.md) et l’enregistrer afin qu’il puisse demander plus d’informations ultérieurement au cours du profilage.  
   
 ## <a name="setting-event-notifications"></a>Définition de notifications d'événements  
+
  Le profileur appelle ensuite la méthode [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md) pour spécifier les catégories de notifications qui l’intéressent. Par exemple, si le profileur s’intéresse uniquement aux notifications d’entrée et de sortie de fonction, ainsi qu’aux notifications de garbage collection, il spécifie ce qui suit.  
   
 ```cpp  
@@ -84,7 +88,9 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
  Certains événements de profileur sont immuables. Cela signifie que, dès que ces événements sont définis dans le rappel `ICorProfilerCallback::Initialize`, ils ne peuvent pas être désactivés et aucun nouvel événement ne peut être activé. Toute tentative de modification d'un événement immuable entraîne le retour d'un HRESULT d'échec par `ICorProfilerInfo::SetEventMask`.  
   
 <a name="windows_service"></a>
+
 ## <a name="profiling-a-windows-service"></a>Profilage d'un service Windows  
+
  Le profilage d'un service Windows s'apparente au profilage d'une application du Common Language Runtime. Les deux opérations de profilage sont activées via des variables d'environnement. Étant donné qu'un service Windows démarre au démarrage du système d'exploitation, les variables d'environnement décrites précédemment dans cette rubrique doivent déjà être présentes et définies sur les valeurs requises avant le démarrage du système. En outre, la DLL de profilage doit déjà être enregistrée sur le système.  
   
  Après avoir défini les variables d'environnement COR_ENABLE_PROFILING et COR_PROFILER, puis inscrit la DLL du profileur, vous devez redémarrer l'ordinateur cible pour que le service Windows puisse détecter ces modifications.  

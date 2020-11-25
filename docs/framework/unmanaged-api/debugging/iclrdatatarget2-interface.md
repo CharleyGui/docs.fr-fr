@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 94249397-861b-4294-a538-cf01466a66d3
 topic_type:
 - apiref
-ms.openlocfilehash: 6b2700b2f12e312f06640a06e5ec82fbc58f2ca9
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: dee5108439610b67c3397cebcd8ee5f84d4eacea
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860464"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723634"
 ---
 # <a name="iclrdatatarget2-interface"></a>ICLRDataTarget2, interface
+
 Sous-classe de [ICLRDataTarget](iclrdatatarget-interface.md) qui est utilisée par la couche des services d’accès aux données pour manipuler les régions de la mémoire virtuelle dans le processus cible.  
   
 ## <a name="methods"></a>Méthodes  
@@ -31,10 +32,12 @@ Sous-classe de [ICLRDataTarget](iclrdatatarget-interface.md) qui est utilisée p
 |[AllocVirtual, méthode](iclrdatatarget2-allocvirtual-method.md)|Alloue de la mémoire dans l’espace d’adressage du processus cible.|  
 |[FreeVirtual, méthode](iclrdatatarget2-freevirtual-method.md)|Libère de la mémoire qui a été précédemment allouée dans l’espace d’adressage du processus cible.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Le client API (c'est-à-dire le débogueur) doit implémenter cette interface comme il convient pour le processus cible particulier. Par exemple, un processus actif aurait une implémentation différente de celle d'un vidage de la mémoire. La cible ne prend peut-être pas en charge la modification de ses régions de mémoire.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

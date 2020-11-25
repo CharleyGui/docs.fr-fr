@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26c1bf4b-75ff-4c32-872c-3078ccdde04f
 topic_type:
 - apiref
-ms.openlocfilehash: 279c69bd38b5492d00b43e371ebec27997882857
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a58d309c3bc19c09a9a46bff019d04cf7ba2082d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788782"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722971"
 ---
 # <a name="icordebugeditandcontinuesnapshotsetilmap-method"></a>ICorDebugEditAndContinueSnapshot::SetILMap, méthode
+
 `SetILMap` est obsolète. N'appelez pas cette méthode.  
   
 ## <a name="see-also"></a>Voir aussi

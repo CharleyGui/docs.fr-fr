@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26fb69f8-1467-4711-bd24-cb117c63938f
 topic_type:
 - apiref
-ms.openlocfilehash: 0a36af5b411673081e74aa243ec8e0f8f876f238
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 1fb701a40abe2dc6e51443837c07ee5ba05ddfbe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860473"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723647"
 ---
 # <a name="iclrdatatarget2freevirtual-method"></a>ICLRDataTarget2::FreeVirtual, méthode
+
 Appelée par les services d’accès aux données common language runtime (CLR) pour libérer de la mémoire qui a été précédemment allouée dans l’espace d’adressage du processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT FreeVirtual(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `addr`  
  dans `CLRDATA_ADDRESS` Valeur qui spécifie l’adresse de départ de la mémoire à libérer.  
   
@@ -43,14 +45,16 @@ HRESULT FreeVirtual(
  dans Taille, en octets, de la mémoire à libérer.  
   
  `typeFlags`  
- dans Indicateurs qui contrôlent la libération de la mémoire. Consultez la fonction `VirtualFree` Win32.  
+ dans Indicateurs qui contrôlent la libération de la mémoire. Consultez la `VirtualFree` fonction Win32.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La `FreeVirtual` méthode sert de wrapper logique pour la fonction Win32 `VirtualFree` .  
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

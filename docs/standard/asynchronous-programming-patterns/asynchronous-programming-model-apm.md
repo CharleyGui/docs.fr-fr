@@ -11,14 +11,15 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - asynchronous programming, beginning operations
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
-ms.openlocfilehash: 7b976cf48214fb623563b09aab8a991a5a05d3ca
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a6e2ed06e92adffa6c8a61b27bbff994370e8b34
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722737"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Modèle de programmation asynchrone
+
 Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsyncResult> est implémentée sous la forme de deux méthodes nommées `BeginOperationName` et `EndOperationName` qui commencent et terminent respectivement l’opération asynchrone *OperationName*. Par exemple, la classe <xref:System.IO.FileStream> fournit les méthodes <xref:System.IO.FileStream.BeginRead%2A> et <xref:System.IO.FileStream.EndRead%2A> pour lire les octets d’un fichier de façon asynchrone. Ces méthodes implémentent la version asynchrone de la méthode <xref:System.IO.FileStream.Read%2A> .  
   
 > [!NOTE]
@@ -27,6 +28,7 @@ Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsy
  Après avoir appelé la méthode `BeginOperationName`, une application peut continuer à exécuter les instructions sur le thread appelant pendant que l’opération asynchrone s’exécute sur un autre thread. Pour chaque appel de la méthode `BeginOperationName`, l’application doit également appeler la méthode `EndOperationName` afin d’obtenir les résultats de l’opération.  
   
 ## <a name="beginning-an-asynchronous-operation"></a>Commencement d’une opération asynchrone  
+
  La méthode `BeginOperationName` commence l’opération asynchrone *OperationName* et retourne un objet qui implémente l’interface <xref:System.IAsyncResult>. Les objets<xref:System.IAsyncResult> stockent des informations sur une opération asynchrone. Le tableau suivant affiche des informations sur une opération asynchrone.  
   
 |Membre|Description|  
@@ -41,6 +43,7 @@ Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsy
  `BeginOperationName` retourne immédiatement le contrôle au thread appelant. Si la méthode `BeginOperationName` lève des exceptions, celles-ci le sont avant le lancement de l’opération asynchrone. Si la méthode `BeginOperationName` lève des exceptions, la méthode de rappel n’est pas appelée.  
   
 ## <a name="ending-an-asynchronous-operation"></a>Fin d’une opération asynchrone  
+
  La méthode `EndOperationName` met fin à l’opération asynchrone *OperationName*. La valeur de retour de la méthode `EndOperationName` est de type identique à celui retourné par son équivalent synchrone et est spécifique à l’opération asynchrone. Par exemple, la méthode <xref:System.IO.FileStream.EndRead%2A> retourne le nombre d’octets lus à partir d’un <xref:System.IO.FileStream> et la méthode <xref:System.Net.Dns.EndGetHostByName%2A> retourne un objet <xref:System.Net.IPHostEntry> qui contient des informations sur un ordinateur hôte. La méthode `EndOperationName` accepte tout paramètre out ou ref déclaré dans la signature de la version synchrone de la méthode. Outre les paramètres de la méthode synchrone, la méthode `EndOperationName` inclut également un paramètre <xref:System.IAsyncResult>. Les appelants doivent passer l’instance retournée par l’appel correspondant à la méthode `BeginOperationName`.  
   
  Si l’opération asynchrone représentée par l’objet <xref:System.IAsyncResult> n’est pas terminée quand la méthode `EndOperationName` est appelée, la méthode `EndOperationName` bloque le thread appelant jusqu’à la fin de l’opération asynchrone. Les exceptions levées par l’opération asynchrone sont levées à partir de la méthode `EndOperationName`. Les conséquences de plusieurs appels à la méthode `EndOperationName` avec le même <xref:System.IAsyncResult> ne sont pas définies. De même, l’appel de la méthode `EndOperationName` avec un <xref:System.IAsyncResult> qui n’a pas été retourné par la méthode Begin associée n’est pas non plus défini.  

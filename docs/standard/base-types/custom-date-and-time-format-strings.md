@@ -15,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 804a72f865fc491d6fc991e78c53ceb62d20cd1c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 70e68de3ce736bc4935dea80e37cc805068b0bc5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824452"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722464"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Chaînes de format de date et d’heure personnalisées
 
@@ -630,6 +630,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "zzz" dans u
 ## <a name="date-and-time-separator-specifiers"></a>Spécificateurs de séparateur de date et d’heure
 
 ### <a name="the--custom-format-specifier"></a><a name="timeSeparator"></a> Spécificateur de format personnalisé " :"
+
 Le spécificateur de format personnalisé ":" représente le séparateur d'heure, lequel est utilisé pour différencier les heures, les minutes et les secondes. Le séparateur d'heure localisé approprié est récupéré de la propriété <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> de la culture actuelle ou spécifiée.
 
 > [!NOTE]

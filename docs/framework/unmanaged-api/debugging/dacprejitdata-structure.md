@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 4436ece72b0a6a405fc41cba5413093fc42ce750
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 46708acc77dad00727ee35e7d06e4228eacbd502
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860782"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723036"
 ---
 # <a name="dacprejitdata-structure"></a>DacpReJitData, structure
 
@@ -55,11 +55,12 @@ struct MSLAYOUT DacpReJitData
 | `flags`          | Indicateur qui spécifie l’état actuel de l’instrumentation ReJit de la méthode pour la version donnée. |
 | `NativeCodeAddr` | Adresse de base de l’implémentation rejitted de la méthode.                                         |
 
-## <a name="remarks"></a>Notes 
+## <a name="remarks"></a>Remarques
 
-Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus. La structure doit également être définie à `ms_struct` l’aide de l’empaquetage si vous n’utilisez pas les compilateurs Microsoft.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus. La structure doit également être définie à l’aide `ms_struct` de l’empaquetage si vous n’utilisez pas les compilateurs Microsoft.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
+
 **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
 **En-tête :** None  
 **Bibliothèque :** None  

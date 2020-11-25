@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-ms.openlocfilehash: ad309290319396ff4e74e30d572effeffe802d1d
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: f0ba2342e9704ba06dd1d3612f699298c734a5eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859877"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723517"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata, méthode
+
 Appelée par les services d’accès aux données common language runtime (CLR) pour récupérer les métadonnées d’une image.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,6 +44,7 @@ HRESULT GetMetadata(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `imagePath`  
  dans Chaîne qui spécifie le chemin d’accès du fichier image.  
   
@@ -70,10 +72,12 @@ HRESULT GetMetadata(
  `dataSize`  
  à Taille des métadonnées retournées.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
 topic_type:
 - apiref
-ms.openlocfilehash: b7b15261d825c1bd5f217c4cecd82ed36a716d0e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 9d14ec33128596a148ca3509a49c8c97fafe82d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008259"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723101"
 ---
 # <a name="iceegengetstring-method"></a>ICeeGen::GetString, méthode
+
 Obtient la chaîne stockée à l’adresse virtuelle relative spécifiée.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -37,18 +38,20 @@ HRESULT GetString (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `RVA`  
  dans Adresse virtuelle relative de la chaîne à retourner.  
   
  `lpString`  
  à Chaîne retournée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

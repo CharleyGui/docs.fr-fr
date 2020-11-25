@@ -2,14 +2,15 @@
 title: Copie de nœuds existants d'un document à un autre
 ms.date: 03/30/2017
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
-ms.openlocfilehash: f4d58fa5aafdd48feff1a768ab0463ac09315476
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2e66d6eb83692e8e6541ce869062e2ce67c3c1df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829607"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722204"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Copie de nœuds existants d'un document à un autre
+
 La méthode **ImportNode** est le mécanisme par lequel un nœud ou un sous-arbre de nœuds entier est copié d'un **XmlDocument** à un autre. Le nœud retourné par l'appel est une copie du nœud issu du document source, y compris sur le plan des valeurs d'attribut, du nom du nœud, du type de nœud et de tous les attributs associés à l'espace de noms tels que le préfixe, le nom local et l'URI (Uniform Resource Identifier) d'espace de noms. Le document source n'est pas modifié. À l'issue de l'importation du nœud, il vous reste encore à l'ajouter à l'arborescence à l'aide d'une des méthodes d'insertion de nœuds.  
   
  Dès que le nœud a été joint à son nouveau document, ce dernier en prend possession. En effet, chaque nœud, lors de sa création, possède un document propriétaire, même si les nœuds sont créés dans des fragments de document distincts. Il s’agit d’une exigence imposée par le DOM (Document Object Model) XML, qui est appliquée par le design de création de factory à la classe **XmlDocument**. Par exemple, **CreateElement** constitue la seule solution pour créer de nouveaux nœuds.  

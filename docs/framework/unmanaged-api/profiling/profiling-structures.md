@@ -6,17 +6,19 @@ helpviewer_keywords:
 - unmanaged structures [.NET Framework], profiling
 - structures [.NET Framework profiling]
 ms.assetid: 750385f2-f365-41b1-939f-ca2f2ff9b466
-ms.openlocfilehash: c3bbc66079e05abf494ad112b8aa0ac68e3c3e2f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3f832850fac918a568d02e9ef2f1e5b140ffc04f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868107"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722750"
 ---
 # <a name="profiling-structures"></a>Structures de profilage
+
 Cette section décrit les structures non managées utilisées par l'API de profilage.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [COR_PRF_ASSEMBLY_REFERENCE_INFO, structure](cor-prf-assembly-reference-info-structure.md)  
  Fournit au CLR (Common Language Runtime) des informations sur un assembly de référence qui doit être pris en compte lors d'un parcours de fermeture des références d'assembly.  
   
@@ -38,7 +40,8 @@ Cette section décrit les structures non managées utilisées par l'API de profi
  [COR_PRF_GC_GENERATION_RANGE, structure](cor-prf-gc-generation-range-structure.md)  
  Décrit une plage (un bloc) de mémoire qui va faire l'objet d'une récupération de mémoire.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
+
  COR_DEBUG_IL_TO_NATIVE_MAP  
   
  COR_IL_MAP  
@@ -47,6 +50,6 @@ Cette section décrit les structures non managées utilisées par l'API de profi
   
  [Interfaces de profilage](profiling-interfaces.md)  
   
- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)  
+ [Fonctions statiques globales du profilage](profiling-global-static-functions.md)  
   
  [Énumérations de profilage](profiling-enumerations.md)

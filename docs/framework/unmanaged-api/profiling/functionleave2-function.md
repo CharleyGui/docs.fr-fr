@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8cdac941-8b94-4497-b874-4e571785f3fe
 topic_type:
 - apiref
-ms.openlocfilehash: a2a3d58e0631fceab96c32f9d86fef25973fed84
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5fa6ffff3cdb64a7471568e1f6e76fea9194c5a0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500661"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722282"
 ---
 # <a name="functionleave2-function"></a>FunctionLeave2 (fonction)
+
 Notifie le profileur qu’une fonction va retourner à l’appelant et fournit des informations sur le frame de pile et la valeur de retour de fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,6 +59,7 @@ void __stdcall FunctionLeave2 (
   Pour pouvoir accéder aux informations de valeur de retour, l' `COR_PRF_ENABLE_FUNCTION_RETVAL` indicateur doit être défini. Le profileur peut utiliser la méthode [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md) pour définir les indicateurs d’événement.
 
 ## <a name="remarks"></a>Remarques  
+
  Les valeurs des `func` paramètres et ne `retvalRange` sont pas valides après le retour de la `FunctionLeave2` fonction, car les valeurs peuvent changer ou être détruites.  
   
  La `FunctionLeave2` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec` `naked` attribut de classe de stockage ().  
@@ -73,6 +75,7 @@ void __stdcall FunctionLeave2 (
  En outre, la `FunctionLeave2` fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

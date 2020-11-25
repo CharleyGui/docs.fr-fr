@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-ms.openlocfilehash: 42ea497bdcab71518bec08514b827d76f0317d57
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 02bc6f4bbb6754bd160fe2694f27563908f3a759
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500596"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722217"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall (fonction)
+
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
   
 > [!NOTE]
@@ -42,6 +43,7 @@ void __stdcall FunctionTailcall (
   \[in] identificateur de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
 
 ## <a name="remarks"></a>Remarques  
+
  La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave](functionleave-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
   
  La `FunctionTailcall` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec` `naked` attribut de classe de stockage ().  
@@ -57,6 +59,7 @@ void __stdcall FunctionTailcall (
  En outre, la `FunctionTailcall` fonction ne doit pas appeler dans du code managé ou de quelque manière provoquer une allocation de mémoire managée.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0358b84a-4236-4c34-945b-4babff7df570
 topic_type:
 - apiref
-ms.openlocfilehash: 92cc6c3ce15d8391a43ff130a82476a4363ff5bd
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: d133cacb611a1c7bd03d7653f46c2e5fb1acc043
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895297"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723348"
 ---
 # <a name="icordebugappdomainattach-method"></a>ICorDebugAppDomain::Attach, méthode
+
 Attache le débogueur au domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,10 +32,12 @@ Attache le débogueur au domaine d’application.
 HRESULT Attach ();  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
+
  Le débogueur doit être attaché au domaine d’application pour recevoir des événements et activer le débogage du domaine d’application.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

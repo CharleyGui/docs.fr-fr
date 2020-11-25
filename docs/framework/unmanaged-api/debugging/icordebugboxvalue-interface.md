@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3d3ae7e2-97d4-46de-a2c3-cb78f3490f9d
 topic_type:
 - apiref
-ms.openlocfilehash: bece1be7474c57d38f083e322c2af1b0ba705ee9
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 6d58ae048382a78c422703d5c6caeb3bbc739849
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894755"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723166"
 ---
 # <a name="icordebugboxvalue-interface"></a>ICorDebugBoxValue, interface
 
@@ -31,12 +31,13 @@ Sous-classe de « ICorDebugHeapValue » qui représente un objet de classe de 
 |------------|-----------------|  
 |[GetObject, méthode](icordebugboxvalue-getobject-method.md)|Obtient un pointeur d’interface vers l’instance « ICorDebugObjectValue » boxed.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d079131b-685b-4869-95be-826b88d28bd2
 topic_type:
 - apiref
-ms.openlocfilehash: a197d260c55d24f906da7d7f2768bb7ba1ad751f
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 97a4a464d3dfb7b333f44ac4206bd880fd171e16
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895345"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723413"
 ---
 # <a name="icordebugsetmanagedhandler-method"></a>ICorDebug::SetManagedHandler, méthode
+
 Spécifie l’objet de gestionnaire d’événements pour les événements managés.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT SetManagedHandler (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pCallback`  
  dans Pointeur vers un objet [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) , qui est l’objet de gestionnaire d’événements.  
   
-## <a name="remarks"></a>Notes   
- `SetManagedHandler`doit être appelé au moment de la création.  
+## <a name="remarks"></a>Remarques  
+
+ `SetManagedHandler` doit être appelé au moment de la création.  
   
- Si l' `ICorDebugManagedCallback` implémentation ne contient pas suffisamment d’interfaces pour gérer les événements de débogage de l’application en cours de débogage `SetManagedHandler` , retourne un HRESULT de E_NOINTERFACE.  
+ Si l' `ICorDebugManagedCallback` implémentation ne contient pas suffisamment d’interfaces pour gérer les événements de débogage de l’application en cours de débogage, `SetManagedHandler` retourne un HRESULT de E_NOINTERFACE.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

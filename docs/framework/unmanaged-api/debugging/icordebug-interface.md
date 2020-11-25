@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 33f431d7-ab1a-494d-8af2-20ab15aba194
 topic_type:
 - apiref
-ms.openlocfilehash: 66b50bad0e8d2622922da96c213643ac3be83a9e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 21838bdd8ff45f8f74524dc4da52364fb032b396
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895369"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723400"
 ---
 # <a name="icordebug-interface"></a>ICorDebug, interface
+
 Fournit des méthodes qui permettent aux développeurs de déboguer des applications dans l’environnement du common language runtime (CLR).  
   
 > [!NOTE]
@@ -39,17 +40,19 @@ Fournit des méthodes qui permettent aux développeurs de déboguer des applicat
 |[Initialize, méthode](icordebug-initialize-method.md)|Initialise l'objet `ICorDebug`.|  
 |[SetManagedHandler, méthode](icordebug-setmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements managés.|  
 |[SetUnmanagedHandler, méthode](icordebug-setunmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements non managés.|  
-|[Terminate, méthode](icordebug-terminate-method.md)|Met fin à `ICorDebug` l’objet.|  
+|[Terminate, méthode](icordebug-terminate-method.md)|Met fin à l' `ICorDebug` objet.|  
   
-## <a name="remarks"></a>Notes   
- `ICorDebug`représente une boucle de traitement des événements pour un processus du débogueur. Le débogueur doit attendre le rappel [ICorDebugManagedCallback :: ExitProcess](icordebugmanagedcallback-exitprocess-method.md) de tous les processus en cours de débogage avant de libérer cette interface.  
+## <a name="remarks"></a>Remarques  
+
+ `ICorDebug` représente une boucle de traitement des événements pour un processus du débogueur. Le débogueur doit attendre le rappel [ICorDebugManagedCallback :: ExitProcess](icordebugmanagedcallback-exitprocess-method.md) de tous les processus en cours de débogage avant de libérer cette interface.  
   
- L' `ICorDebug` objet est l’objet initial pour contrôler tout le débogage managé. Dans les versions 1,0 et 1,1 de .NET Framework, cet objet était `CoClass` un objet créé à partir de com. Dans la version 2,0 de .NET Framework, cet objet n’est plus `CoClass` un objet. Elle doit être créée par la fonction [CreateDebuggingInterfaceFromVersion](../hosting/createdebugginginterfacefromversion-function.md) , qui prend en charge la version. Cette nouvelle fonction de création permet aux clients d’obtenir une implémentation `ICorDebug`spécifique de, qui émule également une version spécifique de l’API de débogage.  
+ L' `ICorDebug` objet est l’objet initial pour contrôler tout le débogage managé. Dans les versions 1,0 et 1,1 de .NET Framework, cet objet était un `CoClass` objet créé à partir de com. Dans la version 2,0 de .NET Framework, cet objet n’est plus un `CoClass` objet. Elle doit être créée par la fonction [CreateDebuggingInterfaceFromVersion](../hosting/createdebugginginterfacefromversion-function.md) , qui prend en charge la version. Cette nouvelle fonction de création permet aux clients d’obtenir une implémentation spécifique de `ICorDebug` , qui émule également une version spécifique de l’API de débogage.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

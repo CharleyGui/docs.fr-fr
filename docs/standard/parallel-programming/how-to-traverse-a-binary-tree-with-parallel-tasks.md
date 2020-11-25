@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to traverse a tree
 ms.assetid: 4265d169-6c69-4f36-b10d-b7ae7f72f4df
-ms.openlocfilehash: ca70021c7d071abe480cb4ed866e34f171cc3b45
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6c8708f2879671573ab870bf7d9df520a6118c7a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722374"
 ---
 # <a name="how-to-traverse-a-binary-tree-with-parallel-tasks"></a>Procédure : parcourir un arbre binaire avec des tâches parallèles
+
 L’exemple suivant montre deux façons d’utiliser des tâches parallèles pour parcourir une arborescence de données. La création de l’arborescence en soi est considérée comme un exercice.  
   
 ## <a name="example"></a>Exemple  
+
  [!code-csharp[TPL#16](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#16)]
  [!code-vb[TPL#16](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/treewalk.vb#16)]  
   

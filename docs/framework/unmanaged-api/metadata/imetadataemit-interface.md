@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3b48fd47-7397-4e2c-8bec-8157aa08978c
 topic_type:
 - apiref
-ms.openlocfilehash: a2c2512abc28f0140fc261c5136c7e1255db96de
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: f5495c170abf3e991a6e28016687f8ae77f0b423
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009208"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722022"
 ---
 # <a name="imetadataemit-interface"></a>IMetaDataEmit, interface
+
 Fournit des méthodes pour créer, modifier et enregistrer des métadonnées relatives à l’assembly dans l’étendue actuellement définie. Les métadonnées peuvent être stockées dans la mémoire ou enregistrées sur le disque.  
   
 ## <a name="methods"></a>Méthodes  
@@ -78,12 +79,13 @@ Fournit des méthodes pour créer, modifier et enregistrer des métadonnées rel
 |[SetTypeDefProps, méthode](imetadataemit-settypedefprops-method.md)|Définit les fonctionnalités d’un type défini par un appel antérieur à `IMetaDataEmit::DefineTypeDef` .|  
 |[TranslateSigWithScope, méthode](imetadataemit-translatesigwithscope-method.md)|Importe un assembly dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

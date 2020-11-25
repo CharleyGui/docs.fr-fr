@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c6b7fb4-cbca-4479-b650-ab9a99732ea0
 topic_type:
 - apiref
-ms.openlocfilehash: 2858e924ab6effe192955ce53dad9d333d2d244d
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 25aefff46f7557f89f27d1eccab58c9c70d2d13e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009065"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722113"
 ---
 # <a name="imetadataassemblyimportgetassemblyrefprops-method"></a>IMetaDataAssemblyImport::GetAssemblyRefProps, méthode
+
 Obtient le jeu de propriétés pour la référence d’assembly avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,8 +44,9 @@ HRESULT GetAssemblyRefProps (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mdar`  
- dans `mdAssemblyRef`Jeton de métadonnées qui représente la référence d’assembly pour laquelle obtenir les propriétés.  
+ dans `mdAssemblyRef` Jeton de métadonnées qui représente la référence d’assembly pour laquelle obtenir les propriétés.  
   
  `ppbPublicKeyOrToken`  
  à Pointeur vers la clé publique ou le jeton de métadonnées.  
@@ -74,14 +76,16 @@ HRESULT GetAssemblyRefProps (
  à Pointeur vers des indicateurs qui décrivent les métadonnées appliquées à un assembly. La valeur flags est une combinaison d’une ou plusieurs valeurs [CorAssemblyFlags,](corassemblyflags-enumeration.md) .  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne S_OK si elle est réussie ; Sinon, elle retourne l’un des codes d’erreur définis dans le fichier d’en-tête winerror. h.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

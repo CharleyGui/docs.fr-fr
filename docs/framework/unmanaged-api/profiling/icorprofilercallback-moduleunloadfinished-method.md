@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 185e3327-9f9c-44bc-8a5c-febea9a6bb5b
 topic_type:
 - apiref
-ms.openlocfilehash: fd35f47c004d1ffb235cefe1cd2a1eb2c1fffaef
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 514c20455b95ecf74ffaecd349982fd8f8f49816
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503313"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723231"
 ---
 # <a name="icorprofilercallbackmoduleunloadfinished-method"></a>ICorProfilerCallback::ModuleUnloadFinished, méthode
+
 Notifie le profileur qu’un module a terminé le déchargement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT ModuleUnloadFinished(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleId`  
  dans ID du module qui a été déchargé.  
   
@@ -41,11 +43,13 @@ HRESULT ModuleUnloadFinished(
  dans HRESULT qui indique si le module a été déchargé avec succès.  
   
 ## <a name="remarks"></a>Remarques  
+
  La valeur de `moduleId` n’est pas valide pour une demande d’informations après le retour de la méthode [ICorProfilerCallback :: ModuleUnloadStarted](icorprofilercallback-moduleunloadstarted-method.md) .  
   
  Certaines parties du déchargement de la classe peuvent continuer après le `ModuleUnloadFinished` rappel. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement du module a réussi.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

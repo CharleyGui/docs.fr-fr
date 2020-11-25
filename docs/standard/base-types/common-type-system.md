@@ -15,12 +15,12 @@ helpviewer_keywords:
 - namespaces [.NET], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: d9ee7020c7ec06f079b7f0a05d5fea67ff1c1a90
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 0f80be2d1da43341f8e2af6f32580be2e01289dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823184"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723218"
 ---
 # <a name="common-type-system"></a>Système de type commun
 
@@ -170,11 +170,13 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 - les définitions de chacun des membres du type.  
   
 ### <a name="attributes"></a>Attributs  
+
  Les attributs fournissent des métadonnées définies par l'utilisateur supplémentaires. La plupart du temps, ils sont utilisés pour stocker les informations supplémentaires relatives à un type de l’assembly, ou pour modifier le comportement d’un membre de type dans l’environnement au moment du design ou dans l’environnement d’exécution.  
   
  Les attributs sont des classes qui héritent de <xref:System.Attribute?displayProperty=nameWithType>. Les langages qui prennent en charge l'utilisation d'attributs ont chacun leur propre syntaxe pour l'application d'attributs à un élément du langage. Les attributs peuvent être appliqués à presque n’importe quel élément de langage ; les éléments spécifiques auxquels un attribut peut être appliqué sont définis par l’<xref:System.AttributeUsageAttribute> qui est appliqué à cette classe d’attributs.  
   
 ### <a name="type-accessibility"></a>Accessibilité des types  
+
  Tous les types ont un modificateur qui régit leur accessibilité à partir d'autres types. Le tableau suivant décrit les accessibilités de type prises en charge par le runtime.  
   
 |Accessibilité|Description|  
@@ -197,6 +199,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 - Si l'accessibilité déclarée de `M` est `private`, le domaine d'accessibilité de `M` correspond au texte de programme de `T`.  
   
 ### <a name="type-names"></a>Noms de types  
+
  Le système de type commun (CTS, Common Type System) impose uniquement deux restrictions sur les noms :  
   
 - Tous les noms sont encodés comme des chaînes de caractères Unicode (16 bits).  
@@ -208,6 +211,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
  Bien qu’un type puisse référencer des types d’autres modules et assemblys, il doit être entièrement défini à l’intérieur d’un seul module .NET. (En fonction de la prise en charge du compilateur, toutefois, il peut être divisé en plusieurs fichiers de code source.) Les noms de types doivent être uniques uniquement dans un espace de noms. Pour identifier complètement un type, le nom du type doit être qualifié par l'espace de noms qui contient l'implémentation du type.  
   
 ### <a name="base-types-and-interfaces"></a>Types de base et interfaces  
+
  Un type peut hériter des valeurs et des comportements d'un autre type. Le système de type commun (CTS, Common Type System) ne permet pas à des types d'hériter de plusieurs types de base.  
   
  Un type peut implémenter n'importe quel nombre d'interfaces. Pour implémenter une interface, un type doit implémenter tous les membres virtuels de cette interface. Une méthode virtuelle peut être implémentée par un type dérivé et peut être appelée de manière statique ou dynamique.  
@@ -291,12 +295,14 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 |virtual|Méthodes, propriétés et événements|La méthode peut être implémentée par un type dérivé et peut être appelée de manière statique ou dynamique. Si un appel dynamique est utilisé, le type de l'instance qui effectue l'appel au moment de l'exécution détermine quelle implémentation de la méthode est appelée (plutôt que le type connu au moment de la compilation). Pour appeler une méthode virtuelle de manière statique, un cast en un type qui utilise la version désirée de la méthode devra éventuellement être effectué sur la variable.|  
   
 ### <a name="overloading"></a>Surcharge  
+
  Chaque membre de type a une signature unique. Les signatures de méthode sont composées du nom de la méthode, d'une liste de paramètres (l'ordre et les types des arguments de la méthode). Plusieurs méthodes du même nom peuvent être définies dans un type à condition que leurs signatures diffèrent. Lorsque plusieurs méthodes du même nom sont définies, la méthode est dite surchargée. Par exemple, dans <xref:System.Char?displayProperty=nameWithType>, la méthode <xref:System.Char.IsDigit%2A> est surchargée. Une méthode prend un <xref:System.Char>. L'autre méthode prend un <xref:System.String> et un <xref:System.Int32>.  
   
 > [!NOTE]
 > Le type de retour n’est pas considéré comme une partie de la signature d’une méthode. En d'autres termes, les méthodes ne peuvent pas être surchargées si seul le type de retour les différencie.  
   
 ### <a name="inherit-override-and-hide-members"></a>Hériter, substituer et masquer les membres  
+
  Un type dérivé hérite de tous les membres de son type de base ; c'est-à-dire que ces membres sont définis sur le type dérivé et disponibles pour celui-ci. Le comportement ou les qualités de membres hérités peuvent être modifiés de deux manières :  
   
 - Un type dérivé peut masquer un membre hérité en définissant un nouveau membre avec la même signature. Cela permet notamment de rendre privé un membre précédemment public ou de définir un nouveau comportement pour une méthode héritée marquée comme `final`.  
@@ -307,4 +313,4 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 
 - [Navigateur d’API .NET](../../../api/index.md)
 - [Common Language Runtime](../clr.md)
-- [Conversion de types dans .NET](type-conversion.md)
+- [Conversion de type dans .NET](type-conversion.md)

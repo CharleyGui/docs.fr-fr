@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7d6733ec-f081-4166-bc17-de09e16dc304
 topic_type:
 - apiref
-ms.openlocfilehash: 8f0bbd26bde562df5482d167c9d2775e01426f55
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: fddfd2a163f6e6513b648ee0b724c0b5bd54c81a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610052"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722932"
 ---
 # <a name="isymunmanagedwriter-interface"></a>ISymUnmanagedWriter, interface
+
 Représente un writer de symboles et fournit des méthodes pour définir des documents, des points de séquence, des étendues lexicales et des variables.  
   
 ## <a name="methods"></a>Méthodes  
@@ -53,7 +54,8 @@ Représente un writer de symboles et fournit des méthodes pour définir des doc
 |[SetUserEntryPoint, méthode](isymunmanagedwriter-setuserentrypoint-method.md)|Spécifie la méthode définie par l’utilisateur qui est le point d’entrée de ce module.|  
 |[UsingNamespace, méthode](isymunmanagedwriter-usingnamespace-method.md)|Spécifie que le nom d’espace de noms complet donné est utilisé dans la portée lexicale actuellement ouverte.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

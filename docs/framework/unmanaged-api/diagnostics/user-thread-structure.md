@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a57c7d71-c4b0-41f9-a964-0c5ee84a3124
 topic_type:
 - apiref
-ms.openlocfilehash: 5144feab742bc5dac36563d701d81a699d0bb2f3
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 409651aa69e957418ad46f61e1bd57add0eb10a6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609441"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722893"
 ---
 # <a name="user_thread-structure"></a>USER_THREAD, structure
+
 Fournit des informations à un débogueur à propos d’un thread. Pour plus d’informations, consultez la méthode [INotifySource2 :: SetNotifyFilter,](inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,7 +44,8 @@ typedef struct tagUSER_THREAD
 |`dwSidLen`|Longueur de la mémoire tampon de thread, en octets.|  
 |`dwTid`|ID de thread.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi

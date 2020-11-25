@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ef782c53-dae7-4990-b4ad-fddb1e690d4e
 topic_type:
 - apiref
-ms.openlocfilehash: b435e1a3504dd623421f977ffc48264f8b0dcb5a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 98a821eabb393d8b5042647e6ef6ffce7ab10783
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500700"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722880"
 ---
 # <a name="functionenter3-function"></a>FunctionEnter3, fonction
+
 Indique au profileur que le contrôle est passé à une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
   \[in] identificateur de la fonction vers laquelle le contrôle est passé.
 
 ## <a name="remarks"></a>Remarques  
+
  La `FunctionEnter3` fonction de rappel indique au profileur que les fonctions sont appelées, mais ne prend pas en charge l’inspection des arguments. Utilisez la [méthode ICorProfilerInfo3 :: SetEnterLeaveFunctionHooks3,](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour inscrire votre implémentation de cette fonction.  
   
  La `FunctionEnter3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec(naked)` attribut de classe de stockage.  
@@ -48,6 +50,7 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
 - À la sortie, vous devez restaurer la pile en dépilant tous les paramètres qui ont été envoyés par son appelant.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  

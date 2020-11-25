@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 32d71aba5d8a650293a4d8653fb2a2e383b8a800
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 110efce0bd7fae1a4f39f5d879496bf541ffe667
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282381"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722152"
 ---
 # <a name="serialization-guidelines"></a>Indications concernant la sérialisation
 
@@ -24,7 +24,7 @@ Cet article répertorie les recommandations à prendre en compte lors de la conc
 
  .NET offre trois technologies de sérialisation principales qui sont optimisées pour différents scénarios de sérialisation. Le tableau suivant répertorie ces technologies et les principaux types .NET qui leur sont associés.
 
-|Technologie|Classes concernées|Notes|
+|Technology|Classes concernées|Notes|
 |----------------|----------------------|-----------|
 |Sérialisation du contrat de données|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Persistance générale<br /><br /> Services Web<br /><br /> JSON|
 |Sérialisation XML|<xref:System.Xml.Serialization.XmlSerializer>|Format XML <br />avec contrôle total|
@@ -39,6 +39,7 @@ Cet article répertorie les recommandations à prendre en compte lors de la conc
   La sérialisation constitue une considération de conception importante pour tout type, car les programmes devront peut-être rendre persistantes ou transmettre des instances du type.
 
 ### <a name="choosing-the-right-serialization-technology-to-support"></a>Choix de la technologie de sérialisation appropriée à prendre en charge
+
  Tout type donné peut prendre en charge une ou plusieurs des technologies de sérialisation ou aucune d'entre elles.
 
 - ENVISAGEZ la prise en charge de la *sérialisation du contrat de données* si des instances de votre type doivent être rendues persistantes ou utilisées dans des services web.
@@ -52,6 +53,7 @@ Cet article répertorie les recommandations à prendre en compte lors de la conc
 - ÉVITEZ de prendre en charge la sérialisation XML ou du runtime uniquement pour des raisons de persistance. Préférez plutôt la sérialisation du contrat de données.
 
 #### <a name="data-contract-serialization"></a>Sérialisation du contrat de données
+
  Les types peuvent prendre en charge la sérialisation du contrat de données en appliquant <xref:System.Runtime.Serialization.DataContractAttribute> au type et <xref:System.Runtime.Serialization.DataMemberAttribute> aux membres (champs et propriétés) du type.
 
  [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)]
@@ -96,7 +98,8 @@ Cet article répertorie les recommandations à prendre en compte lors de la conc
      Pour plus d’informations, consultez [Contrats de données compatibles avec des versions ultérieures](../../framework/wcf/feature-details/forward-compatible-data-contracts.md).
 
 #### <a name="xml-serialization"></a>sérialisation XML
- La sérialisation de contrat de données est la technologie de sérialisation principale (par défaut) dans .NET Framework, mais il existe des scénarios de sérialisation que la sérialisation de contrat de données ne prend pas en charge. Par exemple, vous n'avez pas le contrôle total sur la forme du XML généré ou consommé par le sérialiseur. Si ce contrôle renforcé est nécessaire, vous devez utiliser la *sérialisation XML* , et concevoir vos types pour prendre en charge cette technologie de sérialisation.
+
+ La sérialisation de contrat de données est la technologie de sérialisation principale (par défaut) dans .NET Framework, mais il existe des scénarios de sérialisation que la sérialisation de contrat de données ne prend pas en charge. Par exemple, vous n'avez pas le contrôle total sur la forme du XML généré ou consommé par le sérialiseur. Si ce contrôle renforcé est nécessaire, vous devez utiliser la *sérialisation XML*, et concevoir vos types pour prendre en charge cette technologie de sérialisation.
 
 1. ÉVITEZ de concevoir vos types spécifiquement pour la sérialisation XML, sauf si vous avez une bonne raison de contrôler la forme du XML généré. Cette technologie de sérialisation a été remplacée par la sérialisation du contrat de données présentée dans la section précédente.
 
@@ -108,6 +111,7 @@ Cet article répertorie les recommandations à prendre en compte lors de la conc
 2. Envisagez d’implémenter l' <xref:System.Xml.Serialization.IXmlSerializable> interface si vous voulez encore plus de contrôle sur la forme du code XML sérialisé que ce qui est proposé en appliquant les attributs de SÉRIALISATION XML. Deux méthodes de l’interface, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> et <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> , vous permettent de contrôler entièrement le flux XML sérialisé. Vous pouvez aussi contrôler le schéma XML qui est généré pour le type en appliquant l'attribut <xref:System.Xml.Serialization.XmlSchemaProviderAttribute>.
 
 #### <a name="runtime-serialization"></a>Sérialisation du Runtime
+
  La technologie de *sérialisation du runtime* est utilisée par .NET Remoting. Si vous pensez que vos types seront transportés à l’aide de .NET Remoting, assurez-vous qu’ils prennent en charge la sérialisation du Runtime.
 
  La prise en charge de base de la *sérialisation du runtime* peut être fournie en appliquant l’attribut <xref:System.SerializableAttribute>. Des scénarios plus avancés nécessitent l’implémentation d’un *modèle sérialisable du runtime* simple (implémentez -<xref:System.Runtime.Serialization.ISerializable> et fournissez un constructeur de sérialisation).

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: 668ac7552289a9d1015b62ed9e68f53415dd6211
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 8d12ab2904b336f38e56387c8aaf2a851a46007e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830439"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722724"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Appel de méthodes synchrones de façon asynchrone
 
@@ -55,6 +55,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
 > Quelle que soit la technique utilisée, appelez toujours `EndInvoke` pour terminer votre appel asynchrone.
 
 ## <a name="defining-the-test-method-and-asynchronous-delegate"></a>Définition de la méthode de test et du délégué asynchrone
+
  Les exemples de code suivants illustrent différentes façons d’appeler la même méthode longue, `TestMethod`, de façon asynchrone. La méthode `TestMethod` affiche un message de console pour indiquer qu’elle a commencé le traitement, se met en veille pendant quelques secondes, puis se termine. `TestMethod` possède un paramètre `out` pour illustrer la façon dont ces paramètres sont ajoutés aux signatures de `BeginInvoke` et `EndInvoke`. Vous pouvez gérer les paramètres `ref` de la même façon.
 
  L’exemple de code suivant illustre la définition de `TestMethod` et le délégué nommé `AsyncMethodCaller` qui peut être utilisé pour appeler `TestMethod` de manière asynchrone. Pour compiler les exemples de code, vous devez inclure les définitions de `TestMethod` et le délégué `AsyncMethodCaller` .
@@ -64,6 +65,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
  [!code-vb[AsyncDelegateExamples#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]
 
 ## <a name="waiting-for-an-asynchronous-call-with-endinvoke"></a>Attente d’un appel asynchrone avec EndInvoke
+
  Le moyen le plus simple d’exécuter une méthode de manière asynchrone est de démarrer l’exécution de la méthode en appelant la méthode `BeginInvoke` du délégué, d’effectuer quelques tâches sur le thread principal, puis d’appeler la méthode `EndInvoke` du délégué. `EndInvoke` peut bloquer le thread appelant, car il ne retourne de pas résultat avant la fin de l’appel asynchrone. Cette technique est utile pour les opérations de fichier ou de réseau.
 
 > [!IMPORTANT]
@@ -74,6 +76,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
  [!code-vb[AsyncDelegateExamples#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/EndInvoke.vb#2)]
 
 ## <a name="waiting-for-an-asynchronous-call-with-waithandle"></a>Attente d’un appel asynchrone avec WaitHandle
+
  Vous pouvez obtenir un <xref:System.Threading.WaitHandle> à l’aide de la propriété <xref:System.IAsyncResult.AsyncWaitHandle%2A> du <xref:System.IAsyncResult> retourné par `BeginInvoke`. Le <xref:System.Threading.WaitHandle> est signalé quand l’appel asynchrone se termine et vous pouvez l’attendre en appelant la méthode <xref:System.Threading.WaitHandle.WaitOne%2A> .
 
  Si vous utilisez un <xref:System.Threading.WaitHandle>, vous pouvez effectuer un traitement supplémentaire avant ou après la fin de l’appel asynchrone, mais avant d’appeler `EndInvoke` pour récupérer les résultats.
@@ -86,6 +89,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
  [!code-vb[AsyncDelegateExamples#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/WaitHandle.vb#3)]
 
 ## <a name="polling-for-asynchronous-call-completion"></a>Interrogation pour connaître l’état d’avancement de l’appel asynchrone
+
  Vous pouvez utiliser la propriété <xref:System.IAsyncResult.IsCompleted%2A> du <xref:System.IAsyncResult> retourné par `BeginInvoke` pour déterminer la fin de l’appel asynchrone. Cela est possible quand vous effectuez l’appel asynchrone à partir d’un thread qui gère l’interface utilisateur. L’interrogation pour connaître l’état d’avancement permet au thread appelant de continuer à s’exécuter pendant que l’appel asynchrone s’exécute sur un thread <xref:System.Threading.ThreadPool> .
 
  [!code-cpp[AsyncDelegateExamples#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/polling.cpp#4)]
@@ -93,6 +97,7 @@ Les exemples de code de cette rubrique illustrent quatre façons courantes d’u
  [!code-vb[AsyncDelegateExamples#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/polling.vb#4)]
 
 ## <a name="executing-a-callback-method-when-an-asynchronous-call-completes"></a>Exécution d’une méthode de rappel à la fin d’un appel asynchrone
+
  Si le thread qui lance l’appel asynchrone ne doit pas nécessairement être le thread qui traite les résultats, vous pouvez exécuter une méthode de rappel à la fin de l’appel. La méthode de rappel est exécutée sur un thread <xref:System.Threading.ThreadPool> .
 
  Pour utiliser une méthode de rappel, vous devez transmettre `BeginInvoke` et le délégué <xref:System.AsyncCallback> qui représente la méthode de rappel. Vous pouvez également transmettre un objet contenant les informations que la méthode de rappel doit utiliser. Dans la méthode de rappel, vous pouvez convertir le <xref:System.IAsyncResult>, qui est le seul paramètre de la méthode de rappel, en objet <xref:System.Runtime.Remoting.Messaging.AsyncResult> . Vous pouvez ensuite utiliser la propriété <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncDelegate%2A?displayProperty=nameWithType> pour obtenir le délégué utilisé pour lancer l’appel, afin de pouvoir appeler `EndInvoke`.

@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 307d6ac7-4a86-45f3-999d-6b47004a68f2
 topic_type:
 - apiref
-ms.openlocfilehash: 63c92e3f34527f895552f45d43f332f778470b13
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 0a8b7a90cd909379f870f6a501a940386d2e1451
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860419"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723595"
 ---
 # <a name="iclrdatatarget3getexceptionthreadid-method"></a>ICLRDataTarget3::GetExceptionThreadID, méthode
+
 Appelée par les services d'accès aux données de CLR (Common Language Runtime) pour obtenir l'ID du thread qui a levé l'exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,10 +32,12 @@ HRESULT GetExceptionThreadID(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `threadID`  
  [en sortie] L'ID du thread qui a levé l'exception.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  La valeur de retour est `S_OK` en cas de réussite ou un code d'échec `HRESULT` en cas d'échec. Les codes `HRESULT` peuvent comprendre, sans y être limités, ce qui suit :  
   
 |Code de retour|Description|  
@@ -42,10 +45,12 @@ HRESULT GetExceptionThreadID(
 |`S_OK`|La méthode a réussi.|  
 |`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|Impossible de trouver un ID de thread valide pour l'exception.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  

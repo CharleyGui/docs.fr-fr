@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b0b2facd-5991-4f4c-932d-c4937f45cef9
 topic_type:
 - apiref
-ms.openlocfilehash: a2a54c32c0713b4b69d8f2a0272687cbe9420610
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: df1d5881bccdb357b16c7f02cd090388e0f66273
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494772"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722802"
 ---
 # <a name="icorprofilerobjectenumclone-method"></a>ICorProfilerObjectEnum::Clone, méthode
+
 Obtient un pointeur d’interface vers une copie de cette interface [ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,10 +34,12 @@ HRESULT Clone (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppEnum`  
  à Pointeur vers le pointeur d’interface qui pointe à son tour vers la copie de cette `ICorProfilerObjectEnum` interface. La copie conserve son propre état d’énumération séparément de celui-ci. Toutefois, la position initiale du curseur de la copie sera la même que la position actuelle du curseur de cet énumérateur.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
