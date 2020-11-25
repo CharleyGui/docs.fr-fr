@@ -8,14 +8,15 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-ms.openlocfilehash: 2d1484889eb7db537de970c31109f26a6d61ad8d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 95a90ff66ffc9f2a5a3202d6877b1cc19149ff35
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830049"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706526"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Noms d'assemblys et de DLL
+
 Un assembly est l’unité de déploiement et d’identité des programmes de code managé. Bien que les assemblys puissent couvrir un ou plusieurs fichiers, en général un assembly mappe un à un avec une DLL. Par conséquent, cette section décrit uniquement les conventions d’affectation de noms de DLL, qui peuvent alors être mappées aux conventions d’affectation de noms d’assembly.
 
  ✔️ Choisissez des noms pour vos dll d’assembly qui suggèrent de grands blocs de fonctionnalités, tels que System. Data.

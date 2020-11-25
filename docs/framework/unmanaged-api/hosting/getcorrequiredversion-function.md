@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1588fe7b-c378-4f4b-9c4b-48647f1119cc
 topic_type:
 - apiref
-ms.openlocfilehash: 6b9fd62102056a8d5f859ac913f4786f04c1df7e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9590d19f4e5f5890af53a108492bd1b6d130fb72
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617241"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704498"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion, fonction
+
 Obtient le numéro de version du common language runtime (CLR) requis.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -37,6 +38,7 @@ HRESULT GetCORRequiredVersion (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbuffer`  
  à Mémoire tampon contenant une chaîne qui spécifie le numéro de version.  
   
@@ -46,12 +48,13 @@ HRESULT GetCORRequiredVersion (
  `dwLength`  
  à Nombre d’octets retournés dans la mémoire tampon.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

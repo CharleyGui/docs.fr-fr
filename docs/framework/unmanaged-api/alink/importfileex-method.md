@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ad276f3f-b303-46ac-97e0-66a377adaa4f
 topic_type:
 - apiref
-ms.openlocfilehash: bee7db61beb9ed8c00cf584924be690a67d92eac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9e373f133830a5bc1f3cf7bdc8034cb67725d797
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446950"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705200"
 ---
 # <a name="importfileex-method"></a>ImportFileEx, méthode
+
 Importe l’assembly ou le module indépendant indiqué.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT ImportFileEx(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszFilename`  
  Nom complet du fichier à partir duquel effectuer l’importation.  
   
@@ -60,10 +62,12 @@ HRESULT ImportFileEx(
  `pdwCountOfScopes`  
  Reçoit le nombre de fichiers et/ou d’étendues importés.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

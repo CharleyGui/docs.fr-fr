@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 36c76266-71d8-48dc-bd89-54943fa659c1
 topic_type:
 - apiref
-ms.openlocfilehash: ea84b742c901ba58a3bb730f1f5033a0d90610ce
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: ea50430c3ae6cef9b47880bcb8ad969f62ce9c39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007375"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704912"
 ---
 # <a name="corgenericparamattr-enumeration"></a>CorGenericParamAttr, énumération
+
 Contient des valeurs qui décrivent les <xref:System.Type> paramètres des types génériques, tels qu’ils sont utilisés dans les appels à [IMetaDataEmit2 ::D efinegenericparam](imetadataemit2-definegenericparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -57,7 +58,8 @@ typedef enum CorGenericParamAttr {
 |`gpNotNullableValueTypeConstraint`|Indique que le <xref:System.Type> paramètre doit être un type valeur qui ne peut pas être une valeur null.|  
 |`gpDefaultConstructorConstraint`|Indique que le <xref:System.Type> paramètre doit avoir un constructeur public par défaut qui ne prend pas de paramètres.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

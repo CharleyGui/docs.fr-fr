@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc14f408-b359-4c8c-ade2-888ccdf7261b
 topic_type:
 - apiref
-ms.openlocfilehash: 7c5359ddf2c021f77ad1ea0a8579316c3c773fd5
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cfa0950ca2ef4e969258c147b762fa95e52a82e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705812"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue, interface
 
@@ -32,8 +32,9 @@ Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Ce
 |[GetValue, méthode](icordebuggenericvalue-getvalue-method.md)|Copie la valeur dans la mémoire tampon spécifiée.|  
 |[Méthode SetValue](icordebuggenericvalue-setvalue-method.md)|Copie une nouvelle valeur à partir de la mémoire tampon spécifiée.|  
   
-## <a name="remarks"></a>Remarks  
- `ICorDebugGenericValue`est une sous-interface, car elle n’est pas accessible à distance.  
+## <a name="remarks"></a>Remarques  
+
+ `ICorDebugGenericValue` est une sous-interface, car elle n’est pas accessible à distance.  
   
  Pour les types référence, la valeur est la référence plutôt que le contenu de la référence.  
   
@@ -42,7 +43,8 @@ Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Ce
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

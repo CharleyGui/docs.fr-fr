@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50dbb9af-58a1-41f4-b56d-3da20011884f
 topic_type:
 - apiref
-ms.openlocfilehash: 2d065d956319076d3b92eddafd4a2c25ffbfbac1
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 86c017f581c7b980b8b0cb8bd7bdc1b0aa439afe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976263"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705819"
 ---
 # <a name="icordebugevalgetresult-method"></a>ICorDebugEval::GetResult, méthode
+
 Obtient les résultats de cette évaluation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,18 @@ HRESULT GetResult (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppResult`  
  à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente les résultats de cette évaluation, si l’évaluation se termine normalement.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  La `GetResult` méthode est valide uniquement une fois l’évaluation terminée.  
   
- Si l’évaluation se termine normalement `ppResult` , spécifie les résultats. Si elle se termine avec une exception, le résultat est l’exception levée. Si l’évaluation s’est produite pour un nouvel objet, le résultat est la référence au nouvel objet.  
+ Si l’évaluation se termine normalement, `ppResult` spécifie les résultats. Si elle se termine avec une exception, le résultat est l’exception levée. Si l’évaluation s’est produite pour un nouvel objet, le résultat est la référence au nouvel objet.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

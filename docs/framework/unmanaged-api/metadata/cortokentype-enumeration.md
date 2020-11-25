@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 93c9a369-225f-4eff-9b78-3fbee4902cf1
 topic_type:
 - apiref
-ms.openlocfilehash: 629e18b6cd2fd7910804ecc608a45d2406dddea1
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 70b28ab0ca73988093eadb9628142fecd9442948
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007492"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705473"
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType, énumération
+
 Indique le type d’un jeton de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -91,9 +92,11 @@ typedef enum CorTokenType {
 |`mdtBaseType`|Non utilisé.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Chaque valeur est égale à la valeur de l’octet de poids le plus élevé dans le jeton de métadonnées correspondant.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  

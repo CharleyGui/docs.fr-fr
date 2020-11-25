@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9a6be861-c260-4a35-acea-3372ea515a0f
 topic_type:
 - apiref
-ms.openlocfilehash: 17f158167d4075783d1aa594fb61cc9e28d30dd7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d02bc53676dd5afb0222a1ea366a8f2bd1f94f62
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446986"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705226"
 ---
 # <a name="importfile2-method"></a>ImportFile2, méthode
+
 Importe les assemblys et les modules indépendants. Cette méthode est semblable à la [méthode ImportFile](importfile-method.md), mais fonctionne même si le fichier importé n’existe pas sur le disque.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,6 +40,7 @@ HRESULT ImportFile2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pszFilename`  
  Nom du fichier à importer.  
   
@@ -60,10 +62,12 @@ HRESULT ImportFile2(
  `pdwCountOfScopes`  
  Reçoit le trouvé des fichiers et/ou des étendues importés.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi

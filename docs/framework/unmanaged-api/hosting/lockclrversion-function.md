@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1318ee37-c43b-40eb-bbe8-88fc46453d74
 topic_type:
 - apiref
-ms.openlocfilehash: 09bcebfdcfea3d5728d404cdb6b5fb170a5432c3
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2ff08ec8f194ccc9e968b3a7ee017afe788f4b03
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008493"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704927"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion, fonction
+
 Permet à l’hôte de déterminer la version du common language runtime (CLR) qui sera utilisée dans le processus avant d’initialiser explicitement le CLR.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT LockClrVersion (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hostCallback`  
  dans Fonction à appeler par le CLR lors de l’initialisation.  
   
@@ -48,6 +50,7 @@ HRESULT LockClrVersion (
  dans Fonction à appeler par l’hôte pour informer le CLR que l’initialisation est terminée.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
@@ -56,7 +59,8 @@ HRESULT LockClrVersion (
 |E_INVALIDARG|Un ou plusieurs arguments ont la valeur null.|  
   
 ## <a name="remarks"></a>Remarques  
- L’hôte appelle `LockClrVersion` avant d’initialiser le CLR. `LockClrVersion`prend trois paramètres, qui sont tous des rappels de type [FLockClrVersionCallback (](flockclrversioncallback-function-pointer.md). Ce type est défini comme suit.  
+
+ L’hôte appelle `LockClrVersion` avant d’initialiser le CLR. `LockClrVersion` prend trois paramètres, qui sont tous des rappels de type [FLockClrVersionCallback (](flockclrversioncallback-function-pointer.md). Ce type est défini comme suit.  
   
 ```cpp  
 typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();  
@@ -72,7 +76,7 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
     - Fonction spécifiée par le `pBeginHostSetup` paramètre.  
   
-    - `CorBindToRuntimeEx`(ou une autre fonction d’initialisation du Runtime).  
+    - `CorBindToRuntimeEx` (ou une autre fonction d’initialisation du Runtime).  
   
     - [ICLRRuntimeHost :: SetHostControl](iclrruntimehost-sethostcontrol-method.md).  
   
@@ -82,12 +86,13 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
  Tous les appels de `pBeginHostSetup` à `pEndHostSetup` doivent se produire sur un thread ou une fibre unique, avec la même pile logique. Ce thread peut être différent du thread sur lequel `hostCallback` est appelé.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

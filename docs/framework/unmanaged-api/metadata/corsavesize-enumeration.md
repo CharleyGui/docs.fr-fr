@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: eb95ce39-5688-43c1-a34d-578794b32faa
 topic_type:
 - apiref
-ms.openlocfilehash: 22a7f87a5803dc185052a5ce7ed427eff9f8fb18
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 81d47a3e4d72f991dc15924e7ff1ecc8df2e7322
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009182"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706051"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize, énumération
+
 Contient des valeurs indiquant le niveau de précision requis lors de l'interrogation de la taille d'une opération d'enregistrement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,12 +43,13 @@ typedef enum CorSaveSize {
 |`cssQuick`|Spécifie que la valeur de retour doit être estimée.|  
 |`cssDiscardTransientCAs`|Spécifie que les types pouvant être éliminés doivent être supprimés.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorHdr. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

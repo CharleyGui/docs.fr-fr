@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e11c9baa-4cf1-4bb4-a95f-b1908893b46c
 topic_type:
 - apiref
-ms.openlocfilehash: 58d81fd150684f254333c17374d06f7dd5b95823
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 0d0c1462bc1c19f47bfbdcfa9694988da9acd9d2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441412"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706864"
 ---
 # <a name="isymunmanagedconstant-interface"></a>ISymUnmanagedConstant, interface
+
 Fournit l’accès aux constantes non managées.  
   
 ## <a name="methods"></a>Méthodes  
@@ -32,7 +33,8 @@ Fournit l’accès aux constantes non managées.
 |[GetSignature, méthode](isymunmanagedconstant-getsignature-method.md)|Obtient la signature de la constante.|  
 |[GetValue, méthode](isymunmanagedconstant-getvalue-method.md)| Obtient la valeur de la constante.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

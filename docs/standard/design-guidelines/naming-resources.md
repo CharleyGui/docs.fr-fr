@@ -9,14 +9,15 @@ helpviewer_keywords:
 - global applications, naming guidelines
 - international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
-ms.openlocfilehash: c01e041edbf30813c477e579867abb9099ce0528
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 08046fb78638546b3dcab856674424c92c03fe83
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820850"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706409"
 ---
 # <a name="naming-resources"></a>Attribution d'un nom à des ressources
+
 Étant donné que les ressources localisables peuvent être référencées par le biais de certains objets comme s’il s’agissait de propriétés, les instructions d’affectation de noms pour les ressources sont similaires aux instructions de propriété.
 
  ✔️ Utilisez PascalCasing dans les clés de ressources.

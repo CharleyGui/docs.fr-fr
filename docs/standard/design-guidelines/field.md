@@ -6,14 +6,15 @@ helpviewer_keywords:
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-ms.openlocfilehash: 6e58274f32ea129d3271c11e321bdbd454d2406a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4329ca9e74fa02411bd39755a432fc7d4858597d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821110"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706695"
 ---
 # <a name="field-design"></a>Conception de champs
+
 Le principe de l’encapsulation est l’une des notions les plus importantes en matière de conception orientée objet. Ce principe stipule que les données stockées dans un objet ne doivent être accessibles qu’à cet objet.
 
  Une méthode utile pour interpréter le principe consiste à indiquer qu’un type doit être conçu de manière à ce que les modifications apportées aux champs de ce type (modification de nom ou de type) puissent être effectuées sans interrompre le code autre que pour les membres du type. Cette interprétation implique immédiatement que tous les champs doivent être privés.

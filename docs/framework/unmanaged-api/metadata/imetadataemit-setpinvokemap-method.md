@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6bfd574-1da3-4ba7-82f2-46ca5efcbaba
 topic_type:
 - apiref
-ms.openlocfilehash: 0d34c7a2992a2779b96ec87f1a0175d8fcbce34a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 236fc848087f64c2327c2c9e790065cc3f64dc58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007791"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704303"
 ---
 # <a name="imetadataemitsetpinvokemap-method"></a>IMetaDataEmit::SetPinvokeMap, méthode
+
 Définit ou modifie les fonctionnalités de la signature PInvoke d’une méthode, comme défini par un appel antérieur à [IMetaDataEmit ::D efinepinvokemap](imetadataemit-definepinvokemap-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT SetPinvokeMap (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `tk`  
  dans Auquel les `mdToken` informations de mappage s’appliquent.  
   
@@ -47,14 +49,15 @@ HRESULT SetPinvokeMap (
  dans Nom de l’exportation cible dans la DLL native.  
   
  `mrImportDLL`  
- dans `mdModuleRef`Jeton pour la dll non managée cible.  
+ dans `mdModuleRef` Jeton pour la dll non managée cible.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

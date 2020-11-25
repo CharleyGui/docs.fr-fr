@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 32f3ba58-9695-41e9-ba58-fd19e45ed396
 topic_type:
 - apiref
-ms.openlocfilehash: 8dae903ab76ab83ac0818c4bc4a76e81094bdf65
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2ec7708edd86b9f2656d0eee434992c3b73200ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445666"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705044"
 ---
 # <a name="importtypes2-method"></a>ImportTypes2, méthode
+
 Initialise l’importation de types. Appelez cette méthode pour commencer l’importation de types à partir de chaque étendue importée via la [méthode ImportFile](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT ImportTypes2(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `AssemblyID`  
  ID de l’assembly dans lequel effectuer l’importation.  
   
@@ -56,10 +58,12 @@ HRESULT ImportTypes2(
  `pdwCountOfTypes`  
  Reçoit éventuellement le nombre de types dans l’étendue spécifiée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi

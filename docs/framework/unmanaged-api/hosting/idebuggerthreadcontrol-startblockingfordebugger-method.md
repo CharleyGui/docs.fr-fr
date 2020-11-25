@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c8f11b4-35d3-4c39-9bbd-58b896ba5ba6
 topic_type:
 - apiref
-ms.openlocfilehash: 878dba37728734a777d2f95226b60bfbe9aae16a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 1e0cb52a6b9f03209256e5398415b4ec632fb5e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805267"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705502"
 ---
 # <a name="idebuggerthreadcontrolstartblockingfordebugger-method"></a>IDebuggerThreadControl::StartBlockingForDebugger, méthode
+
 Avertit l’hôte que les services de débogage sont sur le paragraphe duquel ils commencent à bloquer tous les threads.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,18 +35,21 @@ HRESULT StartBlockingForDebugger (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwUnused`  
  [in] Réservé pour une future utilisation.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La `StartBlockingForDebugger` méthode peut être appelée sur un thread d’exécution.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0dfd7cdc-c116-4e25-b56a-ac7b0378c942
 topic_type:
 - apiref
-ms.openlocfilehash: 0efda458d51677fcd16140cd0f0a835b76c20173
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b120b854e1787824808dd64d95b0fa78ba6c9fa2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617176"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705486"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo, fonction
+
 Obtient les informations de version et de répertoire relatives au common language runtime (CLR) demandé par une application.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -46,6 +47,7 @@ HRESULT GetRequestedRuntimeInfo (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pExe`  
  dans Nom de l’application.  
   
@@ -79,7 +81,8 @@ HRESULT GetRequestedRuntimeInfo (
  `dwlength`  
  à Pointeur vers la longueur de la chaîne de version.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
@@ -87,7 +90,8 @@ HRESULT GetRequestedRuntimeInfo (
 |S_OK|La commande s'est correctement terminée.|  
 |ERROR_INSUFFICIENT_BUFFER|La mémoire tampon du répertoire n’est pas assez grande pour stocker le chemin d’accès au répertoire.<br /><br /> - ou -<br /><br /> La mémoire tampon de version n’est pas assez grande pour stocker la chaîne de version.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La `GetRequestedRuntimeInfo` méthode retourne des informations d’exécution sur la version chargée dans le processus, qui n’est pas nécessairement la version la plus récente installée sur l’ordinateur.  
   
  Dans la version 2,0 de .NET Framework, vous pouvez obtenir des informations sur la dernière version installée à l’aide de la `GetRequestedRuntimeInfo` méthode comme suit :  
@@ -112,12 +116,13 @@ HRESULT GetRequestedRuntimeInfo (
   
 - RUNTIME_INFO_REQUEST_X86  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - .NET Framework 4, hosting interfaces
 - interfaces [.NET Framework hosting], version 4
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
-ms.openlocfilehash: a524c0b0e01fbde95ce2341874511960b3e5738e
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6ee3b8cdf348a5eade3903e2d26b4f9b93886305
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616851"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706812"
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>Interfaces d'hébergement du CLR ajoutées dans .NET Framework 4 et 4.5
+
 Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser pour intégrer le common language runtime (CLR) des .NET Framework 4, .NET Framework 4,5 et versions ultérieures dans leurs applications. Ces interfaces fournissent des méthodes permettant à un hôte de configurer et de charger le runtime dans un processus.  
   
  À partir du .NET Framework 4, toutes les interfaces d’hébergement présentent les caractéristiques suivantes :  
@@ -25,6 +26,7 @@ Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser
 - Il n’existe pas de modèles cloisonnés, d’agrégation ou d’activation du Registre qui utilisent la [fonction CoCreateInstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ICLRAppDomainResourceMonitor, interface](iclrappdomainresourcemonitor-interface.md)  
  Fournit des méthodes qui inspectent la mémoire et l’utilisation de l’UC d’un domaine d’application.  
   
@@ -53,6 +55,7 @@ Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser
  Fournit toutes les fonctionnalités de l' [interface ICLRTask](iclrtask-interface.md); en outre, fournit des méthodes qui permettent de retarder les abandons de thread sur le thread actuel.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Interfaces d'hébergement du CLR et coclasses déconseillées](deprecated-clr-hosting-interfaces-and-coclasses.md)  
  Décrit les interfaces d’hébergement fournies avec les versions de .NET Framework 1,0 et 1,1.  
   

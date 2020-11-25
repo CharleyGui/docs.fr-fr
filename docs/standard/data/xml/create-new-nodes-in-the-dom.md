@@ -2,14 +2,15 @@
 title: Création de nouveaux nœuds dans le DOM
 ms.date: 03/30/2017
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
-ms.openlocfilehash: 835d92b972341e67bc163563ec62c24db610a65a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: dea7add100fbdbb9e761fe39d0d824d27975757f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822748"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704745"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Création de nouveaux nœuds dans le DOM
+
 L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous les types de nœuds. À l'invite, donnez un nom à la méthode, au contenu ou autres paramètres pour les nœuds dotés de contenu (par exemple, un nœud de texte) et le nœud est créé. Les méthodes suivantes sont celles qui nécessitent un nom ainsi que quelques autres paramètres pour créer un nœud correct.  
   
 - <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  

@@ -2,14 +2,15 @@
 title: ISymUnmanagedAsyncMethod::IsAsyncMethod, méthode
 ms.date: 03/30/2017
 ms.assetid: 670a7653-dac6-4171-98ee-d669e3adf4b2
-ms.openlocfilehash: 91b4c2688dadf12fa4a835a662622267d7831cf8
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: af02aba1a0d390c103e8c6108f90b93fe2a98ff3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441797"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707150"
 ---
 # <a name="isymunmanagedasyncmethodisasyncmethod-method"></a>ISymUnmanagedAsyncMethod::IsAsyncMethod, méthode
+
 Vérifie si la méthode contient des informations asynchrones.  
   
  Si cette méthode retourne `FALSE` , il n’est pas valide d’appeler d’autres méthodes dans cette interface. Ils seront tous retournés `E_UNEXPECTED` dans ce cas.  
@@ -26,10 +27,12 @@ HRESULT IsAsyncMethod(    [out, retval] BOOL* pRetVal);
 |---------------|-----------------|  
 |`pRetVal`||  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Retourne `HRESULT`.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

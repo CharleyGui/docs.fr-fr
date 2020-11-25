@@ -8,14 +8,15 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-ms.openlocfilehash: 9dc764492e1ac565c51d49d07e6566295bb76bc1
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 03fa44c1fed219b50cf1a8d22b2c9f79947f4976
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821032"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706656"
 ---
 # <a name="framework-design-guidelines"></a>Règles de conception de .NET Framework
+
 Cette section fournit des instructions pour concevoir des bibliothèques qui étendent et interagissent avec l' .NET Framework. L’objectif est d’aider les concepteurs de bibliothèques à garantir la cohérence et la facilité d’utilisation des API en fournissant un modèle de programmation unifié qui est indépendant du langage de programmation utilisé pour le développement. Nous vous recommandons de suivre ces instructions de conception lors du développement de classes et de composants qui étendent les .NET Framework. Une conception incohérente de la bibliothèque affecte la productivité des développeurs et déconseille l’adoption.  
   
  Les instructions sont organisées en tant que recommandations simples précédées des termes `Do` ,, `Consider` `Avoid` et `Do not` . Ces instructions sont destinées à aider les concepteurs de bibliothèques de classes à comprendre les compromis entre les différentes solutions. Il peut y avoir des situations où une bonne conception de bibliothèque exige que vous violiez ces règles de conception. Ce cas de figure doit être rare et il est important que vous ayez une raison claire et attrayante pour votre décision.  
@@ -23,6 +24,7 @@ Cette section fournit des instructions pour concevoir des bibliothèques qui ét
  Ces instructions sont extraites des règles de *conception de la structure Book : conventions, idiomes et modèles pour les bibliothèques .net réutilisables, 2e édition*, par Krzysztof Cwalina et Brad Abrams.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Instructions d’affectation de noms](naming-guidelines.md)  
  Fournit des instructions pour nommer les assemblys, les espaces de noms, les types et les membres dans les bibliothèques de classes.  
   
@@ -50,5 +52,5 @@ Cette section fournit des instructions pour concevoir des bibliothèques qui ét
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d'ensemble](../../framework/get-started/overview.md)
+- [Vue d’ensemble](../../framework/get-started/overview.md)
 - [Guide de développement](../../framework/development-guide.md)

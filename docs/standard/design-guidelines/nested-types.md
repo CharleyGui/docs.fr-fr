@@ -9,14 +9,15 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-ms.openlocfilehash: 1ac2f9f5e10149027b79cd67e5077ec6bc17f9c9
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bc0aee32b5cc1d40afdd9cce8260d5b5341a687d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820811"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706396"
 ---
 # <a name="nested-types"></a>Types imbriqués
+
 Un type imbriqué est un type défini dans la portée d’un autre type, appelé type englobant. Un type imbriqué a accès à tous les membres de son type englobant. Par exemple, il a accès aux champs privés définis dans le type englobant et aux champs protégés définis dans tous les ascendants du type englobant.
 
  En général, les types imbriqués doivent être utilisés avec modération. et ce, pour plusieurs raisons. Certains développeurs ne sont pas entièrement familiarisés avec le concept. Ces développeurs peuvent, par exemple, rencontrer des problèmes avec la syntaxe de la déclaration de variables de types imbriqués. Les types imbriqués sont également très étroitement couplés avec leurs types englobants, et en tant que tels ne sont pas adaptés aux types à usage général.

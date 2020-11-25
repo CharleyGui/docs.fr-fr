@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ef83bd2-3d8e-499e-8a12-d9d6fd6ced30
 topic_type:
 - apiref
-ms.openlocfilehash: 4a23e9aa259f430c0d0579657952fc6aba4c307c
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: d48c2bdd55e487038048f432c5586d49f393118c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441654"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706942"
 ---
 # <a name="isymunmanagedbinder3getreaderfromcallback-method"></a>ISymUnmanagedBinder3::GetReaderFromCallback, méthode
+
 Permet à l’utilisateur d’implémenter ou de fournir via le rappel d’un `IID_IDiaReadExeAtRVACallback` ou `IID_IDiaReadExeAtOffsetCallback` pour obtenir les informations du répertoire de débogage à partir de la mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT GetReaderFromCallback(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `importer`  
  dans Pointeur vers l’interface d’importation de métadonnées.  
   
@@ -56,10 +58,12 @@ HRESULT GetReaderFromCallback(
  `pRetVal`  
  à Pointeur qui a pour valeur l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) retournée.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl  
   
 ## <a name="see-also"></a>Voir aussi

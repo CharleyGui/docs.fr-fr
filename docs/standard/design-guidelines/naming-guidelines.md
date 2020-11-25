@@ -11,14 +11,15 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-ms.openlocfilehash: e82b6941d3ea0243f4ae16bc9d42ea8d1f1fccfb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: de68eeb287b13bc9f55230243f23cd03508f2561
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820876"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706422"
 ---
 # <a name="naming-guidelines"></a>Indications concernant l'attribution d'un nom
+
 À la suite d’un ensemble cohérent de conventions d’affectation de noms dans le développement d’une infrastructure, il peut s’agir d’une contribution majeure à la facilité d’utilisation du Framework. Il permet à un grand nombre de développeurs d’utiliser le Framework sur des projets largement séparés. Au-delà de la cohérence de la forme, les noms des éléments de l’infrastructure doivent être facilement compris et doivent communiquer avec la fonction de chaque élément.  
   
  L’objectif de ce chapitre est de fournir un ensemble cohérent de conventions d’affectation de noms qui se traduit par des noms qui prennent un sens immédiat pour les développeurs.  
@@ -26,6 +27,7 @@ ms.locfileid: "94820876"
  Bien que l’adoption de ces conventions d’affectation de noms en tant que directives de développement de code générales produirait des noms plus cohérents dans votre code, vous ne devez les appliquer qu’aux API qui sont exposées publiquement (types et membres publics ou protégés, et interfaces implémentées explicitement).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Conventions de mise en majuscules](capitalization-conventions.md)  
  [Conventions d’affectation de noms générales](general-naming-conventions.md)  
  [Noms d’assemblys et de dll](names-of-assemblies-and-dlls.md)  

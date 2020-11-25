@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 383d20b0-efe9-4e71-8fb8-1186b2e7d0c0
 topic_type:
 - apiref
-ms.openlocfilehash: e6cf0aa6f731d0a417e1a2be0ca1d0f8c9299379
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2c180a135608350b0feec3f419be98f4f428b186
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008272"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704511"
 ---
 # <a name="iceegen-interface"></a>ICeeGen, interface
+
 Fournit des méthodes pour la compilation de code dynamique.  
   
  Cette interface est obsolète et ne doit pas être utilisée.  
@@ -46,12 +47,13 @@ Fournit des méthodes pour la compilation de code dynamique.
 |[GetStringSection, méthode](iceegen-getstringsection-method.md)|Obsolète. Obtient une représentation sous forme de chaîne de la section de code référencée par le handle spécifié.|  
 |[TruncateSection, méthode](iceegen-truncatesection-method.md)|Obsolète. Tronque la section de code spécifiée selon la longueur spécifiée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdf91864-48ea-4aa6-b70c-361b7a3184c7
 topic_type:
 - apiref
-ms.openlocfilehash: 40de06d47654337542d2c80dc325f8201335312a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 315e4cc3b93fc78e11a4fb399bbe6f8a9f55ac84
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379152"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705005"
 ---
 # <a name="icordebugregistersetgetregisters-method"></a>ICorDebugRegisterSet::GetRegisters, méthode
+
 Obtient la valeur de chaque registre (sur l’ordinateur qui exécute actuellement le code) spécifié par le masque de bits.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetRegisters (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mask`  
  dans Masque de bits qui spécifie les valeurs de Registre à récupérer. Chaque bit correspond à un registre. Si un bit est défini sur un, la valeur du Registre est Récupérée ; dans le cas contraire, la valeur du Registre n’est pas récupérée.  
   
@@ -46,12 +48,14 @@ HRESULT GetRegisters (
  `regBuffer`  
  à Tableau d' `CORDB_REGISTER` objets, chacun d’entre eux recevant une valeur d’un registre.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La taille du tableau doit être égale au nombre de bits défini sur un dans le masque de bits. Le `regCount` paramètre spécifie le nombre d’éléments dans la mémoire tampon qui recevront les valeurs de registre. Si la `regCount` valeur est trop petite pour le nombre de registres indiqué par le masque, les registres numérotés les plus élevés seront tronqués de l’ensemble. Si la `regCount` valeur est trop grande, les éléments inutilisés `regBuffer` ne seront pas modifiés.  
   
  Si le masque de bits spécifie un registre qui n’est pas disponible, `GetRegisters` retourne une valeur indéterminée pour ce registre.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

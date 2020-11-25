@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 15cfc300-8231-4ecb-9a04-19851c3eb484
 topic_type:
 - apiref
-ms.openlocfilehash: 0a21924008bcbfa0894218f57aee559a564f8003
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 058c66af85da6c902e3d628e1b1479bb88c4fa85
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499972"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704849"
 ---
 # <a name="icorprofilercallbackremotingclientreceivingreply-method"></a>ICorProfilerCallback::RemotingClientReceivingReply, méthode
+
 Indique au profileur que la partie côté serveur d’un appel de communication à distance est terminée et que le client reçoit et est à présent en train de traiter la réponse.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT RemotingClientReceivingReply(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pCookie`  
  dans Valeur qui correspond à la valeur fournie dans [ICorProfilerCallback :: RemotingServerSendingReply,](icorprofilercallback-remotingserversendingreply-method.md) dans les conditions suivantes :  
   
@@ -49,6 +51,7 @@ HRESULT RemotingClientReceivingReply(
  dans Valeur qui est `true` si l’appel est asynchrone ; sinon, `false` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

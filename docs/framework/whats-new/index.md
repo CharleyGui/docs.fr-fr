@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: c99f7c0778b1160c926d5ed62a6a2d295f5c50c5
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 3421afee304125413f4fcade6b20df990e922f58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557244"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704797"
 ---
 # <a name="whats-new-in-net-framework"></a>Nouveautés de .NET Framework
 
@@ -26,7 +26,7 @@ Cet article résume les nouvelles fonctionnalités clés et les améliorations a
 - [.NET Framework 4.7.1](#v471)
 - [.NET Framework 4.7](#v47)
 - [.NET Framework 4.6.2](#v462)
-- [.NET Framework 4.6.1](#v461)
+- [.NET Framework 4.6.1](#v461)
 - [.NET 2015 et .NET Framework 4.6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
@@ -353,7 +353,7 @@ La prise en charge de la décompression à l’aide des API Windows est activée
 
 **API de collection supplémentaires**
 
-.NET Framework 4.7.2 ajoute de nouvelles API aux types <xref:System.Collections.Generic.SortedSet%601> et <xref:System.Collections.Generic.HashSet%601>. Elles incluent notamment :
+.NET Framework 4.7.2 ajoute de nouvelles API aux types <xref:System.Collections.Generic.SortedSet%601> et <xref:System.Collections.Generic.HashSet%601>. notamment :
 
 - Des méthodes `TryGetValue` qui étendent le modèle try utilisé dans d’autres types de collection à ces deux types. Ces méthodes sont les suivantes :
 
@@ -744,7 +744,7 @@ Windows Communication Foundation (WCF) ajoute les fonctionnalités et les modifi
 
 **Amélioration de la fiabilité des applications WCF et de la sérialisation WCF**
 
-WCF inclut plusieurs modifications du code qui éliminent la concurrence critique, améliorant ainsi les performances et la fiabilité des options de sérialisation. Elles incluent notamment :
+WCF inclut plusieurs modifications du code qui éliminent la concurrence critique, améliorant ainsi les performances et la fiabilité des options de sérialisation. notamment :
 
 - Meilleure prise en charge pour le mélange de code synchrone et asynchrone dans les appels à **SocketConnection.BeginRead** et à **SocketConnection.Read**.
 - Meilleure fiabilité lors de l’abandon d’une connexion avec **SharedConnectionListener** et **DuplexChannelBinder**.
@@ -844,7 +844,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Name                                 | Valeur                                     |
+| Nom                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -1585,9 +1585,9 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
     Il est préférable d'utiliser un format homogène pour les commutateurs, car ils constituent un contrat formel exposé par une bibliothèque. Voici les deux formats évidents.
 
-    - *Commutateur*. *espace de noms*. *nom_commutateur*
+    - *Commutateur*.*espace de noms*.*nom_commutateur*
 
-    - *Commutateur*. *bibliothèque*. *nom_commutateur*
+    - *Commutateur*.*bibliothèque*.*nom_commutateur*
 
   - **Changements apportés au modèle asynchrone basé sur les tâches (TAP)**
 
@@ -1623,7 +1623,7 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
   - **Améliorations HDPI**
 
-    La prise en charge de HDPI dans WPF est désormais plus efficace dans .NET Framework 4,6. Des améliorations ont été apportées à l'arrondi de disposition pour réduire les instances de découpage dans les contrôles avec bordures. Par défaut, cette fonctionnalité est activée uniquement si votre <xref:System.Runtime.Versioning.TargetFrameworkAttribute> a la valeur .NET 4.6.  Les applications qui ciblent des versions antérieures du Framework mais qui s’exécutent sur .NET Framework 4,6 peuvent accepter le nouveau comportement en ajoutant la ligne suivante à la [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier app.config :
+    La prise en charge de HDPI dans WPF est désormais plus efficace dans .NET Framework 4,6. Des améliorations ont été apportées à l'arrondi de disposition pour réduire les instances de découpage dans les contrôles avec bordures. Par défaut, cette fonctionnalité est activée uniquement si votre <xref:System.Runtime.Versioning.TargetFrameworkAttribute> a la valeur .NET Framework 4,6.  Les applications qui ciblent des versions antérieures du Framework mais qui s’exécutent sur .NET Framework 4,6 peuvent accepter le nouveau comportement en ajoutant la ligne suivante à la [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section du fichier app.config :
 
     ```xml
     <AppContextSwitchOverrides
@@ -1746,7 +1746,7 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
 - **Prise en charge des encodages de pages de codes**
 
-  .NET Core prend en charge principalement les codages Unicode, et fournit par défaut une prise en charge limitée des codages de pages de codes. Vous pouvez ajouter la prise en charge des encodages de pages de codes disponibles dans .NET Framework, mais non pris en charge dans .NET Core, en inscrivant les encodages de pages de codes avec la méthode <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Pour plus d'informations, consultez <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+  .NET Core prend en charge principalement les codages Unicode, et fournit par défaut une prise en charge limitée des codages de pages de codes. Vous pouvez ajouter la prise en charge des encodages de pages de codes disponibles dans .NET Framework, mais non pris en charge dans .NET Core, en inscrivant les encodages de pages de codes avec la méthode <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 
@@ -1843,7 +1843,7 @@ Avec les fichiers PDB de NGen, NGen peut créer un fichier PDB qui contient le m
 
 ## <a name="whats-new-in-net-framework-451"></a>Nouveautés de .NET Framework 4.5.1
 
-**Mises à jour d’avril 2014**  :
+**Mises à jour d’avril 2014** :
 
 - [Visual Studio 2013 Update 2](https://go.microsoft.com/fwlink/p/?LinkId=393658) inclut les mises à jour des modèles de la bibliothèque de classes portable pour prendre en charge les scénarios suivants :
 
@@ -1947,7 +1947,7 @@ Dans .NET Framework 4,5, le Managed Extensibility Framework (MEF) fournit les no
 
 - Portées multiples.
 
-- Sous-ensemble MEF que vous pouvez utiliser lorsque vous créez des applications Windows 8.x Store. Ce sous-ensemble est disponible sous la forme d’un [package téléchargeable](https://www.nuget.org/packages/Microsoft.Composition) à partir de la galerie NuGet. Pour installer ce package, ouvrez votre projet dans Visual Studio, dans le menu **Projet** choisissez **Gérer les packages NuGet** , puis recherchez en ligne le package `Microsoft.Composition`.
+- Sous-ensemble MEF que vous pouvez utiliser lorsque vous créez des applications Windows 8.x Store. Ce sous-ensemble est disponible sous la forme d’un [package téléchargeable](https://www.nuget.org/packages/Microsoft.Composition) à partir de la galerie NuGet. Pour installer ce package, ouvrez votre projet dans Visual Studio, dans le menu **Projet** choisissez **Gérer les packages NuGet**, puis recherchez en ligne le package `Microsoft.Composition`.
 
 Pour plus d’informations, consultez [Vue d’ensemble de Managed Extensibility Framework](../mef/index.md).
 
@@ -1967,7 +1967,7 @@ L'outil d'optimisation guidée par profil managé (Mpgo.exe) vous permet d'amél
 
 ### <a name="parallel-computing"></a>Calcul parallèle
 
-.NET Framework 4,5 fournit plusieurs nouvelles fonctionnalités et améliorations pour l’informatique parallèle. Il s'agit notamment de performances améliorées, d'un contrôle accru, d'une prise en charge améliorée pour la programmation asynchrone, d'une nouvelle bibliothèque de flux de données et d'une prise en charge améliorée pour le débogage parallèle et l'analyse des performances. Consultez l’entrée [Nouveautés du parallélisme dans .net 4,5](https://devblogs.microsoft.com/pfxteam/whats-new-for-parallelism-in-net-4-5/) dans le blog sur la programmation parallèle avec .net.
+.NET Framework 4,5 fournit plusieurs nouvelles fonctionnalités et améliorations pour l’informatique parallèle. Il s'agit notamment de performances améliorées, d'un contrôle accru, d'une prise en charge améliorée pour la programmation asynchrone, d'une nouvelle bibliothèque de flux de données et d'une prise en charge améliorée pour le débogage parallèle et l'analyse des performances. Consultez l’entrée [Nouveautés du parallélisme dans .NET Framework 4,5](https://devblogs.microsoft.com/pfxteam/whats-new-for-parallelism-in-net-4-5/) dans le blog programmation parallèle avec .net.
 
 <a name="web"></a>
 
@@ -2131,7 +2131,7 @@ Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les vers
 
 - [Versions finales hors plage de .NET Framework](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Nouveautés de l’accessibilité dans .NET Framework](whats-new-in-accessibility.md)
-- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Nouveautés de Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Nouveautés de C++ dans Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)
 - [Télécharger le Kit de développement logiciel (SDK) .NET](https://dotnet.microsoft.com/download)

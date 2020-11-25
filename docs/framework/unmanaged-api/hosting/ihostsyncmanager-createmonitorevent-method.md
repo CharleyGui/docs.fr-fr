@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-ms.openlocfilehash: c0f7e1fd6bf4c9386300b11477df85e87899fc67
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 7fc431861ac8f5c0e47e12e688f4ca004313c062
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803318"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704446"
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent, méthode
+
 Crée un objet d’événement de réinitialisation automatique surveillé.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,17 +36,18 @@ HRESULT CreateMonitorEvent (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cookie`  
  dans Cookie à associer à l’objet d’événement.  
   
  `ppEvent`  
  à Pointeur vers l’adresse d’une instance [IHostAutoEvent](ihostautoevent-interface.md) , ou null si l’objet d’événement n’a pas pu être créé.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent`retourné avec succès.|  
+|S_OK|`CreateMonitorEvent` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
@@ -53,17 +55,19 @@ HRESULT CreateMonitorEvent (
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Mémoire disponible insuffisante pour créer l’objet d’événement demandé.|  
   
-## <a name="remarks"></a>Notes  
- `CreateMonitorEvent`retourne un `IHostAutoEvent` que le CLR utilise dans son implémentation du type managé <xref:System.Threading.Monitor?displayProperty=nameWithType> . Cette méthode reflète la `CreateEvent` fonction Win32, avec `false` la valeur spécifiée pour le `bManualReset` paramètre.  
+## <a name="remarks"></a>Remarques  
+
+ `CreateMonitorEvent` retourne un `IHostAutoEvent` que le CLR utilise dans son implémentation du type managé <xref:System.Threading.Monitor?displayProperty=nameWithType> . Cette méthode reflète la `CreateEvent` fonction Win32, avec `false` la valeur spécifiée pour le `bManualReset` paramètre.  
   
  L’hôte peut utiliser le cookie pour déterminer quelle tâche est en attente sur l’analyse en appelant la méthode [ICLRSyncManager :: GetMonitorOwner,](iclrsyncmanager-getmonitorowner-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

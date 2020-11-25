@@ -2,14 +2,15 @@
 title: Instructions relatives aux collections
 ms.date: 10/22/2008
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-ms.openlocfilehash: 2306462d933e71d0d23021a0e036e8cc23100c68
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a143e88be01bf2c8f45e25f26498d2d3ccbd98da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821084"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706669"
 ---
 # <a name="guidelines-for-collections"></a>Instructions relatives aux collections
+
 Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des caractéristiques communes peut être considéré comme une collection. Il est presque toujours approprié pour que ces types implémentent <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601> . par conséquent, dans cette section, nous prenons uniquement en compte les types qui implémentent l’une de ces interfaces, ou les deux, pour être des collections.
 
  ❌ N’utilisez pas de collections faiblement typées dans les API publiques.
@@ -31,6 +32,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  ❌ N’implémentez pas `IEnumerator<T>` et `IEnumerable<T>` sur le même type. Il en va de même pour les interfaces non génériques `IEnumerator` et `IEnumerable` .
 
 ## <a name="collection-parameters"></a>Paramètres de collection
+
  ✔️ Utilisez le type le moins spécialisé possible comme type de paramètre. La plupart des membres qui prennent des collections comme paramètres utilisent l' `IEnumerable<T>` interface.
 
  ❌ Évitez <xref:System.Collections.Generic.ICollection%601> d’utiliser ou <xref:System.Collections.ICollection> comme paramètre simplement pour accéder à la `Count` propriété.
@@ -38,6 +40,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  Au lieu de cela, envisagez d’utiliser `IEnumerable<T>` ou `IEnumerable` et de vérifier dynamiquement si l’objet implémente `ICollection<T>` ou `ICollection` .
 
 ## <a name="collection-properties-and-return-values"></a>Propriétés de collection et valeurs de retour
+
  ❌ NE fournissez pas de propriétés de collection définissables.
 
  Les utilisateurs peuvent remplacer le contenu de la collection en effaçant d’abord la collection, puis en ajoutant le nouveau contenu. Si le remplacement de l’ensemble de la collection est un scénario courant, envisagez de fournir la `AddRange` méthode sur la collection.
@@ -69,6 +72,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  La règle générale est que les collections ou tableaux null et vides (0 élément) doivent être traités de la même façon.
 
 ### <a name="snapshots-versus-live-collections"></a>Captures instantanées et collections en direct
+
  Les collections représentant un État à un moment donné sont appelées collections d’instantanés. Par exemple, une collection contenant des lignes retournées par une requête de base de données serait un instantané. Les collections qui représentent toujours l’état actuel sont appelées collections dynamiques. Par exemple, une collection d' `ComboBox` éléments est une collection en direct.
 
  ❌ NE retournez pas de collections d’instantanés à partir des propriétés. Les propriétés doivent retourner des collections dynamiques.
@@ -80,6 +84,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  En général, toutes les collections représentant une ressource partagée (par exemple, les fichiers dans un répertoire) sont volatiles. Ces collections sont très difficiles ou impossibles à implémenter en tant que collections dynamiques, sauf si l’implémentation est simplement un énumérateur avant uniquement.
 
 ## <a name="choosing-between-arrays-and-collections"></a>Choix entre les tableaux et les collections
+
  ✔️ préférez les collections sur les tableaux.
 
  Les collections permettent de mieux contrôler le contenu, peuvent évoluer au fil du temps et sont plus utilisables. En outre, il est déconseillé d’utiliser des tableaux pour les scénarios en lecture seule, car le coût du clonage du tableau est prohibitif. Les études de convivialité ont montré que certains développeurs se sentent plus à l’aise avec les API basées sur les collections.
@@ -93,6 +98,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  ❌ N’utilisez pas de tableaux pour les propriétés si la propriété doit retourner un nouveau tableau (par exemple, une copie d’un tableau interne) chaque fois que l’accesseur Get de propriété est appelé.
 
 ## <a name="implementing-custom-collections"></a>Implémentation de regroupements personnalisés
+
  ✔️ ENVISAGER d’hériter de `Collection<T>` , `ReadOnlyCollection<T>` ou lors de la `KeyedCollection<TKey,TItem>` conception de nouvelles collections.
 
  ✔️ implémenter `IEnumerable<T>` lors de la conception de nouvelles collections. Envisagez d’implémenter `ICollection<T>` ou même `IList<T>` là où cela est pertinent.
@@ -106,6 +112,7 @@ Tout type conçu spécifiquement pour manipuler un groupe d’objets ayant des c
  ❌ N’héritez pas de collections de base non génériques telles que `CollectionBase` . Utilisez `Collection<T>` , `ReadOnlyCollection<T>` et à la `KeyedCollection<TKey,TItem>` place.
 
 ### <a name="naming-custom-collections"></a>Nommer des collections personnalisées
+
  Les collections (types qui implémentent `IEnumerable` ) sont créées principalement pour deux raisons : (1) pour créer une nouvelle structure de données avec des opérations spécifiques à la structure et souvent différentes caractéristiques de performances que les structures de données existantes (par exemple,,,  <xref:System.Collections.Generic.List%601> <xref:System.Collections.Generic.LinkedList%601> <xref:System.Collections.Generic.Stack%601> ) et (2) pour créer une collection spécialisée pour conserver un ensemble spécifique d’éléments (par exemple,  <xref:System.Collections.Specialized.StringCollection> ). Les structures de données sont le plus souvent utilisées dans l’implémentation interne des applications et des bibliothèques. Les collections spécialisées sont principalement exposées dans les API (en tant que types de propriété et de paramètre).
 
  ✔️ Utilisez le suffixe « dictionary » dans les noms d’abstractions implémentant `IDictionary` ou `IDictionary<TKey,TValue>` .

@@ -2,23 +2,25 @@
 title: ISymUnmanagedAsyncMethodPropertiesWriter, interface
 ms.date: 03/30/2017
 ms.assetid: caa71820-8058-4b6a-93a2-25ee757d92d3
-ms.openlocfilehash: 04876483fd42e3f6e55222416fd0747891734a52
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 779b737da43f61d1023a0a640dce936e11c4704c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501857"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707033"
 ---
 # <a name="isymunmanagedasyncmethodpropertieswriter-interface"></a>ISymUnmanagedAsyncMethodPropertiesWriter, interface
+
 Vous permet de définir des informations de méthode Async facultatives pour chaque symbole de méthode. Utilisez toujours avec une méthode ouverte ; autrement dit, entre les appels à la [méthode OpenMethod,](isymunmanagedwriter-openmethod-method.md) et à la [méthode CloseMethod,](isymunmanagedwriter-closemethod-method.md).  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```idl  
 [object,uuid(FC073774-1739-4232-BD56-A027294BEC15),pointer_default(unique)]interface ISymUnmanagedAsyncMethodPropertiesWriter : IUnknown  
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  Cette interface contient les méthodes suivantes :  
   
 |Méthode|Description|  
@@ -28,6 +30,7 @@ Vous permet de définir des informations de méthode Async facultatives pour cha
 |[DefineKickoffMethod, méthode](isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md)|Définit la méthode de démarrage qui lance l’opération asynchrone.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

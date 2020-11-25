@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0afc1197-2a5b-424f-8b82-9cb59a7e00db
 topic_type:
 - apiref
-ms.openlocfilehash: 12b4b897f9dc51175037d39c0368b6ce59fefefb
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 7d9fe7d6d5c5af32be22ba19b52e7d40033a6eb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498477"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706747"
 ---
 # <a name="icorprofilerinfogetclassfromtoken-method"></a>ICorProfilerInfo::GetClassFromToken, méthode
+
 Obtient l’ID de la classe, en fonction du jeton de métadonnées. Cette méthode est obsolète dans la version 2,0 de .NET Framework. Utilisez [ICorProfilerInfo2 :: GetClassFromTokenAndTypeArgs,](icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetClassFromToken(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleID`  
  dans ID du module qui contient la classe.  
   
@@ -45,9 +47,11 @@ HRESULT GetClassFromToken(
  à Pointeur vers l’ID de classe.  
   
 ## <a name="remarks"></a>Remarques  
+
  Cette méthode est obsolète ; Utilisez plutôt `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` pour tous les types.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

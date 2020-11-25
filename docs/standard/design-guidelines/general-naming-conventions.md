@@ -14,18 +14,19 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: ff9efd40b630e8e25963b3d69b026feea2823ece
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 60832e823ed2f51fdd13c467dbbef4378de27885
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821097"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706708"
 ---
 # <a name="general-naming-conventions"></a>Conventions générales d'affectation de noms
 
 Cette section décrit les conventions d’affectation de noms générales relatives au choix de mots, des instructions sur l’utilisation des abréviations et des acronymes, ainsi que des recommandations sur la façon d’éviter d’utiliser des noms spécifiques à une langue.
 
 ## <a name="word-choice"></a>Choix de mots
+
  ✔️ Choisissez des noms d’identificateur facilement lisibles.
 
  Par exemple, une propriété nommée `HorizontalAlignment` est plus lisible en anglais que `AlignmentHorizontal` .
@@ -43,6 +44,7 @@ Cette section décrit les conventions d’affectation de noms générales relati
  Conformément à la règle 4 du Common Language Specification (CLS), tous les langages conformes doivent fournir un mécanisme qui permet d’accéder à des éléments nommés qui utilisent un mot clé de ce langage comme identificateur. C#, par exemple, utilise le signe @ comme mécanisme d’échappement dans ce cas. Toutefois, il est toujours judicieux d’éviter les mots clés courants, car il est bien plus difficile d’utiliser une méthode avec la séquence d’échappement que l’autre sans lui.
 
 ## <a name="using-abbreviations-and-acronyms"></a>Utilisation des abréviations et des acronymes
+
  ❌ N’utilisez pas d’abréviations ou de contractions dans les noms d’identificateurs.
 
  Par exemple, utilisez `GetWindow` plutôt que `GetWin` .
@@ -50,6 +52,7 @@ Cette section décrit les conventions d’affectation de noms générales relati
  ❌ N’utilisez pas les acronymes qui ne sont pas largement acceptés, et même s’ils le sont, uniquement lorsque cela est nécessaire.
 
 ## <a name="avoiding-language-specific-names"></a>Éviter les noms de Language-Specific
+
  ✔️ Utilisez des noms sémantiquement intéressants plutôt que des mots clés spécifiques à une langue pour les noms de types.
 
  Par exemple, `GetLength` est un meilleur nom que `GetInt` .
@@ -78,6 +81,7 @@ Cette section décrit les conventions d’affectation de noms générales relati
  ✔️ Utilisez un nom commun, tel que `value` ou `item` , au lieu de répéter le nom de type, dans les rares cas où un identificateur n’a aucune signification sémantique et que le type du paramètre n’est pas important.
 
 ## <a name="naming-new-versions-of-existing-apis"></a>Attribution de noms aux nouvelles versions des API existantes
+
  ✔️ Utilisez un nom similaire à l’ancienne API lors de la création de nouvelles versions d’une API existante.
 
  Cela permet de mettre en évidence la relation entre les API.

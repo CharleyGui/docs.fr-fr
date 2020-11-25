@@ -10,14 +10,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-ms.openlocfilehash: cde574be6d4fadb78805548cff1b42ee354bf36f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 17a303cde5fa51cd940b0375d2c6657fcd354dc5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558951"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706326"
 ---
 # <a name="com-wrappers"></a>Wrappers COM
+
 COM diffère du modèle objet de runtime .NET sur plusieurs points importants :  
   
 - Les clients des objets COM doivent gérer la durée de vie de ces objets ; le common language runtime gère la durée de vie des objets dans son environnement.  

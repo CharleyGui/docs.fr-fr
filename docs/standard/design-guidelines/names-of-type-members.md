@@ -12,17 +12,19 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: 85f3137b4a8d75de92b12d6535415743395db890
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 409e881198a359fa28356e22ea73d5b724742a0d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820911"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706474"
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
+
 Les types se composent de membres, de méthodes, de propriétés, d’événements, de constructeurs et de champs. Les sections suivantes décrivent les règles de nommage des membres de type.
 
 ## <a name="names-of-methods"></a>Noms des méthodes
+
  Comme les méthodes permettent d’entreprendre des actions, les règles de conception exigent que les noms des méthodes soient des verbes ou des expressions verbales. Cette règle sert également à distinguer les noms de méthode des noms de propriété et de type, qui sont des expressions nominales ou adjectivales.
 
  ✔️ Donnez des noms de méthodes qui sont des verbes ou des expressions de verbe.
@@ -36,6 +38,7 @@ public class String {
 ```
 
 ## <a name="names-of-properties"></a>Noms des propriétés
+
  Contrairement aux autres membres, les noms des propriétés doivent être des expressions nominales ou adjectivales. C’est parce que les propriétés font référence à des données, donc leur nom doivent le refléter. La casse Pascal est toujours utilisée pour les noms de propriété.
 
  ✔️ Nommez les propriétés à l’aide d’un nom, d’une expression nominale ou d’un adjectif.
@@ -62,6 +65,7 @@ public class Control {
 ```
 
 ## <a name="names-of-events"></a>Noms des événements
+
  Les événements font toujours référence à une action, soit une action en cours, soit une action passée. Par conséquent, comme avec les méthodes, les événements sont nommés avec des verbes, le temps des verbes servant à indiquer l’heure où l’événement est déclenché.
 
  ✔️ Nommez les événements avec un verbe ou une phrase verbale.
@@ -85,6 +89,7 @@ public class Control {
  ✔️ Nommez les classes d’argument d’événement avec le suffixe « EventArgs ».
 
 ## <a name="names-of-fields"></a>Noms des champs
+
  Les règles de nommage des champs s’appliquent à des champs publics et protégés statiques. Les champs internes et privés ne sont pas couverts par les règles, tandis que les champs d’instance publics ou protégés ne sont pas autorisés par les [règles de conception de membres](member.md).
 
  ✔️ Utilisez PascalCasing dans les noms de champs.

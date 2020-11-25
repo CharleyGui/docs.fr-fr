@@ -13,14 +13,15 @@ helpviewer_keywords:
 - interfaces [.NET Framework], names
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-ms.openlocfilehash: b9de9329cc8e1bfc47a46523c7119bb3b2c244d8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 49bafda0d5c362fa02313c5304436069d054cfd9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290212"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706513"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Noms de classes, de structures et d'interfaces
+
 Les règles d’affectation des noms qui suivent s’appliquent à la dénomination générale des types.
 
  ✔️ Nommez les classes et les structs avec des noms ou des expressions nominales, à l’aide de PascalCasing.
@@ -31,7 +32,7 @@ Les règles d’affectation des noms qui suivent s’appliquent à la dénominat
 
  Les noms et les expressions nominales doivent être utilisés rarement et peuvent indiquer que le type doit être une classe abstraite, et non une interface.
 
- ❌N’attribuez pas de noms de classe à un préfixe (par exemple, « C »).
+ ❌ N’attribuez pas de noms de classe à un préfixe (par exemple, « C »).
 
  ✔️ envisagez de terminer le nom des classes dérivées par le nom de la classe de base.
 
@@ -44,6 +45,7 @@ Les règles d’affectation des noms qui suivent s’appliquent à la dénominat
  ✔️ Assurez-vous que les noms diffèrent uniquement par le préfixe « I » sur le nom de l’interface lorsque vous définissez une paire classe-interface où la classe est une implémentation standard de l’interface.
 
 ## <a name="names-of-generic-type-parameters"></a>Noms des paramètres de type générique
+
  Des génériques ont été ajoutés à .NET Framework 2,0. La fonctionnalité a introduit un nouveau type d’identificateur appelé *paramètre de type*.
 
  ✔️ Nommez les paramètres de type générique avec des noms descriptifs, sauf si un nom de lettre unique est entièrement explicite et qu’un nom descriptif n’ajoute pas de valeur.
@@ -69,14 +71,15 @@ public interface ISessionChannel<TSession> where TSession : ISession {
  Par exemple, un paramètre avec une limite `ISession` peut être appelé `TSession` .
 
 ## <a name="names-of-common-types"></a>Noms des types courants
+
  ✔️ Suivez les instructions décrites dans le tableau suivant lors de l’attribution de noms aux types dérivés de ou de l’implémentation de certains types d' .NET Framework.
 
 |Base Type|Instruction de type Derived/Implementation|
 |---------------|------------------------------------------|
 |`System.Attribute`|✔️ Ajoutez le suffixe « Attribute » aux noms des classes d’attributs personnalisés.|
-|`System.Delegate`|✔️ Ajoutez le suffixe « EventHandler » aux noms des délégués utilisés dans les événements.<br /><br /> ✔️ Ajoutez le suffixe « callback » aux noms des délégués autres que ceux utilisés comme gestionnaires d’événements.<br /><br /> ❌N’ajoutez pas le suffixe « Delegate » à un délégué.|
+|`System.Delegate`|✔️ Ajoutez le suffixe « EventHandler » aux noms des délégués utilisés dans les événements.<br /><br /> ✔️ Ajoutez le suffixe « callback » aux noms des délégués autres que ceux utilisés comme gestionnaires d’événements.<br /><br /> ❌ N’ajoutez pas le suffixe « Delegate » à un délégué.|
 |`System.EventArgs`|✔️ Ajoutez le suffixe « EventArgs ».|
-|`System.Enum`|❌NE dérivez pas de cette classe ; Utilisez le mot clé pris en charge par votre langage à la place. par exemple, en C#, utilisez le `enum` mot clé.<br /><br /> ❌N’ajoutez pas le suffixe « enum » ou « Flag ».|
+|`System.Enum`|❌ NE dérivez pas de cette classe ; Utilisez le mot clé pris en charge par votre langage à la place. par exemple, en C#, utilisez le `enum` mot clé.<br /><br /> ❌ N’ajoutez pas le suffixe « enum » ou « Flag ».|
 |`System.Exception`|✔️ Ajoutez le suffixe « exception ».|
 |`IDictionary` <br /> `IDictionary<TKey,TValue>`|✔️ Ajoutez le suffixe « dictionary ». Notez que `IDictionary` est un type spécifique de collection, mais cette règle est prioritaire sur la règle de regroupements plus généraux qui suit.|
 |`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|✔️ Ajoutez le suffixe « collection ».|
@@ -84,17 +87,18 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 |`CodeAccessPermission IPermission`|✔️ Ajoutez le suffixe « permission ».|
 
 ## <a name="naming-enumerations"></a>Énumération des noms
+
  En général, les noms de types énumération (également appelés énumérations) doivent respecter les règles d’attribution de noms de type standard (PascalCasing, etc.). Toutefois, des instructions supplémentaires s’appliquent spécifiquement aux enums.
 
  ✔️ Utilisez un nom de type singulier pour une énumération, sauf si ses valeurs sont des champs de bits.
 
  ✔️ Utilisez un nom de type pluriel pour une énumération avec des champs de bits comme valeurs, également appelé enum Flags.
 
- ❌N’utilisez pas de suffixe « enum » dans les noms de types ENUM.
+ ❌ N’utilisez pas de suffixe « enum » dans les noms de types ENUM.
 
- ❌N’utilisez pas les suffixes « Flag » ou « flags » dans les noms de types ENUM.
+ ❌ N’utilisez pas les suffixes « Flag » ou « flags » dans les noms de types ENUM.
 
- ❌N’utilisez pas de préfixe pour les noms de valeurs d’énumération (par exemple, « AD » pour les enums ADO, « RTF » pour les énumérations de texte enrichi, etc.).
+ ❌ N’utilisez pas de préfixe pour les noms de valeurs d’énumération (par exemple, « AD » pour les enums ADO, « RTF » pour les énumérations de texte enrichi, etc.).
 
  *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-ms.openlocfilehash: a7a450e85f7eaa765766ffa985d7c01538e2669c
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 0e7afa386af1bd2eebc2b58592d01b764660248f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795792"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704693"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult, énumération
+
 Fournit les détails sur la façon dont la valeur du pointeur d'instruction a été obtenue.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -48,10 +49,12 @@ typedef enum CorDebugMappingResult {
 |`MAPPING_EXACT`|Soit la méthode est mappée exactement au code MSIL, soit le frame a été interprété, donc la valeur de l’adresse IP est exacte.|  
 |`MAPPING_APPROXIMATE`|La méthode a été correctement mappée, mais la valeur de l’adresse IP peut être approximative.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Vous pouvez utiliser la méthode [ICorDebugILFrame :: GetIP](icordebugilframe-getip-method.md) pour obtenir la valeur du pointeur d’instruction.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

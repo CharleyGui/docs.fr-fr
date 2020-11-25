@@ -2,24 +2,20 @@
 title: Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 description: Découvrez comment effectuer un lift-and-shift et moderniser les applications existantes avec le cloud Azure et des conteneurs dans ce livre électronique.
 ms.date: 04/28/2018
-ms.openlocfilehash: 74359b526bead85788a6ddc8039ef05b4c475d5e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: f4ae4e2d24d343b55811955fb43e929c0db6f01b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172255"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705330"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 
 ![Image de couverture du guide Moderniser les applications .NET.](./media/index/web-application-guide-cover-image.png)
 
-PUBLIÉ PAR  
-Microsoft Press et Microsoft DevDiv  
-Divisions de Microsoft Corporation  
-One Microsoft Way  
-Redmond, Washington 98052-6399  
+PUBLIÉ par Microsoft Press et Microsoft DevDiv subdivisions de Microsoft Corporation One Microsoft Way Redmond, Washington 98052-6399
 
-Copyright © 2020 par Microsoft Corporation  
+Copyright © 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
@@ -37,12 +33,7 @@ Auteur :
 > **Cesar de la Torre**, SR. pm, équipe du produit .net, Microsoft Corp.
 
 Participants et réviseurs :
-> **Scott Hunter**, chef de projet directeur partenaire, équipe .NET, Microsoft  
-> **Paul Yuknewicz**, chef de projet responsable principal, équipe Visual Studio Tools, Microsoft  
-> **Lisa Guthrie**, chef de projet senior, équipe Visual Studio Tools, Microsoft  
-> **Ankit Asthana**, responsable principal de la gestion de projets, équipe .NET, Microsoft  
-> **Unai Zorrilla**, développeur en chef, Plain Concepts  
-> **Javier Valero**, chef des opérations chez Grupo Solutio  
+> **Scott Hunter**, directeur de partenaire PM, équipe .net, Microsoft **Paul Yuknewicz**, responsable principal des comptes, Visual Studio Tools équipe, Microsoft **Lisa Guthrie**, SR. pm, Visual Studio Tools équipe, Microsoft **Ankit Asthana**, responsable des comptes fournisseurs, équipe .net, Microsoft **Unai Zorrilla**, responsable des développeurs, principes simples **Javier Valero**, directeur des exploitations sur Grupo solutio
 
 ## <a name="introduction"></a>Introduction
 
@@ -70,7 +61,7 @@ Pour les applications modernes avec les meilleures agilité et valeur ajoutée �
 
 La figure 1-1 montre les voies possibles utilisables quand vous faites passer progressivement des applications .NET existantes dans le cloud.
 
- ![Voies de modernisation pour les applications et les services .NET existants](./media/image1-1.png)
+ ![Voies de modernisation pour les applications et les services .NET existants](./media/image1-1.png)
 
 **Figure 1-1**. Voies de modernisation pour les applications et les services .NET existants
 
@@ -89,7 +80,7 @@ Le troisième niveau de maturité est l’objectif ultime dans le cloud, mais il
 
 Le tableau 1-1 décrit les principaux avantages et les raisons de choisir chaque approche de migration ou de modernisation.
 
-| **Prêt pour l’infrastructure cloud** <br /> *Élévation et décalage* | **Optimisé pour le cloud** <br /> *Moderniser* | **Cloud-natif** <br /> *Moderniser, réarchitecturer et réécrire* |
+| **Prêt pour l’infrastructure cloud** <br /> *Migration lift-and-shift* | **Optimisé pour le cloud** <br /> *Moderniser* | **Cloud-natif** <br /> *Moderniser, réarchitecturer et réécrire* |
 |---|---|---|
 | **Cible informatique de l’application** |
 | Applications déployées sur des machines virtuelles dans Azure | Applications monolithiques ou multiniveaux déployées sur Azure App Service, Azure Container Instance (ACI), des machines virtuelles avec conteneurs ou Azure Kubernetes Service (AKS) | Microservices conteneurisés sur Azure Kubernetes service (AKS) et/ou microservices serverless basés sur Azure Functions. |
@@ -103,7 +94,7 @@ Le tableau 1-1 décrit les principaux avantages et les raisons de choisir chaque
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>Technologies et architectures principales par niveau de maturité
 
-Au départ, les applications .NET Framework démarraient avec le .NET Framework version 1.0, qui a été publié fin 2001. Ensuite, les entreprises sont passées à des versions plus récentes (comme 2.0, 3.5 et .NET 4.x). La plupart de ces applications s’exécutaient sur Windows Server et IIS (Internet Information Server), et utilisaient une base de données relationnelle, comme SQL Server, Oracle, MySQL ou n’importe quel autre SGBDR.
+Au départ, les applications .NET Framework démarraient avec le .NET Framework version 1.0, qui a été publié fin 2001. Ensuite, les entreprises ont été déplacées vers des versions plus récentes (par exemple, 2,0, 3,5 et .NET Framework 4. x). La plupart de ces applications s’exécutaient sur Windows Server et IIS (Internet Information Server), et utilisaient une base de données relationnelle, comme SQL Server, Oracle, MySQL ou n’importe quel autre SGBDR.
 
 La plupart des applications .NET existantes sont probablement basées sur le .NET Framework 4.x, ou même sur le .NET Framework 3.5, et elles utilisent des frameworks web, comme ASP.NET MVC, ASP.NET Web Forms, ASP.NET Web API, WCF (Windows Communication Foundation), ASP.NET SignalR et ASP.NET Web Pages. Ces technologies .NET Framework répandues dépendent de Windows. Cette dépendance est importante à prendre en compte si vous effectuez simplement une migration d’applications héritées et que vous voulez apporter le moins de modifications possible à votre infrastructure d’application.
 
