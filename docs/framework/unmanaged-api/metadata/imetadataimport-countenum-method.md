@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d1de53ad-9435-4b5f-9df7-07f21210e5b5
 topic_type:
 - apiref
-ms.openlocfilehash: 4521a3f15ec358a4d786a4533efb6b99d0e1c1cc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f2470cd7112adff35ef49c21a155072fcd4008be
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492380"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727285"
 ---
 # <a name="imetadataimportcountenum-method"></a>IMetaDataImport::CountEnum, méthode
+
 Obtient le nombre d’éléments de l’énumération récupérés par l’énumérateur spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT CountEnum (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hEnum`  
  dans Handle de l’énumérateur.  
   
@@ -42,14 +44,16 @@ HRESULT CountEnum (
  à Nombre d’éléments énumérés.  
   
 ## <a name="remarks"></a>Remarques  
+
  Le handle spécifié par `hEnum` est obtenu à partir d’un appel de `Enum` *nom* précédent (par exemple, [IMetaDataImport :: EnumTypeDefs,](imetadataimport-enumtypedefs-method.md)).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2a9e0ea7-a9e2-4817-b1c4-fcf15b215ea9
 topic_type:
 - apiref
-ms.openlocfilehash: 3dc5f04504cca632892c16d31c92a33935b356e0
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 271f9f4fd0d85407aedf088ffb524fa6e0398e37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727209"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress, méthode
+
 Obtient l’adresse du champ statique du domaine d’application spécifié qui est dans la portée du domaine d’application spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ RESULT GetAppDomainStaticAddress(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `classId`  
  dans ID de classe de la classe qui contient le champ statique de domaine d’application demandé.  
   
@@ -49,6 +51,7 @@ RESULT GetAppDomainStaticAddress(
  à Pointeur vers l’adresse du champ statique qui est dans le domaine d’application spécifié.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `GetAppDomainStaticAddress` méthode peut retourner l’un des éléments suivants :  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT si aucune adresse n’a été assignée au champ statique donné dans le contexte spécifié.  
@@ -58,6 +61,7 @@ RESULT GetAppDomainStaticAddress(
  Avant la fin du constructeur de classe d’une classe, `GetAppDomainStaticAddress` retourne CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains champs statiques soient déjà initialisés et que les objets de racine garbage collection.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

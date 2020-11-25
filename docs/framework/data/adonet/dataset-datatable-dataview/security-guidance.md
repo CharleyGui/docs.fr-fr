@@ -3,12 +3,12 @@ title: Aide sur la sécurité des jeux de données et des DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: e9973df02ff478eedc932099fb8be0526a97b899
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 8798c4542acc578c8f7f00c9b26cd01a0db20c42
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679453"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726065"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Aide sur la sécurité des jeux de données et des DataTable
 
@@ -18,7 +18,7 @@ Cet article s’applique à :
 * .NET Core et versions ultérieures
 * .NET 5,0 et versions ultérieures
 
-Les types [DataSet](/dotnet/api/system.data.dataset) et [DataTable](/dotnet/api/system.data.datatable) sont des composants .net hérités qui permettent de représenter les jeux de données comme des objets managés. Ces composants ont été introduits dans .NET 1,0 dans le cadre de l' [infrastructure ADO.net](./index.md)d’origine. Son objectif était de fournir une vue managée sur un jeu de données relationnelles, en faisant abstraction de la source de données sous-jacente XML, SQL ou une autre technologie.
+Les types [DataSet](/dotnet/api/system.data.dataset) et [DataTable](/dotnet/api/system.data.datatable) sont des composants .net hérités qui permettent de représenter les jeux de données comme des objets managés. Ces composants ont été introduits dans .NET Framework 1,0 dans le cadre de l' [infrastructure ADO.net](./index.md)d’origine. Son objectif était de fournir une vue managée sur un jeu de données relationnelles, en faisant abstraction de la source de données sous-jacente XML, SQL ou une autre technologie.
 
 Pour plus d’informations sur ADO.NET, y compris des paradigmes d’affichage de données plus modernes, consultez [la documentation de ADO.net](../index.md).
 
@@ -34,13 +34,9 @@ Sur toutes les versions prises en charge de .NET Framework, .NET Core et .NET, `
 
 Si les données XML entrantes contiennent un objet dont le type n’est pas dans cette liste :
 
-* Une exception est levée avec le message et la trace de la pile suivants.  
-Message d’erreur :  
-System. InvalidOperationException : type' \<Type Name\> , version = \<n.n.n.n\> , culture = \<culture\> , PublicKeyToken = \<token value\> 'n’est pas autorisé ici. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Pour plus d’informations, consultez.  
-Trace de la pile :  
-dans System. Data. TypeLimiter. EnsureTypeIsAllowed (type type, TypeLimiter capturedLimiter)  
-à System. Data. DataColumn. UpdateColumnType (type type, StorageType typeCode)  
-à System. Data. DataColumn. set_DataType (valeur de type)  
+* Une exception est levée avec le message et la trace de la pile suivants.
+Message d’erreur : System. InvalidOperationException : type' \<Type Name\> , version = \<n.n.n.n\> , culture = \<culture\> , PublicKeyToken = \<token value\> 'n’est pas autorisé ici. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Pour plus d’informations, consultez.
+Trace de la pile : à System. Data. TypeLimiter. EnsureTypeIsAllowed (type type, TypeLimiter capturedLimiter) au niveau de System. Data. DataColumn. UpdateColumnType (type type, StorageType typeCode) à System.Data.DataColumn.set_DataType (valeur de type)
 
 * L’opération de désérialisation échoue.
 
@@ -280,7 +276,7 @@ Si `AppContext` n’est pas disponible, les contrôles de limite de type peuvent
 
 | Type  |  Value |
 |---|---|
-| **Clé de Registre** | `HKLM\SOFTWARE\Microsoft\.NETFramework\AppContext` |
+| **Clé du Registre** | `HKLM\SOFTWARE\Microsoft\.NETFramework\AppContext` |
 | **Nom de la valeur** | `Switch.System.Data.AllowArbitraryDataSetTypeInstantiation` |
 | **Type de valeur** | `REG_SZ` |
 | **Données de valeur** | `true` |
@@ -293,7 +289,7 @@ Pour plus d’informations sur l’utilisation du Registre pour configurer `AppC
 
 ## <a name="safety-with-regard-to-untrusted-input"></a>Sécurité en ce qui concerne les entrées non fiables
 
-Bien que `DataSet` et `DataTable` imposent des limitations par défaut sur les types qui sont autorisés à être présents lors de la désérialisation des charges utiles XML, __ `DataSet` et `DataTable` qui ne sont généralement pas sécurisés quand ils sont remplis avec une entrée non fiable.__ Voici une liste non exhaustive des façons dont une `DataSet` `DataTable` instance ou peut lire des entrées non fiables.
+Bien que `DataSet` et `DataTable` imposent des limitations par défaut sur les types qui sont autorisés à être présents lors de la désérialisation des charges utiles XML, __`DataSet` et `DataTable` qui ne sont généralement pas sécurisés quand ils sont remplis avec une entrée non fiable.__ Voici une liste non exhaustive des façons dont une `DataSet` `DataTable` instance ou peut lire des entrées non fiables.
 
 * `DataAdapter`Fait référence à une base de données, et la `DataAdapter.Fill` méthode est utilisée pour remplir un `DataSet` avec le contenu d’une requête de base de données.
 * La `DataSet.ReadXml` `DataTable.ReadXml` méthode ou est utilisée pour lire un fichier XML contenant des informations sur les colonnes et les lignes.
@@ -479,9 +475,9 @@ La désérialisation d' `DataSet` un `DataTable` objet ou de cette façon à par
 
 ## <a name="deserialize-a-dataset-or-datatable-via-binaryformatter"></a>Désérialiser un DataSet ou un DataTable via BinaryFormatter
 
-Les développeurs ne doivent jamais utiliser `BinaryFormatter` ,, `NetDataContractSerializer` `SoapFormatter` ou des formateurs ***non sécurisés*** associés pour désérialiser une `DataSet` `DataTable` instance ou à partir d’une charge utile non fiable :
+Les développeurs ne doivent jamais utiliser les `BinaryFormatter` `NetDataContractSerializer` `SoapFormatter` formateurs,, ou associés ***unsafe** _ pour désérialiser une `DataSet` `DataTable` instance ou à partir d’une charge utile non fiable :
 
-* Cela est vulnérable à une attaque d’exécution de code à distance complète.
+_ Cela est vulnérable à une attaque d’exécution de code à distance complète.
 * L’utilisation d’un personnalisé `SerializationBinder` n’est pas suffisante pour empêcher une telle attaque.
 
 ## <a name="safe-replacements"></a>Remplacements sécurisés

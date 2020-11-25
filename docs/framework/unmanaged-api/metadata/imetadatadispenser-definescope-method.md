@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: af28db02-29af-45ac-aec6-8d6c6123c2ff
 topic_type:
 - apiref
-ms.openlocfilehash: 12a32b5d2f0647ea2d9b696d08d6644e30be0c65
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 87a39350986cb7bb62f76b0d9a6a9aae8f82e2f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501350"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726091"
 ---
 # <a name="imetadatadispenserdefinescope-method"></a>IMetaDataDispenser::DefineScope, méthode
+
 Crée une zone en mémoire dans laquelle vous pouvez créer des métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT DefineScope (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `rclsid`  
  dans CLSID de la version des structures de métadonnées à créer. Cette valeur doit être CLSID_CorMetaDataRuntime pour la version .NET Framework 2,0.  
   
@@ -52,16 +54,18 @@ HRESULT DefineScope (
  à Pointeur vers l’interface retournée.  
   
 ## <a name="remarks"></a>Remarques  
- `DefineScope`crée un ensemble de tables de métadonnées en mémoire, génère un GUID unique (identificateur de version de module, ou MVID) pour les métadonnées, et crée une entrée dans la table de module pour l’unité de compilation en cours d’émission.  
+
+ `DefineScope` crée un ensemble de tables de métadonnées en mémoire, génère un GUID unique (identificateur de version de module, ou MVID) pour les métadonnées, et crée une entrée dans la table de module pour l’unité de compilation en cours d’émission.  
   
  Vous pouvez attacher des attributs à la portée de métadonnées dans son ensemble à l’aide de la méthode [IMetaDataEmit :: SetModuleProps,](imetadataemit-setmoduleprops-method.md) ou [IMetaDataEmit ::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , selon le cas.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

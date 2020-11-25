@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7c36a7c2-75a2-4971-bc23-abf54c812154
 topic_type:
 - apiref
-ms.openlocfilehash: 3ecaebb9d943a3cdbb231307012b5dc3aaf000f7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5d6ec42da60a7b294177063b9f8bd5afbf352c62
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493385"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726819"
 ---
 # <a name="eclrevent-enumeration"></a>EClrEvent, énumération
+
 Décrit les événements common language runtime (CLR) pour lesquels l’hôte peut inscrire des rappels.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,6 +46,7 @@ typedef enum {
 |`Event_StackOverflow`|Spécifie qu’une erreur de dépassement de capacité de la pile s’est produite.|  
   
 ## <a name="remarks"></a>Remarques  
+
  L’hôte peut enregistrer des rappels pour tous les types d’événements décrits par `EClrEvent` en appelant des méthodes de l’interface [ICLROnEventManager](iclroneventmanager-interface.md) . L’hôte obtient un pointeur vers cette interface en appelant la méthode [ICLRControl :: GetCLRManager](iclrcontrol-getclrmanager-method.md) .  
   
  Les `Event_CLRDisabled` `Event_DomainUnload` événements et peuvent être déclenchés plusieurs fois et à partir de différents threads pour signaler un déchargement ou la désactivation du CLR.  
@@ -52,11 +54,12 @@ typedef enum {
  L' `Event_MDAFired` événement déclenche la création d’une instance [MDAInfo](mdainfo-structure.md) qui contient les détails du message de l’Assistant Débogage managé. Pour plus d’informations sur les MDA, consultez [diagnostic des erreurs avec les Assistants Débogage managé](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

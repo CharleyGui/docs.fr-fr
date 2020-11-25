@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a71563c0-62f2-4eb4-970c-825d61827613
 topic_type:
 - apiref
-ms.openlocfilehash: 093c5e3e64395c8946acd9201990d132e8111fc7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6a7824949edc905a3edcd58f60d40f8b1a40c53c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610585"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726910"
 ---
 # <a name="isymunmanagedvariablegetaddresskind-method"></a>ISymUnmanagedVariable::GetAddressKind, méthode
+
 Obtient le type d’adresse de cette variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,13 +34,16 @@ HRESULT GetAddressKind(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pRetVal`  
  à Pointeur vers un `ULONG32` qui reçoit la valeur. Les valeurs possibles sont définies dans l’énumération [CorSymAddrKind,](corsymaddrkind-enumeration.md) .  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

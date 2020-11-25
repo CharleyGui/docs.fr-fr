@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: aae0f48c-4ede-4256-9251-a7fc85a229dc
 topic_type:
 - apiref
-ms.openlocfilehash: 9f6962f987079da1ccb04ea368307d7c119910a6
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 1396e7a8ca61734a9363a9c852502290675249d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379507"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727664"
 ---
 # <a name="icordebugstepperstepout-method"></a>ICorDebugStepper::StepOut, méthode
+
 Fait en sorte que ces ICorDebugStepper effectuent un pas à pas détaillé dans son thread conteneur et se termine lorsque le frame actuel retourne le contrôle au frame appelant.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -31,14 +32,16 @@ Fait en sorte que ces ICorDebugStepper effectuent un pas à pas détaillé dans 
 HRESULT StepOut ();  
 ```  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Notes  
+
  Une `StepOut` opération se termine après avoir été retournée normalement du frame actuel au frame appelant.  
   
  Si `StepOut` est appelé lorsque, dans du code non managé, l’étape se termine lorsque le frame actuel retourne au code managé qui l’a appelé.  
   
  Dans la version 2,0 de .NET Framework, n’utilisez pas `StepOut` avec l’indicateur STOP_UNMANAGED défini, car il échouera. (Utilisez [ICorDebugStepper :: SetUnmappedStopMask](icordebugstepper-setunmappedstopmask-method.md) pour définir des indicateurs pour l’exécution pas à pas.) Les débogueurs d’interopérabilité doivent effectuer eux-mêmes un pas à pas sortant du code natif.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

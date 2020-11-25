@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
 topic_type:
 - apiref
-ms.openlocfilehash: e774905939640d2748344ad3f6e12a96f9868d9f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d9150d15ac183b65b87448424f265693ed7b7ab7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213801"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726572"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid, méthode
+
 Obtient une valeur qui indique si l’objet représenté par cet ICorDebugHeapValue est valide.  
   
  Cette méthode est déconseillée dans la version 2,0 de .NET Framework.  
@@ -36,15 +37,18 @@ HRESULT IsValid (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbValid`  
  à Pointeur vers une valeur booléenne qui indique si cette valeur sur le tas est valide.  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  La valeur n’est pas valide si elle a été récupérée par le garbage collector.  
   
  Cette méthode est dépréciée. Dans la .NET Framework 2,0, toutes les valeurs sont valides jusqu’à ce que [ICorDebugController :: continue](icordebugcontroller-continue-method.md) soit appelé, auquel les valeurs sont invalidées.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d9720428-c353-4f07-a7e8-899e106a1b37
 topic_type:
 - apiref
-ms.openlocfilehash: 6f4764f016360a2ec0ab054b7a89ccb3f86aeb43
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b79dbdd64ac171d1bc4cd30b96ee76b4a853afb6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490222"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727248"
 ---
 # <a name="imetadatatablesgetnextstring-method"></a>IMetaDataTables::GetNextString, méthode
+
 Obtient l’index de la chaîne suivante dans la colonne de table actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetNextString (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ixString`  
  dans Valeur d’index d’une colonne de table de chaînes.  
   
@@ -42,11 +44,12 @@ HRESULT GetNextString (
  à Pointeur vers l’index de la chaîne suivante dans la colonne.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

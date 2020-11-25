@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 866dc96b-bbfc-4c0f-80c2-38ce93072106
 topic_type:
 - apiref
-ms.openlocfilehash: 5a232f30da8812c6f3bd94647d74151312a8593b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b8ad159dace734c343297b256092162f17ab829b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493035"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726481"
 ---
 # <a name="imetadataemit2-interface"></a>IMetaDataEmit2, interface
+
 Étend l’interface [IMetaDataEmit](imetadataemit-interface.md) principalement pour offrir la possibilité d’utiliser des types génériques.  
   
 ## <a name="methods"></a>Méthodes  
@@ -38,11 +39,12 @@ ms.locfileid: "84493035"
 |[SetGenericParamProps, méthode](imetadataemit2-setgenericparamprops-method.md)|Définit des valeurs de propriété pour la définition de paramètre générique référencée par le jeton spécifié.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 43189651-a535-4803-a1d1-f1c427ace2ca
 topic_type:
 - apiref
-ms.openlocfilehash: 257cf24fa476c75d6ec949e17a5b83fc015b8d43
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d141a78a953d4e0ab922535ad2363c79f2e18ecd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496781"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727040"
 ---
 # <a name="icorprofilerinfo2getstringlayout-method"></a>ICorProfilerInfo2::GetStringLayout, méthode
+
 Obtient des informations sur la disposition d'un objet string. Cette méthode est déconseillée dans le .NET Framework 4 et est remplacée par la méthode [ICorProfilerInfo3 :: GetStringLayout2,](icorprofilerinfo3-getstringlayout2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetStringLayout(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pBufferLengthOffset`  
  à Pointeur vers le décalage de l’emplacement, relatif au `ObjectID` pointeur, qui stocke la longueur de la chaîne. La longueur est stockée sous la forme d’un `DWORD` .  
   
@@ -48,6 +50,7 @@ HRESULT GetStringLayout(
  à Pointeur vers l’offset de la mémoire tampon, relatif au `ObjectID` pointeur, qui stocke la chaîne de caractères larges.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `GetStringLayout` méthode obtient les offsets, par rapport au `ObjectID` pointeur, des emplacements dans lesquels sont stockés les éléments suivants :  
   
 - Longueur de la mémoire tampon de la chaîne.  
@@ -59,6 +62,7 @@ HRESULT GetStringLayout(
  Les chaînes peuvent se terminer par un caractère null.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - local thread storage
 - TLS
 ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
-ms.openlocfilehash: c9ea2939dcff321a1d4e24e7a97c056c016e5fdc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b45c83887d278589cc1704ec1398ec99e27550ad
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819628"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727521"
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Stockage local des threads : champs static et emplacements de données relatifs à un thread
 
@@ -27,6 +27,7 @@ Vous pouvez utiliser le stockage local des threads managés (TLS) pour stocker d
 Vous pouvez utiliser la <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> classe pour créer des objets locaux de thread qui sont initialisés tardivement lorsque l’objet est consommé pour la première fois. Pour plus d’informations, consultez [Initialisation tardive](../../framework/performance/lazy-initialization.md).  
   
 ## <a name="uniqueness-of-data-in-managed-tls"></a>Unicité des données dans TLS managé  
+
  Si vous utilisez les champs statiques relatifs à un thread ou des emplacements de données, les données dans TLS managé sont uniques à la combinaison du thread et du domaine d’application.  
   
 - Au sein d’un domaine d’application, un thread ne peut pas modifier des données à partir d’un autre thread, même lorsque les deux threads utilisent le même emplacement ou champ.  
@@ -38,6 +39,7 @@ Vous pouvez utiliser la <xref:System.Threading.ThreadLocal%601?displayProperty=n
  De même, lorsqu’un thread obtient le même emplacement de données nommé dans deux domaines d’application différents, les données dans le premier domaine d’application restent indépendantes des données dans le deuxième domaine d’application.  
   
 ## <a name="thread-relative-static-fields"></a>Champs statiques relatifs à un thread  
+
  Si vous savez qu’un élément de données est toujours unique à un thread et à une combinaison de domaines d’application, appliquez l’attribut <xref:System.ThreadStaticAttribute> dans le champ statique. Utilisez le champ comme vous utiliseriez tout autre champ statique. Les données dans le champ sont uniques à chaque thread qui les utilise.  
   
  Les champs statiques relatifs à un thread fournissent de meilleures performances que les emplacements de données et offrent l’avantage du contrôle de type au moment de la compilation.  

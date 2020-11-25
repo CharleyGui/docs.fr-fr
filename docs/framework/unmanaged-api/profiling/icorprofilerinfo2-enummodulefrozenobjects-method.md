@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
 topic_type:
 - apiref
-ms.openlocfilehash: 1fe44f8f84c079e920c8c82fb9d52d1980d3b852
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fe4f3a7355339c9b5adbe5de062f0a5688d81c23
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497203"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727183"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects, méthode
+
 Obtient un énumérateur qui autorise l’itération sur les objets figés dans le module spécifié. Cette méthode est obsolète.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT EnumModuleFrozenObjects(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `moduleID`  
  dans ID du module qui contient les objets figés à énumérer.  
   
@@ -41,6 +43,7 @@ HRESULT EnumModuleFrozenObjects(
  à Pointeur vers l’adresse d’une interface [ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md) , qui énumère les objets figés.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

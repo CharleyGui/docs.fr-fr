@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: b22fbe19-b30f-4696-8175-e6b91da9edab
 topic_type:
 - apiref
-ms.openlocfilehash: f4f925282d65cd9cbc8eb1c8825f358602de68ed
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 554e59484f00626726f7f024c69e93a5e6647130
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441693"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727378"
 ---
 # <a name="isymunmanagedbinder-interface"></a>ISymUnmanagedBinder, interface
-Représente un Binder de symboles pour du code non managé.  
+
+Représente un binder de symboles pour du code non managé.  
   
 > [!IMPORTANT]
 > L’ouverture d’un fichier de base de données du programme (PDB) à partir d’une source non fiable constitue un risque pour la sécurité.  
@@ -34,7 +35,8 @@ Représente un Binder de symboles pour du code non managé.
 |[GetReaderForFile, méthode](isymunmanagedbinder-getreaderforfile-method.md)|Pour une interface de métadonnées et un nom de fichier donnés, retourne la structure [ISymUnmanagedReader](isymunmanagedreader-interface.md) correcte qui lira les symboles de débogage associés au module.|  
 |[GetReaderFromStream, méthode](isymunmanagedbinder-getreaderfromstream-method.md)|À partir d’une interface de métadonnées et d’un flux de données qui contient le magasin de symboles, retourne la structure [ISymUnmanagedReader](isymunmanagedreader-interface.md) appropriée qui lira les symboles de débogage du magasin de symboles donné.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

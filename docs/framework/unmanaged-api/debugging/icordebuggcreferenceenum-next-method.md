@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: 1cf6f9c5fe8777f3333e449a804a3c3a0a64ff19
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e55c53b9610dcadee92ba9871bf52e3dacb5796b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213086"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726234"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next, méthode
+
 Obtient le nombre spécifié d’instances de [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui feront l’objet d’un garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  celt  
  dans Nombre de racines à récupérer.  
   
@@ -47,6 +49,7 @@ HRESULT Next(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Spécifications  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

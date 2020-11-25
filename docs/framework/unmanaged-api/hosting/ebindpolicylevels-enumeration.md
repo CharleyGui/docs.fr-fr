@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a9e00b4f-b6d0-4257-bd88-4fe9af97b8fa
 topic_type:
 - apiref
-ms.openlocfilehash: 94d2ec12309249afbecdc4130f8fe20c927b0a9b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a0992ca8ac4bfffef681c74de455a0eeb627a042
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616370"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726845"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels, énumération
+
 Fournit des indicateurs pour spécifier le niveau auquel appliquer ou modifier la stratégie d’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,18 +50,20 @@ typedef enum {
 |`ePolicyLevelNone`|Ne spécifie aucun indicateur de niveau stratégie.|  
 |`ePolicyLevelPublisher`|Spécifie que la stratégie doit être appliquée au niveau du serveur de publication.|  
 |`ePolicyLevelRetargetable`|Spécifie que la stratégie doit être applicable à des niveaux variables.|  
-|`ePolicyPortability`|Spécifie que la stratégie doit prendre en charge la portabilité entre les implémentations d’un assembly .NET Framework. Consultez l’élément [ \< supportPortability>](../../configure-apps/file-schema/runtime/supportportability-element.md) configuration file.|  
+|`ePolicyPortability`|Spécifie que la stratégie doit prendre en charge la portabilité entre les implémentations d’un assembly .NET Framework. Consultez l' [\<supportPortability>](../../configure-apps/file-schema/runtime/supportportability-element.md) élément fichier de configuration.|  
 |`ePolicyUnifiedToCLR`|Spécifie que la stratégie doit être unifiée à celle de la common language runtime (CLR).|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Cette énumération est passée aux méthodes de l’interface [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) pour spécifier les modifications apportées à la stratégie d’application.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

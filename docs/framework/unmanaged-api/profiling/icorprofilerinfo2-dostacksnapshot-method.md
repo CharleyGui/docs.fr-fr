@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
 topic_type:
 - apiref
-ms.openlocfilehash: ff0ff35f42e20725cab49afd971523aabda866c3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 10cc9dedfa34cd5235df721d7010bbd928fbc3ba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547803"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727235"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot, méthode
+
 Parcourt les frames managés sur la pile pour le thread spécifié et envoie des informations au profileur par le biais d’un rappel.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT DoStackSnapshot(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `thread`  
  dans ID du thread cible.  
   
@@ -64,7 +66,8 @@ HRESULT DoStackSnapshot(
  `contextSize`  
  dans Taille de la `CONTEXT` structure, qui est référencée par le `context` paramètre.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Le passage de la valeur null à `thread` génère un instantané du thread actuel. Les instantanés ne peuvent être utilisés par d’autres threads que si le thread cible est suspendu à ce moment-là.  
   
  Quand le profileur souhaite remonter la pile, il appelle `DoStackSnapshot` . Avant que le CLR ne retourne à partir de cet appel, il appelle `StackSnapshotCallback` plusieurs fois, une fois pour chaque frame managé (ou l’exécution de frames non managés) sur la pile. Lorsque des frames non managés sont détectés, vous devez les parcourir vous-même.  
@@ -76,11 +79,13 @@ HRESULT DoStackSnapshot(
  Un parcours de pile peut être synchrone ou asynchrone, comme expliqué dans les sections suivantes.  
   
 ## <a name="synchronous-stack-walk"></a>Parcours de pile synchrone  
+
  Un parcours de pile synchrone implique le parcours de la pile du thread actuel en réponse à un rappel. Elle ne nécessite pas d’amorçage ou de suspension.  
   
  Vous effectuez un appel synchrone quand, en réponse au CLR appelant l’une des méthodes [ICorProfilerCallback](icorprofilercallback-interface.md) (ou [ICorProfilerCallback2](icorprofilercallback2-interface.md)) de votre profileur, vous appelez `DoStackSnapshot` pour parcourir la pile du thread actuel. Cela est utile lorsque vous souhaitez voir à quoi ressemble la pile dans une notification telle que [ICorProfilerCallback :: ObjectAllocated](icorprofilercallback-objectallocated-method.md). Vous appelez simplement `DoStackSnapshot` à partir de votre `ICorProfilerCallback` méthode, en passant la valeur null dans les `context` `thread` paramètres et.  
   
 ## <a name="asynchronous-stack-walk"></a>Parcours de pile asynchrone  
+
  Un parcours de pile asynchrone implique le parcours de la pile d’un thread différent, ou le parcours de la pile du thread actuel, et non en réponse à un rappel, mais en détournent le pointeur d’instruction du thread actuel. Un parcours asynchrone requiert une valeur de départ si le haut de la pile est du code non managé qui ne fait pas partie d’un appel de code non managé (PInvoke) ou d’un appel COM, mais code d’assistance dans le CLR lui-même. Par exemple, le code qui effectue une compilation juste-à-temps (JIT) ou garbage collection est un code d’assistance.  
   
  Vous obtenez une valeur de départ en suspendant directement le thread cible et en parcourant sa pile vous-même, jusqu’à ce que vous trouviez le frame managé le plus haut. Une fois le thread cible suspendu, obtient le contexte de registre actuel du thread cible. Ensuite, déterminez si le contexte de registre pointe vers du code non managé en appelant [ICorProfilerInfo :: GetFunctionFromIP,](icorprofilerinfo-getfunctionfromip-method.md) : s’il retourne un `FunctionID` égal à zéro, le frame est du code non managé. À présent, parcourez la pile jusqu’à ce que vous atteigniez le premier frame géré, puis calculez le contexte de départ en fonction du contexte de registre de ce frame.  
@@ -97,7 +102,8 @@ HRESULT DoStackSnapshot(
   
  Il y a également un risque d’interblocage si vous appelez `DoStackSnapshot` à partir d’un thread que votre profileur a créé afin que vous puissiez parcourir la pile d’un thread cible séparé. La première fois que le thread que vous avez créé entre dans certaines `ICorProfilerInfo*` méthodes (y compris `DoStackSnapshot` ), le CLR effectuera une initialisation par thread et spécifique au CLR sur ce thread. Si votre profileur a suspendu le thread cible dont vous tentez de parcourir la pile, et si ce thread cible est devenu propriétaire d’un verrou nécessaire pour effectuer cette initialisation par thread, un interblocage se produit. Pour éviter ce blocage, effectuez un appel initial `DoStackSnapshot` de à partir de votre thread créé par le profileur pour parcourir un thread cible séparé, mais n’interrompez pas d’abord le thread cible. Cet appel initial garantit que l’initialisation par thread peut se terminer sans interblocage. Si `DoStackSnapshot` suit et signale au moins un frame, après ce point, il est possible pour ce thread créé par le profileur d’interrompre n’importe quel thread cible et `DoStackSnapshot` d’appeler pour parcourir la pile de ce thread cible.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

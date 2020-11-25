@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 783faea9-8083-41c1-b04a-51a81ac4c8f3
 topic_type:
 - apiref
-ms.openlocfilehash: 6b7b6969c1f207decbf47217e98b7fee3aa9ce54
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 668b27932ea7a2bdc244e1ac0bb8e6891cbd4d17
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213237"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726292"
 ---
 # <a name="icordebugfunction-interface"></a>ICorDebugFunction, interface
 
@@ -38,7 +38,8 @@ Représente une fonction ou une méthode managée.
 |[GetNativeCode, méthode](icordebugfunction-getnativecode-method.md)|Obtient le code natif pour cette fonction.|  
 |[GetToken, méthode](icordebugfunction-gettoken-method.md)|Obtient le jeton de métadonnées pour cette fonction.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  L' `ICorDebugFunction` interface ne représente pas une fonction avec des paramètres de type générique. Par exemple, une `ICorDebugFunction` instance de représente, `Func<T>` mais pas `Func<string>` . Appelez [ICorDebugILFrame2 :: EnumerateTypeParameters,](icordebugilframe2-enumeratetypeparameters-method.md) pour récupérer les paramètres de type générique.  
   
  La relation entre le jeton de métadonnées d’une méthode, `mdMethodDef` , et l’objet d’une méthode `ICorDebugFunction` dépend de l’autorisation de modifier & Continuer sur la fonction :  
@@ -50,7 +51,8 @@ Représente une fonction ou une méthode managée.
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

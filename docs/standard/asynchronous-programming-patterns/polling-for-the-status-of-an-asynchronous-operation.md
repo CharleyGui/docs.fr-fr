@@ -9,14 +9,15 @@ helpviewer_keywords:
 - polling asynchronous operation status
 - status information [.NET], asynchronous operations
 ms.assetid: b541af31-dacb-4e20-8847-1b1ff7c35363
-ms.openlocfilehash: c4e8e7c66551e0a240eaa873513c3975703af946
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 8676568a1493c5c404e6b3019f37dd672c2ed8d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830309"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726689"
 ---
 # <a name="polling-for-the-status-of-an-asynchronous-operation"></a>Interrogation de l'état d'une opération asynchrone
+
 Les applications qui peuvent continuer à effectuer d’autres tâches en attendant les résultats d’une opération asynchrone ne doivent pas se bloquer en attendant que cette opération se termine. Pour poursuivre l’exécution des instructions tout en attendant la fin d’une opération asynchrone, utilisez l’une des options suivantes :  
   
 - Utilisez la <xref:System.IAsyncResult.IsCompleted%2A> propriété du <xref:System.IAsyncResult> retourné par la méthode **Begin**_NomOpération_ de l’opération asynchrone pour déterminer si l’opération est terminée. Cette approche, nommée interrogation, est illustrée dans cette rubrique.  
@@ -24,6 +25,7 @@ Les applications qui peuvent continuer à effectuer d’autres tâches en attend
 - Utilisez un délégué <xref:System.AsyncCallback> pour traiter les résultats de l’opération asynchrone dans un thread distinct. Vous trouverez un exemple illustrant cette approche sur la page [Utiliser un délégué AsyncCallback pour mettre fin à une opération asynchrone](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple de code suivant montre comment utiliser des méthodes asynchrones dans la classe <xref:System.Net.Dns> afin de récupérer les informations DNS (Domain Name System) pour un ordinateur spécifié par l’utilisateur. Cet exemple démarre l’opération asynchrone, puis imprime des points (« . ») dans la console jusqu'à la fin de l’opération. Notez que **null** (**Nothing** en Visual Basic) est transmis aux paramètres <xref:System.Net.Dns.BeginGetHostByName%2A><xref:System.AsyncCallback> et <xref:System.Object>, car ces arguments ne sont pas requis dans cette approche.  
   
  [!code-csharp[AsyncDesignPattern#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/Async_Poll.cs#3)]

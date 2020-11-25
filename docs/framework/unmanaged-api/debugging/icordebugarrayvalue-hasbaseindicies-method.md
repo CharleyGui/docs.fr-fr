@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: aa26df07-e0a6-4608-bdef-d4afafec89aa
 topic_type:
 - apiref
-ms.openlocfilehash: e6e8eb91bbc41faf0dcea010da9aa54995058653
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: a9d1faf5a834cb5d9be19f995aaa3eee1202171b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894981"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727443"
 ---
 # <a name="icordebugarrayvaluehasbaseindicies-method"></a>ICorDebugArrayValue::HasBaseIndicies, méthode
+
 Obtient une valeur qui indique si les dimensions de ce tableau ont un index de base différent de zéro.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT HasBaseIndicies (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pbHasBaseIndicies`  
- à Pointeur vers une valeur booléenne qui est `true` si une ou plusieurs dimensions de cet `ICorDebugArrayValue` objet ont un index de base différent de zéro ; Sinon, la valeur booléenne est `false`.  
+ à Pointeur vers une valeur booléenne qui est `true` si une ou plusieurs dimensions de cet `ICorDebugArrayValue` objet ont un index de base différent de zéro ; sinon, la valeur booléenne est `false` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

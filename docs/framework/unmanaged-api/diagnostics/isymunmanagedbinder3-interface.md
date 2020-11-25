@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 37527a84-4b03-4f08-8135-94d898599089
 topic_type:
 - apiref
-ms.openlocfilehash: 5a26de2a8f5439b7c81560927c991d449e57b76c
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 0cb0b91f2dca8203c37599400b3b61f84eb7d282
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441589"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727313"
 ---
 # <a name="isymunmanagedbinder3-interface"></a>ISymUnmanagedBinder3, interface
+
 Étend l’interface de classeur de symboles. Obtenez cette interface en appelant `QueryInterface` sur un objet qui implémente l' `ISymUnmanagedBinder` interface.  
   
 > [!IMPORTANT]
@@ -33,7 +34,8 @@ ms.locfileid: "83441589"
 |------------|-----------------|  
 |[GetReaderFromCallback, méthode](isymunmanagedbinder3-getreaderfromcallback-method.md)|Permet à l’utilisateur d’implémenter ou de fournir via le rappel d’un `IID_IDiaReadExeAtRVACallback` ou `IID_IDiaReadExeAtOffsetCallback` pour obtenir les informations du répertoire de débogage à partir de la mémoire|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

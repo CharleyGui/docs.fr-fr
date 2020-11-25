@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9777d8bb-4abc-4be8-aa7c-34f853eceb9c
 topic_type:
 - apiref
-ms.openlocfilehash: d04c9865d8272bf8d04080f6049ddfb1d4c643bb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 19e07fb181f631335a0c56bd59b6fc8e14e2f36d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726923"
 ---
 # <a name="isymunmanagedencupdategetlocalvariablecount-method"></a>ISymUnmanagedENCUpdate::GetLocalVariableCount, méthode
+
 Obtient le nombre de variables locales.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,16 +35,19 @@ HRESULT GetLocalVariableCount(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `mdMethodToken`  
  dans Jeton de métadonnées des méthodes.  
   
  `pcLocals`  
  à Pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nombre de variables locales.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

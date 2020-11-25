@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-ms.openlocfilehash: 38d8ebd6e973632b23865ad60e007d9aa21e7da6
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: b8a0775e9d33d59606b1150aa9a1b3b1026d4b0b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281995"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726442"
 ---
 # <a name="add-element-for-schemaimporterextensions"></a>\<add>, élément de \<schemaImporterExtensions>
 
@@ -22,13 +22,14 @@ Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>
 \<schemaImporterExtensions>  
 \<add>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <add name = "typeName" type="fully qualified type [,Version=version number] [,Culture=culture] [,PublicKeyToken= token]"/>  
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -39,6 +40,7 @@ Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>
 |**type**|Obligatoire. Spécifie la classe d'extension de schéma à ajouter. La valeur d’attribut **type** doit figurer sur une ligne et inclure le nom complet du type. Lorsque l'assembly est placé dans le Global Assembly Cache (GAC), il doit également inclure la version, la culture et le jeton de clé publique de l'assembly signé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -48,6 +50,7 @@ Ajoute des types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>
 |\<schemaImporterExtensions>|Contient les types utilisés par <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
   
 ## <a name="example"></a>Exemple  
+
  L'exemple de code suivant ajoute un type d'extension que XmlSchemaImporter peut utiliser lors du mappage de types.  
   
 ```xml  

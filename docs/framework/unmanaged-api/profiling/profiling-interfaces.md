@@ -6,17 +6,19 @@ helpviewer_keywords:
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-ms.openlocfilehash: f073794b4fdf89f289b70fed9967ee37b5f4e133
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: dd6999e9f9e16264bde3cf62ce3a888841347607
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494031"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727469"
 ---
 # <a name="profiling-interfaces"></a>Interfaces de profilage
+
 Cette section décrit les interfaces non managées qui vous permettent de profiler un programme exécuté par le CLR (Common Language Runtime).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ICLRProfiling, interface](iclrprofiling-interface.md)  
  Fournit la méthode [AttachProfiler](iclrprofiling-attachprofiler-method.md) , qui permet à un profileur de s’attacher à un processus en cours d’exécution.  
   
@@ -81,7 +83,7 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  Fournit des méthodes pour boucler séquentiellement dans une collection de modules chargés par l’application ou par le profileur.  
   
  [ICorProfilerObjectEnum, interface](icorprofilerobjectenum-interface.md)  
- Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par [Ngen. exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md).  
+ Fournit des méthodes pour itérer séquentiellement au sein d’une collection d’objets figés qui sont générés par [Ngen.exe (générateur d’images natives)](../../tools/ngen-exe-native-image-generator.md).  
   
  [ICorProfilerThreadEnum, interface](icorprofilerthreadenum-interface.md)  
  Fournit des méthodes pour boucler séquentiellement dans une collection de threads dans le CLR.  
@@ -90,6 +92,7 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  Fournit la méthode [Alloc](imethodmalloc-alloc-method.md) pour allouer de la mémoire pour un nouveau corps de fonction MSIL (Microsoft Intermediate Language).  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Vue d’ensemble du profilage](profiling-overview.md)  
   
  [Fonctions statiques globales du profilage](profiling-global-static-functions.md)  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-ms.openlocfilehash: 3265417d806104f9c4de96cb98de2330d62d1e48
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2cb63fd91b1aeb51c762975103ea665e0d8539b1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820161"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726676"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Procédure : signer des documents XML avec des signatures numériques
 
@@ -95,6 +95,7 @@ Pour plus d’informations sur la vérification d’une signature numérique XML
      [!code-vb[HowToSignXMLDocumentRSA#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#13)]  
   
 ## <a name="example"></a>Exemple  
+
  Cet exemple suppose qu'un fichier nommé `test.xml` se trouve dans le même répertoire que le programme compilé.  Vous pouvez placer le code XML suivant dans un fichier appelé `test.xml` et l'utiliser avec cet exemple.  
   
 ```xml  

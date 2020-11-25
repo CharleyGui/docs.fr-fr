@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2a62dae5-dd8a-4696-b817-0e1e586c24a0
 topic_type:
 - apiref
-ms.openlocfilehash: 79a6c70399d5059d6959ac6127f22807138c00fa
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 4ef5728e4b13d6d3d73aef06f9f7f50ab22609ad
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213112"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726260"
 ---
 # <a name="icordebugfunctionbreakpointgetfunction-method"></a>ICorDebugFunctionBreakpoint::GetFunction, méthode
+
 Obtient un pointeur d’interface vers un ICorDebugFunction qui fait référence à la fonction dans laquelle le point d’arrêt est défini.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,10 +35,12 @@ HRESULT GetFunction (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppFunction`  
  à Pointeur vers l’adresse de la fonction dans laquelle le point d’arrêt est défini.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

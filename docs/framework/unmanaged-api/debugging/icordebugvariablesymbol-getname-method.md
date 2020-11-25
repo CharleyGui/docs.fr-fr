@@ -2,14 +2,15 @@
 title: Méthode ICorDebugVariableSymbol::GetName
 ms.date: 03/30/2017
 ms.assetid: c922b7d4-44e5-45e4-aef3-cc9c35a0be80
-ms.openlocfilehash: ea414a39e140c74df736764dbbb1bb3934bda78f
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: aa3f335516f7fa22a77b786cd870f2a5064aeff5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397128"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727625"
 ---
 # <a name="icordebugvariablesymbolgetname-method"></a>Méthode ICorDebugVariableSymbol::GetName
+
 Obtient le nom d'une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,6 +24,7 @@ HRESULT GetName(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchName`  
  [in] Nombre de caractères dans la mémoire tampon `szName`.  
   
@@ -32,12 +34,13 @@ HRESULT GetName(
  `szName`  
  Pointeur vers un tableau de caractères qui contient le nom de la variable.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

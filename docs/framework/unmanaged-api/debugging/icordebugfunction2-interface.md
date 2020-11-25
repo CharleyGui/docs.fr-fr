@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2b936bef-9b75-48bf-859f-42e419c65f1c
 topic_type:
 - apiref
-ms.openlocfilehash: 611091d39da6d7f646457457f20ce1eaf37db361
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d9e84a70d72db1338c80140ce3350774bfae4bca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213203"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726273"
 ---
 # <a name="icordebugfunction2-interface"></a>ICorDebugFunction2, interface
 
@@ -34,12 +34,13 @@ ms.locfileid: "83213203"
 |[GetVersionNumber, méthode](icordebugfunction2-getversionnumber-method.md)|Obtient la version modifier & continuer de cette fonction.|  
 |[SetJMCStatus, méthode](icordebugfunction2-setjmcstatus-method.md)|Marque cette fonction pour Uniquement mon code pas à pas.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

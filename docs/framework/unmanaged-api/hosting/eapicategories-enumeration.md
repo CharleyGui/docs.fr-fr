@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3c4a8a5a-8a46-4ac9-947f-4959bc9d6ac6
 topic_type:
 - apiref
-ms.openlocfilehash: d31b0190ef9a697fb27c849db080bec6c57618ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f90e08373c0497201816bc7eead89b83b84be255
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616383"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726871"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories, énumération
+
 Décrit les catégories de fonctionnalités que l’hôte peut empêcher de s’exécuter dans du code de confiance partielle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,17 +59,19 @@ typedef enum {
 |`eSynchronization`|Spécifie que les classes et les membres de common language runtime qui autorisent le code utilisateur à contenir des verrous ne pourront pas s’exécuter dans du code partiellement fiable.|  
 |`eUI`|Spécifie que les classes et les membres managés qui autorisent ou nécessitent une interaction humaine ne sont pas en cours d’exécution dans du code partiellement fiable.|  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  La méthode [ICLRHostProtectionManager :: SetProtectedCategories](iclrhostprotectionmanager-setprotectedcategories-method.md) prend un paramètre de type `EApiCategories` .  
   
  L' `EApiCategories` énumération et la `SetProtectedCategories` méthode sont directement liées à la <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> classe managée. La classe managée est utilisée avec l' <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> énumération, dont les valeurs correspondent directement aux `EApiCategories` valeurs, pour marquer les membres et les types managés qui exposent les fonctionnalités correspondant aux catégories décrites par `EApiCategories` .  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll  
+ **Bibliothèque :** MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

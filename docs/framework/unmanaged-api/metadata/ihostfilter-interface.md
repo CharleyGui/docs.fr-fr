@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e79456b1-045b-4a84-9714-2ea560ff75ea
 topic_type:
 - apiref
-ms.openlocfilehash: c9cc545f0b3fbe20ef6eb2a72aadf8d6b4374867
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: fedf50db963cb2f3d9a45713b13c0d190fe4a597
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008233"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726494"
 ---
 # <a name="ihostfilter-interface"></a>IHostFilter, interface
+
 Fournit une méthode pour indiquer qu’un jeton spécifié sera traité.  
   
 > [!NOTE]
@@ -33,12 +34,13 @@ Fournit une méthode pour indiquer qu’un jeton spécifié sera traité.
 |------------|-----------------|  
 |[MarkToken, méthode](ihostfilter-marktoken-method.md)|Indique que le jeton de métadonnées spécifié sera traité.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c9e07657-1682-4c30-a336-f8658ff1a125
 topic_type:
 - apiref
-ms.openlocfilehash: 0d2975d6247cd9ecdb07b564d77518151404c7d0
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 5d57bc742ebcba00f9fbe569a4be27b82a5f8055
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762455"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726507"
 ---
 # <a name="iclrtaskgetmemstats-method"></a>ICLRTask::GetMemStats, méthode
+
 Obtient des informations sur l’utilisation de la mémoire statistique relatives à la tâche que l’instance d' [ICLRTask](iclrtask-interface.md) actuelle représente.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,26 +35,28 @@ HRESULT GetMemStats (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pMemUsage`  
  à Pointeur vers une instance de [COR_GC_THREAD_STATS](cor-gc-thread-stats-structure.md) qui contient des détails sur l’utilisation de la mémoire de la tâche, y compris le nombre d’octets alloués.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetMemStats`retourné avec succès.|  
+|S_OK|`GetMemStats` retourné avec succès.|  
 |HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
 |HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
 |HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
 |E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

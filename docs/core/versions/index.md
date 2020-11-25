@@ -2,12 +2,12 @@
 title: Gestion des versions NET Core du runtime et du SDK
 description: Cet article vous explique comment les .NET Core versions du SDK et du runtime sont gérées (similaire à la gestion sémantique des versions).
 ms.date: 06/24/2020
-ms.openlocfilehash: 5e315f49227f3c2ea40652a30fabbf566bdfe495
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: baa3f94947699d21ce7426054359d91f7781b565
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619752"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726702"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Vue d’ensemble de la gestion des versions .NET Core
 
@@ -23,7 +23,7 @@ Le SDK .NET Core n’adhère pas à la gestion sémantique de versions. Le SDK .
 
 La troisième position du numéro de la version du SDK indique le numéro mineur et de correctif. La version mineure est multipliée par 100. La version mineure 1 avec version de correctif 2 serait représentée par le chiffre 102. Les deux derniers chiffres représentent le numéro du correctif. Par exemple, la publication de .NET Core 2.2 peut créer des versions comme indiqué dans le tableau suivant :
 
-| Changement                | Runtime .NET Core | Kit SDK .NET Core ( \* ) |
+| Modifier                | Runtime .NET Core | Kit SDK .NET Core ( \* ) |
 |-----------------------|-------------------|-------------------|
 | Version initiale       | 2.2.0             | 2.2.100           |
 | Correctif de SDK             | 2.2.0             | 2.2.101           |
@@ -113,4 +113,4 @@ Pour obtenir un tableau interactif des versions de .NET Standard et leur corresp
 - [Empaquetage de la distribution de .NET Core](../distribution-packaging.md)
 - [Fiche d’information sur le cycle de vie de support .NET Core](https://dotnet.microsoft.com/platform/support/policy)
 - [Liaison de version .NET Core 2+](https://github.com/dotnet/designs/issues/3)
-- [Images Docker pour .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)
+- [Images Docker pour .NET Core](https://hub.docker.com/_/microsoft-dotnet/)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fe248069-b33c-48e1-a777-06ac9b239c54
 topic_type:
 - apiref
-ms.openlocfilehash: 288d7bfdf18be5cef032227c537032966fa68df4
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 50903b3737c0fc63eda2b1190e4c3d961ce3ae7b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795701"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726039"
 ---
 # <a name="cordebugstepreason-enumeration"></a>CorDebugStepReason, énumération
+
 Indique le résultat d'une étape individuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -50,7 +51,8 @@ typedef enum CorDebugStepReason {
 |`STEP_INTERCEPT`|Le contrôle a été passé à un intercepteur.|  
 |`STEP_EXIT`|Le thread s’est arrêté avant la fin de l’étape.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1dee9781-1cf3-48a9-a376-d18ea1f73280
 topic_type:
 - apiref
-ms.openlocfilehash: 5f758d76d779cff7db119e69dc1cf3342071f1c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 58b8b83ce1db9338612cbaa01a0db0862cf1054e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134350"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727898"
 ---
 # <a name="iassemblynamegetname-method"></a>IAssemblyName::GetName, méthode
+
 Obtient le nom simple et non chiffré de l’assembly référencé par cet objet [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,18 +36,20 @@ HRESULT GetName (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `lpcwBuffer`  
- [in, out] Taille de `pwzName` en caractères larges, y compris le caractère de marque de fin null.  
+ [in, out] Taille de `pwzName` en caractères larges, y compris le caractère de fin null.  
   
  `pwzName`  
  à Mémoire tampon destinée à contenir le nom de l’assembly référencé.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

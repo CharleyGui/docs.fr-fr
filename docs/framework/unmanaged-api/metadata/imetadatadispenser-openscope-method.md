@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 65063ad5-e0d9-4c01-8f8b-9a5950109fa6
 topic_type:
 - apiref
-ms.openlocfilehash: 8d9de753f1c44338a96e990def80643d591f2a8b
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: f2a85bafc3e2f25b2ed6116a46a9938d869dbaae
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726078"
 ---
 # <a name="imetadatadispenseropenscope-method"></a>IMetaDataDispenser::OpenScope, méthode
+
 Ouvre un fichier sur disque existant et mappe ses métadonnées en mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT OpenScope (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `szScope`  
  dans Nom du fichier à ouvrir. Le fichier doit contenir des métadonnées common language runtime (CLR).  
   
@@ -52,6 +54,7 @@ HRESULT OpenScope (
  à Pointeur vers l’interface retournée.  
   
 ## <a name="remarks"></a>Remarques  
+
  La copie en mémoire des métadonnées peut être interrogée à l’aide de méthodes de l’une des interfaces d’importation ou ajoutée à l’aide de méthodes à partir de l’une des interfaces d’émission.  
   
  Si le fichier cible ne contient pas de métadonnées CLR, la `OpenScope` méthode échoue.  
@@ -60,12 +63,13 @@ HRESULT OpenScope (
   
  Dans la version de .NET Framework 2,0, les étendues ouvertes avec `dwOpenFlags` définies sur ofRead ne sont plus partagées. Utilisez la valeur ofReadOnly pour autoriser le partage de l’étendue. Lorsqu’une étendue est partagée, les requêtes qui utilisent des interfaces de métadonnées en lecture/écriture échouent.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

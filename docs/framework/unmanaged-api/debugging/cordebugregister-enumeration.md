@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 003bb138-7960-4291-ac88-0d87e470ff70
 topic_type:
 - apiref
-ms.openlocfilehash: 19d0dcf8a5633371765861fcc29df4ef8c91ebc4
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 85df98e83396c9439c28dd41a3ffa02b820c9c3e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795714"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726052"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister, énumération
+
 Spécifie les registres associés à une architecture de processeur donnée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -189,7 +190,8 @@ typedef enum CorDebugRegister {
 |`REGISTER_ARM_R12`|Registre R12 sur le processeur ARM.|  
 |`REGISTER_ARM_LR`|Registre de lien (R14) sur le processeur ARM.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Il existe 128 registres de données d'utilisation générale et 128 registres de données en virgule flottante sur le processeur IA-64, mais seules les valeurs `REGISTER_IA64_R0` et `REGISTER_IA64_F0` sont spécifiées. Les autres valeurs peuvent être déterminées comme suit :  
   
 - Ajoutez le numéro de registre à `REGISTER_IA64_R0` pour les valeurs allant de `REGISTER_IA64_R1` à `REGISTER_IA64_R127`, qui correspondent aux registres de données n° 1 à 127 sur le processeur IA-64.  
@@ -198,7 +200,8 @@ typedef enum CorDebugRegister {
   
  Par exemple, si vous devez spécifier le registre de données n° 83 sur le processeur IA-64, utilisez `REGISTER_IA64_R0` + 83.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

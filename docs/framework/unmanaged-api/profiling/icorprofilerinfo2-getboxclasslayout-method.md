@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
 topic_type:
 - apiref
-ms.openlocfilehash: 630b67a64716f26577bbc376970e4f76216f4da5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ff39a688132112e88438bc192d7c1ab61f169400
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497350"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727157"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout, méthode
+
 Obtient des informations sur l’emplacement du type valeur spécifié lorsqu’il est boxed.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT GetBoxClassLayout(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `classId`  
  dans ID de la classe qui décrit le type valeur boxed.  
   
@@ -41,9 +43,11 @@ HRESULT GetBoxClassLayout(
  à Entier qui est le décalage par rapport au pointeur d’ID d’objet boxed du type valeur.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `pBufferOffset` valeur est l’emplacement du type de valeur dans une zone. Une fois que `pBufferOffset` est appliqué à un objet boxed, la disposition de classe du type valeur peut être utilisée pour interpréter la valeur de l’objet.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

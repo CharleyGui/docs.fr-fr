@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-ms.openlocfilehash: 7a6553de31d4f9627809af7691218c39dc734c6f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 53a70c53a06ac55a2dab7c646018d63189ee0b36
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501662"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726221"
 ---
 # <a name="cor_gc_stats-structure"></a>COR_GC_STATS, structure
+
 Fournit des statistiques sur le mécanisme de garbage collection du common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -59,6 +60,7 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen1`|Taille, en kilo-octets, des objets promus de la génération 1 à la génération 2.|  
   
 ## <a name="remarks"></a>Remarques  
+
  La méthode [ICLRGCManager :: GetStats](iclrgcmanager-getstats-method.md) exige que le `Flags` champ de la `COR_GC_STATS` structure soit défini sur une ou plusieurs valeurs de l’énumération [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) pour spécifier les statistiques à définir.  
   
  Le tableau suivant mappe les statistiques fournies par cette structure aux deux [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) valeurs d’énumération, `COR_GC_COUNTS` et `COR_GC_MEMORYUSAGE` .  
@@ -76,11 +78,12 @@ pCLRGCManager->GetStats(&GCStats);
 ```  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** GCHost. idl  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

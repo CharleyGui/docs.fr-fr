@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7115e920-aaff-440a-824e-39497139c6f6
 topic_type:
 - apiref
-ms.openlocfilehash: 933edf734a0e02b4ac9c88d9f193277d963adada
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8a7de5a900bc1af219924b6a83f83cf7e2ef6150
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615796"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726143"
 ---
 # <a name="iclrdebugmanagergetdacl-method"></a>ICLRDebugManager::GetDacl, méthode
+
 Cette méthode n’est pas implémentée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,21 +35,23 @@ HRESULT GetDacl (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppacl`  
  à Pointeur d’interface vers la liste d’Access Control (ACL).  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
 |E_NOTIMPL|Cette méthode n'est pas implémentée.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
 topic_type:
 - apiref
-ms.openlocfilehash: 200e68abb3f176c267045bf2a5e7e35d18400519
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7c4589c3371d2c66279684a365cde102bef58c6e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610091"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727586"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant, méthode
+
 Définit un nom pour une valeur de constante.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT DefineConstant(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `name`  
  dans Pointeur vers un `WCHAR` qui définit le nom de la constante.  
   
@@ -48,10 +50,12 @@ HRESULT DefineConstant(
  `signature`  
  dans Signature de type pour la constante.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8809d00e-beaa-4dcf-b4e8-e89d0a5406b7
 topic_type:
 - apiref
-ms.openlocfilehash: 206e4fb232f4786a76525d24aa379b25d6d2f71d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd85ba2e6a907ff9546614e02b4da5f45e74b924
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099348"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726637"
 ---
 # <a name="cor_debug_step_range-structure"></a>COR_DEBUG_STEP_RANGE, structure
+
 Contient les informations de décalage pour une plage de code.  
   
  Cette structure est utilisée par la méthode [ICorDebugStepper :: StepRange](icordebugstepper-steprange-method.md) .  
@@ -42,14 +43,15 @@ typedef struct {
 |`startOffset`|Offset du début de la plage.|  
 |`endOffset`|Décalage de la fin de la plage.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug. idl  
   
  **Bibliothèque :** CorGuids.lib  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

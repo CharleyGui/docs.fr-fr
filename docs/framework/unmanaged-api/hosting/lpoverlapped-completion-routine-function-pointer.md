@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5fb645d9-b818-401c-8c2c-c30d86de58ba
 topic_type:
 - apiref
-ms.openlocfilehash: c0bdd9e59f5794dbb0d447dc2cc6cb682bfdf09f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: a3a45a13073cf422064d28554a274e068db6f517
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008480"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727508"
 ---
 # <a name="lpoverlapped_completion_routine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE (pointeur fonction)
+
 Pointe vers une fonction qui avertit l’hôte lorsqu’une e/s avec chevauchement (c’est-à-dire, asynchrone) sur un appareil est terminée.  
   
  Ce pointeur de fonction est déconseillé dans le .NET Framework 4.  
@@ -37,6 +38,7 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwErrorCode`  
  dans Valeur qui est un code d’erreur si l’appareil a été fermé ; Sinon, cette valeur est égale à zéro.  
   
@@ -49,14 +51,16 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
  dans Pointeur vers une structure qui contient des informations à utiliser pour terminer la requête d’e/s.  
   
 ## <a name="remarks"></a>Remarques  
+
  La fonction vers laquelle `LPOVERLAPPED_COMPLETION_ROUTINE` pointe est une fonction de rappel et doit être implémentée par le writer de l’application d’hébergement. La fonction de rappel permet à l’hôte de traiter la requête d’e/s terminée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorWks. dll  
+ **Bibliothèque :** MSCorWks.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-ms.openlocfilehash: ee36845f19ef4a7c3923b1032ab6eb45d2f60733
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c2ab384b6d84a14d5e8f4cfe66281a26b14421f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830816"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726962"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Procédure : effectuer une conversion entre des flux .NET Framework et Windows Runtime (Windows uniquement)
 
@@ -19,6 +19,7 @@ ms.locfileid: "94830816"
 La classe <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> contient des méthodes qui rendent ces conversions plus faciles. Toutefois, il existe des différences sous-jacentes entre les flux .NET Framework et Windows Runtime qui affecteront les résultats obtenus lors de l’utilisation de ces méthodes, comme l’expliquent les sections suivantes :
 
 ## <a name="convert-from-a-windows-runtime-to-a-net-framework-stream"></a>Convertir un flux Windows Runtime en flux .NET Framework
+
 Pour convertir un flux Windows Runtime en un flux .NET Framework, utilisez l’une des méthodes <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> suivantes :
 
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsStream%2A?displayProperty=nameWithType> convertit un flux d’accès aléatoire Windows Runtime en un flux managé dans .NET pour les applications de plateforme Windows universelle (UWP).
@@ -32,6 +33,7 @@ Windows Runtime propose des types de flux qui prennent en charge la lecture seul
 Il est recommandé d’utiliser la méthode de conversion qui correspond aux fonctionnalités du flux de Windows Runtime que vous souhaitez convertir. Toutefois, comme <xref:Windows.Storage.Streams.IRandomAccessStream> est accessible en lecture et en écriture (il implémente <xref:Windows.Storage.Streams.IOutputStream> et <xref:Windows.Storage.Streams.IInputStream>), les méthodes de conversion conservent les fonctionnalités du flux d’origine. Par exemple, l’utilisation de <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A?displayProperty=nameWithType> pour convertir <xref:Windows.Storage.Streams.IRandomAccessStream> n’empêche pas le flux .NET Framework converti d’être accessible en lecture. Il est également accessible en écriture.
 
 ## <a name="example-convert-windows-runtime-random-access-to-net-framework-stream"></a>Exemple : convertir Windows Runtime un accès aléatoire en flux .NET Framework
+
 Pour convertir un flux d’accès aléatoire Windows Runtime en un flux .NET Framework, utilisez la méthode <xref:System.IO.WindowsRuntimeStreamExtensions.AsStream%2A?displayProperty=nameWithType>.
 
 L’exemple de code suivant vous invite à sélectionner un fichier, l’ouvre à l’aide des API Windows Runtime, puis le convertit en flux .NET Framework. Il lit le flux et l’exporte vers un bloc de texte. En général, vous devez manipuler le flux à l’aide des API .NET Framework avant de sortir les résultats.
@@ -42,6 +44,7 @@ Pour exécuter cet exemple, créez une application XAML UWP, contenant un bloc d
   [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage1.xaml.vb)]
 
 ## <a name="convert-from-a-net-framework-to-a-windows-runtime-stream"></a>Convertir un flux .NET Framework en flux Windows Runtime
+
 Pour convertir un flux .NET Framework en un flux Windows Runtime, utilisez l’une des méthodes <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> suivantes :
 
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A?displayProperty=nameWithType> convertit un flux managé dans .NET pour les applications de plateforme Windows universelle (UWP) en un flux d’entrée dans Windows Runtime.

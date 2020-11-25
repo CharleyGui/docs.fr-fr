@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 752e49b4-987c-4c28-a118-1a0c1ed510c5
 topic_type:
 - apiref
-ms.openlocfilehash: 8bd0292ddf22453f8892ed8bddd10c2144877097
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 16f95f8fce20f2cf46d4cda214e4494bd288bf60
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008511"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727547"
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC, fonction
+
 Convertit une valeur HRESULT en message d’erreur à l’aide de la culture par défaut du thread actuel.  
   
  Cette fonction a été dépréciée dans le .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT LoadStringRC (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `iResourceID`  
  [in] HRESULT.  
   
@@ -51,22 +53,25 @@ HRESULT LoadStringRC (
  dans Pas.  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne des codes d’erreur COM (Component Object Model) standard, tels que définis dans WinError. h, en plus des valeurs suivantes.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`szBuffer`a la valeur null ou `iMax` est égal à zéro (0).|  
+|E_INVALIDARG|`szBuffer` a la valeur null ou `iMax` est égal à zéro (0).|  
   
 ## <a name="remarks"></a>Remarques  
+
  Si la méthode ne se termine pas correctement, `szBuffer` contient une chaîne vide.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** MSCorEE. dll et mscorwks. dll. Utilisez MSCorEE. dll au lieu de Mscorwks. dll pour vous assurer que vous ciblez la version correcte du .NET Framework.  
+ **Bibliothèque :** MSCorEE.dll et Mscorwks.dll. Utilisez MSCorEE.dll au lieu de Mscorwks.dll pour vous assurer que vous ciblez la version correcte du .NET Framework.  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

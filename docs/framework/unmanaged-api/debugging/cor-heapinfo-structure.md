@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bfb2cd39-3e0b-4d51-ba0c-f009755c1456
 topic_type:
 - apiref
-ms.openlocfilehash: 37659262695b63a6dd6390c62c4bb7e04fdadca4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5400350e1c489ec4c2ff3cddf83a4f1a8a0c7947
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179309"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726598"
 ---
 # <a name="cor_heapinfo-structure"></a>COR_HEAPINFO, structure
+
 Fournit des informations générales sur le tas du récupérateur de mémoire, y compris s’il est ou non énumérable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,25 +41,27 @@ typedef struct _COR_HEAPINFO {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true`si les structures de collecte des ordures sont valides et que le tas peut être énuméré; autrement, `false`.|  
-|`pointerSize`|La taille, dans les octets, des pointeurs sur l’architecture cible.|  
-|`numHeaps`|Le nombre de tas logiques de collecte des ordures dans le processus.|  
-|`concurrent`|`TRUE`si la collecte simultanée des ordures (arrière-plan) est activée; autrement, `FALSE`.|  
-|`gcType`|Un membre du [recensement CorDebugGCType](cordebuggctype-enumeration.md) qui indique si le collecteur d’ordures fonctionne sur un poste de travail ou un serveur.|  
+|`areGCStructuresValid`|`true` Si les structures garbage collection sont valides et que le tas peut être énuméré ; Sinon, `false` .|  
+|`pointerSize`|Taille, en octets, des pointeurs sur l’architecture cible.|  
+|`numHeaps`|Nombre de tas de garbage collection logiques dans le processus.|  
+|`concurrent`|`TRUE` Si la garbage collection simultanée (arrière-plan) est activée ; Sinon, `FALSE` .|  
+|`gcType`|Membre de l’énumération [cordebuggctype,](cordebuggctype-enumeration.md) qui indique si le garbage collector s’exécute sur une station de travail ou sur un serveur.|  
   
-## <a name="remarks"></a>Notes   
- Un exemple `COR_HEAPINFO` de la structure est retourné en appelant le [ICorDebugProcess5::GetGCHeapInformation](icordebugprocess5-getgcheapinformation-method.md) méthode.  
+## <a name="remarks"></a>Remarques  
+
+ Une instance de la `COR_HEAPINFO` structure est retournée en appelant la méthode [ICorDebugProcess5 :: getgcheapinformation,](icordebugprocess5-getgcheapinformation-method.md) .  
   
- Avant d’énumérer les objets sur le tas `areGCStructuresValid` de collecte des ordures, vous devez toujours vérifier le champ pour vous assurer que le tas est dans un état enumerable. Pour plus d’informations, voir la méthode [ICorDebugProcess5::GetGCHeapInformation.](icordebugprocess5-getgcheapinformation-method.md)  
+ Avant d’énumérer des objets sur le tas garbage collection, vous devez toujours vérifier le `areGCStructuresValid` champ pour vous assurer que le tas est dans un État énumérable. Pour plus d’informations, consultez la méthode [ICorDebugProcess5 :: getgcheapinformation,](icordebugprocess5-getgcheapinformation-method.md) .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Versions-cadre:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

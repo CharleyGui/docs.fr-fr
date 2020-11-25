@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a3a36987-5666-4e2f-95b5-d0cb246502ec
 topic_type:
 - apiref
-ms.openlocfilehash: ac35b18ce8c45c95bb2fb8e820423470ca1b75bf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a2bac05e7471a0df8d624bf5dfbe2aa58c25cf4c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497151"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727170"
 ---
 # <a name="icorprofilerinfo2getclasslayout-method"></a>ICorProfilerInfo2::GetClassLayout, méthode
+
 Obtient des informations sur la disposition, dans la mémoire, des champs définis par la classe spécifiée. Autrement dit, cette méthode obtient les offsets des champs de la classe.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetClassLayout(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `classID`  
  [in] ID de la classe pour laquelle les informations sont récupérées.  
   
@@ -53,6 +55,7 @@ HRESULT GetClassLayout(
  [out] Pointeur vers un emplacement qui contient la taille, en octets, de la classe.  
   
 ## <a name="remarks"></a>Remarques  
+
  La méthode `GetClassLayout` retourne uniquement les champs définis par la classe elle-même. Si la classe parente de la classe a également défini des champs, le profileur doit appeler `GetClassLayout` sur la classe parente pour obtenir ces champs.  
   
  Si vous utilisez `GetClassLayout` avec des classes string, la méthode échoue avec le code d'erreur E_INVALIDARG. Utilisez [ICorProfilerInfo2 :: GetStringLayout,](icorprofilerinfo2-getstringlayout-method.md) pour obtenir des informations sur la disposition d’une chaîne. La méthode `GetClassLayout` échoue également quand elle est appelée avec une classe array.  
@@ -62,6 +65,7 @@ HRESULT GetClassLayout(
  Vous pouvez également commencer par appeler `GetClassLayout` avec un tampon `rFieldOffset` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite affecter à la taille de la mémoire tampon la valeur retournée dans `pcFieldOffset` et rappeler `GetClassLayout`.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

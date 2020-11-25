@@ -15,28 +15,30 @@ helpviewer_keywords:
 ms.assetid: 610e792d-98ef-411f-90b0-5b9a3813f547
 topic_type:
 - apiref
-ms.openlocfilehash: 15c421471704ffc085da2af6ac74350bd099fdb0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 842b878fac1e2590eb6ea0b29ebee0d46e818474
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134361"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727924"
 ---
 # <a name="iassemblynamefinalize-method"></a>IAssemblyName::Finalize, méthode
+
 Permet à cet objet [IAssemblyName](iassemblyname-interface.md) de libérer des ressources et d’effectuer d’autres opérations de nettoyage avant l’appel de son destructeur.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 HRESULT Finalize ();  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d1e0b654-ccaf-4fa2-9aa3-8e007813c84d
 topic_type:
 - apiref
-ms.openlocfilehash: 8056750e3d0107e27339a85c8cf814632dcece47
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c3fed9166d95c0ca71ac44f5447b95eee97af310
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616351"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726832"
 ---
 # <a name="eclrassemblyidentityflags-enumeration"></a>ECLRAssemblyIdentityFlags, énumération
+
 Indique le type de l’identité d’un assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,7 +39,8 @@ typedef enum _CLRAssemblyIdentityFlags {
 |------------|-----------------|  
 |`CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT`|L’identité est rendue canonique.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

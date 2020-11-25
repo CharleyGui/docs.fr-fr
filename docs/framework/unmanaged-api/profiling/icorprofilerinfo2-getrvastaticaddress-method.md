@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a25a8f8b-5cfa-440d-9376-a1a1c3a9fc11
 topic_type:
 - apiref
-ms.openlocfilehash: 525fa2efa39909390d874fb97d9f11e647340ea9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ea4f6f129cf2919124b1bef1fd837f2b1e13760e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496943"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727053"
 ---
 # <a name="icorprofilerinfo2getrvastaticaddress-method"></a>ICorProfilerInfo2::GetRVAStaticAddress, méthode
+
 Obtient l’adresse du champ statique d’adresse virtuelle relative (RVA) spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,6 +36,7 @@ HRESULT GetRVAStaticAddress(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `classId`  
  dans ID de la classe qui contient le champ statique RVA demandé.  
   
@@ -45,6 +47,7 @@ HRESULT GetRVAStaticAddress(
  à Pointeur vers l’adresse du champ RVA-static.  
   
 ## <a name="remarks"></a>Remarques  
+
  La `GetRVAStaticAddress` méthode peut retourner l’un des éléments suivants :  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT si aucune adresse n’a été assignée au champ statique donné dans le contexte spécifié.  
@@ -54,6 +57,7 @@ HRESULT GetRVAStaticAddress(
  Avant la fin du constructeur de classe d’une classe, `GetRVAStaticAddress` retourne CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains champs statiques soient déjà initialisés et peuvent être des objets de racine garbage collection.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

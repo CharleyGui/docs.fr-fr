@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
-ms.openlocfilehash: b0dd786e1922d75edcb0326cc9e98037c6e4945c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2ae1c514185152dd709fe06018df513fb54b874b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830322"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726715"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interopérabilité avec d’autres types et modèles asynchrones
 
@@ -28,6 +28,7 @@ Bref historique des modèles asynchrones dans .NET :
 ## <a name="tasks-and-the-asynchronous-programming-model-apm"></a>Tâches et APM
 
 ### <a name="from-apm-to-tap"></a>APM vers modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)  
+
  Étant donné que le modèle [APM (Asynchronous Programming Model)](asynchronous-programming-model-apm.md) est structuré, il est assez facile de créer un wrapper pour exposer une implémentation APM en tant qu’implémentation TAP. .NET Framework 4 et versions ultérieures incluent des routines d’assistance sous la forme de <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> surcharges de méthode pour fournir cette traduction.  
   
  Imaginez la classe <xref:System.IO.Stream> et ses méthodes <xref:System.IO.Stream.BeginRead%2A> et <xref:System.IO.Stream.EndRead%2A> , qui représentent la contrepartie AMP de méthode <xref:System.IO.Stream.Read%2A> synchrone :  
@@ -50,6 +51,7 @@ Bref historique des modèles asynchrones dans .NET :
  [!code-vb[Conceptual.AsyncInterop#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/Wrap2.vb#5)]  
   
 ### <a name="from-tap-to-apm"></a>TAP vers APM  
+
  Si votre infrastructure existante attend le modèle APM, vous voudrez également prendre une implémentation TAP et l’utiliser lorsque l’implémentation APM est attendue.  Étant donné que les tâches peuvent être composées et que la classe <xref:System.Threading.Tasks.Task> implémente <xref:System.IAsyncResult>, vous pouvez utiliser une fonction d’assistance simple pour effectuer cette opération. Le code suivant utilise une extension de la classe <xref:System.Threading.Tasks.Task%601> , mais vous pouvez utiliser une fonction presque identique pour les tâches non génériques.  
   
  [!code-csharp[Conceptual.AsyncInterop#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/APM1.cs#6)]
@@ -73,6 +75,7 @@ Bref historique des modèles asynchrones dans .NET :
  [!code-vb[Conceptual.AsyncInterop#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.AsyncInterop/vb/APM2.vb#10)]  
   
 ## <a name="tasks-and-the-event-based-asynchronous-pattern-eap"></a>Tâches et EAP  
+
  Envelopper une implémentation [Event-based Asynchronous Pattern (EAP)](event-based-asynchronous-pattern-eap.md) est plus complexe qu’envelopper un modèle APM, car le modèle EAP est plus variable et moins structuré qu’un modèle APM.  Par exemple, le code suivant enveloppe la méthode `DownloadStringAsync` .  `DownloadStringAsync` accepte un URI, déclenche l’événement `DownloadProgressChanged` lors du téléchargement afin de générer plusieurs statistiques sur la progression et déclenche l’événement `DownloadStringCompleted` lorsque l’événement précédent est terminé.  Le résultat final est une chaîne qui détient le contenu de la page au niveau de l’URI spécifié.  
   
  [!code-csharp[Conceptual.AsyncInterop#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/EAP1.cs#11)]
@@ -81,6 +84,7 @@ Bref historique des modèles asynchrones dans .NET :
 ## <a name="tasks-and-wait-handles"></a>Tâches et handles d’attente  
   
 ### <a name="from-wait-handles-to-tap"></a>handles d’attente vers TAP  
+
  Bien que les handles d’attente n’implémentent pas un modèle asynchrone, les développeurs expérimentés peuvent utiliser la classe <xref:System.Threading.WaitHandle> et la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> pour recevoir des notifications asynchrones lorsqu’un handle d’attente est défini.  Vous pouvez envelopper la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> pour autoriser une alternative basée sur les tâches pour toute attente synchrone sur un handle d’attente :  
   
  [!code-csharp[Conceptual.AsyncInterop#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wait1.cs#12)]
@@ -94,6 +98,7 @@ Bref historique des modèles asynchrones dans .NET :
  Vous pouvez également créer un sémaphore asynchrone qui ne repose pas sur les handles d’attente, mais sur les tâches. Pour ce faire, vous pouvez utiliser des techniques telles que celles abordées dans [Consuming the Task-based Asynchronous Pattern](consuming-the-task-based-asynchronous-pattern.md) pour la création de structures de données sur <xref:System.Threading.Tasks.Task>.  
   
 ### <a name="from-tap-to-wait-handles"></a>TAP vers handles d’attente  
+
  Comme mentionné précédemment, la classe <xref:System.Threading.Tasks.Task> implémente <xref:System.IAsyncResult>, et cette implémentation expose une propriété <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle%2A> qui renvoie un handle d’attente qui sera défini une fois la <xref:System.Threading.Tasks.Task> terminée.  Vous pouvez obtenir un <xref:System.Threading.WaitHandle> pour une <xref:System.Threading.Tasks.Task> comme suit :  
   
  [!code-csharp[Conceptual.AsyncInterop#14](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.AsyncInterop/cs/Wait1.cs#14)]

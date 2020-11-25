@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0ebd793-3764-4df0-8f12-0e95f60b9eae
 topic_type:
 - apiref
-ms.openlocfilehash: 1553e616f60b4f05c06b6457d47454dfb4bc2eb7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c702aa32e8c8d6d5c137f7968d1578715102180f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614771"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726859"
 ---
 # <a name="isymunmanagedwriterinitialize-method"></a>ISymUnmanagedWriter::Initialize, méthode
+
 Définit l’interface d’émetteur de métadonnées à laquelle ce writer sera associé et définit le nom du fichier de sortie dans lequel les symboles de débogage seront écrits.  
   
  Cette méthode ne peut être appelée qu’une seule fois, et elle doit être appelée avant toute autre méthode d’écriture. Certains enregistreurs peuvent nécessiter un nom de fichier. Toutefois, vous pouvez toujours passer un nom de fichier à cette méthode sans effet négatif sur les writers qui n’utilisent pas le nom de fichier.  
@@ -38,6 +39,7 @@ HRESULT Initialize(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `emitter`  
  dans Pointeur vers l’interface d’émetteur de métadonnées.  
   
@@ -48,12 +50,14 @@ HRESULT Initialize(
  dans S’il est spécifié, le writer de symbole émet les symboles dans le donné <xref:System.Runtime.InteropServices.ComTypes.IStream> plutôt que dans le fichier spécifié dans le `filename` paramètre. Le paramètre `pIStream` est facultatif.  
   
  `fFullBuild`  
- [in] `true` s’il s’agit d’une régénération complète ; `false`s’il s’agit d’une compilation incrémentielle.  
+ [in] `true` s’il s’agit d’une régénération complète ; `false` s’il s’agit d’une compilation incrémentielle.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

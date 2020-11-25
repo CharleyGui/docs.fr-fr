@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 188090a968b49bd77279d35dc41f00e808299938
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e1b90bdc5657c1fd22c6e77e31890ff63c3cc3ea
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819641"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727456"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -38,12 +38,15 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 |Synchronisation manuelle|Manuel|Manuel|Manuel|Manuel|Manuel|Manuel|  
   
 ## <a name="no-synchronization"></a>Aucune synchronisation  
+
  Il s’agit de la valeur par défaut pour les objets. N’importe quel thread peut accéder à toute méthode ou champ et ce, à tout moment. Par contre, un seul thread à la fois doit accéder à ces objets.  
   
 ## <a name="manual-synchronization"></a>Synchronisation manuelle  
+
  La bibliothèque de classes .NET fournit plusieurs classes pour la synchronisation des threads. Voir [Vue d’ensemble des primitives de synchronisation](overview-of-synchronization-primitives.md).  
   
 ## <a name="synchronized-code-regions"></a>Régions de code synchronisées  
+
  Vous pouvez utiliser la classe <xref:System.Threading.Monitor> ou un mot-clé de compilateur pour synchroniser des blocs de code ainsi que des méthodes d’instance et statiques. Les champs statiques synchronisés ne sont pas pris en charge.  
   
  Visual Basic et C# prennent en charge le marquage de blocs de code avec un mot-clé d’un langage spécifique, l’instruction `lock` en C# ou l’instruction `SyncLock` en Visual Basic. Lorsque le code est exécuté par un thread, une tentative d’acquisition du verrou est effectuée. Si le verrou a déjà été acquis par un autre thread, le thread se bloque jusqu’à ce qu’il devienne disponible. Lorsque le thread quitte le bloc de code synchronisé (d’une manière ou d’une autre), le verrou est libéré.  
@@ -59,6 +62,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
 > Ne verrouillez pas le type (`typeof(MyType)` en C#, `GetType(MyType)` en Visual Basic, ou `MyType::typeid` en C++) pour protéger les méthodes `static` (méthodes `Shared` dans Visual Basic). Utilisez plutôt un objet statique privé. De même, n’utilisez pas `this` en C# (`Me` en Visual Basic) pour verrouiller des méthodes d’instance. Utilisez plutôt un objet privé. Une classe ou une instance peut être verrouillée par un code autre que le vôtre, ce qui peut entraîner des blocages ou des problèmes de performances.  
   
 ### <a name="compiler-support"></a>Prise en charge du compilateur  
+
  Visual Basic et C# prennent en charge un mot clé de langage qui utilise <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> et <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> pour verrouiller l’objet. Visual Basic prend en charge l’instruction [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) et C#, l’instruction [lock](../../csharp/language-reference/keywords/lock-statement.md).  
   
  Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try** / **finally** avec **Monitor. Enter** au début de la tentative, et **Monitor. Exit** dans le bloc **finally** . Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  

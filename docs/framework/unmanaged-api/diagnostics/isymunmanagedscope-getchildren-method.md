@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0bed524e-cc48-4bf0-b9fa-25d665e63ddb
 topic_type:
 - apiref
-ms.openlocfilehash: c6d21f40c260890c9c88dcdfccd7e31161024ba3
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8f3c83a7a89553ba600f3e0e368eec0ddd0350e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614862"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727606"
 ---
 # <a name="isymunmanagedscopegetchildren-method"></a>ISymUnmanagedScope::GetChildren, méthode
+
 Obtient les enfants de cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,8 +37,9 @@ HRESULT GetChildren(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cChildren`  
- dans `ULONG32`Qui indique la taille du `children` tableau.  
+ dans `ULONG32` Qui indique la taille du `children` tableau.  
   
  `pcChildren`  
  à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les enfants.  
@@ -45,10 +47,12 @@ HRESULT GetChildren(
  `children`  
  à Tableau d’enfants retourné.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
