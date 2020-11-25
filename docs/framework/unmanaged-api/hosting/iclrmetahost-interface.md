@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c627fcdd-fc4f-4b1c-8e91-df8536f627d8
 topic_type:
 - apiref
-ms.openlocfilehash: bb7c3659930f308328cba121c06a88cb6a95eb26
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 75c8d550e572795a291f4639f9f28bd5214ff188
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504158"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714014"
 ---
 # <a name="iclrmetahost-interface"></a>ICLRMetaHost, interface
+
 Fournit des méthodes qui retournent une version spécifique du common language runtime (CLR) en fonction de son numéro de version, de la liste de tous les CLR installés, de la liste de tous les runtimes chargés dans un processus spécifié, de la découverte de la version CLR utilisée pour compiler un assembly, de la sortie d’un processus avec arrêt du runtime propre et de la liaison d’API héritée  
   
 ## <a name="methods"></a>Méthodes  
@@ -37,6 +38,7 @@ Fournit des méthodes qui retournent une version spécifique du common language 
 |[RequestRuntimeLoadedNotification, méthode](iclrmetahost-requestruntimeloadednotification-method.md)|Garantit un rappel au pointeur de fonction spécifié quand une version CLR est chargée pour la première fois, mais pas encore démarrée. Cette méthode remplace [LockClrVersion](lockclrversion-function.md)|  
   
 ## <a name="remarks"></a>Remarques  
+
  La seule façon d’accéder à une instance de cette interface est d’appeler la fonction [CLRCreateInstance](clrcreateinstance-function.md) comme suit :  
   
 ```cpp  
@@ -46,15 +48,16 @@ HRESULT hr = CLRCreateInstance(CLSID_CLRMetaHost,
 ```  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

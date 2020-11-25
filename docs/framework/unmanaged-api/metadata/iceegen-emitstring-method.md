@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ad2710a7-edb8-4493-8619-3fce235e3334
 topic_type:
 - apiref
-ms.openlocfilehash: e7c58e6cdbe0d3c8513721a40eaa3fdfcec6ce2e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b9c907868df31da8d995c6a6b86db258d395335d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008857"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715444"
 ---
 # <a name="iceegenemitstring-method"></a>ICeeGen::EmitString, méthode
+
 Émet la chaîne spécifiée dans la base de code.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -37,18 +38,20 @@ HRESULT EmitString (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `lpString`  
  dans Chaîne à émettre.  
   
  `RVA`  
  à Adresse virtuelle relative de la chaîne émise.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

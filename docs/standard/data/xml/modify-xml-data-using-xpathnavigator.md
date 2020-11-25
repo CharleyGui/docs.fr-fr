@@ -6,14 +6,15 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: 79bb23b77557a5a10f021e2167c9fa8ae3ee044a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 10de24d97d15ed4b6de3effa21410fb22054ec68
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830192"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714456"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
+
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de modifier les nœuds et les valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
   
  Les objets <xref:System.Xml.XPath.XPathNavigator> qui permettent d'éditer un document XML sont créés par la méthode <xref:System.Xml.XmlDocument.CreateNavigator%2A> de la classe <xref:System.Xml.XmlDocument>. Les objets <xref:System.Xml.XPath.XPathNavigator> créés par la classe <xref:System.Xml.XPath.XPathDocument> sont en lecture seule et toute tentative d'utilisation des méthodes de modification d'un objet <xref:System.Xml.XPath.XPathNavigator> créé par un objet <xref:System.Xml.XPath.XPathDocument> se traduit par un objet <xref:System.NotSupportedException>.  
@@ -21,6 +22,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  Pour plus d’informations sur la création d’objets <xref:System.Xml.XPath.XPathNavigator> modifiables, consultez [Lecture de données XML à l’aide de XPathDocument et XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="modifying-nodes"></a>Modification de nœuds  
+
  Une technique simple de modification de la valeur d'un nœud consiste à utiliser les méthodes <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> et <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
  Le tableau suivant répertorie les effets de ces méthodes sur différents types de nœuds.  
@@ -41,6 +43,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit également un ensemble de méthodes permettant d'insérer et de supprimer des nœuds. Pour plus d’informations sur l’insertion et la suppression de nœuds d’un document XML, consultez les rubriques [Insertion de données XML à l’aide de XPathNavigator](insert-xml-data-using-xpathnavigator.md) et [Suppression de données XML à l’aide de XPathNavigator](remove-xml-data-using-xpathnavigator.md).  
   
 ### <a name="modifying-untyped-values"></a>Modification de valeurs non typées  
+
  La méthode <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> insère simplement la valeur `string` non typée transmise sous la forme d'un paramètre comme la valeur du nœud sur lequel l'objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné. La valeur est insérée sans type ou sans vérifier que la nouvelle valeur est valide par rapport au type de nœud si les informations sur le schéma sont disponibles.  
   
  Dans l'exemple suivant, la méthode <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> permet de mettre à jour tous les éléments `price` du fichier `contosoBooks.xml`.  
@@ -54,6 +57,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ### <a name="modifying-typed-values"></a>Modification de valeurs typées  
+
  Si le type d'un nœud est un type simple des schémas XML du W3C, la nouvelle valeur insérée par la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> est vérifiée par rapport aux facettes du type simple avant d'être définie. Si la nouvelle valeur n'est pas valide par rapport au type du nœud (par exemple, une valeur est définie sur `-1` pour un élément dont le type est `xs:positiveInteger`), une exception se produit.  
   
  L'exemple suivant tente de modifier la valeur de l'élément `price` du premier élément `book` du fichier `contosoBooks.xml` en valeur <xref:System.DateTime>. Étant donné que le type de schéma XML de l'élément `price` est défini comme `xs:decimal` dans les fichiers `contosoBooks.xsd`, une exception se produit.  
@@ -103,6 +107,7 @@ navigator.SetTypedValue(DateTime.Now);
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
 #### <a name="the-effects-of-editing-strongly-typed-xml-data"></a>Effets de la modification de données XML fortement typées  
+
  La <xref:System.Xml.XPath.XPathNavigator> classe utilise le schéma XML W3C comme base pour décrire le XML fortement typé. Les éléments et les attributs ne peuvent pas être annotés avec les informations sur le type en fonction de la validation par rapport au document du W3C sur les schémas XML. Les éléments pouvant contenir d'autres éléments ou attributs sont appelés types complexes, tandis que ceux qui ne peuvent avoir que du contenu textuel sont appelés types simples.  
   
 > [!NOTE]
@@ -115,6 +120,7 @@ navigator.SetTypedValue(DateTime.Now);
  Pour plus d'informations sur la validation de schémas et la classe <xref:System.Xml.XPath.XPathNavigator>, voir [Validation de schéma à l’aide de XPathNavigator](schema-validation-using-xpathnavigator.md).  
   
 ### <a name="modifying-attributes"></a>Modification d'attributs  
+
  Les méthodes <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> et <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> peuvent permettre de modifier des nœuds d'attribut typés et non typés, ainsi que les autres types de nœuds d'attribut répertoriés dans la section sur la modification de nœuds.  
   
  L'exemple suivant modifie la valeur de l'attribut `genre` du premier élément `book` du fichier `books.xml`.  
@@ -152,6 +158,7 @@ Console.WriteLine(navigator.OuterXml);
  Pour plus d'informations sur les méthodes <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> et <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A>, voir les sections sur la modification de valeurs non typées et de valeurs typées.  
   
 ## <a name="innerxml-and-outerxml-properties"></a>Propriétés InnerXml et OuterXml  
+
  Les propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> modifient le balisage XML des nœuds sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné.  
   
  La propriété <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné avec le contenu analysé de la `string` XML donnée. De même, la propriété <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné, ainsi que le nœud actuel proprement dit.  
@@ -193,6 +200,7 @@ Console.WriteLine(navigator.OuterXml);
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ## <a name="modifying-namespace-nodes"></a>Modification de nœuds d'espace de noms  
+
  Dans le DOM (Document Object Model), les déclarations d'espaces de noms sont traitées comme des attributs réguliers qui peuvent être insérés, mis à jour et supprimés. La classe <xref:System.Xml.XPath.XPathNavigator> n'autorise pas ce type d'opération sur les nœuds d'espace de noms car toute modification de la valeur d'un nœud d'espace de noms peut modifier l'identité des éléments et attributs dans la portée du nœud d'espace de noms comme illustré dans l'exemple suivant.  
   
 ```xml  
@@ -232,9 +240,11 @@ Console.WriteLine(navigator.OuterXml);
  Dans l'exemple XML ci-dessus, l'attribut `a:parent-id` est inséré dans l'élément `parent` dans l'espace de noms `http://www.contoso.com/parent-id`. La méthode <xref:System.Xml.XPath.XPathNavigator.CreateAttribute%2A> permet d'insérer l'attribut tout en étant positionné sur l'élément `parent`. La déclaration d'espace de noms `http://www.contoso.com` est automatiquement insérée par la classe <xref:System.Xml.XPath.XPathNavigator> pour conserver la cohérence du reste du document XML.  
   
 ## <a name="modifying-entity-reference-nodes"></a>Modification de nœuds de référence d'entité  
+
  Les nœuds de référence d'entité d'un objet <xref:System.Xml.XmlDocument> sont en lecture seule et ne peuvent pas être modifiés à l'aide des classes <xref:System.Xml.XPath.XPathNavigator> ou <xref:System.Xml.XmlNode>. Toute tentative de modification d'un nœud de référence d'entité se traduit par un objet <xref:System.InvalidOperationException>.  
   
 ## <a name="modifying-xsinil-nodes"></a>Modification de nœuds xsi:nil  
+
  La recommandation du W3C sur les schémas XML introduit le concept d'élément pouvant prendre la valeur null. Si un élément peut prendre la valeur null, il peut n'avoir aucun contenu et rester valide. Le concept d'élément pouvant prendre la valeur null est similaire à celui d'objet `null`. La principale différence est qu'il est possible d'accéder à un objet `null` de n'importe quelle manière, tandis qu'un élément `xsi:nil` possède toujours des propriétés telles que des attributs accessibles, mais n'ayant aucun contenu (texte ou éléments enfants). L'existence de l'attribut `xsi:nil` présentant la valeur `true` dans un élément d'un document XML permet d'indiquer qu'un élément n'a aucun contenu.  
   
  Si un objet <xref:System.Xml.XPath.XPathNavigator> permet d'ajouter du contenu à un élément valide avec un attribut `xsi:nil` ayant la valeur `true`, la valeur de son attribut `xsi:nil` est définie sur `false`.  
@@ -243,6 +253,7 @@ Console.WriteLine(navigator.OuterXml);
 > Si le contenu d'un élément possédant un attribut `xsi:nil` défini sur `false` est supprimé, la valeur de l'attribut n'est pas modifiée en `true`.  
   
 ## <a name="saving-an-xml-document"></a>Enregistrement d'un document XML  
+
  L'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument> suite aux méthodes de modification décrites dans cette rubrique s'effectue à l'aide des méthodes de la classe <xref:System.Xml.XmlDocument>. Pour plus d'informations sur l'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument>, consultez [Enregistrement et écriture d'un document](saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Voir aussi

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14218249-bdec-48ae-b5fc-9f57f7ca8501
 topic_type:
 - apiref
-ms.openlocfilehash: 69e5e05012d2b44a76a986591ec990f66bf8ae20
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 26293e38a275ca691c7d48dceb12c1e7dd316536
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007323"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713416"
 ---
 # <a name="imetadatadispenseropenscopeonmemory-method"></a>IMetaDataDispenser::OpenScopeOnMemory, méthode
+
 Ouvre une zone de mémoire qui contient des métadonnées existantes. Autrement dit, cette méthode ouvre une zone de mémoire spécifiée dans laquelle les données existantes sont traitées en tant que métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT OpenScopeOnMemory (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pData`  
  dans Pointeur qui spécifie l’adresse de début de la zone mémoire.  
   
@@ -56,18 +58,20 @@ HRESULT OpenScopeOnMemory (
  à Pointeur vers l’interface retournée.  
   
 ## <a name="remarks"></a>Remarques  
+
  La copie en mémoire des métadonnées peut être interrogée à l’aide de méthodes de l’une des interfaces d’importation ou ajoutée à l’aide de méthodes à partir de l’une des interfaces d’émission.  
   
  La `OpenScopeOnMemory` méthode est semblable à la méthode [IMetaDataDispenser :: OpenScope](imetadatadispenser-openscope-method.md) , sauf que les métadonnées d’intérêt existent déjà en mémoire, plutôt que dans un fichier sur le disque.  
   
  Si la zone cible de la mémoire ne contient pas de métadonnées common language runtime (CLR), la `OpenScopeOnMemory` méthode échoue.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

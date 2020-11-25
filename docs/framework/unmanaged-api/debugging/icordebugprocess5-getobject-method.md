@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8111502-5a20-447f-9dc2-76e8acd7ed5a
 topic_type:
 - apiref
-ms.openlocfilehash: de570507c4312f09def0908b9d56e5371c63527e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ff2913399e1dbeb33bbfb697058db3caf2a8d1fb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207290"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713104"
 ---
 # <a name="icordebugprocess5getobject-method"></a>ICorDebugProcess5::GetObject, méthode
+
 Convertit une adresse d’objet en objet « ICorDebugObjectValue ».  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,16 +36,19 @@ HRESULT GetObject(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `addr`  
  dans Adresse de l’objet.  
   
  `ppObject`  
  à Pointeur vers l’adresse d’un objet « ICorDebugObjectValue ».  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Si `addr` ne pointe pas vers un objet managé valide, la `GetObject` méthode retourne `E_FAIL` .  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

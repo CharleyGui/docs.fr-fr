@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: fe18cda64e0c9986884486298adf4a83b604f323
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 4d3abde965d9a2ab0f86477feeb7c10f274a4b9a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594533"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715119"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -30,7 +30,7 @@ La dernière version de .NET est 5,0.
 
 Le tableau suivant répertorie les versions de .NET actuellement prises en charge et les versions de Windows sur lesquelles elles sont prises en charge. Ces versions restent prises en charge jusqu’à la fin de la [prise en charge](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) de la version de .net ou de la [fin de vie](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)de la version de Windows.
 
-Les dates de fin de service des versions de Windows 10 sont segmentées par édition. Seules les éditions **familiales** , **Pro** , **Pro Education** et **Pro for Workstations** sont étudiées dans le tableau suivant. Consultez la [feuille de faits du cycle de vie Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) pour obtenir des détails spécifiques.
+Les dates de fin de service des versions de Windows 10 sont segmentées par édition. Seules les éditions **familiales**, **Pro**, **Pro Education** et **Pro for Workstations** sont étudiées dans le tableau suivant. Consultez la [feuille de faits du cycle de vie Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) pour obtenir des détails spécifiques.
 
 - Une ✔️ indique que la version de Windows ou de .NET Core est toujours prise en charge.
 - Une ❌ indique que la version de Windows ou de .net Core n’est pas prise en charge sur cette version de Windows.
@@ -204,7 +204,7 @@ La configuration requise précédente est également requise si vous rencontrez 
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation d’intégration continue et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 3,1. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le kit de développement logiciel (SDK).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `Channel` commutateur. Incluez le `Runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le kit de développement logiciel (SDK).
 
 ```powershell
 dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore

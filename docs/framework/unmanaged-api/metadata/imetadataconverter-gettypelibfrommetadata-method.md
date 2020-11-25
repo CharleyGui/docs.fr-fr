@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 90eab7b3-1fae-4af4-8bce-f7bc0e188a99
 topic_type:
 - apiref
-ms.openlocfilehash: 79bd8901641ee587e94861c0aec85b812591ea48
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: eed8661f8885ca16492ab336a599b5290057843a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008415"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714599"
 ---
 # <a name="imetadataconvertergettypelibfrommetadata-method"></a>IMetaDataConverter::GetTypeLibFromMetaData, méthode
+
 Obtient un pointeur vers une `ITypeLib` instance de qui représente la bibliothèque de types qui a la bibliothèque et les noms de modules spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetTypeLibFromMetaData (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `strModule`  
  dans Nom du module de la bibliothèque de types.  
   
@@ -45,12 +47,13 @@ HRESULT GetTypeLibFromMetaData (
  `ppITL`  
  à Pointeur vers un emplacement qui reçoit l’adresse de l' `ITypeLib` instance qui représente la bibliothèque de types.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

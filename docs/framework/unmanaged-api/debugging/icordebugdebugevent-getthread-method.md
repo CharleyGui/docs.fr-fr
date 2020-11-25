@@ -2,14 +2,15 @@
 title: ICorDebugDebugEvent::GetThread, méthode
 ms.date: 03/30/2017
 ms.assetid: 4f2e9a2c-8369-4a07-a881-ad5422626353
-ms.openlocfilehash: acce18517c105739417fc734b49ff004ca9546dc
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: ca6aba7897d9e97743d29db49bd058e140f84e6e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976376"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713585"
 ---
 # <a name="icordebugdebugeventgetthread-method"></a>ICorDebugDebugEvent::GetThread, méthode
+
 Obtient le thread sur lequel l'événement s'est produit.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -21,15 +22,17 @@ HRESULT GetThread(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  ppThread  
  [out] Pointeur vers l'adresse d'un objet ICorDebugThread qui représente le thread sur lequel l'événement s'est produit.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

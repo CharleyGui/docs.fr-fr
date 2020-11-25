@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b6b95c04-0f2c-4fcc-a8bc-3b1dcbdba731
 topic_type:
 - apiref
-ms.openlocfilehash: 206dcd3a0a82da9b6211c8c2045e4e9d3d991973
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 41a3b9c77fc766b2fa39b406dedbb3203cc97ad9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008870"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715470"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer, méthode
+
 Détermine la mémoire tampon pour la section de code spécifiée.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -38,6 +39,7 @@ HRESULT ComputePointer (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `section`  
  dans Section de code pour laquelle retourner une mémoire tampon.  
   
@@ -47,12 +49,13 @@ HRESULT ComputePointer (
  `lpBuffer`  
  à Pointeur vers la mémoire tampon retournée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b3847495-0ae6-4a72-b496-65ce2424afc6
 topic_type:
 - apiref
-ms.openlocfilehash: 4de3530cb912f9e60a6bdf11026f9168a188c8ce
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 69c4a64dee0eb12481a78aa6f185ab568266ee30
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008820"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715392"
 ---
 # <a name="iceegengenerateceememoryimage-method"></a>ICeeGen::GenerateCeeMemoryImage, méthode
+
 Génère une image en mémoire pour la base de code.  
   
  Cette méthode est obsolète et ne doit pas être utilisée.  
@@ -36,15 +37,17 @@ HRESULT GenerateCeeMemoryImage (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppImage`  
  à Pointeur vers l’image générée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

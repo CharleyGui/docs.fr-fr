@@ -15,14 +15,15 @@ helpviewer_keywords:
 - .NET regular expressions, anchors
 - .NET regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-ms.openlocfilehash: 5f40270baa70c2b72d768cf0f5c4f8305f8bae7a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 37b6426581dc705264cd1403c979e95b1f4cfa5d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825271"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714482"
 ---
 # <a name="anchors-in-regular-expressions"></a>Ancres dans les expressions régulières
+
 Les ancres, ou assertions atomiques de largeur nulle, spécifient une position dans la chaîne où une correspondance doit se produire. Quand vous utilisez une ancre dans votre expression de recherche, le moteur des expressions régulières n'avance pas dans la chaîne ou ne consomme pas de caractères ; il recherche uniquement une correspondance à la position spécifiée. Par exemple, `^` spécifie que la correspondance doit commencer au début d'une ligne ou d'une chaîne. Par conséquent, l'expression régulière `^http:` correspond uniquement à « http: » quand elle se produit au début d'une ligne. Le tableau suivant répertorie les ancres prises en charge par les expressions régulières dans .NET.  
   
 |Ancre|Description|  
@@ -37,6 +38,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |`\B`|La correspondance ne doit pas se produire à la limite d'un mot. Pour plus d'informations, consultez [Limite n'appartenant pas à un mot](#non-word-boundary-b).|  
 
 ## <a name="start-of-string-or-line-"></a>Début de chaîne ou de ligne : ^  
+
  Par défaut, l’ancre `^` spécifie que le modèle suivant doit commencer à la première position de caractère de la chaîne. Si vous utilisez `^` avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> (consultez [Options des expressions régulières](regular-expression-options.md)), la correspondance doit se trouver au début de chaque ligne.  
   
  L'exemple suivant utilise l'ancre `^` dans une expression régulière qui extrait des informations à propos des années pendant lesquelles certaines équipes de base-ball professionnelles ont existé. L'exemple appelle deux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> :  
@@ -63,6 +65,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |<code>(\s\d{4}(-(\d{4}&#124;present))?,?)+</code>|Mettre en correspondance une ou plusieurs occurrences des éléments suivants : un espace, quatre chiffres décimaux, zéro ou une occurrence d'un trait d'union suivie de quatre chiffres décimaux ou de la chaîne « present » et zéro ou une virgule. Il s'agit du cinquième groupe de capture.|
 
 ## <a name="end-of-string-or-line-"></a>Fin de chaîne ou de ligne : $  
+
  L'ancre `$` spécifie que le modèle précédent doit se produire à la fin de la chaîne d'entrée ou avant `\n` à la fin de la chaîne d'entrée.  
   
  Si vous utilisez `$` avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> , la correspondance peut également se trouver à la fin d'une ligne. Notez que `$` correspond à `\n` , mais ne correspond pas à `\r\n` (combinaison de caractères de retour chariot et de saut de ligne ou CR/LF). Pour établir une correspondance avec la combinaison de caractères CR/LF, incluez `\r?$` dans le modèle d'expression régulière.  
@@ -73,6 +76,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
  [!code-vb[Conceptual.RegEx.Language.Assertions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring1.vb#2)]
 
 ## <a name="start-of-string-only-a"></a>Début de chaîne uniquement : \A  
+
  L'ancre `\A` spécifie qu'une correspondance doit se produire au début de la chaîne d'entrée. Elle est identique à l'ancre `^` , à la différence près que l'ancre `\A` ignore l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> . Par conséquent, elle peut correspondre uniquement au début de la première ligne dans une chaîne d'entrée multiligne.  
   
  L'exemple suivant est semblable aux exemples des ancres `^` et `$` . Il utilise l'ancre `\A` dans une expression régulière qui extrait des informations sur les années où jouaient certaines équipes de base-ball professionnelles. La chaîne d'entrée inclut cinq lignes. L'appel à la méthode <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> recherche uniquement la première sous-chaîne dans la chaîne d'entrée qui correspond au modèle d'expression régulière. Comme le montre l'exemple, l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline> n'a aucun effet.  
@@ -81,6 +85,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
  [!code-vb[Conceptual.RegEx.Language.Assertions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/startofstring2.vb#3)]
 
 ## <a name="end-of-string-or-before-ending-newline-z"></a>Fin de chaîne ou avant un saut de ligne final : \Z  
+
  L'ancre `\Z` spécifie qu'une correspondance doit se produire à la fin de la chaîne d'entrée ou avant `\n` à la fin de la chaîne d'entrée. Elle est identique à l'ancre `$` , à la différence près que l'ancre `\Z` ignore l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> . Par conséquent, dans une chaîne multiligne, elle peut correspondre uniquement à la fin de la dernière ligne ou à la dernière ligne avant `\n`.  
   
  Notez que `\Z` correspond à `\n` , mais ne correspond pas à `\r\n` (combinaison de caractères CR/LF). Pour établir une correspondance avec les caractères CR/LF, incluez `\r?\Z` dans le modèle d'expression régulière.  
@@ -91,6 +96,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
  [!code-vb[Conceptual.RegEx.Language.Assertions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring2.vb#4)]
 
 ## <a name="end-of-string-only-z"></a>Fin de chaîne uniquement : \z  
+
  L'ancre `\z` spécifie qu'une correspondance doit se produire à la fin de la chaîne d'entrée. Comme l'élément de langage `$` , `\z` ignore l'option <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> . Contrairement à l'élément de langage `\Z` , `\z` ne correspond pas à un caractère `\n` à la fin d'une chaîne. Par conséquent, elle peut correspondre uniquement à la dernière ligne de la chaîne d'entrée.  
   
  L'exemple suivant utilise l'ancre `\z` dans une expression régulière qui est sinon identique à l'exemple dans la section précédente, qui extrait des informations à propos des années pendant lesquelles certaines équipes de base-ball professionnelles ont existé. L'exemple essaie de faire correspondre chacun des cinq éléments dans un tableau de chaînes avec le modèle d'expression régulière `^((\w+(\s?)){2,}),\s(\w+\s\w+),(\s\d{4}(-(\d{4}|present))?,?)+\r?\z`. Deux des chaînes se terminent par un retour chariot et des caractères de saut de ligne, l'une se termine par un caractère de saut de ligne, et deux ne se terminent ni par un retour chariot ni par un caractère de saut de ligne. Comme le montre la sortie, seules les chaînes sans retour chariot ou caractère de saut de ligne correspondent au modèle.  
@@ -99,6 +105,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
  [!code-vb[Conceptual.RegEx.Language.Assertions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.assertions/vb/endofstring3.vb#5)]
 
 ## <a name="contiguous-matches-g"></a>Correspondances contiguës : \G  
+
  L'ancre `\G` spécifie qu'une correspondance doit se produire au point où la correspondance précédente s'est terminée. Quand vous utilisez cette ancre avec la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> , elle vérifie que toutes les correspondances sont contiguës.  
   
  L'exemple suivant utilise une expression régulière pour extraire les noms d'espèces de rongeurs d'une chaîne délimitée par des virgules.  
@@ -118,6 +125,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |`,?`|Mettre en correspondance zéro ou une occurrence d'une virgule littérale.|
 
 ## <a name="word-boundary-b"></a>Limite de mot : \b  
+
  L'ancre `\b` spécifie que la correspondance doit se produire à la limite entre un caractère de mot (élément de langage `\w` ) et un caractère n'appartenant pas à un mot (élément de langage `\W` ). Les caractères de mot se composent de caractères alphanumériques et de traits de soulignement ; un caractère n'appartenant pas à un mot est un caractère qui n'est pas alphanumérique ou qui n'est pas un trait de soulignement. (Pour plus d’informations, consultez [classes de caractères](character-classes-in-regular-expressions.md).) La correspondance peut également se produire à la limite d’un mot au début ou à la fin de la chaîne.  
   
  L'ancre `\b` est fréquemment utilisée pour faire en sorte qu'une sous-expression corresponde à un mot entier plutôt qu'au début ou à la fin d'un mot uniquement. L'expression régulière `\bare\w*\b` dans l'exemple suivant illustre cette utilisation. Elle correspond à tout mot qui commence par la sous-chaîne « are ». La sortie de l'exemple illustre également que `\b` correspond à la fois au début et la fin de la chaîne d'entrée.  
@@ -135,6 +143,7 @@ Les ancres, ou assertions atomiques de largeur nulle, spécifient une position d
 |`\b`|Terminer la correspondance à la limite d'un mot.|  
 
 ## <a name="non-word-boundary-b"></a>Limite n'appartenant pas à un mot : \B  
+
  L'ancre `\B` spécifie que la correspondance ne doit pas se produire à la limite d'un mot. Elle est le contraire de l'ancre `\b` .  
   
  L'exemple suivant utilise l'ancre `\B` pour trouver des occurrences de la sous-chaîne « qu » dans un mot. Le modèle d'expression régulière `\Bqu\w+` met en correspondance une sous-chaîne qui commence par un « qu » qui n'est pas en début de mot et continue jusqu'à la fin du mot.  

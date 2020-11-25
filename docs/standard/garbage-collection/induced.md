@@ -4,19 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-ms.openlocfilehash: 637ba9b3b73d685ee2263315a08f982d862efb35
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 25e94221355569931a31b566a53434cbed9ea93f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827722"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714235"
 ---
 # <a name="induced-collections"></a>Collections forcées
+
 Dans la plupart des cas, le Garbage collector peut déterminer le meilleur moment pour exécuter une collection. En outre, vous devez lui permettre de s’exécuter de façon indépendante. Dans de rares cas, une collection forcée peut toutefois améliorer les performances de votre application. Vous pouvez alors induire le garbage collection à l’aide de la méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> pour forcer un garbage collection.  
   
  Utilisez la méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> quand la quantité de mémoire utilisée à un point spécifique dans le code de votre application diminue considérablement. Par exemple, si votre application utilise une boîte de dialogue complexe comportant plusieurs contrôles, l’appel de <xref:System.GC.Collect%2A> quand la boîte de dialogue est fermée peut améliorer les performances en libérant immédiatement la mémoire utilisée par la boîte de dialogue. Vérifiez que votre application n’induit pas trop fréquemment le garbage collection. En effet, les performances risquent d’être affectées si le Garbage collector tente de récupérer des objets à des moments inopportuns. Vous pouvez fournir une valeur d’énumération <xref:System.GCCollectionMode.Optimized?displayProperty=nameWithType> à la méthode <xref:System.GC.Collect%2A> pour effectuer une collection uniquement lorsqu’elle est productive, comme décrit dans la section suivante.  
   
 ## <a name="gc-collection-mode"></a>Mode de collection GC  
+
  Vous pouvez utiliser l’une des surcharges de méthode <xref:System.GC.Collect%2A?displayProperty=nameWithType> qui inclut une valeur <xref:System.GCCollectionMode> pour spécifier le comportement d’une collection forcée, comme suit.  
   
 |Valeur `GCCollectionMode`|Description|  
@@ -26,6 +28,7 @@ Dans la plupart des cas, le Garbage collector peut déterminer le meilleur momen
 |<xref:System.GCCollectionMode.Optimized>|Permet au Garbage collector de déterminer si le moment est opportun pour récupérer des objets.<br /><br /> Le Garbage collector peut déterminer qu’une collection n’est pas assez productive pour être effectuée. Dans ce cas, aucun objet n’est récupéré.|  
   
 ## <a name="background-or-blocking-collections"></a>Collections d’arrière-plan ou de blocage  
+
  Vous pouvez appeler la surcharge de méthode <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29?displayProperty=nameWithType> pour spécifier si une collection induite bloque ou non. Le type de collection effectué dépend d’une combinaison des paramètres `mode` et `blocking` de la méthode. `mode` est membre de l’énumération <xref:System.GCCollectionMode> et `blocking` est une valeur <xref:System.Boolean>. Le tableau suivant résume l’interaction des arguments `mode` et `blocking`.  
   
 |`mode`|`blocking` = `true`|`blocking` = `false`|  

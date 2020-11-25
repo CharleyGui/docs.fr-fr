@@ -8,14 +8,15 @@ helpviewer_keywords:
 - weak references, long
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
-ms.openlocfilehash: 40d17009c98a73b7cb51779663360726c5fc7403
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1eb5e57f5cc1065f1b8510e4fb0a980a85abca29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827358"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714209"
 ---
 # <a name="weak-references"></a>Références faibles
+
 Le Garbage collector ne peut pas collecter un objet actuellement utilisé par une application, tandis que le code de l’application peut accéder à cet objet. On dit de l’application qu’elle a une référence forte à l’objet.  
   
  Une référence faible permet au Garbage collector de collecter l’objet tout en permettant à l’application d’y accéder. Une référence faible est valide uniquement pour une période indéterminée jusqu’à ce que l’objet soit collecté quand il n’existe aucune référence forte. Quand vous utilisez une référence faible, l’application peut toujours obtenir une référence forte à l’objet, ce qui l’empêche d’être collecté. Toutefois, il existe toujours un risque que le Garbage collector accède à l’objet avant qu’une référence forte soit rétablie.  
@@ -29,6 +30,7 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
  Pour établir une référence faible à un objet, vous créez un <xref:System.WeakReference> à l’aide de l’instance de l’objet à suivre. Vous affectez ensuite cet objet à la propriété <xref:System.WeakReference.Target%2A> et vous définissez la référence d’origine à l’objet sur `null`. Pour obtenir un exemple de code, consultez <xref:System.WeakReference> dans la bibliothèque de classes.  
   
 ## <a name="short-and-long-weak-references"></a>Références faibles courtes et longues  
+
  Vous pouvez créer une référence faible courte ou une référence faible longue :  
   
 - Court  
@@ -44,6 +46,7 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
  Pour établir une référence forte et réutiliser l’objet, effectuez un cast de la propriété <xref:System.WeakReference.Target%2A> d’un <xref:System.WeakReference> vers le type de l’objet. Si la propriété <xref:System.WeakReference.Target%2A> retourne la valeur `null`, l’objet a été collecté ; sinon, vous pouvez continuer à utiliser l’objet, car l’application a récupéré une référence forte à celui-ci.  
   
 ## <a name="guidelines-for-using-weak-references"></a>Instructions d’utilisation de références faibles  
+
  Utilisez des références faibles longues uniquement quand cela est nécessaire, car l’état de l’objet est imprévisible après la finalisation.  
   
  Évitez d’utiliser des références faibles aux petits objets, car le pointeur lui-même peut être de la même taille ou d’une taille supérieure.  

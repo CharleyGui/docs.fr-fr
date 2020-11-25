@@ -2,14 +2,15 @@
 title: ICorDebugDataTarget2::EnumerateThreadIDs, méthode
 ms.date: 03/30/2017
 ms.assetid: af02460f-2a45-496e-bc4e-a1ac4f80fe11
-ms.openlocfilehash: 4a65b76f384cdad68cba75af524dbe672c309624
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 31a839076b34901ae1a8f3b43021f64f77629fc0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976484"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713845"
 ---
 # <a name="icordebugdatatarget2enumeratethreadids-method"></a>ICorDebugDataTarget2::EnumerateThreadIDs, méthode
+
 Retourne une liste des ID de threads actifs.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,6 +24,7 @@ HRESULT EnumerateThreadIDs(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  cThreadIDs  
  [in] Nombre maximal de threads dont les ID peuvent être retournés.  
   
@@ -32,12 +34,13 @@ HRESULT EnumerateThreadIDs(
  pThreadIDs  
  Tableau d'identificateurs de threads.  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration système requise](../../get-started/system-requirements.md). **En-tête :** CorDebug. idl, CorDebug. h  
   
  **Bibliothèque :** CorGuids.lib  

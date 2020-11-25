@@ -8,14 +8,15 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-ms.openlocfilehash: ea30cafc998b8691321bf5e2b9b4bcc897878200
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f8ca723ca3b9b9428c95651ebe2fa7d92e48ebbb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94817274"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713286"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Procédure : annuler une requête PLINQ
+
 Les exemples suivants montrent deux façons de modifier une requête PLINQ. Le premier exemple montre comment annuler une requête principalement composée de parcours de données. Le deuxième exemple montre comment annuler une requête contenant une fonction d’utilisateur dont les calculs sont onéreux.
 
 > [!NOTE]

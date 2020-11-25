@@ -9,14 +9,15 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-ms.openlocfilehash: 3dbe0675b73f902a7da0fb4f7881c1ee15022b36
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c0f184720849a0c21fdeda1de4543a2443d60674
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825856"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713351"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Procédure : annuler un bloc de dataflow
+
 Ce document montre comment activer l’annulation dans votre application. Cet exemple utilise des Windows Forms pour montrer où les éléments de travail sont actifs dans un pipeline de flux de données, ainsi que les effets de l’annulation.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -34,6 +35,7 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
 5. Ajoutez quatre objets <xref:System.Windows.Forms.ToolStripProgressBar> au contrôle <xref:System.Windows.Forms.ToolStrip>.  
   
 ## <a name="creating-the-dataflow-pipeline"></a>Création du pipeline de flux de données  
+
  Cette section décrit comment créer le pipeline de flux de données qui traite les éléments de travail et met à jour les barres de progression.  
   
 ### <a name="to-create-the-dataflow-pipeline"></a>Pour créer le pipeline de flux de données  
@@ -65,6 +67,7 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
  Cet exemple définit la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> lors de la construction des membres du pipeline. Étant donné que la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> annule définitivement l’exécution du bloc de flux de données, l’ensemble du pipeline doit être recréé si l’utilisateur annule l’opération et souhaite par la suite ajouter d’autres éléments de travail au pipeline. Pour obtenir un exemple illustrant une autre méthode d’annulation d’un bloc de flux de données de sorte que les autres travaux puissent être effectués après l’annulation d’une opération, consultez [Walkthrough: Using Dataflow in a Windows Forms Application](walkthrough-using-dataflow-in-a-windows-forms-application.md) (Procédure pas à pas : utilisation d’un flux de données dans une application Windows Forms).  
   
 ## <a name="connecting-the-dataflow-pipeline-to-the-user-interface"></a>Connexion du pipeline de flux de données à l’interface utilisateur  
+
  Cette section décrit comment connecter le pipeline de flux de données à l’interface utilisateur. La création du pipeline et l’ajout d’éléments de travail au pipeline sont contrôlés par le gestionnaire d’événements pour le bouton **Add Work Items** (Ajouter des éléments de travail). L’annulation est lancée par le bouton **Annuler**. Lorsque l’utilisateur clique sur un de ces boutons, l’action appropriée est lancée de manière asynchrone.  
   
 ### <a name="to-connect-the-dataflow-pipeline-to-the-user-interface"></a>Pour connecter le pipeline de flux de données à l’interface utilisateur  
@@ -84,6 +87,7 @@ Ce document montre comment activer l’annulation dans votre application. Cet ex
      [!code-vb[TPLDataflow_CancellationWinForms#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#6)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant montre le code complet pour Form1.cs (Form1.vb pour Visual Basic).  
   
  [!code-csharp[TPLDataflow_CancellationWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#100)]

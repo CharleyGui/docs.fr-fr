@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 287e5ede-b3a7-4ef8-a756-4fca3f285a82
 topic_type:
 - apiref
-ms.openlocfilehash: 71e2c7f6790f29872c051bb5cea50755068057e9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9f485728ddb050abf815bf8ba26c69be9c909785
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504041"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714969"
 ---
 # <a name="iclrruntimeinfo-interface"></a>ICLRRuntimeInfo, interface
+
 Fournit des méthodes qui retournent des informations sur un common language runtime spécifique (CLR), notamment la version, le répertoire et l’état de chargement. Cette interface fournit également des fonctionnalités spécifiques au runtime sans initialiser le Runtime. Il comprend la méthode [LoadLibrary](iclrruntimeinfo-loadlibrary-method.md) relative au runtime, la méthode [GetProcAddress](iclrruntimeinfo-getprocaddress-method.md) spécifique au module Runtime et les interfaces fournies par le runtime via la méthode [GetInterface](iclrruntimeinfo-getinterface-method.md) .  
   
 ## <a name="methods"></a>Méthodes  
@@ -42,15 +43,16 @@ Fournit des méthodes qui retournent des informations sur un common language run
 |[SetDefaultStartupFlags, méthode](iclrruntimeinfo-setdefaultstartupflags-method.md)|Définit les indicateurs de démarrage CLR et le fichier de configuration hôte.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

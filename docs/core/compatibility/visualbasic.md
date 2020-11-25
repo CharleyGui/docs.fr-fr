@@ -1,15 +1,15 @@
 ---
 title: Modifications avec rupture Visual Basic
-description: Répertorie les modifications avec rupture dans Visual Basic utilisé avec .NET Core.
+description: Répertorie les modifications avec rupture dans Visual Basic utilisé avec .NET Core 3,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: f6dd25586b9da173a4809cd4721bf2a39c9e0401
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b814edbf3a3a58d37b0a2b66a0e1c4f680f14b57
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555905"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713143"
 ---
-# <a name="visual-basic-breaking-changes"></a>Modifications avec rupture Visual Basic
+# <a name="visual-basic-breaking-changes-in-net-core-30"></a>Visual Basic modifications avec rupture dans .NET Core 3,0
 
 La liste suivante répertorie les dernières modifications apportées à Visual Basic :
 

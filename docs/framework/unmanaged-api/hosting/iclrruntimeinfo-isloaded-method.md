@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdc5a3a7-71ff-4025-99a1-59e4ee0bfe1b
 topic_type:
 - apiref
-ms.openlocfilehash: 45e27ac3c2d4912d2ed3e5d43ea3020b9db5dbdc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 66ae74deba9ceab9d1ea6b2c0b96a87bf44f32ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504028"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714924"
 ---
 # <a name="iclrruntimeinfoisloaded-method"></a>ICLRRuntimeInfo::IsLoaded, méthode
+
 Indique si le common language runtime (CLR) associé à l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) est chargé dans un processus. Un Runtime peut être chargé sans également être démarré.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT IsLoaded(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `hndProcess`  
  dans Handle du processus.  
   
@@ -41,6 +43,7 @@ HRESULT IsLoaded(
  [out] `true` Si le CLR est chargé dans le processus ; Sinon, `false` .  
   
 ## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -49,6 +52,7 @@ HRESULT IsLoaded(
 |E_POINTER|`pbLoaded` a la valeur null.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Cette méthode est à compatibilité descendante avec les fonctions et interfaces suivantes :  
   
 - [ICorRuntimeHost](icorruntimehost-interface.md) , interface (dans l’API d’hébergement .NET Framework version 1).  
@@ -62,11 +66,12 @@ HRESULT IsLoaded(
  Si l’hôte appelle ensuite la `IsLoaded` méthode sur l’interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) retournée, `pbLoaded` retourne `true` ; sinon, il retourne `false` .  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
@@ -74,4 +79,4 @@ HRESULT IsLoaded(
 
 - [ICLRRuntimeInfo, interface](iclrruntimeinfo-interface.md)
 - [Interfaces d'hébergement](hosting-interfaces.md)
-- [Hosting](index.md)
+- [Hébergement](index.md)

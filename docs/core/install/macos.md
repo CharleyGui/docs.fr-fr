@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 983c5d2c04b87759b898f449bc092161b03c8ace
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: f926479227f11def5c8bb8c6bf29ad30a04e6ed2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594454"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715132"
 ---
 # <a name="install-net-on-macos"></a>Installer .NET sur macOS
 
@@ -74,7 +74,7 @@ Le kit de développement logiciel (SDK) est utilisé pour générer et publier d
 > [!NOTE]
 > Un `+` symbole représente la version minimale.
 
-| Version de .NET Core | macOS                 | Architectures | Plus d’informations    |
+| Version de .NET Core | macOS                 | Architectures | Autres informations    |
 | ----------------- | --------------------- | --------------| --- |
 | 5.0               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) |
 | 3.1               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) |
@@ -94,7 +94,7 @@ Pour plus d’informations sur la façon dont l’application de la notaire affe
 
 Les applications .NET qui utilisent l’assembly *System. Drawing. Common* nécessitent l’installation de libgdiplus.
 
-Pour obtenir facilement des libgdiplus, vous pouvez utiliser le gestionnaire de package [Homebrew (« Brass »)](https://brew.sh/) pour MacOS. Après l’installation de la commande *infuse* , installez libgdiplus en exécutant les commandes suivantes à une invite de commandes :
+Pour obtenir facilement des libgdiplus, vous pouvez utiliser le gestionnaire de package [Homebrew (« Brass »)](https://brew.sh/) pour MacOS. Après l’installation de la commande *infuse*, installez libgdiplus en exécutant les commandes suivantes à une invite de commandes :
 
 ```console
 brew update
@@ -124,7 +124,7 @@ Ensuite, extrayez le fichier téléchargé et utilisez la `export` commande pour
 
 Pour extraire le runtime et rendre les commandes de l’interface de commande .NET CLI disponibles sur le terminal, commencez par télécharger une version binaire .NET. Ensuite, ouvrez un terminal et exécutez les commandes suivantes à partir du répertoire dans lequel le fichier a été enregistré. Le nom du fichier d’archive peut être différent en fonction de ce que vous avez téléchargé.
 
-**Utilisez la commande suivante pour extraire le runtime** :
+**Utilisez la commande suivante pour extraire le runtime**:
 
 ```bash
 mkdir -p "$HOME/dotnet" && tar zxf aspnetcore-runtime-5.0.0-osx-x64.tar.gz -C "$HOME/dotnet"
@@ -132,7 +132,7 @@ export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
 
-**Utilisez la commande suivante pour extraire le kit de développement logiciel (SDK)** :
+**Utilisez la commande suivante pour extraire le kit de développement logiciel (SDK)**:
 
 ```bash
 mkdir -p "$HOME/dotnet" && tar zxf dotnet-sdk-5.0.100-osx-x64.tar.gz -C "$HOME/dotnet"
@@ -143,11 +143,11 @@ export PATH=$PATH:$HOME/dotnet
 > [!TIP]
 > Les `export` commandes précédentes rendent uniquement les commandes de l’interface de commande .net CLI disponibles pour la session Terminal dans laquelle elle a été exécutée.
 >
-> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Exemple :
+> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Par exemple :
 >
-> - **Interpréteur** de commandes bash : *~/.bash_profile* , *~ fichier/.bashrc*
-> - **Shell Korn** : *~/.kshrc* ou *. Profile*
-> - **Z Shell** : *~/.zshrc* ou *. zprofile*
+> - **Interpréteur** de commandes bash : *~/.bash_profile*, *~ fichier/.bashrc*
+> - **Shell Korn**: *~/.kshrc* ou *. Profile*
+> - **Z Shell**: *~/.zshrc* ou *. zprofile*
 >
 > Modifiez le fichier source approprié pour votre shell et ajoutez `:$HOME/dotnet` à la fin de l' `PATH` instruction existante. Si aucune `PATH` instruction n’est incluse, ajoutez une nouvelle ligne avec `export PATH=$PATH:$HOME/dotnet` .
 >
@@ -181,7 +181,7 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation et les installations non administratives du Runtime. Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net 3,1. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](./windows.md).
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Vous pouvez choisir une version spécifique en spécifiant le `current` commutateur. Incluez le `runtime` commutateur pour installer un Runtime. Dans le cas contraire, le script installe le [Kit de développement logiciel (SDK)](./windows.md).
 
 ```bash
 ./dotnet-install.sh --channel 5.0 --runtime aspnetcore

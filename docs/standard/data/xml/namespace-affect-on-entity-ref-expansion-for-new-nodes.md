@@ -2,14 +2,15 @@
 title: Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs
 ms.date: 03/30/2017
 ms.assetid: 64359aee-aab0-4042-9a32-d19789af6ca7
-ms.openlocfilehash: 8ef86f05d2b39639ad5faae792eb9b2854ff0673
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1d3d0a8bddfa2ca68a7be63d09ae6873e994ed44
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830166"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714430"
 ---
 # <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a>Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs
+
 Le contenu d’une déclaration d’entité peut contenir pratiquement n’importe quel élément, c’est pourquoi il est possible qu’il comporte un élément tel que `<!ENTITY aname "<elem>test</elem>">`.  
   
  Lorsque le document XML est analysé, `&aname;` n’est pas développé avec son contenu de remplacement au moment de l’analyse. Le développement XML n’a pas lieu car la résolution de l’espace de noms pour l’élément ne peut se produire tant que le nœud n’est pas placé dans le document. Jusqu'alors, l'espace de noms figurant dans la portée n'est pas détectable. Lorsque le nœud est placé dans le document, la résolution de l’espace de noms se produit et le contenu d’entité résultant est analysé dans ses nœuds adéquats.  

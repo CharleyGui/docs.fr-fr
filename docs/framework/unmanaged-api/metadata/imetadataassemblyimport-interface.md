@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 29c6fba5-4cea-417d-b484-7ed22ebff1c9
 topic_type:
 - apiref
-ms.openlocfilehash: 2a67f50fa1042e8d3957a9a0394507f260a328c6
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c556fe247754b363ece0c5dc60750068276ddcc4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009013"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714755"
 ---
 # <a name="imetadataassemblyimport-interface"></a>IMetaDataAssemblyImport, interface
+
 Fournit des méthodes pour accéder au contenu d'un manifeste d'assembly et l'examiner.  
   
 ## <a name="methods"></a>Méthodes  
@@ -43,12 +44,13 @@ Fournit des méthodes pour accéder au contenu d'un manifeste d'assembly et l'ex
 |[GetFileProps, méthode](imetadataassemblyimport-getfileprops-method.md)|Obtient les paramètres de propriété du fichier spécifié.|  
 |[GetManifestResourceProps, méthode](imetadataassemblyimport-getmanifestresourceprops-method.md)|Obtient les paramètres de propriété de la ressource de manifeste spécifiée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateforme :** Consultez [Configuration système requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
