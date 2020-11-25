@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 75594833-bed3-47b2-a426-b75c5fe6fbcf
 topic_type:
 - apiref
-ms.openlocfilehash: fdbcbb2da8f449b9275d820763c2a94cca86cd1e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f7d76c72ed5db95425f5b1fa2db5e4346983daa4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500752"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696672"
 ---
 # <a name="cor_prf_suspend_reason-enumeration"></a>COR_PRF_SUSPEND_REASON, énumération
+
 Indique la raison pour laquelle le runtime est suspendu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,9 +53,11 @@ typedef enum {
 |`COR_PRF_SUSPEND_FOR_REJIT`|Le runtime est suspendu pour la recompilation JIT.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Tous les threads d’exécution qui se trouvent dans du code non managé sont autorisés à continuer à s’exécuter jusqu’à ce qu’ils essaient d’entrer à nouveau le Runtime. à partir de là, ils sont également suspendus jusqu’à la reprise du Runtime. Cela s’applique également aux nouveaux threads qui entrent dans le Runtime. Tous les threads au sein du runtime sont suspendus immédiatement s’ils sont dans le code interruptible, ou ils sont invités à s’interrompre lorsqu’ils atteignent du code interruptible.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

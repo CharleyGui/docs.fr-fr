@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 98b097ef-2276-4dd9-8551-b03c972e8179
 topic_type:
 - apiref
-ms.openlocfilehash: ccf48b6aea25bd602b55727c2e5958811702f6bf
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 34f996f4efe9c0db4c3f0f5277e30f53e91ec47f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696789"
 ---
 # <a name="iclrruntimeinfogetversionstring-method"></a>ICLRRuntimeInfo::GetVersionString, méthode
+
 Obtient les informations de version de common language runtime (CLR) associées à une interface [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) donnée.  
   
  Cette méthode remplace les fonctions suivantes :  
@@ -40,8 +41,9 @@ HRESULT GetVersionString(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pwzBuffer`  
- à Version de compilation .NET Framework au format «v*A*. *B*[.* X*]». *A*, *B*et *X* sont des nombres décimaux qui correspondent à la version principale, à la version mineure et au numéro de Build. *X* est facultatif. Si *X* n’est pas présent, il n’y a aucun point final.  
+ à Version de compilation .NET Framework au format «v *A*. *B*[.*X*]». *A*, *B* et *X* sont des nombres décimaux qui correspondent à la version principale, à la version mineure et au numéro de Build. *X* est facultatif. Si *X* n’est pas présent, il n’y a aucun point final.  
   
 > [!NOTE]
 > Ce paramètre doit correspondre au nom de répertoire de la version .NET Framework, tel qu’il apparaît sous C:\Windows\Microsoft.NET\Framework.  
@@ -51,7 +53,8 @@ HRESULT GetVersionString(
  `pchBuffer`  
  [in, out] Spécifie la taille de `pwzBuffer` pour éviter les dépassements de mémoire tampon. Si `pwzBuffer` a `null` la valeur, `pchBuffer` retourne la taille requise de `pwzBuffer` pour autoriser la préallocation.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
@@ -59,12 +62,13 @@ HRESULT GetVersionString(
 |S_OK|La commande s'est correctement terminée.|  
 |E_POINTER|`pwzBuffer` ou `pchBuffer` est null.|  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e8bb98f1-e477-45d2-8956-ba404137cd2d
 topic_type:
 - apiref
-ms.openlocfilehash: 4d08644307e48b607ef700876845a0f0aad13fc9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d4bddca6f1fe881099e80bd9269ab392b1207fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127104"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697023"
 ---
 # <a name="iassemblycachecreateassemblyscavenger-method"></a>IAssemblyCache::CreateAssemblyScavenger, méthode
+
 Réservé à un usage interne par la technologie de fusion.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,15 +35,17 @@ HRESULT CreateAssemblyScavenger (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppUnkReserved`  
- à Pointeur de `IUnknown` retourné.  
+ à Pointeur retourné `IUnknown` .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

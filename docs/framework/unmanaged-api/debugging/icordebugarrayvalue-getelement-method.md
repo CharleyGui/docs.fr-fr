@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7ac3cba5-c282-402e-b7ef-b46634f5176b
 topic_type:
 - apiref
-ms.openlocfilehash: 7a52e61f41bd1d7f68523dd16f70010ffbba401e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 0b6b6f46c7fff8f1d4c2ad555c93423f9ca8ac09
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895032"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698141"
 ---
 # <a name="icordebugarrayvaluegetelement-method"></a>ICorDebugArrayValue::GetElement, méthode
+
 Obtient la valeur de l’élément de tableau donné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetElement (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cdim`  
  dans Nombre de dimensions de cet `ICorDebugArrayValue` objet.  
   
@@ -45,12 +47,13 @@ HRESULT GetElement (
  `indices`  
  dans Tableau de valeurs d’index, chacune spécifiant une position dans une dimension de l' `ICorDebugArrayValue` objet.  
   
- Cette valeur ne doit pas être null.  
+ Cette valeur ne doit pas être Null.  
   
  `ppValue`  
  à Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur de l’élément spécifié.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

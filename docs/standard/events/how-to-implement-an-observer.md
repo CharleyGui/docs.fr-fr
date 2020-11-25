@@ -9,14 +9,15 @@ helpviewer_keywords:
 - observers [.NET], observer design pattern
 - observer design pattern [.NET], implementing observers
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
-ms.openlocfilehash: bfd595cec8e499b760f75f614bd0a61b031eb207
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 73f6d2c25c727717394c79268b71b44ea9ff7800
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697478"
 ---
 # <a name="how-to-implement-an-observer"></a>Comment : implémenter une méthode Observer
+
 Le modèle de design observateur requiert une division entre un observateur, qui s’inscrit pour recevoir des notifications, et un fournisseur, qui surveille les données et envie des notifications à un ou plusieurs observateurs. Cette rubrique décrit comment créer un observateur. Une rubrique connexe, [Guide pratique pour implémenter un fournisseur](how-to-implement-a-provider.md), explique comment créer un fournisseur.  
   
 ### <a name="to-create-an-observer"></a>Pour créer un observateur  
@@ -42,6 +43,7 @@ Le modèle de design observateur requiert une division entre un observateur, qui
      [!code-vb[Conceptual.ObserverDesign.HowTo#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/observer.vb#11)]  
   
 ## <a name="example"></a>Exemple  
+
  L’exemple suivant contient le code source complet de la classe `TemperatureReporter`, qui fournit l’implémentation <xref:System.IObserver%601> pour une application de surveillance de la température.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/observer.cs#12)]

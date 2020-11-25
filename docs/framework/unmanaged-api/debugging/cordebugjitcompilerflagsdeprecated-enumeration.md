@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: af15e2ca-6be1-472b-bd36-03644a1e3ddd
 topic_type:
 - apiref
-ms.openlocfilehash: 7b8a726cffcc00d7371675192a209b2d8e9db94d
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 8797f77388bf4992dfb69191ce8a844a9b7fdb8a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795779"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696438"
 ---
 # <a name="cordebugjitcompilerflagsdeprecated-enumeration"></a>CorDebugJITCompilerFlagsDeprecated, énumération
-Cette énumération est obsolète. Utilisez à `CORDEBUG_JIT_DEFAULT` la place le membre de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) .  
+
+Cette énumération est obsolète. Utilisez à la `CORDEBUG_JIT_DEFAULT` place le membre de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,9 +37,10 @@ typedef enum CorDebugJITCompilerFlagsDeprecated {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`CORDEBUG_JIT_TRACK_DEBUG_INFO`|Utilisez `CORDEBUG_JIT_DEFAULT` à la place.|  
+|`CORDEBUG_JIT_TRACK_DEBUG_INFO`|Utilisez plutôt `CORDEBUG_JIT_DEFAULT`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

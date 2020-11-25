@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f436bca-1b96-494b-a6d2-e102c7551752
-ms.openlocfilehash: 0895154e6932f32ebd3f5d1cf0d59bd557eb1b06
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 265275e3b200ec7bf38df997ace622f2056ad66f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822540"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697621"
 ---
 # <a name="remove-xml-data-using-xpathnavigator"></a>Suppression de données XML à l'aide de XPathNavigator
+
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de supprimer des nœuds et des valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
   
  Les objets <xref:System.Xml.XPath.XPathNavigator> qui permettent d'éditer un document XML sont créés par la méthode <xref:System.Xml.XmlDocument.CreateNavigator%2A> de la classe <xref:System.Xml.XmlDocument>. Les objets <xref:System.Xml.XPath.XPathNavigator> créés par la classe <xref:System.Xml.XPath.XPathDocument> sont en lecture seule et toute tentative d'utilisation des méthodes de modification d'un objet <xref:System.Xml.XPath.XPathNavigator> créé par un objet <xref:System.Xml.XPath.XPathDocument> se traduit par un objet <xref:System.NotSupportedException>.  
@@ -20,9 +21,11 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  Pour plus d’informations sur la création d’objets <xref:System.Xml.XPath.XPathNavigator> modifiables, consultez [Lecture de données XML à l’aide de XPathDocument et XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="removing-nodes"></a>Suppression de nœuds  
+
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> permettant de supprimer des nœuds d'un document XML.  
   
 ### <a name="removing-a-node"></a>Suppression d'un nœud  
+
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> permettant de supprimer d'un document XML le nœud actuel sur lequel l'objet <xref:System.Xml.XPath.XPathNavigator> est positionné.  
   
  Une fois qu'un nœud a été supprimé à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A>, il n'est plus accessible depuis la racine de l'objet <xref:System.Xml.XmlDocument>. Après la suppression d'un nœud, l'objet <xref:System.Xml.XPath.XPathNavigator> est positionné sur le nœud parent du nœud supprimé.  
@@ -69,17 +72,21 @@ Console.WriteLine(navigator.OuterXml);
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ### <a name="removing-an-attribute-node"></a>Suppression d'un nœud d'attribut  
+
  Les nœuds d'attribut d'un document XML se suppriment à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A>.  
   
  Une fois qu'un nœud d'attribut a été supprimé, il n'est plus accessible depuis le nœud racine d'un objet <xref:System.Xml.XmlDocument> et l'objet <xref:System.Xml.XPath.XPathNavigator> est positionné sur l'élément parent.  
   
 #### <a name="default-attributes"></a>Attributs par défaut  
+
  Quelle que soit la méthode utilisée pour la suppression des attributs, la suppression d'attributs définis comme des attributs par défaut dans la DTD ou dans le schéma XML du document XML est sujette à des restrictions spéciales. Les attributs par défaut ne peuvent pas être supprimés, à moins que l'élément auquel ils appartiennent ne le soit également. Il y a toujours des attributs par défaut pour les éléments pour lesquels des attributs par défaut ont été déclarés ; par conséquent, la suppression d'un attribut par défaut entraîne l'insertion, dans l'élément, d'un attribut de remplacement qui est initialisé à la valeur par défaut déclarée.  
   
 ## <a name="removing-values"></a>Suppression de valeurs  
+
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit les méthodes <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> et <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> permettant de supprimer des valeurs typées et non typées d'un document XML.  
   
 ### <a name="removing-untyped-values"></a>Suppression de valeurs non typées  
+
  La méthode <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> insère simplement la valeur `string` non typée transmise sous la forme d'un paramètre comme la valeur du nœud sur lequel l'objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné. La transmission d'une chaîne vide à la méthode <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> supprime la valeur du nœud actuel.  
   
  L'exemple suivant supprime la valeur de l'élément `price` du premier élément `book` du fichier `contosoBooks.xml` à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.SetValue%2A>.  
@@ -119,6 +126,7 @@ Console.WriteLine(navigator.OuterXml);
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ### <a name="removing-typed-values"></a>Suppression de valeurs typées  
+
  Si le type d'un nœud est un type simple des schémas XML du W3C, la nouvelle valeur insérée par la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> est vérifiée par rapport aux facettes du type simple avant d'être définie. Si la nouvelle valeur n'est pas valide par rapport au type du nœud (par exemple, une valeur est définie sur `-1` pour un élément dont le type est `xs:positiveInteger`), une exception se produit. De même, la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> ne peut pas recevoir la valeur `null` comme paramètre. Par conséquent, la suppression de la valeur d'un nœud typé doit être conforme au type de schéma du nœud.  
   
  L'exemple suivant supprime la valeur de l'élément `price` du premier élément `book` du fichier `contosoBooks.xml` à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> en définissant la valeur sur `0`. La valeur du nœud n'est pas supprimée, mais le prix du livre a été supprimé d'après son type de données (`xs:decimal`).  
@@ -166,9 +174,11 @@ Console.WriteLine(navigator.OuterXml);
 ```  
   
 ## <a name="namespace-nodes"></a>Nœuds d'espace de noms  
+
  Il est impossible de supprimer des nœuds d'espace de noms d'un objet <xref:System.Xml.XmlDocument>. Toute tentative de suppression des nœuds d'espace de noms avec la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A> produit une exception.  
   
 ## <a name="the-innerxml-and-outerxml-properties"></a>Propriétés InnerXml et OuterXml  
+
  Les propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> modifient le balisage XML des nœuds sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné.  
   
  La propriété <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné avec le contenu analysé de la `string` XML donnée. De même, la propriété <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> modifie le balisage XML des nœuds enfants sur lesquels un objet <xref:System.Xml.XPath.XPathNavigator> est actuellement positionné, ainsi que le nœud actuel proprement dit.  
@@ -176,6 +186,7 @@ Console.WriteLine(navigator.OuterXml);
  Outre les méthodes décrites dans cette rubrique, les propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> permettent de supprimer des nœuds et des valeurs d'un document XML. Pour plus d'informations sur l'utilisation des propriétés <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> et <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> pour modifier des nœuds, consultez la rubrique [Modification de données XML à l’aide de XPathNavigator](modify-xml-data-using-xpathnavigator.md).  
   
 ## <a name="saving-an-xml-document"></a>Enregistrement d'un document XML  
+
  L'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument> suite aux méthodes décrites dans cette rubrique s'effectue à l'aide des méthodes de la classe <xref:System.Xml.XmlDocument>. Pour plus d'informations sur l'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument>, consultez [Enregistrement et écriture d'un document](saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Voir aussi

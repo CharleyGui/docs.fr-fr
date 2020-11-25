@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-ms.openlocfilehash: fb9b5ee329b41a8b842b94d59bd61c8bcf5f0bf5
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: be797b1b3f288fd367d7f624e9cf33015dd114ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895146"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698271"
 ---
 # <a name="icordebugappdomain2getfunctionpointertype-method"></a>ICorDebugAppDomain2::GetFunctionPointerType, méthode
+
 Obtient un pointeur vers une fonction qui a une signature donnée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetFunctionPointerType (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `nTypeArgs`  
  dans Nombre d’arguments de type pour la fonction.  
   
@@ -45,7 +47,8 @@ HRESULT GetFunctionPointerType (
  `ppType`  
  à Pointeur vers l’adresse d’un `ICorDebugType` objet qui représente le pointeur vers la fonction.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

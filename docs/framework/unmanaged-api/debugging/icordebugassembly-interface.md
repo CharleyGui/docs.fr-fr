@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d657a28-6984-4c5e-8a54-89d20080baff
 topic_type:
 - apiref
-ms.openlocfilehash: d9e2236b944137de82bb056820f81014febfcc5f
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 821eae8ea5b4147408e9fe60d1e5b70c7936959e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894895"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696243"
 ---
 # <a name="icordebugassembly-interface"></a>ICorDebugAssembly, interface
 
@@ -30,17 +30,18 @@ Représente un assembly.
 |Méthode|Description|  
 |------------|-----------------|  
 |[EnumerateModules, méthode](icordebugassembly-enumeratemodules-method.md)|Obtient un énumérateur pour les modules contenus dans l’assembly.|  
-|[GetAppDomain, méthode](icordebugassembly-getappdomain-method.md)|Obtient un pointeur d’interface vers le domaine d’application qui `ICorDebugAssembly` contient cette instance.|  
+|[GetAppDomain, méthode](icordebugassembly-getappdomain-method.md)|Obtient un pointeur d’interface vers le domaine d’application qui contient cette `ICorDebugAssembly` instance.|  
 |[GetCodeBase, méthode](icordebugassembly-getcodebase-method.md)|Non implémenté dans la version actuelle du .NET Framework.|  
 |[GetName, méthode](icordebugassembly-getname-method.md)|Obtient le nom de l'assembly.|  
 |[GetProcess, méthode](icordebugassembly-getprocess-method.md)|Obtient l’instance ICorDebugProcess dans laquelle l’assembly est en cours d’exécution.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

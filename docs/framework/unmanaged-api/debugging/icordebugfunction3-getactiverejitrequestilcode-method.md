@@ -12,14 +12,15 @@ api_type:
 ms.assetid: 88584574-ade5-45b2-9778-489ed5c4dd7f
 topic_type:
 - apiref
-ms.openlocfilehash: 8c502c082c2cf90d87c195df531de686e2a6d914
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7ab5f8826da0b38fc9f92d9be955991a88d15f69
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544256"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695996"
 ---
 # <a name="icordebugfunction3getactiverejitrequestilcode-method"></a>ICorDebugFunction3::GetActiveReJitRequestILCode, méthode
+
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
  Obtient un pointeur d’interface vers un [ICorDebugILCode](icordebugilcode-interface.md) qui contient le langage intermédiaire d’une requête ReJIT active.  
@@ -33,15 +34,18 @@ HRESULT GetActiveReJitRequestILCode(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `ppReJitedILCode`  
  Un pointeur depuis une demande ReJIT active vers le langage intermédiaire.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
+
  Si la méthode représentée par cet objet `ICorDebugFunction3` a une demande ReJIT active, `ppReJitedILCode` retourne un pointeur vers son langage intermédiaire. S’il n’y a aucune requête active, ce qui est un cas courant, `ppReJitedILCode` est **null**.  
   
  Une requête ReJIT devient active juste après le retour de l’exécution de l’appel de la méthode [ICorProfilerCallback4 :: getrejitparameters,](../profiling/icorprofilercallback4-getrejitparameters-method.md) . Il est possible qu'elle ne soit pas encore compilée en mode juste-à-temps et que des threads soient toujours en cours d'exécution dans la version d'origine du code. Une requête ReJIT devient inactive pendant l’appel du profileur à la méthode [ICorProfilerInfo4 :: requestrevert,](../profiling/icorprofilerinfo4-requestrevert-method.md) . Même après le rétablissement du langage intermédiaire, un thread peut toujours être en train d'exécuter le code ReJIT (recompilé en mode juste-à-temps).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -54,4 +58,4 @@ HRESULT GetActiveReJitRequestILCode(
 
 - [ICorDebugFunction3, interface](icordebugfunction3-interface.md)
 - [Interfaces de débogage](debugging-interfaces.md)
-- [ReJIT : Guide pratique](/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT : Guide de How-To](/archive/blogs/davbr/rejit-a-how-to-guide)

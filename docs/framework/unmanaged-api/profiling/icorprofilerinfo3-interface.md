@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 044a262f-0fa7-485d-b0c1-64cdc359c654
 topic_type:
 - apiref
-ms.openlocfilehash: 0a474719935ba763cbd15dc6e18fe5ba99c14ebc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9944234da1677608aec10066b61bfc6a6cb72bcb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496306"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697855"
 ---
 # <a name="icorprofilerinfo3-interface"></a>ICorProfilerInfo3, interface
+
 Fournit des méthodes utilisées par les profileurs de code pour communiquer avec le Common Language Runtime (CLR) pour contrôler la surveillance des événements et demander des informations. L' `ICorProfilerInfo3` interface est une extension de l’interface [ICorProfilerInfo2](icorprofilerinfo2-interface.md) . Il fournit de nouvelles méthodes prises en charge dans le .NET Framework 4 et versions ultérieures.  
   
 ## <a name="methods"></a>Méthodes  
@@ -44,11 +45,13 @@ Fournit des méthodes utilisées par les profileurs de code pour communiquer ave
 |[SetFunctionIDMapper2, méthode](icorprofilerinfo3-setfunctionidmapper2-method.md)|Spécifie la fonction implémentée par le profileur qui sera appelée pour mapper des valeurs `FunctionID` sur d'autres valeurs, qui sont passées aux raccordements d'entrée/sortie de fonction du profileur. Cette méthode étend [ICorProfilerInfo :: SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md) avec un paramètre que les profileurs peuvent utiliser pour lever l’ambiguïté entre les runtimes.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Le CLR implémente les méthodes de l'interface `ICorProfilerInfo3` à l'aide du modèle libre de threads. Chaque méthode retourne un HRESULT pour indiquer la réussite ou l'échec. Pour obtenir la liste des codes de retour possibles, consultez le fichier CorError.h.  
   
  Le CLR passe une `ICorProfilerInfo3` interface à chaque profileur de code pendant l’initialisation, à l’aide de l’implémentation de la méthode [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) ou [ICorProfilerCallback3 :: InitializeForAttach](icorprofilercallback3-initializeforattach-method.md) du profileur. Un profileur de code peut ensuite appeler les méthodes `ICorProfilerInfo3` pour obtenir des informations sur le code managé qui est en cours d'exécution sous le contrôle du CLR.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: da941118-01b7-4197-ae5b-9f2f8adcd623
 topic_type:
 - apiref
-ms.openlocfilehash: e890c62a54654e86bb4a825613807efe142c8d5a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 747313f217092652d5a9404fbf81383fa0828ee9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500739"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696659"
 ---
 # <a name="cor_prf_transition_reason-enumeration"></a>COR_PRF_TRANSITION_REASON, énumération
+
 Indique la raison d'une transition de code managé en code non managé, ou l'inverse.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,9 +42,11 @@ typedef enum {
 |`COR_PRF_TRANSITION_RETURN`|La transition est due à un retour d’une fonction.|  
   
 ## <a name="remarks"></a>Remarques  
+
  Quand une transition se produit, le profileur reçoit un rappel [ICorProfilerCallback :: ManagedToUnmanagedTransition,](icorprofilercallback-managedtounmanagedtransition-method.md) ou [ICorProfilerCallback :: UnmanagedToManagedTransition](icorprofilercallback-unmanagedtomanagedtransition-method.md) , qui fournit une valeur de l' `COR_PRF_TRANSITION_REASON` énumération pour indiquer la raison de la transition.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

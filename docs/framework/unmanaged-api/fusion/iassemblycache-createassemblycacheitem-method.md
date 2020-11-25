@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 017a7ba5-aaaf-44e2-9cbe-ceebef259df0
 topic_type:
 - apiref
-ms.openlocfilehash: e3e50538bde8fe3509b49e3dbcb031875e6863e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b417377ea1d0746e563490d87cc9a988e857d943
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127119"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697036"
 ---
 # <a name="iassemblycachecreateassemblycacheitem-method"></a>IAssemblyCache::CreateAssemblyCacheItem, méthode
+
 Obtient une référence à un nouvel objet [IAssemblyCacheItem](iassemblycacheitem-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,8 +38,9 @@ HRESULT CreateAssemblyCacheItem (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `dwFlags`  
- dans Indicateurs définis dans fusion. idl. Les valeurs suivantes sont prises en charge :  
+ dans Indicateurs définis dans fusion. idl. Les valeurs suivantes sont admises :  
   
 - IASSEMBLYCACHE_INSTALL_FLAG_REFRESH (0x00000001)  
   
@@ -48,17 +50,18 @@ HRESULT CreateAssemblyCacheItem (
  dans Réservé pour une future extensibilité. `pvReserved` doit être une référence null.  
   
  `ppAsmItem`  
- à Pointeur de `IAssemblyCacheItem` retourné.  
+ à Pointeur retourné `IAssemblyCacheItem` .  
   
  `pszAssemblyName`  
- [in, facultatif] Les paires de `name=value` séparées par des virgules et non canoniques.  
+ [in, facultatif] Les paires non canoniques, séparées par des virgules `name=value` .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Fusion. h  
   
- **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

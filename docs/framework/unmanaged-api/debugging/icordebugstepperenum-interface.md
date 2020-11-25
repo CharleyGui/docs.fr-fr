@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 988718c1-1a4a-40f2-a04c-7d67e5cfe1e2
 topic_type:
 - apiref
-ms.openlocfilehash: c39c047cce97db7c98f1fad403bd16d0e6a2c0fe
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: facea5cd7f0b0e0e6c0b1049e87a2355f1d3965a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379452"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697166"
 ---
 # <a name="icordebugstepperenum-interface"></a>ICorDebugStepperEnum, interface
+
 Implémente les méthodes ICorDebugEnum et énumère les tableaux ICorDebugStepper.  
   
 ## <a name="methods"></a>Méthodes  
@@ -30,12 +31,13 @@ Implémente les méthodes ICorDebugEnum et énumère les tableaux ICorDebugStepp
 |------------|-----------------|  
 |[Next, méthode](icordebugstepperenum-next-method.md)|Obtient le nombre d' `ICorDebugStepper` instances spécifié à partir de l’énumération, en commençant à la position actuelle.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

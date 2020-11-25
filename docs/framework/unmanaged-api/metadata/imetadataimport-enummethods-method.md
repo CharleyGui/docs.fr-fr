@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8cc3b0c3-d97d-4f71-9e7d-ef2a92b4959a
 topic_type:
 - apiref
-ms.openlocfilehash: 91ae326a89e463d26b39c1659d872130042557bf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 00726b7e74bdedc658886cccbc4329eaf3ae76d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492011"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696802"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods, méthode
+
 Énumère les jetons MethodDef représentant les méthodes du type spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,6 +39,7 @@ HRESULT EnumMethods (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
@@ -57,15 +59,16 @@ HRESULT EnumMethods (
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethods`retourné avec succès.|  
+|`S_OK`|`EnumMethods` retourné avec succès.|  
 |`S_FALSE`|Il n’y a aucun jeton MethodDef à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

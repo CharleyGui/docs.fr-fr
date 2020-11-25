@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: e4412dc2-c338-4cfb-94d8-f682095dd2b1
 topic_type:
 - apiref
-ms.openlocfilehash: 4a65a98ee04c3870dae2f49b3da2a8e72b1ffae4
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 1c94e03aa088d8f48eb7f7a418cebd0492319513
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795828"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696594"
 ---
 # <a name="cordebuginternalframetype-enumeration"></a>CorDebugInternalFrameType, énumération
+
 Identifie le type de frame de pile. Cette énumération est utilisée par la méthode [ICorDebugInternalFrame :: GetFrameType,](icordebuginternalframe-getframetype-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,7 +48,7 @@ typedef enum CorDebugInternalFrameType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`STUBFRAME_NONE`|Valeur Null. La `ICorDebugInternalFrame::GetFrameType` méthode ne retourne jamais cette valeur.|  
+|`STUBFRAME_NONE`|Valeur null. La `ICorDebugInternalFrame::GetFrameType` méthode ne retourne jamais cette valeur.|  
 |`STUBFRAME_M2U`|Frame stub managé vers non managé.|  
 |`STUBFRAME_U2M`|Frame stub non managé vers managé.|  
 |`STUBFRAME_APPDOMAIN_TRANSITION`|Transition entre des domaines d’application.|  
@@ -59,7 +60,8 @@ typedef enum CorDebugInternalFrameType {
 |`STUBFRAME_SECURITY`|Frame utilisé pour la sécurité d’accès du code.|  
 |`STUBFRAME_JIT_COMPILATION`|Le runtime fait la compilation juste-à-temps d’une méthode.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

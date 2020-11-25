@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-ms.openlocfilehash: b8e503af11fa1d02aac2ec83edde0ffbd562d8e5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fdb2b1601e0164de19bcc1e8f60856346aeaacb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496397"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698011"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation, méthode
+
 Fournit des informations de version sur le common language runtime (CLR) en cours de profilage.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,6 +43,7 @@ HRESULT GetRuntimeInformation(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pClrInstanceId`  
  à ID représentatif d’une instance CLR en cours d’exécution dans un processus. Il s’agit du même que celui `ClrInstanceID` que l’événement de démarrage suivi d’événements pour Windows (ETW) signale.  
   
@@ -70,9 +72,11 @@ HRESULT GetRuntimeInformation(
  à Chaîne de version CLR.  
   
 ## <a name="remarks"></a>Remarques  
+
  Vous pouvez passer NULL pour n’importe quel paramètre. Toutefois, `pcchVersionString` ne peut pas avoir la valeur null, sauf si `szVersionString` a également la valeur null.  
   
 ## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

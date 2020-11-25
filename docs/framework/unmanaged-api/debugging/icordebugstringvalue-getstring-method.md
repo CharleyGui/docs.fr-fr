@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b94bda7-09ee-435d-91b9-c4e31af1896c
 topic_type:
 - apiref
-ms.openlocfilehash: 9c154d4ad561e0bd9d82adaca77d2e30f11a5237
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 9051fa612bef3fbd817ff7bdadbd52c96ade5b7f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379665"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697088"
 ---
 # <a name="icordebugstringvaluegetstring-method"></a>ICorDebugStringValue::GetString, méthode
+
 Obtient la chaîne référencée par cet ICorDebugStringValue.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetString (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cchString`  
  [in] Taille du tableau `szString`.  
   
@@ -46,7 +48,8 @@ HRESULT GetString (
  `szString`  
  à Tableau qui stocke la chaîne récupérée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

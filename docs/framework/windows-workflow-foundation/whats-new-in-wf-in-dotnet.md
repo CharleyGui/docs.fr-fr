@@ -1,18 +1,18 @@
 ---
-title: Nouveautés de Windows Workflow Foundation dans .NET 4.5
+title: Nouveautés de Windows Workflow Foundation dans .NET Framework 4,5
 description: Windows Workflow Foundation dans .NET Framework 4,5 introduit de nombreuses nouvelles fonctionnalités, telles que les nouvelles activités, les fonctionnalités de concepteur et les modèles de développement de Workflow.
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: b115a0a5bb5e425e808270d3daf8bb0aeb942b3c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0d7086fd5ff9bfa410568a74092be3e29f732e23
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697907"
 ---
-# <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Nouveautés de Windows Workflow Foundation dans .NET 4.5
+# <a name="whats-new-in-windows-workflow-foundation-in-net-framework-45"></a>Nouveautés de Windows Workflow Foundation dans .NET Framework 4,5
 
-Windows Workflow Foundation (WF) dans .NET Framework 4,5 introduit de nombreuses nouvelles fonctionnalités, telles que les nouvelles activités, les fonctionnalités de concepteur et les modèles de développement de flux de travail. La plupart des nouvelles fonctionnalités de workflow introduites dans .NET Framework 4,5 sont prises en charge dans le concepteur de flux de travail réhébergé. Pour plus d’informations sur les nouvelles fonctionnalités prises en charge, consultez [prise en charge des nouvelles fonctionnalités de Workflow Foundation 4,5 dans le concepteur de flux de travail réhébergé](wf-features-in-the-rehosted-workflow-designer.md). Pour plus d’informations sur la migration des applications de flux de travail .NET 3,0 et .NET 3,5 afin d’utiliser la dernière version, consultez [Guide de migration](migration-guidance.md). Cette rubrique fournit une vue d’ensemble des nouvelles fonctionnalités de workflow introduites dans .NET Framework 4,5.
+Windows Workflow Foundation (WF) dans .NET Framework 4,5 introduit de nombreuses nouvelles fonctionnalités, telles que les nouvelles activités, les fonctionnalités de concepteur et les modèles de développement de flux de travail. La plupart des nouvelles fonctionnalités de workflow introduites dans .NET Framework 4,5 sont prises en charge dans le concepteur de flux de travail réhébergé. Pour plus d’informations sur les nouvelles fonctionnalités prises en charge, consultez [prise en charge des nouvelles fonctionnalités de Workflow Foundation 4,5 dans le concepteur de flux de travail réhébergé](wf-features-in-the-rehosted-workflow-designer.md). Pour plus d’informations sur la migration des applications de flux de travail .NET Framework 3,0 et .NET Framework 3,5 afin d’utiliser la version la plus récente, consultez [Guide de migration](migration-guidance.md). Cet article fournit une vue d’ensemble des nouvelles fonctionnalités de workflow introduites dans .NET Framework 4,5.
 
 > [!WARNING]
 > Les nouvelles fonctionnalités de Windows Workflow Foundation introduites dans .NET Framework 4,5 ne sont pas disponibles pour les projets qui ciblent des versions antérieures du Framework. Si un projet qui cible .NET Framework 4,5 est reciblé vers une version antérieure du Framework, plusieurs problèmes peuvent se produire.

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22c27b01-2869-4214-b840-5921f7c874fc
 topic_type:
 - apiref
-ms.openlocfilehash: 7da12554ba1db9a467aa03c01bfb3b584125b129
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 55f219b5b834f365b87440e69bfa7d2c4e519235
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213190"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696088"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a>ICorDebugFunction2::SetJMCStatus, méthode
+
 Marque la fonction représentée par ce ICorDebugFunction2 pour Uniquement mon code pas à pas.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,6 +35,7 @@ HRESULT SetJMCStatus (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `bIsJustMyCode`  
  dans Affectez la valeur à pour `true` marquer la fonction en tant que code utilisateur ; sinon, affectez à la valeur `false` .  
   
@@ -44,10 +46,12 @@ HRESULT SetJMCStatus (
 |`S_OK`|La fonction a été marquée avec succès.|  
 |`CORDBG_E_FUNCTION_NOT_DEBUGGABLE`|La fonction n’a pas pu être marquée comme code utilisateur, car elle ne peut pas être déboguée.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Remarques  
+
  Une Uniquement mon code pas à pas permet d’ignorer le code non-utilisateur. Le code utilisateur doit être un sous-ensemble du code pouvant être débogué.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
