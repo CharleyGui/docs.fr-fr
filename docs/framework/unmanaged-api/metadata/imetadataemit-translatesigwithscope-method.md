@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-ms.openlocfilehash: 7ef6dbc46806febc6fba89b39a8b894377225c23
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 80d33da2eb2a7f0cfbe5dcb7279fff9973dada2e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84003956"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712922"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope, méthode
+
 Importe un assembly dans la portée actuelle et obtient une nouvelle signature de métadonnées pour la portée fusionnée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -44,6 +45,7 @@ HRESULT TranslateSigWithScope (
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `pAssemImport`  
  dans Interface pour l’assembly d’importation (où la signature est définie).  
   
@@ -77,12 +79,13 @@ HRESULT TranslateSigWithScope (
  `pcbTranslatedSig`  
  à Nombre d’octets réels dans la signature traduite.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE.dll  
   
  **Versions de .NET Framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
