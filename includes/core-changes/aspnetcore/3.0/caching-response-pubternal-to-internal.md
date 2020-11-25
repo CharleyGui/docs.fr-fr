@@ -1,46 +1,46 @@
 ---
 ms.openlocfilehash: ae5a5fbf97ed4a03de7d35b9d5d5ca8de3aebc39
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394039"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032464"
 ---
-### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a><span data-ttu-id="429fa-101">Mise en cache : les types « pubternal » ResponseCaching sont devenus internes</span><span class="sxs-lookup"><span data-stu-id="429fa-101">Caching: ResponseCaching "pubternal" types changed to internal</span></span>
+### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a><span data-ttu-id="5371a-101">Mise en cache : les types « pubternal » ResponseCaching sont devenus internes</span><span class="sxs-lookup"><span data-stu-id="5371a-101">Caching: ResponseCaching "pubternal" types changed to internal</span></span>
 
-<span data-ttu-id="429fa-102">Dans ASP.NET Core 3,0, les types « pubternal » `ResponseCaching` dans ont été remplacés `internal`par.</span><span class="sxs-lookup"><span data-stu-id="429fa-102">In ASP.NET Core 3.0, "pubternal" types in `ResponseCaching` have been changed to `internal`.</span></span>
+<span data-ttu-id="5371a-102">Dans ASP.NET Core 3,0, les types « pubternal » dans `ResponseCaching` ont été remplacés par `internal` .</span><span class="sxs-lookup"><span data-stu-id="5371a-102">In ASP.NET Core 3.0, "pubternal" types in `ResponseCaching` have been changed to `internal`.</span></span>
 
-<span data-ttu-id="429fa-103">En outre, les implémentations par `IResponseCachingPolicyProvider` défaut `IResponseCachingKeyProvider` de et de ne sont plus ajoutées aux services dans `AddResponseCaching` le cadre de la méthode.</span><span class="sxs-lookup"><span data-stu-id="429fa-103">In addition, default implementations of `IResponseCachingPolicyProvider` and `IResponseCachingKeyProvider` are no longer added to services as part of the `AddResponseCaching` method.</span></span>
+<span data-ttu-id="5371a-103">En outre, les implémentations par défaut de `IResponseCachingPolicyProvider` et de `IResponseCachingKeyProvider` ne sont plus ajoutées aux services dans le cadre de la `AddResponseCaching` méthode.</span><span class="sxs-lookup"><span data-stu-id="5371a-103">In addition, default implementations of `IResponseCachingPolicyProvider` and `IResponseCachingKeyProvider` are no longer added to services as part of the `AddResponseCaching` method.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="429fa-104">Description de la modification</span><span class="sxs-lookup"><span data-stu-id="429fa-104">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="5371a-104">Description de la modification</span><span class="sxs-lookup"><span data-stu-id="5371a-104">Change description</span></span>
 
-<span data-ttu-id="429fa-105">Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public` , mais résident dans un espace de `.Internal`noms avec le suffixe.</span><span class="sxs-lookup"><span data-stu-id="429fa-105">In ASP.NET Core, "pubternal" types are declared as `public` but reside in a namespace suffixed with `.Internal`.</span></span> <span data-ttu-id="429fa-106">Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture.</span><span class="sxs-lookup"><span data-stu-id="429fa-106">While these types are public, they have no support policy and are subject to breaking changes.</span></span> <span data-ttu-id="429fa-107">Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.</span><span class="sxs-lookup"><span data-stu-id="429fa-107">Unfortunately, accidental use of these types has been common, resulting in breaking changes to these projects and limiting the ability to maintain the framework.</span></span>
+<span data-ttu-id="5371a-105">Dans ASP.NET Core, les types « pubternal » sont déclarés comme, `public` mais résident dans un espace de noms avec le suffixe `.Internal` .</span><span class="sxs-lookup"><span data-stu-id="5371a-105">In ASP.NET Core, "pubternal" types are declared as `public` but reside in a namespace suffixed with `.Internal`.</span></span> <span data-ttu-id="5371a-106">Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture.</span><span class="sxs-lookup"><span data-stu-id="5371a-106">While these types are public, they have no support policy and are subject to breaking changes.</span></span> <span data-ttu-id="5371a-107">Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.</span><span class="sxs-lookup"><span data-stu-id="5371a-107">Unfortunately, accidental use of these types has been common, resulting in breaking changes to these projects and limiting the ability to maintain the framework.</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="429fa-108">Version introduite</span><span class="sxs-lookup"><span data-stu-id="429fa-108">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="5371a-108">Version introduite</span><span class="sxs-lookup"><span data-stu-id="5371a-108">Version introduced</span></span>
 
-<span data-ttu-id="429fa-109">3.0</span><span class="sxs-lookup"><span data-stu-id="429fa-109">3.0</span></span>
+<span data-ttu-id="5371a-109">3.0</span><span class="sxs-lookup"><span data-stu-id="5371a-109">3.0</span></span>
 
-#### <a name="old-behavior"></a><span data-ttu-id="429fa-110">Ancien comportement</span><span class="sxs-lookup"><span data-stu-id="429fa-110">Old behavior</span></span>
+#### <a name="old-behavior"></a><span data-ttu-id="5371a-110">Ancien comportement</span><span class="sxs-lookup"><span data-stu-id="5371a-110">Old behavior</span></span>
 
-<span data-ttu-id="429fa-111">Ces types étaient visibles publiquement, mais ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="429fa-111">These types were publicly visible, but unsupported.</span></span>
+<span data-ttu-id="5371a-111">Ces types étaient visibles publiquement, mais ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="5371a-111">These types were publicly visible, but unsupported.</span></span>
 
-#### <a name="new-behavior"></a><span data-ttu-id="429fa-112">Nouveau comportement</span><span class="sxs-lookup"><span data-stu-id="429fa-112">New behavior</span></span>
+#### <a name="new-behavior"></a><span data-ttu-id="5371a-112">Nouveau comportement</span><span class="sxs-lookup"><span data-stu-id="5371a-112">New behavior</span></span>
 
-<span data-ttu-id="429fa-113">Ces types sont maintenant `internal`.</span><span class="sxs-lookup"><span data-stu-id="429fa-113">These types are now `internal`.</span></span>
+<span data-ttu-id="5371a-113">Ces types sont maintenant `internal` .</span><span class="sxs-lookup"><span data-stu-id="5371a-113">These types are now `internal`.</span></span>
 
-#### <a name="reason-for-change"></a><span data-ttu-id="429fa-114">Motif de modification</span><span class="sxs-lookup"><span data-stu-id="429fa-114">Reason for change</span></span>
+#### <a name="reason-for-change"></a><span data-ttu-id="5371a-114">Motif de modification</span><span class="sxs-lookup"><span data-stu-id="5371a-114">Reason for change</span></span>
 
-<span data-ttu-id="429fa-115">L' `internal` étendue reflète mieux la stratégie non prise en charge.</span><span class="sxs-lookup"><span data-stu-id="429fa-115">The `internal` scope better reflects the unsupported policy.</span></span>
+<span data-ttu-id="5371a-115">L' `internal` étendue reflète mieux la stratégie non prise en charge.</span><span class="sxs-lookup"><span data-stu-id="5371a-115">The `internal` scope better reflects the unsupported policy.</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="429fa-116">Action recommandée</span><span class="sxs-lookup"><span data-stu-id="429fa-116">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="5371a-116">Action recommandée</span><span class="sxs-lookup"><span data-stu-id="5371a-116">Recommended action</span></span>
 
-<span data-ttu-id="429fa-117">Copiez les types utilisés par votre application ou bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="429fa-117">Copy types that are used by your app or library.</span></span>
+<span data-ttu-id="5371a-117">Copiez les types utilisés par votre application ou bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="5371a-117">Copy types that are used by your app or library.</span></span>
 
-#### <a name="category"></a><span data-ttu-id="429fa-118">Category</span><span class="sxs-lookup"><span data-stu-id="429fa-118">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="5371a-118">Category</span><span class="sxs-lookup"><span data-stu-id="5371a-118">Category</span></span>
 
-<span data-ttu-id="429fa-119">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="429fa-119">ASP.NET Core</span></span>
+<span data-ttu-id="5371a-119">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5371a-119">ASP.NET Core</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="429fa-120">API affectées</span><span class="sxs-lookup"><span data-stu-id="429fa-120">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="5371a-120">API affectées</span><span class="sxs-lookup"><span data-stu-id="5371a-120">Affected APIs</span></span>
 
 - `Microsoft.AspNetCore.ResponseCaching.Internal.CachedResponse`
 - `Microsoft.AspNetCore.ResponseCaching.Internal.CachedVaryByRules`

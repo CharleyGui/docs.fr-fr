@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: b55de00188d92623c493dfc5f9aca915890ae5df
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021464"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032007"
 ---
-### <a name="private-fields-added-to-built-in-struct-types"></a><span data-ttu-id="b2939-101">Champs privés ajoutés aux types de struct intégrés</span><span class="sxs-lookup"><span data-stu-id="b2939-101">Private fields added to built-in struct types</span></span>
+### <a name="private-fields-added-to-built-in-struct-types"></a><span data-ttu-id="03957-101">Champs privés ajoutés aux types struct intégrés</span><span class="sxs-lookup"><span data-stu-id="03957-101">Private fields added to built-in struct types</span></span>
 
-<span data-ttu-id="b2939-102">Des champs privés ont été ajoutés à [certains types de struct](#affected-apis) dans [les assemblages de référence.](../../../../docs/standard/assembly/reference-assemblies.md)</span><span class="sxs-lookup"><span data-stu-id="b2939-102">Private fields were added to [certain struct types](#affected-apis) in [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md).</span></span> <span data-ttu-id="b2939-103">Par conséquent, dans le C, ces types de struct doivent toujours être instantanés en utilisant le [nouvel opérateur](../../../../docs/csharp/language-reference/operators/new-operator.md) ou par [défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="b2939-103">As a result, in C#, those struct types must always be instantiated by using the [new operator](../../../../docs/csharp/language-reference/operators/new-operator.md) or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
+<span data-ttu-id="03957-102">Des champs privés ont été ajoutés à [certains types struct](#affected-apis) dans des [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="03957-102">Private fields were added to [certain struct types](#affected-apis) in [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md).</span></span> <span data-ttu-id="03957-103">Par conséquent, en C#, ces types struct doivent toujours être instanciés à l’aide du [nouvel opérateur](../../../../docs/csharp/language-reference/operators/new-operator.md) ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="03957-103">As a result, in C#, those struct types must always be instantiated by using the [new operator](../../../../docs/csharp/language-reference/operators/new-operator.md) or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="b2939-104">Description de la modification</span><span class="sxs-lookup"><span data-stu-id="b2939-104">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="03957-104">Description de la modification</span><span class="sxs-lookup"><span data-stu-id="03957-104">Change description</span></span>
 
-<span data-ttu-id="b2939-105">Dans .NET Core 2.0 et les versions précédentes, <xref:System.ConsoleKeyInfo>certains types de struct `new` fournis, par exemple, pourraient être instantanés sans utiliser l’opérateur ou [par défaut littéral](../../../../docs/csharp/language-reference/operators/default.md#default-literal) dans C.</span><span class="sxs-lookup"><span data-stu-id="b2939-105">In .NET Core 2.0 and previous versions, some provided struct types, for example, <xref:System.ConsoleKeyInfo>, could be instantiated without using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal) in C#.</span></span> <span data-ttu-id="b2939-106">C’est parce que les [assemblages de référence](../../../../docs/standard/assembly/reference-assemblies.md) utilisés par le compilateur C ne contenait pas les champs privés pour les structs.</span><span class="sxs-lookup"><span data-stu-id="b2939-106">This was because the [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md) used by the C# compiler didn't contain the private fields for the structs.</span></span> <span data-ttu-id="b2939-107">Tous les champs privés pour les types de struct .NET sont ajoutés aux assemblages de référence à partir de .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="b2939-107">All private fields for .NET struct types are added to the reference assemblies starting in .NET Core 2.1.</span></span>
+<span data-ttu-id="03957-105">Dans .NET Core 2,0 et versions antérieures, certains types de struct fournis, par exemple, <xref:System.ConsoleKeyInfo> peuvent être instanciés sans utiliser l' `new` opérateur ou le [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal) en C#.</span><span class="sxs-lookup"><span data-stu-id="03957-105">In .NET Core 2.0 and previous versions, some provided struct types, for example, <xref:System.ConsoleKeyInfo>, could be instantiated without using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal) in C#.</span></span> <span data-ttu-id="03957-106">Cela était dû au fait que les [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md) utilisés par le compilateur C# ne contenaient pas de champs privés pour les structs.</span><span class="sxs-lookup"><span data-stu-id="03957-106">This was because the [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md) used by the C# compiler didn't contain the private fields for the structs.</span></span> <span data-ttu-id="03957-107">Tous les champs privés pour les types struct .NET sont ajoutés aux assemblys de référence à partir de .NET Core 2,1.</span><span class="sxs-lookup"><span data-stu-id="03957-107">All private fields for .NET struct types are added to the reference assemblies starting in .NET Core 2.1.</span></span>
 
-<span data-ttu-id="b2939-108">Par exemple, le code Cmd suivant compile en .NET Core 2.0, mais pas en .NET Core 2.1 :</span><span class="sxs-lookup"><span data-stu-id="b2939-108">For example, the following C# code compiles in .NET Core 2.0, but not in .NET Core 2.1:</span></span>
+<span data-ttu-id="03957-108">Par exemple, le code C# suivant est compilé dans .NET Core 2,0, mais pas dans .NET Core 2,1 :</span><span class="sxs-lookup"><span data-stu-id="03957-108">For example, the following C# code compiles in .NET Core 2.0, but not in .NET Core 2.1:</span></span>
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,17 +25,17 @@ if (key.ToString() == "y")
 }
 ```
 
-<span data-ttu-id="b2939-109">Dans .NET Core 2.1, le code précédent se traduit par l’erreur compilateur suivante: **CS0165 - Utilisation de la variable locale non assignée 'clé'**</span><span class="sxs-lookup"><span data-stu-id="b2939-109">In .NET Core 2.1, the previous code results in the following compiler error: **CS0165 - Use of unassigned local variable 'key'**</span></span>
+<span data-ttu-id="03957-109">Dans .NET Core 2,1, le code précédent génère l’erreur de compilateur suivante : **CS0165-utilisation d’une variable locale non assignée’key'**</span><span class="sxs-lookup"><span data-stu-id="03957-109">In .NET Core 2.1, the previous code results in the following compiler error: **CS0165 - Use of unassigned local variable 'key'**</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="b2939-110">Version introduite</span><span class="sxs-lookup"><span data-stu-id="b2939-110">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="03957-110">Version introduite</span><span class="sxs-lookup"><span data-stu-id="03957-110">Version introduced</span></span>
 
-<span data-ttu-id="b2939-111">2.1</span><span class="sxs-lookup"><span data-stu-id="b2939-111">2.1</span></span>
+<span data-ttu-id="03957-111">2.1</span><span class="sxs-lookup"><span data-stu-id="03957-111">2.1</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="b2939-112">Action recommandée</span><span class="sxs-lookup"><span data-stu-id="b2939-112">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="03957-112">Action recommandée</span><span class="sxs-lookup"><span data-stu-id="03957-112">Recommended action</span></span>
 
-<span data-ttu-id="b2939-113">Instantiate struct types `new` en utilisant l’opérateur ou [par défaut littérale](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="b2939-113">Instantiate struct types by using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
+<span data-ttu-id="03957-113">Instanciez des types struct à l’aide de l' `new` opérateur ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="03957-113">Instantiate struct types by using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
 
-<span data-ttu-id="b2939-114">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="b2939-114">For example:</span></span>
+<span data-ttu-id="03957-114">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="03957-114">For example:</span></span>
 
 ```csharp
 ConsoleKeyInfo key = new ConsoleKeyInfo();    // Struct type.
@@ -51,11 +51,11 @@ if (key.ToString() == "y")
     Console.WriteLine("Yes!");
 ```
 
-#### <a name="category"></a><span data-ttu-id="b2939-115">Category</span><span class="sxs-lookup"><span data-stu-id="b2939-115">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="03957-115">Category</span><span class="sxs-lookup"><span data-stu-id="03957-115">Category</span></span>
 
-<span data-ttu-id="b2939-116">Core .NET bibliothèques</span><span class="sxs-lookup"><span data-stu-id="b2939-116">Core .NET libraries</span></span>
+<span data-ttu-id="03957-116">Bibliothèques .NET Core</span><span class="sxs-lookup"><span data-stu-id="03957-116">Core .NET libraries</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="b2939-117">API affectées</span><span class="sxs-lookup"><span data-stu-id="b2939-117">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="03957-117">API affectées</span><span class="sxs-lookup"><span data-stu-id="03957-117">Affected APIs</span></span>
 
 - <xref:System.ArraySegment%601.Enumerator?displayProperty=fullName>
 - <xref:System.ArraySegment%601?displayProperty=fullName>
