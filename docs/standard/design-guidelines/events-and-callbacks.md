@@ -7,14 +7,15 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: 82c1df01197e04d14436b6e5b3b2c6aaa249add2
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c63a88cb4e500504f993352a03478f40cad58400
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821227"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734729"
 ---
 # <a name="events-and-callbacks"></a>Événements et rappels
+
 Les rappels sont des points d’extensibilité qui permettent à un Framework d’effectuer un rappel dans le code utilisateur via un délégué. Ces délégués sont généralement passés à l’infrastructure par le biais d’un paramètre d’une méthode.
 
  Les événements sont un cas spécial de rappels qui prend en charge une syntaxe pratique et cohérente pour fournir le délégué (un gestionnaire d’événements). En outre, la saisie semi-automatique des instructions de Visual Studio et les concepteurs fournissent de l’aide pour l’utilisation des API basées sur les événements. (Voir [conception des événements](event.md).)

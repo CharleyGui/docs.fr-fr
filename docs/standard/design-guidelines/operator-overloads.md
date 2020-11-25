@@ -7,14 +7,15 @@ helpviewer_keywords:
 - member design guidelines, operators
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
-ms.openlocfilehash: 40e1c6a4a65bfc20c94223e4012e34928b25a2ab
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7757e6cfdb9ae31f6e94c26a2684f8176174499a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830036"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734814"
 ---
 # <a name="operator-overloads"></a>Surcharges d'opérateurs
+
 Les surcharges d’opérateur permettent d’afficher les types de Framework comme s’ils étaient des primitives de langage intégrées.
 
  Bien qu’elles soient autorisées et utiles dans certains cas, les surcharges d’opérateur doivent être utilisées avec prudence. Il existe de nombreux cas dans lesquels la surcharge d’opérateur a été abusée, par exemple quand les concepteurs de Framework ont commencé à utiliser des opérateurs pour les opérations qui doivent être des méthodes simples. Les instructions suivantes doivent vous aider à déterminer quand et comment utiliser la surcharge d’opérateur.
@@ -85,9 +86,11 @@ Les surcharges d’opérateur permettent d’afficher les types de Framework com
 |`~`|`op_OnesComplement`|`OnesComplement`|
 
 ### <a name="overloading-operator-"></a>Surcharge de l’opérateur = =
+
  La surcharge `operator ==` est assez complexe. La sémantique de l’opérateur doit être compatible avec plusieurs autres membres, tels que <xref:System.Object.Equals%2A?displayProperty=nameWithType> .
 
 ### <a name="conversion-operators"></a>Opérateurs de conversion
+
  Les opérateurs de conversion sont des opérateurs unaires qui autorisent la conversion d’un type en un autre. Les opérateurs doivent être définis en tant que membres statiques sur l’opérande ou le type de retour. Il existe deux types d’opérateurs de conversion : implicites et explicites.
 
  ❌ NE fournissez pas d’opérateur de conversion si une telle conversion n’est pas clairement attendue par les utilisateurs finaux.

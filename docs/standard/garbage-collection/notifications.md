@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
-ms.openlocfilehash: c91712b9d25221f1ffd9e9e980c420be32e2379a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 70343851ba73af9041014e8654f5df82d8389c39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831180"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734775"
 ---
 # <a name="garbage-collection-notifications"></a>Notifications de garbage collection
+
 Il existe des cas où une opération garbage collection complète (c’est-à-dire, une opération garbage collection de génération 2) par le CLR peut avoir des effets néfastes sur les performances. Cela peut être particulièrement problématique avec les serveurs qui traitent de gros volumes de requêtes ; dans ce cas, une longue garbage collection peut entraîner un délai d’attente de requête. Pour éviter qu’une collecte complète ne se produise pendant une période critique, vous pouvez être averti qu’une garbage collection complète approche, puis agir pour rediriger la charge de travail vers une autre instance de serveur. Vous pouvez également déclencher vous-même une collection, sous réserve que l’instance de serveur actuelle n’a pas besoin de traiter de requêtes.  
   
  La méthode <xref:System.GC.RegisterForFullGCNotification%2A> permet de déclencher une notification lorsque le runtime détecte qu’un garbage collection complet est sur le point de se produire. Cette notification est divisée en deux parties : lorsqu’un garbage collection complet est imminent et lorsque le garbage collection complet est terminé.  
@@ -32,6 +33,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
  Les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A> sont conçues pour fonctionner ensemble. Le fait d’utiliser l’une sans l’autre peut produire des résultats indéterminés.  
   
 ## <a name="full-garbage-collection"></a>Garbage collection complet  
+
  Le runtime génère un garbage collection complet lorsque l’un des scénarios suivants est vrai :  
   
 - Une quantité suffisante de mémoire a été promue au niveau génération 2 pour entraîner le garbage collection de génération 2 suivant.  
@@ -49,6 +51,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
  Le troisième scénario contribue également à l’incertitude sur la réception de la notification. Bien que cela ne soit pas garanti, cela peut constituer un moyen utile pour atténuer les effets d’un garbage collection complet intempestif en redirigeant les requêtes durant ce laps de temps ou en déclenchant vous-même la collection lorsque cela est approprié.  
   
 ## <a name="notification-threshold-parameters"></a>Paramètres de seuil de notification  
+
  La méthode <xref:System.GC.RegisterForFullGCNotification%2A> possède deux paramètres pour spécifier les valeurs de seuil des objets de génération 2 et le tas d’objets volumineux. Lorsque ces valeurs sont atteintes, une notification de garbage collection doit être déclenchée. Le tableau suivant décrit ces paramètres.  
   
 |Paramètre|Description|  
@@ -63,6 +66,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
+
  Dans l’exemple suivant, un groupe de serveurs traitent des requêtes web entrantes. Pour simuler la charge de travail de traitement des requêtes, des tableaux d’octets sont ajoutés à une collection <xref:System.Collections.Generic.List%601>. Chaque serveur s’inscrit pour une notification de garbage collection, puis démarre un thread sur la méthode utilisateur `WaitForFullGCProc` afin de surveiller en permanence l’énumération <xref:System.GCNotificationStatus> retournée par les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A>.  
   
  Les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A> appellent leurs méthodes utilisateur de gestion des événements respectives lorsqu’une notification est levée :  

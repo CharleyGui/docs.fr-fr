@@ -9,12 +9,12 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: dc0da9842df7b0a827293c42d80ccdd418a043b2
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4a179bff7ec7988c5b7410fa99eab346d4add1df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819199"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734827"
 ---
 # <a name="memory-mapped-files"></a>Fichiers mappés en mémoire
 
@@ -31,6 +31,7 @@ Il existe deux types de fichiers mappés en mémoire :
      Les non fichiers persistants sont des fichiers mappés en mémoire associés à un fichier sur un disque. Lorsque le dernier processus a fini de travailler avec le fichier, les données sont perdues et l'espace mémoire est récupéré par le nettoyage de la mémoire. Ces fichiers sont adaptés à la création d’une mémoire partagée pour les communications entre processus (IPC).  
   
 ## <a name="processes-views-and-managing-memory"></a>Processus, vues et gestion de la mémoire  
+
  Les fichiers mappés en mémoire ne peuvent pas être partagé entre plusieurs processus. Des processus peuvent être mappés dans le même fichier mappé en mémoire à l’aide d’un nom commun attribué par le processus qui a créé le fichier.  
   
  Pour utiliser un fichier mappé en mémoire, vous devez créer une vue de l’intégralité du fichier mappé en mémoire ou une partie de celui-ci. Vous pouvez également créer plusieurs vues dans la même partie du fichier mappé en mémoire et créer ainsi une mémoire simultanée. Pour que deux vues restent simultanées, elles doivent être créées à partir du même fichier mappé en mémoire.  
@@ -48,6 +49,7 @@ Il existe deux types de fichiers mappés en mémoire :
  ![Capture d’écran qui montre des vues dans un fichier mappé en mémoire.](./media/memory-mapped-files/memory-map-persist-file.png)  
   
 ## <a name="programming-with-memory-mapped-files"></a>Programmation avec des fichiers mappés en mémoire  
+
  Le tableau suivant fournit un guide pour l’utilisation d’objets de fichier mappé en mémoire et de leurs membres.  
   
 |Tâche|Méthodes ou propriétés à utiliser|  
@@ -61,6 +63,7 @@ Il existe deux types de fichiers mappés en mémoire :
 |Pour différer l’allocation de mémoire jusqu’à ce qu’une vue soit créée (fichiers non persistants uniquement).<br /><br /> (Pour déterminer la taille de page du système actuel, utilisez la propriété <xref:System.Environment.SystemPageSize%2A?displayProperty=nameWithType>.)|Méthode <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> avec la valeur <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions.DelayAllocatePages?displayProperty=nameWithType>.<br /><br /> - ou -<br /><br /> Méthodes <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> qui ont une énumération <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions> en tant que paramètre.|  
   
 ### <a name="security"></a>Sécurité  
+
  Vous pouvez appliquer des droits d’accès lorsque vous créez un fichier mappé en mémoire, en utilisant les méthodes suivantes qui prennent une énumération <xref:System.IO.MemoryMappedFiles.MemoryMappedFileAccess> en tant que paramètre :  
   
 - <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType>  
@@ -78,6 +81,7 @@ Il existe deux types de fichiers mappés en mémoire :
 ## <a name="examples"></a>Exemples  
   
 ### <a name="persisted-memory-mapped-files"></a>Fichiers mappés en mémoire persistants  
+
  Les méthodes <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A> créent un fichier mappé en mémoire à partir d’un fichier existant sur le disque.  
   
  L’exemple suivant crée une vue mappée en mémoire d’une partie d’un fichier très volumineux et manipule une partie de ce dernier.  
@@ -93,6 +97,7 @@ Il existe deux types de fichiers mappés en mémoire :
  [!code-vb[MemoryMappedFiles.MemoryMappedFile.OpenExisting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/vb/program.vb#1)]  
   
 ### <a name="non-persisted-memory-mapped-files"></a>Fichiers mappés en mémoire non persistants  
+
  Les méthodes <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> et <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> créent un fichier mappé en mémoire qui n’est pas mappé à un fichier existant sur le disque.  
   
  L’exemple suivant se compose de trois processus distincts (applications console) qui écrivent des valeurs booléennes dans un fichier mappé en mémoire. La séquence d’actions suivante se produit :  
@@ -148,4 +153,4 @@ Process C says: True
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fichier et flux de données E/S](index.md)
+- [E/s de fichier et de flux](index.md)

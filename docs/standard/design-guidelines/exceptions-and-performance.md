@@ -8,14 +8,15 @@ helpviewer_keywords:
 - exceptions, performance
 - throwing exceptions, performance
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
-ms.openlocfilehash: 1d9e4ff3cfb02b1db358c19786322622621329fe
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: babe378e0d61357709006e08f71ff578492f116c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821201"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734749"
 ---
 # <a name="exceptions-and-performance"></a>Exceptions et performances
+
 L’une des préoccupations courantes liées aux exceptions est que, si des exceptions sont utilisées pour du code qui échoue régulièrement, les performances de l’implémentation seront inacceptables. Cette inquiétude est tout à fait valide. Lorsqu’un membre lève une exception, ses performances peuvent être plus lentes. Toutefois, il est possible d’obtenir de bonnes performances tout en respectant strictement les règles d’exception qui interdisent l’utilisation de codes d’erreur. Deux modèles décrits dans cette section montrent comment procéder.
 
  ❌ N’utilisez pas de codes d’erreur en raison de problèmes liés au fait que les exceptions peuvent affecter les performances de manière négative.
@@ -23,6 +24,7 @@ L’une des préoccupations courantes liées aux exceptions est que, si des exce
  Pour améliorer les performances, il est possible d’utiliser le modèle de Tester-Doer ou le modèle de Try-Parse, décrit dans les deux sections suivantes.
 
 ## <a name="tester-doer-pattern"></a>Modèle de Tester-Doer
+
  Parfois, les performances d’un membre levant une exception peuvent être améliorées en divisant le membre en deux. Examinons la <xref:System.Collections.Generic.ICollection%601.Add%2A> méthode de l' <xref:System.Collections.Generic.ICollection%601> interface.
 
 ```csharp
@@ -46,6 +48,7 @@ if (!numbers.IsReadOnly)
  ✔️ PRENDRE en compte le modèle de Tester-Doer pour les membres qui peuvent lever des exceptions dans des scénarios courants afin d’éviter les problèmes de performances liés aux exceptions.
 
 ## <a name="try-parse-pattern"></a>Modèle de Try-Parse
+
  Pour les API très performantes, il est préférable d’utiliser un modèle encore plus rapide que le modèle d' Tester-Doer décrit dans la section précédente. Le modèle appelle pour ajuster le nom de membre afin qu’un cas de test bien défini fasse partie de la sémantique de membre. Par exemple, <xref:System.DateTime> définit une <xref:System.DateTime.Parse%2A> méthode qui lève une exception en cas d’échec de l’analyse d’une chaîne. Il définit également une <xref:System.DateTime.TryParse%2A> méthode correspondante qui tente d’analyser, mais retourne la valeur false si l’analyse échoue et retourne le résultat d’une analyse réussie à l’aide d’un `out` paramètre.
 
 ```csharp
