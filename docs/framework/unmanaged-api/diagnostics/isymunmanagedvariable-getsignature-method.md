@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 78c1ba28-a410-4360-805c-23a95408964a
 topic_type:
 - apiref
-ms.openlocfilehash: a3ec0af33f3f1201ce2f6b62291dfc67696fecab
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 791b92c30fc2bf3d506113620b59ba20015e077e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610442"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725818"
 ---
 # <a name="isymunmanagedvariablegetsignature-method"></a>ISymUnmanagedVariable::GetSignature, méthode
+
 Obtient la signature de cette variable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,6 +37,7 @@ HRESULT GetSignature(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cSig`  
  dans Longueur de la mémoire tampon vers laquelle pointe le `sig` paramètre.  
   
@@ -45,10 +47,12 @@ HRESULT GetSignature(
  `sig`  
  à Mémoire tampon qui stocke la signature.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi

@@ -2,14 +2,15 @@
 title: Méthode ICorDebugVariableSymbol::GetValue
 ms.date: 03/30/2017
 ms.assetid: 90abece1-392e-4ade-94a1-30c75b0f7074
-ms.openlocfilehash: f217f7226d53a27363f66eb90a340fd3604a0217
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 0a57b1a31e1ef4b0db317012b25bc65ecbbaf011
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396516"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725961"
 ---
 # <a name="icordebugvariablesymbolgetvalue-method"></a>Méthode ICorDebugVariableSymbol::GetValue
+
 Obtient la valeur d'une variable sous forme d'un tableau d'octets.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,6 +27,7 @@ HRESULT GetValue(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `offset`  
  [in] Offset de démarrage dans la variable au niveau duquel lire la valeur. Ce paramètre est utilisé lors de la lecture de champs membres d'un objet.  
   
@@ -44,12 +46,13 @@ HRESULT GetValue(
  `pValue`  
  [out] Tableau d'octets contenant la valeur de la variable.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

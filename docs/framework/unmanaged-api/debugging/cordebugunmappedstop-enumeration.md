@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
 topic_type:
 - apiref
-ms.openlocfilehash: 772f1f0dee260ad3752b2f89e5fbe0d6bc27b87b
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: e251bf67adcaf2bbd6565eda068d487eb0d70efd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795649"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725769"
 ---
 # <a name="cordebugunmappedstop-enumeration"></a>CorDebugUnmappedStop, énumération
+
 Spécifie le type de code non mappé qui peut déclencher un arrêt dans l'exécution du code par l'exécution pas à pas.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -50,10 +51,12 @@ typedef enum CorDebugUnmappedStop {
 |`STOP_UNMANAGED`|Arrêtez dans le code non managé. Cette valeur est valide uniquement avec le débogage d’interopérabilité.|  
 |`STOP_ALL`|Arrêtez dans tous les types de code non mappé.|  
   
-## <a name="remarks"></a>Notes   
+## <a name="remarks"></a>Remarques  
+
  Utilisez la méthode [ICorDebugStepper :: SetUnmappedStopMask](icordebugstepper-setunmappedstopmask-method.md) pour définir les indicateurs qui spécifient le code non mappé dans lequel le pas à pas s’arrêtera.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
+
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f241b620-9ec5-42fd-92ef-3b22329db72a
 topic_type:
 - apiref
-ms.openlocfilehash: f558d209d13fae93bd3a6f5e0e653afb91371a6a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: df42e58a9bb3bf00b3fa4df45086dc2219658e25
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615330"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725844"
 ---
 # <a name="isymunmanagedscope2getconstants-method"></a>ISymUnmanagedScope2::GetConstants, méthode
+
 Obtient les constantes locales définies dans cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -37,6 +38,7 @@ HRESULT GetConstants(
 ```  
   
 ## <a name="parameters"></a>Paramètres  
+
  `cConstants`  
  dans Longueur de la mémoire tampon vers laquelle `pcConstants` pointe le paramètre.  
   
@@ -46,10 +48,12 @@ HRESULT GetConstants(
  `constants`  
  à Mémoire tampon qui stocke les constantes.  
   
-## <a name="return-value"></a>Valeur de retour  
+## <a name="return-value"></a>Valeur renvoyée  
+
  S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>Conditions requises  
+## <a name="requirements"></a>Configuration requise  
+
  **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
