@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], overview
 ms.assetid: 1d37645e-086d-4d68-a358-f3c5b6e8205e
-ms.openlocfilehash: a6bd41fa5aed4c2a22ee7c72087e2da0d7e4ea17
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: db601a26eb7a7703403432590e359f51231e3ca1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248290"
 ---
 # <a name="metadata-architecture-overview"></a>Vue d'ensemble de l'architecture de métadonnées
-Windows Communication Foundation (WCF) fournit une infrastructure riche pour l’exportation, la publication, la récupération et l’importation des métadonnées de service. Les services WCF utilisent des métadonnées pour décrire comment interagir avec les points de terminaison du service afin que les outils tels que Svcutil. exe puissent générer automatiquement le code client pour accéder au service.  
+
+Windows Communication Foundation (WCF) fournit une infrastructure riche pour l’exportation, la publication, la récupération et l’importation des métadonnées de service. Les services WCF utilisent des métadonnées pour décrire comment interagir avec les points de terminaison du service afin que les outils, tels que Svcutil.exe, puissent générer automatiquement le code client pour accéder au service.  
   
  La plupart des types qui composent l’infrastructure de métadonnées WCF résident dans l' <xref:System.ServiceModel.Description> espace de noms.  
   
@@ -22,13 +23,14 @@ Windows Communication Foundation (WCF) fournit une infrastructure riche pour l�
   
 - Métadonnées brutes.  
   
-- Une instance de <xref:System.ServiceModel.Description.MetadataReference>.  
+- Instance de <xref:System.ServiceModel.Description.MetadataReference>.  
   
-- Une instance de <xref:System.ServiceModel.Description.MetadataLocation>.  
+- Instance de <xref:System.ServiceModel.Description.MetadataLocation>.  
   
  Les instances <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> pointent vers un autre point de terminaison d'échanges de métadonnées (MEX) et les instances <xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> pointent vers un document de métadonnées à l'aide d'une URL HTTP. WCF prend en charge l’utilisation de documents WSDL pour décrire des points de terminaison de service, des contrats de service, des liaisons, des modèles d’échange de messages, des messages et des messages d’erreur implémentés par un service. Les types de données utilisés par le service sont décrits dans les documents WSDL à l'aide du schéma XML. Pour plus d’informations, consultez [importation et exportation de schémas](schema-import-and-export.md). Vous pouvez utiliser WCF pour exporter et importer des extensions WSDL pour le comportement de service, les comportements de contrat et les éléments de liaison qui étendent les fonctionnalités d’un service. Pour plus d’informations, consultez [exportation de métadonnées personnalisées pour une extension WCF](../extending/exporting-custom-metadata-for-a-wcf-extension.md).  
   
 ## <a name="exporting-service-metadata"></a>Exportation des métadonnées de service  
+
  Dans WCF, l' *exportation des métadonnées* est le processus qui consiste à décrire des points de terminaison de service et à les projeter dans une représentation parallèle et standardisée que les clients peuvent utiliser pour comprendre comment utiliser le service. Pour exporter des métadonnées à partir des instances <xref:System.ServiceModel.Description.ServiceEndpoint>, utilisez une implémentation de la classe abstraite <xref:System.ServiceModel.Description.MetadataExporter>. Une implémentation <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> génère des métadonnées encapsulée dans une instance <xref:System.ServiceModel.Description.MetadataSet>.  
   
  La classe <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> fournit une infrastructure pour générer des expressions de stratégie qui décrivent les fonctions et les spécifications d'une liaison de point de terminaison et ses opérations, messages et erreurs associés. Ces expressions de stratégie sont capturées dans une instance <xref:System.ServiceModel.Description.PolicyConversionContext>. Une implémentation <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> peut ensuite attacher ces expressions de stratégie aux métadonnées qu'elle génère.  
@@ -40,11 +42,12 @@ Windows Communication Foundation (WCF) fournit une infrastructure riche pour l�
  Pour exporter des métadonnées WSDL ou des extensions WSDL personnalisées pour les comportements de point de terminaison, les comportements de contrat ou les éléments de liaison dans un point de terminaison de service, vous pouvez implémenter l’interface <xref:System.ServiceModel.Description.IWsdlExportExtension>. Le <xref:System.ServiceModel.Description.WsdlExporter> recherche dans une instance <xref:System.ServiceModel.Description.ServiceEndpoint> des éléments de liaison, des comportements d'opération, des comportements de contrat et des comportements de point de terminaison qui implémentent l'interface <xref:System.ServiceModel.Description.IWsdlExportExtension> lors de la génération du document WSDL.  
   
 ## <a name="publishing-service-metadata"></a>Publication des métadonnées de service  
+
  Les services WCF publient les métadonnées en exposant un ou plusieurs points de terminaison de métadonnées. La publication des métadonnées de service rend les métadonnées de service disponibles à l'aide de protocoles standardisés, tels que les demandes MEX et HTTP/GET. Les points de terminaison de métadonnées sont semblables à d’autres points de terminaison de service en ce sens qu’ils ont une adresse, une liaison et un contrat. Vous pouvez ajouter des points de terminaison de métadonnées à un hôte de service dans la configuration ou dans le code.  
   
  Pour publier des points de terminaison de métadonnées pour un service WCF, vous devez d’abord ajouter une instance du <xref:System.ServiceModel.Description.ServiceMetadataBehavior> comportement de service au service. L'ajout d'une instance <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> à votre service augmente votre service en rendant possible la publication des métadonnées en exposant un ou plusieurs points de terminaison de métadonnées. Après avoir ajouté le comportement de service <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType>, vous pouvez ensuite exposer les points de terminaison de métadonnées qui prennent en charge le protocole MEX ou les points de terminaison de métadonnées qui répondent aux demandes HTTP/GET.  
   
- Pour ajouter des points de terminaison de métadonnées qui utilisent le protocole MEX, ajoutez des points de terminaison de service à votre hôte de service qui utilisent le contrat de service nommé IMetadataExchange. WCF définit l' <xref:System.ServiceModel.Description.IMetadataExchange> interface qui possède ce nom de contrat de service. Les points de terminaison WS-MetadataExchange (ou points de terminaison MEX) peuvent utiliser l’une des quatre liaisons par défaut exposées par les méthodes de fabrique statiques sur la <xref:System.ServiceModel.Description.MetadataExchangeBindings> classe pour correspondre aux liaisons par défaut utilisées par les outils WCF, tels que Svcutil. exe. Vous pouvez également configurer des points de terminaison de métadonnées MEX à l’aide d’une liaison personnalisée.  
+ Pour ajouter des points de terminaison de métadonnées qui utilisent le protocole MEX, ajoutez des points de terminaison de service à votre hôte de service qui utilisent le contrat de service nommé IMetadataExchange. WCF définit l' <xref:System.ServiceModel.Description.IMetadataExchange> interface qui possède ce nom de contrat de service. WS-MetadataExchange points de terminaison, ou points de terminaison MEX, peuvent utiliser l’une des quatre liaisons par défaut exposées par les méthodes de fabrique statiques sur la <xref:System.ServiceModel.Description.MetadataExchangeBindings> classe pour qu’elles correspondent aux liaisons par défaut utilisées par les outils WCF, comme Svcutil.exe. Vous pouvez également configurer des points de terminaison de métadonnées MEX à l’aide d’une liaison personnalisée.  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> utilise <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> pour exporter les métadonnées de tous les points de terminaison de service de votre service. Pour plus d’informations sur l’exportation des métadonnées à partir d’un service, consultez [exportation et importation de métadonnées](exporting-and-importing-metadata.md).  
   
@@ -67,13 +70,15 @@ Windows Communication Foundation (WCF) fournit une infrastructure riche pour l�
 > - Affectez à l'un des espaces de noms des opérations un espace de noms différent à l'aide de la propriété <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A>.  
   
 ## <a name="retrieving-service-metadata"></a>Récupération des métadonnées de service  
+
  WCF peut récupérer les métadonnées de service à l’aide de protocoles standardisés tels que WS-MetadataExchange et HTTP. Ces deux protocoles sont pris en charge par le type <xref:System.ServiceModel.Description.MetadataExchangeClient>. Vous récupérez les métadonnées de service à l’aide du type <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> en fournissant une adresse et une liaison facultative. La liaison utilisée par une instance <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> peut être l'une des liaisons par défaut de la classe statique <xref:System.ServiceModel.Description.MetadataExchangeBindings>, une liaison fournie par l'utilisateur ou une liaison chargée à partir d'une configuration de point de terminaison pour le contrat `IMetadataExchange`. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> peut également résoudre des références d'URL HTTP aux métadonnées à l'aide du type <xref:System.Net.HttpWebRequest>.  
   
  Par défaut, une instance <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> est attachée à une instance <xref:System.ServiceModel.Channels.ChannelFactoryBase> unique. Vous pouvez modifier ou remplacer l'instance <xref:System.ServiceModel.Channels.ChannelFactoryBase> utilisée par <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> en substituant la méthode virtuelle <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A>. De la même façon, vous pouvez modifier ou remplacer l'instance <xref:System.Net.HttpWebRequest?displayProperty=nameWithType> utilisée par <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> pour effectuer des requêtes HTTP/GET en substituant la méthode virtuelle <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType>.  
   
- Vous pouvez récupérer des métadonnées de service à l’aide de WS-MetadataExchange ou de requêtes HTTP/obtenir à l’aide de l’outil Svcutil. exe et en passant le commutateur **/target : Metadata** et une adresse. Svcutil.exe télécharge les métadonnées à l'adresse spécifiée et enregistre les fichiers sur disque. Svcutil.exe utilise une instance <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> en interne et charge, à partir du fichier de configuration de l'application, une configuration de point de terminaison MEX dont le nom correspond au schéma de l'adresse passée à Svcutil.exe, s'il en existe une. Sinon, Svcutil.exe utilise par défaut une des liaisons définies par le type de fabrique statique <xref:System.ServiceModel.Description.MetadataExchangeBindings>.  
+ Vous pouvez récupérer les métadonnées du service à l’aide de WS-MetadataExchange ou de requêtes HTTP/obtenir à l’aide de l’outil Svcutil.exe et en passant le commutateur **/target : Metadata** et une adresse. Svcutil.exe télécharge les métadonnées à l'adresse spécifiée et enregistre les fichiers sur disque. Svcutil.exe utilise une instance <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> en interne et charge, à partir du fichier de configuration de l'application, une configuration de point de terminaison MEX dont le nom correspond au schéma de l'adresse passée à Svcutil.exe, s'il en existe une. Sinon, Svcutil.exe utilise par défaut une des liaisons définies par le type de fabrique statique <xref:System.ServiceModel.Description.MetadataExchangeBindings>.  
   
 ## <a name="importing-service-metadata"></a>Importation des métadonnées de service  
+
  Dans WCF, l’importation de métadonnées est le processus de génération d’une représentation abstraite d’un service ou de ses composants à partir de ses métadonnées. Par exemple, WCF peut importer des instances, des instances <xref:System.ServiceModel.Description.ServiceEndpoint> <xref:System.ServiceModel.Channels.Binding> ou <xref:System.ServiceModel.Description.ContractDescription> des instances à partir d’un document WSDL pour un service. Pour importer des métadonnées de service dans WCF, utilisez une implémentation de la <xref:System.ServiceModel.Description.MetadataImporter> classe abstraite. Les types qui dérivent de la <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> classe implémentent la prise en charge de l’importation des formats de métadonnées qui tirent parti de la logique d’importation WS-Policy dans WCF.  
   
  Une implémentation <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> recueille les expressions de stratégie attachées aux métadonnées de service dans un objet <xref:System.ServiceModel.Description.PolicyConversionContext>. Le <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> traite ensuite les stratégies dans le cadre de l'importation des métadonnées en appelant les implémentations de l'interface <xref:System.ServiceModel.Description.IPolicyImportExtension> dans la propriété <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A>.  
@@ -85,6 +90,7 @@ Windows Communication Foundation (WCF) fournit une infrastructure riche pour l�
  Vous pouvez ajouter la prise en charge pour importer des extensions WSDL en implémentant l’interface <xref:System.ServiceModel.Description.IWsdlImportExtension> et en ajoutant ensuite votre implémentation à la propriété <xref:System.ServiceModel.Description.WsdlImporter.WsdlImportExtensions%2A> sur votre instance <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>. Le <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> peut également charger des implémentations de l'interface <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> inscrite dans votre fichier de configuration de l'application cliente.  
   
 ## <a name="dynamic-bindings"></a>Liaisons dynamiques  
+
  Vous pouvez mettre à jour dynamiquement la liaison que vous utilisez pour créer un canal vers un point de terminaison de service au cas où la liaison pour le point de terminaison change ou si vous souhaitez créer un canal vers un point de terminaison qui utilise le même contrat mais possède une liaison différente. Vous pouvez utiliser la classe statique <xref:System.ServiceModel.Description.MetadataResolver> pour récupérer et importer les métadonnées au moment de l'exécution pour les points de terminaison de service qui implémentent un contrat spécifique. Vous pouvez utiliser ensuite les objets <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> importés pour créer une fabrique de client ou de canaux au point de terminaison souhaité.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -93,7 +99,7 @@ Windows Communication Foundation (WCF) fournit une infrastructure riche pour l�
 - [Formats de métadonnées](metadata-formats.md)
 - [Exportation et importation de métadonnées](exporting-and-importing-metadata.md)
 - [Publication de métadonnées](publishing-metadata.md)
-- [Récupération des métadonnées](retrieving-metadata.md)
+- [Récupération de métadonnées](retrieving-metadata.md)
 - [Utilisation des métadonnées](using-metadata.md)
 - [Considérations sur la sécurité des métadonnées](security-considerations-with-metadata.md)
 - [Extension du système de métadonnées](../extending/extending-the-metadata-system.md)

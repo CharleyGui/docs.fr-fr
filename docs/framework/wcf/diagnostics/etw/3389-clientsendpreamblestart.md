@@ -2,27 +2,30 @@
 title: 3389 - ClientSendPreambleStart
 ms.date: 03/30/2017
 ms.assetid: c31e8b2d-14ba-41c4-ab9b-205d591b078d
-ms.openlocfilehash: 274b78cf65da46688b23566bceda37955d936bcf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f35c8726db1451982d7df4ffd79bc59a102a7fd4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959508"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247744"
 ---
 # <a name="3389---clientsendpreamblestart"></a>3389 - ClientSendPreambleStart
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|3389|  
-|Mots clés|Canal|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|id|3389|  
+|Mots clés|Channel|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Cet événement est émis au Début du préambule d'envoi par le client.  
   
 ## <a name="message"></a>Message  
+
  Début du préambule d'envoi par le client.  
   
 ## <a name="details"></a>Détails

@@ -7,14 +7,15 @@ helpviewer_keywords:
 - List control type
 - UI Automation, List control type
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
-ms.openlocfilehash: 01827250ac216dbcb57a8a139637e7c48d59566d
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: b56856e3157ad4b770173cf0b34c7e092ffff075
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166079"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247237"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle List
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -25,7 +26,9 @@ ms.locfileid: "87166079"
  Les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifications dans les sections suivantes s’appliquent à tous les contrôles qui implémentent le type de contrôle List, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] , Win32 ou Windows Forms. Les contrôles de conteneur List constituent un exemple de contrôles qui implémentent le type de contrôle List.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
+
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
+
  Le tableau suivant représente les deux affichages de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] concernant les contrôles list et décrit ce que chaque affichage peut contenir. L’affichage de contrôle contient uniquement des éléments qui correspondent à des contrôles, tandis que l’affichage de contenu supprime les informations redondantes de l’arborescence. Par exemple, un contrôle de texte servant d’étiquette pour une zone de liste déroulante est exposé en tant que `ComboBox NameProperty`. Comme le contrôle de texte est déjà exposé de cette manière via l’affichage de contrôle, il n’est pas nécessaire de l’exposer deux fois. De ce fait, il est supprimé de l’affichage de contenu. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
 |Affichage de contrôle|Affichage de contenu|  
@@ -52,7 +55,9 @@ Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérar
  Les éléments sélectionnables dans le contrôle list sont accessibles aux descendants dans l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] du contrôle List. Tous les éléments du contrôle list doivent appartenir au même groupe de sélection. Les éléments sélectionnables dans la liste doivent être exposées en tant que types de contrôle ListItem (et non DataItem).  
   
 <a name="Required_UI_Automation_Properties"></a>
+
 ## <a name="required-ui-automation-properties"></a>Propriétés UI Automation obligatoires  
+
  Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles de liste. Pour plus d’informations sur les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
 |Propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
@@ -71,7 +76,9 @@ Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérar
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Consultez les remarques.|Le texte d’aide sur les contrôles list doit expliquer la raison pour laquelle l’utilisateur est invité à faire un sélection dans une liste d’options. Par exemple, « la sélection d’un élément dans cette liste a pour effet de définir la résolution d’affichage de votre moniteur ».|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>
+
 ## <a name="required-ui-automation-control-patterns-and-properties"></a>Modèles de contrôle et propriétés UI Automation requis  
+
  Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles list. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
   
 |Modèle de contrôle/Propriété de modèle|Prise en charge/valeur|Notes|  
@@ -85,7 +92,9 @@ Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérar
 |<xref:System.Windows.Automation.Provider.ITableProvider>|Jamais|`ITableProvider` n’est jamais pris en charge pour le type de contrôle List. Si le contrôle doit prendre en charge ce modèle de contrôle, le contrôle doit être basé sur le type de contrôle Data Grid.|  
   
 <a name="Required_UI_Automation_Events"></a>
+
 ## <a name="required-ui-automation-events"></a>Événements UI Automation obligatoires  
+
  Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles list. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](ui-automation-events-overview.md).  
   
 |Événement[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge/valeur|Notes|  

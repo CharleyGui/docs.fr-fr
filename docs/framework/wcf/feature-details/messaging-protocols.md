@@ -2,12 +2,12 @@
 title: Protocoles de messagerie
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: 69a92bfb406e2e1af3bdcbb0316711dbf531204b
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 871297abb0ccc46e079ab85b098705602d14a161
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812053"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248316"
 ---
 # <a name="messaging-protocols"></a>Protocoles de messagerie
 
@@ -63,11 +63,13 @@ Les espaces de noms XML et les préfixes associés suivants sont utilisés dans 
 ## <a name="soap-11-and-soap-12"></a>SOAP 1.1 et SOAP 1.2
 
 ### <a name="envelope-and-processing-model"></a>Enveloppe et modèle de traitement
+
 WCF implémente le traitement d’enveloppe SOAP 1,1 suivant le profil de base 1,1 (BP11) et le profil de base 1,0 (SSBP10). Le traitement d'enveloppe SOAP 1.2 est implémenté selon SOAP12-Part1.
 
 Cette section décrit certains choix d’implémentation pris par WCF en ce qui concerne BP11 et SOAP12-part1.
 
 #### <a name="mandatory-header-processing"></a>Traitement obligatoire des en-têtes
+
 WCF suit des règles pour le traitement des en-têtes marqués comme `mustUnderstand` décrit dans les spécifications soap 1,1 et soap 1,2, avec les variations suivantes.
 
 Un message qui entre dans la pile de canaux WCF est traité par les canaux individuels configurés par des éléments de liaison associés, par exemple, l’encodage de message texte, la sécurité, la messagerie fiable et les transactions. Chaque canal reconnaît les en-têtes de l'espace de noms associé et les marque comme compris. Une fois qu'un message entre le répartiteur, le module de formatage de l'opération lit les en-têtes attendus par le contrat de message/opération correspondant et les marque comme compris. Ensuite, le répartiteur vérifie si des en-têtes restants ne sont pas compris mais marqués comme `mustUnderstand` et lève une exception. Les messages qui contiennent des en-têtes `mustUnderstand` ciblant le destinataire ne sont pas traités par le code de l'application destinataire.
@@ -81,6 +83,7 @@ Un tel traitement par couches permet de séparer les couches d'infrastructure et
 - B1112 : WCF émet les `mustUnderstand` valeurs 0 et 1 pour les versions soap 1,1 et soap 1,2 de l’enveloppe SOAP. WCF accepte l’espace de valeur entier de `xs:boolean` pour l' `mustUnderstand` en-tête (0, 1, `false` , `true` )
 
 #### <a name="soap-faults"></a>Erreurs SOAP
+
 La liste suivante répertorie les implémentations d’erreurs SOAP spécifiques à WCF.
 
 - B2121 : WCF retourne les codes d’erreur SOAP 1,1 suivants : `s11:mustUnderstand` , `s11:Client` et `s11:Server` .
@@ -90,6 +93,7 @@ La liste suivante répertorie les implémentations d’erreurs SOAP spécifiques
 ### <a name="http-binding"></a>Liaison HTTP
 
 #### <a name="soap-11-http-binding"></a>Liaison HTTP SOAP 1.1
+
 WCF implémente la liaison HTTP SOAP 1.1 conformément à la spécification Basic Profile 1,1, section 3,4, avec les éclaircissements suivants :
 
 - B2211 : le service WCF n’implémente pas la redirection des requêtes HTTP HTTP.
@@ -97,6 +101,7 @@ WCF implémente la liaison HTTP SOAP 1.1 conformément à la spécification Basi
 - B2212 : les clients WCF prennent en charge les cookies HTTP conformément à 3.4.8.
 
 #### <a name="soap-12-http-binding"></a>Liaison HTTP SOAP 1,2
+
 WCF implémente la liaison HTTP SOAP 1,2, comme décrit dans la spécification SOAP 1,2-part 2 (SOAP12Part2), avec les clarifications suivantes.
 
 SOAP 1.2 a introduit un paramètre d'action facultatif pour le type de média `application/soap+xml`. Ce paramètre est utile pour optimiser la distribution du message sans que le corps du message SOAP soit analysé lorsque la spécification WS-Addressing n'est pas utilisée.
@@ -108,6 +113,7 @@ SOAP 1.2 a introduit un paramètre d'action facultatif pour le type de média `a
 Lorsque la spécification WS-Addressing est désactivée et qu'une demande entrante ne contient pas de paramètre d'action, l'`Action` du message est considérée comme non spécifiée.
 
 ## <a name="ws-addressing"></a>WS-Addressing
+
 WCF implémente 3 versions de WS-Addressing :
 
 - WS-Addressing 2004/08
@@ -117,19 +123,22 @@ WCF implémente 3 versions de WS-Addressing :
 - WS-Addressing 1.0 - Métadonnées
 
 ### <a name="endpoint-references"></a>Références de point de terminaison
+
 Toutes les versions de WS-Addressing que WCF implémente utilisent des références de point de terminaison pour décrire des points de terminaison.
 
 #### <a name="endpoint-references-and-ws-addressing-versions"></a>Références de point de terminaison et versions de WS-Addressing
-WCF implémente plusieurs protocoles d’infrastructure qui utilisent WS-Addressing et, en particulier, l' `EndpointReference` élément et la `W3C.WsAddressing.EndpointReferenceType` classe (par exemple, WS-RELIABLEMESSAGING, WS-SECURECONVERSATION et WS-Trust). WCF prend en charge l’utilisation de l’une ou l’autre version de WS-Addressing avec d’autres protocoles d’infrastructure. Les points de terminaison WCF prennent en charge une version de WS-Addressing par point de terminaison.
+
+WCF implémente plusieurs protocoles d’infrastructure qui utilisent WS-Addressing et en particulier l' `EndpointReference` élément et la `W3C.WsAddressing.EndpointReferenceType` classe (par exemple, WS-RELIABLEMESSAGING, WS-SECURECONVERSATION et WS-Trust). WCF prend en charge l’utilisation de l’une ou l’autre version de WS-Addressing avec d’autres protocoles d’infrastructure. Les points de terminaison WCF prennent en charge une version de WS-Addressing par point de terminaison.
 
 Pour R3111, l’espace de noms de l' `EndpointReference` élément ou du type utilisé dans les messages échangés avec un point de terminaison WCF doit correspondre à la version de WS-Addressing implémentée par ce point de terminaison.
 
 Par exemple, si un point de terminaison WCF implémente WS-ReliableMessaging, l' `AcksTo` en-tête retourné par un tel point de terminaison dans `CreateSequenceResponse` utilise la version de WS-Addressing que l' `EncodingBinding` élément spécifie pour ce point de terminaison.
 
 #### <a name="endpoint-references-and-metadata"></a>Références de point de terminaison et métadonnées
+
 Plusieurs scénarios nécessitent de communiquer des métadonnées ou une référence aux métadonnées pour un point de terminaison donné.
 
-B3121 : WCF utilise des mécanismes décrits dans la section 6 de la spécification WS-MetadataExchange (MEX) pour inclure les métadonnées des références de point de terminaison par valeur ou par référence.
+B3121 : WCF utilise les mécanismes décrits dans la section 6 de la spécification WS-MetadataExchange (MEX) pour inclure les métadonnées des références de point de terminaison par valeur ou par référence.
 
 Imaginez un scénario dans lequel un service WCF requiert une authentification à l’aide d’un jeton SAML (Security Assertions Markup Language) émis par l’émetteur du jeton à l’adresse `http://sts.fabrikam123.com` . Le point de terminaison WCF décrit cette exigence d’authentification en utilisant `sp:IssuedToken` une assertion avec une assertion imbriquée `sp:Issuer` qui pointe sur l’émetteur de jeton. Les applications clientes qui accèdent à l'assertion `sp:Issuer` doivent savoir comment communiquer avec l'émetteur du jetons du point de terminaison. Le client a besoin de connaître les métadonnées relatives à l'émetteur de jetons. À l’aide des extensions de métadonnées de référence de point de terminaison définies dans MEX, WCF fournit une référence aux métadonnées de l’émetteur de jeton.
 
@@ -157,9 +166,10 @@ Imaginez un scénario dans lequel un service WCF requiert une authentification �
 ### <a name="message-addressing-headers"></a>En-têtes d'adressage des messages
 
 #### <a name="message-headers"></a>En-têtes de message
+
 Pour les deux versions de WS-Addressing, WCF utilise les en-têtes de message suivants comme stipulé par les spécifications,,, `wsa:To` `wsa:ReplyTo` `wsa:Action` `wsa:MessageID` et `wsa:RelatesTo` .
 
-B3211 : pour toutes les versions WS-Addressing, WCF honore, mais ne produit pas les en-têtes de message WS-Addressing prêts à l’emploi `wsa:FaultTo` et `wsa:From` .
+B3211 : pour toutes les versions de WS-Addressing, WCF honore, mais ne produit pas, WS-Addressing en-têtes de message `wsa:FaultTo` et `wsa:From` .
 
 Les applications qui interagissent avec les applications WCF peuvent ajouter ces en-têtes de message et WCF les traite en conséquence.
 
@@ -170,11 +180,13 @@ WCF implémente le traitement des paramètres de référence de point de termina
 B3221 : lorsqu’il est configuré pour utiliser WS-Addressing 2004/08, les points de terminaison WCF ne font pas la différence entre les propriétés de référence de traitement et les paramètres de référence.
 
 ### <a name="message-exchange-patterns"></a>Modèles d’échange de messages
+
 La séquence de messages impliquée dans l’appel d’opération de service Web est appelée *modèle d’échange de messages*. WCF prend en charge les modèles d’échange de messages unidirectionnels, demande-réponse et duplex. Cette section clarifie les exigences WS-Addressing de traitement des messages en fonction du modèle d’échange de messages utilisé.
 
 Dans cette section, le demandeur envoie le premier message et le répondeur reçoit le premier message.
 
 #### <a name="one-way-message"></a>Message unidirectionnel
+
 Quand un point de terminaison WCF est configuré pour prendre en charge des messages avec un donné `Action` pour suivre un modèle unidirectionnel, le point de terminaison WCF suit les comportements et les spécifications suivantes. Sauf spécification contraire, les comportements et les règles s’appliquent aux deux versions de WS-Addressing prises en charge dans WCF :
 
 - R3311 : le demandeur doit inclure `wsa:To`, `wsa:Action` et les en-têtes pour tous les paramètres de référence spécifiés par la référence de point de terminaison. Lorsque WS-Addressing 2004/08 est utilisée et que des [propriétés de référence] sont spécifiées par la référence de point de terminaison, les en-têtes correspondants doivent également être ajoutés au message.
@@ -188,17 +200,19 @@ Quand un point de terminaison WCF est configuré pour prendre en charge des mess
 - B3314 : le répondeur WCF n’envoie pas de message d’erreur en réponse à un message unidirectionnel.
 
 #### <a name="request-reply"></a>Demande-réponse
+
 Quand un point de terminaison WCF est configuré pour un message avec un donné `Action` pour suivre le modèle demande-réponse, le point de terminaison WCF suit les comportements et les exigences ci-dessous. Sauf spécification contraire, les comportements et les règles s’appliquent aux deux versions de WS-Addressing prises en charge dans WCF :
 
 - R3321 : le demandeur doit inclure dans les `wsa:To` en-têtes de demande,, `wsa:Action` `wsa:MessageID` et pour tous les paramètres de référence ou propriétés de référence (ou les deux) spécifiés par la référence de point de terminaison.
 
 - R3322 : lorsque WS-Addressing 2004/08 est utilisée, `ReplyTo` doit également être inclus dans la demande.
 
-- R3323 : lorsque WS-Addressing 1,0 est utilisé et `ReplyTo` n’est pas présent dans la demande, une référence de point de terminaison par défaut avec la propriété [Address] est égale à `http://www.w3.org/2005/08/addressing/anonymous` .
+- R3323 : quand WS-Addressing 1,0 est utilisé et `ReplyTo` n’est pas présent dans la demande, une référence de point de terminaison par défaut avec la propriété [Address] est égale à `http://www.w3.org/2005/08/addressing/anonymous` .
 
 - R3324 : le demandeur doit inclure les `wsa:To` `wsa:Action` `wsa:RelatesTo` en-têtes, et dans le message de réponse, ainsi que les en-têtes pour tous les paramètres de référence ou propriétés de référence (ou les deux) spécifiés par la `ReplyTo` référence de point de terminaison dans la demande.
 
 ### <a name="web-services-addressing-faults"></a>Erreurs d'adressage des services Web
+
 R3411 : WCF produit les erreurs suivantes définies par WS-Addressing 2004/08.
 
 | Code | Cause |
@@ -221,7 +235,8 @@ Le code des tables précédentes correspond à `FaultCode` dans SOAP 1.1 et `Sub
 ### <a name="wsdl-11-binding-and-ws-policy-assertions"></a>Liaison WSDL 1.1 et assertions de WS-Policy
 
 #### <a name="indicating-use-of-ws-addressing"></a>Utilisation recommandée de WS-Addressing
-WCF utilise des assertions de stratégie pour indiquer la prise en charge du point de terminaison pour une version spécifique de WS-Addressing.
+
+WCF utilise des assertions de stratégie pour indiquer la prise en charge du point de terminaison pour une version de WS-Addressing particulière.
 
 L'assertion de stratégie suivante possède l'objet de stratégie de point de terminaison [WS-PA] et indique que les messages envoyés et reçus depuis le point de terminaison doivent utiliser WS-Addressing 2004/08.
 
@@ -300,6 +315,7 @@ L’instruction précédente mène aux exigences suivantes pour l’en-tête `ws
 La spécification WSDL de WS-Addressing tente de décrire des liaisons de protocole semblables en présentant un élément `<wsaw:Anonymous/>` avec trois valeurs textuelles (obligatoire, facultatif et a interdit) pour indiquer des besoins sur l’en-tête `wsa:ReplyTo` (section 3.2). Malheureusement, une telle définition d’élément n’est pas particulièrement utilisable comme une assertion dans le contexte de WS-Policy, car il requiert que les extensions spécifiques au domaine prennent en charge l’intersection d’alternatives à l’aide d’un élément de ce type comme une assertion. Une telle définition d'élément indique également la valeur de l'en-tête `ReplyTo` par opposition au comportement du point de terminaison sur la transmission, ce qui le rend spécifique au transport HTTP.
 
 #### <a name="action-definition"></a>Définition d'action
+
 WS-Addressing 2004/08 définit un attribut `wsa:Action` pour les éléments `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]`. La liaison WS-Addressing 1.0 WSDL (WS-ADDR10-WSDL) définit un attribut semblable, `wsaw10:Action`.
 
 La seule différence entre les deux réside dans la sémantique du modèle d’action par défaut décrite à la section 3.3.2 de WS-ADDR et à la section 4.4.4 de WS-ADDR10-WSDL, respectivement.
@@ -311,6 +327,7 @@ Pour résoudre ce conflit, WCF prend en charge une seule version de l' `Action` 
 B3521 : WCF utilise l' `wsaw10:Action` attribut sur les `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]` éléments tels que définis dans WS-ADDR10-WSDL pour déterminer l' `Action` URI des messages correspondants, quelle que soit la version de WS-Addressing utilisée par le point de terminaison.
 
 #### <a name="use-endpoint-reference-inside-wsdl-port"></a>Utilisation des références de point de terminaison à l'intérieur d'un port WSDL
+
 La section 4.1 de WS-ADDR10-WSDL étend l'élément `wsdl:port` de manière à inclure l'élément enfant `<wsa10:EndpointReference…/>` et décrire le point de terminaison en des termes propres à WS-Addressing. WCF développe cet utilitaire sur WS-Addressing 2004/08, ce qui permet `<wsa:EndpointReference…/>` à d’apparaître en tant qu’élément enfant de `wsdl:port` .
 
 - R3531 : si un point de terminaison possède une alternative de stratégie attachée avec une assertion de la stratégie `<wsaw10:UsingAddressing/>`, l'élément `wsdl:port` correspondant peut contenir un élément enfant `<wsa10:EndpointReference …/>`.
@@ -322,6 +339,7 @@ La section 4.1 de WS-ADDR10-WSDL étend l'élément `wsdl:port` de manière à 
 - R3534 : si un `wsdl:port` contient un élément enfant `<wsa:EndpointReference …/>` , la `wsa:EndpointReference/wsa:Address` valeur de l’élément enfant doit correspondre à la valeur de l' `@address` attribut de l' `wsdl:port` / `wsdl:location` élément frère.
 
 ### <a name="composition-with-ws-security"></a>Composition avec WS-Security
+
 D'après les sections relatives à la sécurité de WS-ADDR et WS-ADDR10, il est recommandé que tous les en-têtes d'adressage de messages soient signés avec le corps du message afin de les lier.
 
 Lorsque WS-Security est utilisée pour la protection de l'intégrité des messages, les en-têtes de message WS-Addressing ainsi que les en-têtes résultant des paramètres ou des propriétés de référence (ou les deux) doivent être signés avec le corps du message.
@@ -329,6 +347,7 @@ Lorsque WS-Security est utilisée pour la protection de l'intégrité des messag
 ### <a name="examples"></a>Exemples
 
 #### <a name="one-way-message"></a>Message unidirectionnel
+
 Dans ce scénario, l'expéditeur envoie un message unidirectionnel au récepteur. SOAP 1.2, HTTP 1.1 et W3C WS-Addressing 1.0 sont utilisés.
 
 Structure du message de demande : les en-têtes de message incluent les éléments `wsa10:To` et `wsa10:Action`. Le corps du message inclut un élément `<app:Ping>` spécifique de l'espace de noms de l'application.
@@ -376,6 +395,7 @@ Content-Length: 0
 ```
 
 ## <a name="soap-message-transmission-optimization-mechanism"></a>SOAP MTOM (Message Transmission Optimization Mechanism)
+
 Cette section décrit les détails de l’implémentation WCF pour la MTOM HTTP SOAP. La technologie MTOM est le mécanisme d’encodage de message SOAP de la même classe que le codage texte/XML traditionnel ou l’encodage binaire WCF. MTOM inclut ce qui suit :
 
 - Un mécanisme d'encodage XML et d'empaquetage décrit par [XOP] qui optimise les éléments d'information XML qui contiennent les données binaires encodées en Base64 dans des parties binaires séparées.
@@ -393,6 +413,7 @@ Le format MTOM tire parti d'un grand ensemble de spécifications qui couvrent MT
 ### <a name="mtom-message-encoding"></a>Encodage de message MTOM
 
 #### <a name="generating-mtom-messages"></a>Génération de messages MTOM
+
 Le [XOP] la section 3.1 décrit le processus de l'encodage XML avec des détails d'élément qui contiennent des valeurs Base64 dans un package XOP abstraitement défini.
 
 La séquence d'étapes suivante décrit le processus d'encodage spécifique à MTOM :
@@ -429,6 +450,7 @@ La séquence d'étapes suivante décrit le processus d'encodage spécifique à M
 7. Écrivez le package MIME.
 
 #### <a name="processing-mtom-messages"></a>Traitement des messages MTOM
+
 Le traitement d'un message MTOM est l'inverse exact du processus décrit dans la section précédente « Génération de messages MTOM » :
 
 1. Vérifiez que la partie MIME racine possède le `application/xop+xml` Content-type.
@@ -444,6 +466,7 @@ Le traitement d'un message MTOM est l'inverse exact du processus décrit dans la
     3. Remplacez l'élément d'information `xop:Include` qui apparaît dans la propriété `children` de chaque élément par les éléments d'information de caractère qui représentent l'encodage Base64 canonique (voir XSD-2, 3.2.16 base64Binary) du corps d'entité de la partie MIME identifiée à l'étape 3b (remplacez l'élément d'information `xop:Include` par les données reconstruites à partir de la partie du package).
 
 #### <a name="http-content-type-header"></a>En-tête HTTP Content-Type
+
 Voici une liste de clarifications WCF pour le format de l’en-tête de type de contenu HTTP d’un message SOAP 1. x encodé MTOM dérivé des spécifications indiquées dans la spécification MTOM elle-même et qui sont dérivées de MTOM et RFC 2387.
 
 - R4131 : un en-tête HTTP Content-Type doit avoir la valeur de multipart/related (non sensible à la casse) et ses paramètres. Les noms des paramètres ne respectent pas la casse. L'ordre des paramètres n'est pas important.
@@ -490,6 +513,7 @@ Alors que la nécessité d’utiliser des guillemets doubles n’est pas explici
     ```
 
 #### <a name="infoset-mime-part"></a>Partie MIME d'ensemble d'informations
+
 L'enveloppe SOAP 1.x est encapsulée comme une partie racine du package MIME XOP et est souvent appelée la partie `infoset`.
 
 - R4141 : l'enveloppe SOAP 1.x doit être encapsulée comme une partie racine du package MIME XOP, appelée la partie `infoset` et référencée depuis le Content-Type HTTP.
@@ -554,6 +578,7 @@ MIME (RFC 2045) fournit l'en-tête Content-Transfer-Encoding pour communiquer l'
 - R41410 : Les paramètres `type` et `charset` doivent être présents dans l'en-tête Content-Type de la partie de l'ensemble d'informations SOAP 1.x.
 
 #### <a name="wcf-endpoint-support-for-mtom"></a>Prise en charge des points de terminaison WCF pour MTOM
+
 L'objectif de MTOM est d'encoder un message SOAP pour optimiser les données encodées en Base64. Les contraintes sont répertoriées dans la liste suivante :
 
 - R4151 : tout élément d'information qui contient des données encodées en Base64 peut être optimisé.
@@ -563,6 +588,7 @@ L'objectif de MTOM est d'encoder un message SOAP pour optimiser les données enc
 Un point de terminaison WCF configuré pour utiliser MTOM enverra toujours des messages codés MTOM. Même si aucune partie ne répond aux critères requis, le message est tout de même encodé en MTOM (sérialisé comme un package MIME avec une partie MIME unique qui contient l'enveloppe SOAP).
 
 ### <a name="ws-policy-assertion-for-mtom"></a>Assertion de WS-Policy pour MTOM
+
 WCF utilise l’assertion de stratégie suivante pour indiquer l’utilisation de MTOM par point de terminaison :
 
 ```xml
@@ -574,6 +600,7 @@ WCF utilise l’assertion de stratégie suivante pour indiquer l’utilisation d
 - B4212 : lorsqu’il est configuré pour utiliser l’optimisation MTOM, un point de terminaison WCF ajoute une assertion de stratégie MTOM à la stratégie attachée au correspondant `wsdl:binding` .
 
 ### <a name="composition-with-ws-security"></a>Composition avec WS-Security
+
 MTOM est un mécanisme d’encodage qui est similaire à `text/xml` et au XML binaire WCF. MTOM offre la composition naturelle avec WS-Security et d'autre protocoles WS-* : un message sécurisé à l'aide de WS-Security peut être optimisé à l'aide de MTOM.
 
 ### <a name="examples"></a>Exemples
@@ -612,6 +639,7 @@ Content-Type: application/octet-stream
 ```
 
 #### <a name="wcf-secure-soap-12-message-encoded-using-mtom"></a>Message sécurisé SOAP 1.2 WCF encodé à l'aide de MTOM
+
 Dans cet exemple, un message est encodé à l'aide de MTOM et SOAP 1.2 et protégé à l'aide de WS-Security. Les parties binaires identifiées pour l'encodage sont les contenus du `BinarySecurityToken`, `CipherValue` des `EncryptedData` correspondant à la signature chiffrée et au corps chiffré. Notez que le `CipherValue` du `EncryptedKey` n’a pas été identifié pour l’optimisation par WCF, car sa longueur est inférieure à 1024 octets.
 
 ```http

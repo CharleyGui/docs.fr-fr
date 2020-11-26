@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Clrver.exe
 - CLR Version tool
 ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
-ms.openlocfilehash: e914034819418df00438c454e209e6c86779ba3c
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3a7a585d990051553aa8fdc0e99b2dc206273cf4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167281"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247224"
 ---
 # <a name="clrverexe-clr-version-tool"></a>Clrver.exe (outil CLR Version)
+
 L'outil de version CLR (Clrver.exe) rapporte toutes les versions installées du CLR (Common Runtime Language) sur l'ordinateur.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
@@ -35,6 +36,7 @@ clrver [option]
 |`-?`|Affiche la syntaxe et les options de commande de l'outil.|  
   
 ## <a name="remarks"></a>Notes  
+
  Si vous appelez Clrver.exe sans option, il affiche toutes les versions de CLR installées. Si vous spécifiez PID pour un autre utilisateur, vous devez disposer des autorisations d'administrateur pour obtenir les informations de version.  
   
 > [!NOTE]
@@ -43,6 +45,7 @@ clrver [option]
  La tentative afin de déterminer la version du CLR pour des processus SYSTÈME, SERVICE LOCAL et SERVICE RÉSEAU entraîne un message indiquant que le PID n'existe pas.  
   
 ## <a name="examples"></a>Exemples  
+
  La commande suivante affiche toutes les versions du CLR installée sur l'ordinateur.  
   
  `clrver`  

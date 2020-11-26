@@ -5,17 +5,19 @@ helpviewer_keywords:
 - authorization [WCF]
 - security [WCF], authorization
 ms.assetid: 8ea0b552-af65-45b0-a157-c6c111b8ce5e
-ms.openlocfilehash: c86a07b96b15963af9f078b52bc0d28e9a38187a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 67da01508fbb8f14b6405b79445bdef297e63288
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556256"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247484"
 ---
 # <a name="authorization-in-wcf"></a>Autorisation dans WCF
+
 L'autorisation est le processus qui consiste à contrôler l'accès et les droits aux ressources, telles que les services ou fichiers. Les rubriques de cette section vous montrent comment effectuer cette tâche de base dans Windows Communication Foundation (WCF) de différentes façons.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Mécanismes de contrôle d'accès](access-control-mechanisms.md)  
  Fournit un bref aperçu des mécanismes d’autorisation dans WCF et les utilisations suggérées.  
   
@@ -35,6 +37,7 @@ L'autorisation est le processus qui consiste à contrôler l'accès et les droit
  Explique la différence entre la délégation et l'emprunt d'identité.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.ServiceModel.Security>  
   
  <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
@@ -44,6 +47,7 @@ L'autorisation est le processus qui consiste à contrôler l'accès et les droit
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Authentification](authentication-in-wcf.md)  
   
 ## <a name="see-also"></a>Voir aussi

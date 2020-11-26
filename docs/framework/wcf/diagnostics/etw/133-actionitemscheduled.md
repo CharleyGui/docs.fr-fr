@@ -2,27 +2,30 @@
 title: 133 - ActionItemScheduled
 ms.date: 03/30/2017
 ms.assetid: a226aeea-69f4-438c-909b-05bd68b99220
-ms.openlocfilehash: 7e2a59056bdef8e4f5d2a7afeda4696f4c8762ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 59507e7ca14e17c18db5df9264bf6363e0593170
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782393"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247055"
 ---
 # <a name="133---actionitemscheduled"></a>133 - ActionItemScheduled
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|133|  
+|id|133|  
 |Mots clés|Thread|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
- Cet événement est émis lorsque le Thread d’e/s appeler de rappel du planificateur ne démarre.  
+
+ Cet événement est émis lorsque l’appel de rappel du planificateur de threads d’e/s démarre.  
   
 ## <a name="message"></a>Message  
- Rappel du planificateur du Thread d’e/s invoqué.  
+
+ Rappel du planificateur de threads d’e/s appelé.  
   
 ## <a name="details"></a>Détails

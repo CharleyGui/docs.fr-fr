@@ -14,14 +14,15 @@ helpviewer_keywords:
 - CTLs
 - certificate revocation lists
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
-ms.openlocfilehash: 43ab281e6ec28ff23ea584b03fd4278c6682e33e
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 30a35ded6fc86af6dc6dd4bf19cdf60f66570e0c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167267"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247250"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (outil de gestionnaire de certificats)
+
 L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de certificats de confiance (CTL) et les listes de révocation de certificats (CRL).  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l’outil, utilisez des [Invites de commandes](developer-command-prompt-for-vs.md).  
@@ -58,7 +59,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 |**/CRL**|Ajoute des listes de révocation de certificats si utilisée avec **/add**. Supprime les listes de révocation de certificats lorsqu’elles sont utilisées avec **/del**. Enregistre les listes de révocation de certificats lorsqu’elles sont utilisées avec **/put**. Affiche les listes de révocation des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
 |**/CTL**|Ajoute des listes de certificats de confiance si utilisée avec **/add**. Supprime des listes CTL en cas d’utilisation avec **/del**. Enregistre les listes CTL en cas d’utilisation avec **/put**. Affiche des listes de certificats de confiance si utilisée sans l'option **/add**, **/del** ou **/put**.|  
 |**/del**|Supprime des certificats, listes de certificats de confiance et listes de révocation de certificats dans un magasin de certificats.|  
-|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. Par défaut, il s’agit de `X509_ASN_ENCODING`.|  
+|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. La valeur par défaut est `X509_ASN_ENCODING`.|  
 |**/f** *dwFlags*|Spécifie l'indicateur d'ouverture du magasin. Il s'agit du paramètre *dwFlags* passé à **CertOpenStore**. Sa valeur par défaut est CERT_SYSTEM_STORE_CURRENT_USER. Cette option n'est prise en compte que si l'option **/y** est utilisée.|  
 |**/h**[**IDE**]|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/n** *nam*|Spécifie le nom commun du certificat à ajouter, à supprimer ou à enregistrer. Cette option ne peut être utilisée qu'avec des certificats ; elle n'est pas compatible avec les listes de certificats de confiance, ni avec les listes de révocation de certificats.|  
@@ -72,6 +73,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
 ## <a name="remarks"></a>Notes  
+
  Certmgr.exe exécute les fonctions de base suivantes :  
   
 - Affiche les certificats, listes de certificats de confiance et listes de révocation de certificats dans la console.  
@@ -94,6 +96,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
  Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](../wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="examples"></a>Exemples  
+
  La commande suivante affiche un magasin système par défaut appelé `my` avec une sortie des commentaires.  
   
 ```console  

@@ -7,14 +7,15 @@ helpviewer_keywords:
 - CorFlags.exe
 - portable executable files, CorFlags section
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
-ms.openlocfilehash: da5efadd63cc03f6f6e4eecf3115865ca3643b39
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3f9f2a71a7a33de13264ce60fa7ff6ea5832aace
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167230"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247185"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (outil de conversion CorFlags)
+
 L’outil de conversion CorFlags vous permet de configurer la section CorFlags de l’en-tête d’une image exécutable portable.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
@@ -49,6 +50,7 @@ CorFlags.exe assembly [options]
 |`-UpgradeCLRHeader`|Met à niveau l'en-tête du CLR à la version 2.5. **Remarque :** Les assemblys doivent avoir la version 2.5 ou ultérieure dans l’en-tête du CLR pour être exécutés en mode natif.|  
   
 ## <a name="remarks"></a>Notes  
+
  Si aucune option n'est spécifiée, l'outil de conversion CorFlags affiche les indicateurs pour l'assembly spécifié.  
   
 ## <a name="see-also"></a>Voir aussi
