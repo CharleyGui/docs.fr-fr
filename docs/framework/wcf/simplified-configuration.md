@@ -3,17 +3,19 @@ title: Configuration simplifiée
 description: En savoir plus sur la configuration simplifiée pour les services WCF. .NET Framework 4.6.1 offre un moyen de réduire la taille et la complexité de la configuration du service.
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: defaf536d5a5b9f1479271c0976b43e9b1eb5bc4
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 248fe05e5854dbbec1a66b046c4def3d11d30327
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246036"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235946"
 ---
 # <a name="simplified-configuration"></a>Configuration simplifiée
+
 La configuration des services de Windows Communication Foundation (WCF) peut être une tâche complexe. Il existe de nombreuses options différentes et il n'est pas toujours évident de déterminer les paramètres nécessaires. Alors que les fichiers de configuration augmentent la flexibilité des services WCF, ils sont également la source de nombreux problèmes difficiles à détecter. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] traite ces problèmes et permet de réduire la taille et la complexité de la configuration de service.  
   
 ## <a name="simplified-configuration"></a>Configuration simplifiée  
+
  Dans les fichiers de configuration du service WCF, la `system.serviceModel` section> <contient un `service` élément <> pour chaque service hébergé. L' `service` élément <> contient une collection d' `endpoint` éléments <> qui spécifient les points de terminaison exposés pour chaque service et éventuellement un ensemble de comportements de service. Les `endpoint` éléments de> <spécifient l’adresse, la liaison et le contrat exposés par le point de terminaison, et éventuellement la liaison des comportements de configuration et de point de terminaison. La `system.serviceModel` section> <contient également un `behaviors` élément <> qui vous permet de spécifier des comportements de service ou de point de terminaison. L’exemple suivant montre le <`system.serviceModel`> section d’un fichier de configuration.  
   
 ```xml  
@@ -47,7 +49,7 @@ La configuration des services de Windows Communication Foundation (WCF) peut êt
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]facilite la configuration d’un service WCF en supprimant la nécessité de l' `service` élément <>. Si vous n’ajoutez pas de <`service` section> ou si vous ajoutez des points de terminaison dans une `service` section de> <et que votre service ne définit aucun point de terminaison par programmation, un jeu de points de terminaison par défaut est automatiquement ajouté à votre service, un pour chaque adresse de base de service et pour chaque contrat implémenté par votre service. Dans chacun de ces points de terminaison, l’adresse du point de terminaison correspond à l’adresse de base, la liaison est déterminée par le schéma d’adresse de base et le contrat est celui implémenté par votre service. Si vous n’avez pas besoin de spécifier de comportements de point de terminaison ou de service, ni de modifier un paramètre de liaison, il est inutile de spécifier un fichier de configuration de service. Si un service implémente deux contrats et que l'hôte active à la fois les transports HTTP et TCP, l'hôte de service crée quatre points de terminaison par défaut, un pour chaque contrat utilisant chaque transport. Pour créer des points de terminaison par défaut, l'hôte de service doit savoir quelles liaisons utiliser. Ces paramètres sont spécifiés dans une `protocolMappings` section> <dans la `system.serviceModel` section> de <. La `protocolMappings` section> <contient une liste de schémas de protocole de transport mappés aux types de liaison. L’hôte du service utilise les adresses de base qui lui sont transmises pour déterminer quelle liaison utiliser. L’exemple suivant utilise l' `protocolMappings` élément <>.  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] facilite la configuration d’un service WCF en supprimant la nécessité de l' `service` élément <>. Si vous n’ajoutez pas de <`service` section> ou si vous ajoutez des points de terminaison dans une `service` section de> <et que votre service ne définit aucun point de terminaison par programmation, un jeu de points de terminaison par défaut est automatiquement ajouté à votre service, un pour chaque adresse de base de service et pour chaque contrat implémenté par votre service. Dans chacun de ces points de terminaison, l’adresse du point de terminaison correspond à l’adresse de base, la liaison est déterminée par le schéma d’adresse de base et le contrat est celui implémenté par votre service. Si vous n’avez pas besoin de spécifier de comportements de point de terminaison ou de service, ni de modifier un paramètre de liaison, il est inutile de spécifier un fichier de configuration de service. Si un service implémente deux contrats et que l'hôte active à la fois les transports HTTP et TCP, l'hôte de service crée quatre points de terminaison par défaut, un pour chaque contrat utilisant chaque transport. Pour créer des points de terminaison par défaut, l'hôte de service doit savoir quelles liaisons utiliser. Ces paramètres sont spécifiés dans une `protocolMappings` section> <dans la `system.serviceModel` section> de <. La `protocolMappings` section> <contient une liste de schémas de protocole de transport mappés aux types de liaison. L’hôte du service utilise les adresses de base qui lui sont transmises pour déterminer quelle liaison utiliser. L’exemple suivant utilise l' `protocolMappings` élément <>.  
   
 > [!WARNING]
 > Le fait de modifier les éléments de configuration par défaut, comme les liaisons ou les comportements, peut affecter les services définis dans les niveaux inférieurs de la hiérarchie de configuration, car ces derniers peuvent utiliser ces liaisons et comportements par défaut. C’est pourquoi, la personne qui modifie les liaisons et comportements par défaut doit savoir que ces changements peuvent affecter d’autres services dans la hiérarchie.  
@@ -121,4 +123,4 @@ La configuration des services de Windows Communication Foundation (WCF) peut êt
 - [Configuration des liaisons fournies par le système](./feature-details/configuring-system-provided-bindings.md)
 - [Configuration des services](configuring-services.md)
 - [Configuration des services WCF](configuring-services.md)
-- [Configuration des services WCF dans le code](configuring-wcf-services-in-code.md)
+- [Configuration de services WCF dans le code](configuring-wcf-services-in-code.md)

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: d3059cec5007c24d41a4a779939d4990f19305ca
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 8b00c20e82ee1b1efa6a8a123e66a4cfc239143b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475201"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236167"
 ---
 # <a name="thread-pool-etw-events"></a>Événements ETW de pool de threads
+
 Ces événements collectent des informations sur les threads de travail et d'E/S.  
   
  Il existe deux groupes d'événements de pool de threads :  
@@ -23,9 +24,11 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 - Les[événements du pool de threads d'E/S](#io-thread-events), qui fournissent des informations sur les threads d'E/S créés, retirés, non retirés ou terminés dans le pool de threads.  
 
 ## <a name="worker-thread-pool-events"></a>événements du pool de threads de travail
+
  Ces événements sont liés au pool de threads de travail du runtime et fournissent des notifications pour les événements de thread (par exemple, quand un thread est créé ou arrêté). Le pool de threads de travail utilise un algorithme flexible pour le contrôle d’accès concurrentiel, où le nombre de threads est calculé en fonction du débit mesuré. Les événements du pool de threads de travail peuvent être utilisés pour comprendre comment une application utilise le pool de threads et l'effet que certaines charges de travail peuvent avoir sur le contrôle d'accès concurrentiel.  
   
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart et ThreadPoolWorkerThreadStop  
+
  Le tableau ci-dessous indique le mot clé et le niveau de ces événements. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -50,9 +53,11 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="threadpoolworkerthreadadjustment"></a>ThreadPoolWorkerThreadAdjustment  
+
  Ces événements de pool de threads fournissent des informations permettant de comprendre et de déboguer le comportement de l'algorithme d'injection de thread (contrôle d'accès concurrentiel). Ces informations sont utilisées en interne par le pool de threads de travail.  
   
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -73,6 +78,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -95,6 +101,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -124,9 +131,11 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
 
 ## <a name="io-thread-events"></a>Événements de thread d'E/S  
+
  Ces événements de pool de threads se produisent pour les threads du pool de threads d'E/S (ports de terminaison), qui est asynchrone.  
   
 ### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -148,6 +157,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -169,6 +179,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -190,6 +201,7 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  

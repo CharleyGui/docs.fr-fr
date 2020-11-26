@@ -2,14 +2,15 @@
 title: Net.TCP Port Sharing, exemple
 ms.date: 03/30/2017
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-ms.openlocfilehash: 6c196380951d0da912cd937e3ebc38a03f80489c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fa62734ed6a4a016011c9f29b3665dae05a000c6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584309"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235374"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Net.TCP Port Sharing, exemple
+
 Le protocole TCP/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur. Si une application écoute un port, tout le trafic TCP de ce port va à cette application. Les autres applications ne peuvent pas écouter en même temps ce port.  
   
 > [!IMPORTANT]
@@ -34,6 +35,7 @@ Unhandled Exception: System.ServiceModel.CommunicationException: The TransportMa
  Le partage de ports est activé sur le serveur en définissant la propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> de la liaison <xref:System.ServiceModel.NetTcpBinding> ou de l'élément de liaison <xref:System.ServiceModel.Channels.TcpTransportBindingElement>. Le client n'a pas besoin de savoir comment le partage de ports a été configuré pour l'utiliser sur le serveur.  
   
 ## <a name="enabling-port-sharing"></a>Activation du partage de ports  
+
  Le code suivant illustre l'activation du partage de ports sur le serveur. Il démarre une instance du service `ICalculator` sur un port fixe avec un chemin d’accès URI aléatoire. Bien que deux services puissent partager le même port, leurs adresses de point de terminaison globales doivent demeurer uniques afin que le service de partage de ports NetTcp puisse router les messages vers l'application qui convient.  
 
 ```csharp
@@ -56,6 +58,7 @@ Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is 
 ```  
   
 ## <a name="running-the-sample"></a>Exécution de l'exemple  
+
  Vous pouvez utiliser le client test pour vérifier que les messages sont correctement routés aux services qui partagent le port.  
 
 ```csharp

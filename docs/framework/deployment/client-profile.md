@@ -10,14 +10,15 @@ helpviewer_keywords:
 - profile [.NET Framework Client Profile]
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
-ms.openlocfilehash: e199dccd30b8648177b3da5cc173ea3a7f9a60d8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 92ade654b20c5971482464ce1cb9619c434679b6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555287"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236388"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
+
 .NET Client Profile est un sous-ensemble du .NET Framework fourni avec .NET Framework 4 et versions antérieures, et optimisé pour les applications clientes. Le .NET Framework est une plateforme de développement pour Windows Phone et Microsoft Azure qui fournit un environnement managé d'exécution d'applications et la bibliothèque de classes .NET Framework. .NET Framework 4 et versions antérieures fournissaient deux options de déploiement : le .NET Framework complet et Client Profile. Client Profile a permis d'accélérer le déploiement et de réduire les packages d'installation par rapport au .NET Framework complet.  
   
  À compter de .NET Framework 4.5, Client Profile a été supprimé et seul le package redistribuable complet est disponible. Les optimisations fournies par .NET Framework 4.5, telles qu’une plus petite taille de téléchargement et un déploiement plus rapide, ont supprimé le besoin d’un package de déploiement distinct. Le package redistribuable unique rationalise le processus d'installation et simplifie les options de déploiement de votre application.  

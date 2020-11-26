@@ -2,36 +2,42 @@
 title: Propagation d'ID d'activité
 ms.date: 03/30/2017
 ms.assetid: cd1c1ae5-cc8a-4f51-90c9-f7b476bcfe70
-ms.openlocfilehash: 642d4da49f90d3fc6f2b0dfc9896d724acb075b5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0f0478b16bf2ca0975ae0290a8855756ecfc383e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651806"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236102"
 ---
 # <a name="activity-id-propagation"></a>Propagation d'ID d'activité
+
 La propagation a lieu lorsque le suivi d'activité ServiceModel est activé (propagation ServiceModel) ou désactivé (propagation d'activité utilisateur-à-utilisateur).  
   
 ## <a name="servicemodel-activity-tracing-is-enabled"></a>Le suivi d'activité ServiceModel est activé  
+
  Si le suivi d'activité (ActivityTracing) ServiceModel est activé, la propagation a lieu entre les activités ProcessAction.  
   
 ### <a name="server"></a>Serveur  
- Lorsque le `propagateActivity` attribut a la valeur `true` sur le client et le serveur, l’ID de la `ProcessAction` activité sur le serveur est identique à l’ID dans le propagé `ActivityId` en-tête de message.  
+
+ Lorsque l' `propagateActivity` attribut a la valeur `true` sur le client et le serveur, l’ID de l' `ProcessAction` activité sur le serveur est identique à l’ID dans l' `ActivityId` en-tête de message propagé.  
   
- En cas de non `ActivityId` en-tête est présent dans le message (autrement dit, `propagateActivity` = `false` sur le client), ou lorsque `propagateActivity` = `false` sur le serveur, le serveur génère un nouvel ID d’activité.  
+ Lorsqu’aucun `ActivityId` en-tête n’est présent dans le message (c’est-à-dire `propagateActivity` = `false` sur le client) ou lorsque `propagateActivity` = `false` sur le serveur, le serveur génère un nouvel ID d’activité.  
   
 ### <a name="client"></a>Client  
- Si le client est à thread unique de façon synchrone, il ignore tout paramètre de `propagateActivity` sur le client ou le serveur. Au lieu de cela, la réponse est gérée dans l'activité de demande. Si le client soit synchrone ou asynchrone multithread, `propagateActivity` = `true` dans le client et qu’un en-tête d’ID activité dans le message envoyé par le serveur, le client récupère l’ID d’activité à partir du message et transfère vers le Activité traiter l’Action qui contient l’ID d’activité propagé. Autrement, le client effectue le transfert de l'activité Traiter le message à une nouvelle activité Traiter l'action. Ce transfert supplémentaire vers une nouvelle activité Traiter l'action est effectué pour des raisons de cohérence. À l'intérieur de cette activité, le client récupère l'ID d'activité de l'activité BeginCall à partir du contexte de thread local, lorsque le thread est alloué pour le traitement du message de réponse. Il transfère ensuite l'ID à l'activité Traiter l'action initiale.  
+
+ Si le client est à thread unique de façon synchrone, il ignore tout paramètre de `propagateActivity` sur le client ou le serveur. Au lieu de cela, la réponse est gérée dans l'activité de demande. Si le client est multithread asynchrone ou synchrone, `propagateActivity` = `true` dans le client et qu’il y a un en-tête d’ID d’activité dans le message envoyé par le serveur, le client récupère l’ID d’activité à partir du message et transfère à l’activité traiter l’action qui contient l’ID d’activité propagée. Autrement, le client effectue le transfert de l'activité Traiter le message à une nouvelle activité Traiter l'action. Ce transfert supplémentaire vers une nouvelle activité Traiter l'action est effectué pour des raisons de cohérence. À l'intérieur de cette activité, le client récupère l'ID d'activité de l'activité BeginCall à partir du contexte de thread local, lorsque le thread est alloué pour le traitement du message de réponse. Il transfère ensuite l'ID à l'activité Traiter l'action initiale.  
   
  Si le client est duplex, il fait office de serveur lors de la réception du message.  
   
 ### <a name="propagation-in-fault-messages"></a>Propagation dans les messages d'erreur  
- Il n'y a aucune différence entre la gestion des messages valides et celle des messages d'erreur. Si `propagateActivity` = `true`, l’ID d’activité ajouté aux en-têtes de messages d’erreur SOAP est identique à l’activité ambiante.  
+
+ Il n'y a aucune différence entre la gestion des messages valides et celle des messages d'erreur. Si `propagateActivity` = `true` la valeur est, l’ID d’activité ajouté aux en-têtes de message d’erreur SOAP est identique à l’activité ambiante.  
   
 ## <a name="servicemodel-activity-tracing-is-disabled"></a>Le suivi d'activité ServiceModel est désactivé  
+
  Si le suivi d'activité (ActivityTracing) ServiceModel est désactivé, la propagation se produit directement entre les activités de code utilisateur sans passer par les activités ServiceModel. Un ID d'activité défini par l'utilisateur est également propagé par le biais de l'en-tête d'ID d'activité de message.  
   
- Si `propagateActivity` = `true` et `ActivityTracing` = `off` pour un écouteur de suivi ServiceModel (indépendamment de si le traçage est activé sur ServiceModel), les éléments suivants se produisent sur le client ou le serveur :  
+ Si `propagateActivity` = `true` et `ActivityTracing` = `off` pour un écouteur de suivi ServiceModel (que le suivi soit activé ou non sur ServiceModel), les éléments suivants se produisent sur le client ou le serveur :  
   
 - Lors de la demande d'opération ou de l'envoi de réponse, l'ID d'activité dans TLS est propagé hors du code utilisateur jusqu'à ce qu'un message soit formé. Un en-tête d'ID d'activité est également inséré dans le message avant qu'il ne soit envoyé.  
   

@@ -1,18 +1,19 @@
 ---
-title: 'Comment : spécifier une liaison de service dans le code'
+title: 'Procédure : spécifier une liaison de service dans le code'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 67ab5dd8-79c1-4e62-aa75-828ea918a53a
-ms.openlocfilehash: 3c6cfd084055d59d3292b49897ff710f14f92737
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7cf54754661182dca1e91c75b158d9b0a34a1f5e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320875"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236479"
 ---
-# <a name="how-to-specify-a-service-binding-in-code"></a>Comment : spécifier une liaison de service dans le code
+# <a name="how-to-specify-a-service-binding-in-code"></a>Procédure : spécifier une liaison de service dans le code
+
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est défini dans du code, où il est spécifié que le service doit utiliser la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
@@ -51,4 +52,4 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md)
-- [Spécification d’une adresse de point de terminaison](specifying-an-endpoint-address.md)
+- [Spécification d'une adresse de point de terminaison](specifying-an-endpoint-address.md)

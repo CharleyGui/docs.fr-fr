@@ -6,14 +6,15 @@ helpviewer_keywords:
 - stack event [.NET Framework]
 - ETW, stack event (CLR)
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
-ms.openlocfilehash: cab496615c4ef17831895b72c8987917e3c06e77
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 3b890e587abd5cb1b7315fe41897f24638fd4604
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474135"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236206"
 ---
 # <a name="stack-etw-event"></a>Événement ETW de pile
+
 L’événement de pile doit être utilisé conjointement avec d’autres événements pour générer des arborescences d’appels de procédure après le déclenchement d’un événement. Il est enregistré quand le fournisseur du runtime est activé. Il s’agit d’un événement très fréquent, car il est déclenché à chaque déclenchement d’un autre événement runtime. Pour cette raison, nous vous recommandons d’utiliser cet événement avec précaution.  
   
  Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  

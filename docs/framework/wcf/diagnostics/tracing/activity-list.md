@@ -2,23 +2,25 @@
 title: Liste des activités
 ms.date: 03/30/2017
 ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
-ms.openlocfilehash: 8d43cc878d54efbd4908f92c3405bef2c7956f94
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d28ae2e4750c718c35105d090aff8d085025b9d6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602165"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236089"
 ---
 # <a name="activity-list"></a>Liste des activités
+
 Cette rubrique répertorie toutes les activités définies par Windows Communication Foundation (WCF).  
   
 > [!NOTE]
-> Vous pouvez également définir des activités par programme pour grouper des suivis utilisateur. Pour plus d’informations, consultez [émission de traces de code utilisateur](emitting-user-code-traces.md).  
+> Vous pouvez également définir des activités par programme pour grouper des suivis utilisateur. Pour plus d’informations, consultez [émission de suivis de User-Code](emitting-user-code-traces.md).  
   
 ## <a name="servicemodel-activities"></a>Activités ServiceModel  
+
  Le tableau suivant répertorie toutes les activités pour les principaux scénarios d'utilisation.  
   
-|Etiquette|Nom de l’activité|Type d’activité|Description|  
+|Étiquette|Nom de l’activité|Type d’activité|Description|  
 |-----------|-------------------|-------------------|-----------------|  
 |A, M|Activité ambiante|N/A (non contrôlé par ServiceModel)|Activité dont l'ID est défini dans TLS avant les appels au code ServiceModel (côté client ou côté serveur).<br /><br /> Exemple : une activité où Open est appelé sur le client WCF ou serviceHost. Open est appelé.|  
 |B|Construction<br /><br /> ChannelFactory. ContractType : '[Type]'.|Construction||  
@@ -34,6 +36,7 @@ Cette rubrique répertorie toutes les activités définies par Windows Communica
 |T|Exécuter '[IContract.Operation]'.|ExecuteUserCode|Cette activité exécute le code utilisateur après distribution sur le côté service. Elle fournit une limite permettant de définir le code ServiceHost à partir du code fourni par l'utilisateur.|  
   
 ## <a name="security-activities"></a>Activités de sécurité  
+
  Le tableau suivant répertorie l'ensemble des activités relatives à la sécurité.  
   
 |Nom de l’activité|Type d’activité|Description|  
@@ -46,9 +49,10 @@ Cette rubrique répertorie toutes les activités définies par Windows Communica
 |Nom de l’activité|Type d’activité|Description|  
 |-------------------|-------------------|-----------------|  
 |Créer une instance COM+|TransferToCOMPlus|1 instance d’activité pour chaque appel COM+ à partir du code WCF|  
-|Exécuter COM+\<operation>|TransferToCOMPlus|1 instance d’activité pour chaque appel COM+ à partir du code WCF|  
+|Exécuter COM+ \<operation>|TransferToCOMPlus|1 instance d’activité pour chaque appel COM+ à partir du code WCF|  
   
 ## <a name="wmi-activities"></a>Activités WMI  
+
  Le tableau suivant répertorie l'ensemble des activités relatives WMI.  
   
 |Nom de l’activité|Type d’activité|Description|  

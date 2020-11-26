@@ -3,22 +3,24 @@ title: Présentation des problèmes et exceptions de WebRequest
 description: WebRequest et les classes dérivées lèvent des exceptions pour signaler des conditions anormales. Utilisez ces solutions possibles pour résoudre ces conditions dans le .NET Framework.
 ms.date: 03/30/2017
 ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
-ms.openlocfilehash: aa9ab989bad7940e82cc4fd8fd22ca3915f7b800
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 27fde2a3cf3e6a3469a47bdd9efe70d31620777d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502078"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236323"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>Présentation des problèmes et exceptions de WebRequest
+
 <xref:System.Net.WebRequest> et ses classes dérivées (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest> et <xref:System.Net.FileWebRequest>) lèvent des exceptions pour signaler une condition anormale. La résolution de ces problèmes n’est pas toujours facile.  
   
 ## <a name="solutions"></a>Solutions  
+
  La propriété <xref:System.Net.WebException.Status%2A> de <xref:System.Net.WebException> vous aide à déterminer le problème. Le tableau suivant répertorie différentes valeurs d’état et résolutions possibles.  
   
 |Statut|Détails|Solution|  
 |------------|-------------|--------------|  
-|<xref:System.Net.WebExceptionStatus.SendFailure><br /><br /> -ou-<br /><br /> <xref:System.Net.WebExceptionStatus.ReceiveFailure>|Il y a un problème avec le socket sous-jacent. La connexion a peut-être été réinitialisée.|Reconnectez-vous et renvoyez la demande.<br /><br /> Vérifiez que vous avez installé la version la plus récente du Service Pack.<br /><br /> Augmentez la valeur de la propriété <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType>.<br /><br /> Définissez <xref:System.Net.HttpWebRequest.KeepAlive%2A?displayProperty=nameWithType> sur `false`.<br /><br /> Augmentez le nombre maximal de connexions avec la propriété <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>.<br /><br /> Vérifiez la configuration du proxy.<br /><br /> Si vous utilisez SSL, vérifiez que le processus serveur a l’autorisation appropriée pour accéder au magasin de certificats.<br /><br /> Si vous envoyez de grandes quantités de données, définissez <xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A> sur `false`.|  
+|<xref:System.Net.WebExceptionStatus.SendFailure><br /><br /> -ou-<br /><br /> <xref:System.Net.WebExceptionStatus.ReceiveFailure>|Il y a un problème avec le socket sous-jacent. La connexion a peut-être été réinitialisée.|Reconnectez-vous et renvoyez la demande.<br /><br /> Vérifiez que vous avez installé la version la plus récente du Service Pack.<br /><br /> Augmentez la valeur de la propriété <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType>.<br /><br /> Affectez la valeur <xref:System.Net.HttpWebRequest.KeepAlive%2A?displayProperty=nameWithType> à `false`.<br /><br /> Augmentez le nombre maximal de connexions avec la propriété <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>.<br /><br /> Vérifiez la configuration du proxy.<br /><br /> Si vous utilisez SSL, vérifiez que le processus serveur a l’autorisation appropriée pour accéder au magasin de certificats.<br /><br /> Si vous envoyez de grandes quantités de données, définissez <xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A> sur `false`.|  
 |<xref:System.Net.WebExceptionStatus.TrustFailure>|Le certificat de serveur n’a pas pu être validé.|Essayez d’ouvrir l’URI à l’aide d’Internet Explorer. Résolvez les alertes de sécurité affichées par Internet Explorer. Si vous ne pouvez pas résoudre l’alerte de sécurité, créez une classe de stratégie de certificat pour implémenter <xref:System.Net.ICertificatePolicy> qui retourne `true`, puis passez-la à <xref:System.Net.ServicePointManager.CertificatePolicy%2A>.<br /><br /> Consultez la page <https://support.microsoft.com/?id=823177>.<br /><br /> Vérifiez que le certificat de l’autorité de certification qui a signé le certificat de serveur a été ajouté à la liste des autorités de certification approuvées dans Internet Explorer.<br /><br /> Vérifiez que le nom d’hôte dans l’URL correspond au nom commun sur le certificat de serveur.|  
 |<xref:System.Net.WebExceptionStatus.SecureChannelFailure>|Une erreur s’est produite dans la transaction SSL, ou il y a un problème de certificat.|.NET Framework version 1.1 prend uniquement en charge SSL version 3.0. Si le serveur utilise uniquement TLS version 1.0 ou SSL version 2.0, l’exception est levée. Effectuez une mise à niveau vers NET Framework 2.0 et définissez le même <xref:System.Net.ServicePointManager.SecurityProtocol%2A> que le serveur.<br /><br /> Le certificat client a été signé par une autorité de certification qui n’est pas approuvée par le serveur. Installez le certificat de l’autorité de certification sur le serveur. Consultez <https://support.microsoft.com/?id=332077>.<br /><br /> Vérifiez que vous avez installé le Service Pack le plus récent.|  
 |<xref:System.Net.WebExceptionStatus.ConnectFailure>|La connexion a échoué.|Un pare-feu ou un proxy bloque la connexion. Modifiez le pare-feu ou le proxy pour permettre la connexion.<br /><br /> Désignez explicitement un <xref:System.Net.WebProxy> dans l’application cliente en appelant le <xref:System.Net.WebProxy> constructeur ( `WebServiceProxyClass.Proxy = new WebProxy("http://server:80", true)` ).<br /><br /> Exécutez Filemon ou Regmon pour vérifier que l’identité du processus Worker a les autorisations nécessaires pour accéder à WSPWSP.dll, HKLM\System\CurrentControlSet\Services\DnsCache ou HKLM\System\CurrentControlSet\Services\WinSock2.|  

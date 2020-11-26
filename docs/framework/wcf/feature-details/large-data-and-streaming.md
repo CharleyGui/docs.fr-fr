@@ -3,21 +3,23 @@ title: Données volumineuses et diffusion en continu
 description: En savoir plus sur les considérations relatives à la communication basée sur XML WCF, aux encodeurs et aux données de diffusion en continu, y compris le transfert de données binaires.
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 58ef2ea1fd4f9aa800a91edbaabeb80f989b38f4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 09e020801486c09c027883fca3d67a6c2e2fe8d7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555027"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234698"
 ---
 # <a name="large-data-and-streaming"></a>Données volumineuses et diffusion en continu
 
 Windows Communication Foundation (WCF) est une infrastructure de communication basée sur XML. Étant donné que les données XML sont généralement codées au format texte standard défini dans la [spécification XML 1,0](https://www.w3.org/TR/REC-xml/), les développeurs et les architectes de systèmes connectés se préoccupent généralement de l’empreinte du câble (ou de la taille) des messages envoyés sur le réseau, et l’encodage de code XML basé sur du texte pose des difficultés spéciales pour le transfert efficace de données binaires.  
   
 ## <a name="basic-considerations"></a>Considérations de base  
+
  Pour fournir des informations générales sur les informations suivantes pour WCF, cette section met en évidence certaines préoccupations générales et les considérations relatives aux encodages, aux données binaires et à la diffusion en continu qui s’appliquent généralement aux infrastructures de systèmes connectés.  
   
 ### <a name="encoding-data-text-vs-binary"></a>Encodage de données : texte et binaire  
+
  Les préoccupations couramment exprimées par les développeurs incluent l’idée que le XML possède une charge mémoire considérable par rapport aux formats binaires en raison de la nature répétitive des étiquettes de début et de fin, que l’encodage de valeurs numériques est considéré comme nettement plus volumineux parce qu’elles sont exprimées en valeurs texte, et que ces données binaires ne peuvent pas être exprimées efficacement parce qu’elles doivent être encodées spécialement à des fins d’incorporation dans un format texte.  
   
  Même si de nombreuses préoccupations comme celle-ci ainsi que d’autres sont justifiées, la différence réelle entre les messages à encodage texte XML dans un environnement de services web XML et les messages à encodage binaire dans un environnement d’appel de procédure distante (RPC) hérité est souvent beaucoup moins importante que la considération initiale peut le suggérer.  
@@ -33,6 +35,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
  Un avantage net des messages texte XML est qu'ils sont basés sur des normes et qu'ils offrent le choix le plus large d'options d'interopérabilité et de prise en charge de plateformes. Pour plus d’informations, consultez la section « encodages » plus loin dans cette rubrique.  
   
 ### <a name="binary-content"></a>Contenu binaire  
+
  Un domaine dans lequel les encodages binaires sont supérieurs aux encodages basés sur le texte en termes de taille des messages obtenus concerne les éléments de données binaires volumineux tels que les photos, vidéos, clips audio ou tout autre forme de données binaires et opaques qui doivent être échangées entre des services et leurs consommateurs. Pour adapter ces types de données au texte XML, l'approche courante consiste à les encoder à l'aide d'un encodage Base64.  
   
  Dans une chaîne encodée en Base64, chaque caractère représente 6 bits des données de 8 bits d'origine, ce qui donne un rapport encodage/charge mémoire de 4:3 pour Base64, en ne comptant pas les caractères de mise en forme supplémentaires (retour chariot/saut de ligne) habituellement ajoutés par convention. Alors que l'importance des différences entre les encodages XML et binaire dépend en général du scénario, un gain de taille de plus de 33 % lors d'une transmission d'une charge utile de 500 Mo n'est habituellement pas acceptable.  
@@ -44,6 +47,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
  Pour autant, comme avec Base64, MTOM s'accompagne également d'une charge mémoire nécessaire pour le format MIME, de sorte que les avantages de l'utilisation de MTOM s'aperçoivent uniquement quand la taille d'un élément de données binaires dépasse 1 Ko environ. En raison de la charge mémoire, les messages encodés MTOM peuvent être plus volumineux que les messages qui utilisent l'encodage Base64 pour les données binaires, si la charge utile binaire reste sous ce seuil. Pour plus d’informations, consultez la section « encodages » plus loin dans cette rubrique.  
   
 ### <a name="large-data-content"></a>Contenu de données volumineux  
+
  L'encombrement du câble mis de côté, la charge utile de 500 Mo précédemment mentionnée représente également un grand challenge local pour le service et le client. Par défaut, WCF traite les messages en *mode de mise en mémoire tampon*. Cela signifie que le contenu entier d'un message est présent en mémoire avant son envoi ou après sa réception. Alors qu’il s’agit d’une bonne stratégie pour la plupart des scénarios et qu’elle est nécessaire pour les fonctionnalités de messagerie telles que les signatures numériques et la remise fiable, les messages volumineux peuvent épuiser les ressources d’un système.  
   
  La stratégie permettant de gérer les grandes charges utiles est la diffusion en continu. Alors que les messages, surtout ceux exprimés en XML, sont généralement considérés comme des packages de données relativement compacts, un message peut avoir une taille de plusieurs giga-octets et ressembler à un flux de données continu plus qu'à un package de données. Lorsque les données sont transférées en mode de diffusion en continu plutôt qu'en mode mémoire tampon, l'expéditeur rend le contenu du corps du message disponible au destinataire sous la forme d'un flux, et l'infrastructure du message transfère en continu les données de l'expéditeur au destinataire au fur et à mesure de leur disponibilité.  
@@ -61,6 +65,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
  Lors de l’envoi de grandes quantités de données, vous devez définir le `maxAllowedContentLength` paramètre IIS (pour plus d’informations, consultez [Configuration des limites des demandes IIS](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)) et le `maxReceivedMessageSize` paramètre de liaison (par exemple, [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) ou <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ). La `maxAllowedContentLength` valeur par défaut de la propriété est de 28,6 Mo et la `maxReceivedMessageSize` valeur par défaut de 64 Ko.  
   
 ## <a name="encodings"></a>Encodages  
+
  Un *encodage* définit un ensemble de règles sur la façon de présenter des messages sur le câble. Un *encodeur* implémente ce type d’encodage et est responsable, du côté de l’expéditeur, de la transformation d’un en mémoire <xref:System.ServiceModel.Channels.Message> en un flux d’octets ou une mémoire tampon d’octets qui peut être envoyé sur le réseau. Du côté destinataire, l'encodeur transforme une séquence d'octets en un message en mémoire.  
   
  WCF comprend trois encodeurs et vous permet d’écrire et de brancher vos propres encodeurs, si nécessaire.  
@@ -78,6 +83,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
  Si votre solution ne requiert pas une interopérabilité, mais que vous souhaitez quand même utiliser le transport HTTP, vous pouvez composer un <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> dans une liaison personnalisée qui utilise la classe <xref:System.ServiceModel.Channels.HttpTransportBindingElement> pour le transport. Si plusieurs clients sur votre service ont besoin d'interopérabilité, il est recommandé d'exposer des points de terminaison parallèles qui ont tous le transport approprié et le choix de l'encodage pour les clients respectifs activés.  
   
 ### <a name="enabling-mtom"></a>Activation de MTOM  
+
  Lorsque l’interopérabilité est une exigence et que vous devez envoyer des données binaires volumineuses, l’encodage de message MTOM constitue la stratégie d’encodage alternative que vous pouvez activer sur les liaisons <xref:System.ServiceModel.BasicHttpBinding> ou <xref:System.ServiceModel.WSHttpBinding> standard en affectant à la propriété `MessageEncoding` respective la valeur <xref:System.ServiceModel.WSMessageEncoding.Mtom> ou en composant le <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> dans une <xref:System.ServiceModel.Channels.CustomBinding>. L’exemple de code suivant, extrait de l’exemple d' [encodage MTOM](../samples/mtom-encoding.md) , montre comment activer MTOM dans la configuration.  
   
 ```xml  
@@ -99,6 +105,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
  L’utilisation de l’encodeur MTOM est conforme à toutes les autres fonctionnalités WCF. Notez qu'il peut ne pas être possible d'observer cette règle dans tous les cas, par exemple lorsque la prise en charge des sessions est requise.  
   
 ### <a name="programming-model"></a>Modèle de programmation  
+
  Quel que soit l'encodeur intégré que vous utilisiez dans votre application parmi les trois disponibles, l'expérience en matière de programmation est identique en ce qui concerne le transfert de données binaires. La différence réside dans la façon dont WCF gère les données en fonction de leurs types de données.  
   
 ```csharp
@@ -124,11 +131,13 @@ class MyData
 > Vous ne devez pas utiliser des types dérivés <xref:System.IO.Stream?displayProperty=nameWithType> dans les contrats de données. Les données de flux doivent être communiquées à l'aide du modèle de diffusion en continu, expliqué dans la section « Diffusion en continu de données » ci-après.  
   
 ## <a name="streaming-data"></a>Diffusion en continu de données  
+
  Lorsque vous avez une grande quantité de données à transférer, le mode de transfert en continu dans WCF est une alternative possible au comportement par défaut de mise en mémoire tampon et de traitement des messages en mémoire dans leur intégralité.  
   
  Comme mentionné précédemment, activez uniquement la diffusion en continu pour les messages volumineux (avec un contenu texte ou binaire) si les données ne peuvent pas être segmentées, si le message doit être remis en temps voulu ou si les données ne sont pas encore complètement disponibles au moment où le transfert est initialisé.  
   
 ### <a name="restrictions"></a>Restrictions  
+
  Vous ne pouvez pas utiliser un nombre significatif de fonctionnalités WCF lorsque la diffusion en continu est activée :  
   
 - Les signatures numériques pour le corps du message ne peuvent pas être effectuées parce qu'elles requièrent un calcul de hachage sur le contenu entier du message. Avec la diffusion en continu, le contenu n'est pas complètement disponible lorsque les en-têtes de message sont construits et envoyés et, par conséquent, une signature numérique ne peut pas être calculée.  
@@ -154,12 +163,14 @@ class MyData
  La diffusion en continu n'est pas disponible non plus lors de l'utilisation du transport de canal homologue, elle n'est donc pas disponible avec <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
 #### <a name="streaming-and-sessions"></a>Sessions et diffusion en continu  
+
  Vous pouvez obtenir un comportement inattendu lors de la diffusion en continu des appels avec une liaison basée sur session. Tous les appels en streaming passent par un canal unique (le canal de datagramme) qui ne prend pas en charge les sessions même si la liaison utilisée est configurée pour utiliser des sessions. Si plusieurs clients effectuent des appels de diffusion en continu vers le même objet de service sur une liaison basée sur session, et si le mode d’accès concurrentiel de l’objet de service est configuré comme unique et son mode de contexte d’instance a la valeur PerSession, les appels généraux doivent traverser le canal de datagramme et un seul appel à la fois est traité. Un ou plusieurs clients peuvent expirer. Vous pouvez contourner ce problème en définissant le mode de contexte d’instance de l’objet de service sur PerCall ou la concurrence sur multiple.  
   
 > [!NOTE]
 > MaxConcurrentSessions n'a aucun effet dans ce cas parce qu'il n'y a qu'une seule « session » disponible.  
   
 ### <a name="enabling-streaming"></a>Activation de la diffusion en continu  
+
  Vous pouvez activer la diffusion en continu des manières suivantes :  
   
 - Envoyez et acceptez des demandes en mode de diffusion en continu, puis acceptez et renvoyez les réponses en mode mémoire tampon (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
@@ -187,9 +198,11 @@ class MyData
  Vous pouvez activer la diffusion en continu pour les demandes et les réponses ou pour les deux sens de manière indépendante à l'un ou l'autre côté des parties communicantes sans affecter les fonctionnalités. Toutefois, vous devez toujours partir du principe que la taille des données transférées est si importante que l'activation de la diffusion en continu est justifiée sur les deux points de terminaison d'une liaison de communication. Pour les communications interplateformes où l’un des points de terminaison n’est pas implémenté avec WCF, la possibilité d’utiliser la diffusion en continu dépend des fonctionnalités de diffusion en continu de la plateforme. Une autre exception rare peut impliquer un scénario piloté par la consommation de mémoire dans lequel un client ou service doit minimiser son jeu de travail et peut uniquement accepter de petites tailles de mémoire tampon.  
   
 ### <a name="enabling-asynchronous-streaming"></a>Activation de la diffusion en continu asynchrone  
+
  Pour activer la diffusion en continu asynchrone, ajoutez le comportement de point de terminaison <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> à l'hôte de service et affectez à sa propriété <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> la valeur `true`. Nous avons également ajouté la fonction de diffusion en continu asynchrone du côté expéditeur. Cela améliore l'extensibilité du service dans les scénarios où des messages sont diffusés en continu à plusieurs clients, dont certains sont lents dans la lecture ; probablement en raison de la congestion du réseau ou ne lisent pas du tout. Dans ces scénarios, nous ne bloquons plus les différents threads sur le service par client. Cela garantit que le service peut gérer beaucoup plus de clients fournissant ainsi l'extensibilité du service.  
   
 ### <a name="programming-model-for-streamed-transfers"></a>Modèle de programmation pour les transferts en continu  
+
  Le modèle de programmation pour la diffusion en continu est simple. Pour recevoir des données en continu, spécifiez un contrat d'opération qui possède un seul paramètre d'entrée <xref:System.IO.Stream> saisi. Pour renvoyer des données en continu, renvoyez une référence <xref:System.IO.Stream>.  
   
 ```csharp
@@ -229,6 +242,7 @@ public class UploadStreamMessage
  La diffusion en continu au niveau du transport fonctionne également avec tout autre type de contrat de message (listes de paramètres, arguments de contrat de données et contrat de message explicite), mais étant donné que la sérialisation et la désérialisation de tels messages requièrent une mise en mémoire tampon par le sérialiseur, l’utilisation de telles variantes de contrat n’est pas recommandée.  
   
 ### <a name="special-security-considerations-for-large-data"></a>Considérations spéciales en matière de sécurité pour les données volumineuses  
+
  Toutes les liaisons vous permettent de contraindre la taille des messages entrants afin d’empêcher des attaques par déni de service. <xref:System.ServiceModel.BasicHttpBinding>, Par exemple, expose une propriété [System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) qui limite la taille du message entrant et, par conséquent, la quantité maximale de mémoire qui est accédée lors du traitement du message. Cette unité est définie en octets et s'élève par défaut à 65 536 octets.  
   
  Une menace pour la sécurité, spécifique à la diffusion en continu de données volumineuses, engendre un déni de service en provoquant la mise en mémoire tampon des données lorsque le destinataire s'attend à ce qu'elles soient diffusées en continu. Par exemple, WCF met toujours en mémoire tampon les en-têtes SOAP d’un message. par conséquent, une personne malveillante peut construire un message malveillant volumineux qui se compose entièrement d’en-têtes pour forcer la mise en mémoire tampon des données. Lorsque la diffusion en continu est activée, `MaxReceivedMessageSize` peut avoir une valeur extrêmement élevée, parce que le destinataire ne s'attend jamais à ce que le message entier soit mis en mémoire tampon en une seule fois. Si WCF est contraint de mettre le message en mémoire tampon, un dépassement de capacité de la mémoire se produit.  

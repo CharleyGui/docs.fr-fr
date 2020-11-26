@@ -4,17 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-ms.openlocfilehash: 4c59b83448f5a2c448843c12dae99c442441441f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e60f84aafe6c62a657cd3f27c9ccdb6b65186c35
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143276"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235907"
 ---
 # <a name="services-and-transactions"></a>Services et transactions
-Les applications de la Windows Communication Foundation (WCF) peuvent lancer une transaction à partir d’un client et coordonner la transaction au sein de l’opération de service. Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s'assurer que les opérations de service sont validées ou annulées en tant qu'unité unique.  
+
+Les applications Windows Communication Foundation (WCF) peuvent initier une transaction à partir d’un client et coordonner la transaction au sein de l’opération de service. Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s'assurer que les opérations de service sont validées ou annulées en tant qu'unité unique.  
   
- Vous pouvez activer le comportement de transaction dans le contrat de service en spécifiant un <xref:System.ServiceModel.ServiceBehaviorAttribute> et en définissant ses propriétés <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pour les opérations de service qui requièrent des transactions clientes. Le paramètre <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> spécifie si la transaction dans laquelle la méthode s’exécute est automatiquement effectuée si aucune exception non prise en charge n’est levée. Pour plus d’informations sur ces attributs, voir [Attributs transactionnels De ServiceModel](./feature-details/servicemodel-transaction-attributes.md).  
+ Vous pouvez activer le comportement de transaction dans le contrat de service en spécifiant un <xref:System.ServiceModel.ServiceBehaviorAttribute> et en définissant ses propriétés <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pour les opérations de service qui requièrent des transactions clientes. Le paramètre <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> spécifie si la transaction dans laquelle la méthode s’exécute est automatiquement effectuée si aucune exception non prise en charge n’est levée. Pour plus d’informations sur ces attributs, consultez [attributs de transaction ServiceModel](./feature-details/servicemodel-transaction-attributes.md).  
   
  Le travail effectué dans les opérations de service et géré par un gestionnaire de ressources, tel que l'enregistrement des mises à jour de base de données, fait partie de la transaction du client.  
   
@@ -59,7 +60,7 @@ public class CalculatorService: ICalculatorLog
 }  
 ```  
   
- Vous pouvez activer les transactions et le flux de transactions en configurant les liaisons client et service pour utiliser `true`le protocole WS-AtomicTransaction, et en définissant [ \<l’élément transactionFlow>](../configure-apps/file-schema/wcf/transactionflow.md) élément à , comme indiqué dans la configuration de l’échantillon suivant.  
+ Vous pouvez activer les transactions et le déroulement des transactions en configurant les liaisons du client et du service pour utiliser le protocole WS-AtomicTransaction, et en définissant l' [\<transactionFlow>](../configure-apps/file-schema/wcf/transactionflow.md) élément sur `true` , comme indiqué dans l’exemple de configuration suivant.  
   
 ```xml  
 <client>  

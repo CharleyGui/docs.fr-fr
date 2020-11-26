@@ -1,19 +1,20 @@
 ---
-title: 'Comment : spécifier une liaison client dans le code'
+title: 'Procédure : spécifier une liaison de client dans le code'
 description: Apprenez à spécifier la liaison pour un client WCF de manière impérative dans le code. Le client accède à un service dans cet exemple.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-ms.openlocfilehash: e5e1dff98121985a598579d83043de838e21e5f1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: f9a56c631d841fe60923c05a19bdec9db989ac60
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244502"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236570"
 ---
-# <a name="how-to-specify-a-client-binding-in-code"></a>Comment : spécifier une liaison client dans le code
+# <a name="how-to-specify-a-client-binding-in-code"></a>Procédure : spécifier une liaison de client dans le code
+
 Dans cet exemple, un client est créé afin d’utiliser un service de calculatrice et la liaison du client est spécifiée de manière impérative dans le code. Le client accède au service `CalculatorService`, lequel implémente l'interface `ICalculator`. Le service et le client utilisent la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  Cette procédure part du principe que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la création du service, consultez [Comment : spécifier une liaison de service dans la configuration](how-to-specify-a-service-binding-in-configuration.md). Il utilise également l' [outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) fournit pour générer automatiquement les composants clients. Cet outil génère le code client permettant d'accéder au service.  

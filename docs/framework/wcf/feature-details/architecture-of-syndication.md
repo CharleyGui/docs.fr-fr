@@ -2,14 +2,15 @@
 title: Architecture de syndication
 ms.date: 03/30/2017
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-ms.openlocfilehash: 718778993a953ae819a2bee5a4a050a81d3a4b84
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bc8c9cfbdc4f5d8ee01dfcf5098cfbc74afc2467
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587519"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234802"
 ---
 # <a name="architecture-of-syndication"></a>Architecture de syndication
+
 L'API de syndication est conçue pour fournir un modèle de programmation neutre en ce qui concerne le format qui autorise l'écriture du contenu syndiqué sur le fil dans divers formats. Le modèle de données abstrait inclut les classes suivantes :  
   
 - <xref:System.ServiceModel.Syndication.SyndicationCategory>  
@@ -36,11 +37,12 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
 > La spécification Atom 1.0 permet de spécifier des fractions de seconde dans l'un de ses constructeurs Date. Lors de la sérialisation et de la désérialisation de l’implémentation WCF, les fractions de seconde sont ignorées.  
   
 ## <a name="object-model"></a>Modèle objet  
+
  Le modèle objet pour la syndication se compose de groupes de classes répertoriés dans les tableaux suivants.  
   
  Classes de formatage :  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.Syndication.Atom10FeedFormatter>|Classe chargée de sérialiser une instance <xref:System.ServiceModel.Syndication.SyndicationFeed> au format Atom 1.0.|  
 |<xref:System.ServiceModel.Syndication.Atom10FeedFormatter%601>|Classe chargée de sérialiser des classes dérivées de <xref:System.ServiceModel.Syndication.SyndicationFeed> au format Atom 1.0.|  
@@ -53,12 +55,12 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Classes de modèle objet :  
   
-|Class|Description|  
+|Classe|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.Syndication.SyndicationCategory>|Classe qui représente la catégorie d'un flux de syndication.|  
 |<xref:System.ServiceModel.Syndication.SyndicationContent>|Classe de base qui représente le contenu de syndication.|  
 |<xref:System.ServiceModel.Syndication.SyndicationElementExtension>|Classe représentant une extension d’élément de syndication.|  
-|<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection>|Collection d’objets <xref:System.ServiceModel.Syndication.SyndicationElementExtension>.|  
+|<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection>|Collection d'objets <xref:System.ServiceModel.Syndication.SyndicationElementExtension>.|  
 |<xref:System.ServiceModel.Syndication.SyndicationFeed>|Classe qui représente un objet de flux de niveau supérieur.|  
 |<xref:System.ServiceModel.Syndication.SyndicationItem>|Classe qui représente un élément de flux.|  
 |<xref:System.ServiceModel.Syndication.SyndicationLink>|Classe qui représente un lien dans un flux ou un élément de syndication.|  
@@ -79,6 +81,6 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la syndication WCF](wcf-syndication-overview.md)
+- [Vue d'ensemble de la syndication WCF](wcf-syndication-overview.md)
 - [Comment le modèle objet Syndication WCF est mappé à Atom et RSS](how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)
 - [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)

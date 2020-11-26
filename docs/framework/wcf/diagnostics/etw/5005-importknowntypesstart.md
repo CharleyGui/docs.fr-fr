@@ -2,27 +2,30 @@
 title: 5005 - ImportKnownTypesStart
 ms.date: 03/30/2017
 ms.assetid: e70c9c92-833d-4e88-b129-1decf7a0491d
-ms.openlocfilehash: e9f41ea0584ff42006958c228de09f7868df9a07
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4d56dce0bf2e3e9d00ed7c2eb261fdaa4e4dbc30
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699738"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235647"
 ---
 # <a name="5005---importknowntypesstart"></a>5005 - ImportKnownTypesStart
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|5005|  
+|id|5005|  
 |Mots clés|Sérialisation|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Cet événement est émis lorsque ImportKnownTypes commence.  
   
 ## <a name="message"></a>Message  
+
  Démarrage des ImportKnownTypes.  
   
 ## <a name="details"></a>Détails

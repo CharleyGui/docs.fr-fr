@@ -10,14 +10,15 @@ helpviewer_keywords:
 - accessing embedded objects
 - UI Automation, accessing embedded objects
 ms.assetid: a5b513ec-7fa6-4460-869f-c18ff04f7cf2
-ms.openlocfilehash: 031d9c90318eec59ad2b77d611e0ed0d5a3ae719
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 30b41e3a3d47802eb4a3e761c4282b3e937156f2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516968"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235777"
 ---
 # <a name="access-embedded-objects-using-ui-automation"></a>Accéder à des objets incorporés à l'aide d'UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -31,7 +32,8 @@ ms.locfileid: "87516968"
  ![Objets imbriqués dans un conteneur de texte.](./media/uia-textpattern-embeddedobjects.PNG "UIA_TextPattern_EmbeddedObjects")  
 Exemple de document avec du contenu textuel (« Saviez-vous ? » ...) et deux objets incorporés (une image de baleine et un lien hypertexte de texte), utilisés comme cible pour les exemples de code.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre comment récupérer une collection d’objets incorporés à partir d’un fournisseur de texte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Pour l’exemple de document fourni dans l’introduction, deux objets sont retournés (un élément image et un élément de texte).  
   
 > [!NOTE]
@@ -44,7 +46,8 @@ Exemple de document avec du contenu textuel (« Saviez-vous ? » ...) et deux
 [!code-csharp[FindText#GetChildren](../../../samples/snippets/csharp/VS_Snippets_Wpf/FindText/CSharp/SearchWindow.cs#getchildren)]
 [!code-vb[FindText#GetChildren](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#getchildren)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre comment obtenir une plage de texte à partir d’un fournisseur de texte [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . La plage de texte récupérée est une plage vide dans laquelle le point de terminaison de départ suit « ... ocean.(space) » et le point de terminaison de fin précède le « . » final qui représente le lien hypertexte incorporé (comme illustré par l’image fournie dans l’introduction). Même s’il s’agit d’une plage vide, elle n’est pas considérée comme une plage dégénérée, car son étendue n’est pas nulle.  
   
 > [!NOTE]

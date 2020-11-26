@@ -1,16 +1,17 @@
 ---
-title: 'Comment : spécifier une liaison de client dans la configuration'
+title: 'Procédure : spécifier une liaison de client dans la configuration'
 description: Découvrez comment spécifier la liaison d’un client WCF de façon déclarative dans un fichier de configuration. Le client accède à un service dans cet exemple.
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 28778b6ae853199c5d7943f329bb087760f4bb11
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: e8a552211b28c1323b2afd595c5b060db6b2824a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244489"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236505"
 ---
-# <a name="how-to-specify-a-client-binding-in-configuration"></a>Comment : spécifier une liaison de client dans la configuration
+# <a name="how-to-specify-a-client-binding-in-configuration"></a>Procédure : spécifier une liaison de client dans la configuration
+
 Dans cet exemple, une application console cliente est créée pour utiliser un service de calculatrice, et la liaison pour ce client est spécifiée de façon déclarative dans la configuration. Le client accède au service `CalculatorService`, lequel implémente l'interface `ICalculator`. Le service et le client utilisent la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  La procédure présentée suppose que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la génération du service, consultez [Comment : spécifier une liaison de service dans la configuration](how-to-specify-a-service-binding-in-configuration.md). Il utilise également l' [outil ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) que Windows Communication Foundation (WCF) fournit pour générer automatiquement les composants clients. L'outil génère le code client et la configuration permettant d'accéder au service.  

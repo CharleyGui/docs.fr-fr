@@ -1,5 +1,5 @@
 ---
-title: 'Comment : définir la propriété ProtectionLevel'
+title: 'Procédure : définir la propriété ProtectionLevel'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,16 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 3d4e8f80-0f9e-4a26-9899-beb6584e78df
-ms.openlocfilehash: 4ff835f767852da586a3a35b7f4ce2edf99db283
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 359364228c4ab4d5b247f4f42f3ef3391f774197
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320909"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236596"
 ---
-# <a name="how-to-set-the-protectionlevel-property"></a>Comment : définir la propriété ProtectionLevel
-Vous pouvez définir le niveau de protection en appliquant un attribut approprié et en définissant la propriété. Vous pouvez définir la protection au niveau du service afin d'affecter toutes les parties de chaque message, ou vous pouvez la définir à des niveaux de plus en plus spécifiques, des méthodes aux parties du message. Pour plus d’informations sur la propriété `ProtectionLevel`, consultez [Présentation du niveau de protection](understanding-protection-level.md).  
+# <a name="how-to-set-the-protectionlevel-property"></a>Procédure : définir la propriété ProtectionLevel
+
+Vous pouvez définir le niveau de protection en appliquant un attribut approprié et en définissant la propriété. Vous pouvez définir la protection au niveau du service afin d'affecter toutes les parties de chaque message, ou vous pouvez la définir à des niveaux de plus en plus spécifiques, des méthodes aux parties du message. Pour plus d’informations sur la `ProtectionLevel` propriété, consultez [Présentation du niveau de protection](understanding-protection-level.md).  
   
 > [!NOTE]
 > Vous pouvez définir des niveaux de protection dans le code uniquement, mais pas dans la configuration.  
@@ -42,6 +43,7 @@ Vous pouvez définir le niveau de protection en appliquant un attribut appropri�
      [!code-vb[C_ProtectionLevel#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#2)]  
   
 ## <a name="protecting-fault-messages"></a>Protection des messages d'erreur  
+
  Les exceptions levées sur un service peuvent être envoyées à un client en tant qu'erreurs SOAP. Pour plus d’informations sur la création d’erreurs fortement typées, consultez [spécification et gestion des erreurs dans les contrats et les services](specifying-and-handling-faults-in-contracts-and-services.md) et [Comment : déclarer des erreurs dans des contrats de service](how-to-declare-faults-in-service-contracts.md).  
   
 #### <a name="to-protect-a-fault-message"></a>Pour protéger un message d'erreur  
@@ -61,6 +63,7 @@ Vous pouvez définir le niveau de protection en appliquant un attribut appropri�
      [!code-vb[C_ProtectionLevel#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#4)]  
   
 ## <a name="protecting-message-parts"></a>Protection de parties de message  
+
  Utilisez un contrat de message pour protéger des parties d'un message. Pour plus d’informations sur les contrats de message, consultez [utilisation de contrats de message](./feature-details/using-message-contracts.md).  
   
 #### <a name="to-protect-a-message-body"></a>Pour protéger le corps d'un message  
@@ -71,18 +74,20 @@ Vous pouvez définir le niveau de protection en appliquant un attribut appropri�
   
 3. Appliquez l'attribut <xref:System.ServiceModel.MessageHeaderAttribute> à un champ qui sera exprimé sous forme d'un en-tête de message et affectez `ProtectionLevel` à la propriété <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
   
-4. Appliquez la <xref:System.ServiceModel.MessageBodyMemberAttribute> à n’importe quel champ qui sera exprimé dans le corps du message et affectez à la propriété `ProtectionLevel` la valeur <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>, comme indiqué dans l’exemple suivant.  
+4. Appliquez <xref:System.ServiceModel.MessageBodyMemberAttribute> à n’importe quel champ qui sera exprimé dans le corps du message et affectez à la `ProtectionLevel` propriété la valeur <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> , comme illustré dans l’exemple suivant.  
   
      [!code-csharp[C_ProtectionLevel#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#5)]
      [!code-vb[C_ProtectionLevel#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#5)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant définit la propriété `ProtectionLevel` de plusieurs classes d'attributs à divers emplacements dans un service.  
   
  [!code-csharp[C_ProtectionLevel#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#6)]
  [!code-vb[C_ProtectionLevel#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#6)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Le code suivant présente les espaces de noms requis pour compiler l'exemple de code.  
   
  [!code-csharp[C_ProtectionLevel#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#0)]
@@ -95,4 +100,4 @@ Vous pouvez définir le niveau de protection en appliquant un attribut appropri�
 - <xref:System.ServiceModel.FaultContractAttribute>
 - <xref:System.ServiceModel.MessageContractAttribute>
 - <xref:System.ServiceModel.MessageBodyMemberAttribute>
-- [Présentation du niveau de protection](understanding-protection-level.md)
+- [Fonctionnement des niveaux de protection](understanding-protection-level.md)

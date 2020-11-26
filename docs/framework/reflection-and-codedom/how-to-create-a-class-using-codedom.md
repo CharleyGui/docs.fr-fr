@@ -12,14 +12,15 @@ helpviewer_keywords:
 - CodeDOM, creating classes
 - CodeDOM, graphs
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
-ms.openlocfilehash: 3d7151d384402dba6fbb5da8fe54621346251f7b
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7c2cda2bb7cbdb93c27aef91c08f7c7227da7eed
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865305"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235699"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Guide pratique pour créer une classe à l’aide de CodeDOM
+
 Les procédures suivantes expliquent comment créer et compiler un graphique CodeDOM qui génère une classe contenant deux champs, trois propriétés, une méthode, un constructeur et un point d’entrée.  
   
 1. Créez une application console qui utilisera du code CodeDOM pour générer le code source pour une classe.  
@@ -93,7 +94,8 @@ Les procédures suivantes expliquent comment créer et compiler un graphique Cod
   
 2. Compilez et exécutez la classe génératrice.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre le code des étapes précédentes.  
   
  [!code-csharp[CodeDOM Class Sample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#1)]

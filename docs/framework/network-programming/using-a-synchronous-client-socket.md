@@ -18,14 +18,15 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
-ms.openlocfilehash: ef682af33c10cf06ffc398c22e4a7dc1adf8290e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f198f283f2acfdcfbafed25baecb02a64e9d1e26
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502065"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236310"
 ---
 # <a name="using-a-synchronous-client-socket"></a>Utilisation d’un socket client synchrone
+
 Un socket client synchrone interrompt l’exécution de l’application durant l’opération réseau. Les sockets synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils facilitent l’accès aux services réseau pour les autres applications.  
   
  Pour envoyer les données, passez un tableau d’octets à l’une des méthodes d’envoi de données de la classe <xref:System.Net.Sockets.Socket> (<xref:System.Net.Sockets.Socket.Send%2A> et <xref:System.Net.Sockets.Socket.SendTo%2A>). L’exemple suivant encode une chaîne dans une mémoire tampon de tableau d’octets à l’aide de la propriété <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType>, puis transmet la mémoire tampon à l’appareil réseau avec la méthode **Send**. La méthode **Send** retourne le nombre d’octets envoyés à l’appareil réseau.  
@@ -74,5 +75,5 @@ s.Close();
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation d’un socket client asynchrone](using-an-asynchronous-client-socket.md)
-- [Écoute avec des sockets](listening-with-sockets.md)
+- [écoute avec des sockets](listening-with-sockets.md)
 - [Exemple de socket client synchrone](synchronous-client-socket-example.md)

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 4afd40c3-68f2-41c5-8ec1-4951bc148b9c
-ms.openlocfilehash: 6f54875d6aadb1da18cf25a1bec0a0e451f4a24c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3146d607392a590974f452e06eb5a8b125e58e69
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619557"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236362"
 ---
 # <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Procédure : générer des assemblys d’interopérabilité à partir de bibliothèques de types
+
 L’outil en ligne de commande [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md) permet de convertir les coclasses et les interfaces figurant dans une bibliothèque de types COM en métadonnées. Cet outil crée automatiquement un assembly d’interopérabilité et un espace de noms pour les informations sur les types. Une fois les métadonnées d’une classe disponibles, les clients managés peuvent créer des instances du type COM et appeler ses méthodes, comme s’il s’agissait d’une instance .NET. Tlbimp.exe convertit en une seule opération l’intégralité d’une bibliothèque de types en métadonnées et ne peut pas générer d’informations sur les types pour un sous-ensemble de types définis dans une bibliothèque de types.  
   
 ### <a name="to-generate-an-interop-assembly-from-a-type-library"></a>Pour générer un assembly d’interopérabilité à partir d’une bibliothèque de types  
@@ -27,7 +28,8 @@ L’outil en ligne de commande [Tlbimp.exe (importateur de bibliothèques de typ
   
      L’ajout du commutateur **/out:** produit un assembly d’interopérabilité avec un nom modifié (LOANLib.dll, par exemple). La modification du nom de l’assembly d’interopérabilité peut aider à le distinguer de la DLL COM d’origine et évite les problèmes qui peuvent survenir quand des noms sont dupliqués.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  La commande suivante produit l’assembly Loanlib.dll dans l’espace de noms `Loanlib`.  
   
 ```console  

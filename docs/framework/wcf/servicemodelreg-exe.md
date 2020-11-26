@@ -3,14 +3,15 @@ title: Outil d'inscription ServiceModel (ServiceModelReg.exe)
 description: Utilisez cet outil en ligne de commande pour gérer l’inscription des composants WCF et WF sur un ordinateur unique si vous rencontrez des problèmes avec l’activation du service.
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: 347b1b8071abe7d8eb7e16ffd879c1fdb9825bc7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: d8d5bc4dc3de021e2110fb953dbc4d6c7d7972d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245893"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235920"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Outil d'inscription ServiceModel (ServiceModelReg.exe)
+
 Cet outil en ligne de commande permet de gérer l'inscription des composants WCF et WF sur un ordinateur unique. Dans des circonstances normales vous n'avez pas à utiliser cet outil, car les composants WCF et WF sont configurés lors de l'installation. Mais si vous rencontrez des problèmes avec l'activation de service, vous pouvez essayer d'inscrire les composants à l'aide de cet outil.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,6 +21,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 ```  
   
 ## <a name="remarks"></a>Notes  
+
  Cet outil se trouve à l'emplacement suivant :  
   
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
@@ -43,6 +45,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 |`-?`|Affiche le texte de l'aide.|  
   
 ## <a name="fixing-the-fileloadexception-error"></a>Résolution de l'erreur FileLoadException  
+
  Si vous avez installé des versions précédentes de WCF sur votre ordinateur, vous risquez d’obtenir une `FileLoadFoundException` erreur quand vous exécutez l’outil ServiceModelReg pour inscrire une nouvelle installation. Cela peut se produire même si vous avez supprimé manuellement les fichiers de la précédente installation, mais que vous avez conservé les paramètres machine.config.  
   
  Le message d'erreur est semblable au message suivant.  
@@ -69,6 +72,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
  Recherchez dans ce fichier tous les nœuds XML qui font référence à « System. ServiceModel, version = 2.0.0.0 », supprimez-les et tous les nœuds enfants. Enregistrez le fichier et réexécutez ServiceModelReg.exe afin de résoudre ce problème.  
   
 ## <a name="examples"></a>Exemples  
+
  Les exemples suivants indiquent comment utiliser les options les plus courantes de l'outil ServiceModelReg.exe.  
   
 ```console  
