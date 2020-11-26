@@ -1,19 +1,20 @@
 ---
-title: "Procédure : créer un workflow d'ordinateur d'état"
+title: 'Procédure : créer un flux de travail de machine à états'
 description: Cet article crée un flux de travail qui utilise à la fois des activités intégrées, telles que l’activité StateMachine et des activités personnalisées.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 8a9342c07c15d65df0310c0cb35b4b2c6f2ba686
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 9df911779422ca2710686963a040a95258db8891
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419653"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248917"
 ---
-# <a name="how-to-create-a-state-machine-workflow"></a>Procédure : créer un workflow d'ordinateur d'état
+# <a name="how-to-create-a-state-machine-workflow"></a>Procédure : créer un flux de travail de machine à états
+
 Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l' <xref:System.Activities.Statements.StateMachine> activité, et les activités personnalisées de la rubrique précédente [Comment : créer une activité](how-to-create-an-activity.md) . Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
@@ -111,7 +112,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 12. Faites glisser une activité **FinalState** de la section **machine à États** de la **boîte à outils**, placez-la sur l’état **Enter Guess** et déposez-la sur le triangle qui apparaît à droite de l’état **Enter Guess** afin qu’une transition soit créée entre **Enter Guess** et **FinalState**.  
   
-13. Le nom par défaut de la transition est **T2**. Cliquez sur la transition dans le concepteur de flux de travail pour la sélectionner et définissez **DisplayName** sur **estimation correcte**. Cliquez ensuite sur le **FinalState**et sélectionnez-le, puis faites-le glisser vers la droite afin qu’il y ait de la place pour que le nom de la transition complète s’affiche sans superposer l’un des deux États. Cela facilitera l'exécution des autres étapes du didacticiel.  
+13. Le nom par défaut de la transition est **T2**. Cliquez sur la transition dans le concepteur de flux de travail pour la sélectionner et définissez **DisplayName** sur **estimation correcte**. Cliquez ensuite sur le **FinalState** et sélectionnez-le, puis faites-le glisser vers la droite afin qu’il y ait de la place pour que le nom de la transition complète s’affiche sans superposer l’un des deux États. Cela facilitera l'exécution des autres étapes du didacticiel.  
   
 14. Double-cliquez sur la transition **estimation correcte** renommée dans le concepteur de workflow pour la développer.  
   
@@ -193,7 +194,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
 - [Programmation Windows Workflow Foundation](programming.md)
-- [Conception des workflows](designing-workflows.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
-- [Guide pratique pour créer une activité](how-to-create-an-activity.md)
-- [Guide pratique pour exécuter un workflow](how-to-run-a-workflow.md)
+- [Conception des flux de travaux](designing-workflows.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
+- [Procédure : créer une activité](how-to-create-an-activity.md)
+- [Procédure : exécuter un workflow](how-to-run-a-workflow.md)

@@ -4,19 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
-ms.openlocfilehash: 9ddb3fe637cd0402f0ce850bc523ae8cb0c5dc37
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ea32855a3a512b8e96b8d6d72f101523b5d16107
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801978"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248771"
 ---
 # <a name="designing-and-implementing-services"></a>Conception et implémentation de services
+
 Cette section vous montre comment définir et implémenter des contrats WCF. Un contrat de service spécifie ce qu'un point de terminaison communique au monde extérieur. À un niveau plus concret, il s'agit d'une instruction à propos d'un ensemble de messages spécifiques organisé en modèles d'échange de messages de base, tels que les messages demande/réponse, unidirectionnels et duplex. Si un contrat de service est un ensemble d'échanges de messages liés de manière logique, une opération de service est un échange de messages unique. Par exemple, une opération `Hello` doit évidemment accepter un message (de sorte que l'appelant puisse annoncer la salutation) et peut ou non retourner un message (en fonction du niveau de courtoisie de l'opération).  
   
  Pour plus d’informations sur les contrats et les autres concepts de Core Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](fundamental-concepts.md). Cette rubrique est consacrée au fonctionnement des contrats de service. Pour plus d’informations sur la façon de créer des clients qui utilisent des contrats de service pour se connecter à des services, consultez [vue d’ensemble du client WCF](wcf-client-overview.md).  
   
-## <a name="overview"></a>Vue d'ensemble de  
+## <a name="overview"></a>Vue d'ensemble  
+
  Cette rubrique fournit une orientation conceptuelle de haut niveau pour la conception et l’implémentation des services WCF. Les sous-rubriques contiennent des informations détaillées sur les particularités de ce type de conception et d'implémentation. Avant de concevoir et d’implémenter votre application WCF, il est recommandé d’exécuter les tâches suivantes :  
   
 - comprendre ce qu'est un contrat de service, comment il fonctionne et comment en créer un ;  
@@ -24,6 +26,7 @@ Cette section vous montre comment définir et implémenter des contrats WCF. Un 
 - comprendre que les contrats définissent des exigences minimales susceptibles de ne pas être prises en charge par la configuration d’exécution et l’environnement d’hébergement.  
   
 ## <a name="service-contracts"></a>Contrats de service  
+
  Un contrat de service spécifie les éléments suivants :  
   
 - les opérations qu'un contrat expose ;  
@@ -55,11 +58,13 @@ Cette section vous montre comment définir et implémenter des contrats WCF. Un 
  Pour plus d’informations sur la conception de contrats, consultez [conception de contrats de service](designing-service-contracts.md). Pour plus d’informations sur l’implémentation de contrats, consultez [implémentation de contrats de service](implementing-service-contracts.md).  
   
 ### <a name="messages-up-front-and-center"></a>Messages avant et centre  
- L'utilisation d'interfaces, de classes et de méthodes managées pour modeler des opérations de service ne pose aucune difficulté dès lors que vous êtes familiarisé avec les signatures de méthode de style « appels de procédure distante » (remote call procedure, RPC), pour lesquelles le passage des paramètres dans les méthodes et la réception des valeurs retournées constituent le procédé standard de demande de fonctionnalités auprès d'un objet ou d'un autre type de code. Par exemple, les programmeurs qui utilisent des langages managés tels que Visual Basic et C++ com peuvent appliquer leurs connaissances de l’approche de style RPC (que ce soit en utilisant des objets ou des interfaces) à la création de contrats de service WCF sans rencontrer les problèmes inhérents aux systèmes d’objets distribués de style RPC. La programmation orientée service présente les mêmes avantages que la programmation orientée message faiblement couplée tout en permettant aux développeurs de continuer à bénéficier de la convivialité de la programmation RPC.  
+
+ L'utilisation d'interfaces, de classes et de méthodes managées pour modeler des opérations de service ne pose aucune difficulté dès lors que vous êtes familiarisé avec les signatures de méthode de style « appels de procédure distante » (remote call procedure, RPC), pour lesquelles le passage des paramètres dans les méthodes et la réception des valeurs retournées constituent le procédé standard de demande de fonctionnalités auprès d'un objet ou d'un autre type de code. Par exemple, les programmeurs qui utilisent des langages managés tels que Visual Basic et C++ COM peuvent appliquer leurs connaissances de l’approche de style RPC (que ce soit en utilisant des objets ou des interfaces) à la création de contrats de service WCF sans rencontrer les problèmes inhérents aux systèmes d’objets distribués de style RPC. La programmation orientée service présente les mêmes avantages que la programmation orientée message faiblement couplée tout en permettant aux développeurs de continuer à bénéficier de la convivialité de la programmation RPC.  
   
- De nombreux programmeurs préfèrent les interfaces de programmation d'application orientées message, telles que les files d'attente de messages comme Microsoft MSMQ, les espaces de noms <xref:System.Messaging> dans le .NET Framework ou l'envoi sous forme de langage XML non structuré dans les requêtes HTTP, pour n'en nommer que quelques-unes. Pour plus d’informations sur la programmation au niveau du message, consultez [utilisation de contrats de message](./feature-details/using-message-contracts.md), [programmation au niveau du canal de service](./extending/service-channel-level-programming.md)et [interopérabilité avec les applications POX](./feature-details/interoperability-with-pox-applications.md).  
+ De nombreux programmeurs préfèrent les interfaces de programmation d'application orientées message, telles que les files d'attente de messages comme Microsoft MSMQ, les espaces de noms <xref:System.Messaging> dans le .NET Framework ou l'envoi sous forme de langage XML non structuré dans les requêtes HTTP, pour n'en nommer que quelques-unes. Pour plus d’informations sur la programmation au niveau du message, consultez [utilisation de contrats de message](./feature-details/using-message-contracts.md), Channel-Level la programmation de [service](./extending/service-channel-level-programming.md)et l' [interopérabilité avec des applications POX](./feature-details/interoperability-with-pox-applications.md).  
   
 ### <a name="understanding-the-hierarchy-of-requirements"></a>Présentation de la hiérarchie des exigences  
+
  Un contrat de service regroupe les opérations, spécifie le modèle d'échange de messages, les types de messages et les types de données transportés par ces messages et indique les catégories de comportements que l'implémentation doit pouvoir adopter en cours d'exécution pour assurer la prise en charge du contrat (il peut, par exemple, s'agir des comportements en matière de chiffrement et de signature des messages). Le contrat de service proprement dit ne spécifie pas précisément comment ces spécifications sont satisfaites, mais uniquement qu'elles doivent l'être. Le type de chiffrement ou la manière dont un message doit être signé incombent à l'implémentation et à la configuration des services concernés.  
   
  Remarquez la façon dont le contrat requiert certaines choses de l'implémentation de contrat de service et de la configuration à l'exécution pour ajouter un comportement. L’ensemble d’exigences qui doivent être satisfaites pour exposer un service pour une utilisation repose sur l’ensemble d’exigences précédent. Si un contrat spécifie des exigences concernant l'implémentation, une implémentation peut requérir une plus grande partie de la configuration et des liaisons qui autorisent l'exécution du service. Pour finir, l’application hôte doit également prendre en charge les exigences ajoutées par la configuration du service et les liaisons.  

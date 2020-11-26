@@ -5,14 +5,15 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-ms.openlocfilehash: 57a1537e1bde1efcd3586d032efee063561efcca
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1b9b7e57760c2aba0a8e9eadd53ca8e72529b787
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586492"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248966"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Vue d'ensemble de l'intégration à des applications COM+
+
 Windows Communication Foundation (WCF) fournit un environnement riche pour la création d’applications distribuées. Si vous utilisez déjà une logique d’application basée sur des composants hébergée dans COM+, vous pouvez utiliser WCF pour étendre votre logique existante au lieu de la réécrire. Un scénario courant consiste à exposer une logique métier COM+ ou Enterprise Services existante par le biais de services Web.  
   
  Lorsqu'une interface sur un composant COM+ est exposée comme service Web, la spécification et le contrat de ces services sont déterminés par un mappage automatique exécuté au moment de l'initialisation de l'application. La liste suivante présente le modèle conceptuel de ce mappage :  
@@ -40,11 +41,12 @@ Windows Communication Foundation (WCF) fournit un environnement riche pour la cr
   
 2. Sélectionnez un mode d'hébergement approprié.  
   
-3. Utilisez l'outil ComSvcConfig.exe (COM+ Service Model Configuration) pour ajouter un service Web pour l'interface. Pour plus d’informations sur l’utilisation de ComSvcConfig. exe, consultez [Comment : utiliser l’outil de configuration de modèle de service com+](how-to-use-the-com-service-model-configuration-tool.md).  
+3. Utilisez l'outil ComSvcConfig.exe (COM+ Service Model Configuration) pour ajouter un service Web pour l'interface. Pour plus d’informations sur l’utilisation de ComSvcConfig.exe, consultez [Comment : utiliser l’outil de configuration de modèle de service com+](how-to-use-the-com-service-model-configuration-tool.md).  
   
 4. Configurez les paramètres de service supplémentaires dans le fichier de configuration de l'application. Pour plus d’informations sur la configuration d’un composant, consultez [procédure : configurer les paramètres du service com+](how-to-configure-com-service-settings.md).  
   
 ## <a name="supported-interfaces"></a>Interfaces prises en charge  
+
  Certaines restrictions s'appliquent aux types d'interfaces qui peuvent être exposés comme service Web. Les types d'interfaces suivants ne sont pas pris en charge :  
   
 - Les interfaces qui passent des références d'objet comme paramètres - voir la section concernant la prise en charge limitée des références d'objet.  
@@ -62,9 +64,10 @@ Windows Communication Foundation (WCF) fournit un environnement riche pour la cr
 - Les interfaces issues des composants Enterprise Services qui n'ont pas été ajoutés au cache GAC (Global Assembly Cache).  
   
 ### <a name="limited-object-reference-support"></a>Prise en charge limitée des références d'objet  
+
  Comme un certain nombre de composants COM+ déployés n'utilisent pas de paramètres de référence d'objet, pour retourner un objet ADO Recordset par exemple, l'intégration COM+ inclut une prise en charge limitée des paramètres de référence d'objet. Cette prise en charge est limitée aux objets qui implémentent l'interface COM `IPersistStream`. Elle inclut les objets ADO Recordset et peut être implémentée pour des objets COM propres à l'application.  
   
- Pour activer cette prise en charge, l’outil ComSvcConfig. exe fournit le commutateur **allowreferences** qui désactive le paramètre de signature de méthode normal et vérifie que l’outil s’exécute pour s’assurer que les paramètres de référence d’objet ne sont pas utilisés. En outre, les types d’objets que vous transmettez comme paramètres doivent être nommés et identifiés dans le <`persistableTypes`> élément de configuration qui est un enfant de l' `comContract` élément <>.  
+ Pour activer cette prise en charge, l’outil ComSvcConfig.exe fournit le commutateur **allowreferences** qui désactive le paramètre de signature de méthode normal et vérifie que l’outil s’exécute pour s’assurer que les paramètres de référence d’objet ne sont pas utilisés. En outre, les types d’objets que vous transmettez comme paramètres doivent être nommés et identifiés dans le <`persistableTypes`> élément de configuration qui est un enfant de l' `comContract` élément <>.  
   
  Lorsque cette fonctionnalité est activée, le service d’intégration COM+ utilise l’interface `IPersistStream` pour sérialiser ou désérialiser l’instance d’objet. Si l'instance d'objet ne prend pas en charge `IPersistStream`, une exception est levée.  
   
@@ -74,6 +77,7 @@ Windows Communication Foundation (WCF) fournit un environnement riche pour la cr
 > En raison de la nature personnalisée et propre à la plateforme de l’approche de sérialisation, il est préférable de l’utiliser entre les clients WCF et les services WCF.  
   
 ## <a name="selecting-the-hosting-mode"></a>Sélection du mode d'hébergement  
+
  COM+ expose des services Web dans l'un des modes d'hébergement suivants :  
   
 - Hébergé par COM+  
@@ -89,6 +93,7 @@ Windows Communication Foundation (WCF) fournit un environnement riche pour la cr
      Le service Web et la logique d’application COM+ sont hébergés dans le processus de travail de serveur web. Cela permet l'activation automatique du mode Hébergé sur le Web sans provoquer de saut de processus pour les demandes de service Web. L'inconvénient est que l'application serveur n'est pas accessible par le biais de DCOM.  
   
 ### <a name="security-considerations"></a>Considérations relatives à la sécurité  
+
  À l’instar des autres services WCF, les paramètres de sécurité du service exposé sont administrés par le biais des paramètres de configuration du canal WCF. D'ordinaire, les paramètres de sécurité DCOM, tels que les paramètres des autorisations DCOM à l'échelle de l'ordinateur, ne sont pas appliqués. Pour appliquer des rôles d'application COM+, l'autorisation « Appliquer les vérifications d'accès au niveau du composant » doit être activée pour le composant.  
   
  L’utilisation d’une liaison non sécurisée peut exposer la communication à des risques de falsification et de divulgation d’informations. Pour éviter ce problème, il est recommandé de recourir à une liaison sécurisée.  

@@ -2,14 +2,15 @@
 title: Transport d'intégration MSMQ
 ms.date: 03/30/2017
 ms.assetid: 2bf9893a-fbd1-41fc-b6de-a41a44279936
-ms.openlocfilehash: 52fd98354ded57bd7d7c075d4f08ca543760e598
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 032b6886152fb73c382fed1572e8c184a822b44f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777362"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248745"
 ---
 # <a name="msmq-integration-transport"></a>Transport d'intégration MSMQ
+
 Cette rubrique répertorie toutes les exceptions générées par le transport d'intégration MSMQ.  
   
 ## <a name="exception-list"></a>Liste des exceptions  

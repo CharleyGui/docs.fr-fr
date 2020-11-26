@@ -2,14 +2,15 @@
 title: Message Security over Message Queuing
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 1733cea17c82f85751b810f4a6033caefd828e29
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1b262a5f4343e07aecf5eebda32cc995f86ec77b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558639"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248927"
 ---
 # <a name="message-security-over-message-queuing"></a>Message Security over Message Queuing
+
 Cet exemple montre comment implémenter une application qui utilise WS-Security avec l'authentification de certificat X.509v3 pour le client et requiert l'authentification de serveur à l'aide du certificat X.509v3 du serveur via MSMQ. La sécurité de message est parfois plus souhaitable pour garantir que les messages du magasin MSMQ demeurent chiffrés et que l'application peut effectuer sa propre authentification du message.
 
  Cet exemple est basé sur l’exemple de [liaison MSMQ transactionnelle](transacted-msmq-binding.md) . Les messages sont chiffrés et signés.
@@ -83,9 +84,11 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
     > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
 ## <a name="requirements"></a>Spécifications
+
  Cet exemple requiert l'installation et l'exécution de MSMQ.
 
 ## <a name="demonstrates"></a>Illustre le
+
  Le client chiffre le message à l'aide de la clé publique du service et signe le message qui utilise son propre certificat. Le service qui lit le message depuis la file d'attente authentifie le certificat client avec le certificat de son magasin de personnes de confiance. Il déchiffre alors le message et distribue le message à l'opération de service.
 
  Étant donné que le message Windows Communication Foundation (WCF) est transporté comme une charge dans le corps du message MSMQ, le corps reste chiffré dans le magasin MSMQ. Cela protège le message contre toute divulgation non désirée du message. Notez que MSMQ lui-même ne sait pas si le message qu'il transporte est chiffré.
@@ -93,6 +96,7 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
  L'exemple montre comment l'authentification mutuelle au niveau du message peut être utilisée avec MSMQ. Les certificats sont échangés hors bande. C'est toujours le cas avec les applications mises en file d'attente parce que le service et le client n'ont pas à être en marche en même temps.
 
 ## <a name="description"></a>Description
+
  L’exemple de code de client et de service est identique à l’exemple de [liaison MSMQ transactionnelle](transacted-msmq-binding.md) , avec une différence. Le contrat d’opération est annoté avec le niveau de protection, ce qui suggère que le message doit être signé et chiffré.
 
 ```csharp

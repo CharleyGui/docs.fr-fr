@@ -2,17 +2,19 @@
 title: System.ServiceModel.Security.SecurityIdentityDeterminationSuccess
 ms.date: 03/30/2017
 ms.assetid: cee8df47-b568-44e3-aeff-e74618326093
-ms.openlocfilehash: 86c9a3d66afd13f5fd2c5bb41ef3ee8c46ad4f16
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e470bbf1818bf8fa71f40ca1d90087273ec4e4ae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597933"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96249343"
 ---
 # <a name="systemservicemodelsecuritysecurityidentitydeterminationsuccess"></a>System.ServiceModel.Security.SecurityIdentityDeterminationSuccess
+
 System.ServiceModel.Security.SecurityIdentityDeterminationSuccess  
   
 ## <a name="description"></a>Description  
+
  Une identité a été déterminée pour un élément EndpointAddress.  
   
 ## <a name="see-also"></a>Voir aussi
