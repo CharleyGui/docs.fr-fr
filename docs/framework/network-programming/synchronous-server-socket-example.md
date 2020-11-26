@@ -10,15 +10,16 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: 0e2fb91dc493b2da4c68a98ac8a62494e78a9fd1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 49646a71c979eda04f8bf932a3dbfac11677a8e0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502104"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239521"
 ---
-# <a name="synchronous-server-socket-example"></a><span data-ttu-id="e85e8-104">Exemple de socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="e85e8-104">Synchronous Server Socket Example</span></span>
-<span data-ttu-id="e85e8-105">L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients.</span><span class="sxs-lookup"><span data-stu-id="e85e8-105">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="e85e8-106">Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client.</span><span class="sxs-lookup"><span data-stu-id="e85e8-106">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="e85e8-107">L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client.</span><span class="sxs-lookup"><span data-stu-id="e85e8-107">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="e85e8-108">La chaîne du client doit contenir la chaîne « \<EOF> » pour signaler la fin du message.</span><span class="sxs-lookup"><span data-stu-id="e85e8-108">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
+# <a name="synchronous-server-socket-example"></a><span data-ttu-id="56d21-104">Exemple de socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="56d21-104">Synchronous Server Socket Example</span></span>
+
+<span data-ttu-id="56d21-105">L’exemple de programme suivant crée un serveur qui reçoit les demandes de connexion des clients.</span><span class="sxs-lookup"><span data-stu-id="56d21-105">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="56d21-106">Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client.</span><span class="sxs-lookup"><span data-stu-id="56d21-106">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="56d21-107">L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client.</span><span class="sxs-lookup"><span data-stu-id="56d21-107">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="56d21-108">La chaîne du client doit contenir la chaîne « \<EOF> » pour signaler la fin du message.</span><span class="sxs-lookup"><span data-stu-id="56d21-108">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
   
 ```vb  
 Imports System  
@@ -156,8 +157,8 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e85e8-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e85e8-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="56d21-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="56d21-109">See also</span></span>
 
-- [<span data-ttu-id="e85e8-110">Exemple de socket client synchrone</span><span class="sxs-lookup"><span data-stu-id="e85e8-110">Synchronous Client Socket Example</span></span>](synchronous-client-socket-example.md)
-- [<span data-ttu-id="e85e8-111">Utilisation d’un socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="e85e8-111">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
-- [<span data-ttu-id="e85e8-112">Exemples de code de socket</span><span class="sxs-lookup"><span data-stu-id="e85e8-112">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="56d21-110">Exemple de socket client synchrone</span><span class="sxs-lookup"><span data-stu-id="56d21-110">Synchronous Client Socket Example</span></span>](synchronous-client-socket-example.md)
+- [<span data-ttu-id="56d21-111">Utilisation d’un socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="56d21-111">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
+- [<span data-ttu-id="56d21-112">Exemples de code de socket</span><span class="sxs-lookup"><span data-stu-id="56d21-112">Socket Code Examples</span></span>](socket-code-examples.md)
