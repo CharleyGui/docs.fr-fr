@@ -5,19 +5,21 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: bab29d738c7562753a826b47c03867eeebac4372
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 185be9f6e33fcf107226e98d96d6be5c562384d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558977"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238325"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Utilisation des NAT et des pare-feu
+
 Il arrive fréquemment que les client et serveur d'une connexion réseau ne disposent pas d'une voie de communication directe et ouverte. Les paquets sont filtrés, acheminés, analysés et transformés par les ordinateurs de point de terminaison ainsi que par les ordinateurs intermédiaires sur le réseau. Ces ordinateurs intermédiaires, qui participent à la communication, sont notamment les applications de traduction d'adresses réseau (Network address translation, NAT) et les pare-feu.  
   
  Les transports Windows Communication Foundation (WCF) et MEP (message Exchange patterns) réagissent différemment à, la présence de nat et de pare-feu. Cette rubrique présente la manière dont ces deux types d'applications fonctionnent dans des topologies de réseau similaires. Des recommandations relatives à des combinaisons spécifiques de transports WCF et de MEP sont fournies pour améliorer la robustesse de vos applications pour les NAT et les pare-feu sur le réseau.  
   
 ## <a name="how-nats-affect-communication"></a>Répercussions des applications NAT sur les communications  
+
  Le mécanisme NAT a été créé pour permettre à plusieurs ordinateurs de partager une même adresse IP externe. Un NAT de remappage de port mappe une adresse IP interne et un port de connexion à une adresse IP externe à laquelle une nouveau numéro de port est attribué. Le nouveau numéro de port permet alors à la NAT de mettre en relation le trafic reçu en retour avec la communication originale. Les ordinateurs personnels des particuliers disposent dans la plupart des cas d'une adresse IP acheminable uniquement de manière privée et doivent donc utiliser un NAT pour assurer l'acheminement public de leurs paquets.  
   
  Les NAT n'offrent pas de cordon de sécurité. Cependant, les configurations NAT les plus courantes empêchent l'adressage direct des ordinateurs internes. Ce principe protège les ordinateurs internes des connexions indésirables, mais rend difficile le développement d'applications serveur devant renvoyer de manière asynchrone des données au client. Les NAT réécrivent les adresses figurant dans les paquets pour donner l'impression que les connexions transportant ces paquets émanent d'un ordinateur NAT. C'est pourquoi lorsque le serveur tente de rouvrir la connexion avec le client, il échoue. Si le serveur utilise l'adresse visible du client, sa tentative échoue car cette adresse ne peut pas être acheminée publiquement. Si le serveur utiliser l'adresse NAT du client, sa tentative échoue également car aucune application n'est à l'écoute des connexions depuis l'ordinateur NAT.  
@@ -25,6 +27,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
  Certaines configurations NAT prennent en charge les règles de transfert afin de permettre aux ordinateurs externes de se connecter à certains ordinateurs internes. Les modalités de configuration de cette option varient en fonction des applications NAT. En outre, demander aux utilisateurs finaux de modifier leur configuration NAT est déconseillé pour la plupart des applications. Un grand nombre d'utilisateurs finaux ne peuvent ou ne souhaitent pas modifier leur configuration NAT pour une application particulière.  
   
 ## <a name="how-firewalls-affect-communication"></a>Répercussions des pare-feu sur les communications  
+
  Un *pare-feu* est un logiciel ou un périphérique matériel qui applique des règles au trafic transitant pour décider s’il faut autoriser ou refuser le passage. Les pare-feu peuvent être configurés de sorte à examiner les flux entrants et/ou sortants du trafic. Ils forment un cordon de sécurité sur le réseau considéré, au niveau des ses extrémités ou au niveau de l'hôte de point de terminaison. Les professionnels utilisent depuis longtemps les pare-feu pour protéger leurs serveurs des attaques malveillantes. Depuis l’introduction du pare-feu personnel dans Windows XP SP2, le nombre d’utilisateurs privés derrière un pare-feu a considérablement augmenté. C'est pourquoi, lors d'une connexion, il y a de grandes chances qu'aux deux extrémités un pare-feu examine les paquets.  
   
  Il existe une grande variété de pare-feu tant sur le plan de leur complexité que sur le plan des fonctionnalités qu'ils utilisent pour examiner les paquets. Les pare-feu de base appuient leur décision d'accorder ou non le droit d'entrée aux paquets en examinant les adresse de destination et de source ainsi que les ports qui y figurent. Les pare-feu plus élaborés examinent également le contenu des paquets pour prendre leur décision. Un grand nombre de configurations différents sont possibles pour ces pare-feu et ils sont souvent utilisés dans le cadre d'applications spécialisées.  
@@ -36,6 +39,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
  Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. Les systèmes d’exploitation Windows XP et versions ultérieures prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. Windows XP SP2 et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Sélection d’un transport et d’un modèle d’échange de messages  
+
  La sélection d'un transport et d'un MEP s'effectue en trois étapes :  
   
 1. Analysez l'adressabilité des ordinateurs de point de terminaison. L'adressabilité des serveurs d'entreprise est en principe directe, tandis que l'adressabilité des ordinateurs des utilisateurs finaux est en général bloquée par des NAT. Si les deux point de terminaison se trouvent derrière une application NAT, par exemple dans le cadre d'une situation pair-à-pair entre deux utilisateurs finaux, vous aurez peut-être besoin de la technologie Teredo pour assurer l'adressabilité.  

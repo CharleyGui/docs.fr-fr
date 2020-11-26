@@ -2,27 +2,30 @@
 title: 1101 - WorkflowActivityStart
 ms.date: 03/30/2017
 ms.assetid: 831cd386-b9b5-47a9-9690-aff6292ff348
-ms.openlocfilehash: 1e6db97284b7ca83d532166d96d7a42df0a51091
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6e43b0ab1e2d35657bae43e7239a677643154fa9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924148"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238728"
 ---
 # <a name="1101---workflowactivitystart"></a>1101 - WorkflowActivityStart
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1101|  
+|id|1101|  
 |Mots clés|WFRuntime|  
-|Niveau|Information|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Informations|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Indique qu'une activité du flux de travail a démarré.  
   
 ## <a name="message"></a>Message  
+
  ID WorkflowInstance : « %1 » Activité E2E  
   
 ## <a name="details"></a>Détails  

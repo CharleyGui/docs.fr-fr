@@ -6,14 +6,15 @@ helpviewer_keywords:
 - assemblies [.NET Framework], how-tos
 - application domains, how-tos
 ms.assetid: 2264054e-712e-47e4-8657-1aa1cfec3e3d
-ms.openlocfilehash: 9489f23e6730e36fb43e367b34954d220f633c96
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 4f0bf91c9f8f52959ed387be90f9bd59eff494cd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104970"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237480"
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a>Rubriques Comment relatives aux domaines d'application et aux assemblys
+
 Les sections suivantes contiennent des liens vers toutes les rubriques Guide pratique de la documentation conceptuelle pour la programmation avec des domaines d’application et des assemblys.  
   
  **Domaines d'application**  
@@ -32,11 +33,11 @@ Les sections suivantes contiennent des liens vers toutes les rubriques Guide pra
   
 - [Comment : déterminer le nom qualifié complet d'un assembly](../../standard/assembly/find-fully-qualified-name.md)  
   
-- [Comment : générer un assembly à fichier unique](build-single-file-assembly.md)  
+- [Comment : générer un assembly Single-File](build-single-file-assembly.md)  
   
 - [Comment : générer un assembly multifichier](build-multifile-assembly.md)  
   
-- [Comment : créer une paire de clés publique/privée](../../standard/assembly/create-public-private-key-pair.md)  
+- [Comment : créer une paire de clés de Public-Private](../../standard/assembly/create-public-private-key-pair.md)  
   
 - [Comment : signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md)  
   

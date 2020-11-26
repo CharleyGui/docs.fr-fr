@@ -2,17 +2,18 @@
 title: WSDL et stratégie
 ms.date: 03/30/2017
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-ms.openlocfilehash: 201920a8ebf639c74acfb20b2e990c8bbc0c5b55
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 123a878e90ee9099b009985a5e79155e8b1cd097
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600099"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238338"
 ---
 # <a name="wsdl-and-policy"></a>WSDL et stratégie
-Cette rubrique Windows Communication Foundation traite des détails de l’implémentation WSDL 1,1, WS-Policy et WS-PolicyAttachment (WCF), ainsi que des assertions WS-Policy et des extensions WSDL 1,1 supplémentaires introduites par WCF.  
+
+Cette rubrique décrit Windows Communication Foundation (WCF) WSDL 1,1, WS-Policy et WS-PolicyAttachment les détails de l’implémentation, ainsi que des assertions de WS-Policy et des extensions WSDL 1,1 supplémentaires introduites par WCF.  
   
- WCF implémente les spécifications WS-Policy et WS-PolicyAttachment soumises au W3C avec les contraintes et les clarifications décrites dans ce document.  
+ WCF implémente WS-Policy et WS-PolicyAttachment spécifications soumises au W3C avec des contraintes et des clarifications décrites dans ce document.  
   
  Ce document utilise les préfixes et espaces de noms répertoriés dans le tableau suivant.  
   
@@ -28,6 +29,7 @@ Cette rubrique Windows Communication Foundation traite des détails de l’impl�
 |cdp|`http://schemas.microsoft.com/net/2006/06/duplex`|  
   
 ## <a name="wcf-wsdl11-extensions"></a>Extensions WSDL1.1 WCF  
+
  WCF utilise les extensions WSDL 1.1 suivantes pour décrire les spécifications de session de contrat.  
   
  wsdl:portType/wsdl:operation/@msc:isInitiating  
@@ -40,6 +42,7 @@ Cette rubrique Windows Communication Foundation traite des détails de l’impl�
  xs:boolean, indique que ce contrat requiert l'établissement d'une session.  
   
 ### <a name="soap-1x-http-binding-transport-uris"></a>Uri de transport de liaison HTTP SOAP 1.x  
+
  WCF utilise les URI suivants pour indiquer les transports à utiliser pour les éléments d’extension de liaison WSDL 1,1, SOAP 1,1 et SOAP 1,2.  
   
 |Transport|URI|  
@@ -50,6 +53,7 @@ Cette rubrique Windows Communication Foundation traite des détails de l’impl�
 |Canaux nommés|`http://schemas.microsoft.com/soap/named-pipe`|  
   
 ## <a name="policy-assertions-implemented-by-wcf"></a>Assertions de stratégie implémentées par WCF  
+
  En plus des assertions de stratégie introduites dans les spécifications de services Web (WS-*) et mentionnées dans d’autres sections de ce document, WCF implémente les assertions de stratégie suivantes.  
   
 |Assertion de stratégie|Sujet de stratégie|Description|  
@@ -75,5 +79,5 @@ Cette rubrique Windows Communication Foundation traite des détails de l’impl�
 ## <a name="see-also"></a>Voir aussi
 
 - [Publication WSDL personnalisée](../samples/custom-wsdl-publication.md)
-- [Guide pratique pour exporter un WSDL personnalisé](../extending/how-to-export-custom-wsdl.md)
-- [Guide pratique pour importer un WSDL personnalisé](../extending/how-to-import-custom-wsdl.md)
+- [Procédure : exporter un WSDL personnalisé](../extending/how-to-export-custom-wsdl.md)
+- [Procédure : importer un WSDL personnalisé](../extending/how-to-import-custom-wsdl.md)

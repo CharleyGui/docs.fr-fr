@@ -2,14 +2,15 @@
 title: Transport MSMQ
 ms.date: 03/30/2017
 ms.assetid: 3f29a2fe-24df-4614-b64c-b0c084fb7003
-ms.openlocfilehash: a2e5384808b82f48bd1d4856bf893130da8c5f1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 407512cbb129dd2e5497de92c32b0641dd21080b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959417"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238026"
 ---
 # <a name="msmq-transport"></a>Transport MSMQ
+
 Cette rubrique répertorie toutes les exceptions générées par le transport MSMQ.  
   
 ## <a name="exception-list"></a>Liste des exceptions  
@@ -22,7 +23,7 @@ Cette rubrique répertorie toutes les exceptions générées par le transport MS
 |MsmqDeserializationError|Une erreur a été rencontrée lors de la désérialisation du message XML. Le message ne peut pas être reçu et est supprimé.|  
 |MsmqDLQNotWriteable|La validation de la liaison pour le client a échoué. Le client ne peut envoyer aucun message. La file d'attente de lettres mortes spécifiée n'existe pas ou ne peut pas être écrite. Vérifiez que la file d'attente existe avec l'autorisation d'écriture appropriée.|  
 |MsmqGetPrivateComputerInformationError|La vérification de la version a échoué à cause de l'erreur spécifiée. La version de MSMQ ne peut pas être détectée. Toutes les opérations qui se trouvent sur le canal mis en file d'attente échoueront. Vérifiez que MSMQ est installé et disponible.|  
-|MsmqNoAssurancesForVolatile|La validation de la liaison pour le service a échoué. Impossible de démarrer le point de terminaison du service ou le client. La propriété ExactlyOnce a la valeur Vrai et la propriété Durable a la valeur Faux. Cela n'est pas compatible. Pour résoudre le conflit, corrigez l'une de ces propriétés.|  
+|MsmqNoAssurancesForVolatile|La validation de la liaison pour le service a échoué. Impossible de démarrer le point de terminaison du service ou le client. La propriété ExactlyOnce a la valeur Vrai et la propriété Durable a la valeur Faux. Ceci n’est pas pris en charge. Pour résoudre le conflit, corrigez l'une de ces propriétés.|  
 |MsmqNonTransactionalQueueNeeded|Une incompatibilité entre la liaison et la configuration de la file d’attente MSMQ a été détectée. Impossible de démarrer le point de terminaison de service. La propriété ExactlyOnce a la valeur Faux et la file d’attente depuis laquelle lire les messages est une file d’attente transactionnelle. Corrigez l’erreur en affectant la valeur Vrai à la propriété ExactlyOnce ou en créant une liaison non transactionnelle.|  
 |MsmqOpenError|Une erreur s'est produite lors de l'ouverture de la file d'attente spécifiée. Impossible d'envoyer ou de recevoir le message depuis la file d'attente. Vérifiez que MSMQ est installé et en cours d'exécution. Vérifiez également que la file d'attente est disponible à l'ouverture avec le mode d'accès et l'autorisation requis.|  
 |MsmqPathLookupError|Une erreur s'est produite lors de la conversion du nom du chemin d'accès de la file d'attente spécifiée en nom de format. Toutes les opérations sur le canal mis en file d'attente ont échoué. Vérifiez que l'adresse de la file d'attente est valide. MSMQ doit être installé avec l'intégration à Active Directory activée et être disponible.|  
@@ -39,4 +40,4 @@ Cette rubrique répertorie toutes les exceptions générées par le transport MS
 |MsmqTransactionCurrentRequired|Aucune transaction n'est disponible pour envoyer des messages dans la session. Pour envoyer un message dans une session mise en file d’attente, une transaction est nécessaire. Vérifiez que l'étendue de la transaction est spécifiée pour envoyer le message dans la session.|  
 |MsmqTransactionRequired|Une transaction est requise mais n’est pas disponible. Impossible d'envoyer ou de recevoir des messages. Vérifiez que l'étendue de la transaction est spécifiée pour envoyer ou recevoir des messages.|  
 |MsmqUnsupportedSerializationFormat|Une erreur de désérialisation s'est produite. Le message ne peut pas être reçu et est supprimé. Le format de sérialisation spécifié n'est pas pris en charge.|  
-|MsmqWrongPrivateQueueSyntax|L'URL n'est pas valide. L'URL de la file d'attente ne peut pas contenir le caractère « $ ». Utilisez la syntaxe dans net.msmq://machine/private/queueName pour adresser une file d'attente privée.|
+|MsmqWrongPrivateQueueSyntax|L’URL n’est pas valide. L'URL de la file d'attente ne peut pas contenir le caractère « $ ». Utilisez la syntaxe dans net.msmq://machine/private/queueName pour adresser une file d'attente privée.|

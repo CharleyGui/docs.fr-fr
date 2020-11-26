@@ -13,14 +13,15 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-ms.openlocfilehash: 29de46afa2a96dd7011cec40f4f76e7bfb8ee454
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: dfbff0a78b3c6c1318224ccc9608c1b816f9d5f1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803534"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238052"
 ---
 # <a name="trace-switches"></a>Commutateurs de traçage
+
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer. Ces commutateurs sont des objets présents dans votre code, mais ils peuvent être configurés en dehors du code via le fichier .config. Trois types de commutateurs de trace sont disponibles dans .NET Framework : la classe <xref:System.Diagnostics.BooleanSwitch> , la classe <xref:System.Diagnostics.TraceSwitch> et la classe <xref:System.Diagnostics.SourceSwitch> . La classe <xref:System.Diagnostics.BooleanSwitch> agit comme un bouton bascule qui active ou désactive diverses instructions de trace. Les classes <xref:System.Diagnostics.TraceSwitch> et <xref:System.Diagnostics.SourceSwitch> vous permettent d'activer un commutateur de trace pour un niveau de traçage spécifique. Les messages <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.TraceSource> spécifiés pour ce niveau et tous les niveaux inférieurs seront alors affichés. Si vous désactivez le commutateur, les messages de trace ne seront pas affichés. Toutes ces classes dérivent de la classe abstraite (**MustInherit**) **Switch**, comme tous les commutateurs créés par l'utilisateur.  
   
  Les commutateurs de trace sont parfois utiles pour filtrer des informations. Supposons que vous vouliez afficher tous les messages de trace dans un module d'accès aux données, mais afficher uniquement les messages d'erreur dans les autres parties de l'application. Dans ce cas, vous pouvez utiliser un commutateur de trace pour le module d'accès aux données et un deuxième commutateur pour les autres parties de l'application. Si vous utilisez le fichier .config pour configurer les commutateurs avec les paramètres appropriés, vous pouvez déterminer les types de messages de trace que vous recevez. Pour plus d’informations, consultez [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md).  
@@ -30,6 +31,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
  Pour utiliser un commutateur, vous devez tout d'abord créer un objet commutateur à partir d'une classe **BooleanSwitch** , d'une classe **TraceSwitch** ou d'une classe de commutateur définie par le développeur. Pour plus d’informations sur la création de commutateurs définis par le développeur, consultez la classe <xref:System.Diagnostics.Switch> dans la référence .NET Framework. Définissez ensuite une valeur de configuration qui spécifie à quel moment l'objet commutateur doit être utilisé. Enfin, testez le paramètre de l'objet commutateur dans plusieurs méthodes de traçage **Trace** (ou **Debug**).  
   
 ## <a name="trace-levels"></a>Niveaux de trace  
+
  Quand vous utilisez **TraceSwitch**, d'autres aspects sont à prendre en compte. Un objet **TraceSwitch** possède quatre propriétés qui retournent des valeurs de type **Boolean** indiquant si au moins un niveau de trace est défini pour le commutateur :  
   
 - <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
@@ -80,10 +82,11 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
 ```  
   
 ## <a name="developer-defined-switches"></a>Commutateurs définis par le développeur  
+
  En plus des commutateurs **BooleanSwitch** et **TraceSwitch**, vous pouvez définir vos propres commutateurs en les dérivant de la classe **Switch** et en remplaçant les méthodes de la classe de base par des méthodes personnalisées. Pour plus d’informations sur la création de commutateurs définis par le développeur, consultez la classe <xref:System.Diagnostics.Switch> dans la référence .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Écouteurs de suivi](trace-listeners.md)
-- [Comment : ajouter des instructions de traçage dans le code d'une application](how-to-add-trace-statements-to-application-code.md)
-- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)
+- [Procédure : Ajouter des instructions de trace dans le code d’une application](how-to-add-trace-statements-to-application-code.md)
+- [Traçage et instrumentation d’applications](tracing-and-instrumenting-applications.md)

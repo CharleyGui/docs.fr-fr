@@ -2,14 +2,15 @@
 title: Instructions relatives à l'hébergement dans les Services Internet (IIS)
 ms.date: 03/30/2017
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
-ms.openlocfilehash: 226b47bfd90dc4cffb0a364a804016043cc25d02
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 151c5ba8dd79e8554e7d79fb5b8182740b0be18e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929109"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237688"
 ---
 # <a name="internet-information-service-hosting-instructions"></a>Instructions relatives à l'hébergement dans les Services Internet (IIS)
+
 Pour exécuter les exemples hébergés par les services IIS (Internet Information Services), vous devez vous assurer que les services IIS sont correctement installés et en cours d'exécution.  
   
 ### <a name="to-install-iis-version-75-on-windows-server-2008-r2"></a>Pour installer IIS version 7.5 sur Windows Server 2008 R2  
@@ -30,7 +31,7 @@ Pour exécuter les exemples hébergés par les services IIS (Internet Informatio
   
 ### <a name="to-install-iis-version-75-on-windows-7"></a>Pour installer IIS version 7.5 sur Windows 7  
   
-1. Cliquez sur **Démarrer**, puis sur **panneau de configuration**.  
+1. Cliquez sur **Démarrer**, puis sur **Panneau de configuration**.  
   
 2. Ouvrez le groupe **programmes** .  
   
@@ -140,9 +141,9 @@ Pour exécuter les exemples hébergés par les services IIS (Internet Informatio
   
 ### <a name="to-install-iis-version-51-on-windows-xp-with-service-pack-2-and-service-pack-3-installed"></a>Pour installer IIS version 5.1 sur Windows XP avec Service Pack 2 et Service Pack 3 installés  
   
-1. Dans le panneau de configuration, cliquez sur **Ajout/suppression de programmes**.  
+1. Dans le Panneau de configuration, cliquez sur **Ajout/Suppression de programmes**.  
   
-2. Dans la boîte de dialogue **Ajout/suppression de programmes** , cliquez sur **Ajouter/supprimer des composants Windows**.  
+2. Dans la boîte de dialogue **Ajouter ou supprimer des programmes**, cliquez sur **Ajouter ou supprimer des composants Windows**.  
   
 3. Dans l **'Assistant composants de Windows**, activez la case à cocher **Internet Information Services (IIS)** , puis cliquez sur **suivant**.  
   
@@ -156,7 +157,7 @@ Pour exécuter les exemples hébergés par les services IIS (Internet Informatio
   
 1. Enregistrez le fichier HTML indiqué à la fin de cette rubrique dans le répertoire \InetPub\wwwroot racine et nommez-le Default.aspx.  
   
-2. Ouvrez une nouvelle fenêtre de navigateur.  
+2. Ouvrez une fenêtre de navigateur.  
   
 3. Tapez `http://localhost/Default.aspx` dans la zone adresse, puis appuyez sur entrée.  
   

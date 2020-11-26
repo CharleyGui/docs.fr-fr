@@ -5,14 +5,15 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: 705e571e11fa7c8276fcb48d15ed0160fbda2bc5
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 10a4fe88c9d49d49338776db83abc1201ada8a95
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628759"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238143"
 ---
 # <a name="guide-to-the-documentation"></a>Guide de la documentation
+
 Vous trouverez ici des conseils sur la documentation de Windows Communication Foundation (WCF). Les documents liés sont des points de départ recommandés regroupés en fonction d'intérêts et de niveaux d'expertise spécifiques.  
   
 ## <a name="new-to-windows-communication-foundation-programming"></a>Nouveautés concernant la programmation WCF (Windows Communication Foundation)  
@@ -38,6 +39,7 @@ Vous trouverez ici des conseils sur la documentation de Windows Communication Fo
 - La configuration à l’aide de fichiers XML est un moyen principal de programmer des services et des clients WCF. Pour obtenir de la documentation de référence sur les éléments XML utilisés dans les fichiers de configuration, consultez [schéma de configuration WCF](../configure-apps/file-schema/wcf/index.md).  
   
 ## <a name="troubleshooting"></a>Dépannage  
+
  Pour plus d’informations sur la résolution des problèmes WCF courants, consultez [démarrage rapide de WCF Troubleshooting](wcf-troubleshooting-quickstart.md).  
   
 ## <a name="using-windows-communication-foundation-with-other-technologies"></a>Utilisation de WCF (Windows Communication Foundation) avec d'autres technologies  
@@ -57,11 +59,12 @@ Vous trouverez ici des conseils sur la documentation de Windows Communication Fo
 - Pour utiliser WCF pour consommer un service WSE (Web services extensions) 3,0, consultez [Comment : accéder à un service wse 3,0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
   
 ## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>WS-* Protocoles pris en charge dans WCF (Windows Communication Foundation)  
- Pour afficher une liste des protocoles pris en charge dans les liaisons fournies par le système, consultez [protocoles de services Web pris en charge par les liaisons d’interopérabilité fournies par le système](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Pour afficher la liste des liaisons fournies par le système, consultez [liaisons fournies par le système](system-provided-bindings.md).  
+
+ Pour afficher une liste des protocoles pris en charge dans les liaisons fournies par le système, consultez [protocoles de services Web pris en charge par System-Provided liaisons d’interopérabilité](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Pour afficher la liste des liaisons fournies par le système, consultez [liaisons fournies par le système](system-provided-bindings.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Exemples Windows Communication Foundation](./samples/index.md)
 - [Vue d’ensemble conceptuelle](conceptual-overview.md)
-- [Conseils et bonnes pratiques](guidelines-and-best-practices.md)
+- [Indications et meilleures pratiques](guidelines-and-best-practices.md)
 - [Génération de clients](building-clients.md)

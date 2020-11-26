@@ -2,17 +2,19 @@
 title: 'Service : nombre d’échecs de la validation de la sécurité et de l’authentification'
 ms.date: 03/30/2017
 ms.assetid: 55c98268-b1ad-459d-851b-25ef52248187
-ms.openlocfilehash: 399249926bcb1383fd33f60510c2c212c6f4261c
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: d89419d7d579d29a1c57370d61eefb8b26333a40
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204579"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236856"
 ---
 # <a name="service-security-validation-and-authentication-failures"></a>Service : nombre d’échecs de la validation de la sécurité et de l’authentification
+
 Nom de compteur : nombre d’échecs de la validation de la sécurité et de l’authentification  
   
 ## <a name="description"></a>Description  
+
  Ce compteur est incrémenté chaque fois qu'un message est rejeté en raison d'un problème de sécurité non couvert par le compteur « Appels de sécurité non autorisés ». Ces problèmes sont les suivants :  
   
 - Impossibilité de lire le jeton client depuis le message.  

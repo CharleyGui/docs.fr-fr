@@ -11,14 +11,15 @@ helpviewer_keywords:
 - strong-named assemblies, signing files
 - key pairs for signing files
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
-ms.openlocfilehash: 8f10dab9b395640e46cb9bf3ca468b8f6bb2bc1b
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: bb9640bbb46683a3facf290c8157853007f4407d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517189"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238442"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
+
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../standard/assembly/strong-named.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
   
 > [!WARNING]
@@ -56,7 +57,7 @@ sn [-quiet][option [parameter(s)]]
 |`-o infile [outfile]`|Extrait la clé publique d’*infile* et la stocke dans un fichier .csv. Chaque octet de la clé publique est séparé par une virgule. Ce format s'avère utile pour les références de codage en dur aux clés sous forme de tableaux initialisés dans le code source. Si *outfile* n’est pas spécifié, cette option place la sortie dans le Presse-papiers. **Remarque :** Cette option ne vérifie pas si l’entrée est une clé publique uniquement. Si `infile` contient une paire de clés dont une est privée, la clé privée est également extraite.|  
 |`-p infile outfile [hashalg]`|Extrait la clé publique de la paire de clés dans *infile* et la stocke dans *outfile*, éventuellement à l’aide de l’algorithme RSA spécifié par *hashalg*. Cette clé publique permet de différer la signature d’un assembly à l’aide des options **/delaysign+** et **/keyfile** d’[Assembly Linker (Al.exe)](al-exe-assembly-linker.md). En cas signature différée d'un assembly, seule la clé publique est définie au moment de la compilation et un espace est réservé dans le fichier pour la signature qui sera ajoutée par la suite, lorsque la clé privée sera connue.|  
 |`-pc container outfile [hashalg]`|Extrait la clé publique de la paire de clés figurant dans *container* et la stocke dans *outfile*. Si vous utilisez l’option *hashalg*, l’algorithme RSA est utilisé pour récupérer la clé publique.|  
-|`-Pb [y|n]`|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. Par défaut, il s’agit de `y`. **Remarque :** Sur les ordinateurs 64 bits, vous devez définir ce paramètre à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
+|`-Pb [y|n]`|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. La valeur par défaut est `y`. **Remarque :** Sur les ordinateurs 64 bits, vous devez définir ce paramètre à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
 |`-q[uiet]`|Spécifie le mode silencieux ; supprime l'affichage des messages d'opération réussie.|  
 |`-R[a] assembly infile`|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *infile*.<br /><br /> Si **-Ra** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  
 |`-Rc[a] assembly container`|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *container*.<br /><br /> Si **-Rca** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  
@@ -64,7 +65,7 @@ sn [-quiet][option [parameter(s)]]
 |`-t[p] infile`|Affiche le jeton de la clé publique stockée dans *infile*. Le contenu d’*infile* doit être une clé publique générée précédemment à partir d’un fichier de paire de clés à l’aide de  **-p**.  N’utilisez pas l’option **-t[p]** pour extraire directement le jeton d’un fichier de paire de clés.<br /><br /> Sn.exe calcule le jeton à l'aide d'une fonction de hachage issue de la clé publique. Pour gagner de la place, le Common Language Runtime stocke les jetons des clés publiques dans le manifeste en cas de référence à un autre assembly, lorsqu'il enregistre une dépendance dans un assembly portant un nom fort. L’option **-TP** affiche la clé publique en plus du jeton. Si l'attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> a été appliqué à l'assembly, le jeton est pour la clé d'identité, et le nom d'algorithme de hachage et de la clé d'identité s'affiche.<br /><br /> Notez que cette option ne vérifie pas la signature de l'assembly et qu'elle ne doit pas être utilisée pour prendre des décisions en matière d'approbation.  Cette option affiche seulement les données brutes de jetons de clés publiques.|  
 |`-T[p] assembly`|Affiche le jeton de clé publique de l’*assembly*. L’*assembly* doit être le nom d’un fichier qui contient un manifeste d’assembly.<br /><br /> Sn.exe calcule le jeton à l'aide d'une fonction de hachage issue de la clé publique. Pour gagner de la place, le runtime stocke les jetons des clés publiques dans le manifeste en cas de référence à un autre assembly, lorsqu'il enregistre une dépendance dans un assembly portant un nom fort. L’option **-Tp** affiche la clé publique en plus du jeton. Si l'attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> a été appliqué à l'assembly, le jeton est pour la clé d'identité, et le nom d'algorithme de hachage et de la clé d'identité s'affiche.<br /><br /> Notez que cette option ne vérifie pas la signature de l'assembly et qu'elle ne doit pas être utilisée pour prendre des décisions en matière d'approbation.  Cette option affiche seulement les données brutes de jetons de clés publiques.|  
 |`-TS assembly infile`|Teste la signature de l' *assembly* signé ou partiellement signé avec la paire de clés dans *infile*.|  
-|`-TSc assembly container`|Teste la signature de l' *assembly* signé ou partiellement signé avec la paire de clés dans le *conteneur*de conteneurs de clés.|
+|`-TSc assembly container`|Teste la signature de l' *assembly* signé ou partiellement signé avec la paire de clés dans le *conteneur* de conteneurs de clés.|
 |`-v assembly`|Vérifie le nom fort figurant dans *assembly*, où *assembly* est le nom d’un fichier contenant un manifeste d’assembly.|  
 |`-vf assembly`|Vérifie le nom fort dans *assembly*. Contrairement à l’option **-v**, **-vf** force la vérification même si celle-ci a été désactivée à l’aide de l’option **-Vr**.|  
 |`-Vk regfile.reg assembly [userlist] [infile]`|Crée un fichier des entrées d'inscription (.reg) que vous pouvez utiliser pour inscrire l'assembly spécifié afin d'ignorer la vérification. Les règles d’affectation des noms d’assemblys qui s’appliquent à l’option **-Vr** s’appliquent également à **-Vk**. Pour plus d’informations sur les options *userlist* et *infile*, consultez l’option **-Vr**.|  
@@ -78,7 +79,8 @@ sn [-quiet][option [parameter(s)]]
 > [!NOTE]
 > Toutes les options de Sn.exe respectent la casse et doivent être tapées exactement comme indiqué pour pouvoir être reconnues par l'outil.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les options **-R** et **-Rc** sont utiles avec les assemblys dont la signature a été différée. Dans ce cas, seule la clé publique est définie au moment de la compilation et la signature a lieu par la suite, lorsque la clé privée est connue.  
   
 > [!NOTE]
@@ -87,6 +89,7 @@ sn [-quiet][option [parameter(s)]]
 L’outil Strong Name suppose que les paires de clés publiques/privées sont générées avec l’identificateur d’algorithme `AT_SIGNATURE`. Les paires de clés publiques/privées générées avec l’algorithme `AT_KEYEXCHANGE` génèrent une erreur.
 
 ## <a name="examples"></a>Exemples  
+
  La commande suivante crée une nouvelle paire de clés aléatoire et la stocke dans `keyPair.snk`.  
   
 ```console  

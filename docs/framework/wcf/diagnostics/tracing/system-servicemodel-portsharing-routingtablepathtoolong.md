@@ -2,17 +2,19 @@
 title: System.ServiceModel.PortSharing.RoutingTablePathTooLong
 ms.date: 03/30/2017
 ms.assetid: 6e4a9c78-c753-469c-93c4-c3a391dc2a11
-ms.openlocfilehash: 67e968ea18faeb59f14dab8c021a85206bea7f93
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c1839c7b1c1cd1eff845458378048a76f05216ae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599402"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237870"
 ---
 # <a name="systemservicemodelportsharingroutingtablepathtoolong"></a>System.ServiceModel.PortSharing.RoutingTablePathTooLong
+
 System.ServiceModel.PortSharing.RoutingTablePathTooLong  
   
 ## <a name="description"></a>Description  
+
  L'espace de noms est trop long.  
   
 ## <a name="see-also"></a>Voir aussi
