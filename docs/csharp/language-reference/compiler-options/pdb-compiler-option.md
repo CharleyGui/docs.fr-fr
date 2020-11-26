@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
 ms.openlocfilehash: ced1ee1f4f079830a032a628da96a389ba27da90
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91193853"
 ---
 # <a name="-pdb-c-compiler-options"></a>-pdb (Options du compilateur C#)

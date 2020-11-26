@@ -3,10 +3,10 @@ title: Les blocs de construction des programmes C#»
 description: En savoir plus sur les membres, les expressions et les instructions C#. Les types contiennent des membres que vous écrivez. Ces membres sont générés à partir d’instructions et d’expressions.
 ms.date: 08/06/2020
 ms.openlocfilehash: e4350f2c2b6005fb59dd868f0f7f628bd07b0053
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93342694"
 ---
 # <a name="program-building-blocks"></a>Blocs de construction de programme
@@ -20,15 +20,15 @@ Les membres d’un `class` sont soit des membres _*_statiques_*_ , soit des _*_m
 La liste suivante fournit une vue d’ensemble des types de membres qu’une classe peut contenir.
 
 - _ * Constantes * * : valeurs constantes associées à la classe
-- **Fields** : variables associées à la classe
-- **Méthodes** : actions qui peuvent être effectuées par la classe
-- **Propriétés** : actions associées à la lecture et à l’écriture des propriétés nommées de la classe
-- **Indexeurs** : actions associées à l’indexation d’instances de la classe comme un tableau
-- **Événements** : notifications qui peuvent être générées par la classe
-- **Opérateurs** : conversions et opérateurs d’expression pris en charge par la classe
-- **Constructeurs** : actions requises pour initialiser des instances de la classe ou la classe elle-même
-- **Finaliseurs** : actions effectuées avant que les instances de la classe soient définitivement ignorées
-- **Types** : types imbriqués déclarés par la classe
+- **Fields**: variables associées à la classe
+- **Méthodes**: actions qui peuvent être effectuées par la classe
+- **Propriétés**: actions associées à la lecture et à l’écriture des propriétés nommées de la classe
+- **Indexeurs**: actions associées à l’indexation d’instances de la classe comme un tableau
+- **Événements**: notifications qui peuvent être générées par la classe
+- **Opérateurs**: conversions et opérateurs d’expression pris en charge par la classe
+- **Constructeurs**: actions requises pour initialiser des instances de la classe ou la classe elle-même
+- **Finaliseurs**: actions effectuées avant que les instances de la classe soient définitivement ignorées
+- **Types**: types imbriqués déclarés par la classe
 
 ## <a name="accessibility"></a>Accessibilité
 
@@ -59,7 +59,7 @@ Comme indiqué dans l’exemple précédent, les *champs en lecture seule* peuve
 
 Une *méthode* est un membre qui implémente un calcul ou une action qui peut être effectuée par un objet ou une classe. Les *méthodes statiques* sont accessibles à travers la classe. Les *méthodes d’instance* sont accessibles via des instances de la classe.
 
-Les méthodes peuvent avoir une liste de *paramètres* , qui représentent des valeurs ou des références variables passées à la méthode. Les méthodes ont un *type de retour* , qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` s’il ne retourne pas de valeur.
+Les méthodes peuvent avoir une liste de *paramètres*, qui représentent des valeurs ou des références variables passées à la méthode. Les méthodes ont un *type de retour*, qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` s’il ne retourne pas de valeur.
 
 Comme les types, les méthodes peuvent également être un jeu de paramètres de type pour lesquels les arguments de type doivent être spécifiés lorsque la méthode est appelée. Contrairement aux types, les arguments de type peuvent souvent être déduits à partir des arguments d’un appel de méthode et n’ont pas à être fournis explicitement.
 
@@ -189,7 +189,7 @@ Contrairement aux autres membres, les constructeurs d’instance ne sont pas hé
 
 Les *propriétés* sont une extension naturelle des champs. Les deux sont des membres nommés avec des types associés, et la syntaxe pour accéder aux champs et propriétés est la même. Toutefois, contrairement aux champs, les propriétés ne désignent pas les emplacements de stockage. Au lieu de cela, les propriétés ont des *accesseurs* qui spécifient les instructions exécutées lorsque leurs valeurs sont lues ou écrites.
 
-Une propriété est déclarée comme un champ, sauf que la déclaration se termine par un accesseur Get ou un accesseur Set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture* , une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule* , et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
+Une propriété est déclarée comme un champ, sauf que la déclaration se termine par un accesseur Get ou un accesseur Set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture*, une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule*, et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
 
 Un accesseur get correspond à une méthode sans paramètre avec une valeur de retour du type de la propriété. Un accesseur set correspond à une méthode avec un paramètre unique nommé valeur et aucun type de retour. L’accesseur Get calcule la valeur de la propriété. L’accesseur Set fournit une nouvelle valeur pour la propriété. Lorsque la propriété est la cible d’une assignation, ou l’opérande de `++` ou `--` , l’accesseur Set est appelé. Dans les autres cas où la propriété est référencée, l’accesseur Get est appelé.
 
@@ -251,8 +251,8 @@ Quand une expression contient plusieurs opérateurs, la *priorité* des opérate
 
 Lorsqu’un opérande se produit entre deux opérateurs de même priorité, *l’associativité* des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
 
-* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche* , ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
-* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=` l’opérateur conditionnel `?:` sont *associatifs à droite* , ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+* À l’exception des opérateurs d’assignation et de fusion Null, tous les opérateurs binaires sont *associatifs à gauche*, ce qui signifie que les opérations sont effectuées de gauche à droite. Par exemple, `x + y + z` est évalué comme étant `(x + y) + z`.
+* Les opérateurs d’assignation, les opérateurs de fusion Null `??` et `??=` l’opérateur conditionnel `?:` sont *associatifs à droite*, ce qui signifie que les opérations sont exécutées de droite à gauche. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
 
 La priorité et l’associativité peuvent être contrôlées à l’aide de parenthèses. Par exemple, `x + y * z` multiplie d’abord `y` par `z`, puis ajoute le résultat à `x`, mais `(x + y) * z` ajoute d’abord `x` et `y`, puis multiplie le résultat par `z`.
 

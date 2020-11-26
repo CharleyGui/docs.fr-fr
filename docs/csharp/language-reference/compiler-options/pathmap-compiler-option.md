@@ -9,10 +9,10 @@ helpviewer_keywords:
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
 ms.openlocfilehash: 707a37c6946cfcaf429552f0aeece6b87f3ad71d
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125005"
 ---
 # <a name="-pathmap-c-compiler-options"></a>-pathmap (Options du compilateur C#)
@@ -33,7 +33,7 @@ L’option de compilateur **-pathmap** spécifie comment mapper des chemins phys
 
 Pour spécifier plusieurs chemins sources mappés, séparez-les par des virgules.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le compilateur écrit le chemin source dans sa sortie dans les cas suivants :
 

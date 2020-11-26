@@ -10,10 +10,10 @@ helpviewer_keywords:
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
 ms.openlocfilehash: 25eb5e6642d8b608bedcb4e9adadde4d84c2bae9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89138967"
 ---
 # <a name="extern-c-reference"></a>extern (référence C#)
@@ -31,7 +31,7 @@ C’est une erreur d’utiliser conjointement les modificateurs [abstract](abstr
 
 L'utilisation du mot clé extern est plus restreinte dans C# que dans C++. Pour comparer son utilisation dans C# et C++, consultez : Utilisation d'extern pour spécifier la liaison dans le Guide de référence du langage C++.
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 Dans cet exemple, le programme reçoit une chaîne provenant de l’utilisateur et l’affiche dans une boîte de message. Le programme utilise la méthode `MessageBox` importée de la bibliothèque User32.dll.
 

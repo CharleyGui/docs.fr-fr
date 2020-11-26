@@ -4,10 +4,10 @@ description: Décrit la prise en charge par C# des éléments ignorés, qui sont
 ms.technology: csharp-fundamentals
 ms.date: 09/22/2020
 ms.openlocfilehash: baa7c559095460cf747cb5c8f7ad581270893bd7
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "95698804"
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
@@ -69,11 +69,11 @@ Vous pouvez utiliser un élément ignoré autonome pour indiquer une variable qu
 
 Notez que `_` est aussi un identificateur valide. Quand il est utilisé en dehors d’un contexte pris en charge, `_` est traité non pas comme élément ignoré, mais comme variable valide. Si un identificateur nommé `_` est déjà dans l’étendue, l’utilisation de `_` comme élément ignoré autonome peut provoquer :
 
-- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Par exemple :
+- Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Une erreur de compilateur pour violation de sécurité du type. Par exemple :
+- Une erreur de compilateur pour violation de sécurité du type. Exemple :
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 

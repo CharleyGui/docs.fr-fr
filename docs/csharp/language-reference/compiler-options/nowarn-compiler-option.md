@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
 ms.openlocfilehash: 31a7ee5eacb2e7cd6b24c4a2276ce6e07fcc67e1
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91194022"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (options du compilateur C#)

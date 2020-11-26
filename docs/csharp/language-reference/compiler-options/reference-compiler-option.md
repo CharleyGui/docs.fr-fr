@@ -15,10 +15,10 @@ helpviewer_keywords:
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
 ms.openlocfilehash: cd7346ae4094a84a398306394f771e040dd7b72f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91193788"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (Options du compilateur C#)

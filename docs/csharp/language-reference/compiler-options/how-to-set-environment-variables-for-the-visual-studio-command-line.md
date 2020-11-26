@@ -17,10 +17,10 @@ helpviewer_keywords:
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
 ms.openlocfilehash: b985c85e2fddce459ed68b3d07ba7d54a8b2d0a7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125603"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Comment : définir des variables d’environnement pour la ligne de commande Visual Studio
@@ -36,7 +36,7 @@ Si la version actuelle de Visual Studio est installée sur un ordinateur qui ex�
 
 1. Dans le menu **Démarrer** , ouvrez le **Invite de commandes développeur pour vs 2019**.  Il se trouve dans le dossier **Visual Studio 2019** .
 
-2. Accédez au sous-répertoire \Program Files\Microsoft Visual Studio \\ *version* \\ *offer*\Common7\Tools ou \Program Files (x86) \Microsoft Visual Studio \\ *version* \\ *offer*\Common7\Tools de votre installation.  (La*version* est *2019* pour la version actuelle. *Offre* correspond à *Enterprise*, *Professional* ou *Community*.)
+2. Accédez au sous-répertoire \Program Files\Microsoft Visual Studio \\ *version* \\ *offer*\Common7\Tools ou \Program Files (x86) \Microsoft Visual Studio \\ *version* \\ *offer*\Common7\Tools de votre installation.  (La *version* est *2019* pour la version actuelle. *Offre* correspond à *Enterprise*, *Professional* ou *Community*.)
 
 3. Exécutez VsDevCmd.bat en tapant **VsDevCmd**.
 

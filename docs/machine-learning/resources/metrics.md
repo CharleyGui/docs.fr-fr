@@ -3,10 +3,10 @@ title: Métriques ML.NET
 description: Découvrir les métriques qui sont utilisées pour évaluer les performances d’un modèle ML.NET
 ms.date: 12/17/2019
 ms.openlocfilehash: 046e0a3feea2da702dfef5ca9ce4f498fce5fb26
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91804820"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>Évaluer votre modèle ML.NET à l’aide de mesures
@@ -23,7 +23,7 @@ Par exemple, pour la tâche de classification, le modèle est évalué en mesura
 |-----------|-----------------------|-----------|
 | **Précision** |  La [précision](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) est la proportion de prédictions correctes avec un jeu de données de test. Elle représente le rapport entre le nombre de prédictions correctes et le nombre total d’échantillons d’entrée. Il fonctionne bien s’il existe un nombre similaire d’exemples appartenant à chaque classe.| **Plus la précision est proche de 1,00, meilleure est la qualité**. Toutefois, la valeur exacte 1,00 indique un problème (en règle générale, une fuite d’étiquette/cible, un surapprentissage ou un test avec des données d’entraînement). Lorsque les données de test sont déséquilibrées (lorsque la plupart des instances appartiennent à l’une des classes), le jeu de données est petit, ou les scores sont 0,00 ou 1,00, la précision ne capture pas vraiment l’efficacité d’un classifieur et vous devez vérifier des métriques supplémentaires. |
 | **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) ou *Area sous la courbe* mesure la zone sous la courbe créée en balayant le taux réel positif par rapport au taux de faux positifs.  |   **Plus la précision est proche de 1,00, meilleure est la qualité**. Elle doit être supérieure à 0,50 pour qu’un modèle soit acceptable. Un modèle avec AUC de 0,50 ou moins est inutile. |
-| **Zone sous une courbe de précision/rappel** | aucPR ou *zone sous la courbe d’une courbe de rappel de précision*: mesure utile du succès de la prédiction lorsque les classes sont déséquilibrées (jeux de données très faussés). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
+| **Zone sous une courbe de précision/rappel** | aucPR ou *Area sous la courbe d’une courbe de Precision-Recall*: mesure utile du succès de la prédiction lorsque les classes sont déséquilibrées (jeux de données très faussés). |  **Plus la précision est proche de 1,00, meilleure est la qualité**. Des scores élevés proches de 1,00 montrent que le classifieur retourne des résultats précis (précision élevée) ainsi que la majorité de tous les résultats positifs (rappel élevé). |
 | **Score F1** | [Score F1](https://en.wikipedia.org/wiki/F1_score) également appelé *balanced F-score or F-measure*. Il s’agit de la moyenne harmonique de la précision et du rappel. Le score F1 est utile quand vous souhaitez rechercher un équilibre entre la précision et le rappel.| **Plus la précision est proche de 1,00, meilleure est la qualité**.  Un score F1 atteint sa meilleure valeur à 1,00 et la pire à 0,00. Il vous indique le degré de précision de votre classifieur. |
 
 Pour plus d’informations sur les métriques de classification binaire, consultez les articles suivants :
@@ -86,7 +86,7 @@ Pour plus d’informations sur les métriques de régression, consultez les arti
 
 | Métrique   |      Description      |  Recherche |
 |----------|-----------------------|-----------|
-|**Gains cumulés avec remise**|Le gain cumulatif avec remise (DCG) est une mesure de la qualité du classement. Il est dérivé de deux hypothèses. Un : les éléments les plus pertinents sont plus utiles lorsqu’ils apparaissent plus haut dans l’ordre de classement. Deux : l’utilité effectue le suivi de la pertinence, plus la pertinence est élevée, plus un élément est utile. Le gain cumulatif à prix réduit est calculé pour une position particulière dans l’ordre de classement. Il additionne la notation de la pertinence divisée par le logarithme de l’index de classement jusqu’à la position d’intérêt. Elle est calculée à l’aide de $ \ sum_ {i = 0} ^ {p} \frac {rel_i} {\ log_ {e} {i + 1}} $ les notations de pertinence sont fournies à un algorithme d’apprentissage de classement en tant qu’étiquettes de vérité au sol. Une valeur DCG est fournie pour chaque position dans la table de classement, par conséquent les **gains**cumulatifs avec remise de nom. |**Les valeurs élevées sont meilleures**|
+|**Gains cumulés avec remise**|Le gain cumulatif avec remise (DCG) est une mesure de la qualité du classement. Il est dérivé de deux hypothèses. Un : les éléments les plus pertinents sont plus utiles lorsqu’ils apparaissent plus haut dans l’ordre de classement. Deux : l’utilité effectue le suivi de la pertinence, plus la pertinence est élevée, plus un élément est utile. Le gain cumulatif à prix réduit est calculé pour une position particulière dans l’ordre de classement. Il additionne la notation de la pertinence divisée par le logarithme de l’index de classement jusqu’à la position d’intérêt. Elle est calculée à l’aide de $ \ sum_ {i = 0} ^ {p} \frac {rel_i} {\ log_ {e} {i + 1}} $ les notations de pertinence sont fournies à un algorithme d’apprentissage de classement en tant qu’étiquettes de vérité au sol. Une valeur DCG est fournie pour chaque position dans la table de classement, par conséquent les **gains** cumulatifs avec remise de nom. |**Les valeurs élevées sont meilleures**|
 |**Gains cumulatifs à prix réduit normalisés**|La normalisation de DCG permet la comparaison de la métrique pour les listes de classement de longueurs différentes|**Les valeurs proches de 1 sont meilleures**|
 
 ## <a name="evaluation-metrics-for-anomaly-detection"></a>Mesures d’évaluation pour la détection des anomalies

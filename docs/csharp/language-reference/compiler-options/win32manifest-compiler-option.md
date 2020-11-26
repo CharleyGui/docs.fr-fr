@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
 ms.openlocfilehash: 1d2eefdab433f67e1cba5f709a2db8ec6b9a5dc7
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91171310"
 ---
 # <a name="-win32manifest-c-compiler-options"></a>-win32manifest (Options du compilateur C#)

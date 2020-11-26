@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 ms.openlocfilehash: 3fdb030dfc141b011f5faa827a4e4bb45ae38d19
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89466012"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (Options du compilateur C#)
@@ -31,7 +31,7 @@ Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’ass
 `string` \
 anycpu (valeur par défaut), anycpu32bitpreferred, ARM, x64, x86 ou Itanium.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 - **anycpu** (valeur par défaut) compile votre assembly pour qu’il s’exécute sur n’importe quelle plateforme. Votre application s’exécute en tant que processus 64 bits dans la mesure du possible et repasse en 32 bits quand seul ce mode est disponible.
 

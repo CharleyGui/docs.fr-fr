@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -keycontainer compiler option [C#]
 ms.assetid: b3982b6d-2382-4f7e-bebd-ce98eaa30763
 ms.openlocfilehash: 93ee5cd755a4fd6918d2a5825b63151a201a8f6a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91152466"
 ---
 # <a name="-keycontainer-c-compiler-options"></a>-keycontainer (Options du compilateur C#)

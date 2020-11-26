@@ -7,10 +7,10 @@ dev_langs:
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
 ms.openlocfilehash: 1264d678b4823149498150f13d8783a82890f6a0
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91177709"
 ---
 # <a name="dataadapter-parameters"></a>Paramètres DataAdapter
@@ -167,7 +167,7 @@ adapter.Fill(customers, "Customers");
 ```  
   
 > [!NOTE]
-> Si aucun nom de paramètre n’est fourni pour un paramètre, le paramètre reçoit un nom incrémentiel par défaut de paramètre*N* *,* commençant par « paramètre1 ». Nous vous recommandons d’éviter la Convention de nommage des paramètres*N* lorsque vous fournissez un nom de paramètre, car le nom que vous fournissez peut être en conflit avec un nom de paramètre par défaut existant dans le `ParameterCollection` . Si le nom fourni existe déjà, une exception est levée.  
+> Si aucun nom de paramètre n’est fourni pour un paramètre, le paramètre reçoit un nom incrémentiel par défaut de paramètre *N* *,* commençant par « paramètre1 ». Nous vous recommandons d’éviter la Convention de nommage des paramètres *N* lorsque vous fournissez un nom de paramètre, car le nom que vous fournissez peut être en conflit avec un nom de paramètre par défaut existant dans le `ParameterCollection` . Si le nom fourni existe déjà, une exception est levée.  
   
 ## <a name="see-also"></a>Voir aussi
 

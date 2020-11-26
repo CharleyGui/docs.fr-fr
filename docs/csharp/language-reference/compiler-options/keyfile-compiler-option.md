@@ -10,10 +10,10 @@ helpviewer_keywords:
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
 ms.openlocfilehash: 5af40da18895d47933cb809d710e31a40f14513b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91152427"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (Options du compilateur C#)

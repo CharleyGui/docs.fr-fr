@@ -11,10 +11,10 @@ helpviewer_keywords:
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
 ms.openlocfilehash: 442c788595a01db9c0a1196d9e13b2a98963a38c
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91204344"
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res (Options du compilateur C#)

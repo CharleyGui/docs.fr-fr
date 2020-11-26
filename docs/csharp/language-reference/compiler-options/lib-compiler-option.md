@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
 ms.openlocfilehash: 9478501ea98ec1b9d3ec2761bc4ebf3f6bef656c
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91152440"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (Options du compilateur C#)

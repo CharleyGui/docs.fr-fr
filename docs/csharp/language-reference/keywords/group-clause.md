@@ -10,10 +10,10 @@ helpviewer_keywords:
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
 ms.openlocfilehash: 5e642492b4b36bb0464baf16baa80c58c19ba9f1
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89138226"
 ---
 # <a name="group-clause-c-reference"></a>group, clause (Référence C#)
@@ -82,7 +82,7 @@ Cet exemple montre comment exécuter une logique supplémentaire sur les groupes
 
 [!code-csharp[cscsrefQueryKeywords#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#17)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Lors de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.
 

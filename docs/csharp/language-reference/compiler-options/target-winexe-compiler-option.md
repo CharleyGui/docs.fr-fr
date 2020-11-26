@@ -10,10 +10,10 @@ helpviewer_keywords:
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
 ms.openlocfilehash: 6e14a2aac427c7adfd69f66eaf624816b75f6ea2
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91168931"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target:winexe (Options du compilateur C#)

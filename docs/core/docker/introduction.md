@@ -4,10 +4,10 @@ description: Cet article présente Docker et en brosse une vue d’ensemble dans
 ms.date: 03/20/2019
 ms.custom: mvc
 ms.openlocfilehash: 6303c16e914c86f3a431a9e5367e6feb8ff88c9e
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "95724740"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker

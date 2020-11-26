@@ -3,10 +3,10 @@ title: Visite guidée de C#-zones de langage majeures
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 08/06/2020
 ms.openlocfilehash: a73399643ada05a4bfb17fadd17bf3267514e99d
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93400746"
 ---
 # <a name="major-language-areas"></a>Principales zones de langue
@@ -36,7 +36,7 @@ Le type d’élément d’un tableau peut être de n’importe quel type, y comp
 
 La première ligne crée un tableau avec trois éléments, chacun de type `int[]` et chacun avec une valeur initiale de `null`. Les lignes suivantes initialisent ensuite les trois éléments avec des références à des instances de tableau individuelles de longueurs différentes.
 
-L' `new` opérateur permet de spécifier les valeurs initiales des éléments du tableau à l’aide d’un _*_initialiseur de tableau_*_ , qui est une liste d’expressions écrites entre les délimiteurs `{` et `}` . L’exemple suivant alloue et initialise un `int[]` avec trois éléments.
+L' `new` opérateur permet de spécifier les valeurs initiales des éléments du tableau à l’aide d’un _*_initialiseur de tableau_*_, qui est une liste d’expressions écrites entre les délimiteurs `{` et `}` . L’exemple suivant alloue et initialise un `int[]` avec trois éléments.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeArray":::
 

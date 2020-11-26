@@ -9,10 +9,10 @@ helpviewer_keywords:
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
 ms.openlocfilehash: 58a8dc226bb2720b6a8251f028712a80f74e893c
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89141684"
 ---
 # <a name="where-clause-c-reference"></a>where, clause (Référence C#)
@@ -37,7 +37,7 @@ Une clause `where` peut contenir une ou plusieurs méthodes qui retournent des v
 
 [!code-csharp[cscsrefQueryKeywords#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Where.cs#7)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 La clause `where` est un mécanisme de filtrage. Elle peut être placée à presque n’importe quel endroit d’une expression de requête, sauf qu’elle ne peut pas être la première ni la dernière clause. Une clause `where` peut apparaître avant ou après une clause [group](group-clause.md) selon que vous devez filtrer les éléments sources avant ou après leur regroupement.
 
@@ -49,7 +49,7 @@ Au moment de la compilation, le mot clé `where` est converti en appel à la mé
 
 - [Mots clés de requête (LINQ)](query-keywords.md)
 - [from, clause](from-clause.md)
-- [select, clause](select-clause.md)
+- [clause SELECT](select-clause.md)
 - [Filtrage des données](../../programming-guide/concepts/linq/filtering-data.md)
 - [LINQ en C#](../../linq/index.md)
 - [LINQ (Language-Integrated Query)](../../programming-guide/concepts/linq/index.md)

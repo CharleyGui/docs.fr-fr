@@ -10,10 +10,10 @@ helpviewer_keywords:
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 ms.openlocfilehash: 6bfe95576a6460efac75fd392e24acf42e36f2de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "90555261"
 ---
 # <a name="default-marshaling-for-arrays"></a>Marshaling par défaut pour les tableaux

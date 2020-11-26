@@ -9,10 +9,10 @@ helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
 ms.openlocfilehash: d30ebfa2dc47265185a96514efbddc3e4937438c
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "94982392"
 ---
 # <a name="is-c-reference"></a>is (référence C#)

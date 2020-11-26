@@ -11,10 +11,10 @@ helpviewer_keywords:
 - noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
 ms.openlocfilehash: d62f16a3926aaa78e79c25b1c9b8d84e4401795a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91194074"
 ---
 # <a name="-noconfig-c-compiler-options"></a>-noconfig (Options du compilateur C#)

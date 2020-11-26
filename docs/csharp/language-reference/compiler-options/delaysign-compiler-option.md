@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /delaysign compiler option [C#]
 ms.assetid: bcb058eb-2933-4e7f-b356-5c941db4de75
 ms.openlocfilehash: 5512ebeca4672f5d69852ab07c3f3fa40c305327
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125837"
 ---
 # <a name="-delaysign-c-compiler-options"></a>-delaysign (Options du compilateur C#)
@@ -32,7 +32,7 @@ Cette option fait en sorte que le compilateur réserve de l’espace dans le fic
 
 Utilisez **-delaysign-** si vous souhaitez obtenir un assembly complètement signé. Utilisez **-delaysign+** si vous souhaitez uniquement placer la clé publique dans l’assembly. **-delaysign-** est l’option par défaut.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L’option **-delaysign** n’a aucun effet, sauf si elle est utilisée avec [-keyfile](./keyfile-compiler-option.md) ou [-keycontainer](./keycontainer-compiler-option.md).
 

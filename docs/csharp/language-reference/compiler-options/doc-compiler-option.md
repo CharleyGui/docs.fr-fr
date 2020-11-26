@@ -14,10 +14,10 @@ helpviewer_keywords:
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
 ms.openlocfilehash: b1d7fbbe98aaad16454fdd71c161f2a17a2f4f2e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91173254"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (Options du compilateur C#)

@@ -3,10 +3,10 @@ title: Catalogue d’identificateurs de Runtime (RID) .NET Core
 description: En savoir plus sur l’identificateur de Runtime (RID) et sur l’utilisation des RID dans .NET Core.
 ms.date: 02/22/2019
 ms.openlocfilehash: 096ce8e33a82df3b9de682ed16e10fbe9f07fd03
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "90538222"
 ---
 # <a name="net-core-rid-catalog"></a>Catalogue RID .NET Core

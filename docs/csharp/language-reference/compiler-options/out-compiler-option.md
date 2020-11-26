@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
 ms.openlocfilehash: 409760ee0b147065a2128c62c304fb5d70cfcf42
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91193879"
 ---
 # <a name="-out-c-compiler-options"></a>-out (Options du compilateur C#)

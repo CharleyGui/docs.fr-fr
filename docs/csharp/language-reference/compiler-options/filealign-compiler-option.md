@@ -18,10 +18,10 @@ helpviewer_keywords:
 - section alignment [C#]
 ms.assetid: 15cf1c98-3798-4ced-9f08-60619308a073
 ms.openlocfilehash: 4b61217a3d6812ea3ab036f82d49bba05c20629e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91173241"
 ---
 # <a name="-filealign-c-compiler-options"></a>-filealign (Options du compilateur C#)

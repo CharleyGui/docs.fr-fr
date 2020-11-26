@@ -3,10 +3,10 @@ title: 'Définir des types et leurs membres-visite guidée de C #'
 description: Les blocs de construction des programmes sont des types. Découvrez comment créer des classes, des structs, des interfaces, etc. en C#.
 ms.date: 08/06/2020
 ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "88559113"
 ---
 # <a name="types-and-members"></a>Types et membres
@@ -36,11 +36,11 @@ La mémoire occupée par un objet est automatiquement libérée lorsque l’obje
 
 ### <a name="type-parameters"></a>Paramètres de type
 
-Les classes génériques définissent les [***paramètres de type***](../programming-guide/generics/index.md). Les paramètres de type sont une liste de noms de paramètre de type entre crochets pointus. Les paramètres de type suivent le nom de la classe. Les paramètres de type peuvent ensuite être utilisés dans le corps des déclarations de classe pour définir les membres de la classe. Dans l’exemple suivant, les paramètres de type de `Pair` sont `TFirst` et `TSecond` :
+Les classes génériques définissent les [ * **paramètres de type** _](../programming-guide/generics/index.md). Les paramètres de type sont une liste de noms de paramètre de type entre crochets pointus. Les paramètres de type suivent le nom de la classe. Les paramètres de type peuvent ensuite être utilisés dans le corps des déclarations de classe pour définir les membres de la classe. Dans l’exemple suivant, les paramètres de type de `Pair` sont `TFirst` et `TSecond` :
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DefinePairClass":::
 
-Un type de classe déclaré pour prendre des paramètres de type est appelé un *type de classe générique*. Les types struct, interface et Delegate peuvent également être génériques.
+Un type de classe déclaré pour prendre des paramètres de type est appelé un _generic type de classe *. Les types struct, interface et Delegate peuvent également être génériques.
 Lorsque la classe générique est utilisée, des arguments de type doivent être fournis pour chacun des paramètres de type :
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="CreatePairObject":::
@@ -61,15 +61,15 @@ Il existe une conversion implicite d’un type de classe vers un de ses types de
 
 ## <a name="structs"></a>Structures
 
-Les classes définissent des types qui prennent en charge l’héritage et le polymorphisme. Elles vous permettent de créer des comportements sophistiqués basés sur des hiérarchies de classes dérivées. En revanche, les types [***struct***](../language-reference/builtin-types/struct.md) sont des types plus simples dont l’objectif principal est de stocker des valeurs de données. Les structs ne peuvent pas déclarer un type de base ; ils dérivent implicitement de <xref:System.ValueType?displayProperty=nameWithType> . Vous ne pouvez pas dériver `struct` d’autres types à partir d’un `struct` type. Ils sont implicitement sealed.
+Les classes définissent des types qui prennent en charge l’héritage et le polymorphisme. Elles vous permettent de créer des comportements sophistiqués basés sur des hiérarchies de classes dérivées. En revanche, les types [ * **struct** _](../language-reference/builtin-types/struct.md) sont des types plus simples dont l’objectif principal est de stocker des valeurs de données. Les structs ne peuvent pas déclarer un type de base ; ils dérivent implicitement de <xref:System.ValueType?displayProperty=nameWithType> . Vous ne pouvez pas dériver `struct` d’autres types à partir d’un `struct` type. Ils sont implicitement sealed.
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="PointStruct":::
 
 ## <a name="interfaces"></a>Interfaces
 
-Une [***interface***](../programming-guide/interfaces/index.md) définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. En général, une interface ne fournit pas d’implémentations des membres qu’elle définit. elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
+Une [_*_interface_*_](../programming-guide/interfaces/index.md) définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. En général, une interface ne fournit pas d’implémentations des membres qu’elle définit. elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
 
-Les interfaces peuvent utiliser ***l’héritage multiple***. Dans l’exemple suivant, l’interface `IComboBox` hérite à la fois de `ITextBox` et `IListBox`.
+Les interfaces peuvent utiliser _*_l’héritage multiple_*_. Dans l’exemple suivant, l’interface `IComboBox` hérite à la fois de `ITextBox` et `IListBox`.
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="FirstInterfaces":::
 
@@ -83,7 +83,7 @@ Lorsqu’une classe ou un struct implémente une interface spécifique, les inst
 
 ## <a name="enums"></a>Énumérations
 
-Un type [***enum***](../language-reference/builtin-types/enum.md) définit un ensemble de valeurs constantes. L’exemple suivant `enum` déclare des constantes qui définissent des légumes racines différents :
+Un type [_*_enum_*_](../language-reference/builtin-types/enum.md) définit un ensemble de valeurs constantes. L’exemple suivant `enum` déclare des constantes qui définissent des légumes racines différents :
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="EnumDeclaration":::
 
@@ -97,13 +97,13 @@ L’exemple suivant montre des déclarations des deux énumérations précédent
 
 ## <a name="nullable-types"></a>Types Nullable
 
-Les variables de tout type peuvent être déclarées comme n' ***acceptant pas les valeurs NULL*** ou ***null***. Une variable Nullable peut contenir une `null` valeur supplémentaire, ce qui n’indique aucune valeur. Les types valeur Nullable (structs ou enums) sont représentés par <xref:System.Nullable%601?displayProperty=nameWithType> . Les types référence non Nullable et Nullable sont représentés par le type référence sous-jacent. La distinction est représentée par les métadonnées lues par le compilateur et certaines bibliothèques. Le compilateur fournit des avertissements quand des références Nullable sont déréférencées sans avoir d’abord vérifié leur valeur par rapport à `null` . Le compilateur fournit également des avertissements lorsque des références non Nullable se voient affecter une valeur qui peut être `null` . L’exemple suivant déclare un ***entier Nullable***, en l’initialisant à `null` . Ensuite, il définit la valeur sur `5` . Il illustre le même concept avec une ***chaîne Nullable***. Pour plus d’informations, consultez [types valeur Nullable](../language-reference/builtin-types/nullable-value-types.md) et [types référence Nullable](../nullable-references.md).
+Les variables de tout type peuvent être déclarées comme n' _*_acceptant pas les valeurs NULL_*_ ou _*_null_*_. Une variable Nullable peut contenir une `null` valeur supplémentaire, ce qui n’indique aucune valeur. Les types valeur Nullable (structs ou enums) sont représentés par <xref:System.Nullable%601?displayProperty=nameWithType> . Les types référence non Nullable et Nullable sont représentés par le type référence sous-jacent. La distinction est représentée par les métadonnées lues par le compilateur et certaines bibliothèques. Le compilateur fournit des avertissements quand des références Nullable sont déréférencées sans avoir d’abord vérifié leur valeur par rapport à `null` . Le compilateur fournit également des avertissements lorsque des références non Nullable se voient affecter une valeur qui peut être `null` . L’exemple suivant déclare un _*_entier Nullable_*_, en l’initialisant à `null` . Ensuite, il définit la valeur sur `5` . Il illustre le même concept avec une _*_chaîne Nullable_*_. Pour plus d’informations, consultez [types valeur Nullable](../language-reference/builtin-types/nullable-value-types.md) et [types référence Nullable](../nullable-references.md).
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 
 ## <a name="tuples"></a>Tuples
 
-C# prend en charge les [***tuples***](../language-reference/builtin-types/value-tuples.md), qui fournit une syntaxe concise pour regrouper plusieurs éléments de données dans une structure de données légère. Vous instanciez un tuple en déclarant les types et les noms des membres entre `(` et `)` , comme indiqué dans l’exemple suivant :
+C# prend en charge les [_ *_tuples_* *](../language-reference/builtin-types/value-tuples.md), qui fournit une syntaxe concise pour regrouper plusieurs éléments de données dans une structure de données légère. Vous instanciez un tuple en déclarant les types et les noms des membres entre `(` et `)` , comme indiqué dans l’exemple suivant :
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareTuples":::
 

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
 ms.openlocfilehash: 9e84ff95f7f0addac1c2c2d79af0ab53572da27f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91193801"
 ---
 # <a name="-recurse-c-compiler-options"></a>-recurse (Options du compilateur C#)

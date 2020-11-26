@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
 ms.openlocfilehash: b979431836b55b23ac9ba6ec4535f33765dce555
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91177733"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mappages de DataAdapter DataTable et DataColumn
@@ -96,7 +96,7 @@ adapter.Fill(customersDataSet, "Customers")
 adapter.Fill(customersDataSet, "Customers");  
 ```  
 
- Deux tables sont créées dans le **jeu de données**: **Customers** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
+ Deux tables sont créées dans le **jeu de données**: **Customers** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders** du **DataSet** , comme indiqué dans l’exemple suivant.  
   
 ```vb  
 adapter.TableMappings.Add("Customers1", "Orders")  

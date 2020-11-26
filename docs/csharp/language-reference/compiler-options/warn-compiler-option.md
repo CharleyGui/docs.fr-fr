@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.custom: updateeachrelease
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
 ms.openlocfilehash: d59274423e6f9844d3ab22f3ac513ba1a05d7f07
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91171349"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (Options du compilateur C#)

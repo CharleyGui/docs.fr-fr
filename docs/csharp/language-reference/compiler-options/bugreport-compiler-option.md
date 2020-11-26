@@ -10,10 +10,10 @@ helpviewer_keywords:
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 ms.openlocfilehash: 1fb2efc9b12680e95767746c7e4e1ddacbdd2594
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93281504"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (Options du compilateur C#)
@@ -49,7 +49,7 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
   
 - Une description de vos suggestions de résolution du problème, qui vous sera demandée.  
   
- Si cette option est utilisée avec **-errorreport:prompt** ou **-errorreport:send** , les informations figurant dans le fichier seront envoyées à Microsoft Corporation.  
+ Si cette option est utilisée avec **-errorreport:prompt** ou **-errorreport:send**, les informations figurant dans le fichier seront envoyées à Microsoft Corporation.  
   
  Étant donné qu’une copie de tous les fichiers de code source sera placée dans `file`, vous souhaiterez peut-être reproduire l’erreur de code suspecte dans le programme le plus court possible.  
   

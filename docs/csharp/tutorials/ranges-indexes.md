@@ -5,10 +5,10 @@ ms.date: 09/11/2020
 ms.technology: csharp-fundamentals
 ms.custom: mvc
 ms.openlocfilehash: cf6c83484332ed517b2326b3fd9d7458f191227e
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "90738864"
 ---
 # <a name="indices-and-ranges"></a>Index et plages

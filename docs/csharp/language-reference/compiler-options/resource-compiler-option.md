@@ -13,10 +13,10 @@ helpviewer_keywords:
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
 ms.openlocfilehash: 6f90ce6c1590784cefbd5f15ca8a36941aad77ed
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91193775"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (Options du compilateur C#)
@@ -46,7 +46,7 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
   
  Par défaut, les ressources sont publiques dans l’assembly quand elles sont créées à l’aide du compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucune accessibilité autre `public` ou `private` n’est autorisée.  
   
- Si `filename` est un fichier de ressources .net créé, par exemple par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l’environnement de développement, il est accessible à l’aide des membres de l' <xref:System.Resources> espace de noms. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource` dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l’exécution.  
+ Si `filename` est un fichier de ressources .net créé, par exemple par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l’environnement de développement, il est accessible à l’aide des membres de l' <xref:System.Resources> espace de noms. Pour plus d’informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource` dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l’exécution.  
   
  **-res** est la forme abrégée de **-resource**.  
   
@@ -60,7 +60,7 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
   
 3. Sélectionnez **Action de génération** pour le fichier dans la fenêtre **Propriétés**.  
   
-4. Définissez **Action de génération ** sur **Ressource incorporée**.  
+4. Définissez **Action de génération** sur **Ressource incorporée**.  
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.FileProperties2.BuildAction%2A>.  
   

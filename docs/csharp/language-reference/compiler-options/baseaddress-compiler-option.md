@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
 ms.openlocfilehash: 76da496f7045f12778bba273947b913be1b94e3e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91196843"
 ---
 # <a name="-baseaddress-c-compiler-options"></a>-baseaddress (Options du compilateur C#)

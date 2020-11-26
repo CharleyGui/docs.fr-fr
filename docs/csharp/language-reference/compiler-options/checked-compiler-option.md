@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
 ms.openlocfilehash: c92ad61b2f482631230e0e6aeb0af5716a4fcb61
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91196830"
 ---
 # <a name="-checked-c-compiler-options"></a>-checked (Options du compilateur C#)

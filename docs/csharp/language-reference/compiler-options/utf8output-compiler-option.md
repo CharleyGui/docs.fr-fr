@@ -10,10 +10,10 @@ helpviewer_keywords:
 - -utf8output compiler option [C#]
 ms.assetid: 27ff7381-c281-45d7-b2eb-1ad644b1354e
 ms.openlocfilehash: 675782ffef9768e57397e765538924b78a2abcaa
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91171362"
 ---
 # <a name="-utf8output-c-compiler-options"></a>-utf8output (Options du compilateur C#)

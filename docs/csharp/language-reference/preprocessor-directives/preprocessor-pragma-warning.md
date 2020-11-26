@@ -8,10 +8,10 @@ helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
 ms.openlocfilehash: 5b67d384e37a5e509ce8ebcc5ddeb16a4437ea2b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91168528"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma warning (référence C#)

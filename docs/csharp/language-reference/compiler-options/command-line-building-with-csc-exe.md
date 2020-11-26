@@ -7,10 +7,10 @@ helpviewer_keywords:
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
 ms.openlocfilehash: 9ffd164602862fce7f5e4f0982d3eda7cb403e60
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125928"
 ---
 # <a name="command-line-build-with-cscexe"></a>Génération à partir de la ligne de commande avec csc.exe
@@ -103,7 +103,7 @@ Aucun fichier objet (*. obj*) n’est créé suite à l’appel du compilateur C
 - [Options du compilateur C#](./index.md)
 - [Options du compilateur C# par ordre alphabétique](./listed-alphabetically.md)
 - [Options du compilateur C# par catégorie](./listed-by-category.md)
-- [Main () et arguments de ligne de commande](../../programming-guide/main-and-command-args/index.md)
+- [Arguments main () et Command-Line](../../programming-guide/main-and-command-args/index.md)
 - [Arguments de ligne de commande](../../programming-guide/main-and-command-args/command-line-arguments.md)
 - [Comment afficher les arguments de ligne de commande](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
 - [Valeurs de retour Main()](../../programming-guide/main-and-command-args/main-return-values.md)
