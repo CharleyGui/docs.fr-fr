@@ -1,5 +1,5 @@
 ---
-title: "Comment : définir une inclinaison de l'horloge maximale"
+title: 'Procédure : définir une inclinaison de l’horloge maximale'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - MaxClockSkew property
 - WCF, custom bindings
 ms.assetid: 491d1705-eb29-43c2-a44c-c0cf996f74eb
-ms.openlocfilehash: f8231acade6821c95a76a608633fe443f4add8ab
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8dd38f3d07773a4be67648b9c1830206438200d6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586912"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242875"
 ---
-# <a name="how-to-set-a-max-clock-skew"></a>Comment : définir une inclinaison de l'horloge maximale
+# <a name="how-to-set-a-max-clock-skew"></a>Procédure : définir une inclinaison de l’horloge maximale
+
 Les fonctions à durée critique peuvent dérailler si les paramètres de l'horloge sont différents sur deux ordinateurs. Pour limiter cette possibilité, vous pouvez affecter à la propriété `MaxClockSkew` un <xref:System.TimeSpan>. Cette propriété est disponible sur deux classes :  
   
  <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>  
@@ -89,4 +90,4 @@ Les fonctions à durée critique peuvent dérailler si les paramètres de l'horl
 - <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

@@ -8,20 +8,22 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: 665b01b5-25f5-47a1-ab11-cffe8ebbf2a7
-ms.openlocfilehash: 83364db3873ed7e263921e9d259e6cdf4db2b8ef
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: aa5235fcfef66c672288e9ae9b7837a77f5f7ca2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163949"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241991"
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>Rubriques "Comment" relatives aux clients UI Automation pour le code managé
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette section fournit des informations détaillées sur l’implémentation des fonctionnalités de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] dans une application cliente.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Rechercher un élément UI Automation basé sur une condition de propriété](find-a-ui-automation-element-based-on-a-property-condition.md)  
  [Naviguer entre les éléments UI Automation avec TreeWalker](navigate-among-ui-automation-elements-with-treewalker.md)  
  [Rechercher un élément UI Automation pour un élément de liste](find-a-ui-automation-element-for-a-list-item.md)  

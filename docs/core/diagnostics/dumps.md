@@ -2,12 +2,12 @@
 title: Dumps-.NET
 description: Introduction aux dumps dans .NET.
 ms.date: 10/12/2020
-ms.openlocfilehash: a5f12837e81edc82f420f7b325b0248f9f8989a3
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 56cf4085d10658c828bac39be93eed3f774e00d5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96034830"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242771"
 ---
 # <a name="dumps"></a>Vidages
 
@@ -50,17 +50,6 @@ Le tableau ci-dessous présente toutes les options que vous `COMPlus_DbgMiniDump
 Vous souhaiterez peut-être collecter un vidage lorsque l’application ne s’est pas encore bloquée. Par exemple, si vous souhaitez examiner l’état d’une application qui semble se trouver dans un blocage, la configuration des variables d’environnement pour collecter des vidages en cas d’incident n’est pas utile, car l’application est toujours en cours d’exécution.
 
 Pour collecter un dump à votre propre demande, vous pouvez utiliser `dotnet-dump` , qui est un outil CLI pour la collecte et l’analyse des vidages. Pour plus d’informations sur la façon de les utiliser pour collecter des vidages avec `dotnet-dump` , consultez [dump collection and Analysis Utility](dotnet-dump.md).
-
-### <a name="types-of-dumps-in-net"></a>Types de vidages dans .NET
-
-Vous pouvez collecter différents types de vidages en fonction de l’objectif. Cela peut être configuré avec lors de l’utilisation d’une `COMPlus_DbgMiniDumpType` variable d’environnement ou de l' `--type` indicateur lorsque vous utilisez `dotnet-dump` . Le tableau suivant présente les types de vidages que vous pouvez collecter dans .NET.
-
-|Valeur|Nom|Description|
-|-----|----|-----------|
-|1|`MiniDumpNormal`|Incluez uniquement les informations nécessaires pour capturer les traces de la pile pour tous les threads existants dans un processus. Mémoire et informations de tas GC limitées.|
-|2|`MiniDumpWithPrivateReadWriteMemory`|Comprend les tas GC et les informations nécessaires à la capture des traces de la pile pour tous les threads existants dans un processus.|
-|3|`MiniDumpFilterTriage`|Incluez uniquement les informations nécessaires pour capturer les traces de la pile pour tous les threads existants dans un processus. Mémoire et informations de tas GC limitées.|
-|4|`MiniDumpWithFullMemory`|Incluez toute la mémoire accessible dans le processus. Les données de mémoire brutes sont incluses à la fin, afin que les structures initiales puissent être mappées directement sans les informations de mémoire brutes. Cette option peut aboutir à un fichier très volumineux.|
 
 ## <a name="analyze-dumps"></a>Analyser les vidages
 

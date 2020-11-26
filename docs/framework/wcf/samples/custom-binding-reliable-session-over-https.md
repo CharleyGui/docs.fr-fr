@@ -2,14 +2,15 @@
 title: Custom Binding Reliable Session over HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: ab2dd4725879ba969afdae8a6423a920a9786125
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aec9bc11fab71a8e3adfe60e0c19b0ac4a9e3699
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585296"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241887"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Custom Binding Reliable Session over HTTPS
+
 Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des sessions fiables. Les sessions fiables implémentent le protocole WS-Reliable Messaging. Vous pouvez obtenir une session fiable sécurisée en composant WS-Security sur des sessions fiables. Mais parfois, vous pouvez choisir d'utiliser à la place la sécurité de transport HTTP avec SSL.  
   
 > [!IMPORTANT]
@@ -22,6 +23,7 @@ Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des se
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\ReliableSessionOverHttps`  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
+
  SSL garantit que les paquets eux-mêmes sont sécurisés. Il est important de noter que cela diffère de la sécurisation de la session fiable à l'aide de WS-Secure Conversation.  
   
  Pour utiliser la session fiable sur HTTPS, vous devez créer une liaison personnalisée. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice. Une liaison personnalisée est créée à l’aide de l’élément de liaison de session fiable et du [\<httpsTransport>](../../configure-apps/file-schema/wcf/httpstransport.md) . La configuration suivante est celle de la liaison personnalisée.  
@@ -102,7 +104,7 @@ Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des se
   
  L’adresse spécifiée utilise le `https://` schéma.  
   
- Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert. exe, une alerte de sécurité s’affiche lorsque vous essayez d’accéder à une adresse https : par exemple `https://localhost/servicemodelsamples/service.svc` , à partir de votre navigateur. Pour permettre au client Windows Communication Foundation (WCF) d’utiliser un certificat de test sur place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
+ Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert.exe, une alerte de sécurité s’affiche lorsque vous essayez d’accéder à une adresse https : par exemple `https://localhost/servicemodelsamples/service.svc` , à partir de votre navigateur. Pour permettre au client Windows Communication Foundation (WCF) d’utiliser un certificat de test sur place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  

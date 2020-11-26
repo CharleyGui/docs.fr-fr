@@ -6,14 +6,15 @@ helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-ms.openlocfilehash: f2def328228a30ace6d0edc0661d6e79f237d6f4
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3f58e9909b18681b3a0acf9332cc0c7c604e2002
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163870"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241965"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -24,7 +25,9 @@ ms.locfileid: "87163870"
  Pour obtenir la liste complète des modèles de contrôle, consultez [UI Automation Control patterns Overview](ui-automation-control-patterns-overview.md).  
   
 <a name="uiautomation_getting_control_patterns"></a>
+
 ## <a name="getting-control-patterns"></a>Obtention de modèles de contrôle  
+
  Les clients récupèrent un modèle de contrôle d'un <xref:System.Windows.Automation.AutomationElement> en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A?displayProperty=nameWithType>.  
   
  Les clients peuvent utiliser la méthode <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A> ou une propriété `IsPatternAvailable` individuelle (par exemple, <xref:System.Windows.Automation.AutomationElement.IsTextPatternAvailableProperty>) pour déterminer si un modèle ou un groupe de modèles est pris en charge sur <xref:System.Windows.Automation.AutomationElement>. Toutefois, il est plus efficace d'essayer d'obtenir le modèle de contrôle et de tester une référence `null` que de vérifier les propriétés prises en charge et de récupérer le modèle de contrôle, car cela entraîne moins d'appels interprocessus.  
@@ -34,13 +37,17 @@ ms.locfileid: "87163870"
  [!code-csharp[UIATextPattern_snip#1037](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1037)]  
   
 <a name="uiautomation_properties_on_control_patterns"></a>
+
 ## <a name="retrieving-properties-on-control-patterns"></a>Récupération de propriétés sur des modèles de contrôle  
+
  Les clients peuvent récupérer les valeurs de propriété sur les modèles de contrôle en appelant <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> et en effectuant le cast de l'objet retourné en un type approprié. Pour plus d’informations sur les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés, consultez [UI Automation Properties for clients](ui-automation-properties-for-clients.md).  
   
  Outre les `GetPropertyValue` méthodes, les valeurs de propriété peuvent être récupérées par le biais des accesseurs Common Language Runtime (CLR) pour accéder aux [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés sur un modèle.  
   
 <a name="uiautomation_with_variable_patterns"></a>
+
 ## <a name="controls-with-variable-patterns"></a>Contrôles avec modèles variables  
+
  Certains types de contrôles prennent en charge différents modèles selon leur état ou la manière dont le contrôle est utilisé. Les affichages de liste (miniatures, mosaïques, icônes, liste, détails), les graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), la zone de document Microsoft Word (normal, page Web, plan, impression, aperçu avant impression) et les apparences du lecteur Microsoft Windows Media sont des exemples de contrôles qui peuvent avoir des modèles variables.  
   
  Les contrôles implémentant des types de contrôles personnalisés peuvent disposer de n’importe quel jeu de modèles de contrôle nécessaires pour représenter leurs fonctionnalités.  
@@ -48,7 +55,7 @@ ms.locfileid: "87163870"
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèles de contrôle UI Automation](ui-automation-control-patterns.md)
-- [Modèle de texte UI Automation](ui-automation-text-pattern.md)
+- [Modèles de texte UI Automation](ui-automation-text-pattern.md)
 - [Appeler un contrôle à l'aide d'UI Automation](invoke-a-control-using-ui-automation.md)
 - [Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)
 - [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)

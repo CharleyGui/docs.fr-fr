@@ -10,20 +10,22 @@ helpviewer_keywords:
 - text, traversing
 - traversing text
 ms.assetid: 3ddb3b7b-1d6b-4dba-8678-5a68e868aadb
-ms.openlocfilehash: 0b4269d043fd6cd0cc5da9825714aab4ead701f9
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 1413cac56e3d6358eb58d55eb2fc0ca583147571
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168078"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242030"
 ---
 # <a name="traverse-text-using-ui-automation"></a>Accéder au texte à l'aide d'UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique montre comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour parcourir le contenu textuel d’un document par incréments <xref:System.Windows.Automation.Text.TextUnit> .  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre comment parcourir le contenu d’un fournisseur de texte UI Automation. La méthode <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> déplace les points de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> et <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> de <xref:System.Windows.Automation.Text.TextPatternRange>. Cette plage de texte est généralement une plage dégénérée représentant le point d’insertion du texte.  
   
 > [!NOTE]

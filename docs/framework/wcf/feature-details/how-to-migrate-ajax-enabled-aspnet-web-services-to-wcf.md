@@ -1,15 +1,16 @@
 ---
-title: 'Comment : migrer des services Web ASP.NET compatibles AJAX vers WCF'
+title: 'Procédure : migrer des services web ASP.NET compatibles AJAX vers WCF'
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-ms.openlocfilehash: 6f356f47922945218e02271371d9ddea36ecc5a2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 89c9601ba6afcef9733d7653564a98664a1ed70f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597005"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241900"
 ---
-# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Comment : migrer des services Web ASP.NET compatibles AJAX vers WCF
+# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Procédure : migrer des services web ASP.NET compatibles AJAX vers WCF
+
 Cette rubrique décrit les procédures de migration d’un service ASP.NET AJAX de base vers un service WCF (Windows Communication Foundation compatible AJAX) équivalent. Il montre comment créer une version WCF équivalente d’un service ASP.NET AJAX. Les deux services peuvent ensuite être utilisés côte à côte, ou le service WCF peut être utilisé pour remplacer le service ASP.NET AJAX.
 
  La migration d’un service ASP.NET AJAX existant vers un service WCF AJAX vous offre les avantages suivants :
@@ -36,7 +37,7 @@ Cette rubrique décrit les procédures de migration d’un service ASP.NET AJAX 
 
 5. Dans le menu **générer** , sélectionnez **générer la solution**.
 
-6. Dans le menu **Déboguer**, sélectionnez **Exécuter sans débogage**.
+6. Dans le menu **Déboguer**, sélectionnez **Démarrer sans débogage**.
 
 7. Sur la page web générée, sélectionnez l’opération `HelloWorld`.
 
@@ -53,7 +54,7 @@ Cette rubrique décrit les procédures de migration d’un service ASP.NET AJAX 
 
 ### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>Pour créer une application de service AJAX WCF équivalente
 
-1. Cliquez avec le bouton droit sur le projet **ASPHello** et sélectionnez **Ajouter**, puis **nouvel élément**et **service WCF compatible Ajax**.
+1. Cliquez avec le bouton droit sur le projet **ASPHello** et sélectionnez **Ajouter**, puis **nouvel élément** et **service WCF compatible Ajax**.
 
 2. Nommez le service `WCFHello` , puis cliquez sur **Ajouter**.
 
@@ -110,7 +111,8 @@ Cette rubrique décrit les procédures de migration d’un service ASP.NET AJAX 
 
 11. Les `WCFHello.svc/HelloWorld` points de `Service1.aspx/HelloWorld` terminaison et sont maintenant équivalents d’un point de fonction.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
+
  Le code qui résulte de l'exécution des procédures mentionnées dans cette rubrique est fourni dans l'exemple suivant.
 
 ```csharp
@@ -195,7 +197,7 @@ d.Add("two", 2);
 
 - [{"Key":"one","Value":1},{"Key":"two","Value":2}] par <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
 
-- {"un" : 1, "deux" : 2} par ASP.NET AJAX<xref:System.Web.Script.Serialization.JavaScriptSerializer>
+- {"un" : 1, "deux" : 2} par ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>
 
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> est plus puissant car il peut gérer des dictionnaires où le type de clé n'est pas une chaîne, alors que <xref:System.Web.Script.Serialization.JavaScriptSerializer> ne le peut pas. Cependant, ce dernier est plus compatible avec JSON.
 
@@ -204,7 +206,7 @@ d.Add("two", 2);
 |Catégorie de différences|DataContractJsonSerializer|JavaScriptSerializer ASP.NET AJAX|
 |-----------------------------|--------------------------------|---------------------------------------|
 |Désérialisation de la mémoire tampon vide (nouvel octet [0]) dans <xref:System.Object> (ou <xref:System.Uri> ou d'autres classes).|SerializationException|null|
-|Sérialisation de <xref:System.DBNull.Value>|{}(ou {« __type » : « #System »})|Null|
+|Sérialisation de <xref:System.DBNull.Value>|{} (ou {« __type » : « #System »})|Null|
 |Sérialisation des membres privés de types [Sérialisable].|sérialisée|n'est pas sérialisé|
 |Sérialisation des propriétés publiques de types <xref:System.Runtime.Serialization.ISerializable>.|n'est pas sérialisé|sérialisée|
 |« Extensions » de JSON|Respecte la spécification JSON, qui exige des guillemets sur les noms de membres d'objet ({"a":"hello"}).|Prend en charge les noms de membres d'objet sans guillemets ({a:"hello"}).|
@@ -214,4 +216,4 @@ d.Add("two", 2);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : utiliser la configuration pour ajouter un point de terminaison AJAX ASP.NET](how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
+- [Procédure : utiliser la configuration pour ajouter un point de terminaison AJAX ASP.NET](how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)

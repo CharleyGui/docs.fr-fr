@@ -2,14 +2,15 @@
 title: Custom Binding Imperative
 ms.date: 03/30/2017
 ms.assetid: 6e13bf96-5de0-4476-b646-5f150774418d
-ms.openlocfilehash: f7ba5c21b35d556be2c8d0817c37d98ad7d7dfcb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6be5105831fa3845db9a55a14a7ed8821dc1cbc4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594736"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241913"
 ---
 # <a name="custom-binding-imperative"></a>Custom Binding Imperative
+
 L’exemple montre comment écrire du code impératif pour définir et utiliser des liaisons personnalisées sans utiliser un fichier de configuration ou un client Windows Communication Foundation (WCF) généré. Il combine les fonctionnalités fournies par le transport HTTP et le canal de session fiable pour créer une liaison HTTP fiable. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice.  
   
 > [!NOTE]

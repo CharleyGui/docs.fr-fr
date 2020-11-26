@@ -16,14 +16,15 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: a1f0829aa0e9e4bcc68168b73443578c3a34310b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 085ca27dd0cfedc90211b21c10cc8bc5cf1ecd21
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502377"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241588"
 ---
 # <a name="internet-authentication"></a>Authentification Internet
+
 Les classes <xref:System.Net> prennent en charge divers mécanismes d’authentification client, parmi lesquels les méthodes d’authentification Internet standard (de base, Digest, Negotiate, NTLM et Kerberos) et les méthodes personnalisées que vous pouvez créer.  
   
  Les informations d’identification utilisées pour l’authentification sont stockées dans les classes <xref:System.Net.NetworkCredential> et <xref:System.Net.CredentialCache>, qui implémentent l’interface <xref:System.Net.ICredentials>. Quand une de ces classes est interrogée pour fournir des informations d’identification, elle retourne une instance de la classe **NetworkCredential**. Le processus d’authentification est géré par la classe <xref:System.Net.AuthenticationManager>, mais il est en réalité effectué par une classe du module d’authentification qui implémente l’interface <xref:System.Net.IAuthenticationModule>. Pour pouvoir utiliser un module d’authentification personnalisé, vous devez préalablement l’inscrire avec **AuthenticationManager**. Les modules pour les méthodes d’authentification de base, Digest, Negotiate, NTLM et Kerberos sont inscrits par défaut.  
@@ -42,6 +43,6 @@ Les classes <xref:System.Net> prennent en charge divers mécanismes d’authenti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Authentification de base et Digest](basic-and-digest-authentication.md)
+- [Authentification de base et authentification Digest](basic-and-digest-authentication.md)
 - [Authentification NTLM et Kerberos](ntlm-and-kerberos-authentication.md)
 - [Sécurité dans la programmation réseau](security-in-network-programming.md)

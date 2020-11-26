@@ -2,20 +2,20 @@
 title: commande de restauration de l’outil dotnet
 description: La commande de restauration de l’outil dotnet installe sur votre machine les outils locaux .NET qui sont dans l’étendue du répertoire actif.
 ms.date: 02/14/2020
-ms.openlocfilehash: 1b7fd10102f2c957b3eb235f6897b60bc8ca9c07
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 3425bc6b78fd53f578c209013f83b006305dbb81
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634270"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242927"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
-`dotnet tool restore` -Installe sur votre machine les outils locaux .NET qui sont dans l’étendue du répertoire actif.
+`dotnet tool restore` -Installe les outils locaux .NET qui sont dans l’étendue du répertoire actif.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -37,7 +37,7 @@ La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil
 
 - **`--configfile <FILE>`**
 
-  Fichier de configuration NuGet ( *nuget.config* ) à utiliser.
+  Fichier de configuration NuGet (*nuget.config*) à utiliser.
 
 - **`--add-source <SOURCE>`**
 
@@ -71,7 +71,7 @@ La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 - **`dotnet tool restore`**
 

@@ -7,14 +7,15 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 867293c00d0724e27f5163f3ae8be43aca30cfe8
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: a2903df0722a931ec2fe37a5b2f3581611965567
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241653"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté client
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -31,11 +32,15 @@ ms.locfileid: "87164387"
  Les applications peuvent également inscrire d’autres fournisseurs côté client.  
   
 <a name="Distributing_Client-Side_Providers"></a>
+
 ## <a name="distributing-client-side-providers"></a>Distribution des fournisseurs côté client  
+
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’attend à trouver des fournisseurs côté client dans un assembly de code managé. L’espace de noms de cet assembly doit avoir le même nom que l’assembly. Par exemple, un assembly appelé ContosoProxies.dll doit contenir l’espace de noms ContosoProxies. Dans l’espace de noms, créez une classe <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders> . Dans l’implémentation du champ <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders.ClientSideProviderDescriptionTable> statique, créez un tableau de structures <xref:System.Windows.Automation.ClientSideProviderDescription> décrivant les fournisseurs.  
   
 <a name="Registering_and_Configuring_Client-Side_Providers"></a>
+
 ## <a name="registering-and-configuring-client-side-providers"></a>Inscription et configuration des fournisseurs côté client  
+
  Les fournisseurs côté client dans une bibliothèque de liens dynamiques (DLL) sont chargés en appelant <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviderAssembly%2A> . Aucune action supplémentaire n’est nécessaire de la part de l’application cliente pour utiliser les fournisseurs.  
   
  Les fournisseurs implémentés dans le propre code du client sont inscrits à l’aide de <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviders%2A>. Cette méthode utilise comme argument un tableau de structures <xref:System.Windows.Automation.ClientSideProviderDescription> , qui spécifient chacune les propriétés suivantes :  

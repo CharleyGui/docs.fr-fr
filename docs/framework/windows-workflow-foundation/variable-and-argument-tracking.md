@@ -2,17 +2,19 @@
 title: Suivi de variables et arguments
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: af5c21b75f3238546acac0755ec4e6149ee50d95
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 85cecbfaf1db224152d4582325326f1f80e08266
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552490"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242901"
 ---
 # <a name="variable-and-argument-tracking"></a>Suivi de variables et arguments
+
 Lors du suivi de l'exécution d'un workflow, il est souvent utile d'extraire des données. Vous obtenez ainsi un contexte supplémentaire lors de l'accès à une post-exécution d'enregistrement de suivi. Dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], vous pouvez extraire toute variable ou argument visible dans l’étendue de toute activité d’un flux de travail utilisant le suivi. Les profils de suivi facilitent l'extraction de données.  
   
 ## <a name="variables-and-arguments"></a>Variables et arguments  
+
  Les variables et arguments sont extraits lorsqu'une activité émet un objet ActivityStateRecord.  Une variable est disponible pour l'extraction, seulement si elle se trouve dans l'étendue de l'activité. Une variable à extraire dans une activité est spécifiée comme suit :  
   
 - Si une variable est spécifiée par son nom, le suivi recherche la variable dans l'activité en cours de suivi et dans les activités parentes. Elle est recherchée dans l'étendue de l'activité en cours et dans l'étendue parente.  
@@ -38,6 +40,7 @@ Lors du suivi de l'exécution d'un workflow, il est souvent utile d'extraire des
 ```  
   
 ## <a name="protecting-information-stored-within-variables-and-arguments"></a>Protection des informations stockées dans les variables et arguments  
+
  Par défaut, une variable ou un argument suivi est rendu visible par le runtime WF. Un développeur de workflow peut les protéger contre tout accès en procédant comme suit :  
   
 1. Chiffrez la valeur d'une variable.  

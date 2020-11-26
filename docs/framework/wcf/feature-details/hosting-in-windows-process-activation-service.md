@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 860806fb6406b8ada075b449616f84a360e9ef3a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3c0549d93d7898b1d49b31c1a5fde4af71c4d5a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555820"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243005"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hébergement dans le service d'activation de processus de Windows (WAS, Windows Process Activation Service)
+
 Le service d’activation des processus Windows (WAS) gère l’activation et la durée de vie des processus de travail qui contiennent des applications qui hébergent des services Windows Communication Foundation (WCF). Le modèle de processus WAS généralise le modèle de processus IIS 6,0 pour le serveur HTTP en supprimant la dépendance sur HTTP. Cela permet aux services WCF d’utiliser à la fois des protocoles HTTP et non-HTTP, tels que net. TCP, dans un environnement d’hébergement qui prend en charge l’activation basée sur les messages et offre la possibilité d’héberger un grand nombre d’applications sur un ordinateur donné.  
   
  Pour plus d’informations sur la création d’un service WCF qui s’exécute dans l’environnement d’hébergement WAS, consultez [Comment : héberger un service WCF dans was](how-to-host-a-wcf-service-in-was.md).  
@@ -29,6 +30,7 @@ Le service d’activation des processus Windows (WAS) gère l’activation et la
 [Windows Server AppFabric](/previous-versions/appfabric/ff384253(v=azure.10)) fonctionne avec IIS 7,0 et le service d’activation des processus Windows (was) pour fournir un environnement d’hébergement d’applications riche pour les services WCF et WF NET4. Ces avantages incluent la gestion du cycle de vie de processus, le recyclage de processus, l'hébergement partagé, la protection rapide contre les incidents, les processus parallèles, l'activation à la demande et le contrôle d'état. Pour plus d’informations, consultez [fonctionnalités d’hébergement AppFabric](/previous-versions/appfabric/ee677189(v=azure.10)) et [concepts d’hébergement AppFabric](/previous-versions/appfabric/ee677371(v=azure.10)).  
   
 ## <a name="elements-of-the-was-addressing-model"></a>Éléments du modèle d'adressage WAS  
+
  Les applications ont des adresses d'URI (Uniform Resource Identifier) qui sont en fait des unités de code dont la durée de vie et l'environnement d'exécution sont gérés par le serveur. Une instance de serveur WAS unique peut loger de nombreuses applications différentes. Les serveurs organisent les applications en groupes appelés *sites*. Dans un site, les applications sont réorganisées d'une façon hiérarchique reflétant la structure des URI qui servent d'adresses externes.  
   
  Les adresses d’application se composent de deux parties : un préfixe URI de base et une adresse relative spécifique à l’application (chemin d’accès) qui fournit l’adresse externe pour une application en cas d’association. Le préfixe URI de base est construit à partir de la liaison du site et est utilisé pour toutes les applications sous le site. Les adresses d’application sont ensuite construites en acceptant des fragments de chemin d’accès spécifiques à l’application (tels que « /applicationOne ») et en les ajoutant au préfixe URI de base (par exemple, « net. TCP : préfixé ») pour arriver à l’URI d’application complet.  
@@ -47,6 +49,7 @@ Le service d’activation des processus Windows (WAS) gère l’activation et la
 - `net.tcp://contoso.com/Billing/GetOrders.svc/SecureEndpoint`
   
 ## <a name="the-was-runtime"></a>Exécution WAS  
+
  Les applications sont organisées en sites pour les besoins d'adressage et de gestion. Au moment de l'exécution, les applications sont également groupées ensemble dans des pools d'applications. Un pool d'applications peut loger de nombreuses applications différentes à partir de nombreux sites différents. Toutes les applications à l'intérieur d'un pool d'applications partagent un jeu commun de caractéristiques d'exécution. Par exemple, elles s'exécutent toutes sous la même version CRL (Common Language Runtime) et elles partagent toutes une identité de processus commune. Chaque pool d'applications correspond à une instance d'un processus de travail (w3wp.exe). Chaque application gérée qui s'exécute dans un pool d'applications partagé est isolée des autres applications au moyen d'un AppDomain CLR.  
   
 ## <a name="see-also"></a>Voir aussi

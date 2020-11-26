@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 117fce887a04def7f9b3f7654a8e9e675ea462d2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 50f23e1a343f969ad2cbb3422038921c710b2b1b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502403"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241679"
 ---
 # <a name="network-programming-in-the-net-framework"></a>Programmation réseau dans le .NET Framework
+
 Microsoft .NET Framework fournit une implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications. Les applications réseau peuvent générer des protocoles enfichables pour tirer parti automatiquement de nouveaux protocoles Internet, ou elles peuvent utiliser une implémentation managée de l'interface Windows Socket pour fonctionner au niveau du socket.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -38,7 +39,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Configuration des applications Internet](configuring-internet-applications.md)  
  Explique comment utiliser les fichiers de configuration .NET Framework pour configurer les applications Web.  
   
- [Traçage réseau dans .NET Framework](network-tracing.md)  
+ [Traçage réseau dans le .NET Framework](network-tracing.md)  
  Explique comment utiliser le traçage réseau pour obtenir des informations sur les appels de méthode et le trafic réseau généré par une application managée.  
   
  [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)  
@@ -56,13 +57,13 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [NetworkInformation](networkinformation.md)  
  Explique comment collecter des informations sur les événements, les modifications, les statistiques et les propriétés réseau et explique également comment déterminer si un hôte distant est accessible ou non à l'aide de la classe <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> .  
   
- [Modifications apportées à l’espace de noms System. URI dans la version 2,0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
+ [Modifications apportées à l’espace de noms System.Uri dans la Version 2.0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
  Décrit plusieurs modifications apportées à la classe <xref:System.Uri?displayProperty=nameWithType> dans la version 2.0 pour corriger les comportements incorrects, améliorer la convivialité et la sécurité.  
   
  [Prise en charge de l’identifiant de ressource internationalisée dans System.Uri](international-resource-identifier-support-in-system-uri.md)  
  Décrit les améliorations apportées à la classe <xref:System.Uri?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1, et 2.0 SP1 pour la prise en charge de l'identifiant de ressource internationalisée et du nom de domaine internationalisé.  
   
- [Améliorations des performances de socket dans la version 3.5](socket-performance-enhancements-in-version-3-5.md)  
+ [Améliorations des performances de socket dans la version 3.5](socket-performance-enhancements-in-version-3-5.md)  
  Décrit un ensemble d'améliorations apportées à la classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1 et 2.0 SP1 qui fournit un autre modèle asynchrone pouvant être utilisé par les applications de socket spécialisées très performantes.  
   
  [Protocole PNRP (Peer Name Resolution Protocol)](peer-name-resolution-protocol.md)  
@@ -71,10 +72,10 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Collaboration pair à pair](peer-to-peer-collaboration.md)  
  Décrit l'ajout de la prise en charge à la version 3.5 pour prendre en charge la collaboration pair à pair qui s'appuie sur PNRP. Ces nouvelles fonctionnalités sont prises en charge par l'espace de noms <xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType> .  
   
- [Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1](changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
+ [Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1](changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
  Décrit les changements de sécurité apportés à la version 3.5 SP1 qui affectent la manière dont l'intégration de l'authentification Windows est gérée par <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>, <xref:System.Net.HttpListener?displayProperty=nameWithType>, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType>, et les classes associées dans l'espace de noms System.Net.  
   
- [Integrated Windows Authentication with Extended Protection](integrated-windows-authentication-with-extended-protection.md)  
+ [Integrated Windows Authentication with Extended Protection (en anglais)](integrated-windows-authentication-with-extended-protection.md)  
  Décrit les améliorations de la protection étendue qui affectent la manière dont l'authentification Windows intégrée est gérée par <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>, <xref:System.Net.HttpListener?displayProperty=nameWithType>, <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>, <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType>, et les classes associées dans <xref:System.Net?displayProperty=nameWithType> et les espaces de noms associés.  
   
  [Parcours NAT avec IPv6 et Teredo](nat-traversal-using-ipv6-and-teredo.md)  
@@ -87,6 +88,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Liens vers des exemples téléchargeables de programmation qui utilisent des classes dans les espaces de noms <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer>, <xref:System.Net.Security>, <xref:System.Net.Sockets> .  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Net?displayProperty=nameWithType>  
  Constitue une interface de programmation simple pour un grand nombre des protocoles réseau employés aujourd'hui. Les classes <xref:System.Net.WebRequest?displayProperty=nameWithType> et <xref:System.Net.WebResponse?displayProperty=nameWithType> de cet espace de noms servent de base aux protocoles enfichables.  
   
@@ -127,7 +129,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Fournit une implémentation managée de l'interface WebSocket pour les développeurs.  
   
  <xref:System.Uri?displayProperty=nameWithType>  
- Fournit une représentation d'objet d'un URI (Uniform Resource Identifier) et un accès aisé aux parties de l'URI.  
+ Fournit une représentation objet d'un URI (Uniform Resource Identifier) et un accès simplifié aux parties de l'identificateur.  
   
  <xref:System.Security.Authentication.ExtendedProtection?displayProperty=nameWithType>  
  Fournit un support pour l'authentification à l'aide de la protection étendue pour les applications.  
@@ -138,6 +140,6 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
 ## <a name="see-also"></a>Voir aussi
 
 - [Bonnes pratiques du protocole TLS (Transport Layer Security) avec le .NET Framework](tls.md)
-- [Rubriques de guide pratique sur la programmation réseau](network-programming-how-to-topics.md)
+- [Rubriques "Comment" relatives à la programmation réseau](network-programming-how-to-topics.md)
 - [Exemples de programmation réseau](network-programming-samples.md)
 - [Exemple HttpClient](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)

@@ -4,12 +4,12 @@ description: Découvrez comment héberger le runtime .NET Core à partir du code
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 380bfb3aa5e5715fe95e0d7772700bac9ab4a5be
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: 79336396de3058e40cf7328e6d92e7e9e54296e9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92160982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242914"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Écrire un hôte .NET Core personnalisé pour contrôler le runtime .NET à partir de votre code natif
 
@@ -163,6 +163,7 @@ Enfin, quand l’hôte termine l’exécution du code managé, le runtime .NET C
 CoreCLR ne prend pas en charge la réinitialisation ou le déchargement. N’appelez pas `coreclr_initialize` à nouveau ou ne déchargez pas la bibliothèque CoreCLR.
 
 ## <a name="conclusion"></a>Conclusion
+
 Une fois que votre hôte est créé, il peut être testé en l’exécutant à partir de la ligne de commande et en passant tous les arguments attendus par l’hôte. Quand vous spécifiez l’application .NET Core que l’hôte doit exécuter, utilisez le fichier .dll généré par `dotnet build`. Les exécutables (fichiers .exe) générés par `dotnet publish` pour les applications autonomes sont l’hôte .NET Core par défaut (pour que l’application puisse être lancée directement à partir de la ligne de commande dans les scénarios principaux) ; le code utilisateur est compilé dans une dll du même nom.
 
 Si ce n’est pas le cas, double-Vérifiez que *coreclr.dll* est disponible à l’emplacement attendu par l’hôte, que toutes les bibliothèques d’infrastructure nécessaires se trouvent dans la liste TPA et que le nombre de bits de CoreCLR (32 bits ou 64 bits) correspond à la façon dont l’hôte a été créé.

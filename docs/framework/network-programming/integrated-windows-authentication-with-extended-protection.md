@@ -1,15 +1,16 @@
 ---
-title: Integrated Windows Authentication with Extended Protection (en anglais)
+title: Authentification Windows intégrée avec protection étendue
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-ms.openlocfilehash: d69471f4be0f102381dee4fc5037e8f8b0c625c3
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 74f421131da0e5b11fd676ff23229f5ff6ec7eca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144849"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241621"
 ---
-# <a name="integrated-windows-authentication-with-extended-protection"></a>Integrated Windows Authentication with Extended Protection (en anglais)
+# <a name="integrated-windows-authentication-with-extended-protection"></a>Authentification Windows intégrée avec protection étendue
+
 Certaines améliorations apportées changent la manière dont l’authentification Windows intégrée est gérée par les classes <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream> et les classes associées dans l’espace de noms <xref:System.Net> et les espaces de noms associés. La prise en charge de la protection étendue a été ajoutée pour renforcer la sécurité.  
   
  Ces modifications peuvent affecter les applications qui utilisent ces classes pour effectuer des demandes web et recevoir des réponses quand l’authentification Windows intégrée est utilisée. Elles peuvent aussi avoir un impact sur les serveurs web et les applications clientes configurés pour utiliser l’authentification Windows intégrée.  
@@ -19,6 +20,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
  Les modifications pour la prise en charge de la protection étendue concernent uniquement les applications s’exécutant sur Windows 7 et Windows Server 2008 R2. Les fonctionnalités de protection étendue ne sont pas disponibles dans les versions antérieures de Windows.  
   
 ## <a name="overview"></a>Vue d'ensemble  
+
  La conception de l’authentification Windows intégrée permet à certaines réponses aux demandes d’informations d’identification d’être universelles, ce qui signifie qu’elles peuvent être réutilisées ou transférées. Les réponses aux demandes doivent être construites au minimum avec des informations spécifiques à la cible et, de préférence, avec également des informations spécifiques au canal. Les services peuvent alors fournir une protection étendue pour garantir que les réponses aux demandes d’informations d’identification contiennent des informations propres aux services, telles qu’un nom de principal du service (SPN). Grâce à la présence de ces informations dans les échanges d’informations d’identification, les services assurent une meilleure protection contre l’utilisation malveillante de certaines réponses aux demandes d’informations d’identification qui ont été utilisées de manière incorrecte.  
   
  La conception de la protection étendue est une amélioration apportée aux protocoles d’authentification qui vise à atténuer les risques d’attaques par relais d’authentification. Elle repose sur le concept d’informations de liaison de service et de canal.  
@@ -64,6 +66,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
  La protection étendue est prise en charge sur Windows 7. Un mécanisme intégré permet à une application de déterminer si le système d’exploitation prend en charge la protection étendue.  
   
 ## <a name="changes-to-support-extended-protection"></a>Modifications pour prendre en charge la protection étendue  
+
  Selon le protocole d’authentification choisi, le processus d’authentification utilisé avec l’authentification Windows intégrée inclut souvent une réponse émise par l’ordinateur de destination et renvoyée à l’ordinateur client. La protection étendue ajoute de nouvelles fonctionnalités à ce processus d’authentification.  
   
  L’espace de noms <xref:System.Security.Authentication.ExtendedProtection> fournit la prise en charge de l’authentification avec protection étendue pour les applications. Dans cet espace de noms, la classe <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> représente une liaison de canal. Dans cet espace de noms, la classe <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> représente la stratégie de protection étendue utilisée par le serveur pour valider les connexions client entrantes. D’autres membres de classe sont utilisés avec la protection étendue.  
@@ -107,6 +110,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
  Une nouvelle propriété <xref:System.Net.Configuration.SmtpNetworkElement> a été ajoutée dans l’espace de noms <xref:System.Net.Security> pour prendre en charge la configuration de la protection étendue pour les clients SMTP.  
   
 ## <a name="extended-protection-for-client-applications"></a>Protection étendue pour les applications clientes  
+
  La prise en charge de la protection étendue est automatique pour la plupart des applications clientes. Les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.Mail.SmtpClient> prennent en charge la protection étendue quand la version sous-jacente de Windows la prend en charge. Une instance <xref:System.Net.HttpWebRequest> envoie un nom de principal du service construit à partir de l’<xref:System.Uri>. Par défaut, une instance <xref:System.Net.Mail.SmtpClient> envoie un nom de principal du service construit à partir du nom d’hôte du serveur de messagerie SMTP.  
   
  Pour l’authentification personnalisée, les applications clientes peuvent utiliser les méthodes <xref:System.Net.HttpWebRequest.EndGetRequestStream%28System.IAsyncResult%2CSystem.Net.TransportContext%40%29?displayProperty=nameWithType> ou <xref:System.Net.HttpWebRequest.GetRequestStream%28System.Net.TransportContext%40%29?displayProperty=nameWithType> de la classe <xref:System.Net.HttpWebRequest> qui permettent de récupérer le <xref:System.Net.TransportContext> et le jeton de liaison de canal à l’aide de la méthode <xref:System.Net.TransportContext.GetChannelBinding%2A>.  
@@ -116,6 +120,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
  La propriété <xref:System.Net.Mail.SmtpClient.TargetName%2A> permet de définir un nom principal de service personnalisé à utiliser pour l’authentification Windows intégrée de la connexion SMTP.  
   
 ## <a name="extended-protection-for-server-applications"></a>Protection étendue pour les applications serveur  
+
  <xref:System.Net.HttpListener> fournit automatiquement des mécanismes de validation des liaisons de service pendant l’authentification HTTP.  
   
  Le scénario le plus sécurisé consiste à activer la protection étendue pour les `HTTPS://` préfixes. Dans ce cas, définissez <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> à <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, où <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> a la valeur <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> ou <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> et où <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> a la valeur <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>. La valeur <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> met <xref:System.Net.HttpListener> en mode partiellement sécurisé, tandis que <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> correspond au mode entièrement sécurisé.  

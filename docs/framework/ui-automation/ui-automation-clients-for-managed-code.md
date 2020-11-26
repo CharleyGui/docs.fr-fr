@@ -8,20 +8,22 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: b7c3e425312652fb37ed8e2203d0a0155fea25b9
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 95ac13409156b553962aee5ea4f5ca717375c133
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163930"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241978"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Clients UI Automation pour le code managé
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette section contient des vues d’ensemble et des rubriques de procédure pour vous aider à développer des clients UI Automation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Mise à l'échelle de l'écran et UI Automation](ui-automation-and-screen-scaling.md)  
  [Prise en charge d'UI Automation pour les contrôles standard](ui-automation-support-for-standard-controls.md)  
  [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)  
@@ -31,7 +33,8 @@ ms.locfileid: "87163930"
  [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)  
  [Obtention d'éléments UI Automation](obtaining-ui-automation-elements.md)  
  [Problèmes liés aux threads UI Automation](ui-automation-threading-issues.md)  
- [Rubriques Comment](ui-automation-clients-for-managed-code-how-to-topics.md)  
+ [Rubriques de procédures](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Windows.Automation>

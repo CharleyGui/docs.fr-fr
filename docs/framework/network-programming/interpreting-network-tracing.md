@@ -10,14 +10,15 @@ helpviewer_keywords:
 - text, network tracing output
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
-ms.openlocfilehash: 7a17e4ba14d8c5fe136667c4eb5bc5b2fd7a8242
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 63d7e36bb95054303fc4f26b0fd14dc3d10dbb7d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502364"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241562"
 ---
 # <a name="interpreting-network-tracing"></a>Interprétation du traçage réseau
+
 Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalité pour capturer les appels effectués par votre application aux différents membres de la classe <xref:System.Net>. La sortie de ces appels peut ressembler aux exemples suivants.  
   
 ```output
@@ -47,6 +48,6 @@ Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalit�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Activation du traçage réseau](enabling-network-tracing.md)
-- [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md)
-- [Traçage réseau dans .NET Framework](network-tracing.md)
+- [Activation du suivi réseau](enabling-network-tracing.md)
+- [Procédure : configurer le traçage réseau](how-to-configure-network-tracing.md)
+- [Traçage réseau dans le .NET Framework](network-tracing.md)

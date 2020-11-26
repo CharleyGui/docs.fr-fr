@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c0b353d-79ee-4e61-b348-be49ad0e9a16
-ms.openlocfilehash: 3b3a0f1b52afce495ca41a426ebc9e57314d8254
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 00af245f49994314ca29e1f5a2debe3af2364999
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592526"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241861"
 ---
 # <a name="custom-binding-transport-and-encoding"></a>Custom Binding Transport and Encoding
+
 Une liaison personnalisée est définie par une liste ordonnée d’éléments de liaison discrets. Cet exemple montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d'encodage de message.  
   
 > [!NOTE]

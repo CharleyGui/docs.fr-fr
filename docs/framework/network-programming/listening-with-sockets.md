@@ -16,14 +16,15 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-ms.openlocfilehash: 0b6de67772bae397373e307ec02ce69a71b0542e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4249948579384ec0159ba61072126944596c8f56
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502312"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242212"
 ---
 # <a name="listening-with-sockets"></a>écoute avec des sockets
+
 Les sockets de serveur et d’écoute ouvrent un port sur le réseau, puis attendent qu’un client se connecte à ce port. Cet exemple montre comment créer un service distant pour un réseau TCP/IP, cependant, il existe d’autres protocoles et familles d’adresses réseau.  
   
  L’adresse unique d’un service TCP/IP peut être définie en combinant l’adresse IP de l’hôte avec le numéro de port du service afin de créer un point de terminaison pour ce service. La classe <xref:System.Net.Dns> fournit des méthodes qui retournent des informations sur les adresses réseau prises en charge par l’appareil du réseau local. Lorsque l’appareil du réseau local a plus d’une adresse réseau, ou si le système local prend en charge plusieurs appareils réseau, la classe **Dns** retourne des informations sur toutes les adresses réseau, et c’est à l’application de choisir l’adresse appropriée pour le service. L’IANA (Internet Assigned Numbers Authority) définit les numéros de port des services courants. Pour plus d’informations, consultez [Registry Name and Transport Protocol port number Registry](https://www.iana.org/assignments/port-numbers). Les autres services peuvent avoir un numéro de port compris dans la plage 1 024 à 65 535.  
@@ -65,5 +66,5 @@ listener.Listen(100);
 - [Utilisation d’un socket serveur synchrone](using-a-synchronous-server-socket.md)
 - [Utilisation d’un socket serveur asynchrone](using-an-asynchronous-server-socket.md)
 - [Utilisation de sockets clients](using-client-sockets.md)
-- [Comment : créer un socket](how-to-create-a-socket.md)
+- [Procédure : créer un socket](how-to-create-a-socket.md)
 - [Sockets](sockets.md)

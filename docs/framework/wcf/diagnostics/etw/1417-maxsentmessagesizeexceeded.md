@@ -2,27 +2,30 @@
 title: 1417 - MaxSentMessageSizeExceeded
 ms.date: 03/30/2017
 ms.assetid: 3cb7c2f0-97bf-4ee9-a037-ed64a25a18fd
-ms.openlocfilehash: ea5535d2f8dc07c19c9cb5503edd445416dbd18e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0738db37982eed920c9736873f8de9c6b1c101fc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782250"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241341"
 ---
 # <a name="1417---maxsentmessagesizeexceeded"></a>1417 - MaxSentMessageSizeExceeded
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1417|  
+|id|1417|  
 |Mots clés|Quota|  
-|Niveau|Error|  
-|Canal|Microsoft-Windows-Application Server-Applications/Analyse|  
+|Level|Error|  
+|Channel|Microsoft-Windows-Application Server-Applications/Analyse|  
   
 ## <a name="description"></a>Description  
+
  Cet événement est émis lorsque la taille maximale de message envoyé est atteinte.  
   
 ## <a name="message"></a>Message  
+
  1%  
   
 ## <a name="details"></a>Détails
