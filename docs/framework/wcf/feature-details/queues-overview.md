@@ -4,18 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-ms.openlocfilehash: 3e75b6d5926b65a93204241eb7c71ca23a5694af
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 464b82c41fe1268d53d77f7bf3cb9463cf235072
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596719"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244637"
 ---
 # <a name="queues-overview"></a>Vue d’ensemble des files d’attente
 
 Cette section présente les concepts généraux et principaux relatifs à la communication mise en file d'attente. Les sections suivantes décrivent en détail comment les concepts de mise en file d’attente décrits ici se manifestent dans Windows Communication Foundation (WCF).  
   
 ## <a name="basic-queuing-concepts"></a>Concepts de base de la mise en file d'attente  
+
  Lors de la conception d'une application distribuée, le choix du bon transport pour la communication entre les services et les clients est important. Plusieurs facteurs affectent le type de transport à utiliser. Un facteur important, l'isolement entre le service, le client et le transport, détermine l'utilisation d'un transport de mise en file d'attente ou d'un transport direct, tel que TCP ou HTTP. En raison de la nature des transports directs tels que TCP et HTTP, la communication s'arrête complètement si le service ou le client cessent de fonctionner ou en cas de défaillance du réseau. Le service, le client et le réseau doivent s'exécuter en même temps pour que l'application fonctionne. Les transports de mise en file d'attente fournissent l'isolement, ce qui signifie qu'en cas de défaillance du service ou du client ou des liaisons de communication entre ces derniers, le client et le service peuvent continuer à fonctionner.  
   
  Les files d'attente fournissent une communication fiable même en cas de défaillance des correspondants ou du réseau. Les files d'attente capturent et remettent les messages échangés entre les correspondants. Les files d'attente sont généralement soutenues par un type de magasin, ce qui peut être volatile ou durable. Les files d'attente stockent les messages d'un client pour le compte d'un service et transmettent ultérieurement ces messages au service. Les files d'attente d'indirection fournissent un isolement garanti des défaillances pour chaque correspondant, ce qui fait d'elles le mécanisme de communication par défaut préféré pour les systèmes à forte disponibilité et les services déconnectés. L'indirection est la conséquence d'une latence élevée. La *latence* est le délai entre le moment où le client envoie un message et le moment où il est reçu par le service. Cela signifie qu'une fois un message envoyé, vous ne savez pas quand celui-ci peut être traité. La plupart des applications en file d'attente s'accommodent d'une latence élevée. L'illustration suivante montre un modèle conceptuel de la communication en file d'attente.  
@@ -35,6 +36,7 @@ Cette section présente les concepts généraux et principaux relatifs à la com
  Ainsi, le gestionnaire de files d'attente fournit l'isolement nécessaire qui autorise la défaillance possible de l'expéditeur et du récepteur de manière indépendante sans affecter la communication elle-même. L'avantage de l'indirection supplémentaire fournie par les files d'attente permet aussi à plusieurs instances d'application de lire la même file d'attente et aux nœuds d'obtenir un débit plus élevé. Par conséquent, il n'est pas rare de faire appel aux files d'attente pour répondre à des exigences de débit et d'échelle supérieures.  
   
 ## <a name="queues-and-transactions"></a>Files d’attente et transactions  
+
  Les transactions vous permettent de regrouper un jeu d'opérations pour que toutes les opérations échouent si une seule opération échoue. Voici un exemple d’utilisation de transactions : lorsqu’une personne utilise une ATM pour transférer $1 000 de son compte d’épargne vers son compte courant. Cela entraîne les opérations suivantes :  
   
 - Le retrait de 1 000 € du compte épargne.  
@@ -54,6 +56,7 @@ Cette section présente les concepts généraux et principaux relatifs à la com
  La transaction cliente traite et envoie le message. Lorsque la transaction est validée, le message est dans la file d'attente de transmission. Sur le service, la transaction lit le message de la file d’attente cible, traite le message, puis valide la transaction. Si une erreur se produit pendant le traitement, le message est annulé et placé dans la file d'attente cible.  
   
 ## <a name="asynchronous-communication-using-queues"></a>Communication asynchrone à l'aide de files d'attente  
+
  Les files d'attente fournissent un moyen asynchrone de communication. Les applications qui envoient des messages à l'aide de files d'attente ne peuvent pas attendre la réception du message et son traitement par le récepteur en raison de la latence élevée que présente le gestionnaire de files d'attente. Les messages peuvent rester dans la file d'attente pour une durée bien supérieure à celle prévue par l'application. Pour éviter cela, l'application peut spécifier une valeur de durée de vie sur le message. Cette valeur spécifie combien de temps le message doit rester dans la file d'attente de transmission. Si cette valeur de temps est dépassée, et que le message n'a pas encore été envoyé à la file d'attente cible, le message peut être transféré à une file d'attente de lettres mortes.  
   
  Lorsque l'expéditeur envoie un message, le retour de l'opération d'envoi implique que le message est parvenu seulement à la file d'attente de transmission sur l'expéditeur. Dans ce cas, s'il y a une défaillance dans la remise du message à la file d'attente cible, l'application émettrice ne peut pas le savoir immédiatement. Pour prendre acte de ces défaillances, le message en échec est transféré à une file d'attente de lettres mortes.  
@@ -67,11 +70,13 @@ Cette section présente les concepts généraux et principaux relatifs à la com
  Les sections suivantes traitent de ces concepts.  
   
 ## <a name="dead-letter-queue-programming"></a>Programmation de la file d'attente de lettres mortes.  
+
  Les files d'attente de lettres mortes contiennent des messages qui ne sont pas parvenus à la file d'attente cible pour différentes raisons. Les raisons peuvent porter sur des messages arrivés à expiration et des problèmes de connectivité qui empêchent le transfert du message vers la file d'attente cible.  
   
  En général, une application peut lire des messages dans une file d'attente de lettres mortes à l'échelle du système, déterminer le mauvais fonctionnement et prendre les mesures appropriées, telles que corriger les erreurs et renvoyer le message ou en prendre note.  
   
 ## <a name="poison-message-queue-programming"></a>Programmation de la file d'attente du message incohérent  
+
  Une fois qu'un message parvient dans la file d'attente cible, son traitement par le service peut faire l'objet de plusieurs échecs. Par exemple, une application qui lit un message de la file d'attente sous une transaction et met à jour une base de données peut être confronté à une déconnexion temporaire de la base de données. Dans ce cas, la transaction est restaurée, une nouvelle transaction est créée et le message est relu dans la file d'attente. Une deuxième tentative peut réussir ou échouer. Dans certains cas, selon la cause de l'erreur, la remise du message à l'application peut connaître plusieurs échecs. Dans ce cas, le message est considéré comme « incohérent ». Ces messages sont déplacés vers une file d'attente de messages incohérents pour être lus par une application chargée de traiter les messages incohérents.  
   
 ## <a name="see-also"></a>Voir aussi

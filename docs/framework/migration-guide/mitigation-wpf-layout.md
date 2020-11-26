@@ -3,17 +3,19 @@ title: 'Atténuation : disposition WPF'
 description: Découvrez comment atténuer les problèmes qui résultent d’une modification de la disposition des contrôles WPF, comme le positionnement d’un objet se déplaçant d’un pixel.
 ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
-ms.openlocfilehash: e4e4612f7b39eefbf0e76ac86c8eb644c257ba75
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: caed758f6e86a1e2bee255c2f29ca3160b327e17
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475344"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244078"
 ---
 # <a name="mitigation-wpf-layout"></a>Atténuation : disposition WPF
+
 La disposition des contrôles WPF peut varier légèrement.  
   
 ## <a name="impact"></a>Impact  
+
  Résultat de cette modification :  
   
 - La largeur ou la hauteur d'éléments peut croître ou diminuer d'un pixel au plus.  
@@ -25,6 +27,7 @@ La disposition des contrôles WPF peut varier légèrement.
  Par défaut, cette nouvelle disposition est activée uniquement pour les applications qui ciblent le .NET. Framework 4.6.  
   
 ## <a name="mitigation"></a>Limitation des risques  
+
  Dans la mesure où cette modification tend à éliminer le découpage droit ou inférieur des contrôles WPF dont le PPP est élevé, les applications qui ciblent les versions antérieures du .NET Framework, mais qui s'exécutent sur le .NET Framework 4.6, peuvent choisir ce nouveau comportement en ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :  
   
 ```xml  

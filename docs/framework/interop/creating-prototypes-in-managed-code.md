@@ -18,14 +18,15 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: e83979e5843c52fc3a446a5b669ae8822b32ddad
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4260bc8b3f9a2550faa28dd4d35842327b4e5935
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555586"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244104"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
+
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
   
  Avant de pouvoir accéder à une fonction DLL non managée depuis du code managé, vous devez connaître le nom de la fonction et le nom de la DLL qui l'exporte. Avec ces informations, vous pouvez commencer à écrire la définition managée d'une fonction non managée implémentée dans une DLL. En outre, vous pouvez ajuster la façon dont l'appel de code non managé crée la fonction et marshale les données vers et depuis la fonction.  
@@ -34,6 +35,7 @@ Cette rubrique décrit comment accéder aux fonctions non managées et présente
 > Les fonctions de l’API Windows qui allouent une chaîne vous permettent de libérer la chaîne à l’aide d’une méthode telle que `LocalFree`. L'appel de code non managé gère ces paramètres différemment. Pour les appels de code non managé, affectez au paramètre un type `IntPtr` au lieu d'un type `String`. Utilisez les méthodes fournies par la classe <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> pour convertir manuellement le type en chaîne et le libérer manuellement.  
   
 ## <a name="declaration-basics"></a>Principes de base des déclarations  
+
  Les définitions managées des fonctions non managées dépendent du langage, comme nous allons le voir dans les exemples suivants. Pour obtenir des exemples de code plus complets, consultez [Exemples d’appel de code non managé](platform-invoke-examples.md).  
   
 ```vb
@@ -84,6 +86,7 @@ extern "C" int MessageBox(
 ```
   
 ## <a name="adjusting-the-definition"></a>Ajustement de la définition  
+
  Que vous les définissiez explicitement ou non, les champs d'attribut définissent le comportement du code managé. L'appel de code non managé agit selon les valeurs par défaut définies dans les différents champs qui existent sous la forme de métadonnées d'assembly. Vous pouvez modifier ce comportement par défaut en ajustant les valeurs d'un ou plusieurs champs. Dans de nombreux cas, vous utilisez <xref:System.Runtime.InteropServices.DllImportAttribute> pour définir une valeur.  
   
  Le tableau suivant répertorie l'ensemble complet des champs d'attribut qui se rapportent aux appels de code non managé. Pour chaque champ, le tableau inclut la valeur par défaut et un lien vers des informations sur la façon d'utiliser ces champs pour définir des fonctions DLL non managées.  
@@ -102,9 +105,11 @@ extern "C" int MessageBox(
  Pour obtenir des informations de référence détaillées, consultez <xref:System.Runtime.InteropServices.DllImportAttribute>.  
   
 ## <a name="platform-invoke-security-considerations"></a>Considérations relatives à la sécurité des appels de code non managé  
+
  Les membres `Assert`, `Deny` et `PermitOnly` de l’énumération <xref:System.Security.Permissions.SecurityAction> sont appelés *modificateurs de parcours de pile*. Ces membres sont ignorés s'ils sont utilisés comme des attributs déclaratifs sur des déclarations d'appel de code non managé et des instructions Interface Definition Language (IDL) COM.  
   
 ### <a name="platform-invoke-examples"></a>Exemples d'appel de code non managé  
+
  Les exemples d'appel de code non managé de cette section illustrent l'utilisation de l'attribut `RegistryPermission` avec les modificateurs de parcours de pile.  
   
  Dans l’exemple suivant, les modificateurs <xref:System.Security.Permissions.SecurityAction>`Assert`, `Deny` et `PermitOnly` sont ignorés.  
@@ -184,6 +189,7 @@ class PInvokeScenario
 ```  
   
 #### <a name="com-interop-examples"></a>Exemples COM Interop  
+
  Les exemples COM Interop de cette section illustrent l'utilisation de l'attribut `RegistryPermission` avec les modificateurs de parcours de pile.  
   
  Les déclarations d'interface COM Interop ignorent les modificateurs `Assert`, `Deny` et `PermitOnly` de façon similaire aux exemples d'appels de code non managé de la section précédente.  

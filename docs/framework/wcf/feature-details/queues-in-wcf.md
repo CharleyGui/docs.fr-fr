@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: d1fee4fdde18563ec6ccce4f0675d8581184be08
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d63b03e519484ad6ec90b4267a49b77738593e45
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596732"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244650"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Files d'attente dans Windows Communication Foundation
+
 Les rubriques de cette section traitent de la prise en charge de Windows Communication Foundation (WCF) pour les files d’attente. WCF prend en charge la mise en file d’attente en tirant parti de Microsoft Message Queuing (précédemment appelé MSMQ) comme un transport et active les scénarios suivants :  
   
 - Applications faiblement couplées. Les applications émettrices peuvent envoyer des messages aux files d'attente sans avoir besoin de savoir si l'application réceptrice est disponible pour traiter le message. La file d'attente permet l'indépendance du traitement, ce qui signifie que l'application émettrice peut envoyer des messages à la file d'attente à un taux de qui ne dépend pas de la rapidité avec laquelle les applications réceptrices peuvent traiter les messages. La disponibilité globale du système augmente lorsque l'envoi de messages à une file d'attente n'est pas fortement couplé au traitement du message.  
@@ -25,16 +26,17 @@ Les rubriques de cette section traitent de la prise en charge de Windows Communi
  Pour utiliser la fonctionnalité files d’attente dans une application WCF, vous pouvez utiliser l’une des liaisons standard, ou vous pouvez créer une liaison personnalisée si l’une des liaisons standard ne répond pas à vos exigences. Pour plus d’informations sur les liaisons standard pertinentes et la manière d’en choisir une, consultez [Comment : échanger des messages avec des points de terminaison WCF et des applications de Message Queuing](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md). Pour plus d’informations sur la création de liaisons personnalisées, consultez [Liaisons personnalisées](../extending/custom-bindings.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Vue d'ensemble des files d'attente](queues-overview.md)  
  Vue d'ensemble des concepts de la mise en file d'attente des messages.  
   
  [Mise en file d'attente dans WCF](queuing-in-wcf.md)  
  Vue d’ensemble de la prise en charge des files d’attente WCF.  
   
- [Comment : échanger des messages en file d'attente avec des points de terminaison WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [Procédure : échanger des messages mis en file d’attente avec des points de terminaison WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  Explique comment utiliser la <xref:System.ServiceModel.NetMsmqBinding> classe pour communiquer entre un client WCF et un service WCF.  
   
- [Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [Procédure : échanger des messages avec des points de terminaison WCF et des applications Message Queuing](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  Explique comment utiliser le <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> pour communiquer entre les applications WCF et Message Queuing.  
   
  [Regroupement de messages mis en file d'attente dans une session](grouping-queued-messages-in-a-session.md)  
@@ -58,7 +60,7 @@ Les rubriques de cette section traitent de la prise en charge de Windows Communi
  [Sécurisation des messages à l'aide de la sécurité de message](securing-messages-using-message-security.md)  
  Décrit comment utiliser la sécurité des messages pour sécuriser des messages mis en file d'attente.  
   
- [Résolution des problèmes de messagerie en file d’attente](troubleshooting-queued-messaging.md)  
+ [Résolution des problèmes de messagerie en file d'attente](troubleshooting-queued-messaging.md)  
  Explique comment résoudre les problèmes courants de mise en file d'attente.  
   
  [Meilleures pratiques pour les communications mises en file d'attente](best-practices-for-queued-communication.md)  

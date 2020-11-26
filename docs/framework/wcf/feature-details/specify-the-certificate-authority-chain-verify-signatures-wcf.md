@@ -5,14 +5,15 @@ helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-ms.openlocfilehash: 103d68d4ccb4cc243d28037260c1f9f380485ff6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a03902c9a0d36ebd6e2c38f4a827737cacec447
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600307"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245030"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Comment : spécifier la chaîne de certificats d'autorité de certification utilisée pour vérifier des signatures (WCF)
+
 Lorsque Windows Communication Foundation (WCF) reçoit un message SOAP signé à l’aide d’un certificat X. 509, par défaut, il vérifie que le certificat X. 509 a été émis par une autorité de certification approuvée. Il consulte pour cela un magasin de certificats et détermine si le certificat de cette autorité de certification a été désigné comme approuvé. Pour que WCF puisse effectuer cette détermination, la chaîne de certificats de l’autorité de certification doit être installée dans le magasin de certificats approprié.  
   
 ### <a name="to-install-a-certification-authority-certificate-chain"></a>Pour installer une chaîne de certificats d'autorité de certification  
@@ -25,7 +26,7 @@ Lorsque Windows Communication Foundation (WCF) reçoit un message SOAP signé à
   
     1. Exportez la chaîne de certificats d'autorité de certification.  
   
-         La procédure exacte dépend de l'autorité de certification. Si l’autorité de certification exécute les services de certificats Microsoft, sélectionnez **Télécharger un certificat d’autorité de certification, une chaîne de certificats ou une liste de révocation**de certificats, puis choisissez **Télécharger le certificat d’autorité**de certification.  
+         La procédure exacte dépend de l'autorité de certification. Si l’autorité de certification exécute les services de certificats Microsoft, sélectionnez **Télécharger un certificat d’autorité de certification, une chaîne de certificats ou une liste de révocation** de certificats, puis choisissez **Télécharger le certificat d’autorité** de certification.  
   
     2. Importez la chaîne de certificats d'autorité de certification.  
   
@@ -35,4 +36,4 @@ Lorsque Windows Communication Foundation (WCF) reçoit un message SOAP signé à
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Working with Certificates](working-with-certificates.md)
+- [Utilisation des certificats](working-with-certificates.md)

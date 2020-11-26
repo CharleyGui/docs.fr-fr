@@ -1,5 +1,5 @@
 ---
-title: 'Comment : effectuer une compilation conditionnelle avec Trace et Debug'
+title: 'Procédure : Effectuer une compilation conditionnelle avec Trace et Debug'
 description: Découvrez comment effectuer une compilation conditionnelle avec les attributs conditionnels de TRACE et de débogage lors de la compilation d’une application .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -11,13 +11,15 @@ helpviewer_keywords:
 - TRACE directive
 - conditional compilation, tracing code
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
-ms.openlocfilehash: 8758b793866ec0317f91d636476d33bd001ddd78
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 895e39593b5e84d708392d3d994267b25bc4eeea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244169"
 ---
-# <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Comment : effectuer une compilation conditionnelle avec Trace et Debug
+# <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Procédure : Effectuer une compilation conditionnelle avec Trace et Debug
+
 Quand vous déboguez une application pendant le développement, les sorties de débogage et de traçage sont dirigées vers la fenêtre de sortie dans Visual Studio. Toutefois, pour inclure les fonctionnalités de suivi dans une application déployée, vous devez compiler vos applications instrumentées en activant la directive de compilateur **TRACE**. De cette façon, le code de traçage peut être compilé dans la version commerciale de votre application. Si vous n’activez pas la directive **TRACE**, tout le code de suivi est ignoré pendant la compilation et n’est pas inclus dans le code exécutable que vous déployez.  
   
  Les méthodes de traçage et de débogage sont associées à des attributs conditionnels. Par exemple, si l’attribut conditionnel pour le suivi a la valeur **true**, toutes les instructions de suivi sont incluses dans un assembly (fichier .exe ou .dll compilé) ; si l’attribut conditionnel **Trace** a la valeur **false**, les instructions de suivi ne sont pas incluses.  
@@ -95,10 +97,10 @@ Commentez la directive de compilateur.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)
-- [Comment : créer, initialiser et configurer les commutateurs de traçage](how-to-create-initialize-and-configure-trace-switches.md)
+- [Traçage et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Procédure : Créer, initialiser et configurer les commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md)
 - [Commutateurs de traçage](trace-switches.md)
 - [Écouteurs de suivi](trace-listeners.md)
-- [Comment : ajouter des instructions de traçage dans le code d'une application](how-to-add-trace-statements-to-application-code.md)
+- [Procédure : Ajouter des instructions de trace dans le code d’une application](how-to-add-trace-statements-to-application-code.md)
 - [Comment : définir des variables d’environnement pour la ligne de commande Visual Studio](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [Procédure : Appeler le compilateur de ligne de commande](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

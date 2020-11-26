@@ -2,14 +2,15 @@
 title: Scénarios de suivi de bout en bout
 ms.date: 03/30/2017
 ms.assetid: f83b7d53-6061-4362-a9a3-ee1daf6542be
-ms.openlocfilehash: d881a8396e21d31b2303d1bb270bed52823c8d49
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cd9be9a39ba1ebb331060231bdb481fd21a3ae6d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589251"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243961"
 ---
 # <a name="end-to-end-tracing-scenarios"></a>Scénarios de suivi de bout en bout
+
 Cette section contient des rubriques qui décrivent différents scénarios d'utilisation du suivi.  
   
  Le suivi d'activité est implémenté pour les scénarios Réponse/Réponse, OneWay et Duplex à l'aide des éléments suivants  

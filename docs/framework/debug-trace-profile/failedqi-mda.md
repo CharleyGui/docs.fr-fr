@@ -9,17 +9,19 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), failed QueryInterface
 - managed debugging assistants (MDAs), failed QueryInterface
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
-ms.openlocfilehash: 2d7f14c67d47e58bcb88eab4621df63d7c598a7a
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: bbd8d5644f8620444d80845b9920b925b6891176
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415938"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244325"
 ---
 # <a name="failedqi-mda"></a>Assistant Débogage managé failedQI
+
 L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appelle `QueryInterface` sur un pointeur d'interface COM au nom d'un wrapper RCW et que l'appel à `QueryInterface` échoue.  
   
 ## <a name="symptoms"></a>Symptômes  
+
  Un cast sur un RCW échoue ou un appel à COM à partir d'un RCW échoue de manière inattendue.  
   
 ## <a name="cause"></a>Cause  
@@ -31,12 +33,15 @@ L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appe
 - Un proxy détenu par OLE a retourné une erreur HRESULT.  
   
 ## <a name="resolution"></a>Résolution  
+
  Consultez la documentation MSDN sur les règles COM.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+
  Si un appel à `QueryInterface` échoue, le contexte est changé et une nouvelle tentative d'appel à `QueryInterface` est effectuée pour déterminer si un contexte incorrect était en cause.  
   
 ## <a name="output"></a>Output  
+
  Nom managé de l'interface, GUID de l'interface et valeur HRESULT de l'échec.  
   
 ## <a name="configuration"></a>Configuration  
@@ -52,5 +57,5 @@ L'Assistant Débogage managé (MDA) `failedQI` est activé quand le runtime appe
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](diagnosing-errors-with-managed-debugging-assistants.md)
 - [Marshaling d’interopérabilité](../interop/interop-marshaling.md)

@@ -2,20 +2,21 @@
 title: Instructions d'installation du répertoire virtuel
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: 2d9443431601ffc712da40bd1c085f595471336b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dba6547888935ccf36ec0924fd3c95e8fbda5688
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602360"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243649"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Instructions d'installation du répertoire virtuel
+
 Les exemples de Windows Communication Foundation (WCF) sont destinés à partager un répertoire virtuel commun nommé servicemodelsamples mappé au dossier%SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
   
 > [!NOTE]
 > %SystemDrive% correspond généralement à C: ou D:, en fonction de l'emplacement de lecteur où Internet Information Services (IIS) est installé.  
   
- Vous pouvez exécuter les fichiers Setupvroot. bat et Cleanupvroot. bat à partir de la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) pour créer le répertoire virtuel. Si vous préférez créer le répertoire virtuel manuellement, exécutez les procédures suivantes.  
+ Vous pouvez exécuter les fichiers Setupvroot.bat et Cleanupvroot.bat à partir de la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) afin de créer le répertoire virtuel. Si vous préférez créer le répertoire virtuel manuellement, exécutez les procédures suivantes.  
   
 ## <a name="procedures"></a>Procédures  
   
@@ -41,7 +42,7 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
     > [!NOTE]
     > Dans cette documentation, le terme `virtual directory` est synonyme du terme `Web application`.  
   
-     En plus de créer le répertoire virtuel, vous devez également définir ses propriétés pour permettre l’exécution des services WCF. Voir ci-dessous pour plus de détails.  
+     En plus de créer le répertoire virtuel, vous devez également définir ses propriétés pour permettre l’exécution des services WCF. Voir les détails ci-dessous.  
   
 #### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>Pour créer un répertoire virtuel dans IIS 5.1 ou 6.0 :  
   
@@ -76,7 +77,7 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
   
 3. Dans le volet Actions, sélectionnez l’option **activer** . Cela permet d'accéder au répertoire du répertoire à l'aide d'Internet Explorer, ce qui est utile lors du débogage d'un service.  
   
- Enfin, vous devez définir les propriétés de sécurité du dossier servicemodelsamples afin d’autoriser son accès. Voir ci-dessous pour plus de détails.  
+ Enfin, vous devez définir les propriétés de sécurité du dossier servicemodelsamples afin d’autoriser son accès. Voir les détails ci-dessous.  
   
 #### <a name="to-set-additional-virtual-directory-properties-in-iis-51-or-60"></a>Pour définir des propriétés de répertoire virtuel supplémentaires dans IIS 5.1 ou 6.0  
   
@@ -104,7 +105,7 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
   
 5. Cliquez sur **Avancé**.  
   
-6. Cliquez sur **emplacements**. La fenêtre **emplacements** est maintenant ouverte.  
+6. Cliquez sur **Emplacements**. La fenêtre **emplacements** est maintenant ouverte.  
   
 7. Sélectionnez l'entrée correspondant à l'ordinateur en cours d'utilisation. Il est important de sélectionner l'ordinateur local et non une entrée correspondant à tous les domaines ou réseaux répertoriés. Une fois l’ordinateur sélectionné, cliquez sur **OK**.  
   
@@ -124,7 +125,7 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
   
 2. Cliquez avec le bouton droit sur le dossier **servicemodelsamples** , puis cliquez sur **partage et sécurité.**  
   
-3. Cliquez sur l’onglet **Sécurité**.  
+3. Cliquez sur l’onglet **Security** .  
   
 4. Si vous utilisez IIS 6,0, dans la zone **noms de groupes ou d’utilisateurs** , vérifiez si le **compte invité Internet** est répertorié.  
   

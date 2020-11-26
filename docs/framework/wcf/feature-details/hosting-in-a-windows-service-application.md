@@ -2,14 +2,15 @@
 title: Hébergement dans une application de service Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: cb952cfcd670a790033fbec70de00a4db2541237
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9f5c78adad34b5fed53a50e85f0361eef469de99
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555846"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243070"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hébergement dans une application de service Windows
+
 Les services Windows (autrefois connus comme services Windows NT) fournissent un modèle de processus particulièrement adapté aux applications qui doivent exister dans un exécutable à durée d’exécution longue et n’affichent aucune forme d’interface utilisateur. La durée de vie de processus d'une application de service Windows est gérée par le gestionnaire de contrôle des services (SCM) qui vous autorise à démarrer, arrêter et suspendre les applications de service Windows. Vous pouvez configurer un processus de service Windows pour qu’il démarre automatiquement lorsque l’ordinateur démarre, ce qui en fait un environnement d’hébergement approprié pour les applications « Always on ». Pour plus d’informations sur les applications de service Windows, consultez [applications de service Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
   
  Les applications qui hébergent des services WCF (Windows Communication Foundation à long terme) partagent de nombreuses caractéristiques avec les services Windows. En particulier, les services WCF sont des exécutables de serveur de longue durée qui n’interagissent pas directement avec l’utilisateur et n’implémentent donc aucune forme d’interface utilisateur. Par conséquent, l’hébergement de services WCF dans une application de service Windows est une option permettant de créer des applications WCF robustes, à long terme.  

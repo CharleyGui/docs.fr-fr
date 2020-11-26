@@ -2,17 +2,19 @@
 title: Client
 ms.date: 03/30/2017
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-ms.openlocfilehash: 8f2d93458c2bec16b737d8bfcbd423494941dc3e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b9887d6200a0101be2185b5bc2fdcc969fc7c69e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585283"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243298"
 ---
 # <a name="client"></a>Client
+
 Cette section contient des exemples qui illustrent les applications clientes Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Interopérabilité des clients](client-interoperability.md)  
  Illustre l’interopérabilité entre WCF et d’autres technologies.  
   
@@ -32,4 +34,4 @@ Cette section contient des exemples qui illustrent les applications clientes Win
  Indique que vous ne devez pas utiliser l'instruction « using » C# pour nettoyer automatiquement les ressources lorsqu'un client typé est utilisé.  
   
  [Typed Client](typed-client.md)  
- Montre comment obtenir des informations à partir d’un client typé généré par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
+ Montre comment obtenir des informations à partir d’un client typé généré par l' [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).

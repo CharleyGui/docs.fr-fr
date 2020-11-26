@@ -1,5 +1,5 @@
 ---
-title: "Comment : ajouter des instructions de traçage dans le code d'une application"
+title: 'Procédure : Ajouter des instructions de trace dans le code d’une application'
 description: Découvrez comment ajouter des instructions de suivi au code d’application dans .NET. Les méthodes utilisées le plus souvent pour le suivi sont les méthodes d’écriture de la sortie dans les écouteurs.
 ms.date: 03/30/2017
 dev_langs:
@@ -14,17 +14,18 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-ms.openlocfilehash: 0c75a8775649aabe73b02187c4604d2eb3a8435b
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: 6beecf39d4372a194a9110ed8942b998443934d4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415886"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244208"
 ---
-# <a name="how-to-add-trace-statements-to-application-code"></a>Comment : ajouter des instructions de traçage dans le code d'une application
+# <a name="how-to-add-trace-statements-to-application-code"></a>Procédure : Ajouter des instructions de trace dans le code d’une application
+
 Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert** et **Fail**. Ces méthodes peuvent être réparties en deux catégories : **Write**, **WriteLine** et **Fail** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf** et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
   
- Quand vous concevez votre stratégie de débogage et de traçage, vous devez tenir compte de l'apparence souhaitée de la sortie. Si plusieurs instructions **Write** sont remplies avec des informations sans rapport, le journal créé est difficile à lire. D’un autre côté, si vous utilisez **WriteLine** pour placer des instructions connexes sur des lignes distinctes, il peut être difficile de déterminer les informations associées. En règle générale, utilisez plusieurs instructions **Write** si vous voulez combiner des informations provenant de plusieurs sources pour créer un message informatif unique et utilisez l’instruction **WriteLine** quand vous voulez créer un message unique et complet.  
+ Quand vous concevez votre stratégie de débogage et de traçage, vous devez tenir compte de l'apparence souhaitée de la sortie. Si plusieurs instructions **Write** sont remplies avec des informations non liées, vous créez un journal difficile à lire. En revanche, l’utilisation de **WriteLine** pour placer des instructions connexes sur des lignes distinctes peut compliquer la distinction entre les informations qui appartiennent. En règle générale, utilisez plusieurs instructions **Write** lorsque vous souhaitez combiner des informations provenant de plusieurs sources pour créer un message informatif unique et utilisez l’instruction **WriteLine** lorsque vous souhaitez créer un message unique et complet.  
   
 ### <a name="to-write-a-complete-line"></a>Pour écrire une ligne complète  
   
@@ -89,7 +90,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
 - <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>
-- [Traçage et instrumentation d'applications](tracing-and-instrumenting-applications.md)
-- [Comment : créer, initialiser et configurer les commutateurs de traçage](how-to-create-initialize-and-configure-trace-switches.md)
+- [Traçage et instrumentation d’applications](tracing-and-instrumenting-applications.md)
+- [Procédure : Créer, initialiser et configurer les commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md)
 - [Commutateurs de traçage](trace-switches.md)
 - [Écouteurs de suivi](trace-listeners.md)

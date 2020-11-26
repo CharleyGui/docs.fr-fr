@@ -14,12 +14,12 @@ helpviewer_keywords:
 - display attributes for debugger
 - DebuggerBrowsableAttribute attribute
 ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
-ms.openlocfilehash: f266bf7278f472c51dd355df5ba04a123cbd7df0
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: 2e556358490409a0fa7b345c4454eb43cf607e32
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415964"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244364"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Amélioration du débogage avec les attributs d'affichage de débogueur
 
@@ -42,6 +42,7 @@ Les attributs appliqués aux propriétés référencées dans l’expression ne 
 Par exemple, si un objet C# a un `ToString()` substitué, le débogueur appelle la substitution et affiche son résultat au lieu du `{<typeName>}.` standard. Ainsi, si vous avez substitué `ToString()`, vous n’avez pas besoin d’utiliser <xref:System.Diagnostics.DebuggerDisplayAttribute>. Si vous utilisez les deux, l'attribut <xref:System.Diagnostics.DebuggerDisplayAttribute> prend la priorité sur la substitution de `ToString()`.
 
 ## <a name="using-the-debuggerbrowsableattribute"></a>Utilisation de DebuggerBrowsableAttribute
+
  Appliquez l’attribut <xref:System.Diagnostics.DebuggerBrowsableAttribute> à un champ ou une propriété pour spécifier comment il ou elle doit être affiché(e) dans la fenêtre du débogueur. Le constructeur pour cet attribut prend l’une des valeurs d’énumération <xref:System.Diagnostics.DebuggerBrowsableState>, qui spécifie l’un des états suivants :
 
 - <xref:System.Diagnostics.DebuggerBrowsableState.Never> indique que le membre n’est pas affiché dans la fenêtre de données.  Par exemple, l’utilisation de cette valeur pour <xref:System.Diagnostics.DebuggerBrowsableAttribute> sur un champ supprime le champ de la hiérarchie ; le champ n’est pas affiché quand vous développez le type englobant en cliquant sur le signe plus (+) pour l’instance de type.
@@ -61,6 +62,7 @@ public static string y = "Test String";
 ```
 
 ## <a name="using-the-debuggertypeproxy"></a>Utilisation de DebuggerTypeProxy
+
  Utilisez l’attribut <xref:System.Diagnostics.DebuggerTypeProxyAttribute> quand vous avez besoin de modifier radicalement l’affichage de débogage d’un type, sans toutefois changer le type proprement dit. L’attribut <xref:System.Diagnostics.DebuggerTypeProxyAttribute> sert à spécifier un proxy d’affichage pour un type, ce qui permet à un développeur de personnaliser l’affichage en fonction du type.  Cet attribut, à l’instar de <xref:System.Diagnostics.DebuggerDisplayAttribute>, peut être utilisé au niveau de l’assembly, auquel cas la propriété <xref:System.Diagnostics.DebuggerTypeProxyAttribute.Target%2A> spécifie le type pour lequel le proxy sera utilisé. Il est généralement recommandé que cet attribut spécifie un type imbriqué privé qui se produit dans le type auquel l’attribut est appliqué.  Un évaluateur d’expression qui prend en charge les visionneuses de type vérifie la présence de cet attribut lors de l’affichage d’un type. Si l’attribut est trouvé, l’évaluateur d’expression substitue le type du proxy d’affichage pour le type auquel l’attribut est appliqué.
 
  Quand <xref:System.Diagnostics.DebuggerTypeProxyAttribute> est présent, la fenêtre des variables du débogueur affiche uniquement les membres publics du type de proxy. Les membres privés ne sont pas affichés. Le comportement de la fenêtre de données n’est pas modifié par les affichages améliorés par les attributs.
@@ -92,7 +94,7 @@ class MyHashtable : Hashtable
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 ### <a name="description"></a>Description
 

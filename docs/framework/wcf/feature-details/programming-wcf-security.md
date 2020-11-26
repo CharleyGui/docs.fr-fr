@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-ms.openlocfilehash: a473a2bb3582274baddf7595ac396a0f833f8daf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4ffbf6a05abd3ed9ebcea4b2e85f0dc305a4f2db
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535896"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244767"
 ---
 # <a name="programming-wcf-security"></a>Programmation de la sécurité dans WCF
+
 Cette rubrique décrit les tâches de programmation fondamentales utilisées pour créer une application de Windows Communication Foundation sécurisée (WCF). Cette rubrique traite uniquement de l’authentification, de la confidentialité et de l’intégrité, collectivement appelée *sécurité de transfert*. Cette rubrique ne couvre pas l’autorisation (le contrôle de l’accès aux ressources ou aux services); Pour plus d’informations sur l’autorisation, consultez [autorisation](authorization-in-wcf.md).  
   
 > [!NOTE]
@@ -24,6 +25,7 @@ Cette rubrique décrit les tâches de programmation fondamentales utilisées pou
  La programmation de la sécurité WCF est basée sur trois étapes : le mode de sécurité, un type d’informations d’identification du client et les valeurs d’informations d’identification. Ces étapes peuvent être effectuées au choix dans le code ou la configuration.  
   
 ## <a name="setting-the-security-mode"></a>Définition du mode de sécurité  
+
  La section suivante décrit les étapes générales de la programmation avec le mode de sécurité dans WCF :  
   
 1. Sélectionnez une liaison prédéfinie adaptée aux exigences de votre application. Pour obtenir la liste des options de liaison, consultez [liaisons fournies](../system-provided-bindings.md)par le système. Par défaut, la sécurité de pratiquement toutes les liaisons est activée. La seule exception est la <xref:System.ServiceModel.BasicHttpBinding> classe (à l’aide de la configuration, [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) ).  
@@ -55,6 +57,7 @@ Cette rubrique décrit les tâches de programmation fondamentales utilisées pou
      Une session sécurisée intervient lorsqu'un client et un service créent un canal à l'aide d'une clé symétrique (le client et le serveur utilisent la même clé pendant toute la durée de la conversation, jusqu'au terme de celle-ci).  
   
 ## <a name="setting-the-client-credential-type"></a>Définition du type d'informations d'identification client  
+
  Sélectionnez un type d'informations d'identification client comme requis. Pour plus d’informations, consultez [sélection d’un type d’informations d’identification](selecting-a-credential-type.md). Les types suivants d'informations d'identification client sont disponibles :  
   
 - `Windows`  
@@ -92,12 +95,14 @@ Cette rubrique décrit les tâches de programmation fondamentales utilisées pou
  [!code-vb[c_WsHttpService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#1)]  
   
 ## <a name="setting-service-credential-values"></a>Définition des valeurs d'informations d'identification service  
+
  Après avoir sélectionné un type d'informations d'identification client, vous devez définir les informations d'identification que le client et le service devront effectivement utiliser. Du côté service, les informations d'identification sont définies à l'aide de la classe <xref:System.ServiceModel.Description.ServiceCredentials> et sont retournées par la propriété <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> de la classe <xref:System.ServiceModel.ServiceHostBase>. Les types d'informations d'identification service et client ainsi que le mode de sécurité dépendent de la liaison utilisée. L'exemple de code suivant définit un certificat pour les informations d'identification service.  
   
  [!code-csharp[c_tcpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpservice/cs/source.cs#3)]
  [!code-vb[c_tcpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpservice/vb/source.vb#3)]  
   
 ## <a name="setting-client-credential-values"></a>Définition des valeurs d'informations d'identification client  
+
  Du côté client, les informations d'identification sont définies à l'aide de la classe <xref:System.ServiceModel.Description.ClientCredentials> et sont retournées par la propriété <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> de la classe <xref:System.ServiceModel.ClientBase%601>. L'exemple de code suivant définit un certificat pour les informations d'identification client, le protocole TCP étant utilisé.  
   
  [!code-csharp[c_TcpClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpclient/cs/source.cs#1)]

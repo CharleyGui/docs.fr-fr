@@ -2,22 +2,25 @@
 title: Problèmes de sécurité et conseils utiles pour le suivi
 ms.date: 03/30/2017
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-ms.openlocfilehash: 91a1b4bab3ac47f41821ad69228310c3993cf037
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 415b27f5ac40d097c5bdf7b09d63ce901003f83f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555040"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243875"
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>Problèmes de sécurité et conseils utiles pour le suivi
+
 Cette rubrique décrit comment empêcher l'exposition des informations sensibles et fournit également des conseils utiles en cas d'utilisation de WebHost.  
   
 ## <a name="using-a-custom-trace-listener-with-webhost"></a>Utilisation d'un écouteur de suivi personnalisé avec WebHost  
+
  Si vous écrivez votre propre écouteur de suivi, vous devez savoir que les traces peuvent être perdues dans le cas d'un service hébergé sur le Web. Lorsque WebHost recycle, il arrête le processus en cours pendant qu'un doublon prend la relève. Toutefois, les deux processus doivent encore avoir accès à la même ressource pendant quelques temps, ce qui dépend du type d'écouteur. Dans ce cas, `XmlWriterTraceListener` crée un fichier de suivi pour le deuxième processus, alors que le suivi des événements Windows gère plusieurs processus dans la même session et donne accès au même fichier. Si votre propre écouteur ne fournit pas de fonctionnalités semblables, des traces peuvent être perdues lorsque le fichier est verrouillé par les deux processus.  
   
  Vous devez également savoir qu'un écouteur de suivi personnalisé peut envoyer des traces et des messages sur le câble, par exemple à une base de données distante. En tant que responsable du déploiement d'applications, vous devez configurer les écouteurs personnalisés avec un contrôle d'accès approprié. Vous devez également appliquer un contrôle de sécurité sur toute information personnelle qui peut être exposée à l'emplacement distant.  
   
 ## <a name="logging-sensitive-information"></a>Enregistrement des informations sensibles  
+
  Les suivis contiennent des en-têtes de messages lorsqu'un message est dans la portée. Lorsque le suivi est activé, les informations personnelles dans les en-têtes spécifiques à l'application, telles qu'une chaîne de requête, et les informations de corps, telles qu'un numéro de carte de crédit, peuvent devenir visibles dans les journaux. Le responsable du déploiement d'applications est chargé de mettre en vigueur le contrôle d'accès sur les fichiers de configuration et de suivi. Si vous ne souhaitez pas que ce type d'informations soit visible, vous devez désactiver le suivi ou éliminer une partie des données par filtrage si vous souhaitez partager les journaux de suivi.  
   
  Les conseils suivants peuvent vous aider à empêcher que le contenu d'un fichier de suivi ne soit exposé involontairement :  

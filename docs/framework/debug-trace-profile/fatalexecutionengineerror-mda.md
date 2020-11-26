@@ -13,23 +13,27 @@ helpviewer_keywords:
 - FatalExecutionEngineError MDA
 - managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-ms.openlocfilehash: 0806d2eaa1752c88bebd03304fbe5c8094416a48
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: a9347338d53755b74b3ff291f75cb6b221134130
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415925"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244273"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>Assistant Débogage managé fatalExecutionEngineError
+
 L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand une erreur irrécupérable dans le common language runtime a été détectée. Le processus se termine.  
   
 ## <a name="symptoms"></a>Symptômes  
+
  Arrêt inattendu du processus. D’autres symptômes ne peuvent pas être déterminés, car une défaillance du common language runtime peut se produire pour différentes raisons.  
   
 ## <a name="cause"></a>Cause  
+
  Le common language runtime a été endommagé de façon irréversible. Ceci est dû le plus souvent à une altération des données, qui peut être provoquée par un certain nombre de problèmes, comme des fonctions d’appel de code non managé incorrectement formées et au passage de données non valides au CLR.  
   
 ## <a name="resolution"></a>Résolution  
+
  L’activation d’Assistants Débogage managé supplémentaires peut aider à identifier le problème. Les Assistants Débogage managé suivants peuvent être particulièrement utiles pour diagnostiquer le problème :  
   
 - [invalidOverlappedToPinvoke](invalidoverlappedtopinvoke-mda.md)  
@@ -57,9 +61,11 @@ L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand un
 - [invalidGCHandleCookie](invalidgchandlecookie-mda.md)  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+
  Cet Assistant Débogage managé n’a aucun effet sur le comportement du runtime.  
   
 ## <a name="output"></a>Output  
+
  L’adresse de la fonction CLR qui a provoqué l’erreur irrécupérable, l’ID du thread où l’erreur s’est produite et le code d’erreur.  
   
 ## <a name="configuration"></a>Configuration  
@@ -76,4 +82,4 @@ L’Assistant Débogage managé `fatalExecutionEngineError` est activé quand un
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution.Cer>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](diagnosing-errors-with-managed-debugging-assistants.md)
