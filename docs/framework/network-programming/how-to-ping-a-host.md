@@ -1,21 +1,22 @@
 ---
-title: 'Procédure : exécution d’une requête ping'
+title: 'Procédure : Exécuter une requête ping sur un hôte'
 description: Utilisez cet exemple de code pour apprendre à exécuter une commande ping sur un hôte distant dans le .NET Framework. Cet exemple nécessite des références à l’espace de noms System.Net.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-ms.openlocfilehash: ac62f58eea41419de2d5651269154d9abb757aba
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 1e77f7eb4dbb8a69848bc6b20e98e0df931f22c9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502494"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244026"
 ---
-# <a name="how-to-ping-a-host"></a><span data-ttu-id="ec468-104">Procédure : exécution d’une requête ping</span><span class="sxs-lookup"><span data-stu-id="ec468-104">How to: Ping a Host</span></span>
-<span data-ttu-id="ec468-105">Cet exemple montre comment exécuter une requête ping sur un hôte distant.</span><span class="sxs-lookup"><span data-stu-id="ec468-105">This sample shows how to ping a remote host.</span></span>  
+# <a name="how-to-ping-a-host"></a><span data-ttu-id="f3850-104">Procédure : Exécuter une requête ping sur un hôte</span><span class="sxs-lookup"><span data-stu-id="f3850-104">How to: Ping a Host</span></span>
+
+<span data-ttu-id="f3850-105">Cet exemple montre comment exécuter une requête ping sur un hôte distant.</span><span class="sxs-lookup"><span data-stu-id="f3850-105">This sample shows how to ping a remote host.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ec468-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="ec468-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f3850-106"> Exemple</span><span class="sxs-lookup"><span data-stu-id="f3850-106">Example</span></span>  
   
 ```csharp
 using System;  
@@ -121,7 +122,8 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="ec468-107">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="ec468-107">Compiling the Code</span></span>  
- <span data-ttu-id="ec468-108">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="ec468-108">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="f3850-107">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="f3850-107">Compiling the Code</span></span>  
+
+ <span data-ttu-id="f3850-108">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="f3850-108">This example requires:</span></span>  
   
-- <span data-ttu-id="ec468-109">Références à l’espace de noms **System.Net**.</span><span class="sxs-lookup"><span data-stu-id="ec468-109">References to the **System.Net** namespace.</span></span>
+- <span data-ttu-id="f3850-109">Références à l’espace de noms **System.Net**.</span><span class="sxs-lookup"><span data-stu-id="f3850-109">References to the **System.Net** namespace.</span></span>
