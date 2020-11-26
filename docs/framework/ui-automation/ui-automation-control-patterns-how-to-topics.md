@@ -8,22 +8,24 @@ helpviewer_keywords:
 - control patterns, UI Automation
 - UI Automation, control patterns
 ms.assetid: 72c80262-8ca9-4624-9bd6-96984c5b7c5c
-ms.openlocfilehash: ff8602382c8064cc5b7f6df44bda3413a7e67de1
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 929f44ca2d4daa75d733059b4072690a6b8f8d91
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163859"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241952"
 ---
-# <a name="ui-automation-control-patterns-how-to-topics"></a><span data-ttu-id="ceba4-103">Rubriques "Comment" relatives aux modèles de contrôle UI Automation</span><span class="sxs-lookup"><span data-stu-id="ceba4-103">UI Automation Control Patterns How-to Topics</span></span>
+# <a name="ui-automation-control-patterns-how-to-topics"></a><span data-ttu-id="57f42-103">Rubriques "Comment" relatives aux modèles de contrôle UI Automation</span><span class="sxs-lookup"><span data-stu-id="57f42-103">UI Automation Control Patterns How-to Topics</span></span>
+
 > [!NOTE]
-> <span data-ttu-id="ceba4-104">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="ceba4-104">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="ceba4-105">Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span><span class="sxs-lookup"><span data-stu-id="ceba4-105">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span></span>  
+> <span data-ttu-id="57f42-104">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="57f42-104">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="57f42-105">Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span><span class="sxs-lookup"><span data-stu-id="57f42-105">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span></span>  
   
- <span data-ttu-id="ceba4-106">Cette section contient des informations détaillées sur l’implémentation des modèles de contrôle.</span><span class="sxs-lookup"><span data-stu-id="ceba4-106">This section contains detailed information about implementing control patterns.</span></span>  
+ <span data-ttu-id="57f42-106">Cette section contient des informations détaillées sur l’implémentation des modèles de contrôle.</span><span class="sxs-lookup"><span data-stu-id="57f42-106">This section contains detailed information about implementing control patterns.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ceba4-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="ceba4-107">In This Section</span></span>  
- [<span data-ttu-id="ceba4-108">Exposer le contenu d'un tableau à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="ceba4-108">Expose the Content of a Table Using UI Automation</span></span>](expose-the-content-of-a-table-using-ui-automation.md)  
- [<span data-ttu-id="ceba4-109">Obtenir des modèles de contrôle UI Automation pris en charge</span><span class="sxs-lookup"><span data-stu-id="ceba4-109">Get Supported UI Automation Control Patterns</span></span>](get-supported-ui-automation-control-patterns.md)  
- [<span data-ttu-id="ceba4-110">Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="ceba4-110">Get the Toggle State of a Check Box Using UI Automation</span></span>](get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
- [<span data-ttu-id="ceba4-111">Appeler un contrôle à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="ceba4-111">Invoke a Control Using UI Automation</span></span>](invoke-a-control-using-ui-automation.md)  
- [<span data-ttu-id="ceba4-112">Déplacer un élément UI Automation</span><span class="sxs-lookup"><span data-stu-id="ceba4-112">Move a UI Automation Element</span></span>](move-a-ui-automation-element.md)
+## <a name="in-this-section"></a><span data-ttu-id="57f42-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="57f42-107">In This Section</span></span>  
+
+ [<span data-ttu-id="57f42-108">Exposer le contenu d'un tableau à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="57f42-108">Expose the Content of a Table Using UI Automation</span></span>](expose-the-content-of-a-table-using-ui-automation.md)  
+ [<span data-ttu-id="57f42-109">Obtenir des modèles de contrôle UI Automation pris en charge</span><span class="sxs-lookup"><span data-stu-id="57f42-109">Get Supported UI Automation Control Patterns</span></span>](get-supported-ui-automation-control-patterns.md)  
+ [<span data-ttu-id="57f42-110">Obtenir l'état bascule d'une case à cocher à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="57f42-110">Get the Toggle State of a Check Box Using UI Automation</span></span>](get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
+ [<span data-ttu-id="57f42-111">Appeler un contrôle à l'aide d'UI Automation</span><span class="sxs-lookup"><span data-stu-id="57f42-111">Invoke a Control Using UI Automation</span></span>](invoke-a-control-using-ui-automation.md)  
+ [<span data-ttu-id="57f42-112">Déplacer un élément UI Automation</span><span class="sxs-lookup"><span data-stu-id="57f42-112">Move a UI Automation Element</span></span>](move-a-ui-automation-element.md)
