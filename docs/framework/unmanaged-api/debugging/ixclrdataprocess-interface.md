@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 6a6def8fc10f04b89aa8d8c735025b01f9b6ddfb
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 376ec2b840bc17c79ed1f27c17a8ddd22c37a0f4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420758"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245351"
 ---
 # <a name="ixclrdataprocess-interface"></a>IXCLRDataProcess, interface
 
@@ -32,6 +32,7 @@ Fournit des méthodes pour interroger les informations relatives à un processus
 
 | Méthode                                                                                                                                               | Description                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [GetRuntimeNameByAddress](ixclrdataprocess-getruntimenamebyaddress-method.md)                     | Obtient un nom pour l’adresse donnée.                                                               |
 | [GetAppDomainByUniqueId](ixclrdataprocess-getappdomainbyuniqueid-method.md)                       | Obtient un `AppDomain` dans un processus par son ID unique.                                              |
 | [StartEnumModules](ixclrdataprocess-startenummodules-method.md)                                   | Fournit un handle pour énumérer les modules d’un processus.                                        |
 | [EnumModule](ixclrdataprocess-enummodule-method.md)                                               | Énumère les modules de ce processus.                                                         |
@@ -44,7 +45,7 @@ Fournit des méthodes pour interroger les informations relatives à un processus
 
 Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec `5c552ab6-fc09-4cb3-8e36-22fa03c798b7` un GUID qui peut être obtenu par le biais des mécanismes com habituels.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Spécifications
 
 **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).
 **En-tête :** None  

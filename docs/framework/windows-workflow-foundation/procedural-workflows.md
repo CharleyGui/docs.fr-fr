@@ -3,18 +3,20 @@ title: Workflows procéduraux
 description: Dans Workflow Foundation, les flux de travail de procédure utilisent des méthodes de contrôle de flux similaires à celles trouvées dans les langages de procédure.
 ms.date: 03/30/2017
 ms.assetid: 52401de9-9115-472d-8fd9-047af6a072b9
-ms.openlocfilehash: 97664c1352928e7d05c2ed15fc118dd21474cfc3
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 13d1b5e55b84687e2a78db1a94317b8b1e33328c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421434"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246028"
 ---
 # <a name="procedural-workflows"></a>Workflows procéduraux
+
 Les workflows procéduraux utilisent des méthodes de contrôle de flux semblables à ceux recherchés dans les langages de procédures. Ces constructions comprennent notamment `While` et `If`. Ces workflows peuvent être composés librement à l'aide d'autres activités de contrôle de flux telles que <xref:System.Activities.Statements.Flowchart> et <xref:System.Activities.Statements.Sequence>.  
   
 ## <a name="controlling-execution-flow"></a>Contrôle du flux d'exécution  
- La bibliothèque d'activité de workflow a des activités pour modéliser la plupart des méthodes de contrôle de flux utilisé dans les langages de procédures. Il s’agit des tables suivantes :  
+
+ La bibliothèque d'activité de workflow a des activités pour modéliser la plupart des méthodes de contrôle de flux utilisé dans les langages de procédures. notamment :  
   
 - <xref:System.Activities.Statements.While>  
   
@@ -39,4 +41,4 @@ Les workflows procéduraux utilisent des méthodes de contrôle de flux semblabl
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Workflows d’organigramme](flowchart-workflows.md)
+- [Workflows d'organigramme](flowchart-workflows.md)

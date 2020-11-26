@@ -1,18 +1,19 @@
 ---
-title: 'Comment : exporter des métadonnées à partir de points de terminaison de service'
+title: 'Procédure : exporter des métadonnées à partir de points de terminaison de service'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
-ms.openlocfilehash: 58e86e5566775048e081bfb4ac217a7747b98a35
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c253358b68cf18a23bab4d12d4ad760874103bff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579408"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246405"
 ---
-# <a name="how-to-export-metadata-from-service-endpoints"></a>Comment : exporter des métadonnées à partir de points de terminaison de service
+# <a name="how-to-export-metadata-from-service-endpoints"></a>Procédure : exporter des métadonnées à partir de points de terminaison de service
+
 Cette rubrique explique comment exporter des métadonnées à partir de points de terminaison de service.  
   
 ### <a name="to-export-metadata-from-service-endpoints"></a>Pour exporter des métadonnées à partir de points de terminaison de service  
@@ -46,17 +47,19 @@ Cette rubrique explique comment exporter des métadonnées à partir de points d
   
 7. Vous pouvez maintenant utiliser les métadonnées, par exemple les écrire dans un fichier en appelant la méthode <xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Les éléments suivants représentent l'intégralité du code pour cet exemple.  
   
  [!code-csharp[S_UEWsdlExporter#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#0)]
  [!code-vb[S_UEWsdlExporter#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Lors de la compilation de Program.cs, faites référence à System.ServiceModel.dll.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d'ensemble de l'architecture de métadonnées](metadata-architecture-overview.md)
 - [Utilisation des métadonnées](using-metadata.md)
-- [Points de terminaison : adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)
+- [Points de terminaison : Adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)

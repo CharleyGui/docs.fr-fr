@@ -1,18 +1,19 @@
 ---
-title: 'Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing'
+title: 'Procédure : échanger des messages avec des points de terminaison WCF et des applications Message Queuing'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
-ms.openlocfilehash: 0775de90903aed27a8d0006614a4b6f2d857eee3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8f8baf345059c01b0fef3b61ef85556151269118
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597096"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246418"
 ---
-# <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing
+# <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Procédure : échanger des messages avec des points de terminaison WCF et des applications Message Queuing
+
 Vous pouvez intégrer des applications de Message Queuing (MSMQ) existantes à des applications Windows Communication Foundation (WCF) à l’aide de la liaison d’intégration MSMQ pour convertir des messages MSMQ vers et depuis des messages WCF. Cela vous permet d’appeler des applications de récepteur MSMQ à partir de clients WCF, ainsi que d’appeler des services WCF à partir d’applications d’expéditeur MSMQ.  
   
  Dans cette section, nous expliquons comment utiliser <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> pour la communication mise en file d’attente entre (1) un client WCF et un service d’application MSMQ écrit à l’aide de System. Messaging et (2) un client d’application MSMQ et un service WCF.  
@@ -61,7 +62,7 @@ Vous pouvez intégrer des applications de Message Queuing (MSMQ) existantes à d
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d'ensemble des files d'attente](queues-overview.md)
-- [Comment : échanger des messages en file d'attente avec des points de terminaison WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)
+- [Procédure : échanger des messages mis en file d’attente avec des points de terminaison WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)
 - [Windows Communication Foundation to Message Queuing](../samples/wcf-to-message-queuing.md)
 - [Installation de Message Queuing (MSMQ)](../samples/installing-message-queuing-msmq.md)
 - [Message Queuing to Windows Communication Foundation](../samples/message-queuing-to-wcf.md)

@@ -2,17 +2,19 @@
 title: Schéma de la base de données de persistance
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 04b57789e7c1ab6bfebd9c9b345ee0fb7dfb3e66
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f0ee076aa327f298007dfb18af324fb81c309067
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558236"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246093"
 ---
 # <a name="persistence-database-schema"></a>Schéma de la base de données de persistance
+
 Cette rubrique décrit les vues publiques prises en charge par le magasin d'instances de workflow SQL.  
   
 ## <a name="instances-view"></a>Vue Instances  
+
  La vue **instances** contient des informations générales sur toutes les instances de workflow dans la base de données.  
   
 |Nom de la colonne|Type de colonne|Description|  
@@ -28,9 +30,9 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |CurrentMachine|Nvarchar(128)|Indique le nom de l'ordinateur ayant actuellement l'instance de workflow chargée en mémoire.|  
 |LastMachine|Nvarchar(450)|Indique le dernier ordinateur qui a chargé l'instance de workflow.|  
 |ExecutionStatus|Nvarchar(450)|Indique l'état d'exécution actuel du workflow. Les États possibles sont les suivants : **exécution**, **inactif**, **fermé**.|  
-|IsInitialized|bit|Indique si l'instance de workflow a été initialisée. Une instance de workflow initialisée est une instance de workflow rendue persistante au moins une fois.|  
-|IsSuspended|bit|Indique si l'instance de workflow a été interrompue.|  
-|IsCompleted|bit|Indique si l'exécution de l'instance de workflow est terminée. **Remarque :**  IIF la propriété **InstanceCompletionAction** est définie sur **DeleteAll**, les instances sont supprimées de la vue une fois l’opération terminée.|  
+|IsInitialized|Bit|Indique si l'instance de workflow a été initialisée. Une instance de workflow initialisée est une instance de workflow rendue persistante au moins une fois.|  
+|IsSuspended|Bit|Indique si l'instance de workflow a été interrompue.|  
+|IsCompleted|Bit|Indique si l'exécution de l'instance de workflow est terminée. **Remarque :**  IIF la propriété **InstanceCompletionAction** est définie sur **DeleteAll**, les instances sont supprimées de la vue une fois l’opération terminée.|  
 |EncodingOption|TinyInt|Décrit l'encodage utilisé pour sérialiser les propriétés de données.<br /><br /> -0 – aucun encodage<br />-1 – GzipStream|  
 |ReadWritePrimitiveDataProperties|Varbinary(max)|Contient les propriétés de données d'instance sérialisée qui seront retournées au runtime de workflow lors du chargement de l'instance.<br /><br /> Chaque propriété primitive est un type CLR natif, ce qui signifie qu'aucun assembly particulier n'est requis pour désérialiser l'objet blob.|  
 |WriteOnlyPrimitiveDataProperties|Varbinary(max)|Contient les propriétés de données d'instance sérialisée qui ne sont pas retournées au runtime de workflow lors du chargement de l'instance.<br /><br /> Chaque propriété primitive est un type CLR natif, ce qui signifie qu'aucun assembly particulier n'est requis pour désérialiser l'objet blob.|  
@@ -38,7 +40,7 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |WriteOnlyComplexDataProperties|Varbinary(max)|Contient les propriétés de données d'instance sérialisée qui ne sont pas retournées au runtime de workflow lors du chargement de l'instance.<br /><br /> Un désérialiseur nécessiterait une connaissance de tous les types d'objets stockés dans cet objet blob.|  
 |IdentityName|Nvarchar(max)|Nom de la définition de workflow.|  
 |IdentityPackage|Nvarchar(max)|Informations sur le package fournies lors de la création du workflow (comme le nom de l'assembly).|  
-|Générer|BigInt|Numéro de la build pour la version de workflow.|  
+|Build|BigInt|Numéro de la build pour la version de workflow.|  
 |Majeure|BigInt|Numéro de la version majeure du workflow.|  
 |Secondaire|BigInt|Numéro de la version mineure du workflow.|  
 |Révision|BigInt|Numéro de révision de la version du workflow.|  
@@ -47,6 +49,7 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 > La vue **instances** contient également un déclencheur Delete. Les utilisateurs disposant des autorisations appropriées peuvent exécuter, sur cette vue, des instructions de suppression qui supprimeront de force des instances de workflow de la base de données. Il est recommandé de n'effectuer une suppression directe dans la vue qu'en dernier recours, car la suppression d'une instance sous le runtime de workflow peut avoir des conséquences inattendues. Utilisez plutôt le point de terminaison de gestion de l'instance de workflow pour que le runtime de workflow arrête l'instance. Si vous voulez supprimer un grand nombre d'instances de la vue, assurez-vous qu'il n'y aucun runtime actif susceptible d'être en train d'utiliser ces instances.  
   
 ## <a name="servicedeployments-view"></a>Vue ServiceDeployments  
+
  La vue **ServiceDeployments** contient des informations de déploiement pour tous les services de workflow hébergés sur le Web (IIS/was). Chaque instance de workflow hébergée sur le Web contiendra un **ServiceDeploymentId** qui fait référence à une ligne dans cette vue.  
   
 |Nom de la colonne|Type de colonne|Description|  
@@ -65,6 +68,7 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 2. Toute tentative de suppression d’une ligne ServiceDeployment référencée par des entrées de la vue **instances** se traduira par une absence d’opération. Vous ne pouvez supprimer que les lignes ServiceDeployment sans références.  
   
 ## <a name="instancepromotedproperties-view"></a>Vue InstancePromotedProperties  
+
  La vue **InstancePromotedProperties** contient des informations sur toutes les propriétés promues qui sont spécifiées par l’utilisateur. Une propriété promue fonctionne comme une propriété de première classe, qu'un utilisateur peut utiliser dans des requêtes pour récupérer des instances.  Par exemple, un utilisateur peut ajouter une promotion PurchaseOrder qui stocke toujours le coût d’une commande dans la colonne **valeur1** . Cela permettrait à un utilisateur de rechercher toutes les commandes fournisseur dont le coût dépasse une certaine valeur.  
   
 |Type de colonne|Type de colonne|Description|  

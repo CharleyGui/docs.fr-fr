@@ -3,20 +3,22 @@ title: Prise en charge de plusieurs liaisons de site IIS
 description: Découvrez comment fournir plusieurs adresses de base qui utilisent le même protocole sur le même site lors de l’hébergement d’un service WCF dans IIS.
 ms.date: 03/30/2017
 ms.assetid: 40440495-254d-45c8-a8c6-b29f364892ba
-ms.openlocfilehash: 6af4d885c7fc3d4dcc12ffb4bf6670f1a9b3d78c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7b9118a7a507939aab6276716722be8d6d02628c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546196"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246288"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Prise en charge de plusieurs liaisons de site IIS
+
 Lorsque vous hébergez un service Windows Communication Foundation (WCF) sous Internet Information Services (IIS) 7,0, vous souhaiterez peut-être fournir plusieurs adresses de base qui utilisent le même protocole sur le même site. Cela permet au même service de répondre à plusieurs URI différents. Cela est utile lorsque vous souhaitez héberger un service qui écoute sur `http://www.contoso.com` et `http://contoso.com` . Il est également utile de créer un service qui a une adresse de base pour les utilisateurs internes et une autre adresse de base pour les utilisateurs externes. Par exemple : `http://internal.contoso.com` et `http://www.contoso.com`.  
   
 > [!NOTE]
 > Ces fonctionnalités ne sont disponibles qu'en utilisant le protocole HTTP.  
   
 ## <a name="multiple-base-addresses"></a>Plusieurs adresses de base  
+
  Cette fonctionnalité est disponible uniquement pour les services WCF hébergés sous IIS. Cette fonctionnalité n’est pas activée par défaut. Pour l’activer, vous devez ajouter l' `multipleSiteBindingsEnabled` attribut à l' `serviceHostingEnvironment` élément <> dans votre fichier Web.config et lui affecter la valeur `true` , comme illustré dans l’exemple suivant.  
   
 ```xml  

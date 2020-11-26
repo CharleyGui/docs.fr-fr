@@ -2,15 +2,16 @@
 title: Bibliothèque d'activités
 ms.date: 03/30/2017
 ms.assetid: 5323e9d4-71d6-47eb-bfa6-31feac62044d
-ms.openlocfilehash: fae2a94b5e5e776625aa7f26700980640b66afd4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a0c289315d7181645573098916788f18493abb8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142899"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245694"
 ---
 # <a name="activity-library"></a>Bibliothèque d'activités
-Cette section contient des échantillons qui démontrent des activités personnalisées avancées dans Windows Workflow Foundation (WF).  
+
+Cette section contient des exemples qui illustrent des activités personnalisées avancées dans Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -20,11 +21,11 @@ Cette section contient des échantillons qui démontrent des activités personna
  [ParallelForEach limité](throttled-parallel-foreach.md)  
  Montre comment l’activité `ThrottleParallelForEach` est semblable à l’activité <xref:System.Activities.Statements.ParallelForEach%601> hormis le seul fait qu’elle permet la définition d’un facteur de concurrence pour restreindre le nombre de branches simultanées à exécuter.
   
- [Activités d’accès aux bases de données](database-access-activities.md)  
- Démontre comment créer des activités qui permettent aux bases de données d’accéder à des bases de données de récupérer ou de modifier des informations et [d’utiliser ADO.NET](../../data/adonet/index.md) pour accéder à la base de données.  
+ [Activités d'accès aux bases de données](database-access-activities.md)  
+ Montre comment créer des activités qui permettent d’accéder aux bases de données afin de récupérer ou de modifier des informations et d’utiliser [ADO.net](../../data/adonet/index.md) pour accéder à la base de données.  
   
- [Activité de stratégie externalisée dans .NET Framework 4.5](externalized-policy-activity-in-net-framework-4-5.md)  
- Démontre comment l’activité ExternalizedPolicy4 permet d’exécuter la Fondation Windows Workflow existante dans .NET <xref:System.Workflow.Activities.Rules.RuleSet> Framework 3.5 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 3.5) objets dans Windows Workflow Foundation en (WF 4.5) directement en utilisant le moteur de règles qui est expédié dans WF 3.5.
+ [Activité de stratégie externalisée dans .NET Framework 4.5](externalized-policy-activity-in-net-framework-4-5.md)  
+ Montre comment l’activité ExternalizedPolicy4 permet d’exécuter des Windows Workflow Foundation existantes dans des objets .NET Framework 3,5 (WF 3,5) <xref:System.Workflow.Activities.Rules.RuleSet> dans Windows Workflow Foundation dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4,5) directement à l’aide du moteur de règles fourni dans WF 3,5.
   
  [ForEach non générique](non-generic-foreach.md)  
  Montre comment créer une version non générique de l'activité <xref:System.Activities.Statements.ForEach%601>.  

@@ -2,15 +2,16 @@
 title: Protocoles de transaction version 1.0
 ms.date: 03/30/2017
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-ms.openlocfilehash: 9e21da0dfdda514e60b6f53090f5225b57aa1b75
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 7b1cfc21a1361cee3027fd5a61ec61a4a0a998b7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720372"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246236"
 ---
 # <a name="transaction-protocols-version-10"></a>Protocoles de transaction version 1.0
-Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de la transaction WS-Atomic et les protocoles WS-coordination. Pour plus d’informations sur la version 1,1, consultez [protocoles de transaction](transaction-protocols.md).  
+
+Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de la transaction WS-Atomic et des protocoles de WS-Coordination. Pour plus d’informations sur la version 1,1, consultez [protocoles de transaction](transaction-protocols.md).  
   
 |Spécification/Document|Lien|  
 |-----------------------------|----------|  
@@ -68,14 +69,17 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 |xsd|`http://www.w3.org/2001/XMLSchema`|  
   
 ## <a name="transaction-manager-bindings"></a>Liaisons de gestionnaire de transactions  
+
  R1001 : les gestionnaires de transactions doivent utiliser SOAP 1.1 et WS-Addressing 2004/08 pour les échanges de message WS-Atomic Transaction et WS-Coordination.  
   
  Les messages d’application ne sont pas contraints à ces liaisons et sont décrits ultérieurement.  
   
 ### <a name="transaction-manager-https-binding"></a>Liaison HTTPS de gestionnaire de transactions  
+
  La liaison HTTPS de gestionnaire de transactions s'appuie uniquement sur le transport de sécurité pour assurer la sécurité et établir la confiance entre chaque paire expéditeur-récepteur dans l'arborescence de transactions.  
   
 #### <a name="https-transport-configuration"></a>Configuration du transport HTTPS  
+
  Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions. L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation :  
   
 - R1111 : les certificats X.509 présentés sur le câble doivent avoir un nom de sujet qui correspond au nom de domaine complet de l'ordinateur d'origine.  
@@ -83,20 +87,25 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 - B1112 : le DNS doit être fonctionnel entre chaque paire expéditeur-récepteur du système pour que les vérifications du nom de sujet X.509 réussissent.  
   
 #### <a name="activation-and-registration-binding-configuration"></a>Configuration de liaison d'activation et d'inscription  
+
  WCF requiert une liaison duplex de demande/réponse avec corrélation sur HTTPs. (Pour plus d'informations sur la corrélation et les descriptions des modèles d'échange de messages demande/réponse, consultez WS-Atomic Transaction, section 8.)  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Configuration de liaison de protocole 2PC  
+
  WCF prend en charge les messages unidirectionnels (datagrammes) sur HTTPs. La corrélation au sein des messages est considérée comme un détail d'implémentation.  
   
  B2131 : les implémentations doivent prendre en charge `wsa:ReferenceParameters` comme décrit dans WS-Addressing pour obtenir la corrélation des messages 2PC de WCF.  
   
 ### <a name="transaction-manager-mixed-security-binding"></a>Liaison de sécurité mixte de gestionnaire de transactions  
- Il s’agit d’une liaison alternative (en mode mixte) qui utilise la sécurité de transport associée au modèle de jeton WS-coordination émis à des fins d’établissement d’identité.  L’activation et l’inscription sont les seuls éléments qui diffèrent entre les deux liaisons.  
+
+ Il s’agit d’une liaison alternative (en mode mixte) qui utilise la sécurité de transport associée à l' WS-Coordination modèle de jeton émis à des fins d’établissement d’identité.  L’activation et l’inscription sont les seuls éléments qui diffèrent entre les deux liaisons.  
   
 #### <a name="https-transport-configuration"></a>Configuration du transport HTTPS  
+
  Les certificats X.509 permettent d'établir l'identité de gestionnaire de transactions. L'authentification client/serveur est requise, et l'autorisation client/serveur est considérée comme un détail d'implémentation.  
   
 #### <a name="activation-message-binding-configuration"></a>Configuration de liaison de message d’activation  
+
  En général, les messages d’activation ne participent pas à l’interopérabilité car ils se produisent habituellement entre une application et son gestionnaire de transactions local.  
   
  B1221 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](messaging-protocols.md)) pour les messages d’activation. Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
@@ -110,6 +119,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
  Un nouvel `t:IssuedTokens` en-tête doit être généré pour être attaché au `wscoor:CreateCoordinationContextResponse` message sortant.  
   
 #### <a name="registration-message-binding-configuration"></a>Configuration de liaison de message d'inscription  
+
  B1231 : WCF utilise la liaison HTTPs duplex (décrite dans [protocoles de messagerie](messaging-protocols.md)). Les messages de demande et de réponse sont corrélés à l'aide de WS-Addressing 2004/08.  
   
  WS-AtomicTransaction, section 8, fournit des informations supplémentaires sur la corrélation et des descriptions des modèles d’échange de messages.  
@@ -119,11 +129,13 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
  L' `wsse:Timestamp` élément doit être signé à l’aide du `SecurityContextToken STx` émis. Cette signature est une preuve de possession du jeton associée à une transaction spécifique et est utilisée pour authentifier un participant qui s’inscrit à la transaction. Le message RegistrationResponse est renvoyé sur HTTPS.  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Configuration de liaison de protocole 2PC  
+
  WCF prend en charge les messages unidirectionnels (datagrammes) sur HTTPs. La corrélation au sein des messages est considérée comme un détail d'implémentation.  
   
  B2131 : les implémentations doivent prendre en charge `wsa:ReferenceParameters` comme décrit dans WS-Addressing pour obtenir la corrélation des messages 2PC de WCF.  
   
 ## <a name="application-message-exchange"></a>Échange de messages d'application  
+
  Les applications sont libres d’utiliser n’importe quelle liaison spécifique pour les messages interapplication, tant que la liaison satisfait aux exigences de sécurité suivantes :  
   
 - R2001 : les messages interapplication doivent transmettre l'en-tête `t:IssuedTokens` avec `CoordinationContext` dans l'en-tête du message.  
@@ -137,6 +149,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 ## <a name="message-examples"></a>Exemples de message  
   
 ### <a name="createcoordinationcontext-requestresponse-messages"></a>Messages de demande/réponse CreateCoordinationContext  
+
  Les messages suivants suivent un modèle de demande/réponse.  
   
 #### <a name="createcoordinationcontext"></a>CreateCoordinationContext  
@@ -248,6 +261,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 ```  
   
 ### <a name="registration-messages"></a>Messages d'inscription  
+
  Les messages suivants sont des messages d'inscription.  
   
 #### <a name="register"></a>S’inscrire  
@@ -348,6 +362,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 ```  
   
 ### <a name="two-phase-commit-protocol-messages"></a>Messages de protocole de validation à deux phases  
+
  Le message suivant concerne le protocole de validation en deux phases (2PC).  
   
 #### <a name="commit"></a>Commit  
@@ -374,6 +389,7 @@ Windows Communication Foundation (WCF) version 1 implémente la version 1,0 de l
 ```  
   
 ### <a name="application-messages"></a>Messages d'application  
+
  Les messages suivants sont des messages d'application.  
   
 #### <a name="application-message-request"></a>Message d'application - demande  

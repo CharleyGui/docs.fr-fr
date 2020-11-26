@@ -2,21 +2,23 @@
 title: Prise en charge du format JSON et d'autres formats de transfert de données
 ms.date: 03/30/2017
 ms.assetid: a527f1be-4e37-4beb-9a95-291480d19627
-ms.openlocfilehash: 168bd9a76b0ff6ff8e6625acc93a5409d43a817c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5f625c4ac6f2fa65df4d5a046b747c58f7a725b0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594762"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246301"
 ---
 # <a name="support-for-json-and-other-data-transfer-formats"></a>Prise en charge du format JSON et d'autres formats de transfert de données
+
 JSON (JavaScript Object Notation) est un format d'encodage de données efficace qui permet l'échange rapide de petites quantités de données entre les navigateurs clients et les services Web compatibles AJAX (Asynchronous JavaScript and XML).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Sérialisation JSON autonome](stand-alone-json-serialization.md)  
  Décrit la sérialisation JSON autonome  
   
- [Comment : sérialiser et désérialiser des données JSON](how-to-serialize-and-deserialize-json-data.md)  
+ [Procédure : sérialiser et désérialiser des données JSON](how-to-serialize-and-deserialize-json-data.md)  
  Décrit comment sérialiser des objets de type .NET dans des données encodées JSON et ensuite désérialiser les données au format JSON en instances de types .NET à l'aide de <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
  [Mappage entre JSON et XML](mapping-between-json-and-xml.md)  
