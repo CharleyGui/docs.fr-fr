@@ -6,19 +6,21 @@ helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-ms.openlocfilehash: 8220e8e773409be76bc7522d57551f1bddb90e5d
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 7de4ad48ae275b4119f05a5269e9819c201027fd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474356"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240587"
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
+
 Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
   
  Tous les événements de chargeur sont déclenchés sous le mot clé `LoaderKeyword` (0x8). Les événements `DCStart` et `DCEnd` sont déclenchés sous `LoaderRundownKeyword` (0x8) avec `StartRundown`/`EndRundown` activé. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
 
 ## <a name="application-domain-events"></a>Événements de domaine d'application
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Événement|Level|  
@@ -47,6 +49,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
 
 ## <a name="clr-loader-assembly-events"></a>Événements d'assembly de chargeur du CLR  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Événement|Level|  
@@ -76,6 +79,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|
 
 ## <a name="module-events"></a>Événements de module
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Événement|Level|  
@@ -121,6 +125,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 - Les noms de champs qui commencent par « NativePdb » font référence au fichier PDB NGen généré par l'appel à `NGEN createPDB`. Ce fichier PDB utilise le format de fichier PDB natif et décrit comment les éléments issus du code source managé d'origine, tels que les fichiers, les numéros de lignes et les noms de symboles sont mappés aux éléments natifs qui sont compilés dans le module NGen.  
 
 ## <a name="clr-domain-module-events"></a>Événements de module de domaine du CLR
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Événement|Level|  
@@ -151,6 +156,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
 
 ## <a name="module-range-events"></a>Événements de plage de module
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Événement|Level|  
@@ -180,6 +186,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 |RangeBegin2|win:UnicodeString||  
   
 ### <a name="remarks"></a>Notes  
+
  Si une image NGen chargée dans un processus du .NET Framework a été optimisée à l’aide d’IBC, l’événement `ModuleRange` qui contient les plages à chaud dans l'image NGen est consigné avec ses `moduleID` et `ClrInstanceID`.  Si l'image NGen n'est pas optimisée à l’aide d’IBC, cet événement n'est pas consigné. Pour déterminer le nom du module, cet événement doit être assemblé avec les événements ETW de chargement de module.  
   
  La taille de charge utile pour cet événement est variable. Le champ `Count` indique le nombre de décalages de plages contenus dans cet événement.  Cet événement doit être assemblé avec l’événement `IStart` de Windows afin de déterminer les plages réelles. L'événement de chargement d'image Windows est consigné chaque fois qu'une image est chargée, et il contient l'adresse virtuelle de l'image chargée.  

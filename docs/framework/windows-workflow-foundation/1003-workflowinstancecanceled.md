@@ -2,27 +2,30 @@
 title: 1003 - WorkflowInstanceCanceled
 ms.date: 03/30/2017
 ms.assetid: 64754dc2-c160-4bf3-869a-13d56694e2dc
-ms.openlocfilehash: c76a2dab6a95bda7f3969af07f814aba30071c7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd8abf173ab6588d4a35ba59c6cd14fb53445e9f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008627"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239898"
 ---
 # <a name="1003---workflowinstancecanceled"></a>1003 - WorkflowInstanceCanceled
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1003|  
+|id|1003|  
 |Mots clés|WFRuntime|  
-|Niveau|Information|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Informations|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Indique qu'une instance de workflow s'est terminée à l'état Canceled.  
   
 ## <a name="message"></a>Message  
+
  ID WorkflowInstance : « %1 » s'est terminé à l'état Canceled.  
   
 ## <a name="details"></a>Détails  

@@ -1,16 +1,17 @@
 ---
-title: Protocole PNRP (Peer Name Resolution Protocol)
+title: Protocole PNRP
 description: En savoir plus sur le protocole PNRP (Peer Name Resolution Protocol), un protocole de résolution de noms et d’inscription de noms sécurisé, évolutif et dynamique.
 ms.date: 03/30/2017
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
-ms.openlocfilehash: 72eb63c2c90f398c515d77cd2b2d693237e533a5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d50514569d066d04391ce65522df789ed421dbed
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502221"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239391"
 ---
-# <a name="peer-name-resolution-protocol"></a>Protocole PNRP (Peer Name Resolution Protocol)
+# <a name="peer-name-resolution-protocol"></a>Protocole PNRP
+
 Dans les environnements pair à pair, les pairs utilisent des systèmes de résolution de noms spécifiques pour résoudre les emplacements réseau les uns des autres (adresses, protocoles et ports) à partir de noms et d’autres types d’identificateurs. Dans le passé, la résolution des noms de pairs était compliquée en raison de la nature transitoire de la connectivité, et d’autres défauts du système DNS.  
   
  La plateforme de réseau pair à pair de Microsoft® Windows® a résolu ce problème grâce au protocole PNRP, à une inscription de noms sécurisée, évolutive et dynamique, ainsi qu’au protocole de résolution de noms développé à l’origine pour Windows XP, puis amélioré pour Windows Vista™. Le protocole PNRP fonctionne très différemment des systèmes traditionnels de résolution de noms, et offre de nouvelles possibilités aux développeurs d’applications.  

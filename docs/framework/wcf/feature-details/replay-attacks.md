@@ -2,17 +2,19 @@
 title: Attaques par relecture
 ms.date: 03/30/2017
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
-ms.openlocfilehash: 47a4726859605415b4e3e1b4d523f2f8059a3989
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4325b3747074f13cf02752f99b25fa02e4117b4c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586297"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239079"
 ---
 # <a name="replay-attacks"></a>Attaques par relecture
+
 Une *attaque par relecture* se produit lorsqu’un intrus copie un flux de messages entre deux correspondants et relit le flux à une ou plusieurs des parties. Sauf atténuation, les ordinateurs sujets à l'attaque traitent le flux comme messages légitimes, ce qui a des conséquences néfastes telles que des ordres redondants d'un élément.  
   
 ## <a name="bindings-may-be-subject-to-reflection-attacks"></a>Les liaisons peuvent être soumises aux attaques de réflexion  
+
  Les *attaques de réflexion* repassent les messages à un expéditeur comme si elles provenaient du récepteur comme réponse. La *détection de relecture* standard dans le mécanisme de Windows Communication Foundation (WCF) ne le gère pas automatiquement.  
   
  Les attaques de réflexion sont atténuées par défaut, car le modèle de service WCF ajoute un ID de message signé pour demander des messages et attend un `relates-to` en-tête signé sur les messages de réponse. Par conséquent, le message de demande ne peut pas être relu en tant que réponse. Dans les scénarios de messages fiables sécurisés, les attaques de réflexion sont atténuées pour les raisons suivantes :  
@@ -28,6 +30,7 @@ Une *attaque par relecture* se produit lorsqu’un intrus copie un flux de messa
  L’atténuation pour les liaisons personnalisées consiste à ne pas établir de contexte de sécurité ou à requérir des en-têtes WS-Addressing.  
   
 ## <a name="web-farm-attacker-replays-request-to-multiple-nodes"></a>Batterie de serveurs Web : l'intrus relit la demande à plusieurs nœuds  
+
  Un client utilise un service implémenté sur une batterie de serveurs Web. Un intrus relit une demande qui a été envoyée à un nœud de la ferme à un autre nœud de la ferme. De plus, si un service est redémarré, le cache de relecture est vidé, ce qui permet à un intrus de relire la demande. (Le cache contient des valeurs de signature de message utilisées et vues précédemment et il empêche toute relecture ; ces signatures ne peuvent donc être utilisées qu'une seule fois. Les caches de relecture ne sont pas partagés dans une batterie de serveurs Web.)  
   
  Les solutions d’atténuation sont les suivantes :  

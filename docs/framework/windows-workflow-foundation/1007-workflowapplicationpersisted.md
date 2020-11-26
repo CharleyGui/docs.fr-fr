@@ -2,27 +2,30 @@
 title: 1007 - WorkflowApplicationPersisted
 ms.date: 03/30/2017
 ms.assetid: f4ea4452-28e3-4e66-93c6-eb12ee29bcb1
-ms.openlocfilehash: 0b3c290ad06eda6921626c0d7a1c8ec854c30e7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aa4c7b2c98924eb43f78ab23a145b93906e302fc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925266"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239807"
 ---
 # <a name="1007---workflowapplicationpersisted"></a>1007 - WorkflowApplicationPersisted
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1007|  
+|id|1007|  
 |Mots clés|WFRuntime|  
-|Niveau|Information|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Informations|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Indique qu'une application de workflow est persistante.  
   
 ## <a name="message"></a>Message  
+
  ID WorkflowApplication : « %1 » était Persisted.  
   
 ## <a name="details"></a>Détails  

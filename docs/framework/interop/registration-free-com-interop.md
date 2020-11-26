@@ -11,14 +11,15 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-ms.openlocfilehash: c6a4dfc54152ade6136e4292bbd1c4522553d491
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: f61ad954215aecfc9380a47de788d36f327ab0b3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281600"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239534"
 ---
 # <a name="registration-free-com-interop"></a>COM Interop sans inscription
+
 COM Interop sans inscription active un composant sans utiliser le Registre Windows pour stocker les informations d'assembly. Au lieu d’inscrire un composant sur un ordinateur pendant le déploiement, vous créez des fichiers manifeste de type Win32 au moment du design qui contiennent des informations sur la liaison et l’activation. Ces fichiers manifeste, plutôt que les clés de Registre, dirigent l'activation d'un objet.  
   
  L'activation sans inscription de vos assemblys pendant le déploiement offre deux avantages :  
@@ -33,9 +34,9 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 1. La prise en charge de COM Interop sans inscription varie légèrement selon le type d'assembly de bibliothèque, plus précisément, si l'assembly est non managé (côte à côte COM) ou managé ( basé sur .NET). Le tableau suivant présente les conditions requises concernant le système d'exploitation et la version de .NET Framework pour chaque type d'assembly.  
   
-    |Type d'assembly|Système d’exploitation|Version du .NET Framework|  
+    |Type d'assembly|Système d'exploitation|Version du .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |Côte à côte COM|Microsoft Windows XP|Non requis.|  
+    |Côte à côte COM|Microsoft Windows XP|Non obligatoire.|  
     |Basé sur .NET|Windows XP SP2|.NET Framework version 1.1 ou ultérieure|  
   
      La famille Windows Server 2003 prend également en charge COM Interop sans inscription pour les assemblys .NET.  

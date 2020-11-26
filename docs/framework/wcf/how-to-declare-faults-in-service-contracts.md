@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e8da98e7-d22f-4f60-ac82-3fb0928a353f
-ms.openlocfilehash: 2de14a76fd2ce8ad656c2b64f5f9e5b17d81eebc
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 06262d5f698f8898e162e92dad272a7188897af0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216864"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240054"
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>Procédure : Déclarer des erreurs dans les contrats de service
 
@@ -18,7 +18,7 @@ Dans le code managé, des exceptions sont levées en cas de conditions d'erreur.
 
 ## <a name="create-a-service-contract-that-specifies-a-soap-fault"></a>Créer un contrat de service qui spécifie une erreur SOAP
 
-1. Créez un contrat de service qui contient au moins une opération. Pour voir un exemple, consultez [Comment : Définir un contrat](how-to-define-a-wcf-service-contract.md)de service.
+1. Créez un contrat de service qui contient au moins une opération. Pour obtenir un exemple, consultez [procédure : définition d’un contrat de service](how-to-define-a-wcf-service-contract.md).
 
 2. Sélectionnez une opération qui peut spécifier une condition d'erreur dont les clients peuvent s'attendre à être notifiés. Pour déterminer les conditions d’erreur qui justifient le retour des erreurs SOAP aux clients, consultez [spécification et gestion des erreurs dans les contrats et les services](specifying-and-handling-faults-in-contracts-and-services.md).
 
@@ -30,6 +30,7 @@ Dans le code managé, des exceptions sont levées en cas de conditions d'erreur.
 4. Répétez les étapes 2 et 3 pour toutes les opérations dans le contrat qui communiquent des conditions d'erreur aux clients.
 
 ## <a name="implementing-an-operation-to-return-a-specified-soap-fault"></a>Implémentation d'une opération pour retourner une erreur SOAP spécifiée
+
  Une fois qu'une opération a spécifié qu'une erreur SOAP spécifique peut être retournée (tel que dans la procédure précédente) pour communiquer une condition d'erreur à une application appelante, l'étape suivante consiste à implémenter cette spécification.
 
 ### <a name="throw-the-specified-soap-fault-in-the-operation"></a>Générer l'erreur SOAP spécifiée dans l'opération
@@ -39,7 +40,7 @@ Dans le code managé, des exceptions sont levées en cas de conditions d'erreur.
      [!code-csharp[FaultContractAttribute#5](~/samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#5)]
      [!code-vb[FaultContractAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#5)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple de code suivant montre une implémentation d'une opération unique qui spécifie `GreetingFault` pour l'opération `SampleMethod`.
 

@@ -2,17 +2,19 @@
 title: Propagation
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: 732ae5cb1ce311b78728f8d5de0fd9102bf32499
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: be010178d8f0face8f6c7e986107e4ea90d91953
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578953"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240132"
 ---
 # <a name="propagation"></a>Propagation
+
 Cette rubrique décrit la propagation d’activité dans le modèle de suivi Windows Communication Foundation (WCF).  
   
 ## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>Utilisation de la propagation pour corréler des activités sur des points de terminaison  
+
  La propagation fournit à l'utilisateur la corrélation directe de suivi d'erreur pour la même unité de traitement sur des points de terminaison d'application, par exemple, une demande. Les erreurs émises à des points de terminaison différents pour la même unité de traitement sont groupées dans la même activité, y compris sur les domaines d'application. Cette opération s'effectue par la propagation de l'ID d'activité dans les en-têtes de message. Par conséquent, en cas d'expiration d'un client à cause d'une erreur interne dans le serveur, les deux erreurs apparaissent dans la même activité pour une corrélation directe.  
   
  Pour ce faire, utilisez le paramètre `ActivityTracing` comme indiqué dans l'exemple précédent. Définissez aussi l'attribut `propagateActivity` pour la source de suivi `System.ServiceModel` à tous les points de terminaison.  
@@ -24,6 +26,7 @@ Cette rubrique décrit la propagation d’activité dans le modèle de suivi Win
  La propagation d’activité est une fonctionnalité configurable qui amène WCF à ajouter un en-tête aux messages sortants, qui comprend l’ID d’activité sur le TLS. En incluant ces informations dans les suivis ultérieurs sur le côté serveur, il est possible de mettre en corrélation les activités de client et de serveur.  
   
 ## <a name="propagation-definition"></a>Définition de la propagation  
+
  Le gAId de l'activité M est propagé à l'activité N si toutes les conditions suivantes s'appliquent.  
   
 - N est créé à cause de M  
@@ -71,9 +74,11 @@ Cette rubrique décrit la propagation d’activité dans le modèle de suivi Win
 ```  
   
 ## <a name="propagation-and-activity-boundaries"></a>Limites de propagation et d'activité  
+
  Lorsque l'ID d'activité est propagé sur des points de terminaison, le récepteur de message émet un suivi de démarrage et d'arrêt avec cet ID d'activité (propagé). Par conséquent, il y a un suivi de démarrage et d'arrêt avec ce gAId à partir de chaque source de suivi. Si les points de terminaison sont dans le même processus et utilisent le même nom de source de suivi, plusieurs suivis Démarrer et Arrêter ayant le même lAId (gAId identique, source de suivi et processus identiques) sont créés.  
   
-## <a name="synchronization"></a>Synchronisation  
+## <a name="synchronization"></a>Synchronization  
+
  Pour synchroniser des événements sur les points de terminaison qui s’exécutent sur des ordinateurs différents, CorrelationId est ajouté à l’en-tête ActivityId propagé dans les messages. Les outils peuvent utiliser cet ID pour synchroniser des événements sur des ordinateurs présentant des différences d'horloge. En particulier, l'outil Service Trace Viewer utilise cet ID pour afficher les flux de messages d'un point de terminaison à un autre.  
   
 ## <a name="see-also"></a>Voir aussi
@@ -81,4 +86,4 @@ Cette rubrique décrit la propagation d’activité dans le modèle de suivi Win
 - [Configuration du traçage](configuring-tracing.md)
 - [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
 - [Scénarios de suivi de bout en bout](end-to-end-tracing-scenarios.md)
-- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)
