@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-ms.openlocfilehash: 001f30d7a0dde952a7d18bfbc50f2c3622287406
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d136e094e4f1ea5258ff568527d10ac25a38f1a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576549"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293960"
 ---
 # <a name="accessing-services-using-a-client"></a>Accès aux services à l'aide d'un client
+
 Les applications clientes doivent créer, configurer et utiliser des objets de canal ou client WCF pour communiquer avec les services. La rubrique [vue d’ensemble du client WCF](../wcf-client-overview.md) fournit une vue d’ensemble des objets et des étapes nécessaires à la création d’objets client et de canal de base et à leur utilisation.  
   
  Cette rubrique fournit des informations détaillées sur certains aspects liés aux applications clientes et aux objets de client et de canal qui peuvent être utiles selon votre scénario.  
   
-## <a name="overview"></a>Vue d’ensemble  
+## <a name="overview"></a>Vue d'ensemble  
+
  Cette rubrique décrit le comportement et les problèmes liés aux éléments suivants :  
   
 - durées de vie de session et de canal ;  
@@ -29,6 +31,7 @@ Les applications clientes doivent créer, configurer et utiliser des objets de c
 - initialisation de canaux de manière interactive.  
   
 ### <a name="channel-and-session-lifetimes"></a>Durées de vie de session et de canal  
+
  Les applications Windows Communication Foundation (WCF) incluent deux catégories de canaux, de datagrammes et de sessions.  
   
  Un canal de *datagramme* est un canal dans lequel tous les messages sont non corrélés. Avec un canal de datagramme, si une opération d'entrée ou de sortie échoue, l'opération suivante n'est en général pas affectée et le même canal peut être réutilisé. Pour cette raison, les canaux de datagramme ne subissent généralement pas de défaillance.  
@@ -43,11 +46,13 @@ Les applications clientes doivent créer, configurer et utiliser des objets de c
  La plupart des liaisons fournies par le système (qui exposent des canaux à la couche Application) utilisent des sessions par défaut, ce qui n'est pas le cas du <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>. Pour plus d’informations, consultez [utilisation de sessions](../using-sessions.md).  
   
 ### <a name="the-proper-use-of-sessions"></a>Utilisation correcte des sessions  
+
  Les sessions offrent un moyen de savoir si l'intégralité de l'échange de messages a été effectué et si les deux côtés l'ont considéré réussi. Il est recommandé qu'une application appelante ouvre le canal, l'utilise et le ferme à l'intérieur d'un bloc try. Si un canal de session est ouvert, que la méthode <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> est appelée une fois et que cet appel est retourné avec succès, cela signifie que la session a réussi. Le terme « réussi » dans ce cas signifie que toutes les garanties de remise spécifiées par la liaison ont été satisfaites et que l'autre côté n'a pas appelé <xref:System.ServiceModel.ICommunicationObject.Abort%2A?displayProperty=nameWithType> sur le canal avant d'appeler <xref:System.ServiceModel.ICommunicationObject.Close%2A>.  
   
  La section suivante fournit un exemple de cette approche cliente.  
   
 ### <a name="handling-exceptions"></a>Gestion des exceptions  
+
  La gestion des exceptions dans les applications clientes est simple. Si un canal est ouvert, utilisé et fermé à l'intérieur d'un bloc try, cela signifie que la conversation a réussi, à moins qu'une exception ne soit levée. En général, si une exception est levée, la conversation est abandonnée.  
   
 > [!NOTE]
@@ -66,15 +71,17 @@ Les applications clientes doivent créer, configurer et utiliser des objets de c
  Pour obtenir des informations plus complètes sur l’utilisation des informations d’erreur au niveau de l’application, consultez [spécification et gestion des erreurs dans les contrats et les services](../specifying-and-handling-faults-in-contracts-and-services.md). [Exceptions attendues](../samples/expected-exceptions.md) décrit les exceptions attendues et montre comment les gérer. Pour plus d’informations sur la gestion des erreurs lors du développement de canaux, consultez [gestion des exceptions et des erreurs](../extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blocage de client et performances  
+
  Lorsqu'une application appelle une opération demande-réponse de façon synchrone, le client se bloque jusqu'à ce qu'une valeur de retour soit reçue ou qu'une exception (par exemple <xref:System.TimeoutException?displayProperty=nameWithType>) soit levée. Ce comportement est semblable au comportement local. Quand une application appelle de façon synchrone une opération sur un canal ou un objet client WCF, le client ne retourne pas de valeur tant que la couche de canal ne peut pas écrire les données sur le réseau ou qu’une exception ne soit levée. Et bien que le modèle d’échange de messages unidirectionnel (spécifié en marquant une opération avec <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> défini à `true`) puisse améliorer la capacité de réponse de certains clients, les opérations unidirectionnelles peuvent également subir un blocage, en fonction de la liaison et des messages qui ont déjà été envoyés. Les opérations unidirectionnelles concernent uniquement l'échange de messages, ni plus ni moins. Pour plus d’informations, consultez [services unidirectionnels](one-way-services.md).  
   
  Les grands segments de données peuvent ralentir le traitement client, quel que soit le modèle d’échange de messages. Pour comprendre comment gérer ces problèmes, consultez [données volumineuses et diffusion en continu](large-data-and-streaming.md).  
   
- Si votre application doit effectuer davantage de travail pendant l’exécution d’une opération, vous devez créer une paire de méthodes asynchrones sur l’interface de contrat de service implémentée par votre client WCF. Le moyen le plus simple consiste à utiliser le `/async` commutateur de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Pour obtenir un exemple, consultez [Comment : appeler des opérations de service de façon asynchrone](how-to-call-wcf-service-operations-asynchronously.md).  
+ Si votre application doit effectuer davantage de travail pendant l’exécution d’une opération, vous devez créer une paire de méthodes asynchrones sur l’interface de contrat de service implémentée par votre client WCF. Le moyen le plus simple consiste à utiliser le `/async` commutateur de l' [outil ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Pour obtenir un exemple, consultez [Comment : appeler des opérations de service de façon asynchrone](how-to-call-wcf-service-operations-asynchronously.md).  
   
  Pour plus d’informations sur l’amélioration des performances des clients, consultez [applications clientes de niveau intermédiaire](middle-tier-client-applications.md).  
   
 ### <a name="enabling-the-user-to-select-credentials-dynamically"></a>Autoriser l'utilisateur à sélectionner des informations d'identification de manière dynamique  
+
  L'interface <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> permet aux applications d'afficher une interface utilisateur qui permet à l'utilisateur de choisir des informations d'identification avec lesquelles un canal est créé avant le démarrage des minuteries de délai d'attente.  
   
  Les développeurs d'applications peuvent utiliser un <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> inséré de deux façons. L’application cliente peut appeler <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> ou <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (ou une version asynchrone) avant d’ouvrir le canal (approche *explicite* ) ou appeler la première opération (approche *implicite* ).  
@@ -96,9 +103,9 @@ Les applications clientes doivent créer, configurer et utiliser des objets de c
 ## <a name="see-also"></a>Voir aussi
 
 - [Services duplex](duplex-services.md)
-- [Comment : accéder aux services avec des contrats unidirectionnels et demande-réponse](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [Comment : accéder aux services ayant un contrat duplex](how-to-access-services-with-a-duplex-contract.md)
-- [Comment : accéder à un service WSE 3.0](how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
-- [Comment : utiliser la classe ChannelFactory](how-to-use-the-channelfactory.md)
-- [Comment : appeler des opérations de service de façon asynchrone](how-to-call-wcf-service-operations-asynchronously.md)
+- [Procédure : accéder aux services avec des contrats demande-réponse unidirectionnels](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Procédure : accéder aux services avec un contrat duplex](how-to-access-services-with-a-duplex-contract.md)
+- [Procédure : accéder à un service WSE 3.0](how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Procédure : utiliser ChannelFactory](how-to-use-the-channelfactory.md)
+- [Procédure : appeler des opérations de service de façon asynchrone](how-to-call-wcf-service-operations-asynchronously.md)
 - [Applications clientes de niveau intermédiaire](middle-tier-client-applications.md)

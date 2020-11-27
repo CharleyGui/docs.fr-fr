@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: 404fd9ddc911327bbc09c65d74da22bd88d08e2e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a70fb519f3b3e8d9ce109c3b7bef0313e22eb50
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602568"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292816"
 ---
 # <a name="default-message-contract"></a>Default Message Contract
+
 Cet exemple présente un service dans lequel un message personnalisé défini par l'utilisateur est passé à et depuis des opérations de service. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente une interface de calculatrice en tant que service typé. Au lieu des opérations de service individuelles pour l’addition, la soustraction, la multiplication et la Division utilisées dans le [prise en main](getting-started-sample.md), cet exemple passe un message personnalisé qui contient à la fois les opérandes et l’opérateur, et retourne le résultat du calcul arithmétique.  
   
  Le client est un programme de console (.exe) et la bibliothèque de service (.dll) est hébergée par les services IIS. L'activité du client est affichée dans la fenêtre de console.  
@@ -131,7 +132,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Le code client généré pour le client a été créé à l’aide de l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . L'outil crée automatiquement des types de contrats de message dans le code client généré si nécessaire. L'option de commande `/messageContract` peut être spécifiée pour forcer la génération de contrats de message.  
+ Le code client généré pour le client a été créé à l’aide de l’outil [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . L'outil crée automatiquement des types de contrats de message dans le code client généré si nécessaire. L'option de commande `/messageContract` peut être spécifiée pour forcer la génération de contrats de message.  
   
 ```console  
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" /o:client\generatedClient.cs http://localhost/servicemodelsamples/service.svc/mex  

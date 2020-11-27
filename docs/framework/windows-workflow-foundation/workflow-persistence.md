@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
-ms.openlocfilehash: c609ec5e67ce3bb0605f543806085f893acba37c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2184a159423a611a8936e900591a480ce7ef6ec8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557526"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293804"
 ---
 # <a name="workflow-persistence"></a>Persistance du workflow
+
 La persistance de workflow est la capture durable de l'état d'une instance de workflow, indépendamment des informations sur le processus ou l'ordinateur. Cela permet d'abord de fournir, en cas de défaillance du système, un point connu de récupération de l'instance de workflow. Ensuite, la mémoire est conservée en déchargeant les instances de workflow qui ne fonctionnent pas activement. Enfin, l'état de l'instance de workflow peut être déplacé d'un nœud vers un autre dans une batterie de serveurs.  
   
  La persistance permet l'agilité de processus, l'évolutivité, la récupération en cas de défaillance et la capacité de gérer la mémoire plus efficacement. Le processus de persistance inclut l'identification d'un point de persistance, la collecte des données à enregistrer et enfin, la délégation de la mémoire physique des données à un fournisseur de persistance.  
@@ -26,6 +27,7 @@ La persistance de workflow est la capture durable de l'état d'une instance de w
  Windows Server AppFabric simplifie le processus de configuration de la persistance. Pour plus d’informations, consultez [concepts de persistance avec Windows Server App Fabric](/previous-versions/appfabric/ee677272(v=azure.10)) .  
   
 ## <a name="implicit-persistence-points"></a>Points de persistance implicites  
+
  La liste suivante comprend des exemples de conditions selon lesquelles un workflow est rendu persistant, lors de l'association d'un magasin d'instances à un workflow.  
   
 - Lorsqu’une activité **TransactionScope** se termine ou qu’une activité **TransactedReceiveScope** se termine.  

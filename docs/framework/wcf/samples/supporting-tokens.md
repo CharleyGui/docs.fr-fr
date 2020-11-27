@@ -2,17 +2,19 @@
 title: Supporting Tokens
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: ff46a2f5289bc72244ea586f01ea05504d628f69
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d7e2a824060f4be05e0b0e9d1765fcf271eacbd3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555196"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293661"
 ---
 # <a name="supporting-tokens"></a>Supporting Tokens
+
 Cet exemple montre comment ajouter des jetons supplémentaires à un message qui utilise WS-Security. L'exemple ajoute un jeton de sécurité binaire X.509 outre un jeton de sécurité de nom d'utilisateur. Le jeton est passé dans un en-tête de message WS-Security du client au service et une partie du message est signée avec la clé privée associée au jeton de sécurité X.509 pour prouver la possession du certificat X.509 au récepteur. Cela s’avère utile dans le cas où plusieurs revendications doivent être associées à un message pour authentifier ou autoriser l’expéditeur. Le service implémente un contrat qui définit un modèle de communication demande-réponse.
 
 ## <a name="demonstrates"></a>Illustre le
+
  L'exemple montre :
 
 - Comment un client peut passer des jetons de sécurité supplémentaires à un service.
@@ -25,6 +27,7 @@ Cet exemple montre comment ajouter des jetons supplémentaires à un message qui
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
 ## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>Le client s'authentifie à l'aide du jeton de nom d'utilisateur et du jeton de sécurité X.509 de prise en charge
+
  Le service expose un point de terminaison unique de communication qui est créé par programme à l'aide des classes `BindingHelper` et `EchoServiceHost`. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec une liaison personnalisé à l'aide de `SymmetricSecurityBindingElement` et `HttpTransportBindingElement`. Cet exemple oblige `SymmetricSecurityBindingElement` à utiliser un certificat X.509 du service pour protéger la clé symétrique pendant la transmission et à passer un `UserNameToken` avec le `X509SecurityToken` de prise en charge dans un en-tête de message WS-Security. La clé symétrique permet de chiffrer le corps du message et le jeton de sécurité de nom d'utilisateur. Le jeton de prise en charge est passé comme jeton de sécurité binaire supplémentaire dans l'en-tête de message WS-Security. L'authenticité du jeton de prise en charge est prouvée en signant une partie du message avec la clé privée associée au jeton de sécurité X.509 de prise en charge.
 
 ```csharp
@@ -282,6 +285,7 @@ public class EchoService : IEchoService
 ```
 
 ## <a name="displaying-callers-information"></a>Affichage des informations sur les appelants
+
  Pour afficher les informations sur l'appelant, vous pouvez utiliser `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets`, tel qu'indiqué dans le code suivant. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` contient les revendications d'autorisation associées à l'appelant actuel. Ces revendications sont fournies automatiquement par Windows Communication Foundation (WCF) pour chaque jeton reçu dans le message.
 
 ```csharp
@@ -345,14 +349,17 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 ```
 
 ## <a name="running-the-sample"></a>Exécution de l'exemple
+
  Lorsque vous exécutez l'exemple, le client vous invite d'abord à fournir un nom d'utilisateur et un mot de passe pour le jeton de nom d'utilisateur. Veillez à fournir les valeurs correctes pour votre compte système, car WCF sur le service mappe les valeurs fournies dans le jeton de nom d’utilisateur à l’identité fournie par le système. Ceci fait, le client affiche la réponse provenant du service. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.
 
 ## <a name="setup-batch-file"></a>Fichier de commandes d'installation
+
  Le fichier de commandes Setup.bat inclus avec cet exemple vous permet de configurer le serveur avec les certificats appropriés pour exécuter l'application hébergée IIS (Internet Information Services) qui requiert une sécurité basée sur le certificat du serveur. Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.
 
  Les éléments suivants fournissent une vue d'ensemble des différentes sections des fichiers de commandes afin qu'ils puissent être modifiés pour s'exécuter dans la configuration appropriée.
 
 ### <a name="creating-the-client-certificate"></a>Création du certificat client
+
  Les lignes suivantes du fichier de commandes Setup.bat créent le certificat client à utiliser. La variable `%CLIENT_NAME%` spécifie le sujet du certificat client. Cet exemple utilise "client.com" comme nom du sujet.
 
  Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasin `CurrentUser`.
@@ -365,6 +372,7 @@ makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -p
 ```
 
 ### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>Installation du certificat client dans le magasin approuvé du serveur :
+
  La ligne suivante du fichier de commandes Setup.bat copie le certificat client dans le magasin de personnes de confiance du serveur. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système du serveur. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
 ```console
@@ -375,6 +383,7 @@ certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s Tru
 ```
 
 ### <a name="creating-the-server-certificate"></a>Création du certificat de serveur
+
  Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser. La variable `%SERVER_NAME%` spécifie le nom du serveur. Modifiez cette variable pour spécifier votre propre nom de serveur. La valeur par défaut dans ce fichier de commandes est localhost.
 
  Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasins LocalMachine. Le certificat est stocké dans le magasin LocalMachine pour les services hébergés par IIS. Pour les services auto-hébergés, vous devez modifier le fichier de commandes afin de stocker le certificat de serveur dans l'emplacement de magasin CurrentUser en remplaçant la chaîne LocalMachine par CurrentUser.
@@ -390,6 +399,7 @@ makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -
 ```
 
 ### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>Installation du certificat de serveur dans le magasin de certificats approuvé du client :
+
  Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
 ```console
@@ -399,6 +409,7 @@ echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r C
 ```
 
 ### <a name="enabling-access-to-the-certificates-private-key"></a>Activation de l'accès à la clé privée du certificat
+
  Pour activer l'accès à la clé privée du certificat à partir du service hébergé par IIS, le compte d'utilisateur sous lequel le processus hébergé par IIS s'exécute doit disposer des autorisations permettant d'y accéder. Cette opération est effectuée par les dernières étapes du script Setup.bat.
 
 ```console

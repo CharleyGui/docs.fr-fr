@@ -2,15 +2,16 @@
 title: Activités de transaction dans WF
 ms.date: 03/30/2017
 ms.assetid: fb33378e-82c6-4ea0-870f-76dc77e7f0fe
-ms.openlocfilehash: 7ffd64abdc6edf45174d4b756833d65ec0ef747c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c40799f7f0456a13ab975a766a36e9425a2144df
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670259"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293336"
 ---
 # <a name="transaction-activities-in-wf"></a>Activités de transaction dans WF
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] a plusieurs activités fournies par le système pour modéliser les transactions, la compensation et l’annulation. Ces modèles de programmation permettent au workflow de poursuivre la progression vers l'avant dans le cas de modifications de logique métier et de gestion des erreurs. Pour plus d’informations sur les transactions, la compensation et l’annulation, consultez [Transactions](workflow-transactions.md), [Compensation](compensation.md), et [l’annulation](modeling-cancellation-behavior-in-workflows.md).  
+
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] a plusieurs activités fournies par le système pour modéliser les transactions, la compensation et l’annulation. Ces modèles de programmation permettent au workflow de poursuivre la progression vers l'avant dans le cas de modifications de logique métier et de gestion des erreurs. Pour plus d’informations sur les transactions, la compensation et l’annulation, consultez [transactions](workflow-transactions.md), [compensation](compensation.md)et [annulation](modeling-cancellation-behavior-in-workflows.md).  
   
 ## <a name="transaction-activities"></a>Activités de transaction  
   
@@ -21,4 +22,4 @@ ms.locfileid: "61670259"
 |<xref:System.Activities.Statements.Compensate>|Appelle explicitement le gestionnaire de compensation d'un <xref:System.Activities.Statements.CompensableActivity>.|  
 |<xref:System.Activities.Statements.Confirm>|Appelle explicitement le gestionnaire de confirmation d'un <xref:System.Activities.Statements.CompensableActivity>.|  
 |<xref:System.Activities.Statements.TransactionScope>|Délimite une limite de transaction.|  
-|<xref:System.ServiceModel.Activities.TransactedReceiveScope>|Définit la durée de vie d’une transaction créée par un message reçu. La transaction peut être transmise dans le workflow sur le message de départ ou peut être créée par un répartiteur lorsque le message est reçu. **Remarque :**  Le <xref:System.ServiceModel.Activities.TransactedReceiveScope> se trouve dans le **Messaging** section de la **boîte à outils**.|
+|<xref:System.ServiceModel.Activities.TransactedReceiveScope>|Définit la durée de vie d’une transaction créée par un message reçu. La transaction peut être transmise dans le workflow sur le message de départ ou peut être créée par un répartiteur lorsque le message est reçu. **Remarque :**  Le <xref:System.ServiceModel.Activities.TransactedReceiveScope> se trouve dans la section **messagerie** de la **boîte à outils**.|

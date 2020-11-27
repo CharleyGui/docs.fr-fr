@@ -2,14 +2,15 @@
 title: UriTemplate Table Dispatcher, exemple
 ms.date: 03/30/2017
 ms.assetid: 3b32975d-ba90-4c5c-83bc-2fbb48f11c0c
-ms.openlocfilehash: 97e916aaf9d137eb7931470f9565797b03620d28
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 57489264de62b6adbca1c98230a0f90735b3918a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591070"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294948"
 ---
 # <a name="uritemplate-table-dispatcher-sample"></a>UriTemplate Table Dispatcher, exemple
+
 La classe <xref:System.UriTemplateTable> fournit une structure de table associative de type dictionnaire permettant d'utiliser un ensemble d'instances d'<xref:System.UriTemplate>. Cet exemple illustre un moteur de distribution de base construit à l'aide d'`UriTemplateTable`, un scénario d'utilisation commun pour la classe `UriTemplateTable`.  
   
  Cet exemple illustre les concepts clés suivants pour la classe `UriTemplateTable` :  

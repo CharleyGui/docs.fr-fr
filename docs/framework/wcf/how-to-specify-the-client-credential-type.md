@@ -1,5 +1,5 @@
 ---
-title: "Comment : spécifier le type d'informations d'identification du client"
+title: 'Procédure : spécifier le type d’informations d’identification de client'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - security credentials, adding to SOAP messages
 - WCF, security
 ms.assetid: 10f51bee-5f92-4c1a-9126-fa5418535d8f
-ms.openlocfilehash: df18f89ee18bfa33ecc0aced617d168c805e3515
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: b45d7b58d8a1fe79f9d7a8cff6e328b46633985c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138580"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293674"
 ---
-# <a name="how-to-specify-the-client-credential-type"></a>Comment : spécifier le type d'informations d'identification du client
+# <a name="how-to-specify-the-client-credential-type"></a>Procédure : spécifier le type d’informations d’identification de client
+
 Après avoir défini un mode de sécurité (transport ou message), vous avez pouvez définir le type d'informations d'identification du client. Cette propriété spécifie le type d'informations d'identification que le client doit fournir au service dans le cadre de l'authentification. Pour plus d’informations sur la définition du mode de sécurité (étape nécessaire avant de définir le type d’informations d’identification du client), consultez [Comment : définir le mode de sécurité](how-to-set-the-security-mode.md).  
   
 ### <a name="to-set-the-client-credential-type-in-code"></a>Pour définir le type d'informations d'identification du client dans le code  
@@ -31,13 +32,13 @@ Après avoir défini un mode de sécurité (transport ou message), vous avez pou
   
 ### <a name="to-set-the-client-credential-type-in-configuration"></a>Pour définir le type d'informations d'identification du client dans la configuration  
   
-1. Ajoutez un [\<élément System. serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) au fichier de configuration.  
+1. Ajoutez un [\<system.serviceModel>](../configure-apps/file-schema/wcf/system-servicemodel.md) élément au fichier de configuration.  
   
-2. En tant qu’élément enfant, ajoutez une [\<liaisons >](../configure-apps/file-schema/wcf/bindings.md) élément.  
+2. En tant qu’élément enfant, ajoutez un [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) élément.  
   
-3. Ajoutez une liaison appropriée. Cet exemple utilise l’élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .  
+3. Ajoutez une liaison appropriée. Cet exemple utilise l' [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) élément.  
   
-4. Ajoutez un élément de [> de liaison\<](../configure-apps/file-schema/wcf/bindings.md) et définissez l’attribut `name` sur une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
+4. Ajoutez un [\<binding>](../configure-apps/file-schema/wcf/bindings.md) élément et affectez `name` à l’attribut une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
   
 5. Ajoutez une liaison `<security>`. Affectez la valeur appropriée à l'attribut `mode`. Cet exemple lui affecte la valeur `"Message"`.  
   
@@ -60,4 +61,4 @@ Après avoir défini un mode de sécurité (transport ou message), vous avez pou
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurisation de services](securing-services.md)
-- [Guide pratique pour définir le mode de sécurité](how-to-set-the-security-mode.md)
+- [Procédure : définir le mode de sécurité](how-to-set-the-security-mode.md)

@@ -1,19 +1,20 @@
 ---
-title: 'Comment : créer un point de terminaison de service dans le code'
+title: 'Procédure : créer un point de terminaison de Service dans le code'
 description: Découvrez comment implémenter un service dans une classe et définir son point de terminaison par programme. Dans WCF, les points de terminaison sont généralement définis dans un fichier de configuration.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3fbb22fa-2930-48b8-b437-def1de87c6a0
-ms.openlocfilehash: 3b2ff2a17975bc381db61edc2c0f85f67edd3325
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 6f5e06154ff19129da0bce77dd70736037c2dc92
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247050"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294415"
 ---
-# <a name="how-to-create-a-service-endpoint-in-code"></a>Comment : créer un point de terminaison de service dans le code
+# <a name="how-to-create-a-service-endpoint-in-code"></a>Procédure : créer un point de terminaison de Service dans le code
+
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est défini dans du code, où il est spécifié que le service doit utiliser la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
@@ -49,4 +50,4 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour spécifier une liaison de service dans le code](../how-to-specify-a-service-binding-in-code.md)
+- [Procédure : spécifier une liaison de service dans le code](../how-to-specify-a-service-binding-in-code.md)

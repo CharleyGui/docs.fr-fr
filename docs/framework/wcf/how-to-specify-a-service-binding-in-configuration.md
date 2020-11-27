@@ -1,18 +1,20 @@
 ---
-title: 'Comment : spécifier une liaison de service dans la configuration'
+title: 'Procédure : spécifier une liaison de service dans la configuration'
 description: Découvrez comment configurer un point de terminaison pour un service WCF dans un fichier de configuration. Un contrat est défini pour un service et implémenté dans une classe.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: 3b9dd12f2a28ae2d420e82013459613cee8140f1
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 06b1cd009d28f854ec73286efa29d42f0f557314
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051946"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293687"
 ---
-# <a name="how-to-specify-a-service-binding-in-configuration"></a>Comment : spécifier une liaison de service dans la configuration
+# <a name="how-to-specify-a-service-binding-in-configuration"></a>Procédure : spécifier une liaison de service dans la configuration
+
 Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice de base, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est configuré dans le fichier Web.config, où il est spécifié que le service utilise <xref:System.ServiceModel.BasicHttpBinding>. Pour obtenir une description de la façon de configurer ce service à l’aide de code au lieu d’une configuration, consultez [Comment : spécifier une liaison de service dans le code](how-to-specify-a-service-binding-in-code.md).  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
@@ -96,4 +98,4 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation de liaisons pour configurer des services et des clients](using-bindings-to-configure-services-and-clients.md)
-- [Spécification d’une adresse de point de terminaison](specifying-an-endpoint-address.md)
+- [Spécification d'une adresse de point de terminaison](specifying-an-endpoint-address.md)

@@ -2,14 +2,15 @@
 title: TcpConnectionPoolSettings
 ms.date: 03/30/2017
 ms.assetid: 19acfba3-c057-4dbc-bac7-8674d7844d83
-ms.openlocfilehash: 6fa68eed241edaea40b66c31240a4201e05779f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de00cac851e4c6d0fd6df16f3a01b65bb5f43415
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956570"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294675"
 ---
 # <a name="tcpconnectionpoolsettings"></a>TcpConnectionPoolSettings
+
 TcpConnectionPoolSettings  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,40 +26,46 @@ class TcpConnectionPoolSettings
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe TcpConnectionPoolSettings ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe TcpConnectionPoolSettings a les propriétés suivantes :  
   
 ### <a name="groupname"></a>GroupName  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nom de groupe du pool de connexions utilisé par l'élément de liaison.  
   
 ### <a name="idletimeout"></a>IdleTimeout  
+
  Type de données : datetime  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Période maximale d'inactivité de la connexion au terme de laquelle la connexion est coupée.  
   
 ### <a name="leasetimeout"></a>LeaseTimeout  
+
  Type de données : datetime  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Période maximale d'exécution de l'opération de bail avant expiration du délai d'attente.  
   
 ### <a name="maxoutboundconnectionsperendpoint"></a>MaxOutboundConnectionsPerEndpoint  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nombre maximal de connexions sortantes pour chaque point de terminaison.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

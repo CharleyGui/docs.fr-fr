@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Workflow, compilation
 - Workflow, XOML files
 - Workflow, wcf
-ms.openlocfilehash: cf89962014584adf098118044b063b38b29160b7
-ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
+ms.openlocfilehash: 01cbfeb72e19f727a3a470059047a2192228c394
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91844602"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293856"
 ---
 # <a name="wfcexe-workflow-command-line-compiler-tool"></a>wfc.exe (outil du compilateur de ligne de commande du flux de travail)
+
 > [!NOTE]
 > Ce document décrit les types et les espaces de noms qui sont obsolètes.
 
@@ -95,6 +96,7 @@ Cette section présente les options du compilateur de ligne de commande du flux 
 ```
 
 ## <a name="remarks"></a>Notes
+
 > [!NOTE]
 > Ce document décrit les types et les espaces de noms qui sont obsolètes.
 

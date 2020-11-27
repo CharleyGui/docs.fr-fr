@@ -2,18 +2,19 @@
 title: Ajouter une référence de service à un projet de sous-ensemble portable
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: e9a0d3fbc75a8c64af892f74acedfc41dc115da3
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: f81a596c5573405bec9389347c45ff6cb6b30fc9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687712"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294857"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Ajouter une référence de service à un projet de sous-ensemble portable
 
 Les projets de sous-ensemble portables permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (Desktop, Silverlight, Windows Phone et Xbox). Les projets de sous-ensemble portables référencent uniquement les bibliothèques portables qui sont des assemblys .NET qui peuvent être utilisés sur n’importe quelle implémentation .NET.
   
 ## <a name="add-service-reference-details"></a>Ajouter des détails de référence de service  
+
  Lors de l'ajout d'une référence de service dans un projet de sous-ensemble portable, les restrictions suivantes sont appliquées :  
   
 1. Pour <xref:System.Xml.Serialization.XmlSerializer>, seuls les encodages littéraux sont autorisés. Les encodages SOAP génèrent une erreur lors de l'importation.  

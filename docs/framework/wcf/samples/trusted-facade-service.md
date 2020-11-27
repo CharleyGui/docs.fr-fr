@@ -2,14 +2,15 @@
 title: Trusted Facade Service
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: e9459b4cc26ef85adcc59c308d92491fd2d3acba
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 80f139ace43d5f8d2136528681386711bea7a1e5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544178"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295052"
 ---
 # <a name="trusted-facade-service"></a>Trusted Facade Service
+
 Cet exemple de scénario montre comment transmettre les informations d’identité d’un appelant d’un service à un autre à l’aide de l’infrastructure de sécurité Windows Communication Foundation (WCF).  
   
  Exposer les fonctionnalités fournies par un service au réseau public à l'aide d'un service de façade correspond à un modèle de conception standard. Le service de façade, qui se trouve en principe dans le réseau de périmètre (également appelé sous-réseau filtré), communique avec le service principal, lequel implémente la logique métier et l'accès aux données internes. Le canal de communication entre ces deux services traverse un pare-feu et est habituellement utilisé à une seule fin.  
@@ -28,9 +29,11 @@ Cet exemple de scénario montre comment transmettre les informations d’identit
 > Le service principal approuve le service de façade pour authentifier l'appelant. C'est pourquoi le service principal n'authentifie pas à nouveau l'appelant. Il utilise, en revanche, les informations d'identité fournies par le service de façade dans la demande transférée. Dans le cadre de cette relation de confiance, il est essentiel que le service principal authentifie le service de façade afin de garantir la provenance depuis une source fiable (dans ce cas, le service de façade) du message transféré.  
   
 ## <a name="implementation"></a>Implémentation  
+
  Dans cet exemple, deux voies de communication sont utilisées. La première entre le client et le service de façade, la seconde entre le service de façade et le service principal.  
   
 ### <a name="communication-path-between-client-and-faade-service"></a>Voie de communication entre le client et le service de façade  
+
  La voie de communication entre le client et le service de façade utilise `wsHttpBinding` avec un type d'informations d'identification de client `UserName` . Cela signifie que le client s'authentifie auprès du service de façade à l'aide d'un nom d'utilisateur et d'un mot de passe et que le service de façade s'authentifie auprès du client à l'aide d'un certificat X.509. La configuration de la liaison ressemble à l'exemple suivant.  
   
 ```xml  
@@ -93,6 +96,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 ```  
   
 ### <a name="communication-path-between-faade-service-and-backend-service"></a>Voie de communication entre le service de façade et le service principal  
+
  La voie de communication entre le service de façade et le service principal utilise une liaison `customBinding` qui se compose de plusieurs éléments de liaison. Cette liaison remplit deux fonctions. Elle authentifie le service de façade et le service principal afin de garantir que la communication est sécurisée et qu'elle provient d'une source fiable. En outre, elle transmet l'identité de l'appelant initial à l'intérieur du jeton de sécurité `Username` . Dans ce cas, seul le nom d'utilisateur de l'appelant initial est transmis au service principal, son mot de passe ne figure pas dans le message. La raison en est que le service principal approuve le service de façade pour authentifier l'appelant avant que la demande de ce dernier de ne lui soit transféré. Le service de façade s'authentifiant auprès du service principal, ce dernier peut se fier aux informations contenues dans la demande transférée.  
   
  Le code suivant contient la configuration de liaison utilisée par cette voie de communication.  
@@ -212,6 +216,7 @@ public string GetCallerIdentity()
  Les informations relatives au compte du service de façade sont extraites à l'aide de la propriété `ServiceSecurityContext.Current.WindowsIdentity` . Pour accéder aux informations de l'appelant initial, le service principal utilise la propriété `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` . Le service recherche une revendication `Identity` ayant le type `Name`. Cette revendication est générée automatiquement par l’infrastructure de sécurité WCF à partir des informations contenues dans le `Username` jeton de sécurité.  
   
 ## <a name="running-the-sample"></a>Exécution de l’exemple  
+
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter. Vous pouvez appuyer sur le bouton ENTER de la fenêtre du service de façade ou de la fenêtre du service principal pour arrêter ces derniers.  
   
 ```console  

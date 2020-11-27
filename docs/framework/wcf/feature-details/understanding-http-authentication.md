@@ -3,19 +3,21 @@ title: Fonctionnement de l'authentification HTTP
 description: Consultez cette présentation de l’authentification HTTP dans WCF, y compris les schémas d’authentification HTTP et le choix d’un schéma d’authentification.
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-ms.openlocfilehash: 761ab7a92aa26ce1437eefa360e5b46df179e32d
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 65ccde358f4eb8727e59ca32fb9782b87e29c5c1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246517"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293518"
 ---
 # <a name="understanding-http-authentication"></a>Fonctionnement de l'authentification HTTP
+
 L'authentification est le processus visant à identifier si un client est susceptible d'accéder à une ressource. Le protocole HTTP prend en charge des authentifications dans le but de négocier l'accès à une ressource sécurisée.  
   
  La demande initiale d'un client est en général une demande anonyme, ne contenant aucune information d'authentification. Les applications serveur HTTP peuvent refuser la demande anonyme en indiquant qu'une authentification est requise. L'application serveur envoie des en-têtes WWW-Authenticate pour indiquer les schémas d'authentification pris en charge. Ce document décrit plusieurs schémas d’authentification pour HTTP et traite de leur prise en charge dans Windows Communication Foundation (WCF).  
   
 ## <a name="http-authentication-schemes"></a>Schémas d'authentification HTTP  
+
  Le serveur peut spécifier plusieurs schémas d'authentification pour que le client en choisisse un. Le tableau ci-dessous décrit quelques-uns des schémas d'authentification couramment utilisés dans les applications Windows.  
   
 |Schéma d'authentification|Description|  
@@ -28,6 +30,7 @@ L'authentification est le processus visant à identifier si un client est suscep
 |Windows Live ID|Le service HTTP Windows sous-jacent inclut une authentification qui utilise des protocoles fédérés. Toutefois, les transports HTTP standard dans WCF ne prennent pas en charge l’utilisation de schémas d’authentification fédérée, tels que Microsoft Windows Live ID. La prise en charge de cette fonctionnalité est actuellement disponible par le biais de l’utilisation de la sécurité de message. Pour plus d’informations, consultez [Fédération et jetons émis](federation-and-issued-tokens.md).|  
   
 ## <a name="choosing-an-authentication-scheme"></a>Choix d'un schéma d'authentification  
+
  Lors de la sélection des schémas d'authentification possibles pour un serveur HTTP, voici quelques éléments à prendre en compte :  
   
 - Considérez si la ressource doit être protégée. L'utilisation de l'authentification HTTP requiert la transmission de plus de données et peut limiter l'interopérabilité avec les clients. Autorisez un accès anonyme aux ressources qu'il n'est pas nécessaire de protéger.  
@@ -39,5 +42,5 @@ L'authentification est le processus visant à identifier si un client est suscep
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d'ensemble de la sécurité des transports](transport-security-overview.md)
-- [Utilisation d'emprunt d'identité avec sécurité du transport](using-impersonation-with-transport-security.md)
-- [Délégation et emprunt d'identité](delegation-and-impersonation-with-wcf.md)
+- [Utilisation de l'emprunt d'identité avec la sécurité de transport](using-impersonation-with-transport-security.md)
+- [Délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md)

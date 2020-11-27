@@ -2,17 +2,19 @@
 title: Vue d'ensemble de la corrélation
 ms.date: 03/30/2017
 ms.assetid: edcc0315-5d26-44d6-a36d-ea554c418e9f
-ms.openlocfilehash: 8d33022524a4619a57b04e7774918fd73d0bdef3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3cc0bc49ad464401ccff769fd5873d5b7e19dccc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552555"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293713"
 ---
 # <a name="correlation-overview"></a>Vue d'ensemble de la corrélation
+
 La corrélation est le mécanisme qui permet de lier les messages de service de workflow entre eux ou à l'état de l'instance d'application, par exemple une réponse à une demande initiale ou un ID de commande particulier à l'état persistant d'un workflow de traitement de commandes. Cette rubrique offre une vue d'ensemble de la corrélation. Les autres rubriques de cette section fournissent des informations supplémentaires sur chaque type de corrélation.  
   
 ## <a name="types-of-correlation"></a>Types de corrélation  
+
  La corrélation peut être basée sur le protocole ou basée sur le contenu. Les corrélations basées sur le protocole utilisent des données fournies par l'infrastructure de remise des messages pour assurer le mappage entre les messages. Les messages corrélés à l'aide de la corrélation basée sur le protocole sont liés entre eux à l'aide d'un objet en mémoire, tel qu'un <xref:System.ServiceModel.Channels.RequestContext>, ou par un jeton fourni par le protocole de transport. Les corrélations basées sur le contenu lient des messages entre eux à l'aide de données spécifiées par l'application. Les messages corrélés à l'aide de la corrélation basée sur le contenu sont liés entre eux par des données du message définies par l'application, telles qu'un numéro de client.  
   
  Les activités qui participent à la corrélation utilisent un objet <xref:System.ServiceModel.Activities.CorrelationHandle> pour regrouper les activités de messagerie. Par exemple, une activité <xref:System.ServiceModel.Activities.Send> utilisée pour appeler un service et une activité <xref:System.ServiceModel.Activities.Receive> successive, utilisée pour recevoir un rappel du service, partagent le même <xref:System.ServiceModel.Activities.CorrelationHandle>. Ce modèle de base est utilisé que la corrélation soit basée sur le contenu ou sur le protocole. Le handle de corrélation peut être défini explicitement sur chaque activité ou les activités peuvent être contenues dans une activité <xref:System.ServiceModel.Activities.CorrelationScope>. Les activités contenues dans une activité <xref:System.ServiceModel.Activities.CorrelationScope> possèdent leurs handles de corrélation managés par <xref:System.ServiceModel.Activities.CorrelationScope> et ne requièrent pas le <xref:System.ServiceModel.Activities.CorrelationHandle> pour être définies de manière explicite. Une étendue <xref:System.ServiceModel.Activities.CorrelationScope> fournit une gestion <xref:System.ServiceModel.Activities.CorrelationHandle> pour une corrélation demande-réponse et un type de corrélation supplémentaire. Les services de workflow hébergés à l'aide de <xref:System.ServiceModel.Activities.WorkflowServiceHost> ont la même gestion de corrélation par défaut que l'activité <xref:System.ServiceModel.Activities.CorrelationScope>. Cette gestion de corrélation par défaut signifie en général que dans de nombreux scénarios, les activités de messagerie dans une étendue <xref:System.ServiceModel.Activities.CorrelationScope> ou dans un service de workflow n'ont pas besoin que leur <xref:System.ServiceModel.Activities.CorrelationHandle> soit défini, à moins que plusieurs activités de messagerie soient en parallèle ou se chevauchent, par exemple deux activités <xref:System.ServiceModel.Activities.Receive> en parallèle ou deux activités <xref:System.ServiceModel.Activities.Send> suivies de deux activités <xref:System.ServiceModel.Activities.Receive>. Vous trouverez davantage d'informations sur la corrélation par défaut dans les rubriques de cette section qui présentent chaque type spécifique de corrélation. Pour plus d’informations sur les activités de messagerie, consultez [activités de messagerie](messaging-activities.md) et [procédure : créer un service de flux de travail avec des activités de messagerie](how-to-create-a-workflow-service-with-messaging-activities.md).  

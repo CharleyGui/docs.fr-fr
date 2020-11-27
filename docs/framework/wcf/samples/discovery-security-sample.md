@@ -2,12 +2,12 @@
 title: Exemple Discovery Security
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: c6ec9b7e13234b7dae03541eb09ccba98f4cc93a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0957e8ddaee99e60b205c92319dc2c61e2ab007a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144901"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292634"
 ---
 # <a name="discovery-security-sample"></a>Exemple Discovery Security
 
@@ -16,11 +16,13 @@ La spécification Discovery n'exige pas que les points de terminaison participan
  Le canal personnalisé est appliqué en plus de la pile de canaux existante pour les points de terminaison de découverte et d'annonce. De cette façon, un en-tête de signature est appliqué pour chaque message envoyé. La signature est vérifiée sur les messages reçus, qui sont supprimés s’ils ne comportent pas de signature ou si celle-ci ne correspond pas. Pour signer et vérifier des messages, l'exemple utilise des certificats.  
   
 ## <a name="discussion"></a>Discussions  
+
  WCF est extensible et permet aux utilisateurs de personnaliser les canaux comme vous le souhaitez. L’exemple implémente un élément de liaison sécurisée de découverte qui génère des canaux sécurisés. Les canaux sécurisés appliquent et vérifient les signatures des messages et sont appliqués en plus de la pile actuelle.  
   
  L’élément de liaison sécurisée génère des écouteurs et fabriques de canaux sécurisés.  
   
 ## <a name="secure-channel-factory"></a>Fabrique de canaux sécurisés  
+
  La fabrique de canaux sécurisés crée des canaux de sortie ou duplex qui ajoutent une signature compacte aux en-têtes de message. Pour garder les messages aussi petits que possible, le format de signature compact est utilisé. La structure d'une signature compacte est représentée dans l'exemple suivant.  
   
 ```xml  
@@ -43,9 +45,11 @@ La spécification Discovery n'exige pas que les points de terminaison participan
  Les messages sont signés avec un certificat spécifié par le client. L’emplacement du magasin, le nom et le nom d’objet du certificat doivent être spécifiés lors de la création de l’élément de liaison. Le `KeyId` de la signature compacte représente l'identificateur de clé du jeton de signature et constitue l'identificateur de la clé du sujet (SKI, Subject Key Identifier) du jeton de signature ou, si le SKI n'existe pas, un hachage SHA-1 de la clé publique du jeton de signature.  
   
 ## <a name="secure-channel-listener"></a>Écouteur de canal sécurisé  
+
  L'écouteur de canal sécurisé crée des canaux d'entrée ou duplex qui vérifient la signature compacte dans les messages reçus. Pour vérifier la signature, le `KeyId` spécifié dans la signature compacte jointe au message est utilisé afin de sélectionner un certificat dans le magasin spécifié. Si le message n'a pas de signature ou si la vérification de la signature échoue, les messages sont supprimés. Pour utiliser la liaison sécurisée, l’exemple définit une fabrique qui crée les <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> et <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> personnalisés avec l’élément de liaison sécurisée de découverte ajouté. Ces points de terminaison sécurisés peuvent être utilisés dans des écouteurs d'annonces de découverte et des services détectables.  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
+
  L'exemple comporte une bibliothèque et 4 applications console :
   
 - **DiscoverySecurityChannels**: bibliothèque qui expose la liaison sécurisée. Cette bibliothèque calcule et vérifie la signature compacte des messages sortants/entrants.  
@@ -61,7 +65,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
   
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple  
   
-1. Exécutez le script Setup. bat à partir d’un Invite de commandes développeur pour Visual Studio. L'exemple utilise des certificats pour signer et vérifier des messages. Le script crée les certificats à l'aide de Makecert.exe, puis les installe à l'aide de Certmgr.exe. Le script doit être exécuté avec des privilèges d'administrateur.  
+1. Exécutez le script Setup.bat à partir d’une Invite de commandes développeur pour Visual Studio. L'exemple utilise des certificats pour signer et vérifier des messages. Le script crée les certificats à l'aide de Makecert.exe, puis les installe à l'aide de Certmgr.exe. Le script doit être exécuté avec des privilèges d'administrateur.  
   
 2. Pour générer et exécuter l’exemple, ouvrez le fichier Security. sln dans Visual Studio et choisissez **régénérer tout**. Mettez à jour les propriétés de la solution pour démarrer plusieurs projets : sélectionnez **Démarrer** pour tous les projets à l’exception de DiscoverySecureChannels. Exécutez la solution normalement.  
   

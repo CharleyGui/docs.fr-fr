@@ -2,14 +2,15 @@
 title: Propriétés d'exécution de workflow
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 0f958e7e112bfddc2740c2605d446493f2d49010
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: be9ae5924786ea1e23cc649034d927789c64e405
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182660"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293791"
 ---
 # <a name="workflow-execution-properties"></a>Propriétés d'exécution de workflow
+
 Par le biais du stockage local des threads (TLS), le CLR maintient un contexte d’exécution pour chaque thread. Ce contexte d’exécution gouverne des propriétés de thread connues, telles que l’identité de thread, la transaction ambiante et le jeu d’autorisations actuel, en plus des propriétés de thread définies par l’utilisateur (comme les emplacements nommés).  
   
  Contrairement aux programmes qui ciblent directement le CLR, les programmes de workflow sont hiérarchiquement des arborescences de portée d'activités qui s'exécutent dans un environnement de thread agnostique. Cela implique que les mécanismes de TLS standard ne peuvent pas être utilisés directement pour déterminer quel contexte se trouve dans la portée d’un élément de travail donné. Par exemple, deux branches parallèles d'exécution peuvent utiliser des transactions différentes, mais le planificateur peut entrelacer leur exécution sur le même thread de CLR.  
@@ -17,6 +18,7 @@ Par le biais du stockage local des threads (TLS), le CLR maintient un contexte d
  Les propriétés d'exécution de workflow fournissent un mécanisme permettant d'ajouter des propriétés spécifiques au contexte à l'environnement d'une activité. Ainsi, une activité peut déclarer les propriétés incluses dans la portée pour la sous-arborescence associée, tout en fournissant des connexions pour la configuration et la destruction de TLS afin d’interagir correctement avec les objets CLR.  
   
 ## <a name="creating-and-using-workflow-execution-properties"></a>Création et utilisation de propriétés d'exécution de workflow  
+
  Les propriétés d'exécution du workflow implémentent généralement l'interface <xref:System.Activities.IExecutionProperty>, même si les propriétés axées sur la messagerie peuvent implémenter <xref:System.ServiceModel.Activities.ISendMessageCallback> et <xref:System.ServiceModel.Activities.IReceiveMessageCallback> à la place. Pour créer une propriété d'exécution de workflow, créez une classe qui implémente l'interface <xref:System.Activities.IExecutionProperty> et qui implémente les membres <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> et <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>. Ces membres fournissent à la propriété d'exécution la possibilité de configurer et détruire correctement le stockage local des threads lors de chaque impulsion de travail de l'activité qui contient la propriété, y compris ses activités enfants. Dans cet exemple, `ConsoleColorProperty` est créé afin de définir `Console.ForegroundColor`.  
   
 ```csharp  

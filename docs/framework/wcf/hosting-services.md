@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 86ce392bb76b22e2b6a65fa1d005ed8e9589af15
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 41a7a3e651d234de4079455a667df670d6c7435d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246379"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294649"
 ---
 # <a name="hosting-services"></a>Services d’hébergement
 
@@ -22,7 +22,8 @@ Ces options d'hébergement vont de l'exécution dans une application console à 
 
 ## <a name="hosting-options"></a>Options d’hébergement
 
-### <a name="self-host-in-a-managed-application"></a>Auto-hébergement dans une application managée
+### <a name="self-host-in-a-managed-application"></a>Self-Host dans une application managée
+
  Les services WCF peuvent être hébergés dans n’importe quelle application managée. Il s'agit de l'option la plus souple car l'infrastructure à déployer est la plus faible. Vous incorporez le code pour le service à l'intérieur du code d'application managée, puis créez et ouvrez une instance de <xref:System.ServiceModel.ServiceHost> pour rendre le service disponible. Pour plus d’informations, consultez [Comment : héberger un service WCF dans une application managée](how-to-host-a-wcf-service-in-a-managed-application.md).
 
  Cette option active deux scénarios courants : les services WCF qui s’exécutent dans les applications console et les applications clientes riches, telles que celles basées sur Windows Presentation Foundation (WPF) ou Windows Forms (WinForms). L’hébergement d’un service WCF à l’intérieur d’une application console est généralement utile pendant la phase de développement de l’application. Cela simplifie son débogage, l'obtention des informations de suivi pour déterminer ce qui se passe à l'intérieur de l'application, et son déplacement en la copiant vers un nouvel emplacement. Cette option d’hébergement permet également aux applications clientes riches, telles que les applications WPF et WinForms, de communiquer facilement avec le monde extérieur. Par exemple, un client de collaboration pair à pair qui utilise WPF pour son interface utilisateur et héberge également un service WCF qui permet à d’autres clients de s’y connecter et de partager des informations.
@@ -44,6 +45,7 @@ Le service WAS (Windows Process Activation Service) est le nouveau mécanisme d�
  Cette option d'hébergement requiert que les services WAS soient configurés correctement, mais n'exige pas l'écriture d'un code d'hébergement dans le cadre de l'application. Pour plus d’informations sur la configuration de l’hébergement WAS, consultez [Comment : héberger un service WCF dans was](./feature-details/how-to-host-a-wcf-service-in-was.md).
 
 ## <a name="choose-a-hosting-environment"></a>Choisir un environnement d’hébergement
+
  Le tableau suivant résume certains avantages et scénarios clés associés à chacune des options d'hébergement.
 
 |Environnement d'hébergement|Scénarios courants|Avantages et limitations clés|
@@ -58,11 +60,11 @@ Le service WAS (Windows Process Activation Service) est le nouveau mécanisme d�
 
 |Environnement d'hébergement|Disponibilité de plateforme|Transports pris en charge|Recyclage de processus et AppDomain|
 |-------------------------|---------------------------|--------------------------|-------------------------------------|
-|Applications managées (« auto-hébergées »)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|No|
-|Services Windows (autrefois appelés services NT)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|No|
-|IIS 5,1|Windows XP|HTTP|Yes|
-|IIS 6.0|Windows Server 2003|HTTP|Yes|
-|Windows Process Activation Service (WAS)|Windows Vista, Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|Yes|
+|Applications managées (« auto-hébergées »)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|Non|
+|Services Windows (autrefois appelés services NT)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|Non|
+|IIS 5,1|Windows XP|HTTP|Oui|
+|IIS 6.0|Windows Server 2003|HTTP|Oui|
+|Windows Process Activation Service (WAS)|Windows Vista, Windows Server 2008|HTTP,<br /><br /> net.tcp,<br /><br /> net.pipe,<br /><br /> net.msmq|Oui|
 
  Il est important de noter que l'exécution d'un service ou d'une extension à partir d'un hôte non fiable compromet la sécurité. En outre, lors de l’ouverture d’un <xref:System.ServiceModel.ServiceHost> sous emprunt d’identité, une application doit s’assurer que l’utilisateur n’est pas déconnecté, par exemple en mettant en cache le <xref:System.Security.Principal.WindowsIdentity> de l’utilisateur.
 
@@ -70,7 +72,7 @@ Le service WAS (Windows Process Activation Service) est le nouveau mécanisme d�
 
 - [Cycle de vie de la programmation de base](basic-programming-lifecycle.md)
 - [Implémentation de contrats de service](implementing-service-contracts.md)
-- [Comment : héberger un service WCF dans IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md)
-- [Comment : héberger un service WCF dans WAS](./feature-details/how-to-host-a-wcf-service-in-was.md)
-- [Comment : héberger un service WCF dans un service Windows managé](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [Comment : héberger un service WCF dans une application managée](how-to-host-a-wcf-service-in-a-managed-application.md)
+- [Procédure : héberger un service WCF dans IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Procédure : héberger un service WCF dans WAS](./feature-details/how-to-host-a-wcf-service-in-was.md)
+- [Procédure : héberger un service WCF dans un service Windows managé](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Procédure : héberger un service WCF dans une application managée](how-to-host-a-wcf-service-in-a-managed-application.md)

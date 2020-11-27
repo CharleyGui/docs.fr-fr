@@ -2,27 +2,30 @@
 title: 1125 - InvokeMethodIsNotStatic
 ms.date: 03/30/2017
 ms.assetid: ea2b3827-63da-497b-b2c3-d5cebefe57a1
-ms.openlocfilehash: 692c5e56dac0a69ab5705acd284f048391145641
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0405b4e1207db5c056fbd478b98c408258daf0c3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924258"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294207"
 ---
 # <a name="1125---invokemethodisnotstatic"></a>1125 - InvokeMethodIsNotStatic
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1125|  
+|id|1 125|  
 |Mots clés|WFRuntime|  
-|Niveau|Information|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Informations|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Pendant l'étape CacheMetadata, l'activité InvokeMethod indique que la méthode à appeler n'est pas statique.  
   
 ## <a name="message"></a>Message  
+
  InvokeMethod « %1 » - la méthode n'est pas statique.  
   
 ## <a name="details"></a>Détails  

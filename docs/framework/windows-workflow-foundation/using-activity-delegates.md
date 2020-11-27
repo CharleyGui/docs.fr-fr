@@ -2,14 +2,15 @@
 title: Utilisation de délégués d'activité
 ms.date: 03/30/2017
 ms.assetid: e33cf876-8979-440b-9b23-4a12d1139960
-ms.openlocfilehash: cbcc8f8e498be4f79f8fed5af7cd3557d7c55981
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 66a03187336475ed377fda032506cfa66d3daf58
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837569"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293297"
 ---
 # <a name="using-activity-delegates"></a>Utilisation de délégués d'activité
+
 Les délégués d'activité permettent aux auteurs d'activités d'exposer des rappels avec des signatures spécifiques pour lesquelles les utilisateurs de l'activité peuvent fournir des gestionnaires basés sur l'activité. Deux types de délégués d'activité sont disponibles : <xref:System.Activities.ActivityAction%601> est utilisé pour définir des délégués d'activité qui n'ont pas de valeur de retour et <xref:System.Activities.ActivityFunc%601> est utilisé pour définir des délégués d'activité qui ont une valeur de retour.
 
 Les délégués d'activité sont utiles dans les scénarios où une activité enfant doit être limitée à une certaine signature. Par exemple, une activité <xref:System.Activities.Statements.While> peut contenir tout type d’activité enfant sans contraintes, mais le corps d’une activité <xref:System.Activities.Statements.ForEach%601> est un <xref:System.Activities.ActivityAction%601>, et l’activité enfant exécutée finalement par <xref:System.Activities.Statements.ForEach%601> doit avoir un <xref:System.Activities.InArgument%601> qui est du même type que les membres de la collection que le <xref:System.Activities.Statements.ForEach%601> énumère.
@@ -30,9 +31,9 @@ Les exemples de cette rubrique utilisent la syntaxe d'initialisation d'objet. La
 
 [!code-csharp[CFX_ActivityExample#7](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#7)]
 
-Pour plus d’informations sur les initialiseurs d’objets, consultez [Comment : initialiser des objets sans appelerC# de constructeur (Guide de programmation)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) et [Comment : déclarer un objet à l’aide d’un initialiseur d’objet (Visual Basic)](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md).
+Pour plus d’informations sur les initialiseurs d’objets, consultez [Comment : initialiser des objets sans appeler de constructeur (Guide de programmation C#)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) et [Comment : déclarer un objet à l’aide d’un initialiseur d’objet (Visual Basic)](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md).
 
-Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire de l’action d’activité de l’activité de <xref:System.Activities.Statements.Catch%601> est une activité de <xref:System.Activities.Statements.WriteLine>, et le détail de l’exception est transmis à celui-ci à l’aide de la <xref:System.Activities.DelegateInArgument%601>`ex`.
+Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire de l' <xref:System.Activities.Statements.Catch%601> action d’activité de l’activité est une <xref:System.Activities.Statements.WriteLine> activité, et le détail de l’exception est transmis à celui-ci à l’aide de `ex` <xref:System.Activities.DelegateInArgument%601> .
 
 [!code-csharp[CFX_WorkflowApplicationExample#33](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#33)]
 

@@ -2,19 +2,20 @@
 title: Utilisation d'extensions d'activité
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-ms.openlocfilehash: 551ce24db8c0adc8225ac94a1d05f998a26873a9
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 3a9cabda9fe92b2ea4e708da8f853f3029328775
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988632"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293284"
 ---
 # <a name="using-activity-extensions"></a>Utilisation d'extensions d'activité
+
 Les activités peuvent interagir avec les extensions d’application de workflow qui permettent à l’hôte de fournir des fonctionnalités supplémentaires qui ne sont pas explicitement modélisées dans le workflow.  Cette rubrique explique comment créer et utiliser une extension pour compter le nombre de fois où l'activité s'exécute.
 
 ### <a name="to-use-an-activity-extension-to-count-executions"></a>Pour utiliser une extension d’activité pour compter les exécutions
 
-1. Ouvrez Visual Studio 2010. Sélectionnez **nouveau**, **projet**. Sous le **nœud C# visuel** , sélectionnez **flux de travail**.  Dans la liste des modèles, sélectionnez **application console de workflow** . Attribuez un nom au projet `Extensions`. Cliquez sur **OK** pour créer le projet.
+1. Ouvrez Visual Studio 2010. Sélectionnez **nouveau**, **projet**. Sous le nœud **Visual C#** , sélectionnez **Workflow**.  Dans la liste des modèles, sélectionnez **application console de workflow** . Nommez le projet `Extensions`. Cliquez sur **OK** pour créer le projet.
 
 2. Ajoutez une `using` instruction dans le fichier Program.cs pour l’espace de noms **System. Collections. Generic** .
 

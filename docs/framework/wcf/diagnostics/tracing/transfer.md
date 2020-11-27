@@ -2,17 +2,19 @@
 title: Transférer
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: 52b0cf35a2f8bab17252d3711f3143738c2bc39c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: da31dcb24234e750c88383b9f1bea4f088f4ee3d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587766"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293401"
 ---
 # <a name="transfer"></a>Transférer
+
 Cette rubrique décrit le transfert dans le modèle de suivi d’activité Windows Communication Foundation (WCF).  
   
 ## <a name="transfer-definition"></a>Définition d'un transfert  
+
  Les transferts entre activités représentent des liens de causalité entre événements dans les activités connexes dans des points de terminaison. Deux activités sont liées à des transferts lorsqu'un contrôle circule entre ces activités, par exemple, un appel de méthode qui traverse des limites d'activité. Dans WCF, lorsque les octets sont entrants sur le service, l’activité Listen at est transférée à l’activité Receive octets où l’objet message est créé. Pour obtenir la liste des scénarios de suivi de bout en bout, et leur conception d’activité et de suivi respective, consultez [scénarios de suivi de bout](end-to-end-tracing-scenarios.md)en bout.  
   
  Pour émettre des suivis de transfert, appliquez le paramètre `ActivityTracing` sur la source de suivi, tel que le montre le code de configuration suivant.  
@@ -22,6 +24,7 @@ Cette rubrique décrit le transfert dans le modèle de suivi d’activité Windo
 ```  
   
 ## <a name="using-transfer-to-correlate-activities-within-endpoints"></a>Utilisation du suivi Transfert pour corréler des activités dans des points de terminaison  
+
  Les activités et transferts permettent à l'utilisateur de rechercher de manière probabiliste la cause première d'une erreur. Par exemple, si nous transférons des données entre les activités M et N, dans les composants M et N, et qu'un incident se produit en N juste après le transfert vers M, il est possible de conclure que le problème provient du passage de données de N vers M.  
   
  Un suivi de transfert est émis de l'activité M vers l'activité N, lorsqu'il existe un flux de contrôle entre M et N. Par exemple, N exécute une tâche pour M à cause d'un appel de méthode franchissant les limites des activités. N existe peut-être déjà ou a été créé. N est généré par M lorsque N est une nouvelle activité qui exécute une tâche pour M.  
@@ -33,6 +36,7 @@ Cette rubrique décrit le transfert dans le modèle de suivi d’activité Windo
  Il n'existe pas nécessairement de relation d'imbrication entre les activités M et N, et ce pour deux raisons : d'une part si l'activité M ne surveille pas le traitement réel effectué dans N bien qu'il ait initié ce traitement, d'autre part si N existe déjà.  
   
 ## <a name="example-of-transfers"></a>Exemples de transferts  
+
  Deux exemples de transferts sont présentés ci-dessous.  
   
 - Lorsque vous créez un hôte de service, le constructeur prend le contrôle à partir du code appelant, ou le code appelant est transféré au constructeur. Lorsque le constructeur a terminé de s'exécuter, il retourne le contrôle au code appelant, ou le constructeur est transféré au code appelant. C'est le cas d'une relation imbriquée.  
@@ -40,6 +44,7 @@ Cette rubrique décrit le transfert dans le modèle de suivi d’activité Windo
 - Lorsqu'un écouteur commence à traiter des données de transport, il crée un nouveau thread et remet à l'activité Recevoir des octets le contexte de traitement approprié, c'est-à-dire en passant le contrôle et les données. Lorsque ce thread a fini de traiter la demande, l'activité Recevoir des octets ne repasse aucune donnée à l'écouteur. Dans ce cas, la nouvelle activité de thread fait l'objet d'un transfert entrant mais pas d'un transfert sortant. Les deux activités sont liées mais pas imbriquées.  
   
 ## <a name="activity-transfer-sequence"></a>Séquence de transfert d'activité  
+
  Une séquence de transfert d'activité bien formée comprend les étapes suivantes.  
   
 1. Commencer une nouvelle activité, qui consiste à sélectionner un nouveau gAId  
@@ -107,4 +112,4 @@ ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);
 - [Configuration du traçage](configuring-tracing.md)
 - [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
 - [Scénarios de suivi de bout en bout](end-to-end-tracing-scenarios.md)
-- [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

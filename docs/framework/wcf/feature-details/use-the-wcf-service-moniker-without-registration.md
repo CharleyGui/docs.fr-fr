@@ -1,17 +1,18 @@
 ---
-title: 'Comment : utiliser le moniker de service Windows Communication Foundation sans inscription'
+title: 'Procédure : utiliser le moniker de service Windows Communication Foundation sans inscription'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: f69314948a0e0a69e49ec148f94572f17d0b8e3c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41761313fae68a1a348a73f104e21dc19e07eb65
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595048"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293505"
 ---
-# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Comment : utiliser le moniker de service Windows Communication Foundation sans inscription
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Procédure : utiliser le moniker de service Windows Communication Foundation sans inscription
+
 Pour vous connecter à un service Windows Communication Foundation (WCF) et communiquer avec celui-ci, une application cliente WCF doit avoir les détails de l’adresse du service, de la configuration de liaison et du contrat de service.  
   
  Le moniker de service WCF obtient généralement le contrat requis via l’inscription antérieure des types d’attributs requis, mais il peut y avoir des cas où cela n’est pas possible. À la place de l'inscription, le moniker peut obtenir la définition du contrat sous la forme d'un document WSDL (Web Services Definition Language) en utilisant le paramètre `wsdl` ou par le biais de l'échange de métadonnées en utilisant le paramètre `mexAddress`.  
@@ -21,7 +22,8 @@ Pour vous connecter à un service Windows Communication Foundation (WCF) et comm
 > [!NOTE]
 > L'authentification mutuelle doit être utilisée pour la protection contre la falsification ou l'usurpation de demandes et de réponses. Il est en particulier important pour les clients d'avoir la garantie que le point de terminaison d'échange de métadonnées qui répond est le tiers de confiance attendu.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Cet exemple montre l'utilisation du moniker de service avec un contrat MEX. Un service associé au contrat suivant est exposé avec un wsHttpBinding.  
   
 ```csharp
@@ -59,4 +61,4 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : inscrire et configurer un moniker de service](how-to-register-and-configure-a-service-moniker.md)
+- [Procédure : inscrire et configurer un moniker de service](how-to-register-and-configure-a-service-moniker.md)

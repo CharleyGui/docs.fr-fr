@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: cfd29f8cae8ac362a5fa1709864dce4ae11b5af6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 21c8279890d1d1cf746e98f875efb6b1ff869c73
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558886"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295078"
 ---
 # <a name="common-security-scenarios"></a>Scénarios de sécurité courants
+
 Les rubriques de cette section présentent un certain nombre de configurations de sécurité de service et client possibles. Les configurations varient selon un certain nombre de facteurs. Par exemple, si un service ou un client est sur un intranet, ou si la sécurité est fournie par Windows ou un transport (tel que HTTPS).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Service et client Internet non sécurisés](internet-unsecured-client-and-service.md)  
  Exemple de client/service public non sécurisé.  
   
@@ -58,9 +60,11 @@ Les rubriques de cette section présentent un certain nombre de configurations d
  Un client accède à un ou plusieurs services Web distribués sur un réseau. Les services Web accèdent aux ressources supplémentaires (telles que les bases de données ou autres services Web) qui doivent être sécurisées.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Autorisation](authorization-in-wcf.md)  
   
  [Présentation de la sécurité](security-overview.md)  

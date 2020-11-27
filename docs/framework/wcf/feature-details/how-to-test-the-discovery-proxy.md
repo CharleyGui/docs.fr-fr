@@ -1,15 +1,16 @@
 ---
-title: 'Procédure : tester le proxy de découverte'
+title: 'Procédure : tester le proxy de détection'
 ms.date: 03/30/2017
 ms.assetid: d96e3fa2-3c42-4e5d-8244-2694081bdc32
-ms.openlocfilehash: 78921d0a26f1116c87c2931b1472a161d6fed145
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b08e8561ceff9f0a427a9ea9acb2309772579853
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592812"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294662"
 ---
-# <a name="how-to-test-the-discovery-proxy"></a>Procédure : tester le proxy de découverte
+# <a name="how-to-test-the-discovery-proxy"></a>Procédure : tester le proxy de détection
+
 Cette rubrique est la quatrième d'une série quatre qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md), vous avez implémenté une application cliente WCF qui utilise le proxy de découverte pour rechercher un service, puis appelle le service. Cette rubrique explique comment vérifier si le proxy de découverte, le service et l'application cliente fonctionnent comme prévu.  
   
 ### <a name="run-the-discovery-proxy"></a>Exécuter le proxy de découverte  
@@ -28,7 +29,7 @@ Cette rubrique est la quatrième d'une série quatre qui expliquent comment impl
   
 2. Dans l'invite de commandes, exécutez le service détectable service.exe.  
   
-3. DiscoveryProxy. exe doit afficher le texte suivant : `******* Adding the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 3.******* Done *******` .  
+3. Le DiscoveryProxy.exe doit afficher le texte suivant : `******* Adding the following service: ** [Service Contract Name] ** [Service Endpoint Addr] 3.******* Done *******` .  
   
 ### <a name="run-the-client-application"></a>Exécuter l'application cliente  
   
@@ -53,6 +54,6 @@ Cette rubrique est la quatrième d'une série quatre qui expliquent comment impl
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d'ensemble de la découverte WCF](wcf-discovery-overview.md)
-- [Procédure : implémenter un proxy de découverte](how-to-implement-a-discovery-proxy.md)
-- [Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.](discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [Procédure : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md)
+- [Procédure : implémenter un proxy de détection](how-to-implement-a-discovery-proxy.md)
+- [Procédure : implémenter un service détectable qui s’enregistre auprès du proxy de détection](discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Procédure : implémenter une application cliente qui utilise le proxy de détection pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md)
