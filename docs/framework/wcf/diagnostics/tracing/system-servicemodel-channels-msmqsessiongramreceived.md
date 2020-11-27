@@ -2,17 +2,19 @@
 title: System.ServiceModel.Channels.MsmqSessiongramReceived
 ms.date: 03/30/2017
 ms.assetid: 66cfc20b-3bf0-48f6-a715-d82d88f5e71e
-ms.openlocfilehash: 03569ecd0c1c8081ffc81deb15a9d3581ad48116
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5398d69fe4a5848b2a5e2c46c15d833f1877ff05
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84577804"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270886"
 ---
 # <a name="systemservicemodelchannelsmsmqsessiongramreceived"></a>System.ServiceModel.Channels.MsmqSessiongramReceived
+
 System.ServiceModel.Channels.MsmqSessiongramReceived  
   
 ## <a name="description"></a>Description  
+
  Session de transport MSMQ reçue.  
   
 ## <a name="see-also"></a>Voir aussi

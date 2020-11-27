@@ -7,18 +7,19 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: c5ee2fae9167dd508332d8e97a589a8ddb0394ac
-ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
+ms.openlocfilehash: c9e073ef088595d3ee5cd9e1af70140f12022179
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712628"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271471"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 
 Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
 
 ## <a name="exception-performance-counters"></a>Compteurs de performance des exceptions  
+
  La catégorie Exceptions CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les exceptions levées par une application. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -30,6 +31,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Profondeur Throw à Catch/s**|Affiche le nombre de frames de pile traversés, par seconde, entre le frame qui a levé l'exception et celui qui l'a gérée. Ce compteur est remis à zéro quand un gestionnaire d'exceptions est entré. Les exceptions imbriquées indiquent donc la profondeur de la pile entre les gestionnaires.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 
 ## <a name="interop-performance-counters"></a>Compteurs de performance pour l'interopérabilité  
+
  La catégorie Interopérabilité CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur l'interaction entre une application et les composants COM, les services COM+ et les bibliothèques de types externes. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -41,6 +43,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre d’importations TLB/s**|Réservé à un usage ultérieur.|  
 
 ## <a name="jit-performance-counters"></a>compteurs de performance JIT  
+
  La catégorie JIT CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur du code ayant été compilé juste-à-temps (JIT). Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -53,6 +56,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre total d’octets IL traités avec Jit**|Affiche le nombre total d'octets MSIL ayant fait l'objet d'une compilation JIT depuis le démarrage de l'application. Ce compteur est équivalent au compteur **Nombre d’octets IL traités avec Jit**.|  
 
 ## <a name="loading-performance-counters"></a>Compteurs de performance pour le chargement  
+
  La catégorie Chargement CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les assemblys, les classes et les domaines d'application qui sont chargés. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -75,6 +79,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Total de classes chargées**|Affiche le nombre total de classes qui ont été chargées dans tous les assemblys depuis le démarrage de l'application.|  
 
 ## <a name="lock-and-thread-performance-counters"></a>Compteurs de performance pour les verrous et les threads  
+
  La catégorie Verrous et threads CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les verrous et les threads managés qu'une application utilise. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -91,6 +96,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre total de conflits**|Affiche le nombre total de fois où les threads du runtime ont tenté en vain d'acquérir un verrou managé.|  
 
 ## <a name="memory-performance-counters"></a>Compteurs de performance pour la mémoire  
+
  La catégorie Mémoire CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur le garbage collector (le récupérateur de mémoire). Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  
@@ -218,6 +224,7 @@ for (int i = 0; i < Array.Length; i++)
  Pour plus d’informations sur l’accès aux compteurs de performance et la gestion de ces derniers dans une application, consultez [Compteurs de performance](performance-counters.md).  
 
 ## <a name="security-performance-counters"></a>Compteurs de performance pour la sécurité  
+
  La catégorie Sécurité CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les vérifications de sécurité effectuées par le common language runtime pour une application. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performances|Description|  

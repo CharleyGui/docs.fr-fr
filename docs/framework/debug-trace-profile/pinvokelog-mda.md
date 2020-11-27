@@ -10,23 +10,27 @@ helpviewer_keywords:
 - PInvokeLog MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: b830444a-5003-49fe-b89b-b8bee22f7b1a
-ms.openlocfilehash: 05af4e17a91f7c0d8f3576a86d3d784ef6666aed
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: b8cb4805663a2b28a133f98503730199af695c4f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803688"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271458"
 ---
 # <a name="pinvokelog-mda"></a>Assistant Débogage managé pInvokeLog
+
 L’Assistant Débogage managé (MDA) `pInvokeLog` est activé pour chaque signature d’appel de code non managé unique utilisée pendant l’exécution.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
 ## <a name="output"></a>Output  
+
  Message indiquant la signature d’appel de code non managé utilisée lors de l’exécution.  
   
 ## <a name="configuration"></a>Configuration  
+
  Chaque élément de correspondance filtre les fichiers .dll en fonction des appels de code non managé effectués.  
   
 ```xml  
@@ -44,5 +48,5 @@ L’Assistant Débogage managé (MDA) `pInvokeLog` est activé pour chaque signa
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](diagnosing-errors-with-managed-debugging-assistants.md)
 - [Consommation de fonctions DLL non managées](../interop/consuming-unmanaged-dll-functions.md)
