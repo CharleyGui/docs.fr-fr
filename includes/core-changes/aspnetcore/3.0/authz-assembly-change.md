@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b91cdc7a0d2e4258662155a840500ce21ab35760
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 2819fb3857fa6d40a2b2e42eeaec2d9c6e50eef0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96032475"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96299351"
 ---
 ### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autorisation : surcharge AddAuthorization déplacée vers un assembly différent
 
@@ -15,6 +15,7 @@ Les `AddAuthorization` méthodes principales qui utilisaient pour résider dans 
 3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
+
 `AddAuthorization` les méthodes existaient dans `Microsoft.AspNetCore.Authorization` .
 
 #### <a name="new-behavior"></a>Nouveau comportement
@@ -29,7 +30,7 @@ Les `AddAuthorization` méthodes principales qui utilisaient pour résider dans 
 
 Ajoutez une référence à `Microsoft.AspNetCore.Authorization.Policy` ou utilisez à la `AddAuthorizationCore` place.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 

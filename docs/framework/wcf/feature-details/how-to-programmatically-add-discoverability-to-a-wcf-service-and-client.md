@@ -2,19 +2,20 @@
 title: 'Procédure : ajouter par programmation la détectabilité à un service et un client WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: c1b92568d90734a33a7b36af987fdb7cbbbe5149
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1226f02dd96b8ab1502869cb319c6efe1ad09d4f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557825"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295559"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Procédure : ajouter par programmation la détectabilité à un service et un client WCF
+
 Cette rubrique explique comment rendre un service Windows Communication Foundation (WCF) détectable. Il est basé sur l’exemple d' [auto-hébergement](../samples/self-host.md) .  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Pour configurer l'exemple existant de service Self-Host pour la découverte  
   
-1. Ouvrez la solution d’auto-hébergement dans Visual Studio 2012. L'exemple se trouve dans le répertoire TechnologySamples\Basic\Service\Hosting\SelfHost.  
+1. Ouvrez la solution Self-Host dans Visual Studio 2012. L'exemple se trouve dans le répertoire TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
 2. Ajoutez au projet du service une référence à `System.ServiceModel.Discovery.dll`. Vous pouvez voir un message d’erreur indiquant «système. ServiceModel.Discovery.dll ou l’une de ses dépendances requiert une version ultérieure du .NET Framework que celle spécifiée dans le projet...» Si vous voyez ce message, cliquez avec le bouton droit sur le projet dans la Explorateur de solutions et choisissez **Propriétés**. Dans la fenêtre **Propriétés du projet** , assurez-vous que la version cible du **.NET Framework** est [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] .  
   
@@ -220,7 +221,8 @@ Cette rubrique explique comment rendre un service Windows Communication Foundati
     ```  
   
 ## <a name="example"></a> Exemple  
- L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur l’exemple d' [auto-hébergement](../samples/self-host.md) , seuls les fichiers modifiés sont répertoriés. Pour plus d’informations sur l’exemple d’auto-hébergement, consultez [instructions d’installation](../samples/set-up-instructions.md).  
+
+ L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur l’exemple d' [auto-hébergement](../samples/self-host.md) , seuls les fichiers modifiés sont répertoriés. Pour plus d’informations sur l’exemple de Self-Host, consultez [instructions d’installation](../samples/set-up-instructions.md).  
   
 ```csharp  
 // Service.cs  

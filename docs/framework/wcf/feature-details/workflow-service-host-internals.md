@@ -2,14 +2,15 @@
 title: Éléments internes de l'hôte du service de workflow
 ms.date: 03/30/2017
 ms.assetid: af44596f-bf6a-4149-9f04-08d8e8f45250
-ms.openlocfilehash: 7b47293211ee8143b1ce713c64ff1d5b22161b45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 23ee0533d5386164dc95cb7fe2c61a626ea3f96e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594879"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295741"
 ---
 # <a name="workflow-service-host-internals"></a>Éléments internes de l'hôte du service de workflow
+
 <xref:System.ServiceModel.WorkflowServiceHost> fournit un hôte pour les services basés sur des workflows. Elle est chargée d'écouter les messages entrants et de les router vers l'instance de service de workflow appropriée, contrôle le déchargement et la persistance des workflows inactifs, et plus encore. Cette rubrique explique comment WorkflowServiceHost traite les messages entrants.  
   
 ## <a name="workflowservicehost-overview"></a>Vue d'ensemble WorkflowServiceHost  
@@ -23,6 +24,7 @@ La classe <xref:System.ServiceModel.WorkflowServiceHost> permet d'héberger des 
  <xref:System.ServiceModel.WorkflowServiceHost> expose aussi des points de terminaison d'application qui écoutent les messages d'application entrants. Un message entrant qui arrive est envoyé à l'instance de service de workflow appropriée (si celle-ci est actuellement chargée). Au besoin, une nouvelle instance de workflow est créée. Cependant, si une instance existante a été rendue persistante, elle est chargée à partir du magasin de persistance.  
   
 ## <a name="workflowservicehost-details"></a>Détails de WorkflowServiceHost  
+
  Le diagramme suivant montre comment <xref:System.ServiceModel.WorkflowServiceHost> gère les messages de manière plus détaillée :  
   
  ![Diagramme qui montre le flux de messages de l’hôte du service de Workflow.](./media/workflow-service-host-internals/workflow-service-host-message-flow.gif)  
@@ -55,6 +57,6 @@ La classe <xref:System.ServiceModel.WorkflowServiceHost> permet d'héberger des 
 - [Services de workflow](workflow-services.md)
 - [Hébergement de services de workflow](hosting-workflow-services.md)
 - [Point de terminaison de contrôle de workflow](workflow-control-endpoint.md)
-- [Procédure : configurer le comportement des exceptions non gérées du workflow avec WorkflowServiceHost](config-workflow-unhandled-exception-workflowservicehost.md)
+- [Procédure : configurer le comportement d’exception non prise en charge du workflow avec WorkflowServiceHost](config-workflow-unhandled-exception-workflowservicehost.md)
 - [Création d'un service de workflow de longue durée](creating-a-long-running-workflow-service.md)
 - [Persistance du workflow](../../windows-workflow-foundation/workflow-persistence.md)

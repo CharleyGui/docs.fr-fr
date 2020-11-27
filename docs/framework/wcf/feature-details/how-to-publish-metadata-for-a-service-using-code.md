@@ -1,18 +1,19 @@
 ---
-title: "Comment : publier les métadonnées d'un service à l'aide de code"
+title: 'Procédure : publier des métadonnées pour un service à l’aide de code'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-ms.openlocfilehash: 9239e8bd9b85986d41006c4b2a21b6f2304e8275
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1291cb040fdcad17135e2187ade1966f3032fb44
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601229"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295533"
 ---
-# <a name="how-to-publish-metadata-for-a-service-using-code"></a>Comment : publier les métadonnées d'un service à l'aide de code
+# <a name="how-to-publish-metadata-for-a-service-using-code"></a>Procédure : publier des métadonnées pour un service à l’aide de code
+
 Il s’agit de l’une des deux rubriques de procédures qui traitent de la publication de métadonnées pour un service Windows Communication Foundation (WCF). Il y a deux façons de spécifier comment un service doit publier des métadonnées : à l'aide d'un fichier de configuration et à l'aide du code. Cette rubrique montre comment publier les métadonnées d'un service à l'aide d'un code.  
   
 > [!CAUTION]
@@ -48,7 +49,7 @@ Il s’agit de l’une des deux rubriques de procédures qui traitent de la publ
      [!code-csharp[htPublishMetadataCode#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#5)]
      [!code-vb[htPublishMetadataCode#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#5)]  
   
-5. Le <xref:System.ServiceModel.Description.ServiceMetadataBehavior> contient une <xref:System.ServiceModel.Description.MetadataExporter>. Le <xref:System.ServiceModel.Description.MetadataExporter> contient une <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A>. Affectez à la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A>. Vous pouvez affecter à la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>. Lorsqu’il a <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> la valeur, l’exportateur de métadonnées génère les informations de stratégie avec les métadonnées qui sont conformes à WS-policy 1,5. Lorsqu'il a la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>, l'exportateur de métadonnées génère les informations de stratégie qui se conforment à WS-Policy 1.2.  
+5. Le <xref:System.ServiceModel.Description.ServiceMetadataBehavior> contient une <xref:System.ServiceModel.Description.MetadataExporter>. Le <xref:System.ServiceModel.Description.MetadataExporter> contient une <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A>. Affectez à la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A>. Vous pouvez affecter à la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>. Lorsqu’il a <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> la valeur, l’exportateur de métadonnées génère les informations de stratégie avec les métadonnées qui sont conformes à WS-Policy 1,5. Lorsqu'il a la valeur <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>, l'exportateur de métadonnées génère les informations de stratégie qui se conforment à WS-Policy 1.2.  
   
      [!code-csharp[htPublishMetadataCode#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#6)]
      [!code-vb[htPublishMetadataCode#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#6)]  
@@ -80,7 +81,8 @@ Il s’agit de l’une des deux rubriques de procédures qui traitent de la publ
   
 11. Utilisez Internet Explorer pour accéder à l’adresse de base du service ( `http://localhost:8001/MetadataSample` dans cet exemple) et vérifiez que la publication des métadonnées est activée. Vous devriez voir s’afficher une page web qui indique "Service simple" en haut et plus bas "Vous a créé un service". Dans la négative, un message s'affiche en haut de la page résultante : "La publication des métadonnées pour ce service est actuellement désactivée".  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre l’implémentation d’un service WCF de base qui publie des métadonnées pour le service dans le code.  
   
  [!code-csharp[htPublishMetadataCode#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#11)]
@@ -88,8 +90,8 @@ Il s’agit de l’une des deux rubriques de procédures qui traitent de la publ
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : héberger un service WCF dans une application managée](../how-to-host-a-wcf-service-in-a-managed-application.md)
+- [Procédure : héberger un service WCF dans une application managée](../how-to-host-a-wcf-service-in-a-managed-application.md)
 - [Self-Host](../samples/self-host.md)
 - [Vue d'ensemble de l'architecture de métadonnées](metadata-architecture-overview.md)
 - [Utilisation des métadonnées](using-metadata.md)
-- [Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration](how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Procédure : publier des métadonnées pour un service à l’aide d’un fichier de configuration](how-to-publish-metadata-for-a-service-using-a-configuration-file.md)

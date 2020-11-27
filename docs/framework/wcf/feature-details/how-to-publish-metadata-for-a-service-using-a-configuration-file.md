@@ -1,16 +1,17 @@
 ---
-title: "Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration"
+title: 'Procédure : publier des métadonnées pour un service à l’aide d’un fichier de configuration'
 description: Découvrez comment publier des métadonnées pour un service WCF à l’aide d’un fichier de configuration. La publication permet aux clients d’obtenir ces métadonnées à l’aide d’une requête d’extraction ou HTTP/obtenir.
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: d5d425be7f02a204476c4f6e81441aca9ea39fcc
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: eb7aeb4275e367bfc4463a7289d4bc3ff77ff9f4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246816"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295546"
 ---
-# <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration
+# <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Procédure : publier des métadonnées pour un service à l’aide d’un fichier de configuration
+
 Il s’agit de l’une des deux rubriques de procédures qui illustrent la publication de métadonnées pour un service Windows Communication Foundation (WCF). Il y a deux façons de spécifier comment un service doit publier des métadonnées : à l'aide d'un fichier de configuration et à l'aide du code. Cette rubrique montre comment publier des métadonnées pour un service à l'aide d'un fichier de configuration.  
   
 > [!CAUTION]
@@ -182,7 +183,8 @@ namespace Metadata.Samples
   
      Étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> avec le `httpGetEnabled` ayant la valeur `true`, la publication des métadonnées est activée pour le service, et comme aucun point de terminaison n'a été ajouté explicitement, le runtime ajoute les points de terminaison par défaut. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant montre l’implémentation d’un service WCF de base et le fichier de configuration qui publie des métadonnées pour le service.  
   
 ```csharp  
@@ -257,8 +259,8 @@ namespace Metadata.Samples
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
-- [Comment : héberger un service WCF dans une application managée](../how-to-host-a-wcf-service-in-a-managed-application.md)
+- [Procédure : héberger un service WCF dans une application managée](../how-to-host-a-wcf-service-in-a-managed-application.md)
 - [Self-Host](../samples/self-host.md)
 - [Vue d'ensemble de l'architecture de métadonnées](metadata-architecture-overview.md)
 - [Utilisation des métadonnées](using-metadata.md)
-- [Comment : publier les métadonnées d'un service à l'aide de code](how-to-publish-metadata-for-a-service-using-code.md)
+- [Procédure : publier des métadonnées pour un service à l’aide de code](how-to-publish-metadata-for-a-service-using-code.md)
