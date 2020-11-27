@@ -1,16 +1,17 @@
 ---
-title: 'Communications principales : Les canaux de Transport HTTP-HTTPS'
+title: 'Communications principales : canaux de transport HTTP-HTTPs'
 ms.date: 03/30/2017
 ms.assetid: 6c0a23c9-a663-461c-bdab-58b4d3e23642
-ms.openlocfilehash: 4c4a2537ae615943ffac299a8c8cd00c67094360
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d33d153c6c527398b035ad9d027593a0fefd0e8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998749"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277411"
 ---
 # <a name="core-communications-httphttps-transport-channels"></a>Communications principales : Canaux de transport HTTP/HTTPS
-Cette rubrique répertorie toutes les exceptions générées par les canaux de Windows Communication Foundation (WCF) Transport HTTP/HTTPS.  
+
+Cette rubrique répertorie toutes les exceptions générées par les canaux de transport HTTP/HTTPs Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Liste des exceptions  
   
@@ -21,7 +22,7 @@ Cette rubrique répertorie toutes les exceptions générées par les canaux de W
 |Hosting_SslSettingsMisconfigured|Les paramètre SSL du service spécifié ne correspondent pas à ceux des services IIS.|  
 |HttpAuthSchemeAndClientCert|La configuration de la fabrication d'écouteur HTTPS nécessite le recours à un certificat client ainsi qu'au schéma d'authentification spécifié. Cependant, un seul mode d'authentification client peut être utilisé à la fois.|  
 |HttpReceiveFailure|Une erreur s'est produite lors de la réception de la réponse HTTP sur le spécifié. La liaison de point de terminaison de service n'utilise peut-être pas le protocole HTTP. Le serveur a peut-être également arrêté le contexte de requête HTTP à cause de la fermeture du service. Pour plus d'informations, consultez les journaux du serveur.|  
-|HttpRegistrationAccessDenied|HTTP ne parvient pas à enregistrer l'adresse URL spécifiée. Le processus n’a pas de droits d’accès à cet espace de noms (consultez [Namespace réservations, les enregistrements et routage](/windows/desktop/http/namespace-reservations-registrations-and-routing) pour plus d’informations).|  
+|HttpRegistrationAccessDenied|HTTP ne parvient pas à enregistrer l'adresse URL spécifiée. Votre processus ne dispose pas de droits d’accès à cet espace de noms (consultez [Réservations d’espace de noms, inscriptions et routage](/windows/desktop/http/namespace-reservations-registrations-and-routing) pour plus d’informations).|  
 |HttpRegistrationAlreadyExists|HTTP ne parvient pas à enregistrer l'adresse URL spécifiée. Une autre application a déjà enregistré cette adresse URL avec HTTP.SYS.|  
 |HttpRegistrationPortInUse|HTTP ne parvient pas à enregistrer l'adresse URL spécifiée car le port TCP indiqué est utilisé par une autre application. .|  
 |HttpSendFailure|Une erreur s'est produite lors de la requête HTTP au spécifié. Assurez-vous qu’un éventuel problème de disparité au niveau des liaisons de sécurité n’est pas à l’origine de cette erreur. Assurez-vous également que la configuration du service ne requiert pas l'utilisation du protocole SSL.|  

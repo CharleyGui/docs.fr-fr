@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 017744d692d6fd4183fde3c21e71fcee2f35844e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 32c08daaacb482aa98a58d7f8882da2c9389293d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535356"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276670"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Service et client Internet non sécurisés
+
 L’illustration suivante montre un exemple de service et client public, non sécurisé Windows Communication Foundation (WCF) :  
   
  ![Capture d’écran montrant un scénario Internet non sécurisé](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
@@ -23,24 +24,27 @@ L’illustration suivante montre un exemple de service et client public, non sé
 |Transport|HTTP|  
 |Liaison|<xref:System.ServiceModel.BasicHttpBinding> dans le code ou [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) dans l’élément de la configuration.|  
 |Interopérabilité|Avec les clients de service Web et les services existants|  
-|Authentification|None|  
+|Authentification|Aucun|  
 |Intégrité|None|  
 |Confidentialité|None|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
 - Créez un service à l'aide de la configuration fournie, mais ne définissez pas de point de terminaison.  
   
 ### <a name="code"></a>Code  
+
  Le code ci-dessous montre comment créer un point de terminaison sans sécurité. Par défaut, <xref:System.ServiceModel.BasicHttpBinding> a le mode de sécurité défini avec la valeur <xref:System.ServiceModel.BasicHttpSecurityMode.None>.  
   
  [!code-csharp[C_UnsecuredService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#1)]
  [!code-vb[C_UnsecuredService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#1)]  
   
 ### <a name="service-configuration"></a>Configuration du service  
+
  Le code ci-dessous configure le même point de terminaison en utilisant la configuration.  
   
 ```xml  
@@ -68,22 +72,25 @@ L’illustration suivante montre un exemple de service et client public, non sé
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
+
  Le code suivant illustre un client WCF de base qui accède à un point de terminaison non sécurisé.  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
   
 ### <a name="client-configuration"></a>Configuration client  
+
  Le code ci-dessous configure le client.  
   
 ```xml  

@@ -2,15 +2,16 @@
 title: 'Communications principales : Framework de canal'
 ms.date: 03/30/2017
 ms.assetid: 8caeb496-8d4c-477e-a476-994ece685a68
-ms.openlocfilehash: 3795c3c34d80c455d7158a707e5d1cb18e7c5a7b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2be3fa056c95a45d16f50442ee86ffb92f97cb74
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998801"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277593"
 ---
 # <a name="core-communications-channel-framework"></a>Communications principales : Framework de canal
-Cette rubrique répertorie toutes les exceptions générées par l’infrastructure de canal de Windows Communication Foundation (WCF).  
+
+Cette rubrique répertorie toutes les exceptions générées par l’infrastructure de canal Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Liste des exceptions  
   
