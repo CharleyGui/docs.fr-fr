@@ -2,14 +2,15 @@
 title: Vue d'ensemble de la protection étendue de l'authentification
 ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-ms.openlocfilehash: fdc42228077bbc703e2e7557c8d7fdb3ff57a150
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0537e6147a7b43dabcb4c3612fc58da11dfd4d6d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559263"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255544"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Vue d'ensemble de la protection étendue de l'authentification
+
 La protection étendue de l'authentification contribue à la protection contre les attaques de l'intercepteur (« man-in-the-middle ») au cours desquelles un intrus intercepte les informations d'identification d'un client et les transmet à un serveur.  
   
  Prenons l'exemple d'un scénario impliquant trois participants : un client, un serveur et un intercepteur. Le serveur présente l'URL `https://server`, l'intercepteur l'URL `https://attacker`. L'intercepteur fait croire au client qu'il accède au serveur, alors qu'il accède en fait à l'URL de l'intercepteur. L'intercepteur envoie alors une demande au serveur. Si l'intercepteur tente d'accéder à une ressource sécurisée, le serveur lui répond avec un en-tête WWW-Authenticate. L'intercepteur ne disposant pas des informations d'authentification, il envoie l'en-tête WWW-Authenticate au client. Le client envoie l'en-tête d'autorisation à l'intercepteur qui, à son tour, envoie l'en-tête au serveur et obtient ainsi l'accès aux ressources sécurisées grâce aux informations d'identification du client.  

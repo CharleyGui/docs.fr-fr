@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-ms.openlocfilehash: 86e7869efdba50d72cc61a1aebb767cf43927546
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 84982aca06bacb5718855602872fe4dab2376a9d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795636"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256064"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Procédure : créer un vérificateur d’identité du client personnalisé
+
 La fonctionnalité d' *identité* de Windows Communication Foundation (WCF) permet à un client de spécifier à l’avance l’identité attendue du service. Lorsqu'un serveur s'authentifie auprès du client, l'identité est vérifiée par rapport à l'identité attendue. (Pour obtenir une explication sur l’identité et son fonctionnement, consultez [identité du service et authentification](../feature-details/service-identity-and-authentication.md).)  
   
  Si nécessaire, la vérification peut être personnalisée à l'aide d'un vérificateur d'identité personnalisé. Par exemple, vous pouvez effectuer des contrôles supplémentaires de vérification de l'identité du service. Dans cet exemple, le vérificateur d'identité personnalisé vérifie des revendications supplémentaires dans le certificat X.509 retourné par le serveur. Pour obtenir un exemple d’application, consultez [exemple d’identité de service](../samples/service-identity-sample.md).  
@@ -44,7 +45,7 @@ La fonctionnalité d' *identité* de Windows Communication Foundation (WCF) perm
   
 ### <a name="to-implement-the-trygetidentity-method"></a>Pour implémenter la méthode TryGetIdentity  
   
-1. Implémentez la méthode <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> qui détermine si une instance de la classe <xref:System.ServiceModel.EndpointIdentity> peut être retournée par le client. L’infrastructure WCF appelle d’abord l’implémentation `TryGetIdentity` de la méthode pour récupérer l’identité du service à partir du message. Ensuite, l'infrastructure appelle l'implémentation `CheckAccess` avec les `EndpointIdentity` et <xref:System.IdentityModel.Policy.AuthorizationContext> retournés.  
+1. Implémentez la méthode <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> qui détermine si une instance de la classe <xref:System.ServiceModel.EndpointIdentity> peut être retournée par le client. L’infrastructure WCF appelle d’abord l’implémentation de la `TryGetIdentity` méthode pour récupérer l’identité du service à partir du message. Ensuite, l'infrastructure appelle l'implémentation `CheckAccess` avec les `EndpointIdentity` et <xref:System.IdentityModel.Policy.AuthorizationContext> retournés.  
   
 2. Dans la méthode `TryGetIdentity`, insérez le code suivant :  
   
@@ -69,13 +70,15 @@ La fonctionnalité d' *identité* de Windows Communication Foundation (WCF) perm
      [!code-csharp[c_HowToSetCustomClientIdentity#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#4)]
      [!code-vb[c_HowToSetCustomClientIdentity#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#4)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant illustre une implémentation complète de la classe <xref:System.ServiceModel.Security.IdentityVerifier>.  
   
  [!code-csharp[c_HowToSetCustomClientIdentity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#5)]
  [!code-vb[c_HowToSetCustomClientIdentity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#5)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant illustre une implémentation complète de la classe <xref:System.ServiceModel.EndpointIdentity>.  
   
  [!code-csharp[c_HowToSetCustomClientIdentity#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#6)]
@@ -86,5 +89,5 @@ La fonctionnalité d' *identité* de Windows Communication Foundation (WCF) perm
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
 - <xref:System.ServiceModel.EndpointIdentity>
 - <xref:System.ServiceModel.Security.IdentityVerifier>
-- [Exemple d’identité de service](../samples/service-identity-sample.md)
-- [Stratégie d’autorisation](../samples/authorization-policy.md)
+- [Service Identity, exemple](../samples/service-identity-sample.md)
+- [Authorization Policy](../samples/authorization-policy.md)

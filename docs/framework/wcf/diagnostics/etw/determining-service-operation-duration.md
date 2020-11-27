@@ -2,19 +2,20 @@
 title: Détermination de la durée d'une opération de service
 ms.date: 03/30/2017
 ms.assetid: e8a93a2c-2c20-48b3-8986-57e90e9aa908
-ms.openlocfilehash: 06a4c2da7b702fa4fbc1469576c118b790803339
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 2607efe0d469f1235ee3d43d62f5e9781681668d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291423"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254829"
 ---
 # <a name="determining-service-operation-duration"></a>Détermination de la durée d'une opération de service
+
 Si le traçage analytique est activé dans une application Windows Communication Foundation (WCF), la durée d’exécution d’une opération de service peut être facilement déterminée en examinant le journal des événements.  Cette rubrique montre comment déterminer la durée d'exécution d'une opération de service.  
   
 ### <a name="determining-service-operation-execution-duration"></a>Détermination de la durée d'exécution d'une opération de service  
   
-1. Ouvrez observateur d’événements en cliquant sur **Démarrer**, **exécuter**, puis en entrant `eventvwr.exe`.  
+1. Ouvrez observateur d’événements en cliquant sur **Démarrer**, **exécuter**, puis en entrant `eventvwr.exe` .  
   
 2. Si vous n’avez pas activé le traçage analytique, développez **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Sélectionnez **Afficher**, **afficher les journaux d’analyse et de débogage**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal**. Laissez l'Observateur d'événements ouvert afin que les traces soient visibles après l'exécution de l'opération de service.  
   

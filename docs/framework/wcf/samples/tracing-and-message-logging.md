@@ -5,20 +5,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 9c3d83f0055a1700c675017216a7419fdba674fd
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ec29ac03e8930bd30ccd7e90dce3993ca9e7443a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547458"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255414"
 ---
 # <a name="tracing-and-message-logging"></a>Tracing and Message Logging
+
 Cet exemple illustre comment activer l'enregistrement des suivis et des messages. Les suivis et journaux des messages résultants sont affichés à l’aide de l' [outil Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Cet exemple est basé sur le [prise en main](getting-started-sample.md).  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 ## <a name="tracing"></a>Traçage  
+
  Windows Communication Foundation (WCF) utilise le mécanisme de suivi défini dans l' <xref:System.Diagnostics> espace de noms. Dans ce modèle de suivi, les données de suivi sont générées par les sources de suivi implémentées par les applications. Chacune de ces sources est identifiée à l'aide d'un nom. Les consommateurs de suivis créent des écouteurs pour les sources de suivi à partir desquelles ils souhaitent récupérer des informations. Pour recevoir des données de suivi d'une source, vous devez créer un écouteur pour cette source. Dans WCF, vous pouvez effectuer cette opération en ajoutant le code suivant au fichier de configuration du client ou du service en définissant la source de suivi du modèle de service `switchValue` :  
   
 ```xml  
@@ -47,6 +49,7 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
  Pour plus d’informations sur les sources de suivi, consultez la section source de suivi dans la rubrique [configuration du suivi](../diagnostics/tracing/configuring-tracing.md) .  
   
 ## <a name="activity-tracing-and-propagation"></a>Suivi et propagation d'activité  
+
  L' `ActivityTracing` activation et la définition de la `propagateActivity` valeur `true` dans les `system.ServiceModel` sources de suivi pour le client et le service fournissent la corrélation des traces au sein d’unités logiques de traitement (activités), entre les activités au sein des points de terminaison (via les transferts d’activité) et entre les activités couvrant plusieurs points de terminaison (par le biais de la propagation d’ID d’activité).  
   
  Ces trois mécanismes (activités, transfert et propagation) peuvent vous permettre de localiser plus facilement la cause racine d’une erreur, notamment en utilisant l’outil Service Trace Viewer. Pour plus d’informations, consultez [utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
@@ -62,6 +65,7 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
  Pour plus d’informations sur la trace d’activité définie par l’utilisateur, consultez l’exemple [extension du traçage](extending-tracing.md) .  
   
 ## <a name="message-logging"></a>Journalisation des messages  
+
  L’enregistrement des messages peut être activé à la fois sur le client et le service d’une application WCF. Pour activer l'enregistrement des messages, vous devez ajouter le code suivant au client ou au service :  
   
 ```xml  

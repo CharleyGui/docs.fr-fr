@@ -2,14 +2,15 @@
 title: AsymmetricSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 7bd3b6be-8f77-4927-93ae-6fa371893cca
-ms.openlocfilehash: 0f86fc1b410753b5ec100f0a7d43de9badd1401b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00485ff80a0064e700d99203de3aa581d3761f30
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964201"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255726"
 ---
 # <a name="asymmetricsecuritybindingelement"></a>AsymmetricSecurityBindingElement
+
 AsymmetricSecurityBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,26 +24,30 @@ class AsymmetricSecurityBindingElement : SecurityBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe AsymmetricSecurityBindingElement ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe AsymmetricSecurityBindingElement a les propriétés suivantes :  
   
 ### <a name="messageprotectionorder"></a>MessageProtectionOrder  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Ordre de chiffrement et de signature des messages de cette liaison.  
   
 ### <a name="requiresignatureconfirmation"></a>RequireSignatureConfirmation  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Si la liaison requiert la confirmation de signature.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

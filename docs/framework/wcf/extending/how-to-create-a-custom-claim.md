@@ -1,19 +1,20 @@
 ---
-title: 'Comment : créer une revendication personnalisée'
+title: 'Procédure : créer une revendication personnalisée'
 description: Découvrez comment créer une revendication personnalisée dans WCF. WCF prend en charge diverses revendications intégrées et certaines applications peuvent nécessiter des revendications personnalisées.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: 89f2b1359b48b71720db6ff38f27883745cfe612
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: ea3bc7384ca10538ca5ab1d3bb05da6a2757fb67
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247544"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256012"
 ---
-# <a name="how-to-create-a-custom-claim"></a>Comment : créer une revendication personnalisée
+# <a name="how-to-create-a-custom-claim"></a>Procédure : créer une revendication personnalisée
+
 L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) fournit un ensemble de types de revendication intégrés et des droits avec les fonctions d’assistance pour créer des <xref:System.IdentityModel.Claims.Claim> instances avec ces types et droits. Ces revendications intégrées sont conçues pour modéliser les informations qui se trouvent dans les types d’informations d’identification du client prises en charge par WCF par défaut. Dans la plupart des cas, les revendications intégrées sont suffisantes ; toutefois, certaines applications peuvent requérir des revendications personnalisées. Une revendication comporte trois volets : le type de revendication, la ressource à laquelle la revendication s'applique et le droit revendiqué sur cette ressource. Cette rubrique décrit comment créer une revendication personnalisée.  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>Pour créer une revendication personnalisée basée sur un type de données primitif  
@@ -69,7 +70,8 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
          [!code-csharp[c_CustomClaim#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#5)]
          [!code-vb[c_CustomClaim#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#5)]
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple de code suivant montre comment créer une revendication personnalisée avec un type de ressource primitif et un type de ressource non primitif.  
   
  [!code-csharp[c_CustomClaim#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#0)]

@@ -2,18 +2,19 @@
 title: Résolution des problèmes d’installation
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: fb687e9975ab9ac763030f10d54c7744dc02c9e0
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 596aae345061796535895a091c59d50a5bffe0d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720450"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255115"
 ---
 # <a name="troubleshoot-setup-issues"></a>Résoudre les problèmes d’installation
 
 Cet article explique comment résoudre les problèmes d’installation de Windows Communication Foundation (WCF).  
   
 ## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>Certaines clés de registre Windows Communication Foundation ne sont pas réparées par l'exécution d'une opération de réparation MSI sur le .NET Framework 3.0  
+
  Si vous supprimez l'une des clés de registre suivantes :  
   
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelService 3.0.0.0  
@@ -65,6 +66,7 @@ Cet article explique comment résoudre les problèmes d’installation de Window
  [L’outil d’inscription du service de flux de travail (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) est disponible dans emplacement%windir%\Microsoft.NET\Framework\v3.5\ ou%windir%\Microsoft.NET\framework64\v3.5\  
   
 ## <a name="configure-iis-properly-for-wcfwf-webhost-after-installing-net-framework-35"></a>Configurer IIS correctement pour WCF/WF Webhost après l'installation du .NET Framework 3.5  
+
  Lorsque .NET Framework installation de 3,5 ne parvient pas à configurer d’autres paramètres de configuration IIS liés à WCF, il enregistre une erreur dans le journal d’installation et continue. Toute tentative d'exécution des applications WorkflowServices échoue, étant donné que les paramètres de configuration sont manquants. Par exemple, le chargement du service xoml ou de règles peut échouer.  
   
  Pour contourner ce problème, utilisez l' [outil d’inscription du service de flux de travail (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) avec le `/c` commutateur pour configurer correctement les mappages de scripts IIS sur l’ordinateur. [L’outil d’inscription du service de flux de travail (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) est disponible dans emplacement%windir%\Microsoft.NET\Framework\v3.5\ ou%windir%\Microsoft.NET\framework64\v3.5\  
@@ -81,4 +83,4 @@ aspnet_regiis.exe -i -enable
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions d'installation](./samples/set-up-instructions.md)
+- [Instructions de configuration](./samples/set-up-instructions.md)

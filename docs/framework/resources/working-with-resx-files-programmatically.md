@@ -9,12 +9,12 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-ms.openlocfilehash: 519ca099b65710b6eb4251e1a9419e965ee69f93
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: c6b1ef6c7dd8be3dbc98b2298ab0e649ff74008e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254504"
 ---
 # <a name="work-with-resx-files-programmatically"></a>Utiliser des fichiers .resx par programmation
 
@@ -51,6 +51,7 @@ L’exemple suivant crée un fichier .resx nommé CarResources.resx qui stocke s
 Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Language Runtime ou le compiler dans un assembly satellite. Vous devez convertir votre fichier .resx en fichier de ressources binaires (.resources) à l’aide de l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md). Le fichier .resources résultant peut ensuite être incorporé dans un assembly d’application ou un assembly satellite. Pour plus d'informations, consultez [Creating Resource Files](creating-resource-files-for-desktop-apps.md).
 
 ## <a name="enumerate-resources"></a>Énumérer les ressources
+
  Dans certains cas, vous voulez récupérer toutes les ressources d’un fichier .resx, et pas seulement une ressource spécifique. Pour ce faire, vous pouvez utiliser la classe <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> , qui fournit un énumérateur pour toutes les ressources du fichier .resx. La classe <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> implémente <xref:System.Collections.IDictionaryEnumerator>, qui retourne un objet <xref:System.Collections.DictionaryEntry> représentant une ressource particulière pour chaque itération de la boucle. Sa propriété <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType> retourne la clé de la ressource et sa propriété <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType> retourne la valeur de la ressource.
 
  L’exemple suivant crée un objet <xref:System.Resources.ResXResourceReader> pour le fichier CarResources.resx créé dans l’exemple précédent et itère au sein du fichier de ressources. Il ajoute les deux objets `Automobile` définis dans le fichier de ressources à un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> , et ajoute cinq des six chaînes à un objet <xref:System.Collections.SortedList> . Les valeurs de l’objet <xref:System.Collections.SortedList> sont converties en tableau de paramètres, utilisé pour afficher des en-têtes de colonne dans la console. Les valeurs de propriété `Automobile` sont également affichées dans la console.
@@ -59,6 +60,7 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
  [!code-vb[Conceptual.Resources.ResX#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/enumerate1.vb#2)]
 
 ## <a name="retrieve-a-specific-resource"></a>Récupérer une ressource spécifique
+
  Outre l’énumération des éléments d’un fichier .resx, vous pouvez récupérer une ressource spécifique par son nom à l’aide de la classe <xref:System.Resources.ResXResourceSet?displayProperty=nameWithType> . La méthode <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=nameWithType> extrait la valeur d’une ressource de chaîne nommée. La méthode <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=nameWithType> extrait la valeur d’un objet nommé ou des données binaires. La méthode retourne un objet qui doit être casté (en C#) ou converti (en Visual Basic) en objet de type approprié.
 
  L’exemple suivant récupère la chaîne et l’icône de la légende d’un formulaire par leur nom de ressources. Elle récupère également les objets `Automobile` définis par l’application utilisés dans l’exemple précédent et les affiche dans un contrôle <xref:System.Windows.Forms.DataGridView>.
@@ -67,6 +69,7 @@ Vous ne pouvez pas incorporer un fichier .resx dans un exécutable du Common Lan
  [!code-vb[Conceptual.Resources.ResX#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/retrieve1.vb#3)]
 
 ## <a name="convert-resx-files-to-binary-resources-files"></a>Convertir les fichiers .resx en fichiers binaires .resources
+
  La conversion de fichiers .resx en fichiers de ressources binaires incorporés (.resources) présente des avantages importants. Bien que les fichiers .resx soient faciles à lire et à gérer pendant le développement d’applications, ils sont rarement inclus avec les applications finies. S’ils sont distribués avec une application, ils existent en tant que fichiers séparés de l’exécutable de l’application et des bibliothèques qui l’accompagnent. En revanche, les fichiers .resources sont incorporés dans l’exécutable d’application ou dans les assemblys qui l’accompagnent. Par ailleurs, pour les applications localisées, l’utilisation de fichiers .resx au moment de l’exécution donne au développeur la responsabilité de la gestion des ressources de secours. En revanche, si un ensemble d’assemblys satellites contenant des fichiers .resources incorporés a été créé, le Common Language Runtime gère le processus de secours pour les ressources.
 
  Pour convertir un fichier .resx en fichier .resources, vous utilisez l’outil [Resource File Generator (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md), qui présente la syntaxe de base suivante :

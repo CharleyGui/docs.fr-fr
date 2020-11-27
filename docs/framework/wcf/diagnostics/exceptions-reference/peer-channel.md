@@ -2,15 +2,16 @@
 title: Canal homologue
 ms.date: 03/30/2017
 ms.assetid: e06a2efb-8e70-4299-8b0f-bfb37efb074b
-ms.openlocfilehash: f1c0be21614ac59ba512694f981addb2e07e8ec8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9a0c5228301ed6a85207fa1ba461c60a7d4760d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969154"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254790"
 ---
 # <a name="peer-channel"></a>Canal homologue
-Cette rubrique répertorie toutes les exceptions générées par le canal homologue de Windows Communication Foundation (WCF).  
+
+Cette rubrique répertorie toutes les exceptions générées par Windows Communication Foundation (WCF) canal homologue.  
   
 ## <a name="exception-list"></a>Liste des exceptions  
   
