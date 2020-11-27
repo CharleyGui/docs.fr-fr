@@ -1,17 +1,19 @@
 ---
 title: System.ServiceModel.WarnServiceHealthEnabledNoBaseAddress
 ms.date: 10/30/2018
-ms.openlocfilehash: 82960d2c2236750eba22edbd037aac3eeeb54961
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e039be284d38dbb4fab3ae9dac4230cf0531d1c8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593631"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282273"
 ---
 # <a name="systemservicemodelwarnservicehealthenablednobaseaddress"></a>System.ServiceModel.WarnServiceHealthEnabledNoBaseAddress
+
 System.ServiceModel.WarnServiceHealthEnabledNoBaseAddress  
   
 ## <a name="description"></a>Description  
+
  La page d’intégrité ServiceHealthBehavior est activée à une adresse relative et ne peut pas être créée, car il n’y a pas d’adresse de base.  
   
 ## <a name="see-also"></a>Voir aussi

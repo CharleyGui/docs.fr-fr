@@ -2,14 +2,15 @@
 title: SslStreamSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 18130d50-8996-4257-9c60-bc457f8654d8
-ms.openlocfilehash: 83929c46f57af35932dd8399d4f74b6a5b5debc3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcb6cb304c7435f8b954ed5aeea7179c7cb40be8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956648"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282091"
 ---
 # <a name="sslstreamsecuritybindingelement"></a>SslStreamSecurityBindingElement
+
 SslStreamSecurityBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,19 +23,22 @@ class SslStreamSecurityBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe SslStreamSecurityBindingElement ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe SslStreamSecurityBindingElement a la propriété suivante :  
   
 ### <a name="requireclientcertificate"></a>RequireClientCertificate  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Spécifie si un certificat client est requis pour cette liaison.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

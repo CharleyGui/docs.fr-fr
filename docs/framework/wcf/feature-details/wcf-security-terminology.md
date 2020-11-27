@@ -6,14 +6,15 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: 8941350e46680c4ecaeb9b89fe9e6910c5830bcb
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 70dde7ab30d542ecc9f85d027a86b466eb13e4f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553289"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281311"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie relative à la sécurité dans WCF
+
 La terminologie utilisée pour aborder la sécurité peut vous sembler peu familière. Cette rubrique explique rapidement certains des termes relatifs à la sécurité, mais ne fournit pas d'informations complètes pour chaque élément.  
   
  Pour plus d’informations sur les termes utilisés dans la documentation de Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](../fundamental-concepts.md).  
@@ -173,7 +174,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Logiciel qui décide si un fichier donné est approuvé. Cette décision est basée sur le certificat associé au fichier.  
   
  nom d'utilisateur principal (User Principal Name ou UPN)  
- Nom de compte d’utilisateur (parfois appelé *nom d’ouverture de session*de l’utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d’utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le suivant : someone@example.com (comme pour une adresse de messagerie).  
+ Nom de compte d’utilisateur (parfois appelé *nom d’ouverture de session* de l’utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d’utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le suivant : someone@example.com (comme pour une adresse de messagerie).  
   
 > [!NOTE]
 > En plus du formulaire UPN standard, WCF accepte les UPN dans un format de niveau supérieur, par exemple cohowinery. com\someone.  

@@ -2,17 +2,19 @@
 title: Architecture d'activation WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 77cebede5827016c5c9660663c0491614ba0ef19
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 46f9f9b0e951d363200cf41b5119b13ca921a3b5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545980"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281636"
 ---
 # <a name="was-activation-architecture"></a>Architecture d'activation WAS
+
 Cette rubrique détaille et décrit les composants du service d'activation des processus de Windows (également appelé WAS).  
   
 ## <a name="activation-components"></a>Composants d'activation  
+
  Le service WAS se compose de plusieurs composants architecturaux :  
   
 - Adaptateurs d'écouteur. Services Windows qui reçoivent des messages sur des protocoles réseau spécifiques et communiquent avec WAS pour acheminer les messages entrants vers le processus de travail correct.  
@@ -30,6 +32,7 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
  ![Capture d’écran montrant l’architecture WAS.](./media/was-activation-architecture/windows-process-application-service-architecture.gif)  
   
 ### <a name="listener-adapters"></a>Adaptateurs d'écouteur  
+
  Les adaptateurs d'écouteur sont des services Windows individuels qui implémentent la logique de la communication réseau utilisée pour recevoir les messages à l'aide du protocole réseau sur lequel ils écoutent. Le tableau suivant répertorie les adaptateurs d’écouteur pour les protocoles Windows Communication Foundation (WCF).  
   
 |Nom du service d'adaptateur de l'écouteur|Protocol|Notes|  
@@ -59,6 +62,7 @@ Cette rubrique détaille et décrit les composants du service d'activation des p
 ```  
   
 ### <a name="protocol-handlers"></a>Gestionnaires de protocoles  
+
  Les gestionnaires de protocoles de processus et AppDomain pour des protocoles spécifiques sont enregistrés dans le fichier Web.config de l'ordinateur.  
   
 ```xml  

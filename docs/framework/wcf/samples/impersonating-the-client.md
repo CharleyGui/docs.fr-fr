@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: b5272d8b4dbac60e14fe87accbb08a2073ed65ab
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bc4ff2d4b53b679266978ae5ffdea97e4606a351
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594632"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281896"
 ---
 # <a name="impersonating-the-client"></a>Emprunt de l'identité du client
+
 Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.  
   
  Cet exemple est basé sur l’exemple d' [auto-hébergement](self-host.md) . Les fichiers de configuration du service et du client sont les mêmes que ceux de l’exemple [auto-hôte](self-host.md) .  
@@ -102,10 +103,10 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Lorsque vous exécutez l'exemple, les requêtes et réponses de l'opération s'affichent dans les fenêtres de console du service et du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
 > [!NOTE]
-> Le service doit s’exécuter sous un compte d’administration ou le compte sous lequel il s’exécute doit disposer des droits d’inscription de l' `http://localhost:8000/ServiceModelSamples` URI auprès de la couche http. Ces droits peuvent être accordés en configurant une [réservation d’espace de noms](/windows/win32/http/namespace-reservations-registrations-and-routing) à l’aide de l' [outil HttpCfg. exe](/windows/win32/http/httpcfg-exe).  
+> Le service doit s’exécuter sous un compte d’administration ou le compte sous lequel il s’exécute doit disposer des droits d’inscription de l' `http://localhost:8000/ServiceModelSamples` URI auprès de la couche http. Ces droits peuvent être accordés en configurant une [réservation d’espace de noms](/windows/win32/http/namespace-reservations-registrations-and-routing) à l’aide de l' [ outilHttpcfg.exe](/windows/win32/http/httpcfg-exe).  
   
 > [!NOTE]
-> Sur les ordinateurs exécutant Windows Server 2003, l’emprunt d’identité est pris en charge uniquement si l’application Host. exe dispose du privilège d’emprunt d’identité. (Par défaut, seuls les administrateurs ont cette autorisation.) Pour ajouter ce privilège à un compte sous lequel le service s’exécute, accédez à **Outils d’administration**, ouvrez **stratégie de sécurité locale**, ouvrez **stratégies locales**, cliquez sur **attribution des droits utilisateur**, puis sélectionnez **emprunter l’identité d’un client après l’authentification** et double-cliquez sur **Propriétés** pour ajouter un utilisateur ou un groupe.  
+> Sur les ordinateurs exécutant Windows Server 2003, l’emprunt d’identité est pris en charge uniquement si l’application Host.exe possède le privilège d’emprunt d’identité. (Par défaut, seuls les administrateurs ont cette autorisation.) Pour ajouter ce privilège à un compte sous lequel le service s’exécute, accédez à **Outils d’administration**, ouvrez **stratégie de sécurité locale**, ouvrez **stratégies locales**, cliquez sur **attribution des droits utilisateur**, puis sélectionnez **emprunter l’identité d’un client après l’authentification** et double-cliquez sur **Propriétés** pour ajouter un utilisateur ou un groupe.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   

@@ -3,14 +3,15 @@ title: Installation de Message Queuing (MSMQ)
 description: Découvrez comment installer Message Queuing 4,0 et Message Queuing 3,0 à utiliser avec les exemples WFC dans le cadre d’une procédure d’installation unique.
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 0d0cb87b40b1cb11eb7692c2fa1e890ec815b13d
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: bf33a5cd899bf2d7ef4947c51ac1723c8eb80c29
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244463"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281870"
 ---
 # <a name="installing-message-queuing-msmq"></a>Installation de Message Queuing (MSMQ)
+
 Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Message Queuing 3.0.  
   
 > [!NOTE]
@@ -65,4 +66,4 @@ Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Me
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions d'installation](set-up-instructions.md)
+- [Instructions de configuration](set-up-instructions.md)

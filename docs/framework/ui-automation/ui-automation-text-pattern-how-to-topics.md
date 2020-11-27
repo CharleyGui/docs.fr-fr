@@ -9,20 +9,22 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: ca6ac045-7b21-4487-9379-59aa20909670
-ms.openlocfilehash: fa145607c1e3286870c0cc07f2ecb12583900440
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f6a002e531f634d11057e80430745995827e9d7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924810"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281155"
 ---
 # <a name="ui-automation-text-pattern-how-to-topics"></a>Rubriques "Comment" relatives au modèle de texte UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette section contient des rubriques qui expliquent comment utiliser le modèle de texte UI Automation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Ajouter du contenu à une zone de texte à l'aide d'UI Automation](add-content-to-a-text-box-using-ui-automation.md)  
  [Rechercher et mettre un texte en surbrillance à l'aide d'UI Automation](find-and-highlight-text-using-ui-automation.md)  
  [Obtenir des attributs de texte à l'aide d'UI Automation](obtain-text-attributes-using-ui-automation.md)  
