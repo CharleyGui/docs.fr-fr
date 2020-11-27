@@ -2,17 +2,19 @@
 title: Utilisation du contexte d'édition ModelItem
 ms.date: 03/30/2017
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
-ms.openlocfilehash: e1481d96e39f837d72834222d2839c520e880cc6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ab002f902833d3b1a69ea0b03b5ca589f4492d1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142512"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275968"
 ---
 # <a name="using-the-modelitem-editing-context"></a>Utilisation du contexte d'édition ModelItem
+
 Le contexte d'édition <xref:System.Activities.Presentation.Model.ModelItem> est l'objet que l'application hôte utilise pour communiquer avec le concepteur. <xref:System.Activities.Presentation.EditingContext> expose deux méthodes, <xref:System.Activities.Presentation.EditingContext.Items%2A> et <xref:System.Activities.Presentation.EditingContext.Services%2A>, qui peuvent être utilisées  
   
 ## <a name="the-items-collection"></a>La collection Items  
+
  La collection <xref:System.Activities.Presentation.EditingContext.Items%2A> permet d'accéder aux données partagées entre l'hôte et le concepteur ou aux données disponibles pour tous les concepteurs. Cette collection fournit les fonctionnalités suivantes, accessibles via la classe <xref:System.Activities.Presentation.ContextItemManager> :  
   
 1. <xref:System.Activities.Presentation.ContextItemManager.GetValue%2A>  
@@ -24,6 +26,7 @@ Le contexte d'édition <xref:System.Activities.Presentation.Model.ModelItem> est
 4. <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A>  
   
 ## <a name="the-services-collection"></a>La collection Services  
+
  La collection <xref:System.Activities.Presentation.EditingContext.Services%2A> permet d’accéder aux services que le concepteur utilise pour interagir avec l’hôte ou aux services que les concepteurs utilisent. Cette collection présente les méthodes de références suivantes :  
   
 1. <xref:System.Activities.Presentation.ServiceManager.Publish%2A>  
@@ -35,6 +38,7 @@ Le contexte d'édition <xref:System.Activities.Presentation.Model.ModelItem> est
 4. <xref:System.Activities.Presentation.ServiceManager.GetService%2A>  
   
 ## <a name="assigning-a-designer-an-activity"></a>Assignation d'une activité à un concepteur  
+
  L'attribut Designer permet de spécifier le concepteur utilisé par une activité.  
   
 ```csharp  
@@ -45,6 +49,7 @@ public sealed class MyClass : CodeActivity
 ```  
   
 ## <a name="creating-a-service"></a>Création d'un service  
+
  Pour créer un service servant de canal de transmission des informations entre le concepteur et l'hôte, une interface et une implémentation doivent être créées. L'interface est utilisée par la méthode <xref:System.Activities.Presentation.ServiceManager.Publish%2A> pour définir les membres du service et l'implémentation contient la logique du service. Dans l'exemple de code suivant, une interface et une implémentation de service sont créées.  
   
 ```csharp  
@@ -67,6 +72,7 @@ public interface IMyService
 ```  
   
 ## <a name="publishing-a-service"></a>Publication d'un service  
+
  Pour qu'un concepteur puisse consommer un service, il doit d'abord être publié par l'hôte à l'aide de la méthode <xref:System.Activities.Presentation.ServiceManager.Publish%2A>.  
   
 ```csharp  
@@ -74,6 +80,7 @@ this.Context.Services.Publish<IMyService>(new MyServiceImpl);
 ```  
   
 ## <a name="subscribing-to-a-service"></a>Abonnement à un service  
+
  Le concepteur obtient l'accès au service à l'aide de la méthode <xref:System.Activities.Presentation.ServiceManager.Subscribe%2A> dans la méthode <xref:System.Activities.Presentation.WorkflowViewElement.OnModelItemChanged%2A>. L'extrait de code suivant montre comment s'abonner à un service.  
   
 ```csharp  
@@ -93,10 +100,12 @@ protected override void OnModelItemChanged(object newItem)
 ```  
   
 ## <a name="sharing-data-using-the-items-collection"></a>Partage de données à l’aide de la collection Items  
+
  L'utilisation de la collection Items est similaire à celle de la collection Services, à ceci près que <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A> est utilisé à la place de Publish. Cette collection est plus appropriée pour le partage de données simples entre les concepteurs et l’hôte qu’une fonctionnalité complexe.  
   
 ## <a name="editingcontext-host-items-and-services"></a>Éléments et services de l'hôte EditingContext  
- Le cadre .NET fournit un certain nombre d’articles et de services intégrés accessibles dans le contexte de l’édition.  
+
+ Le .NET Framework fournit un certain nombre d’éléments intégrés et de services accessibles via le contexte d’édition.  
   
  Éléments :  
   
@@ -110,7 +119,7 @@ protected override void OnModelItemChanged(object newItem)
   
 - <xref:System.Activities.Presentation.WorkflowFileItem> : fournit des informations sur le fichier sur lequel la session d'édition active repose.  
   
- Services :  
+ Services :  
   
 - <xref:System.Activities.Presentation.Model.AttachedPropertiesService> : permet d'ajouter les propriétés à l'instance actuelle, à l'aide de <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>.  
   
@@ -128,7 +137,7 @@ protected override void OnModelItemChanged(object newItem)
   
 - <xref:System.Activities.Presentation.Validation.IValidationErrorService> : fournit l'accès aux erreurs de validation à l'aide de <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>.  
   
-- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService> : fournit un service interne pour stocker et récupérer des données. Ce service est utilisé en interne par le cadre .NET, et n’est pas destiné à un usage externe.  
+- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService> : fournit un service interne pour stocker et récupérer des données. Ce service est utilisé en interne par le .NET Framework et n’est pas destiné à un usage externe.  
   
 - <xref:System.Activities.Presentation.IXamlLoadErrorService> : fournit l'accès à la collection d'erreurs de chargement XAML à l'aide de <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>.  
   

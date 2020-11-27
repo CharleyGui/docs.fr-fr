@@ -2,27 +2,30 @@
 title: 1024 - CreateBookmarkScope
 ms.date: 03/30/2017
 ms.assetid: e1ed8fc2-2a31-4878-a851-5db8b869283a
-ms.openlocfilehash: 5e5f0a04586c87eadf70fbca3cbdd0cf51a3d628
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 179c54365c2aa1ef7e74485202c27820bf1e2cae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008835"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275282"
 ---
 # <a name="1024---createbookmarkscope"></a>1024 - CreateBookmarkScope
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1024|  
+|id|1 024|  
 |Mots clés|WFRuntime|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Indique qu'un BookmarkScope a été créé.  
   
 ## <a name="message"></a>Message  
+
  Un BookmarkScope a été créé : %1.  
   
 ## <a name="details"></a>Détails  

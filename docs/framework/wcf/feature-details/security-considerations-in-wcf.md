@@ -6,17 +6,19 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: 42055ee0-6d0c-443d-9d89-788dfc345d6d
-ms.openlocfilehash: ed0f018e0151e68afeb9a4747bf8a260faa184b1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 796098258601ec5fa208fd8a8060b28c3eeeb4d6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601034"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276020"
 ---
 # <a name="security-considerations-in-wcf"></a>Considérations relatives à la sécurité dans WCF
+
 Les rubriques de cette section répertorient les différents éléments liés à la sécurité à prendre en compte lors de la conception d’une application Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Divulgation d’informations](information-disclosure.md)  
  Traite des diverses manières dont les informations peuvent être divulguées ou attaquées, et de la manière de limiter ce risque.  
   
@@ -39,6 +41,7 @@ Les rubriques de cette section répertorient les différents éléments liés à
  Répertorie différents scénarios qui ne prennent pas en charge un aspect particulier de la sécurité et qui doivent être évités ou pris en compte.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.IdentityModel.Tokens>  
   
  <xref:System.IdentityModel.Claims>  
@@ -48,6 +51,7 @@ Les rubriques de cette section répertorient les différents éléments liés à
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Aide sur la sécurité et meilleures pratiques](security-guidance-and-best-practices.md)  
   
 ## <a name="see-also"></a>Voir aussi

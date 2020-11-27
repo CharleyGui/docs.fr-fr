@@ -2,17 +2,19 @@
 title: Sélection d’un modèle d’échange de messages
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-ms.openlocfilehash: 7dcbea30b53142ed68db9ac138f8c7a665ca1729
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 22c720beaa8dc70d2916a5b1d38819ad3d333a0f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797292"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275656"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Sélection d’un modèle d’échange de messages
+
 La première étape de l’écriture d’un transport personnalisé consiste à décider quels *modèles d’échange de messages* (ou MEP) sont requis pour le canal que vous développez. Cette rubrique contient des explications sur les options disponibles ainsi que sur les différentes exigences. Il s’agit de la première tâche de la liste des tâches de développement de canaux décrite dans [développement de canaux](developing-channels.md).  
   
 ## <a name="six-message-exchange-patterns"></a>Modèles d'échange de messages  
+
  Trois MEP sont disponibles :  
   
 - Datagramme (<xref:System.ServiceModel.Channels.IInputChannel> et <xref:System.ServiceModel.Channels.IOutputChannel>)  
@@ -48,6 +50,7 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
 > Pour le transport UDP, le seul MEP pris en charge est datagramme, le protocole UDP, de part sa nature même, permettant uniquement l'échange de messages de type « déclenché et oublié ».  
   
 ## <a name="sessions-and-sessionful-channels"></a>Sessions et canaux de session  
+
  En matière de réseaux, il existe des protocoles orientés connexion (par exemple, le protocole TCP) et des protocoles sans connexion (par exemple, le protocole UDP). WCF utilise le terme session pour signifier une abstraction logique de type connexion. Les protocoles de session WCF s'apparentent aux protocoles de réseau orientés connexion et les protocoles sans session WCF aux protocoles de réseau sans connexion.  
   
  Dans le modèle d'objet de canal, chaque session logique se manifeste sous forme d'instance de canal de session. Par conséquent, chaque nouvelle session créée par le client et acceptée par le service correspond à un nouveau canal de session de part et d'autre. Le diagramme suivant contient, dans sa partie supérieure, la structure des canaux sans session et, dans sa partie inférieure, la structure des canaux de session.  
@@ -61,6 +64,7 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
  Sans session, il n'existe pas de corrélation entre canaux et sessions. Par conséquent, l'écouteur de canal crée un seul canal via lequel tous les messages sont reçus, puis remis à l'application. En l'absence de session pour maintenir l'ordre des messages, ceux-ci sont transmis sans respecter leur ordre d'envoi. La partie supérieure du graphique précédent illustre un échange de messages sans session.  
   
 ## <a name="starting-and-terminating-sessions"></a>Démarrage et fin des sessions  
+
  Les sessions sont démarrées à partir du client à la création par ce dernier d'un nouveau canal de session. Elles sont démarrées à partir du service à réception par cette dernière d'un message envoyé dans une nouvelle session. De la même façon, les sessions sont arrêtées par la fermeture ou l'annulation du canal de session.  
   
  Le canal <xref:System.ServiceModel.Channels.IDuplexSessionChannel> qui est utilisé à la fois pour l’envoi et la réception des messages selon un modèle de communication duplex avec session fait exception à cette règle. L'une des parties peut souhaiter ne plus envoyer de messages tout en continuant à en recevoir. Par conséquent, lors de l'utilisation d'un canal <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, un système vous permet de fermer la session de sortie, indiquant ainsi que vous ne souhaitez plus envoyer de messages, tout en maintenant la session d'entrée ouverte, ce qui vous permet en revanche de continuer à en recevoir.  
@@ -70,6 +74,7 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
  Cependant, les canaux d'entrée de session ne doivent pas être fermés, sauf si la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.Channels.IDuplexSessionChannel> retourne la valeur null, indiquant alors que la session est déjà fermée. Lorsque la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.Channels.IDuplexSessionChannel> ne retourne pas la valeur null, la fermeture du canal d'entrée de session risque de lever une exception, celui-ci étant susceptible de recevoir des messages de manière inopinée pendant le processus de fermeture. Lorsque le destinataire souhaite mettre un terme à la session avant l'expéditeur, il doit appeler la méthode <xref:System.ServiceModel.ICommunicationObject.Abort%2A> sur le canal d'entrée, mettant ainsi un terme brutal à la session.  
   
 ## <a name="writing-sessionful-channels"></a>Création des canaux de session  
+
  Lorsque vous créez des canaux de session, ceux-ci doivent remplir certaines conditions pour permettre l'avènement des sessions. Du côté expéditeur, votre canal doit :  
   
 - Créer une nouvelle session (pour chaque nouveau canal) et y associer un nouvel ID de session correspondant à une chaîne unique. Ou obtenir une nouvelle session à partir du canal de session figurant en dessous du vôtre dans la pile.  
@@ -94,4 +99,4 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du modèle de canal](channel-model-overview.md)
+- [Vue d'ensemble du modèle de canal](channel-model-overview.md)

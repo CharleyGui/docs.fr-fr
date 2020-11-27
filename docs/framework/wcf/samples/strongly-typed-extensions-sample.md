@@ -2,12 +2,12 @@
 title: Exemple d’extensions fortement typées
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: e8c3bf202a1fb76d383f0a3fe15084d19a1d51fb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e5b74188d4c9c333858c60ff95a2a90b0e2e9418
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600878"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275929"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Exemple d’extensions fortement typées
 
@@ -18,6 +18,7 @@ L'exemple utilise la classe <xref:System.ServiceModel.Syndication.SyndicationFee
  En particulier, cet exemple indique comment implémenter un élément d’extension défini dans la RFC proposée, Atom Threading Extensions. Cet exemple est fourni à titre de démonstration uniquement et n'est pas conçu comme une implémentation complète de la spécification proposée.  
   
 ## <a name="sample-xml"></a>Exemple XML  
+
  L’exemple de code XML suivant illustre une entrée Atom 1.0 avec un élément d’extension `<in-reply-to>` supplémentaire.  
   
 ```xml  
@@ -44,6 +45,7 @@ L'exemple utilise la classe <xref:System.ServiceModel.Syndication.SyndicationFee
  L' `<in-reply-to>` élément spécifie trois attributs requis ( `ref` , `type` et `href` ), tout en autorisant également la présence d’attributs d’extension et d’éléments d’extension supplémentaires.  
   
 ## <a name="modeling-the-in-reply-to-element"></a>Modélisation de l'élément In-Reply-To  
+
  Dans cet exemple, l'élément `<in-reply-to>` est modélisé en tant que CLR qui implémente <xref:System.Xml.Serialization.IXmlSerializable>, ce qui active son utilisation avec <xref:System.Runtime.Serialization.DataContractSerializer>. Il implémente également des méthodes et des propriétés pour accéder aux données de l’élément, comme indiqué dans l’exemple de code suivant.  
   
 ```csharp  
@@ -186,6 +188,7 @@ public void WriteXml(System.Xml.XmlWriter writer)
 ```  
   
 ## <a name="threadedfeed-and-threadeditem"></a>ThreadedFeed et ThreadedItem  
+
  Dans l'exemple, les `SyndicationItems` avec les extensions `InReplyTo` sont modélisés par la classe `ThreadedItem`. De même, la classe `ThreadedFeed` est un `SyndicationFeed` dont les éléments sont tous des instances de `ThreadedItem`.  
   
  La classe `ThreadedFeed` est héritée de `SyndicationFeed` et substitue la méthode `OnCreateItem` pour retourner un `ThreadedItem`. Elle implémente également une méthode pour accéder à la collection `Items` en tant que `ThreadedItems`, comme illustré dans le code suivant.  

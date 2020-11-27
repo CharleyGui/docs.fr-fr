@@ -13,14 +13,15 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 45a80ba7c3e24c0f419758315b2d2daafd3890f4
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: d1644ff4d69c857e36e87f7e83f668908b7ba021
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164249"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275760"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (License Compiler)
+
 L'outil License Compiler lit les fichiers texte comportant des informations sur les licences et génère un fichier binaire pouvant être incorporé dans un exécutable du Common Language Runtime en tant que ressource.  
   
  Un fichier .licx est automatiquement généré ou mis à jour par le concepteur Windows Forms lorsqu'un contrôle sous licence est ajouté au formulaire. Dans le cadre de la compilation, le système de projet transforme le fichier texte .licx en ressource binaire .licenses qui assure la prise en charge des licences de contrôles .NET. La ressource binaire est ensuite incorporée dans la sortie de projet.  
@@ -51,9 +52,9 @@ targetPE /complist:filename [-outdir:path]
 |**@***fichier*|Spécifie le fichier de réponse (.rsp).|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
-1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe`*, *vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
+1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe`*,* vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
   
     ```text
     MyCompany.Samples.LicControl1, Samples.DLL  
@@ -78,6 +79,7 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
 ```  
   
 ## <a name="response-file-example"></a>Exemple de fichier de réponse  
+
  La liste suivante montre un exemple de fichier réponse, `response.rsp`. Pour plus d’informations sur les fichiers réponse, consultez [Fichiers réponse](/visualstudio/msbuild/msbuild-response-files).  
   
 ```text  

@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wrappers, creating manually
 ms.assetid: cc2a70d8-6a58-4071-a8cf-ce28c018c09b
-ms.openlocfilehash: 0d696adbe1ee224e78f79a049ed2e41d50be1faa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0321e98e6237e54397db7e583546fd69803ab7e1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275955"
 ---
 # <a name="how-to-create-wrappers-manually"></a>Procédure : créer manuellement des wrappers
+
 Si vous décidez de déclarer des types COM manuellement dans du code source managé, il est recommandé de démarrer avec un fichier IDL (Interface Definition Language) existant ou une bibliothèque de types existante. Quand vous ne disposez pas du fichier IDL ou ne pouvez pas générer un fichier de bibliothèque de types, vous pouvez simuler les types COM en créant des déclarations managées et en exportant l'assembly résultant dans une bibliothèque de types.  
   
 ### <a name="to-simulate-com-types-from-managed-source"></a>Pour simuler des types COM à partir d’une source managée  
@@ -34,6 +35,7 @@ Si vous décidez de déclarer des types COM manuellement dans du code source man
 4. Quant aux types importés avec Tlbimp.exe, certains nécessitent des informations supplémentaires, que vous pouvez ajouter directement dans le code. Pour plus d’informations, consultez [Guide pratique pour modifier des assemblys d’interopérabilité](/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100)).  
   
 ## <a name="example"></a> Exemple  
+
  Le code suivant montre un exemple de l’interface `ISATest` et de la classe `SATest` dans IDL, et les types correspondants dans le code source C#.  
   
  **Fichier IDL ou fichier bibliothèque de types**  
@@ -104,5 +106,5 @@ namespace SAServer
 - [Types de données COM](/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
 - [Guide pratique pour modifier des assemblys d’interopérabilité](/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (Type Library Importer)](../tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)

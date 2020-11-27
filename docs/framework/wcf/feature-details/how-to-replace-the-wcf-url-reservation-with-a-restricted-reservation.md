@@ -2,12 +2,12 @@
 title: 'Procédure : remplacer la réservation d’URL WCF par une réservation restreinte'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: a7025636bb1ca2ef250d7d25634bda961f2db09d
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 52dc74ea1f8e86d6a92a2894b888b8d150ebf47c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811611"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276059"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d’URL WCF par une réservation restreinte
 
@@ -36,6 +36,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
 3. Si la réservation est supprimée avec succès, le message suivant s'affiche. **Suppression réussie de la réservation d'URL**  
   
 ## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>Création d'un nouveau groupe de sécurité et d'une nouvelle réservation d'URL restreinte  
+
  Pour remplacer la réservation d’URL WCF par une réservation restreinte, vous devez d’abord créer un nouveau groupe de sécurité. Pour ce faire, deux méthodes s'offrent à vous : à partir d'une invite de commandes ou de la console de gestion de l'ordinateur. L'utilisation d'une seule de ces méthodes suffit.  
   
 ### <a name="to-create-a-new-security-group-from-a-command-prompt"></a>Pour créer un groupe de sécurité à partir d'une invite de commandes  

@@ -1,19 +1,20 @@
 ---
-title: "Procédure : créer un workflow d'organigramme"
+title: 'Procédure : créer un workflow d’organigramme'
 description: Cet article décrit la création d’un workflow qui utilise à la fois des activités intégrées et les activités personnalisées de l’article précédent.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 6b3fa423200f5c5cfece60f07372ce9678fc0072
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f8e0703591629a72e0a8f6eeb05dd9d19c8c4c91
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419705"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275825"
 ---
-# <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d'organigramme
+# <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d’organigramme
+
 Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l' <xref:System.Activities.Statements.Flowchart> activité, et les activités personnalisées de la rubrique précédente [Comment : créer une activité](how-to-create-an-activity.md) . Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
@@ -100,7 +101,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 5. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et connectez-la à l’aide de l’une des méthodes décrites à l’étape précédente afin qu’elle soit en dessous de l’activité **prompt** .  
   
-6. Tapez `Turns` dans la zone **à** , puis `Turns + 1` dans la zone **entrer une expression C#** ou **entrer une expression VB** .  
+6. Tapez `Turns` dans la zone **à** , puis `Turns + 1` dans la zone **entrer une expression C#**  ou **entrer une expression VB** .  
   
 7. Faites glisser un **FlowDecision** à partir de la section **Flowchart** de la **boîte à outils** et connectez-le sous l’activité **Assign** . Dans la **fenêtre Propriétés**, tapez l’expression suivante dans la zone valeur de la propriété **condition** .  
   
@@ -156,7 +157,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
 - [Programmation Windows Workflow Foundation](programming.md)
-- [Conception des workflows](designing-workflows.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
-- [Guide pratique pour créer une activité](how-to-create-an-activity.md)
-- [Guide pratique pour exécuter un workflow](how-to-run-a-workflow.md)
+- [Conception des flux de travaux](designing-workflows.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
+- [Procédure : créer une activité](how-to-create-an-activity.md)
+- [Procédure : exécuter un workflow](how-to-run-a-workflow.md)

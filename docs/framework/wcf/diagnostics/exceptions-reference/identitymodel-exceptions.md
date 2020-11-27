@@ -2,14 +2,15 @@
 title: Exceptions IdentityModel
 ms.date: 03/30/2017
 ms.assetid: 4ef34497-8ff5-4621-b773-7731cc721231
-ms.openlocfilehash: 4b8af2620b6179ce4cff59d7f9871377f06ffe5f
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 08d81f4eb35d0f4bda3997d6ab4dfd0ec10407e1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486664"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275035"
 ---
 # <a name="identitymodel-exceptions"></a>Exceptions IdentityModel
+
 Cette rubrique répertorie toutes les exceptions générées par IdentityModel.  
   
 ## <a name="exception-list"></a>Liste des exceptions  
@@ -23,7 +24,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SAMLAttributeMissingNameAttributeOnRead|La valeur de 'Name' pour l'élément SamlAttribute qui est lu est manquante ou de longueur 0.|  
 |UnknownICryptoType|L'implémentation ICrypto n'est pas prise en charge.|  
 |TraceCodeSecurityTokenProviderClosed|Le fournisseur de jetons de sécurité a été fermé.|  
-|SAMLUnableToLoadAdvice|Impossible de charger le \<SAML : Advice > élément.|  
+|SAMLUnableToLoadAdvice|Échec du chargement de l' \<saml:advice> élément.|  
 |SAMLAuthenticationStatementMissingAuthenticationMethodOnRead|L'attribut 'AuthenticationMethod' qui est lu pour un élément SamlAuthenticationStatement est manquant ou de longueur 0.|  
 |UnsupportedTransformAlgorithm|Algorithme de canonisation ou de transformation non pris en charge.|  
 |SAMLAudienceRestrictionShouldHaveOneAudience|Un élément SamlAudienceRestrictionCondition doit contenir au moins un élément Audience (URI).|  
@@ -80,15 +81,15 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SAMLSignatureAlreadyRead|La signature est déjà lue dans l'assertion SAML.|  
 |AlgorithmAndPrivateKeyMisMatch|L'algorithme spécifié et la clé privée ne correspondent pas.|  
 |EmptyTransformChainNotSupported|La chaîne de transformation vide n'est pas prise en charge.|  
-|SspiWrapperEncryptDecryptAssert1|SSPIWrapper :: EncryptDecryptHelper&#124;« offset » est hors limites.|  
-|SspiWrapperEncryptDecryptAssert2|SSPIWrapper :: EncryptDecryptHelper&#124;'size' est hors limites. SecurityTokenManagerCannotCreateAuthenticatorForRequirement=Le gestionnaire de jetons de sécurité ne peut pas créer d’authentificateur de jeton pour l’exigence spécifique.|  
+|SspiWrapperEncryptDecryptAssert1|SSPIWrapper :: EncryptDecryptHelper&#124; 'offset’est hors limites.|  
+|SspiWrapperEncryptDecryptAssert2|SSPIWrapper :: EncryptDecryptHelper&#124; 'size’est hors limites. SecurityTokenManagerCannotCreateAuthenticatorForRequirement=Le gestionnaire de jetons de sécurité ne peut pas créer d’authentificateur de jeton pour l’exigence spécifique.|  
 |UnableToCreateKeyedHashAlgorithm|Création d'un élément KeyedHashAlgorithm impossible à partir de la valeur spécifique pour l'algorithme de signature spécifique.|  
-|SAMLUnableToLoadAssertion|Le \<SAML : assertion > Échec du chargement de l’élément.|  
+|SAMLUnableToLoadAssertion|Échec du chargement de l' \<saml:assertion> élément.|  
 |X509FindValueMismatchMulti|L’élément X509FindType spécifique requiert que le type de l’argument findValue soit l’une des 2 valeurs. L’argument findValue est d’un autre type.|  
 |TraceCodeSecurityIdentityDeterminationSuccess|L'identité a été déterminée pour un élément EndpointAddress.|  
 |UndefinedUseOfPrefixAtElement|Aucun espace de noms n'est défini pour le préfixe spécifique utilisé au niveau de l'élément.|  
 |TraceCodeSecuritySessionResponderOperationFailure|Échec de l'opération de session sur le serveur.|  
-|CannotFindCert|Impossible de trouver le certificat X.509 à l’aide de critères de recherche spécifique : StoreName , StoreLocation, FindType, FindValue.|  
+|CannotFindCert|Impossible de trouver le certificat X.509 à l'aide des critères de recherche spécifiés : StoreName, StoreLocation, FindType, FindValue.|  
 |X509InvalidUsageTime|Le temps d'utilisation du certificat X.509 spécifique est non valide. Ce temps d'utilisation n'est pas compris dans la plage NotBefore time et NotAfter time.|  
 |TraceCodeSecurityIdentityDeterminationFailure|L'identité ne peut pas être déterminée pour un élément EndpointAddress.|  
 |AsyncObjectAlreadyEnded|La méthode End a déjà été appelée sur cet objet de résultat asynchrone.|  
@@ -100,11 +101,11 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SAMLAssertionMissingMajorVersionAttributeOnRead|L'attribut MajorVersion pour l'élément SamlAssertion qui est lu est manquant ou de longueur 0.|  
 |SamlAttributeClaimRightShouldBePossessProperty|Ce constructeur SamlAttribute requiert que la valeur du Droit de la revendication soit définie sur System.IdentityModel.Claims.Rights.PossessProperty.|  
 |AuthorizationPolicyEvaluated|Évaluation de la stratégie avec l'ID spécifique.|  
-|SAMLUnableToLoadCondtions<!-- the misspelling here is deliberate. -->|Le \<SAML : conditions > Échec du chargement de l’élément.|  
+|SAMLUnableToLoadCondtions<!-- the misspelling here is deliberate. -->|Échec du chargement de l' \<saml:conditions> élément.|  
 |AESKeyLengthNotSupported|La clé de bits spécifique n'est pas prise en charge. Seule la clé de 128, 192 et 256 bits est prise en charge.|  
 |UserNameCannotBeEmpty|Le nom d'utilisateur ne peut pas être vide.|  
 |AlgorithmAndPublicKeyMisMatch|L'algorithme spécifié et la clé publique ne correspondent pas.|  
-|SAMLUnableToLoadCondtion<!-- the misspelling here is deliberate. -->|Le \<SAML : conditions > Échec du chargement de l’élément.|  
+|SAMLUnableToLoadCondtion<!-- the misspelling here is deliberate. -->|Échec du chargement de l' \<saml:conditions> élément.|  
 |SamlAssertionMissingSigningCredentials|La valeur de SigningCredentials n'est pas définie sur l'élément SamlAssertion. SamlAssertions doit être signé, définissez cette valeur pour poursuivre.|  
 |SspiPayloadNotEncrypted|Les données binaires n'ont pas été chiffrées avec le contexte de sécurité SSPI.|  
 |SAMLAuthorizationDecisionShouldHaveOneActionOnRead|L'élément SamlAuthorizationDecisionStatement qui est lu ne contient aucun SamlAction.|  
@@ -164,7 +165,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |LengthOfArrayToConvertMustGreaterThanZero|La longueur du tableau à convertir en nombre entier doit être supérieure à 0.|  
 |InvalidAsyncResult|AsyncResult non valide.|  
 |TraceCodeIssuanceTokenProviderRemovedCachedToken|IssuanceTokenProvider a supprimé le jeton de service expiré.|  
-|IncorrectUserNameFormat|Le format du nom d'utilisateur est non valide. Le format de nom d’utilisateur doit être sous la forme de « username » ou « domaine\\\username ».|  
+|IncorrectUserNameFormat|Le format du nom d'utilisateur est non valide. Le format du nom d’utilisateur doit se présenter sous la forme « username » ou « Domain \\ \username ».|  
 |TraceCodeExportSecurityChannelBindingEntry|Démarrage de Security ExportChannelBinding.|  
 |UnsupportedInputTypeForTransform|Le type d'entrée spécifié n'est pas pris en charge pour la transformation.|  
 |CannotFindDocumentRoot|Impossible de trouver la racine du document.|  
@@ -227,7 +228,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |UnableToCreateSignatureDeformatterFromAsymmetricCrypto|Création d'un module de déformatage de signature impossible pour l'algorithme spécifié à partir de la cryptographie asymétrique spécifiée.|  
 |TraceCodeIdentityModelAsyncCallbackThrewException|Un rappel asynchrone a levé une exception.|  
 |LengthMustBeGreaterThanZero|La longueur de cet argument doit être supérieure à 0.|  
-|FoundMultipleCerts|Trouve plusieurs certificats X.509 à l’aide de critères de recherche spécifiés : StoreName, StoreLocation, FindType, FindValue. Indiquez une valeur de recherche plus précise.|  
+|FoundMultipleCerts|Plusieurs certificats X.509 ont été trouvés en utilisant les critères de recherche spécifiés : StoreName, StoreLocation, FindType, FindValue. Indiquez une valeur de recherche plus précise.|  
 |AtLeastOneTransformRequired|L'élément Transforms doit au moins contenir une transformation.|  
 |SAMLTokenNotSerialized|Sérialisation de l'élément SamlAssertion en flux XML impossible. Consultez l'exception interne pour plus de détails.|  
 |TraceCodeSecurityBindingOutgoingMessageSecured|Le protocole de sécurité a sécurisé le message sortant.|  
@@ -294,5 +295,5 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |UnableToCreateKeyedHashAlgorithmFromSymmetricCrypto|Création d'un élément keyedHashAlgorithm impossible pour l'algorithme spécifié à partir de la cryptographie symétrique spécifiée.|  
 |SAMLAuthenticationStatementMissingAuthenticationMethod|L'élément 'AuthenticationMethod' spécifié pour une entité SamlAuthenticationStatement ne peut ni être null, ni être de longueur 0.|  
 |TraceCodeSecurityImpersonationFailure|Échec de l'emprunt d'identité de sécurité sur le serveur.|  
-|Par défaut|(Default)|  
+|Default|(Par défaut)|  
 |UnsupportedNodeTypeInReader|Le type de nœud spécifié doté du nom spécifié n'est pas pris en charge.|
