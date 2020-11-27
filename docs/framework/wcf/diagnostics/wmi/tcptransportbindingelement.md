@@ -2,14 +2,15 @@
 title: TcpTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-ms.openlocfilehash: 6d2717bc2d1d14e369af2b9c5a8c0affb67501d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6af85d62fffada95537494692b8694f42d7a2932
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956544"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290086"
 ---
 # <a name="tcptransportbindingelement"></a>TcpTransportBindingElement
+
 TcpTransportBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,40 +26,46 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe TcpTransportBindingElement ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe TcpTransportBindingElement a les propriétés suivantes :  
   
 ### <a name="connectionpoolsettings"></a>ConnectionPoolSettings  
+
  Type de données : TcpConnectionPoolSettings  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Paramètres de pool de connexions.  
   
 ### <a name="listenbacklog"></a>ListenBacklog  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nombre maximal de demandes de connexion en file d'attente pouvant être en attente.  
   
 ### <a name="portsharingenabled"></a>PortSharingEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion.  
   
 ### <a name="teredoenabled"></a>TeredoEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

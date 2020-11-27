@@ -3,14 +3,15 @@ title: Génération d'un client WCF à partir de métadonnées de service
 description: Découvrez les différents commutateurs dans Svcutil.exe utilisé pour générer des clients WFC à partir de documents de métadonnées de service basés sur WSDL ou sur un fichier de stratégie du service.
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-ms.openlocfilehash: f755a092fb3596349a6878c61fe414f4e0a9f9d1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: e4363ac94a79dedf6d8a80adcaf738df179252b8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247271"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290073"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Génération d'un client WCF à partir de métadonnées de service
+
 Cette rubrique décrit comment utiliser plusieurs commutateurs dans Svcutil.exe pour générer des clients à partir de documents de métadonnées.  
   
  Les documents de métadonnées peuvent se trouver sur un stockage durable ou être récupérés en ligne. La récupération en ligne suit le protocole WS-MetadataExchange ou le protocole Microsoft Discovery (DISCO). Svcutil.exe publie les demandes de métadonnées suivantes simultanément pour récupérer des métadonnées :  
