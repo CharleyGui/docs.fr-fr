@@ -6,14 +6,15 @@ helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-ms.openlocfilehash: 9f86e8334482880c4f7cb23ec93a3c826c083389
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f537a2e0557f1b0434d1f303d74f9cd48f157edc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309649"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283872"
 ---
 # <a name="clr-etw-providers"></a>Fournisseurs ETW du CLR
+
 Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtime et le fournisseur d’arrêt.  
   
  Le fournisseur de runtime déclenche des événements en fonction des mots clés (catégories d’événements) activés. Par exemple, vous pouvez collecter des événements de chargeur en activant le mot clé `LoaderKeyword`.  
@@ -21,6 +22,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
  Les événements de Suivi d’v nements pour Windows (ETW) sont enregistrés dans un fichier qui a une extension. etl, qui peut être postérieurement traité dans des fichiers de valeurs séparées par des virgules (. csv) si nécessaire. Pour plus d’informations sur la façon de convertir le fichier .etl en fichier .csv, consultez [Controlling .NET Framework Logging](controlling-logging.md) (Contrôle de la journalisation du .NET Framework).  
   
 ## <a name="the-runtime-provider"></a>Fournisseur de runtime  
+
  Le fournisseur de runtime est le principal fournisseur ETW du CLR.  
   
  Le GUID du fournisseur de runtime du CLR est e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
@@ -30,6 +32,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
  En plus des mots clés tels que `LoaderKeyword`, vous devrez éventuellement activer des mots clés pour la journalisation des événements qui se déclenchent trop fréquemment. Les mots clés `StartEnumerationKeyword` et `EndEnumerationKeyword` activent ces événements et sont résumés dans [Mots clés et niveaux CLR ETW](clr-etw-keywords-and-levels.md).  
   
 ## <a name="the-rundown-provider"></a>Fournisseur d’arrêt  
+
  Le fournisseur d’arrêt doit être activé dans certains cas bien précis. Toutefois, pour la plupart des utilisateurs, le fournisseur de runtime est tout à fait suffisant.  
   
  Le GUID du fournisseur d’arrêt du CLR est A669021C-C450-4609-A035-5AF59AF4DF18.  
@@ -43,9 +46,11 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
  En plus des filtres par mots clés d’événement, le fournisseur d’arrêt prend en charge les mots clés `StartRundownKeyword` et `EndRundownKeyword` pour permettre un filtrage ciblé.  
   
 ### <a name="start-rundown"></a>Arrêt de début  
+
  Un arrêt de début est déclenché quand la journalisation sous le fournisseur d’arrêt est activée avec le mot clé `StartRundownKeyword`. Cela entraîne le déclenchement de l’événement `DCStart` et la capture de l’état du système. Avant le démarrage de l’énumération, l’événement `DCStartInit` est déclenché. À la fin de l’énumération, l’événement `DCStartComplete` est déclenché pour indiquer au contrôleur que la collecte de données s’est terminée normalement.  
   
 ### <a name="end-rundown"></a>Arrêt de fin  
+
  Un arrêt de fin est déclenché quand la journalisation sous le fournisseur d’arrêt est activée avec le mot clé `EndRundownKeyword`. L’arrêt de fin arrête le profilage sur un processus qui continue de s’exécuter. Les événements `DCEnd` capturent l’état du système quand le profilage est arrêté.  
   
  Avant le démarrage de l’énumération, l’événement `DCEndInit` est déclenché. À la fin de l’énumération, l’événement `DCEndComplete` est déclenché pour indiquer au consommateur que la collecte de données s’est terminée normalement. Les arrêts de début et de fin sont principalement utilisés pour la résolution de symboles managés. L’arrêt de début peut fournir des informations sur les plages d’adresses des méthodes qui ont été compilées juste-à-temps (JIT) avant le début de la session de profilage. L’arrêt de fin peut fournir des informations sur les plages d’adresses de toutes les méthodes qui ont été compilées juste-à-temps (JIT) quand le profilage est sur le point d’être désactivé.  
@@ -55,6 +60,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
  Bien que l’arrêt de début ou de fin puisse fournir des informations de plage d’adresses de méthodes pour la résolution de symboles managés, nous vous recommandons d’utiliser le mot clé `EndRundownKeyword` (qui fournit des événements `DCEnd`) plutôt que le mot clé `StartRundownKeyword` (qui fournit des événements `DCStart`). L’utilisation de `StartRundownKeyword` entraîne l’arrêt de la session de profilage, ce qui peut perturber le scénario profilé.  
   
 ## <a name="etw-data-collection-using-runtime-and-rundown-providers"></a>Collecte de données ETW à l’aide des fournisseurs de runtime et d’arrêt  
+
  L’exemple suivant montre comment utiliser le fournisseur d’arrêt du CLR d’une façon qui autorise la résolution des symboles des processus managés avec un impact minimal, indépendamment du fait que les processus démarrent ou se terminent à l’intérieur ou à l’extérieur de la fenêtre profilée.  
   
 1. Activez la journalisation ETW à l’aide du fournisseur de runtime du CLR :  

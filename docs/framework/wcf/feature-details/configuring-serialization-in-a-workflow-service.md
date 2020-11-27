@@ -2,15 +2,16 @@
 title: Configuration de la sérialisation dans un service de workflow
 ms.date: 03/30/2017
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-ms.openlocfilehash: 5076f3d377a656cb96909cf8df01591dc6ab72b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d1cda33c8a469b4a54b6d282b99c07b23e91543e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597538"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284197"
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>Configuration de la sérialisation dans un service de workflow
-Les services de workflow sont des services Windows Communication Foundation (WCF). par conséquent, vous avez la possibilité d’utiliser l' <xref:System.Runtime.Serialization.DataContractSerializer> (valeur par défaut) ou l' <xref:System.Xml.Serialization.XmlSerializer> . Lors de l'écriture de services en dehors du workflow, le type de sérialiseur à utiliser est spécifié dans le contrat de service ou d'opération. Lorsque vous créez des services de workflow WCF, vous ne spécifiez pas ces contrats dans le code, mais ils sont générés au moment de l’exécution par l’inférence de contrat. Pour plus d’informations sur l’inférence de contrat, consultez [utilisation de contrats dans le workflow](using-contracts-in-workflow.md).  Le sérialiseur est spécifié à l'aide de la propriété <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A>. Celle-ci peut être définie dans le concepteur comme le montre l'illustration suivante.  
+
+Les services de workflow sont des services Windows Communication Foundation (WCF). par conséquent, vous avez la possibilité d’utiliser l' <xref:System.Runtime.Serialization.DataContractSerializer> (valeur par défaut) ou l' <xref:System.Xml.Serialization.XmlSerializer> . Lors de l'écriture de services en dehors du workflow, le type de sérialiseur à utiliser est spécifié dans le contrat de service ou d'opération. Lorsque vous créez des services de workflow WCF, vous ne spécifiez pas ces contrats dans le code, mais ils sont générés au moment de l’exécution par l’inférence de contrat. Pour plus d’informations sur l’inférence de contrat, consultez  [utilisation de contrats dans le workflow](using-contracts-in-workflow.md).  Le sérialiseur est spécifié à l'aide de la propriété <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A>. Celle-ci peut être définie dans le concepteur comme le montre l'illustration suivante.  
   
  ![Définition de la propriété SerializerOption dans la fenêtre Propriétés.](./media/configuring-serialization-in-a-workflow-service/setting-serializer-property.png)  
   

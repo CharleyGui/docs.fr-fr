@@ -8,17 +8,19 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-ms.openlocfilehash: dfbe047640a3a640cf37adeea6fa3656cfd9ec6d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 31426ae0589954d4388ba6d40f156c3eea9a8989
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309675"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283885"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
+
 Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#clr-etw-keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#etw-event-levels) sont identifiés par des indicateurs.  
   
 ## <a name="clr-etw-keywords"></a>Mots clés ETW du CLR  
+
  Les mots clés sont des indicateurs qui peuvent être combinés pour générer des valeurs. Dans la pratique, vous utilisez les valeurs hexadécimales des mots clés au lieu de leurs noms lorsque vous appelez des utilitaires en ligne de commande.  
   
  Les mots clés sont décrits dans les tableaux suivants :  
@@ -32,7 +34,9 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 - [Combinaisons de mots clés pour la résolution des symboles pour le fournisseur d’arrêt](#rundown_combo)  
   
 <a name="runtime"></a>
+
 ### <a name="clr-etw-runtime-keywords"></a>Mots clés de runtime ETW du CLR  
+
  Le tableau suivant répertorie les mots clés de runtime ETW du CLR, leurs valeurs et leur usage.  
   
 |Nom du mot clé de runtime|Valeur|Objectif|  
@@ -55,7 +59,9 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`StackKeyword`|0x40000000|Active la collecte des [événements de trace de la pile](stack-etw-event.md).|  
   
 <a name="rundown"></a>
+
 ### <a name="clr-etw-rundown-keywords"></a>Mots clés d’arrêt ETW du CLR  
+
  Le tableau suivant répertorie les mots clés d’arrêt ETW du CLR, leurs valeurs et leur usage.  
   
 |Nom du mot clé d’arrêt|Valeur|Objectif|  
@@ -71,6 +77,7 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`et `ModuleRangeDCEnd` .|
   
 <a name="runtime_combo"></a>
+
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>Combinaisons de mots clés pour la résolution des symboles pour le fournisseur de runtime  
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements de chargement/déchargement de module|Événements de chargement/déchargement de méthode (sauf événements dynamiques)|Événements de chargement/destruction de méthode dynamique|  
@@ -83,6 +90,7 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun.|Événements de déchargement.|Non applicable.|  
   
 <a name="rundown_combo"></a>
+
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>Combinaisons de mots clés pour la résolution des symboles pour le fournisseur d’arrêt  
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements DCStart/DCEnd de module|Événements DCStart/DCEnd de méthode (y compris les événements de méthode dynamique)|  
@@ -95,6 +103,7 @@ Les événements de suivi d'événements pour Windows (ETW) peuvent être filtr�
 |`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Aucun.|Événements`DCEnd` .|  
 
 ## <a name="etw-event-levels"></a>Niveaux d'événement ETW  
+
  Les événements ETW peuvent également être filtrés par niveau. Si le niveau est défini sur 0x5, les événements de tous les niveaux, y compris 0x5 et inférieurs (qui sont des événements qui appartiennent aux catégories activées via des mots clés), sont déclenchés. Si le niveau est défini sur 0x2, seuls les événements de niveau 0x2 et inférieurs sont déclenchés.  
   
  Les niveaux ont les significations suivantes :  

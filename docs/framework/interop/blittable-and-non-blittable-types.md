@@ -6,14 +6,15 @@ helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-ms.openlocfilehash: 8bbf9c72143033cec22b38cc26cbe8ceb44f790b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5f0f6b2f35c184b4df8c93af1c85e7169cb0cc95
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556269"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283144"
 ---
 # <a name="blittable-and-non-blittable-types"></a>types blittable et non blittable
+
 La plupart des types de données ont une représentation commune à la fois dans la mémoire managée et non managée, et ne nécessitent pas de traitement particulier par le marshaleur d’interopérabilité. Ces types sont appelés *types blittables*, car ils ne nécessitent pas de conversion quand ils transitent entre le code managé et le code non managé.  
   
  Les structures qui sont retournées par les appels de code non managé doivent être des types blittables. L’appel de code non managé ne prend en charge aucune structure non blittable comme type de retour.  
@@ -62,7 +63,7 @@ La plupart des types de données ont une représentation commune à la fois dans
 |-------------------------|-----------------|  
 |[System.Array](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
 |[System.Boolean](/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|Convertit en valeur de 1, 2 ou 4 octets, la valeur `true` ayant pour valeur 1 ou -1.|  
-|[System.Char](/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Convertit en caractère ANSI ou Unicode.|  
+|[System. Char](/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|Convertit en caractère ANSI ou Unicode.|  
 |[System.Class](/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|Convertit en interface de classe.|  
 |[System.Object](default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
 |[System.Mdarray](default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  

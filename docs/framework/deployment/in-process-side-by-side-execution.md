@@ -6,17 +6,19 @@ helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-ms.openlocfilehash: 078f2eaada8fac57138bef22d46218ef2ccda835
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 85d0ec90a8877384517e9de3b56258d294e0c612
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622599"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283482"
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
+
 À compter de .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
   
 ## <a name="background"></a>Arrière-plan  
+
  Le .NET Framework a toujours fourni un hébergement côte à côte pour les applications de code managé, mais avant .NET Framework 4, il ne fournissait pas cette fonctionnalité pour les composants COM managés. Dans le passé, les composants COM managés chargés dans un processus étaient exécutés avec la version du runtime déjà chargée ou avec la version installée la plus récente du .NET Framework. Si cette version n’était pas compatible avec le composant COM, le composant échouait.  
   
  .NET Framework 4 fournit une nouvelle approche de l’hébergement côte à côte qui s’assure des éléments suivants :  
@@ -39,7 +41,7 @@ ms.locfileid: "85622599"
   
     |Version du .NET Framework|1.1|2.0 - 3.5|4|  
     |----------------------------|---------|----------------|-------|  
-    |1.1|Non applicable|Non |Oui|  
+    |1.1|Non applicable|Non|Oui|  
     |2.0 - 3.5|Non|Non applicable|Oui|  
     |4|Oui|Oui|Non applicable|  
   
@@ -47,6 +49,7 @@ ms.locfileid: "85622599"
 > Les versions 3.0 et 3.5 du .NET Framework sont générées de façon incrémentielle sur la version 2.0 et n’ont pas besoin de fonctionner côte à côte. Il s’agit fondamentalement de la même version.  
   
 <a name="scenarios"></a>
+
 ## <a name="common-side-by-side-hosting-scenarios"></a>Scénarios d’hébergement côte à côte courants  
   
 - **Scénario 1 :** application native qui utilise des composants COM créés avec des versions antérieures du .NET Framework.  
@@ -84,7 +87,8 @@ ms.locfileid: "85622599"
     </configuration>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple suivant montre un hôte COM non managé qui exécute un composant COM managé à l’aide de la version du .NET Framework dans laquelle le composant a été compilé.  
   
  Pour exécuter l’exemple suivant, compilez et inscrivez le composant COM managé suivant avec .NET Framework 3.5. Pour inscrire le composant, dans le menu **Projet**, cliquez sur **Propriétés**, sur l’onglet **Générer**, puis cochez la case **Inscrire pour COM Interop**.  
@@ -174,5 +178,5 @@ int _tmain(int argc, _TCHAR* argv[])
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<startup>Appartient](../configure-apps/file-schema/startup/startup-element.md)
-- [\<supportedRuntime>Appartient](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<startup> Appartient](../configure-apps/file-schema/startup/startup-element.md)
+- [\<supportedRuntime> Appartient](../configure-apps/file-schema/startup/supportedruntime-element.md)

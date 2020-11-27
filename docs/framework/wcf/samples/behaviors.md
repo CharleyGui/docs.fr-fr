@@ -1,25 +1,27 @@
 ---
-title: comportements
+title: Comportements
 ms.date: 03/30/2017
 ms.assetid: b0885b65-4e74-4bc9-bbf0-eb7ebe566da1
-ms.openlocfilehash: 79cc9af5a2050ccee4da3239fa89d704b6378d04
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e963da6d151b82b205f6f52b70aeb69b09eae4f4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575562"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283612"
 ---
-# <a name="behaviors"></a>comportements
+# <a name="behaviors"></a>Comportements
+
 Cette section contient des exemples qui illustrent les comportements de service Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Concurrency](concurrency.md)  
  Montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément.  
   
  [Default Service Behavior](default-service-behavior.md)  
  Montre comment configurer les paramètres de comportement de service.  
   
- [instanciation](instancing.md)  
+ [Instanciation](instancing.md)  
  Illustre l'utilisation du comportement d'instanciation qui contrôle la manière dont les instances d'une classe de service sont créées en réponse aux demandes du client.  
   
  [Metadata Publishing Behavior](metadata-publishing-behavior.md)  

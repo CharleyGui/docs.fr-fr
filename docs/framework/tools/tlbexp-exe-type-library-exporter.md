@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Type Library Exporter
 - type libraries [.NET Framework], exporting
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
-ms.openlocfilehash: e675b0addc9051a0b3c877e9b029e113c17ba5f0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1a9e984e1b81adda572076cb118a25f5f3a045ea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543385"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283755"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportateur de bibliothèques de types)
+
 L'outil Type Library Exporter (Exportateur de bibliothèques de types) génère une bibliothèque de types décrivant les types définis dans un assembly du Common Language Runtime.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
@@ -56,6 +57,7 @@ tlbexp assemblyName [options]
 > Les options de ligne de commande de Tlbexp.exe ne respectent pas la casse et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par exemple, **/n** équivaut à **/nologo**, et **/o:** *outfile.tlb* à **/out:** *outfile.tlb*.  
   
 ## <a name="remarks"></a>Notes  
+
  Tlbexp.exe génère une bibliothèque de types comportant les définitions des types définis dans l'assembly. Des applications, telles que Visual Basic 6.0, peuvent utiliser la bibliothèque de types générée pour créer une liaison vers les types .NET définis dans l'assembly.  
   
 > [!IMPORTANT]
@@ -96,6 +98,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
  L'outil Type Library Exporter est pris en charge sur Microsoft Windows 2000 et les versions ultérieures.  
   
 ## <a name="examples"></a>Exemples  
+
  La commande suivante génère une bibliothèque de types portant le même nom que celui de l'assembly figurant dans `myTest.dll`.  
   
 ```console  
@@ -132,7 +135,7 @@ tlbexp Sample.dll
 
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
 - [outils](index.md)
-- [Regasm.exe (outil d’inscription d’assembly)](regasm-exe-assembly-registration-tool.md)
+- [Regasm.exe (outil Assembly Registration Tool)](regasm-exe-assembly-registration-tool.md)
 - [Récapitulatif de la conversion d’un assembly en bibliothèque de types](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
-- [Tlbimp.exe (importateur de bibliothèques de types)](tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (Type Library Importer)](tlbimp-exe-type-library-importer.md)
 - [Invites de commandes](developer-command-prompt-for-vs.md)

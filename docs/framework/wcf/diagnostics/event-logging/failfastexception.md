@@ -2,24 +2,26 @@
 title: FailFastException
 ms.date: 03/30/2017
 ms.assetid: f30de0d9-3a91-4800-9d09-3504d7e5a10f
-ms.openlocfilehash: 9fb288abcce78bb754e2b276e8778107be9e6061
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 01c666e816ee39e471b4f6a9728ebdb84941b0d9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797855"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284301"
 ---
 # <a name="failfastexception"></a>FailFastException
-Id : 103  
+
+ID : 103  
   
- Gravité : Error  
+ Gravité : Erreur  
   
- Catégorie : Traçage  
+ Catégorie : suivi  
   
 ## <a name="description"></a>Description  
+
  Une exception a été levée pendant FailFast. L'événement répertorie l'exception, le nom de processus et l'ID de processus.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Journalisation des événements](index.md)
-- [Informations de référence générales sur les événements](events-general-reference.md)
+- [Référence générale relative aux événements](events-general-reference.md)

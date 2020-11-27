@@ -2,14 +2,15 @@
 title: Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 7dccfea990afff1d2aacd5e9714472e733684c33
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2f84afba72e5260a44726dcc812401da5475679f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556601"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284093"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
+
 Cette rubrique décrit les étapes requises pour configurer le service d’activation des processus Windows (également appelé WAS) dans Windows Vista pour héberger des services Windows Communication Foundation (WCF) qui ne communiquent pas sur des protocoles réseau HTTP. Les sections suivantes définissent les étapes pour cette configuration :  
   
 - Installez (ou confirmez l’installation de) les composants d’activation WCF requis.  
@@ -21,6 +22,7 @@ Cette rubrique décrit les étapes requises pour configurer le service d’activ
 - Générez un service WCF qui expose un point de terminaison non-HTTP.  
   
 ## <a name="configuring-a-site-with-non-http-bindings"></a>Configuration d’un site avec des liaisons non HTTP  
+
  Pour utiliser une liaison non HTTP avec le service WAS, la liaison de site doit être ajoutée à la configuration WAS. Le magasin de configurations pour le service WAS est le fichier applicationHost.config situé dans le répertoire %windir%\system32\inetsrv\config. Ce magasin de configurations est partagé à la fois par le service WAS et le service IIS 7.0.  
   
  applicationHost.config est un fichier texte XML qui peut être ouvert avec un éditeur de texte standard (tel que le Bloc-notes). Toutefois, l’outil de configuration de ligne de commande IIS 7,0 (appcmd.exe) est la méthode recommandée pour ajouter des liaisons de site non-HTTP.  
@@ -46,6 +48,7 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 ```  
   
 ## <a name="enabling-an-application-to-use-non-http-protocols"></a>Activation de l'utilisation des protocoles non HTTP par une application  
+
  Vous pouvez activer ou désactiver le protocolsat réseau individuel au niveau de l’application. La commande suivante montre comment activer à la fois les protocoles HTTP et net.tcp pour une application qui s'exécute dans le `Default Web Site`.  
   
 ```console  
@@ -92,6 +95,7 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
  Si cette erreur s'affiche, assurez-vous que WAS pour l'activation non HTTP est installé et configuré correctement. Pour plus d’informations, consultez [Comment : installer et configurer des composants d’activation WCF](how-to-install-and-configure-wcf-activation-components.md).  
   
 ## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a>Génération d'un service WCF qui utilise le service WAS pour l'activation non HTTP  
+
  Une fois que vous avez effectué les étapes d’installation et de configuration de WAS (voir [Comment : installer et configurer des composants d’activation WCF](how-to-install-and-configure-wcf-activation-components.md)), la configuration d’un service pour utiliser was pour l’activation est semblable à la configuration d’un service hébergé dans IIS.  
   
  Pour obtenir des instructions détaillées sur la création d’un service WCF activé par WAS, consultez [Comment : héberger un service WCF dans was](how-to-host-a-wcf-service-in-was.md).  

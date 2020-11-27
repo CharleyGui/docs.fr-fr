@@ -2,17 +2,19 @@
 title: Federation, exemple
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 00cb9a13a01687fb41f1d5c09f277d582f706e3b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 22d405620a77285ebe7a68fc151a8e8611df9b4d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594684"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283274"
 ---
 # <a name="federation-sample"></a>Federation, exemple
+
 Cet exemple présente la sécurité fédérée :  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
+
  Windows Communication Foundation (WCF) prend en charge le déploiement d’architectures de sécurité fédérée via le `wsFederationHttpBinding` . `wsFederationHttpBinding` fournit une liaison sécurisée, fiable et interopérable qui implique l'utilisation de HTTP comme mécanisme de transport sous-jacent pour la communication demande/réponse, le format de câble d'encodage étant Text/XML. Pour plus d’informations sur la Fédération dans WCF, consultez [Federation](../feature-details/federation.md).  
   
  Le scénario comporte 4 parties :  

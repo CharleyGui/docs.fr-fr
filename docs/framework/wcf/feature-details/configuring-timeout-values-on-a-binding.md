@@ -3,14 +3,15 @@ title: configuration de valeurs du délai d'attente sur une liaison
 description: Apprenez à gérer les paramètres de délai d’attente pour les liaisons WCF afin d’améliorer les performances, la facilité d’utilisation et la sécurité de votre service.
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: c41824a242d9b42290183cd70b9acf5b8ee59e6b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 6582568f3579f784d4c91c707dbb35c38533551d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245113"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284041"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>configuration de valeurs du délai d'attente sur une liaison
+
 Il existe plusieurs paramètres de délai d'attente disponibles dans les liaisons WCF. Définir ces paramètres de délai d'attente correctement peut non seulement améliorer les performances de votre service, mais également jouer un rôle dans la facilité d'utilisation et la sécurité de ce dernier. Les délais d'attente suivants sont disponibles sur les liaisons WCF :  
   
 1. OpenTimeout  
@@ -22,6 +23,7 @@ Il existe plusieurs paramètres de délai d'attente disponibles dans les liaison
 4. ReceiveTimeout  
   
 ## <a name="wcf-binding-timeouts"></a>Délais d'attente de liaison WCF  
+
  Chacun des paramètres décrits dans cette rubrique sont créés sur la liaison elle-même, dans le code ou la configuration. Le code suivant montre comment définir des délais d’attente par programme sur une liaison WCF dans le contexte d’un service auto-hébergé.  
   
 ```csharp  
@@ -76,6 +78,7 @@ public static void Main()
  Plus d'informations sur ces paramètres se trouvent dans la documentation de la classe <xref:System.ServiceModel.Channels.Binding>.  
   
 ### <a name="client-side-timeouts"></a>Délais d'attente côté client  
+
  Côté client :  
   
 1. SendTimeout – utilisé pour initialiser OperationTimeout, qui détermine le processus entier pour envoyer un message, y compris recevoir un message de réponse pour une opération de service de demande/réponse. Ce délai d'attente s'applique également lors de l'envoi des messages de réponse d'une méthode du contrat de rappel.  
@@ -87,6 +90,7 @@ public static void Main()
 4. ReceiveTimeout – n’est pas utilisé.  
   
 ### <a name="service-side-timeouts"></a>Délais d’attente côté service  
+
  Du côté service :  
   
 1. SendTimeout, OpenTimeout, CloseTimeout sont les mêmes que sur le client.  

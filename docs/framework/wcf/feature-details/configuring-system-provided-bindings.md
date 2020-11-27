@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF [WCF], system-provided bindings
 - bindings [WCF], system-provided
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
-ms.openlocfilehash: d6018c8339cb04471bf9ce0f2ee86e091e1d1e95
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ab608ba954eafd9035335f00c8755629c5703c22
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597525"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284158"
 ---
 # <a name="configuring-system-provided-bindings"></a>Configuration des liaisons fournies par le système
+
 Les liaisons spécifient le mécanisme de communication à utiliser pour communiquer avec un point de terminaison et indiquer comment se connecter à un point de terminaison. Les liaisons se composent d’éléments qui définissent la façon dont les canaux Windows Communication Foundation (WCF) sont superposés pour fournir les fonctionnalités de communication requises. Une liaison contient trois types d'éléments :  
   
 - Éléments de liaison de canal de protocole qui déterminent la sécurité, la fiabilité, des paramètres de flux de contexte ou des protocoles définis par l'utilisateur à utiliser avec les messages envoyés au point de terminaison.  
@@ -31,6 +32,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 > N’utilisez pas de contrats duplex avec les liaisons qui ne prennent pas en charge la sécurité, ou dont la sécurité est désactivée, sauf si l’échange de réseau est sécurisé par d’autres moyens.  
   
 ## <a name="system-provided-bindings"></a>Liaisons fournies par le système  
+
  Les liaisons suivantes sont fournies avec WCF.  
   
 |Liaison|Élément de configuration|Description|  
@@ -49,9 +51,10 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 |<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding>](../../configure-apps/file-schema/wcf/msmqintegrationbinding.md)|Une liaison adaptée à la communication entre ordinateurs entre une application WCF et des applications Message Queuing existantes (également appelées MSMQ).|  
   
 ## <a name="binding-features"></a>Fonctionnalités de liaison  
+
  Le tableau suivant répertorie certaines des fonctionnalités clés fournies par chacune des liaisons fournies par le système. Les liaisons sont répertoriées dans la première colonne et les information concernant les fonctionnalités sont décrites dans le tableau. Le tableau suivant fournit une clé pour les abréviations de liaison utilisées. Pour sélectionner une liaison, déterminez quelle colonne satisfait toutes les fonctionnalités de ligne dont vous avez besoin.  
   
-|Liaison|Interopérabilité|Mode de sécurité (valeur par défaut)|Session<br /><br /> (Par défaut)|Transactions|Duplex|  
+|Liaison|Interopérabilité|Mode de sécurité (valeur par défaut)|session<br /><br /> (Par défaut)|Transactions|Duplex|  
 |-------------|----------------------|----------------------------------|-----------------------------|------------------|------------|  
 |<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(Aucun), transport, message, mixte|Aucun, (aucun)|(aucune)|n/a|  
 |<xref:System.ServiceModel.WSHttpBinding>|WS|Aucun, transport, (message), mixte|(Aucun), transport, session fiable|(Aucun), oui|n/a|  
@@ -72,7 +75,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 |-------------|-----------------|  
 |Type d'interopérabilité|Nomme le protocole ou la technologie avec laquelle la liaison garantit l'interopérabilité.|  
 |Sécurité|Définit le mode de sécurisation du canal :<br /><br /> -None : le message SOAP n’est pas sécurisé et le client n’est pas authentifié.<br />-Transport : les exigences de sécurité sont satisfaites au niveau de la couche de transport.<br />-Message : les exigences de sécurité sont satisfaites au niveau de la couche de message.<br />-Mixed : ce mode de sécurité est connu sous le nom de `TransportWithMessageCredentials` . Il gère les informations d’identification au niveau du message, et les exigences relatives à l’intégrité et à la confidentialité sont traitées par la couche de transport.<br />-Both : la sécurité au niveau du message et au niveau du transport est utilisée. Cette fonction est propre à <xref:System.ServiceModel.NetMsmqBinding>.|  
-|Session|Spécifie si cette liaison prend en charge des contrats de session.|  
+|session|Spécifie si cette liaison prend en charge des contrats de session.|  
 |Transactions|Spécifie si les transactions sont activées.|  
 |Duplex|Spécifie si les contrats duplex sont pris en charge. Notez que cette fonctionnalité requiert la prise en charge des sessions dans la liaison.|  
 |Diffusion en continu|Spécifie si la diffusion en continu de message est prise en charge.|  
