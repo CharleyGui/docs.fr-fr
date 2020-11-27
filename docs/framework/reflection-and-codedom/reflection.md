@@ -22,12 +22,12 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 46c67595126af2c62b28d29983775943586a0b90
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 371f56c3a57b8e320c9b329c539075a40cd7a19f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865279"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258411"
 ---
 # <a name="reflection-in-net"></a>Réflexion dans .NET
 
@@ -62,6 +62,7 @@ La réflexion peut également être utilisée pour créer des applications appel
 Il existe d'autres utilisations de la réflexion. Les compilateurs de langages comme JScript utilisent la réflexion pour construire des tables de symboles. Les classes de l'espace de noms <xref:System.Runtime.Serialization> utilisent la réflexion pour accéder aux données et pour déterminer les champs à rendre persistants. Les classes de l'espace de noms <xref:System.Runtime.Remoting> utilisent la réflexion indirectement via la sérialisation.  
   
 ## <a name="runtime-types-in-reflection"></a>Types au moment de l'exécution dans la réflexion  
+
 La réflexion fournit des classes, comme <xref:System.Type> et <xref:System.Reflection.MethodInfo>, pour représenter des types, des membres, des paramètres et d'autres entités de code. Cependant, quand vous utilisez la réflexion, vous ne travaillez pas directement avec ces classes, dont la plupart sont abstraites (`MustInherit` en Visual Basic). Au lieu de cela, vous utilisez des types fournis par le common language runtime (CLR).  
   
 Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual Basic) pour obtenir un objet <xref:System.Type>, l'objet est réellement d'un type `RuntimeType`. `RuntimeType` dérive de <xref:System.Type> et fournit des implémentation de toutes les méthodes abstraites.  
@@ -78,11 +79,11 @@ Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne so
 |[Réflexion et types génériques](reflection-and-generic-types.md)|Explique comment la réflexion gère les paramètres de types et les arguments de types des types génériques et des méthodes génériques.|  
 |[Considérations sur la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
 |[Chargement et utilisation dynamiques des types](dynamically-loading-and-using-types.md)|Décrit l’interface de liaison personnalisée de la réflexion qui prend en charge la liaison tardive.|  
-|[Procédure : charger des assemblys dans le contexte de réflexion uniquement](how-to-load-assemblies-into-the-reflection-only-context.md)|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
+|[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](how-to-load-assemblies-into-the-reflection-only-context.md)|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
 |[Accès aux attributs personnalisés](accessing-custom-attributes.md)|Montre l'utilisation de la réflexion pour déterminer l'existence et les valeurs des attributs.|  
 |[Spécification des noms de types qualifiés complets](specifying-fully-qualified-type-names.md)|Décrit le format des noms complets des types sous la forme Backus-Naur (BNF) et la syntaxe requise pour spécifier les caractères spéciaux, les noms d'assemblys, les pointeurs, les références et les tableaux.|  
 |[Procédure : raccorder un délégué à l’aide de la réflexion](how-to-hook-up-a-delegate-using-reflection.md)|Explique comment créer un délégué pour une méthode et raccorder le délégué à un événement. Explique comment créer une méthode de gestion d'événements à l'exécution à l'aide de <xref:System.Reflection.Emit.DynamicMethod>.|  
-|[Émission d’assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
+|[Émission d'assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
   
 ## <a name="reference"></a>Informations de référence  
 

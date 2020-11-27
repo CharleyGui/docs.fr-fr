@@ -2,14 +2,15 @@
 title: Multiple Contracts
 ms.date: 03/30/2017
 ms.assetid: 2bef319b-fe9c-4d49-ac6c-dfb23eb35099
-ms.openlocfilehash: e8451c49395a1dad55c5afca419f47a8e856b61f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 516867a2fd7d6ba0ca1eb6cc3b51c68769b46aba
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602503"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260199"
 ---
 # <a name="multiple-contracts"></a>Multiple Contracts
+
 L'exemple Multiples Contracts montre comment implémenter plusieurs contrats sur un service et comment configurer des points de terminaison pour communiquer avec chacun des contrats implémentés. Cet exemple est basé sur le [prise en main](getting-started-sample.md). Le service a été modifié afin de définir deux contrats, le contrat `ICalculator` et le contrat `ICalculatorSession`.  
   
 > [!NOTE]

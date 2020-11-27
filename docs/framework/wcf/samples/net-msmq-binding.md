@@ -2,17 +2,19 @@
 title: Liaison MSMQ de réseau
 ms.date: 03/30/2017
 ms.assetid: fe4bb696-f57c-4cb3-9b7e-9d95fe6b8323
-ms.openlocfilehash: 622341ef00f5d8950fa0c013e427f20e02187893
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 22b82e9335f3bf5861000a62374ab9e8dccce8cf
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602425"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259978"
 ---
 # <a name="net-msmq-binding"></a>Liaison MSMQ de réseau
+
 Cette section contient des exemples qui illustrent l’utilisation des attributs de liaison MSMQ d’un élément de point de terminaison.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Transacted MSMQ Binding](transacted-msmq-binding.md)  
  Montre comment effectuer la communication de messages mis en file d'attente avec transactions à l'aide de MSMQ (Message Queuing).  
   

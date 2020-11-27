@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-ms.openlocfilehash: 2e71dc177a0358370c7eecde03d9388cced60b75
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: d10af40420c1ab9ab177514c0babeaf5cea96922
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957435"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259074"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Créer des fichiers de ressources pour les applications .NET
 
@@ -33,6 +33,7 @@ Vous pouvez inclure des ressources, telles que des chaînes, des images ou des d
 - Utilisez [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) pour créer un fichier de ressources et l’inclure dans votre projet. Visual Studio fournit un éditeur de ressources qui vous permet d’ajouter, de supprimer et de modifier des ressources. Au moment de la compilation, le fichier de ressources est automatiquement converti en un fichier .resources binaire et incorporé dans un assembly d’application ou un assembly satellite. Pour plus d’informations, consultez la section [Fichiers de ressources dans Visual Studio](creating-resource-files-for-desktop-apps.md#VSResFiles).
 
 <a name="TextFiles"></a>
+
 ## <a name="resources-in-text-files"></a>Ressources dans les fichiers texte
 
 Vous pouvez utiliser des fichiers texte (.txt ou .restext) pour stocker uniquement les ressources de chaîne. Pour les ressources autres que les ressources de chaîne, utilisez des fichiers .resx ou créez-les programmatiquement. Les fichiers texte qui contiennent des ressources de type chaîne ont le format suivant :
@@ -135,7 +136,9 @@ csc greeting.cs -resource:GreetingResources.resources
 ```
 
 <a name="ResxFiles"></a>
+
 ## <a name="resources-in-resx-files"></a>Ressources dans les fichiers .resx
+
  Contrairement aux fichiers texte, qui peuvent stocker des ressources de type chaîne uniquement, les fichiers de ressources XML (.resx) peuvent stocker des chaînes, des données binaires telles que les images, les icônes et les clips audio, et des objets de programmation. Un fichier .resx contient un en-tête standard, qui décrit le format des entrées de ressources et spécifie les informations de contrôle de version pour le XML utilisé pour analyser les données. Les données de fichier de ressources suivent l’en-tête XML. Chaque élément de données se compose d’une paire nom/valeur contenue dans une balise `data`. Son attribut `name` définit le nom de ressource et la balise `value` imbriquée contient la valeur de ressource. Pour les données de type chaîne, la balise `value` contient la chaîne.
 
  Par exemple, la balise `data` suivante définit une ressource de type chaîne nommée `prompt` dont la valeur est « Entrez votre nom : ».
@@ -174,6 +177,7 @@ csc greeting.cs -resource:GreetingResources.resources
 > Comme les fichiers .resx doivent se composer de code XML bien formé dans un format prédéfini, nous déconseillons d’utiliser des fichiers .resx manuellement, en particulier quand les fichiers .resx contiennent des ressources autres que des chaînes. Au lieu de cela, [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) fournit une interface transparente pour créer et manipuler les fichiers .resx. Pour plus d’informations, consultez la section [Fichiers de ressources dans Visual Studio](creating-resource-files-for-desktop-apps.md#VSResFiles). Vous pouvez également créer et manipuler des fichiers .resx par programmation. Pour plus d’informations, consultez [Utilisation des fichiers .resx par programmation](working-with-resx-files-programmatically.md).
 
 <a name="ResourcesFiles"></a>
+
 ## <a name="resources-in-resources-files"></a>Ressources dans les fichiers .resources
 
 Vous pouvez utiliser la classe <xref:System.Resources.ResourceWriter?displayProperty=nameWithType> pour créer par programmation un fichier de ressources binaire (.resources) directement à partir du code. Vous pouvez également utiliser le [Générateur de fichiers de ressources (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) pour créer un fichier .resources à partir d’un fichier texte ou d’un fichier .resx. Le fichier .resources peut contenir des données binaires (tableaux d’octets) et des données d’objet en plus des données de type chaîne. La création d’un fichier .resources par programmation nécessite les étapes suivantes :
@@ -195,6 +199,7 @@ Vous pouvez utiliser la classe <xref:System.Resources.ResourceWriter?displayProp
  Une fois que vous avez créé le fichier .resources, vous pouvez l’incorporer dans un fichier exécutable à l’exécution ou une bibliothèque en incluant le commutateur `/resource` du compilateur de langage, ou l’incorporer dans un assembly satellite avec [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md).
 
 <a name="VSResFiles"></a>
+
 ## <a name="resource-files-in-visual-studio"></a>Fichiers de ressources dans Visual Studio
 
 Quand vous ajoutez un fichier de ressources à votre projet [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link), Visual Studio crée un fichier .resx dans le répertoire de projet. Visual Studio fournit des éditeurs de ressources qui vous permettent d’ajouter des chaînes, des images et des objets binaires. Comme les éditeurs sont conçus pour gérer des données statiques uniquement, ils ne peuvent pas être utilisés pour stocker des objets de programmation. Vous devez écrire par programmation les données d’objet dans un fichier .resx ou .resources. Consultez [Utilisation des fichiers .resx par programmation](working-with-resx-files-programmatically.md) et la section [Ressources dans les fichiers .resources](creating-resource-files-for-desktop-apps.md#ResourcesFiles) pour plus d’informations.
@@ -207,4 +212,4 @@ Au moment de la compilation, Visual Studio convertit en premier les fichiers .re
 
 - <xref:System.Resources>
 - [Ressources dans les applications .NET](index.md)
-- [Packaging and Deploying Resources](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Empaquetage et déploiement de ressources](packaging-and-deploying-resources-in-desktop-apps.md)

@@ -2,14 +2,15 @@
 title: Multiple Endpoints at a Single ListenUri
 ms.date: 03/30/2017
 ms.assetid: 911ffad4-4d47-4430-b7c2-79192ce6bcbd
-ms.openlocfilehash: 91220c6631db2f283b6571fbc32af2211feeaa35
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 09696ec8170915f29dae7510f8953565bcc67436
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602490"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260186"
 ---
 # <a name="multiple-endpoints-at-a-single-listenuri"></a>Multiple Endpoints at a Single ListenUri
+
 Cet exemple présente un service qui héberge plusieurs points de terminaison au niveau d'un `ListenUri` unique. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice.  
   
 > [!NOTE]
@@ -20,6 +21,7 @@ Cet exemple présente un service qui héberge plusieurs points de terminaison au
  `EndpointAddress` est l'adresse logique d'un service. Il s'agit de l'adresse à laquelle les messages SOAP sont adressés. `ListenUri` est l'adresse physique du service. Elle comporte les informations sur l'adresse et le port sur lesquels le point de terminaison de service écoute réellement les messages sur l'ordinateur actuel. Dans la plupart des cas, il n'est pas nécessaire que ces adresses différèrent ; lorsque `ListenUri` n'est pas spécifié de manière explicite, la valeur par défaut est l'URI de `EndpointAddress` du point de terminaison. Dans certains cas, il est utile de les distinguer, par exemple lors de la configuration d'un routeur, qui peut accepter des messages adressé à un certain nombre de services différents.  
   
 ## <a name="service"></a>Service  
+
  Le service dans cet exemple a deux contrats : `ICalculator` et `IEcho`. Outre le point de terminaison habituel `IMetadataExchange`, il existe également trois points de terminaison d'application, tel qu'indiqué dans le code suivant.  
   
 ```xml  
@@ -44,6 +46,7 @@ Cet exemple présente un service qui héberge plusieurs points de terminaison au
  La combinaison du filtre d'adresse et du filtre de contrat permet donc d'acheminer chaque message qui arrive au niveau du `ListenUri` de ce service vers le point de terminaison approprié. Le troisième point de terminaison se distingue des deux autres en ce sens qu'il accepte des messages envoyés à une adresse différente des autres points de terminaison. Le premier et le deuxième point de terminaison se distinguent l'un de l'autre par leurs contrats (l'action du message entrant).  
   
 ## <a name="client"></a>Client  
+
  À l'instar des points de terminaison sur le serveur, les points de terminaison de client ont également deux adresses différentes. Sur le serveur et le client, l'adresse logique est appelée `EndpointAddress`. Mais si l'adresse physique est appelée `ListenUri` sur le serveur, elle est appelée `Via` sur le client.  
   
  Tout comme sur le serveur, ces deux adresses sont par défaut les mêmes. `Via` permet de spécifier sur le client un `ClientViaBehavior` différent de l'adresse du point de terminaison.  

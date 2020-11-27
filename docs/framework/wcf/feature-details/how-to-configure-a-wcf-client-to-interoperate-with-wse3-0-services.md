@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 1ebc4e145528c3025b0299ea7e421c248c28cdc0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b5284db1329c572bdecf3ef607e697c63835d508
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556367"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257520"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Procédure : configurer un client WCF pour interagir avec des services WSE 3.0
-Les clients Windows Communication Foundation (WCF) sont compatibles au niveau du câble avec les services Web Services Enhancements 3,0 for Microsoft .NET (WSE) lorsque les clients WCF sont configurés pour utiliser la version du 2004 d’août de la spécification WS-Addressing.  
+
+Les clients Windows Communication Foundation (WCF) sont compatibles au niveau des câbles avec les services Web Services Enhancements 3,0 for Microsoft .NET (WSE) lorsque les clients WCF sont configurés pour utiliser la version du 2004 d’août de la spécification de WS-Addressing.  
   
 ### <a name="to-configure-a-wcf-client-to-interoperate-with-a-wse-30-web-service"></a>Configurer un client WCF pour interagir avec un service Web WSE 3.0  
   
@@ -56,6 +57,7 @@ Les clients Windows Communication Foundation (WCF) sont compatibles au niveau du
      [!code-vb[c_WCFClientToWSEService#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#4)]  
   
 ## <a name="example"></a> Exemple  
+
  L'exemple de code suivant définit une liaison personnalisée qui expose des propriétés correspondant à celles d'une assertion de sécurité clé en main WSE 3.0. La liaison personnalisée, qui est nommée `WseHttpBinding` , est ensuite utilisée pour spécifier les propriétés de liaison d’un client WCF.  
 
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]

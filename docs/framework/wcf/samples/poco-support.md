@@ -2,14 +2,15 @@
 title: Prise en charge POCO
 ms.date: 03/30/2017
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-ms.openlocfilehash: a9f8d185c58b22e68f7a8c11954e0e534c4bd48f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d416f37e0add99fbe3d60982fd2298748ff78556
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600462"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259965"
 ---
 # <a name="poco-support"></a>Prise en charge POCO
+
 Cet exemple illustre la prise en charge de la sérialisation pour les types non marqués, c'est-à-dire les types auxquels aucun attribut de sérialisation n'a été appliqué. Ces types sont parfois appelés types POCO (Plain Old CLR Object). Le <xref:System.Runtime.Serialization.DataContractSerializer> déduit un contrat de données pour tous les types non marqués publics qui ont un constructeur sans paramètre. Les contrats de données vous permettent de transférer des données structurées vers des services et à partir de ceux-ci. Pour plus d’informations sur les types non marqués, consultez [types sérialisables](../feature-details/serializable-types.md).  
   
  Cet exemple est basé sur le [prise en main](getting-started-sample.md), mais utilise des nombres complexes au lieu de types numériques primitifs. Elle est également similaire à l’exemple de [contrat de données de base](basic-data-contract.md) , à la différence que les <xref:System.Runtime.Serialization.DataContractAttribute> attributs et ne <xref:System.Runtime.Serialization.DataMemberAttribute> sont pas utilisés.  

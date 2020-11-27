@@ -2,14 +2,15 @@
 title: Operation Formatter and Operation Selector
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: 344d3122d03e89a7f20e391db49005d0e085dfa6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a49b466a940b63b70509ba76e62a9b9c5a36ad61
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575149"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260030"
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Operation Formatter and Operation Selector
+
 Cet exemple montre comment les points d’extensibilité Windows Communication Foundation (WCF) peuvent être utilisés pour autoriser les données de message dans un format différent de celui attendu par WCF. Par défaut, les formateurs WCF attendent que les paramètres de méthode soient inclus sous l' `soap:body` élément. L'exemple montre comment implémenter à la place un formateur d'opération personnalisé qui analyse les données de paramètre d'une chaîne de requête HTTP GET chaîne et appelle des méthodes à l'aide de ces données.  
   
  L’exemple est basé sur le [prise en main](getting-started-sample.md), qui implémente le `ICalculator` contrat de service. Il montre comment les messages d'ajout, de soustraction, de multiplication et de division peuvent être modifiés pour utiliser HTTP GET pour les demandes de client à serveur et HTTP POST avec messages POX pour les réponses de serveur à client.  
@@ -30,7 +31,8 @@ Cet exemple montre comment les points d’extensibilité Windows Communication F
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 ## <a name="key-concepts"></a>Concepts clés  
- `QueryStringFormatter`-Le formateur d’opération est le composant de WCF qui est responsable de la conversion d’un message en un tableau d’objets de paramètres et d’un tableau d’objets de paramètre en message. Cela est effectué sur le client à l'aide de l'interface <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> et sur le serveur avec l'interface <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter>. Ces interfaces permettent aux utilisateurs d'obtenir les messages de demande et de réponse des méthodes `Serialize` et `Deserialize`.  
+
+ `QueryStringFormatter` -Le formateur d’opération est le composant de WCF qui est responsable de la conversion d’un message en un tableau d’objets de paramètres et d’un tableau d’objets de paramètre en message. Cela est effectué sur le client à l'aide de l'interface <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> et sur le serveur avec l'interface <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter>. Ces interfaces permettent aux utilisateurs d'obtenir les messages de demande et de réponse des méthodes `Serialize` et `Deserialize`.  
   
  Dans cet exemple, `QueryStringFormatter` implémente ces deux interfaces et est implémenté sur le client et le serveur.  
   
@@ -47,6 +49,7 @@ Cet exemple montre comment les points d’extensibilité Windows Communication F
 - Dans cet exemple, HTTP GET est utilisé uniquement pour la demande. Le formateur délègue l'envoi de la réponse au formateur d'origine qui aurait été utilisé pour générer un message XML. L'un des objectifs de cet exemple est de montrer comment un tel formateur déléguant peut être implémenté.  
   
 ### <a name="uripathsuffixoperationselector-class"></a>Classe UriPathSuffixOperationSelector  
+
  L'interface <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> permet aux utilisateurs d'implémenter leur propre logique pour indiquer pour quelle opération un message particulier doit être distribué.  
   
  Dans cet exemple, `UriPathSuffixOperationSelector` doit être implémenté sur le serveur pour sélectionner l'opération appropriée parce que le nom de l'opération est inclus dans l'URI HTTP GET plutôt que dans un en-tête d'action dans le message. L'exemple est configuré pour des noms d'opération non sensibles à la casse uniquement.  
@@ -54,6 +57,7 @@ Cet exemple montre comment les points d’extensibilité Windows Communication F
  La méthode `SelectOperation` prend le message entrant et recherche l'URI `Via` dans ses propriétés de message. Elle extrait le suffixe du nom de l'opération de l'URI, recherche une table interne pour obtenir le nom de l'opération à laquelle le message doit être distribué, et retourne ce nom d'opération.  
   
 ### <a name="enablehttpgetrequestsbehavior-class"></a>Classe EnableHttpGetRequestsBehavior  
+
  Le composant `UriPathSuffixOperationSelector` peut être installé par programme ou par l'intermédiaire d'un comportement de point de terminaison. L'exemple implémente le comportement `EnableHttpGetRequestsBehavior`, spécifié dans le fichier de configuration de l'application du service.  
   
  Sur le serveur :  
@@ -63,6 +67,7 @@ Cet exemple montre comment les points d’extensibilité Windows Communication F
  Par défaut, WCF utilise un filtre d’adresse de correspondance exacte. L'URI sur le message entrant contient un suffixe de nom d'opération suivi par une chaîne de requête qui contient des données de paramètre, donc le comportement de point de terminaison modifie également le filtre d'adresse en filtre de correspondance du préfixe. Elle utilise WCF <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> à cet effet.  
   
 ### <a name="installing-operation-formatters"></a>Installation des formateurs d'opération  
+
  Les comportements d'opération qui spécifient des formateurs sont uniques. Un tel comportement est toujours implémenté par défaut pour chaque opération pour créer le formateur d'opération nécessaire. Toutefois, ces comportements ressemblent à tous les autres comportements d'opération ; ils ne sont pas identifiables par tout autre attribut. Pour installer un comportement de remplacement, l’implémentation doit rechercher des comportements de formateur spécifiques installés par le chargeur de type WCF par défaut et le remplacer ou ajouter un comportement compatible à exécuter après le comportement par défaut.  
   
  Ces comportements de formateur d'opération peuvent être installés par programme avant d'appeler <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> ou en spécifiant un comportement d'opération exécuté après le comportement par défaut. Cependant, ils ne peuvent pas être installés facilement par un comportement de point de terminaison (et par conséquent par la configuration) parce que le modèle de comportement ne permet pas à un comportement de remplacer d’autres comportements ou modifier de toute autre manière l’arborescence de description.  
@@ -99,6 +104,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
 - Ceci doit être fait avant d'appeler <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Dans cet exemple, nous montrons comment le formateur est modifié manuellement avant d'appeler <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Pour parvenir au même résultat, il est possible de dériver une classe de <xref:System.ServiceModel.ServiceHost> qui appelle `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` avant de s'ouvrir (consultez la documentation et les exemples relatifs à l'hébergement).  
   
 ### <a name="user-experience"></a>Expérience utilisateur  
+
  Sur le serveur :  
   
 - L'implémentation serveur `ICalculator` n'a pas besoin d'être modifiée.  

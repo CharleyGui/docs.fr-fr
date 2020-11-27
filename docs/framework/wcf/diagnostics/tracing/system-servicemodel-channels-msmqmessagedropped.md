@@ -2,17 +2,19 @@
 title: System.ServiceModel.Channels.MsmqMessageDropped
 ms.date: 03/30/2017
 ms.assetid: 8b6e644d-fa68-4be7-abe9-3659671a37c1
-ms.openlocfilehash: 4b016f53a75d9527a5cd1bbadacacd650b7f35b0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6e8b134f61d2dc9bd5daf541db4ec81604166baa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601900"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260381"
 ---
 # <a name="systemservicemodelchannelsmsmqmessagedropped"></a>System.ServiceModel.Channels.MsmqMessageDropped
+
 MSMQ a supprimé le message.  
   
 ## <a name="description"></a>Description  
+
  Cette trace indique qu'un message MSMQ a été supprimé. Les messages MSMQ peuvent être supprimés lorsque Windows Communication Foundation (WCF) (utilisé avec NetMsmqBinding ou MsmqIntegrationBinding) ne peut pas les traiter. Ces messages sont appelés des messages incohérents.  
   
  Un message incohérent est supprimé lorsque la propriété `ReceiveErrorHandling` sur NetMsmqBinding ou MsmqIntegrationBinding a la valeur `Drop`. Ce message est supprimé de la file d’attente et ne peut plus être récupéré.  

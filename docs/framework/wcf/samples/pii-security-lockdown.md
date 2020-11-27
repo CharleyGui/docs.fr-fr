@@ -2,14 +2,15 @@
 title: PII Security Lockdown
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 62e1495927cad669771c560603919e8f6b94d863
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0b4ec820cd57e3dfaff035dc8e5ce1ef4b463df5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559361"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259994"
 ---
 # <a name="pii-security-lockdown"></a>PII Security Lockdown
+
 Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) en :  
   
 - Chiffrement des informations sensibles dans le fichier de configuration du service.  
@@ -27,7 +28,8 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
-## <a name="discussion"></a>Discussion  
+## <a name="discussion"></a>Discussions  
+
  Chacune de ces fonctionnalités peut être utilisée séparément ou simultanément afin de contrôler les divers aspects relatifs à la sécurité des services. Il ne s’agit pas d’un guide définitif pour la sécurisation d’un service WCF.  
   
  Les fichiers de configuration .NET Framework peuvent contenir des informations sensibles telles que les chaînes de connexion permettant de se connecter aux bases de données. Dans le cadre de services partagés et hébergés par le Web, le chiffrement de ces informations dans le fichier de configuration des services concernés peut s'avérer souhaitable pour assurer leur protection en cas de consultation informelle. .NET Framework 2.0 et ses versions ultérieures permettent de chiffrer certains passages des fichiers de configuration à l'aide de l'interface de programmation d'applications de protection des données Windows (Data Protection Application Programming Interface, DPAPI) ou du fournisseur de services de chiffrement RSA. Le programme aspnet_regiis.exe peut chiffrer les sections choisies d'un fichier de configuration donné à l'aide de l'interface ou du fournisseur ci-dessus.  
@@ -37,6 +39,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
  Cet exemple illustre comment contrôler la fonctionnalité d'enregistrement des informations d'identification personnelle connues, telles que le nom d'utilisateur et le mot de passe, dans les journaux de suivi et de message. Par défaut, l'enregistrement des PII connues est désactivé. Toutefois, dans certaines situations, leur enregistrement peut s'avérer essentiel lors du débogage des applications. Cet exemple est basé sur le [prise en main](getting-started-sample.md). En outre, cet exemple utilise l'enregistrement des suivis et des messages. Pour plus d’informations, consultez l’exemple [suivi et journalisation des messages](tracing-and-message-logging.md) .  
   
 ## <a name="encrypting-configuration-file-elements"></a>Chiffrement des éléments de fichier de configuration  
+
  Pour des raisons de sécurité, dans le cadre d'un environnement partagé avec hébergement Web, le chiffrement de certains éléments de configuration tels que les chaînes de connexion aux bases de données, susceptibles de contenir des informations sensibles, peut s'avérer souhaitable. Un élément de configuration peut être chiffré à l’aide de l’outil aspnet_regiis.exe figurant dans le dossier .NET Framework par exemple,%WINDIR%\Microsoft.NET\Framework\v4.0.20728.  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>Pour chiffrer les valeurs dans la section appSettings du fichier Web.config de l'exemple  
@@ -50,6 +53,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
  Vous trouverez plus d’informations sur le chiffrement des sections de fichiers de configuration en lisant une procédure sur DPAPI dans la configuration ASP.NET ([création d’Applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](/previous-versions/msp-n-p/ff649248(v=pandp.10))) et d’une procédure sur RSA dans Configuration ASP.net ([procédure : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](/previous-versions/msp-n-p/ff650304(v=pandp.10))).  
   
 ## <a name="locking-configuration-file-elements"></a>Verrouillage des éléments de fichier de configuration  
+
  Dans le cadre de services hébergés par le Web, il est possible de placer ces services dans les sous-répertoires d'autres services. Dans ce genre de situation, les valeurs de configuration des services placés dans ces sous-répertoires sont calculées en examinant les valeurs du fichier Machine.config. Ces valeurs sont ensuite fusionnées avec les valeurs des éventuels fichiers Web.config figurant dans les répertoires parents en descendant la hiérarchie de l’arborescence de répertoires jusqu’au fichier Web.config du répertoire contenant les services concernés. Le comportement par défaut de la plupart des éléments de configuration permet aux fichiers de configuration des sous-répertoires de se substituer aux valeurs définies dans leurs répertoires parents. Dans certains cas, il peut s'avérer préférable d'empêcher une telle substitution.  
   
  Le .NET Framework propose une fonctionnalité permettant de verrouiller les éléments de configuration, provoquant ainsi la levée d'exception pendant l'exécution lorsque les fichiers de configuration des sous-répertoires tentent de se substituer aux éléments verrouillés.  
@@ -74,6 +78,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
  Le verrouillage des éléments de configuration peut être plus spécifique. La valeur à laquelle `lockElements` est appliqué peut être spécifiée sous la forme d'une liste d'éléments afin de verrouiller un ensemble d'éléments au sein d'une collection de sous-éléments. La valeur à laquelle `lockAttributes` est appliqué peut être définie sous la forme d'une liste d'attributs pour verrouiller un ensemble d'attributs au sein d'un élément. Une collection entière d’éléments ou d’attributs peut être verrouillée à l’exception d’une liste spécifiée au niveau des attributs `lockAllElementsExcept` ou `lockAllAttributesExcept` sur un nœud.  
   
 ## <a name="pii-logging-configuration"></a>Configuration de l'enregistrement des informations d'identification personnelle  
+
  L'enregistrement des PII est contrôlé par deux commutateurs : paramètre à l'échelle de l'ordinateur situé dans le fichier Machine.config permettant à l'administrateur de cet ordinateur d'autoriser ou non leur enregistrement et paramètre d'application permettant aux administrateurs d'application d'activer ou non leur enregistrement pour chaque source dans les fichiers Web.config ou App.config.  
   
  Le paramètre à l’ensemble de l’ordinateur est contrôlé en affectant `enableLoggingKnownPii` à `true` la valeur ou `false` , dans l' `machineSettings` élément de Machine.config. Par exemple, le code suivant permet aux applications d’activer la journalisation des informations d’identification personnelle.  

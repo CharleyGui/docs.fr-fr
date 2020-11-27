@@ -2,14 +2,15 @@
 title: 'Procédure : accéder à un service à partir d’une application de workflow'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 7375dc4f9af2eb0209b83724cd2ac9b9619b56dd
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 13fae7dec3026e96e3c196467da29fe768a3655f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556874"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257930"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Procédure : accéder à un service à partir d’une application de workflow
+
 Cette rubrique décrit comment appeler un service de workflow à partir d'une application console de workflow. Cela dépend de l’achèvement de la rubrique [Comment : créer un service de flux de travail avec des activités de messagerie](how-to-create-a-workflow-service-with-messaging-activities.md) . Bien que cette rubrique explique comment appeler un service de workflow à partir d’une application de workflow, les mêmes méthodes peuvent être utilisées pour appeler n’importe quel service Windows Communication Foundation (WCF) à partir d’une application de Workflow.
 
 ### <a name="create-a-workflow-console-application-project"></a>Créer un projet d'application console de workflow.
@@ -30,7 +31,7 @@ Cette rubrique décrit comment appeler un service de workflow à partir d'une ap
 
      ![IE affichant la page d’aide WCF et l’URI](./media/how-to-access-a-service-from-a-workflow-application/ie-wcf-help-page-uri.jpg)
 
-6. Cliquez avec le bouton droit sur le projet **MyWFClient** dans le **Explorateur de solutions** , puis sélectionnez **Ajouter**une  >  **référence de service**. Cliquez sur le bouton **découvrir** pour rechercher des services dans la solution actuelle. Cliquez sur le triangle à côté de Service1.xamlx dans la liste des services. Cliquez sur le triangle à côté de Service1 pour répertorier les contrats implémentés par le service Service1. Développez le nœud **Service1** dans la liste des **services** . L’opération ECHO est affichée dans la liste des **opérations** , comme indiqué dans l’illustration suivante.
+6. Cliquez avec le bouton droit sur le projet **MyWFClient** dans le **Explorateur de solutions** , puis sélectionnez **Ajouter** une  >  **référence de service**. Cliquez sur le bouton **découvrir** pour rechercher des services dans la solution actuelle. Cliquez sur le triangle à côté de Service1.xamlx dans la liste des services. Cliquez sur le triangle à côté de Service1 pour répertorier les contrats implémentés par le service Service1. Développez le nœud **Service1** dans la liste des **services** . L’opération ECHO est affichée dans la liste des **opérations** , comme indiqué dans l’illustration suivante.
 
      ![Boîte de dialogue Ajouter une référence de service](./media/how-to-access-a-service-from-a-workflow-application/add-service-reference.jpg)
 

@@ -2,14 +2,15 @@
 title: System.ServiceModel.Channels.MsmqPoisonMessageRejected
 ms.date: 03/30/2017
 ms.assetid: 0e64b9bd-1f12-43df-a189-d7be3c2bace1
-ms.openlocfilehash: c5401bae1d8e7f61939d8de321353f59f412f966
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 69da35f65e04a3cba15885c4fe6e57d63762cb1c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535331"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260342"
 ---
 # <a name="systemservicemodelchannelsmsmqpoisonmessagerejected"></a>System.ServiceModel.Channels.MsmqPoisonMessageRejected
+
 Message poison rejeté.  
   
 ## <a name="description"></a>Description  

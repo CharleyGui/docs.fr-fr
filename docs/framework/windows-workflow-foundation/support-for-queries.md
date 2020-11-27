@@ -2,21 +2,22 @@
 title: Prise en charge des requêtes
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-ms.openlocfilehash: e281b5ae7a41bd282f8e7c7eb9db6f99ef5487f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 350644de4a5deb7b8dcb5133c9cc2edb477fd355
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948935"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258437"
 ---
 # <a name="support-for-queries"></a>Prise en charge des requêtes
+
 Le magasin d'instances de workflow SQL enregistre un jeu de propriétés connues dans le magasin. Les utilisateurs peuvent demander des instances à partir de ces propriétés. La liste suivante comprend quelques-unes de ces propriétés connues :  
   
 - **Nom du site.** Nom du site Web qui contient le service.  
   
-- **Chemin d’accès relatif de l’application.** Chemin d’accès à l’application relatif au site Web.  
+- **Chemin d'accès à l'application relatif.** Chemin d’accès à l’application relatif au site Web.  
   
-- **Chemin de service relatif.** Chemin d’accès au service relatif à l’application.  
+- **Chemin d'accès au service relatif.** Chemin d’accès au service relatif à l’application.  
   
 - **Nom du service.** Nom du service.  
   
@@ -33,10 +34,12 @@ Le magasin d'instances de workflow SQL enregistre un jeu de propriétés connues
   
  La fonctionnalité de magasin d'instances de workflow SQL vous permet également de spécifier les propriétés personnalisées pour lesquelles vous souhaitez stocker les valeurs dans la base de données de persistance et que vous souhaitez utiliser dans les requêtes. Pour plus d’informations sur les promotions personnalisées, consultez la page [extensibilité du magasin](store-extensibility.md).  
   
-## <a name="views"></a>Affichages  
+## <a name="views"></a>Les vues  
+
  Le magasin d'instances contient les vues suivantes. Pour plus d’informations, consultez [schéma de base de données de persistance](persistence-database-schema.md) .  
   
 ### <a name="the-instances-view"></a>Vue Instances  
+
  La vue Instances contient les champs suivants :  
   
 1. **Id**  
@@ -78,6 +81,7 @@ Le magasin d'instances de workflow SQL enregistre un jeu de propriétés connues
 19. **WriteOnlyComplexDataProperties**  
   
 ### <a name="the-servicedeployments-view"></a>Vue ServiceDeployments  
+
  La vue ServiceDeployments contient les champs suivants :  
   
 1. **SiteName**  
@@ -86,11 +90,12 @@ Le magasin d'instances de workflow SQL enregistre un jeu de propriétés connues
   
 3. **RelativeApplicationPath**  
   
-4. **ServiceName**  
+4. **FormName**  
   
-5. **Espace**  
+5. **ServiceNamespace**  
   
 ### <a name="the-instancepromotedproperties-view"></a>Vue InstancePromotedProperties  
+
  La vue InstancePromotedProperties contient les champs suivants. Pour plus d’informations sur les propriétés promues, consultez la rubrique extensibilité de la [Banque](store-extensibility.md) .  
   
 1. **InstanceId**  
@@ -99,4 +104,4 @@ Le magasin d'instances de workflow SQL enregistre un jeu de propriétés connues
   
 3. **PromotionName**  
   
-4. **Valeur #** (plage de champs de **value1** à **Value64**).
+4. **Valeur #** (une plage de champs de **value1** à **Value64**).

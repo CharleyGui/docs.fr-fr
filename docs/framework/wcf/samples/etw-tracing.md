@@ -3,14 +3,15 @@ title: ETW Tracing
 description: Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l’aide de Suivi d’v nements pour Windows (ETW) et du ETWTraceListener.
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 6e7526ef05d672b550599e3b12a4b083e9130b96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6777b2d14786f7a79b3605bec93b4da62ff24616
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547139"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258476"
 ---
 # <a name="etw-tracing"></a>ETW Tracing
+
 Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide du suivi d'événements pour Windows (ETW, Event Tracing for Windows) et du `ETWTraceListener` fourni dans cet exemple. L’exemple est basé sur le [prise en main](getting-started-sample.md) et comprend le suivi ETW.  
   
 > [!NOTE]

@@ -2,17 +2,19 @@
 title: System.ServiceModel.Channels.MsmqFoundBaseAddress
 ms.date: 03/30/2017
 ms.assetid: 5431889d-c296-44f3-a54d-a356e9f1eb5e
-ms.openlocfilehash: 2bf950109c05be3f2470a90ee21860cdbbfee191
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c8793176424ac42d6510dda107bf4eccc89eaf50
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601944"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260446"
 ---
 # <a name="systemservicemodelchannelsmsmqfoundbaseaddress"></a>System.ServiceModel.Channels.MsmqFoundBaseAddress
+
 System.ServiceModel.Channels.MsmqFoundBaseAddress  
   
 ## <a name="description"></a>Description  
+
  L'environnement d'hébergement a trouvé l'adresse de base pour le service.  
   
 ## <a name="see-also"></a>Voir aussi

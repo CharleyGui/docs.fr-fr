@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-ms.openlocfilehash: 28f2858d68de99839d7fec66b0fe4528d7e42325
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 39b9da1096c38eba648f528f7c2b3ecaa39ab7c2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579525"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257507"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Comment : configurer un service Windows Communication Foundation pour utiliser le partage de ports
+
 Le moyen le plus simple d’utiliser le partage de ports net. TCP://dans votre application Windows Communication Foundation (WCF) consiste à exposer un service à l’aide de <xref:System.ServiceModel.NetTcpBinding> .  
   
  Cette liaison fournit une propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> qui contrôle si le partage de ports net.tcp:// est activé pour le service configuré avec cette liaison.  
@@ -63,4 +64,4 @@ Le moyen le plus simple d’utiliser le partage de ports net. TCP://dans votre a
 ## <a name="see-also"></a>Voir aussi
 
 - [Partage de ports Net.TCP](net-tcp-port-sharing.md)
-- [Comment : activer le service de partage de ports Net.TCP](how-to-enable-the-net-tcp-port-sharing-service.md)
+- [Procédure : activer le service de partage de ports Net.TCP](how-to-enable-the-net-tcp-port-sharing-service.md)

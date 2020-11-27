@@ -2,17 +2,18 @@
 title: Liste des types de suivis
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 8ed6dceb19caa52f928f285064c60337e3f15a87
-ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
+ms.openlocfilehash: e8d222d6f093f5db3bd620194bfde7edd4b998a8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78674839"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259243"
 ---
 # <a name="trace-type-summary"></a>Liste des types de suivis
-[Les niveaux de source](xref:System.Diagnostics.SourceLevels) définissent divers niveaux de trace : critiques, erreurs, avertissement, `ActivityTracing` information et Verbose, ainsi qu’une description du drapeau, qui bascule la sortie des événements de limite de trace et de transfert d’activité.  
+
+Les [niveaux source](xref:System.Diagnostics.SourceLevels) définissent différents niveaux de suivi : critique, erreur, avertissement, informations et commentaires. ils fournissent également une description de l' `ActivityTracing` indicateur, qui bascule la sortie des événements de limite de suivi et de transfert d’activité.  
   
- Vous pouvez <xref:System.Diagnostics.TraceEventType> également passer en revue pour les <xref:System.Diagnostics>types de traces qui peuvent être émises à partir de .  
+ Vous pouvez également passer en revue <xref:System.Diagnostics.TraceEventType> les types de traces qui peuvent être émis à partir de <xref:System.Diagnostics> .  
   
  Le tableau suivant répertorie les plus importants.  
   
@@ -21,7 +22,7 @@ ms.locfileid: "78674839"
 |Critique|Erreur irrécupérable ou panne d'application.|  
 |Error|Erreur récupérable.|  
 |Avertissement|Message d’information.|  
-|Information|Problème non critique.|  
+|Informations|Problème non critique.|  
 |Commentaires|Suivi de débogage.|  
 |Démarrer|Démarrage d'une unité logique de traitement.|  
 |Interrompre|Interruption d'une unité logique de traitement.|  

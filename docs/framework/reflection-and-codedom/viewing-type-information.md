@@ -12,14 +12,15 @@ helpviewer_keywords:
 - viewing type information
 - reflection, viewing type information
 ms.assetid: 7e7303a9-4064-4738-b4e7-b75974ed70d2
-ms.openlocfilehash: cd74021e1f1a79626e171db13def98e546cd51df
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3baacbeca7f5cc50fbb720849aec273f996f86e7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865201"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259139"
 ---
 # <a name="viewing-type-information"></a>Affichage des informations de type
+
 La classe <xref:System.Type?displayProperty=nameWithType> est un élément central de la réflexion. Le common language runtime crée l’objet **Type** pour un type chargé quand la réflexion le demande. Vous pouvez utiliser les méthodes, les champs, les propriétés et les classes imbriquées d’un objet **Type** pour connaître toutes les informations le concernant.  
   
  Utilisez <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> pour obtenir les objets **Type** des assemblys n’ayant pas été chargés, en passant le nom du ou des types souhaités. Utilisez <xref:System.Type.GetType%2A?displayProperty=nameWithType> pour obtenir les objets **Type** d’un assembly déjà chargé. Utilisez <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType> et <xref:System.Reflection.Module.GetTypes%2A?displayProperty=nameWithType> pour obtenir les objets **Type** d’un module.  
@@ -46,6 +47,7 @@ La classe <xref:System.Type?displayProperty=nameWithType> est un élément centr
  Si vous avez un **Type**, vous pouvez utiliser la propriété <xref:System.Type.Module%2A?displayProperty=nameWithType> pour obtenir un objet qui encapsule le module contenant ce type. Utilisez la propriété <xref:System.Reflection.Module.Assembly%2A?displayProperty=nameWithType> pour localiser un objet qui encapsule l’assembly contenant le module. Vous pouvez obtenir directement l’assembly qui encapsule le type en utilisant la propriété <xref:System.Type.Assembly%2A?displayProperty=nameWithType>.  
   
 ## <a name="systemtype-and-constructorinfo"></a>System.Type et ConstructorInfo  
+
  L’exemple suivant montre comment lister les constructeurs d’une classe, dans le cas présent, la classe <xref:System.String>.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source1.cpp#1)]
@@ -53,6 +55,7 @@ La classe <xref:System.Type?displayProperty=nameWithType> est un élément centr
  [!code-vb[Conceptual.Types.ViewInfo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source1.vb#1)]  
   
 ## <a name="memberinfo-methodinfo-fieldinfo-and-propertyinfo"></a>MemberInfo, MethodInfo, FieldInfo et PropertyInfo  
+
  Obtenez des informations sur les méthodes, propriétés, événements et champs d’un type à l’aide des objets <xref:System.Reflection.MemberInfo>, <xref:System.Reflection.MethodInfo>, <xref:System.Reflection.FieldInfo> et <xref:System.Reflection.PropertyInfo>.  
   
  L’exemple suivant utilise **MemberInfo** pour lister le nombre de membres de la classe **System.IO.File** et la propriété <xref:System.Type.IsPublic%2A> pour déterminer la visibilité de la classe.  
@@ -67,7 +70,7 @@ La classe <xref:System.Type?displayProperty=nameWithType> est un élément centr
  [!code-csharp[Conceptual.Types.ViewInfo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source3.cs#3)]
  [!code-vb[Conceptual.Types.ViewInfo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source3.vb#3)]  
   
- L’exemple suivant utilise toutes les classes d' ** \* informations** de réflexion avec <xref:System.Reflection.BindingFlags> pour répertorier tous les membres (constructeurs, champs, propriétés, événements et méthodes) de la classe spécifiée, en divisant les membres en catégories statiques et d’instance.  
+ L’exemple suivant utilise toutes les classes d' **\* informations** de réflexion avec <xref:System.Reflection.BindingFlags> pour répertorier tous les membres (constructeurs, champs, propriétés, événements et méthodes) de la classe spécifiée, en divisant les membres en catégories statiques et d’instance.  
   
  [!code-cpp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.Types.ViewInfo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source4.cs#4)]

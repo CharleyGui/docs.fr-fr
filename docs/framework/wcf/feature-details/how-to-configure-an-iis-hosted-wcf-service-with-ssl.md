@@ -3,14 +3,15 @@ title: 'Procédure : configurer un service WCF hébergé par IIS avec SSL'
 description: Découvrez comment configurer un service WCF hébergé par IIS pour utiliser la sécurité de transport HTTP, qui requiert un certificat inscrit auprès d’IIS.
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: 8dc4692863d93e407a122c0ba93ae38323b8b213
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 960005761d3bed917142141976e9f9094094b34c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245256"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257650"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Procédure : configurer un service WCF hébergé par IIS avec SSL
+
 Cette rubrique décrit comment installer un service WCF hébergé par IIS pour utiliser la sécurité de transport HTTP. La sécurité de transport HTTP requiert un certificat SSL à enregistrer avec IIS. Si vous n’avez pas de certificat SSL, vous pouvez utiliser IIS pour générer un certificat de test. Vous devez ensuite ajouter une liaison SSL au site web et configurer les propriétés d’authentification du site web. Enfin, vous devez configurer le service WCF pour utiliser HTTPS.  
   
 ### <a name="creating-a-self-signed-certificate"></a>Création d'un certificat auto-signé  
@@ -19,7 +20,7 @@ Cette rubrique décrit comment installer un service WCF hébergé par IIS pour u
   
      ![Écran d'accueil du Gestionnaire des services IIS](media/mg-inetmgrhome.jpg "mg_INetMgrHome")  
   
-2. Dans la fenêtre certificats de serveur, cliquez sur **créer un certificat auto-signé....** Lien.  
+2. Dans la fenêtre certificats de serveur, cliquez sur **créer Self-Signed certificat.** ... Lien.  
   
      ![Création d’un certificat auto&#45;signé avec IIS](media/mg-createselfsignedcert.jpg "mg_CreateSelfSignedCert")  
   
@@ -94,7 +95,8 @@ Cette rubrique décrit comment installer un service WCF hébergé par IIS pour u
     </services>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Voici un exemple complet d'un fichier web.config pour un service WCF utilisant la sécurité de transport HTTP.  
   
 ```xml  
