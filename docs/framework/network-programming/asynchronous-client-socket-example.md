@@ -10,15 +10,16 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
-ms.openlocfilehash: c0bcf4becf8193f3bd6bc728dc6d7e96276dddf2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2ab53ef5973091d8828260aa82d287ce4a2455eb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502728"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250695"
 ---
-# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="e3507-104">Exemple de socket client asynchrone</span><span class="sxs-lookup"><span data-stu-id="e3507-104">Asynchronous Client Socket Example</span></span>
-<span data-ttu-id="e3507-105">L’exemple de programme suivant crée un client qui se connecte à un serveur.</span><span class="sxs-lookup"><span data-stu-id="e3507-105">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="e3507-106">Le client est créé avec un socket asynchrone. L’exécution de l’application cliente n’est donc pas suspendue pendant que le serveur retourne une réponse.</span><span class="sxs-lookup"><span data-stu-id="e3507-106">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="e3507-107">L’application envoie une chaîne au serveur, puis affiche la chaîne retournée par le serveur sur la console.</span><span class="sxs-lookup"><span data-stu-id="e3507-107">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
+# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="94214-104">Exemple de socket client asynchrone</span><span class="sxs-lookup"><span data-stu-id="94214-104">Asynchronous Client Socket Example</span></span>
+
+<span data-ttu-id="94214-105">L’exemple de programme suivant crée un client qui se connecte à un serveur.</span><span class="sxs-lookup"><span data-stu-id="94214-105">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="94214-106">Le client est créé avec un socket asynchrone. L’exécution de l’application cliente n’est donc pas suspendue pendant que le serveur retourne une réponse.</span><span class="sxs-lookup"><span data-stu-id="94214-106">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="94214-107">L’application envoie une chaîne au serveur, puis affiche la chaîne retournée par le serveur sur la console.</span><span class="sxs-lookup"><span data-stu-id="94214-107">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -322,8 +323,8 @@ public class AsynchronousClient {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e3507-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e3507-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="94214-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="94214-108">See also</span></span>
 
-- [<span data-ttu-id="e3507-109">Exemple de socket serveur asynchrone</span><span class="sxs-lookup"><span data-stu-id="e3507-109">Asynchronous Server Socket Example</span></span>](asynchronous-server-socket-example.md)
-- [<span data-ttu-id="e3507-110">Utilisation d’un socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="e3507-110">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
-- [<span data-ttu-id="e3507-111">Exemples de code de socket</span><span class="sxs-lookup"><span data-stu-id="e3507-111">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="94214-109">Exemple de sockets serveur asynchrones</span><span class="sxs-lookup"><span data-stu-id="94214-109">Asynchronous Server Socket Example</span></span>](asynchronous-server-socket-example.md)
+- [<span data-ttu-id="94214-110">Utilisation d’un socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="94214-110">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
+- [<span data-ttu-id="94214-111">Exemples de code de socket</span><span class="sxs-lookup"><span data-stu-id="94214-111">Socket Code Examples</span></span>](socket-code-examples.md)
