@@ -2,14 +2,15 @@
 title: OperationBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 8c9b0755-9e83-411f-bdcb-61a586022797
-ms.openlocfilehash: 79601308c66abe43dd5a7f72bd2a05b9d2346c2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76cc619aed4ba2b944a8d11dc454a40368a4068c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963044"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269078"
 ---
 # <a name="operationbehaviorattribute"></a>OperationBehaviorAttribute
+
 OperationBehaviorAttribute  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,47 +27,54 @@ class OperationBehaviorAttribute : Behavior
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe OperationBehaviorAttribute ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe OperationBehaviorAttribute a les propriétés suivantes :  
   
 ### <a name="autodisposeparameters"></a>AutoDisposeParameters  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  État de la fonctionnalité d’élimination automatique pour les paramètres.  
   
 ### <a name="impersonation"></a>Emprunt d'identité  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique le niveau d'emprunt d'identité de l'appelant pris en charge par l'opération.  
   
 ### <a name="releaseinstancemode"></a>ReleaseInstanceMode  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique à quel moment il convient de recycler l'objet lors de l'appel d'une opération.  
   
 ### <a name="transactionautocomplete"></a>TransactionAutoComplete  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique s’il convient de valider automatiquement la transaction actuelle si aucune exception non traitée ne se produit.  
   
 ### <a name="transactionscoperequired"></a>TransactionScopeRequired  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique si l’opération nécessite une transaction.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

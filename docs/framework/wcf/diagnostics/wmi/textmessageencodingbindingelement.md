@@ -2,14 +2,15 @@
 title: TextMessageEncodingBindingElement
 ms.date: 03/30/2017
 ms.assetid: 885e2d7a-3436-4093-bc5f-0a404c62acdc
-ms.openlocfilehash: 67c1083daa9acfd204d4de50d4e9178b25aafcf0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 551761af255681dd2c2dbb9e40b7103c95cd2e0a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858388"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267219"
 ---
 # <a name="textmessageencodingbindingelement"></a>TextMessageEncodingBindingElement
+
 TextMessageEncodingBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,40 +26,46 @@ class TextMessageEncodingBindingElement : MessageEncodingBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe TextMessageEncodingBindingElement ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe TextMessageEncodingBindingElement a les propriétés suivantes :  
   
 ### <a name="encoding"></a>Encodage  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison.  
   
 ### <a name="maxreadpoolsize"></a>MaxReadPoolSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Entier qui définit combien de messages peuvent être lus de manière simultanée sans allouer de nouveaux lecteurs.  
   
 ### <a name="maxwritepoolsize"></a>MaxWritePoolSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Entier qui définit combien de messages peuvent être envoyés simultanément sans allouer de nouveaux enregistreurs.  
   
 ### <a name="readerquotas"></a>ReaderQuotas  
+
  Type de données : XmlDictionaryReaderQuotas  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Quotas des lecteurs.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

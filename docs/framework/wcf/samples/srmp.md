@@ -2,14 +2,15 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: f3b0e57f05ccb77eef25c97e7d5d028183e7b13e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1cb0cd4e7300920afb900af0291b9e3d3dc778b2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600930"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268285"
 ---
 # <a name="srmp"></a>SRMP
+
 Cet exemple illustre comment établir une communication en file d'attente avec transaction à l'aide de MSMQ (Message Queuing) sur HTTP.  
   
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  
@@ -34,13 +35,16 @@ Cet exemple illustre comment établir une communication en file d'attente avec t
   
 8. Exécutez le client. Assurez-vous de remplacer les occurrences de localhost de l'adresse de point de terminaison par le nom de l'ordinateur ou l'adresse IP appropriée. Le client envoie un message, puis s'arrête.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
+
  Pour exécuter cet exemple, le protocole MSMQ ainsi que les services IIS doivent être installés sur l'ordinateur du client et celui du service.  
   
-## <a name="demonstrates"></a>Illustre  
+## <a name="demonstrates"></a>Illustre le  
+
  L’exemple montre comment envoyer des messages de mise en file d’attente WCF à l’aide de MSMQ sur HTTP. Ce type de transmission est également appelé messagerie SRMP. Lorsqu'un message en file d'attente est envoyé, le protocole MSMQ sur l'ordinateur expéditeur transfère les messages vers le gestionnaire de files d'attente de réception via le transport TCP ou HTTP. Lorsque l'utilisateur sélectionne SRMP, cela signifie que le transport HTTP sera utilisé pour le transfert des messages vers la file d'attente. Le protocole SRMP Secure permet d'utiliser HTTPS.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple de code est basé sur l'exemple avec transaction. Les modalités d'envoi et de réception des messages à et depuis la file d'attente à l'aide du protocole SRMP sont identiques à celles utilisées pour l'envoi et la réception des messages à l'aide d'un protocole natif.  
   
  La configuration du client est modifiée en fonction du protocole de transfert vers la file d'attente souhaitée. Il peut s'agir de l'un des protocoles suivants : natif, SRMP ou SrmpSecure. Par défaut, le protocole de transfert correspond au protocole natif. Dans cet exemple, les configurations du client et du service spécifient l'utilisation du protocole SRMP.  

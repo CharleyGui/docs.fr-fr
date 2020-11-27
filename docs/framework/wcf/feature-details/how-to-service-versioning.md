@@ -1,15 +1,16 @@
 ---
-title: 'Procédure : contrôle des versions du service'
+title: 'Procédure : Contrôle des versions du service'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: beb7de63d300ad7986bfc59093006b074b9456ba
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ec0f776f296e5ab24f4f628a204b04aa8d903d39
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586934"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268467"
 ---
-# <a name="how-to-service-versioning"></a>Procédure : contrôle des versions du service
+# <a name="how-to-service-versioning"></a>Procédure : Contrôle des versions du service
+
 Cette rubrique présente les étapes de base nécessaires pour créer une configuration de routage qui route les messages vers des versions différentes du même service. Dans cet exemple, les messages sont routés vers deux versions différentes d'un service de calculatrice, `roundingCalc` (v1) et `regularCalc` (v2). Les deux implémentations prennent en charge les mêmes opérations ; toutefois, le service le plus ancien, `roundingCalc`, arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Une application cliente doit être en mesure d'indiquer s'il faut utiliser le service `regularCalc` plus récent.  
   
 > [!WARNING]
@@ -130,7 +131,8 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </behaviors>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'intégralité du fichier de configuration est présentée ci-dessous.  
   
 ```xml  
@@ -213,7 +215,8 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
 </configuration>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'intégralité de l'application cliente est présentée ci-dessous.  
   
 ```csharp  

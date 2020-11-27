@@ -1,15 +1,16 @@
 ---
-title: "Comment : spécifier des informations d'identification pour la sécurité des canaux"
+title: 'Procédure : spécifier des informations d’identification de sécurité de canal'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 45a13460ce94cbacae0465fede4b455a2833ce81
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9236985ef461044e480847003d9d249b7e232783
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596940"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266764"
 ---
-# <a name="how-to-specify-channel-security-credentials"></a>Comment : spécifier des informations d'identification pour la sécurité des canaux
+# <a name="how-to-specify-channel-security-credentials"></a>Procédure : spécifier des informations d’identification de sécurité de canal
+
 Le moniker de service Windows Communication Foundation (WCF) permet aux applications COM d’appeler des services WCF. La plupart des services WCF requièrent que le client spécifie des informations d’identification pour l’authentification et l’autorisation. Lors de l’appel d’un service WCF à partir d’un client WCF, vous pouvez spécifier ces informations d’identification en code managé ou dans un fichier de configuration de l’application. Lors de l’appel d’un service WCF à partir d’une application COM, vous pouvez utiliser l' <xref:System.ServiceModel.ComIntegration.IChannelCredentials> interface pour spécifier les informations d’identification. Cette rubrique illustre diverses méthodes pour spécifier des informations d'identification à l'aide de l'interface <xref:System.ServiceModel.ComIntegration.IChannelCredentials>.  
   
 > [!NOTE]
@@ -25,7 +26,7 @@ Le moniker de service Windows Communication Foundation (WCF) permet aux applicat
   
 3. Ajoutez `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` à la `ICalculator` définition de l’interface.  
   
-4. Ajoutez `bindingNamespace="http://Microsoft.ServiceModel.Samples"` à la balise de point de terminaison dans le fichier app. config du service.  
+4. Ajoutez `bindingNamespace="http://Microsoft.ServiceModel.Samples"` à la balise de point de terminaison dans le App.config pour le service.  
   
 5. Générez l'exemple de la sécurité de message et exécutez Service.exe. Utilisez Internet Explorer et accédez à l’URI du service ( `http://localhost:8000/ServiceModelSamples/Service` ) pour vous assurer que le service fonctionne.  
   
@@ -134,7 +135,7 @@ Le moniker de service Windows Communication Foundation (WCF) permet aux applicat
 ## <a name="see-also"></a>Voir aussi
 
 - [Fédération](federation.md)
-- [Comment : configurer des informations d'identification sur un service FS (Federation Service)](how-to-configure-credentials-on-a-federation-service.md)
-- [Comment : créer un client fédéré](how-to-create-a-federated-client.md)
+- [Procédure : configurer des informations d’identification sur un service de fédération](how-to-configure-credentials-on-a-federation-service.md)
+- [Procédure : créer un client fédéré](how-to-create-a-federated-client.md)
 - [Sécurité des messages](message-security-in-wcf.md)
 - [Liaisons et sécurité](bindings-and-security.md)

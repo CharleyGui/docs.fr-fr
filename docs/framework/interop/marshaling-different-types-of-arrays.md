@@ -9,14 +9,15 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-ms.openlocfilehash: f1473c7917189f0b36c96b2adcf20005c5fd6b48
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: b7777e99daf9d294bf26033f470a6e562b7b727f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621494"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269091"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Marshaling de différents types de tableaux
+
 Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus d'informations, voir [Copie et épinglage](copying-and-pinning.md).  
   
  Le tableau suivant répertorie les options de marshaling des tableaux et décrit leur utilisation.  
@@ -30,7 +31,8 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 |De structures avec des entiers.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In.|  
 |De structures avec des chaînes.|Passe un tableau de structures contenant uniquement des chaînes en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Cet exemple montre comment passer les types de tableaux suivants :  
   
 - Tableau d'entiers par valeur.  
@@ -106,10 +108,12 @@ typedef struct _MYPERSON
  La classe `NativeMethods` contient un ensemble de méthodes appelé par la classe `App` . Pour obtenir des détails spécifiques sur le passage de tableaux, voir les commentaires de l'exemple suivant. Un tableau, qui est un type référence, est passé en tant que paramètre par défaut. Pour que l'appelant reçoive les résultats, **InAttribute** et **OutAttribute** doivent être appliqués explicitement à l'argument contenant le tableau.  
   
 ### <a name="declaring-prototypes"></a>Déclaration de prototypes  
+
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]
  [!code-vb[Conceptual.Interop.Marshaling#31](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#31)]  
   
 ### <a name="calling-functions"></a>Appel de fonctions  
+
  [!code-csharp[Conceptual.Interop.Marshaling#32](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#32)]
  [!code-vb[Conceptual.Interop.Marshaling#32](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#32)]  
   

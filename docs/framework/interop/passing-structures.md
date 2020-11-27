@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - platform invoke, calling unmanaged functions
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
-ms.openlocfilehash: eae28d6746cd89d98b659b9eb957f158e1319190
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ece5db8fdf803ce2f450ebeaaad66a379cfbf992
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620818"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268909"
 ---
 # <a name="passing-structures"></a>Passage de structures
+
 De nombreuses fonctions non managées s’attendent à ce que vous passiez, en tant que paramètre de la fonction, des membres de structures (types définis par l’utilisateur en Visual Basic) ou des membres de classes qui sont définis dans le code managé. Lors du passage de structures ou de classes à du code non managé à l’aide de l’appel de code non managé, vous devez fournir des informations supplémentaires afin de conserver la disposition et l’alignement d’origine. Cette rubrique présente l’attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute>, qui vous permet de définir des types mis en forme. Pour les classes et structures managées, vous pouvez sélectionner parmi plusieurs comportements de disposition prévisible fournis par l’énumération **LayoutKind**.  
   
  Les concepts présentés dans cette rubrique sont axés sur une différence importante entre les types structure et classe. Les structures sont des types valeur et les classes sont des types référence. Les classes fournissent toujours au moins un niveau d’indirection de mémoire (un pointeur vers une valeur). Cette différence est importante, car les fonctions non managées exigent souvent une indirection, comme indiqué par les signatures de la première colonne du tableau suivant. Les déclarations de structures et de classes managées dans les colonnes restantes montrent le degré auquel vous pouvez ajuster le niveau d’indirection dans votre déclaration. Les déclarations sont fournies pour Visual Basic et Visual C#.  
@@ -35,6 +36,7 @@ De nombreuses fonctions non managées s’attendent à ce que vous passiez, en t
 - Utilisez une classe passée par référence quand la fonction non managée exige deux niveaux d’indirection.  
   
 ## <a name="declaring-and-passing-structures"></a>Déclaration et passage de structures  
+
  L’exemple suivant montre comment définir les structures `Point` et `Rect` dans le code managé, et comment passer les types en tant que paramètre à la fonction **PtInRect** dans le fichier User32.dll. **PtInRect** a la signature non managée suivante :  
   
 ```cpp
@@ -89,6 +91,7 @@ internal static class NativeMethods
 ```  
   
 ## <a name="declaring-and-passing-classes"></a>Déclaration et passage de classes  
+
  Vous pouvez passer les membres d’une classe à une fonction DLL non managée, à condition que la classe ait une disposition de membre fixe. L’exemple suivant montre comment passer les membres de la classe `MySystemTime`, qui sont définis dans un ordre séquentiel, à **GetSystemTime** dans le fichier User32.dll. **GetSystemTime** a la signature non managée suivante :  
   
 ```cpp

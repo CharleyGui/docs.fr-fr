@@ -2,14 +2,15 @@
 title: Classe d'opération
 ms.date: 03/30/2017
 ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
-ms.openlocfilehash: 9696a7f026e54afacb5ccbfa8703a2ba617a9f3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b47d933dc84813532398830c92c95210208a709
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963109"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269156"
 ---
 # <a name="operation-class"></a>Classe d'opération
+
 Opération  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,96 +34,110 @@ class Operation
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe Operation ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe Operation a les propriétés suivantes :  
   
 ### <a name="action"></a>Action  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  L'action WS-Addressing du message de demande.  
   
 ### <a name="asyncpattern"></a>AsyncPattern  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
- Indique qu’une opération est implémentée de façon asynchrone à l’aide un `Begin`[Ouvrir/fermer les crochets] et `End`paire de méthodes [ouverture/fermeture crochets] dans un contrat de service.  
+ Indique qu’une opération est implémentée de façon asynchrone à l’aide d’une `Begin` paire de méthodes [guillemets ouvrant/fermant] et `End` [parenthèses ouvrante/fermante] dans un contrat de service.  
   
-### <a name="behaviors"></a>comportements  
- Type de données : Tableau de comportements  
+### <a name="behaviors"></a>Comportements  
+
+ Type de données : tableau de comportements  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Comportements associés à cette opération.  
   
 ### <a name="iscallback"></a>IsCallback  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  True lorsque l'opération est une opération de rappel.  
   
 ### <a name="isinitiating"></a>IsInitiating  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique si la méthode implémente une opération qui peut initialiser une session sur le serveur.  
   
 ### <a name="isoneway"></a>IsOneWay  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique si une opération retourne un message de réponse.  
   
 ### <a name="isterminating"></a>IsTerminating  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Indique si une opération retourne un message de réponse.  
   
 ### <a name="methodsignature"></a>MethodSignature  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Signature de méthode de l'opération.  
   
 ### <a name="name"></a>Nom  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nom de l'opération.  
   
 ### <a name="parametertypes"></a>ParameterTypes  
+
  Type de données : tableau de chaînes  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Types des paramètres de l'opération.  
   
 ### <a name="replyaction"></a>ReplyAction  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur de l'action SOAP pour le message de réponse de l'opération.  
   
 ### <a name="returntype"></a>ReturnType  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Type de retour de l’opération.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

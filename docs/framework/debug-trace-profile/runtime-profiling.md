@@ -12,17 +12,19 @@ helpviewer_keywords:
 - profiling applications
 - Performance Console
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
-ms.openlocfilehash: fc88cc5c7c7655cf03573bae3935498a05496cc2
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 5d1542c7f6afa2d683240d6d5cca837b961eb3be
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803584"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267102"
 ---
 # <a name="runtime-profiling"></a>Génération de profils d'exécution
+
 Le profilage est une méthode de collecte de données de performance dans le cadre d’un scénario de développement ou de déploiement. Cette section s’adresse aux développeurs et administrateurs système qui souhaitent recueillir des informations sur les performances d’une application.  
   
 ## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Suivi des performances à l’aide de l’analyseur de performances (Perfmon.exe)  
+
  L’analyseur de performances est l’outil le plus simple à utiliser pour profiler votre application .NET Framework. L’analyseur de performances représente graphiquement les données trouvées dans les compteurs de performance .NET Framework installés avec le common language runtime et le SDK Windows. Ces compteurs permettent de tout surveiller, de la gestion de la mémoire jusqu’aux performances du compilateur juste-à-temps (JIT). Ils vous renseignent sur les ressources que votre application utilise, ce qui est une mesure indirecte des performances de votre application. Ces compteurs s’avèrent utiles pour comprendre le fonctionnement interne de votre application.  
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Pour exécuter Perfmon.exe sur Windows Vista et les versions ultérieures  
@@ -56,6 +58,7 @@ Le profilage est une méthode de collecte de données de performance dans le cad
 > Sur les systèmes sur lesquels le .NET Framework 4 est installé, l’analyseur de performances peut ne pas afficher les données des compteurs de performances dans certaines catégories, telles que les **données CLR .net** et la **mise en réseau CLR .net**, pour les applications développées à l’aide de la .NET Framework 1,1. Si c’est le cas, vous pouvez configurer l’analyseur de performances pour afficher ces données en ajoutant l' [\<forcePerformanceCounterUniqueSharedMemoryReads>](../configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) élément au fichier de configuration de l’application.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Lecture et création de compteurs de performances par programmation  
+
  Le .NET Framework fournit des classes que vous pouvez utiliser pour accéder par programmation aux mêmes informations de performances que celles disponibles dans la console de performances. Vous pouvez aussi utiliser ces classes pour créer des compteurs de performances personnalisés. Le tableau suivant décrit quelques-unes des classes d’analyse des performances fournies dans le .NET Framework.  
   
 |Classe|Description|  

@@ -2,19 +2,20 @@
 title: Activité personnalisée SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 4dca15bfd3798b9282960663bea827f9323a1266
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f518beebe336080853e4dec3bca6f8539bbec304
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547725"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267587"
 ---
 # <a name="sendmail-custom-activity"></a>Activité personnalisée SendMail
+
 Cet exemple montre comment créer une activité personnalisée dérivée de <xref:System.Activities.AsyncCodeActivity> pour envoyer du courrier à l'aide de SMTP afin de l'utiliser dans une application de workflow. L’activité personnalisée utilise les fonctionnalités de <xref:System.Net.Mail.SmtpClient> pour envoyer des courriers électroniques de manière asynchrone et pour envoyer du courrier électronique avec l’authentification. Elle fournit aussi certaines fonctionnalités d'utilisateur final telles que le mode Test, le remplacement des jetons, les modèles de fichier et le chemin d'accès de dépôt de test.  
   
  Le tableau suivant décrit en détail les arguments pour l’activité `SendMail`.  
   
-|Name|Type|Description|  
+|Nom|Type|Description|  
 |-|-|-|  
 |Host|String|Adresse du serveur hôte SMTP.|  
 |Port|String|Port du service SMTP dans l'hôte.|  
@@ -22,9 +23,9 @@ Cet exemple montre comment créer une activité personnalisée dérivée de <xre
 |UserName|String|Nom d'utilisateur pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
 |Mot de passe|String|Mot de passe pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
 |Objet|<xref:System.Activities.InArgument%601>\<string>|Sujet du message.|  
-|body|<xref:System.Activities.InArgument%601>\<string>|Corps du message.|  
+|Corps|<xref:System.Activities.InArgument%601>\<string>|Corps du message.|  
 |Pièces jointes|<xref:System.Activities.InArgument%601>\<string>|Collection de pièces jointes utilisée pour stocker les données jointes à ce message électronique.|  
-|À partir|<xref:System.Net.Mail.MailAddress>|Adresse de l’adresse de ce message électronique.|  
+|Du|<xref:System.Net.Mail.MailAddress>|Adresse de l’adresse de ce message électronique.|  
 |À|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de ce message électronique.|  
 |CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de copie carbone (CC) pour ce message électronique.|  
 |BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de copie carbone invisible (CCI) pour ce message électronique.|  
@@ -34,6 +35,7 @@ Cet exemple montre comment créer une activité personnalisée dérivée de <xre
 |TestDropPath|String|Lorsque cette propriété est définie, tous les courriers électroniques sont également enregistrés dans le fichier spécifié.<br /><br /> Cette propriété est destinée à être utilisée lorsque vous testez ou déboguez des flux de travail pour vous assurer que le format et le contenu des messages sortants sont appropriés.|  
   
 ## <a name="solution-contents"></a>Contenu de la solution  
+
  La solution contient deux projets.  
   
 |Projet|Description|Fichiers importants|  
@@ -42,9 +44,11 @@ Cet exemple montre comment créer une activité personnalisée dérivée de <xre
 |SendMailTestClient|Client pour tester l'activité SendMail.  Ce projet illustre deux façons d'appeler l'activité SendMail : déclarative et par programme.|1. Sequence1. xaml : workflow qui appelle l’activité SendMail.<br />2. Program.cs : appelle Sequence1 et crée également un workflow par programme qui utilise SendMail.|  
   
 ## <a name="further-configuration-of-the-sendmail-activity"></a>Configuration supplémentaire de l'activité SendMail  
+
  Bien qu'elle ne soit pas illustrée dans l'exemple, les utilisateurs peuvent effectuer une configuration supplémentaire de l'activité SendMail. Les trois sections suivantes montrent comment procéder.  
   
 ### <a name="sending-an-email-using-tokens-specified-in-the-body"></a>Envoi d'un message électronique à l'aide de jetons spécifiés dans le corps  
+
  Cet extrait de code montre comment envoyer un message électronique avec des jetons dans le corps. Notez la façon dont les jetons sont fournis dans la propriété de corps. Les valeurs pour ces jetons sont fournies à la propriété de jetons.  
   
 ```csharp  
@@ -67,6 +71,7 @@ new SendMail
 ```  
   
 ### <a name="sending-an-email-using-a-template"></a>Envoi d'un message électronique à l'aide d'un modèle  
+
  Cet extrait de code montre comment envoyer un message électronique à l'aide de jetons de modèle dans le corps. Notez que lorsque vous définissez la propriété `BodyTemplateFilePath`, il n'est pas nécessaire de fournir la valeur pour la propriété Body (le contenu du modèle sera copié dans le corps).  
   
 ```csharp  
@@ -84,6 +89,7 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Envoi de messages électronique en mode Test  
+
  Cet extrait de code montre comment définir les deux propriétés de test : en définissant `TestMailTo` sur tous les messages seront envoyés à `john.doe@contoso.con` (sans tenir compte des valeurs de à, CC, CCI). En définissant TestDropPath, tous les messages électroniques sortants seront aussi enregistrés dans le chemin d'accès fourni. Ces propriétés peuvent être définies indépendamment (elles ne sont pas liées).  
   
 ```csharp  
@@ -103,6 +109,7 @@ new SendMail
 ```  
   
 ## <a name="set-up-instructions"></a>Instructions d'installation  
+
  Vous devez avoir accès à un serveur SMTP pour cet exemple.  
   
  Pour plus d’informations sur la configuration d’un serveur SMTP, consultez les liens suivants.  

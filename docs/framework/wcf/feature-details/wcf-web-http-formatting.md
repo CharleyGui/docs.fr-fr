@@ -2,17 +2,19 @@
 title: Mise en forme HTTP Web WCF
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-ms.openlocfilehash: 011ff4f2e667268fac1aa2d82c0a2c4ffefc8dde
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e9346cd1bb3798ad0beac5e9e28a8536007d897b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585556"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266907"
 ---
 # <a name="wcf-web-http-formatting"></a>Mise en forme HTTP Web WCF
+
 Le modèle de programmation HTTP Web WCF vous permet de déterminer dynamiquement le format le plus approprié pour permettre à une opération de service de retourner sa réponse. Deux méthodes pour déterminer le format approprié sont prises en charge : automatique et explicite.  
   
 ## <a name="automatic-formatting"></a>Mise en forme automatique  
+
  Lorsqu'elle est activée, la mise en forme automatique choisit le meilleur format dans lequel retourner la réponse. Elle détermine le meilleur format en vérifiant dans l'ordre les éléments suivants :  
   
 1. Types de médias dans l'en-tête Accept du message de demande.  
@@ -91,6 +93,7 @@ try
 ```  
   
 ## <a name="explicit-formatting"></a>Mise en forme explicite  
+
  Comme son nom l'indique, dans une mise en forme explicite le développeur détermine le meilleur format à utiliser dans le code d'opération. Si le meilleur format est XML ou JSON, le développeur affecte à la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> la valeur <xref:System.ServiceModel.Web.WebMessageFormat.Xml> ou <xref:System.ServiceModel.Web.WebMessageFormat.Json>. Si la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> n'est pas définie de manière explicite, le format par défaut de l'opération est utilisé.  
   
  L'exemple suivant cherche un format à utiliser dans le paramètre de chaîne de demande du format. S'il a été spécifié, il définit le format de l'opération à l'aide de la propriété <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A>.  
@@ -170,4 +173,4 @@ public class Service : IService
 - [Modèle de programmation HTTP Web WCF](wcf-web-http-programming-model.md)
 - [UriTemplate et UriTemplateTable](uritemplate-and-uritemplatetable.md)
 - [Vue d'ensemble du modèle de programmation Web HTTP WCF](wcf-web-http-programming-model-overview.md)
-- [Modèle objet de programmation HTTP web WCF](wcf-web-http-programming-object-model.md)
+- [Modèle objet de programmation Web HTTP WCF](wcf-web-http-programming-object-model.md)

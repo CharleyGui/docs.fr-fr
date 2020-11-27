@@ -2,14 +2,15 @@
 title: Utilisation de l'activité Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-ms.openlocfilehash: 7ca4527cc1d5bc90ed1ec4df3eef6cf2d8b93b4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: df8570a61c7bfbfacc00b0896156135ecf2a0c32
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142613"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267453"
 ---
 # <a name="using-the-pick-activity"></a>Utilisation de l'activité Pick
+
 Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.Pick>.
 
  L'activité <xref:System.Activities.Statements.Pick> fournit une modélisation de contrôle basée sur les événements. Le comportement est semblable à celui de l’instruction `switch` de C#, qui exécute une seule des branches dans l’instruction `switch`. Contrairement à l’instruction `switch` dans laquelle une branche est exécutée en fonction d’une valeur, l’activité <xref:System.Activities.Statements.Pick> exécute une branche en fonction de l’exécution d’une activité.
@@ -17,12 +18,14 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
  Cet exemple invite un utilisateur à taper son nom sur la console dans une période de temps donné. L’activité <xref:System.Activities.Statements.Pick> dans l’exemple a deux branches qui sont exécutées selon si l’utilisateur tape son nom dans les 5 secondes ou non. Si l'utilisateur tape son nom dans les 5 secondes, la première branche, qui contient une activité `ReadLine` personnalisée est exécutée ; sinon, l'autre branche, qui contient une activité <xref:System.Activities.Statements.Delay> est exécutée. Une fois qu'un nom d'utilisateur est tapé sur la console, il est imprimé sur la console. Si rien n'est entré dans les 5 secondes, l'opération expire.
 
 ## <a name="demonstrates"></a>Illustre le
+
  Activité <xref:System.Activities.Statements.Pick>
 
 ## <a name="discussion"></a>Discussions
+
  L'exemple inclut un workflow de concepteur et un workflow encodé.
 
- Designer Workflow La version Designer de l’échantillon montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
+ Flux de travail du concepteur la version du concepteur de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
 - Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.
 
@@ -30,7 +33,7 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 
 - Sequence1.xaml : workflow créé à l'aide du concepteur qui utilise Pick.
 
- Flux de travail codé La version codée de l’échantillon montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
+ Flux de travail codé la version codée de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
 - Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.
 
@@ -38,7 +41,7 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2010, ouvrez le fichier de solution Pick.sln.
+1. À l’aide de Visual Studio 2010, ouvrez le fichier solution Pick. sln.
 
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.
 
@@ -49,6 +52,6 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Si ce répertoire n’existe pas, rendez-vous sur [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) Samples pour .NET Framework 4 pour](https://www.microsoft.com/download/details.aspx?id=21459) télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] des échantillons. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`

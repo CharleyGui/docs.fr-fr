@@ -2,17 +2,19 @@
 title: Suspension et reprise d'un workflow
 ms.date: 03/30/2017
 ms.assetid: 11f38339-79c7-4295-b610-24a7223bbf6d
-ms.openlocfilehash: dc6bdfe7cc10837fb8721ab12490d244d5ec1ca0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8d1806c6d2c8e72b4e3a8b18bff669fcd0e0538
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142964"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268536"
 ---
 # <a name="pausing-and-resuming-a-workflow"></a>Suspension et reprise d'un workflow
+
 Les workflows seront suspendus et reprendront en réponse à des signets et des activités bloquantes, telles que <xref:System.Activities.Statements.Delay>, mais vous pouvez aussi suspendre, décharger et reprendre explicitement un workflow à l'aide de la persistance.  
   
 ## <a name="pausing-a-workflow"></a>Suspension d'un workflow  
+
  Pour suspendre un workflow, utilisez <xref:System.Activities.WorkflowApplication.Unload%2A>.  Cette méthode demande que le workflow soit persistant et déchargé, et lève une exception <xref:System.TimeoutException> si le workflow n'est pas déchargé en trente secondes.  
   
 ```csharp  
@@ -28,6 +30,7 @@ catch (TimeoutException e)
 ```  
   
 ## <a name="resuming-a-workflow"></a>Reprise d'un workflow  
+
  Pour reprendre la progression d'un workflow qui était déjà suspendu et déchargé, utilisez <xref:System.Activities.WorkflowApplication.Load%2A>. Cette méthode charge un workflow d'un magasin de persistances dans la mémoire.  
   
 ```csharp  
@@ -37,6 +40,7 @@ application.Load(id);
 ```  
   
 ## <a name="example"></a> Exemple  
+
  L'exemple de code suivant montre comment suspendre et reprendre un workflow à l'aide de la persistance.  
   
 ```csharp  

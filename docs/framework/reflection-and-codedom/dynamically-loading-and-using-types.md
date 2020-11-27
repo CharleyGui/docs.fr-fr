@@ -13,14 +13,15 @@ helpviewer_keywords:
 - implicit late binding
 - reflection, dynamically using types
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
-ms.openlocfilehash: 39a4a9a2ff77cb900db7f39a55dc17a5b8c62cf3
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: be9991a4df866f65aabe063be3cc2b374f4d124d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475084"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266790"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Chargement et utilisation dynamiques des types
+
 La réflexion fournit l’infrastructure utilisée par les compilateurs de langages pour implémenter la liaison tardive implicite. La liaison est le processus de localisation de la déclaration (en d’autres termes, l’implémentation) qui correspond à un type spécifié unique. Quand ce processus se produit au moment de l’exécution plutôt qu’au moment de la compilation, il est appelé liaison tardive. Visual Basic permet d’utiliser la liaison tardive implicite dans le code ; le compilateur Visual Basic appelle une méthode d’assistance qui utilise la réflexion pour récupérer le type d’objet. Les arguments passés à la méthode d’assistance entraînent l’appel de la méthode appropriée au moment de l’exécution. Ces arguments sont l’instance (un objet) sur laquelle appeler la méthode, le nom de la méthode appelée (une chaîne) et les arguments passés à la méthode appelée (un tableau d’objets).  
   
  Dans l’exemple suivant, le compilateur Visual Basic utilise implicitement la réflexion pour appeler une méthode sur un objet dont le type n’est pas connu au moment de la compilation. Une classe **HelloWorld** a une méthode **PrintHello** qui imprime « Hello World » concaténé à du texte passé à la méthode **PrintHello**. La méthode **PrintHello** appelée dans cet exemple équivaut en fait à un <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>. Le code Visual Basic permet à la méthode **PrintHello** d’être appelée comme si le type de l’objet (helloObj) était connu au moment de la compilation (liaison anticipée) plutôt qu’au moment de l’exécution (liaison tardive).  
@@ -40,6 +41,7 @@ End Module
 ```  
   
 ## <a name="custom-binding"></a>Liaison personnalisée  
+
  Outre son utilisation implicite par les compilateurs, la réflexion peut également être utilisée explicitement dans le code pour exécuter la liaison tardive.  
   
  Le [Common Language Runtime](../../standard/clr.md) prend en charge plusieurs langages de programmation dont les règles de liaison diffèrent. Dans le cadre de la liaison anticipée, les générateurs de code peuvent contrôler complètement cette liaison. Cependant, dans la liaison tardive par réflexion, celle-ci doit être contrôlée par une liaison personnalisée. La classe <xref:System.Reflection.Binder> assure un contrôle personnalisé de la sélection et de l’appel des membres.  
@@ -53,6 +55,7 @@ End Module
  [!code-vb[Conceptual.Types.Dynamic#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.dynamic/vb/source1.vb#1)]  
   
 ### <a name="invokemember-and-createinstance"></a>InvokeMember et CreateInstance  
+
  Utilisez <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType> pour appeler un membre d’un type. Les méthodes **CreateInstance** de diverses classes, telles que <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.CreateInstance%2A?displayProperty=nameWithType>, sont des formes particulières de **InvokeMember** qui créent des instances du type spécifié. La classe **Binder** est utilisée pour la résolution de surcharge et la contrainte d’argument dans ces méthodes.  
   
  L’exemple suivant montre les trois combinaisons possibles de contrainte d’argument (conversion de type) et de sélection de membre. Dans le cas n°1, aucune contrainte d’argument ou sélection de membre n’est nécessaire. Dans le cas n°2, seule la sélection de membre est nécessaire. Dans le cas n°3, seule la contrainte d’argument est nécessaire.  
@@ -79,7 +82,7 @@ End Module
   
  **ChangeType** n’effectue que des [contraintes étendues](../../standard/base-types/type-conversion.md) ou sans perte, comme l’illustre le tableau suivant.  
   
-|Type de source|Type de cible|  
+|Type de source|Type cible|  
 |-----------------|-----------------|  
 |Tout type|Son type de base|  
 |Tout type|L’interface implémentée|  

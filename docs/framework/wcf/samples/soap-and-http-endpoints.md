@@ -2,25 +2,28 @@
 title: Points de terminaison SOAP et HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: fee1df86026716941f65dccca15d437ae917770b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9e7ce32a0f5a2f37294db57659e2b30b364bef24
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600943"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268259"
 ---
 # <a name="soap-and-http-endpoints"></a>Points de terminaison SOAP et HTTP
+
 Cet exemple montre comment implémenter un service basé sur RPC et l’exposer au format SOAP et au format POX (Plain Old XML) à l’aide du modèle de programmation Web WCF. Pour plus d’informations sur la liaison HTTP pour le service, consultez l’exemple de [service http de base](basic-http-service.md) . Cet exemple se concentre sur les détails ayant trait à l’exposition du même service sur SOAP et HTTP au moyen de différentes liaisons.  
   
-## <a name="demonstrates"></a>Illustre  
+## <a name="demonstrates"></a>Illustre le  
+
  Exposition d’un service RPC sur SOAP et HTTP à l’aide de WCF.  
   
 ## <a name="discussion"></a>Discussions  
+
  Cet exemple se compose de deux composants : un projet d’application Web (service) qui contient un service WCF et une application console (client) qui appelle des opérations de service à l’aide de liaisons SOAP et HTTP.  
   
  Le service WCF expose 2 opérations, `GetData` et, `PutData` qui répercutent la chaîne passée comme entrée. Les opérations de service sont annotées avec <xref:System.ServiceModel.Web.WebGetAttribute> et <xref:System.ServiceModel.Web.WebInvokeAttribute>. Ces attributs contrôlent la projection HTTP de ces opérations. Elles sont aussi annotées avec <xref:System.ServiceModel.OperationContractAttribute>, ce qui permet leur exposition sur des liaisons SOAP. La méthode `PutData` du service lève un <xref:System.ServiceModel.Web.WebFaultException>, qui est renvoyé sur HTTP avec le code d'état HTTP et sur SOAP en tant qu'erreur SOAP.  
   
- Le fichier Web. config configure le service WCF avec 3 points de terminaison :  
+ Le fichier Web.config configure le service WCF avec 3 points de terminaison :  
   
 - le point de terminaison ~/service.svc/mex qui expose les métadonnées du service pour l'accès des clients SOAP ;  
   

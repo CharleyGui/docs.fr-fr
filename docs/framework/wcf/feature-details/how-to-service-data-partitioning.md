@@ -1,15 +1,16 @@
 ---
-title: 'Procédure : partitionnement des données du service'
+title: 'Procédure : Partitionnement des données du service'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 3b2f86ee6a4dea25fb5c972d4cecb1b9ed411b29
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7bb5eb6bda8bb2be3dfaaa88eb4b5ad787f47aa7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601190"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268922"
 ---
-# <a name="how-to-service-data-partitioning"></a>Procédure : partitionnement des données du service
+# <a name="how-to-service-data-partitioning"></a>Procédure : Partitionnement des données du service
+
 Cette rubrique présente les étapes de base requises pour partitionner des messages entre plusieurs instances du même service de destination. Le partitionnement des données du service est en général utilisé pour faire évoluer un service vers une meilleure qualité ou pour gérer les demandes de différents clients de manière spécifique. Par exemple, les messages de clients de valeur élevée ou « Gold » peuvent avoir besoin d’être traités avec une priorité plus élevée que les messages d’un client standard.  
   
  Dans cet exemple, les messages sont routés vers l'une des deux instances du service regularCalc. Les deux instances du service sont identiques ; toutefois, le service représenté par le point de terminaison calculator1 traite les messages provenant de clients importants et le point de terminaison calculator2 traite les messages des autres clients.  
@@ -98,7 +99,8 @@ Cette rubrique présente les étapes de base requises pour partitionner des mess
     </behaviors>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'intégralité du fichier de configuration est présentée ci-dessous.  
   
 ```xml  

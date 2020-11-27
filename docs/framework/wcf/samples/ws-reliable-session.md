@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Reliable session
 ms.assetid: 86e914f2-060b-432b-bd17-333695317745
-ms.openlocfilehash: 68123ba9a273bf2c1eaa7b3747930ebca386064b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cf3e206724636113646c478407e61dc1c775b620
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589693"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267193"
 ---
 # <a name="ws-reliable-session"></a>WS Reliable Session
+
 Cet exemple montre l'utilisation des sessions fiables. Les sessions fiables fournissent la prise en charge de la messagerie et des sessions fiables. La messagerie fiable réessaie d'établir la communication en cas d'échec et permet de spécifier des assurances de remise telles que l'ordre d'arrivée des messages. Les sessions conservent l'état pour les clients entre les appels. Cet exemple implémente des sessions permettant de conserver l'état du client et spécifie des assurances de remise par ordre d'arrivée.  
   
 > [!IMPORTANT]
@@ -39,7 +40,7 @@ Cet exemple montre l'utilisation des sessions fiables. Les sessions fiables four
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Le point de terminaison contient un attribut `bindingConfiguration` qui référence une configuration de liaison appelée « Binding1 ». La configuration de liaison active les sessions fiables en affectant `enabled` à l’attribut de la [\<reliableSession>](../../configure-apps/file-schema/wcf/reliablesession.md) valeur `true` . Les assurances de remise pour les sessions ordonnées sont contrôlées en affectant `true` ou `false` à l'attribut ordonné. Par défaut, il s’agit de `true`.  
+ Le point de terminaison contient un attribut `bindingConfiguration` qui référence une configuration de liaison appelée « Binding1 ». La configuration de liaison active les sessions fiables en affectant `enabled` à l’attribut de la [\<reliableSession>](../../configure-apps/file-schema/wcf/reliablesession.md) valeur `true` . Les assurances de remise pour les sessions ordonnées sont contrôlées en affectant `true` ou `false` à l'attribut ordonné. La valeur par défaut est `true`.  
   
 ```xml  
 <bindings>  

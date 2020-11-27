@@ -2,14 +2,15 @@
 title: PeerTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 40bf6be2-8087-4cb3-a66c-408d53eb9269
-ms.openlocfilehash: ba9031dad96f12c7c48b03f1da4af1b3adc6dd4f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae6a3448896cb206bce8867daf7104c3e484ecc8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962954"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269013"
 ---
 # <a name="peertransportbindingelement"></a>PeerTransportBindingElement
+
 PeerTransportBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,33 +25,38 @@ class PeerTransportBindingElement : TransportBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe PeerTransportBindingElement ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe PeerTransportBindingElement a les propriétés suivantes :  
   
 ### <a name="listenipaddress"></a>ListenIPAddress  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Adresse IP sur laquelle le nœud homologue écoute les messages.  
   
 ### <a name="port"></a>Port  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Port d’interface de réseau sur lequel la liaison traite les messages de canaux homologues.  
   
 ### <a name="security"></a>Sécurité  
+
  Type de données : PeerSecuritySettings  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Paramètres de sécurité de transport de l'homologue.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

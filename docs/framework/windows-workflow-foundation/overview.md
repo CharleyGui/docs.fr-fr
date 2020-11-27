@@ -3,17 +3,19 @@ title: Vue d'ensemble de Windows Workflow
 description: Cet article décrit les flux de travail de Workflow Foundation, qui sont des modèles qui décrivent des processus réels.
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: c54e405c5fff013f994f98cbf84fcce4d17d9d4e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f966aa2b62a743358d4c1ad18f237f988924014d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558098"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268675"
 ---
 # <a name="windows-workflow-overview"></a>Vue d'ensemble de Windows Workflow
+
 Un flux de travail est un ensemble d’unités élémentaires nommées *activités* , stockées en tant que modèle, qui décrit un processus réel. Les workflows offrent un moyen de décrire l'ordre d'exécution et les relations de dépendance entre des éléments de travail de courte ou longue durée. Ce travail s'effectue à travers le modèle de démarrage à l'arrêt et les activités peuvent être exécutées par des utilisateurs ou par les fonctions système.  
   
 ## <a name="workflow-run-time-engine"></a>Moteur d'exécution de workflow  
+
  Chaque instance de workflow en cours d'exécution est créée et gérée par un moteur d'exécution in-process avec lequel le processus hôte interagit par le biais de l'un des éléments suivants :  
   
 - Un <xref:System.Activities.WorkflowInvoker>, qui appelle le workflow comme une méthode.  
@@ -30,6 +32,7 @@ Un flux de travail est un ensemble d’unités élémentaires nommées *activit�
 Composants de workflow dans le processus hôte  
   
 ## <a name="interaction-between-workflow-components"></a>Interaction entre composants de workflow  
+
  Le diagramme suivant montre comment les composants de workflow interagissent les uns avec les autres.  
   
  ![Diagramme qui montre comment les composants de workflow interagissent.](./media/overview/workflow-component-interatction.gif)  

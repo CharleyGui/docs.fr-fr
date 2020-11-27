@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
-ms.openlocfilehash: 7b30fa21e32acf2a462db4f9f39b7e1c459a2949
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 157311f29b203e0c26be21a89d2d5b560543094b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553543"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267830"
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>Procédure : implémenter une opération de service asynchrone
+
 Dans les applications Windows Communication Foundation (WCF), une opération de service peut être implémentée de façon asynchrone ou synchrone sans dicter au client comment l’appeler. Par exemple, les opérations de service asynchrones peuvent être appelées de façon synchrone, et les opérations de service synchrones peuvent être appelées de façon asynchrone. Pour obtenir un exemple qui montre comment appeler une opération de façon asynchrone dans une application cliente, consultez [Comment : appeler des opérations de service de façon asynchrone](./feature-details/how-to-call-wcf-service-operations-asynchronously.md). Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [conception de contrats de service](designing-service-contracts.md) et [opérations synchrones et asynchrones](synchronous-and-asynchronous-operations.md). Cette rubrique décrit la structure de base d'une opération de service asynchrone, le code n'est pas complet. Pour obtenir un exemple complet du côté du service et du client, consultez [Asynchronous](/previous-versions/dotnet/netframework-4.0/ms751505(v=vs.100)).  
   
 ### <a name="implement-a-service-operation-asynchronously"></a>Implémenter une opération de service de façon asynchrone  
@@ -31,6 +32,7 @@ Dans les applications Windows Communication Foundation (WCF), une opération de 
      [!code-vb[C_SyncAsyncClient#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#3)]  
   
 ## <a name="example"></a> Exemple  
+
  Les exemples de code suivants présentent :  
   
 1. Une interface de contrat de service avec :  
