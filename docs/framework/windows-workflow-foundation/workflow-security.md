@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: d2d8556b1ed2ac0a2b030a88d6bfc0ad48ed6f5c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6253a0d76d8b1db938e789f19d2cdd5abba9b700
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557513"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273891"
 ---
 # <a name="workflow-security"></a>Sécurité de workflow
+
 Windows Workflow Foundation (WF) est intégré à plusieurs technologies différentes, telles que Microsoft SQL Server et Windows Communication Foundation (WCF). L'interaction avec ces technologies peut poser des problèmes de sécurité dans votre workflow si elle est effectuée de façon incorrecte.
 
 ## <a name="persistence-security-concerns"></a>Problèmes de sécurité de la persistance
@@ -45,6 +46,7 @@ Windows Workflow Foundation (WF) est intégré à plusieurs technologies différ
 - Le ServiceSecurityContext pour le message entrant est également disponible dans le workflow en accédant à OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>WF Security Pack CTP
+
  Microsoft WF Security Pack Community Technology Preview (CTP) 1 est un ensemble d’activités et de leur implémentation basée sur [Windows Workflow Foundation](index.md) dans [.NET Framework 4](/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF 4) et [Windows Identity Foundation (WIF)](/previous-versions/dotnet/framework/security/index). Microsoft WF Security Pack CTP 1 contient les deux activités et leurs concepteurs qui expliquent comment vérifier facilement plusieurs scénarios liés à la sécurité en utilisant un workflow, notamment :
 
 1. Emprunter l'identité d'un client dans le workflow

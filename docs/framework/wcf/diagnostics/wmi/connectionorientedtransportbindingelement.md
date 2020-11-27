@@ -2,14 +2,15 @@
 title: ConnectionOrientedTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: c1308313-f0e2-49e6-977d-6b4ce9ad35d1
-ms.openlocfilehash: 04e6abc5941ec99769ff2c15d47881b60e81d2e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c69b73cc05a56a7556630de0f83675590442293
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048396"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274151"
 ---
 # <a name="connectionorientedtransportbindingelement"></a>ConnectionOrientedTransportBindingElement
+
 ConnectionOrientedTransportBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,68 +30,78 @@ class ConnectionOrientedTransportBindingElement : TransportBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe ConnectionOrientedTransportBindingElement ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe ConnectionOrientedTransportBindingElement a les propriétés suivantes :  
   
 ### <a name="channelinitializationtimeout"></a>ChannelInitializationTimeout  
+
  Type de données : datetime  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Le timespan qui spécifie le délai d'initialisation du canal avant expiration.  
   
 ### <a name="connectionbuffersize"></a>ConnectionBufferSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Taille de la mémoire tampon utilisée pour transmettre une portion du message sérialisé sur le câble du client ou du service.  
   
 ### <a name="hostnamecomparisonmode"></a>HostNameComparisonMode  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur qui indique si le nom d'hôte est utilisé pour atteindre le service lors de la correspondance avec l'URI.  
   
 ### <a name="maxbuffersize"></a>MaxBufferSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Taille maximale autorisée de la mémoire tampon.  
   
 ### <a name="maxoutputdelay"></a>MaxOutputDelay  
+
  Type de données : datetime  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Durée maximale pendant laquelle une portion d'un message ou un message complet peut rester en mémoire tampon avant d'être expédié.  
   
 ### <a name="maxpendingaccepts"></a>MaxPendingAccepts  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nombre maximal de threads d'acceptation asynchrones en attente qui sont disponibles pour traiter des connexions entrantes sur le service.  
   
 ### <a name="maxpendingconnections"></a>MaxPendingConnections  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nombre maximal de connexions en attente.  
   
 ### <a name="transfermode"></a>TransferMode  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur qui spécifie si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

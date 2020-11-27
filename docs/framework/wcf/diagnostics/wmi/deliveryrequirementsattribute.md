@@ -2,14 +2,15 @@
 title: DeliveryRequirementsAttribute
 ms.date: 03/30/2017
 ms.assetid: 40c5435c-a325-4cf8-9dd0-d6e24b4a56a3
-ms.openlocfilehash: c81e4b27969d879a70806082f48879cbf1b32ccc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a70a4ba40b569acc7893b21d796194224dc4ee78
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039674"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274047"
 ---
 # <a name="deliveryrequirementsattribute"></a>DeliveryRequirementsAttribute
+
 DeliveryRequirementsAttribute  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,33 +25,38 @@ class DeliveryRequirementsAttribute : Behavior
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe DeliveryRequirementsAttribute ne définit pas de méthodes.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe DeliveryRequirementsAttribute a les propriétés suivantes :  
   
 ### <a name="queueddeliveryrequirements"></a>QueuedDeliveryRequirements  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Spécifie si la liaison pour un service prend en charge des contrats.  
   
 ### <a name="requireordereddelivery"></a>RequireOrderedDelivery  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Spécifie si la liaison prend en charge les messages ordonnés.  
   
 ### <a name="targetcontract"></a>TargetContract  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Contrat auquel il s'applique.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  
