@@ -2,14 +2,15 @@
 title: Service Auditing Behavior
 ms.date: 03/30/2017
 ms.assetid: 59bf0cda-e496-4418-a3a1-2f0f6e85f8ce
-ms.openlocfilehash: bfe13146a7f7cdec648a82a34c34077ec5466809
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ae7ed2059b491a71de9c806e78f1fb784da197fa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599930"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262565"
 ---
 # <a name="service-auditing-behavior"></a>Service Auditing Behavior
+
 Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> pour activer l'audit des événements de sécurité pendant des opérations de service. Cet exemple est basé sur le [prise en main](getting-started-sample.md). Le service et le client ont été configurés à l’aide du [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) . L' `mode` attribut de [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) a été défini sur `Message` et `clientCredentialType` a été défini sur `Windows` . Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
 > [!NOTE]
@@ -53,4 +54,4 @@ Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.Servic
 ## <a name="see-also"></a>Voir aussi
 
 - [Audit](../feature-details/auditing-security-events.md)
-- [Comment : auditer des événements de sécurité](../feature-details/how-to-audit-wcf-security-events.md)
+- [Procédure : auditer des événements de sécurité](../feature-details/how-to-audit-wcf-security-events.md)

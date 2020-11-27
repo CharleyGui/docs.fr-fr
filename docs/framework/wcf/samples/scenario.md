@@ -2,17 +2,19 @@
 title: Scénario 2
 ms.date: 03/30/2017
 ms.assetid: 816557e0-f676-4731-95c5-b02cbef3d8d7
-ms.openlocfilehash: e983df89f35037732059ce284b67862da3171fd1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 31d12152530b57f84c55df79c40fdead1ce53924
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602399"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262643"
 ---
 # <a name="scenario"></a>Scénario
+
 Cette section contient des exemples qui illustrent les scénarios Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Scénarios de liaison de données](data-binding-scenarios.md)  
  Illustre les scénarios de liaison de données WCF.  
   
@@ -29,4 +31,4 @@ Cette section contient des exemples qui illustrent les scénarios Windows Commun
  Montre comment transmettre les informations d’identité d’un appelant d’un service à un autre à l’aide de l’infrastructure de sécurité WCF.  
   
  [Modèles de conception : Publication/Abonnement par liste](design-patterns-list-based-publish-subscribe.md)  
- Illustre le modèle de publication/abonnement basé sur une liste implémenté en tant que programme Windows Communication Foundation (WCF).
+ Illustre le modèle de Publish-Subscribe basé sur une liste implémenté en tant que programme Windows Communication Foundation (WCF).

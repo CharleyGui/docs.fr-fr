@@ -2,14 +2,15 @@
 title: Nuages PNRP
 ms.date: 03/30/2017
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
-ms.openlocfilehash: dd27e61fe1f648dcaf4ee4dd5f5119d33913c63a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 60b6fb44116fe2d8af50fb0b310615b3b962977b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047370"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263202"
 ---
 # <a name="pnrp-clouds"></a>Nuages PNRP
+
 Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer entre eux via le réseau. Le terme « cloud » est un synonyme de « maille d’homologue ».  
   
  La communication entre les nœuds ne doit jamais se faire entre différents clouds. Une instance <xref:System.Net.PeerToPeer.Cloud> est identifiée par son nom, qui respecte la casse. Il est possible de connecter un même pair ou nœud à plusieurs clouds.  
@@ -25,6 +26,7 @@ Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer
  Un troisième cloud, le cloud spécifique au site, correspond à l’étendue d’adresses IPv6 de site et aux adresses locales de site. Ce cloud est désormais déprécié, même s’il est toujours pris en charge dans PNRP.  
   
 ## <a name="clouds"></a>Clouds  
+
  Les clouds PNRP sont représentés par des instances de la classe <xref:System.Net.PeerToPeer.Cloud>. Les groupes de cloud utilisant un pair sont représentés par des instances de la classe énumérable <xref:System.Net.PeerToPeer.CloudCollection>. Les collections de clouds PNRP connues du pair actuel peuvent être obtenues en appelant la méthode statique <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A>.  
   
  Chaque cloud porte un nom unique, constitué d’une chaîne Unicode de 256 caractères. Le nom des clouds, ainsi que l’étendue mentionnée plus haut, sont utilisés pour construire des instances uniques de la classe Cloud. Ces instances peuvent être sérialisées et reconstruites en vue d’une utilisation régulière.  
@@ -34,4 +36,4 @@ Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.PeerToPeer.Cloud>
-- [protocole PNRP](peer-name-resolution-protocol.md)
+- [Protocole PNRP (Peer Name Resolution Protocol)](peer-name-resolution-protocol.md)

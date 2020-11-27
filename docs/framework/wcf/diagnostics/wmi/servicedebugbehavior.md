@@ -2,14 +2,15 @@
 title: ServiceDebugBehavior
 ms.date: 03/30/2017
 ms.assetid: a5ec9061-1e95-43fb-b0d9-dbd0a7bc3c44
-ms.openlocfilehash: 2e38eb2c2d42ffc5436562b254a42215ccabbab2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dba4abd74cdddeb2b641feec5902413fe0704b1f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956960"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262292"
 ---
 # <a name="servicedebugbehavior"></a>ServiceDebugBehavior
+
 ServiceDebugBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,47 +27,54 @@ class ServiceDebugBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe ServiceDebugBehavior ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe ServiceDebugBehavior possède les propriétés suivantes :  
   
 ### <a name="httphelppageenabled"></a>HttpHelpPageEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Vérifie si le service publie son WSDL à l'adresse contrôlée par l'attribut `HttpGetUrl`.  
   
 ### <a name="httphelppageurl"></a>HttpHelpPageUrl  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTP.  
   
 ### <a name="httpshelppageenabled"></a>HttpsHelpPageEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Vérifie si le service publie son WSDL sur HTTPS à l'adresse contrôlée par l'attribut `HttpsGetUrl`.  
   
 ### <a name="httpshelppageurl"></a>HttpsHelpPageUrl  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTPS.  
   
 ### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Spécifie s'il convient d'inclure des informations d'exception gérées dans les détails des fautes SOAP renvoyées aux clients à des fins de débogage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

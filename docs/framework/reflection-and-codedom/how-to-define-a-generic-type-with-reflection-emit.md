@@ -11,14 +11,15 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-ms.openlocfilehash: bf308b07bf4b2a863b9825e7c8d9f412bdb6d1b8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 75076eb9ce1b9bfc6b3c8b5a48e200ca5e63cdff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559211"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263462"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Procédure : définir un type générique avec l’émission de réflexion
+
 Cette rubrique montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.  
   
 > [!IMPORTANT]
@@ -110,6 +111,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
      [!code-vb[EmitGenericType#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#10)]  
   
 ## <a name="example"></a> Exemple  
+
  L’exemple de code suivant définit une classe nommée `Sample`, ainsi qu’une classe de base et deux interfaces. Le programme définit deux paramètres de type générique pour `Sample`, ce qui en fait un type générique. Les paramètres de type sont la seule chose qui rend un type générique. Le programme l’indique en affichant un message de test avant et après la définition des paramètres de type.  
   
  Le paramètre de type `TSecond` sert à illustrer les contraintes de classe et d’interface, à l’aide des interfaces et de la classe de base, et le paramètre de type `TFirst` sert à illustrer des contraintes spéciales.  

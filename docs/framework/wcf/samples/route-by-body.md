@@ -2,14 +2,15 @@
 title: Route by Body
 ms.date: 03/30/2017
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-ms.openlocfilehash: 146baf806f4922f5e3ddd92a762772786e61d443
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: af88d9938098c9aaa6b4b116c196e3b7f563a1e7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594593"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262695"
 ---
 # <a name="route-by-body"></a>Route by Body
+
 Cet exemple montre comment implémenter un service qui accepte des objets de message avec toute action SOAP. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice. Le service implémente une opération `Calculate` unique qui accepte un paramètre de demande <xref:System.ServiceModel.Channels.Message> et retourne une réponse <xref:System.ServiceModel.Channels.Message>.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé dans IIS.  
@@ -37,7 +38,7 @@ Cet exemple montre comment implémenter un service qui accepte des objets de mes
   
  Selon le contrat, le service requiert le comportement de distribution personnalisé `DispatchByBodyBehavior` pour autoriser les messages à être distribués entre des opérations. Ce comportement de distribution initialise le `DispatchByBodyElementOperationSelector` Sélecteur d’opération personnalisé avec une table des noms d’opération indexés par le QName des éléments wrapper respectifs. `DispatchByBodyElementOperationSelector` examine la balise de début du premier enfant du corps et sélectionne l'opération à l'aide du tableau mentionné précédemment.  
   
- Le client utilise un proxy généré automatiquement à partir du WSDL exporté par le service à l’aide de l' [outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Le client utilise un proxy généré automatiquement à partir du WSDL exporté par le service à l’aide de l' [outil utilitaire de métadonnées ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ```console  
 svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples /uxs http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedProxy.cs  

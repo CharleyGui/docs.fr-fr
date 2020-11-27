@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : examiner et instancier des types génériques avec la réflexion'
+title: Guide pratique pour examiner et instancier des types génériques avec la réflexion
 description: Consultez Comment examiner et instancier des types génériques avec la réflexion. Utilisez les propriétés IsGenericType, IsGenericParameter et GenericParameterPosition.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - reflection, generic types
 - generics [.NET Framework], reflection
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
-ms.openlocfilehash: b57a0ed0c809da442dc9fcf202ad364060971f80
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 34efca4a26b0ab3739d19b793237532ec9f4f15e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865097"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263436"
 ---
-# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Procédure : examiner et instancier des types génériques avec la réflexion
+# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Guide pratique pour examiner et instancier des types génériques avec la réflexion
+
 Les informations sur les types génériques s’obtiennent de la même façon que les informations sur les autres types : en examinant un objet <xref:System.Type> qui représente le type générique. La principale différence est qu’un type générique a une liste d’objets <xref:System.Type> représentant ses paramètres de type générique. La première procédure de cette section examine les types génériques.  
   
  Vous pouvez créer un objet <xref:System.Type> qui représente un type construit en liant des arguments de type aux paramètres de type d’une définition de type générique. Ceci est illustrée par la deuxième procédure.  
@@ -73,6 +74,7 @@ Les informations sur les types génériques s’obtiennent de la même façon qu
      [!code-vb[HowToGeneric#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#9)]  
   
 ## <a name="constructing-an-instance-of-a-generic-type"></a>Construction d’une instance d’un type générique  
+
  Un type générique est comme un modèle. Vous ne pouvez pas créer des instances de ce type, sauf si vous spécifiez des types réels pour ses paramètres de type générique. Effectuer cela au moment de l’exécution à l’aide de la réflexion nécessite la méthode <xref:System.Type.MakeGenericType%2A>.  
   
 #### <a name="to-construct-an-instance-of-a-generic-type"></a>Pour construire une instance d’un type générique  
@@ -101,7 +103,8 @@ Les informations sur les types génériques s’obtiennent de la même façon qu
      [!code-csharp[HowToGeneric#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/ur.cs#13)]
      [!code-vb[HowToGeneric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#13)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant définit une méthode `DisplayGenericType` pour examiner les définitions de type générique et les types construits utilisés dans le code, et pour afficher leurs informations. La méthode `DisplayGenericType` montre comment utiliser les propriétés <xref:System.Type.IsGenericType%2A>, <xref:System.Type.IsGenericParameter%2A> et <xref:System.Type.GenericParameterPosition%2A>, et la méthode <xref:System.Type.GetGenericArguments%2A>.  
   
  L’exemple définit également une méthode `DisplayGenericParameter` pour examiner un paramètre de type générique et afficher ses contraintes.  

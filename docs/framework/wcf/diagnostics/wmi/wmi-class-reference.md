@@ -2,20 +2,23 @@
 title: Référence des classes WMI
 ms.date: 03/30/2017
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
-ms.openlocfilehash: 226e4dedecd152f3a3d4143280529c7823339932
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9830fbf50e8df625e3d3077a66c66e0370204acb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795876"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262253"
 ---
 # <a name="wmi-class-reference"></a>Référence des classes WMI
+
 Cette section répertorie toutes les classes WMI exposées par le fournisseur WMI de Windows Communication Foundation (WCF).  
   
 ## <a name="accessing-wmi-instances"></a>Accès aux instances WMI  
+
  Toutes les classes répertoriées dans la référence d'objet WMI ne peuvent pas être directement instanciées, à l'exception de Service, AppDomain, Contract, ServiceAppDomain, ServiceToEndpointAssociation et Endpoint. Pour accéder à d'autres instances, vous pouvez accéder aux propriétés des classes de niveau supérieur mentionnées précédemment. Par exemple, vous pouvez accéder à l’instance de TransportBindingElement à partir de l’instance de point de terminaison-> Binding-> BindingElements.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [ActivityTransfer](activitytransfer.md)  
   
  [AppDomainInfo](appdomaininfo.md)  
@@ -28,7 +31,7 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [BinaryMessageEncodingBindingElement](binarymessageencodingbindingelement.md)  
   
- [Binding](binding.md)  
+ [Liaison](binding.md)  
   
  [BindingElement](bindingelement.md)  
   
@@ -46,13 +49,13 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [ConnectionOrientedTransportBindingElement](connectionorientedtransportbindingelement.md)  
   
- [Contract](contract.md)  
+ [Façon](contract.md)  
   
  [CustomBindingElement](custombindingelement.md)  
   
  [DeliveryRequirementsAttribute](deliveryrequirementsattribute.md)  
   
- [Endpoint](endpoint.md)  
+ [Point de terminaison](endpoint.md)  
   
  [HttpsTransportBindingElement](httpstransportbindingelement.md)  
   

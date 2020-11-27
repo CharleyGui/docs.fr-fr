@@ -2,14 +2,15 @@
 title: Poison Message Handling in MSMQ 4,0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 54e69d60aabb3793ef4a8d800dd0e6238c28f231
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2ad7ad5b7e1865d5c9843720861b7a8e440f47f0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602438"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261356"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Poison Message Handling in MSMQ 4,0
+
 Cet exemple montre comment assurer la gestion des messages incohérents dans un service. Cet exemple est basé sur l’exemple de [liaison MSMQ transactionnelle](transacted-msmq-binding.md) . Cet exemple utilise `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
 
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.
@@ -21,6 +22,7 @@ Cet exemple montre comment assurer la gestion des messages incohérents dans un 
  Cet exemple illustre les fonctionnalités d’empoisonnement limitées fournies sur la plateforme Windows Server 2003 et Windows XP, ainsi que les fonctionnalités incohérentes complètes fournies sur Windows Vista. Dans les deux exemples, l’objectif est de déplacer le message incohérent hors de la file d’attente vers une autre file d’attente. Cette file d’attente peut ensuite être desservie par un service de message incohérent.
 
 ## <a name="msmq-v40-poison-handling-sample"></a>Exemple de gestion de message incohérent dans MSMQ v4.0
+
  Dans Windows Vista, MSMQ offre une sous-file d’attente de messages incohérents qui peut être utilisée pour stocker les messages incohérents. Cet exemple illustre la meilleure pratique pour gérer les messages incohérents à l’aide de Windows Vista.
 
  La détection de messages incohérents dans Windows Vista est sophistiquée. Il existe 3 propriétés qui aident à la détection. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est nombre de fois qu'un message donné est relu à partir de la file d'attente et est distribué à l'application pour traitement. Un message est relu à partir de la file d'attente lorsqu'il est remis dans celle-ci parce qu'il ne peut pas être distribué à l'application ou l'application restaure la transaction dans l'opération de service. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> est le nombre de fois où le message est déplacé vers la file d'attente des nouvelles tentatives. Lorsque <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est atteint, le message est déplacé dans la file d'attente des nouvelles tentatives. La propriété <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> correspond à l'intervalle après lequel le message est déplacé de la file d'attente des nouvelles tentatives vers la file d'attente principale. La propriété <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est réinitialisée à 0. Le message est réessayé. Si toutes les tentatives de lecture du message ont échoué, le message est alors marqué comme étant incohérent.
@@ -35,7 +37,7 @@ Cet exemple montre comment assurer la gestion des messages incohérents dans un 
 
 - Reject : permet de rejeter le message en le renvoyant dans la file d'attente de lettres mortes de l'expéditeur. Cette valeur est disponible uniquement sur Windows Vista.
 
- L'exemple montre comment utiliser la disposition `Move` pour le message incohérent. `Move`provoque le déplacement du message vers la sous-file d’attente de messages incohérents.
+ L'exemple montre comment utiliser la disposition `Move` pour le message incohérent. `Move` provoque le déplacement du message vers la sous-file d’attente de messages incohérents.
 
  Le contrat de service est `IOrderProcessor`, qui définit un service monodirectionnel qui peut être utilisé avec des files d'attente.
 
@@ -155,6 +157,7 @@ public class OrderProcessorService : IOrderProcessor
 ```
 
 ## <a name="processing-messages-from-the-poison-message-queue"></a>Traitement des messages de la file d'attente de messages incohérents
+
  Le service de message incohérent lit les messages de la file d'attente finale de messages incohérents et les traite.
 
  Les messages de la file d'attente de messages incohérents sont adressés au service de traitement, qui peut être différent du point de terminaison de service de message incohérent. Par conséquent, lorsque le service de message incohérent lit les messages de la file d’attente, la couche de canal WCF recherche l’incompatibilité dans les points de terminaison et ne distribue pas le message. Dans ce cas, le message est adressé au service de traitement des commandes mais est reçu par le service de message incohérent. Pour continuer à recevoir le message même s'il est adressé à un autre point de terminaison, nous devons ajouter un `ServiceBehavior` pour filtrer les adresses où le critère de correspondance doit correspondre aux points de terminaison de service auxquels le message est adressé. Cela est nécessaire pour pouvoir traiter les messages que vous lisez à partir de la file d'attente de messages incohérents.

@@ -8,17 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: 5c192d3bda65a7364345df4310dccd96cbe04056
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1cb63569c1789b1577588caf63fb0a0259e530ff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247362"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262162"
 ---
 # <a name="data-member-order"></a>Classement des membres de données
+
 Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans lequel les données émanant des divers membres de données sont envoyées ou l'ordre selon lequel leur réception est attendue (il peut, par exemple s'agir de l'ordre dans lequel les données apparaissent dans le langage XML sérialisé). Dans certains cas, la modification de cet ordre peut s'avérer nécessaire. Cette rubrique contient des explications sur les règles régissant ces types de classements.  
   
 ## <a name="basic-rules"></a>Règles de base  
+
  Les règles de base concernant le classement des données sont notamment :  
   
 - Si un type de contrat de données fait partie d'une hiérarchie d'héritage, les membres de données des types de base de ce type sont toujours classés en premier.  
@@ -30,6 +32,7 @@ Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans 
  L'ordre alphabétique est établi par l'appel de la méthode <xref:System.String.CompareOrdinal%2A>.  
   
 ## <a name="examples"></a>Exemples  
+
  Prenons le code suivant.  
   
  [!code-csharp[C_DataContractNames#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#4)]
@@ -66,5 +69,5 @@ Dans certaines applications, il peut s'avérer utile de connaître l'ordre dans 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
-- [Data Contract Equivalence](data-contract-equivalence.md)
-- [Using Data Contracts](using-data-contracts.md)
+- [Équivalence de contrats de données](data-contract-equivalence.md)
+- [Utilisation de contrats de données](using-data-contracts.md)

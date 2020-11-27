@@ -19,14 +19,15 @@ helpviewer_keywords:
 - output, network tracing
 - method invocations
 ms.assetid: e993b7c3-087f-45d8-9c02-9dded936d804
-ms.openlocfilehash: 172f8ce4a50fe9294ee34cf65c0a39eb2f29badc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c3c710d99c9597120b0c4d9674439a27c3bedfcc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502247"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261681"
 ---
 # <a name="network-tracing-in-the-net-framework"></a>Traçage réseau dans le .NET Framework
+
 Le traçage réseau dans .NET Framework fournit l'accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Cette fonctionnalité permet de déboguer les applications en cours de développement et d'analyser celles qui sont déployées. La sortie fournie par un traçage réseau est personnalisable pour prendre en charge différents scénarios d'utilisation au moment du développement et dans un environnement de production.  
   
  Pour activer le traçage réseau dans .NET Framework, vous devez sélectionner une destination pour la sortie de traçage et ajouter des paramètres de configuration de traçage à l'application ou au fichier de configuration de l'ordinateur. Pour obtenir une description des fichiers de configuration et de leur mode d’utilisation, consultez [Fichiers de configuration](../configure-apps/index.md). Pour plus d’informations sur l’activation du traçage réseau, consultez [Activation du traçage réseau](enabling-network-tracing.md). Pour plus d’informations sur les paramètres que vous devez ajouter au fichier de configuration, consultez [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md).  
@@ -38,7 +39,7 @@ Le traçage réseau dans .NET Framework fournit l'accès aux informations sur le
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Activation du traçage réseau](enabling-network-tracing.md)
-- [Guide pratique pour configurer le traçage réseau](how-to-configure-network-tracing.md)
-- [Interprétation du suivi réseau](interpreting-network-tracing.md)
-- [Traçage et instrumentation d'applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Activation du suivi réseau](enabling-network-tracing.md)
+- [Procédure : configurer le traçage réseau](how-to-configure-network-tracing.md)
+- [Interprétation du traçage réseau](interpreting-network-tracing.md)
+- [Traçage et instrumentation d’applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)

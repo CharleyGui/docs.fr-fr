@@ -9,21 +9,23 @@ helpviewer_keywords:
 - UI Automation, custom user interface (UI) elements
 - providers, UI Automation
 ms.assetid: 5f82f731-f1b5-4c8b-b47c-d11279a02574
-ms.openlocfilehash: 5b88127aa88544e77b1516d776bdce2d9f9a9fef
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 531dff4db6fe30ee4cdff2c0b9c482e7d3536583
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163155"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261083"
 ---
 # <a name="ui-automation-providers-for-managed-code"></a>Fournisseurs UI Automation pour le code managé
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette section contient des vues d’ensemble et des rubriques de procédures qui décrivent comment écrire [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] des fournisseurs pour des [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] éléments personnalisés.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)  
  [Vue d'ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)  
  [Implémentation de fournisseur UI Automation côté client](client-side-ui-automation-provider-implementation.md)  
- [Rubriques Comment](ui-automation-providers-for-managed-code-how-to-topics.md)
+ [Rubriques de procédures](ui-automation-providers-for-managed-code-how-to-topics.md)

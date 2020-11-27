@@ -2,15 +2,16 @@
 title: Références d'objet
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
-ms.openlocfilehash: ba4ee3fd0cc16130f66570891ecc295b2d2c50aa
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 55cadc908a3479ee3d104354bcbfd3ea49b15d07
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262370"
 ---
 # <a name="object-references"></a>Références d'objet
-Cet exemple montre comment transmettre des objets par référence entre le serveur et un client. L’exemple utilise des *réseaux sociaux*simulés. Un réseau social se compose d'une classe `Person` qui contient une liste d'amis dans laquelle chaque ami est une instance de la classe `Person`, contenant sa propre liste d'amis. Tous ces éléments constituent un graphique d'objets. Le service expose les opérations sur ces réseaux sociaux.  
+
+Cet exemple montre comment transmettre des objets par référence entre le serveur et un client. L’exemple utilise des *réseaux sociaux* simulés. Un réseau social se compose d'une classe `Person` qui contient une liste d'amis dans laquelle chaque ami est une instance de la classe `Person`, contenant sa propre liste d'amis. Tous ces éléments constituent un graphique d'objets. Le service expose les opérations sur ces réseaux sociaux.  
   
  Dans cet exemple, le client est une application de console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
@@ -18,6 +19,7 @@ Cet exemple montre comment transmettre des objets par référence entre le serve
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 ## <a name="service"></a>Service  
+
  L'attribut `Person` est appliqué à la classe <xref:System.Runtime.Serialization.DataContractAttribute> et la valeur <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> est affectée au champ `true` pour le déclarer en tant que type de référence. L'attribut <xref:System.Runtime.Serialization.DataMemberAttribute>. est appliqué à toutes les propriétés.  
   
 ```csharp
@@ -92,6 +94,7 @@ public List<Person> GetCommonFriends(List<Person> people)
 ```  
   
 ## <a name="client"></a>Client  
+
  Le proxy client est créé à l’aide de la fonctionnalité **Ajouter une référence de service** de Visual Studio.  
   
  Un réseau social qui se compose de cinq objets `Person` est créé. Le client appelle chacune des trois méthodes dans le service.  

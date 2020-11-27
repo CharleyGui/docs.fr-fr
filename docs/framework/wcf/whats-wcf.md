@@ -7,14 +7,15 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 898211ec4504225413769f2f0dbf2f2c70110c14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b63ce62cd39ef7961db1c0ac86c8cbd6ca871dbd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556061"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261889"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
+
 Windows Communication Foundation (WCF) est une infrastructure permettant de créer des applications orientées service. À l’aide de WCF, vous pouvez envoyer des données sous forme de messages asynchrones d’un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :
 
 - Service sécurisé pour traiter des transactions commerciales.
@@ -65,7 +66,7 @@ WCF comprend l’ensemble de fonctionnalités suivant. Pour plus d’information
 
 - **Messages fiables et mis en file d'attente**
 
-     WCF prend en charge l’échange de messages fiables à l’aide de sessions fiables implémentées via WS-Reliable Messaging et à l’aide de MSMQ. Pour plus d’informations sur la prise en charge de la messagerie fiable et en file d’attente dans WCF, consultez [files d’attente et sessions fiables](./feature-details/queues-and-reliable-sessions.md).
+     WCF prend en charge l’échange de messages fiables à l’aide de sessions fiables implémentées sur WS-Reliable messagerie et l’utilisation de MSMQ. Pour plus d’informations sur la prise en charge de la messagerie fiable et en file d’attente dans WCF, consultez [files d’attente et sessions fiables](./feature-details/queues-and-reliable-sessions.md).
 
 - **Messages durables**
 
@@ -101,7 +102,7 @@ Les fonctionnalités d’hébergement du serveur d’applications Windows Server
 - [Concepts fondamentaux concernant Windows Communication Foundation](fundamental-concepts.md)
 - [Architecture Windows Communication Foundation](architecture.md)
 - [Indications et meilleures pratiques](guidelines-and-best-practices.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
 - [Guide de la documentation](guide-to-the-documentation.md)
 - [Programmation WCF de base](basic-wcf-programming.md)
 - [Exemples Windows Communication Foundation](/previous-versions/dotnet/netframework-3.5/ms751514(v=vs.90))

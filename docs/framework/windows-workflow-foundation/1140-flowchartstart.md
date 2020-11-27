@@ -2,27 +2,30 @@
 title: 1140 - FlowchartStart
 ms.date: 03/30/2017
 ms.assetid: 9aa2c71e-a4ab-4aed-b76d-4795e8493b70
-ms.openlocfilehash: 556fd0421966083b29c925bf7555f9d8a2e7d7f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c3b22398926585177f4db9ffa5657d1fcb2bdde
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924512"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261798"
 ---
 # <a name="1140---flowchartstart"></a>1140 - FlowchartStart
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|1140|  
+|id|1140|  
 |Mots clés|WFActivities|  
-|Niveau|Information|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Informations|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Indique qu'un démarrage d'organigramme a été planifié.  
   
 ## <a name="message"></a>Message  
+
  Flowchart « %1 » - Le début a été planifié  
   
 ## <a name="details"></a>Détails  

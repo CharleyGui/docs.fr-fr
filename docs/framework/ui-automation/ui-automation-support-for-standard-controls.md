@@ -6,25 +6,30 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-ms.openlocfilehash: 17916a6978008439e91caae00d8b6f26045f9018
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 0a5a0b61a6492d9efb62799fa610859b247cf26e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166118"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261070"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Prise en charge d'UI Automation pour les contrôles standard
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette rubrique contient des informations sur [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] la prise en charge des contrôles standard dans les applications développées pour les [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] frameworks, Win32 et Windows Forms.  
   
 <a name="Windows_Presentation_Foundation_Controls"></a>
+
 ## <a name="windows-presentation-foundation-controls"></a>Contrôles Windows Presentation Foundation  
+
  Tous les éléments du contrôle [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] qui fournissent des informations ou une prise en charge pour l’interaction utilisateur disposent d’une prise en charge native complète de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. D’autres éléments, tels que les panneaux, ne sont pas visibles par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Win32_Controls"></a>
+
 ## <a name="win32-controls"></a>Contrôles Win32  
+
  La plupart des contrôles Win32 sont exposés à [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] via des fournisseurs côté client dans UIAutomationClientsideProviders.dll. Cet assembly est inscrit automatiquement pour être utilisé avec les applications clientes UI Automation.  
   
  La prise en charge complète n’est fournie que pour les contrôles de la version 6 de *ComCtrl32.dll*.  
@@ -47,7 +52,7 @@ ms.locfileid: "87166118"
 |SysLink|Hyperlink|  
 |statique|Texte|  
 |statique|Image|  
-|SysIPAddress32|Personnalisé|  
+|SysIPAddress32|Custom|  
 |SysHeader32|Header/HeaderItem|  
 |SysListView32|DataGrid|  
 |SysListView32|List|  
@@ -55,7 +60,7 @@ ms.locfileid: "87166118"
 |ListBox|ListItem|  
 |#32768|Menu|  
 |#32768|MenuItem|  
-|msctls_progress32|Barre de progression|  
+|msctls_progress32|ProgressBar|  
 |RichEdit|Document. Consultez la remarque.|  
 |RichEdit20A|Document|  
 |RichEdit20W|Document|  
@@ -86,15 +91,17 @@ ms.locfileid: "87166118"
 |----------------|------------------|  
 |SysAnimate32|Image|  
 |SysPager|Spinner|  
-|SysDateTimePick32|Personnalisé|  
+|SysDateTimePick32|Custom|  
 |SysMonthCal32|Calendrier|  
 |MS_WINNOTE|Info-bulle|  
 |VBBubble|Info-bulle|  
 |ScrollBar (quand il est utilisé comme contrôle autonome)|Curseur|  
-|SuperGrid|Personnalisé|  
+|SuperGrid|Custom|  
   
 <a name="Windows_Forms_Controls"></a>
+
 ## <a name="windows-forms-controls"></a>contrôles Windows Forms  
+
  Les contrôles Windows Forms sont exposés à [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] via des fournisseurs côté client dans UIAutomationClientsideProviders.dll. Cet assembly est inscrit automatiquement pour être utilisé avec les applications clientes UI Automation.  
   
  En général, les contrôles Windows Forms qui sont des wrappers managés pour les contrôles communs Win32 sont pris en charge par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Les contrôles suivants sont pris en charge.  
@@ -113,14 +120,14 @@ ms.locfileid: "87166118"
 |ImageList|  
 |Étiquette|  
 |ListBox|  
-|Affichage de liste|  
+|ListView|  
 |MainMenu/ContextMenu|  
 |MonthCalendar|  
 |NotifyIcon|  
 |OpenFileDialog|  
 |PageSetupDialog|  
 |PrintDialog|  
-|Barre de progression|  
+|ProgressBar|  
 |RadioButton|  
 |RichTextBox|  
 |SaveFileDialog|  
@@ -129,7 +136,7 @@ ms.locfileid: "87166118"
 |StatusBar|  
 |TabControl/TabPage|  
 |TextBox|  
-|Minuterie|  
+|Minuteur|  
 |Barre d'outils|  
 |Info-bulle|  
 |TrackBar|  

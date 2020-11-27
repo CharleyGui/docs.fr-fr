@@ -4,19 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-ms.openlocfilehash: fca5fbeffb560f848edda6421301785f02547d2c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bcc63e6645580c1021667b278b80c09baf5700c1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585699"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261460"
 ---
 # <a name="transport-quotas"></a>Quotas de transport
+
 Les quotas de transport sont un mécanisme stratégique permettant de déterminer lorsqu'une connexion consomme trop de ressources. Un quota est une limite imposée qui empêche l'utilisation de ressources supplémentaires une fois la valeur du quota dépassée. Les quotas de transport permettent de lutter contre les attaques par déni de service malveillantes ou non intentionnelles.  
   
  Les transports Windows Communication Foundation (WCF) ont des valeurs de quota par défaut qui sont basées sur une allocation conservatrice des ressources. Ces valeurs par défaut sont adaptées aux environnements de développement et aux scénarios d'installation courts. Les administrateurs de service doivent examiner les quotas de transport et ajuster les valeurs de chaque quota si une installation manque de ressources ou si les connexions sont limitées malgré la disponibilité de ressources supplémentaires.  
   
 ## <a name="types-of-transport-quotas"></a>Types de quotas de transport  
+
  Les transports WCF ont trois types de quotas :  
   
 - Les *délais d’attente* atténuent les attaques par déni de service qui reposent sur l’enduction des ressources pendant une période prolongée.  
@@ -26,6 +28,7 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
 - Les *limites de taille de regroupement limitent* la consommation des ressources qui allouent indirectement de la mémoire ou qui sont en offre limitée.  
   
 ## <a name="transport-quota-descriptions"></a>Description des quotas de transport  
+
  Cette section décrit les quotas de transport disponibles pour les transports WCF standard : HTTP (S), TCP/IP et canaux nommés. Les transports personnalisés peuvent posséder des quotas configurables propres non inclus dans cette liste. Consultez la documentation relative à un transport personnalisé pour en savoir plus sur ses quotas.  
   
  Chaque paramètre de quota possède un type, une valeur minimale et une valeur par défaut. La valeur maximale d'un quota est limitée par son type. En raison des limites de l'ordinateur, il n'est pas toujours possible d'affecter à un quota sa valeur maximale.  
@@ -52,11 +55,13 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
  Les quotas de transport `MaxPendingConnections` et `MaxOutboundConnectionsPerEndpoint` sont combinés dans un quota de transport unique appelé `MaxConnections` en cas de définition par la liaison ou la configuration. Seul l’élément de liaison autorise la définition de ces valeurs de quota une par une. Le quota de transport `MaxConnections` a les mêmes valeurs minimale et par défaut.  
   
 ## <a name="setting-transport-quotas"></a>Définition des quotas de transport  
- Les quotas de transport sont définis au moyen de l’élément de liaison de transport, la liaison de transport, la configuration de l’application ou la stratégie hôte. Ce document n'aborde pas le paramétrage des transports par la stratégie hôte. Consultez la documentation relative au transport sous-jacent pour découvrir les paramètres des quotas de stratégie hôte. La rubrique [configuration de http et HTTPS](configuring-http-and-https.md) décrit les paramètres de quota pour le pilote http. sys. Recherchez plus d'informations sur la configuration des limites de Windows pour des connexions HTTP, TCP/IP et de canal nommé dans la Base de connaissances Microsoft.  
+
+ Les quotas de transport sont définis au moyen de l’élément de liaison de transport, la liaison de transport, la configuration de l’application ou la stratégie hôte. Ce document n'aborde pas le paramétrage des transports par la stratégie hôte. Consultez la documentation relative au transport sous-jacent pour découvrir les paramètres des quotas de stratégie hôte. La rubrique [configuration de http et HTTPS](configuring-http-and-https.md) décrit les paramètres de quota pour le pilote Http.sys. Recherchez plus d'informations sur la configuration des limites de Windows pour des connexions HTTP, TCP/IP et de canal nommé dans la Base de connaissances Microsoft.  
   
  D'autres types de quotas s'appliquent indirectement aux transports. L'encodeur de message que le transport utilise pour transformer un message en octets peut avoir ses propres paramètres de quota. Toutefois, ces quotas sont indépendants du type de transport utilisé.  
   
 ### <a name="controlling-transport-quotas-from-the-binding-element"></a>Contrôle des quotas de transport depuis l’élément de liaison  
+
  La définition des quotas de transport au moyen de l’élément de liaison offre le maximum de souplesse pour contrôler le comportement du transport. Les délais par défaut pour les opérations de fermeture, d'ouverture, de réception et d'envoi sont issus de la liaison lorsqu'un canal est construit.  
   
 |Nom|HTTP|TCP/IP|Canal nommé|  
@@ -79,6 +84,7 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
 |`SendTimeout`||||  
   
 ### <a name="controlling-transport-quotas-from-the-binding"></a>Contrôle des quotas de transport depuis la liaison  
+
  La définition des quotas de transport au moyen de la liaison permet de choisir parmi un ensemble de quotas simplifié tout en conservant l’accès aux valeurs de quota les plus courantes.  
   
 |Nom|HTTP|TCP/IP|Canal nommé|  
@@ -105,6 +111,7 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
 2. Les quotas de transport `MaxPendingConnections` et `MaxOutboundConnectionsPerEndpoint` sont combinés dans un quota de transport unique appelé `MaxConnections`.  
   
 ### <a name="controlling-transport-quotas-from-configuration"></a>Contrôle des quotas de transport depuis la configuration  
+
  La configuration de l’application peut définir les mêmes quotas de transport qu’en accédant directement aux propriétés d’une liaison. Dans les fichiers de configuration, le nom d'un quota de transport commence toujours par une minuscule. Par exemple, la propriété `CloseTimeout` d’une liaison correspond au paramètre `closeTimeout` dans la configuration et la propriété `MaxConnections` d’une liaison correspond au paramètre `maxConnections` dans la configuration.  
   
 ## <a name="see-also"></a>Voir aussi

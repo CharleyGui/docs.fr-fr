@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-ms.openlocfilehash: a8e3306612e016568ad7cfd5138ab538af771a17
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1486290241fdb40d415278c4a01738aa711e2182
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585829"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261473"
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Vue d’ensemble des transactions Windows Communication Foundation
+
 Les transactions permettent de regrouper un ensemble d’actions ou d’opérations dans une unité d’exécution unique et indivisible. Une transaction est une collection d'opérations avec les propriétés suivantes :  
   
 - Atomicité. Cela garantit que toutes les mises à jour effectuées sous une transaction spécifique sont validées et rendues durable ou qu'elles sont toutes interrompues et rétablies à leur état précédent.  

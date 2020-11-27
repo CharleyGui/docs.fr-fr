@@ -2,27 +2,30 @@
 title: 3408 - HttpPipelineBeginProcessInboundRequestStart
 ms.date: 03/30/2017
 ms.assetid: 7ca229e2-93bb-4993-807c-9ad5d4ab5092
-ms.openlocfilehash: d1f36f8af11cfac565081f816a32aa291f63dd30
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 246e92041af818d88871240307699d19154ac990
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959495"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263397"
 ---
 # <a name="3408---httppipelinebeginprocessinboundrequeststart"></a>3408 - HttpPipelineBeginProcessInboundRequestStart
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|3408|  
+|id|3408|  
 |Mots clés|HTTP|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Cet événement est émis lorsque le gestionnaire de messages HTTP a commencé le traitement de la demande entrante de façon asynchrone.  
   
 ## <a name="message"></a>Message  
+
  Le gestionnaire de messages HTTP a démarré le traitement asynchrone de la demande entrante.  
   
 ## <a name="details"></a>Détails

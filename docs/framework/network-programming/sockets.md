@@ -16,14 +16,15 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 10d22735-bd37-42c1-a2be-c1932f979a7d
-ms.openlocfilehash: b44409a0fafc770625be55881ccef3b57045acef
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e00d04164f7ce5251b7f30b5abd16c14643f6862
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502130"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263124"
 ---
 # <a name="sockets"></a>Sockets
+
 L’espace de noms <xref:System.Net.Sockets> contient une implémentation managée de l’interface Windows Sockets. Toutes les autres classes d’accès réseau dans l’espace de noms <xref:System.Net> s’appuient sur cette implémentation de sockets.  
   
  La classe <xref:System.Net.Sockets.Socket> du .NET Framework est une version de code managé des services de socket fournis par l’API Winsock32. Dans la plupart des cas, les méthodes de la classe **Socket** ne font que marshaler les données dans leurs équivalents Win32 natifs et gérer les vérifications de sécurité nécessaires.  
@@ -32,6 +33,6 @@ L’espace de noms <xref:System.Net.Sockets> contient une implémentation manag�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : créer un socket](how-to-create-a-socket.md)
+- [Procédure : créer un socket](how-to-create-a-socket.md)
 
 - [Utilisation de protocoles d’application](using-application-protocols.md)

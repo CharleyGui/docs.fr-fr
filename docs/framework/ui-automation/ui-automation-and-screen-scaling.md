@@ -11,21 +11,24 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: 99239d7bac2e556d4da0d74f36c68916da7c688a
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: cf8069f26b85318994aeeb47d42ad28a3a33834a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164013"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262526"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Mise à l'échelle de l'écran et UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
 À compter de Windows Vista, Windows permet aux utilisateurs de modifier le paramètre points par pouce (dpi) afin que la plupart des éléments de l’interface utilisateur de l’écran apparaissent plus grands. Bien que cette fonctionnalité soit disponible dans Windows, dans les versions précédentes, la mise à l’échelle devait être implémentée par les applications. À compter de Windows Vista, la Gestionnaire de fenêtrage effectue une mise à l’échelle par défaut pour toutes les applications qui ne gèrent pas leur propre mise à l’échelle. Les applications clientes UI Automation doivent prendre en compte cette fonctionnalité.  
   
 <a name="Scaling_in_Windows_Vista"></a>
+
 ## <a name="scaling-in-windows-vista"></a>Mise à l’échelle dans Windows Vista  
+
  Le paramètre PPP par défaut est 96, ce qui signifie que 96 pixels occupent la largeur ou la hauteur d’un pouce notionnel. La mesure exacte d’un « pouce » dépend de la taille et de la résolution physique du moniteur. Par exemple, sur un moniteur d’une largeur de 12 pouces, pour une résolution horizontale de 1 280 pixels, une ligne horizontale de 96 pixels s’étend sur 9/10e de pouce.  
   
  La modification du paramètre PPP n’est pas la même que la modification de la résolution de l’écran. Avec la mise à l’échelle PPP, le nombre de pixels physiques sur l’écran reste le même. Toutefois, la mise à l’échelle est appliquée à la taille et à l’emplacement des éléments [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] . Cette mise à l’échelle peut être effectuée automatiquement par le Gestionnaire de fenêtrage (DWM, Desktop Window Manager) pour le bureau et pour les applications qui ne demandent pas explicitement à ne pas être mises à l’échelle.  
@@ -42,7 +45,9 @@ ms.locfileid: "87164013"
  Les coordonnées logiques sont importantes, car elles rendent cohérent le comportement du système d’exploitation et des applications quel que soit le paramètre PPP. Par exemple, <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType> retourne normalement les coordonnées logiques. Si vous déplacez le curseur sur un élément dans une boîte de dialogue, les mêmes coordonnées sont retournées quel que soit le paramètre PPP. Si vous dessinez un contrôle à l’emplacement (100, 100), il est dessiné à ces coordonnées logiques et occupera la même position relative à n’importe quel paramètre PPP.  
   
 <a name="Scaling_in_UI_Automation_Clients"></a>
+
 ## <a name="scaling-in-ui-automation-clients"></a>Mise à l’échelle dans les clients UI Automation  
+
  L' [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] API n’utilise pas de coordonnées logiques. Les méthodes et propriétés suivantes retournent des coordonnées physiques ou les utilisent comme paramètres.  
   
 - <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  

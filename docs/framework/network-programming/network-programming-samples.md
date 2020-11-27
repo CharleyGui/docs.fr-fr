@@ -3,20 +3,22 @@ title: Exemples de programmation réseau
 description: Utilisez ces exemples de programmation réseau téléchargeable pour .NET Framework System.Net et les classes étendues.
 ms.date: 03/30/2017
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
-ms.openlocfilehash: b2bff98a23b5ed8fd9a27413818f0c455d46f6f8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e5d1306f3d42226bca88e2338a31a2c984491645
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558444"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261700"
 ---
 # <a name="network-programming-samples"></a>Exemples de programmation réseau
+
 Cette section contient des descriptions et des liens vers des exemples de programmation réseau téléchargeables qui utilisent des classes dans les espaces de noms <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security> et <xref:System.Net.Sockets>, et dans des espaces de noms associés.
   
 > [!NOTE]
 > Tous les exemples sont disponibles en téléchargement dans le [fichier d’exemples pour le SDK .NET Framework version 2.0](https://www.microsoft.com/download/confirmation.aspx?id=22181) (qui a été publié pour le .NET Framework 2.0 et qui peut être obsolète).
 
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Exemple de technologie d’indicateur de progression de téléchargement](/previous-versions/dotnet/netframework-3.0/t8w6294a(v=vs.85))  
  Montre comment afficher la progression du téléchargement d’un fichier.  
   
@@ -53,6 +55,7 @@ Cette section contient des descriptions et des liens vers des exemples de progra
  Montre comment répertorier le contenu d’un serveur FTP.  
 
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Net>  
   
  <xref:System.Net.NetworkInformation>  

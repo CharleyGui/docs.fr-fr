@@ -6,14 +6,15 @@ helpviewer_keywords:
 - side-by-side execution, multiple application versions
 - side-by-side execution, multiple component versions
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
-ms.openlocfilehash: f0d25984f2444d29d9fc0edb3add23b6adc04c62
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3ac7c514a69ae05b00e7a486aadcbf41e5d1cbd6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622638"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262513"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Indications pour la création de composants pour l'exécution côte à côte
+
 Suivez ces recommandations générales pour créer des applications managées ou des composants conçus pour l'exécution côte à côte :  
   
 - Associer l'identité de type à une version particulière d'un fichier.  
@@ -29,6 +30,7 @@ Suivez ces recommandations générales pour créer des applications managées ou
      Une application ou un composant qui s'exécute de manière isolée doit gérer les ressources de sorte à éviter des conflits quand deux instances de l'application ou du composant sont exécutées simultanément. L'application ou le composant doit également utiliser une structure de fichiers propre à la version.  
   
 ## <a name="application-and-component-isolation"></a>Isolement d'application et de composant  
+
  L'isolement est l'un des moyens permettant de correctement concevoir une application ou un composant pour l'exécution côte à côte. L'application ou le composant doit gérer toutes les ressources, en particulier l'E/S des fichiers, de manière isolée. Suivez ces instructions pour vous assurer que votre application ou composant s'exécute de manière isolée :  
   
 - Écrivez dans le Registre en tenant compte de la version. Stockez des valeurs dans des ruches ou des clés qui indiquent la version, et ne partagez pas des informations ou un état entre les versions d'un composant. Cela permet d'éviter que deux applications ou composants qui s'exécutent en même temps remplacent les informations.  
@@ -40,6 +42,7 @@ Suivez ces recommandations générales pour créer des applications managées ou
 - Créez des comptes et groupes d'utilisateur en tenant compte de la version. Les comptes et groupes d'utilisateurs créés par une application doivent être identifiés par la version. Ne partagez pas les comptes et groupes d'utilisateurs entre les versions d'une application.  
   
 ## <a name="installing-and-uninstalling-versions"></a>Installation et désinstallation de versions  
+
  Quand vous concevez une application pour l'exécution côte à côte, suivez ces indications concernant l'installation et la désinstallation des versions :  
   
 - Ne supprimez pas les informations du Registre qui peuvent être requises par d'autres applications s'exécutant sous une version différente du .NET Framework.  
@@ -55,6 +58,7 @@ Suivez ces recommandations générales pour créer des applications managées ou
 - N'ajoutez pas d'entrée dans le Registre qui contient un chemin d'accès sans version.  
   
 ## <a name="file-version-number-and-assembly-version-number"></a>Numéro de version de fichier et numéro de version d'assembly  
+
  La version de fichier est une ressource de version Win32 qui n'est pas utilisée par le runtime. En général, vous mettez à jour la version de fichier même pour une mise à jour sur place. Deux fichiers identiques peuvent avoir des informations de version de fichier différentes, et deux fichiers différents peuvent avoir des informations de version de fichier identiques.  
   
  La version d'assembly est utilisée par le runtime pour la liaison d'assembly. Deux assemblys identiques avec des numéros de version différents sont traités comme deux assemblys différents par le runtime.  

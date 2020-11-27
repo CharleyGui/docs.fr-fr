@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: 3ac2d48962dd96535e1a08310570212121eca986
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a02e5a2f69ad1819e6ab98b0454dd64599382cd0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555417"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262774"
 ---
 # <a name="override-the-identity-of-a-service-for-authentication"></a>Remplacer l’identité d’un service pour l’authentification
 
@@ -21,6 +21,7 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
  Pour obtenir un exemple d’application illustrant le paramètre d’identité, consultez [exemple d’identité de service](../samples/service-identity-sample.md). Pour plus d’informations sur l’identité du service, consultez [identité du service et authentification](../feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Authentification et identité Kerberos  
+
  Par défaut, lorsqu’un service est configuré pour utiliser des informations d’identification Windows, un [\<identity>](../../configure-apps/file-schema/wcf/identity.md) élément qui contient un [\<userPrincipalName>](../../configure-apps/file-schema/wcf/userprincipalname.md) [\<servicePrincipalName>](../../configure-apps/file-schema/wcf/serviceprincipalname.md) élément ou est généré dans le WSDL. Si le service s’exécute sous le `LocalSystem` `LocalService` compte, ou `NetworkService` , un nom de principal du service (SPN) est généré par défaut sous la forme, `host/` \<*hostname*> car ces comptes ont accès aux données SPN de l’ordinateur. Si le service s’exécute sous un compte différent, Windows Communication Foundation (WCF) génère un UPN au format \<*username*> @< *nom_domaine* `>` . Cela est dû au fait que l'authentification Kerberos requiert qu'un UPN ou SPN soit fourni au client pour authentifier le service.  
   
  Vous pouvez également utiliser l’outil [setspn](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731241(v=ws.10)) pour enregistrer un SPN supplémentaire avec le compte d’un service dans un domaine. Vous pouvez ensuite utiliser le SPN comme identité du service. Pour plus d’informations sur l’outil, consultez [vue d’ensemble de setspn](/previous-versions/windows/it-pro/windows-server-2003/cc773257(v=ws.10)).  
@@ -35,6 +36,7 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
  Pour plus d’informations sur les noms de principal du service, le protocole Kerberos et Active Directory, consultez [supplément technique Kerberos pour Windows](/previous-versions/msp-n-p/ff649429(v=pandp.10)).  
   
 ### <a name="when-spn-or-upn-equals-the-empty-string"></a>Lorsque SPN ou UPN équivaut à une chaîne vide  
+
  Si vous attribuez une valeur de chaîne vide à SPN ou UPN, plusieurs choses se produisent, en fonction du niveau de sécurité et du mode d'authentification utilisés :  
   
 - Si vous utilisez la sécurité de niveau transport, l'authentification NTLM (NT LanMan) est choisie.  
@@ -48,11 +50,13 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
 - Si vous utilisez Kerberos direct (également appelé « one-shot »), l'authentification échoue.  
   
 ### <a name="use-the-identity-element-in-configuration"></a>Utiliser l' \<identity> élément dans la configuration  
+
  Si vous modifiez le type d’informations d’identification du client dans la liaison précédemment indiquée à `Certificate` , alors le WSDL généré contient un certificat X. 509 sérialisé en base64 pour la valeur d’identité, comme indiqué dans le code suivant. Il s'agit de la valeur par défaut pour tous les types d'informations d'identification du client autres que Windows.  
 
  Vous pouvez modifier la valeur de l’identité de service par défaut ou modifier le type de l’identité à l’aide de l' `identity` élément <> dans la configuration ou en définissant l’identité dans le code. Le code de configuration suivant affecte à une identité DNS (Domain Name System) la valeur `contoso.com`.  
 
 ### <a name="set-identity-programmatically"></a>Définir l’identité par programmation  
+
  Votre service n’a pas besoin de spécifier explicitement une identité, car WCF le détermine automatiquement. Toutefois, WCF vous permet de spécifier une identité sur un point de terminaison, si nécessaire. Le code suivant ajoute un point de terminaison de service avec une identité DNS spécifique.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]

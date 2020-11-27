@@ -2,14 +2,15 @@
 title: WSAT_TraceRecord
 ms.date: 03/30/2017
 ms.assetid: 99bc7f66-1335-40d8-aa68-e754d569dc0d
-ms.openlocfilehash: 907e764cf032e595c7aba455fd4808a640f68016
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0409277821a7cca3f97fcec1bb383aba9583a1f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923407"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262214"
 ---
-# <a name="wsattracerecord"></a>WSAT_TraceRecord
+# <a name="wsat_tracerecord"></a>WSAT_TraceRecord
+
 WSAT_TraceRecord  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,30 +25,35 @@ class WSAT_TraceRecord : WSAT_TraceEvent
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe WSAT_TraceRecord ne définit aucune méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe WSAT_TraceRecord a les propriétés suivantes :  
   
 ### <a name="activityid"></a>ActivityID  
+
  Type de données : objet  
-Type d’accès : Propriétés en lecture seule  
+Type d'accès : Lecture seule  
   
  ID d'activité de l'enregistrement de suivi.  
   
-### <a name="eventid"></a>ID de l’événement  
+### <a name="eventid"></a>EventID  
+
  Type de données : sint32  
-Type d’accès : Propriétés en lecture seule  
+Type d'accès : Lecture seule  
   
  ID d'événement de l'enregistrement de suivi.  
   
 ### <a name="tracerecord"></a>TraceRecord  
- Type de données : chaîne  
-Type d’accès : Propriétés en lecture seule  
+
+ Type de données : chaîne  
+Type d'accès : Lecture seule  
   
  Enregistrement de suivi  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

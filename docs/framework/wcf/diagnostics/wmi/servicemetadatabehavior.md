@@ -2,14 +2,15 @@
 title: ServiceMetadataBehavior
 ms.date: 03/30/2017
 ms.assetid: 0f194476-72f1-467e-bdce-674306316e64
-ms.openlocfilehash: 1d99af064205447c2f11f6f19258551c1e88d386
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 921a880dad0d77558a70dff8a09f75c25a3cbb8a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956947"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262279"
 ---
 # <a name="servicemetadatabehavior"></a>ServiceMetadataBehavior
+
 ServiceMetadataBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,47 +27,54 @@ class ServiceMetadataBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe ServiceMetadataBehavior ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe ServiceMetadataBehavior a les propriétés suivantes :  
   
 ### <a name="externalmetadatalocation"></a>ExternalMetadataLocation  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Définit l'emplacement vers lequel le service redirige les demandes de métadonnées.  
   
 ### <a name="httpgetenabled"></a>HttpGetEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Vérifie si le service publie son WSDL à l'adresse contrôlée par l'attribut `HttpGetUrl`.  
   
 ### <a name="httpgeturl"></a>HttpGetUrl  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTP.  
   
 ### <a name="httpsgetenabled"></a>HttpsGetEnabled  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Vérifie si le service publie son WSDL sur HTTPS à l'adresse contrôlée par l'attribut `HttpsGetUrl`.  
   
 ### <a name="httpsgeturl"></a>HttpsGetUrl  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTPS.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

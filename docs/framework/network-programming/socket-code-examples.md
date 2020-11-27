@@ -15,17 +15,19 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: f3fc7533-6956-42c6-bbc3-73e5a221027d
-ms.openlocfilehash: 0a0911a779ed3d4938ad7ff57f048c176cf677fb
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a1e6ae5cc6e192c3f041ce763e1a2f51a97988be
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502156"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263150"
 ---
 # <a name="socket-code-examples"></a>Exemples de code de socket
+
 Les exemples de code suivants montrent comment utiliser la classe <xref:System.Net.Sockets.Socket> comme client pour établir une connexion à des services réseau distants et comment l’utiliser comme serveur pour écouter les connexions effectuées à partir de clients distants.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Exemple de socket client synchrone](synchronous-client-socket-example.md)  
  Montre comment implémenter un client <xref:System.Net.Sockets.Socket> synchrone qui se connecte à un serveur et affiche les données retournées par le serveur.  
   
@@ -35,10 +37,11 @@ Les exemples de code suivants montrent comment utiliser la classe <xref:System.N
  [Exemple de socket client asynchrone](asynchronous-client-socket-example.md)  
  Montre comment implémenter un client <xref:System.Net.Sockets.Socket> asynchrone qui se connecte à un serveur et affiche les données retournées par le serveur.  
   
- [Exemple de socket serveur asynchrone](asynchronous-server-socket-example.md)  
+ [Exemple de sockets serveur asynchrones](asynchronous-server-socket-example.md)  
  Montre comment implémenter un serveur <xref:System.Net.Sockets.Socket> asynchrone qui accepte les connexions effectuées à partir d’un client et renvoie les données reçues du client.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Sockets](sockets.md)  
  Fournit des informations générales sur l’espace de noms <xref:System.Net.Sockets> et la classe <xref:System.Net.Sockets.Socket>.  
   

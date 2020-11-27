@@ -7,20 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - UI automation fundamentals
 ms.assetid: d270ab45-542b-45c0-a240-e80aa4a61b95
-ms.openlocfilehash: d62bf321e81fccc10c23b6563a58c1ea6af995f0
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 17d5c55f5f98764cca5988a677e34a5ceb4bbf82
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168427"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262851"
 ---
 # <a name="ui-automation-fundamentals"></a>Notions de base d'UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
  Cette section contient des vues d’ensemble générales de l' [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] API.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Vue d'ensemble d'UI Automation](ui-automation-overview.md)  
  [UI Automation et Microsoft Active Accessibility](ui-automation-and-microsoft-active-accessibility.md)  
  [Vue d’ensemble de l’arborescence UI Automation](ui-automation-tree-overview.md)  
@@ -31,6 +33,7 @@ ms.locfileid: "87168427"
  [Utilisation d'UI Automation pour des tests automatisés](using-ui-automation-for-automated-testing.md)  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.Windows.Automation>  
   
  <xref:System.Windows.Automation.Provider>  

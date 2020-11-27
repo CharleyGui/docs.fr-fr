@@ -12,17 +12,19 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 4d62f5736e9aa469be49d101e85851bc01b7c159
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 5094a066fe6689a1c0cda227b284accaac49ad54
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141603"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263163"
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
+
 Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut retourner une ressource demandée à partir de son cache ou transférer la demande au serveur sur lequel réside la ressource. Les proxies peuvent améliorer les performances réseau en réduisant le nombre de demandes envoyées aux serveurs distants. Les proxies peuvent également être utilisés pour restreindre l'accès aux ressources.  
   
 ## <a name="adaptive-proxies"></a>Proxies adaptatifs  
+
  Dans le .NET Framework, les proxies sont fournis sous deux formes : adaptatifs et statiques. Les proxies adaptatifs ajustent leurs paramètres lorsque la configuration du réseau change. Par exemple, si l'utilisateur d'un ordinateur portable démarre une connexion réseau d'accès à distance, un proxy adaptatif identifie cette modification, détecte et exécute son nouveau script de configuration, et ajuste ses paramètres de façon appropriée.  
   
  Les proxys adaptatifs sont configurés par un script de configuration (voir [Détection automatique de proxy](automatic-proxy-detection.md)). Le script génère un ensemble de protocoles d'application et un proxy pour chaque protocole.  
@@ -42,6 +44,7 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
 ```  
   
 ## <a name="static-proxies"></a>Proxies statiques  
+
  Les proxies statiques sont généralement configurés explicitement par une application, ou lorsqu'un fichier de configuration est appelé par une application ou le système. Les proxies statiques sont utiles dans les réseaux dans lesquels la topologie change rarement, par exemple dans le cas d'un ordinateur de bureau connecté à un réseau d'entreprise.  
   
  Plusieurs options déterminent le fonctionnement d'un proxy statique. Spécifiez les informations suivantes :  

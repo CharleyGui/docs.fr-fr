@@ -2,17 +2,19 @@
 title: System.ServiceModel.AsyncCallbackThrewException
 ms.date: 03/30/2017
 ms.assetid: dfc27ca7-b904-4f29-a5b6-dc702fa54a20
-ms.openlocfilehash: 08bafd1bbc5b60e868d5d9ccd7898322d21cd32f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3b9f1375f2d302bcf182743e94dd595a389d88ef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594099"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262981"
 ---
 # <a name="systemservicemodelasynccallbackthrewexception"></a>System.ServiceModel.AsyncCallbackThrewException
+
 System.ServiceModel.AsyncCallbackThrewException  
   
 ## <a name="description"></a>Description  
+
  Un rappel asynchrone a levé une exception.  
   
 ## <a name="see-also"></a>Voir aussi
