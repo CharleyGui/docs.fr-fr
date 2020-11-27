@@ -2,17 +2,19 @@
 title: 'Point de terminaison : nombre d’échecs de la validation de la sécurité et de l’authentification par seconde'
 ms.date: 03/30/2017
 ms.assetid: 89a70b90-d7e4-4b03-9b84-4dc88ce3d605
-ms.openlocfilehash: 8573c35f16d03e2f86310c054703c25a3175200c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b2c5022caa5abe6154a3cb4dd4281dd212599b74
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541498"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256480"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures-per-second"></a>Point de terminaison : nombre d’échecs de la validation de la sécurité et de l’authentification par seconde
+
 Nom du compteur : Nombre d’échecs de validation de la sécurité et d’authentification par seconde  
   
 ## <a name="description"></a>Description  
+
  Ce compteur est incrémenté chaque fois qu'un message est rejeté en raison d'un problème de sécurité non couvert par le compteur « Appels de sécurité non autorisés ». Ces problèmes sont les suivants :  
   
 - Impossibilité de lire le jeton client depuis le message.  

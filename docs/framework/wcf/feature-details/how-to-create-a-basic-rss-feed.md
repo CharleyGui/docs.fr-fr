@@ -1,18 +1,19 @@
 ---
-title: 'Comment : créer un flux RSS de base'
+title: 'Procédure : créer un flux RSS de base'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 431879b8-a5f8-4947-ad1e-4768c726aca8
-ms.openlocfilehash: 872fe325a6705e79d026cd7f6e1f7cfef5145307
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d322dd40fd024685d6f3236caed41ae5eec1f375
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599020"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256805"
 ---
-# <a name="how-to-create-a-basic-rss-feed"></a>Comment : créer un flux RSS de base
+# <a name="how-to-create-a-basic-rss-feed"></a>Procédure : créer un flux RSS de base
+
 Windows Communication Foundation (WCF) vous permet de créer un service qui expose un flux de syndication. Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication RSS.  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Pour créer un service de syndication de base  
@@ -85,13 +86,15 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
      [!code-csharp[htRssBasic#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htrssbasic/cs/snippets.cs#11)]
      [!code-vb[htRssBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/snippets.vb#11)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Les éléments suivants représentent l'intégralité du code pour cet exemple.  
   
  [!code-csharp[htRssBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htrssbasic/cs/program.cs#12)]
  [!code-vb[htRssBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/program.vb#12)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Lors de la compilation du code précédent, référencez System.ServiceModel.dll et System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -2,17 +2,19 @@
 title: Liaison WS
 ms.date: 03/30/2017
 ms.assetid: 629945b2-d771-46d7-a87b-5df3b2e460da
-ms.openlocfilehash: b17391a882e4a85b717376f644fb3b6195073a70
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e4e37dc4b04cfa44cbca4367046c0ee24d182956
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589758"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256714"
 ---
 # <a name="ws-binding"></a>Liaison WS
+
 Cette section contient des exemples qui illustrent la liaison de service Windows dans Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [WS Transaction Flow](ws-transaction-flow.md)  
  Illustre l’utilisation d’une transaction coordonnée par le client et des options de client et de serveur pour le flux de transaction, à l’aide du protocole WS-Atomic Transaction ou OleTransactions.  
   

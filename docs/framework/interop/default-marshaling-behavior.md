@@ -10,14 +10,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: f2a508b87d2f4a9ad92bc0f27fc44d74d8e916d3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3e18bb5c4caa43a8e951eed3fc6992ec1b2d2afb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555274"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256650"
 ---
 # <a name="default-marshaling-behavior"></a>comportement de marshaling par défaut
+
 Le marshaling d'interopérabilité agit sur les règles qui définissent le comportement des données associées aux paramètres de méthode quand elles sont passées de la mémoire managée à la mémoire non managée. Ces règles intégrées contrôlent les activités de marshaling telles que les transformations de types de données, le fait qu’un appelant puisse modifier les données transmises et renvoyer ces modifications à l’appelant, ainsi que les circonstances dans lesquelles le marshaleur fournit des optimisations de performances.  
   
  Cette section aborde les caractéristiques de comportement par défaut du service de marshaling d'interopérabilité. Elle présente des informations détaillées sur le marshaling des tableaux, des types booléens, des types char, des délégués, des classes, des objets, des chaînes et des structures.  
@@ -26,6 +27,7 @@ Le marshaling d'interopérabilité agit sur les règles qui définissent le comp
 > Le marshaling des types génériques n'est pas pris en charge. Pour plus d’informations, consultez [Interopérabilité à l’aide de types génériques](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Gestion de la mémoire avec le marshaleur d'interopérabilité  
+
  Le marshaleur d'interopérabilité tente toujours de libérer de la mémoire allouée par du code non managé. Ce comportement est conforme aux règles de gestion de mémoire COM, mais pas à celles qui régissent le code C++ natif.  
   
  Vous pouvez créer une confusion si vous anticipez le comportement du C++ natif (aucune libération de mémoire) lors d‘un appel de code non managé qui libère automatiquement de la mémoire pour les pointeurs. Par exemple, l'appel de la méthode non managée suivante à partir d'une DLL C++ ne libère pas automatiquement de la mémoire.  
@@ -43,12 +45,15 @@ BSTR MethodOne (BSTR b) {
  Le runtime utilise toujours la méthode **CoTaskMemFree** pour libérer de la mémoire. Si la mémoire que vous utilisez n’a pas été allouée avec la méthode **CoTaskMemAlloc**, vous devez utiliser un **IntPtr** et libérer la mémoire manuellement à l’aide de la méthode appropriée. De même, vous pouvez éviter la libération automatique de mémoire dans les cas où celle-ci ne doit jamais être libérée, par exemple quand vous utilisez la fonction **GetCommandLine** depuis Kernel32.dll qui retourne un pointeur à la mémoire du noyau. Pour plus d’informations sur la libération manuelle de mémoire, consultez [Mémoires tampons, exemple](/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Marshaling par défaut pour les classes  
+
  Les classes ne peuvent être marshalées que par COM Interop et sont toujours marshalées en tant qu’interfaces. Dans certains cas, l’interface utilisée pour marshaler la classe est appelée interface de classe. Pour plus d’informations sur la substitution de l’interface de classe par une interface de votre choix, consultez [Présentation de l’interface de classe](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).  
   
 ### <a name="passing-classes-to-com"></a>Passage de classes à COM  
+
  Quand une classe managée est passée à COM, le marshaleur d’interopérabilité encapsule automatiquement la classe avec un proxy COM et passe l’interface de classe produite par le proxy à l’appel de méthode COM. Le proxy délègue ensuite tous les appels sur l'interface de classe vers l'objet managé. Le proxy expose également d'autres interfaces qui ne sont pas explicitement implémentées par la classe. Le proxy implémente automatiquement les interfaces telles que **IUnknown** et **IDispatch** pour le compte de la classe.  
   
 ### <a name="passing-classes-to-net-code"></a>Passage de classes à du code .NET  
+
  Les coclasses ne sont généralement pas utilisées en tant qu'arguments de méthode dans COM. Au lieu d’une coclasse, c’est une interface par défaut qui est généralement passée.  
   
  Quand une interface est passée dans du code managé, le marshaleur d’interopérabilité est responsable de l’encapsulation de l’interface avec le wrapper approprié et du passage du wrapper à la méthode managée. Savoir quel wrapper utiliser peut s'avérer difficile. Chaque instance d'un objet COM possède un seul et unique wrapper, quel que soit le nombre d'interfaces qu'implémente l'objet. Par exemple, un objet COM qui implémente cinq interfaces différentes n'a qu'un seul wrapper. Le même wrapper expose les cinq interfaces. Si deux instances de l'objet COM sont créées, deux instances du wrapper sont créées.  
@@ -70,6 +75,7 @@ BSTR MethodOne (BSTR b) {
 3. Si le marshaleur ne peut toujours pas identifier la classe, il enveloppe l’interface avec une classe wrapper générique appelée **System.__ComObject**.  
   
 ## <a name="default-marshaling-for-delegates"></a>Marshaling par défaut pour les délégués  
+
  Un délégué managé est marshalé comme une interface COM ou comme un pointeur fonction, en fonction du mécanisme d’appel :  
   
 - Pour un appel de code non managé, un délégué est marshalé en tant que pointeur fonction non managé par défaut.  
@@ -161,6 +167,7 @@ internal class DelegateTest {
 ```  
   
 ## <a name="default-marshaling-for-value-types"></a>Marshaling par défaut des types valeur  
+
  La plupart des types valeur, tels que les nombres entiers et à virgule flottante, sont [blittables](blittable-and-non-blittable-types.md) et ne nécessitent pas de marshaling. D’autres types [non blittables](blittable-and-non-blittable-types.md) ont des représentations différentes selon qu’ils sont en mémoire managée et non managée. De plus, ils nécessitent d’être marshalés. D'autres encore nécessitent une mise en forme explicite au-delà des limites d'interopération.  
   
  Cette section fournit des informations sur les types valeur mis en forme suivants :  
@@ -186,6 +193,7 @@ internal class DelegateTest {
      Indique que les membres sont disposés selon le <xref:System.Runtime.InteropServices.FieldOffsetAttribute> fourni avec chaque champ.  
   
 ### <a name="value-types-used-in-platform-invoke"></a>Types valeur utilisés dans un appel de code non managé  
+
  Dans l’exemple suivant, les types `Point` et `Rect` fournissent des informations sur la disposition des membres à l’aide de **StructLayoutAttribute**.  
   
 ```vb  
@@ -330,6 +338,7 @@ public class Point {
 ```  
   
 ### <a name="value-types-used-in-com-interop"></a>Types valeur utilisés dans COM Interop  
+
  Les types mis en forme peuvent également être passés aux appels de méthode d'interopérabilité COM. En effet, quand ils sont exportés vers une bibliothèque de types, les types valeur sont convertis automatiquement en structures. Comme dans l'exemple suivant, le type valeur `Point` devient une définition de type (typedef) portant le nom `Point`. Toutes les références au type valeur `Point` situées ailleurs que dans la bibliothèque de types sont remplacées par le typedef `Point`.  
   
  **Représentation de la bibliothèque de types**  
@@ -353,6 +362,7 @@ interface _Graphics {
 > Les structures dont la valeur d’énumération <xref:System.Runtime.InteropServices.LayoutKind> est définie sur **Explicit** ne peuvent pas être utilisées dans COM Interop, car la bibliothèque de types exportée ne peut pas exprimer une disposition explicite.  
   
 ### <a name="system-value-types"></a>Types de valeur système  
+
  L'espace de noms <xref:System> possède plusieurs types valeur qui représentent la forme boxed de types primitifs de runtime. Par exemple, la structure de type valeur <xref:System.Int32?displayProperty=nameWithType> représente la forme boxed d’**ELEMENT_TYPE_I4**. Au lieu de marshaler ces types en tant que structures, comme le sont les autres types mis en forme, vous les marshalez de la même façon que les types primitifs boxed. **System.Int32** est donc marshalé en tant qu’**ELEMENT_TYPE_I4** et non en tant que structure contenant un seul membre de type **long**. Le tableau suivant répertorie les types valeur de l’espace de noms **System** qui sont des représentations boxed de types primitifs.  
   
 |Type de valeur système|Type d'élément|  

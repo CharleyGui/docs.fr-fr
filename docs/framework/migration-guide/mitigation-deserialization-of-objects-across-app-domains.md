@@ -3,17 +3,19 @@ title: 'Atténuation : désérialisation des objets à travers les domaines d�
 description: Découvrez comment diagnostiquer et atténuer un problème où une tentative de désérialisation d’objets dans le contexte d’appel logique entre des domaines d’application lève une exception.
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
-ms.openlocfilehash: 20ea0f2f0b49000b7d1993adb583a803d9f5be6c
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1b8060870962ddd26d90c4152a270a65936c2af3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475240"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256636"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Atténuation : désérialisation des objets à travers les domaines d’application
+
 Dans certains cas, lorsqu'une application utilise plusieurs domaines d'application avec différentes bases d'application, la tentative de désérialiser des objets dans le contexte d'appel logique à travers des domaines d'application lève une exception.  
   
 ## <a name="diagnosing-the-issue"></a>Diagnostic du problème  
+
  Le problème survient dans la séquence suivante de conditions :  
   
 1. Une application utilise deux voire plusieurs domaines d'application avec différentes bases d'application.  
@@ -37,6 +39,7 @@ Dans certains cas, lorsqu'une application utilise plusieurs domaines d'applicati
 6. Parce que les types qui sont dans le contexte d'appel logique ne peuvent pas être résolus dans le domaine d'application par défaut, une exception est levée.  
   
 ## <a name="mitigation"></a>Limitation des risques  
+
  Pour contourner ce problème, procédez comme suit  
   
 1. Recherchez l'appel à `get_Evidence` dans la pile des appels lorsque l'exception est levée. L'exception peut faire partie d'un grand sous-ensemble d'exceptions, notamment <xref:System.IO.FileNotFoundException> et <xref:System.Runtime.Serialization.SerializationException>.  
