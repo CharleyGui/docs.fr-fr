@@ -2,27 +2,30 @@
 title: 4034 - RoutingTableLookupStop
 ms.date: 03/30/2017
 ms.assetid: 8a7ae705-77fd-42ce-a181-814765873d73
-ms.openlocfilehash: a2f90e8f51a3a2b23eee53d83a77c27ae7798ca1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 694dd89dc9d42262db7ac82ad8c1c376811fcf53
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048840"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270261"
 ---
 # <a name="4034---routingtablelookupstop"></a>4034 - RoutingTableLookupStop
-## <a name="properties"></a>Properties  
+
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
-|Id|4034|  
+|id|4034|  
 |Mots clés|ActivationServices|  
-|Niveau|Verbose|  
-|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
+|Level|Commentaires|  
+|Channel|Microsoft-Windows-Application Server-Applications/Débogage|  
   
 ## <a name="description"></a>Description  
+
  Cet événement est émis lorsque la recherche de la table de routage s'arrête.  
   
 ## <a name="message"></a>Message  
+
  Recherche dans la table de routage terminée.  
   
 ## <a name="details"></a>Détails

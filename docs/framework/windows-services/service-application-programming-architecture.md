@@ -15,14 +15,15 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-ms.openlocfilehash: 386311228abb08600acc249e80702c724c137900
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: c2344dd0a7d35781aea52b24694f2cfee70a6d41
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609263"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270456"
 ---
 # <a name="service-application-programming-architecture"></a>Architecture de programmation d'une application de service
+
 Les applications de service Windows sont basées sur une classe qui hérite de la classe <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Substituez les méthodes de cette classe et définissez des fonctionnalités pour qu’elles déterminent le comportement de votre service.  
   
  Les principales classes impliquées dans la création du service sont les suivantes :  
@@ -34,6 +35,7 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
  Par ailleurs, vous pouvez utiliser une classe nommée <xref:System.ServiceProcess.ServiceController> pour manipuler le service. Cette classe n’est pas impliquée dans la création d’un service, mais vous pouvez vous en servir pour démarrer et arrêter le service, lui passer des commandes et retourner une série d’énumérations.  
   
 ## <a name="defining-your-services-behavior"></a>Définition du comportement de votre service  
+
  Dans votre classe de service, substituez les fonctions de classe de base qui déterminent ce qui se passe en cas de changement de l’état de votre service dans le Gestionnaire de contrôle des services. La classe <xref:System.ServiceProcess.ServiceBase> expose les méthodes suivantes, que vous pouvez substituer pour ajouter un comportement personnalisé.  
   
 |Méthode|Substituer pour|  
@@ -49,7 +51,7 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
 > [!NOTE]
 > Ces méthodes représentent les états par lesquels passe le service au cours de sa vie (le service passe d’un état à l’autre). Par exemple, le service ne répond jamais à une commande <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> avant un appel à <xref:System.ServiceProcess.ServiceBase.OnStart%2A>.  
   
- D’autres propriétés et méthodes présentent un intérêt. Il s’agit des tables suivantes :  
+ D’autres propriétés et méthodes présentent un intérêt. notamment :  
   
 - La méthode <xref:System.ServiceProcess.ServiceBase.Run%2A> sur la classe <xref:System.ServiceProcess.ServiceBase>. Il s’agit du point d’entrée principal du service. Quand vous créez un service à l’aide du modèle de service Windows, le code est inséré dans la méthode `Main` de votre application pour exécuter le service. Ce code ressemble à ceci :  
   

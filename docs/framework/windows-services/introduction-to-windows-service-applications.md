@@ -22,14 +22,15 @@ helpviewer_keywords:
 - Win32ShareProcess service type
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
-ms.openlocfilehash: b177673d8904a3c40e41cd0f92b1ea7408641186
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: fd69ca11d42a229b861bafd642383e89f0119815
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609315"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270469"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Introduction aux applications de service Windows
+
 Les services Microsoft Windows, anciennement « services NT », vous permettent de créer des applications exécutables longue durée qui s’exécutent au sein de leurs propres sessions Windows. Ces services peuvent être lancés automatiquement au démarrage de l’ordinateur, et peuvent être suspendus et redémarrés. Ils n’affichent aucune interface utilisateur. Les services sont donc parfaitement adaptés à une utilisation sur un serveur ou chaque fois que vous avez besoin de fonctionnalités longue durée qui n’interfèrent pas avec d’autres utilisateurs travaillant sur le même ordinateur. Vous pouvez également exécuter des services dans le contexte de sécurité d’un compte d’utilisateur spécifique (différent de l’utilisateur connecté ou du compte d’ordinateur par défaut). Pour plus d’informations sur les services et sessions Windows, consultez la documentation du kit SDK Windows.  
   
  Vous pouvez facilement créer des services en créant une application qui est installée comme service. Par exemple, supposons que vous souhaitiez monitorer les données d’un compteur de performances et réagir à des valeurs de seuil. Vous pouvez écrire une application de service Windows qui écoute les données du compteur de performances, déployer l’application, puis lancer la collecte et l’analyse des données.  
@@ -39,6 +40,7 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
  Après avoir créé et généré l’application, vous pouvez l’installer en exécutant l’utilitaire de ligne de commande InstallUtil.exe et en passant le chemin au fichier exécutable du service. Vous pouvez ensuite utiliser le **Gestionnaire de contrôle des services** pour démarrer, arrêter, suspendre, reprendre et configurer votre service. Vous pouvez également accomplir la plupart de ces tâches dans le nœud **Services** de **l’Explorateur de serveurs** ou à l’aide de la classe <xref:System.ServiceProcess.ServiceController>.  
   
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>Applications de service et autres applications Visual Studio  
+
  Le fonctionnement des applications de service diffère de celui d’autres types de projets à plusieurs égards :  
   
 - Le fichier exécutable compilé créé par un projet d’application de service doit d’abord être installé sur le serveur pour que le projet puisse fonctionner de manière utile. Vous ne pouvez pas appuyer sur F5 ou F11 pour déboguer ou exécuter une application de service. Par ailleurs, vous ne pouvez ni exécuter immédiatement un service ni effectuer un pas à pas détaillé dans son code. Vous devez installer et démarrer votre service, puis attacher un débogueur au processus du service. Pour plus d’informations, consultez [Guide pratique pour déboguer les applications de service Windows](how-to-debug-windows-service-applications.md).  
@@ -56,6 +58,7 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
 - Les applications de service Windows s’exécutent dans leur propre contexte de sécurité et sont démarrées avant que l’utilisateur ne se connecte à l’ordinateur Windows sur lequel elles sont installées. Réfléchissez bien au compte d’utilisateur sous lequel vous souhaitez que le service s’exécute. En effet, un compte système confère au service davantage de droits et de privilèges qu’un compte d’utilisateur.  
   
 ## <a name="service-lifetime"></a>Durée de vie d’un service  
+
  Un service passe par plusieurs états internes au cours de sa vie. Le service est d’abord installé sur le système sur lequel il doit s’exécuter. Ce processus exécute les programmes d’installation du projet de service et charge le service dans le **Gestionnaire de contrôle des services** de cet ordinateur. Le **Gestionnaire de contrôle des services** est l’utilitaire central fourni par Windows pour administrer les services.  
   
  Une fois le service chargé, il doit être démarré. Un service qui n’est pas démarré ne fonctionne pas. Vous pouvez démarrer un service à partir du **Gestionnaire de contrôle des services**, à partir de **l’Explorateur de serveurs** ou à partir du code en appelant la méthode <xref:System.ServiceProcess.ServiceController.Start%2A>. La méthode <xref:System.ServiceProcess.ServiceController.Start%2A> passe le traitement à la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> de l’application et traite le code que vous avez défini à cet emplacement.  
@@ -65,16 +68,18 @@ Les services Microsoft Windows, anciennement « services NT », vous permettent 
  Vous pouvez suspendre, arrêter ou reprendre un service à partir du **Gestionnaire de contrôle des services**, à partir de **l’Explorateur de serveurs** ou en appelant des méthodes dans le code. Chacune de ces actions peut appeler une procédure associée dans le service (<xref:System.ServiceProcess.ServiceBase.OnStop%2A>, <xref:System.ServiceProcess.ServiceBase.OnPause%2A> ou <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>), où vous pouvez définir un traitement supplémentaire à effectuer quand le service change d’état.  
   
 ## <a name="types-of-services"></a>Types de services  
+
  Dans Visual Studio, vous pouvez créer deux types de services à l’aide du .NET Framework. Un service unique dans un processus se voit affecter le type <xref:System.ServiceProcess.ServiceType.Win32OwnProcess>. Un service qui partage un processus avec un autre service se voit affecter le type <xref:System.ServiceProcess.ServiceType.Win32ShareProcess>. Pour récupérer le type d’un service, interrogez la propriété <xref:System.ServiceProcess.ServiceController.ServiceType%2A>.  
   
  Il est possible que vous obteniez d’autres types de services si vous interrogez des services existants qui n’ont pas été créés dans Visual Studio. Pour plus d’informations sur ceux-ci, consultez <xref:System.ServiceProcess.ServiceType>.  
   
 ## <a name="services-and-the-servicecontroller-component"></a>Services et composant ServiceController  
+
  Le composant <xref:System.ServiceProcess.ServiceController> permet d’établir une connexion à un service installé et de manipuler son état. À l’aide d’un composant <xref:System.ServiceProcess.ServiceController>, vous pouvez démarrer et arrêter un service, suspendre et poursuivre son exécution, et envoyer des commandes personnalisées à un service. Toutefois, il est inutile de recourir à un composant <xref:System.ServiceProcess.ServiceController> quand vous créez une application de service. En fait, dans la plupart des cas, votre composant <xref:System.ServiceProcess.ServiceController> doit se trouver dans une application séparée de l’application de service Windows qui définit votre service.  
   
- Pour plus d'informations, consultez <xref:System.ServiceProcess.ServiceController>.  
+ Pour plus d’informations, consultez <xref:System.ServiceProcess.ServiceController>.  
   
-## <a name="requirements"></a>Exigences  
+## <a name="requirements"></a>Spécifications  
   
 - Les services doivent être créés dans un projet d’application **Service Windows** ou un autre projet compatible .NET Framework qui crée un fichier .exe au moment de la génération et qui hérite de la classe <xref:System.ServiceProcess.ServiceBase>.  
   

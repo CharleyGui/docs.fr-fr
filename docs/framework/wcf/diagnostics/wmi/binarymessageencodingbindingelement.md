@@ -2,14 +2,15 @@
 title: BinaryMessageEncodingBindingElement
 ms.date: 03/30/2017
 ms.assetid: e2bb3cdd-3bbd-4bb5-85fe-570457500a66
-ms.openlocfilehash: e0551e7b4b05151490625912742aa6b26ef0216e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb174d12731d7f1bc78f4d709cf043daf2346bd2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964097"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269793"
 ---
 # <a name="binarymessageencodingbindingelement"></a>BinaryMessageEncodingBindingElement
+
 BinaryMessageEncodingBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,40 +26,46 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe BinaryMessageEncodingBindingElement ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe BinaryMessageEncodingBindingElement a les propriétés suivantes.  
   
 ## <a name="maxreadpoolsize"></a>MaxReadPoolSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Entier qui définit combien de messages peuvent être lus de manière simultanée sans allouer de nouveaux lecteurs.  
   
 ## <a name="maxsessionsize"></a>MaxSessionSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur qui spécifie la taille, en octets, de la mémoire tampon utilisée pour l'encodage.  
   
 ## <a name="maxwritepoolsize"></a>MaxWritePoolSize  
+
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Entier qui définit combien de messages peuvent être envoyés simultanément sans allouer de nouveaux enregistreurs.  
   
 ## <a name="readerquotas"></a>ReaderQuotas  
+
  Type de données : XmlDictionaryReaderQuotas  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Quotas des lecteurs.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

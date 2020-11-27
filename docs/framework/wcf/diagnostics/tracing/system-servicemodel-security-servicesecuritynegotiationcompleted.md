@@ -2,17 +2,19 @@
 title: System.ServiceModel.Security.ServiceSecurityNegotiationCompleted
 ms.date: 03/30/2017
 ms.assetid: c43d2d67-8b9b-4a2b-b0cd-ceab8ad38141
-ms.openlocfilehash: 7412ecad6879eb42b0e4280e0cd06598508e9045
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 89ab73d1f99c37dc5588411c792d5f5c89bd5ed3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597876"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270066"
 ---
 # <a name="systemservicemodelsecurityservicesecuritynegotiationcompleted"></a>System.ServiceModel.Security.ServiceSecurityNegotiationCompleted
+
 System.ServiceModel.Security.ServiceSecurityNegotiationCompleted  
   
 ## <a name="description"></a>Description  
+
  Négociation de sécurité de service terminée.  
   
 ## <a name="see-also"></a>Voir aussi

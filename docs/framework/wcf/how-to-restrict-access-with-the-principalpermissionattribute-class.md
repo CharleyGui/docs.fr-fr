@@ -1,5 +1,5 @@
 ---
-title: "Comment : restreindre l'accès à l'aide de la classe PrincipalPermissionAttribute"
+title: 'Procédure : restreindre l’accès à la classe PrincipalPermissionAttribute'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,15 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
-ms.openlocfilehash: 93268be4b04ec6824ed7ecab070f28ddf40f8831
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 92d27548c510a19bf36ffaffb532f48461146d99
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320940"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269611"
 ---
-# <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Comment : restreindre l'accès à l'aide de la classe PrincipalPermissionAttribute
+# <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Procédure : restreindre l’accès à la classe PrincipalPermissionAttribute
+
 Le contrôle de l'accès aux ressources sur un ordinateur de domaine Windows est une tâche de sécurité de base. Par exemple, certains utilisateurs doivent pouvoir consulter des données sensibles, telles que les informations relatives aux salaires. Cette rubrique explique comment restreindre l'accès à une méthode en exigeant que l'utilisateur appartienne à un groupe prédéfini. Pour obtenir un exemple fonctionnel, consultez [autorisation de l’accès aux opérations de service](./samples/authorizing-access-to-service-operations.md).  
   
  La tâche se compose de deux procédures séparées. La première crée le groupe et le remplit avec les utilisateurs. La deuxième applique la classe <xref:System.Security.Permissions.PrincipalPermissionAttribute> pour spécifier le groupe.  
@@ -41,7 +42,7 @@ Le contrôle de l'accès aux ressources sur un ordinateur de domaine Windows est
   
 1. Ouvrez le fichier de code Windows Communication Foundation (WCF) qui contient le code de contrat de service implémenté. Pour plus d’informations sur l’implémentation d’un contrat, consultez [implémentation de contrats de service](implementing-service-contracts.md).  
   
-2. Appliquez l'attribut <xref:System.Security.Permissions.PrincipalPermissionAttribute> à chaque méthode qui doit être restreinte à un groupe spécifique. Affectez <xref:System.Security.Permissions.SecurityAttribute.Action%2A> à la propriété <xref:System.Security.Permissions.SecurityAction.Demand> et le nom du groupe à la propriété <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>. Exemple :  
+2. Appliquez l'attribut <xref:System.Security.Permissions.PrincipalPermissionAttribute> à chaque méthode qui doit être restreinte à un groupe spécifique. Affectez <xref:System.Security.Permissions.SecurityAttribute.Action%2A> à la propriété <xref:System.Security.Permissions.SecurityAction.Demand> et le nom du groupe à la propriété <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>. Par exemple :  
   
      [!code-csharp[c_PrincipalPermissionAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_principalpermissionattribute/cs/source.cs#1)]
      [!code-vb[c_PrincipalPermissionAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_principalpermissionattribute/vb/source.vb#1)]  
@@ -50,6 +51,7 @@ Le contrôle de l'accès aux ressources sur un ordinateur de domaine Windows est
     > Si vous appliquez l'attribut <xref:System.Security.Permissions.PrincipalPermissionAttribute> à un contrat, une exception <xref:System.Security.SecurityException> sera levée. Vous pouvez appliquer l'attribut uniquement au niveau de la méthode.  
   
 ## <a name="using-a-certificate-to-control-access-to-a-method"></a>Utilisation d'un certificat pour contrôler l'accès à une méthode  
+
  Vous pouvez également utiliser la classe `PrincipalPermissionAttribute` pour contrôler l'accès à une méthode si le type d'informations d'identification du client est un certificat. Pour ce faire, vous devez avoir l'empreinte numérique et le sujet du certificat.  
   
  Pour examiner les propriétés d’un certificat, consultez [Comment : afficher des certificats avec le composant logiciel enfichable MMC](./feature-details/how-to-view-certificates-with-the-mmc-snap-in.md). Pour trouver la valeur de l’empreinte numérique, consultez [Comment : récupérer l’empreinte numérique d’un certificat](./feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
@@ -89,6 +91,6 @@ Le contrôle de l'accès aux ressources sur un ordinateur de domaine Windows est
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - <xref:System.Security.Permissions.SecurityAction.Demand>
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>
-- [Autorisation de l’accès aux opérations de service](./samples/authorizing-access-to-service-operations.md)
-- [Vue d’ensemble de la sécurité](./feature-details/security-overview.md)
+- [Authorizing Access to Service Operations](./samples/authorizing-access-to-service-operations.md)
+- [Présentation de la sécurité](./feature-details/security-overview.md)
 - [Implémentation de contrats de service](implementing-service-contracts.md)
