@@ -2,14 +2,15 @@
 title: Dispatch by Body Element
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: 19913cdaa47d766f62a313e216a653ac69633a99
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ddff361179c2ef071ca4df076e78b238de9041a1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594697"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292582"
 ---
 # <a name="dispatch-by-body-element"></a>Dispatch by Body Element
+
 Cet exemple montre comment implémenter un autre algorithme pour l'assignation des messages entrants aux opérations.  
   
  Par défaut, le répartiteur modèle de service sélectionne la méthode de gestion appropriée pour un message entrant en fonction de l'en-tête d'action WS-Addressing du message ou de l'information équivalente dans la requête HTTP SOAP.  
@@ -70,6 +71,7 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>Ajout d'un sélecteur d'opération à un service  
+
  Les sélecteurs d’opération de distribution de service sont des extensions du répartiteur Windows Communication Foundation (WCF). Pour la sélection des méthodes sur le canal de rappel de contrats duplex, il existe également des sélecteurs d'opération clients qui fonctionnent de manière semblable aux sélecteurs d'opération de distribution décrits ici, mais ne sont pas traités de manière explicite dans cet exemple.  
   
  Comme la plupart des extensions de modèle de service, les sélecteurs d’opération de distribution sont ajoutés au répartiteur à l’aide de comportements. Un *comportement* est un objet de configuration qui ajoute une ou plusieurs extensions au runtime de dispatch (ou à l’exécution du client) ou modifie ses paramètres.  
@@ -118,6 +120,7 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ```  
   
 ## <a name="implementing-the-service"></a>Implémentation du service  
+
  Le comportement implémenté dans cet exemple affecte directement la façon dont les messages provenant du câble sont interprétés et distribués, ce qui constitue une fonction du contrat de service. Par conséquent, le comportement doit être déclaré sur le niveau de contrat de service dans toute implémentation de service qui choisit de l'utiliser.  
   
  L’exemple de service de projet applique le `DispatchByBodyElementBehaviorAttribute` comportement de contrat au `IDispatchedByBody` contrat de service et étiquette chacune des deux opérations `OperationForBodyA()` et `OperationForBodyB()` avec un `DispatchBodyElementAttribute` comportement d’opération. Lorsqu'un hôte est ouvert pour un service qui implémente ce contrat, ces métadonnées sont choisies par le générateur de répartiteurs comme décrit précédemment.  
@@ -143,6 +146,7 @@ public interface IDispatchedByBody
  L'implémentation du service exemple est simple. Chaque méthode insère le message reçu dans un message de réponse et le retourne au client.  
   
 ## <a name="running-and-building-the-sample"></a>Génération et exécution de l'exemple  
+
  Lorsque vous exécutez l'exemple, le contenu du corps des réponses d'opération est affiché dans la fenêtre de la console cliente semblable à la sortie suivante (mis en forme).  
   
  Le client envoie trois messages au service dont l'élément du contenu du corps est nommé `bodyA`, `bodyB` et `bodyX`, respectivement. Comme il peut être différé de la description précédente et du contrat de service indiqué, le message entrant avec l'élément `bodyA` est distribué à la méthode `OperationForBodyA()`. Étant donné qu'il n'y a aucune cible de distribution explicite pour le message avec l'élément de corps `bodyX`, le message est distribué à `DefaultOperation()`. Chacune des opérations de service englobe le corps du message reçu dans un élément spécifique à la méthode et le renvoie, ce qui permet de faire correspondre clairement les messages d'entrée et de sortie pour cet exemple :  

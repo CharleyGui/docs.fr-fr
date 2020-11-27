@@ -2,17 +2,19 @@
 title: Découverte (exemples)
 ms.date: 03/30/2017
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
-ms.openlocfilehash: bb5471db6f4feb61798926ae1466a3bebac7e959
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d5801452943a75e87d829e5d5004e3c259ce3afa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600579"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292608"
 ---
 # <a name="discovery-samples"></a>Découverte (exemples)
+
 Cette section contient des exemples liés à la fonctionnalité Découverte.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Annonces](announcements-sample.md)  
  Montre comment utiliser des annonces avec la fonctionnalité de découverte.  
   

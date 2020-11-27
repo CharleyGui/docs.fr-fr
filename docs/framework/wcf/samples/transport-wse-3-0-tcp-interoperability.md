@@ -2,14 +2,15 @@
 title: 'Transport : Interopérabilité TCP WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: f61d5037af0be6579d5110152ca070bec586fe87
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c268043a9d5c3f6a48b7b66dc807e4e30f029f61
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558964"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292504"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Transport : Interopérabilité TCP WSE 3.0
+
 L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment implémenter une session duplex TCP en tant que transport Windows Communication Foundation personnalisé (WCF). Il décrit également comment utiliser l'extensibilité de la couche du canal pour assurer l'interface sur le câble avec les systèmes déployés existants. Les étapes suivantes montrent comment générer ce transport WCF personnalisé :  
   
 1. À partir d'un socket TCP, créez les implémentations serveur et client de <xref:System.ServiceModel.Channels.IDuplexSessionChannel> qui utilisent le tramage DIME pour définir les limites de message.  
@@ -23,6 +24,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 5. Ajoutez un élément de liaison qui ajoute le transport personnalisé à une pile de canaux. Pour plus d’informations, consultez [Ajout d’un élément de liaison].  
   
 ## <a name="creating-iduplexsessionchannel"></a>Création de IDuplexSessionChannel  
+
  La première étape de l'écriture du transport WSE 3.0 TCP Interoperability consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IDuplexSessionChannel> sur <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` dérive de <xref:System.ServiceModel.Channels.ChannelBase>. La logique d'envoi d'un message comporte deux parties principales : (1) encodage du message en octets, et (2) tramage et envoi des octets sur le câble.  
   
  `ArraySegment<byte> encodedBytes = EncodeMessage(message);`  
@@ -50,6 +52,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 - session. CloseOutputSession : arrêter le flux de données sortantes (demi-clôture).  
   
 ## <a name="channel-factory"></a>Fabrique de canaux  
+
  L'étape suivante de l'écriture du transport TCP consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IChannelFactory> pour les canaux clients.  
   
 - `WseTcpChannelFactory`dérive de <xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel> . Il s'agit d'une fabrique qui substitue `OnCreateChannel` pour produire des canaux clients.  
@@ -77,6 +80,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
 - Dans le cadre du contrat de canal, les exceptions spécifiques du domaine sont incluses dans un wrapper, comme `SocketException` dans <xref:System.ServiceModel.CommunicationException>.  
   
 ## <a name="channel-listener"></a>Écouteur de canal  
+
  L'étape suivante de l'écriture du transport TCP consiste à créer une implémentation de <xref:System.ServiceModel.Channels.IChannelListener> permettant d'accepter les canaux serveur.  
   
 - `WseTcpChannelListener`dérive de <xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel> et des substitutions sur [begin] Open et on [begin] Close pour contrôler la durée de vie de son socket d’écoute. Dans OnOpen, un socket est créé pour écouter sur IP_ANY. Des implémentations plus avancées peuvent créer un deuxième socket pour écouter également sur IPv6. Elles permettent également de spécifier l'adresse IP dans le nom d'hôte.  
@@ -92,6 +96,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
  Lorsqu'un nouveau socket est accepté, un canal serveur est initialisé avec celui-ci. Toutes les entrées et sorties étant déjà implémentées dans la classe de base, ce canal est donc chargé d'initialiser le socket.  
   
 ## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
+
  Maintenant que les fabriques de canaux sont générées, elles doivent être exposées à l'exécution de ServiceModel via une liaison. Une liaison est une collection d’éléments de liaison qui représente la pile de communication associée à une adresse de service. Chaque élément de la pile est représenté par un élément de liaison.  
   
  Dans notre exemple, l'élément de liaison est `WseTcpTransportBindingElement`, lequel dérive de <xref:System.ServiceModel.Channels.TransportBindingElement>. Il prend en charge <xref:System.ServiceModel.Channels.IDuplexSessionChannel> et substitue les méthodes suivantes pour générer les fabriques associées à notre liaison.  
@@ -115,6 +120,7 @@ L’exemple de transport d’interopérabilité TCP WSE 3,0 montre comment impl�
  Notre exemple contient également des membres permettant de cloner l'élément `BindingElement` et de retourner notre schéma (wse.tcp).  
   
 ## <a name="the-wse-tcp-test-console"></a>Console de test TCP WSE  
+
  Le code de test permettant d'utiliser cet exemple de transport est disponible dans TestCode.cs. Les instructions suivantes indiquent comment installer l'exemple WSE `TcpSyncStockService`.  
   
  Le code de test crée une liaison personnalisée qui utilise MTOM comme encodage et `WseTcpTransport` comme transport. Il installe également AddressingVersion afin d'assurer la conformité avec WSE 3.0, comme indiqué dans le code suivant.  

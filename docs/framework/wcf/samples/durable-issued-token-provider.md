@@ -2,17 +2,19 @@
 title: Durable Issued Token Provider
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: fed5f44e6cc40cfe2ca963077b6371c14b3b086a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7e0025eb4bc4918b977d9d8c4e2b1435b0425973
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600559"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96291672"
 ---
 # <a name="durable-issued-token-provider"></a>Durable Issued Token Provider
+
 Cet exemple montre comment implémenter un fournisseur de jetons émis client personnalisé.  
   
 ## <a name="discussion"></a>Discussions  
+
  Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :  
   
 - Si vous disposez d'un magasin d'informations d'identification avec lequel le fournisseur de jetons intégré ne peut pas fonctionner.  
@@ -110,6 +112,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
  Le service d'émission de jeton de sécurité expose un point de terminaison unique à l'aide du wsHttpBinding standard. Le service d'émission de jeton de sécurité répond pour demander des jetons aux clients et, à la condition que le client s'authentifie à l'aide d'un compte Windows, il émet un jeton qui contient le nom d'utilisateur du client comme revendication dans le jeton émis. Dans le cadre de la création du jeton, le service d'émission de jeton de sécurité le signe à l'aide de la clé privée associée au certificat CN=STS. Par ailleurs, il crée une clé symétrique et la chiffre à l'aide de la clé publique associée au certificat CN=localhost. Lors du retour du jeton au client, le service d'émission de jeton de sécurité retourne également la clé symétrique. Le client présente le jeton émis au service de calculatrice et prouve qu'il connaît la clé symétrique en signant le message à l'aide de celle-ci.  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>Informations d'identification client personnalisées et fournisseur de jetons personnalisé  
+
  Les étapes suivantes indiquent comment développer un fournisseur de jetons personnalisé qui met en cache les jetons émis et les intègre à WCF : Security.  
   
 ### <a name="to-develop-a-custom-token-provider"></a>Pour développer un fournisseur de jetons personnalisé  
@@ -226,9 +229,11 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
     ```  
   
 ## <a name="running-the-sample"></a>Exécution de l’exemple  
+
  Consultez les instructions suivantes pour exécuter l'exemple. Lorsque vous exécutez l'exemple, la demande de jeton de sécurité s'affiche dans la fenêtre de console du service d'émission de jeton de sécurité. Les demandes et réponses d'opération s'affichent dans les fenêtres de console du client et du service. Appuyez sur ENTER dans l'une ou l'autre de ces fenêtres pour arrêter l'application leur correspondant.  
   
 ## <a name="the-setupcmd-batch-file"></a>Fichier de commandes Setup.cmd  
+
  Le fichier de commandes Setup.cmd inclus avec cet exemple vous permet de configurer le serveur et le service d'émission de jeton de sécurité avec les certificats appropriés pour exécuter une application auto-hébergée. Il crée deux certificats dans le magasin de certificats CurrentUser/TrustedPeople. Le nom du sujet du premier certificat est CN=STS. Ce certificat est utilisé par le service d'émission de jeton de sécurité pour signer les jetons de sécurité qu'il émet au client. Le deuxième a le nom du sujet CN=localhost et est utilisé par le service d'émission de jeton de sécurité pour chiffrer un secret de sorte que le service puisse le déchiffrer.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
