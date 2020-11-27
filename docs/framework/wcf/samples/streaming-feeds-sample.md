@@ -2,14 +2,15 @@
 title: Streaming Feeds, exemple
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: 551a97f3cc54915a831fc28eca6ae0ff23101e0b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 735a72cba3c953ea4774d89751dad3216aa44400
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589784"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257182"
 ---
 # <a name="streaming-feeds-sample"></a>Streaming Feeds, exemple
+
 Cet exemple indique comment gérer des flux de syndication qui contiennent de grandes quantités d'éléments. Sur le serveur, l'exemple décrit comment différer la création d'objets <xref:System.ServiceModel.Syndication.SyndicationItem> individuels dans le flux jusqu'au moment précédant immédiatement l'écriture de l'élément dans le flux de données réseau.  
   
  Sur le client, l'exemple décrit comment un module de formatage de flux de syndication personnalisé peut être utilisé pour lire des éléments du flux de réseau, afin que le flux qui est lu ne soit jamais complètement mis en mémoire tampon.  
@@ -19,6 +20,7 @@ Cet exemple indique comment gérer des flux de syndication qui contiennent de gr
  La démonstration utilise des itérateurs Visual C# (à l’aide de la `yield return` construction de mot clé). Pour plus d’informations sur les itérateurs, consultez la rubrique « utilisation d’itérateurs » sur MSDN.  
   
 ## <a name="service"></a>Service  
+
  Le service implémente un contrat <xref:System.ServiceModel.Web.WebGetAttribute> de base qui se compose d'une opération, comme l'illustre le code suivant.  
   
 ```csharp  
@@ -68,6 +70,7 @@ public Atom10FeedFormatter StreamedFeed()
  En conséquence, le flux d'éléments n'est jamais complètement mis en mémoire tampon. Vous pouvez observer ce comportement en définissant un point d’arrêt sur l' `yield return` instruction à l’intérieur de la `ItemGenerator.GenerateItems()` méthode et en notant que ce point d’arrêt est rencontré pour la première fois après que le service a retourné le résultat de la `StreamedFeed()` méthode.  
   
 ## <a name="client"></a>Client  
+
  Le client de cet exemple utilise une implémentation <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> personnalisée qui diffère la matérialisation d'éléments individuels dans le flux au lieu de les mettre en mémoire tampon. L'instance `StreamedAtom10FeedFormatter` personnalisée est utilisée comme suit.  
   
 ```csharp  

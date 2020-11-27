@@ -1,23 +1,25 @@
 ---
-title: 'Comment : configurer des paramètres de service COM+'
+title: 'Procédure : configurer des paramètres de service COM+'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 3fb4b31038845d223248e72d32b3e7413f2aef63
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b75f5c2a64b7184959e929439893b33193aa7bae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597174"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257468"
 ---
-# <a name="how-to-configure-com-service-settings"></a>Comment : configurer des paramètres de service COM+
-Lorsqu'une interface d'application est ajoutée ou supprimée en utilisant l'outil de configuration de service COM+, la configuration de service Web est mise à jour dans le fichier de configuration de l'application. Dans le mode hébergé par COM+, le fichier application. config est placé dans le répertoire racine de l’application (%PROGRAMFILES%\ComPlus applications \\ {AppID} est la valeur par défaut). Dans l'un ou l'autre des modes hébergés sur le Web, le fichier Web.config est placé dans le répertoire vroot spécifié.  
+# <a name="how-to-configure-com-service-settings"></a>Procédure : configurer des paramètres de service COM+
+
+Lorsqu'une interface d'application est ajoutée ou supprimée en utilisant l'outil de configuration de service COM+, la configuration de service Web est mise à jour dans le fichier de configuration de l'application. Dans le mode hébergé par COM+, le fichier Application.config est placé dans le répertoire racine de l’application (%PROGRAMFILES%\ComPlus applications \\ {AppID} est la valeur par défaut). Dans l'un ou l'autre des modes hébergés sur le Web, le fichier Web.config est placé dans le répertoire vroot spécifié.  
   
 > [!NOTE]
 > La signature du message doit être utilisée pour éviter la falsification des messages entre un client et un serveur. De plus, le chiffrement de la couche transport ou message doit être utilisé pour se protéger contre la divulgation d'informations de messages entre un client et un serveur. Comme pour les services Windows Communication Foundation (WCF), vous devez utiliser la limitation pour limiter le nombre d’appels simultanés, de connexions, d’instances et d’opérations en attente. Elle permet d'empêcher la surconsommation de ressources. La fonctionnalité de limitation est spécifiée à l'aide des paramètres de fichier de configuration de service.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Prenons l'exemple d'un composant qui implémente l'interface suivante :  
   
 ```csharp

@@ -2,14 +2,15 @@
 title: 'Procédure : configurer le suivi avec WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: 54594a8f464e77062c658606db6bc941e319f71d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cf30ace90f86e282d72c4da5f2c3707905360aeb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599098"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257351"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Procédure : configurer le suivi avec WorkflowServiceHost
+
 Cette rubrique explique comment configurer le suivi pour un workflow [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] hébergé dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Il est configuré via un fichier Web.config en spécifiant un comportement de service.  
   
 ### <a name="configure-tracking-in-configuration"></a>Configurer le suivi dans le fichier de configuration  
@@ -72,4 +73,4 @@ Cette rubrique explique comment configurer le suivi pour un workflow [!INCLUDE[n
 
 - [Configuration simplifiée pour WCF Services](../samples/simplified-configuration-for-wcf-services.md)
 - [Services de workflow](workflow-services.md)
-- [Profils de suivi](../../windows-workflow-foundation/tracking-profiles.md)
+- [Modèles de suivi](../../windows-workflow-foundation/tracking-profiles.md)
