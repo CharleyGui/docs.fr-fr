@@ -2,17 +2,19 @@
 title: Intégration de System.Web.Routing
 ms.date: 03/30/2017
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-ms.openlocfilehash: 6e67aa4a790edeb367b099d4a94f465f1e7b9bcc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bb820f535a69a24e05b7374bcf97539ae2b87aef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554773"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266426"
 ---
 # <a name="systemwebrouting-integration"></a>Intégration de System.Web.Routing
+
 Lors de l’hébergement d’un service Windows Communication Foundation (WCF) dans Internet Information Services (IIS), vous placez un fichier. svc dans le répertoire virtuel. Ce fichier .svc spécifie la fabrique hôte de service à utiliser ainsi que la classe qui implémente le service. Lorsque vous effectuez des demandes au service, vous spécifiez le fichier. svc dans l’URI, par exemple : `http://contoso.com/EmployeeServce.svc` . Pour les programmeurs qui écrivent des services REST, ce type d'URI n'est pas optimal. Les URI des services REST spécifient une ressource spécifique et n’ont généralement pas d’extension. La <xref:System.Web.Routing> fonctionnalité d’intégration vous permet d’héberger un service WCF Rest qui répond aux URI sans extension. Pour plus d’informations sur le routage, consultez [routage ASP.net](/previous-versions/aspnet/cc668201(v=vs.100)).  
   
 ## <a name="using-systemwebrouting-integration"></a>Utilisation de l'intégration System.Web.Routing  
+
  Pour utiliser la fonctionnalité d’intégration <xref:System.Web.Routing>, vous utilisez la classe <xref:System.ServiceModel.Activation.ServiceRoute> pour créer un ou plusieurs itinéraires et les ajouter à l’objet <xref:System.Web.Routing.RouteTable> dans un fichier Global.asax. Ces itinéraires spécifient les URI relatifs auxquels le service répond. L’exemple suivant vous montre comment procéder.  
   
 ```aspx-csharp  

@@ -1,15 +1,16 @@
 ---
-title: "Comment : utiliser un moniker de service avec des contrats d'échange de métadonnées"
+title: 'Procédure : utiliser un moniker de service avec des contrats d’échange de métadonnées'
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: 04a940a6e8f010e5cd851684c5fc62bab2a1a034
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 194caf6a48e64a4358a77ecd514dda456cc35e0b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265958"
 ---
-# <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Comment : utiliser un moniker de service avec des contrats d'échange de métadonnées
+# <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Procédure : utiliser un moniker de service avec des contrats d’échange de métadonnées
+
 Après avoir développé de nouveaux services WCF, vous pouvez décider que vous souhaitez être en mesure d’appeler ces services à partir d’un script ou d’une application Visual Basic 6,0. Une méthode consisterait à générer un assembly client WCF, à inscrire l’assembly auprès de COM, à installer l’assembly dans le GAC, puis à référencer les types COM à partir de votre code Visual Basic. Lorsque vous distribuez l’application, vous devez également distribuer l’assembly client WCF. L'utilisateur devra ensuite inscrire l'assembly client WCF avec COM et le placer dans le GAC. L’interopérabilité COM WCF vous permet également d’effectuer les mêmes appels de service sans compter sur un assembly client WCF. Le moniker WCF vous permet d’appeler n’importe quel service WCF à partir de n’importe quel langage compatible COM (Visual Basic, VBScript, Visual Basic pour Applications (VBA), etc.) en spécifiant un URI de point de terminaison MEX (Metadata Exchange) utilisé par le moniker de service pour extraire les informations de type relatives au service. Cette rubrique explique comment appeler l’exemple WCF Prise en main à l’aide d’un moniker WCF qui spécifie un point de terminaison MEX.  
   
 > [!NOTE]
@@ -41,5 +42,5 @@ Après avoir développé de nouveaux services WCF, vous pouvez décider que vous
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : utiliser le moniker de service Windows Communication Foundation sans inscription](use-the-wcf-service-moniker-without-registration.md)
-- [Comment : utiliser un moniker de service avec des contrats WSDL](how-to-use-a-service-moniker-with-wsdl-contracts.md)
+- [Procédure : utiliser le moniker de service Windows Communication Foundation sans inscription](use-the-wcf-service-moniker-without-registration.md)
+- [Procédure : utiliser un moniker de service avec des contrats WSDL](how-to-use-a-service-moniker-with-wsdl-contracts.md)

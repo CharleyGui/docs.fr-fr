@@ -3,19 +3,21 @@ title: Configuration client
 description: Découvrez comment utiliser la configuration du client WCF pour spécifier l’adresse, la liaison, le comportement et le contrat d’un point de terminaison, qui est utilisé pour se connecter à un service.
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: c3e3d4904bad39e951e8ba69013ac95894130489
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: af9101be0067311fb1a3c0e6e575f186e8ccf161
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245373"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265971"
 ---
 # <a name="client-configuration"></a>Configuration client
+
 Vous pouvez utiliser la configuration du client Windows Communication Foundation (WCF) pour spécifier l’adresse, la liaison, le comportement et le contrat, les propriétés « ABC » du point de terminaison client, que les clients utilisent pour se connecter aux points de terminaison de service. L' [\<client>](../../configure-apps/file-schema/wcf/client.md) élément a un [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) élément dont les attributs sont utilisés pour configurer le point de terminaison ABC. Ces attributs sont décrits dans la section [Configuration des points de terminaison](#configuring-endpoints) .  
   
  L' [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) élément contient également un [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md) élément qui est utilisé pour spécifier les paramètres d’importation et d’exportation des métadonnées, un [\<headers>](../../configure-apps/file-schema/wcf/headers.md) élément qui contient une collection d’en-têtes d’adresse personnalisés et un [\<identity>](../../configure-apps/file-schema/wcf/identity.md) élément qui permet l’authentification d’un point de terminaison par d’autres points de terminaison qui échangent des messages avec lui. Les [\<headers>](../../configure-apps/file-schema/wcf/headers.md) [\<identity>](../../configure-apps/file-schema/wcf/identity.md) éléments et font partie de <xref:System.ServiceModel.EndpointAddress> et sont décrits dans l’article [adresses](endpoint-addresses.md) . Des liens vers des rubriques qui expliquent l’utilisation des extensions de métadonnées sont fournis dans la section [Configuration des métadonnées](#configuring-metadata) .  
   
 ## <a name="configuring-endpoints"></a>Configuration des points de terminaison  
+
  La configuration client est conçue pour permettre au client de spécifier un ou plusieurs points de terminaison, chacun avec son propre nom, adresse et contrat, avec chacun référençant [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) les [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) éléments et dans la configuration client à utiliser pour configurer ce point de terminaison. Le fichier de configuration client doit être nommé « App.config », car il s’agit du nom attendu par le runtime WCF. L'exemple suivant illustre un fichier de configuration client.  
   
 ```xml  
@@ -92,9 +94,10 @@ Vous pouvez utiliser la configuration du client Windows Communication Foundation
  L'attribut `contract` spécifie quel contrat le point de terminaison expose. Cette valeur correspond au <xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> de <xref:System.ServiceModel.ServiceContractAttribute>. La valeur par défaut est le nom de type complet de la classe qui implémente le service.  
   
 ### <a name="configuring-metadata"></a>Configuration des métadonnées  
+
  L' [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md) élément est utilisé pour spécifier les paramètres utilisés pour enregistrer des extensions d’importation de métadonnées. Pour plus d’informations sur l’extension du système de métadonnées, consultez [extension du système de métadonnées](../extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Points de terminaison : adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)
+- [Points de terminaison : Adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)
 - [Configuration des comportements clients](../configuring-client-behaviors.md)

@@ -27,17 +27,19 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: 3aad7b2ff047a2d9ad12c23d16773e482a395c10
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: aec7d6b44e63558ae70bc0eb41f94e55c8a6c325
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551195"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266335"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Génération et compilation du code source à partir d’un graphique CodeDOM
+
 L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la génération de code source à partir de graphiques d’objets CodeDOM et pour la gestion de la compilation avec les compilateurs pris en charge. Un fournisseur de code peut produire du code source dans un langage de programmation particulier en fonction d’un graphique CodeDOM. Une classe qui dérive de <xref:System.CodeDom.Compiler.CodeDomProvider> peut fournir en général des méthodes pour générer et compiler le code pour le langage pris en charge par le fournisseur.  
   
 ## <a name="using-a-codedom-code-provider-to-generate-source-code"></a>Utilisation d’un fournisseur de code CodeDOM pour générer du code source  
+
  Pour générer du code source dans un langage particulier, vous avez besoin d’un graphique CodeDOM qui représente la structure du code source à générer.  
   
  L’exemple suivant montre comment créer une instance de <xref:Microsoft.CSharp.CSharpCodeProvider> :  
@@ -53,6 +55,7 @@ L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la
  [!code-vb[CodeDomExample#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#22)]  
   
 ## <a name="using-a-codedom-code-provider-to-compile-assemblies"></a>Utilisation d’un fournisseur de code CodeDOM pour compiler des assemblys  
+
  **Appel de la compilation**  
   
  Pour compiler un assembly à l’aide d’un fournisseur CodeDom, vous devez disposer du code source à compiler dans un langage pour lequel vous avez un compilateur, ou d’un graphique CodeDOM à partir duquel ce code source à compiler peut être généré.  
@@ -90,6 +93,7 @@ L’espace de noms <xref:System.CodeDom.Compiler> fournit des interfaces pour la
  [!code-vb[CodeDomExample#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#23)]  
   
 ## <a name="languages-with-initial-support"></a>Langages avec prise en charge initiale  
+
  Le .NET Framework fournit des compilateurs de code et des générateurs de code pour les langages suivants : C#, Visual Basic, C++ et JScript. La prise en charge de codeDOM peut être étendue à d’autres langages en implémentant des générateurs de code et des compilateurs de code propres au langage.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -2,12 +2,12 @@
 title: Intégration de composants transactionnels Enterprise Services
 ms.date: 03/30/2017
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
-ms.openlocfilehash: 3fd8876de53be30f18e4fa9d7f4a1cc07ab5e220
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d235806ba94d68cadca91a17361bfd5bab1e1332
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554102"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265867"
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Intégration de composants transactionnels Enterprise Services
 
@@ -16,6 +16,7 @@ Windows Communication Foundation (WCF) fournit un mécanisme automatique pour l�
  Afin d’offrir un niveau d’interopérabilité suffisant entre les transactions entrantes et les transactions de contexte COM+, l’implémentation de service doit créer une instance <xref:System.Transactions.TransactionScope> et utiliser la valeur appropriée de l’énumération <xref:System.Transactions.EnterpriseServicesInteropOption>.  
   
 ## <a name="integrating-enterprise-services-with-a-service-operation"></a>Intégration des composants Enterprise Services à une opération de service  
+
  L’exemple de code suivant contient une opération (autorisant le transfert des transactions) qui crée une étendue <xref:System.Transactions.TransactionScope> à l’aide de l’option <xref:System.Transactions.EnterpriseServicesInteropOption.Full>. Les conditions suivantes s'appliquent à notre exemple :  
   
 - Si le client transfère une transaction, l'opération, y compris l'appel au composant Enterprise Services, est exécutée dans les limites de portée de cette transaction. L’utilisation de <xref:System.Transactions.EnterpriseServicesInteropOption.Full> assure la synchronisation de la transaction avec le contexte <xref:System.EnterpriseServices>, ce qui signifie que la transaction ambiante de <xref:System.Transactions> correspond à celle de <xref:System.EnterpriseServices>.  
@@ -63,6 +64,7 @@ public class CustomerService : ICustomerServiceContract
  Si aucune synchronisation n'est requise entre la transaction en cours d'une opération et les appels aux composants transactionnels Enterprise Services, utilisez l'option <xref:System.Transactions.EnterpriseServicesInteropOption.None> lorsque vous instanciez l'instance <xref:System.Transactions.TransactionScope>.  
   
 ## <a name="integrating-enterprise-services-with-a-client"></a>Intégration des composants Enterprise Services à un client  
+
  L'exemple de code suivant contient un code client qui utilise une instance <xref:System.Transactions.TransactionScope> avec le paramètre <xref:System.Transactions.EnterpriseServicesInteropOption.Full>. Dans cet exemple de code, les appels aux opérations de service qui prennent en charge le transfert des transactions se produisent dans les mêmes limites de portée de transaction que les appels aux composants Enterprise Services, leurs transactions étant identiques.  
   
 ```csharp

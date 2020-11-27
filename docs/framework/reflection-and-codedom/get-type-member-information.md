@@ -10,17 +10,18 @@ dev_langs:
 - cpp
 - csharp
 - vb
-ms.openlocfilehash: fa7af39c0addb328944a03236c26982301caf722
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 771917bb2ae5cae56c775ae23119d5eda9701df1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865318"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266322"
 ---
 # <a name="how-to-get-type-and-member-information-by-using-reflection"></a>Procédure : Obtenir des informations de type et de membre à l’aide de la réflexion
+
 L' <xref:System.Reflection> espace de noms contient de nombreuses méthodes pour obtenir des informations sur les types et leurs membres. Cet article illustre l’une de ces méthodes, <xref:System.Type.GetMembers%2A?displayProperty=nameWithType> . Pour plus d’informations, consultez [vue d’ensemble](reflection.md)de la réflexion.
   
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant obtient des informations sur les types et les membres à l’aide de la réflexion :
 
