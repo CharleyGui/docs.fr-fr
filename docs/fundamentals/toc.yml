@@ -384,6 +384,8 @@ items:
             href: ../core/diagnostics/index.md
           - name: Débogueurs gérés
             href: ../core/diagnostics/managed-debuggers.md
+          - name: Vidages
+            href: ../core/diagnostics/dumps.md
           - name: Déboguer des vidages Linux
             href: ../core/diagnostics/debug-linux-dumps.md
           - name: EventCounters
@@ -465,7 +467,7 @@ items:
             items:
               - name: Règles de qualité du code
                 items:
-                  - name: Vue d’ensemble
+                  - name: Vue d'ensemble
                     href: code-analysis/quality-rules/index.md
                   - name: Règles de conception
                     items:
@@ -1506,7 +1508,7 @@ items:
             href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Opérations de chaînes de base
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: ../standard/base-types/basic-string-operations.md
                 displayName: string operations
               - name: Créer de nouvelles chaînes
@@ -1632,7 +1634,7 @@ items:
                 href: ../standard/serialization/how-to-determine-if-netstandard-object-is-serializable.md
           - name: "Sérialisation\_XML et\_SOAP"
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: ../standard/serialization/xml-and-soap-serialization.md
               - name: Sérialisation XML en profondeur
                 href: ../standard/serialization/introducing-xml-serialization.md
