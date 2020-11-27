@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 6221f253746ac304115fe844966e2cf552263d04
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4a1cb6d804d313f438fc8e7a92946d55f73b9ee5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551143"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288578"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Sécurité de message avec un client de certificat
+
 Le scénario suivant montre un client et un service Windows Communication Foundation (WCF) sécurisés à l’aide du mode de sécurité message. Le client et le service sont tous les deux authentifiés à l'aide de certificats. Pour plus d’informations, consultez [sécurité des applications distribuées](distributed-application-security.md).
 
  ![Capture d’écran montrant un client avec un certificat.](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
@@ -31,19 +32,22 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
 - Créez un service à l'aide de la configuration fournie, mais ne définissez pas de point de terminaison.  
   
 ### <a name="code"></a>Code  
+
  Le code ci-dessous montre comment créer un point de terminaison de service qui utilise la sécurité de message pour établir un contexte sécurisé.  
   
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
 ### <a name="configuration"></a>Configuration  
+
  La configuration ci-dessous peut être utilisée à la place du code.  
   
 ```xml  
@@ -85,22 +89,25 @@ Le scénario suivant montre un client et un service Windows Communication Founda
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
+
  Le code ci-dessous crée le client. La liaison s’effectue avec la sécurité en mode de message et le type d’informations d’identification client a la valeur `Certificate`.  
   
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
 ### <a name="configuration"></a>Configuration  
+
  La configuration ci-dessous spécifie le certificat client à l'aide d'un comportement de point de terminaison. Pour plus d’informations sur les certificats, consultez [Utilisation de certificats](working-with-certificates.md). Le code utilise également un `identity` élément <> pour spécifier un DNS (Domain Name System) de l’identité de serveur attendue. Pour plus d’informations sur l’identité, consultez [identité du service et authentification](service-identity-and-authentication.md).  
   
 ```xml  

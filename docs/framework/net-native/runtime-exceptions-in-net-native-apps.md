@@ -2,20 +2,22 @@
 title: Exceptions du runtime dans les applications natives .NET
 ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
-ms.openlocfilehash: 12df2ef7bf6e86a60dfa4c130f35969e72ac5211
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5c521eed94590e583a761cc2003460875e690fa9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180952"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287850"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Exceptions du runtime dans les applications natives .NET
+
 Il est important de tester les versions release de votre application de plateforme Windows universelle sur leurs plateformes cibles, car les configurations debug et release sont totalement différentes. Par défaut, la configuration debug utilise le runtime .NET Core pour compiler votre application, mais la configuration release utilise .NET Native pour compiler votre application en code natif.  
   
 > [!IMPORTANT]
-> Pour plus d’informations sur la gestion des exceptions [MissingMetadataException](missingmetadataexception-class-net-native.md), [MissingInteropDataException](missinginteropdataexception-class-net-native.md)et [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) que vous pouvez rencontrer lors du test des versions release de votre application, consultez la section «étape 4 : résoudre manuellement les métadonnées manquantes : dans la rubrique [prise en main](getting-started-with-net-native.md) , ainsi que la référence de fichier de configuration de la [réflexion et](reflection-and-net-native.md) de la .net native et des [directives Runtime (Rd. Xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+> Pour plus d’informations sur la gestion des exceptions [MissingMetadataException](missingmetadataexception-class-net-native.md), [MissingInteropDataException](missinginteropdataexception-class-net-native.md)et [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) que vous pouvez rencontrer lors du test des versions release de votre application, consultez la section «étape 4 : résoudre manuellement les métadonnées manquantes : dans la rubrique [prise en main](getting-started-with-net-native.md) , ainsi que la référence de fichier de Configuration de [.net Native](reflection-and-net-native.md) et de [directives Runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="debug-and-release-builds"></a>Versions debug et release  
+
  Quand la version debug s’exécute sur le runtime .NET Core, elle n’a pas été compilée en code natif. Ainsi, tous les services normalement fournis par le runtime sont accessibles à votre application.  
   
  D’autre part, la version release est compilée en code natif pour ses plateformes cibles, elle supprime la plupart des dépendances vis-à-vis des runtimes et bibliothèques externes et elle optimise largement le code à des fins de performances maximales.  
@@ -32,7 +34,9 @@ Il est important de tester les versions release de votre application de platefor
 > Vous pouvez déterminer si les versions debug et release sont compilées avec la chaîne d’outils .NET Native en cochant ou non la case **Compiler avec la chaîne de l’outil du code natif .NET** .   Notez quand même que le Windows Store compile toujours la version de production de votre application avec la chaîne d’outils .NET Native.  
   
 <a name="Messages"></a>
+
 ## <a name="runtime-exception-messages"></a>Runtime exception messages  
+
  Pour réduire la taille de l’exécutable de l’application, .NET Native n’inclut pas le texte complet des messages d’exception. Ainsi, les exceptions du runtime levées dans les versions release risquent de ne pas afficher le texte complet des messages d’exception. Le texte peut plutôt consister en une sous-chaîne assortie d’un lien à suivre pour plus d’informations. Par exemple, les informations sur l’exception peuvent apparaître comme suit :  
   
 ```output
@@ -52,7 +56,9 @@ Additional information: Value does not fall within the expected range.
 ```  
   
 <a name="CallStack"></a>
+
 ## <a name="runtime-call-stack"></a>Runtime call stack  
+
  Du fait de l’incorporation et des autres optimisations, la pile des appels affichée par une application compilée par la chaîne d’outils .NET Native risque de ne pas vous aider à identifier clairement le chemin vers une exception runtime.  
   
  Pour obtenir la pile complète, exécutez plutôt la version debug.  

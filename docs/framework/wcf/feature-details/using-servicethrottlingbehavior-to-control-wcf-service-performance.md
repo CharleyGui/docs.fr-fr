@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - behavior [WCF], service performance
 ms.assetid: f9dc120c-dc24-49d5-930e-b22f5bc73423
-ms.openlocfilehash: 9cc5141805504bc46391105f475860b032f12d32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 44cc924de0c3079bb2f8125a7ac63fa494d4aca1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600229"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289410"
 ---
 # <a name="using-servicethrottlingbehavior-to-control-wcf-service-performance"></a>Utilisation de ServiceThrottlingBehavior pour contrôler les performances du service WCF
+
 La classe <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> expose les propriétés que vous pouvez utiliser pour limiter le nombre d'instances ou de sessions créées au niveau de l'application. À l’aide de ce comportement, vous pouvez ajuster les performances de votre application Windows Communication Foundation (WCF).  
   
 ## <a name="controlling-service-instances-and-concurrent-calls"></a>Contrôle des instances de service et des appels simultanés  
+
  Utilisez la propriété <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> pour spécifier le nombre maximal des messages en cours de traitement actif dans une classe <xref:System.ServiceModel.ServiceHost>, et la propriété <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> pour spécifier le nombre maximal d'objets <xref:System.ServiceModel.InstanceContext> dans le service.  
   
  Étant donné que la détermination des paramètres de ces propriétés a généralement lieu après une expérience concrète de l’exécution de l’application par rapport aux charges, les paramètres des <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> propriétés sont généralement spécifiés dans un fichier de configuration de l’application à l’aide de l' [\<serviceThrottling>](../../configure-apps/file-schema/wcf/servicethrottling.md) élément.  

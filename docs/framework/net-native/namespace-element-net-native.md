@@ -1,15 +1,16 @@
 ---
-title: <Namespace>, Élément (.NET Native)
+title: <Namespace> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
-ms.openlocfilehash: 06d88a7b0f95c7c1dbe98818b847c92e08a57a19
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 05de04685f8ba746f55bf040c74fd3831c5b63ca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180954"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287889"
 ---
-# <a name="namespace-element-net-native"></a>\<Namespace>, Élément (.NET Native)
+# <a name="namespace-element-net-native"></a>\<Namespace> , Élément (.NET Native)
+
 Applique la stratégie de réflexion runtime à tous les types dans un espace de noms spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,6 +30,7 @@ Applique la stratégie de réflexion runtime à tous les types dans un espace de
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -76,10 +78,11 @@ Applique la stratégie de réflexion runtime à tous les types dans un espace de
 |[\<Library>](library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L' [\<Library>](library-element-net-native.md) élément peut avoir zéro ou un [\<Assembly>](assembly-element-net-native.md) élément.|  
 |`<Namespace>`|Applique la stratégie de réflexion à tous les types dans un espace de noms parent.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs. Si aucun n'est présent, l'élément `<Namespace>` sert uniquement de conteneur pour les éléments enfants. S'ils sont présents, l'élément `<Namespace>` applique la stratégie de réflexion runtime à tous les types dans l'espace de noms spécifié.  
   
- Lorsqu’il s’agit d’un enfant de l' [\<Assembly>](assembly-element-net-native.md) élément, l' `<Namespace>` élément substitue la stratégie de réflexion Runtime définie par l' [\<Assembly>](assembly-element-net-native.md) élément.  
+ Lorsqu’il s’agit d’un enfant de l' [\<Assembly>](assembly-element-net-native.md) élément, l' `<Namespace>` élément substitue la stratégie de réflexion Runtime définie par l'  [\<Assembly>](assembly-element-net-native.md) élément.  
   
 ## <a name="see-also"></a>Voir aussi
 

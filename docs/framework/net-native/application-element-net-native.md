@@ -1,19 +1,20 @@
 ---
-title: <Application>, Élément (.NET Native)
+title: <Application> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-ms.openlocfilehash: e26826b3d8674b536ab0897182da58bc02cfd00b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a7f2eca5a5bb5cfb7b9827f2463454a17fc128cb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128515"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288136"
 ---
-# <a name="application-element-net-native"></a>\<Application>, Élément (.NET Native)
+# <a name="application-element-net-native"></a>\<Application> , Élément (.NET Native)
+
 Sert de conteneur pour les types à l'échelle de l'application et pour les membres de type dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution, et applique la stratégie de réflexion runtime à tous les éléments de programme dans une application.  
   
  Élément \<Directives>  
-\<Application>, Élément (Rd. Xml)  
+\<Application> , Élément (rd.xml)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,6 +32,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents. Dans le tableau Éléments enfants, la stratégie fait référence au type de métadonnées rendues disponibles pour des éléments de programme spécifiques au moment de l'exécution.  
   
 ### <a name="attributes"></a>Attributs  
@@ -74,7 +76,8 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
 |-------------|-----------------|  
 |[\<Directives>](directives-element-net-native.md)|Élément racine d'un fichier de directives de runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' [\<Directives>](directives-element-net-native.md) élément peut contenir zéro ou un `<Application>` élément. Un même fichier de directives de réflexion ne peut pas contenir plusieurs éléments `<Application>`.  
   
  Un élément `<Application>` peut être utilisé de deux manières différentes :  
@@ -85,7 +88,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Library>Appartient](library-element-net-native.md)
-- [\<Directives>Appartient](directives-element-net-native.md)
+- [\<Library> Appartient](library-element-net-native.md)
+- [\<Directives> Appartient](directives-element-net-native.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

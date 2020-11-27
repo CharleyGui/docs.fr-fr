@@ -1,15 +1,16 @@
 ---
-title: <Method>, Élément (.NET Native)
+title: <Method> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-ms.openlocfilehash: 8db32c660846b4f4071fff2a40c760a3d1ef2489
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1d57457c90e44c70caa301eccc02c5831d283cea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180987"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287902"
 ---
-# <a name="method-element-net-native"></a>\<Method>, Élément (.NET Native)
+# <a name="method-element-net-native"></a>\<Method> , Élément (.NET Native)
+
 Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,6 +23,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -37,7 +39,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|*method_name*|Le nom de la méthode. Le type de la méthode est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
+|*method_name*|Nom de la méthode. Le type de la méthode est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="signature-attribute"></a>Attribut de signature  
   
@@ -67,14 +69,16 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Un élément `<Method>` d'une méthode générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie.  
   
  Vous pouvez utiliser l'attribut `Signature` pour spécifier la stratégie d'une surcharge de méthode particulière. Sinon, si l'attribut `Signature` est absent, la directive runtime s'applique à toutes les surcharges de la méthode.  
   
- Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l' `Activate` attribut de l' [\<Assembly>](assembly-element-net-native.md) élément, [\<Namespace>](namespace-element-net-native.md) , [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .  
+ Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l' `Activate` attribut de l'  [\<Assembly>](assembly-element-net-native.md) élément, [\<Namespace>](namespace-element-net-native.md) , [\<Type>](type-element-net-native.md) ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=nameWithType> qui convertit un nombre au format binaire, hexadécimale ou octale.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
@@ -148,4 +152,4 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
-- [\<MethodInstantiation>Appartient](methodinstantiation-element-net-native.md)
+- [\<MethodInstantiation> Appartient](methodinstantiation-element-net-native.md)

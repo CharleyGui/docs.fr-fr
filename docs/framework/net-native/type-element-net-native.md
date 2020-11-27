@@ -1,15 +1,15 @@
 ---
-title: <Type>, Élément (.NET Native)
+title: <Type> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
-ms.openlocfilehash: 4e88b49b82513079ddcf6f0bafe02d44235a406a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e71df41c4a37206910d835ee85dc3d68b4cbad4a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73091852"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287707"
 ---
-# <a name="type-element-net-native"></a>\<Type>, Élément (.NET Native)
+# <a name="type-element-net-native"></a>\<Type> , Élément (.NET Native)
 
 Applique la stratégie runtime à un type particulier, tel qu'une classe ou une structure.
 
@@ -53,7 +53,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Valeur|Description|
 |-----------|-----------------|
-|*type_name*|Nom du type. Si cet `<Type>` élément est l’enfant d’un [\<Namespace>](namespace-element-net-native.md) élément ou d’un autre `<Type>` élément, *type_name* pouvez inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|
+|*TYPE_NAME*|Nom du type. Si cet `<Type>` élément est l’enfant d’un [\<Namespace>](namespace-element-net-native.md) élément ou d’un autre `<Type>` élément, *type_name* pouvez inclure le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet.|
 
 ## <a name="all-other-attributes"></a>Tous les autres attributs
 
@@ -88,7 +88,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |`<Type>`|Applique la stratégie de réflexion à un type et à tous ses membres.|
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs. Si aucun n'est présent, l'élément `<Type>` sert de conteneur dont les types enfants définissent une stratégie pour des membres individuels.
 
@@ -98,7 +98,7 @@ Un élément `<Type>` d'un type générique applique sa stratégie à toutes les
 
 Si le type est un type générique, son nom est décoré par un accent grave (\`) suivi de son nombre de paramètres génériques. Par exemple, l'attribut `Name` d'un élément `<Type>` pour la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> est ``Name="System.Collections.Generic.List`1"``.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant utilise la réflexion pour afficher des informations sur les champs, les propriétés et les méthodes de la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle. Comme l'exemple récupère simplement les informations de type, la disponibilité des métadonnées est contrôlée par le paramètre de stratégie `Browse`.
 
@@ -117,7 +117,8 @@ L'exemple suivant utilise la réflexion pour afficher des informations sur les c
 </Directives>
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
+
  L'exemple suivant utilise la réflexion pour récupérer un objet <xref:System.Reflection.PropertyInfo> qui représente la propriété <xref:System.String.Chars%2A?displayProperty=nameWithType>. Il utilise ensuite la méthode <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> pour récupérer la valeur du septième caractère d'une chaîne et afficher tous les caractères de la chaîne. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.
 
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]

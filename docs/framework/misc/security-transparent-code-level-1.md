@@ -10,12 +10,12 @@ helpviewer_keywords:
 - security-transparent code
 - security [.NET Framework], security-transparent code
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-ms.openlocfilehash: 55cf6b937d4bb12c44aae2022921c8adb8180df4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 97acccdc1dcab11e42d116f4743e1182029e2dd6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556419"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288188"
 ---
 # <a name="security-transparent-code-level-1"></a>Code transparent de sécurité, niveau 1
 
@@ -35,7 +35,9 @@ ms.locfileid: "90556419"
 - [Exemples de transparence de la sécurité](#security_transparency_examples)  
   
 <a name="the_level_1_transparency_model"></a>
+
 ## <a name="the-level-1-transparency-model"></a>Modèle de transparence de niveau 1  
+
  Quand vous utilisez la transparence de niveau 1, vous utilisez un modèle de sécurité qui sépare le code en méthodes transparentes de sécurité, critiques sécurisées et critiques de sécurité.  
   
  Vous pouvez marquer un assembly entier, certaines classes d'un assembly ou certaines méthodes d'une classe comme étant transparents de sécurité. Le code transparent de sécurité ne peut pas élever les privilèges. Cette restriction a trois conséquences :  
@@ -58,7 +60,9 @@ ms.locfileid: "90556419"
  Pour assurer une compatibilité avec les versions antérieures du .NET Framework, tous les membres qui ne sont pas annotés avec des attributs de transparence sont considérés comme étant critiques sécurisés. Tous les types qui ne sont pas annotés sont considérés comme étant transparents. Il n'existe aucune règle d'analyse statique pour valider la transparence. Par conséquent, vous serez peut-être amené à déboguer les erreurs de transparence au moment de l'exécution.  
   
 <a name="transparency_attributes"></a>
+
 ## <a name="transparency-attributes"></a>Attributs de transparence  
+
  Le tableau suivant décrit les trois attributs que vous utilisez pour annoter votre code pour la transparence.  
   
 |Attribut|Description|  
@@ -70,6 +74,7 @@ ms.locfileid: "90556419"
  L'attribut <xref:System.Security.SecuritySafeCriticalAttribute> permet au code transparent de sécurité d'accéder aux membres critiques de sécurité du même assembly. Considérez le code transparent de sécurité et le code critique de sécurité de votre assembly comme séparés en deux assemblys. Le code transparent de sécurité ne serait pas en mesure de distinguer les membres privés ou internes du code critique de sécurité. De plus, l'accès à l'interface publique du code critique de sécurité faire généralement l'objet d'un audit. Vous ne trouveriez probablement pas logique qu'un état privé ou interne soit accessible en dehors de l'assembly ; vous préféreriez que l'état reste isolé. L'attribut <xref:System.Security.SecuritySafeCriticalAttribute> garantit l'isolation de l'état entre le code transparent de sécurité et le code critique de sécurité tout en offrant la possibilité de substituer l'isolation quand cela est nécessaire. Le code transparent de sécurité ne peut pas accéder au code critique de sécurité privé ou interne à moins que ces membres aient été marqués avec <xref:System.Security.SecuritySafeCriticalAttribute>. Avant d'appliquer <xref:System.Security.SecuritySafeCriticalAttribute>, auditez ce membre comme s'il était exposé publiquement.  
   
 ### <a name="assembly-wide-annotation"></a>Annotation à l'échelle de l'assembly  
+
  Le tableau suivant décrit les effets de l'utilisation d'attributs de sécurité au niveau de l'assembly.  
   
 |Attribut d’assembly|État de l'assembly|  
@@ -81,7 +86,9 @@ ms.locfileid: "90556419"
 |`SecurityCritical`|Tout le code est transparent par défaut. Cependant, chaque type et membre individuel peut avoir d'autres attributs.|  
   
 <a name="security_transparency_examples"></a>
+
 ## <a name="security-transparency-examples"></a>Exemples de transparence de la sécurité  
+
  Pour utiliser les règles de transparence du .NET Framework 2.0 (transparence de niveau 1), utilisez l'annotation d'assembly suivante :  
   
 ```csharp

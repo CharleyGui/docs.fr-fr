@@ -1,15 +1,16 @@
 ---
-title: <Parameter>, Élément (.NET Native)
+title: <Parameter> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 22aaa1f3-596f-4733-93db-f4bcabcb5240
-ms.openlocfilehash: c6dfc347d44a794ee8496c45ca879f9daab12b22
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7e812ab60eb0a89eb868346733a8ea74e2f76d3e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128200"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287863"
 ---
-# <a name="parameter-element-net-native"></a>\<Parameter>, Élément (.NET Native)
+# <a name="parameter-element-net-native"></a>\<Parameter> , Élément (.NET Native)
+
 Applique la stratégie de réflexion au type de l’argument passé à une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,13 +30,14 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
   
 |Attribut|Type d'attribut|Description|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Le nom du paramètre. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
+|`Name`|Général|Attribut requis. Nom du paramètre. Par exemple, pour la signature de méthode `String.CompareTo(Object value)`, la valeur de l'attribut `Name` est « value ».|  
 |`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les éléments de programme, mais ne permet pas l'accès au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
@@ -60,6 +62,7 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -68,12 +71,13 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
 |-------------|-----------------|  
 |[\<Method>](method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L' `<Parameter>` élément est un enfant de l' [\<Method>](method-element-net-native.md) élément et est utilisé pour appliquer la stratégie à un paramètre de méthode particulier. Le paramètre de méthode spécifique est défini par le nom plutôt que par le type. Au moins un attribut qui représente un type de stratégie, tel que `Activate` ou `Dynamic`, doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Method>Appartient](method-element-net-native.md)
+- [\<Method> Appartient](method-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)

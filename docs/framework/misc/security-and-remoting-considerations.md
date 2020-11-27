@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 3a272b2a8f164aad07413a069e68a2146d0df6a7
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 883c20483c4d315a45e1f4dab959d42cbb6e3c4b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855710"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288201"
 ---
 # <a name="security-and-remoting-considerations"></a>Considérations sur la sécurité et la communication à distance
 
@@ -26,6 +26,7 @@ La communication à distance vous permet de définir des appels transparents ent
  En règle générale, vous ne devez jamais exposer de méthodes, de propriétés ou d’événements protégés par un [LinkDemand](link-demands.md) déclaratif et des <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> vérifications de sécurité. Avec la communication à distance, ces contrôles ne sont pas appliqués. D’autres vérifications de sécurité, telles que <xref:System.Security.Permissions.SecurityAction.Demand> , [Assert](using-the-assert-method.md), etc., fonctionnent entre les domaines d’application au sein d’un processus, mais ne fonctionnent pas dans les scénarios inter-processus ou inter-ordinateurs.  
   
 ## <a name="protected-objects"></a>Objets protégés  
+
  Certains objets comportent un état de sécurité. Ces objets ne doivent pas être passés à du code non fiable, qui obtiendrait alors des autorisations de sécurité n'entrant pas dans le champ de ses propres autorisations.  
   
  Un exemple consiste à créer un objet <xref:System.IO.FileStream>. Le <xref:System.Security.Permissions.FileIOPermission> est exigé au moment de la création et, en cas de réussite, l'objet de fichier est retourné. Toutefois, si cette référence d'objet est passée au code sans les autorisations de fichier, l'objet pourra lire et écrire dans ce fichier.  
@@ -33,6 +34,7 @@ La communication à distance vous permet de définir des appels transparents ent
  La défense la plus simple pour un tel objet consiste à demander la même **autorisation FileIOPermission** de tout code visant à obtenir la référence d’objet via un élément d’API public.  
   
 ## <a name="application-domain-crossing-issues"></a>Questions relatives au franchissement de domaine d'application  
+
  Pour isoler du code dans des environnements d'hébergement managés, il est courant de générer plusieurs domaines d'application enfants dont la stratégie explicite réduit les niveaux d'autorisations pour divers assemblys. Cependant, la stratégie pour ces assemblys reste inchangée dans le domaine d'application par défaut. Si l'un des domaines d'application enfants peut forcer le domaine d'application par défaut à charger un assembly, l'effet de l'isolement du code est perdu et les types dans l'assembly chargé de force pourront exécuter du code à un niveau de confiance plus élevé.  
   
  Un domaine d'application peut forcer un autre domaine d'application à charger un assembly et exécuter le code qu'il contient en appelant un proxy vers un objet hébergé dans l'autre domaine d'application. Pour obtenir un proxy entre domaines d'application, le domaine d'application qui héberge l'objet doit en distribuer un par l'intermédiaire d'un paramètre d'appel de méthode ou d'une valeur de retour. Ou, si le domaine d'application vient d'être créé, le créateur possède un proxy vers l'objet Ou, si le domaine d'application vient d'être créé, le créateur possède un proxy vers l'objet <xref:System.AppDomain> par défaut. Ainsi, pour éviter d’interrompre l’isolement du code, un domaine d’application dont le niveau de confiance est supérieur ne doit pas distribuer de références aux objets marshalés par référence (instances de classes dérivées de <xref:System.MarshalByRefObject>) dans son domaine à des domaines d’application dont les niveaux de confiance sont moindres.  

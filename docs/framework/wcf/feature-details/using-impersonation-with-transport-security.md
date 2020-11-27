@@ -1,18 +1,20 @@
 ---
-title: Utilisation d'emprunt d'identité avec sécurité du transport
+title: Utilisation de l'emprunt d'identité avec la sécurité de transport
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-ms.openlocfilehash: 1d33bfbbb74266aefa538166b4e1aca7d7e315ef
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 14914bc65d5033c54640e06b79713ea1871daf18
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594970"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289501"
 ---
-# <a name="using-impersonation-with-transport-security"></a>Utilisation d'emprunt d'identité avec sécurité du transport
+# <a name="using-impersonation-with-transport-security"></a>Utilisation de l'emprunt d'identité avec la sécurité de transport
+
 L' *emprunt d’identité* est la capacité d’une application serveur à prendre l’identité du client. Les services utilisent couramment l'emprunt d'identité lors de la validation de l'accès aux ressources. L'application serveur s'exécute à l'aide d'un compte de service, mais lorsque le serveur accepte une connexion cliente, il emprunte l'identité du client afin d'exécuter des contrôles d'accès à l'aide des informations d'identification du client. La sécurité de transport est un mécanisme permettant à la fois de passer des informations d'identification et sécuriser les communications à l'aide de ces informations. Cette rubrique décrit l’utilisation de la sécurité de transport dans Windows Communication Foundation (WCF) avec la fonctionnalité d’emprunt d’identité. Pour plus d’informations sur l’emprunt d’identité à l’aide de la sécurité de message, consultez [délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="five-impersonation-levels"></a>Les cinq niveaux d'emprunt d'identité  
+
  La sécurité de transport utilise cinq niveaux d'emprunt d'identité, comme le décrit le tableau suivant.  
   
 |Niveau d'emprunt d'identité|Description|  
@@ -28,9 +30,11 @@ L' *emprunt d’identité* est la capacité d’une application serveur à prend
  L'utilisation de l'emprunt d'identité avec les niveaux `Impersonate` ou `Delegate` nécessite que l'application serveur ait le privilège `SeImpersonatePrivilege`. Une application a ce privilège par défaut si elle s'exécute sur un compte du groupe Administrateurs ou sur un compte avec un service SID (service réseau, service local ou système local). L'emprunt d'identité ne requiert pas l'authentification mutuelle du client et du serveur. Certains schémas d'authentification qui prennent en charge l'emprunt d'identité, tels que NTLM, ne peuvent pas être utilisés avec l'authentification mutuelle.  
   
 ## <a name="transport-specific-issues-with-impersonation"></a>Problèmes spécifiques au transport avec l'emprunt d'identité  
+
  Le choix d’un transport dans WCF affecte les choix possibles pour l’emprunt d’identité. Cette section décrit les problèmes affectant les transports HTTP et de canaux nommés standard dans WCF. Les transports personnalisés ont leurs propres restrictions quant à la prise en charge de l'emprunt d'identité.  
   
 ### <a name="named-pipe-transport"></a>Transport de canal nommé  
+
  Les éléments suivants sont utilisés avec le transport de canal nommé :  
   
 - Le transport de canal nommé est prévu uniquement pour une utilisation sur l'ordinateur local. Le transport de canal nommé dans WCF interdit explicitement les connexions entre ordinateurs.  
@@ -40,6 +44,7 @@ L' *emprunt d’identité* est la capacité d’une application serveur à prend
  Pour plus d’informations sur les canaux nommés, consultez [choix d’un transport](choosing-a-transport.md).  
   
 ### <a name="http-transport"></a>Transport HTTP  
+
  Les liaisons qui utilisent le transport HTTP ( <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.BasicHttpBinding> ) prennent en charge plusieurs schémas d’authentification, comme expliqué dans [Présentation de l’authentification http](understanding-http-authentication.md). Le niveau d'emprunt d'identité pris en charge dépend du schéma d'authentification. Les éléments suivants sont utilisés avec le transport http :  
   
 - Le schéma d'authentification `Anonymous` ignore l'emprunt d'identité.  
@@ -56,7 +61,7 @@ L' *emprunt d’identité* est la capacité d’une application serveur à prend
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Délégation et emprunt d'identité](delegation-and-impersonation-with-wcf.md)
+- [Délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md)
 - [Autorisation](authorization-in-wcf.md)
-- [Guide pratique pour emprunter l’identité d’un client sur un service](../how-to-impersonate-a-client-on-a-service.md)
+- [Procédure : emprunter l’identité d’un client sur un service](../how-to-impersonate-a-client-on-a-service.md)
 - [Fonctionnement de l'authentification HTTP](understanding-http-authentication.md)

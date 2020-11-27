@@ -9,14 +9,15 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-ms.openlocfilehash: 942ade69d92d8a213f65a3a2e463b6924e2f986e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 52a9e1bf4c9442bd42beb55b133a185c4a42148d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590213"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288563"
 ---
 # <a name="schema-import-and-export"></a>Importation et exportation de schémas
+
 Windows Communication Foundation (WCF) comprend un nouveau moteur de sérialisation, le <xref:System.Runtime.Serialization.DataContractSerializer> . Le `DataContractSerializer` traduit entre les objets .NET Framework et XML (dans les deux sens). En plus du sérialiseur lui-même, WCF comprend des mécanismes d’importation et d’exportation de schémas associés. Le *schéma* est une description formelle, précise et explicite de la forme du code XML que le sérialiseur produit ou auquel le désérialiseur peut accéder. WCF utilise le langage XSD (XML Schema Definition Language) World Wide Web Consortium (W3C) comme représentation de schéma, qui est largement interopérable avec de nombreuses plateformes tierces.  
   
  Le composant d’importation de schéma, <xref:System.Runtime.Serialization.XsdDataContractImporter> , prend un document de schéma XSD et génère des classes .NET Framework (normalement les classes de contrat de données) de telle sorte que les formulaires sérialisés correspondent au schéma donné.  
@@ -42,9 +43,11 @@ Windows Communication Foundation (WCF) comprend un nouveau moteur de sérialisat
  L'exportateur <xref:System.Runtime.Serialization.XsdDataContractExporter> vous permet d'effectuer l'opération inverse, c'est-à-dire de prendre des types pouvant être sérialisés à l'aide de `DataContractSerializer`, puis de générer un document de schéma XSD.  
   
 ## <a name="fidelity-is-not-guaranteed"></a>Fidélité non garantie  
+
  Lors de la conversion, puis reconversion des schémas ou types, la stricte fidélité des informations converties n'est pas garantie. (Un aller- *retour* signifie que vous importez un schéma pour créer un ensemble de classes et que vous exportez le résultat pour créer à nouveau un schéma.) Le même schéma ne peut pas être retourné. Effectuer à nouveau le processus dans le sens inverse ne garantit pas en effet la fidélité aux informations d'origine. (Exportez un type pour générer son schéma, puis réimportez le type. Il est improbable que le même type soit retourné.)  
   
 ## <a name="supported-types"></a>Types pris en charge  
+
  Le modèle de contrat de données prend uniquement en charge un sous-ensemble limité de schémas WC3. Tout schéma ne se conformant pas à ce sous-ensemble provoquera la levée d'une exception lors de l'importation. Par exemple, il n'est pas possible d'indiquer qu'un membre de données d'un contrat de données doit être sérialisé sous forme d'attribut XML. Les schémas nécessitant l'utilisation d'attributs XML ne sont donc pas pris en charge et provoqueront la levée d'exceptions lors de l'importation, le contrat de données ne pouvant être généré à l'aide des attributs XML appropriés.  
   
  Par exemple, il est impossible d'importer le fragment de schéma suivant à l'aide des paramètres d'importation par défaut.  

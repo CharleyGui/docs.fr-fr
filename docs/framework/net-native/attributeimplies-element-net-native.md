@@ -1,15 +1,16 @@
 ---
-title: <AttributeImplies>, Élément (.NET Native)
+title: <AttributeImplies> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
-ms.openlocfilehash: 2ab1fdc71bc43f61f69a0d9b7bea7acb35e14ea5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4171345bb5337436142128623abc7d183c4477ff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181067"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288110"
 ---
-# <a name="attributeimplies-element-net-native"></a>\<AttributeImplies>, Élément (.NET Native)
+# <a name="attributeimplies-element-net-native"></a>\<AttributeImplies> , Élément (.NET Native)
+
 Définit la stratégie pour les éléments de code auxquels l'attribut conteneur est appliqué.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,6 +29,7 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -52,6 +54,7 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -60,14 +63,15 @@ Définit la stratégie pour les éléments de code auxquels l'attribut conteneur
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L'élément `<AttributeImplies>` est utilisé si son type conteneur est un attribut (autrement dit, une classe dérivée de <xref:System.Attribute?displayProperty=nameWithType>). Si l'attribut est appliqué à un élément de programme particulier, la stratégie définie par l'élément `<AttributeImplies>` s'applique à cet élément de programme.  
   
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs, même si un au moins doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type>Appartient](type-element-net-native.md)
+- [\<Type> Appartient](type-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

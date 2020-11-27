@@ -1,15 +1,16 @@
 ---
-title: <Subtypes>, Élément (.NET Native)
+title: <Subtypes> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
-ms.openlocfilehash: bb719449f3769c5dbbde6d05efdb865c18bb4ab2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7484152c351f59ee84b601584bd84347186628a3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180933"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287811"
 ---
-# <a name="subtypes-element-net-native"></a>\<Subtypes>, Élément (.NET Native)
+# <a name="subtypes-element-net-native"></a>\<Subtypes> , Élément (.NET Native)
+
 Applique la stratégie runtime à toutes les classes héritées du type conteneur.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,6 +29,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -52,6 +54,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -60,12 +63,14 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
 |-------------|-----------------|  
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  L'élément `<Subtypes>` applique la stratégie à tous les sous-types de son type conteneur. Utilisez-le pour appliquer des stratégies distinctes aux types dérivés et à leurs classes de base.  
   
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs, même si un au moins doit être présent.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant définit une classe nommée `BaseClass` et une sous-classe nommée `Derived1`.  
   
  [!code-csharp[ProjectN_Reflection#4](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#4)]  
@@ -89,7 +94,7 @@ Applique la stratégie runtime à toutes les classes héritées du type conteneu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<Type>Appartient](type-element-net-native.md)
+- [\<Type> Appartient](type-element-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
 - [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md)

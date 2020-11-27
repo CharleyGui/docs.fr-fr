@@ -2,17 +2,19 @@
 title: Utilisation d'un programme de résolution de contrat de données
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: 20abd4d928fc51eb359949ecbb216615e9659b7f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a86ad21a5846feec37f8b4b48843eab2d6c161da
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595022"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289631"
 ---
 # <a name="using-a-data-contract-resolver"></a>Utilisation d'un programme de résolution de contrat de données
+
 Un programme de résolution de contrat de données vous permet de configurer des types connus de manière dynamique. Les types connus sont nécessaires lors de la sérialisation ou de la désérialisation d'un type non attendu par un contrat de données. Pour plus d’informations sur les types connus, consultez [types connus de contrat de données](data-contract-known-types.md). Les types connus sont généralement spécifiés statiquement. Cela signifie que vous devez connaître tous les types possibles qu'une opération peut recevoir pendant son implémentation. Voici les scénarios où cela n'est pas vrai et où il est important de pouvoir spécifier les types connus de façon dynamique.  
   
 ## <a name="creating-a-data-contract-resolver"></a>Création d'un programme de résolution de contrat de données  
+
  La création d'un programme de résolution de contrat de données implique l'implémentation de deux méthodes, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> et <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>. Ces deux méthodes implémentent des rappels utilisés respectivement lors de la sérialisation et de la désérialisation. La méthode <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> est appelée lors de la sérialisation, prend un type de contrat de données et le mappe à un nom et espace de noms `xsi:type`. La méthode <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> est appelée lors de la désérialisation, prend un nom et espace de noms `xsi:type` et le résout en type de contrat de données. Ces deux méthodes ont un paramètre `knownTypeResolver` qui peut être utilisé pour utiliser le programme de résolution de type connu par défaut dans votre implémentation.  
   
  L'exemple suivant indique comment implémenter un objet <xref:System.Runtime.Serialization.DataContractResolver> pour un mappage sur et à partir d'un type de contrat de données nommé `Customer`, dérivé d'un type de contrat de données `Person`.  

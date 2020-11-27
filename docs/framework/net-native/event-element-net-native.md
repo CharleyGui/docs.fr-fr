@@ -1,15 +1,16 @@
 ---
-title: <Event>, Élément (.NET Native)
+title: <Event> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
-ms.openlocfilehash: 60da48d5872d7ce61afcffa7977411bc6e1efc7f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b1cf2239e58839c5026bc375ba04568227881bdd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181036"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288097"
 ---
-# <a name="event-element-net-native"></a>\<Event>, Élément (.NET Native)
+# <a name="event-element-net-native"></a>\<Event> , Élément (.NET Native)
+
 Applique la stratégie de réflexion runtime à un événement.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -21,6 +22,7 @@ Applique la stratégie de réflexion runtime à un événement.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -44,6 +46,7 @@ Applique la stratégie de réflexion runtime à un événement.
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour l'événement. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -53,7 +56,8 @@ Applique la stratégie de réflexion runtime à un événement.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Si la stratégie d'un événement n'est pas définie explicitement, elle hérite la stratégie runtime de son élément parent.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: 528824e2d1b5d854f9eef816d3f7b20ba0f2b7db
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 1119965f971e00b1b795378d9af3977074a696f3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224348"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288318"
 ---
 # <a name="code-access-security"></a>Sécurité d'accès du code
 
@@ -44,7 +44,9 @@ ms.locfileid: "92224348"
  Tout le code managé qui cible le Common Language Runtime bénéficie de la sécurité d'accès du code, même si ce code ne fait aucun appel de sécurité d'accès du code. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](code-access-security-basics.md).  
   
 <a name="key_functions"></a>
+
 ## <a name="key-functions-of-code-access-security"></a>Fonctions clés de la sécurité d'accès du code  
+
  La sécurité d'accès du code permet de limiter l'accès du code aux ressources et opérations protégées. Dans le .NET Framework, la sécurité d'accès du code exécute les fonctions suivantes :  
   
 - Définit les autorisations et les jeux d'autorisations qui représentent le droit d'accéder à diverses ressources système.  
@@ -56,7 +58,9 @@ ms.locfileid: "92224348"
 - Applique des restrictions sur le code au moment de l'exécution en comparant les autorisations accordées de chaque appelant sur la pile d'appels avec les autorisations que les appelants doivent posséder.  
   
 <a name="walking_the_call_stack"></a>
+
 ## <a name="walking-the-call-stack"></a>Parcours de la pile des appels  
+
  Pour déterminer si le code est autorisé à accéder à une ressource ou à exécuter une opération, le système de sécurité du runtime parcourt la pile des appels, en comparant les autorisations accordées de chaque appelant à l'autorisation demandée. Si un appelant dans la pile des appels n'a pas l'autorisation demandée, une exception de sécurité est levée et l'accès est refusé. Le parcours de la pile est conçu pour éviter les attaques malveillantes au cours desquelles du code ayant un niveau de confiance plus faible appelle du code ayant un niveau de confiance élevé et l'utilise pour exécuter des actions non autorisées. Demander les autorisations de tous les appelants au moment de l'exécution affecte les performances, mais est essentiel pour protéger le code contre les attaques malveillantes de code ayant un niveau de confiance plus faible. Pour optimiser les performances, vous pouvez faire en sorte que votre code effectue moins de parcours de pile. Toutefois, veillez à ne pas exposer de faille de sécurité à chaque fois que vous faites cela.  
   
  L'illustration suivante présente le parcours de la pile obtenu quand une méthode dans l'assembly A4 réclame que ses appelants bénéficient de l'autorisation P.  
@@ -64,9 +68,10 @@ ms.locfileid: "92224348"
  ![Parcours de pile de la sécurité d’accès du code](media/slide-10a.gif "slide_10a")
   
 <a name="related_topics"></a>
+
 ## <a name="related-articles"></a>Articles connexes
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Notions fondamentales de la sécurité d'accès du code](code-access-security-basics.md)|Décrit la sécurité d'accès du code et ses principales utilisations.|  
 |[Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)|Décrit le modèle de transparence de la sécurité dans le .NET Framework 4.|  

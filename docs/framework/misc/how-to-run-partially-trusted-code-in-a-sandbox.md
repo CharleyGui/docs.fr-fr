@@ -9,12 +9,12 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: 415a42f7c4f4866bb72f19bdd6f02bfdb5158bf8
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: baa04a3c55728590b8aa502648a8ab42bf62f903
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855801"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288279"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)
 
@@ -177,7 +177,8 @@ AppDomain.CreateDomain( string friendlyName,
   
      L'assertion de confiance totale permet d'obtenir les informations détaillées de <xref:System.Security.SecurityException>. Sans <xref:System.Security.PermissionSet.Assert%2A>, la méthode <xref:System.Security.SecurityException.ToString%2A> de <xref:System.Security.SecurityException> détecte que du code de niveau de confiance partielle se trouve sur la pile et restreint les informations retournées. Cela peut provoquer des problèmes de sécurité si le code de confiance partielle peut lire ces informations. Cependant, le risque est atténué par le fait de ne pas accorder <xref:System.Security.Permissions.UIPermission>. L'assertion de confiance totale doit être utilisée avec modération et uniquement quand vous êtes sûr de ne pas autoriser du code à passer du niveau de confiance partielle au niveau de confiance totale. En règle générale, n'appelez pas de code non fiable dans la même fonction et après avoir appelé une assertion de confiance totale. Nous vous conseillons de toujours rétablir l'assertion quand vous avez terminé de l'utiliser.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant implémente la procédure de la section précédente. Dans l'exemple, un projet nommé `Sandboxer` dans une solution Visual Studio contient également un projet nommé `UntrustedCode`, qui implémente la classe `UntrustedClass`. Ce scénario suppose que vous avez téléchargé un assembly de bibliothèque qui contient une méthode censée retourner la valeur `true` ou `false` pour indiquer si le nombre que vous avez fourni est un nombre de Fibonacci. À la place, la méthode essaie de lire un fichier de votre ordinateur. L'exemple suivant illustre le code non fiable.  
   
 ```csharp

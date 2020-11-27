@@ -2,17 +2,19 @@
 title: Utilisation du canal client de découverte
 ms.date: 03/30/2017
 ms.assetid: 1494242a-1d64-4035-8ecd-eb4f06c8d2ba
-ms.openlocfilehash: a74d0ba77977e158a6c6e469a9b6a88c8d1aac82
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: baf822b5c5acd34913fdd58c346426ad91971cb0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575977"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289397"
 ---
 # <a name="using-the-discovery-client-channel"></a>Utilisation du canal client de découverte
+
 Lors de l'écriture d'une application cliente WCF vous devez connaître l'adresse du point de terminaison du service que vous appelez. Dans de nombreux cas, l'adresse du point de terminaison d'un service n'est pas connue à l'avance ou bien l'adresse du service change avec le temps. Le canal client de découverte vous permet d'écrire une application cliente WCF, de décrire le service que vous souhaitez appeler, et le canal client envoie automatiquement une demande de sonde. Lorsqu'un service répond, le canal client de découverte extrait de la réponse de sonde l'adresse du point de terminaison du service et l'utilise pour appeler le service.  
   
 ## <a name="using-the-discovery-client-channel"></a>Utilisation du canal client de découverte  
+
  Pour utiliser le canal client de découverte, ajoutez une instance de <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> à la pile des canaux de votre client. Vous pouvez également utiliser l’objet <xref:System.ServiceModel.Discovery.DynamicEndpoint> et un élément <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> est automatiquement ajouté à votre liaison, s’il n’est pas déjà présent.  
   
 > [!CAUTION]
@@ -22,9 +24,9 @@ Lors de l'écriture d'une application cliente WCF vous devez connaître l'adress
   
 1. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.FindCriteria%2A>, utilisée pour décrire le service que vous souhaitez appeler.  
   
-2. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A>qui spécifie le point de terminaison de découverte auquel envoyer des messages de découverte.  
+2. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A> qui spécifie le point de terminaison de découverte auquel envoyer des messages de découverte.  
   
- La propriété <xref:System.ServiceModel.Discovery.FindCriteria.%23ctor%2A> vous permet de spécifier le contrat de service que vous recherchez, un URI d'étendue requis et la durée maximale de tentative d'ouverture du canal. Le type de contrat est spécifié en appelant le constructeur <xref:System.ServiceModel.Discovery.FindCriteria> . Des URI d'étendue peuvent être ajoutés à la propriété <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A>. La propriété <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vous permet de spécifier le nombre maximal de résultats auxquels le client essaie de se connecter. Lorsqu'une réponse de sonde est reçue, le client tente d'ouvrir le canal à l'aide de l'adresse du point de terminaison de la réponse de sonde. Si une exception se produit, le client passe à la réponse de sonde suivante, en attendant que davantage de réponses soit reçues, si nécessaire. Il continue à procéder ainsi jusqu'à ce que le canal s'ouvre avec succès ou que le nombre maximal de résultats soit atteint. Pour plus d'informations sur ces paramètres, consultez <xref:System.ServiceModel.Discovery.FindCriteria>.  
+ La propriété <xref:System.ServiceModel.Discovery.FindCriteria.%23ctor%2A> vous permet de spécifier le contrat de service que vous recherchez, un URI d'étendue requis et la durée maximale de tentative d'ouverture du canal. Le type de contrat est spécifié en appelant le constructeur  <xref:System.ServiceModel.Discovery.FindCriteria> . Des URI d'étendue peuvent être ajoutés à la propriété <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A>. La propriété <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vous permet de spécifier le nombre maximal de résultats auxquels le client essaie de se connecter. Lorsqu'une réponse de sonde est reçue, le client tente d'ouvrir le canal à l'aide de l'adresse du point de terminaison de la réponse de sonde. Si une exception se produit, le client passe à la réponse de sonde suivante, en attendant que davantage de réponses soit reçues, si nécessaire. Il continue à procéder ainsi jusqu'à ce que le canal s'ouvre avec succès ou que le nombre maximal de résultats soit atteint. Pour plus d'informations sur ces paramètres, consultez <xref:System.ServiceModel.Discovery.FindCriteria>.  
   
  La propriété <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A> vous permet de spécifier le point de terminaison de découverte à utiliser. Normalement, c'est un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, mais il peut s'agir de tout point de terminaison valide.  
   
@@ -60,4 +62,5 @@ catch (EndpointNotFoundException ex)
 ```  
   
 ## <a name="security-and-the-discovery-client-channel"></a>La sécurité et le canal client de découverte  
+
  Lors de l'utilisation du canal client de découverte, deux points de terminaison sont spécifiés. L'un, <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> habituellement, est utilisé pour les messages de découverte et l'autre est le point de terminaison d'application. Lors de l'implémentation d'un service sécurisé, il faut veiller à sécuriser les deux points de terminaison. Pour plus d’informations sur la sécurité, consultez [sécurisation des services et des clients](securing-services-and-clients.md).

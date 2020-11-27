@@ -2,14 +2,15 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: b5f7679d5e5ec82e63b588cebd90ce873c055088
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6aae16b766889f402f774451338ae2cd30162437
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558301"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288596"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
+
 Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding> .  
   
 > [!NOTE]
@@ -28,6 +29,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
  La sécurité des messages WCF ajoute des en-têtes de sécurité au message WCF qui s’intègrent avec les infrastructures de sécurité existantes, telles qu’un certificat ou le protocole Kerberos.  
   
 ## <a name="message-credential-type"></a>Type d'informations d'identification de message  
+
  Grâce à la sécurité de message, le service et le client peuvent présenter des informations d'identification pour s'authentifier mutuellement. Vous pouvez sélectionner la sécurité de message en définissant le mode <xref:System.ServiceModel.NetMsmqBinding.Security%2A> sur `Message` ou sur `Both` (c'est-à-dire en utilisant la sécurité de transport et la sécurité de message).  
   
  Le service peut utiliser la propriété <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> pour inspecter les informations d'identification permettant d'authentifier le client. Elle peut également être utilisée pour des vérifications d'autorisation supplémentaires que le service choisit d'implémenter.  
@@ -35,6 +37,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
  Cette section présente les différents types d'informations d'identification et explique comment les utiliser avec les files d'attente.  
   
 ### <a name="certificate"></a>Certificat  
+
  Le type d'informations d'identification de certificat utilise un certificat X.509 pour identifier le service et le client.  
   
  Dans un scénario classique, un certificat valide est émis pour le client et le service par une autorité de certification de confiance. Lorsque la connexion est établie, le client authentifie la validité du service à l'aide du certificat du service pour décider s'il peut faire confiance au service. De la même façon, le service utilise le certificat du client pour valider l'approbation du client.  
@@ -44,6 +47,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
  Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ### <a name="windows"></a>Windows  
+
  Le type d'informations d'identification de message Windows utilise le protocole Kerberos.  
   
  Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.  
@@ -55,12 +59,15 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
  Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message.
   
 ### <a name="username-password"></a>Username Password  
+
  À l'aide de cette propriété, le client peut s'authentifier auprès du serveur en utilisant un mot de passe de nom d'utilisateur dans l'en-tête de sécurité du message.  
   
 ### <a name="issuedtoken"></a>IssuedToken  
+
  Le client peut utiliser le service de jeton de sécurité pour émettre un jeton qui peut ensuite être joint au message pour que le service authentifie le client.  
   
 ## <a name="using-transport-and-message-security"></a>Utilisation de la sécurité de transport et de message  
+
  Lorsque vous utilisez à la fois la sécurité de transport et la sécurité de message, le certificat utilisé pour sécuriser le message au niveau du transport et du message SOAP doit être le même.  
   
 ## <a name="see-also"></a>Voir aussi
