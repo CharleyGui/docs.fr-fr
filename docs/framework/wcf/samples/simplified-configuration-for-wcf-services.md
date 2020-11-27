@@ -3,14 +3,15 @@ title: Configuration simplifiée pour WCF Services
 description: Découvrez comment implémenter et configurer un service et un client standard à l’aide de WCF. Le service communique à l’aide d’un point de terminaison spécifié dans un fichier de configuration.
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: dd05754dcfe36cb2e9c28ce20a5927585f85478f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 087618d603ea1c7df75ab5383f6c95b781dca847
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554265"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290021"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Configuration simplifiée pour WCF Services
+
 Cet exemple montre comment implémenter et configurer un service et un client standard à l’aide de Windows Communication Foundation (WCF). Cet exemple constitue la base de tous les autres exemples de technologie de base.  
   
  Ce service, qui expose un point de terminaison pour communiquer avec le service, utilise la configuration simplifiée dans .NET Framework 4. Avant .NET Framework 4, le point de terminaison est généralement défini dans un fichier de configuration (Web.config), comme indiqué dans l’exemple de code de configuration suivant.  

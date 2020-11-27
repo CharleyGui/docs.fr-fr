@@ -1,17 +1,18 @@
 ---
-title: Session
+title: session
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
-ms.openlocfilehash: 283c8b9641dcce8b0207d3be0024b57369d125ff
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 23b42e48c715c9c723ce9ac8ba8c3c1af7ace969
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591447"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290047"
 ---
-# <a name="session"></a>Session
+# <a name="session"></a>session
+
 L'exemple Session montre comment implémenter un contrat qui requiert une session. Une session fournit le contexte pour effectuer plusieurs opérations. Cela permet à un service d'associer l'état à une session donnée ; ainsi les opérations suivantes peuvent utiliser l'état d'une opération précédente. Cet exemple est basé sur le [prise en main](getting-started-sample.md), qui implémente un service de calculatrice. Le contrat `ICalculator` a été modifié afin de permettre l'exécution d'un ensemble d'opérations arithmétiques, tout en conservant un résultat en cours. Cette fonctionnalité est définie par le contrat `ICalculatorSession`. Le service maintient l'état pou un client tandis que plusieurs opérations de service sont appelées pour effectuer un calcul. Le client peut récupérer le résultat actuel en appelant `Result()` et remettre le résultat à zéro en appelant `Clear()`.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
