@@ -6,17 +6,19 @@ helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-ms.openlocfilehash: e24d3bc07c7292625813828d598ed43952155e4f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f15cd9b38285e88dac727bcfe51c8dc542a735f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822358"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277983"
 ---
 # <a name="net-framework-performance"></a>Performances .NET Framework
+
 Si vous voulez créer des applications dotées de hautes performances, vous devez concevoir et planifier les performances comme vous concevez n'importe quelle autre fonctionnalité de votre application. Vous pouvez utiliser les outils fournis par Microsoft pour mesurer les performances de votre application et, si nécessaire, apporter des améliorations à l'utilisation de la mémoire, au débit de code et à la réactivité. Cette rubrique répertorie les outils d'analyse de performance fournis par Microsoft et fournit des liens vers d'autres rubriques qui couvrent les performances dans des domaines spécifiques du développement d'applications.  
   
 ## <a name="designing-and-planning-for-performance"></a>Conception et planification des performances  
+
  Pour créer une application présentant d’excellentes performances, vous devez concevoir les performances dans votre application comme si vous conceviez n’importe quelle autre fonctionnalité. Vous devez déterminer les scénarios où les performances sont essentielles, définir des objectifs de performances et mesurer régulièrement les performances dans ces scénarios d'application. Comme chaque application est différente et possède différents chemins d'exécution aux performances critiques, le fait de déterminer précocement ces chemins et de concentrer vos efforts vous permet de maximiser votre productivité.  
   
  Il n'est pas nécessaire que votre plateforme cible vous soit complètement familière pour créer une application à hautes performances. Toutefois, vous devez chercher à comprendre quelles parties de votre plateforme cible sont coûteuses en termes de performances. Pour cela, vous pouvez mesurer les performances tôt dans votre processus de développement.  
@@ -24,9 +26,11 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
  Pour déterminer les domaines essentiels pour les performances et pour établir vos objectifs de performances, prenez toujours en compte l'expérience utilisateur. Le temps de démarrage et la réactivité sont deux domaines clés qui affectent la perception qu'a l'utilisateur de votre application. Si votre application utilise beaucoup de mémoire, elle peut sembler lente à l'utilisateur ou affecter d'autres applications qui s'exécutent sur le système, ou, dans certains cas, elle peut échouer au test de soumission du Windows Store ou du Windows Phone Store. De plus, si vous déterminez quelles parties de votre code s'exécutent le plus fréquemment, vous pouvez veiller à l'optimisation de ces parties de code.  
   
 ## <a name="analyzing-performance"></a>Analyse des performances  
+
  Dans le cadre de votre plan de développement global, définissez des points durant le développement où mesurer les performances de votre application et comparer les résultats aux objectifs que vous avez définis précédemment. Mesurez votre application dans l'environnement et avec le matériel que posséderont selon vous les utilisateurs. En analysant les performances de votre application tôt et régulièrement, vous pouvez changer les décisions architecturales qui seraient coûteuses à corriger ultérieurement dans le cycle de développement. Les sections suivantes décrivent les outils de performance que vous pouvez utiliser pour analyser vos applications et traitent du suivi d'événements, qui est utilisé par ces outils.  
   
 ### <a name="performance-tools"></a>Outils d'analyse des performances  
+
  Voici certains outils de performance que vous pouvez utiliser avec vos applications .NET Framework.  
   
 |Outil|Description|  
@@ -37,9 +41,11 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
 |[Windows Performance Analyzer](https://www.microsoft.com/p/windows-performance-analyzer/9n0w1b2bxgnz?activetab=pivot:overviewtab)|Utilisez cet outil pour déterminer les performances globales du système telles que l'utilisation de la mémoire et du stockage par votre application quand plusieurs applications s'exécutent sur le même ordinateur. Cet outil est disponible dans le centre de téléchargement dans le cadre du kit de déploiement et d’évaluation Windows (ADK) pour Windows 8. Pour plus d’informations, consultez [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|
   
 ### <a name="event-tracing-for-windows-etw"></a>Suivi d'événements pour Windows (ETW)  
+
  Le suivi d'événements pour Windows est une technique qui vous permet d'obtenir des informations de diagnostic sur le code en cours d'exécution et qui est essentielle pour un grand nombre des outils de performance mentionnés précédemment. Il crée des journaux lorsque des événements particuliers sont déclenchés par des applications .NET Framework et par Windows. Le suivi d'événements pour Windows vous permet d'activer et désactiver la journalisation de façon dynamique, et vous pouvez effectuer un traçage détaillé dans un environnement de production sans redémarrer votre application. .NET Framework propose la prise en charge des événements ETW, et le suivi d'événements pour Windows est utilisé par de nombreux outils de profilage et de performance pour générer des données de performance. Ces outils activent et désactivent souvent des événements ETW et il est utile de se familiariser avec eux. Vous pouvez utiliser des événements ETW spécifiques pour collecter des informations de performance sur des composants particuliers de votre application. Pour plus d’informations sur la prise en charge du suivi d’événements pour Windows (ETW) dans .NET Framework, consultez [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md) et [Événements ETW dans la bibliothèque parallèle de tâches et PLINQ](etw-events-in-task-parallel-library-and-plinq.md).  
   
 ## <a name="performance-by-app-type"></a>Performances par type d'application  
+
  Chaque type d'application .NET Framework possède ses propres pratiques recommandées, considérations et outils pour évaluer les performances. Le tableau ci-dessous propose des liens vers des rubriques liées aux performances pour des types d'applications .NET Framework spécifiques.  
   
 |Type d’application|Consultez|  
@@ -51,7 +57,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Mise en cache dans les applications .NET Framework](caching-in-net-framework-applications.md)|Décrit des techniques de mise en cache des données pour améliorer les performances dans votre application.|  
 |[Initialisation tardive](lazy-initialization.md)|Décrit comment initialiser des objets selon vos besoins pour améliorer les performances, notamment au démarrage de l'application.|  

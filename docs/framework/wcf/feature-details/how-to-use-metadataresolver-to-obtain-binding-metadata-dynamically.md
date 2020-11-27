@@ -1,15 +1,16 @@
 ---
-title: 'Comment : utiliser MetadataResolver pour obtenir des métadonnées de liaison dynamiquement'
+title: 'Procédure : utiliser MetadataResolver pour obtenir des métadonnées de liaison de manière dynamique'
 ms.date: 03/30/2017
 ms.assetid: 56ffcb99-fff0-4479-aca0-e3909009f605
-ms.openlocfilehash: 98fe4977f270b008c51039af19261ca86b8d6642
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fc64e11271c6901a8d4598c0efa563a06a92decf
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601125"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280713"
 ---
-# <a name="how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically"></a>Comment : utiliser MetadataResolver pour obtenir des métadonnées de liaison dynamiquement
+# <a name="how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically"></a>Procédure : utiliser MetadataResolver pour obtenir des métadonnées de liaison de manière dynamique
+
 Cette rubrique indique comment utiliser la classe <xref:System.ServiceModel.Description.MetadataResolver> pour obtenir des métadonnées de liaison dynamiquement.  
   
 ### <a name="to-dynamically-obtain-binding-metadata"></a>Pour obtenir des métadonnées de liaison dynamiquement  

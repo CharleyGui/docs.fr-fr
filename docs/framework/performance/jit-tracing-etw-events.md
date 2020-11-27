@@ -6,19 +6,21 @@ helpviewer_keywords:
 - JIT tracing events [.NET Framework]
 - ETW, JIT tracing events (CLR)
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
-ms.openlocfilehash: 568fc942cd0e2188c530d2befb6260083757ec72
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: fd1fae8731ea927ab64d0c0df83b90d29289a0a0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474460"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277966"
 ---
 # <a name="jit-tracing-etw-events"></a>Événements ETW de traçage JIT
+
 Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.
 
 ## <a name="jit-inlining-events"></a>Événements d’incorporation (inlining) JIT
 
 ### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed
+
  Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -49,6 +51,7 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 |ClrInstanceID|win:UnicodeString|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="methodjitinliningsucceeded-event"></a>Événement MethodJitInliningSucceeded  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -79,6 +82,7 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 ## <a name="jit-tail-call-events"></a>Événements d'appel tail JIT  
   
 ### <a name="methodjittailcallfailed-event"></a>Événement MethodJITTailCallFailed  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  
@@ -109,6 +113,7 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 ### <a name="methodjittailcallsucceeded-event"></a>Événement MethodJITTailCallSucceeded  
+
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Level|  

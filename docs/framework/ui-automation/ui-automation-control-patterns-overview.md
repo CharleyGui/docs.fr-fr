@@ -6,14 +6,15 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: d0df24de4f8a877405dfecb6b0d245ff1caf0418
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e7d32be1532be7d673d8df4fe3f76c3d83fea913
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163884"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96278061"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -25,7 +26,9 @@ ms.locfileid: "87163884"
 > Les contrôles d’agrégat (générés avec des contrôles enfants qui fournissent l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] pour les fonctionnalités exposées par le parent) doivent implémenter tous les modèles de contrôle normalement associés à chaque contrôle enfant. Il n’est pas nécessaire que ces mêmes modèles de contrôle soient, à leur tour, implémentés par les contrôles enfants.  
   
 <a name="uiautomation_control_pattern_includes"></a>
+
 ## <a name="ui-automation-control-pattern-components"></a>Composants des modèles de contrôle UI Automation  
+
  Les modèles de contrôle prennent en charge les méthodes, les propriétés, les événements et les relations nécessaires pour définir une partie discrète des fonctionnalités disponibles dans un contrôle.  
   
 - La relation entre un élément UI Automation et son parent, ses enfants et ses frères décrit la structure de l’élément dans l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
@@ -37,7 +40,9 @@ ms.locfileid: "87163884"
  Les modèles de contrôle sont liés à [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] car les interfaces sont liées aux objets COM (Component Object Model). Dans COM, vous pouvez interroger un objet et lui demander quelles interfaces il prend en charge, puis vous servir de ces interfaces pour accéder aux fonctionnalités. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les clients UI Automation peuvent demander à un contrôle les modèles de contrôle qu’il prend en charge, puis interagir avec le contrôle via les propriétés, les méthodes, les événements et les structures exposées par les modèles de contrôle pris en charge. Par exemple, pour une zone d’édition multiligne, les fournisseurs UI Automation implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Lorsqu’un client sait qu’un <xref:System.Windows.Automation.AutomationElement> prend en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> , il peut utiliser les propriétés, les méthodes et les événements exposés par ce modèle de contrôle pour manipuler le contrôle ou accéder aux informations concernant le contrôle.  
   
 <a name="uiautomation_control_pattern_client_provider"></a>
+
 ## <a name="ui-automation-providers-and-clients"></a>Fournisseurs et clients UI Automation  
+
  Les fournisseurs UI Automation implémentent des modèles de contrôle pour exposer le comportement approprié d’une partie spécifique des fonctionnalités prises en charge par le contrôle.  
   
  Les clients UI Automation accèdent aux méthodes et aux propriétés des classes de modèle de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et les utilisent pour obtenir des informations sur l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]ou pour manipuler l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Ces classes de modèle de contrôle se trouvent dans l’espace de noms <xref:System.Windows.Automation> (par exemple, <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.SelectionPattern>).  
@@ -45,11 +50,15 @@ ms.locfileid: "87163884"
  Les clients utilisent des <xref:System.Windows.Automation.AutomationElement> méthodes (telles que <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> ou <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType> ) ou les accesseurs Common Language Runtime (CLR) pour accéder aux [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Propriétés sur un modèle. Chaque classe de modèle de contrôle a un membre de champ (par exemple, <xref:System.Windows.Automation.InvokePattern.Pattern?displayProperty=nameWithType> ou <xref:System.Windows.Automation.SelectionPattern.Pattern?displayProperty=nameWithType> ) qui identifie ce modèle de contrôle et peut être passé en tant que paramètre à <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> ou <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> pour récupérer ce modèle pour un <xref:System.Windows.Automation.AutomationElement> .  
   
 <a name="uiautomation_control_patterns_dynamic"></a>
+
 ## <a name="dynamic-control-patterns"></a>Modèles de contrôle dynamique  
+
  Certains contrôles ne prennent pas toujours en charge le même ensemble de modèles de contrôle. Les modèles de contrôle sont considérés comme pris en charge lorsqu’ils sont disponibles pour un client UI Automation. Par exemple, une zone d’édition multiligne ne permet un défilement vertical que lorsqu’elle contient plus de lignes de texte que ne peut en afficher sa zone affichable. Le défilement est désactivé lorsque tout le texte peut s’afficher dans la zone prévue à cet effet. Pour cet exemple, le modèle de contrôle ScrollPattern est pris en charge de manière dynamique en fonction de l’état actuel du contrôle (la quantité de texte présente dans la zone d’édition).  
   
 <a name="Control_Pattern_Classes_and_Interfaces"></a>
+
 ## <a name="control-pattern-classes-and-interfaces"></a>Interfaces et classes du modèle de contrôle  
+
  Le tableau suivant décrit les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Il répertorie également les classes utilisées par les clients UI Automation pour accéder aux modèles de contrôle, ainsi que les interfaces utilisées par les fournisseurs UI Automation pour les implémenter.  
   
 |Classe du modèle de contrôle|Interface du fournisseur|Description|  

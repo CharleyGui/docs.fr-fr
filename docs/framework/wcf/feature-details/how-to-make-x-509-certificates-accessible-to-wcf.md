@@ -1,5 +1,5 @@
 ---
-title: 'Comment : rendre des certificats X.509 accessibles à WCF'
+title: 'Procédure : rendre des certificats X.509 accessibles à WCF'
 description: Découvrez comment rendre un certificat X. 509 accessible à WCF. Le code d’application doit spécifier le nom et l’emplacement du magasin de certificats. Il peut y avoir d’autres exigences.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 5cc1118640bcf1262d88cb8cdb39939ae315cae3
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 06a6167f0ad352955eb6b764ef8bfdb1394f4ed9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246868"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279738"
 ---
-# <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Comment : rendre des certificats X.509 accessibles à WCF
+# <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Procédure : rendre des certificats X.509 accessibles à WCF
+
 Pour rendre un certificat X. 509 accessible à Windows Communication Foundation (WCF), le code d’application doit spécifier le nom et l’emplacement du magasin de certificats. Dans certains cas, l'identité du processus doit avoir accès au fichier contenant la clé privée associée au certificat X.509. Pour obtenir la clé privée associée à un certificat X. 509 dans un magasin de certificats, WCF doit avoir l’autorisation de le faire. Par défaut, seuls le propriétaire et le compte système peuvent accéder à la clé privée d'un certificat.  
   
 ### <a name="to-make-x509-certificates-accessible-to-wcf"></a>Pour rendre des certificats X.509 accessibles à WCF  
@@ -74,5 +75,5 @@ Pour rendre un certificat X. 509 accessible à Windows Communication Foundation 
 ## <a name="see-also"></a>Voir aussi
 
 - [FindPrivateKey](../samples/findprivatekey.md)
-- [Comment : récupérer l'empreinte numérique d'un certificat](how-to-retrieve-the-thumbprint-of-a-certificate.md)
-- [Working with Certificates](working-with-certificates.md)
+- [Procédure : récupérer l’empreinte d’un certificat](how-to-retrieve-the-thumbprint-of-a-certificate.md)
+- [Utilisation des certificats](working-with-certificates.md)

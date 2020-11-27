@@ -1,23 +1,24 @@
 ---
-title: Expressions - WF
+title: Expressions-WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 93fe449e8fa6c50f715d842c2ef6a9ecbd31aff2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1dca2090dda981fabb27d3e5f2dff78051d7af24
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182940"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280219"
 ---
 # <a name="expressions"></a>Expressions
 
-Une expression de la Windows Workflow Foundation (WF) est toute activité qui renvoie un résultat. Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité. [!INCLUDE[wf1](../../../includes/wf1-md.md)] est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat. Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.
+Une expression Windows Workflow Foundation (WF) est toute activité qui retourne un résultat. Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité. [!INCLUDE[wf1](../../../includes/wf1-md.md)] est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat. Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.
 
 ## <a name="using-expressions"></a>Utilisation d'expressions
+
  Le concepteur de workflow utilise <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pour les expressions dans les projets Visual Basic, et <xref:Microsoft.CSharp.Activities.CSharpValue%601> et <xref:Microsoft.CSharp.Activities.CSharpReference%601> pour les expressions dans les projets de workflow C#.
 
 > [!NOTE]
-> Le soutien aux expressions de C dans les projets de flux de travail a été introduit dans le cadre .NET 4.5. Pour plus d’informations, voir [expressions de C .](csharp-expressions.md)
+> La prise en charge des expressions C# dans les projets de workflow a été introduite dans .NET Framework 4,5. Pour plus d’informations, consultez [expressions C#](csharp-expressions.md).
 
  Les workflows produits par le concepteur sont enregistrés en XAML, où les expressions s'affichent entre crochets, comme dans l'exemple suivant.
 
@@ -40,7 +41,7 @@ Une expression de la Windows Workflow Foundation (WF) est toute activité qui re
 </Sequence>
 ```
 
- Lors de la définition d'un workflow dans le code, toutes les activités d'expressions peuvent être utilisées. L’exemple suivant montre l’utilisation d’une composition des activités de l’opérateur pour ajouter trois numéros :
+ Lors de la définition d'un workflow dans le code, toutes les activités d'expressions peuvent être utilisées. L’exemple suivant illustre l’utilisation d’une composition d’activités d’opérateur pour ajouter trois nombres :
 
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -69,7 +70,7 @@ Sequence w = new Sequence
 };
 ```
 
- Le même flux de travail peut être exprimé plus compactement en utilisant des expressions de lambda de C, comme le montre l’exemple suivant :
+ Le même Workflow peut être exprimé plus compact en utilisant des expressions lambda C#, comme indiqué dans l’exemple suivant :
   
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -119,7 +120,7 @@ namespace ExpressionsDemo
 }
 ```
 
- Avec cette nouvelle activité, vous pouvez réécrire le flux de travail précédent qui a ajouté trois valeurs comme indiqué dans l’exemple suivant:
+ Avec cette nouvelle activité, vous pouvez réécrire le flux de travail précédent qui a ajouté trois valeurs, comme indiqué dans l’exemple suivant :
 
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -146,4 +147,4 @@ Sequence w = new Sequence
 };
 ```
 
- Pour plus d’informations sur l’utilisation des expressions dans le code, voir [Authoring Workflows, Activities, and Expressions Using Imperative Code](authoring-workflows-activities-and-expressions-using-imperative-code.md).
+ Pour plus d’informations sur l’utilisation d’expressions dans le code, consultez [création de flux de travail, d’activités et d’expressions à l’aide du code impératif](authoring-workflows-activities-and-expressions-using-imperative-code.md).

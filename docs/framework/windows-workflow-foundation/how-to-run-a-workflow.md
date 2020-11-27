@@ -1,19 +1,20 @@
 ---
-title: 'Procédure : exécuter un workflow'
+title: 'Procédure : exécuter un workflow'
 description: Cet article explique comment créer un hôte de workflow et exécuter le workflow défini dans un article précédent de cette série de didacticiels Windows Workflow Foundation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: 86062dd5147e6e354833928fd98bd1f6b5de9114
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 7f76ed5ad1a76a155489339a9febf12eefd64ae8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421499"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279985"
 ---
-# <a name="how-to-run-a-workflow"></a>Procédure : exécuter un workflow
+# <a name="how-to-run-a-workflow"></a>Procédure : exécuter un workflow
+
 Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow Foundation et explique comment créer un hôte de workflow et exécuter le workflow défini dans la rubrique précédente [How to: Create a Workflow](how-to-create-a-workflow.md) .
 
 > [!NOTE]
@@ -138,7 +139,7 @@ Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow 
      [!code-csharp[CFX_WF_GettingStarted#11](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#11)]
      [!code-vb[CFX_WF_GettingStarted#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#11)]
 
-## <a name="to-build-and-run-the-application"></a><a name="BKMK_ToRunTheApplication"></a>Pour générer et exécuter l’application
+## <a name="to-build-and-run-the-application"></a><a name="BKMK_ToRunTheApplication"></a> Pour générer et exécuter l’application
 
 1. Cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans l' **Explorateur de solutions** , puis sélectionnez **Définir comme projet de démarrage**.
 
@@ -151,7 +152,8 @@ Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow 
 
      Pour obtenir des instructions sur la façon d’ajouter la persistance à une application de workflow, consultez la rubrique suivante, [How to: Create and Run a Long Running Workflow](how-to-create-and-run-a-long-running-workflow.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
+
  L'exemple suivant constitue l'intégralité du code de la méthode `Main` .
 
 > [!NOTE]
@@ -165,8 +167,8 @@ Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow 
 - <xref:System.Activities.WorkflowApplication>
 - <xref:System.Activities.Bookmark>
 - [Programmation Windows Workflow Foundation](programming.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
-- [Guide pratique pour créer un workflow](how-to-create-a-workflow.md)
-- [Procédure : créer et exécuter un workflow de longue durée](how-to-create-and-run-a-long-running-workflow.md)
-- [Attente d’une entrée dans un workflow](waiting-for-input-in-a-workflow.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
+- [Procédure : créer un workflow](how-to-create-a-workflow.md)
+- [Procédure : créer et exécuter un workflow durable](how-to-create-and-run-a-long-running-workflow.md)
+- [Attente d'une entrée dans un flux de travail](waiting-for-input-in-a-workflow.md)
 - [Hébergement de workflows](hosting-workflows.md)

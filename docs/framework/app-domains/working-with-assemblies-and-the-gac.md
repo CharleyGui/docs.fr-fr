@@ -9,12 +9,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-ms.openlocfilehash: 16cfd9faf02d5b58acad1cc0cf19be61c9814d35
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: e27fdd7def2d234e1e8eb7557e869bf478d68210
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105160"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279309"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Utilisation d'assemblys et du Global Assembly Cache
 
@@ -46,6 +46,7 @@ Vous pouvez souhaiter installer un assembly dans le Global Assembly Cache pour p
  Notez que dans certains scénarios, vous ne voulez explicitement pas installer un assembly dans le Global Assembly Cache. Si vous placez un des assemblys composant une application dans le Global Assembly Cache, vous ne pouvez plus répliquer ni installer l’application en utilisant XCOPY pour copier le répertoire de l’application. Dans ce cas, vous devez également déplacer l’assembly dans le Global Assembly Cache.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
 [Comment : installer un assembly dans le global assembly cache](install-assembly-into-gac.md)  
 Décrit les façons d’installer un assembly dans le Global Assembly Cache.  
   

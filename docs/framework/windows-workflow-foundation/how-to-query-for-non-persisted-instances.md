@@ -2,12 +2,12 @@
 title: 'Procédure : interroger des instances non persistantes'
 ms.date: 03/30/2017
 ms.assetid: 294019b1-c1a7-4b81-a14f-b47c106cd723
-ms.openlocfilehash: 87b29ce6a5858872929cea4408d0d7bcc1b378d1
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 54a442dab6700dda33cf05df1fb5c60a96bcbd56
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425319"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279998"
 ---
 # <a name="how-to-query-for-non-persisted-instances"></a>Procédure : interroger des instances non persistantes
 
@@ -21,11 +21,11 @@ Les instances de service durables qui ne sont pas encore persistantes restent da
 
 - L'instance rencontre une exception non prise en charge avant qu'elle soit persistante pour la première fois. Les scénarios suivants se produisent :
 
-  - Si la valeur de la **UnhandledExceptionAction** propriété est définie sur **abandonner**, les informations de déploiement de service sont écrites dans le magasin d’instances et l’instance est déchargée de la mémoire. L'instance reste dans l'état non persistant dans la base de données de persistance.
+  - Si la valeur de la propriété **UnhandledExceptionAction** est définie sur **abandon**, les informations de déploiement du service sont écrites dans le magasin d’instances et l’instance est déchargée de la mémoire. L'instance reste dans l'état non persistant dans la base de données de persistance.
 
-  - Si la valeur de la **UnhandledExceptionAction** propriété est définie sur **AbandonAndSuspend**, les informations de déploiement de service sont écrites à la base de données de persistance et l’état de l’instance est défini sur  **Suspendu**. L'instance ne peut pas reprendre, être annulée ou être terminée. L'hôte de service ne peut pas charger l'instance car l'instance n'est pas encore persistante et, par conséquent, l'entrée de base de données pour l'instance n'est pas terminée.
+  - Si la valeur de la propriété **UnhandledExceptionAction** est définie sur **AbandonAndSuspend**, les informations de déploiement du service sont écrites dans la base de données de persistance et l’état de l’instance est défini sur **Suspended**. L'instance ne peut pas reprendre, être annulée ou être terminée. L'hôte de service ne peut pas charger l'instance car l'instance n'est pas encore persistante et, par conséquent, l'entrée de base de données pour l'instance n'est pas terminée.
 
-  - Si la valeur de la **UnhandledExceptionAction** propriété est définie sur **Annuler** ou **Terminate**, les informations de déploiement de service sont écrites dans le magasin d’instances et le état de l’instance est définie sur **terminé**.
+  - Si la valeur de la propriété **UnhandledExceptionAction** est définie sur **Cancel** ou **Terminate**, les informations de déploiement du service sont écrites dans le magasin d’instances et l’état de l’instance est défini sur **Completed**.
 
 Les sections suivantes fournissent des exemples de requêtes pour rechercher des instances non persistantes dans la base de données de persistance SQL et supprimer ces instances de la base de données.
 
@@ -38,6 +38,7 @@ select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Inst
 ```
 
 ## <a name="to-find-all-instances-not-persisted-yet-and-also-not-loaded"></a>Pour rechercher toutes les instances pas encore persistantes et également non chargées
+
  La requête SQL suivante retourne l'ID et l'heure de création de toutes les instances qui ne sont pas persistantes et qui ne sont pas non plus chargées.
 
 ```sql
@@ -56,7 +57,7 @@ select InstanceId, CreationTime, SuspensionReason, SuspensionExceptionName from 
 
 Vous devez vérifier régulièrement les instances non persistantes dans le magasin d'instances, et les supprimer si vous êtes sûr que l'instance ne recevra pas de message corrélé. Par exemple, si l'instance se trouve dans la base de données depuis plusieurs mois et que vous savez que le workflow a généralement une durée de vie de quelques jours, il est possible de supposer sans risque que c'est une instance non initialisée qui a bloqué.
 
-En général, il est possible de supprimer sans risque des instances non persistantes qui ne sont pas interrompues ou pas chargées. Vous ne devez pas supprimer **tous les** les instances non persistantes car cet ensemble d’instances inclut des instances qui viennent d’être créées mais qui ne sont pas encore persistant. Vous devez supprimer uniquement les instances non persistantes qui restent car l'hôte du service de workflow sur lequel l'instance était chargée a provoqué une exception ou l'instance elle-même a provoqué une exception.
+En général, il est possible de supprimer sans risque des instances non persistantes qui ne sont pas interrompues ou pas chargées. Vous ne devez pas supprimer **toutes** les instances non persistantes, car ce jeu d’instances comprend des instances qui viennent d’être créées mais qui ne sont pas encore persistantes. Vous devez supprimer uniquement les instances non persistantes qui restent car l'hôte du service de workflow sur lequel l'instance était chargée a provoqué une exception ou l'instance elle-même a provoqué une exception.
 
 > [!WARNING]
 > La suppression d'instances non persistantes du magasin d'instances diminue la taille du magasin et peut améliorer les performances des opérations de stockage.

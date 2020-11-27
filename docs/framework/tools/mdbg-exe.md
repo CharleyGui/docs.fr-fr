@@ -6,27 +6,29 @@ helpviewer_keywords:
 - command-line debugger [.NET Framework]
 - MDbg.exe
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
-ms.openlocfilehash: 1c663474e5084afa1824f0f6b0740ae03a344e92
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 8953db973e231014284ec6585012edc7f3ea11f5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904219"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279166"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (débogueur de ligne de commande du .NET Framework)
+
 Le débogueur de ligne de commande du .NET Framework aide les fournisseurs d'outils et les développeurs d'applications à trouver et à corriger les bogues dans les programmes qui ont pour cible le Common Language Runtime du .NET Framework. Cet outil utilise l'API de débogage du runtime pour fournir des services de débogage. Vous pouvez utiliser MDbg.exe pour déboguer uniquement du code managé ; il n'y a pas de prise en charge du débogage du code non managé.  
   
 Cet outil est disponible via NuGet. Pour plus d’informations sur l’installation, consultez [MDbg 0.1.0](https://www.nuget.org/packages/MDbg/0.1.0). Pour exécuter l'outil, utilisez la console du Gestionnaire de package. Pour plus d’informations sur la manière d’utiliser la console du Gestionnaire de package, consultez l’article [Console du Gestionnaire de package](/nuget/tools/package-manager-console).
   
 À l'invite du Gestionnaire de package, tapez ce qui suit :  
   
-## <a name="syntax"></a>Syntax  
+## <a name="syntax"></a>Syntaxe  
   
 ```console  
 MDbg [ProgramName[arguments]] [options]  
 ```  
   
 ## <a name="commands"></a>Commandes  
+
  Quand vous êtes dans le débogueur (comme indiqué par l’invite **mdbg>**), tapez l’une des commandes décrites dans la section suivante :  
   
  **commande** [*arguments*]  
@@ -80,11 +82,12 @@ MDbg [ProgramName[arguments]] [options]
 |**t**[**hread**] [*newThread*] [-*Nick surnom*`]`|La commande de threads sans paramètre affiche tous les threads managés dans le processus en cours. Les threads sont généralement identifiés par leur numéro de thread. Toutefois, si le thread a un surnom assigné, celui-ci est affiché à la place. Vous pouvez utiliser le paramètre `-nick` pour assigner un surnom à un thread.<br /><br /> -   **thread** `-nick` *threadName* assigne un surnom au thread en cours d’exécution.<br /><br /> Les surnoms ne peuvent pas être des nombres. Si le thread actuel a déjà un surnom assigné, le nouveau vient remplacer l'ancien. Si le nouveau surnom est une chaîne vide (""), le surnom du thread en cours est supprimé et aucun nouveau surnom n'est assigné au thread.|  
 |**u**[**p**]|Déplace le frame de la pile vers le haut.|  
 |**uwgc**[**handle**] [*var*] &#124; [*address*]|Imprime la variable suivie par un handle. Le handle peut être spécifié par un nom ou par une adresse.|  
-|**à**|Affiche les instructions `when` actuellement actives.<br /><br /> **lorsque** **Delete All** &#124; `num` [ `num` [ `num` ...]]-supprime l' `when` instruction spécifiée par le nombre, ou toutes les `when` instructions si `all` est spécifié.<br /><br /> **quand** `stopReason` [ `specific_condition` ] **ne** `cmd` [ `cmd` [ `cmd` ...]]-Le paramètre *stopReason* peut avoir l’une des valeurs suivantes :<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* peut avoir l’une des valeurs suivantes :<br /><br /> -   *number* - Pour `ThreadCreated` et `BreakpointHit`, déclenche l’action uniquement quand elle est arrêtée par un numéro d’ID/de point d’arrêt de thread de même valeur.<br />-[ `!` ]*nom* -pour `ModuleLoaded` , `ClassLoaded` , `AssemblyLoaded` , `AssemblyUnloaded` , `ExceptionThrown` et `UnhandledExceptionThrown` , déclenche l’action uniquement lorsque le nom correspond au nom du *stopReason*.<br /><br /> *specific_condition* doit être vide pour d’autres valeurs de *stopReason*.|  
+|**when**|Affiche les instructions `when` actuellement actives.<br /><br /> **lorsque** **Delete All** &#124; `num` [ `num` [ `num` ...]]-supprime l' `when` instruction spécifiée par le nombre, ou toutes les `when` instructions si `all` est spécifié.<br /><br /> **quand** `stopReason` [ `specific_condition` ] **ne** `cmd` [ `cmd` [ `cmd` ...]]-Le paramètre *stopReason* peut avoir l’une des valeurs suivantes :<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* peut avoir l’une des valeurs suivantes :<br /><br /> -   *number* - Pour `ThreadCreated` et `BreakpointHit`, déclenche l’action uniquement quand elle est arrêtée par un numéro d’ID/de point d’arrêt de thread de même valeur.<br />-[ `!` ]*nom* -pour `ModuleLoaded` , `ClassLoaded` , `AssemblyLoaded` , `AssemblyUnloaded` , `ExceptionThrown` et `UnhandledExceptionThrown` , déclenche l’action uniquement lorsque le nom correspond au nom du *stopReason*.<br /><br /> *specific_condition* doit être vide pour d’autres valeurs de *stopReason*.|  
 |**w**[**ici**] [ `-v` ] [ `-c` *profondeur*] [*threadID*]|Affiche des informations de débogage sur des frames de pile.<br /><br /> -   L’option `-v` fournit des informations détaillées sur chacun des frames de pile affichés.<br />-   La spécification d’un nombre pour `depth` limite le nombre de frames affichés. Utilisez la commande **all** pour afficher tous les frames. La valeur par défaut est 100.<br />-   Si vous spécifiez le paramètre *threadID*, vous pouvez contrôler le thread qui est associé à la pile. La valeur par défaut est le thread actuel uniquement. Utilisez la commande **all** pour obtenir tous les threads.|  
 |**x** [ `-c` *numSymbols*] [*module*[ `!` *pattern*]]|Affiche les fonctions qui correspondent à `pattern` pour un module.<br /><br /> Si *numSymbols* est spécifié, la sortie est limitée au nombre spécifié. Si `!` (indiquant une expression régulière) n’est pas spécifié pour *pattern*, toutes les fonctions sont affichées. Si *module* n’est pas fourni, tous les modules chargés sont affichés. Les symboles ( *~#* ) peuvent être utilisés pour définir des points d’arrêt à l’aide de la commande **break** .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Compilez l'application à déboguer à l'aide d'indicateurs spécifiques au compilateur, ce qui oblige ce dernier à générer des symboles de débogage. Pour plus d'informations sur ces indicateurs, consultez la documentation de votre compilateur. Il est toujours possible de déboguer des applications optimisées, mais il manquera certaines informations de débogage. Par exemple, un grand nombre de variables locales ne seront pas visibles et certaines lignes sources seront incorrectes.  
   
  Après avoir compilé votre application, tapez **mdbg** à l’invite de commandes pour démarrer une session de débogage, comme le montre l’exemple suivant.  

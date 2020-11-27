@@ -1,15 +1,16 @@
 ---
-title: 'Comment : utiliser un moniker de service avec des contrats WSDL'
+title: 'Procédure : utiliser un moniker de service avec des contrats WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 70d7e9ff45616f832597ebc48db00198967935c6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b1a6c905008b0232a098f253b9007e5147d71a2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601138"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280882"
 ---
-# <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Comment : utiliser un moniker de service avec des contrats WSDL
+# <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Procédure : utiliser un moniker de service avec des contrats WSDL
+
 Dans certains cas, vous pouvez avoir besoin d'un client COM Interop entièrement autonome. Le service que vous souhaitez appeler peut ne pas exposer de point de terminaison MEX et la DLL du client WCF risque de ne pas être enregistrée pour COM Interop. Le cas échéant, vous pouvez créer un fichier WSDL qui décrit le service et le transmet au moniker de service WCF. Cette rubrique décrit la manière d'appeler l'exemple de mise en route WCF à l'aide d'un moniker WCF WSDL.  
   
 ### <a name="using-the-wsdl-service-moniker"></a>Utilisation du moniker de service WSDL  

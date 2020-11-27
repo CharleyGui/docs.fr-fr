@@ -1,5 +1,5 @@
 ---
-title: 'Meilleures pratiques : contrôle de version des contrats de données'
+title: 'Bonnes pratiques : Contrôle de version des contrats de données'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,17 +7,19 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-ms.openlocfilehash: 4d500c37efa4a90e24b06cd2e886147e1f159d4e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: d6a1eef949e30a1a6d9a1c5971d33c788cc548b9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320780"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277905"
 ---
-# <a name="best-practices-data-contract-versioning"></a>Meilleures pratiques : contrôle de version des contrats de données
+# <a name="best-practices-data-contract-versioning"></a>Bonnes pratiques : Contrôle de version des contrats de données
+
 Cette rubrique répertorie les méthodes conseillées pour créer des contrats de données qui peuvent évoluer facilement avec le temps. Pour plus d’informations sur les contrats de données, consultez les rubriques relatives [à l’utilisation des contrats de données](./feature-details/using-data-contracts.md).  
   
 ## <a name="note-on-schema-validation"></a>Note sur la validation de schéma  
+
  Dans la discussion sur le contrôle de version des contrats de données, il est important de noter que le schéma de contrat de données exporté par Windows Communication Foundation (WCF) n’a pas de prise en charge du contrôle de version, à l’exception du fait que les éléments sont marqués comme facultatifs par défaut.  
   
  Cela signifie que même le scénario le plus courant de contrôle de version, tel que l'ajout d'un nouveau membre de données, ne peut pas être implémenté d'une manière transparente par rapport à un schéma donné. Les versions plus récentes d'un contrat de données (avec un nouveau membre de données, par exemple) ne valident pas l'utilisation de l'ancien schéma.  
@@ -27,6 +29,7 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
  Par conséquent, il existe deux jeux d'instructions relatives au contrôle de version des contrats de données : un jeu pour les scénarios où la validation stricte de schéma est importante, et un autre jeu pour les scénarios où elle ne l'est pas.  
   
 ## <a name="versioning-when-schema-validation-is-required"></a>Contrôle de version lorsque la validation de schéma est requise  
+
  Si la validité stricte de schéma est requise dans toutes les directions (du nouveau vers l'ancien et de l'ancien vers le nouveau), les contrats de données doivent être considérés comme immuables. Si le contrôle de version est requis, un nouveau contrat de données doit être créé, avec un nom ou un espace de noms différent, et la version du contrat de service qui utilise le type de données doit être gérée en conséquence.  
   
  Par exemple, un contrat de service pour le traitement de bon de commande nommé `PoProcessing` avec une opération `PostPurchaseOrder` accepte un paramètre conforme à un contrat de données `PurchaseOrder`. Si le contrat `PurchaseOrder` doit changer, vous devez créer un contrat de données, c'est-à-dire `PurchaseOrder2`, qui inclut les modifications. Vous devez gérer ensuite le contrôle de version au niveau du contrat de service. Par exemple, en créant une opération `PostPurchaseOrder2` qui accepte le paramètre `PurchaseOrder2` ou en créant un contrat de service `PoProcessing2` où l'opération `PostPurchaseOrder` accepte un contrat de données `PurchaseOrder2`.  
@@ -37,7 +40,7 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
   
  Pour plus d’informations, consultez meilleures pratiques : contrôle de [version du service](service-versioning.md).  
   
- Parfois, il est nécessaire de garantir la conformité stricte de schéma pour les messages envoyés par votre application, sans pouvoir compter sur la conformité stricte des messages entrants. Dans ce cas, il est possible qu'un message entrant contienne des données étrangères. Les valeurs superflues sont stockées et retournées par WCF, ce qui entraîne l’envoi de messages de schéma non valides. Pour éviter ce problème, la fonctionnalité d’aller-retour doit être désactivée. Il existe deux manières de procéder.  
+ Parfois, il est nécessaire de garantir la conformité stricte de schéma pour les messages envoyés par votre application, sans pouvoir compter sur la conformité stricte des messages entrants. Dans ce cas, il est possible qu'un message entrant contienne des données étrangères. Les valeurs superflues sont stockées et retournées par WCF, ce qui entraîne l’envoi de messages de schéma non valides. Pour éviter ce problème, la fonctionnalité d’aller-retour doit être désactivée. Il existe deux façons d'effectuer cette opération.  
   
 - N'implémentez l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject> sur aucun de vos types.  
   
@@ -46,6 +49,7 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
  Pour plus d’informations sur les allers-retours, consultez [contrats de données à compatibilité ascendante](./feature-details/forward-compatible-data-contracts.md).  
   
 ## <a name="versioning-when-schema-validation-is-not-required"></a>Contrôle de version lorsque la validation de schéma n’est pas requise  
+
  La conformité stricte de schéma est rarement requise. De nombreuses plateformes tolèrent des éléments supplémentaires non décrits par un schéma. Tant que cela est toléré, l’ensemble complet des fonctionnalités décrites dans gestion des [versions](./feature-details/data-contract-versioning.md) des contrats de données et des [contrats de données à compatibilité ascendante](./feature-details/forward-compatible-data-contracts.md) peut être utilisé. Les instructions suivantes sont recommandées.  
   
  Certaines instructions doivent être suivies à la lettre pour envoyer de nouvelles versions d'un type alors qu'un type antérieur est attendu ou envoyer un type antérieur alors qu'une nouvelle version est attendue. Certaines instructions ne sont pas obligatoires, mais sont répertoriées dans ce contexte parce qu'elles peuvent être concernées à terme par l'évolution du contrôle de version de schéma.  
@@ -70,7 +74,7 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
   
     2. Si le membre ne peut pas avoir de valeur par défaut `null` ou zéro, une méthode de rappel doit être fournie à l'aide de <xref:System.Runtime.Serialization.OnDeserializingAttribute> pour fournir une valeur par défaut acceptable au cas où le membre ne serait pas présent dans le flux de données entrant. Pour plus d’informations sur le rappel, consultez [rappels de sérialisation avec tolérance de version](./feature-details/version-tolerant-serialization-callbacks.md).  
   
-    3. La propriété <xref:System.Runtime.Serialization.DataMemberAttribute.Order?displayProperty=nameWithType> doit être utilisée pour s’assurer que tous les membres de données récemment ajoutés apparaissent après les membres de données existants. Pour cela, la méthode recommandée consiste à ne pas définir la propriété `Order` des membres de données dans la première version du contrat de données. La propriété `Order` de tous les membres de données ajoutés à la version 2 du contrat de données doit avoir la valeur 2. La propriété `Order` de tous les membres de données ajoutés à la version 3 du contrat de données doit avoir la valeur 3, etc. Il est possible que plusieurs membres de données aient le même numéro d'`Order`.  
+    3. La <xref:System.Runtime.Serialization.DataMemberAttribute.Order?displayProperty=nameWithType> propriété doit être utilisée pour s’assurer que tous les membres de données récemment ajoutés apparaissent après les membres de données existants. Pour cela, la méthode recommandée consiste à ne pas définir la propriété `Order` des membres de données dans la première version du contrat de données. La propriété `Order` de tous les membres de données ajoutés à la version 2 du contrat de données doit avoir la valeur 2. La propriété `Order` de tous les membres de données ajoutés à la version 3 du contrat de données doit avoir la valeur 3, etc. Il est possible que plusieurs membres de données aient le même numéro d'`Order`.  
   
 9. Ne supprimez pas de membres de données dans les versions ultérieures, même si la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> conserve sa propriété `false` par défaut dans les versions antérieures.  
   
@@ -102,7 +106,7 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
 - <xref:System.Runtime.Serialization.ExtensionDataObject>
 - <xref:System.Runtime.Serialization.OnDeserializingAttribute>
 - [Utilisation de contrats de données](./feature-details/using-data-contracts.md)
-- [Gestion de version des contrats de données](./feature-details/data-contract-versioning.md)
+- [Contrôle de version des contrats de données](./feature-details/data-contract-versioning.md)
 - [Noms de contrats de données](./feature-details/data-contract-names.md)
 - [Contrats de données à compatibilité ascendante](./feature-details/forward-compatible-data-contracts.md)
 - [Rappels de sérialisation avec tolérance de version](./feature-details/version-tolerant-serialization-callbacks.md)

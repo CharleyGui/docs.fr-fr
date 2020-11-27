@@ -2,14 +2,15 @@
 title: 'Procédure : utiliser MetadataExchangeClient pour récupérer des métadonnées'
 ms.date: 03/30/2017
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
-ms.openlocfilehash: c9558e1943c3886a61c3b19801e22d57732e459a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 412e695036f29886310099cc5a55b940247b0c72
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968753"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280830"
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>Procédure : utiliser MetadataExchangeClient pour récupérer des métadonnées
+
 Utilisez la classe <xref:System.ServiceModel.Description.MetadataExchangeClient> pour télécharger les métadonnées à l'aide du protocole WS-MetadataExchange (MEX). Les fichiers de métadonnées récupérés sont retournés sous forme d'objet <xref:System.ServiceModel.Description.MetadataSet>. L'objet <xref:System.ServiceModel.Description.MetadataSet> retourné contient une collection d'objets <xref:System.ServiceModel.Description.MetadataSection>, chacun d'eux contenant un dialecte de métadonnées spécifique ainsi qu'un identificateur. Vous pouvez inscrire les métadonnées retournées dans des fichiers. Si ces métadonnées contiennent des documents WSDL (Web Services Description Language), vous pouvez également les importer à l'aide de <xref:System.ServiceModel.Description.WsdlImporter>.  
   
  Les constructeurs <xref:System.ServiceModel.Description.MetadataExchangeClient> qui acceptent une adresse utilisent la liaison de la classe statique <xref:System.ServiceModel.Description.MetadataExchangeBindings> correspondant au modèle URI de cette adresse. Vous pouvez également utiliser le constructeur <xref:System.ServiceModel.Description.MetadataExchangeClient> permettant de spécifier de manière explicite la liaison à utiliser. La liaison spécifiée est utilisée pour résoudre toutes les références de métadonnées.  
@@ -27,12 +28,14 @@ Utilisez la classe <xref:System.ServiceModel.Description.MetadataExchangeClient>
   
 3. Récupérez l'objet <xref:System.ServiceModel.Description.MetadataSet> qui contient les métadonnées récupérées en appelant l'une des méthodes <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A>. Remarque : vous pouvez utiliser uniquement la surcharge <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> n’acceptant pas d’arguments si vous avez spécifié une adresse de manière explicite pendant la construction de <xref:System.ServiceModel.Description.MetadataExchangeClient>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple de code suivant indique comment utiliser <xref:System.ServiceModel.Description.MetadataExchangeClient> pour télécharger et énumérer des fichiers de métadonnées.  
 
  [!code-csharp[MetadataResolver#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
 
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Pour compiler cet exemple de code, vous devez référencer l'assembly System.ServiceModel.dll et importer l'espace de noms <xref:System.ServiceModel.Description>.  
   
 ## <a name="see-also"></a>Voir aussi

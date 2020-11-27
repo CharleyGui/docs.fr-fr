@@ -5,14 +5,15 @@ ms.date: 02/25/2019
 helpviewer_keywords:
 - certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
-ms.openlocfilehash: e63034e48ae836f67f89b454829f7196c94610cd
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1f20384f16b3b5b898f926258d76a6a2773eaaa1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246673"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280622"
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>Procédure : afficher les certificats avec le composant logiciel enfichable MMC
+
 Lorsque vous créez un client ou un service sécurisé, vous pouvez utiliser un [certificat](working-with-certificates.md) comme informations d’identification. Par exemple, un type commun d’informations d’identification est le certificat X. 509, que vous créez à l’aide de la <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> méthode.
 
 Il existe trois types différents de magasins de certificats que vous pouvez examiner avec la console MMC (Microsoft Management Console) sur les systèmes Windows :

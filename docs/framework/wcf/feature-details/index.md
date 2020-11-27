@@ -7,27 +7,29 @@ helpviewer_keywords:
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-ms.openlocfilehash: 308a32c73d33a4da2fd841ca7c330a42deb7d324
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 30b8acb3b89b8c28be0b8d0b4ce5a1d1d734b055
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246634"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280427"
 ---
 # <a name="wcf-feature-details"></a>Informations détaillées sur les fonctionnalités de WCF
+
 Windows Communication Foundation (WCF) permet un contrôle étendu sur les fonctions de messagerie d’une application. Les rubriques de cette section présentent dans le détail les fonctionnalités disponibles. Pour plus d’informations sur la programmation de base, consultez [programmation WCF de base](../basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Services de workflow](workflow-services.md)  
  Explique comment créer et configurer des services de workflow.  
   
- [Points de terminaison : adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)  
+ [Points de terminaison : Adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)  
  Décrit comment contrôler plusieurs aspects de votre service.  
   
  [Transfert de données et sérialisation](data-transfer-and-serialization.md)  
  Décrit comment la sérialisation des données peut être adaptée pour l'interopérabilité ou la compatibilité future.  
   
- [Sessions, instanciation et concurrence](sessions-instancing-and-concurrency.md)  
+ [Sessions, instanciation et accès concurrentiel](sessions-instancing-and-concurrency.md)  
  Décrit les modes d’instanciation et de session de WCF et comment sélectionner le mode approprié pour votre application.  
   
  [Transports](transports.md)  
@@ -51,7 +53,7 @@ Windows Communication Foundation (WCF) permet un contrôle étendu sur les fonct
  [Clients](clients.md)  
  Décrit comment créer divers clients qui accèdent à des services.  
   
- [Hosting](hosting.md)  
+ [Hébergement](hosting.md)  
  Décrit l'hébergement. Un service peut être hébergé par une autre application ou il peut être auto-hébergé.  
   
  [Interopérabilité et intégration](interoperability-and-integration.md)  
@@ -73,6 +75,7 @@ Windows Communication Foundation (WCF) permet un contrôle étendu sur les fonct
  Décrit le service de routage.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -82,4 +85,5 @@ Windows Communication Foundation (WCF) permet un contrôle étendu sur les fonct
  <xref:System.ServiceModel.Routing>  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Programmation WCF de base](../basic-wcf-programming.md)

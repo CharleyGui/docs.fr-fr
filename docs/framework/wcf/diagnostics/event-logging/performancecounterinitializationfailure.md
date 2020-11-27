@@ -2,24 +2,26 @@
 title: PerformanceCounterInitializationFailure
 ms.date: 03/30/2017
 ms.assetid: 85050ac6-7f7b-4dd3-8e5e-f5116d7c9906
-ms.openlocfilehash: f8a6ef03074be8aee45dc5804329b601ff914b9d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 746ab980114cb8373165381757dcbab1a1e2d9da
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70796217"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96278542"
 ---
 # <a name="performancecounterinitializationfailure"></a>PerformanceCounterInitializationFailure
-Id : 149  
+
+ID : 149  
   
- Gravité : Error  
+ Gravité : Erreur  
   
  Catégorie : TransactionBridge  
   
 ## <a name="description"></a>Description  
+
  Cet événement indique qu'un compteur de performance n'a pas pu être initialisé. L'événement répertorie le nom du compteur, l'exception, le nom de processus et l'ID de processus.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Journalisation des événements](index.md)
-- [Informations de référence générales sur les événements](events-general-reference.md)
+- [Référence générale relative aux événements](events-general-reference.md)

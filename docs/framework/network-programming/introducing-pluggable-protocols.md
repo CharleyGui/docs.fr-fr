@@ -23,17 +23,19 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-ms.openlocfilehash: 0bc2d0d005e50b04aff360866a146f6fe6b0ea02
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5b61497963e785ffe8e4c04db5b54dfb2500eed8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502351"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279634"
 ---
 # <a name="introducing-pluggable-protocols"></a>Introduction aux protocoles enfichables
+
 Microsoft .NET Framework fournit une implémentation en couche, extensible et managée de services Internet que vous pouvez intégrer rapidement et facilement à vos applications. Les classes d’accès à Internet disponibles dans les espaces de noms <xref:System.Net> et <xref:System.Net.Sockets> permettent d’implémenter des applications Internet et web.  
   
 ## <a name="internet-applications"></a>Applications Internet  
+
  Les applications Internet se répartissent globalement en deux catégories : les applications clientes qui demandent des informations et les applications serveur qui répondent aux demandes d’informations effectuées par les clients. L’application client-serveur Internet connue est le World Wide Web, où les internautes utilisent des navigateurs pour accéder aux documents et autres données qui sont stockés sur des serveurs web dans le monde entier.  
   
  Les applications ne se limitent pas à un seul de ces rôles. Par exemple, un serveur d’applications de niveau intermédiaire standard répond aux demandes des clients en demandant lui-aussi des données à un autre serveur. Dans ce cas, ce serveur agit à la fois comme serveur et comme client.  
@@ -41,11 +43,13 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  L’application cliente effectue une demande en identifiant la ressource Internet demandée ainsi que le protocole de communication à utiliser pour la demande et la réponse. Si nécessaire, le client fournit aussi les données supplémentaires requises pour effectuer la demande, telles que les informations sur l’emplacement du proxy ou les informations d’authentification (nom d’utilisateur, mot de passe, etc.). Une fois que la demande est prête, elle est envoyée au serveur.  
   
 ## <a name="identifying-resources"></a>Identification des ressources  
+
  .NET Framework utilise un URI (Uniform Resource Identifier) pour identifier la ressource Internet demandée et le protocole de communication utilisé. L’URI se compose de trois ou quatre parties : l’identificateur de schéma, qui identifie le protocole de communication utilisé pour la demande et la réponse ; l’identificateur de serveur, constitué d’un nom d’hôte DNS ou d’une adresse TCP qui identifie de façon unique le serveur sur Internet ; l’identificateur de chemin d’accès, qui indique l’emplacement des informations demandées sur le serveur ; et une chaîne de requête facultative, qui passe les informations du client au serveur. Par exemple, l’URI `http://www.contoso.com/whatsnew.aspx?date=today` est formé de l’identificateur de schéma `http`, de l’identificateur de serveur `www.contoso.com`, du chemin d’accès `/whatsnew.aspx` et de la chaîne de requête `?date=today`.  
   
  Une fois que le serveur a reçu la demande et traité la réponse, il retourne la réponse à l’application cliente. La réponse inclut des informations supplémentaires, telles que le type du contenu (texte brut ou données XML, par exemple).  
   
 ## <a name="requests-and-responses-in-the-net-framework"></a>Demandes et réponses dans .NET Framework  
+
  .NET Framework utilise des classes spécifiques pour fournir les trois éléments d’informations nécessaires pour accéder à des ressources Internet selon un modèle de type demande-réponse : la classe <xref:System.Uri>, qui contient l’URI de la ressource Internet recherchée ; la classe <xref:System.Net.WebRequest>, qui contient une demande pour la ressource ; et la classe <xref:System.Net.WebResponse>, qui fournit un conteneur pour la réponse entrante.  
   
  Les applications clientes créent des instances `WebRequest` en passant l’URI de la ressource réseau à la méthode <xref:System.Net.WebRequest.Create%2A>. Cette méthode statique crée une instance `WebRequest` pour un protocole spécifique (HTTP, par exemple). L’instance `WebRequest` retournée fournit l’accès aux propriétés qui contrôlent à la fois la demande envoyée au serveur et l’accès au flux de données qui est transmis quand la demande est effectuée. La méthode <xref:System.Net.WebRequest.GetResponse%2A> sur `WebRequest` envoie la demande de l’application cliente au serveur identifié dans l’URI. Si la réponse risque d’être différée, la demande peut être effectuée de façon asynchrone sur **WebRequest**, à l’aide de la méthode <xref:System.Net.WebRequest.BeginGetResponse%2A>, et la réponse peut être retournée ultérieurement avec la méthode <xref:System.Net.WebRequest.EndGetResponse%2A>.  
@@ -61,6 +65,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Quand une autorisation du client est requise pour les demandes Internet, la propriété <xref:System.Net.WebRequest.Credentials%2A> de **WebRequest** fournit les informations d’identification nécessaires. Ces informations d’identification se composent simplement de la paire nom/mot de passe pour l’authentification HTTP de base ou Digest, ou de l’ensemble nom/mot de passe/domaine pour l’authentification NTLM ou Kerberos. Une instance <xref:System.Net.NetworkCredential> peut stocker un seul ensemble d’informations d’identification, alors qu’une instance <xref:System.Net.CredentialCache> peut en stocker plusieurs simultanément. **CredentialCache** utilise l’URI de la demande ainsi que le schéma d’authentification que le serveur prend en charge pour déterminer quelles informations d’identification envoyer au serveur.  
   
 ## <a name="simple-requests-with-webclient"></a>Demandes simples avec WebClient  
+
  Pour les applications se limitant à effectuer des demandes simples de ressources Internet, la classe <xref:System.Net.WebClient> fournit les méthodes standard permettant d’échanger des données avec un serveur Internet. Comme la classe **WebClient** repose sur la classe **WebRequest** pour fournir l’accès aux ressources Internet, la classe **WebClient** peut utiliser n’importe quel protocole enfichable inscrit.  
   
  Pour les applications qui ne peuvent pas utiliser le modèle de demande/réponse, ou pour les applications qui doivent écouter sur le réseau et envoyer des requêtes, l’espace de noms **System .net. Sockets** fournit les <xref:System.Net.Sockets.TcpClient> <xref:System.Net.Sockets.TcpListener> classes, et <xref:System.Net.Sockets.UdpClient> . Ces classes gèrent les informations utilisées pour établir des connexions à l’aide de différents protocoles de transport et exposent les connexions réseau à l’application sous forme de flux.  
@@ -70,5 +75,5 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
 ## <a name="see-also"></a>Voir aussi
 
 - [programmation de protocoles enfichables](programming-pluggable-protocols.md)
-- [Programmation réseau dans .NET Framework](index.md)
+- [Programmation réseau dans le .NET Framework](index.md)
 - [Exemples de programmation réseau](network-programming-samples.md)
