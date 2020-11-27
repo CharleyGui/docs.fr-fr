@@ -7,12 +7,12 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: df2a63716904ebfc6ee163121a1f07e53aa07514
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 36bfc60a55c8b0374a7e542b590aa7c030ceaed6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105179"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272265"
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 
@@ -49,19 +49,20 @@ Explique comment recevoir une notification indiquant qu’une exception a été 
 [Résoudre les chargements d'assemblys](../../standard/assembly/resolve-loads.md)  
 Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour résoudre les échecs de chargement de l’assembly.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
 
 <xref:System.AppDomain>  
 Représente un domaine d’application. Fournit des méthodes pour la création et le contrôle des domaines d’application.  
   
 ## <a name="related-sections"></a>Sections connexes  
+
 [Assemblys dans .NET](../../standard/assembly/index.md)  
 Fournit une vue d’ensemble des fonctions exécutées par les assemblys.  
   
 [Programmation à l’aide d’assemblys](../../standard/assembly/index.md)  
 Décrit comment créer, signer et définir des attributs sur des assemblys.  
   
-[Émission d’assemblys et de méthodes dynamiques](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
+[Émission d'assemblys et de méthodes dynamiques](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
 Décrit comment créer des assemblys dynamiques.  
   
 [Domaines d'application](application-domains.md)  

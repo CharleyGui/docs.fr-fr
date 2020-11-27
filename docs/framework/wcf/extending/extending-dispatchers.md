@@ -4,21 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: 9250ca09fb5e28655e39f8d91d991fdb3bffcdbd
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: fa9d5c40c2ae813493b3643048fa7eaba00c431d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795748"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273228"
 ---
 # <a name="extending-dispatchers"></a>Extension des répartiteurs
+
 Les répartiteurs sont chargés d'extraire des messages entrants des canaux sous-jacents, de les traduire dans des appels de méthode dans le code d'application et de renvoyer les résultats à l'appelant. Les extensions de répartiteurs vous permettent de modifier ce traitement.  Vous pouvez implémenter des inspecteurs de messages ou de paramètres qui inspectent ou modifient le contenu des messages ou des paramètres.  Vous pouvez modifier la manière dont les messages sont acheminés vers les opérations ou fournir d'autres fonctionnalités.
 
-Cette rubrique explique comment utiliser les <xref:System.ServiceModel.Dispatcher.DispatchRuntime> classes et <xref:System.ServiceModel.Dispatcher.DispatchOperation> dans une application de service Windows Communication Foundation (WCF) pour modifier le comportement d’exécution par défaut d’un répartiteur ou pour intercepter ou modifier des messages, des paramètres ou un retour. valeurs avant ou après l’envoi ou la récupération de la couche de canal. Pour plus d’informations sur le traitement des messages du runtime client équivalent, consultez [extension des clients](extending-clients.md). Pour comprendre le rôle <xref:System.ServiceModel.IExtensibleObject%601> joué par les types dans l’accès à l’état partagé entre différents objets de personnalisation du runtime, consultez [objets extensibles](extensible-objects.md).
+Cette rubrique explique comment utiliser les <xref:System.ServiceModel.Dispatcher.DispatchRuntime> classes et <xref:System.ServiceModel.Dispatcher.DispatchOperation> dans une application de service Windows Communication Foundation (WCF) pour modifier le comportement d’exécution par défaut d’un répartiteur ou pour intercepter ou modifier des messages, des paramètres ou des valeurs de retour avant ou après l’envoi ou la récupération de ces messages à partir de la couche de canal. Pour plus d’informations sur le traitement des messages du runtime client équivalent, consultez [extension des clients](extending-clients.md). Pour comprendre le rôle joué par les <xref:System.ServiceModel.IExtensibleObject%601> types dans l’accès à l’état partagé entre différents objets de personnalisation du runtime, consultez [objets extensibles](extensible-objects.md).
 
 ## <a name="dispatchers"></a>Répartiteurs
 
-La couche de modèle de service effectue la conversion entre le modèle de programmation du développeur et l'échange de message sous-jacent, ou communément, couche de canal. Dans WCF, les répartiteurs de canal et<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> de <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>point de terminaison (et, respectivement) sont les composants de service chargés d’accepter de nouveaux canaux, de recevoir des messages, de distribuer et d’appeler des opérations et de traiter les réponses. Les objets de répartiteur sont des objets de récepteur, mais les implémentations de contrat de rappel dans les services duplex exposent également leurs objets de répartiteur pour l’inspection, le changement ou l’extension.
+La couche de modèle de service effectue la conversion entre le modèle de programmation du développeur et l'échange de message sous-jacent, ou communément, couche de canal. Dans WCF, les répartiteurs de canal et de point de terminaison ( <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> et <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> , respectivement) sont les composants de service chargés d’accepter de nouveaux canaux, de recevoir des messages, de distribuer et d’appeler des opérations et de traiter les réponses. Les objets de répartiteur sont des objets de récepteur, mais les implémentations de contrat de rappel dans les services duplex exposent également leurs objets de répartiteur pour l’inspection, le changement ou l’extension.
 
 Le répartiteur de canal (et le <xref:System.ServiceModel.Channels.IChannelListener>d'accompagnement) extrait des messages hors du canal sous-jacent et passe les messages à leurs répartiteurs de point de terminaison respectifs. Chaque répartiteur de point de terminaison a un <xref:System.ServiceModel.Dispatcher.DispatchRuntime> qui route des messages au <xref:System.ServiceModel.Dispatcher.DispatchOperation> approprié, chargé d'appeler la méthode qui implémente l'opération. Différentes classes d'extension facultatives et requises sont appelées. Cette rubrique explique comment ces morceaux s'ajustent les uns aux autres et comment vous pouvez modifier des propriétés et brancher votre propre code pour étendre les fonctionnalités de base.
 
@@ -26,7 +27,7 @@ Les propriétés de répartiteur et les objets de personnalisation modifiés son
 
 Le graphique suivant fournit une vue d'ensemble des éléments architecturaux dans un service.
 
-![Architecture du runtime de dispatch](./media/wcfc-dispatchruntimearchc.gif "wcfc_DispatchRuntimeArchc")
+![Architecture d'exécution du répartiteur](./media/wcfc-dispatchruntimearchc.gif "wcfc_DispatchRuntimeArchc")
 
 ### <a name="channel-dispatchers"></a>Répartiteurs de canal
 
@@ -50,7 +51,7 @@ Plusieurs raisons d'étendre le répartiteur existent :
 
 - Transformations personnalisées des messages. Les utilisateurs peuvent appliquer certaines transformations au message dans l'exécution (par exemple, pour le contrôle de la version). Cela peut, à nouveau, être accompli à l'aide des interfaces de l'intercepteur de messages.
 
-- Modèle personnalisé de données. Les utilisateurs peuvent avoir un modèle de sérialisation de données autre que celui pris en charge par défaut dans <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>WCF <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>(à savoir, les messages bruts,, et). Cela peut être accompli en implémentant les interfaces du module de formatage de messages. Pour obtenir un exemple, consultez [formateur d’opérations et sélecteur d’opérations](../samples/operation-formatter-and-operation-selector.md).
+- Modèle personnalisé de données. Les utilisateurs peuvent avoir un modèle de sérialisation de données autre que celui pris en charge par défaut dans WCF (à savoir, les <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> messages bruts,, et). Cela peut être accompli en implémentant les interfaces du module de formatage de messages. Pour obtenir un exemple, consultez [formateur d’opérations et sélecteur d’opérations](../samples/operation-formatter-and-operation-selector.md).
 
 - Validation personnalisée des paramètres. Les utilisateurs peuvent s’assurer que les paramètres typés sont valides (contrairement à XML). Cela peut être accompli à l'aide des interfaces de l'inspecteur de paramètres.
 
@@ -67,7 +68,7 @@ Plusieurs raisons d'étendre le répartiteur existent :
   > [!CAUTION]
   > Étant donné que la modification des propriétés de sécurité risque de compromettre la sécurité des applications WCF, il est fortement recommandé d’effectuer des modifications liées à la sécurité avec soin et de tester minutieusement avant le déploiement.
 
-- Validateurs d'exécution WCF personnalisés. Vous pouvez installer des validateurs personnalisés qui examinent des services, des contrats et des liaisons pour appliquer des stratégies au niveau de l’entreprise en ce qui concerne les applications WCF. (Par exemple, consultez [procédure : Verrouiller les points de terminaison dans l'](how-to-lock-down-endpoints-in-the-enterprise.md)entreprise.)
+- Validateurs d'exécution WCF personnalisés. Vous pouvez installer des validateurs personnalisés qui examinent des services, des contrats et des liaisons pour appliquer des stratégies au niveau de l’entreprise en ce qui concerne les applications WCF. (Par exemple, consultez [Comment : verrouiller des points de terminaison dans l’entreprise](how-to-lock-down-endpoints-in-the-enterprise.md).)
 
 ### <a name="using-the-dispatchruntime-class"></a>Utilisation de la classe DispatchRuntime
 
@@ -137,6 +138,6 @@ La propriétés suivantes contrôlent l'exécution au niveau de l'opération :
 
 - <xref:System.ServiceModel.Dispatcher.DispatchRuntime>
 - <xref:System.ServiceModel.Dispatcher.DispatchOperation>
-- [Guide pratique pour Inspecter et modifier des messages sur le service](how-to-inspect-and-modify-messages-on-the-service.md)
-- [Guide pratique pour Inspecter ou modifier des paramètres](how-to-inspect-or-modify-parameters.md)
-- [Guide pratique : Verrouiller les points de terminaison dans l’entreprise](how-to-lock-down-endpoints-in-the-enterprise.md)
+- [Procédure : inspecter et modifier des messages sur le service](how-to-inspect-and-modify-messages-on-the-service.md)
+- [Procédure : inspecter ou modifier des paramètres](how-to-inspect-or-modify-parameters.md)
+- [Procédure : verrouiller des points de terminaison dans l’entreprise](how-to-lock-down-endpoints-in-the-enterprise.md)

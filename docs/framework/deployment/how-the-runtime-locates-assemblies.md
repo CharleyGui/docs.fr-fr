@@ -10,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 1b2ee58ccbd4bdfceb6300c20d5255718982f2e5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031707"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272525"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -135,11 +135,13 @@ Le fichier de configuration de la stratégie d'éditeur substitue les informatio
 Un fichier de stratégie d'éditeur est utilisé quand un composant partagé est mis à jour et que la nouvelle version de ce composant doit être utilisée par toutes les applications partageant le composant. Les paramètres définis dans le fichier de stratégie d'éditeur substituent ceux du fichier de configuration de l'application, sauf si ce dernier applique le mode sans échec.
 
 #### <a name="safe-mode"></a>Mode sans échec
+
 Les fichiers de stratégie d'éditeur sont généralement installés explicitement avec un Service Pack ou une mise à jour de programme. En cas de problème avec le composant partagé mis à jour, vous pouvez ignorer les substitutions spécifiées dans le fichier de stratégie d'éditeur en utilisant le mode sans échec. Le mode sans échec est déterminé par l' **\<publisherPolicy apply="yes**&#124;**no"/>** élément, situé uniquement dans le fichier de configuration de l’application. Il spécifie si les informations de configuration du fichier de stratégie d'éditeur doivent être supprimées du processus de liaison.
 
 Le mode sans échec peut être défini pour toute l'application ou pour des assemblys spécifiques. Autrement dit, vous pouvez désactiver la stratégie pour tous les assemblys qui composent votre application ou l'activer pour certains assemblys seulement. Pour appliquer de manière sélective une stratégie d’éditeur aux assemblys qui composent une application, définissez **\<publisherPolicy apply\=no/>** et spécifiez les assemblys que vous souhaitez affecter à l’aide de l' \<**dependentAssembly**> élément. Pour appliquer la stratégie d’éditeur à tous les assemblys qui composent l’application, définissez sans **\<publisherPolicy apply\=no/>** éléments d’assembly dépendants. Pour plus d'informations sur la configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
 
 ### <a name="machine-configuration-file"></a>Fichier de configuration de l'ordinateur
+
 Finalement, le runtime examine le fichier de configuration de l'ordinateur. Ce fichier, intitulé Machine.config, réside sur l'ordinateur local dans le sous-répertoire Config du répertoire racine où le runtime est installé. Il peut être utilisé par les administrateurs pour spécifier des restrictions de liaison d'assemblys qui sont propres à cet ordinateur. Les paramètres définis dans le fichier de configuration de l'ordinateur sont prioritaires par rapport aux autres paramètres de configuration. Cependant, cela ne signifie pas que tous les paramètres de configuration doivent être placés dans ce fichier. La version déterminée par le fichier de stratégie d'administrateur est finale et ne peut pas être substituée. Les substitutions spécifiées dans le fichier Machine.config s'appliquent à toutes les applications. Pour plus d'informations sur les fichiers de configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../configure-apps/index.md).
 
 <a name="step2"></a>

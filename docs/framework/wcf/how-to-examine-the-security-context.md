@@ -1,5 +1,5 @@
 ---
-title: 'Comment : examiner le contexte de sécurité'
+title: 'Procédure : examiner le contexte de sécurité'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,15 @@ helpviewer_keywords:
 - WCF, security
 - Claimset class
 ms.assetid: 389b5a57-4175-4bc0-ada0-fc750d51149f
-ms.openlocfilehash: 328d47a583a4f047fd54589a82d339de2cb1a16f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 40950614892ddfd4eb24194f0389e057a5a13378
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320990"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272942"
 ---
-# <a name="how-to-examine-the-security-context"></a>Comment : examiner le contexte de sécurité
+# <a name="how-to-examine-the-security-context"></a>Procédure : examiner le contexte de sécurité
+
 Lors de la programmation des services Windows Communication Foundation (WCF), le contexte de sécurité du service vous permet de déterminer les détails sur les informations d’identification du client et les revendications utilisées pour l’authentification auprès du service. Pour ce faire, utilisez les propriétés de la classe <xref:System.ServiceModel.ServiceSecurityContext>.  
   
  Par exemple, vous pouvez récupérer l'identité du client actuel en utilisant la propriété <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> ou <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A>. Pour déterminer si le client est ou non anonyme, utilisez la propriété <xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A>.  
@@ -37,13 +38,15 @@ Lors de la programmation des services Windows Communication Foundation (WCF), le
   
 2. Analysez la collection d’objets <xref:System.IdentityModel.Claims.ClaimSet> retournés par la propriété <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> de la classe <xref:System.IdentityModel.Policy.AuthorizationContext>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant imprime les valeurs des propriétés <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> et <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> du contexte de sécurité actuel ainsi que la propriété <xref:System.IdentityModel.Claims.Claim.ClaimType%2A>, la valeur de ressource de la revendication et la propriété <xref:System.IdentityModel.Claims.Claim.Right%2A> de chaque revendication du contexte de sécurité actuel.  
   
  [!code-csharp[c_PrincipalPermissionAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_principalpermissionattribute/cs/source.cs#4)]
  [!code-vb[c_PrincipalPermissionAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_principalpermissionattribute/vb/source.vb#4)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Le code utilise les espaces de noms suivants :  
   
 - <xref:System>  

@@ -2,25 +2,28 @@
 title: Instancing Initialization
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 06a8dfe571b652ded236df3097b37861c03a858d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9681c091fe2a69024b000c5b93d003ec4d127a7b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596654"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273358"
 ---
 # <a name="instancing-initialization"></a>Instancing Initialization
+
 Cet exemple étend l’exemple de [regroupement](pooling.md) en définissant une interface, `IObjectControl` , qui personnalise l’initialisation d’un objet en l’activant et en le désactivant. Le client appelle des méthodes qui retournent l'objet au pool et d'autres qui ne retournent pas l'objet au pool.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 ## <a name="extensibility-points"></a>Points d'extensibilité  
+
  La première étape de la création d’une extension Windows Communication Foundation (WCF) consiste à décider du point d’extensibilité à utiliser. Dans WCF, le terme *EndpointDispatcher* fait référence à un composant Runtime chargé de convertir des messages entrants en appels de méthode sur le service de l’utilisateur et de convertir les valeurs de retour de cette méthode en message sortant. Un service WCF crée un EndpointDispatcher pour chaque point de terminaison.  
   
  L'EndpointDispatcher permet l'extensibilité de l'étendue du point de terminaison (pour tous les messages reçus ou envoyés par le service) à l'aide de la classe <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>. Cette classe vous permet de personnaliser différentes propriétés qui contrôlent le comportement de l'EndpointDispatcher. Cet exemple se concentre sur la propriété <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> qui pointe sur l'objet qui fournit les instances de la classe de service.  
   
 ## <a name="iinstanceprovider"></a>IInstanceProvider  
+
  Dans WCF, EndpointDispatcher crée des instances d’une classe de service à l’aide d’un fournisseur d’instances qui implémente l' <xref:System.ServiceModel.Dispatcher.IInstanceProvider> interface. Cette interface possède uniquement deux méthodes :  
   
 - <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> : lorsqu'un message arrive, le répartiteur appelle la méthode <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> afin de créer une instance de la classe de service pour traiter le message. La fréquence des appels à cette méthode est déterminée par la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>. Par exemple, si la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> a la valeur <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType>, une nouvelle instance de la classe de service est créée pour traiter chaque message qui arrive, et <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> est donc appelée chaque fois qu'un message arrive.  
@@ -28,6 +31,7 @@ Cet exemple étend l’exemple de [regroupement](pooling.md) en définissant une
 - <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> : lorsque l'instance de service finit de traiter le message, l'EndpointDispatcher appelle la méthode <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A>. À l'instar de la méthode <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>, la fréquence des appels à cette méthode est déterminée par la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>.  
   
 ## <a name="the-object-pool"></a>Mise en pool d’objets  
+
  La classe `ObjectPoolInstanceProvider` contient l'implémentation pour le mise en pool d’objets. Cette classe implémente l'interface <xref:System.ServiceModel.Dispatcher.IInstanceProvider> pour interagir avec la couche de modèle de service. Lorsque l'EndpointDispatcher appelle la méthode <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>, au lieu de créer une instance, l'implémentation personnalisée recherche un objet existant dans un pool en mémoire. Si aucun n'est disponible, il est retourné. Sinon, `ObjectPoolInstanceProvider` vérifie si la propriété `ActiveObjectsCount` (nombre d'objets retournés depuis le pool) a atteint la taille de pool maximale. Si ce n'est pas le cas, une nouvelle instance est créée et retournée à l'appelant et `ActiveObjectsCount` est incrémenté par la suite. Sinon, une demande de création d'objet est mise en file d'attente pendant le laps de temps configuré. L'implémentation pour `GetObjectFromThePool` est présentée dans l'exemple de code suivant.  
   
 ```csharp
@@ -201,6 +205,7 @@ public class PoolService : IPoolService
 ```  
   
 ## <a name="hooking-activation-and-deactivation"></a>Activation et désactivation du raccordement  
+
  L'objectif principal de la mise en mise en pool d’objets est d'optimiser la création et l'initialisation relativement coûteuses des objets éphémères. Par conséquent, elle peut singulièrement améliorer les performances d'une application si elle est utilisée correctement. Étant donné que l'objet est retourné depuis le pool, le constructeur est appelé une seule fois. Toutefois, certaines applications requièrent un certain niveau de contrôle afin de pouvoir initialiser et nettoyer les ressources utilisées dans un contexte unique. Par exemple, un objet utilisé pour un ensemble de calculs peut réinitialiser ses champs privés avant de traiter le calcul suivant. Les Enterprise Services ont activé ce type d'initialisation spécifique au contexte en laissant le développeur d'objets substituer les méthodes `Activate` et `Deactivate` de la classe <xref:System.EnterpriseServices.ServicedComponent> de base.  
   
  Le pool d'objets appelle la méthode `Activate` juste avant de retourner l'objet depuis le pool. `Deactivate` est appelé lorsque l'objet est retourné au pool. La classe <xref:System.EnterpriseServices.ServicedComponent> de base a également une propriété `boolean` appelée `CanBePooled`, qui peut être utilisée pour notifier au pool que l'objet peut être davantage regroupé.  

@@ -2,14 +2,15 @@
 title: ServiceAuthorizationBehavior
 ms.date: 03/30/2017
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
-ms.openlocfilehash: 51555e3357b8c33a53261c4894d97798b0a05656
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3625865484568746888ef0638d9a8501e610bef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61957053"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273202"
 ---
 # <a name="serviceauthorizationbehavior"></a>ServiceAuthorizationBehavior
+
 ServiceAuthorizationBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -25,40 +26,46 @@ class ServiceAuthorizationBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe ServiceAuthorizationBehavior ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe ServiceAuthorizationBehavior a les propriétés suivantes :  
   
 ### <a name="impersonatecallerforalloperations"></a>ImpersonateCallerForAllOperations  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur qui contrôle si le service essaie d'emprunter l'identité à l'aide des informations d'identification fournies par le message entrant.  
   
 ### <a name="principalpermissionmode"></a>PrincipalPermissionMode  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Principal de sécurité utilisée pour effectuer les opérations sur le serveur.  
   
 ### <a name="roleprovider"></a>RoleProvider  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Nom du fournisseur de rôles ASP.NET.  
   
 ### <a name="serviceauthorizationmanager"></a>ServiceAuthorizationManager  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Gestionnaire d'autorisations utilisé pour l'autorisation personnalisée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

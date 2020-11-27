@@ -10,14 +10,15 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: 84cad85a7a9fc4b420b57543b7f258607be4ab52
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 4edf11315892ed8267bee17d69a70033348eca5c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517046"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272564"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
+
 L’outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du .NET Framework. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
   
 - À partir d'une base de données, générez le code source et les attributs de mappage ou un fichier de mappage.  
@@ -33,13 +34,14 @@ L’outil en ligne de commande SqlMetal génère le code et le mappage du compos
   
  Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md). À l’invite de commandes, tapez ce qui suit :  
   
-## <a name="syntax"></a>Syntax  
+## <a name="syntax"></a>Syntaxe  
   
 ```console  
 sqlmetal [options] [<input file>]  
 ```  
   
 ## <a name="options"></a>Options  
+
  Pour afficher la liste des options la plus récente, tapez `sqlmetal /?` à partir d’une invite de commandes depuis l’emplacement d’installation.  
   
  **Options de connexion**  
@@ -50,7 +52,7 @@ sqlmetal [options] [<input file>]
 |**/Database :***\<name>*|Spécifie le catalogue de base de données sur le serveur.|  
 |**/User :***\<name>*|Spécifie l’ID d’utilisateur d’ouverture de session. Valeur par défaut : utilisez l’authentification Windows.|  
 |**/Password :***\<password>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : utilisez l'authentification Windows.|  
-|**/conn :***\<connection string>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
+|**/conn :***\<connection string>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user** ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
 |**/timeout :***\<seconds>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 (à savoir, aucune limite de temps).|  
   
  **Options d’extraction**  
@@ -86,7 +88,8 @@ sqlmetal [options] [<input file>]
 |------------|-----------------|  
 |**\<input file>**|Spécifie un fichier SQL Server Express .mdf, un fichier SQL Server Compact 3.5 .sdf, ou un fichier intermédiaire .dbml.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  La fonctionnalité SqlMetal implique en fait deux étapes :  
   
 - Extraction des métadonnées de la base de données dans un fichier .dbml.  
@@ -110,6 +113,7 @@ sqlmetal [options] [<input file>]
  Pour spécifier un nom de fichier d'entrée, ajoutez son nom à la ligne de commande comme fichier d'entrée. L’inclusion du nom de fichier dans la chaîne de connexion (avec l’option **/conn** ) n’est pas prise en charge.  
   
 ## <a name="examples"></a>Exemples  
+
  Générez un fichier .dbml qui inclut des métadonnées SQL extraites :  
   
  **sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**  

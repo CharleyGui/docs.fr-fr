@@ -2,14 +2,15 @@
 title: SecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: ef93b6e6-3524-48a8-94d3-c8837f1872f9
-ms.openlocfilehash: 1d367d0c5d14e6e75539dd2b20cdffcf2b34963d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61eae75de04f75b6ad6e78d16569595732b3d28f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962784"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273306"
 ---
 # <a name="securitybindingelement"></a>SecurityBindingElement
+
 SecurityBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,54 +28,62 @@ class SecurityBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Méthodes  
+
  La classe SecurityBindingElement ne définit pas de méthode.  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>Propriétés  
+
  La classe SecurityBindingElement a les propriétés suivantes :  
   
 ### <a name="defaultalgorithmsuite"></a>DefaultAlgorithmSuite  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Spécifie les algorithmes à utiliser avec la liaison.  
   
 ### <a name="includetimestamp"></a>IncludeTimestamp  
+
  Type de données : booléen  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Valeur booléenne qui spécifie si chaque message contient un horodatage.  
   
 ### <a name="keyentropymode"></a>KeyEntropyMode  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Source d'entropie utilisée pour créer des clés.  
   
 ### <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings  
+
  Type de données : LocalServiceSecuritySettings  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Propriétés de sécurité spécifiques d’une liaison pour le service local.  
   
 ### <a name="messagesecurityversion"></a>MessageSecurityVersion  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Version utilisée pour la sécurité de message.  
   
 ### <a name="securityheaderlayout"></a>SecurityHeaderLayout  
- Type de données : chaîne  
+
+ Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d'accès : Lecture seule  
   
  Ordre des éléments dans l'en-tête de sécurité pour cette liaison.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

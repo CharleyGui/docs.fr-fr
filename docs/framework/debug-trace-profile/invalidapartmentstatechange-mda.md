@@ -12,13 +12,15 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - COM apartment states
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
-ms.openlocfilehash: c6f7b6a5e450d4167946d22b2ada268ea2b0135f
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: db55e3ac2d6862d008013abef0f09f67213d9faa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051825"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272746"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>Assistant Débogage managé invalidApartmentStateChange
+
 L’Assistant Débogage managé `invalidApartmentStateChange` est activé par l’un des deux problèmes suivants :  
   
 - Une tentative est effectuée pour modifier l’état de cloisonnement COM d’un thread qui a déjà été initialisé par COM à un état de cloisonnement différent.  
@@ -38,14 +40,17 @@ L’Assistant Débogage managé `invalidApartmentStateChange` est activé par l�
 - La méthode `CoUninitialize` (ou la méthode `CoInitializeEx`) avec un modèle de concurrence différent est appelée sur le thread.  
   
 ## <a name="resolution"></a>Résolution  
+
  Définissez l’état de cloisonnement du thread avant que son exécution ne commence ou appliquez l’attribut <xref:System.STAThreadAttribute> ou l’attribut <xref:System.MTAThreadAttribute> à la méthode principale de l’application.  
   
  Dans l’idéal, pour la deuxième cause, le code qui appelle la méthode `CoUninitialize` doit être modifié pour différer l’appel jusqu’à ce que le thread soit sur le point de s’arrêter et qu’aucun des RCW ou de leurs composants COM sous-jacents ne soient encore utilisés par le thread. Toutefois, s’il est impossible de modifier le code qui appelle la méthode `CoUninitialize`, aucun RCW ne doit être utilisé par des threads non initialisés de cette façon.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
+
  État de cloisonnement COM du thread actuel et état que le code tentait d’appliquer.  
   
 ## <a name="configuration"></a>Configuration  
@@ -58,7 +63,8 @@ L’Assistant Débogage managé `invalidApartmentStateChange` est activé par l�
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L’exemple de code suivant illustre une situation qui peut activer cet Assistant Débogage managé.  
   
 ```csharp
@@ -78,5 +84,5 @@ namespace ApartmentStateMDA
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostic d’erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostic d'erreurs avec les Assistants de débogage managés](diagnosing-errors-with-managed-debugging-assistants.md)
 - [Marshaling d’interopérabilité](../interop/interop-marshaling.md)
