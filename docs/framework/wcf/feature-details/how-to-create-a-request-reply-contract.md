@@ -1,15 +1,16 @@
 ---
-title: 'Comment : créer un contrat demande-réponse'
+title: 'Procédure : créer un contrat de demande-réponse'
 ms.date: 03/30/2017
 ms.assetid: 801d90da-3d45-4284-9c9f-56c8aadb4060
-ms.openlocfilehash: 8a09c265c77edc584b591477e64314f1e76e332b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 506ce527348286bb53223c64245c74e4cb21879a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593436"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286550"
 ---
-# <a name="how-to-create-a-request-reply-contract"></a>Comment : créer un contrat demande-réponse
+# <a name="how-to-create-a-request-reply-contract"></a>Procédure : créer un contrat de demande-réponse
+
 Un contrat demande-réponse spécifie une méthode qui retourne une réponse. La réponse doit être envoyée et corrélée à la demande selon les termes de ce contrat. Même si la méthode ne retourne aucune réponse (`void` dans C# ou un `Sub` dans Visual Basic), l'infrastructure crée et envoie un message vide à l'appelant. Pour empêcher l'envoi d'un message de réponse vide, utilisez un contrat unidirectionnel pour l'opération.  
   
 ### <a name="to-create-a-request-reply-contract"></a>Pour créer un contrat demande-réponse  
@@ -20,9 +21,10 @@ Un contrat demande-réponse spécifie une méthode qui retourne une réponse. La
   
 3. Appliquez l'attribut <xref:System.ServiceModel.OperationContractAttribute> à chaque méthode que les clients peuvent appeler.  
   
-4. Facultatif. Affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> la valeur `true` pour empêcher l'envoi d'un message de réponse vide. Par défaut, toutes les opérations sont des contrats demande-réponse.  
+4. facultatif. Affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> la valeur `true` pour empêcher l'envoi d'un message de réponse vide. Par défaut, toutes les opérations sont des contrats demande-réponse.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant définit un contrat pour un service de calculatrice qui fournit des méthodes `Add` et `Subtract`. La méthode `Multiply` ne fait pas partie du contrat car elle n'est pas marquée par la classe <xref:System.ServiceModel.OperationContractAttribute> et n'est pas, par conséquent, accessible aux clients.  
   
 ```csharp
@@ -51,4 +53,4 @@ public interface ICalculator
 
 - <xref:System.ServiceModel.OperationContractAttribute>
 - [Conception de contrats de service](../designing-service-contracts.md)
-- [Comment : créer un contrat duplex](how-to-create-a-duplex-contract.md)
+- [Procédure : créer un contrat duplex](how-to-create-a-duplex-contract.md)

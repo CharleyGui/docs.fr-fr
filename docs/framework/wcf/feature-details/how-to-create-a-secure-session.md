@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer une session sécurisée'
+title: 'Procédure : créer une session sécurisée'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
-ms.openlocfilehash: 80973a31050cf1ede03d4a3919066c62625ae590
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f6fb73653add7362e8c8452e75be802395ffc3cd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593410"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286524"
 ---
-# <a name="how-to-create-a-secure-session"></a>Comment : créer une session sécurisée
+# <a name="how-to-create-a-secure-session"></a>Procédure : créer une session sécurisée
+
 À l’exception de la [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) liaison, les liaisons fournies par le système dans Windows Communication Foundation (WCF) utilisent automatiquement des sessions sécurisées lorsque la sécurité de message est activée.  
   
  Par défaut, les sessions sécurisées ne survivent pas à un serveur web recyclé. Lorsqu'une session sécurisée est établie, le client et le service mettent en cache la clé associée à la session sécurisée. Lorsque les messages sont échangés, seul un identificateur de la clé mise en cache est échangé. Si le serveur web est recyclé, le cache est également recyclé, de sorte que le serveur web ne peut pas récupérer la clé mise en cache pour l’identificateur. Si cela arrive, une exception est retournée au client. Les sessions sécurisées qui utilisent un jeton de contexte de sécurité avec état peuvent survivre au recyclage d'un serveur Web. Pour plus d’informations sur l’utilisation d’un SCT avec état dans une session sécurisée, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](how-to-create-a-security-context-token-for-a-secure-session.md).  
@@ -60,7 +61,7 @@ ms.locfileid: "84593410"
   
 - Créez une liaison personnalisée qui spécifie que les messages SOAP sont protégés par une session sécurisée.  
   
-     Pour plus d’informations sur la création d’une liaison personnalisée, consultez Guide pratique [pour personnaliser une liaison fournie par le système](../extending/how-to-customize-a-system-provided-binding.md).  
+     Pour plus d’informations sur la création d’une liaison personnalisée, consultez [How to : Customize a System-Provided Binding](../extending/how-to-customize-a-system-provided-binding.md).  
   
      L’exemple de code suivant utilise la configuration pour spécifier une liaison personnalisée à laquelle les messages font appel dans une session sécurisée.  
   

@@ -22,14 +22,15 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-ms.openlocfilehash: 760a4ac7cec9abeabfc372c3be5bd3860a6fb03a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 796752ebf6e3cc5c3dac2a20213934f35d31b392
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502637"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287460"
 ---
 # <a name="configuring-internet-applications"></a>Configuration des applications Internet
+
 L’élément de configuration de l' [ \<system.Net> élément (paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md) contient des informations de configuration réseau pour les applications. À l’aide de l’élément [ \<system.Net> (paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md) , vous pouvez définir des serveurs proxy, définir des paramètres de gestion de connexion et inclure l’authentification personnalisée et les modules de demande dans votre application.  
   
  L’élément [ \<defaultProxy> élément (paramètres réseau)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) définit le serveur proxy retourné par la `GlobalProxySelection` classe. Tout <xref:System.Net.HttpWebRequest> dont la propre propriété <xref:System.Net.HttpWebRequest.Proxy%2A> n’a pas une valeur spécifique utilise le proxy par défaut. En plus de définir l’adresse du proxy, vous pouvez créer une liste d’adresses de serveurs qui n’utiliseront pas le serveur proxy, et vous pouvez indiquer que le proxy ne doit pas être utilisé pour les adresses locales.  
@@ -100,6 +101,6 @@ L’élément de configuration de l' [ \<system.Net> élément (paramètres rés
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation réseau dans .NET Framework](index.md)
+- [Programmation réseau dans le .NET Framework](index.md)
 - [Schéma des paramètres réseau](../configure-apps/file-schema/network/index.md)
-- [\<system.Net>, Élément (paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<system.Net> , Élément (paramètres réseau)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

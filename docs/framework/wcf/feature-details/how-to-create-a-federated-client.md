@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer un client fédéré'
+title: 'Procédure : créer un client fédéré'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +8,18 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-ms.openlocfilehash: 47e59452edfff74daf17d94a058ce8b12af7867c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a03d388f2773e312a149b5caf1747627d1c17864
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593540"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286622"
 ---
-# <a name="how-to-create-a-federated-client"></a>Comment : créer un client fédéré
+# <a name="how-to-create-a-federated-client"></a>Procédure : créer un client fédéré
+
 Dans Windows Communication Foundation (WCF), la création d’un client pour un *service fédéré* se compose de trois étapes principales :  
   
-1. Configurez une [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) liaison personnalisée ou similaire. Pour plus d’informations sur la création d’une liaison appropriée, consultez [How to : Create a WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md). Vous pouvez également exécuter l' [outil ServiceModel Metadata Utility (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) sur le point de terminaison des métadonnées du service fédéré pour générer un fichier de configuration pour communiquer avec le service fédéré et un ou plusieurs services de jeton de sécurité.  
+1. Configurez une [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) liaison personnalisée ou similaire. Pour plus d’informations sur la création d’une liaison appropriée, consultez [How to : Create a WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md). Vous pouvez également exécuter l' [outil ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) sur le point de terminaison des métadonnées du service fédéré pour générer un fichier de configuration pour communiquer avec le service fédéré et un ou plusieurs services de jeton de sécurité.  
   
 2. Définissez les propriétés du <xref:System.ServiceModel.Security.IssuedTokenClientCredential> qui contrôle différents aspects de l'interaction d'un client avec un service d'émission de jeton de sécurité.  
   
@@ -31,7 +32,7 @@ Dans Windows Communication Foundation (WCF), la création d’un client pour un 
   
 ### <a name="to-generate-and-examine-the-configuration-for-a-federated-service"></a>Pour générer et examiner la configuration d'un service fédéré  
   
-1. Exécutez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) avec l’adresse de l’URL des métadonnées du service en tant que paramètre de ligne de commande.  
+1. Exécutez l' [outil ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) avec l’adresse de l’URL des métadonnées du service en tant que paramètre de ligne de commande.  
   
 2. Ouvrez le fichier de configuration généré dans un éditeur approprié.  
   
@@ -51,14 +52,14 @@ Dans Windows Communication Foundation (WCF), la création d’un client pour un 
      [!code-csharp[c_CreateSTS#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#9)]
      [!code-vb[c_CreateSTS#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#9)]  
   
-2. Si la mise en cache de jeton n'est pas requise, affectez à la propriété <xref:System.ServiceModel.Security.IssuedTokenClientCredential.CacheIssuedTokens%2A> la valeur `false`. La propriété <xref:System.ServiceModel.Security.IssuedTokenClientCredential.CacheIssuedTokens%2A> contrôle si les jetons d'un service d'émission de jeton de sécurité sont mis en cache. Si cette propriété a la valeur `false`, le client demande un nouveau jeton auprès du service d'émission de jeton de sécurité à chaque fois qu'il doit se  ré-authentifier lui-même auprès du service fédéré, qu'un jeton précédent soit encore valide ou non. Si cette propriété a la valeur `true`, le client réutilise un jeton existant toutes les fois qu'il doit se ré-authentifier auprès du service fédéré (tant que le jeton n'a pas expiré). Par défaut, il s’agit de `true`.  
+2. Si la mise en cache de jeton n'est pas requise, affectez à la propriété <xref:System.ServiceModel.Security.IssuedTokenClientCredential.CacheIssuedTokens%2A> la valeur `false`. La propriété <xref:System.ServiceModel.Security.IssuedTokenClientCredential.CacheIssuedTokens%2A> contrôle si les jetons d'un service d'émission de jeton de sécurité sont mis en cache. Si cette propriété a la valeur `false`, le client demande un nouveau jeton auprès du service d'émission de jeton de sécurité à chaque fois qu'il doit se  ré-authentifier lui-même auprès du service fédéré, qu'un jeton précédent soit encore valide ou non. Si cette propriété a la valeur `true`, le client réutilise un jeton existant toutes les fois qu'il doit se ré-authentifier auprès du service fédéré (tant que le jeton n'a pas expiré). La valeur par défaut est `true`.  
   
 3. Si une limite de temps est requise sur les jetons mis en cache, affectez à la propriété <xref:System.ServiceModel.Security.IssuedTokenClientCredential.MaxIssuedTokenCachingTime%2A> une valeur <xref:System.TimeSpan>. La propriété spécifie la durée de mise en cache d'un jeton. Au terme de l'intervalle de temps spécifié, le jeton est supprimé du cache client. Par défaut, les jetons sont mis en cache indéfiniment. L'exemple suivant affecte à l'intervalle de temps la valeur de 10 minutes.  
   
      [!code-csharp[c_CreateSTS#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#15)]
      [!code-vb[c_CreateSTS#15](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#15)]  
   
-4. Facultatif. Affectez au <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> un pourcentage. La valeur par défaut est 60 (pourcent). La propriété spécifie un pourcentage de la période de validité du jeton. Par exemple, si le jeton émis est valide pour 10 heures et <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> a la valeur 80, le jeton est renouvelé après huit heures. L'exemple suivant affecte la valeur de 80 pourcent.  
+4. facultatif. Affectez au <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> un pourcentage. La valeur par défaut est 60 (pourcent). La propriété spécifie un pourcentage de la période de validité du jeton. Par exemple, si le jeton émis est valide pour 10 heures et <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuedTokenRenewalThresholdPercentage%2A> a la valeur 80, le jeton est renouvelé après huit heures. L'exemple suivant affecte la valeur de 80 pourcent.  
   
      [!code-csharp[c_CreateSTS#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#16)]
      [!code-vb[c_CreateSTS#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#16)]  
@@ -99,7 +100,7 @@ Dans Windows Communication Foundation (WCF), la création d’un client pour un 
     <issuedToken defaultKeyEntropyMode = "ServerEntropy" />  
     ```  
   
-6. Facultatif. Configurez tout comportement de point de terminaison personnalisé spécifique à l’émetteur en créant un `issuerChannelBehaviors` élément <> en tant qu’enfant de l' `issuedToken` élément> <. Pour chaque comportement, créez un `add` élément <> en tant qu’enfant de l' `issuerChannelBehaviors` élément <>. Spécifiez l’adresse de l’émetteur du comportement en définissant l' `issuerAddress` attribut sur l' `add` élément <>. Spécifiez le comportement lui-même en définissant l' `behaviorConfiguration` attribut sur l' `add` élément <>.  
+6. facultatif. Configurez tout comportement de point de terminaison personnalisé spécifique à l’émetteur en créant un `issuerChannelBehaviors` élément <> en tant qu’enfant de l' `issuedToken` élément> <. Pour chaque comportement, créez un `add` élément <> en tant qu’enfant de l' `issuerChannelBehaviors` élément <>. Spécifiez l’adresse de l’émetteur du comportement en définissant l' `issuerAddress` attribut sur l' `add` élément <>. Spécifiez le comportement lui-même en définissant l' `behaviorConfiguration` attribut sur l' `add` élément <>.  
   
     ```xml  
     <issuerChannelBehaviors>  
@@ -140,21 +141,25 @@ Dans Windows Communication Foundation (WCF), la création d’un client pour un 
     </scopedCertificates>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple de code suivant configure une instance de la classe <xref:System.ServiceModel.Security.IssuedTokenClientCredential> dans le code.  
   
  [!code-csharp[c_FederatedClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federatedclient/cs/source.cs#2)]
  [!code-vb[c_FederatedClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federatedclient/vb/source.vb#2)]  
   
-## <a name="net-framework-security"></a>Sécurité du .NET Framework  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+
  Pour empêcher la divulgation d'informations possible, les clients qui exécutent l'outil Svcutil.exe pour traiter les métadonnées de points de terminaison fédérés doivent vérifier que les adresses de service d'émission de jeton de sécurité résultantes correspondent à celles qu'ils attendent. C'est particulièrement important lorsqu'un service d'émission de jeton de sécurité expose plusieurs points de terminaison, parce que l'outil Svcutil.exe génère le fichier de configuration résultant pour utiliser le premier tel point de terminaison, qui ne peut pas être celui le client doit utiliser.  
   
 ## <a name="localissuer-required"></a>LocalIssuer requis  
+
  Si les clients doivent toujours utiliser un émetteur local, prenez note des éléments suivants : la sortie par défaut de Svcutil.exe entraîne la non-émission de l'émetteur local qui n'est pas utilisé si l'antépénultième service d'émission de jeton de sécurité dans la chaîne spécifie une adresse d'émetteur ou une adresse de métadonnées d'émetteur.  
   
  Pour plus d’informations sur la <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A> définition <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> des propriétés, et de la <xref:System.ServiceModel.Security.IssuedTokenClientCredential> classe, consultez [procédure : configurer un émetteur local](how-to-configure-a-local-issuer.md).  
   
 ## <a name="scoped-certificates"></a>Certificats à étendue  
+
  Si les certificats de service doivent être spécifiés pour communiquer avec des services d'émission de jeton de sécurité, parce que la négociation de certificat n'est pas le plus souvent utilisée, ils peuvent être spécifiés à l'aide de la propriété <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> de la classe <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>. La méthode <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetDefaultCertificate%2A> accepte un <xref:System.Uri> et un <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> comme paramètres. Le certificat spécifié est utilisé pour communiquer avec les points de terminaison à l'URI spécifié. Vous pouvez également utiliser la méthode <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetScopedCertificate%2A> pour ajouter un certificat à la collection retournée par la propriété <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>.  
   
 > [!NOTE]
@@ -163,9 +168,9 @@ Dans Windows Communication Foundation (WCF), la création d’un client pour un 
 ## <a name="see-also"></a>Voir aussi
 
 - [Federation, exemple](../samples/federation-sample.md)
-- [Comment : désactiver des sessions sécurisées sur une classe WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
-- [Guide pratique pour créer une liaison WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md)
-- [Comment : configurer des informations d'identification sur un service FS (Federation Service)](how-to-configure-credentials-on-a-federation-service.md)
-- [Comment : configurer un émetteur local](how-to-configure-a-local-issuer.md)
+- [Procédure : désactiver des sessions sécurisées sur un WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
+- [Procédure : créer un WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md)
+- [Procédure : configurer des informations d’identification sur un service de fédération](how-to-configure-credentials-on-a-federation-service.md)
+- [Procédure : configurer un émetteur local](how-to-configure-a-local-issuer.md)
 - [Considérations sur la sécurité des métadonnées](security-considerations-with-metadata.md)
-- [Comment : sécuriser des points de terminaison de métadonnées](how-to-secure-metadata-endpoints.md)
+- [Procédure : sécuriser des points de terminaison de métadonnées](how-to-secure-metadata-endpoints.md)

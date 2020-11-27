@@ -12,14 +12,15 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 4ad0b23fc93ddcdc11cebcc556d12148df5e8ae2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 246a975ead3cb9c1acb4fe0512dfa91d1b8a00c0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502598"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287421"
 ---
 # <a name="enabling-network-tracing"></a>Activation du suivi réseau
+
 Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
   
 - Compiler votre code avec le traçage activé. Pour plus d’informations sur les commutateurs du compilateur nécessaires pour activer le traçage, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  
@@ -48,6 +49,6 @@ Le traçage réseau fournit l’accès aux informations sur les appels de métho
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interprétation du suivi réseau](interpreting-network-tracing.md)
-- [Traçage réseau dans .NET Framework](network-tracing.md)
-- [Traçage et instrumentation d'applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Interprétation du traçage réseau](interpreting-network-tracing.md)
+- [Traçage réseau dans le .NET Framework](network-tracing.md)
+- [Traçage et instrumentation d’applications](../debug-trace-profile/tracing-and-instrumenting-applications.md)

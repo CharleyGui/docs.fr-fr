@@ -6,19 +6,21 @@ helpviewer_keywords:
 - contracts [WCF]
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
-ms.openlocfilehash: 1cd7e54d50e7116c71c040df1965674a4fdaff13
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b51bbd1a8a9bfc8963cee429dab41fdf9b4f594c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595594"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286758"
 ---
 # <a name="contracts"></a>Contrats
+
 Cette section vous montre comment définir et implémenter des contrats Windows Communication Foundation (WCF). Un contrat de service spécifie ce qu'un point de terminaison communique au monde extérieur. À un niveau plus concret, il s'agit d'une instruction à propos d'un ensemble de messages spécifiques organisé en modèles d'échange de messages de base, tels que les messages demande/réponse, unidirectionnels et duplex. Si un contrat de service est un ensemble d'échanges de messages liés de manière logique, une opération de service est un échange de messages unique. Par exemple, une opération `Hello` doit évidemment accepter un message (de sorte que l'appelant puisse annoncer la salutation) et peut ou non retourner un message (en fonction du niveau de courtoisie de l'opération).  
   
  Pour plus d’informations sur les contrats et les autres concepts principaux de WCF, consultez [concepts fondamentaux du Windows Communication Foundation](../fundamental-concepts.md). Cette rubrique est consacrée au fonctionnement des contrats de service. Pour plus d’informations sur la façon de créer des clients qui utilisent des contrats de service pour se connecter à des services, consultez [vue d’ensemble du client WCF](../wcf-client-overview.md). Pour plus d’informations sur les canaux clients, l’architecture client et les autres problèmes liés aux clients, consultez [clients](clients.md).  
   
-## <a name="overview"></a>Vue d’ensemble  
+## <a name="overview"></a>Vue d'ensemble  
+
  Cette rubrique fournit une orientation conceptuelle de haut niveau pour la conception et l’implémentation des services WCF. Les sous-rubriques fournissent des informations plus détaillées sur les aspects spécifiques à la conception et à l'implémentation. Avant de concevoir et d’implémenter votre application WCF, il est recommandé d’exécuter les tâches suivantes :  
   
 - comprendre ce qu'est un contrat de service, comment il fonctionne et comment en créer un ;  
@@ -26,6 +28,7 @@ Cette section vous montre comment définir et implémenter des contrats Windows 
 - comprendre que les contrats définissent des exigences minimales que la configuration à l’exécution ou l’environnement d’hébergement peuvent ne pas prendre en charge.  
   
 ## <a name="service-contracts"></a>Contrats de service  
+
  Un contrat de service est une instruction qui fournit des informations sur :  
   
 - le groupement d'opérations dans un service ;  
@@ -59,6 +62,7 @@ Cette section vous montre comment définir et implémenter des contrats Windows 
  En outre, WCF offre également la possibilité de développer entièrement des contrats de service au niveau du message. Pour plus d’informations sur le développement de contrats de service au niveau du message, consultez [utilisation de contrats de message](using-message-contracts.md). Pour plus d’informations sur le développement de services en XML non-SOAP, consultez [interopérabilité avec les applications POX](interoperability-with-pox-applications.md).  
   
 ### <a name="understanding-the-hierarchy-of-requirements"></a>Présentation de la hiérarchie des exigences  
+
  Un contrat de service groupe les opérations, spécifie les modèles d'échange de messages, les types de messages et les types de données que ces messages transportent, et indique les catégories de comportement à l'exécution qu'une implémentation doit avoir pour prendre en charge le contrat (par exemple, il peut exiger que les messages soient chiffrés et signés). Toutefois, le contrat de service lui-même ne spécifie pas précisément comment ces exigences sont satisfaites, mais uniquement qu’elles doivent l’être. Le type de chiffrement utilisé ou la façon dont un message est signé incombe à l'implémentation et à la configuration d'un service conforme.  
   
  Remarquez la façon dont le contrat requiert certaines choses de l'implémentation de contrat de service et de la configuration à l'exécution pour ajouter un comportement. L’ensemble d’exigences qui doivent être satisfaites pour exposer un service pour une utilisation repose sur l’ensemble d’exigences précédent. Si un contrat spécifie des exigences concernant l'implémentation, une implémentation peut requérir une plus grande partie de la configuration et des liaisons qui autorisent l'exécution du service. Pour finir, l’application hôte doit également prendre en charge les exigences ajoutées par la configuration du service et les liaisons.  
@@ -67,6 +71,6 @@ Cette section vous montre comment définir et implémenter des contrats Windows 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Points de terminaison : adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)
+- [Points de terminaison : Adresses, liaisons et contrats](endpoints-addresses-bindings-and-contracts.md)
 - [Conception de contrats de service](../designing-service-contracts.md)
 - [Implémentation de contrats de service](../implementing-service-contracts.md)
