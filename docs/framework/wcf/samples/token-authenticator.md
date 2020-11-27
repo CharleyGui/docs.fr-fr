@@ -2,14 +2,15 @@
 title: Token Authenticator
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: a493ea48d9d339c0bc1a4b191b084374ad5f2dc4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ab3f8486229416465d7eca0b9413475d81318d32
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548590"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264632"
 ---
 # <a name="token-authenticator"></a>Token Authenticator
+
 Cet exemple montre comment implémenter un authentificateur de jetons personnalisé. Un authentificateur de jetons dans Windows Communication Foundation (WCF) est utilisé pour valider le jeton utilisé avec le message, vérifier qu’il est auto-cohérent et authentifier l’identité associée au jeton.
 
  Les authentificateurs de jetons personnalisés sont utiles dans un grand nombre de cas, dont les suivants :
@@ -119,6 +120,7 @@ static void Main()
 ```
 
 ## <a name="custom-token-authenticator"></a>Authentificateur de jetons personnalisé
+
  Suivez les étapes suivantes pour créer un authentificateur de jetons personnalisé :
 
 1. Écrivez un authentificateur de jetons personnalisé.
@@ -293,6 +295,7 @@ static void DisplayIdentityInformation()
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.
 
 ## <a name="setup-batch-file"></a>Fichier de commandes d'installation
+
  Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec les certificats appropriés pour exécuter une application auto-hébergée qui requiert une sécurité basée sur le certificat du serveur. Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.
 
  Les éléments suivants fournissent une vue d'ensemble des différentes sections des fichiers de commandes afin qu'ils puissent être modifiés pour s'exécuter dans la configuration appropriée.

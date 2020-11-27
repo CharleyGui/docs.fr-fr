@@ -1,19 +1,20 @@
 ---
-title: 'Comment : activer le service de partage de ports Net.TCP'
+title: 'Procédure : activer le service de partage de ports Net.TCP'
 description: Découvrez comment configurer le service de partage de port Net TCP à l’aide de MMC pour activer net. TCP, qui est désactivé par défaut.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - port sharing [WCF]
 - activation services [WCF]
 ms.assetid: c9175af4-c27c-4765-bf45-b8f7528a7282
-ms.openlocfilehash: 0292559e3befde7f0b00b36aa10a2d9615daf049
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 7200d82e4a45ce9e36b2a4cec3d0c08e1a5f00ab
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246998"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265464"
 ---
-# <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Comment : activer le service de partage de ports Net.TCP
+# <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Procédure : activer le service de partage de ports Net.TCP
+
 Windows Communication Foundation (WCF) utilise un service Windows appelé service de partage de ports net. TCP pour faciliter le partage de ports TCP entre plusieurs processus. Ce service est installé dans le cadre de WCF, mais le service n’est pas activé par défaut pour des raisons de sécurité et doit donc être activé manuellement avant la première utilisation. Cette rubrique décrit comment configurer le service de partage de ports Net.TCP à l'aide du composant logiciel enfichable Microsoft Management Console (MMC).  
   
  Après avoir activé le service de partage de port Net. TCP et l’avoir démarré manuellement, consultez [procédure : configurer un service WCF pour utiliser le partage de ports](how-to-configure-a-wcf-service-to-use-port-sharing.md) pour plus d’informations sur la façon de configurer votre service pour utiliser ce service.  

@@ -2,17 +2,19 @@
 title: Gestion
 ms.date: 03/30/2017
 ms.assetid: 52f4825b-91a2-4f23-94f4-cfd76a7980cf
-ms.openlocfilehash: 53c53252e5798ffb01d42b143971a66d1c067851
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0f3d5404787d46f5b00ec54fc155997e40ac7fac
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591785"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264736"
 ---
 # <a name="management"></a>Gestion
+
 Cette section contient des exemples qui illustrent la gestion Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [WCF Services et suivi d'événements Windows](wcf-services-and-event-tracing-for-windows.md)  
  Montre comment utiliser le traçage analytique dans WCF pour émettre des événements dans Suivi d’v nements pour Windows (ETW).  
   
@@ -40,5 +42,5 @@ Cette section contient des exemples qui illustrent la gestion Windows Communicat
  [Security Validation](security-validation.md)  
  Montre comment utiliser un comportement personnalisé pour valider des services sur un ordinateur afin de garantir qu'ils répondent à des critères spécifiques.  
   
- [WMI Provider](wmi-provider.md)  
+ [Fournisseur WMI](wmi-provider.md)  
  Montre comment collecter des données à partir des services WCF au moment de l’exécution à l’aide du fournisseur Windows Management Instrumentation (WMI) intégré à WCF.

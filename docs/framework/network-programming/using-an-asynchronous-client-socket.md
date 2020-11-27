@@ -18,14 +18,15 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-ms.openlocfilehash: 9cf46e9519bcecf4d7a20ff99b86fa5f66af2087
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: af5379533e51e7488d673359dc24268c6329c082
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502039"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265217"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Utilisation d’un socket client asynchrone
+
 Un socket client asynchrone n’interrompt pas l’exécution de l’application durant les opérations réseau. Au lieu de cela, il utilise le modèle de programmation asynchrone standard de .NET Framework pour traiter la connexion réseau sur un thread pendant que l’application continue de s’exécuter sur le thread d’origine. Les sockets asynchrones sont appropriés pour les applications qui utilisent le réseau de manière intensive ou qui ne peuvent pas être interrompues en attendant la fin des opérations réseau.  
   
  La classe <xref:System.Net.Sockets.Socket> respecte la convention de nommage du .NET Framework pour les méthodes asynchrones. Par exemple, la méthode synchrone <xref:System.Net.Sockets.Socket.Receive%2A> correspond aux méthodes asynchrones <xref:System.Net.Sockets.Socket.BeginReceive%2A> et <xref:System.Net.Sockets.Socket.EndReceive%2A>.  
@@ -289,5 +290,5 @@ private static void ReceiveCallback( IAsyncResult ar ) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation d’un socket client synchrone](using-a-synchronous-client-socket.md)
-- [Écoute avec des sockets](listening-with-sockets.md)
+- [écoute avec des sockets](listening-with-sockets.md)
 - [Exemple de socket client asynchrone](asynchronous-client-socket-example.md)

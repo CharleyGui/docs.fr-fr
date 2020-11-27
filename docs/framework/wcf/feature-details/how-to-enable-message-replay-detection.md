@@ -10,14 +10,15 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: c99500a3d4dc0bd8abe7062f23e064d395cadf36
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4a4d304a1316fe534e09f02ac1cd2900bf798011
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557877"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265529"
 ---
 # <a name="how-to-enable-message-replay-detection"></a>Procédure : activer la détection de réexécution des messages
+
 Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages entre deux correspondants et relit le flux à l'un ou plusieurs des correspondants. Sauf atténuation, les ordinateurs sujets à l'attaque traiteront le flux comme messages légitimes, ce qui a des conséquences néfastes telles que des ordres redondants d'un élément.  
   
  Pour plus d’informations sur la détection de relecture des messages, consultez [détection de relecture des messages](/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
@@ -75,15 +76,18 @@ Une attaque par relecture se produit lorsqu'un intrus copie un flux de messages 
     ```  
   
 ## <a name="example"></a> Exemple  
+
  L’exemple suivant crée un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à l’aide de la méthode <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> et définit les propriétés de relecture de la liaison.  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
  [!code-vb[c_ReplayDetection#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_replaydetection/vb/source.vb#1)]  
   
 ## <a name="scope-of-replay-message-security-only"></a>Étendue de relecture : sécurité de message uniquement  
+
  Notez que les procédures suivantes s'appliquent uniquement au mode de sécurité Message. Pour les modes Transport et Transport avec informations d'identification de message, les mécanismes de transport détectent les relectures.  
   
 ## <a name="secure-conversation-notes"></a>Remarques relatives aux conversations sécurisées  
+
  Pour les liaisons qui activent les conversations sécurisées, vous pouvez ajuster ces paramètres à la fois pour le canal d’application et pour la liaison du démarrage de conversation sécurisée. Par exemple, vous pouvez désactiver les relectures pour le canal d'application mais les activer pour le canal de démarrage qui établit la conversation sécurisée.  
   
  Si vous n'utilisez pas de sessions de conversation sécurisée, la détection des relectures n'est pas garantie dans les scénarios de batterie de serveurs et lorsque le processus est recyclé. Cela s’applique aux liaisons fournies par le système suivantes :  

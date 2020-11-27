@@ -16,14 +16,15 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: 67330962382e768849cbf67d5f412ea80f65569d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 1309e9dc594869cec7bce81ef666d9f5e06f13b9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501987"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265178"
 ---
 # <a name="using-secure-sockets-layer"></a>Utilisation du protocole Secure Sockets Layer
+
 Les classes <xref:System.Net> utilisent le protocole SSL (Secure Sockets Layer) pour chiffrer les connexions avec différents protocoles réseau.  
   
  Pour les connexions HTTP, les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> utilisent SSL pour communiquer avec les hôtes web qui prennent en charge SSL. L’utilisation du protocole SSL est déterminée par la classe <xref:System.Net.WebRequest> en fonction de l’URI fourni. Si l’URI commence par « https: », SSL est utilisé ; si l’URI commence par « http: », une connexion non chiffrée est utilisée.  
@@ -59,6 +60,7 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Cet exemple nécessite :  
   
 - Références à l’espace de noms **System.Net**.  
@@ -66,5 +68,5 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité dans la programmation réseau](security-in-network-programming.md)
-- [Programmation réseau dans .NET Framework](index.md)
+- [Programmation réseau dans le .NET Framework](index.md)
 - [Sélection et validation de certificats](certificate-selection-and-validation.md)

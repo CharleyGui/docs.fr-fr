@@ -3,14 +3,15 @@ title: Client test WCF (WcfTestClient.exe)
 description: Découvrez le client test WCF, qui fournit des tests de service fluides lorsqu’il est associé à l’hôte de service WCF. Soumettre les valeurs de test du client et afficher les réponses du service.
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: 4f636698c538809f89ee356159839a37b73adb57
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: f583d20edf7eeea87ae1dbf63a3cadef05912833
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245659"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264125"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>Client test WCF (WcfTestClient.exe)
+
 Le client de test Windows Communication Foundation (WCF) (WcfTestClient.exe) est un outil d’interface utilisateur graphique qui permet aux utilisateurs d’entrer des paramètres de test, d’envoyer cette entrée au service et d’afficher la réponse renvoyée par le service. Il fournit une expérience de test de service transparente lorsqu’il est associé à l’hôte de service WCF.
 
 Vous pouvez généralement trouver le client test WCF (WcfTestClient.exe) à l’emplacement suivant : `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` -Community peut être « Enterprise », « Professional » ou « Community », selon le niveau de Visual Studio installé.
@@ -33,7 +34,7 @@ Vous pouvez également utiliser le client test WCF pour déboguer un projet de s
 
 Vous pouvez également appeler le client test WCF (WcfTestClient.exe) en dehors de Visual Studio pour tester un service arbitraire sur Internet. Pour localiser l'outil, allez à l'emplacement suivant :
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`(où Communauté peut être « entreprise », « professionnel » ou « communauté » selon le niveau de Visual Studio installé sur l’ordinateur)
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (où Communauté peut être « entreprise », « professionnel » ou « communauté » selon le niveau de Visual Studio installé sur l’ordinateur)
 
 Pour utiliser l'outil, double-cliquez sur le nom de fichier afin de l'ouvrir à partir de cet emplacement ou lancez-le à partir d'une ligne de commandes.
 
@@ -104,7 +105,7 @@ Pendant la génération de proxy, la compilation binaire ou l’appel de service
 
 #### <a name="persist-client-configuration"></a>Rendre la configuration client persistante
 
-L' **Tools** -> **Options** -> onglet Configuration du**client** options des outils contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers contrats de service et fichiers de App.config de service.
+L' **Tools** -> **Options** -> onglet Configuration du **client** options des outils contient une option **toujours régénérer la configuration au démarrage des services** , qui est activée par défaut. Cette option spécifie que chaque fois que le client test WCF charge un service, il régénère un fichier de configuration basé sur les derniers contrats de service et fichiers de App.config de service.
 
 Si vous avez modifié la configuration du client pour votre service WCF et que vous souhaitez toujours utiliser ce fichier mis à jour pour déboguer votre service, vous pouvez décocher l’option **régénérer** . En procédant ainsi, même lorsque vous mettez à jour le service et rouvrez le client test WCF, le fichier Client.dll.config est celui que vous avez précédemment mis à jour au lieu d’un client regénéré en fonction du service mis à jour.
 
@@ -187,4 +188,4 @@ Vous pouvez fermer le client test WCF des manières suivantes :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WCF Service Host (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)
+- [Hôte de service WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

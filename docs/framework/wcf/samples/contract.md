@@ -2,18 +2,19 @@
 title: Exemples de contrats WCF
 ms.date: 03/30/2017
 ms.assetid: 305eeb65-a52f-459e-9aa8-0ef071eade16
-ms.openlocfilehash: f191046738bd16a9c839bbb627e00cf21dd16fd4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f937eaaf85e2e05aad85ef73158534c713bd4122
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575405"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264190"
 ---
 # <a name="contract"></a>Contrat
 
 Cette section contient des exemples qui illustrent des contrats dans Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Contrats de données](data-contracts.md)  
  Illustre des contrats de données dans WCF.  
   

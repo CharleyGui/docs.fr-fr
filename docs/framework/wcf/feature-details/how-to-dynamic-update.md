@@ -1,15 +1,16 @@
 ---
-title: 'Procédure : mise à jour dynamique'
+title: 'Procédure : Mise à jour dynamique'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: aaeb4d9d42c289cf34a6aee9212fc2d74b8f8c01
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a12d480163bb579f34d006ae1837ed4392bf47ee
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184964"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265542"
 ---
-# <a name="how-to-dynamic-update"></a>Procédure : mise à jour dynamique
+# <a name="how-to-dynamic-update"></a>Procédure : Mise à jour dynamique
+
 Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
   
 > [!NOTE]
@@ -64,7 +65,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </filterTables>  
     ```  
   
-3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’association de «filterTable1» avec le critère de service.  
+3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’Association de « filterTable1 » au point de terminaison de service.  
   
     ```xml  
     <behaviors>  
@@ -78,6 +79,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     ```  
   
 ## <a name="implement-dynamic-configuration"></a>Implémenter la configuration dynamique  
+
  La configuration dynamique du service de routage s'effectue uniquement dans le code, en créant un objet <xref:System.ServiceModel.Routing.RoutingConfiguration> et en utilisant la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> pour remplacer la configuration actuelle.  Pour cet exemple, le service de routage est auto-hébergé dans une application console. Une fois l'application démarrée, vous pouvez modifier la configuration de routage en entrant 'regular' ou 'rounding' dans la fenêtre de console, pour configurer le point de terminaison de destination vers lequel router les messages : regularCalc si vous entrez 'regular' ou roundingCalc si vous entrez 'rounding'.  
   
 1. Les instructions using suivantes doivent être ajoutées afin de prendre en charge le service de routage.  
@@ -164,7 +166,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
   
 ## <a name="example"></a> Exemple  
 
-Voici une liste complète de l’application console utilisée dans cet exemple :
+Voici une liste complète de l’application console utilisée dans cet exemple :
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -243,7 +245,7 @@ namespace Microsoft.Samples.AdvancedFilters
   
 ## <a name="example"></a> Exemple  
 
-Voici une liste complète du fichier de configuration utilisé dans cet exemple :
+Voici une liste complète du fichier de configuration utilisé dans cet exemple :
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

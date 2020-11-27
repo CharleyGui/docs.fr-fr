@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: da11ce4cf9da10c0ebb990f9439b0bbe3621c561
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: fc47170a08ff08f6cd8f67996ef8fbf19c40f819
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168212"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265646"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implémentation du modèle de contrôle Transform d’UI Automation
+
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -23,7 +24,9 @@ ms.locfileid: "87168212"
  Le modèle de contrôle <xref:System.Windows.Automation.TransformPattern> permet de prendre en charge des contrôles qui peuvent être déplacés, redimensionnés ou pivotés dans un espace à deux dimensions. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
+
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
+
  Quand vous implémentez le modèle de contrôle Transform, notez les conventions et recommandations suivantes :  
   
 - La prise en charge pour ce modèle de contrôle ne se limite pas aux objets sur le bureau. Ce modèle de contrôle doit également être pris en charge par les enfants d’un objet conteneur si les enfants peuvent être déplacés, redimensionnés et pivotés librement dans les limites du conteneur.  
@@ -35,7 +38,9 @@ ms.locfileid: "87168212"
 - Tous les paramètres et valeurs de propriété sont absolus et indépendants des paramètres régionaux.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
+
 ## <a name="required-members-for-itransformprovider"></a>Membres requis pour ITransformProvider  
+
  Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.ITransformProvider>.  
   
 |Membres nécessaires|Type de membre|Notes|  
@@ -50,7 +55,9 @@ ms.locfileid: "87168212"
  Ce modèle de contrôle n’est associé aucun événement.  
   
 <a name="Exceptions"></a>
+
 ## <a name="exceptions"></a>Exceptions  
+
  Les fournisseurs doivent lever les exceptions suivantes.  
   
 |Type d’exception|Condition|  

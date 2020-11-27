@@ -2,14 +2,15 @@
 title: Exemple Configuration
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 6d84085d06da117ebf13fa4bb714513aacc3abd6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 927aab30ab122d281b4f3577ec05a2035c08f2fc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594723"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264333"
 ---
 # <a name="configuration-sample"></a>Exemple Configuration
+
 Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un service détectable.  
   
 > [!NOTE]
@@ -25,6 +26,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Configuration`  
   
 ## <a name="service-configuration"></a>Configuration du service  
+
  Le fichier de configuration de cet exemple illustre deux fonctionnalités :  
   
 - rendre le service détectable sur un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> standard ;  
@@ -155,6 +157,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
 ```  
   
 ## <a name="client-configuration"></a>Configuration client  
+
  Le fichier de configuration de l'application pour le client utilise un `standardEndpoint` de type `dynamicEndpoint` afin d'utiliser la découverte, comme indiqué dans l'extrait de configuration suivant.  
   
 ```xml  

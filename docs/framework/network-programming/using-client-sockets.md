@@ -17,14 +17,15 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-ms.openlocfilehash: 1dc02d0b3651d5766d1d30752566217d8417af0c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6982d09c20cd0d7e9d27fc63880b39e0982c86ef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502000"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265191"
 ---
 # <a name="using-client-sockets"></a>Utilisation de sockets clients
+
 Avant de démarrer une conversation via un <xref:System.Net.Sockets.Socket>, vous devez créer un canal de données entre votre application et l’appareil distant. Il existe d’autres protocoles et familles d’adresses réseau, mais cet exemple montre comment créer une connexion TCP/IP à un service distant.  
   
  TCP/IP utilise une adresse réseau et un numéro de port de service pour identifier un service de manière unique. L’adresse réseau identifie un appareil spécifique sur le réseau ; le numéro de port identifie le service spécifique sur cet appareil faisant l’objet de la connexion. La combinaison de l’adresse réseau et du port de service constitue un point de terminaison, qui est représenté par la classe <xref:System.Net.EndPoint> dans .NET Framework. Un descendant du point de terminaison (**EndPoint**) est défini pour chaque famille d’adresses prise en charge. Pour la famille d’adresses IP, il s’agit de la classe <xref:System.Net.IPEndPoint>.  
@@ -82,5 +83,5 @@ try {
 
 - [Utilisation d’un socket client synchrone](using-a-synchronous-client-socket.md)
 - [Utilisation d’un socket client asynchrone](using-an-asynchronous-client-socket.md)
-- [Comment : créer un socket](how-to-create-a-socket.md)
+- [Procédure : créer un socket](how-to-create-a-socket.md)
 - [Sockets](sockets.md)
