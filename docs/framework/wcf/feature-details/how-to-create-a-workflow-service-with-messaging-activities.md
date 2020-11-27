@@ -1,15 +1,16 @@
 ---
-title: 'Procédure : créer un service de workflow avec les activités de messagerie'
+title: 'Procédure : créer un service de workflow avec des activités de messagerie'
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-ms.openlocfilehash: b4991fc9f8a6c45cae3943f1506247c42ed2b30b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 21d08d9c3c78cc8774d038018703ffb0c7ceb1fe
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597122"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286316"
 ---
-# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Procédure : créer un service de workflow avec les activités de messagerie
+# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Procédure : créer un service de workflow avec des activités de messagerie
+
 Cette rubrique décrit comment créer un service de workflow simple, à l'aide d'activités de messagerie. Elle est consacrée à la mécanique de création d'un service de workflow, simplement constitué d'activités de messagerie. Dans un service réel, le workflow contient de nombreuses autres activités. Le service implémente une opération nommée Echo, qui prend une chaîne et la retourne à l'appelant. Cette rubrique est la première d'une série de deux. La rubrique suivante [Comment : accéder à un service à partir d’une application de workflow](how-to-access-a-service-from-a-workflow-application.md) explique comment créer une application de workflow capable d’appeler le service créé dans cette rubrique.  
   
 ### <a name="to-create-a-workflow-service-project"></a>Pour créer un projet de service de workflow  
@@ -67,6 +68,7 @@ Cette rubrique décrit comment créer un service de workflow simple, à l'aide d
 8. Enregistrez et générez la solution en cliquant sur le menu **générer** et en sélectionnant **générer la solution**.  
   
 ## <a name="configure-the-workflow-service-project"></a>Configurer le projet du service de workflow  
+
  Le service de workflow est terminé. Cette section explique comment configurer la solution de service de workflow pour en faciliter l'hébergement et l'exécution. Cette solution utilise le serveur de développement ASP.NET pour héberger le service.  
   
 #### <a name="to-set-project-start-up-options"></a>Pour définir les options de démarrage du projet  

@@ -2,24 +2,25 @@
 title: Outils
 ms.date: 03/30/2017
 ms.assetid: 89c907f9-313f-408c-992a-631f1eadf1da
-ms.openlocfilehash: 623ba8a3ae3b58381edc80a19bf2d1a4561f3976
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2f7ef8b7f871dada676eb05713d6f624427d5395
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774236"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285692"
 ---
 # <a name="tools"></a>Outils
+
 Cette rubrique répertorie toutes les exceptions générées par les outils Windows Communication Foundation (WCF).
 
 ## <a name="exception-list"></a>Liste des exceptions
 
 |Code de la ressource|Chaîne de la ressource|
 |-------------------|---------------------|
-|ParametersTarget|\<> enum|
-|ParametersToolConfig|\<configFile >|
+|ParametersTarget|\<enum>|
+|ParametersToolConfig|\<configFile>|
 |ErrInvalidPath|Le chemin spécifié est incorrect. Vérifiez l’argument spécifié.|
-|ParametersReference|chemin du fichier de \<|
+|ParametersReference|\<file path>|
 |WrnCannotLoadConfigFileForValidation|Une erreur s'est produite lors du traitement du fichier de configuration chargé depuis l'emplacement spécifié. Les services définis dans ce fichier de configuration ne peuvent pas être validés.|
 |MoreHelp|Pour obtenir une assistance, tapez « svcutil » avec les arguments spécifiés.|
 |HelpMergeConfig|Fait en sorte que la configuration générée soit fusionnée dans un fichier existant au lieu de remplacer le fichier existant.|
@@ -41,11 +42,11 @@ Cette rubrique répertorie toutes les exceptions générées par les outils Wind
 |HelpNologo|Le message de bannière et de copyright est supprimé.|
 |ErrInputConflictsWithTarget|Le type d'entrée lu à partir du spécifié n'est pas pris en charge avec l'option spécifiée définie à la valeur spécifiée.|
 |WrnCannotLoadServiceForExport|Une erreur s'est produite lors du chargement du type de service à exporter.|
-|HelpMetadataDownloadCategory|\- = TÉLÉCHARGEMENT DE MÉTADONNÉES = -|
+|HelpMetadataDownloadCategory|- = TÉLÉCHARGEMENT DE MÉTADONNÉES = -|
 |WrnNoServiceContractTypes|Impossible de générer des types XmlSerializer pour l'assembly spécifié. Aucun type de contrat de service n'a été trouvé.|
 |WrnCouldNotLoadTypesFromReferenceAssemblyAt|Une erreur s'est produite lors du chargement des types dans un assembly qui a été chargé à partir du spécifié. Certains types dans l'assembly ne peuvent pas être chargés et sont inaccessibles à l'outil.|
 |ErrDirectoryPointsToAFile|La valeur non valide spécifiée a été passée à l'option spécifiée. La valeur spécifiée est un chemin d’accès à un fichier.|
-|Erreur|Erreur :|
+|Error|Erreur :|
 |ErrDuplicateReferenceValues|L'assembly spécifié a été chargé deux fois à l'aide de l'option spécifiée. Un assembly ne peut être référencé qu'une seule fois.|
 |WrnNoXmlSerializerOperationBehavior|Impossible de générer XmlSerializer pour l'assembly spécifié. Aucun contrat de service dans l'assembly n'a une opération avec XmlSerializerOperationBehavior.|
 |ErrCannotCreateDirectory|Impossible de créer le répertoire spécifié.|
@@ -68,14 +69,14 @@ Cette rubrique répertorie toutes les exceptions générées par les outils Wind
 |HelpCodeGenerationCategory|-= GÉNÉRATION DE CODE =-|
 |RetreivingMetadataWithMexAndDisco|Tentative de téléchargement de métadonnées à partir du spécifié à l'aide de WS-Metadata Exchange ou DISCO.|
 |ErrGeneralSchemaValidation|Une erreur s'est produite lors de la vérification des schémas XML générés pendant l'exportation.|
-|ParametersDirectory|Répertoire \<|
+|ParametersDirectory|\<directory>|
 |ErrCannotLoadSpecifiedType|Aucun type ne peut être chargé pour la valeur spécifiée passée à l'option spécifiée. Assurez-vous que l'assembly auquel ce type appartient est spécifié à l'aide de l'option spécifiée.|
 |ErrOptionModeConflict|L'option spécifiée ne peut pas être utilisée avec l'option spécifiée car elles impliquent des types de sortie différents.|
 |ErrIsNotAnAssembly|Impossible de charger le spécifié en tant qu'assembly. Vérifiez que ce fichier est un assembly .NET.|
 |ErrInputConflictsWithMode|L'entrée lue à partir du spécifié est incohérente avec d'autres options.|
 |ErrDuplicateValuePassedToTypeArg|La valeur spécifiée a été passée plusieurs fois à l'option spécifiée. Chaque type ne peut être spécifié qu'une seule fois.|
 |ErrInputEPRFileParseError|Impossible de lire la référence du point de terminaison à partir du spécifié. Vérifiez que le XML est correctement structuré et valide.|
-|ErrCouldNotCreateCodeProvider|Impossible de créer un fournisseur de code pour la valeur spécifiée qui a été passée à l’argument/{1}. Vérifiez que le fournisseur de code est installé et configuré correctement.|
+|ErrCouldNotCreateCodeProvider|Impossible de créer un fournisseur de code pour la valeur spécifiée qui a été passée à l' {1} argument/. Vérifiez que le fournisseur de code est installé et configuré correctement.|
 |ErrPathTooLongDirOnly|Le chemin d’accès spécifié résultant est trop long. Examinez l'argument spécifié.|
 |HelpDataContractSerializer|Générez des types de données qui utilisent le sérialiseur DataContract pour la sérialisation et la désérialisation.|
 |ErrUnableToExportEndpoint|Une erreur s'est produite lors de l'exportation du nom de point de terminaison spécifié dans l'espace de noms spécifié dans le type de service spécifié mentionné dans le fichier de configuration chargé pour l'assembly.|
@@ -87,11 +88,11 @@ Cette rubrique répertorie toutes les exceptions générées par les outils Wind
 |ErrDirectoryNotFound|Le répertoire spécifié est introuvable. Vérifiez que le répertoire existe et que vous avez les autorisations appropriées pour le lire.|
 |ErrUnableToLoadFile|Impossible de lire le fichier spécifié.|
 |ErrNoFilesFound|Le chemin d’accès d’entrée spécifié semble ne faire référence à aucun fichier existant.|
-|ParametersConfig|\<configFile >|
+|ParametersConfig|\<configFile>|
 |ErrDirectoryInsteadOfFile|Le chemin d’accès d’entrée spécifié semble être un répertoire. L’entrée doit être un URL ou un chemin d’accès de fichier.|
 |HelpConfig|Fait en sorte que les outils génèrent un fichier de configuration avec le nom fourni. Par défaut : output.config.|
 |ErrSingleUseSwitch|L'option spécifiée ne peut pas être spécifiée à plusieurs reprises.|
-|Warning|Avertissement :|
+|Avertissement|Avertissement :|
 |WrnAmbiguousServiceConfig|Plusieurs configurations de service ont été détectées avec le nom de configuration spécifié, les assemblys suivants sont spécifiés.|
 |ErrInvalidInputPath|Le chemin d’accès d’entrée spécifié semble ne faire référence à aucun fichier existant et ne semble pas être un URI valide.|
 |ErrUnableToLoadInputs|Une erreur s'est produite lors de la lecture des métadonnées chargées.|
@@ -111,21 +112,21 @@ Cette rubrique répertorie toutes les exceptions générées par les outils Wind
 |RetreivingMetadataWithMexOnly|Tentative de téléchargement de métadonnées à partir de l'emplacement spécifié à l'aide de WS-Metadata Exchange. Cette URL ne prend pas en charge DISCO.|
 |ErrInvalidTarget|La cible spécifiée n'est pas valide lorsqu'elle est spécifiée à l'aide de l'option spécifiée. Les cibles prises en charge sont spécifiées.|
 |ErrPathTooLong|Le chemin d’accès résultant est trop long. Examinez les arguments spécifiés.|
-|HelpCommonOptionsCategory|\- = OPTIONS COURANTES = -|
-|ParametersServiceName|\<serviceConfigName >|
+|HelpCommonOptionsCategory|- = OPTIONS COURANTES = -|
+|ParametersServiceName|\<serviceConfigName>|
 |ErrNoValidInputFilesSpecified|Aucun fichier d'entrée valide n'a été spécifié. Spécifiez des documents de métadonnées ou des fichiers d'assembly.|
-|ParametersLanguage|> de langage \<|
+|ParametersLanguage|\<language>|
 |ErrUnableToLoadMetadataDocument|Une erreur s'est produite lors de la lecture des métadonnées à partir de l'un des documents chargés. L'identificateur de document est spécifié.|
 |ErrConflictingInputs|L’argument d’entrée spécifié est en conflit avec le spécifié car ils impliquent différents modes d’opération d’outil.|
 |WrnUnableToLoadContractForValidation|Une erreur s'est produite lors du chargement d'un type de contrat. Le type et les détails sont spécifiés.|
 |WrnAttributeReflectionErrors|La réflexion d'attribut a échoué pour certains des types dans l'assembly qui ont été chargés à partir du spécifié. Vérifiez que cet assembly peut être chargé à partir de cet emplacement avec les privilèges de sécurité corrects.|
-|HelpMetadataExportCategory|\- = EXPORT DE MÉTADONNÉES = -|
-|HelpValidationCategory|\- = VALIDATION DU SERVICE = -|
+|HelpMetadataExportCategory|- = EXPORT DE MÉTADONNÉES = -|
+|HelpValidationCategory|- = VALIDATION DU SERVICE = -|
 |ValidationError|Erreur de validation :|
 |GeneratingFiles|Génération de fichiers…|
 |ErrCannotSpecifyMultipleMappingsForNamespace|Une valeur non valide a été passée à l'option spécifiée. L'espace de noms cible spécifié ne peut pas être mappé à plusieurs espaces de noms CLR comme spécifié.|
 |ErrCouldNotLoadReferenceAssemblyAt|Impossible de charger l'assembly de référence spécifié.|
-|ParametersOut|fichier de \<|
+|ParametersOut|\<file>|
 |NoCodeWasGeneratedSuggestDCOnly|Pour générer des contrats à partir des schémas, utilisez l'option spécifiée.|
 |ErrUnableToLoadInputConfig|Impossible de charger le fichier de configuration spécifié.|
 |ErrUnexpectedDelimiter|Un séparateur d’arguments non valide (’:’ ou ’=’) ne peut pas démarrer l’option.|
@@ -142,7 +143,7 @@ Cette rubrique répertorie toutes les exceptions générées par les outils Wind
 |ErrCodegenError|Une erreur s'est produite lors de la génération du code dans le langage spécifié.<br /><br /> Le langage ne prend pas en charge tous les éléments de code générés. Un autre langage doit être utilisé.|
 |ErrInputWsdlParseError|Une erreur d'analyse WSDL s'est produite lors de la lecture du spécifié. Vérifiez que le XML est correctement structuré et valide.|
 |ErrCouldNotCreateInstance|Impossible de créer une instance du type spécifié qui a été passé à l'argument spécifié.|
-|ParametersNamespace|chaîne \<, chaîne >|
+|ParametersNamespace|\<string,string>|
 |HelpNostdlib|Ne faites pas référence à des bibliothèques standard (par défaut, mscorlib.dll et system.servicemodel.dll sont référencés.)|
 |WrnCannotLoadConfigFileForExport|Une erreur s'est produite lors du traitement du fichier de configuration qui a été chargé à partir du spécifié. Les services définis dans ce fichier de configuration ne peuvent pas être chargés.|
 |WrnUnableToLoadContractForExport|Une erreur s'est produite lors du chargement d'un type de contrat. Ce type spécifié ne peut pas être exporté.|

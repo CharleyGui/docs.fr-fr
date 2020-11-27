@@ -1,18 +1,19 @@
 ---
-title: 'Comment : créer un service qui requiert des sessions'
+title: 'Procédure : créer un service qui exige des sessions'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8a7613ef-0df9-47c3-b8dc-47f42cb1fd8b
-ms.openlocfilehash: 29c2a87daaf763a50aa657c9badc002ff2fa27e1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 13287d0d5c989fc3a5dc95c6df5d548bca9df4d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593332"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286355"
 ---
-# <a name="how-to-create-a-service-that-requires-sessions"></a>Comment : créer un service qui requiert des sessions
+# <a name="how-to-create-a-service-that-requires-sessions"></a>Procédure : créer un service qui exige des sessions
+
 Les sessions créent un état partagé entre deux ou plusieurs points de terminaison activant des fonctions utiles telles que les rappels, la sécurité en cascade et des associations entre clients et instances de service. Pour plus d’informations sur les sessions dans les applications Windows Communication Foundation (WCF), consultez [utilisation de sessions](../using-sessions.md).  
   
 ### <a name="to-specify-that-a-contract-require-its-binding-to-support-sessions"></a>Pour spécifier qu'un contrat requiert que sa liaison prenne en charge des sessions  
@@ -31,7 +32,8 @@ Les sessions créent un état partagé entre deux ou plusieurs points de termina
   
      [!code-xml[SCA.Session#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/sca.session/cs/hostapplication.exe.config#2)]
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  Le code d’exemple suivant indique comment utiliser une exigence de session au niveau du contrat et utiliser un fichier de configuration pour prendre en charge cette exigence avec la liaison <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>.  
   
  [!code-csharp[SCA.Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/sca.session/cs/services.cs#1)]

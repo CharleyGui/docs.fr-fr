@@ -2,14 +2,15 @@
 title: 'Procédure : créer un service transactionnel'
 ms.date: 03/30/2017
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-ms.openlocfilehash: be364e7638394a30c199b05dd15ef4c44e18e688
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c3d094dbd5822f6025e1cc6c90aab04b61459314
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964020"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286290"
 ---
 # <a name="how-to-create-a-transactional-service"></a>Procédure : créer un service transactionnel
+
 Cet exemple présente les divers aspects de la création d’un service transactionnel et l’utilisation d’une transaction initialisée par le client pour coordonner des opérations de service.  
   
 ### <a name="creating-a-transactional-service"></a>Création d'un service transactionnel  
@@ -65,7 +66,7 @@ Cet exemple présente les divers aspects de la création d’un service transact
     }  
     ```  
   
-3. Configurez les liaisons dans le fichier de configuration, en spécifiant que le contexte de transaction doit être transmis, et les protocoles à utiliser pour ce faire. Pour plus d’informations, consultez [Configuration des transactions ServiceModel](servicemodel-transaction-configuration.md). Plus précisément, le type de liaison est spécifié dans l’attribut `binding` de l’élément de point de terminaison. `bindingConfiguration` L' [ \<élément > de point de terminaison](../../configure-apps/file-schema/wcf/endpoint-element.md) contient un attribut qui référence une `transactionalOleTransactionsTcpBinding`configuration de liaison nommée, comme indiqué dans l’exemple de configuration suivant.  
+3. Configurez les liaisons dans le fichier de configuration, en spécifiant que le contexte de transaction doit être transmis, et les protocoles à utiliser pour ce faire. Pour plus d’informations, consultez [Configuration des transactions ServiceModel](servicemodel-transaction-configuration.md). Plus précisément, le type de liaison est spécifié dans l’attribut `binding` de l’élément de point de terminaison. L' [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-element.md) élément contient un `bindingConfiguration` attribut qui référence une configuration de liaison nommée `transactionalOleTransactionsTcpBinding` , comme indiqué dans l’exemple de configuration suivant.  
   
     ```xml  
     <service name="CalculatorService">  
@@ -182,7 +183,7 @@ Cet exemple présente les divers aspects de la création d’un service transact
   
 ### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Contrôle de la durée de vie d’une instance de service transactionnelle  
   
-1. WCF utilise la <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> propriété pour spécifier si l’instance de service sous-jacente est libérée lorsqu’une transaction se termine. Dans la mesure où la `true`valeur par défaut est, sauf si elle est configurée dans le cas contraire, WCF présente un comportement d’activation «juste-à-temps» efficace et prévisible. Les appels à un service sur une transaction suivante sont assurés de disposer d'une nouvelle instance de service sans restes de l'état de la transaction précédente. Bien que cela s’avère souvent utile, vous pouvez souhaiter conserver l’état dans l’instance de service après l’exécution de la transaction. Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer. Pour ce faire, vous pouvez affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> à la propriété `false`. Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants. Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l’état seront effacés et exécutés. L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
+1. WCF utilise la <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> propriété pour spécifier si l’instance de service sous-jacente est libérée lorsqu’une transaction se termine. Dans la mesure où la valeur par défaut est `true` , sauf si elle est configurée dans le cas contraire, WCF présente un comportement d’activation « juste-à-temps » efficace et prévisible. Les appels à un service sur une transaction suivante sont assurés de disposer d'une nouvelle instance de service sans restes de l'état de la transaction précédente. Bien que cela s’avère souvent utile, vous pouvez souhaiter conserver l’état dans l’instance de service après l’exécution de la transaction. Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer. Pour ce faire, vous pouvez affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> à la propriété `false`. Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants. Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l’état seront effacés et exécutés. L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
   
     ```csharp
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  

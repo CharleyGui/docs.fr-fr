@@ -2,14 +2,15 @@
 title: Infrastructure de service
 ms.date: 03/30/2017
 ms.assetid: 75f60b87-f80e-4377-ba7c-8e6becaa2b28
-ms.openlocfilehash: 859e718a56ab63c8e012e1851c0730f53cb707be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1fb39f2106e027cc5d4125cfb0bc89f3e5983cec
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780755"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285718"
 ---
 # <a name="service-framework"></a>Infrastructure de service
+
 Cette rubrique répertorie toutes les exceptions générées par les données d'infrastructure de service.  
   
 ## <a name="exception-list"></a>Liste des exceptions  
@@ -25,7 +26,7 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |BaseAddressCannotHaveUserInfo|Une adresse de base ne peut pas contenir de section d'information utilisateur d'URI.|  
 |BaseAddressDuplicateScheme|Cette collection contient déjà une adresse avec le schéma spécifié. Une seule adresse est autorisée pour chaque schéma dans cette collection.|  
 |BaseAddressMustBeAbsolute|Seul un URI absolu peut être utilisé comme adresse de base.|  
-|BindingDoesnTSupportAnyChannelTypes1|La liaison spécifiée ne gère pas la création de types de canaux. Les éléments BindingElements dans une liaison personnalisée ont été empilés de façon incorrecte ou sont dans le mauvais ordre. Un élément de transport est requis au bas de la pile. L’ordre recommandé pour les éléments de liaison est : TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.|  
+|BindingDoesnTSupportAnyChannelTypes1|La liaison spécifiée ne gère pas la création de types de canaux. Les éléments BindingElements dans une liaison personnalisée ont été empilés de façon incorrecte ou sont dans le mauvais ordre. Un élément de transport est requis au bas de la pile. L'ordre recommandé pour les éléments de liaison est : TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.|  
 |BindingDoesnTSupportDuplexButContractRequires1|Le contrat exige le mode Duplex. La liaison spécifiée ne le prend pas en charge ou elle n'est pas configurée correctement pour cela.|  
 |BindingDoesnTSupportOneWayButContractRequires1|Le contrat exige le mode OneWay. La liaison spécifiée ne le prend pas en charge ou elle n'est pas configurée correctement pour cela.|  
 |BindingDoesnTSupportRequestReplyButContract1|Le contrat exige le mode Request/Reply. La liaison spécifiée ne le prend pas en charge ou elle n'est pas configurée correctement pour cela.|  
@@ -33,11 +34,11 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |BindingDoesnTSupportTwoWayButContractRequires1|Le contrat exige le mode TwoWay (soit demande-réponse, soit duplex). La liaison spécifiée ne le prend pas en charge ou elle n'est pas configurée correctement pour cela.|  
 |BindingRequirementsAttributeDisallowsQueuedDelivery1|DeliveryRequirementsAttribute n'autorise pas QueuedDelivery. La liaison pour le point de terminaison avec le contrat spécifié prend cet élément en charge.|  
 |BindingRequirementsAttributeRequiresQueuedDelivery1|DeliveryRequirementsAttribute requiert QueuedDelivery. La liaison pour le point de terminaison avec le contrat spécifié ne le prend pas en charge ou elle n’est pas configurée correctement pour cela.|  
-|channelDoesNotHaveADuplexSession0|Le canal actuel ne prend pas en charge la fermeture de la session de sortie. Ce canal n’implémente pas ISessionChannel\<IDuplexSession >.|  
+|channelDoesNotHaveADuplexSession0|Le canal actuel ne prend pas en charge la fermeture de la session de sortie. Ce canal n’implémente pas ISessionChannel \<IDuplexSession> .|  
 |ClientRuntimeRequiresFormatter0|Le ClientOperation spécifié requiert un formateur car SerializeRequest et DeserializeReply ne sont pas tous les deux false.|  
 |CommunicationObjectAborted1|L'objet de communication spécifié ne peut pas être utilisé pour la communication car il a été arrêté.|  
 |CommunicationObjectAbortedStack2|L’objet de communication spécifié ne peut pas être utilisé pour la communication car il a été arrêté : {1}|  
-|CommunicationObjectBaseClassMethodNotCalled|L’objet de communication spécifié a remplacé la fonction virtuelle {1} mais il n’appelle pas la version définie dans la classe de base.|  
+|CommunicationObjectBaseClassMethodNotCalled|L’objet de communication spécifié a remplacé la fonction virtuelle, {1} mais il n’appelle pas la version définie dans la classe de base.|  
 |ContractIsNotSelfConsistentItHasOneOrMore2|Le contrat spécifié contient une ou plusieurs opérations IsTerminating ou non-IsInitiating. Sa propriété SessionMode n'a pas la valeur SessionMode.Required. Les attributs IsInitiating et IsTerminating peuvent être utilisés uniquement dans le contexte d'une session.|  
 |CouldnTCreateChannelForChannelType2|Le type de canal spécifié a été demandé, mais la liaison spécifiée ne le prend pas en charge ou n'est pas configurée correctement pour cela.|  
 |DispatchRuntimeRequiresFormatter0|Le DispatchOperation spécifié requiert un formateur car DeserializeRequest et SerializeReply ne sont pas tous les deux false.|  
@@ -48,7 +49,7 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |MultipleMebesInParameters|Plusieurs éléments MessageEncodingBindingElement ont été trouvés dans les paramètres BindingParameters du contexte BindingContext. CustomBinding ne peut pas avoir plusieurs MessageEncodingBindingElements. Supprimez tous ces éléments sauf un.|  
 |MultipleStreamUpgradeProvidersInParameters|Plusieurs éléments IStreamUpgradeProviderElement ont été trouvés dans les paramètres BindingParameters du contexte BindingContext. CustomBinding ne peut pas avoir plusieurs IStreamUpgradeProviderElements. Supprimez tous ces éléments sauf un.|  
 |NoChannelBuilderAvailable|La liaison ne peut pas être utilisée pour créer une fabrication de canal ou un écouteur de canal car elle n’a pas de TransportBindingElement. Chaque liaison doit avoir au moins un élément de liaison qui dérive de TransportBindingElement.|  
-|NotAllBindingElementsBuilt|Certains des éléments de liaison dans cette liaison n'ont pas été utilisés lors de la génération de la fabrication de canal et de l'écouteur de canal. Les éléments de liaison ne sont pas ordonnés correctement. L’ordre recommandé pour les éléments de liaison est : TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.  Notez que le TransportBindingElement doit être mentionné en dernier. Les éléments de liaison spécifiés n’ont pas été générés.|  
+|NotAllBindingElementsBuilt|Certains des éléments de liaison dans cette liaison n'ont pas été utilisés lors de la génération de la fabrication de canal et de l'écouteur de canal. Les éléments de liaison ne sont pas ordonnés correctement. L'ordre recommandé pour les éléments de liaison est : TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.  Notez que le TransportBindingElement doit être mentionné en dernier. Les éléments de liaison spécifiés n’ont pas été générés.|  
 |RuntimeRequiresInvoker0|L'opération de répartition requiert un demandeur.|  
 |ServiceHasZeroAppEndpoints|Le service spécifié ne possède aucun point de terminaison d'application (non infrastructure). Cela peut être dû au fait qu'aucun fichier de configuration n'a été trouvé pour votre application, qu'aucun élément de service correspondant au nom du service n'a été trouvé dans le fichier de configuration ou qu'aucun point de terminaison n'a été défini dans l'élément de service.|  
 |SFxActionMismatch|Impossible de créer un message typé en raison d'une incompatibilité d'action. L'action spécifiée était attendue, mais une autre a été rencontrée.|  
@@ -100,13 +101,13 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |SFXEndpointBehaviorUsedOnWrongSide|L'IEndpointBehavior spécifié ne peut pas être utilisé sur le serveur. Ce comportement ne peut s'appliquer qu'à des clients.|  
 |SFxEndpointNoMatchingScheme|L'adresse de base qui correspond au schéma spécifié pour le point de terminaison à la liaison spécifiée est introuvable. Les schémas d'adresse de base inscrits sont spécifiés.|  
 |SFxErrorCreatingMtomReader|Une erreur s'est produite lors de la création d'un lecteur pour le message du mécanisme d'optimisation de transmission de message.|  
-|SFxErrorDeserializingFault|Le serveur a retourné une erreur de protocole SOAP non valide. Consultez InnerException pour plus de détails.|  
+|SFxErrorDeserializingFault|Le serveur a retourné une erreur de protocole SOAP non valide. Pour plus d’informations, consultez InnerException. »|  
 |SFxErrorDeserializingHeader|Une erreur s'est produite lors de la désérialisation de l'un des en-têtes dans le message spécifié. Consultez InnerException pour plus de détails.|  
-|SFxErrorReflectingOnMethod3|Une erreur s'est produite lors du chargement de l'attribut spécifié sur la méthode spécifiée dans le type spécifié.  Consultez InnerException pour plus de détails.|  
-|SFxErrorReflectingOnParameter4|Une erreur s'est produite lors du chargement de l'attribut spécifié sur le paramètre spécifié de la méthode spécifiée dans le type spécifié. Consultez InnerException pour plus de détails.|  
-|SFxErrorReflectingOnType2|Une erreur s'est produite lors du chargement de l'attribut spécifié sur le type spécifié.  Consultez InnerException pour plus de détails.|  
-|SFxErrorSerializingBody|Une erreur s'est produite lors de la sérialisation du corps du message spécifié. Consultez InnerException pour plus de détails.|  
-|SFxErrorSerializingHeader|Une erreur s'est produite lors de la sérialisation de l'un des en-têtes dans le message spécifié. Consultez InnerException pour plus de détails.|  
+|SFxErrorReflectingOnMethod3|Une erreur s'est produite lors du chargement de l'attribut spécifié sur la méthode spécifiée dans le type spécifié.  Pour plus d’informations, consultez InnerException. »|  
+|SFxErrorReflectingOnParameter4|Une erreur s'est produite lors du chargement de l'attribut spécifié sur le paramètre spécifié de la méthode spécifiée dans le type spécifié. Pour plus d’informations, consultez InnerException. »|  
+|SFxErrorReflectingOnType2|Une erreur s'est produite lors du chargement de l'attribut spécifié sur le type spécifié.  Pour plus d’informations, consultez InnerException. »|  
+|SFxErrorSerializingBody|Une erreur s'est produite lors de la sérialisation du corps du message spécifié. Pour plus d’informations, consultez InnerException. »|  
+|SFxErrorSerializingHeader|Une erreur s'est produite lors de la sérialisation de l'un des en-têtes dans le message spécifié. Pour plus d’informations, consultez InnerException. »|  
 |SFxExpectedIMethodCallMessage|Erreur interne. Le message doit être un IMethodCallMessage valide.|  
 |SFxExportMustHaveType|La partie spécifiée dans l'opération spécifiée ne peut pas être exportée car elle n'a pas de type CLR valide.|  
 |SFxHeaderNotUnderstood|Le message n'a pas été traité. L'en-tête spécifié de l'espace de noms spécifié n'a pas été compris par le destinataire de ce message. Cette erreur indique en général que l'expéditeur de ce message a activé un protocole de communication que le récepteur ne peut pas traiter. Vérifiez que la configuration de la liaison du client correspond à la liaison du service.|  
@@ -117,12 +118,12 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |SFxInvalidMessageBody|OperationFormatter a rencontré un corps de message non valide. Le type de nœud 'Element' avec le nom et l'espace de noms spécifiés était attendu. Le type de nœud spécifié avec le nom et l'espace de noms spécifiés a été trouvé.|  
 |SFxInvalidMessageBodyEmptyMessage|L'OperationFormatter ne peut pas désérialiser d'informations du message car le message est vide.|  
 |SFxInvalidMessageBodyErrorDeserializingParameter|Une erreur s'est produite lors de la tentative de désérialisation du paramètre spécifié. Consultez InnerException pour plus de détails.|  
-|SFxInvalidMessageBodyErrorSerializingParameter|Une erreur s'est produite lors de la tentative de sérialisation du paramètre spécifié. Le message InnerException a été spécifié.  Consultez InnerException pour plus de détails.|  
+|SFxInvalidMessageBodyErrorSerializingParameter|Une erreur s'est produite lors de la tentative de sérialisation du paramètre spécifié. Le message InnerException a été spécifié.  Pour plus d’informations, consultez InnerException. »|  
 |SFxInvalidMessageBodyUnexpectedNode|Le nœud inattendu spécifié de l'espace de noms spécifié a été rencontré lors de la désérialisation des paramètres.|  
 |SFxInvalidMessageContractSignature|L’opération spécifiée a un paramètre ou un type de retour marqué avec le MessageContractAttribute. Lors de l'utilisation d'un contrat de message pour représenter un message de demande, l'opération doit avoir un paramètre unique marqué avec le MessageContractAttribute. Lors de l'utilisation d'un contrat de message pour représenter le message de réponse, la valeur de retour de l'opération doit être un type marqué avec le MessageContractAttribute. L'opération ne peut pas contenir de paramètres 'out' ou 'ref'.|  
 |SFxInvalidReplyAction|Le message de réponse sortant pour l'opération a l'Action spécifiée, mais le contrat pour cette opération spécifie un autre ReplyAction. L'Action spécifiée dans le message doit correspondre au ReplyAction dans le contrat, ou le contrat d'opération doit spécifier ReplyAction= '*'.|  
 |SFxInvalidRequestAction|Le message de demande sortant pour l'opération a l'Action spécifiée, mais le contrat pour cette opération spécifie un autre RequestAction. L'Action spécifiée dans le message doit correspondre au RequestAction dans le contrat, ou le contrat d'opération doit spécifier RequestAction= '*'.|  
-|SFxInvalidStaticOverloadCalledForDuplexChannelFactory1|La méthode statique CreateChannel ne peut pas être utilisée avec le contrat spécifié car ce dernier définit un contrat de rappel. Utilisez une des surcharges statiques CreateChannel sur DuplexChannelFactory\<TChannel >.|  
+|SFxInvalidStaticOverloadCalledForDuplexChannelFactory1|La méthode statique CreateChannel ne peut pas être utilisée avec le contrat spécifié car ce dernier définit un contrat de rappel. Utilisez l’une des surcharges CreateChannel statiques sur DuplexChannelFactory \<TChannel> .|  
 |SFxInvalidStreamInRequest|Pour que la demande dans l'opération spécifiée soit un flux, l'opération doit avoir un paramètre unique dont le type est Stream.|  
 |SFxInvalidStreamInResponse|Pour que la réponse dans l'opération spécifiée soit un flux, l'opération doit avoir un paramètre de sortie ou une valeur de retour unique dont le type est Stream.|  
 |SFxInvalidStreamInTypedMessage|Pour utiliser des flux avec le modèle de programmation Contrat de message, le type spécifié doit avoir un membre MessageBody unique dont le type est Stream.|  
@@ -145,7 +146,7 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |SFxSchemaDoesNotContainType|Le schéma avec l'espace de noms cible spécifié ne contient pas de type avec le nom spécifié.|  
 |SfxServiceContractAttributeNotFound|Le type de contrat spécifié n'est pas attribué avec ServiceContractAttribute. Pour définir un contrat valide, le type spécifié doit être attribué avec ServiceContractAttribute. Le type peut être une interface de contrat ou une classe de service.|  
 |SFxServiceContractGeneratorConfigRequired|Pour générer des informations de configuration à l'aide de la méthode GenerateServiceEndpoint, l'instance ServiceContractGenerator doit être initialisée avec un objet Configuration valide.|  
-|SFxServiceHostBaseCannotAddEndpointAfterOpen|Les points de terminaison ne peuvent pas être ajoutés après que le ServiceHost a été dans l'un des états suivants :<br /><br /> -Ouvert<br />-A généré une erreur<br />-S’est arrêté<br />-Fermé|  
+|SFxServiceHostBaseCannotAddEndpointAfterOpen|Les points de terminaison ne peuvent pas être ajoutés après que le ServiceHost a été dans l'un des états suivants :<br /><br /> -Ouvert<br />-Erreur<br />-Terminé<br />-Fermé|  
 |SFxServiceHostBaseCannotAddEndpointWithoutDescription|Les points de terminaison ne peuvent pas être ajoutés avant que la propriété Description ne soit initialisée.|  
 |SFxServiceMetadataBehaviorNoHttpBaseAddress|La propriété HttpGetEnabled de ServiceMetadataBehavior a la valeur true et la propriété HttpGetUrl est une adresse relative, mais il n'y a aucune adresse de base HTTP. Fournissez une adresse de base HTTP ou définissez HttpGetUrl en tant qu'adresse absolue.|  
 |SFxServiceMetadataBehaviorNoHttpsBaseAddress|La propriété HttpsGetEnabled de ServiceMetadataBehavior a la valeur true et la propriété HttpsGetUrl est une adresse relative, mais il n'y a aucune adresse de base HTTPS. Fournissez une adresse de base HTTPS ou définissez HttpsGetUrl en tant qu'adresse absolue.|  
