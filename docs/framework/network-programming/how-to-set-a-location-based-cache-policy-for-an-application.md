@@ -1,5 +1,5 @@
 ---
-title: 'Comment : définir une stratégie de cache basée sur l’emplacement pour une application'
+title: 'Procédure : définir une stratégie de cache basée sur l’emplacement pour une application'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,15 +11,16 @@ helpviewer_keywords:
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: 6fe569e781b005461ea41e3d6b90859666f9601a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7331845c391265d72d3025fd9bf7856d83c783e9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180778"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253490"
 ---
-# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Comment : définir une stratégie de cache basée sur l’emplacement pour une application
-Avec une stratégie de cache basée sur l’emplacement, une application peut définir explicitement le comportement de cache en fonction de l’emplacement de la ressource demandée. Cette rubrique explique comment définir la stratégie de cache par programmation. Pour plus d’informations sur la définition de la stratégie d’une application à l’aide des fichiers de configuration, voir [ \<demandeCaching> Element (Paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Procédure : définir une stratégie de cache basée sur l’emplacement pour une application
+
+Avec une stratégie de cache basée sur l’emplacement, une application peut définir explicitement le comportement de cache en fonction de l’emplacement de la ressource demandée. Cette rubrique explique comment définir la stratégie de cache par programmation. Pour plus d’informations sur la définition de la stratégie pour une application à l’aide des fichiers de configuration, consultez [ \<requestCaching> élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Pour définir une stratégie de cache basée sur l’emplacement pour une application  
   
@@ -157,6 +158,6 @@ Avec une stratégie de cache basée sur l’emplacement, une application peut d�
 
 - [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)
 - [Stratégie de cache](cache-policy.md)
-- [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
-- [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
-- [\<demandeCaching> Element (Paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
+- [stratégies de cache basées sur la durée](time-based-cache-policies.md)
+- [\<requestCaching> , Élément (paramètres réseau)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

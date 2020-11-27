@@ -1,15 +1,16 @@
 ---
-title: "Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF"
+title: 'Procédure : créer un service qui retourne des données arbitraires à l’aide du modèle de programmation HTTP web WCF'
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-ms.openlocfilehash: 9753fbc9b333cb7e89ddc8dff030cb1f62ede23b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4ed3e5269be5b636b348ff0efe44c49dae5335e2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600359"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253893"
 ---
-# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF
+# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Procédure : créer un service qui retourne des données arbitraires à l’aide du modèle de programmation HTTP web WCF
+
 Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner des données dans un format non pris en charge par WCF. Cette rubrique décrit l’utilisation du modèle de programmation HTTP WEB WCF pour créer un tel service. Ce service a une opération qui retourne un flux de données.  
   
 ### <a name="to-implement-the-service-contract"></a>Pour implémenter le contrat de service  
@@ -107,7 +108,8 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
   
 2. Ouvrez Internet Explorer et tapez `http://localhost:8000/Service/GetImage?width=50&height=40`. Un rectangle jaune traversé en son centre par une ligne diagonale bleue devrait apparaître.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```csharp  

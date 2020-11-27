@@ -1,15 +1,16 @@
 ---
-title: "Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte."
+title: 'Procédure : implémenter un service détectable qui s’enregistre auprès du proxy de détection'
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: bf878dff59a9a258567ff99098b0b3f8761194e2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1e6b57193d25da7e5c9a865525dd5e9ea21110b0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599228"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254257"
 ---
-# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Procédure : implémenter un service détectable qui s’enregistre auprès du proxy de détection
+
 Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : implémenter un proxy de découverte](how-to-implement-a-discovery-proxy.md), vous avez implémenté un proxy de découverte. Dans cette rubrique, vous allez créer un service WCF qui envoie des messages `Hello` d’annonce (et `Bye` ) au proxy de découverte, ce qui lui permet de s’inscrire et d’annuler son inscription auprès du proxy de découverte.
 
 ### <a name="to-define-the-service-contract"></a>Pour définir le contrat de service
@@ -158,7 +159,8 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
 
 Vous avez terminé l'implémentation d'un service détectable. Continuez sur [Comment : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
+
  Les éléments suivants représentent l'intégralité du code utilisé dans cette rubrique.
 
 ```csharp
@@ -292,5 +294,5 @@ namespace Microsoft.Samples.Discovery
 ## <a name="see-also"></a>Voir aussi
 
 - [Discovery WCF](wcf-discovery.md)
-- [Procédure : implémenter un proxy de découverte](how-to-implement-a-discovery-proxy.md)
-- [Procédure : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md)
+- [Procédure : implémenter un proxy de détection](how-to-implement-a-discovery-proxy.md)
+- [Procédure : implémenter une application cliente qui utilise le proxy de détection pour rechercher un service](client-app-discovery-proxy-to-find-a-service.md)

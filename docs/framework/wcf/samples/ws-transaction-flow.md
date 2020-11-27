@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 1fbde53289c147d8ea273b9c86e65cbb8e262b30
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7fd4968bbe4e1a3dafbfc35cc0617cef7083d291
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596408"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252385"
 ---
 # <a name="ws-transaction-flow"></a>WS Transaction Flow
+
 Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et des options de client et de serveur pour le flux de transaction, à l’aide du protocole WS-Atomic Transaction ou OleTransactions. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice, mais les opérations sont attribuées pour illustrer l’utilisation de `TransactionFlowAttribute` avec l’énumération **TransactionFlowOption** pour déterminer à quel degré le workflow de transaction est activé. Dans l'étendue de la transaction passée, un journal des opérations demandées est écrit dans une base de données et est conservé jusqu'à ce que la transaction coordonnée par le client soit terminée. Si la transaction cliente ne se termine pas, la transaction de service Web garantit que les mises à jour appropriées de la base de données ne sont pas validées.  
   
 > [!NOTE]
@@ -230,15 +231,15 @@ Press <ENTER> to terminate the service.
 3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).  
   
     > [!NOTE]
-    > Pour une configuration à plusieurs ordinateurs, activez Microsoft Distributed Transaction Coordinator (MSDTC) à l’aide des instructions ci-dessous et utilisez l’outil WsatConfig.exe du Kit de développement logiciel (SDK) Windows pour activer la prise en charge réseau des transactions WCF. Pour plus d’informations sur la configuration de WsatConfig. exe, consultez Configuration de la [prise en charge des transactions WS-Atomic](../feature-details/configuring-ws-atomic-transaction-support.md).  
+    > Pour une configuration à plusieurs ordinateurs, activez Microsoft Distributed Transaction Coordinator (MSDTC) à l’aide des instructions ci-dessous et utilisez l’outil WsatConfig.exe du Kit de développement logiciel (SDK) Windows pour activer la prise en charge réseau des transactions WCF. Pour plus d’informations sur la configuration de WsatConfig.exe, consultez Configuration de la [prise en charge des transactions WS-Atomic](../feature-details/configuring-ws-atomic-transaction-support.md).  
   
- Que vous exécutiez l’exemple sur le même ordinateur ou sur des ordinateurs différents, vous devez configurer le Distributed Transaction Coordinator Microsoft (MSDTC) pour activer le workflow de transaction réseau et utiliser l’outil WsatConfig. exe pour activer la prise en charge réseau des transactions WCF.  
+ Si vous exécutez l’exemple sur le même ordinateur ou sur des ordinateurs différents, vous devez configurer le Distributed Transaction Coordinator Microsoft (MSDTC) pour activer le workflow de transaction réseau et utiliser l’outil WsatConfig.exe pour activer la prise en charge réseau des transactions WCF.  
   
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Pour configurer Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l'exécution de l'exemple  
   
 1. Sur un ordinateur de service Windows Server 2003 ou Windows XP, configurez MSDTC pour autoriser des transactions réseau entrantes en suivant ces instructions.  
   
-    1. Dans le menu **Démarrer** , accédez à **panneau de configuration**, puis **Outils d’administration**et **services de composants**.  
+    1. Dans le menu **Démarrer** , accédez à **panneau de configuration**, puis **Outils d’administration** et **services de composants**.  
   
     2. Développez **services de composants**. Ouvrez le dossier **ordinateurs** .  
   
@@ -254,7 +255,7 @@ Press <ENTER> to terminate the service.
   
 2. Sur un ordinateur de service Windows Server 2008 ou Windows Vista, configurez MSDTC pour autoriser des transactions réseau entrantes en suivant ces instructions.  
   
-    1. Dans le menu **Démarrer** , accédez à **panneau de configuration**, puis **Outils d’administration**et **services de composants**.  
+    1. Dans le menu **Démarrer** , accédez à **panneau de configuration**, puis **Outils d’administration** et **services de composants**.  
   
     2. Développez **services de composants**. Ouvrez le dossier **ordinateurs** . Sélectionnez **Distributed Transaction Coordinator**.  
   
@@ -268,7 +269,7 @@ Press <ENTER> to terminate the service.
   
 3. Sur l'ordinateur client, configurez MSDTC pour autoriser les transactions réseau sortantes :  
   
-    1. Dans le menu **Démarrer** , accédez à `Control Panel` , puis **Outils d’administration**et **services de composants**.  
+    1. Dans le menu **Démarrer** , accédez à `Control Panel` , puis **Outils d’administration** et **services de composants**.  
   
     2. Cliquez avec le bouton droit sur **poste de travail** , puis sélectionnez **Propriétés**.  
   

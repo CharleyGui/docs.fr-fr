@@ -1,5 +1,5 @@
 ---
-title: 'Comment : créer un contrat de données de base destiné à une classe ou une structure'
+title: 'Procédure : créer un contrat de données de base pour une classe ou structure'
 description: Suivez cet exemple pour apprendre à créer un contrat de données à l’aide d’une classe ou d’une structure dans WCF à l’aide de l’attribut DataContractAttribute.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - DataContractAttribute class
 - data contracts [WCF], creating for a class or structure
 ms.assetid: bc464889-3070-4a2f-91d2-e788a0f686a7
-ms.openlocfilehash: a45fde58795947c3e46fa45750ae1a3faddd8849
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 5634eb3d3ec18d95fd7d6b3c89b572ab4f5b8eca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254036"
 ---
-# <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Comment : créer un contrat de données de base destiné à une classe ou une structure
+# <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Procédure : créer un contrat de données de base pour une classe ou structure
+
 Cette rubrique illustre les étapes de base pour créer un contrat de données à l'aide d'une classe ou d'une structure. Pour plus d’informations sur les contrats de données et leur utilisation, consultez [utilisation de contrats de données](using-data-contracts.md).  
   
  Pour obtenir un didacticiel qui vous guide tout au long des étapes de création d’un client et d’un service de base Windows Communication Foundation (WCF), consultez le [didacticiel prise en main](../getting-started-tutorial.md). Pour obtenir un exemple d’application fonctionnel qui se compose d’un service et d’un client de base, consultez [contrat de données de base](../samples/basic-data-contract.md).  
@@ -31,7 +32,8 @@ Cette rubrique illustre les étapes de base pour créer un contrat de données �
     > [!NOTE]
     > Vous pouvez appliquer l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> aux champs privés, ce qui expose les données aux autres. Vérifiez que le membre ne contient pas de données sensibles.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant montre comment créer un contrat de données pour le type `Person` en appliquant les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> à la classe et à ses membres.  
   
  [!code-csharp[DataContractAttribute#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/datacontractattribute/cs/overview.cs#2)]
@@ -41,6 +43,6 @@ Cette rubrique illustre les étapes de base pour créer un contrat de données �
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
-- [Using Data Contracts](using-data-contracts.md)
-- [Didacticiel Prise en main](../getting-started-tutorial.md)
+- [Utilisation de contrats de données](using-data-contracts.md)
+- [Didacticiel de mise en route](../getting-started-tutorial.md)
 - [Prise en main](../samples/getting-started-sample.md)

@@ -2,17 +2,19 @@
 title: System.ServiceModel.PerformanceCountersFailed
 ms.date: 03/30/2017
 ms.assetid: 3bf030f3-e218-4300-943f-03aaa7dfe2d3
-ms.openlocfilehash: 63f6f072f9cb0990dbf5095f19e3f79a3a39c60b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cea7e72461b22d0407f5aec323d641adb314fac0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595958"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252658"
 ---
 # <a name="systemservicemodelperformancecountersfailed"></a>System.ServiceModel.PerformanceCountersFailed
+
 System.ServiceModel.PerformanceCountersFailed  
   
 ## <a name="description"></a>Description  
+
  Échec du chargement du compteur de performance spécifié. Certains compteurs de performance ne sont pas disponibles.  
   
 ## <a name="see-also"></a>Voir aussi

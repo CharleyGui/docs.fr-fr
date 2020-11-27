@@ -2,14 +2,15 @@
 title: Hello World avec le service de routage
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: 63cfb32a5f5d0cae7635d39d5df594a5bb07e411
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3d91634d72481427f04e958f6dc2734829b6158b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554786"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253854"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World avec le service de routage
+
 Cet exemple illustre le service de routage Windows Communication Foundation (WCF). Le service de routage est un composant WCF qui facilite l’inclusion d’un routeur basé sur le contenu dans votre application. Cet exemple adapte l’exemple de calculatrice WCF standard pour communiquer à l’aide du service de routage. Dans cet exemple, le client Calculator est configuré pour envoyer des messages à un point de terminaison exposé par le routeur. Le service de routage (Routing Service) est configuré de façon à accepter tous les messages qui lui sont envoyés et les transférer à un point de terminaison qui correspond au service Calculator. Les messages envoyés à partir du client sont donc reçus par le routeur et reroutés au véritable service Calculator. Les messages du service Calculator sont renvoyés au routeur, qui à son tour les retransmet au client Calculator.
 
 ### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
@@ -40,12 +41,15 @@ Cet exemple illustre le service de routage Windows Communication Foundation (WCF
     ```
 
 ## <a name="configurable-via-code-or-appconfig"></a>Configurable au moyen d'un code ou d'un fichier App.config
+
  L'exemple est fourni en étant configuré de façon à utiliser un fichier App.config pour définir le comportement du routeur. Vous pouvez également renommer le fichier App.config afin qu'il ne soit pas reconnu et supprimer les marques de commentaire de l'appel de méthode à ConfigureRouterViaCode(). Quelle que soit la méthode employée, le comportement de routeur obtenu est le même.
 
 ### <a name="scenario"></a>Scénario
+
  Cet exemple illustre l'utilisation du routeur en tant que pompe de messages de base. Le service de routage fait office de nœud de proxy transparent configuré pour passer les messages directement à un ensemble préconfiguré de points de terminaison de destination.
 
 ### <a name="real-world-scenario"></a>Scénario réel
+
  Contoso souhaite augmenter la flexibilité en matière d'affectation de noms, d'adressage, de configuration et de sécurité de ses services. Pour ce faire, la société place une pompe de messages de base devant ses services, qui fera office de point de terminaison face au public. Cela lui permet de renforcer la sécurité devant ses véritables services et de simplifier l'implémentation de solutions à montée en puissance parallèle ou du contrôle des versions du service à une date ultérieure.
 
 > [!IMPORTANT]

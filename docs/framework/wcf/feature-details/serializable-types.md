@@ -2,19 +2,21 @@
 title: Types sérialisables
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: e65fcb93c5c36bb289b825cef58b3adc6f5155f5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4ba5fb80b3a7f4149eb49aa838826f2792147dd1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586102"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253958"
 ---
 # <a name="serializable-types"></a>Types sérialisables
+
 Par défaut, <xref:System.Runtime.Serialization.DataContractSerializer> sérialise tous les types accessibles publiquement. Toutes les propriétés et tous les champs publics en lecture/écriture du type sont sérialisés.  
   
  Vous pouvez modifier le comportement par défaut en appliquant les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> aux types et membres. Cette fonctionnalité peut être utile dans les situations dans lesquelles vous avez des types qui ne sont pas sous votre contrôle et ne peuvent pas être modifiés pour ajouter des attributs. Le <xref:System.Runtime.Serialization.DataContractSerializer> reconnaît ces types "non marqués".  
   
 ## <a name="serialization-defaults"></a>Valeurs par défaut de sérialisation  
+
  Vous pouvez appliquer les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> pour contrôler explicitement ou personnaliser la sérialisation de types et membres. De plus, vous pouvez appliquer ces attributs aux champs privés. Toutefois, même les types qui ne sont pas marqués avec ces attributs sont sérialisés et désérialisés. Les règles et les exceptions suivantes s'appliquent :  
   
 - Le <xref:System.Runtime.Serialization.DataContractSerializer> déduit un contrat de données à partir des types sans attributs à l'aide des propriétés par défaut des types créés récemment.  
@@ -36,6 +38,7 @@ Par défaut, <xref:System.Runtime.Serialization.DataContractSerializer> sériali
 - Pour annuler le processus de sérialisation des membres publics, des propriétés ou des champs, appliquez l'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> à ce membre.  
   
 ## <a name="inheritance"></a>Héritage  
+
  Les types non marqués (type sans attribut <xref:System.Runtime.Serialization.DataContractAttribute>) peuvent hériter des types qui ont cet attribut. Toutefois, l'inverse n'est pas permis : les types avec l'attribut ne peuvent pas hériter de types non marqués. Cette règle est appliquée principalement pour garantir la compatibilité descendante avec le code écrit dans les versions antérieures de .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi

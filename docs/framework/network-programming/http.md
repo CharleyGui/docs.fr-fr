@@ -14,14 +14,15 @@ helpviewer_keywords:
 - HTTP, about HTTP
 - HttpWebRequest class, sending and receiving data
 ms.assetid: 985fe5d8-eb71-4024-b361-41fbdc1618d8
-ms.openlocfilehash: ffb7a5d027ef7691d03caf0ac45d4a3dd9bdb652
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 62c4ddb7e4b904be501ed2938692bce405c7e5f3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502416"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253399"
 ---
 # <a name="http"></a>HTTP
+
 Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebResponse>, le .NET Framework offre une prise en charge complète du protocole HTTP sur lequel repose la majeure partie du trafic Internet global. Ces classes, dérivées de <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse>, sont retournées par défaut dès que la méthode statique <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> détecte un URI commençant par « http » ou « https ». Dans la plupart des cas, les classes **WebRequest** et **WebResponse** fournissent tous les éléments nécessaires pour effectuer une demande mais, si vous avez besoin d’un accès aux fonctionnalités spécifiques à HTTP exposées en tant que propriétés, vous pouvez effectuer un cast du type de ces classes en **HttpWebRequest** ou **HttpWebResponse**.  
   
  **HttpWebRequest** et **HttpWebResponse** encapsulent une transaction de demande et réponse HTTP standard et fournissent l’accès aux en-têtes HTTP communs. Ces classes prennent également en charge la plupart des fonctionnalités HTTP 1.1, y compris le traitement « pipeline », l’envoi et la réception des données en bloc, l’authentification, la pré-authentification, le chiffrement, la prise en charge de proxy, la validation du certificat de serveur et la gestion des connexions. Les en-têtes personnalisés et les en-têtes non fournis par le biais de propriétés peuvent être stockés dans la propriété **Headers** qui permet d’y accéder.  
@@ -36,4 +37,4 @@ Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebRes
 
 - [Accès à Internet via un proxy](accessing-the-internet-through-a-proxy.md)
 - [Utilisation de protocoles d’application](using-application-protocols.md)
-- [Comment : accéder aux propriétés spécifiques à HTTP](how-to-access-http-specific-properties.md)
+- [Procédure : accéder aux propriétés spécifiques à HTTP](how-to-access-http-specific-properties.md)

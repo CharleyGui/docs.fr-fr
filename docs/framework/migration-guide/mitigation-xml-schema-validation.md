@@ -6,20 +6,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-ms.openlocfilehash: 0672361ca5c0bc7cb6ec166f59278b93555e0947
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 0744a703c1e9dc35a8accc448d34f1a736e77e4d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475305"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253529"
 ---
 # <a name="mitigation-xml-schema-validation"></a>Atténuation : Validation du schéma XML
+
 Dans .NET Framework 4.6, la validation de schéma XSD détecte une violation de contrainte unique si une clé composée est utilisée et qu’une clé est vide.  
   
 ## <a name="impact"></a>Impact  
+
  L'impact de cette modification devrait être minime : selon la spécification de schéma, une erreur de validation de schéma est attendue si `xsd:unique` est enfreinte par l'utilisation d'une clé composée avec une clé vide.  
   
 ## <a name="mitigation"></a>Limitation des risques  
+
  Le fait qu'une erreur de validation de schéma soit détectée ou pas si une clé composée a une clé vide est une fonctionnalité que vous pouvez configurer :  
   
 - Depuis les applications qui ciblent .NET Framework 4.6, la détection de l’erreur de validation de schéma est activée par défaut ; néanmoins, il est possible de la refuser afin que l’erreur de validation de schéma ne soit pas détectée.  

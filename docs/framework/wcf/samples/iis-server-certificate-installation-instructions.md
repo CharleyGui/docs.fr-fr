@@ -2,24 +2,27 @@
 title: Instructions d'installation du certificat de serveur des services Internet (IIS)
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 301a10c615a13a42e1a6e1b89d2724476ca4fbae
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 597af9873b4a5c042aec817ac0d26a86bac9ea82
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594658"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253789"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Instructions d'installation du certificat de serveur des services Internet (IIS)
+
 Pour pouvoir exécuter les exemples qui utilisent la communication sécurisée avec les services Internet (IIS), vous devez créer et installer un certificat de serveur.  
   
 ## <a name="step-1-creating-certificates"></a>Étape 1. Création de certificats  
- Pour créer un certificat pour votre ordinateur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur, puis exécutez le fichier Setup. bat inclus dans chacun des exemples qui utilisent la communication sécurisée avec IIS. Vérifiez que le chemin d'accès inclut le dossier qui contient Makecert.exe avant d'exécuter ce fichier batch. La commande suivante permet de créer le certificat dans Setup.bat.  
+
+ Pour créer un certificat pour votre ordinateur, ouvrez une Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et exécutez le Setup.bat inclus dans chacun des exemples qui utilisent la communication sécurisée avec IIS. Vérifiez que le chemin d'accès inclut le dossier qui contient Makecert.exe avant d'exécuter ce fichier batch. La commande suivante permet de créer le certificat dans Setup.bat.  
   
 ```console  
 makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exchange -sk ServiceModelSamples-HTTPS-Key  
 ```  
   
 ## <a name="step-2-installing-certificates"></a>Étape 2. Installation de certificats  
+
  La procédure d'installation des certificats que vous venez de créer varie en fonction de la version d'IIS utilisée.  
   
 #### <a name="to-install-iis-on-iis-51-windows-xp-and-iis-60-windows-server-2003"></a>Pour installer IIS sur IIS 5.1 (Windows XP) et IIS 6.0 (Windows Server 2003)  
