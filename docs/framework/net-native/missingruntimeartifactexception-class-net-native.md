@@ -2,14 +2,15 @@
 title: MissingRuntimeArtifactException, classe (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
-ms.openlocfilehash: 7a69add45202b3ad838de592fadc82a84fa0ba5d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2618af8e122964d64126f945c337101cb5bbe5ae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180967"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250903"
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>MissingRuntimeArtifactException, classe (.NET Native)
+
 **.NET pour les applications Windows pour Windows 10, .NET Native uniquement**  
   
  Exception levée quand les métadonnées d'un type ou d'un membre de type sont disponibles, mais que leur implémentation a été supprimée.  
@@ -17,9 +18,10 @@ ms.locfileid: "79180967"
  **Espace de noms :** System.Reflection  
   
 > [!IMPORTANT]
-> La `MissingRuntimeArtifactException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Notes.  
+> La `MissingRuntimeArtifactException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
   
 ## <a name="syntax"></a>Syntaxe  
+
  [!code-csharp[ProjectN#22](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingruntimeartifactexception_syntax1.cs#22)]  
   
  Notez que la classe `MissingRuntimeArtifactException` est dérivée de <xref:System.MemberAccessException>.  
@@ -66,12 +68,13 @@ ms.locfileid: "79180967"
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Se produit quand une exception est sérialisée pour créer un objet d'état d'exception qui contient des données sérialisées concernant l'exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
   
 ## <a name="usage-details"></a>Usage Details  
+
  L'exception `MissingRuntimeArtifactException` est levée en cas d'instanciation d'un type ou d'appel d'un membre de type dont l'implémentation a été supprimée malgré la présence de ses métadonnées.  
   
- Le fait que les métadonnées et le code d’implémentation de l’exécution dynamique d’une méthode soient disponibles pour une application au moment de l’exécution sont définis par le fichier de directives Runtime (configuration XML), \* . rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de sorte que les métadonnées nécessaires à un type ou à un membre de type soient présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+ La disponibilité des métadonnées et du code d’implémentation pour exécuter dynamiquement une méthode pour une application au moment de l’exécution est définie par le fichier de directives Runtime (configuration XML), \*.rd.xml. Pour empêcher votre application de lever cette exception, vous devez modifier le fichier \*.rd.xml de sorte que les métadonnées nécessaires à un type ou à un membre de type soient présentes au moment de l’exécution. Pour plus d’informations sur le format du fichier \*.rd.xml, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
-> Comme cette exception indique que le code d’implémentation nécessaire à votre application n’est pas disponible au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer à l'aide d'un fichier de directives runtime. En règle générale, vous éliminez cette exception en spécifiant le approprié `Activate` ou la `Dynamic` stratégie pour un élément de programme dans le fichier de directives Runtime ( \* fichier. rd. Xml). Pour obtenir l'entrée que vous pouvez ajouter à votre fichier de directives de runtime qui élimine l'exception, vous pouvez utiliser un des deux utilitaires de résolution des problèmes :  
+> Comme cette exception indique que le code d’implémentation nécessaire à votre application n’est pas disponible au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer à l'aide d'un fichier de directives runtime. En règle générale, vous éliminez cette exception en spécifiant le approprié `Activate` ou la `Dynamic` stratégie pour un élément de programme dans le fichier de directives Runtime ( \* fichier.rd.xml). Pour obtenir l'entrée que vous pouvez ajouter à votre fichier de directives de runtime qui élimine l'exception, vous pouvez utiliser un des deux utilitaires de résolution des problèmes :  
 >
 > - l’ [utilitaire de résolution des problèmes MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pour les types ;  
 > - l’ [utilitaire de résolution des problèmes MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pour les méthodes.  

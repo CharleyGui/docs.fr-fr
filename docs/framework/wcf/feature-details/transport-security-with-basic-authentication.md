@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: 2add8c21ca8ade4b530e0e6b1b3c5bba66e100ab
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e821f8ed3996e9119c6f2c06ec6533c575bf75dd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556783"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251839"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Sécurité de transport avec l'authentification de base
+
 L’illustration suivante montre un service et un client Windows Communication Foundation (WCF). Le serveur nécessite un certificat X.509 valide qui peut être utilisé pour SSL (Secure Sockets Layer) et les clients doivent approuver le certificat du serveur. De plus, le service Web contient déjà une implémentation SSL disponible. Pour plus d’informations sur l’activation de l’authentification de base sur les Internet Information Services (IIS), consultez <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication> .  
   
  ![Capture d’écran montrant la sécurité de transport avec l’authentification de base.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
@@ -29,19 +30,22 @@ L’illustration suivante montre un service et un client Windows Communication F
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des actions suivantes :  
+
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
 - Créez un service à l'aide de la configuration fournie, mais ne définissez pas de point de terminaison.  
   
 ### <a name="code"></a>Code  
+
  Le code suivant montre comment créer un point de terminaison de service qui utilise un nom d'utilisateur de domaine et un mot de passe Windows pour la sécurité de transfert. Notez que le service requiert un certificat X.509 pour s'authentifier auprès du client. Pour plus d’informations, consultez [utilisation des certificats](working-with-certificates.md) et [procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
   
  [!code-csharp[C_SecurityScenarios#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#1)]
  [!code-vb[C_SecurityScenarios#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#1)]  
   
 ## <a name="configuration"></a>Configuration  
+
  Les éléments suivants configurent un service pour utiliser l'authentification de base avec la sécurité au niveau du transport :  
   
 ```xml  
@@ -73,6 +77,7 @@ L’illustration suivante montre un service et un client Windows Communication F
 ## <a name="client"></a>Client  
   
 ### <a name="code"></a>Code  
+
  Le code suivant affiche le code client qui inclut le nom d'utilisateur et le mot de passe. Notez que l'utilisateur doit fournir un nom d'utilisateur et un mot de passe Windows valides. Le code pour retourner le nom d'utilisateur et le mot de passe n'est pas indiqué. Utilisez une boîte de dialogue ou une autre interface pour demander les informations à l'utilisateur.  
   
 > [!NOTE]
@@ -82,6 +87,7 @@ L’illustration suivante montre un service et un client Windows Communication F
  [!code-vb[C_SecurityScenarios#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#2)]  
   
 ### <a name="configuration"></a>Configuration  
+
  Le code suivant affiche la configuration du client.  
   
 > [!NOTE]

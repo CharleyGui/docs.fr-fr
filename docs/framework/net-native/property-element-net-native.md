@@ -1,15 +1,16 @@
 ---
-title: <Property>, Élément (.NET Native)
+title: <Property> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
-ms.openlocfilehash: b9bc89804a872dddf1a56c2a3dadc9c3df4f5fd1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a0bdf95a1d1cadf7423f8c6595add13eda4d0d9a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128210"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250851"
 ---
-# <a name="property-element-net-native"></a>\<Property>, Élément (.NET Native)
+# <a name="property-element-net-native"></a>\<Property> , Élément (.NET Native)
+
 Applique la stratégie de réflexion runtime à une propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,6 +23,7 @@ Applique la stratégie de réflexion runtime à une propriété.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -37,7 +39,7 @@ Applique la stratégie de réflexion runtime à une propriété.
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|*method_name*|Nom de propriété. Le type de la propriété est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
+|*method_name*|Nom de la propriété. Le type de la propriété est défini par l' [\<Type>](type-element-net-native.md) élément parent ou [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
@@ -46,6 +48,7 @@ Applique la stratégie de réflexion runtime à une propriété.
 |*policy_setting*|Paramètre à appliquer à ce type de stratégie pour la propriété. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
+
  Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -55,10 +58,12 @@ Applique la stratégie de réflexion runtime à une propriété.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Si la stratégie d'une propriété n'est pas définie explicitement, elle hérite la stratégie runtime de son élément parent.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant utilise la réflexion pour instancier un objet `Book` et afficher les valeurs de ses propriétés. Le fichier default.rd.xml d'origine du projet se présente comme suit :  
   
 ```xml  
@@ -81,7 +86,7 @@ Applique la stratégie de réflexion runtime à une propriété.
   
 - en définissant la `Dynamic` stratégie pour le `Book` type dans son [\<Type>](type-element-net-native.md) élément.  
   
-- En ajoutant un élément imbriqué [\<Property>](property-element-net-native.md) pour chaque propriété dont nous aimerions appeler l’accesseur Get, comme le fait le fichier default. rd. XML suivant.  
+- En ajoutant un élément imbriqué [\<Property>](property-element-net-native.md) pour chaque propriété dont nous aimerions appeler l’accesseur Get, comme le fait le fichier default.rd.xml suivant.  
   
     ```xml  
     <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

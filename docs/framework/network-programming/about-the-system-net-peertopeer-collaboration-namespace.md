@@ -2,17 +2,19 @@
 title: À propos de l’espace de noms System.Net.PeerToPeer.Collaboration
 ms.date: 03/30/2017
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
-ms.openlocfilehash: f0c9ecaacc1d875aac8eed61a85ca7579f5cb8a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54eaf1a99aab8b1db61f4b46237d57104c9d1a44
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "64649523"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250708"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>À propos de l’espace de noms System.Net.PeerToPeer.Collaboration
+
 L’espace de noms <xref:System.Net.PeerToPeer.Collaboration> fournit des classes et des API qui sont utilisées pour implémenter les activités de collaboration pair à l’aide de l’infrastructure de collaboration pair à pair.  
   
 ## <a name="classes"></a>Classes  
+
  Les principales classes utilisées dans l’implémentation d’une activité de collaboration pair à pair sont les suivantes :  
   
 - La classe <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, qui peut être utilisée pour stocker les contacts du pair.  

@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
-ms.openlocfilehash: faf14245cd9dd7aa4bf8e89d5a05901279956509
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bbbb484e5cb8060568b321a2a41474d60c9f87f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128280"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250916"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>MissingInteropDataException, classe (.NET Native)
+
 **.NET pour les applications Windows pour Windows 10, .NET Native uniquement**  
   
  Exception levée quand une méthode de marshaling manuel est appelée, mais que les métadonnées d'un type sont introuvables par analyse statique ou dans un fichier de directives runtime.  
@@ -20,9 +21,10 @@ ms.locfileid: "73128280"
  **Espace de noms :** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
-> La `MissingInteropDataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Notes.  
+> La `MissingInteropDataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
   
 ## <a name="syntax"></a>Syntaxe  
+
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
  [!code-vb[ProjectN#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/projectn/vb/missinginteropdataexception_syntax1.vb#21)]  
   
@@ -68,9 +70,10 @@ ms.locfileid: "73128280"
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Se produit quand une exception est sérialisée pour créer un objet d'état d'exception qui contient des données sérialisées concernant l'exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
   
 ## <a name="usage-details"></a>Usage Details  
+
  L'exception `MissingInteropDataException` est levée quand un appel de méthode à destination d'un composant COM ou Windows Runtime ne peut pas aboutir car les informations de type ne sont pas disponibles.  
   
- Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML), \* . rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier ce fichier de manière à définir les métadonnées qui doivent être présentes au moment de l'exécution. Le plus souvent, vous corrigez cette erreur en ajoutant un attribut `MarshalObject`, `MarshalDelegate` ou `MarshalStructure` à un élément de programme approprié dans le fichier de directives runtime. Pour plus d’informations sur le format de ce fichier, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+ Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML), \*.rd.xml. Pour empêcher votre application de lever cette exception, vous devez modifier ce fichier de manière à définir les métadonnées qui doivent être présentes au moment de l'exécution. Le plus souvent, vous corrigez cette erreur en ajoutant un attribut `MarshalObject`, `MarshalDelegate` ou `MarshalStructure` à un élément de programme approprié dans le fichier de directives runtime. Pour plus d’informations sur le format de ce fichier, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
 > Comme cette exception indique que les métadonnées nécessaires à votre application ne sont pas disponibles au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer en ajoutant l'entrée appropriée à un fichier de directives runtime.  

@@ -2,15 +2,16 @@
 title: Activités de collection dans le WF
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-ms.openlocfilehash: 5935b569bc46a6f38a7158049336f1e57fd8b0e5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ff6bfdff7c05d996be66af508307f2087d8bfc76
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143146"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250331"
 ---
 # <a name="collection-activities-in-wf"></a>Activités de collection dans le WF
-Les activités de collection sont utilisées pour utiliser les objets de collection dans un workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] comprend des activités fournies par le système permettant d'ajouter des éléments à une collection et de les supprimer, de vérifier l'existence d'un élément dans une collection et d'effacer une collection. `ExistsInCollection`et `RemoveFromCollection` ont <xref:System.Activities.OutArgument%601> un <xref:System.Boolean>type , ce qui indique le résultat.  
+
+Les activités de collection sont utilisées pour utiliser les objets de collection dans un workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] comprend des activités fournies par le système permettant d'ajouter des éléments à une collection et de les supprimer, de vérifier l'existence d'un élément dans une collection et d'effacer une collection. `ExistsInCollection` et `RemoveFromCollection` ont un <xref:System.Activities.OutArgument%601> de type <xref:System.Boolean> , qui indique le résultat.  
   
 > [!IMPORTANT]
 > Si une activité de collection est exécutée avant de définir l’objet de collection sous-jacent, un objet <xref:System.InvalidOperationException> est levé et l’activité émet une erreur.  
@@ -25,6 +26,7 @@ Les activités de collection sont utilisées pour utiliser les objets de collect
 |<xref:System.Activities.Statements.RemoveFromCollection%601>|Supprime un élément d’une collection spécifiée et retourne `true` si celui-ci a correctement été supprimé.|  
   
 ## <a name="using-collection-activities"></a>Utilisation d’activités de collection  
+
  L’exemple de code suivant montre comment interagir avec une collection déclarée comme une variable de workflow. La collection utilisée est un objet <xref:System.Collections.Generic.List%601> d'objets <xref:System.String>, nommée `fruitList`.  
   
 ```csharp  
@@ -427,4 +429,4 @@ Activity wf = new Sequence
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de workflows, d’activités et d’expressions à l’aide du code impératif](authoring-workflows-activities-and-expressions-using-imperative-code.md)
+- [Création de workflows, d'activités et d'expressions à l'aide du code impératif](authoring-workflows-activities-and-expressions-using-imperative-code.md)

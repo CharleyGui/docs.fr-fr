@@ -2,14 +2,15 @@
 title: Guide de référence de l'API de réflexion .NET Native
 ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
-ms.openlocfilehash: 01678ea6230a53416f213730ae6bb66e6bc057f8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4cded310397ffa4dea057899b6f008146d35a03b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128217"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250877"
 ---
 # <a name="net-native-reflection-api-reference"></a>Guide de référence de l'API de réflexion .NET Native
+
 .NET Native comprend trois nouveaux types d’exception : [System. Runtime. CompilerServices. MissingInteropDataException](missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](missingmetadataexception-class-net-native.md)et [System. Reflection. MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md). Notez les éléments suivants concernant ces trois types d'exception :  
   
  Ces types sont destinés à une utilisation interne uniquement.  
@@ -26,6 +27,7 @@ ms.locfileid: "73128217"
 > Cette référence décrit trois types d’exception propres à .NET Native. Pour obtenir une documentation de référence sur l’API de réflexion .NET Framework Core, consultez les <xref:System.Reflection> <xref:System.Reflection.Context> espaces de <xref:System.Reflection.Emit> noms et. Pour la documentation de référence sur l'API d'interopérabilité principale du .NET Framework, consultez <xref:System.Runtime.InteropServices>.  
   
 ## <a name="systemreflection-namespace"></a>Espace de noms System.Reflection  
+
  L'espace de noms <xref:System.Reflection> contient les types principaux utilisés pour la réflexion dans le .NET Framework. Par .NET Native, il comprend également deux nouveaux types d’exception :  
   
 |Classe|Description|  
@@ -36,6 +38,7 @@ ms.locfileid: "73128217"
  Pour plus d'informations sur les autres types de cet espace de noms, consultez les pages de référence de <xref:System.Reflection> dans l'ensemble de la documentation du .NET Framework.  
   
 ## <a name="systemruntimecompilerservices-namespace"></a>Espace de noms System.Runtime.CompilerServices  
+
  L'espace de noms <xref:System.Runtime.CompilerServices> comprend des types qui ont été conçus pour être utilisés par des compilateurs de langage. Par .NET Native, il comprend également un nouveau type d’exception :  
   
 |Classe|Description|  

@@ -6,15 +6,16 @@ helpviewer_keywords:
 - digital signatures [WCF], encryption
 - digital signatures [WCF]
 ms.assetid: 0868866d-40b4-4341-8e42-eee3b7f15b69
-ms.openlocfilehash: 41094b2eee50e97cf60887cfa29f8110f2895bfa
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dece961ac70dbcf310e5e4a9dcb05c303c787ad4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597395"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251436"
 ---
 # <a name="encryption-of-digital-signatures"></a>Chiffrement de signatures numériques
-Par défaut, un message est signé et chiffré et sa signature chiffrée numériquement. Vous pouvez contrôler ce paramètre en créant une liaison personnalisée à l’aide d’une instance de <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> ou de <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, puis en affectant à la propriété `MessageProtectionOrder` de l’une de ces deux classes une valeur d’énumération <xref:System.ServiceModel.Security.MessageProtectionOrder>. Par défaut, il s’agit de <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Ce processus nécessite 10 à 40 pour cent plus de temps que lorsque les messages sont seulement signés et chiffrés. Toutefois, désactiver le chiffrement de la signature présente un risque en matière de sécurité, les intrus pouvant deviner en son absence le contenu des messages. En effet, l'élément de la signature contient le code de hachage du texte brut de chaque partie signée du message. Par exemple, même si le corps des messages est chiffré par défaut, la signature non chiffrée contient le code de hachage du corps des messages. Si le message est petit, un intrus risque de parvenir à déduire son contenu. Le chiffrement de la signature limite ou élimine complètement ce risque.  
+
+Par défaut, un message est signé et chiffré et sa signature chiffrée numériquement. Vous pouvez contrôler ce paramètre en créant une liaison personnalisée à l’aide d’une instance de <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> ou de <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, puis en affectant à la propriété `MessageProtectionOrder` de l’une de ces deux classes une valeur d’énumération <xref:System.ServiceModel.Security.MessageProtectionOrder>. La valeur par défaut est <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Ce processus nécessite 10 à 40 pour cent plus de temps que lorsque les messages sont seulement signés et chiffrés. Toutefois, désactiver le chiffrement de la signature présente un risque en matière de sécurité, les intrus pouvant deviner en son absence le contenu des messages. En effet, l'élément de la signature contient le code de hachage du texte brut de chaque partie signée du message. Par exemple, même si le corps des messages est chiffré par défaut, la signature non chiffrée contient le code de hachage du corps des messages. Si le message est petit, un intrus risque de parvenir à déduire son contenu. Le chiffrement de la signature limite ou élimine complètement ce risque.  
   
  En conclusion, désactivez uniquement le chiffrement de la signature lorsque les messages ne contiennent pas d'informations à caractère sensible et lorsque cela peut permettre une amélioration significative des performances, par exemple lorsque vous envoyez des fichiers binaires de grande taille ne nécessitant pas de protection particulière.  
   
@@ -26,13 +27,13 @@ Par défaut, un message est signé et chiffré et sa signature chiffrée numéri
   
 3. Affectez à la propriété <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> la valeur <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> ou affectez à la propriété <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> la valeur <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>.  
   
- Pour plus d’informations sur la création de liaisons personnalisées, consultez [création de liaisons définies par l’utilisateur](../extending/creating-user-defined-bindings.md). Pour plus d’informations sur la création d’une liaison personnalisée pour un mode d’authentification spécifique, consultez [procédure : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ Pour plus d’informations sur la création de liaisons personnalisées, consultez [création de liaisons de User-Defined](../extending/creating-user-defined-bindings.md). Pour plus d’informations sur la création d’une liaison personnalisée pour un mode d’authentification spécifique, consultez [procédure : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Security.MessageProtectionOrder>
 - <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
-- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Procédure : créer une liaison personnalisée à l’aide de SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Création de liaisons définies par l’utilisateur](../extending/creating-user-defined-bindings.md)
-- [Comment : créer un SecurityBindingElement pour un mode d'authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Procédure : créer un SecurityBindingElement pour un mode d’authentification spécifié](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

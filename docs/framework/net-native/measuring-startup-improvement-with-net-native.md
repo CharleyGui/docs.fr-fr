@@ -2,14 +2,15 @@
 title: Mesure de l'amélioration du démarrage avec .NET Native
 ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
-ms.openlocfilehash: 5d20fa77ee299065ced406bf8cd531b8c54b6c33
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6d89edaff184692eabb11e928f5211f664ff5afa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540886"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250968"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Mesure de l'amélioration du démarrage avec .NET Native
+
 .NET Native améliore considérablement le temps de lancement des applications. Cette amélioration est particulièrement visible sur les appareils portables à basse consommation d'énergie hébergeant des applications complexes. Cette rubrique facilite la prise en main de l'instrumentation de base servant à mesurer cette amélioration du démarrage.  
   
  Pour faciliter les investigations des performances, le .NET Framework et Windows utilisent une infrastructure d'événements appelée Suivi d'événements pour Windows (ETW) qui permet à votre application de notifier les outils quand des événements se produisent. Vous pouvez ensuite utiliser un outil appelé PerfView pour afficher et analyser les événements ETW facilement. Cette rubrique explique comment :  
@@ -21,6 +22,7 @@ ms.locfileid: "90540886"
 - utiliser PerfView pour afficher ces événements.  
   
 ## <a name="using-eventsource-to-emit-events"></a>Utilisation de la classe EventSource pour émettre des événements  
+
  <xref:System.Diagnostics.Tracing.EventSource> fournit une classe de base à partir de laquelle vous pouvez créer un fournisseur d'événements personnalisé. En règle générale, vous créez une sous-classe de <xref:System.Diagnostics.Tracing.EventSource> et encapsulez les méthodes `Write*` avec vos méthodes d'événement. Un modèle de singleton est généralement utilisé pour chaque <xref:System.Diagnostics.Tracing.EventSource>.  
   
  Par exemple, la classe dans l'exemple suivant permet de mesurer deux caractéristiques de performance :  
@@ -52,6 +54,7 @@ ms.locfileid: "90540886"
  Quand l'application est instrumentée, vous êtes prêt à collecter des événements.  
   
 ## <a name="gathering-events-with-perfview"></a>Collecte d'événements avec PerfView  
+
  PerfView utilise des événements ETW pour vous aider à effectuer toutes sortes d'investigations de performances sur votre application. Il inclut également une interface utilisateur graphique de configuration qui vous permet d'activer ou de désactiver la journalisation de différents types d'événement. PerfView est un outil gratuit qui peut être téléchargé à partir du [Centre de téléchargement Microsoft](https://www.microsoft.com/download/details.aspx?id=28567). Pour plus d’informations, regardez les [vidéos du didacticiel PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial).  
   
 > [!NOTE]
@@ -85,6 +88,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
  Une fois que vous avez exécuté votre application pour permettre à PerfView de collecter les événements émis, cliquez sur le bouton **Arrêter la collection**. En règle générale, vous devez arrêter la collection avant de fermer votre application afin de ne pas obtenir d’événements superflus. Toutefois, la mesure de performances d'arrêt ou de suspension peut vous amener à continuer la collecte.  
   
 ## <a name="displaying-the-events"></a>Affichage des événements  
+
  Pour afficher les événements qui ont déjà été collectés, utilisez PerfView pour ouvrir le fichier .etl ou .etl.zip que vous avez créé, puis choisissez **Événements**. ETW aura recueilli des informations sur un grand nombre d'événements, y compris les événements issus d'autres processus. Pour concentrer vos recherches, complétez les zones de texte suivantes dans l'affichage des événements :  
   
 - Dans la zone **Filtre des processus**, spécifiez le nom de votre application (sans « .exe »).  

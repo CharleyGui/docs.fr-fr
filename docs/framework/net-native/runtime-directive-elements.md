@@ -2,14 +2,15 @@
 title: Éléments de directive runtime
 ms.date: 03/30/2017
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
-ms.openlocfilehash: c900516382c8e526a6b0021bb2b681486283f3ab
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 96bce89c02ad17d1b30eda66237f69a15123dcd3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128171"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250799"
 ---
 # <a name="runtime-directive-elements"></a>Éléments de directive runtime
+
 Le format du fichier de directives runtime (rd.xml) prend en charge les éléments de directive runtime suivants. Pour voir une représentation hiérarchique, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
  [\<Application>](application-element-net-native.md)  

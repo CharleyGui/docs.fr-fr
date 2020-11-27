@@ -1,17 +1,18 @@
 ---
-title: 'Comment : obtenir des informations d’interface et de protocole'
+title: 'Procédure : Obtenir des informations d’interface et de protocole'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
-ms.openlocfilehash: b2b2f4f0bfa8b026bbd5dce8e25919a4a7fc7036
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6e94914ec6312fad9a22cdbb4d145ed131d233da
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180820"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250526"
 ---
-# <a name="how-to-get-interface-and-protocol-information"></a>Comment : obtenir des informations d’interface et de protocole
+# <a name="how-to-get-interface-and-protocol-information"></a>Procédure : Obtenir des informations d’interface et de protocole
+
 Cet exemple montre comment lire les statistiques TCP d’une interface réseau.  
   
 ## <a name="example"></a> Exemple  
@@ -70,6 +71,7 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
+
  Cet exemple nécessite :  
   
 - Références à l’espace de noms **System.Net**.

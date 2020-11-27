@@ -1,15 +1,16 @@
 ---
-title: <TypeInstantiation>, Élément (.NET Native)
+title: <TypeInstantiation> , Élément (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
-ms.openlocfilehash: 9069856b3d8739724d148b5eea5d4188c8b8b9e1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a1db497762b3dc8c135154086d72fb3ac92ff5a4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128680"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250747"
 ---
-# <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation>, Élément (.NET Native)
+# <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation> , Élément (.NET Native)
+
 Applique la stratégie de réflexion runtime à un type générique construit.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -30,6 +31,7 @@ Applique la stratégie de réflexion runtime à un type générique construit.
 ```  
   
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
+
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
@@ -53,7 +55,7 @@ Applique la stratégie de réflexion runtime à un type générique construit.
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|*type_name*|Nom du type. Si cet `<TypeInstantiation>` élément est l’enfant d’un élément, d' [\<Namespace>](namespace-element-net-native.md) un [\<Type>](type-element-net-native.md) élément ou d’un autre `<TypeInstantiation>` élément, *type_name* pouvez spécifier le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet. Le nom du type n'est pas décoré. Par exemple, pour un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, l'élément `<TypeInstantiation>` peut apparaître comme suit :<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
+|*TYPE_NAME*|Nom du type. Si cet `<TypeInstantiation>` élément est l’enfant d’un élément, d' [\<Namespace>](namespace-element-net-native.md) un [\<Type>](type-element-net-native.md) élément ou d’un autre `<TypeInstantiation>` élément, *type_name* pouvez spécifier le nom du type sans son espace de noms. Dans le cas contraire, *type_name* doit inclure le nom de type complet. Le nom du type n'est pas décoré. Par exemple, pour un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, l'élément `<TypeInstantiation>` peut apparaître comme suit :<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
   
 ## <a name="arguments-attribute"></a>Attribut Arguments  
   
@@ -91,12 +93,14 @@ Applique la stratégie de réflexion runtime à un type générique construit.
 |[\<Type>](type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
 |`<TypeInstantiation>`|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
+
  Les attributs de réflexion, de sérialisation et d'interopérabilité sont tous facultatifs. Toutefois, au moins un doit être présent.  
   
  Si un `<TypeInstantiation>` élément est l’enfant d’un [\<Assembly>](assembly-element-net-native.md) [\<Namespace>](namespace-element-net-native.md) élément, ou, il se [\<Type>](type-element-net-native.md) substitue aux paramètres de stratégie définis par l’élément parent. Si un [\<Type>](type-element-net-native.md) élément définit une définition de type générique correspondante, l' `<TypeInstantiation>` élément se substitue à la stratégie de réflexion Runtime uniquement pour les instanciations du type générique construit spécifié.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
+
  L'exemple suivant utilise la réflexion pour récupérer la définition de type générique construit d'un objet <xref:System.Collections.Generic.Dictionary%602>. Il utilise également la réflexion pour afficher des informations sur les objets <xref:System.Type> qui représentent des types génériques construits et des définitions de type générique. La variable `b` de l’exemple est un <xref:Windows.UI.Xaml.Controls.TextBlock> contrôle.  
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  

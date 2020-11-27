@@ -2,12 +2,12 @@
 title: Sérialisation et métadonnées
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 739d482330103a2a79d0d640781b5516bbc15c01
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81389229"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250786"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
 
@@ -18,6 +18,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 - Sérialiseurs non basés sur la réflexion trouvés dans la bibliothèque de classes .NET Framework. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
   
 <a name="ThirdParty"></a>
+
 ## <a name="third-party-serializers"></a>Sérialiseurs tiers
 
  Les sérialiseurs tiers, y compris Newtonsoft.JSON, sont généralement basés sur la réflexion. Avec un objet BLOB (Binary Large Object) de données sérialisées, les champs de données sont affectés à un type concret en fonction des noms des champs du type cible. L’utilisation de ces bibliothèques entraîne au minimum des exceptions [MissingMetadataException](missingmetadataexception-class-net-native.md) pour chaque objet <xref:System.Type> que vous essayez de sérialiser ou de désérialiser dans une collection `List<Type>`.  
@@ -31,6 +32,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
  Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [ \<Namespace> élément](namespace-element-net-native.md).  
   
 <a name="Microsoft"></a>
+
 ## <a name="microsoft-serializers"></a>Sérialiseurs Microsoft
 
  Bien que les classes <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> et <xref:System.Xml.Serialization.XmlSerializer> ne reposent pas sur la réflexion, elles nécessitent la génération de code en fonction de l'objet à sérialiser ou à désérialiser. Les constructeurs surchargés pour chaque sérialiseur incluent un paramètre <xref:System.Type> qui spécifie le type à sérialiser ou à désérialiser. La façon dont vous spécifiez ce type dans votre code définit l'action à entreprendre, comme indiqué dans les deux sections suivantes.  
@@ -71,5 +73,5 @@ Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez 
 
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](runtime-directive-elements.md)
-- [\<Type>Appartient](type-element-net-native.md)
-- [\<Namespace>Appartient](namespace-element-net-native.md)
+- [\<Type> Appartient](type-element-net-native.md)
+- [\<Namespace> Appartient](namespace-element-net-native.md)

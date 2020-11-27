@@ -1,5 +1,5 @@
 ---
-title: Services fiables
+title: Services fiables (Reliable Services)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF [WCF], reliable messaging
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], reliable sessions
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
-ms.openlocfilehash: 78f492c7a7c5abd7b72c40fc5695b8d56003f822
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: d028af80a30fd18b6aa6e9678e7fd8788e7b7b95
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319889"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96249746"
 ---
-# <a name="reliable-services"></a>Services fiables
+# <a name="reliable-services"></a>Services fiables (Reliable Services)
+
 Les files d’attente et les sessions fiables sont les fonctionnalités de Windows Communication Foundation (WCF) qui implémentent la messagerie fiable. Cette rubrique décrit les fonctionnalités de messagerie fiable de WCF.  
   
  La *messagerie fiable* est la manière dont une source de messagerie fiable (appelée *source*) transfère les messages de manière fiable vers une destination de messagerie fiable (appelée *destination*).  
@@ -33,11 +34,13 @@ Les files d’attente et les sessions fiables sont les fonctionnalités de Windo
 - Les [files d’attente dans WCF](./feature-details/queues-in-wcf.md), qui offrent à la fois les transferts fiables et la séparation entre la source et la destination.  
   
 ## <a name="reliable-sessions"></a>Sessions fiables  
+
  À l'aide du protocole WS-Reliable Messaging, les sessions fiables assurent un transfert fiable des messages de bout en bout entre source et destination quels que soient les nombre et type d'intermédiaires figurant entre les points de terminaison (source et destination) de la messagerie. Au rang de ces intermédiaires figurent notamment tous les transports qui n'utilisent pas le protocole SOAP (par exemple, les proxys HTTP) ou les intermédiaires qui utilisent SOAP (par exemple, les routeurs ou les ponts SOAP), nécessaires à la circulation des messages entre les points de terminaison. Les sessions fiables utilisent une fenêtre de transfert en mémoire pour masquer les défaillances survenant au niveau des messages SOAP et rétablir les connexions en cas de défaillance des transports.  
   
  Les sessions fiables assurent le transfert fiable à faible latence des messages. Elles accomplissent pour les messages SOAP sur tous proxys ou intermédiaires, ce que le service TCP accomplit pour les paquets sur les ponts IP. Pour plus d’informations sur les sessions fiables, consultez [sessions fiables](./feature-details/reliable-sessions.md).  
   
-### <a name="queues"></a>Files d'attente  
+### <a name="queues"></a>Files d’attente  
+
  Les files d’attente dans WCF fournissent des transferts fiables de messages et une séparation entre les sources et les destinations au détriment de la latence élevée. La communication en file d’attente WCF repose sur Message Queuing (MSMQ).  
   
  Le service MSMQ est un composant en option de Windows. Ce service s'exécute en tant que service Windows. Elle capture, au nom de la source, les messages à transmettre figurant dans la file d'attente de transmission, puis les remet à la file d'attente cible. La file d'attente cible accepte ces messages au nom de la destination pour les lui remettre ultérieurement dès qu'elle en fera la demande. Les gestionnaires MSMQ implémentent un protocole de transfert de message fiable afin d'éviter que les messages ne soient égarés pendant leur transmission. Il peut s'agir d'un protocole natif ou du protocole SOAP appelé protocole SRMP (SOAP Reliable Messaging Protocole).  
@@ -46,5 +49,5 @@ Les files d’attente et les sessions fiables sont les fonctionnalités de Windo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des sessions fiables](./feature-details/reliable-sessions-overview.md)
-- [Mise en file d’attente dans WCF](./feature-details/queuing-in-wcf.md)
+- [Vue d'ensemble des sessions fiables](./feature-details/reliable-sessions-overview.md)
+- [Mise en file d'attente dans WCF](./feature-details/queuing-in-wcf.md)

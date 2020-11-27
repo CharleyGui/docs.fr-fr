@@ -2,19 +2,20 @@
 title: Exécution
 ms.date: 03/30/2017
 ms.assetid: a9dcedcc-9f4c-45c2-8222-6bcbf48f3534
-ms.openlocfilehash: fd6ba0bb3a463287cea28e95ad2b893dd8d0c8a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 116eec94cbd33c282ec2b899ff7689e31311e6b1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913781"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251550"
 ---
 # <a name="execution"></a>Exécution
-Cette section contient des exemples qui illustrent l’exécution de workflows dans Windows Workflow Foundation (WF).  
+
+Cette section contient des exemples qui illustrent l’exécution de flux de travail dans Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>Dans cette section
   
- [Création et exécution d’une instance de workflow](creating-and-running-a-workflow-instance.md)  
+ [Création et exécution d'une instance de workflow](creating-and-running-a-workflow-instance.md)  
  Montre comment exécuter une instance de workflow. Il indique comment l’exécuter de façon synchrone et de façon asynchrone.  
   
  [Reprise de signet WorkflowHostingEndpoint](workflowhostingendpoint-resume-bookmark.md)  

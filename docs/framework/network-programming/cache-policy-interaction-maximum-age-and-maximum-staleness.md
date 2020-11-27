@@ -9,14 +9,15 @@ helpviewer_keywords:
 - staleness of cached resources
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
-ms.openlocfilehash: e21cfc28407ba67afdce8d72e5e52c12ab359059
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdfa608b5169755b2b4daaaa26e562308ae2be01
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048839"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250604"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interaction de la stratégie de cache : ancienneté maximale et péremption maximale
+
 Pour vous assurer que le contenu le plus récent est renvoyé à l’application cliente, l’interaction entre la stratégie de cache du client et les exigences de revalidation du serveur ont toujours comme résultat la stratégie de cache la plus restrictive. Tous les exemples de cette rubrique illustrent la stratégie de cache pour une ressource mise en cache le 1er janvier et expirant le 4 janvier.  
   
  Dans les exemples suivants, la valeur de péremption maximale (`maxStale`) est utilisée conjointement avec une ancienneté maximale (`maxAge`) :  
@@ -39,7 +40,7 @@ Pour vous assurer que le contenu le plus récent est renvoyé à l’application
 
 - [Gestion du cache pour les applications réseau](cache-management-for-network-applications.md)
 - [Stratégie de cache](cache-policy.md)
-- [Stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
-- [Stratégies de cache basées sur la durée](time-based-cache-policies.md)
+- [stratégies de cache basées sur l’emplacement](location-based-cache-policies.md)
+- [stratégies de cache basées sur la durée](time-based-cache-policies.md)
 - [Configuration de la mise en cache dans les applications réseau](configuring-caching-in-network-applications.md)
 - [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](cache-policy-interaction-maximum-age-and-minimum-freshness.md)

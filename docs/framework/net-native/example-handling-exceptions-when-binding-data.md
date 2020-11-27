@@ -2,14 +2,15 @@
 title: 'Exemple : Gestion des exceptions pendant la liaison de données'
 ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
-ms.openlocfilehash: b774d1bce4f4d1c03258ed44b27d3871e7c5275f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 399bd1af9ef25eca9cdfe1e13fdc4c01021babcd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181024"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251072"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Exemple : Gestion des exceptions pendant la liaison de données
+
 > [!NOTE]
 > Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
   
@@ -36,7 +37,8 @@ Windows_UI_Xaml!DirectUI::PropertyAccessPathStep::GetValue+0x31
 Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113  
 ```  
   
-## <a name="what-was-the-app-doing"></a>Que faisait l'application ?  
+## <a name="what-was-the-app-doing"></a>Que faisait l’application ?  
+
  À la base de la pile, les frames de l' <xref:Windows.UI.Xaml?displayProperty=nameWithType> espace de noms indiquent que le moteur de rendu XAML était en cours d’exécution.   L'utilisation de la méthode <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> indique une recherche basée sur la réflexion de la valeur d'une propriété sur le type dont les métadonnées ont été supprimées.  
   
  La première étape pour fournir une directive de métadonnées consisterait à ajouter des métadonnées `serialize` pour le type afin que ses propriétés soient toutes accessibles :  
@@ -46,6 +48,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="is-this-an-isolated-case"></a>S'agit-il d'un cas isolé ?  
+
  Dans ce scénario, si la liaison de données contient des métadonnées incomplètes pour un `ViewModel`, cela peut également être le cas pour d'autres.  Si le code est structuré de façon à ce que les modèles d'affichage de l'application se trouvent tous dans l'espace de noms `App.ViewModels`, vous pouvez utiliser une directive runtime plus générale :  
   
 ```xml  
@@ -53,6 +56,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a>Le code peut-il être réécrit de manière à ne pas utiliser la réflexion ?  
+
  Comme la liaison de données repose sur la réflexion, modifier le code pour éviter la réflexion est impossible.  
   
  Toutefois, certains procédés permettent de spécifier le `ViewModel` pour la page XAML afin que la chaîne d'outils associe les liaisons de propriété au type approprié au moment de la compilation et conserve les métadonnées sans utiliser de directive runtime.  Par exemple, vous pouvez appliquer l' <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> attribut sur les propriétés. Ainsi, le compilateur XAML génère les informations de recherche nécessaires et évite la présence d'une directive runtime dans le fichier Default.rd.xml.  

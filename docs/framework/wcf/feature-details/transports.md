@@ -6,19 +6,21 @@ helpviewer_keywords:
 - WCF, transports
 - Windows Communication Foundation, transports
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
-ms.openlocfilehash: 077d63d8038b245a68083611897c1e6c68971071
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8623b788b848867f25836a657b07349dd50c2780
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598669"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251683"
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Transports dans Windows Communication Foundation
+
 La couche de transport se situe au niveau le plus bas de la pile des canaux. Les transports principaux utilisés dans Windows Communication Foundation (WCF) sont HTTP, HTTPs, TCP et les canaux nommés. Les rubriques de cette section contiennent des conseils et des instructions permettant de savoir quel protocole choisir, de le configurer et de définir les propriétés de réglage afférentes.  
   
  WCF comprend des transports supplémentaires. Pour plus d’informations sur le transport Message Queuing (également appelé MSMQ), consultez [files d’attente et sessions fiables](queues-and-reliable-sessions.md). Pour plus d’informations sur le transport d’égal à égal, consultez [mise en réseau pair à pair](peer-to-peer-networking.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Choix d'un transport](choosing-a-transport.md)  
  Présente les trois transports principaux et aborde les différents points à prendre en considération lors de leur sélection.  
   
@@ -31,7 +33,7 @@ La couche de transport se situe au niveau le plus bas de la pile des canaux. Les
  [Configuration de HTTP et HTTPS](configuring-http-and-https.md)  
  Contient des instructions permettant de configurer les éléments de liaison de transport HTTP et HTTPS.  
   
- [Procédure : remplacer la réservation d'URL WCF par une réservation restreinte](how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
+ [Procédure : remplacer la réservation d’URL WCF par une réservation restreinte](how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
  Décrit comment utiliser des réservations restreintes WCFURL.  
   
  [Quotas de transport](transport-quotas.md)  
@@ -44,6 +46,7 @@ La couche de transport se situe au niveau le plus bas de la pile des canaux. Les
  Décrit comment utiliser le composant de partage de port Net. TCP de WCF.  
   
 ## <a name="reference"></a>Informations de référence  
+
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
   
  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
@@ -53,6 +56,7 @@ La couche de transport se situe au niveau le plus bas de la pile des canaux. Les
  <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
   
 ## <a name="related-sections"></a>Sections connexes  
+
  [Liaisons](bindings.md)  
   
  [Extension de liaisons](../extending/extending-bindings.md)
