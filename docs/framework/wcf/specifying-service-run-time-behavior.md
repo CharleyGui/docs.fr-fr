@@ -9,14 +9,14 @@ ms.openlocfilehash: 61c3b8ebd431c3a16475342984b463d5f8842a89
 ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "96235881"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Spécification du comportement du service au moment de l'exécution
 
 Une fois que vous avez conçu un contrat de service ([Designing Service Contracts](designing-service-contracts.md)) et implémenté votre contrat de service ([Implementing Service Contracts](implementing-service-contracts.md)), vous pouvez configurer le comportement d’opération de l’exécution du service. Cette rubrique traite des comportements de service fournis par le système et des comportements d'opération et précise où rechercher plus d'informations pour créer de nouveaux comportements. Si certains comportements sont appliqués sous la forme d'attributs, un grand nombre s'appliquent à l'aide d'un fichier de configuration de l'application ou par programme. Pour plus d’informations sur la configuration de votre application de service, consultez [Configuration des services](configuring-services.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Vue d’ensemble  
 
  Le contrat définit les entrées, sorties, types de données et fonctions d'un service de ce type. L'implémentation d'un contrat de service crée une classe qui, lorsqu'elle est configurée avec une liaison à une adresse, répond au contrat qu'elle implémente. Les informations contractuelles, de liaisons et d'adresse sont tout connues du client ; sans elles, le client ne peut pas utiliser le service.  
   

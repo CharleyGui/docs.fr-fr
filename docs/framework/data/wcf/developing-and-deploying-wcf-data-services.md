@@ -8,10 +8,10 @@ helpviewer_keywords:
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
 ms.openlocfilehash: 484505406701b52a2b80b95b718a23a2156aa22c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "90556087"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Développez et déployez des WCF Data Services
@@ -98,7 +98,7 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
 
     - [Comment : créer un package de déploiement Web dans Visual Studio](/previous-versions/aspnet/dd465323(v=vs.110))
 
-    - [Comment : déployer un projet Web à l’aide de la publication en un clic dans Visual Studio](/previous-versions/aspnet/dd465337(v=vs.110))
+    - [Comment : déployer un projet Web à l’aide de One-Click publier dans Visual Studio](/previous-versions/aspnet/dd465337(v=vs.110))
 
   - **Technologies de déploiement des sites Web ASP.NET**
 
@@ -113,7 +113,7 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
     > [!TIP]
     > Avant de tenter de déployer le service de données sur IIS, testez le déploiement sur un serveur Web qui exécute IIS. Pour plus d'informations, consultez [How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
 
-- **Azure**
+- **Microsoft Azure**
 
      Vous pouvez déployer un service de données sur Azure à l’aide d' [Azure Tools pour Visual Studio](../../../azure/vs2015-install.md). Pour plus d’informations sur le déploiement d’un service de données sur Azure, consultez [déploiement d’un service OData dans Azure](/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
