@@ -4,12 +4,12 @@ description: Découvrez la façon dont les bibliothèques fournissent des implé
 author: richlander
 ms.date: 06/20/2016
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: e59f53f2a16dc84709e0b815d3e2b710c903ff60
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4e71f81b0dd72f4569d8b6b319b9e97491533d28
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827930"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438202"
 ---
 # <a name="framework-libraries"></a>Bibliothèques de framework
 
@@ -39,7 +39,7 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 
 .NET inclut un ensemble de structures de données qui sont les bêtes de somme de presque toutes les applications .NET. Il s’agit essentiellement de collections, mais on retrouve également d’autres types.
 
-* <xref:System.Array> : Représente un tableau d’objets fortement typés accessibles par index. Sa taille est fixe, par sa construction.
+* <xref:System.Array> -Représente un tableau d’objets fortement typés accessibles par index. Sa taille est fixe, par sa construction.
 * <xref:System.Collections.Generic.List%601> : Représente une liste fortement typée d’objets accessibles par index. Est automatiquement redimensionnée en fonction des besoins.
 * <xref:System.Collections.Generic.Dictionary%602> : Représente une collection de valeurs indexées par une clé. Les valeurs sont accessibles par une clé. Est automatiquement redimensionnée en fonction des besoins.
 * <xref:System.Uri> : Fournit une représentation objet d’un URI (Uniform Resource Identifier) et un accès simplifié aux parties de l’identificateur.

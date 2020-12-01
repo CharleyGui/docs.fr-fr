@@ -14,12 +14,12 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: e7c4d6ca4c72390c3e0803502aa9c1a675e02345
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 26612c5b0591efa61fcd476733aee2b219d67c62
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282412"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438164"
 ---
 # <a name="version-tolerant-serialization"></a>Sérialisation avec tolérance de version
 
@@ -28,7 +28,7 @@ Dans les premières versions de .NET Framework, la création de types sérialisa
 - Les versions antérieures d'une application pouvaient lever des exceptions lorsque l'utilisateur tentait de désérialiser les nouvelles versions du type précédent.
 - Les versions plus récentes d'une application pouvaient lever des exceptions lors de la désérialisation de versions antérieures d'un type ayant des données manquantes.
 
-La sérialisation avec tolérance de version (STM) est un ensemble de fonctionnalités qui facilite, au fil du temps, la modification de types sérialisables. Plus précisément, les fonctions VTS sont activées pour les classes auxquelles l'attribut <xref:System.SerializableAttribute> a été appliqué, y compris des types génériques. VTS permet d'ajouter de nouveaux champs à ces classes en assurant la compatibilité avec d'autres versions du type. Pour obtenir un exemple d’application opérationnelle, consultez [Sérialisation avec tolérance de version, exemple de technologie](basic-serialization-technology-sample.md).
+La sérialisation avec tolérance de version (STM) est un ensemble de fonctionnalités qui facilite, au fil du temps, la modification de types sérialisables. Plus précisément, les fonctions VTS sont activées pour les classes auxquelles l'attribut <xref:System.SerializableAttribute> a été appliqué, y compris des types génériques. VTS permet d'ajouter de nouveaux champs à ces classes en assurant la compatibilité avec d'autres versions du type.
 
 Les fonctions VTS sont activées lors de l'utilisation de <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. En outre, toutes les fonctionnalités, hormis la tolérance de données étrangères, sont également activées lors de l'utilisation de <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Pour plus d’informations sur l’utilisation de ces classes pour la sérialisation, consultez [Sérialisation binaire](binary-serialization.md).
 

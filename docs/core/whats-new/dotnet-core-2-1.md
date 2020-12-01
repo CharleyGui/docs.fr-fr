@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: f125a6a8d9287cb515478a10c2679c07817ae9a6
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 5c15b663cf69de334771e83c1a14db8d66d30458
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91087360"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437917"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -21,7 +21,7 @@ ms.locfileid: "91087360"
 - [Déploiement](#deployment)
 - [Pack de compatibilité Windows](#windows-compatibility-pack)
 - [Améliorations de la compilation JIT](#jit-compiler-improvements)
-- [Modifications de l’API](#api-changes)
+- [Modifications d'API](#api-changes)
 
 ## <a name="tooling"></a>Outillage
 
@@ -248,7 +248,7 @@ Sous Linux et macOS, vous pouvez uniquement configurer <xref:System.Net.Http.Htt
 
 ### <a name="breaking-changes"></a>Changements cassants
 
-Pour plus d’informations sur les modifications avec rupture, consultez [modifications avec rupture pour la migration de la version 2,0 vers 2,1](../compatibility/2.0-2.1.md).
+Pour plus d’informations sur les modifications avec rupture, consultez [modifications avec rupture pour la migration de la version 2,0 vers 2,1](../compatibility/2.1.md).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 11/16/2020
-ms.openlocfilehash: 143657b4ec360640c0a43099ca5c1c0d9c863453
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 77ed506fb1c5bd4018b5fe0c14cc0bf37cb08113
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687777"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438188"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -63,7 +63,7 @@ Le code source de la bibliothèque de classes de [base pour .net 5 (et .net Core
 
 Les termes suivants font souvent référence à la collection d’API à laquelle BCL fait référence :
 
-- [bibliothèques .NET principales](../core/compatibility/3.1-5.0.md#core-net-libraries)
+- [bibliothèques .NET principales](../core/compatibility/corefx.md)
 - [bibliothèques d’infrastructure](#framework-libraries)
 - [bibliothèques Runtime](#runtime)
 - [Framework partagé](#shared-framework)

@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 42d4f7e8800bf2d13d584084f8a41bad2ada534f
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 9caecdcc3516db2bd71420184fbd21f7837552a7
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608122"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437931"
 ---
 # <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
@@ -29,7 +29,7 @@ Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,
 
 .NET Core 3,1 est une version LTS avec prise en charge de Microsoft au cours des trois prochaines années. Il est fortement recommandé de déplacer vos applications vers .NET Core 3,1. Le cycle de vie actuel des autres versions majeures est le suivant :
 
-| Libérer | Remarque |
+| Libérer | Notes |
 | ------- | ---- |
 | .NET Core 3.0 | Fin de vie le 3 mars 2020.     |
 | .NET Core 2.2 | Fin de vie le 23 décembre 2019. |
@@ -99,5 +99,5 @@ Pour ajouter la prise en charge de C++/CLI dans Visual Studio 2019 version 16,4,
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Passez en revue les modifications avec rupture entre .NET Core 3,0 et 3,1.](../compatibility/3.0-3.1.md)
+- [Passez en revue les modifications avec rupture entre .NET Core 3,0 et 3,1.](../compatibility/3.1.md)
 - [Passez en revue les dernières modifications apportées à .NET Core 3,1 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-31)

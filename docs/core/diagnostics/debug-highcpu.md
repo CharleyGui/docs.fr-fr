@@ -3,12 +3,12 @@ title: Utilisation élevée du processeur par le débogage-.NET Core
 description: Un didacticiel qui vous guide tout au long du débogage de l’utilisation élevée de l’UC dans .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 71e0b98f7ad38836c6a20c3e0e75a878fb6525c7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 91f31f77b54398d2f9816890338955bc9b0852e4
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538707"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437833"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Déboguer une utilisation élevée du processeur dans .NET Core
 
@@ -90,7 +90,7 @@ Avec l’application Web en cours d’exécution, immédiatement après le déma
 À présent, réexécutez la commande [dotnet-Counters](dotnet-counters.md) . Pour surveiller uniquement le `cpu-usage` , spécifiez `System.Runtime[cpu-usage]` dans le cadre de la commande.
 
 ```dotnetcli
-dotnet-counters monitor System.Runtime[cpu-usage] -p 22884 --refresh-interval 1
+dotnet-counters monitor --counters System.Runtime[cpu-usage] -p 22884 --refresh-interval 1
 ```
 
 Vous devez voir une augmentation de l’utilisation de l’UC comme indiqué ci-dessous :

@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 42d60f919cb6ae0dab262ef9056a7c33c312a911
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 1e48f2f83b65ef934c7c460d42f05e2f8de04cbd
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95726663"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437902"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -108,7 +108,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
-- ou -
+-ou-
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -573,5 +573,5 @@ Souvent, lorsque vous développez une application, vous souhaiterez utiliser une
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Passez en revue les modifications avec rupture entre .NET Core 2,2 et 3,0.](../compatibility/2.2-3.0.md)
+- [Passez en revue les modifications avec rupture entre .NET Core 2,2 et 3,0.](../compatibility/3.0.md)
 - [Passez en revue les dernières modifications apportées à .NET Core 3,0 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-30)

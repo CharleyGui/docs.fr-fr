@@ -2,12 +2,12 @@
 title: 'Modification avec rupture : CA1831 : utiliser AsSpan à la place d’indexeurs basés sur une plage pour une chaîne'
 description: En savoir plus sur la modification avec rupture dans .NET 5,0 provoquée par l’activation de la règle d’analyse du code CA1831.
 ms.date: 08/21/2020
-ms.openlocfilehash: 74f34af04a56b73478ffb3305d69ed49f3a30072
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 850916b804ae29dba8d2bd05c6e4fb06fe667296
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95760819"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437886"
 ---
 # <a name="warning-ca1831-use-asspan-instead-of-range-based-indexers-for-string"></a>AVERTISSEMENT CA1831 : utiliser AsSpan à la place d’indexeurs basés sur une plage pour une chaîne
 
@@ -41,7 +41,7 @@ ReadOnlySpan<char> slice = str.AsSpan()[1..3];
   ReadOnlySpan<char> slice = str.AsSpan()[1..3];
   ```
 
-- Si vous ne souhaitez pas modifier votre code, vous pouvez désactiver la règle en affectant à sa gravité la valeur `suggestion` ou `none` . Pour plus d’informations, consultez [configurer des règles d’analyse du code](../../../../fundamentals/productivity/configure-code-analysis-rules.md).
+- Si vous ne souhaitez pas modifier votre code, vous pouvez désactiver la règle en affectant à sa gravité la valeur `suggestion` ou `none` . Pour plus d’informations, consultez [configurer des règles d’analyse du code](../../../../fundamentals/code-analysis/configuration-options.md).
 
 - Pour désactiver complètement l’analyse du code, affectez `EnableNETAnalyzers` à `false` la valeur dans votre fichier projet. Pour plus d’informations, consultez [EnableNETAnalyzers](../../../project-sdk/msbuild-props.md#enablenetanalyzers).
 

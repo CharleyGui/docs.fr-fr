@@ -9,12 +9,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: f4cb85e346e0043a3f28c48845f574afa89548db
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: b4c5b6911a4be4f9ac156b600646c649549f88f8
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95673356"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438137"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions du .NET Framework installées
 
@@ -98,7 +98,7 @@ Utilisez les commandes PowerShell pour vérifier la valeur de l’entrée de **p
 Les exemples suivants vérifient la valeur de l’entrée de **mise en sortie** pour déterminer si .NET Framework 4.6.2 ou version ultérieure est installé. Ce code retourne `True` s’il est installé et `False` dans le cas contraire.
 
 ```powershell
-(Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
 ### <a name="query-the-registry-using-code"></a>Interroger le registre à l’aide de code
@@ -134,7 +134,7 @@ Chaque version de .NET Framework de 1,1 à 4,0 est indiquée sous la forme d’u
 > [!NOTE]
 > La sous-clé **d’installation** du .NET Framework dans le chemin d’accès du registre ne commence *pas* par un point.
 
-| Version du Framework  | Sous-clé de Registre | Value |
+| Version du Framework  | Sous-clé de Registre | Valeur |
 | ------------------ | --------------- | ----- |
 | 1.0                | **HKLM \\ Software \\ Microsoft \\ . \\Stratégie NETFramework \\ v 1.0 \\ 3705**     | **Installer** REG_SZ est égal à `1` |
 | 1.1                | **HKLM \\ Software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Installer** REG_DWORD est égal à `1` |

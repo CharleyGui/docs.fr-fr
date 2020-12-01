@@ -1,16 +1,16 @@
 ---
 title: Nouveautés de .NET 5
 description: Découvrez .NET 5, une plateforme de développement multiplateforme et open source qui est la prochaine évolution de .NET Core.
-ms.date: 11/18/2020
+ms.date: 11/30/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: 1101e218f225eed2a2013ed9e19b60f4ece57738
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: d0b8533dd63dd7d24f49e11093770b52d7daea89
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982299"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437863"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -46,7 +46,7 @@ ASP.NET Core 5,0 est basé sur .NET 5,0, mais conserve le nom « Core » pour 
 
 Il n’est pas prévu de porter les technologies suivantes de .NET Framework vers .NET 5,0, mais il existe des alternatives dans .NET 5,0 :
 
-| Technology            | Alternative recommandée                                                                         |
+| Technologie            | Alternative recommandée                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------|
 | Web Forms             | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
 | Windows Workflow (WF) | [CoreWF Open source](https://github.com/UiPath-Open/corewf)                                     |
@@ -141,17 +141,17 @@ Pour plus d’informations sur les modèles de projet à partir de l’interface
 
 Il existe de nouvelles fonctionnalités dans et pour [System.Text.Jssur](../standard/serialization/system-text-json-overview.md):
 
-- [Conserver les références et gérer les références circulaires](../standard/serialization/system-text-json-how-to.md#preserve-references-and-handle-circular-references)
+- [Conserver les références et gérer les références circulaires](../standard/serialization/system-text-json-preserve-references.md)
 - [Méthodes d’extension HttpClient et HttpContent](../standard/serialization/system-text-json-how-to.md#httpclient-and-httpcontent-extension-methods)
-- [Autoriser ou écrire des nombres entre guillemets](../standard/serialization/system-text-json-how-to.md#allow-or-write-numbers-in-quotes)
-- [Prendre en charge les types immuables et les enregistrements C# 9](../standard/serialization/system-text-json-how-to.md#immutable-types-and-records)
-- [Prendre en charge les accesseurs de propriété non publics](../standard/serialization/system-text-json-how-to.md#non-public-property-accessors)
-- [champs de support](../standard/serialization/system-text-json-how-to.md#include-fields)
-- [Ignorer conditionnellement les propriétés](../standard/serialization/system-text-json-how-to.md#ignore-properties)
+- [Autoriser ou écrire des nombres entre guillemets](../standard/serialization/system-text-json-invalid-json.md#allow-or-write-numbers-in-quotes)
+- [Prendre en charge les types immuables et les enregistrements C# 9](../standard/serialization/system-text-json-immutability.md)
+- [Prendre en charge les accesseurs de propriété non publics](../standard/serialization/system-text-json-immutability.md)
+- [Champs de support](../standard/serialization/system-text-json-how-to.md#include-fields)
+- [Ignorer conditionnellement les propriétés](../standard/serialization/system-text-json-ignore-properties.md)
 - [Prise en charge des dictionnaires non-clés-chaîne](../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md#dictionary-with-non-string-key)
 - [Autoriser les convertisseurs personnalisés à gérer la valeur null](../standard/serialization/system-text-json-converters-how-to.md#handle-null-values)
-- [Copier JsonSerializerOptions](../standard/serialization/system-text-json-how-to.md#copy-jsonserializeroptions)
-- [Créer des JsonSerializerOptions avec des valeurs par défaut Web](../standard/serialization/system-text-json-how-to.md#web-defaults-for-jsonserializeroptions)
+- [Copier JsonSerializerOptions](../standard/serialization/system-text-json-configure-options.md#copy-jsonserializeroptions)
+- [Créer des JsonSerializerOptions avec des valeurs par défaut Web](../standard/serialization/system-text-json-configure-options.md#web-defaults-for-jsonserializeroptions)
 
 ## <a name="see-also"></a>Voir aussi
 

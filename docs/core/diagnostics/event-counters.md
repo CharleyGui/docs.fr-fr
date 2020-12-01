@@ -2,12 +2,12 @@
 title: EventCounters dans .NET Core
 description: Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 ms.date: 08/07/2020
-ms.openlocfilehash: 212cd6b495785dcd091187f97a1b5e44e5597a4a
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 68c831713eed8c49d24ebf93da301ef68d213bf9
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687640"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437818"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters dans .NET Core
 
@@ -61,10 +61,10 @@ dotnet-counters ps
    1400180 sample-counters C:\sample-counters\bin\Debug\netcoreapp3.1\sample-counters.exe
 ```
 
-Transmettez le <xref:System.Diagnostics.Tracing.EventSource> nom au `counter_list` commutateur pour démarrer la surveillance de votre compteur :
+Transmettez le <xref:System.Diagnostics.Tracing.EventSource> nom à l' `--counters` option pour démarrer l’analyse de votre compteur :
 
 ```console
-dotnet-counters monitor --process-id 1400180 Sample.EventCounter.Minimal
+dotnet-counters monitor --process-id 1400180 --counters Sample.EventCounter.Minimal
 ```
 
 L’exemple suivant illustre la sortie de l’analyse :
@@ -131,7 +131,7 @@ var monitorContentionCounter = new IncrementingPollingCounter(
 
 Il existe d’autres implémentations de compteur à utiliser comme référence dans le [Runtime .net](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Diagnostics/Tracing/RuntimeEventSource.cs) référentiel.
 
-## <a name="concurrency"></a>Accès concurrentiel
+## <a name="concurrency"></a>Concurrence
 
 > [!TIP]
 > L’API EventCounters ne garantit pas la sécurité des threads. Lorsque les délégués passés à <xref:System.Diagnostics.Tracing.PollingCounter> <xref:System.Diagnostics.Tracing.IncrementingPollingCounter> des instances ou sont appelés par plusieurs threads, il vous incombe de garantir la sécurité des threads des délégués.

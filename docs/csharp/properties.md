@@ -3,12 +3,12 @@ title: Propriétés
 description: En savoir plus sur les propriétés C#, notamment les fonctionnalités liées à la validation, les valeurs calculées, l’évaluation différée et les notifications de modification de propriété.
 ms.technology: csharp-fundamentals
 ms.date: 04/25/2018
-ms.openlocfilehash: 28050a77e1f7b0ac148bba6112aa79ef4d46b710
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 5306650a10a3de0ff208f7c72c0ba520a527e746
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "89358906"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437940"
 ---
 # <a name="properties"></a>Propriétés
 
@@ -129,7 +129,7 @@ Si la version précédemment calculée est valide, elle est utilisée. Si elle n
 ### <a name="attaching-attributes-to-auto-implemented-properties"></a>Attachement d’attributs à des propriétés implémentées automatiquement
 
 À compter de C# 7.3, les attributs de champ peuvent être attachés au champ de stockage généré par le compilateur dans les propriétés implémentées automatiquement. Par exemple, considérez une révision de la classe `Person` qui ajoute une propriété `Id` unique de type entier.
-Vous écrivez la propriété `Id` en utilisant une propriété implémentée automatiquement, mais votre conception n’effectue pas d’appel pour le stockage de la propriété `Id`. <xref:System.NonSerializedAttribute> peut être attaché seulement à des champs, et pas à des propriétés. Vous pouvez attacher <xref:System.NonSerializedAttribute> au champ de stockage pour la propriété `Id` en utilisant le spécificateur `field:` sur l’attribut, comme illustré dans l’exemple suivant :
+Vous écrivez la `Id` propriété à l’aide d’une propriété implémentée automatiquement, mais votre conception n’appelle pas pour rendre la propriété persistante `Id` . <xref:System.NonSerializedAttribute> peut être attaché seulement à des champs, et pas à des propriétés. Vous pouvez attacher <xref:System.NonSerializedAttribute> au champ de stockage pour la propriété `Id` en utilisant le spécificateur `field:` sur l’attribut, comme illustré dans l’exemple suivant :
 
 [!code-csharp[Attaching attributes to a backing field](../../samples/snippets/csharp/properties/Person.cs#14)]
 
