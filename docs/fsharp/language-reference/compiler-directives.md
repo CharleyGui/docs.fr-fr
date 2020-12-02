@@ -4,12 +4,12 @@ description: 'En savoir plus sur les directives de préprocesseur de langage F #
 ms.date: 12/10/2018
 f1_keywords:
 - '#endif_FS'
-ms.openlocfilehash: c3e1a07e0e09b5ae090c550368f8a9f8ee575bfb
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ff106339478c3413dc6458b12f12e1d3f9cd1fe5
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557318"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438180"
 ---
 # <a name="compiler-directives"></a>Directives de compilateur
 
@@ -26,8 +26,8 @@ Le tableau suivant répertorie les directives de préprocesseur disponibles en F
 |`#if`*symbole*|Prend en charge la compilation conditionnelle. Code dans la section après l' `#if` inclusion de si le *symbole* est défini. Le symbole peut également être inversé avec `!` .|
 |`#else`|Prend en charge la compilation conditionnelle. Marque une section de code à inclure si le symbole utilisé avec le `#if` précédent n'est pas défini.|
 |`#endif`|Prend en charge la compilation conditionnelle. Marque la fin d'une section conditionnelle de code.|
-|`#`spline *entier*,<br/>`#`spline *int* *chaîne*int,<br/>`#`spline *int* *Verbatim-String*|Indique la ligne et le nom de fichier du code source d'origine, à des fins de débogage. Cette fonctionnalité est fournie pour les outils qui génèrent du code source F#.|
-|`#nowarn`*WarningCode*|Désactive un ou plusieurs avertissements du compilateur. Pour désactiver un avertissement, trouvez son numéro dans la sortie du compilateur et incluez-le entre guillemets. Omettez le préfixe « FS ». Pour désactiver plusieurs numéros d'avertissement sur la même ligne, incluez chaque nombre entre guillemets, puis séparez chaque chaîne par un espace. Exemple :
+|`#`spline *entier*,<br/>`#`spline *int* *chaîne* int,<br/>`#`spline *int* *Verbatim-String*|Indique la ligne et le nom de fichier du code source d'origine, à des fins de débogage. Cette fonctionnalité est fournie pour les outils qui génèrent du code source F#.|
+|`#nowarn`*WarningCode*|Désactive un ou plusieurs avertissements du compilateur. Pour désactiver un avertissement, trouvez son numéro dans la sortie du compilateur et incluez-le entre guillemets. Omettez le préfixe « FS ». Pour désactiver plusieurs numéros d'avertissement sur la même ligne, incluez chaque nombre entre guillemets, puis séparez chaque chaîne par un espace. Par exemple :
 
 `#nowarn "9" "40"`
 
@@ -78,7 +78,7 @@ Le tableau suivant répertorie la directive de compilateur disponible en F#.
 |---------|-----------|
 |`#light` ["on" &#124; "OFF"]|Active ou désactive la syntaxe simplifiée, à des fins de compatibilité avec d'autres versions de ML. Par défaut, la syntaxe simplifiée est activée. La syntaxe détaillée est toujours activée. Par conséquent, vous pouvez utiliser la syntaxe simplifiée et la syntaxe détaillée. La directive `#light` en elle-même équivaut à `#light "on"`. Si vous spécifiez `#light "off"`, vous devez utiliser la syntaxe détaillée pour toutes les constructions de langage. La syntaxe présentée dans la documentation de F# part du principe que vous utilisez la syntaxe simplifiée. Pour plus d’informations, consultez [syntaxe détaillée](verbose-syntax.md).|
 
-Pour connaître les directives de l’interpréteur (fsi.exe), consultez [programmation interactive avec F #](../tutorials/fsharp-interactive/index.md).
+Pour connaître les directives de l’interpréteur (fsi.exe), consultez [programmation interactive avec F #](../tools/fsharp-interactive/index.md).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: 'Nouveautés du guide F # 5,0-F #'
 description: 'Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 29b5b110379dec476d7c0aa51540984acb25f26e
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: dd954fac31b008beab37cd6c1f06b1d41c5d5004
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95098695"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438007"
 ---
 # <a name="whats-new-in-f-50"></a>Nouveautés de F # 5,0
 
@@ -56,7 +56,7 @@ let test p str =
 test pfloat "1.234"
 ```
 
-Cette fonctionnalité implémente [les outils F # RFC FST-1027](https://github.com/fsharp/fslang-design/blob/master/tooling/FST-1027-fsi-references.md). Pour plus d’informations sur les références de package, consultez le didacticiel [F# Interactive](../tutorials/fsharp-interactive/index.md) .
+Cette fonctionnalité implémente [les outils F # RFC FST-1027](https://github.com/fsharp/fslang-design/blob/master/tooling/FST-1027-fsi-references.md). Pour plus d’informations sur les références de package, consultez le didacticiel [F# Interactive](../tools/fsharp-interactive/index.md) .
 
 ## <a name="string-interpolation"></a>Interpolation de chaîne
 

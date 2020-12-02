@@ -1,15 +1,15 @@
 ---
 title: Référence de F# Interactive (dotnet)
 description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour exécuter le code F # de manière interactive sur la console ou pour exécuter des scripts F #.'
-ms.date: 10/31/2020
+ms.date: 11/29/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: b535cb03d76909043ca192ed5a9d2078f9343795
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: 92177c41dc6b31d9186bae8176f85787e2fb89e0
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95099476"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96438039"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -118,6 +118,17 @@ let f (x: Tensor) = sin (sqrt x)
 printfn "%A" (f (dsharp.tensor 1.2))
 ```
 
+### <a name="specifying-a-package-source"></a>Spécification d’une source de package
+
+Vous pouvez également spécifier une source de package à l’aide de la `#i` commande. L’exemple suivant spécifie une source locale et distante :
+
+```fsharp
+#i "nuget:https://my-remote-package-source/index.json
+#i @"path-to-my-local-source"
+```
+
+Cela indique au moteur de résolution en coulisses de prendre en compte également les sources distantes et/ou locales ajoutées à un script.
+
 Vous pouvez spécifier autant de références de package que vous le souhaitez dans un script.
 
 > [!NOTE]
@@ -224,7 +235,7 @@ Lorsque vous spécifiez des fichiers ou des chemins d'accès dans F# Interactive
 
 ## <a name="interactive-and-compiled-preprocessor-directives"></a>Directives de préprocesseurs interactives et compilées
 
-Quand vous compilez du code dans F# Interactive, que vous exécutez de manière interactive ou que vous exécutiez un script, le symbole **interactif** est défini. Quand vous compilez du code dans le compilateur, le symbole **compilé** est défini. Par conséquent, si le code doit être différent dans les modes compilé et interactif, vous pouvez utiliser ces directives de préprocesseur pour la compilation conditionnelle afin de déterminer laquelle utiliser. Exemple :
+Quand vous compilez du code dans F# Interactive, que vous exécutez de manière interactive ou que vous exécutiez un script, le symbole **interactif** est défini. Quand vous compilez du code dans le compilateur, le symbole **compilé** est défini. Par conséquent, si le code doit être différent dans les modes compilé et interactif, vous pouvez utiliser ces directives de préprocesseur pour la compilation conditionnelle afin de déterminer laquelle utiliser. Par exemple :
 
 ```fsharp
 #if INTERACTIVE
@@ -249,6 +260,6 @@ Vous pouvez contrôler les F# Interactive arguments de ligne de commande (option
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----|-----------|
 |[Options F# Interactive](../../language-reference/fsharp-interactive-options.md)|Décrit la syntaxe et les options de ligne de commande pour le F# Interactive, fsi.exe.|
