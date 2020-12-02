@@ -1,19 +1,19 @@
 ---
 title: Sécurité Azure pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Sécurité Azure pour les applications Cloud natives
-ms.date: 05/13/2020
-ms.openlocfilehash: e6f91cc4c240dd3349faed2f87db1ba99b2780a9
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/01/2020
+ms.openlocfilehash: 5e541606c762ea192ab8767e78e9b7346b3ec9c1
+ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160994"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509817"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Sécurité Azure pour les applications Cloud natives
 
 Les applications natives du Cloud peuvent être à la fois plus simples et plus difficiles à sécuriser que les applications traditionnelles. À l’inconvénient, vous devez sécuriser des applications plus petites et dédier plus d’énergie pour créer l’infrastructure de sécurité. La nature hétérogène des langages de programmation et des styles dans la plupart des déploiements de service signifie également que vous devez faire attention aux bulletins de sécurité de nombreux fournisseurs différents.
 
-Du côté du basculement, les services plus petits, chacun avec leur propre magasin de données, limitent l’étendue d’une attaque. Si une personne malveillante compromet un système, il est probablement plus difficile pour l’attaquant de passer à un autre système que dans une application monolithique. Les limites de processus sont des limites fortes. En outre, en cas de fuite d’une sauvegarde de base de données, le dommage est plus limité, car cette base de données contient uniquement un sous-ensemble de données et il est peu probable qu’elle contienne des données personnelles.
+Du côté du basculement, les services plus petits, chacun avec leur propre magasin de données, limitent l’étendue d’une attaque. Si une personne malveillante compromet un système, il est probablement plus difficile pour l’attaquant de passer à un autre système que dans une application monolithique. Les limites de processus sont des limites fortes. En outre, si une sauvegarde de base de données est exposée, les dommages sont plus limités, car cette base de données contient uniquement un sous-ensemble de données et il est peu probable qu’elle contienne des données personnelles.
 
 ## <a name="threat-modeling"></a>Modélisation des menaces
 
@@ -26,7 +26,7 @@ Peu importe si les avantages compensent les inconvénients des applications Clou
 
 Toutes ces questions font partie d’un processus appelé [modélisation des menaces](/azure/security/azure-security-threat-modeling-tool). Ce processus tente de répondre à la question des menaces qui pèsent sur le système, de la probabilité que les menaces se présentent et de leurs dommages potentiels.
 
-Une fois la liste des menaces établie, vous devez décider si elles méritent une atténuation. Parfois, une menace est si improbable et coûteuse à planifier qu’il n’est pas utile de dépenser de l’énergie. Par exemple, un acteur de niveau État peut injecter des modifications dans la conception d’un processus qui est utilisé par des millions d’appareils. Maintenant, au lieu d’exécuter un certain morceau de code dans l' [anneau 3](https://en.wikipedia.org/wiki/Protection_ring), ce code est exécuté dans l’anneau 0. Cela permet une attaque qui peut contourner l’hyperviseur et exécuter le code d’attaque sur les systèmes nus, ce qui permet d’effectuer des attaques sur toutes les machines virtuelles qui s’exécutent sur ce matériel.
+Une fois la liste des menaces établie, vous devez décider si elles méritent une atténuation. Parfois, une menace est si improbable et coûteuse à planifier qu’il n’est pas utile de dépenser de l’énergie. Par exemple, un acteur de niveau État peut injecter des modifications dans la conception d’un processus qui est utilisé par des millions d’appareils. Maintenant, au lieu d’exécuter un certain morceau de code dans l' [anneau 3](https://en.wikipedia.org/wiki/Protection_ring), ce code est exécuté dans l’anneau 0. Ce processus permet une attaque qui peut contourner l’hyperviseur et exécuter le code d’attaque sur les systèmes nus, ce qui permet d’effectuer des attaques sur toutes les machines virtuelles qui s’exécutent sur ce matériel.
 
 Les processeurs modifiés sont difficiles à détecter sans microscope et une connaissance approfondie de la conception sur le silicium de ce processeur. Ce scénario est peu probable et coûteux à atténuer. par conséquent, il est probable qu’aucun modèle de menace ne vous recommande de créer une protection contre les attaques.
 
@@ -58,9 +58,9 @@ Si une personne malveillante tente de pénétrer dans une application, il doit y
 
 L’un des emplacements où la sécurité est souvent négligée est le processus de génération. Non seulement la génération doit exécuter les vérifications de sécurité, telles que l’analyse de code non sécurisé ou les informations d’identification archivées, mais la build elle-même doit être sécurisée. Si le serveur de builds est compromis, il fournit un vecteur fantastique pour introduire du code arbitraire dans le produit.
 
-Imaginez qu’une personne malveillante cherche à voler les mots de passe des personnes qui se connectent à une application Web. Ils peuvent introduire une étape de génération qui modifie le code extrait pour mettre en miroir toute demande de connexion à un autre serveur. La prochaine fois que le code passe par la build, il est mis à jour en mode silencieux. L’analyse des vulnérabilités du code source ne l’intercepte pas, car elle s’exécute avant la génération. De même, personne ne l’intercepte dans une revue de code, car les étapes de génération résident sur le serveur de builds. Le code exploité passe en production, où il peut collecter les mots de passe. Il se peut que le journal d’audit du processus de génération ne change pas ou qu’il ne surveille pas l’audit.
+Imaginez qu’une personne malveillante cherche à voler les mots de passe des personnes qui se connectent à une application Web. Ils peuvent introduire une étape de génération qui modifie le code extrait pour mettre en miroir toute demande de connexion à un autre serveur. La prochaine fois que le code passe par la build, il est mis à jour en mode silencieux. L’analyse des vulnérabilités du code source ne détecte pas cette vulnérabilité lorsqu’elle s’exécute avant la génération. De même, personne ne l’intercepte dans une revue de code, car les étapes de génération résident sur le serveur de builds. Le code exploité passe en production, où il peut collecter les mots de passe. Il se peut que le journal d’audit du processus de génération ne change pas ou qu’il ne surveille pas l’audit.
 
-Il s’agit d’un parfait exemple d’une cible de valeur apparemment faible qui peut être utilisée pour s’arrêter dans le système. Une fois qu’une personne malveillante a franchi le périmètre du système, elle peut commencer à trouver des moyens d’élever ses autorisations au point qu’ils peuvent causer des dommages réels partout où ils aiment.
+Ce scénario est un exemple parfait d’une cible apparemment à valeur basse qui peut être utilisée pour s’arrêter dans le système. Une fois qu’une personne malveillante a franchi le périmètre du système, elle peut commencer à trouver des moyens d’élever ses autorisations au point qu’ils peuvent causer des dommages réels partout où ils aiment.
 
 ## <a name="building-secure-code"></a>Génération de code sécurisé
 
@@ -82,7 +82,7 @@ Dans un environnement de déploiement local, une grande quantité d’énergie e
 
 Dès l’installation, la plupart des ressources Azure PaaS n’ont que la configuration réseau la plus simple et la plus permissive. Par exemple, quiconque sur Internet peut accéder à un app service. Les nouvelles instances de SQL Server sont généralement restreintes, de sorte que les tiers externes ne peuvent pas y accéder, mais les plages d’adresses IP utilisées par Azure lui-même sont autorisées par le biais de. Donc, alors que le serveur SQL est protégé contre les menaces externes, une personne malveillante doit uniquement configurer un serveur de tête de pont Azure à partir duquel il peut lancer des attaques contre toutes les instances SQL sur Azure.
 
-Heureusement, la plupart des ressources Azure peuvent être placées dans un réseau virtuel Azure qui permet un contrôle d’accès plus affiné. De la même façon que les réseaux locaux établissent des réseaux privés protégés du monde plus étendu, les réseaux virtuels sont des îlots d’adresses IP privées qui se trouvent dans le réseau Azure.
+Heureusement, la plupart des ressources Azure peuvent être placées dans un réseau virtuel Azure qui permet un contrôle d’accès affiné. De la même façon que les réseaux locaux établissent des réseaux privés protégés du monde plus étendu, les réseaux virtuels sont des îlots d’adresses IP privées qui se trouvent dans le réseau Azure.
 
 ![Figure 9-1 un réseau virtuel dans Azure](./media/virtual-network.png)
 
@@ -90,15 +90,15 @@ Heureusement, la plupart des ressources Azure peuvent être placées dans un ré
 
 De la même façon que les réseaux locaux disposent d’un pare-feu qui régit l’accès au réseau, vous pouvez établir un pare-feu similaire à la limite du réseau virtuel. Par défaut, toutes les ressources d’un réseau virtuel peuvent toujours communiquer avec Internet. Il s’agit uniquement de connexions entrantes qui requièrent une certaine forme d’exception de pare-feu explicite.
 
-Une fois le réseau établi, les ressources internes, comme les comptes de stockage, peuvent être configurées pour autoriser uniquement l’accès par des ressources qui se trouvent également sur le réseau virtuel. Ce pare-feu fournit un niveau de sécurité supplémentaire, si les clés de ce compte de stockage sont divulguées, les attaquants ne seraient pas en mesure de s’y connecter pour exploiter les clés divulguées. Voici un autre exemple du principe des privilèges minimum.
+Une fois le réseau établi, les ressources internes, comme les comptes de stockage, peuvent être configurées pour autoriser uniquement l’accès par des ressources qui se trouvent également sur le réseau virtuel. Ce pare-feu fournit un niveau de sécurité supplémentaire, si les clés de ce compte de stockage sont divulguées, les attaquants ne seraient pas en mesure de s’y connecter pour exploiter les clés divulguées. Ce scénario est un autre exemple du principe des privilèges minimum.
 
 Les nœuds d’un cluster Azure Kubernetes peuvent participer à un réseau virtuel de la même façon que d’autres ressources qui sont plus natives pour Azure. Cette fonctionnalité est appelée [interface Azure Container Networking](https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md). En effet, il alloue un sous-réseau au sein du réseau virtuel sur lequel les machines virtuelles et les images de conteneur sont allouées.
 
 En poursuivant le chemin d’accès à l’illustration du principe du moindre privilège, toutes les ressources d’un réseau virtuel ne doivent pas communiquer avec chaque autre ressource. Par exemple, dans une application qui fournit une API Web sur un compte de stockage et une base de données SQL, il est peu probable que la base de données et le compte de stockage doivent communiquer l’un avec l’autre. Tout partage de données entre les deux va traverser l’application Web. Par conséquent, un [groupe de sécurité réseau (NSG)](/azure/virtual-network/security-overview) peut être utilisé pour refuser le trafic entre les deux services.
 
-Une stratégie de refus de la communication entre les ressources peut être gênante à implémenter, en particulier en provenance d’un arrière-plan d’Azure sans restrictions du trafic. Sur d’autres Clouds, le concept de groupes de sécurité réseau est bien plus répandu. Par exemple, la stratégie par défaut sur AWS est que les ressources ne peuvent pas communiquer entre elles jusqu’à ce qu’elles soient activées par les règles d’un groupe de sécurité réseau. Bien qu’il soit plus lent à développer, un environnement plus restrictif fournit une valeur par défaut plus sécurisée. L’utilisation de pratiques DevOps appropriées, en particulier l’utilisation de [Azure Resource Manager ou Terraform](infrastructure-as-code.md) pour gérer les autorisations, peut faciliter le contrôle des règles.
+Une stratégie de refus de la communication entre les ressources peut être gênante à implémenter, en particulier en provenance d’un arrière-plan d’Azure sans restrictions du trafic. Sur d’autres Clouds, le concept de groupes de sécurité réseau est bien plus répandu. Par exemple, la stratégie par défaut sur AWS est que les ressources ne peuvent pas communiquer entre elles jusqu’à ce qu’elles soient activées par les règles d’un groupe de sécurité réseau. Bien que le développement soit plus lent, un environnement plus restrictif fournit une valeur par défaut plus sécurisée. L’utilisation de pratiques DevOps appropriées, en particulier l’utilisation de [Azure Resource Manager ou Terraform](infrastructure-as-code.md) pour gérer les autorisations, peut faciliter le contrôle des règles.
 
-Les réseaux virtuels peuvent également être utiles lors de la configuration de la communication entre des ressources locales et Cloud. Un réseau privé virtuel peut être utilisé pour attacher en toute transparence les deux réseaux. Cela permet l’exécution d’un réseau virtuel sans aucune sorte de passerelle pour les scénarios où tous les utilisateurs sont sur site. Il existe un certain nombre de technologies qui peuvent être utilisées pour établir ce réseau. La méthode la plus simple consiste à utiliser un [VPN de site à site](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#s2smulti) qui peut être établi entre plusieurs routeurs et Azure. Le trafic est chiffré et tunnelé sur Internet au même coût par octet que tout autre trafic. Pour les scénarios où une plus grande bande passante ou plus de sécurité est souhaitable, Azure propose un service appelé [Express route](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#ExpressRoute) qui utilise un circuit privé entre un réseau local et Azure. Il est plus coûteux et difficile à établir mais aussi plus sécurisé.
+Les réseaux virtuels peuvent également être utiles lors de la configuration de la communication entre des ressources locales et Cloud. Un réseau privé virtuel peut être utilisé pour attacher en toute transparence les deux réseaux. Cette approche permet d’exécuter un réseau virtuel sans aucune sorte de passerelle pour les scénarios où tous les utilisateurs sont sur site. Il existe un certain nombre de technologies qui peuvent être utilisées pour établir ce réseau. La méthode la plus simple consiste à utiliser un [VPN de site à site](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#s2smulti) qui peut être établi entre plusieurs routeurs et Azure. Le trafic est chiffré et tunnelé sur Internet au même coût par octet que tout autre trafic. Pour les scénarios où une plus grande bande passante ou plus de sécurité est souhaitable, Azure propose un service appelé [Express route](/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%252fazure%252fvirtual-network%252ftoc.json#ExpressRoute) qui utilise un circuit privé entre un réseau local et Azure. Il est plus coûteux et difficile à établir mais aussi plus sécurisé.
 
 ## <a name="role-based-access-control-for-restricting-access-to-azure-resources"></a>Contrôle d’accès en fonction du rôle pour la restriction de l’accès aux ressources Azure
 
@@ -121,7 +121,7 @@ L’entité de sécurité peut être appliquée à la plupart des ressources. Ce
 
 ## <a name="roles"></a>Rôles
 
-Un principal de sécurité peut prendre de nombreux rôles ou, à l’aide d’une analogie plus sartorial, porter de nombreux chapeaux. Chaque rôle définit une série d’autorisations telles que « lire les messages à partir d’Azure Service Bus point de terminaison ». Le jeu d’autorisations effectif d’un principal de sécurité est la combinaison de toutes les autorisations affectées à tous les rôles que possède le principal de sécurité. Azure dispose d’un grand nombre de rôles intégrés et les utilisateurs peuvent définir leurs propres rôles.
+Un principal de sécurité peut prendre de nombreux rôles ou, à l’aide d’une analogie plus sartorial, porter de nombreux chapeaux. Chaque rôle définit une série d’autorisations telles que « lire les messages à partir d’Azure Service Bus point de terminaison ». Le jeu d’autorisations effectif d’un principal de sécurité est la combinaison de toutes les autorisations affectées à tous les rôles d’un principal de sécurité. Azure dispose d’un grand nombre de rôles intégrés et les utilisateurs peuvent définir leurs propres rôles.
 
 ![Figure 9-3 définitions de rôle RBAC](./media/rbac-role-definition.png)
 
@@ -137,7 +137,7 @@ Les rôles peuvent être appliqués à un ensemble restreint de ressources dans 
 
 L’étendue peut être aussi limitée qu’une seule ressource, ou elle peut être appliquée à un groupe de ressources entier, un abonnement ou même un groupe d’administration.
 
-Lorsque vous testez si une entité de sécurité dispose d’une autorisation spécifique, la combinaison du rôle et de l’étendue est prise en compte. Cette combinaison fournit un mécanisme d’autorisation puissant.
+Lorsque vous testez si une entité de sécurité dispose de certaines autorisations, la combinaison du rôle et de l’étendue est prise en compte. Cette combinaison fournit un mécanisme d’autorisation puissant.
 
 ## <a name="deny"></a>Deny
 
@@ -147,7 +147,7 @@ Les règles de refus sont prioritaires sur les règles d’autorisation. Mainten
 
 ## <a name="checking-access"></a>Vérification de l’accès
 
-Comme vous pouvez l’imaginer, le fait de disposer d’un grand nombre de rôles et d’étendues peut compliquer la recherche de l’autorisation effective d’un principal de service. Empilez les règles de refus en plus de cela, sert uniquement à accroître la complexité. Heureusement, il existe une [Calculatrice des autorisations](/azure/role-based-access-control/check-access) qui peut afficher les autorisations effectives pour n’importe quel principal du service. Il se trouve généralement sous l’onglet IAM dans le portail, comme illustré à la figure 10-3.
+Comme vous pouvez l’imaginer, le fait de disposer d’un grand nombre de rôles et d’étendues peut compliquer la recherche de l’autorisation effective d’un principal de service. Empilez les règles de refus en plus de cela, sert uniquement à accroître la complexité. Heureusement, il existe une [Calculatrice des autorisations](/azure/role-based-access-control/check-access) qui peut afficher les autorisations effectives pour n’importe quel principal du service. Il se trouve généralement sous l’onglet IAM dans le portail, comme illustré à la figure 9-3.
 
 ![Figure 9-4 Calculatrice des autorisations pour un service d’application](./media/check-rbac.png)
 
@@ -229,13 +229,13 @@ Dans toutes les applications, il existe un certain nombre d’emplacements où l
 
 ### <a name="storage"></a>Stockage
 
-Le moteur de stockage Azure est l’un des fondements de la majeure partie d’Azure. Les disques de machines virtuelles sont montés sur le stockage Azure. Les services Azure Kubernetes s’exécutent sur des machines virtuelles qui, elles-mêmes, sont hébergées sur le stockage Azure. Même les technologies sans serveur, telles que les applications Azure Functions et les Azure Container Instances, manquent de disque et font partie du stockage Azure.
+Le moteur de stockage Azure est l’un des fondements de la majeure partie d’Azure. Les disques de machines virtuelles sont montés sur le stockage Azure. Le service Azure Kubernetes s’exécute sur des machines virtuelles qui, elles-mêmes, sont hébergées sur le stockage Azure. Même les technologies sans serveur, telles que les applications Azure Functions et les Azure Container Instances, manquent de disque et font partie du stockage Azure.
 
 Si le stockage Azure est correctement chiffré, il fournit une base pour la plupart des autres éléments à crypter. Le stockage Azure [est chiffré avec le chiffrement](/azure/storage/common/storage-service-encryption) [AES 256 bits](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)conforme à la norme [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140) . Il s’agit d’une technologie de chiffrement bien considérée qui a fait l’objet d’un examen approfondi des 20 dernières années. À l’heure actuelle, il n’existe aucune attaque pratique connue qui permettrait à un utilisateur sans avoir connaissance de la clé de lire les données chiffrées par AES.
 
 Par défaut, les clés utilisées pour le chiffrement du stockage Azure sont gérées par Microsoft. Des protections étendues sont en place pour empêcher tout accès malveillant à ces clés. Toutefois, les utilisateurs ayant des exigences particulières en matière de chiffrement peuvent également [fournir leurs propres clés de stockage](/azure/storage/common/storage-encryption-keys-powershell) qui sont gérées dans Azure Key Vault. Ces clés peuvent être révoquées à tout moment, ce qui rend effectivement le contenu du compte de stockage à l’aide de celles-ci inaccessibles.
 
-Les machines virtuelles utilisent un stockage chiffré, mais il est possible de fournir une autre couche de chiffrement à l’aide de technologies telles que BitLocker sur Windows ou DM-crypt sur Linux. Ces technologies signifient que même si l’image de disque a été divulguée à partir du stockage, elle reste presque impossible à lire.
+Les machines virtuelles utilisent un stockage chiffré, mais il est possible de fournir une autre couche de chiffrement à l’aide de technologies telles que BitLocker sur Windows ou DM-Crypt sur Linux. Ces technologies signifient que même si l’image de disque a été divulguée à partir du stockage, elle reste presque impossible à lire.
 
 ### <a name="azure-sql"></a>Azure SQL
 

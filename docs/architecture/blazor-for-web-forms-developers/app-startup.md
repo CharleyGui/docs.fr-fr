@@ -3,13 +3,13 @@ title: Démarrage des applications
 description: Découvrez comment définir la logique de démarrage de votre application.
 author: csharpfritz
 ms.author: jefritz
-ms.date: 02/25/2020
-ms.openlocfilehash: 883f9a3fbe2d52cb7d0fbc5dfc94ce829a5d2bf3
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 11/20/2020
+ms.openlocfilehash: d812079f84f67409334d07c4c10c5577446503be
+ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91158186"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509700"
 ---
 # <a name="app-startup"></a>Démarrage des applications
 
@@ -28,7 +28,7 @@ Avec ASP.NET Core et éblouissant, ces méthodes sont soit simplifiées et conso
 
 ## <a name="blazor-server-startup-structure"></a>Structure de démarrage du serveur éblouissant
 
-Les applications serveur éblouissantes résident sur une application ASP.NET Core 3,0 ou version ultérieure.  ASP.NET Core applications Web sont configurées à l’aide d’une paire de méthodes dans la `Startup.cs` classe sur le dossier racine de l’application.  Le contenu par défaut de la classe Startup est indiqué ci-dessous
+Les applications serveur éblouissantes résident sur une version ASP.NET Core 3,0 ou ultérieure.  ASP.NET Core applications Web sont configurées à l’aide d’une paire de méthodes dans la `Startup.cs` classe sur le dossier racine de l’application.  Le contenu par défaut de la classe Startup est indiqué ci-dessous
 
 ```csharp
 public class Startup
@@ -89,7 +89,7 @@ Ensuite, une méthode de configuration inattendue est présentée à `UseStaticF
 
 La ligne suivante est la première qui réplique l’une des options de configuration à partir de Web Forms : `UseRouting` .  Cette méthode ajoute le routeur ASP.NET Core au pipeline et peut être configurée ici ou dans les fichiers individuels sur lesquels le routage peut être envisagé.  Vous trouverez plus d’informations sur la configuration du routage dans la [section routage](pages-routing-layouts.md).
 
-La dernière instruction de cette méthode définit les points de terminaison sur lesquels ASP.NET Core écoute.  Ce sont les emplacements accessibles sur le Web auxquels vous pouvez accéder sur le serveur Web et qui reçoivent du contenu géré par .NET et qui vous sont renvoyés.  La première entrée `MapBlazorHub` configure un concentrateur signalr à utiliser pour fournir la connexion permanente et en temps réel au serveur sur lequel l’État et le rendu des composants éblouissants sont gérés.  L' `MapFallbackToPage` appel de méthode indique l’emplacement accessible via le Web de la page qui démarre l’application éblouissante et configure l’application pour gérer les demandes de liaison profonde du côté client.  Vous verrez cette fonctionnalité au travail si vous ouvrez un navigateur et accédez directement à l’itinéraire géré par éblouissant dans votre application, par exemple `/counter` dans le modèle de projet par défaut. La requête est gérée par la page de secours *_Host. cshtml* , qui exécute ensuite le routeur éblouissant et affiche la page de compteur.
+La dernière instruction de cette méthode définit les points de terminaison sur lesquels ASP.NET Core écoute.  Ces itinéraires sont les emplacements accessibles sur le Web auxquels vous pouvez accéder sur le serveur Web et qui reçoivent du contenu géré par .NET et qui vous sont renvoyés.  La première entrée `MapBlazorHub` configure un concentrateur signalr à utiliser pour fournir la connexion permanente et en temps réel au serveur sur lequel l’État et le rendu des composants éblouissants sont gérés.  L' `MapFallbackToPage` appel de méthode indique l’emplacement accessible via le Web de la page qui démarre l’application éblouissante et configure l’application pour gérer les demandes de liaison profonde du côté client.  Vous verrez cette fonctionnalité au travail si vous ouvrez un navigateur et accédez directement à l’itinéraire géré par éblouissant dans votre application, par exemple `/counter` dans le modèle de projet par défaut. La requête est gérée par la page de secours *_Host. cshtml* , qui exécute ensuite le routeur éblouissant et affiche la page de compteur.
 
 ## <a name="upgrading-the-bundleconfig-process"></a>Mise à niveau du processus BundleConfig
 

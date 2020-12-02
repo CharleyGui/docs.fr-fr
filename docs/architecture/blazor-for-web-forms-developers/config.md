@@ -1,19 +1,19 @@
 ---
-title: la configuration d’une application ;
+title: Configuration de l’application
 description: Découvrez comment configurer des Blazor applications sans utiliser ConfigurationManager.
 author: csharpfritz
 ms.author: jefritz
 no-loc:
 - Blazor
-ms.date: 04/01/2020
-ms.openlocfilehash: 6154b4f8c7a5bff42e603b12d5ef85468b80224e
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.date: 11/20/2020
+ms.openlocfilehash: 360d9077bc981a2e9875bb1f86b49c0029424d6e
+ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267501"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509791"
 ---
-# <a name="app-configuration"></a>la configuration d’une application ;
+# <a name="app-configuration"></a>Configuration de l’application
 
 Le principal moyen de charger la configuration de l’application dans Web Forms consiste à utiliser des entrées dans le fichier *web.config* &mdash; , soit sur le serveur, soit sur un fichier de configuration associé référencé par *web.config*. Vous pouvez utiliser l' `ConfigurationManager` objet statique pour interagir avec les paramètres d’application, les chaînes de connexion du référentiel de données et d’autres fournisseurs de configuration étendus ajoutés à l’application. Il est courant de voir les interactions avec la configuration d’application comme indiqué dans le code suivant :
 
@@ -57,14 +57,14 @@ La *appsettings.jssur* le fichier peut être hiérarchique avec des valeurs stru
 
 Lorsqu’il est présenté avec le code JSON précédent, le système de configuration aplatit les valeurs enfants et référence leurs chemins d’accès hiérarchiques complets. Un caractère deux-points ( `:` ) sépare chaque propriété de la hiérarchie. Par exemple, la clé de configuration `section1:key0` accède à la `section1` valeur du littéral d’objet `key0` .
 
-## <a name="user-secrets"></a>Secrets de l’utilisateur
+## <a name="user-secrets"></a>Secrets utilisateur
 
 Secrets de l’utilisateur :
 
 * Valeurs de configuration qui sont stockées dans un fichier JSON sur la station de travail du développeur, en dehors du dossier de développement de l’application.
 * Chargé uniquement lors de l’exécution dans l' `Development` environnement.
 * Associé à une application spécifique.
-* Géré avec la commande de l’CLI .NET Core `user-secrets` .
+* Gérée à l’aide de la commande de l’interface CLI .NET `user-secrets` .
 
 Configurez votre application pour le stockage des secrets en exécutant la `user-secrets` commande suivante :
 

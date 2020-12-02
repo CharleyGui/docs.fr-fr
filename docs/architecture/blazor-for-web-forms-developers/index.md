@@ -6,19 +6,23 @@ ms.author: daroth
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 09/11/2019
-ms.openlocfilehash: 3ac9a02a2f5c93cbfd9377a9f6fff4b6c5f45e93
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/01/2020
+ms.openlocfilehash: 47f684e1b48ca95b8d999e6f1429840eb5f541de
+ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91158173"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509765"
 ---
 # <a name="no-locblazor-for-aspnet-web-forms-developers"></a>Blazor pour les développeurs ASP.NET Web Forms
 
 ![Capture d’écran montrant la couverture de livre électronique applications sans serveur.](./media/index/blazor-for-aspnet-web-forms-developers.png)
 
 > TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/blazor-ebook>
+
+**ÉDITION v 1.0**
+
+Reportez-vous à [Journal des modifications](https://aka.ms/blazor-ebook-changelog) pour les mises à jour de livres et les contributions de la communauté.
 
 PUBLIÉ PAR
 
@@ -34,7 +38,7 @@ Copyright © 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
-Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
+Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans cet ouvrage, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
  Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
@@ -60,7 +64,7 @@ Auteurs :
 
 .NET offre un développement d’applications Web long pris en charge via ASP.NET, un ensemble complet d’infrastructures et d’outils permettant de créer n’importe quel type d’application Web. ASP.NET a son propre lignage de frameworks et de technologies Web en commençant par les pages ASP (Classic Active Server Pages). Les infrastructures comme ASP.NET Web Forms, ASP.NET MVC, pages Web ASP.NET et les ASP.NET Core plus récentes offrent un moyen productif et puissant de créer des applications Web de type *serveur* , où le contenu de l’interface utilisateur est généré dynamiquement sur le serveur en réponse aux requêtes http. Chaque Framework ASP.NET répond à un public et une philosophie de construction d’applications différents. ASP.NET Web Forms fourni avec la version d’origine du .NET Framework et du développement Web activé à l’aide de nombreux modèles familiers pour les développeurs de bureau, comme les contrôles d’interface utilisateur réutilisables avec une gestion des événements simple. Toutefois, aucune des offres ASP.NET ne permet d’exécuter du code qui s’exécute dans le navigateur de l’utilisateur. Pour ce faire, il est nécessaire d’écrire du code JavaScript et d’utiliser l’un des nombreux frameworks et outils JavaScript qui ont été mis en avant et non en popularité au fil des années : jQuery, Knockout, angulaire, REACT, etc.
 
-[Blazor](https://blazor.net) est une nouvelle infrastructure Web qui change ce qui est possible lors de la création d’applications Web avec .NET. Blazor est une infrastructure d’interface utilisateur Web côté client basée sur C# au lieu de JavaScript. Avec Blazor , vous pouvez écrire vos composants de logique et d’interface utilisateur côté client en C#, les compiler dans des assemblys .NET normaux, puis les exécuter directement dans le navigateur à l’aide d’une nouvelle norme Web ouverte appelée WebAssembly . Vous Blazor pouvez également exécuter vos composants de l’interface utilisateur .net sur le serveur et gérer les interactions de l’interface utilisateur de manière fluide sur une connexion en temps réel avec le navigateur. En cas de jumelage avec .NET exécuté sur le serveur, Blazor active le développement Web à pile complète avec .net. Tandis que Blazor partage de nombreux points communs avec ASP.NET Web Forms, comme le fait de disposer d’un modèle de composant réutilisable et d’un moyen simple de gérer les événements utilisateur, il s’appuie également sur les fondements de .net Core pour offrir une expérience de développement Web moderne et hautes performances.
+[Blazor](https://blazor.net) est une nouvelle infrastructure Web qui change ce qui est possible lors de la création d’applications Web avec .NET. Blazor est une infrastructure d’interface utilisateur Web côté client basée sur C# au lieu de JavaScript. Avec Blazor , vous pouvez écrire vos composants de logique et d’interface utilisateur côté client en C#, les compiler dans des assemblys .NET normaux, puis les exécuter directement dans le navigateur à l’aide d’une nouvelle norme Web ouverte appelée WebAssembly . Vous Blazor pouvez également exécuter vos composants de l’interface utilisateur .net sur le serveur et gérer les interactions de l’interface utilisateur de manière fluide sur une connexion en temps réel avec le navigateur. En cas de jumelage avec .NET exécuté sur le serveur, Blazor active le développement Web à pile complète avec .net. Tandis que Blazor partage de nombreux points communs avec ASP.NET Web Forms, comme le fait de disposer d’un modèle de composant réutilisable et d’un moyen simple de gérer les événements utilisateur, il s’appuie également sur les fondements de .net pour offrir une expérience de développement Web moderne et hautes performances.
 
 Cet ouvrage présente ASP.NET Web Forms les développeurs à d' Blazor une manière familière et pratique. Il présente Blazor les concepts en parallèle avec les concepts analogues dans ASP.NET Web Forms tout en expliquant les nouveaux concepts qui peuvent être moins familiers. Il couvre un large éventail de sujets et de préoccupations, notamment la création de composants, le routage, la disposition, la configuration et la sécurité. Et si le contenu de ce livre est principalement destiné à l’activation d’un nouveau développement, il couvre également les instructions et les stratégies de migration des Web Forms ASP.NET existants vers Blazor pour, lorsque vous souhaitez moderniser une application existante.
 
