@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c8f017084fc1ec1eca636ef0178a40559e15b2c5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: f6553444e13416850a398ae5bcb6574f2a69bd2d
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497183"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96477731"
 ---
 ### <a name="improved-wcf-chain-trust-certificate-validation-for-nettcp-certificate-authentication"></a>Amélioration de la validation des certificats de confiance des chaînes WCF pour l’authentification de certificat Net.Tcp
 
@@ -14,9 +14,9 @@ ms.locfileid: "89497183"
 
 #### <a name="suggestion"></a>Suggestion
 
-<ul><li>Vérifiez si votre certification serveur et client a l’OID EKU nécessaire. Si ce n’est pas le cas, mettez à jour votre certification.</li><li>Vérifiez si votre certificat racine est valide. Si ce n’est pas le cas, mettez-le à jour.</li><li>Comment ignorer ce changement : Si vous ne pouvez pas mettre à jour le certificat, vous pouvez contourner temporairement ce changement cassant avec le paramètre de configuration suivant. Toutefois, si vous choisissez d’ignorer ce changement, vous exposez votre système au problème de sécurité.</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;wcf:useLegacyCertificateUsagePolicy&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>
+<ul><li>Vérifiez si votre certification serveur et client a l’OID EKU nécessaire. Si ce n’est pas le cas, mettez à jour votre certification.</li><li>Vérifiez si votre certificat racine est valide. Si ce n’est pas le cas, mettez-le à jour.</li><li>Comment refuser la modification : Si vous ne pouvez pas mettre à jour le certificat, vous pouvez contourner temporairement la modification avec rupture avec le paramètre de configuration suivant. Toutefois, si vous désactivez la modification, votre système sera vulnérable au problème de sécurité.</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;wcf:useLegacyCertificateUsagePolicy&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>
 
-| Name    | Valeur       |
+| Nom    | Valeur       |
 |:--------|:------------|
 | Étendue   |Secondaire|
 |Version|4.7.2|

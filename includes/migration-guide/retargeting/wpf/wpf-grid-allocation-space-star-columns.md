@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3709b9e694011666cebcb0ae09fbc838f65967af
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 28b882384760c8ac56c6d194bef6018c451fd03f
+ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614563"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96478425"
 ---
 ### <a name="wpf-grid-allocation-of-space-to-star-columns"></a>Allocation par Grid de l’espace aux colonnes * dans WPF
 
@@ -25,7 +25,7 @@ Dans les deux premiers cas, les largeurs produites par le nouvel algorithme peuv
 - Les colonnes avec des poids infinis ne sont pas gérées correctement. [Il est en fait impossible de définir un poids infini, mais il s’agit d’une restriction artificielle. Le code d’allocation essayait de le gérer, sans succès.]
 - Plusieurs problèmes mineurs en évitant le dépassement de capacité positif ou négatif, la perte de précision et autres problèmes liées aux nombres à virgule flottante.
 - Les ajustements d’arrondi de disposition sont incorrects à un niveau de PPP suffisamment élevé.
-Le nouvel algorithme produit des résultats qui répondent aux critères suivants :<p/>A. La largeur réelle affectée à une colonne * n’est jamais inférieure à sa largeur minimale ni supérieure à sa largeur maximale.<br/>B. Chaque <em>colonne qui n’est pas affectée de sa largeur minimale ou maximale est assignée à une largeur proportionnelle à son <em>poids. Pour être précis, si deux colonnes sont déclarées respectivement avec les valeurs Width x</em> et y</em> , et si aucune colonne ne reçoit sa largeur minimale ou maximale, les largeurs réelles v et w affectées aux colonnes sont dans la même proportion : v/w = = x/y.<br/>C. La largeur totale allouée aux &quot; colonnes proportionnelles &quot; \* est égale à l’espace disponible après l’allocation aux colonnes avec restriction (Fixed, auto et \* -Columns allouées à leur largeur minimale ou maximale). Cela peut être égal à zéro, par exemple si la somme des largeurs minimales dépasse la largeur disponible de la grille.<br/>D. Toutes ces instructions doivent être interprétées en considérant la disposition &quot;idéale&quot;. Lorsque l’arrondi de disposition est activé, la largeur réelle peut différer de la largeur idéale jusqu’à un pixel.<br/>L’ancien algorithme respectait (A), sans pouvoir en faire autant pour les autres critères dans les cas présentés ci-dessus.<p/>Tout ce que qui a été évoqué sur les colonnes et les largeurs dans cet article s’applique également aux lignes et leurs hauteurs.
+Le nouvel algorithme produit des résultats qui répondent aux critères suivants :<p/>R. La largeur réelle affectée à une colonne * n’est jamais inférieure à sa largeur minimale ni supérieure à sa largeur maximale.<br/>B. Chaque <em>colonne qui n’est pas affectée de sa largeur minimale ou maximale est assignée à une largeur proportionnelle à son <em>poids. Pour être précis, si deux colonnes sont déclarées respectivement avec les valeurs Width x</em> et y</em> , et si aucune colonne ne reçoit sa largeur minimale ou maximale, les largeurs réelles v et w affectées aux colonnes sont dans la même proportion : v/w = = x/y.<br/>C. La largeur totale allouée aux &quot; colonnes proportionnelles &quot; \* est égale à l’espace disponible après l’allocation aux colonnes avec restriction (Fixed, auto et \* -Columns allouées à leur largeur minimale ou maximale). Elle peut avoir pour valeur zéro, par exemple si la somme des largeurs minimales dépasse la largeur disponible de Grid.<br/>D. Toutes ces instructions doivent être interprétées en considérant la disposition &quot;idéale&quot;. Lorsque l’arrondi de disposition est activé, la largeur réelle peut différer de la largeur idéale jusqu’à un pixel.<br/>L’ancien algorithme respectait (A), sans pouvoir en faire autant pour les autres critères dans les cas présentés ci-dessus.<p/>Tout ce que qui a été évoqué sur les colonnes et les largeurs dans cet article s’applique également aux lignes et leurs hauteurs.
 
 #### <a name="suggestion"></a>Suggestion
 
