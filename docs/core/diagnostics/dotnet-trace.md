@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-trace-CLI .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-trace pour collecter les traces .NET d’un processus en cours d’exécution sans le profileur natif, à l’aide de .NET EventPipe.
 ms.date: 11/17/2020
-ms.openlocfilehash: d0798e4f703c18c48db47193ac24ec0d13b66ae5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6bc5ad449f62ed0080ff6b1f401f1871d90cf5ec
+ms.sourcegitcommit: c6de55556add9f92af17e0f8d1da8f356a19a03d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829308"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549330"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>utilitaire d’analyse des performances dotnet-trace
 
@@ -115,7 +115,13 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
 
 - **`--profile <profile-name>`**
 
-  Ensemble de configurations de fournisseur nommé prédéfini qui permet de spécifier succinctement des scénarios de suivi courants.
+  Ensemble de configurations de fournisseur nommé prédéfini qui permet de spécifier succinctement des scénarios de suivi courants. Les profils suivants sont disponibles :
+
+ | Profil | Description |
+ |---------|-------------|
+ |`cpu-sampling`|Utile pour le suivi de l’utilisation de l’UC et des informations générales du Runtime .NET. Il s’agit de l’option par défaut si aucun profil ou fournisseur n’est spécifié.|
+ |`gc-verbose`|Effectue le suivi des collections GC et des exemples d’allocations d’objets.|
+ |`gc-collect`|Effectue le suivi des collections GC uniquement à faible surcharge.|
 
 - **`--providers <list-of-comma-separated-providers>`**
 

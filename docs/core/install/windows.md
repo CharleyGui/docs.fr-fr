@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 4d3abde965d9a2ab0f86477feeb7c10f274a4b9a
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 786814549724948fa69b18a05cee966e0940aaf4
+ms.sourcegitcommit: c6de55556add9f92af17e0f8d1da8f356a19a03d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95715119"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549343"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -32,22 +32,26 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 
 Les dates de fin de service des versions de Windows 10 sont segmentées par édition. Seules les éditions **familiales**, **Pro**, **Pro Education** et **Pro for Workstations** sont étudiées dans le tableau suivant. Consultez la [feuille de faits du cycle de vie Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) pour obtenir des détails spécifiques.
 
-- Une ✔️ indique que la version de Windows ou de .NET Core est toujours prise en charge.
-- Une ❌ indique que la version de Windows ou de .net Core n’est pas prise en charge sur cette version de Windows.
-- Quand une version de Windows et une version de .NET Core ont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
+> [!TIP]
+> Un `+` symbole représente la version minimale.
 
-| Système d’exploitation                      | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
-|-----------------------------|---------------|---------------|----------------|
-| ✔️ Windows 10, version 2004 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ✔️ Windows 10, version 1909 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ✔️ Windows 10, version 1903 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ✔️ Windows 10, version 1809 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ Windows 10, version 1803 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ Windows 10, version 1709 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ Windows 10, version 1703 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
-| ❌ Windows 10, version 1607 | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ Windows 10, version 1511 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
-| ❌ Windows 10, version 1507 | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| Système d’exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
+|-----------------------------|---------------|---------------|--------|
+| Windows 10, version 2004    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1909    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1903    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1809    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1803    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1709    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
+| Windows 8.1                 | ✔️           | ✔️            | ✔️    |
+| Windows 7 SP1 [UDE][esu]    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
+| Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
+| Windows Server 2012 R2      | ✔️           | ✔️            | ✔️    |
+| Windows Server Core 2012 R2 | ✔️           | ✔️            | ✔️    |
+| Nano Server, version 1809 +  | ✔️           | ✔️            | ✔️    |
+| Nano Server, version 1803   | ✔️           | ✔️            | ❌    |
 
 ## <a name="unsupported-releases"></a>Mises en production non prises en charge
 
@@ -84,7 +88,7 @@ Le kit de développement logiciel (SDK) est utilisé pour générer et publier d
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
 
-# <a name="net-50"></a>[.NET 5,0](#tab/net50)
+# <a name="net-50"></a>[.NET 5.0](#tab/net50)
 
 Les versions de Windows suivantes sont prises en charge avec .NET 5,0 :
 
@@ -111,7 +115,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
-| Client Windows 10             | Version 1609 +                  | x64, x86        |
+| Client Windows 10             | Version 1607 +                  | x64, x86        |
 | Windows Server                | 2012 R2 +                       | x64, x86        |
 | Nano Server                   | Version 1803 +                  | x64, ARM32      |
 
@@ -119,7 +123,7 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 # <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
-*.NET Core 3,0 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
+*.NET Core 3,0 n’est ❌ pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 Les versions de Windows suivantes sont prises en charge avec .NET Core 3,0 :
 
@@ -137,7 +141,7 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 # <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
 
-*.NET Core 2,2 n’est pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
+*.NET Core 2,2 n’est ❌ pas pris en charge pour le moment. Pour plus d’informations, consultez la [stratégie de support .net Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 Les versions de Windows suivantes sont prises en charge avec .NET Core 2,2 :
 
@@ -177,11 +181,11 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 Des dépendances supplémentaires sont requises si vous installez le kit de développement logiciel (SDK) .NET ou le runtime sur les versions suivantes de Windows :
 
-- ❌ Windows 7 SP1
-- ❌ Windows Vista SP 2
-- ✔️ Windows 8.1
-- ✔️ Windows Server 2008 R2
-- ✔️ Windows Server 2012 R2
+- Windows 7 SP1 [UDE][esu]
+- Windows Vista SP 2
+- Windows 8.1
+- Windows Server 2008 R2
+- Windows Server 2012 R2
 
 Installez les éléments suivants :
 
@@ -260,15 +264,25 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 01. [Téléchargez et installez le kit SDK .net Core](https://dotnet.microsoft.com/download/dotnet-core).
 01. [Installez l’extension C# à partir de la place de marché Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 
+## <a name="windows-installer"></a>Windows Installer
+
+La [page de téléchargement](https://dotnet.microsoft.com/download/dotnet-core) de .NET fournit des fichiers exécutables Windows Installer.
+
+Lorsque vous utilisez les fichiers MSI pour installer .NET< vous pouvez personnaliser le chemin d’installation en définissant les `DOTNETHOME_X64` `DOTNETHOME_X86` paramètres et :
+
+```console
+dotnet-sdk-3.1.301-win-x64.exe DOTNETHOME_X64="F:\dotnet\x64" DOTNETHOME_X86="F:\dotnet\x86"
+```
+
 ## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
 
 Comme alternative aux programmes d’installation Windows pour .NET, vous pouvez télécharger et installer manuellement le kit de développement logiciel (SDK) ou le Runtime. L’installation manuelle est généralement effectuée dans le cadre du test d’intégration continue. Pour un développeur ou un utilisateur, il est généralement préférable d’utiliser un [programme d’installation](https://dotnet.microsoft.com/download/dotnet-core).
 
 Le kit de développement logiciel (SDK) .NET et .NET Runtime peuvent être installés manuellement après avoir été téléchargés. Si vous installez le kit de développement logiciel (SDK) .NET, vous n’avez pas besoin d’installer le runtime correspondant. Tout d’abord, téléchargez une version binaire pour le kit de développement logiciel (SDK) ou le runtime à partir de l’un des sites suivants :
 
-- [téléchargements .net 5,0](https://dotnet.microsoft.com/download/dotnet/5.0) ✔️
-- ✔️ [téléchargements .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-- ✔️ [téléchargements .net Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
+- [Téléchargements .NET 5,0](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [Téléchargements .NET Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Téléchargements .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 - [Tous les téléchargements .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 Créez un répertoire dans lequel extraire .NET, par exemple `%USERPROFILE%\dotnet` . Ensuite, extrayez le fichier zip téléchargé dans ce répertoire.
@@ -301,3 +315,5 @@ Pour plus d’informations sur l’utilisation de .NET dans un conteneur d’anc
 - [Didacticiel : Hello World didacticiel](../tutorials/with-visual-studio.md).
 - [Didacticiel : créer une application avec Visual Studio code](../tutorials/with-visual-studio-code.md).
 - [Didacticiel : conteneur d’une application .net Core](../docker/build-container.md).
+
+[esu]: /troubleshoot/windows-client/windows-7-eos-faq/windows-7-extended-security-updates-faq
