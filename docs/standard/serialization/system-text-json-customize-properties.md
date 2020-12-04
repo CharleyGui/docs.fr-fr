@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 28f7d03ae9f794f6e5ea34a95082a059451daec6
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: c754d41071e886bc1efcc3a30e249bf9e554ab5b
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439985"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599588"
 ---
 # <a name="how-to-customize-property-names-and-values-with-no-locsystemtextjson"></a>Comment personnaliser les noms et les valeurs des propriétés avec System.Text.Json
 
@@ -168,10 +168,10 @@ Les noms de chaîne enum peuvent également être désérialisés, comme illustr
 
 * [System.Text.Json vue](system-text-json-overview.md)
 * [Instancier JsonSerializerOptions](system-text-json-configure-options.md)
-* [Activer la correspondance qui ne respecte pas la casse](system-text-json-character-casing.md)
+* [Activer la correspondance non sensible à la casse](system-text-json-character-casing.md)
 * [Ignorer les propriétés](system-text-json-ignore-properties.md)
 * [Autoriser JSON non valide](system-text-json-invalid-json.md)
-* [Handle de dépassement JSON](system-text-json-handle-overflow.md)
+* [Gérer le JSON de dépassement](system-text-json-handle-overflow.md)
 * [Conserver les références circulaires](system-text-json-preserve-references.md)
 * [Types immuables et accesseurs non publics](system-text-json-immutability.md)
 * [Sérialisation polymorphe](system-text-json-polymorphism.md)

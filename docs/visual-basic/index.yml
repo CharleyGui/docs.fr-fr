@@ -7,18 +7,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 08/13/2020
   ms.custom: contperfq1
-  ms.openlocfilehash: 1819d6c6cedcd9c2544c8ab6e5ff47d807d8c232
-  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+  ms.openlocfilehash: 5c393052a1782b64af18d32727f6df5bbd9d1415
+  ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/15/2020
-  ms.locfileid: "90554747"
+  ms.lasthandoff: 12/04/2020
+  ms.locfileid: "96599679"
 landingContent:
 - title: Bien démarrer
   linkLists:
   - linkListType: download
     links:
-    - text: Télécharger le kit de développement logiciel (SDK) .NET
+    - text: Télécharger le Kit de développement logiciel (SDK) .NET
       url: https://dotnet.microsoft.com/download
   - linkListType: get-started
     links:
@@ -26,7 +26,7 @@ landingContent:
       url: ../core/tutorials/with-visual-studio.md
     - text: Créer une bibliothèque de .NET Standard à l’aide de Visual Studio
       url: ../core/tutorials/library-with-visual-studio.md
-    - text: Procédures pas à pas
+    - text: Procédures pas à pas
       url: walkthroughs.md
     - text: Ressources supplémentaires
       url: getting-started/additional-resources.md
@@ -50,7 +50,11 @@ landingContent:
       url: developing-apps/index.md
     - text: Applications Windows Forms
       url: developing-apps/windows-forms/index.md
-- title: Informations de référence sur le langage
+  - linkListType: get-started
+    links:
+    - text: Visual Basic sur Q&A
+      url: /answers/topics/dotnet-visual-basic.html
+- title: Référence sur le langage
   linkLists:
   - linkListType: reference
     links:

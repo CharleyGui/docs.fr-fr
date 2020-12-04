@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 54133d7cd73c9a4d097b601f92b685c27575dc8b
-  ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+  ms.openlocfilehash: a30bf235f58c2f66bdcc1d8765e231ecefa312b9
+  ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94439506"
+  ms.lasthandoff: 12/04/2020
+  ms.locfileid: "96599601"
 landingContent:
 - title: En savoir plus sur .NET Framework
   linkLists:
@@ -24,8 +24,12 @@ landingContent:
     links:
     - text: Présentation de .NET Framework
       url: get-started/overview.md
-    - text: Configuration système requise
+    - text: Configuration requise
       url: get-started/system-requirements.md
+  - linkListType: get-started
+    links:
+    - text: .NET Framework sur Q&A
+      url: /answers/topics/dotnet-runtime-framework.html
   - linkListType: concept
     links:
     - text: Versions antérieures de .NET Framework
@@ -112,9 +116,9 @@ landingContent:
       url: /ef/ef6/modeling/designer/workflows/database-first
   - linkListType: concept
     links:
-    - text: Chaînes de connexion et fichiers de configuration
+    - text: Chaînes de connexion et fichiers config
       url: data/adonet/connection-strings-and-configuration-files.md
-    - text: SQL Server le regroupement de connexions
+    - text: Regroupement de connexions SQL Server
       url: data/adonet/sql-server-connection-pooling.md
   - linkListType: how-to-guide
     links:
@@ -124,7 +128,7 @@ landingContent:
       url: data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md
   - linkListType: reference
     links:
-    - text: Syntaxe de chaîne de connexion
+    - text: Syntaxe de la chaîne de connexion
       url: data/adonet/connection-string-syntax.md
     - text: Exemples de bases de données SQL Server
       url: data/adonet/sql/linq/downloading-sample-databases.md

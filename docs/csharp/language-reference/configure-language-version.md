@@ -3,12 +3,12 @@ title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet et des raisons qui sous-tendent ce choix. Découvrez comment remplacer manuellement la valeur par défaut.
 ms.custom: updateeachrelease
 ms.date: 08/11/2020
-ms.openlocfilehash: a06aa8812dad6f4b9a9254eef9f7c678c22af860
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: b022b726861bd6ea45b188df44549dc279d34a74
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634497"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96598921"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
@@ -29,7 +29,7 @@ C# 9,0 est pris en charge uniquement sur .NET 5 et les versions plus récentes.
 
 Le compilateur détermine une valeur par défaut en fonction de ces règles :
 
-| Version cible de .NET Framework | Version | Version du langage C# par défaut |
+| Version cible de .NET Framework | version | Version du langage C# par défaut |
 |------------------|---------|-----------------------------|
 | .NET             | 5     | C# 9.0                      |
 | .NET Core        | 3.x     | C# 8.0                      |
@@ -41,8 +41,8 @@ Le compilateur détermine une valeur par défaut en fonction de ces règles :
 
 Lorsqu’il s’agit d’une préversion cible pour laquelle il existe une préversion du langage correspondante, c’est cette dernière qui est utilisée. Vous utilisez les fonctionnalités les plus récentes avec cette préversion dans n’importe quel environnement, sans affecter les projets qui ciblent une version .NET Core publiée.
 
-> [!TIP]
-> Pour connaître la version linguistique que vous utilisez actuellement, mettez- `#error version` la (respecte la casse) dans votre code. Ainsi, le compilateur produit un diagnostic, CS8304, avec un message contenant la version du compilateur utilisée et la version de langage actuellement sélectionnée.
+> [!IMPORTANT]
+> Visual Studio 2017 a ajouté une `<LangVersion>latest</LangVersion>` entrée aux fichiers projet qu’il a créés. Cela signifiait *C# 7,0* quand il a été ajouté. Toutefois, une fois que vous avez mis à niveau vers Visual Studio 2019, cela signifie la dernière version publiée, quelle que soit la version cible de .NET Framework. Ces projets [remplacent désormais le comportement par défaut](#override-a-default). Vous devez modifier le fichier projet et supprimer ce nœud. Votre projet utilisera ensuite la version du compilateur recommandée pour votre version cible de .NET Framework.
 
 ## <a name="override-a-default"></a>Remplacer les valeurs par défaut
 
@@ -51,6 +51,9 @@ Si vous devez spécifier votre version C# explicitement, vous pouvez le faire de
 - Modifiez manuellement votre [fichier projet](#edit-the-project-file).
 - Définissez la version du langage [pour plusieurs projets d’un sous-répertoire](#configure-multiple-projects).
 - Configurez l' [ `-langversion` option du compilateur](compiler-options/langversion-compiler-option.md).
+
+> [!TIP]
+> Pour connaître la version linguistique que vous utilisez actuellement, mettez- `#error version` la (respecte la casse) dans votre code. Ainsi, le compilateur produit un diagnostic, CS8304, avec un message contenant la version du compilateur utilisée et la version de langage actuellement sélectionnée.
 
 ### <a name="edit-the-project-file"></a>Modifier le fichier projet
 

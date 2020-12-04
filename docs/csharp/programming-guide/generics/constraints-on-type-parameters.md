@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 71c853b38e56c56d0077d7eb20e36cd83d3cd23c
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 8230dfed11bb4ba21e922827cc1a525ce45ba3e5
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224320"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599113"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -20,7 +20,7 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 
 |Contrainte|Description|
 |----------------|-----------------|
-|`where T : struct`|L’argument de type doit être un type valeur n’acceptant pas les valeurs NULL. Pour plus d’informations sur les types valeur Nullable, consultez [types valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types valeur ont un constructeur sans paramètre accessible, la `struct` contrainte implique la `new()` contrainte et ne peut pas être combinée avec la `new()` contrainte. Vous ne pouvez pas associer la `struct` contrainte à la `unmanaged` contrainte.|
+|`where T : struct`|L’argument de type doit être un [type valeur](../../language-reference/builtin-types/value-types.md)n’acceptant pas les valeurs NULL. Pour plus d’informations sur les types valeur Nullable, consultez [types valeur Nullable](../../language-reference/builtin-types/nullable-value-types.md). Étant donné que tous les types valeur ont un constructeur sans paramètre accessible, la `struct` contrainte implique la `new()` contrainte et ne peut pas être combinée avec la `new()` contrainte. Vous ne pouvez pas associer la `struct` contrainte à la `unmanaged` contrainte.|
 |`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau. Dans un contexte Nullable en C# 8,0 ou une version ultérieure, `T` doit être un type de référence non Nullable. |
 |`where T : class?`|L’argument de type doit être un type référence, Nullable ou non Nullable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
 |`where T : notnull`|L’argument de type doit être un type non Nullable. L’argument peut être un type référence non Nullable en C# 8,0 ou version ultérieure, ou un type valeur qui n’autorise pas les valeurs NULL. |

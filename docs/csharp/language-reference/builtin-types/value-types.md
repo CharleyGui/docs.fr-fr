@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 6fb33ad2eb3f6a5e8f6506527f3807f31bf33fdc
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 64c9e9eba2495531cfef8a603d53fb21c95c87a4
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "92471649"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599393"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -31,7 +31,7 @@ Si un type valeur contient un membre de données d’un type référence, seule 
 > [!NOTE]
 > Pour que votre code soit moins sujet aux erreurs et plus robuste, définissez et utilisez des types de valeurs immuables. Cet article utilise des types de valeur mutable uniquement à des fins de démonstration.
 
-## <a name="kinds-of-value-types"></a>Genres de types valeur
+## <a name="kinds-of-value-types-and-type-constraints"></a>Genres de types valeur et contraintes de type
 
 Un type valeur peut être l’un des deux types suivants :
 
@@ -39,6 +39,8 @@ Un type valeur peut être l’un des deux types suivants :
 - [type énumération](enum.md), qui est défini par un ensemble de constantes nommées et qui représente un choix ou une combinaison de choix
 
 Un [type valeur Nullable](nullable-value-types.md) `T?` représente toutes les valeurs de son type valeur sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Vous ne pouvez pas assigner `null` à une variable d’un type valeur, sauf s’il s’agit d’un type valeur Nullable.
+
+Vous pouvez utiliser la [ `struct` contrainte](../../programming-guide/generics/constraints-on-type-parameters.md) pour spécifier qu’un paramètre de type est un type valeur qui n’autorise pas les valeurs NULL. Les types de structure et d’énumération satisfont à la `struct` contrainte. À compter de C# 7,3, vous pouvez utiliser `System.Enum` dans une contrainte de classe de base (appelée [contrainte enum](../../programming-guide/generics/constraints-on-type-parameters.md#enum-constraints)) pour spécifier qu’un paramètre de type est un type énumération.
 
 ## <a name="built-in-value-types"></a>Types valeur intégrés
 

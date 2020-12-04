@@ -2,12 +2,12 @@
 title: Publication d’applications
 description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application comme autonome ou dépendante du Framework. Chaque mode affecte la façon dont un utilisateur exécute votre application.
 ms.date: 04/01/2020
-ms.openlocfilehash: 27206065c899e41a44685f72cfb35ae57986aa4c
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 03d53c8b5184d7276a69a1058d6b1b2f1e62dc81
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654670"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599575"
 ---
 # <a name="net-core-application-publishing-overview"></a>Vue d’ensemble de la publication d’applications .NET Core
 
@@ -67,7 +67,7 @@ La publication d’une application en tant que dépendant du Framework produit u
 
 Le binaire multiplateforme de votre application peut être exécuté à l’aide de la `dotnet <filename.dll>` commande et peut être exécuté sur n’importe quelle plateforme. Si l’application utilise un package NuGet qui a des implémentations spécifiques à la plateforme, toutes les dépendances de plateformes sont copiées dans le dossier de publication avec l’application.
 
-Vous pouvez créer un exécutable pour une plateforme spécifique en passant les `-r <RID> --self-contained false` paramètres à la [`dotnet publish`](../tools/dotnet-publish.md) commande. Lorsque le `-r` paramètre est omis, un fichier exécutable est créé pour votre plateforme actuelle. Tous les packages NuGet qui ont des dépendances spécifiques à la plateforme pour la plateforme ciblée sont copiés dans le dossier de publication.
+Vous pouvez créer un exécutable pour une plateforme spécifique en passant les `-r <RID> --self-contained false` paramètres à la [`dotnet publish`](../tools/dotnet-publish.md) commande. Lorsque le `-r` paramètre est omis, un fichier exécutable est créé pour votre plateforme actuelle. Tous les packages NuGet qui ont des dépendances spécifiques à la plateforme pour la plateforme ciblée sont copiés dans le dossier de publication. Si vous n’avez pas besoin d’un exécutable spécifique à Platfrom, vous pouvez spécifier `<UseAppHost>False</UseAppHost>` dans le fichier projet. Pour plus d’informations, consultez [référence MSBuild pour les projets SDK .net](../project-sdk/msbuild-props.md#useapphost).
 
 ### <a name="advantages"></a>Avantages
 
@@ -111,7 +111,7 @@ dotnet publish -r linux-x64 --self-contained false
 
 La publication de votre application en tant que contenu autonome produit un fichier exécutable spécifique à la plateforme. Le dossier de publication de sortie contient tous les composants de l’application, y compris les bibliothèques .NET Core et le runtime cible. L’application est isolée des autres applications .NET Core et n’utilise pas un runtime partagé installé localement. L’utilisateur de votre application n’est pas obligé de télécharger et d’installer .NET Core.
 
-Le binaire exécutable est généré pour la plateforme cible spécifiée. Par exemple, si vous avez une application nommée **word_reader**et que vous publiez un exécutable autonome pour Windows, un fichier *word_reader.exe* est créé. La publication pour Linux ou macOS, un fichier de *word_reader* est créé. La plateforme et l’architecture cibles sont spécifiées avec le `-r <RID>` paramètre de la [`dotnet publish`](../tools/dotnet-publish.md) commande. Pour plus d’informations sur les RID, consultez [catalogue RID .net Core](../rid-catalog.md).
+Le binaire exécutable est généré pour la plateforme cible spécifiée. Par exemple, si vous avez une application nommée **word_reader** et que vous publiez un exécutable autonome pour Windows, un fichier *word_reader.exe* est créé. La publication pour Linux ou macOS, un fichier de *word_reader* est créé. La plateforme et l’architecture cibles sont spécifiées avec le `-r <RID>` paramètre de la [`dotnet publish`](../tools/dotnet-publish.md) commande. Pour plus d’informations sur les RID, consultez [catalogue RID .net Core](../rid-catalog.md).
 
 Si l’application possède des dépendances spécifiques à la plateforme, telles qu’un package NuGet contenant des dépendances spécifiques à la plateforme, celles-ci sont copiées dans le dossier de publication avec l’application.
 

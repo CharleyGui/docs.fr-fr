@@ -2,12 +2,12 @@
 title: Créer une bibliothèque de classes .NET à l’aide de Visual Studio Code
 description: Découvrez comment créer une bibliothèque de classes .NET à l’aide de Visual Studio Code.
 ms.date: 11/18/2020
-ms.openlocfilehash: 4daa077fc54da3de2f808d831e06ee5f9bb3bde7
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: 4473163b76060623b364d7dabf7366c3575e3dcd
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916089"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599497"
 ---
 # <a name="tutorial-create-a-net-class-library-using-visual-studio-code"></a>Didacticiel : créer une bibliothèque de classes .NET à l’aide de Visual Studio Code
 
@@ -211,6 +211,7 @@ Initialement, le nouveau projet d’application console n’a pas accès à la b
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Développer des bibliothèques avec l’interface CLI .NET](libraries.md)
+* [.NET standard versions et les plateformes qu’ils prennent en charge](../../standard/net-standard.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

@@ -1,21 +1,21 @@
 ---
-title: Test d’une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio pour Mac
-description: Créez un projet de test unitaire pour une bibliothèque de classes .NET Core. Vérifiez que la bibliothèque de classes .NET Core fonctionne correctement avec les tests unitaires.
-ms.date: 06/08/2020
-ms.openlocfilehash: 3adcddc96abf77012f89a28c1cf60ea57ae506a2
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+title: Tester une bibliothèque de classes .NET à l’aide de Visual Studio pour Mac
+description: Créez un projet de test unitaire pour une bibliothèque de classes .NET. Vérifiez que la bibliothèque de classes .NET fonctionne correctement avec les tests unitaires.
+ms.date: 11/18/2020
+ms.openlocfilehash: 02d5aa74258ec15c5447b23246a3c7e9c61a6760
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91180528"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599524"
 ---
-# <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Tester une bibliothèque de classes .NET Standard avec .NET Core à l’aide de Visual Studio
+# <a name="test-a-net-class-library-using-visual-studio"></a>Tester une bibliothèque de classes .NET à l’aide de Visual Studio
 
 Ce didacticiel montre comment automatiser les tests unitaires en ajoutant un projet de test à une solution.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
+- Ce didacticiel fonctionne avec la solution que vous créez dans [créer une bibliothèque de classes .net à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Créer un projet de test unitaire
 
@@ -23,7 +23,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de .NET standard à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
+1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans [créer une bibliothèque de classes .net à l’aide de Visual Studio pour Mac](library-with-visual-studio-mac.md).
 
 1. Dans le panneau **solutions** , cliquez sur la solution en <kbd>appuyant sur la touche Ctrl</kbd> `ClassLibraryProjects` et sélectionnez **Ajouter**  >  **un nouveau projet**.
 
@@ -31,7 +31,9 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
    :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-project.png" alt-text="Boîte de dialogue Nouveau projet Mac de Visual Studio création d’un projet de test":::
 
-1. Sélectionnez **.net Core 3,1**. Nommez le nouveau projet « StringLibraryTest » et sélectionnez **créer**.
+1. Sélectionnez **.net 5,0** comme **Framework cible** , puis cliquez sur **suivant**.
+
+1. Nommez le nouveau projet « StringLibraryTest » et sélectionnez **créer**.
 
    :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-new-project-name.png" alt-text="Boîte de dialogue Nouveau projet dans Visual Studio pour Mac indiquant le nom du projet":::
 
@@ -108,7 +110,7 @@ Pour créer les méthodes de test:
 
    Si vous ne parvenez pas à enregistrer votre code source dans un fichier encodé en UTF-8, Visual Studio peut l’enregistrer en tant que fichier ASCII. Lorsque cela se produit, le runtime ne décode pas correctement les caractères UTF8 en dehors de la plage ASCII, et les résultats des tests ne sont pas corrects.
 
-1. Ouvrez le panneau **Tests unitaires** sur le côté droit de l’écran. Sélectionnez **Afficher**  >  les**tests** dans le menu.
+1. Ouvrez le panneau **Tests unitaires** sur le côté droit de l’écran. Sélectionnez **Afficher**  >  les **tests** dans le menu.
 
 1. Cliquez sur l’icône **Ancrer** pour garder le panneau ouvert.
 
@@ -165,13 +167,13 @@ Pour tester la version Release :
 
 ## <a name="debug-tests"></a>Déboguer les tests
 
-Si vous utilisez Visual Studio pour Mac comme IDE, vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application de console .net core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer du code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application *Showcase* <kbd>, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel.
+Si vous utilisez Visual Studio pour Mac comme IDE, vous pouvez utiliser le même processus que celui présenté dans [Didacticiel : déboguer une application console .net à l’aide d’Visual Studio pour Mac](debugging-with-visual-studio-mac.md) pour déboguer le code à l’aide de votre projet de test unitaire. Au lieu de démarrer le projet d’application *Showcase* <kbd>, cliquez</kbd>sur le projet **StringLibraryTests** , puis sélectionnez **Démarrer le débogage du projet** dans le menu contextuel.
 
 Visual Studio démarre le projet de test avec le débogueur attaché. L’exécution s’arrêtera à un point d’arrêt que vous avez ajouté au projet de test ou au code de bibliothèque sous-jacent.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Tests unitaires dans .NET Core et .NET Standard](../testing/index.md)
+* [Tests unitaires dans .NET](../testing/index.md)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -188,4 +190,4 @@ Si vous publiez une bibliothèque en tant que package NuGet, d’autres peuvent 
 Une bibliothèque n’a pas besoin d’être distribuée en tant que package. Il peut être fourni avec une application console qui l’utilise. Pour savoir comment publier une application console, consultez le didacticiel précédent dans cette série :
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)
+> [Publier une application console .NET à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)

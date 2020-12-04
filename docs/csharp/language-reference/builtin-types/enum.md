@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 930efdbdc6a20ea301331c1ce6fc664da43bfc5f
-ms.sourcegitcommit: 870bc4b4087510f6fba3c7b1c0d391f02bcc1f3e
+ms.openlocfilehash: a21bdf63247dc5fec95922de017e1d3502e08565
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92471848"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599432"
 ---
 # <a name="enumeration-types-c-reference"></a>Types énumération (référence C#)
 
@@ -62,7 +62,7 @@ Pour obtenir plus d’informations et des exemples, consultez la <xref:System.Fl
 
 Le <xref:System.Enum?displayProperty=nameWithType> type est la classe de base abstraite de tous les types énumération. Il fournit un certain nombre de méthodes pour obtenir des informations sur un type d’énumération et ses valeurs. Pour plus d’informations et d’exemples, consultez la <xref:System.Enum?displayProperty=nameWithType> page de référence des API.
 
-À compter de C# 7,3, vous pouvez utiliser `System.Enum` dans une contrainte de classe de base (appelée [contrainte enum](../../programming-guide/generics/constraints-on-type-parameters.md#enum-constraints)) pour spécifier qu’un paramètre de type est un type énumération.
+À compter de C# 7,3, vous pouvez utiliser `System.Enum` dans une contrainte de classe de base (appelée [contrainte enum](../../programming-guide/generics/constraints-on-type-parameters.md#enum-constraints)) pour spécifier qu’un paramètre de type est un type énumération. Tout type énumération satisfait également `struct` à la contrainte, qui est utilisée pour spécifier qu’un paramètre de type est un type valeur qui n’autorise pas les valeurs NULL.
 
 ## <a name="conversions"></a>Conversions
 

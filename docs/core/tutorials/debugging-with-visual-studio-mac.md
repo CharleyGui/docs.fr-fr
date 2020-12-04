@@ -1,21 +1,21 @@
 ---
-title: Déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
-description: Découvrez comment déboguer une application console .NET Core à l’aide de Visual Studio Mac.
-ms.date: 06/08/2020
-ms.openlocfilehash: 011647a6e3e676909880befa3b770205eb9616d6
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+title: Déboguer une application console .NET à l’aide d’Visual Studio pour Mac
+description: Découvrez comment déboguer une application console .NET à l’aide de Visual Studio Mac.
+ms.date: 11/30/2020
+ms.openlocfilehash: e35bbef5582b6eec00ee48669a0f5d028eb051fb
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957523"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599614"
 ---
-# <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : déboguer une application console .NET Core à l’aide de Visual Studio pour Mac
+# <a name="tutorial-debug-a-net-console-application-using-visual-studio-for-mac"></a>Didacticiel : déboguer une application console .NET à l’aide d’Visual Studio pour Mac
 
 Ce didacticiel présente les outils de débogage disponibles dans Visual Studio pour Mac.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
+- Ce didacticiel fonctionne avec l’application console que vous créez dans [créer une application console .net à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
 ## <a name="use-debug-build-configuration"></a>Utiliser la configuration de build Debug
 
@@ -27,7 +27,7 @@ Par défaut, Visual Studio pour Mac utilise la configuration de build Debug. vou
 
 1. Démarrez Visual Studio pour Mac.
 
-1. Ouvrez le projet que vous avez créé dans [créer une application console .net core à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
+1. Ouvrez le projet que vous avez créé dans [créer une application console .net à l’aide de Visual Studio pour Mac](with-visual-studio-mac.md).
 
    La configuration de build actuelle s’affiche sur la barre d’outils. L’image de barre d’outils suivante montre que Visual Studio est configuré pour compiler la version de débogage de l’application :
 
@@ -55,7 +55,7 @@ Un *point d’arrêt* interrompt temporairement l’exécution de l’applicatio
 
 La fenêtre **exécution** vous permet d’interagir avec l’application que vous déboguez. Vous pouvez modifier de manière interactive la valeur des variables pour voir comment elles affectent votre programme.
 
-1. Si la fenêtre **exécution** n’est pas visible, affichez-la en sélectionnant **Afficher**les  >  **blocs de débogage**  >  **immédiats**.
+1. Si la fenêtre **exécution** n’est pas visible, affichez-la en sélectionnant **Afficher** les  >  **blocs de débogage**  >  **immédiats**.
 
 1. Entrez `name = "Gracie"` dans la fenêtre **exécution** et appuyez sur <kbd>entrée</kbd>.
 
@@ -129,7 +129,7 @@ Visual Studio vous permet également de parcourir un programme ligne par ligne e
 
    Visual Studio s’arrête sur la ligne avec le point d’arrêt.
 
-1. Appuyez sur <kbd>⇧</kbd><kbd>⌘</kbd><kbd>i</kbd> (commande de<kbd>déplacement</kbd> + <kbd>command</kbd> + <kbd>i</kbd>) ou sélectionnez **exécuter**  >  un**pas à pas détaillé** pour avancer d’une ligne.
+1. Appuyez sur <kbd>⇧</kbd><kbd>⌘</kbd><kbd>i</kbd> (commande de <kbd>déplacement</kbd> + <kbd>command</kbd> + <kbd>i</kbd>) ou sélectionnez **exécuter**  >  un **pas à pas détaillé** pour avancer d’une ligne.
 
    Visual Studio met en surbrillance et affiche une flèche en regard de la ligne suivante de l’exécution.
 
@@ -178,4 +178,4 @@ Pour générer et tester la version Release de l’application console, procéde
 Dans ce didacticiel, vous avez utilisé les outils de débogage de Visual Studio. Dans le didacticiel suivant, vous allez publier une version déployable de l’application.
 
 > [!div class="nextstepaction"]
-> [Publier une application console .NET Core à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)
+> [Publier une application console .NET à l’aide de Visual Studio pour Mac](publishing-with-visual-studio-mac.md)

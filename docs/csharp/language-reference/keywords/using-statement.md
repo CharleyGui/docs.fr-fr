@@ -2,21 +2,23 @@
 description: using, instruction - Référence C#
 title: using, instruction - Référence C#
 ms.date: 05/29/2020
+f1_keywords:
+- using-statement_CSharpKeyword
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: c7f1fc4b7e911bdec3bd38ae88aa39b7f1795300
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 451235d9d41565c35369700eeec75cfd2f5bfc06
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89141931"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599328"
 ---
 # <a name="using-statement-c-reference"></a>using, instruction (référence C#)
 
 Fournit une syntaxe pratique qui garantit l’utilisation correcte d’objets <xref:System.IDisposable>. À compter de C# 8,0, l' `using` instruction garantit l’utilisation correcte des <xref:System.IAsyncDisposable> objets.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser l’instruction `using`.
 

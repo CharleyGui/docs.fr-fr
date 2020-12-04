@@ -1,17 +1,17 @@
 ---
-title: Créer une application console .NET Core à l’aide de Visual Studio pour Mac
-description: Découvrez comment créer une application console .NET Core à l’aide de Visual Studio pour Mac.
-ms.date: 06/02/2020
-ms.openlocfilehash: 0248e48865541a7c73b9e219a06a57996c5cf601
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+title: Créer une application console .NET à l’aide de Visual Studio pour Mac
+description: Découvrez comment créer une application console .NET à l’aide de Visual Studio pour Mac.
+ms.date: 11/30/2020
+ms.openlocfilehash: 1351b06eec32cd8d3d9d44926655405fe2246f58
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93400524"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599484"
 ---
-# <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET Core à l’aide de Visual Studio pour Mac
+# <a name="tutorial-create-a-net-console-application-using-visual-studio-for-mac"></a>Didacticiel : créer une application console .NET à l’aide de Visual Studio pour Mac
 
-Ce didacticiel montre comment créer et exécuter une application console .NET Core à l’aide de Visual Studio pour Mac.
+Ce didacticiel montre comment créer et exécuter une application console .NET à l’aide de Visual Studio pour Mac.
 
 > [!NOTE]
 > Vos commentaires sont extrêmement précieux. Il existe deux moyens de transmettre vos commentaires à l’équipe de développement sur Visual Studio pour Mac :
@@ -21,15 +21,13 @@ Ce didacticiel montre comment créer et exécuter une application console .NET C
 
 ## <a name="prerequisites"></a>Prérequis
 
-* [Visual Studio pour Mac version 8,6 ou ultérieure](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Sélectionnez l’option d’installation de .NET Core. L’installation de Xamarin est facultative pour le développement .NET Core. Pour plus d’informations, consultez les ressources suivantes :
+* [Visual Studio pour Mac version 8,8 ou ultérieure](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Sélectionnez l’option d’installation de .NET Core. L’installation de Xamarin est facultative pour le développement .NET. Pour plus d’informations, consultez les ressources suivantes :
 
   * [Didacticiel : installer Visual Studio pour Mac](/visualstudio/mac/installation).
   * [Versions MacOS prises en charge](../install/windows.md).
-  * [Versions de .net Core prises en charge par Visual Studio pour Mac](/visualstudio/mac/net-core-support).
+  * [Versions .net prises en charge par Visual Studio pour Mac](/visualstudio/mac/net-core-support).
 
 ## <a name="create-the-app"></a>Créer l’application
-
-Créez un projet d’application console .NET Core nommé « HelloWorld ».
 
 1. Démarrez Visual Studio pour Mac.
 
@@ -41,11 +39,9 @@ Créez un projet d’application console .NET Core nommé « HelloWorld ».
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-dialog.png" alt-text="Liste des modèles Nouveau projet":::
 
-1. Dans la liste déroulante **Framework cible** de la boîte de dialogue **configurer votre nouvelle application console** , sélectionnez **.net Core 3,1** , puis sélectionnez **suivant**.
+1. Dans la liste déroulante **Framework cible** de la boîte de dialogue **configurer votre nouvelle application console** , sélectionnez **.net 5,0**, puis cliquez sur **suivant**.
 
-   :::image type="content" source="media/with-visual-studio-mac/target-framework.png" alt-text="Sélectionner la version cible de .NET Framework":::
-
-1. Tapez « HelloWorld » comme **nom de projet** , puis sélectionnez **créer**.
+1. Tapez « HelloWorld » comme **nom de projet**, puis sélectionnez **créer**.
 
    :::image type="content" source="media/with-visual-studio-mac/visual-studio-mac-new-options.png" alt-text="Boîte de dialogue de configuration de votre nouvelle application console":::
 
@@ -82,7 +78,7 @@ namespace HelloWorld
 
 Améliorez l’application pour inviter l’utilisateur à entrer son nom et l’afficher avec la date et l’heure.
 
-1. Dans *Program.cs* , remplacez le contenu de la `Main` méthode, qui est la ligne qui appelle `Console.WriteLine` , par le code suivant :
+1. Dans *Program.cs*, remplacez le contenu de la `Main` méthode, qui est la ligne qui appelle `Console.WriteLine` , par le code suivant :
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
@@ -102,7 +98,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez créé une application console .NET Core. Dans le didacticiel suivant, vous allez déboguer l’application.
+Dans ce didacticiel, vous avez créé une application console .NET. Dans le didacticiel suivant, vous allez déboguer l’application.
 
 > [!div class="nextstepaction"]
-> [Déboguer une application console .NET Core à l’aide de Visual Studio pour Mac](debugging-with-visual-studio-mac.md)
+> [Déboguer une application console .NET à l’aide d’Visual Studio pour Mac](debugging-with-visual-studio-mac.md)

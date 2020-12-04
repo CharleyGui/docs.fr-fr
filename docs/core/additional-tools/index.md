@@ -4,12 +4,12 @@ description: Vue d’ensemble des outils supplémentaires que vous pouvez instal
 author: mlacouture
 ms.date: 02/13/2020
 ms.custom: mvc
-ms.openlocfilehash: f563dff312442cbf068d52d08992621e3d6f1460
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 6aa8b62f02c4325664ffeccc0c0d4a0635a96f2d
+ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95698999"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96599217"
 ---
 # <a name="net-core-additional-tools-overview"></a>Vue d’ensemble des outils .NET Core supplémentaires
 
@@ -28,6 +28,10 @@ L' [outil de désinstallation de .net Core](https://github.com/dotnet/cli-lab/re
 [dotnet-gcdump](../diagnostics/dotnet-gcdump.md) fournit un moyen de collecter les vidages de mémoire (garbage collector) des processus .net en direct.
 
 [dotnet-trace](../diagnostics/dotnet-trace.md) collecte les données de profilage de votre application qui peuvent vous aider dans des scénarios où vous devez déterminer ce qui entraîne l’exécution lente d’une application.
+
+## <a name="net-install-tool-for-extension-authors"></a>Outil d’installation .NET pour les auteurs d’extensions
+
+L' [outil d’installation de .net pour les auteurs d’extensions](https://github.com/dotnet/vscode-dotnet-runtime) est une extension de Visual Studio code qui permet d’acquérir le Runtime .net Core spécifiquement pour les auteurs d’extensions vs code. Cet outil est conçu pour être utilisé dans les extensions écrites en .NET et nécessiter .NET pour démarrer des éléments de l’extension (par exemple, un serveur de langage). L’extension n’est pas destinée à être utilisée directement par les utilisateurs pour installer .NET en vue du développement.
 
 ## <a name="wcf-web-service-reference-tool"></a>Outil de référence de service Web WCF
 
