@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 11/29/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 92177c41dc6b31d9186bae8176f85787e2fb89e0
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 71ec5d1b050b02ecbdb98adce814fce011cdbca0
+ms.sourcegitcommit: c6de55556add9f92af17e0f8d1da8f356a19a03d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96438039"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549395"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -90,6 +90,9 @@ Les scripts F # sont pris en charge en mode natif dans [Visual Studio](../../get
 
 ## <a name="referencing-packages-in-f-interactive"></a>Référencement de packages dans F# Interactive
 
+> [!NOTE]
+> Le système de gestion des packages est extensible, en savoir plus [sur les autres extensions](https://github.com/dotnet/fsharp/tree/main/src/fsharp/Microsoft.DotNet.DependencyManager).
+
 F# Interactive prend en charge le référencement de packages NuGet avec la `#r "nuget:"` syntaxe et une version facultative :
 
 ```fsharp
@@ -133,6 +136,8 @@ Vous pouvez spécifier autant de références de package que vous le souhaitez d
 
 > [!NOTE]
 > Il existe actuellement une limitation pour les scripts qui utilisent des références d’infrastructure (par exemple `Microsoft.NET.Sdk.Web`  `Microsoft.NET.Sdk.WindowsDesktop` , ou). Les packages comme Saturn, Giraffe, WinForms ne sont pas disponibles. Cela est suivi dans le [#9417](https://github.com/dotnet/fsharp/issues/9417)du problème.
+
+En savoir plus sur l' [extensibilité de la gestion des packages et d’autres extensions](https://github.com/dotnet/fsharp/tree/main/src/fsharp/Microsoft.DotNet.DependencyManager).
 
 ## <a name="referencing-assemblies-on-disk-with-f-interactive"></a>Référencement d’assemblys sur un disque avec F # Interactive
 
