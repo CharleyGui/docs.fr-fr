@@ -2,12 +2,12 @@
 title: 'Modification avec rupture : attributs OSPlatform renommés ou supprimés'
 description: En savoir plus sur le changement critique .NET 5,0 dans les bibliothèques .NET de base où les attributs de plateforme de système d’exploitation qui ont été introduits dans une version préliminaire ont été supprimés ou renommés.
 ms.date: 11/01/2020
-ms.openlocfilehash: 80eba790a607a01e0588c067cdc6105d5f3b20a7
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: be2ddd4909bef70f531ca48246f091923d6435ec
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437881"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739488"
 ---
 # <a name="osplatform-attributes-renamed-or-removed"></a>Les attributs OSPlatform ont été renommés ou supprimés
 
@@ -34,7 +34,7 @@ Dans .NET 5,0 RC1 et versions ultérieures, quand un projet cible une version sp
 
 ## <a name="reason-for-change"></a>Motif de modification
 
-.NET 5,0 Preview 8 a introduit des attributs dans <xref:System.Runtime.Versioning> pour spécifier les plateformes prises en charge pour les API. Les attributs sont consommés par l' [Analyseur de compatibilité](../../code-analysis/5.0/ca1416-platform-compatibility-analyzer.md) de la plateforme pour produire des avertissements de génération lorsque des API spécifiques à la plateforme sont consommées sur des plateformes qui ne sont pas prises en charge par ces API.
+.NET 5,0 Preview 8 a introduit des attributs dans <xref:System.Runtime.Versioning> pour spécifier les plateformes prises en charge pour les API. Les attributs sont consommés par l' [Analyseur de compatibilité](../../code-analysis/5.0/ca1416-platform-compatibility-analyzer.md) de la plateforme pour produire des avertissements de génération lorsque des API spécifiques à la plateforme sont consommées sur des plateformes qui ne prennent pas en charge ces API.
 
 Pour .NET 5,0 RC1, une fonctionnalité supplémentaire a été ajoutée à l’analyseur de compatibilité de plateforme pour l’exclusion de la plateforme. Cette fonctionnalité permet aux API d’être marquées comme étant entièrement non prises en charge sur les plateformes de système d’exploitation. Cette fonctionnalité vous invite à modifier les attributs, notamment en utilisant des noms plus appropriés. `ObsoletedInOSPlatformAttribute`A été supprimé, car il n’était plus nécessaire.
 

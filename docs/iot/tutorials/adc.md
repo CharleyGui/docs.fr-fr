@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 11/13/2020
 ms.topic: tutorial
 ms.prod: dotnet
-ms.openlocfilehash: eda6d8980d256c8063f2bfe1e051b0cb90b587ad
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 7cf25f181997ed66639842727be57e7824ef5466
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96588696"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739985"
 ---
 <!--markdownlint-disable DOCSMD011 -->
 # <a name="read-values-from-an-analog-to-digital-converter"></a>Lire les valeurs d’un convertisseur analogique-numérique
@@ -61,7 +61,7 @@ Reportez-vous aux diagrammes pinout suivants en fonction des besoins :
 
 [!INCLUDE [gpio-breakout](../includes/gpio-breakout.md)]
 
-## <a name="create-the-app"></a>Créer l'application
+## <a name="create-the-app"></a>Créer l’application
 
 Effectuez les étapes suivantes dans votre environnement de développement préféré :
 
@@ -100,11 +100,11 @@ Effectuez les étapes suivantes dans votre environnement de développement préf
 
 1. Arrêtez le programme en appuyant sur <kbd>Ctrl + C</kbd>.
 
-Félicitations ! Vous avez utilisé SPI pour lire des valeurs à partir d’un convertisseur analogique-numérique.
+Félicitations ! Vous avez utilisé SPI pour lire des valeurs à partir d’un convertisseur analogique-numérique.
 
 ## <a name="get-the-source-code"></a>Obtenir le code source
 
-La source de ce didacticiel est [disponible sur GitHub](https://github.com/MicrosoftDocs/dotnet-iot-assets/tree/master/tutorials/AdcTutorial). <span class="docon docon-navigate-external x-hidden-focus"></span>
+La source de ce didacticiel est [disponible sur GitHub](https://github.com/MicrosoftDocs/dotnet-iot-assets/tree/master/tutorials/AdcTutorial) <span class="docon docon-navigate-external x-hidden-focus"></span> .
 
 ## <a name="next-steps"></a>Étapes suivantes
 

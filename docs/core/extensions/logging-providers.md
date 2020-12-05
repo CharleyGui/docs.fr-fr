@@ -3,13 +3,13 @@ title: Fournisseurs de journalisation dans .NET
 description: Découvrez comment l’API du fournisseur de journalisation est utilisée dans les applications .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/25/2020
-ms.openlocfilehash: 4d4658b7ca892d101af32f5cf8ac48a4beabfb92
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.date: 12/04/2020
+ms.openlocfilehash: fdec9018e58c6038b5589c01e775bbb5f10b6b10
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804753"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740089"
 ---
 # <a name="logging-providers-in-net"></a>Fournisseurs de journalisation dans .NET
 
@@ -24,7 +24,7 @@ Les modèles d’application de travail .NET par défaut :
   - [EventSource](#event-source)
   - [EventLog](#windows-eventlog): Windows uniquement
 
-:::code language="csharp" source="snippets/configuration/console/Program.cs" highlight="12":::
+:::code language="csharp" source="snippets/configuration/console/Program.cs" highlight="18":::
 
 Le code précédent montre la `Program` classe créée avec les modèles d’application de travail .net. Les sections suivantes fournissent des exemples basés sur les modèles d’application de travail .NET, qui utilisent l’hôte générique.
 
@@ -102,7 +102,7 @@ Consultez [dotnet-trace](../diagnostics/dotnet-trace.md) pour obtenir des instru
 
 ### <a name="windows-eventlog"></a>Journal des événements Windows
 
-Le `EventLog` fournisseur envoie la sortie de journal dans le journal des événements Windows. Contrairement aux autres fournisseurs, le `EventLog` fournisseur n’hérite ***pas*** des paramètres non-fournisseur par défaut. Si `EventLog` les paramètres du journal ne sont pas spécifiés, leur valeur par défaut est `LogLevel.Warning` .
+Le `EventLog` fournisseur envoie la sortie de journal dans le journal des événements Windows. Contrairement aux autres fournisseurs, le `EventLog` fournisseur ne peut **pas** hériter des paramètres non-fournisseur par défaut. Si `EventLog` les paramètres du journal ne sont pas spécifiés, leur valeur par défaut est `LogLevel.Warning` .
 
 Pour consigner les événements inférieurs à <xref:Microsoft.Extensions.Logging.LogLevel.Warning?displayProperty=nameWithType> , définissez explicitement le niveau de journalisation. L’exemple suivant définit le niveau de journalisation par défaut du journal des événements sur <xref:Microsoft.Extensions.Logging.LogLevel.Information?displayProperty=nameWithType> :
 
@@ -127,8 +127,14 @@ Le code suivant remplace la `SourceName` valeur par défaut de par `".NET Runtim
 ```csharp
 public class Program
 {
-    public static Task Main(string[] args) =>
-        CreateHostBuilder(args).Build().RunAsync();
+    static async Task Main(string[] args)
+    {
+        using IHost host = CreateHostBuilder(args).Build();
+
+        // Application code should start here.
+
+        await host.RunAsync();
+    }
 
     static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
@@ -149,8 +155,14 @@ Pour configurer les paramètres du fournisseur, utilisez <xref:Microsoft.Extensi
 ```csharp
 class Program
 {
-    static Task Main(string[] args) =>
-        CreateHostBuilder(args).Build().RunAsync();
+    static async Task Main(string[] args)
+    {
+        using IHost host = CreateHostBuilder(args).Build();
+
+        // Application code should start here.
+
+        await host.RunAsync();
+    }
 
     static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
@@ -160,7 +172,7 @@ class Program
                 services.Configure<AzureFileLoggerOptions>(options =>
                 {
                     options.FileName = "azure-diagnostics-";
-                    options.FileSizeLimit = 50 * 1024;
+                    options.FileSizeLimit = 50 _ 1024;
                     options.RetainedFileCountLimit = 5;
                 })
                 .Configure<AzureBlobLoggerOptions>(options =>

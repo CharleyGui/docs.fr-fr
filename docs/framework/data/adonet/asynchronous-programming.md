@@ -3,12 +3,12 @@ title: Programmation asynchrone
 description: En savoir plus sur la programmation asynchrone dans le Fournisseur de données .NET Framework pour SQL Server, y compris les améliorations introduites dans .NET Framework 4,5.
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 9065aea02dc3f021ed485a4eb6e56cfcece44fac
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: fe3551d8c7bea9c9218656bd6ae5047a7920f384
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95677945"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739926"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
@@ -431,7 +431,7 @@ namespace SqlBulkCopyAsyncCodeSample {
       // static string connectionString = @"Server=(localdb)\V11.0;Database=Demo";
       static string connectionString = @"Server=(local);Database=Demo;Integrated Security=true";
 
-      // static string odbcConnectionString = @"Driver={SQL Server};Server=(localdb)\V11.0;UID=oledb;Pwd=1Password!;Database=Demo";
+      // static string odbcConnectionString = @"Driver={SQL Server};Server=(localdb)\V11.0;UID=oledb;Pwd=[PLACEHOLDER];Database=Demo";
       static string odbcConnectionString = @"Driver={SQL Server};Server=(local);Database=Demo;Integrated Security=true";
 
       // static string marsConnectionString = @"Server=(localdb)\V11.0;Database=Demo;MultipleActiveResultSets=true;";

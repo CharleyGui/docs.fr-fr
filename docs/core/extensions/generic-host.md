@@ -3,13 +3,13 @@ title: Hôte générique .NET
 author: IEvangelist
 description: En savoir plus sur l’hôte générique .NET, qui est responsable du démarrage et de la gestion de la durée de vie des applications.
 ms.author: dapine
-ms.date: 09/18/2020
-ms.openlocfilehash: d00a8aeae8b4de2cbcb091992fa739c47da6dafc
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.date: 12/04/2020
+ms.openlocfilehash: ddb71b70d15121b7f59899fba38b2bf861219878
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916173"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740096"
 ---
 # <a name="net-generic-host"></a>Hôte générique .NET
 
@@ -74,7 +74,7 @@ La méthode <xref:Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder%2A> :
   - EventLog (uniquement en cas d’exécution sur Windows)
 - Active la validation de l’étendue et la [validation des dépendances](xref:Microsoft.Extensions.DependencyInjection.ServiceProviderOptions.ValidateOnBuild) lorsque l’environnement est `Development` .
 
-La `ConfigureServices` méthode expose la possibilité d’ajouter des services à l' <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection?displayProperty=nameWithType> instance. Plus tard, ces services peuvent être mis à profit à partir de l’injection de dépendances.
+La `ConfigureServices` méthode expose la possibilité d’ajouter des services à l' <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection?displayProperty=nameWithType> instance. Plus tard, ces services peuvent être mis à disposition à partir de l’injection de dépendances.
 
 ## <a name="framework-provided-services"></a>Services fournis par le framework
 
@@ -128,7 +128,7 @@ Pour ajouter la configuration d’hôte, appelez <xref:Microsoft.Extensions.Host
 
 L’exemple suivant crée la configuration d’hôte :
 
-:::code language="csharp" source="snippets/configuration/console-host/Program.cs" highlight="13-19":::
+:::code language="csharp" source="snippets/configuration/console-host/Program.cs" highlight="19-25":::
 
 ## <a name="app-configuration"></a>la configuration d’une application ;
 

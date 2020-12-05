@@ -8,16 +8,19 @@ ms.custom: updateeachrelease
 helpviewer_keywords:
 - code analysis
 - code analyzers
-ms.openlocfilehash: ca3a9cb914befbc8e0982070b818b27ee3143793
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 8efac4d5e3fddcb9fdc6e08bcc933f2776420ced
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "96588395"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739972"
 ---
 # <a name="overview-of-net-source-code-analysis"></a>Vue d’ensemble de l’analyse du code source .NET
 
-Les analyseurs .NET Compiler Platform (Roslyn) inspectent la qualité et les problèmes de styles de code de votre code C# ou Visual Basic. À compter de .NET 5.0, ces analyseurs sont inclus dans le kit de développement logiciel (SDK) .NET. (Précédemment, vous avez installé des analyseurs de qualité du code en tant que [package NuGet](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers)et les analyseurs de style de code ont été installés avec Visual Studio.)
+Les analyseurs .NET Compiler Platform (Roslyn) inspectent la qualité et les problèmes de styles de code de votre code C# ou Visual Basic. À compter de .NET 5.0, ces analyseurs sont inclus dans le kit de développement logiciel (SDK) .NET. Si vous ne souhaitez pas migrer vers le kit de développement logiciel (SDK) .NET 5 + ou si vous préférez un modèle basé sur un package NuGet, les analyseurs sont également disponibles dans le `Microsoft.CodeAnalysis.NetAnalyzers` [package NuGet](https://www.nuget.org/packages/Microsoft.CodeAnalysis.NetAnalyzers). Vous préférerez peut-être un modèle basé sur des packages pour les mises à jour de version à la demande.
+
+> [!NOTE]
+> Les analyseurs .NET sont indépendants de la plateforme cible. Autrement dit, votre projet n’a pas besoin de cibler une plateforme .NET spécifique. Les analyseurs fonctionnent pour les projets qui ciblent ainsi que les `net5.0` versions antérieures de .net, telles que `netcoreapp` , `netstandard` et `net472` .
 
 - [Analyse de la qualité du code (règles « CAXXXX »)](#code-quality-analysis)
 - [Analyse de style de code (règles « IDExxxx »)](#code-style-analysis)
@@ -48,8 +51,8 @@ Les règles suivantes sont activées par défaut dans .NET 5,0 Preview 8.
 | [CA2013](/visualstudio/code-quality/ca2013) | Fiabilité | Avertissement | Ne pas utiliser `ReferenceEquals` avec les types valeur |
 | [CA2014](/visualstudio/code-quality/ca2014) | Fiabilité | Avertissement | Ne pas utiliser `stackalloc` dans les boucles |
 | [CA2015](/visualstudio/code-quality/ca2015) | Fiabilité | Avertissement | Ne définissez pas de finaliseurs pour les types dérivés de <xref:System.Buffers.MemoryManager%601> |
-| [CA2200](/visualstudio/code-quality/ca2200) | Usage | Avertissement | Levez à nouveau une exception pour conserver les détails de la pile
-| [CA2247](/visualstudio/code-quality/ca2247) | Usage | Avertissement | L’argument passé au constructeur TaskCompletionSource doit être <xref:System.Threading.Tasks.TaskCreationOptions> enum au lieu de <xref:System.Threading.Tasks.TaskContinuationOptions> |
+| [CA2200](/visualstudio/code-quality/ca2200) | Utilisation | Avertissement | Levez à nouveau une exception pour conserver les détails de la pile
+| [CA2247](/visualstudio/code-quality/ca2247) | Utilisation | Avertissement | L’argument passé au constructeur TaskCompletionSource doit être <xref:System.Threading.Tasks.TaskCreationOptions> enum au lieu de <xref:System.Threading.Tasks.TaskContinuationOptions> |
 
 Vous pouvez modifier la gravité de ces règles pour les désactiver ou les élever aux erreurs.
 

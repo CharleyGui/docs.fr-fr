@@ -6,16 +6,16 @@ ms.author: casoper
 ms.date: 11/13/2020
 ms.topic: quickstart
 ms.prod: dotnet
-ms.openlocfilehash: 09e0c46a08e08a2021a9dffe214d3d62d6fb8ec5
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 2919db55304590f5557aa0cbda50cc4bd6640443
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "96588581"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739528"
 ---
 # <a name="quickstart---use-net-to-drive-a-raspberry-pi-sense-hat"></a>Démarrage rapide : utilisez .NET pour piloter une Raspberry pi Sense HAT
 
-Raspberry pi [sens Hat](https://www.raspberrypi.org/products/sense-hat/) <span class="docon docon-navigate-external x-hidden-focus"></span> est un tableau complémentaire pour Raspberry pi. Le chapeau de détection est équipé d’une matrice LED de 8 × 8 RGB, d’une manette à cinq boutons et comprend les capteurs suivants :
+Raspberry pi [sens Hat](https://www.raspberrypi.org/products/sense-hat/) <span class="docon docon-navigate-external x-hidden-focus"></span> (**H** matérielle **a** ttached on **T** op) est un tableau complémentaire pour Raspberry pi. Le chapeau de détection est équipé d’une matrice LED de 8 × 8 RGB, d’une manette à cinq boutons et comprend les capteurs suivants :
 
 - Gyroscope
 - Accéléromètre
@@ -52,7 +52,7 @@ Observez la sortie de la console lorsque les données de capteur sont affichées
 
 ## <a name="get-the-source-code"></a>Obtenir le code source
 
-La source de ce guide de démarrage rapide est [disponible sur GitHub](https://github.com/MicrosoftDocs/dotnet-iot-assets/tree/master/quickstarts/SenseHat.Quickstart). <span class="docon docon-navigate-external x-hidden-focus"></span>
+La source de ce guide de démarrage rapide est [disponible sur GitHub](https://github.com/MicrosoftDocs/dotnet-iot-assets/tree/master/quickstarts/SenseHat.Quickstart) <span class="docon docon-navigate-external x-hidden-focus"></span> .
 
 ## <a name="next-steps"></a>Étapes suivantes
 

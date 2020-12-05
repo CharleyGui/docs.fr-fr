@@ -3,13 +3,13 @@ title: Modèle d’options dans .NET
 author: IEvangelist
 description: Découvrez comment utiliser le modèle d’options pour représenter des groupes de paramètres associés dans les applications .NET.
 ms.author: dapine
-ms.date: 09/30/2020
-ms.openlocfilehash: 5c59a14223ec7c35456e1ea84d3f976e236f45dd
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.date: 12/04/2020
+ms.openlocfilehash: 76d99337c51920115a38c400daca1649d0e74a99
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614713"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740017"
 ---
 # <a name="options-pattern-in-net"></a>Modèle d’options dans .NET
 
@@ -33,14 +33,14 @@ Créez la `TransientFaultHandlingOptions` classe suivante :
 Une classe d’options :
 
 * Doit être non abstract avec un constructeur sans paramètre public
-* Contenir des propriétés publiques en lecture/écriture à lier (les champs ***ne sont pas*** liés)
+* Contenir des propriétés publiques en lecture/écriture à lier (les champs **sont * liés**)
 
 Le code suivant :
 
-* Appelle [ConfigurationBinder. bind](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind%2A) pour lier la `TransientFaultHandlingOptions` classe à la `"TransientFaultHandlingOptions"` section.
+_ Appelle [ConfigurationBinder. bind](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind%2A) pour lier la `TransientFaultHandlingOptions` classe à la `"TransientFaultHandlingOptions"` section.
 * Affiche les données de configuration.
 
-:::code language="csharp" source="snippets/configuration/console-json/Program.cs" range="25-32":::
+:::code language="csharp" source="snippets/configuration/console-json/Program.cs" range="31-38":::
 
 Dans le code précédent, les modifications apportées au fichier de configuration JSON après le démarrage de l’application sont lues.
 
@@ -74,13 +74,13 @@ services.Configure<TransientFaultHandlingOptions>(
 
 :::code language="csharp" source="snippets/configuration/console-json/ExampleService.cs":::
 
-Dans le code précédent, les modifications apportées au fichier de configuration JSON après le démarrage de l’application ne sont ***pas*** lues. Pour lire les modifications une fois l’application démarrée, utilisez [IOptionsSnapshot](#use-ioptionssnapshot-to-read-updated-data).
+Dans le code précédent, les modifications apportées au fichier de configuration JSON après le démarrage de l’application sont ***non** _ Read. Pour lire les modifications une fois l’application démarrée, utilisez [IOptionsSnapshot](#use-ioptionssnapshot-to-read-updated-data).
 
 ## <a name="options-interfaces"></a>Interfaces d’options
 
 <xref:Microsoft.Extensions.Options.IOptions%601>:
 
-- Ne prend ***pas*** en charge :
+- Ne prend _*_pas_*_ en charge :
   - Lecture des données de configuration après le démarrage de l’application.
   - [Options nommées](#named-options-support-using-iconfigurenamedoptions)
 - Est inscrit en tant que [Singleton](dependency-injection.md#singleton) et peut être injecté dans n’importe quelle [durée de vie de service](dependency-injection.md#service-lifetimes).
@@ -151,7 +151,7 @@ Options nommées :
 - Sont utiles lorsque plusieurs sections de configuration sont liées aux mêmes propriétés.
 - Respectent la casse.
 
-Prenez en compte les *appsettings.jssuivantes sur* le fichier :
+Prenez en compte les _appsettings.jssuivantes sur le fichier * :
 
 ```json
 {

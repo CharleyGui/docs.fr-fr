@@ -2,12 +2,12 @@
 title: Création d’un microservice CRUD simple piloté par les données
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Comprendre la création d’un microservice CRUD simple (piloté par les données) dans le contexte d’une application de microservices.
 ms.date: 08/14/2020
-ms.openlocfilehash: 056ba37965cf831e0fb176eb585042c440530c6b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 27c9b331573ff08ea16c756552818df285156282
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172363"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739867"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Création d’un microservice CRUD simple piloté par les données
 
@@ -55,7 +55,7 @@ Entity Framework (EF) Core est une version légère, extensible et multiplatefor
 
 Le microservice de catalogue utilise Entity Framework et le fournisseur SQL Server, car sa base de données est exécutée dans un conteneur avec l’image SQL Server pour Linux Docker. Toutefois, la base de données peut être déployée sur n’importe quel serveur SQL Server (instance locale Windows ou Azure SQL DB). La seule chose que vous devez modifier est la chaîne de connexion située dans le microservice de l’API web ASP.NET.
 
-#### <a name="the-data-model"></a>Modèle de données
+#### <a name="the-data-model"></a>le modèle de données
 
 Avec Entity Framework Core, l’accès aux données est effectué à l’aide d’un modèle. Un modèle est composé de classes d’entité (modèle de domaine) et d’un contexte dérivé (DbContext) qui représente une session avec la base de données, ce qui vous permet d’interroger et d’enregistrer des données. Vous pouvez générer un modèle à partir d’une base de données existante, coder manuellement un modèle pour qu’il corresponde à votre base de données ou utiliser la technique de migrations d’EF pour créer une base de données à partir de votre modèle, à l’aide de l’approche code First (qui facilite l’évolution de la base de données à mesure que votre modèle évolue dans le temps). Pour le microservice de catalogue, la dernière approche a été utilisée. Vous pouvez voir un exemple de la classe d’entité CatalogItem dans l’exemple de code suivant, qui est une classe d’entité [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object).
 
@@ -233,7 +233,7 @@ Vous pouvez utiliser les paramètres ASP.NET Core et ajouter une propriété Con
 
 ```json
 {
-    "ConnectionString": "Server=tcp:127.0.0.1,5433;Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word",
+    "ConnectionString": "Server=tcp:127.0.0.1,5433;Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=[PLACEHOLDER]",
     "ExternalCatalogBaseUrl": "http://localhost:5101",
     "Logging": {
         "IncludeScopes": false,
@@ -256,7 +256,7 @@ Dans les fichiers docker-compose.yml ou docker-compose.override.yml, vous pouvez
 #
 catalog-api:
   environment:
-    - ConnectionString=Server=sqldata;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
+    - ConnectionString=Server=sqldata;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=[PLACEHOLDER]
     # Additional environment variables for this service
   ports:
     - "5101:80"

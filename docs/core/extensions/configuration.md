@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 09/16/2020
 ms.topic: overview
-ms.openlocfilehash: f5dc7c99b209b16dfb8595f9d50dcb1428bbde84
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 5955e46c2f5acb6776ada4e3fd6a65507d3faa1f
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91607995"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740123"
 ---
 # <a name="configuration-in-net"></a>Configuration dans .NET
 
@@ -29,13 +29,13 @@ La configuration dans .NET est effectuée à l’aide d’un ou de plusieurs [fo
 
 Les nouvelles applications de console .NET créées à l’aide de [dotnet New](../tools/dotnet-new.md) ou de Visual Studio n’exposent *pas* de fonctionnalités de configuration. Pour ajouter une configuration dans une nouvelle application de console .NET, [Ajoutez une référence de package](../tools/dotnet-add-package.md) à `Microsoft.Extensions.Hosting` . Modifiez le fichier *Program.cs* de façon à ce qu’il corresponde au code suivant :
 
-:::code language="csharp" source="snippets/configuration/console/Program.cs" highlight="12":::
+:::code language="csharp" source="snippets/configuration/console/Program.cs" highlight="18":::
 
 La <xref:Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(System.String[])?displayProperty=nameWithType> méthode fournit la configuration par défaut pour l’application dans l’ordre suivant :
 
 1. [ChainedConfigurationProvider](xref:Microsoft.Extensions.Configuration.ChainedConfigurationSource) : ajoute un existant `IConfiguration` en tant que source.
 1. *appsettings.jssur* l’utilisation du [fournisseur de configuration JSON](configuration-providers.md#file-configuration-provider).
-1. *appSettings.* `Environment` *. JSON* à l’aide du [fournisseur de configuration JSON](configuration-providers.md#file-configuration-provider). Par exemple, *appSettings*. ***Production***. *JSON* et *appSettings*. ***Développement***. *JSON*.
+1. *appSettings.* `Environment` *. JSON* à l’aide du [fournisseur de configuration JSON](configuration-providers.md#file-configuration-provider). Par exemple, *appSettings*. ***Production * * _._json* et *appSettings*. * * * développement** _._json *.
 1. Secrets d’application lorsque l’application s’exécute dans l' `Development` environnement.
 1. Variables d’environnement à l’aide du [fournisseur de configuration des variables d’environnement](configuration-providers.md#environment-variable-configuration-provider).
 1. Arguments de ligne de commande à l’aide du [fournisseur de configuration de ligne de commande](configuration-providers.md#command-line-configuration-provider).
@@ -44,7 +44,7 @@ Les fournisseurs de configuration ajoutés ultérieurement remplacent les param�
 
 ### <a name="binding"></a>Liaison
 
-L’un des principaux avantages de la configuration dans .NET est la possibilité de lier des valeurs de configuration à des instances d’objets .NET. Par exemple, le fournisseur de configuration JSON peut être utilisé pour mapper * desappsettings.jssur des* fichiers à des objets .net et est utilisé avec l’injection de dépendances. Cela active le modèle d’options, le modèle d’options utilise des classes pour fournir un accès fortement typé aux groupes de paramètres associés.
+L’un des principaux avantages de la configuration dans .NET est la possibilité de lier des valeurs de configuration à des instances d’objets .NET. Par exemple, le fournisseur de configuration JSON peut être utilisé pour mapper *desappsettings.jssur des* fichiers à des objets .net et est utilisé avec l’injection de dépendances. Cela active le modèle d’options, le modèle d’options utilise des classes pour fournir un accès fortement typé aux groupes de paramètres associés.
 
 ## <a name="configuration-providers"></a>Fournisseurs de configuration
 
