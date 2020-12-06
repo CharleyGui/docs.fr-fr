@@ -2,12 +2,12 @@
 title: Programmation asynchrone
 description: 'Découvrez comment F # fournit une prise en charge propre pour l’asynchronie basée sur un modèle de programmation au niveau du langage dérivé des concepts de programmation fonctionnelle de base.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 2e5d4fb744b4443eb9caf90cc1bf01473b809127
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 04b397ddbfb468aa3bc4ee245175d3ec9bdedb50
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811767"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739325"
 ---
 # <a name="async-programming-in-f"></a>Programmation asynchrone en F\#
 
@@ -39,7 +39,7 @@ En pratique, les calculs asynchrones en F # sont planifiés pour s’exécuter i
 
 Le principal pas à pas est que les calculs asynchrones sont indépendants du processus principal du programme. Bien qu’il existe peu de garanties quant au moment ou à l’exécution d’un calcul asynchrone, il existe des approches pour l’orchestration et la planification. Le reste de cet article explore les concepts fondamentaux de l’asynchronie F # et explique comment utiliser les types, les fonctions et les expressions intégrés à F #.
 
-## <a name="core-concepts"></a>Concepts principaux
+## <a name="core-concepts"></a>Principaux concepts
 
 En F #, la programmation asynchrone est centrée autour de trois concepts fondamentaux :
 
@@ -57,7 +57,7 @@ let printTotalFileBytes path =
     async {
         let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
         let fileName = Path.GetFileName(path)
-        printfn "File %s has %d bytes" fileName bytes.Length
+        printfn $"File {fileName} has %d{bytes.Length} bytes"
     }
 
 [<EntryPoint>]
@@ -87,7 +87,7 @@ let printTotalFileBytes path =
     async {
         let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
         let fileName = Path.GetFileName(path)
-        printfn "File %s has %d bytes" fileName bytes.Length
+        printfn $"File {fileName} has %d{bytes.Length} bytes"
     }
 
 [<EntryPoint>]
@@ -119,7 +119,7 @@ let printTotalFileBytes path =
     async {
         let! bytes = File.ReadAllBytesAsync(path) |> Async.AwaitTask
         let fileName = Path.GetFileName(path)
-        printfn "File %s has %d bytes" fileName bytes.Length
+        printfn $"File {fileName} has %d{bytes.Length} bytes"
     }
 
 [<EntryPoint>]

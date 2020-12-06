@@ -2,12 +2,12 @@
 title: "Déclarations d'importation : mot clé open"
 description: 'En savoir plus sur les déclarations d’importation F # et la façon dont elles spécifient un module ou un espace de noms dont vous pouvez référencer des éléments sans utiliser un nom complet.'
 ms.date: 08/15/2020
-ms.openlocfilehash: ab208c53809e120bc216c8f8b4d04a322d67cf2f
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 4d3fd159aa4b334e9db0d7f756047470ad9c0829
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557179"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739683"
 ---
 # <a name="import-declarations-the-open-keyword"></a>Déclarations d’importation : `open` mot clé
 
@@ -39,7 +39,7 @@ Le compilateur F # n’émet pas d’erreur ni d’avertissement quand des ambig
 ```fsharp
 open List
 open Seq
-printfn "%A" empty
+printfn %"{empty}"
 ```
 
 Par conséquent, soyez vigilant lorsque vous ouvrez des modules ou des espaces de noms tels que `List` ou `Seq` qui contiennent des membres qui ont des noms identiques ; à la place, envisagez d’utiliser les noms qualifiés. Vous devez éviter toute situation dans laquelle le code dépend de l’ordre des déclarations d’importation.

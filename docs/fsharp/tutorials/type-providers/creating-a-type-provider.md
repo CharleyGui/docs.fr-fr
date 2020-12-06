@@ -2,12 +2,12 @@
 title: 'Didacticiel : créer un fournisseur de type'
 description: 'Découvrez comment créer vos propres fournisseurs de type F # dans F # 3,0 en examinant plusieurs fournisseurs de types simples pour illustrer les concepts de base.'
 ms.date: 11/04/2019
-ms.openlocfilehash: 71225614ed983a76d35c214faa87bbad0fbb7d24
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 65cb9616f66b5850135dbfcdd9b9a9dad30421de
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810870"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739696"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Didacticiel : créer un fournisseur de type
 
@@ -243,7 +243,7 @@ Notez les points suivants :
 Ensuite, ajoutez la documentation XML au type. Cette documentation est retardée, c’est-à-dire calculée à la demande si le compilateur hôte en a besoin.
 
 ```fsharp
-t.AddXmlDocDelayed (fun () -> sprintf "This provided type %s" ("Type" + string n))
+t.AddXmlDocDelayed (fun () -> $"""This provided type {"Type" + string n}""")
 ```
 
 Ensuite, vous ajoutez une propriété statique fournie au type :
@@ -352,9 +352,9 @@ t.AddMembersDelayed(fun () ->
                   getterCode= (fun args -> <@@ valueOfTheProperty @@>))
 
               p.AddXmlDocDelayed(fun () ->
-                  sprintf "This is StaticProperty%d on NestedType" i)
+                  $"This is StaticProperty{i} on NestedType")
 
-              p
+              p
       ]
 
     staticPropsInNestedType)
@@ -581,7 +581,7 @@ for group in r.GetGroupNames() do
         propertyName = group,
         propertyType = typeof<Group>,
         getterCode = fun args -> <@@ ((%%args.[0]:obj) :?> Match).Groups.[group] @@>)
-        prop.AddXmlDoc(sprintf @"Gets the ""%s"" group from this match" group)
+        prop.AddXmlDoc($"""Gets the ""{group}"" group from this match""")
     matchTy.AddMember prop
 ```
 
@@ -764,7 +764,7 @@ Là encore, la première étape consiste à réfléchir à l’aspect de l’API
 let info = new MiniCsv<"info.csv">()
 for row in info.Data do
 let time = row.Time
-printfn "%f" (float time)
+printfn $"{float time}"
 ```
 
 Dans ce cas, le compilateur doit convertir ces appels en un nom similaire à l’exemple suivant :
@@ -773,7 +773,7 @@ Dans ce cas, le compilateur doit convertir ces appels en un nom similaire à l�
 let info = new CsvFile("info.csv")
 for row in info.Data do
 let (time:float) = row.[1]
-printfn "%f" (float time)
+printfn $"%f{float time}"
 ```
 
 La traduction optimale exige que le fournisseur de type définisse un `CsvFile` type réel dans l’assembly du fournisseur de type. Les fournisseurs de type s’appuient souvent sur quelques types et méthodes d’assistance pour encapsuler la logique importante. Étant donné que les mesures sont effacées au moment de l’exécution, vous pouvez utiliser `float[]` comme type effacé pour une ligne. Le compilateur traitera différentes colonnes comme ayant différents types de mesures. Par exemple, la première colonne de notre exemple est de type `float<meter>` , et la seconde a `float<second>` . Toutefois, la représentation effacée peut rester assez simple.
@@ -1048,7 +1048,7 @@ L’API ProvidedTypes fournit des assistances pour fournir des annotations de me
   let nullableDecimal_kgpm2 = typedefof<System.Nullable<_>>.MakeGenericType [|dkgpm2 |]
 ```
 
-### <a name="accessing-project-local-or-script-local-resources"></a>Accès aux ressources de projet local ou de script local
+### <a name="accessing-project-local-or-script-local-resources"></a>Accès aux ressources Project-Local ou Script-Local
 
 Chaque instance d’un fournisseur de type peut recevoir une `TypeProviderConfig` valeur pendant la construction. Cette valeur contient le « dossier de résolution » pour le fournisseur (autrement dit, le dossier du projet pour la compilation ou le répertoire qui contient un script), la liste des assemblys référencés et d’autres informations.
 

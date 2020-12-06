@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 11/29/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 71ec5d1b050b02ecbdb98adce814fce011cdbca0
-ms.sourcegitcommit: c6de55556add9f92af17e0f8d1da8f356a19a03d
+ms.openlocfilehash: fe8ee2ebb97f4a47e80f39d5be8d95ba5b72ddc7
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549395"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739307"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -118,7 +118,7 @@ let t2 = dsharp.tensor [ [ 0; 1 ]; [ 2; 2 ] ]
 // Define a scalar-to-scalar function
 let f (x: Tensor) = sin (sqrt x)
 
-printfn "%A" (f (dsharp.tensor 1.2))
+printfn $"{f (dsharp.tensor 1.2)}"
 ```
 
 ### <a name="specifying-a-package-source"></a>Spécification d’une source de package
@@ -137,7 +137,7 @@ Vous pouvez spécifier autant de références de package que vous le souhaitez d
 > [!NOTE]
 > Il existe actuellement une limitation pour les scripts qui utilisent des références d’infrastructure (par exemple `Microsoft.NET.Sdk.Web`  `Microsoft.NET.Sdk.WindowsDesktop` , ou). Les packages comme Saturn, Giraffe, WinForms ne sont pas disponibles. Cela est suivi dans le [#9417](https://github.com/dotnet/fsharp/issues/9417)du problème.
 
-En savoir plus sur l' [extensibilité de la gestion des packages et d’autres extensions](https://github.com/dotnet/fsharp/tree/main/src/fsharp/Microsoft.DotNet.DependencyManager).
+Pour plus d’informations, consultez extension de la [gestion des packages et autres extensions](https://github.com/dotnet/fsharp/tree/main/src/fsharp/Microsoft.DotNet.DependencyManager).
 
 ## <a name="referencing-assemblies-on-disk-with-f-interactive"></a>Référencement d’assemblys sur un disque avec F # Interactive
 
@@ -154,7 +154,7 @@ Une fois compilé, vous pouvez le référencer dans un fichier appelé, par `Scr
 ```fsharp
 #r "path/to/MyAssembly.dll"
 
-printfn "%A" (MyAssembly.myFunction 10 40)
+printfn $"{MyAssembly.myFunction 10 40}"
 ```
 
 La sortie se présente comme suit :
@@ -182,7 +182,7 @@ Et le fichier de consommation `Script2.fsx` :
 #load "Script1.fsx"
 open Script1
 
-printfn "%d" (square 12)
+printfn $"%d{square 12}"
 ```
 
 Notez que la `open Script1` déclaration est obligatoire. Cela est dû au fait que les constructions dans un script F # sont compilées dans un module de niveau supérieur qui est le nom du fichier de script dans lequel elle se trouve.
@@ -206,7 +206,7 @@ L’exemple suivant montre comment récupérer et utiliser des arguments de lign
 let args = fsi.CommandLineArgs
 
 for arg in args do
-    printfn "%s" arg
+    printfn $"{arg}"
 ```
 
 Lorsqu’elle est évaluée, elle imprime tous les arguments. Le premier argument est toujours le nom du script évalué :
@@ -265,6 +265,6 @@ Vous pouvez contrôler les F# Interactive arguments de ligne de commande (option
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----|-----------|
 |[Options F# Interactive](../../language-reference/fsharp-interactive-options.md)|Décrit la syntaxe et les options de ligne de commande pour le F# Interactive, fsi.exe.|

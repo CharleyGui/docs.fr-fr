@@ -2,12 +2,12 @@
 title: Conventions de codage F#
 description: 'Découvrez des instructions générales et des idiomes lors de l’écriture de code F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 8c7fedf429ecba6e01b26f37972ffa4eeba6d8af
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 87955c379f0abba929b0ced75d62d2601f37dc5a
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554024"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739900"
 ---
 # <a name="f-coding-conventions"></a>Conventions de codage F#
 
@@ -174,7 +174,7 @@ La gestion des erreurs dans les systèmes de grande taille est un effort complex
 
 ### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Représenter des cas d’erreur et un État non conforme dans des types intrinsèques à votre domaine
 
-Avec les [unions discriminées](../language-reference/discriminated-unions.md), F # vous donne la possibilité de représenter un état de programme défectueux dans votre système de type. Exemple :
+Avec les [unions discriminées](../language-reference/discriminated-unions.md), F # vous donne la possibilité de représenter un état de programme défectueux dans votre système de type. Par exemple :
 
 ```fsharp
 type MoneyWithdrawalResult =
@@ -190,9 +190,9 @@ Dans ce cas, il existe trois façons connues de retirer de l’argent d’un com
 let handleWithdrawal amount =
     let w = withdrawMoney amount
     match w with
-    | Success am -> printfn "Successfully withdrew %f" am
-    | InsufficientFunds balance -> printfn "Failed: balance is %f" balance
-    | CardExpired expiredDate -> printfn "Failed: card expired on %O" expiredDate
+    | Success am -> printfn "Successfully withdrew %f{am}"
+    | InsufficientFunds balance -> printfn "Failed: balance is %f{balance}"
+    | CardExpired expiredDate -> printfn "Failed: card expired on %O{expiredDate}"
     | UndisclosedFailure -> printfn "Failed: unknown"
 ```
 
@@ -301,7 +301,7 @@ let tryReadAllTextIfPresent (path : string) =
 
 Au lieu de fonctionner comme un catch, cette fonction gère désormais correctement le cas lorsqu’un fichier est introuvable et assigne cette signification à un retour. Cette valeur de retour peut être mappée à ce cas d’erreur, sans ignorer d’informations contextuelles ou obliger les appelants à traiter un cas qui peut ne pas être pertinent à ce stade du code.
 
-Les types tels que `Result<'Success, 'Error>` sont appropriés pour les opérations de base où ils ne sont pas imbriqués, et les types facultatifs F # sont *parfaits*pour représenter les cas où un élément peut retourner *une valeur* ou rien. Toutefois, ils ne remplacent pas les exceptions et ne doivent pas être utilisés dans une tentative de remplacement des exceptions. Au lieu de cela, elles doivent être appliquées judicieusement pour répondre à des aspects spécifiques de la stratégie de gestion des exceptions et des erreurs de manière ciblée.
+Les types tels que `Result<'Success, 'Error>` sont appropriés pour les opérations de base où ils ne sont pas imbriqués, et les types facultatifs F # sont *parfaits* pour représenter les cas où un élément peut retourner *une valeur* ou rien. Toutefois, ils ne remplacent pas les exceptions et ne doivent pas être utilisés dans une tentative de remplacement des exceptions. Au lieu de cela, elles doivent être appliquées judicieusement pour répondre à des aspects spécifiques de la stratégie de gestion des exceptions et des erreurs de manière ciblée.
 
 ## <a name="partial-application-and-point-free-programming"></a>Programmation partielle d’application et de point-Free
 
@@ -317,7 +317,7 @@ Les fonctions curryfiée n’étiquettent pas leurs arguments. Cela a des implic
 
 ```fsharp
 let func name age =
-    printfn "My name is %s and I am %d years old!" name age
+    printfn "My name is {name} and I am %d{age} years old!"
 
 let funcWithApplication =
     printfn "My name is %s and I am %d years old!"

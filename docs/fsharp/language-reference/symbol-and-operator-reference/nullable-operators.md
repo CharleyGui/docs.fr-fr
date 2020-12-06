@@ -2,12 +2,12 @@
 title: Opérateurs autorisant la valeur Null
 description: 'En savoir plus sur les opérateurs Nullable qui sont disponibles dans le langage de programmation F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 951692ba22781f7f9e759c55bc708fc24f7a5014
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 9ac6afc2c3f4277ee6e93b1ccb3d21f892926b4b
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559139"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740365"
 ---
 # <a name="nullable-operators"></a>Opérateurs autorisant la valeur Null
 
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les opérateurs Nullable pris en charge dans le l
 |[?/](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20?/%20))|[/?](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20/?%20))|[?/?](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20?/?%20))|
 |[?%](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20?%%20))|[%?](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20%?%20))|[?%?](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html#(%20?%?%20))|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les opérateurs Nullable sont inclus dans le module [NullableOperators](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html) de l’espace de noms [FSharp. Linq](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html). Le type des données Nullable est `System.Nullable<'T>` .
 
@@ -48,10 +48,10 @@ let nullableInt = new System.Nullable<int>(10)
 let nullableFloat = Nullable.float nullableInt
 
 // Use the regular non-nullable float operator to convert to a non-nullable float.
-printfn "%f" (float nullableFloat)
+printfn $"%f{float nullableFloat}"
 ```
 
-Le résultat est `10.000000`.
+La sortie est `10.000000`.
 
 Les opérateurs de requête sur des champs de données Nullable, tels que `sumByNullable` , existent également pour une utilisation dans les expressions de requête. Les opérateurs de requête pour les types non Nullable ne sont pas compatibles avec les types Nullable. vous devez donc utiliser la version Nullable de l’opérateur de requête approprié lorsque vous travaillez avec des valeurs de données Nullable. Pour plus d’informations, consultez [expressions de requête](../query-expressions.md).
 
@@ -73,14 +73,14 @@ query {
     for row in db.Table2 do
     where (row.TestData1.HasValue && row.TestData1.Value > 2)
     select row
-} |> Seq.iter (fun row -> printfn "%d %s" row.TestData1.Value row.Name)
+} |> Seq.iter (fun row -> printfn $"%d{row.TestData1.Value} %s{row.Name}")
 
 query {
     for row in db.Table2 do
     // Use a nullable operator ?>
     where (row.TestData1 ?> 2)
     select row
-} |> Seq.iter (fun row -> printfn "%d %s" (row.TestData1.GetValueOrDefault()) row.Name)
+} |> Seq.iter (fun row -> printfn "%d{row.TestData1.GetValueOrDefault()} %s{row.Name}")
 ```
 
 ## <a name="see-also"></a>Voir aussi

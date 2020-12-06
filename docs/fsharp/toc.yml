@@ -142,6 +142,8 @@
       href: language-reference/classes.md
     - name: Structures
       href: language-reference/structures.md
+    - name: Types valeur Nullable
+      href: language-reference/nullable-value-types.md
     - name: Héritage
       href: language-reference/inheritance.md
     - name: Interfaces

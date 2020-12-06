@@ -4,12 +4,12 @@ description: 'Découvrez comment créer une syntaxe pratique pour écrire des ca
 ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: bc3842b6f1075d68d1997e78c8bd8485731fca52
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: a0a71533ea1bc87b75f028ad0d416326f627672a
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95705304"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96739300"
 ---
 # <a name="computation-expressions"></a>Expressions de calcul
 
@@ -111,7 +111,7 @@ let squares =
     }
 
 for sq in squares do
-    printfn "%d" sq
+    printfn $"%d{sq}"
 ```
 
 Dans la plupart des cas, il peut être omis par les appelants. La méthode la plus courante pour omettre `yield` est avec l' `->` opérateur :
@@ -123,7 +123,7 @@ let squares =
     }
 
 for sq in squares do
-    printfn "%d" sq
+    printfn $"%d{sq}"
 ```
 
 Pour les expressions plus complexes qui peuvent générer de nombreuses valeurs différentes, et peut-être de manière conditionnelle, il suffit d’omettre le mot clé :
@@ -167,7 +167,7 @@ let squaresAndCubes =
         yield! cubes
     }
 
-printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
+printfn $"{squaresAndCubes}"  // Prints - 1; 4; 9; 1; 8; 27
 ```
 
 En cas d’évaluation, l’expression de calcul appelée par `yield!` aura ses éléments retournés un par un, ce qui a pour effet d’aplatir le résultat.
@@ -390,7 +390,7 @@ let eventually = new EventuallyBuilder()
 
 let comp = eventually {
     for x in 1..2 do
-        printfn " x = %d" x
+        printfn $" x = %d{x}"
     return 3 + 4 }
 
 // Try the remaining lines in F# interactive to see how this

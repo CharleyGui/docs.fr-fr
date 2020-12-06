@@ -2,18 +2,18 @@
 title: Critères spéciaux
 description: 'Découvrez comment les modèles sont utilisés en F # pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.'
 ms.date: 11/12/2020
-ms.openlocfilehash: e167712b082b7f587e41a78edcaf0a0db9c7294b
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 932f50b7947f6df728149437dd3ceb19c42e5c6a
+ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687803"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96740274"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
 Les modèles sont des règles de transformation des données d’entrée. Ils sont utilisés dans le langage F # pour comparer des données avec une structure logique ou des structures, décomposer des données en parties constitutives ou extraire des informations de données de différentes façons.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Les modèles sont utilisés dans de nombreuses constructions de langage, telles que l' `match` expression. Elles sont utilisées lorsque vous traitez des arguments pour les fonctions dans `let` les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés à l' `try...with` expression. Pour plus d’informations, [consultez expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda : le `fun` mot clé](./functions/lambda-expressions-the-fun-keyword.md)et [exceptions : l' `try...with` expression](./exception-handling/the-try-with-expression.md).
 
@@ -29,7 +29,7 @@ Chaque modèle agit comme une règle de transformation d’entrée d’une certa
 
 Les modèles pris en charge sont présentés dans le tableau suivant. Au moment de l’exécution, l’entrée est testée par rapport à chacun des modèles suivants dans l’ordre indiqué dans le tableau, et les modèles sont appliqués de manière récursive, de la première à la dernière telle qu’ils apparaissent dans votre code, et de gauche à droite pour les modèles sur chaque ligne.
 
-|Nom|Description| Exemple|
+|Nom|Description|Exemple|
 |----|-----------|-------|
 |Modèle de constante|Tout littéral numérique, de caractère ou de chaîne, une constante d’énumération ou un identificateur littéral défini|`1.0`, `"test"`, `30`, `Color.Red`|
 |Modèle d’identificateur|Une valeur case d’une union discriminée, une étiquette d’exception ou un cas de modèle actif|`Some(x)`<br /><br />`Failure(msg)`|
@@ -88,8 +88,8 @@ Vous pouvez utiliser les champs nommés dans une expression de critères spécia
 ```fsharp
 let matchShape shape =
     match shape with
-    | Rectangle(height = h) -> printfn "Rectangle with length %f" h
-    | Circle(r) -> printfn "Circle with radius %f" r
+    | Rectangle(height = h) -> printfn $"Rectangle with length %f{h}"
+    | Circle(r) -> printfn $"Circle with radius %f{r}"
 ```
 
 L’utilisation du champ nommé est facultative. par conséquent, dans l’exemple précédent, les deux `Circle(r)` et `Circle(radius = r)` ont le même effet.
@@ -98,7 +98,7 @@ Lorsque vous spécifiez plusieurs champs, utilisez le point-virgule (;) comme s�
 
 ```fsharp
 match shape with
-| Rectangle(height = h; width = w) -> printfn "Rectangle with height %f and width %f" h w
+| Rectangle(height = h; width = w) -> printfn $"Rectangle with height %f{h} and width %f{w}"
 | _ -> ()
 ```
 
