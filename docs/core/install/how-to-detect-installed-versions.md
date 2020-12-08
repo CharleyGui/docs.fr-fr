@@ -6,16 +6,16 @@ ms.author: adegeo
 ms.date: 11/10/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 39020a32cdea9b82dc9d30e62e663ebc4ee39ebb
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 2fc12c8c398b1a74d623e53884df666f4d4b85f1
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687440"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851612"
 ---
 # <a name="how-to-check-that-net-is-already-installed"></a>Comment vérifier que .NET est déjà installé
 
-Cet article explique comment vérifier quelles versions du Runtime .NET et du kit de développement logiciel (SDK) sont installées sur votre ordinateur. .NET a peut-être déjà été installé si vous disposez d’un environnement de développement intégré, tel que Visual Studio ou Visual Studio pour Mac.
+Cet article explique comment vérifier quelles versions du Runtime .NET et du kit de développement logiciel (SDK) sont installées sur votre ordinateur. Si vous disposez d’un environnement de développement intégré, tel que Visual Studio ou Visual Studio pour Mac, .NET a peut-être déjà été installé.
 
 L’installation d’un kit de développement logiciel installe le runtime correspondant.
 
@@ -139,7 +139,7 @@ Microsoft.NETCore.App 5.0.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ## <a name="check-for-install-folders"></a>Rechercher les dossiers d’installation
 
-Il est possible que .NET soit installé mais pas ajouté à la `PATH` variable pour votre système d’exploitation ou profil utilisateur. L’exécution des commandes des sections précédentes peut ne pas fonctionner. Vous pouvez également vérifier que les dossiers d’installation .NET existent.
+Il est possible que .NET soit installé mais pas ajouté à la `PATH` variable pour votre système d’exploitation ou profil utilisateur. Dans ce cas, les commandes des sections précédentes peuvent ne pas fonctionner. Vous pouvez également vérifier que les dossiers d’installation .NET existent.
 
 Lorsque vous installez .NET à partir d’un programme d’installation ou d’un script, il est installé dans un dossier standard. La plupart du temps, le programme d’installation ou le script que vous utilisez pour installer .NET vous donne la possibilité d’installer dans un autre dossier. Si vous choisissez d’installer dans un autre dossier, ajustez le début du chemin d’accès au dossier.
 
@@ -191,3 +191,7 @@ Vous pouvez voir les versions du kit de développement logiciel (SDK) et les ver
 - [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Windows](windows.md).
 - [Installez le Runtime .net et le kit de développement logiciel (SDK) pour MacOS](macos.md).
 - [Installez le Runtime .net et le kit de développement logiciel (SDK) pour Linux](linux.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Identifier les versions de .NET Framework installées](../../framework/migration-guide/how-to-determine-which-versions-are-installed.md)

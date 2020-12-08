@@ -2,46 +2,43 @@
 title: Analyse du code dans .NET
 titleSuffix: ''
 description: En savoir plus sur l’analyse du code source dans le kit de développement logiciel (SDK) .NET.
-ms.date: 08/22/2020
+ms.date: 12/04/2020
 ms.topic: overview
 ms.custom: updateeachrelease
 helpviewer_keywords:
 - code analysis
 - code analyzers
-ms.openlocfilehash: 8efac4d5e3fddcb9fdc6e08bcc933f2776420ced
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: 657975742c3efc2985264fe16cb316357b959e73
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96739972"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851814"
 ---
 # <a name="overview-of-net-source-code-analysis"></a>Vue d’ensemble de l’analyse du code source .NET
 
-Les analyseurs .NET Compiler Platform (Roslyn) inspectent la qualité et les problèmes de styles de code de votre code C# ou Visual Basic. À compter de .NET 5.0, ces analyseurs sont inclus dans le kit de développement logiciel (SDK) .NET. Si vous ne souhaitez pas migrer vers le kit de développement logiciel (SDK) .NET 5 + ou si vous préférez un modèle basé sur un package NuGet, les analyseurs sont également disponibles dans le `Microsoft.CodeAnalysis.NetAnalyzers` [package NuGet](https://www.nuget.org/packages/Microsoft.CodeAnalysis.NetAnalyzers). Vous préférerez peut-être un modèle basé sur des packages pour les mises à jour de version à la demande.
+Les analyseurs .NET Compiler Platform (Roslyn) inspectent la qualité et les problèmes de styles de code de votre code C# ou Visual Basic. À compter de .NET 5,0, ces analyseurs sont inclus dans le kit de développement logiciel (SDK) .NET et vous n’avez pas besoin de les installer séparément. Si votre projet cible .NET 5 ou une version ultérieure, l’analyse du code est activée par défaut. Si votre projet cible une implémentation .NET différente, par exemple, .NET Core, .NET Standard ou .NET Framework, vous devez activer manuellement l’analyse du code en affectant à la propriété [EnableNETAnalyzers](../../core/project-sdk/msbuild-props.md#enablenetanalyzers) la valeur `true` .
+
+Si vous ne souhaitez pas migrer vers le kit de développement logiciel (SDK) .NET 5 + ou si vous préférez un modèle basé sur un package NuGet, les analyseurs sont également disponibles dans le [package NuGet Microsoft. CodeAnalysis. Netanalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.NetAnalyzers). Vous préférerez peut-être un modèle basé sur des packages pour les mises à jour de version à la demande.
 
 > [!NOTE]
-> Les analyseurs .NET sont indépendants de la plateforme cible. Autrement dit, votre projet n’a pas besoin de cibler une plateforme .NET spécifique. Les analyseurs fonctionnent pour les projets qui ciblent ainsi que les `net5.0` versions antérieures de .net, telles que `netcoreapp` , `netstandard` et `net472` .
-
-- [Analyse de la qualité du code (règles « CAXXXX »)](#code-quality-analysis)
-- [Analyse de style de code (règles « IDExxxx »)](#code-style-analysis)
+> Les analyseurs .NET sont agnostiques au Framework cible. Autrement dit, votre projet n’a pas besoin de cibler une implémentation spécifique de .NET. Les analyseurs fonctionnent pour les projets qui ciblent `net5.0` et les versions antérieures de .net, telles que `netcoreapp3.1` et `net472` .
 
 Si un analyseur détecte des violations de règle, celles-ci sont signalées sous la forme d’une suggestion, d’un avertissement ou d’une erreur, selon la façon dont chaque règle est [configurée](configuration-options.md). Les violations de l’analyse du code s’affichent avec le préfixe « CA » ou « IDE » pour les différencier des erreurs du compilateur.
 
-> [!TIP]
->
-> - Vous pouvez également installer des analyseurs tiers, tels que [StyleCop](https://www.nuget.org/packages/StyleCop.Analyzers/), [Roslynator](https://www.nuget.org/packages/Roslynator.Analyzers/), les [analyseurs xUnit](https://www.nuget.org/packages/xunit.analyzers/)et l' [analyseur sonar](https://www.nuget.org/packages/SonarAnalyzer.CSharp/).
-> - Si vous utilisez Visual Studio, de nombreuses règles de l’analyseur sont associées à des *correctifs de code* que vous pouvez appliquer pour corriger le problème. Les corrections de code s’affichent dans le menu de l’icône d’ampoule.
-
 ## <a name="code-quality-analysis"></a>Analyse de la qualité du code
 
-Les règles d’analyse de la _qualité du code (« ca »)_ inspectent votre code C# ou Visual Basic pour la sécurité, les performances, la conception et d’autres problèmes. L’analyse est activée par défaut pour les projets qui ciblent .NET 5,0 ou une version ultérieure. Vous pouvez activer l’analyse du code sur des projets qui ciblent des versions antérieures de .NET en affectant à la propriété [EnableNETAnalyzers](../../core/project-sdk/msbuild-props.md#enablenetanalyzers) la valeur `true` . Vous pouvez également désactiver l’analyse du code pour votre projet en affectant à la valeur `EnableNETAnalyzers` `false` .
+Les règles d’analyse de la *qualité du code* (« CAXXXX ») inspectent votre code C# ou Visual Basic pour la sécurité, les performances, la conception et d’autres problèmes. L’analyse est activée par défaut pour les projets qui ciblent .NET 5,0 ou une version ultérieure. Vous pouvez activer l’analyse du code sur des projets qui ciblent des versions antérieures de .NET en affectant à la propriété [EnableNETAnalyzers](../../core/project-sdk/msbuild-props.md#enablenetanalyzers) la valeur `true` . Vous pouvez également désactiver l’analyse du code pour votre projet en affectant à la valeur `EnableNETAnalyzers` `false` .
 
 > [!TIP]
-> Dans Visual Studio, vous pouvez activer ou désactiver l’analyse du code à l’aide du Fenêtre Propriétés de projet. Pour accéder au Fenêtre Propriétés du projet, cliquez avec le bouton droit sur un projet dans Explorateur de solutions et sélectionnez **Propriétés**. Ensuite, sélectionnez l’onglet **analyse du code** , puis activez ou désactivez la case à cocher pour activer les **analyseurs .net**.
+> Si vous utilisez Visual Studio :
+>
+> - De nombreuses règles de l’analyseur sont associées à des *correctifs de code* que vous pouvez appliquer pour corriger le problème. Les corrections de code s’affichent dans le menu de l’icône d’ampoule.
+> - Vous pouvez activer ou désactiver l’analyse du code en cliquant avec le bouton droit sur un projet dans Explorateur de solutions et en sélectionnant **Propriétés**  >  onglet **analyse du code** > activer les **analyseurs .net**.
 
 ### <a name="enabled-rules"></a>Règles activées
 
-Les règles suivantes sont activées par défaut dans .NET 5,0 Preview 8.
+Les règles suivantes sont activées par défaut dans .NET 5,0.
 
 | ID de diagnostic | Category | Gravité | Description |
 | - | - | - | - |
@@ -51,27 +48,25 @@ Les règles suivantes sont activées par défaut dans .NET 5,0 Preview 8.
 | [CA2013](/visualstudio/code-quality/ca2013) | Fiabilité | Avertissement | Ne pas utiliser `ReferenceEquals` avec les types valeur |
 | [CA2014](/visualstudio/code-quality/ca2014) | Fiabilité | Avertissement | Ne pas utiliser `stackalloc` dans les boucles |
 | [CA2015](/visualstudio/code-quality/ca2015) | Fiabilité | Avertissement | Ne définissez pas de finaliseurs pour les types dérivés de <xref:System.Buffers.MemoryManager%601> |
-| [CA2200](/visualstudio/code-quality/ca2200) | Utilisation | Avertissement | Levez à nouveau une exception pour conserver les détails de la pile
-| [CA2247](/visualstudio/code-quality/ca2247) | Utilisation | Avertissement | L’argument passé au constructeur TaskCompletionSource doit être <xref:System.Threading.Tasks.TaskCreationOptions> enum au lieu de <xref:System.Threading.Tasks.TaskContinuationOptions> |
+| [CA2200](/visualstudio/code-quality/ca2200) | Usage | Avertissement | Levez à nouveau une exception pour conserver les détails de la pile
+| [CA2247](/visualstudio/code-quality/ca2247) | Usage | Avertissement | L’argument passé au constructeur TaskCompletionSource doit être <xref:System.Threading.Tasks.TaskCreationOptions> enum au lieu de <xref:System.Threading.Tasks.TaskContinuationOptions> |
 
-Vous pouvez modifier la gravité de ces règles pour les désactiver ou les élever aux erreurs.
+Vous pouvez modifier la gravité de ces règles pour les désactiver ou les élever aux erreurs. Vous pouvez également [activer davantage de règles](#enable-additional-rules).
 
-Pour obtenir la liste complète des règles de qualité du code disponibles, consultez [règles de qualité du code](quality-rules/index.md).
+- Pour obtenir la liste des règles incluses avec chaque version du kit de développement logiciel (SDK) .NET, consultez [releases de l’analyseur](https://github.com/dotnet/roslyn-analyzers/blob/master/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md).
+- Pour obtenir la liste de toutes les règles de qualité du code, consultez [règles de qualité du code](quality-rules/index.md).
 
 ### <a name="enable-additional-rules"></a>Activer des règles supplémentaires
 
-À compter de .NET 5,0 RC2, le kit de développement logiciel (SDK) .NET est fourni avec toutes les [règles de qualité du code « ca »](/visualstudio/code-quality/code-analysis-for-managed-code-warnings). Pour obtenir la liste complète des règles incluses avec chaque version du kit de développement logiciel (SDK) .NET, consultez [releases de l’analyseur](https://github.com/dotnet/roslyn-analyzers/blob/master/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md).
+Le *mode d’analyse* fait référence à une configuration d’analyse du code prédéfinie dans laquelle aucune, une partie ou l’ensemble des règles n’est activée. Dans le mode d’analyse par défaut, seul un petit nombre de règles est [activé en tant qu’avertissements de génération](#enabled-rules). Vous pouvez modifier le mode d’analyse de votre projet en définissant la propriété [AnalysisMode](../../core/project-sdk/msbuild-props.md#analysismode) dans le fichier projet. Les valeurs autorisées sont les suivantes :
 
-#### <a name="default-analysis-mode"></a>Mode d’analyse par défaut
+| Valeur | Description |
+| - | - |
+| `AllDisabledByDefault` | Il s’agit du mode le plus conservateur. Toutes les règles sont désactivées par défaut. Vous pouvez [choisir](configuration-options.md) des règles individuelles pour les activer.<br /><br />`<AnalysisMode>AllDisabledByDefault</AnalysisMode>` |
+| `AllEnabledByDefault` | Il s’agit du mode le plus agressif. Toutes les règles sont activées en tant qu’avertissements de Build. Vous pouvez [choisir de](configuration-options.md) désactiver les règles individuelles de manière sélective pour les désactiver.<br /><br />`<AnalysisMode>AllEnabledByDefault</AnalysisMode>` |
+| `Default` | Le mode par défaut, dans lequel quelques règles sont activées en tant qu’avertissements, les autres sont uniquement activées en tant que suggestions de l’IDE Visual Studio avec les correctifs de code correspondants, et les autres sont désactivés complètement. Vous pouvez [choisir d’accepter ou de refuser des](configuration-options.md) règles individuelles pour les désactiver.<br /><br />`<AnalysisMode>Default</AnalysisMode>` |
 
-Dans le mode d’analyse par défaut, certaines règles sont [activées par défaut](#enabled-rules) en tant qu’avertissements de génération. Certaines autres règles sont activées par défaut uniquement en tant que suggestions de l’IDE Visual Studio avec les corrections de code correspondantes. Les règles restantes sont désactivées par défaut. La [liste complète des règles](https://github.com/dotnet/roslyn-analyzers/blob/master/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md) comprend la gravité par défaut de chaque règle et indique si la règle est activée par défaut dans le mode d’analyse par défaut.
-
-#### <a name="custom-analysis-mode"></a>Mode d’analyse personnalisée
-
-Vous pouvez [configurer des règles d’analyse du code](configuration-options.md) pour activer ou désactiver une règle individuelle ou une catégorie de règles. En outre, vous pouvez utiliser la propriété [AnalysisMode](../../core/project-sdk/msbuild-props.md#analysismode) pour basculer vers l’un des modes d’analyse personnalisés suivants :
-
-- Mode _agressif_ ou _opt-out_ : toutes les règles sont activées par défaut en tant qu’avertissements de génération. Vous pouvez [choisir](configuration-options.md) de désactiver les règles individuelles de manière sélective pour les désactiver.
-- Mode _conservateur_ ou _opt-in_ : toutes les règles sont désactivées par défaut. Vous pouvez [choisir](configuration-options.md) des règles individuelles pour les activer.
+Pour connaître la gravité par défaut de chaque règle disponible et indiquer si la règle est activée ou non dans le mode d’analyse par défaut, consultez la [liste complète des règles](https://github.com/dotnet/roslyn-analyzers/blob/master/src/NetAnalyzers/Core/AnalyzerReleases.Shipped.md).
 
 ### <a name="treat-warnings-as-errors"></a>Considérer les avertissements comme des erreurs
 
@@ -106,12 +101,14 @@ Par défaut, vous obtiendrez les dernières règles d’analyse du code et les g
 
 ## <a name="code-style-analysis"></a>Analyse de style de code
 
-L' [analyse de style de code](/visualstudio/ide/editorconfig-code-style-settings-reference) (règles « IDExxxx ») vous permet de définir et de maintenir un style de code cohérent dans votre base de code. Les paramètres par défaut sont les suivants :
+Les règles d' *analyse de style de code* (« IDExxxx ») vous permettent de définir et de maintenir un style de code cohérent dans votre base de code. Les paramètres d’activation par défaut sont les suivants :
 
 - Génération de la ligne de commande : l’analyse du style de code est désactivée, par défaut, pour tous les projets .NET sur les générations à partir de la ligne de commande.
 - Visual Studio : l’analyse de style de code est activée, par défaut, pour tous les projets .NET dans Visual Studio en tant que [actions rapides de refactorisation de code](/visualstudio/ide/code-generation-in-visual-studio).
 
-À partir de .NET 5,0 RC2, vous pouvez activer l’analyse de style de code sur la build, à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
+À partir de .NET 5,0, vous pouvez activer l’analyse de style de code sur la build, à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
+
+Pour obtenir la liste complète des règles d’analyse de style code, consultez [règles de style de code](style-rules/index.md).
 
 > [!NOTE]
 > La fonctionnalité d’analyse de style de code est expérimentale et peut changer entre les versions .NET 5 et .NET 6.
@@ -151,6 +148,10 @@ dotnet_diagnostic.CA1822.severity = none
 Visual Studio fournit des méthodes supplémentaires pour supprimer les avertissements des règles d’analyse du code. Pour plus d’informations, consultez [Supprimer les violations](/visualstudio/code-quality/use-roslyn-analyzers#suppress-violations).
 
 Pour plus d’informations sur les niveaux de gravité de la règle, consultez [configurer la gravité](configuration-options.md#severity-level)de la règle.
+
+## <a name="third-party-analyzers"></a>Analyseurs tiers
+
+En plus des analyseurs .NET officiels, vous pouvez également installer des analyseurs tiers, tels que [StyleCop](https://www.nuget.org/packages/StyleCop.Analyzers/), [Roslynator](https://www.nuget.org/packages/Roslynator.Analyzers/), les [analyseurs xUnit](https://www.nuget.org/packages/xunit.analyzers/)et l' [Analyseur de sonar](https://www.nuget.org/packages/SonarAnalyzer.CSharp/).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,13 +3,13 @@ title: Processus de développement pour Azure
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Processus de développement pour Azure
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 8907c63f8dcd57ec22c3c196cbb1db52d91a3b5f
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.date: 12/01/2020
+ms.openlocfilehash: 2706a4091565e6f3cb795acf031a238ae55a1068
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "91169035"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851625"
 ---
 # <a name="development-process-for-azure"></a>Processus de développement pour Azure
 
@@ -30,9 +30,9 @@ Que vous préfériez un IDE complet et puissant ou un éditeur léger et agile, 
 
 [Télécharger Visual Studio 2019](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
-**Visual Studio Code et interface CLI dotnet** (outils multiplateformes pour Mac, Linux et Windows). Si vous préférez un éditeur léger et multiplateforme prenant en charge n’importe quel langage de développement, vous pouvez utiliser Microsoft Visual Studio Code et l’interface CLI dotnet. Ces produits proposent une expérience simple mais robuste qui simplifie le flux de travail du développeur. De plus, Visual Studio Code prend en charge des extensions pour le développement web et C\#, ce qui donne accès à Intellisense et à des tâches raccourcies dans l’éditeur.
+**Visual Studio code et l’interface CLI dotnet** (outils multiplateformes pour Mac, Linux et Windows). Si vous préférez un éditeur léger et multiplateforme prenant en charge n’importe quel langage de développement, vous pouvez utiliser Microsoft Visual Studio Code et l’interface CLI dotnet. Ces produits proposent une expérience simple mais robuste qui simplifie le flux de travail du développeur. De plus, Visual Studio Code prend en charge des extensions pour le développement web et C\#, ce qui donne accès à Intellisense et à des tâches raccourcies dans l’éditeur.
 
-[Télécharger le kit SDK .NET Core](https://dotnet.microsoft.com/download)
+[Télécharger le Kit de développement logiciel (SDK) .NET](https://dotnet.microsoft.com/download)
 
 [Télécharger Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -56,17 +56,17 @@ Créez un service d’application Azure où vous déploierez votre application. 
 
 **Figure 10-1.** Création d’une application web Azure App Service dans le portail Azure.
 
-Votre processus de génération CI effectue une génération automatique chaque fois que du nouveau code est validé dans le référentiel de contrôle de code source du projet. Ainsi, vous savez immédiatement que le code a été généré (et, dans l’idéal, réussit les tests automatisés) et peut être déployé. Cette build CI génère un artefact de package de déploiement web et le publie en vue de sa consommation par votre processus CD.
+Votre processus de génération CI effectue une génération automatique chaque fois que du nouveau code est validé dans le référentiel de contrôle de code source du projet. Ce processus vous donne immédiatement des commentaires sur la génération du code (et, idéalement, passe des tests automatisés) et peut éventuellement être déployé. Cette build CI génère un artefact de package de déploiement web et le publie en vue de sa consommation par votre processus CD.
 
 [Définir votre processus de build CI](/azure/devops/pipelines/ecosystems/dotnet-core)
 
 Veillez à activer l’intégration continue afin que le système mette en file d’attente une build chaque fois qu’un membre de votre équipe valide du nouveau code. Testez la build et vérifiez qu’elle produit un package de déploiement web comme l’un de ses artefacts.
 
-Quand une build réussit, votre processus CD déploie les résultats de votre build CI sur votre application web Azure. Pour configurer cela, créez et configurez une *Mise en production*, qui sera déployée sur votre service d’application Azure.
+Quand une build réussit, votre processus CD déploie les résultats de votre build CI sur votre application web Azure. Pour configurer cette étape, vous créez et configurez une *version*, qui sera déployée sur votre Azure App service.
 
 [Déployer une application Web Azure](/azure/devops/pipelines/targets/webapp)
 
-Une fois que votre pipeline CI/CD est configuré, vous pouvez simplement effectuer des mises à jour de votre application web et les valider dans le contrôle de code source afin de les déployer.
+Une fois votre pipeline CI/CD configuré, vous pouvez facilement effectuer des mises à jour de votre application Web et les valider dans le contrôle de code source pour les déployer.
 
 ### <a name="workflow-for-developing-azure-hosted-aspnet-core-applications"></a>Flux de travail de développement d’applications ASP.NET Core hébergées par Azure
 
@@ -78,7 +78,7 @@ Une fois que vous avez configuré votre compte Azure et votre processus CI/CD, l
 
 #### <a name="step-1-local-dev-environment-inner-loop"></a>Étape 1. Boucle interne d’environnement de développement local
 
-Le développement d’une application ASP.NET Core pour le déploiement sur Azure ne diffère en aucune manière d’un développement ordinaire. Utilisez l’environnement de développement local avec lequel vous êtes à l’aise, que ce soit Visual Studio 2017 ou l’interface CLI dotnet et Visual Studio Code ou votre éditeur favori. Vous pouvez écrire du code, exécuter et déboguer vos modifications, exécuter des tests automatisés et effectuer des validations locales dans le contrôle de code source jusqu’à ce que vous soyez prêt à envoyer vos modifications dans votre référentiel de contrôle de code source partagée.
+Le développement d’une application ASP.NET Core pour le déploiement sur Azure ne diffère en aucune manière d’un développement ordinaire. Utilisez l’environnement de développement local avec lequel vous êtes familiarisé, qu’il s’agisse de Visual Studio 2019 ou de l’interface CLI dotnet et de Visual Studio Code ou de votre éditeur préféré. Vous pouvez écrire du code, exécuter et déboguer vos modifications, exécuter des tests automatisés et effectuer des validations locales dans le contrôle de code source jusqu’à ce que vous soyez prêt à envoyer vos modifications dans votre référentiel de contrôle de code source partagée.
 
 #### <a name="step-2-application-code-repository"></a>Étape 2. Référentiel de code d’application
 
@@ -88,9 +88,9 @@ Chaque fois que vous êtes prêt à partager votre code avec votre équipe, vous
 
 Une nouvelle build est déclenchée sur le serveur de builds chaque fois qu’une nouvelle validation est effectuée dans le référentiel de code d’application partagé. Dans le cadre du processus CI, cette build doit compiler entièrement l’application et exécuter des tests automatisés afin de confirmer que tout fonctionne comme prévu. Le résultat final du processus CI doit être une version empaquetée de l’application web, prête pour le déploiement.
 
-#### <a name="step-4-build-server-continuous-delivery"></a>Étape 4. Serveur de builds : Livraison continue
+#### <a name="step-4-build-server-continuous-delivery"></a>Étape 4. Serveur de builds : Livraison continue
 
-Une fois qu’une build a réussi, le processus CD prend en charge les artefacts de build générés, qui comprennent notamment un package de déploiement web. Le serveur de builds déploie ce package sur Azure App Service, en remplaçant tout service existant par celui qui vient d’être créé. En général, cette étape cible un environnement de préproduction, mais certaines applications sont déployées directement en production par le biais d’un processus CD.
+Une fois qu’une build a réussi, le processus CD prend en charge les artefacts de build générés, Ce processus inclut un package de déploiement Web. Le serveur de builds déploie ce package sur Azure App Service, en remplaçant tout service existant par celui qui vient d’être créé. En général, cette étape cible un environnement de préproduction, mais certaines applications sont déployées directement en production par le biais d’un processus CD.
 
 #### <a name="step-5-azure-app-service-web-app"></a>Étape 5. Application web Azure App Service
 
@@ -100,7 +100,7 @@ Une fois déployée, l’application ASP.NET Core s’exécute dans le contexte 
 
 Pendant l’exécution de l’application web, vous pouvez surveiller son intégrité et recueillir des données de diagnostic et de comportement de l’utilisateur. Application Insights, qui est fourni avec Visual Studio, offre une instrumentation automatique pour les applications ASP.NET. Il peut vous fournir des informations sur l’utilisation, les exceptions, les requêtes, les performances et les journaux.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 **Générer et déployer votre application ASP.NET Core sur Azure**  
 <https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>

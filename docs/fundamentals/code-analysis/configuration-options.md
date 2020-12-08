@@ -5,18 +5,20 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 no-loc:
 - EditorConfig
-ms.openlocfilehash: af2ebb74786f0ae884ffee4636765cae43fcb23f
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 4f7b392a2b066023fec75c5295bd94651654d645
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "96587697"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851788"
 ---
 # <a name="configuration-options-for-code-analysis"></a>Options de configuration pour l’analyse du code
 
 Les règles d’analyse du code ont plusieurs options de configuration. Ces options sont spécifiées en tant que paires clé-valeur dans un [fichier de configuration d’analyseur](configuration-files.md) à l’aide de la syntaxe `<option key> = <option value>` .
 
-L’option la plus courante que vous configurez est la gravité d’une règle. Vous pouvez configurer le niveau de gravité pour toutes les règles de l’analyseur, y compris les règles de [qualité du code](quality-rules/index.md) et les règles de [style de code](style-rules/index.md).
+L’option la plus courante que vous configurez est la [gravité d’une règle](#severity-level). Vous pouvez configurer le niveau de gravité pour toutes les règles de l’analyseur, y compris les règles de [qualité du code](quality-rules/index.md) et les règles de [style de code](style-rules/index.md). Par exemple, pour activer une règle en tant qu’avertissement, vous pouvez ajouter la paire clé-valeur suivante à un EditorConfig fichier.
+
+`dotnet_diagnostic.<rule ID>.severity = warning`
 
 Vous pouvez également configurer des options supplémentaires pour personnaliser le comportement de la règle :
 

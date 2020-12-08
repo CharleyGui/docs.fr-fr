@@ -3,20 +3,20 @@ title: Architectures courantes des applications web
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Explorer les architectures courantes des applications web
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: 86d2e931e6462fb9f6ff5e3cd31b8d3fd188dd5a
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.date: 12/01/2020
+ms.openlocfilehash: c9c593788d4cdbb5a1d4c57ac91880ef965f06fa
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95682040"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851736"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
-> « Si vous pensez qu’une bonne architecture est coûteuse, faites l’expérience d’une mauvaise architecture. »  
+> « Si vous pensez qu’une bonne architecture est coûteuse, faites l’expérience d’une mauvaise architecture. »
 > _– Brian Foote and Joseph Yoder_
 
-La plupart des applications .NET conventionnelles sont déployées sous forme d’unités individuelles qui correspondent à un exécutable ou à une application web unique s’exécutant dans un seul domaine d’application IIS. C’est le modèle de déploiement le plus simple, qui convient parfaitement à beaucoup d’applications internes et applications publiques de petite taille. Toutefois, même avec ce déploiement en unités individuelles, la majorité des applications métier non triviales tirent avantage à avoir leur logique séparée en plusieurs couches.
+La plupart des applications .NET conventionnelles sont déployées sous forme d’unités individuelles qui correspondent à un exécutable ou à une application web unique s’exécutant dans un seul domaine d’application IIS. Cette approche est le modèle de déploiement le plus simple et sert très bien de nombreuses applications publiques internes et plus petites. Toutefois, même avec ce déploiement en unités individuelles, la majorité des applications métier non triviales tirent avantage à avoir leur logique séparée en plusieurs couches.
 
 ## <a name="what-is-a-monolithic-application"></a>Qu’est-ce qu’une application monolithique ?
 
@@ -40,15 +40,15 @@ Pour résoudre ces problèmes, les applications se transforment souvent en solut
 
 ## <a name="what-are-layers"></a>Présentation des couches
 
-Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela respecte le principe de séparation des préoccupations et peut aider à maintenir une structure de code en pleine croissance, afin que les développeurs puissent facilement trouver où certaines fonctionnalités sont implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
+Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cette approche suit le principe de séparation des préoccupations et peut aider à maintenir une structure de code en pleine croissance, afin que les développeurs puissent facilement trouver où certaines fonctionnalités sont implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
 
 En effet, l’organisation du code en couches permet également la réutilisation des fonctionnalités communes de bas niveau dans l’ensemble de l’application. Cette possibilité est intéressante, car elle réduit la quantité de code à écrire et permet la standardisation de l’application sur une implémentation unique, selon le principe [DRY (« Ne vous répétez pas »)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-Avec une architecture en couches, les applications peuvent appliquer des restrictions sur les échanges autorisés entre les différentes couches. Cela contribue à améliorer l’encapsulation. De cette façon, quand une couche est modifiée ou remplacée, seules les couches qui interagissent avec elle sont impactées. En limitant l’interdépendance des couches, l’impact des modifications peut être atténué afin qu’une modification donnée n’impacte pas l’application entière.
+Avec une architecture en couches, les applications peuvent appliquer des restrictions sur les échanges autorisés entre les différentes couches. Cette architecture permet d’obtenir l’encapsulation. De cette façon, quand une couche est modifiée ou remplacée, seules les couches qui interagissent avec elle sont impactées. En limitant l’interdépendance des couches, l’impact des modifications peut être atténué afin qu’une modification donnée n’impacte pas l’application entière.
 
-Les couches (et l’encapsulation) facilitent le remplacement des fonctionnalités dans l’application. Par exemple, une application peut initialement utiliser sa propre base de données SQL Server pour la persistance, mais plus tard choisir d’utiliser une stratégie de persistance basée sur le cloud ou située derrière une API web. Si l’application a correctement encapsulé son implémentation de persistance au sein d’une couche logique, cette couche spécifique de SQL Server peut être remplacée par une nouvelle couche qui implémente la même interface publique.
+Les couches (et l’encapsulation) facilitent le remplacement des fonctionnalités dans l’application. Par exemple, une application peut initialement utiliser sa propre base de données SQL Server pour la persistance, mais plus tard choisir d’utiliser une stratégie de persistance basée sur le cloud ou située derrière une API web. Si l’application a correctement encapsulé son implémentation de persistance dans une couche logique, cette couche spécifique à la SQL Server peut être remplacée par une nouvelle qui implémente la même interface publique.
 
-Outre la possibilité de permuter des implémentations en réponse à des changements ultérieurs dans les exigences, les couches d’application facilitent également la permutation des implémentations pour les besoins de test. Au lieu d’écrire des tests qui s’exécutent sur la couche des données réelles ou sur la couche de l’interface utilisateur de l’application, vous pouvez remplacer ces couches durant la phase de test par des implémentations fictives qui fournissent des réponses connues aux requêtes. Cette possibilité simplifie considérablement l’écriture des tests et rend leur exécution beaucoup plus rapide par rapport aux tests effectués dans l’infrastructure réelle de l’application.
+Outre la possibilité de permuter des implémentations en réponse à des changements ultérieurs dans les exigences, les couches d’application facilitent également la permutation des implémentations pour les besoins de test. Au lieu d’écrire des tests qui s’exécutent sur la couche des données réelles ou sur la couche de l’interface utilisateur de l’application, vous pouvez remplacer ces couches durant la phase de test par des implémentations fictives qui fournissent des réponses connues aux requêtes. Grâce à cette approche, les tests sont beaucoup plus faciles à écrire et beaucoup plus rapides à exécuter par rapport à l’exécution de tests sur l’infrastructure réelle de l’application.
 
 La mise en couches logiques est une technique courante pour améliorer l’organisation du code dans les applications d’entreprise. Le code peut être organisé en couches de plusieurs façons.
 
@@ -101,7 +101,7 @@ Les applications conçues selon le principe d’inversion des dépendances et le
 
 L’application de référence eShopOnWeb utilise l’approche propre à l’architecture pour organiser son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel GitHub [/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
-L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cela s’obtient par la définition d’abstractions, ou interfaces, dans la couche Noyau de l’application, lesquels sont ensuite implémentés par les types définis dans la couche Infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
+L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cette fonctionnalité est obtenue en définissant des abstractions, ou interfaces, dans le noyau de l’application, qui sont ensuite implémentées par les types définis dans la couche d’infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
 
 ![Architecture propre ; représentation des couches en oignon](./media/image5-7.png)
 
@@ -135,7 +135,7 @@ Comme la couche Noyau de l’application ne dépend pas de la couche Infrastruct
 
 Comme la couche Interface utilisateur n’a pas de dépendance directe vis-à-vis des types définis dans le projet Infrastructure, il est tout aussi simple de permuter les implémentations, que ce soit pour faciliter les tests ou pour répondre à une évolution des exigences de l’application. Grâce à la prise en charge et à l’utilisation intégrée de l’injection de dépendances dans une application ASP.NET Core, cette architecture est la plus performante pour organiser des applications monolithiques non triviales.
 
-Dans les applications monolithiques, les projets Noyau de l’application, Infrastructure et Interface utilisateur sont tous exécutés comme une seule application. La figure 5-12 illustre un exemple d’architecture d’exécution d’une application.
+Pour les applications monolithiques, le noyau de l’application, l’infrastructure et les projets d’interface utilisateur sont tous exécutés en tant qu’application unique. La figure 5-12 illustre un exemple d’architecture d’exécution d’une application.
 
 ![Architecture ASPNET Core 2](./media/image5-12.png)
 
@@ -176,7 +176,7 @@ Dans une application ASP.NET Core MVC, la couche Interface utilisateur est le po
 
 - Contrôleurs
 - Filtres
-- Les vues
+- Affichages
 - ViewModels
 - Démarrage
 
@@ -215,15 +215,15 @@ L’utilisation de conteneurs pour gérer les déploiements d’applications mon
 
 Le déploiement de mises à jour comme images Docker est beaucoup plus rapide et efficace du point de vue du réseau. Les images Docker démarrent généralement en quelques secondes, ce qui accélère les lancements. La suppression d’une instance Docker se fait simplement en exécutant une commande `docker stop`. Cette opération prend normalement moins d’une seconde.
 
-Comme les conteneurs sont immuables de par leur conception même, il n’y a pas de risques d’endommagement des machines virtuelles, au contraire des scripts de mise à jour qui peuvent oublier de prendre en compte une configuration ou un fichier spécifique sur le disque.
+Comme les conteneurs sont fondamentalement immuables par conception, vous n’avez jamais à vous soucier des machines virtuelles endommagées, tandis que les scripts de mise à jour peuvent oublier de tenir compte d’une configuration ou d’un fichier spécifique restant sur le disque.
 
-Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Plus de « il fonctionne sur mon ordinateur, pourquoi ne fonctionne-t-il pas en production ? »
+Vous pouvez utiliser des conteneurs d’ancrage pour un déploiement monolithique d’applications Web plus simples. Cette approche améliore l’intégration continue et les pipelines de déploiement continu et permet de réussir le déploiement en production. Plus de « il fonctionne sur mon ordinateur, pourquoi ne fonctionne-t-il pas en production ? »
 
 Une architecture basée sur des microservices présente de nombreux avantages, mais ces avantages se payent par une complexité accrue. Dans certains cas, les coûts l’emportent sur les avantages, de sorte qu’il est préférable d’utiliser une application à déploiement monolithique s’exécutant dans un petit nombre de conteneurs, voire dans un seul conteneur.
 
 Il n’est pas toujours évident de décomposer une application monolithique en plusieurs microservices bien distincts. Les microservices doivent fonctionner indépendamment les uns des autres pour optimiser la résilience de l’application. Si vous ne pouvez pas proposer l’application par tranches de fonctionnalités indépendantes, la diviser ne fait qu’ajouter de la complexité.
 
-Une application n’est pas pour autant nécessairement amenée à mettre à l’échelle les fonctionnalités de façon indépendante. Bon nombre d’applications, quand elles ont besoin d’une mise à l’échelle qui va au-delà d’une instance unique, peuvent le faire par le biais du processus relativement simple de clonage intégral de cette instance. Le travail supplémentaire que demande la séparation de l’application en services discrets offre peu d’avantages, alors que la mise à l’échelle d’instances complètes de l’application est simple et économique.
+Une application n’est pas pour autant nécessairement amenée à mettre à l’échelle les fonctionnalités de façon indépendante. Bon nombre d’applications, quand elles ont besoin d’une mise à l’échelle qui va au-delà d’une instance unique, peuvent le faire par le biais du processus relativement simple de clonage intégral de cette instance. La tâche supplémentaire de séparer l’application en services discrets constitue un avantage minime lorsque la mise à l’échelle des instances complètes de l’application est simple et économique.
 
 Au stade initial du développement d’une application, vous n’avez peut-être pas une idée précise de là où se trouvent les limites fonctionnelles naturelles. Même à un stade de développement où le produit est viable, il est possible que cette séparation naturelle ne se dégage toujours pas. Certaines de ces conditions peuvent être passagères. Vous pouvez commencer par créer une application monolithique et séparer par la suite certaines fonctionnalités en les développant et les déployant sous forme de microservices. D’autres conditions peuvent être essentielles à l’espace du problème de l’application, ce qui signifie que l’application peut ne jamais être divisée en plusieurs microservices.
 
@@ -231,17 +231,17 @@ Séparer une application en divers processus distincts induit aussi des coûts. 
 
 L’[application de référence eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb), bien plus simple, prend en charge l’utilisation de conteneurs monolithiques uniques. L’application inclut une application web qui inclut les vues MVC, les API web et les pages Razor traditionnelles. Cette application peut être lancée à partir de la racine de la solution à l’aide des commandes `docker-compose build` et `docker-compose up`. Cette commande configure un conteneur pour l’instance web en utilisant le `Dockerfile` situé à la racine du projet web, et exécute le conteneur sur un port spécifié. Vous pouvez télécharger la source de cette application sur GitHub et l’exécuter localement. Même cette application monolithique gagne à être déployée dans un environnement de conteneurs.
 
-Tout d’abord, un déploiement en conteneur signifie que chaque instance de l’application s’exécute dans le même environnement. Cela inclut l’environnement de développement dans lequel les tests de la première heure et le développement ont été réalisés. L’équipe de développement peut exécuter l’application dans un environnement à conteneurs qui correspond à l’environnement de production.
+Tout d’abord, un déploiement en conteneur signifie que chaque instance de l’application s’exécute dans le même environnement. Cette approche comprend l’environnement de développement dans lequel les premiers tests et développements ont eu lieu. L’équipe de développement peut exécuter l’application dans un environnement à conteneurs qui correspond à l’environnement de production.
 
-De plus, la montée en charge des applications en conteneur est moins coûteuse. L’environnement à conteneurs permet un meilleur partage des ressources que les environnements à machines virtuelles classiques.
+En outre, les applications en conteneur évoluent à un coût inférieur. L’environnement à conteneurs permet un meilleur partage des ressources que les environnements à machines virtuelles classiques.
 
 Enfin, la mise en conteneur de l’application contraint à établir une séparation entre la logique métier et le serveur de stockage. À mesure que l’application monte en charge, les différents conteneurs dépendent tous d’un même support de stockage physique. Il s’agit généralement d’un serveur à haute disponibilité exécutant une base de données SQL Server.
 
 ## <a name="docker-support"></a>Prise en charge de Docker
 
-Le projet `eShopOnWeb` s’exécute sur .NET Core. Par conséquent, il peut s’exécuter dans des conteneurs Linux ou Windows. Notez que pour le déploiement de Docker, vous devez utiliser le même type d’hôte pour SQL Server. Les conteneurs Linux offrent un plus faible encombrement et sont à privilégier.
+Le `eShopOnWeb` projet s’exécute sur .net. Par conséquent, il peut s’exécuter dans des conteneurs Linux ou Windows. Notez que pour le déploiement de Docker, vous devez utiliser le même type d’hôte pour SQL Server. Les conteneurs Linux offrent un plus faible encombrement et sont à privilégier.
 
-Vous pouvez utiliser Visual Studio 2017 ou ultérieur pour ajouter la prise en charge de Docker à une application existante en cliquant avec le bouton droit sur un projet dans l’**Explorateur de solutions** et en choisissant **Ajouter** > **Prise en charge de Docker**. Les fichiers nécessaires sont alors ajoutés et le projet est modifié pour pouvoir les utiliser. Ces fichiers sont déjà en place dans l’exemple `eShopOnWeb` actuel.
+Vous pouvez utiliser Visual Studio 2017 ou ultérieur pour ajouter la prise en charge de Docker à une application existante en cliquant avec le bouton droit sur un projet dans l’**Explorateur de solutions** et en choisissant **Ajouter** > **Prise en charge de Docker**. Cette étape ajoute les fichiers requis et modifie le projet pour les utiliser. Ces fichiers sont déjà en place dans l’exemple `eShopOnWeb` actuel.
 
 Le fichier `docker-compose.yml` au niveau de la solution contient des informations sur les images à générer et les conteneurs à lancer. Ce fichier vous permet d’utiliser la commande `docker-compose` pour lancer plusieurs applications en même temps. Dans ce cas, il lance uniquement le projet Web. Vous pouvez aussi l’utiliser pour configurer des dépendances, telles qu’un conteneur de base de données distinct.
 
@@ -268,7 +268,7 @@ networks:
 Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
 
 COPY *.sln .
@@ -278,7 +278,7 @@ RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
 
@@ -291,7 +291,7 @@ Une fois exécutée, l’application en conteneur continue de s’exécuter jusq
 
 Notez que les conteneurs Docker en cours d’exécution peuvent être liés à des ports que vous pouvez tenter d’utiliser dans votre environnement de développement. Si vous essayez d’exécuter ou de déboguer une application en utilisant le même port qu’un conteneur Docker en cours d’exécution, vous obtiendrez une erreur indiquant que le serveur ne peut pas se lier à ce port. Une fois encore, l’arrêt du conteneur devrait résoudre le problème.
 
-Si vous voulez ajouter la prise en charge de Docker à votre application à l’aide de Visual Studio, veillez à ce que Docker Desktop s’exécute pendant l’opération. L’Assistant ne fonctionnera pas correctement si Docker Desktop n’est pas en cours d’exécution lorsque vous démarrez l’Assistant. Par ailleurs, l’Assistant examine votre choix de conteneur actuel pour ajouter la prise en charge appropriée de Docker. Si vous voulez ajouter la prise en charge des conteneurs Windows, vous devez exécuter l’Assistant pendant que Docker Desktop s’exécute avec les conteneurs Windows configurés. Si vous voulez ajouter la prise en charge des conteneurs Linux, exécutez l’Assistant pendant que Docker s’exécute avec les conteneurs Linux configurés.
+Si vous voulez ajouter la prise en charge de Docker à votre application à l’aide de Visual Studio, veillez à ce que Docker Desktop s’exécute pendant l’opération. L’Assistant ne fonctionnera pas correctement si Docker Desktop n’est pas en cours d’exécution lorsque vous démarrez l’Assistant. Par ailleurs, l’Assistant examine votre choix de conteneur actuel pour ajouter la prise en charge appropriée de Docker. Si vous souhaitez ajouter la prise en charge des conteneurs Windows, vous devez exécuter l’Assistant pendant que vous avez installé le Bureau de l’ordinateur de poste de travail avec des conteneurs Windows configurés. Si vous souhaitez ajouter la prise en charge des conteneurs Linux, exécutez l’Assistant pendant que l’Assistant d’ancrage est en cours d’exécution avec des conteneurs Linux configurés.
 
 ### <a name="references--common-web-architectures"></a>Informations de référence sur les architectures web courantes
 

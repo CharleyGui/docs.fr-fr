@@ -4,12 +4,12 @@ author: IEvangelist
 description: Découvrez comment utiliser le framework de journalisation fourni par le package NuGet Microsoft.Extensions.Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: 5a4d333368082389c4dfc134bb6a9a2e618d47e9
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.openlocfilehash: 73c16c80e7e000533b880e908b38109d2b1e88fd
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982319"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851728"
 ---
 # <a name="logging-in-net"></a>Journalisation dans .NET
 
@@ -162,7 +162,7 @@ namespace Example
         private readonly ILogger _logger;
 
         public DefaultService(ILoggerFactory loggerFactory) =>
-            _logger = logger.CreateLogger("CustomCategory");
+            _logger = loggerFactory.CreateLogger("CustomCategory");
 
         // ...
     }

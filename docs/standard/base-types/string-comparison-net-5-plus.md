@@ -1,13 +1,13 @@
 ---
 title: Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 description: En savoir plus sur les changements de comportement de comparaison de chaînes dans .NET 5 et versions ultérieures sur Windows.
-ms.date: 11/04/2020
-ms.openlocfilehash: fa1a1d12f45e5b41877a674d7b8747bb2b2f9658
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.date: 12/07/2020
+ms.openlocfilehash: a53c36b31785fb43c0aa5f5040042abb6d40031a
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734229"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851749"
 ---
 # <a name="behavior-changes-when-comparing-strings-on-net-5"></a>Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 
@@ -43,16 +43,29 @@ Cette section fournit deux options pour traiter les changements de comportement 
 
 ### <a name="enable-code-analyzers"></a>Activer les analyseurs de code
 
-Les [analyseurs de code](../../fundamentals/code-analysis/overview.md) peuvent détecter les sites d’appel éventuellement bogués. Pour vous protéger contre les comportements étonnants, nous vous recommandons d’installer [le package NuGet __Microsoft. CodeAnalysis. FxCopAnalyzers__](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/) dans votre projet. Ce package comprend les règles d’analyse du code [CA1307](../../fundamentals/code-analysis/quality-rules/ca1307.md) et [CA1309](../../fundamentals/code-analysis/quality-rules/ca1309.md), qui permettent d’identifier le code susceptible d’utiliser par inadvertance un comparateur linguistique lorsqu’un comparateur ordinal était probablement prévu.
+Les [analyseurs de code](../../fundamentals/code-analysis/overview.md) peuvent détecter les sites d’appel éventuellement bogués. Pour vous protéger contre les comportements étonnants, nous vous recommandons d’activer les analyseurs de la plateforme du compilateur .NET (Roslyn) dans votre projet. Les analyseurs aident à marquer le code qui peut utiliser par inadvertance un comparateur linguistique lorsqu’un comparateur ordinal était probablement prévu. Les règles suivantes doivent vous aider à signaler ces problèmes :
 
-Par exemple :
+- [CA1307 : Spécifier StringComparison pour clarifier](../../fundamentals/code-analysis/quality-rules/ca1307.md)
+- [CA1309 : Utiliser StringComparison avec la valeur Ordinal](../../fundamentals/code-analysis/quality-rules/ca1309.md)
+- [CA1310 : Spécifier StringComparison pour corriger](../../fundamentals/code-analysis/quality-rules/ca1310.md)
+
+Ces règles spécifiques ne sont pas activées par défaut. Pour les activer et afficher les violations comme des erreurs de build, définissez les propriétés suivantes dans votre fichier projet :
+
+```xml
+<PropertyGroup>
+  <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+  <WarningsAsErrors>$(WarningsAsErrors);CA1307;CA1309;CA1310</WarningsAsErrors>
+</PropertyGroup>
+```
+
+L’extrait de code suivant montre des exemples de code qui produit les avertissements ou erreurs de l’analyseur de code appropriés.
 
 ```cs
 //
 // Potentially incorrect code - answer might vary based on locale.
 //
 string s = GetString();
-// Produces analyzer warning CA1307.
+// Produces analyzer warning CA1310 for string; CA1307 matches on char ','
 int idx = s.IndexOf(",");
 Console.WriteLine(idx);
 
@@ -89,17 +102,12 @@ List<string> list = GetListOfStrings();
 list.Sort(StringComparer.Ordinal);
 ```
 
-Pour plus d’informations sur ces règles d’analyseur de code, notamment le moment où il peut être approprié de supprimer ces règles dans votre propre base de code, consultez les articles suivants :
-
-* [CA1307 : Spécifier StringComparison pour clarifier](../../fundamentals/code-analysis/quality-rules/ca1307.md)
-* [CA1309 : Utiliser StringComparison avec la valeur Ordinal](../../fundamentals/code-analysis/quality-rules/ca1309.md)
-
 ### <a name="revert-back-to-nls-behaviors"></a>Revenir aux comportements NLS
 
 Pour restaurer les applications .NET 5 à des comportements NLS plus anciens lors de l’exécution sous Windows, suivez les étapes de la section [globalisation et ICU de .net](../globalization-localization/globalization-icu.md). Ce commutateur de compatibilité à l’échelle de l’application doit être défini au niveau de l’application. Les bibliothèques individuelles ne peuvent pas accepter ou refuser ce comportement.
 
 > [!TIP]
-> Nous vous recommandons vivement d’activer les règles d’analyse du code [CA1307](../../fundamentals/code-analysis/quality-rules/ca1307.md) et [CA1309](../../fundamentals/code-analysis/quality-rules/ca1309.md) pour aider à améliorer l’hygiène du code et découvrir les bogues latentes existants. Pour plus d’informations, consultez [activer les analyseurs de code](#enable-code-analyzers).
+> Nous vous recommandons vivement d’activer les règles d’analyse du code [CA1307](../../fundamentals/code-analysis/quality-rules/ca1307.md), [CA1309](../../fundamentals/code-analysis/quality-rules/ca1309.md)et [ca1310](../../fundamentals/code-analysis/quality-rules/ca1310.md) pour aider à améliorer l’hygiène du code et découvrir les bogues latentes existants. Pour plus d’informations, consultez [activer les analyseurs de code](#enable-code-analyzers).
 
 ## <a name="affected-apis"></a>API affectées
 
@@ -196,7 +204,7 @@ Reprenons la chaîne `"résumé"` et ses quatre représentations différentes. L
 
 Un élément de classement correspond vaguement à ce que les lecteurs considèrent comme un caractère unique ou un cluster de caractères. Son concept est similaire à celui d’un [cluster graphèmes](character-encoding-introduction.md#grapheme-clusters) , mais il englobe un parapluie un peu plus grand.
 
-Sous un comparateur linguistique, les correspondances exactes ne sont pas nécessaires. Les éléments de classement sont comparés en fonction de leur signification sémantique. Par exemple, un comparateur linguistique tsreat les sous-chaînes `"\u00E9"` et `"e\u0301"` comme égal, car il s’agit de la sémantique « un e minuscule avec un modificateur d’accent aigu ». Cela permet `IndexOf` à la méthode de correspondre à la sous-chaîne `"e\u0301"` dans une chaîne plus grande qui contient la sous-chaîne sémantiquement équivalente `"\u00E9"` , comme illustré dans l’exemple de code suivant.
+Sous un comparateur linguistique, les correspondances exactes ne sont pas nécessaires. Les éléments de classement sont comparés en fonction de leur signification sémantique. Par exemple, un comparateur linguistique traite les sous-chaînes `"\u00E9"` et `"e\u0301"` comme étant égales, car elles sont à la fois sémantiquement moyennes « un e minuscule avec un modificateur d’accent aigu ». Cela permet `IndexOf` à la méthode de correspondre à la sous-chaîne `"e\u0301"` dans une chaîne plus grande qui contient la sous-chaîne sémantiquement équivalente `"\u00E9"` , comme illustré dans l’exemple de code suivant.
 
 ```cs
 Console.WriteLine("r\u00E9sum\u00E9".IndexOf("e")); // prints '-1' (not found)
