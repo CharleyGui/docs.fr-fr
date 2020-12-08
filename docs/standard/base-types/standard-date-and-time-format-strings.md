@@ -1,7 +1,7 @@
 ---
 title: Chaînes de format de date et d’heure standard
 description: Découvrez comment utiliser une chaîne de format de date et d’heure standard pour définir la représentation textuelle d’une valeur de date et d’heure dans .NET.
-ms.date: 11/05/2020
+ms.date: 12/07/2020
 dev_langs:
 - csharp
 - vb
@@ -13,13 +13,14 @@ helpviewer_keywords:
 - custom date and time format strings
 - formatting [.NET], time
 - date and time strings
+ms.topic: reference
 ms.custom: contperfq2
-ms.openlocfilehash: b6917fa8a012a6fe52db1ea2b79397a0484d9d8f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 688aaf7a1814e132f3bffa48394873653bf314e8
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831323"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851130"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d’heure standard
 
@@ -484,6 +485,6 @@ La mise en forme dépend des propriétés de l'objet <xref:System.Globalization.
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Mise en forme des types](formatting-types.md)
-- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

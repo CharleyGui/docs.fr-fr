@@ -3,18 +3,18 @@ title: Principes de l’architecture
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Principes de l’architecture
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: a3444071abae89780304a9687e486f3842283a33
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 12/01/2020
+ms.openlocfilehash: f4079e0409c1675e8f8a3e494303683daeef29c1
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396244"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851410"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
 > « Si les bâtisseurs bâtissaient des bâtiments comme les programmeurs écrivent des programmes, le premier pivert passant par là détruirait la civilisation. »  
-> _\-Gerald Weinberg_
+> _\- Gerald Weinberg_
 
 Quand vous architecturez et que vous concevez des solutions logicielles, vous devez penser à leur maintenabilité. Les principes présentés dans cette section peuvent vous aider à prendre des décisions en matière d’architecture aboutissant à des applications propres et maintenables. D’une façon générale, ces principes vous guident dans la création d’applications à partir de composants individuels qui ne sont pas étroitement couplés à d’autres parties de votre application, mais qui communiquent plutôt via des interfaces explicites ou des systèmes de messages.
 
@@ -30,7 +30,7 @@ De manière architecturale, les applications peuvent être créées logiquement 
 
 Vous devez utiliser **l’encapsulation** pour isoler les unes des autres les différentes parties d’une application. Les composants et les couches de l’application doivent pouvoir ajuster leur implémentation interne sans porter atteinte au fonctionnement de leurs collaborateurs dès lors que les contrats externes ne sont pas rompus. Une utilisation correcte de l’encapsulation permet d’atteindre un couplage faible et une modularité dans la conception des applications, car les objets et les packages peuvent être remplacés par d’autres implémentations tant que la même interface est conservée.
 
-Dans les classes, l’encapsulation est obtenue en limitant l’accès externe à l’état interne de la classe. Si un acteur externe veut manipuler l’état de l’objet, il doit le faire via une fonction bien définie (ou via une méthode setter de propriété), au lieu d’avoir un accès direct à l’état privé de l’objet. De même, les composants d’application et les applications elles-mêmes doivent exposer des interfaces bien définies que leurs collaborateurs doivent utiliser, au lieu de permettre la modification directe de leur état. Ceci vous permet de faire évoluer au fil du temps la conception interne de l’application sans craindre d’altérer le bon fonctionnement des collaborateurs tant que les contrats publics sont respectés.
+Dans les classes, l’encapsulation est obtenue en limitant l’accès externe à l’état interne de la classe. Si un acteur externe veut manipuler l’état de l’objet, il doit le faire via une fonction bien définie (ou via une méthode setter de propriété), au lieu d’avoir un accès direct à l’état privé de l’objet. De même, les composants d’application et les applications elles-mêmes doivent exposer des interfaces bien définies que leurs collaborateurs doivent utiliser, au lieu de permettre la modification directe de leur état. Cette approche libère la conception interne de l’application pour qu’elle évolue au fil du temps sans vous soucier que cela entraînerait la rupture des collaborateurs, tant que les contrats publics sont conservés.
 
 ### <a name="dependency-inversion"></a>Inversion des dépendances
 

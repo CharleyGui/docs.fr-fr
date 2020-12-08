@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: d30ebfa2dc47265185a96514efbddc3e4937438c
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: c38649a9e3b3f75ec35fb8711324302a682b504e
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "94982392"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851332"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
@@ -32,7 +32,7 @@ L’opérateur `is` vérifie si le résultat d’une expression est compatible a
 Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux, `is` permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, effectuer un cast de l’expression en une variable de ce type. Il s’agit d’une extension simple de l’instruction `is` qui permet une évaluation et une conversion de type concises. La forme générale du modèle de type `is` est la suivante :
 
 ```csharp
-   expr is type varname
+expr is type varname
 ```
 
 Où *expr* est une expression qui prend la valeur d’une instance d’un certain type, *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et *varname* est l’objet vers lequel le résultat de *expr* est converti si le `is` test a la valeur `true` .
@@ -130,5 +130,5 @@ Pour plus d’informations, consultez la section [L’opérateur is](~/_csharpla
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Mots clés C#](index.md)
+- [Mots clés C#](index.md)
 - [Opérateurs de conversion et de test de type](../operators/type-testing-and-cast.md)

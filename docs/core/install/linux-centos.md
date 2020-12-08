@@ -4,12 +4,12 @@ description: Montre les différentes façons d’installer le kit de développem
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: b30aa206057107aa17fcd62e0f042f9fe3ad56dc
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 2c3453c79a1dc31f01577bc0c1b9e320eb307c0a
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031928"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851677"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-centos"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur CentOS
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les versions .NET actuellement prises en charge s
 - Une ❌ indique que la version de CentOS ou .net n’est pas prise en charge sur cette version de CentOS.
 - Quand une version de CentOS et une version de .NET sont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
 
-| CentOS                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
+| CentOS                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5.0 |
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [8](#centos-8-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [7](#centos-7-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
@@ -50,14 +50,7 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 
 ## <a name="centos-8-"></a>CentOS 8 ✔️
 
-> [!TIP]
-> .NET 5,0 n’est pas encore disponible dans les référentiels de packages par défaut, mais .NET Core 3,1 est. Pour installer .NET Core 3,1, utilisez la `dnf install` commande avec le package approprié, tel que `aspnetcore-runtime-3.1` ou `dotnet-sdk-3.1` . Les instructions suivantes concernent .NET 5,0.
-
-[!INCLUDE [linux-prep-intro-generic](includes/linux-prep-intro-generic.md)]
-
-```bash
-sudo rpm -Uvh https://packages.microsoft.com/config/centos/8/packages-microsoft-prod.rpm
-```
+.NET 5,0 est disponible dans les référentiels de packages par défaut pour CentOS 8.
 
 [!INCLUDE [linux-dnf-install-50](includes/linux-install-50-dnf.md)]
 
@@ -87,7 +80,7 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 

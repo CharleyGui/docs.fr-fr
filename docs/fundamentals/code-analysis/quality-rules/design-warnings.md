@@ -11,12 +11,12 @@ helpviewer_keywords:
 - rules, design
 author: gewarren
 ms.author: gewarren
-ms.openlocfilehash: c8c7d46b9271e33ab7ce3f989fae95bd57394ccd
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 7b49403b1aa3d48008e6f7448ab0ed5a84468373
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "96587797"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851527"
 ---
 # <a name="design-rules"></a>Règles de conception
 
@@ -75,3 +75,4 @@ Les règles de conception prennent en charge l’adhésion aux règles de [conce
 | [CA1068 : Les paramètres CancellationToken doivent venir en dernier](ca1068.md) | Une méthode a un paramètre CancellationToken qui n’est pas le dernier paramètre. |
 | [CA1069 : Les enums ne doivent pas avoir de valeurs en double](ca1069.md) | Une énumération a plusieurs membres auxquels la même valeur de constante est affectée explicitement. |
 | [CA1070 : Ne pas déclarer de champs d’événement comme virtuels](ca1070.md) | Un [événement de type champ](../../../csharp/event-pattern.md#defining-and-raising-field-like-events) a été déclaré comme étant virtuel. |
+| [CA1071 : remplacement de la base. Égal à lors de l’implémentation de IEquatable](ca1071.md) | Un type dérivé implémente <xref:System.IEquatable%601> , mais ne se substitue pas à la méthode de la classe de base <xref:System.IEquatable%601.Equals%2A> . |

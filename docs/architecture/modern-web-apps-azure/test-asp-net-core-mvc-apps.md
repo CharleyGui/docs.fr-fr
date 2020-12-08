@@ -3,13 +3,13 @@ title: Tester des applications ASP.NET Core MVC
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Tester des applications ASP.NET Core MVC
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: ca86388b9f5dfe5e63ead1b5f84486ba2181af57
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/01/2020
+ms.openlocfilehash: b253cfb90487cc462b0f3b8a7564c97ad403aa06
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91169074"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851397"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -26,11 +26,11 @@ Il existe de nombreuses sortes de tests automatisés pour les applications logic
 
 Un test unitaire teste une seule partie (unité) de la logique de votre application. Pour mieux le décrire, on peut lister ce qu’il fait et ce qu’il ne fait pas. Un test unitaire ne teste pas la manière dont votre code fonctionne avec les dépendances ou l’infrastructure (cet aspect est vérifié par les tests d’intégration). Un test unitaire ne teste pas le framework sur lequel votre code est écrit. Vous partez du principe qu’il fonctionne correctement. Sinon, entrez un bogue et codez une solution de contournement. Un test unitaire s’exécute entièrement en mémoire et dans le processus. Il ne communique pas avec le système de fichiers, le réseau ou des bases de données. Les tests unitaires doivent uniquement tester votre code.
 
-Les tests unitaires, du fait qu’ils testent une seule unité de votre code, sans dépendances externes, s’exécutent en principe très rapidement. Vous devez donc pouvoir exécuter des suites de centaines de tests unitaires en quelques secondes. Lancez fréquemment ces tests, idéalement avant chaque envoi de données dans un référentiel de contrôle de code source partagé et bien sûr, avec chaque build automatisée sur votre serveur de builds.
+Les tests unitaires, en raison du fait qu’ils testent une seule unité de votre code, sans dépendances externes, doivent s’exécuter extrêmement rapidement. Vous devez donc pouvoir exécuter des suites de centaines de tests unitaires en quelques secondes. Lancez fréquemment ces tests, idéalement avant chaque envoi de données dans un référentiel de contrôle de code source partagé et bien sûr, avec chaque build automatisée sur votre serveur de builds.
 
 ### <a name="integration-tests"></a>Tests d’intégration
 
-Même si vous avez la bonne idée d’encapsuler votre code qui interagit avec une infrastructure comme les bases de données et les systèmes de fichiers, il reste toujours une partie de ce code à tester. En outre, vous devez vérifier que les différentes couches de votre code interagissent comme prévu quand les dépendances de votre application sont entièrement résolues. Cet aspect est de la responsabilité des tests d’intégration. Les tests d’intégration sont généralement plus lents et plus difficiles à configurer que les tests unitaires, car ils dépendent souvent d’une infrastructure et de dépendances externes. Par conséquent, évitez d’utiliser des tests d’intégration pour tester des éléments qui peuvent l’être à l’aide de tests unitaires. Si vous pouvez tester un scénario donné avec un test unitaire, choisissez cette méthode. Si cela n’est pas possible, utilisez un test d’intégration.
+Même si vous avez la bonne idée d’encapsuler votre code qui interagit avec une infrastructure comme les bases de données et les systèmes de fichiers, il reste toujours une partie de ce code à tester. En outre, vous devez vérifier que les différentes couches de votre code interagissent comme prévu quand les dépendances de votre application sont entièrement résolues. Cette fonctionnalité est la responsabilité des tests d’intégration. Les tests d’intégration sont généralement plus lents et plus difficiles à configurer que les tests unitaires, car ils dépendent souvent d’une infrastructure et de dépendances externes. Par conséquent, évitez d’utiliser des tests d’intégration pour tester des éléments qui peuvent l’être à l’aide de tests unitaires. Si vous pouvez tester un scénario donné avec un test unitaire, choisissez cette méthode. Si cela n’est pas possible, utilisez un test d’intégration.
 
 Les procédures de configuration et de désactivation (teardown) des tests d’intégration sont souvent plus complexes que pour les tests unitaires. Par exemple, un test d’intégration exécuté sur une base de données réelle doit avoir un moyen de rétablir la base de données à un état connu avant chaque nouveau test. À mesure que de nouveaux tests sont ajoutés et que le schéma de la base de données de production évolue, la taille et la complexité des scripts de test augmentent. Sur la plupart des grands systèmes, il est quasiment impossible d’exécuter des suites entières de tests d’intégration sur les stations de travail de développement avant d’enregistrer les modifications apportées dans le contrôle de code source partagé. Dans ces cas de figure, les tests d’intégration peuvent être exécutés sur un serveur de builds.
 
@@ -44,7 +44,7 @@ Source : [Test unitaires et tests fonctionnels](https://www.softwaretestingtric
 
 J’aime bien dire que « nous, les développeurs, nous pouvons échouer de deux manières : en concevant mal quelque chose ou en concevant quelque chose d’inadapté. » Les tests unitaires permettent de vous assurer que vous concevez une chose de manière correcte, alors que les tests fonctionnels garantissent que vous concevez la chose attendue.
 
-Étant donné que les tests fonctionnels s’exécutent au niveau du système, ils peuvent nécessitent un certain degré d’automatisation de l’interface utilisateur. Comme les tests d’intégration, les tests fonctionnels interagissent aussi généralement avec l’infrastructure de test. Cela les rend plus lents et moins fiables que les tests unitaires et d’intégration. Vous ne devez pas prévoir plus de tests fonctionnels que le nombre nécessaire pour garantir que le système se comporte comme les utilisateurs l’attendent.
+Étant donné que les tests fonctionnels s’exécutent au niveau du système, ils peuvent nécessitent un certain degré d’automatisation de l’interface utilisateur. Comme les tests d’intégration, les tests fonctionnels interagissent aussi généralement avec l’infrastructure de test. Cette activité les rend plus lents et plus fragiles que les tests d’unité et d’intégration. Vous ne devez pas prévoir plus de tests fonctionnels que le nombre nécessaire pour garantir que le système se comporte comme les utilisateurs l’attendent.
 
 ### <a name="testing-pyramid"></a>Pyramide des tests
 
@@ -78,7 +78,7 @@ Vous pouvez choisir le framework de test que vous préférez. Le framework xUnit
 
 ### <a name="test-naming"></a>Nommage des tests
 
-Nommez vos tests de manière cohérente, avec des noms qui indiquent ce que fait chaque test. Une approche que j’ai expérimentée et qui a fait ses preuves est de nommer les classes de test en fonction de la classe et de la méthode qu’elles testent. Cela crée beaucoup de petites classes de test, mais cela a l’avantage d’indiquer avec précision de quoi chaque test est responsable. Une fois que vous avez défini le nom de la classe de test pour identifier la classe et la méthode à tester, vous pouvez utiliser le nom de la méthode de test pour indiquer le comportement à tester. Il s’agit notamment d’indiquer le comportement attendu ainsi que les entrées ou hypothèses qui doivent interrompre ce comportement. Voici quelques exemples de noms de test :
+Nommez vos tests de manière cohérente, avec des noms qui indiquent ce que fait chaque test. Une approche que j’ai expérimentée et qui a fait ses preuves est de nommer les classes de test en fonction de la classe et de la méthode qu’elles testent. Cette approche se traduit par de nombreuses petites classes de test, mais elle permet de clarifier la responsabilité de chaque test. Une fois le nom de la classe de test configuré, pour identifier la classe et la méthode à tester, le nom de la méthode de test peut être utilisé pour spécifier le comportement testé. Ce nom doit inclure le comportement attendu et toutes les entrées ou hypothèses qui doivent donner ce comportement. Voici quelques exemples de noms de test :
 
 - `CatalogControllerGetImage.CallsImageServiceWithId`
 
@@ -94,7 +94,7 @@ Une variante de cette approche termine chaque nom de classe de test par « Shou
 
 - `CatalogControllerGetImage`**Doit** `.` **Journal**`WarningGivenImageMissingException`
 
-Certaines équipes de développement trouvent la deuxième approche de nommage plus claire, bien que légèrement plus détaillée. Dans tous les cas, essayez de choisir une convention de nommage suffisamment explicite pour comprendre le comportement de test. Ainsi, si un ou plusieurs tests échouent, vous pourrez facilement déterminer ce qui a échoué d’après les noms des tests. Évitez de nommer vos tests vaguement, par exemple ControllerTests. test1, car ils n’offrent aucune valeur quand vous les voyez dans les résultats des tests.
+Certaines équipes de développement trouvent la deuxième approche de nommage plus claire, bien que légèrement plus détaillée. Dans tous les cas, essayez de choisir une convention de nommage suffisamment explicite pour comprendre le comportement de test. Ainsi, si un ou plusieurs tests échouent, vous pourrez facilement déterminer ce qui a échoué d’après les noms des tests. Évitez de nommer vos tests vaguement, par exemple ControllerTests. test1, car ces noms n’offrent aucune valeur quand vous les voyez dans les résultats des tests.
 
 Si vous choisissez une convention de nommage comme celle décrite ci-dessus, qui génère beaucoup de petites classes de test, il est préférable de plutôt organiser vos tests à l’aide de dossiers et d’espaces de noms. La figure 9-4 montre un exemple d’organisation des tests par dossier au sein de plusieurs projets de test.
 
@@ -102,13 +102,13 @@ Si vous choisissez une convention de nommage comme celle décrite ci-dessus, qui
 
 **Figure 9-4.** Organisation des classes de test par dossier en fonction de la classe testée.
 
-Si de nombreuses méthodes sont testées dans une classe d’application particulière (et donc de nombreuses classes de test), il peut être judicieux de les placer dans un dossier correspondant à la classe d’application. Cette organisation est semblable à la façon dont vous pouvez organiser les fichiers dans des dossiers ailleurs. Quand vous avez plus de trois ou quatre fichiers associés dans un dossier contenant beaucoup d’autres fichiers, il est souvent plus pratique de les déplacer dans leur propre sous-dossier.
+Si de nombreuses méthodes sont testées pour une classe d’application particulière (et donc de nombreuses classes de test), il peut être judicieux de placer ces classes dans un dossier correspondant à la classe d’application. Cette organisation est semblable à la façon dont vous pouvez organiser les fichiers dans des dossiers ailleurs. Quand vous avez plus de trois ou quatre fichiers associés dans un dossier contenant beaucoup d’autres fichiers, il est souvent plus pratique de les déplacer dans leur propre sous-dossier.
 
 ## <a name="unit-testing-aspnet-core-apps"></a>Tests unitaires dans les applications ASP.NET Core
 
-Dans une application ASP.NET Core bien conçue, la majeure partie de la complexité et de la logique métier est encapsulée dans les entités métier et divers services. L’application ASP.NET Core MVC, avec ses contrôleurs, filtres, ViewModels et vues, nécessite normalement très peu de tests unitaires. La fonctionnalité d’une action donnée est en grande partie exposée en dehors de la méthode d’action proprement dite. Le fait de tester si le routage ou la gestion des erreurs globales fonctionne correctement ne peut pas être effectué efficacement avec un test unitaire. De même, tous les filtres, y compris la validation de modèle, les filtres d’authentification et d’autorisation, ne peuvent pas être testés par unité avec un test ciblant la méthode d’action d’un contrôleur. En dehors de ces sources de comportement, la plupart des méthodes d’action doivent être très petites, la plus grosse part de leur travail étant déléguée à des services qui peuvent être testés indépendamment du contrôleur qui les utilise.
+Dans une application ASP.NET Core bien conçue, la majeure partie de la complexité et de la logique métier est encapsulée dans les entités métier et divers services. L’application ASP.NET Core MVC elle-même, avec ses contrôleurs, filtres, ViewModels et vues, doit nécessiter quelques tests unitaires. La fonctionnalité d’une action donnée est en grande partie exposée en dehors de la méthode d’action proprement dite. Le fait de tester si le routage ou la gestion des erreurs globales fonctionne correctement ne peut pas être effectué efficacement avec un test unitaire. De même, tous les filtres, y compris la validation de modèle, les filtres d’authentification et d’autorisation, ne peuvent pas être testés par unité avec un test ciblant la méthode d’action d’un contrôleur. En dehors de ces sources de comportement, la plupart des méthodes d’action doivent être très petites, la plus grosse part de leur travail étant déléguée à des services qui peuvent être testés indépendamment du contrôleur qui les utilise.
 
-Vous devrez parfois refactoriser votre code pour pouvoir le tester au moyen de tests unitaires. Cela implique souvent d’identifier les abstractions et d’utiliser l’injection de dépendances pour accéder à l’abstraction dans le code que vous souhaitez tester, au lieu de coder directement dans l’infrastructure. Par exemple, examinez cette méthode d’action simple pour afficher des images :
+Vous devrez parfois refactoriser votre code pour pouvoir le tester au moyen de tests unitaires. Cette activité implique souvent l’identification d’abstractions et l’utilisation de l’injection de dépendances pour accéder à l’abstraction dans le code que vous souhaitez tester, plutôt que de coder directement en fonction de l’infrastructure. Par exemple, considérez cette méthode d’action facile pour afficher des images :
 
 ```csharp
 [HttpGet("[controller]/pic/{id}")]
@@ -121,7 +121,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Il est difficile d’utiliser des tests unitaires pour tester cette méthode à cause de sa dépendance directe vis-à-vis de `System.IO.File`, qu’elle utilise pour lire les données du système de fichiers. Vous pouvez tester ce comportement pour vous assurer qu’il fonctionne comme prévu, mais vous devez utiliser un test d’intégration sur les fichiers réels. Il est à noter que vous ne pouvez pas effectuer de test unitaire sur l’itinéraire de cette méthode &mdash; . vous verrez comment procéder avec un test fonctionnel peu de chance.
+Il est difficile d’utiliser des tests unitaires pour tester cette méthode à cause de sa dépendance directe vis-à-vis de `System.IO.File`, qu’elle utilise pour lire les données du système de fichiers. Vous pouvez tester ce comportement pour vous assurer qu’il fonctionne comme prévu, mais vous devez utiliser un test d’intégration sur les fichiers réels. Il est à noter que vous ne pouvez pas effectuer de test unitaire sur l’itinéraire de cette méthode &mdash; . vous verrez comment effectuer ce test avec un test fonctionnel peu de chance.
 
 Si vous ne pouvez pas utiliser de tests unitaires pour tester directement le comportement du système de fichiers, et que vous ne pouvez pas tester l’itinéraire, que reste-t-il à tester ? En fait, après avoir refactorisé le code pour rendre les tests unitaires possibles, vous risquez de découvrir des cas de test et un comportement manquant, comme la gestion des erreurs. Que fait la méthode quand il manque un fichier ? Que doit-elle faire ? Dans cet exemple, la méthode refactorisée ressemble à ceci :
 
@@ -143,7 +143,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-`_logger` et `_imageService` sont tous deux injectés en tant que dépendances. Vous pouvez maintenant tester que le même ID qui est passé à la méthode d’action est passé à `_imageService` , et que les octets obtenus sont retournés dans le cadre du FileResult. Vous pouvez également vérifier que la journalisation des erreurs se produit comme prévu, et qu’un `NotFound` résultat est retourné si l’image est manquante, en supposant qu’il s’agit d’un comportement d’application important (autrement dit, pas simplement du code temporaire que le développeur a ajouté pour diagnostiquer un problème). La logique du fichier réel a été déplacée dans un service d’implémentation distinct et a été augmentée pour retourner une exception d’application liée au fichier manquant. Vous pouvez tester cette implémentation indépendamment, à l’aide d’un test d’intégration.
+`_logger` et `_imageService` sont tous deux injectés en tant que dépendances. Vous pouvez maintenant tester que le même ID qui est passé à la méthode d’action est passé à `_imageService` , et que les octets obtenus sont retournés dans le cadre du FileResult. Vous pouvez également vérifier que la journalisation des erreurs se produit comme prévu, et qu’un `NotFound` résultat est retourné si l’image est manquante, en supposant que ce comportement est un comportement d’application important (autrement dit, pas simplement du code temporaire que le développeur a ajouté pour diagnostiquer un problème). La logique du fichier réel a été déplacée dans un service d’implémentation distinct et a été augmentée pour retourner une exception d’application liée au fichier manquant. Vous pouvez tester cette implémentation indépendamment, à l’aide d’un test d’intégration.
 
 Dans la plupart des cas, vous souhaiterez utiliser des gestionnaires d’exceptions globaux dans vos contrôleurs, donc la quantité de logique qu’ils contiennent doit être minime et sans doute pas la peine de tester les unités. Effectuez la plupart de vos tests d’actions de contrôleur à l’aide de tests fonctionnels et de la `TestServer` classe décrite ci-dessous.
 
@@ -155,7 +155,7 @@ La plupart des tests d’intégration figurant dans vos applications ASP.NET Cor
 
 Pour les applications ASP.NET Core, la classe `TestServer` facilite grandement l’écriture de tests fonctionnels. Vous configurez un `TestServer` à l’aide d’un `WebHostBuilder` (ou `HostBuilder` ) directement (comme vous le feriez normalement pour votre application) ou avec le `WebApplicationFactory` type (disponible depuis la version 2,1). Essayez de faire correspondre votre hôte de test à votre hôte de production aussi fidèlement que possible, afin que vos tests exercent un comportement similaire à ce que l’application fera en production. La classe `WebApplicationFactory` s’avère utile pour configurer la clé ContentRoot de TestServer, dont se sert ASP.NET Core pour localiser les ressources statiques telles que les vues.
 
-Vous pouvez créer des tests fonctionnels simples en créant une classe de test qui implémente `IClassFixture\<WebApplicationFactory\<TEntry>>` , où `TEntry` est la classe de votre application Web `Startup` . Avec cette mise en place, votre contexte de test peut créer un client à l’aide de la méthode de la fabrique `CreateClient` :
+Vous pouvez créer des tests fonctionnels simples en créant une classe de test qui implémente `IClassFixture\<WebApplicationFactory\<TEntry>>` , où `TEntry` est la classe de votre application Web `Startup` . Une fois cette interface en place, votre contexte de test peut créer un client à l’aide de la méthode de la fabrique `CreateClient` :
 
 ```csharp
 public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
@@ -171,7 +171,7 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 }
 ```
 
-Souvent, vous souhaiterez peaufiner la configuration de votre site avant l’exécution de chaque test, qu’il s’agisse par exemple de configurer l’application pour qu’elle utilise un magasin de données en mémoire et d’amorcer l’application avec les données de test. Pour ce faire, créez votre propre sous-classe de `WebApplicationFactory\<TEntry>` et substituez sa `ConfigureWebHost` méthode. L’exemple ci-dessous est tiré du projet eShopOnWeb FunctionalTests et est utilisé dans le cadre des tests effectués sur l’application web principale.
+Souvent, vous devez effectuer une configuration supplémentaire de votre site avant chaque exécution de test, comme la configuration de l’application pour utiliser une banque de données en mémoire, puis l’amorçage de l’application avec des données de test. Pour obtenir cette fonctionnalité, créez votre propre sous-classe de `WebApplicationFactory\<TEntry>` et substituez sa `ConfigureWebHost` méthode. L’exemple ci-dessous est tiré du projet eShopOnWeb FunctionalTests et est utilisé dans le cadre des tests effectués sur l’application web principale.
 
 ```csharp
 using Microsoft.AspNetCore.Hosting;

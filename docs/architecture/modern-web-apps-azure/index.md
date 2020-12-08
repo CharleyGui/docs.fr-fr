@@ -3,19 +3,21 @@ title: Architecturer des applications web modernes avec ASP.NET Core et Azure
 description: Un guide qui fournit une aide de bout en bout sur la création d’applications web monolithiques avec ASP.NET Core et Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 5/25/2020
-ms.openlocfilehash: 7be03ea8edb763096b0684a62e71826f1cfcd42f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.date: 12/07/2020
+ms.openlocfilehash: 90d092b2269315e5b6734430e82cc7211324479b
+ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284453"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96851293"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
 ![Image de couverture du livre du Guide des applications Web modernes de l’architecte.](./media/index/web-application-guide-cover-image.png)
 
-**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
+**Édition v 5.0** -mise à jour vers ASP.net Core 5,0
+
+Reportez-vous à [Journal des modifications](https://aka.ms/aspnet-ebook-changelog) pour les mises à jour de livres et les contributions de la communauté.
 
 PUBLIÉ PAR
 
@@ -59,7 +61,7 @@ Rédacteurs :
 
 ## <a name="introduction"></a>Introduction
 
-.NET Core et ASP.NET Core offrent plusieurs avantages par rapport au développement .NET classique. Il est recommandé d’utiliser .NET Core pour vos applications serveur si tout ou partie des éléments suivants sont importants pour la réussite de votre application :
+.NET 5 et ASP.NET Core offrent plusieurs avantages par rapport au développement .NET traditionnel. Vous devez utiliser .NET 5 pour vos applications serveur si une partie ou la totalité des éléments suivants sont importants pour la réussite de votre application :
 
 - Prise en charge multiplateforme.
 
@@ -71,7 +73,7 @@ Rédacteurs :
 
 - Gestion côte à côte des versions de .NET par application sur le même serveur.
 
-Les applications .NET classiques prennent en charge nombre de ces spécifications, mais ASP.NET Core et .NET Core ont été optimisés pour offrir une prise en charge améliorée des scénarios ci-dessus.
+Les applications .NET traditionnelles peuvent et prennent en charge un grand nombre de ces exigences, mais ASP.NET Core et .NET 5 ont été optimisés pour offrir une meilleure prise en charge des scénarios ci-dessus.
 
 De plus en plus d’organisations choisissent d’héberger leurs applications web dans le cloud en utilisant des services comme Microsoft Azure. Envisagez d’héberger votre application dans le cloud si les points suivants sont importants pour votre application ou votre organisation :
 
@@ -89,7 +91,7 @@ La création d’applications web avec ASP.NET Core, hébergées dans Azure, off
 
 ## <a name="version"></a>Version
 
-Ce guide a été révisé pour couvrir la version **3,1 de .net Core** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version 3,1 de .net core. C’est la raison pour laquelle la version du livre a également été mise à jour vers la version **3,1**.
+Ce guide a été révisé pour couvrir la version **5,0 de .net** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version .net 5,0. C’est la raison pour laquelle la version du livre a également été mise à jour vers la version **5,0**.
 
 ## <a name="purpose"></a>Objectif
 
@@ -116,10 +118,10 @@ Ce guide a été condensé dans un document relativement petit qui se concentre 
 
 N’hésitez pas à faire connaître ce guide pour favoriser une compréhension partagée de ces considérations et de ces opportunités. Le fait que chacun utilise un même ensemble de terminologie et de principes sous-jacents permet d’obtenir plus facilement une application cohérente des modèles et des pratiques en matière d’architecture.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
-- **Choix entre .NET Core et .NET Framework pour les applications serveur**  
+- **Choix entre .NET 5 et .NET Framework pour les applications serveur**  
   [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../../standard/choosing-core-framework-server.md)
 
 >[!div class="step-by-step"]
->[Suivant](modern-web-applications-characteristics.md)
+>[Next](modern-web-applications-characteristics.md)
