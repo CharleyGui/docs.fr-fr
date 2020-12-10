@@ -59,7 +59,7 @@
           href: how-to-guides/dotnet-interactive-udf-issue.md
         - name: Déployer des fichiers binaires worker et UDF
           href: how-to-guides/deploy-worker-udf-binaries.md
-    - name: Utiliser des blocs-notes Jupyter
+    - name: Utiliser des notebooks Jupyter
       href: how-to-guides/dotnet-spark-jupyter-notebooks.md
     - name: Guide de diffusion
       href: how-to-guides/broadcast-guide.md
