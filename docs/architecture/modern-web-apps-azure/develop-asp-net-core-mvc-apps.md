@@ -7,12 +7,12 @@ ms.date: 12/01/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: 94dda02045f4c3bb1b5bdd64ab6b40eb22f6817c
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: c0fc92b2dbc25a1a48e0264b64c79fc8631fa8f0
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851428"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009662"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -52,7 +52,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Il définit un modèle de routage avec des espaces réservés pour le _contrôleur_, l' _action_ et l' _ID_. Les espaces réservés du contrôleur et de l’action ont la valeur par défaut spécifiée (« orig » et « index », respectivement), et l’espace réservé de l’ID est facultatif (en vertu d’un «  ? » qui lui est appliqué). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
+Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Il définit un modèle de routage avec des espaces réservés pour `controller` , `action` et `id` . Les `controller` `action` espaces réservés et ont la valeur par défaut spécifiée ( `Home` et `Index` , respectivement), et l' `id` espace réservé est facultatif (en vertu d’un «  ? » appliqué). La Convention définie ici indique que la première partie d’une demande doit correspondre au nom du contrôleur, la deuxième partie à l’action, puis, si nécessaire, qu’une troisième partie représente un paramètre d’ID. Les itinéraires conventionnels sont généralement définis à un seul emplacement pour l’application, par exemple dans la `Configure` méthode de la `Startup` classe.
 
 Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. Cette approche a l’avantage de les rendre plus détectables quand vous examinez une méthode particulière, mais cela signifie que les informations de routage ne sont pas conservées à un seul emplacement dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
 
@@ -91,7 +91,7 @@ Dans l’exemple précédent, la page en question correspondrait à une route av
 "/Products/123"
 ```
 
-Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un `int id` paramètre, la liaison de modèle tentera de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. Si une valeur id est trouvée, elle est convertie en entier avant d’être passée à la méthode d’action.
+Après la mise en correspondance d’une requête donnée avec une route, mais avant l’appel de la méthode d’action, ASP.NET Core MV procède à la [liaison de données](/aspnet/core/mvc/models/model-binding) et à la [validation du modèle](/aspnet/core/mvc/models/validation) sur la requête. La liaison de données convertit les données HTTP entrantes en types .NET (spécifiés comme paramètres de la méthode d’action à appeler). Par exemple, si la méthode d’action attend un `int id` paramètre, la liaison de modèle tentera de fournir ce paramètre à partir d’une valeur fournie dans le cadre de la requête. Pour ce faire, la liaison de données recherche des valeurs dans un formulaire publié, dans la route elle-même et dans la chaîne de requête. En supposant `id` qu’une valeur soit trouvée, elle sera convertie en un entier avant d’être passée dans la méthode d’action.
 
 La validation du modèle se produit après la liaison de données, mais avant l’appel de la méthode d’action. À l’aide d’attributs facultatifs sur le type de modèle, la validation du modèle peut contribuer à assurer la conformité de l’objet modèle fourni à certaines exigences en matière de données. Certaines valeurs peuvent être spécifiées comme obligatoires, ou limitées à une certaine longueur ou plage numérique, etc. Si les attributs de validation sont spécifiés mais que le modèle n’est pas conforme à leurs exigences, la propriété ModelState. IsValid prend la valeur false et le jeu de règles de validation qui échoue est disponible pour envoi au client qui effectue la demande.
 
@@ -169,15 +169,15 @@ Le résultat final de cette approche est que les contrôleurs soient plus petits
 
 > ### <a name="references--mapping-requests-to-responses"></a>Références – Mappage des requêtes aux réponses
 >
-> - **Routage vers les actions du contrôleur**
+> - **Routage vers les actions du contrôleur**\
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
-> - **Liaison de modèle**
+> - **Liaison de modèle**\
  > <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
-> - **Validation de modèle**
+> - **Validation de modèle**\
  > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **Filtres**
+> - **Filtres**\
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
-> - **Attribut ApiController**
+> - **Attribut ApiController**\
  > <https://docs.microsoft.com/aspnet/core/web-api/>
 
 ## <a name="working-with-dependencies"></a>Utilisation de dépendances
@@ -391,13 +391,13 @@ Pour plus d’informations sur l’implémentation de filtres et sur le téléch
 
 > ### <a name="references--structuring-applications"></a>Références – Structuration des applications
 >
-> - **Régions**  
+> - **Régions**\
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
-> - **MSDN Magazine – Feature Slices for ASP.NET Core MVC**  
+> - **MSDN Magazine – tranches de fonctionnalités pour ASP.NET Core MVC**\
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
-> - **Filtres**  
+> - **Filtres**\
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
-> - **MSDN Magazine – ASP.NET Core des filtres MVC du monde réel**  
+> - **MSDN Magazine – ASP.NET Core des filtres MVC du monde réel**\
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
 ## <a name="security"></a>Sécurité
@@ -447,9 +447,9 @@ Pour découvrir plus en détail [la configuration de l’authentification à deu
 
 L’authentification est le processus qui consiste à déterminer qui accède au système. Si vous utilisez ASP.NET Core identité et les méthodes de configuration indiquées dans la section précédente, les paramètres par défaut de l’authentification sont automatiquement configurés dans l’application. Toutefois, vous pouvez également configurer ces valeurs par défaut manuellement ou remplacer celles définies par AddIdentity. Si vous utilisez l’identité, elle configure l’authentification basée sur les cookies comme *schéma* par défaut.
 
-Dans l’authentification Web, il existe généralement jusqu’à 5 actions qui peuvent être effectuées au cours de l’authentification d’un client d’un système. Celles-ci sont les suivantes :
+Dans l’authentification Web, il existe généralement jusqu’à cinq actions qui peuvent être effectuées au cours de l’authentification d’un client d’un système. Ces règles sont les suivantes :
 
-- Authentifié. Utilisez les informations fournies par le client pour créer une identité à utiliser au sein de l’application.
+- S’authentifier. Utilisez les informations fournies par le client pour créer une identité à utiliser au sein de l’application.
 - Remettre. Cette action est utilisée pour exiger que le client s’identifie eux-mêmes.
 - Disant. Informez le client qu’il est interdit d’effectuer une action.
 - Connectez-vous. Conservez le client existant d’une certaine façon.
@@ -501,13 +501,13 @@ Blazor Les applications serveur peuvent exploiter les mêmes fonctionnalités d�
 
 > ### <a name="references--authentication"></a>Références : authentification
 >
-> - **Actions d’authentification et valeurs par défaut**  
+> - **Actions d’authentification et valeurs par défaut**\
 >   <https://stackoverflow.com/a/52493428>
-> - **Authentification et autorisation pour SPAs**
+> - **Authentification et autorisation pour SPAs**\
 >   <https://docs.microsoft.com/aspnet/core/security/authentication/identity-api-authorization>
-> - **BlazorAuthentification et autorisation ASP.net Core**
+> - **BlazorAuthentification et autorisation ASP.net Core**\
 >   <https://docs.microsoft.com/aspnet/core/blazor/security/>
-> - **Sécurité : authentification et autorisation dans ASP.NET Web Forms et Blazor**
+> - **Sécurité : authentification et autorisation dans ASP.NET Web Forms et Blazor**\
 >   <https://docs.microsoft.com/dotnet/architecture/blazor-for-web-forms-developers/security-authentication-authorization>
 
 ### <a name="authorization"></a>Autorisation
@@ -584,17 +584,17 @@ Soyez particulièrement vigilant quant au « développement de votre propre »
 
 > ### <a name="references--security"></a>Références – Sécurité
 >
-> - **Vue d’ensemble des documents de sécurité**  
+> - **Présentation des documents de sécurité**\
 >   <https://docs.microsoft.com/aspnet/core/security/>
-> - **Application de SSL dans une application ASP.NET Core**  
+> - **Application de SSL dans une application ASP.NET Core**\
 >   <https://docs.microsoft.com/aspnet/core/security/enforcing-ssl>
-> - **Présentation d’Identity**  
+> - **Présentation de l’identité**\
 >   <https://docs.microsoft.com/aspnet/core/security/authentication/identity>
-> - **Présentation de l’autorisation**  
+> - **Présentation de l’autorisation**\
 >   <https://docs.microsoft.com/aspnet/core/security/authorization/introduction>
-> - **Authentification et autorisation pour API Apps dans Azure App Service**  
+> - **Authentification et autorisation pour API Apps dans Azure App Service**\
 >   <https://docs.microsoft.com/azure/app-service-api/app-service-api-authentication>
-> - **Serveur d’identité**  
+> - **Serveur d’identité**\
 >   <https://github.com/IdentityServer>
 
 ## <a name="client-communication"></a>Communication avec les clients
@@ -653,9 +653,9 @@ Réfléchissez à la manière dont vos applications communiquent directement ave
 
 > ### <a name="references--client-communication"></a>Références – Communication avec les clients
 >
-> - **ASP.NET Core SignalR**  
+> - **Signalr ASP.NET Core**\
 >   <https://github.com/dotnet/aspnetcore/tree/master/src/SignalR>
-> - **WebSocket Manager**  
+> - **Gestionnaire WebSocket**\
 >   <https://github.com/radu-matei/websocket-manager>
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Utiliser la conception pilotée par le domaine ou non ?
@@ -702,7 +702,7 @@ Une approche hybride consiste à utiliser DDD pour les zones transactionnelles o
 
 > ### <a name="references--domain-driven-design"></a>Références – DDD
 >
-> - **DDD en langage clair (réponse StackOverflow)**  
+> - **DDD en anglais clair (réponse StackOverflow)**\
 >   <https://stackoverflow.com/questions/1222392/can-someone-explain-domain-driven-design-ddd-in-plain-english-please/1222488#1222488>
 
 ## <a name="deployment"></a>Déploiement
@@ -745,13 +745,13 @@ _En savoir plus sur les options de déploiement Azure dans le [chapitre 10](deve
 
 > ### <a name="references--deployment"></a>Références – Déploiement
 >
-> - **Vue d’ensemble de l’hébergement et du déploiement**  
+> - **Vue d’ensemble de l’hébergement et du déploiement**\
 >   <https://docs.microsoft.com/aspnet/core/publishing/>
-> - **Quand utiliser Kestrel avec un proxy inverse**  
+> - **Quand utiliser Kestrel avec un proxy inverse**\
 >   <https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy>
-> - **Héberger des applications ASP.NET Core dans Docker**  
+> - **Héberger des applications de ASP.NET Core dans l’ancrage**\
 >   <https://docs.microsoft.com/aspnet/core/publishing/docker>
-> - **Présentation d’Azure Application Gateway**  
+> - **Présentation de la passerelle Azure Application**\
 >   <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]

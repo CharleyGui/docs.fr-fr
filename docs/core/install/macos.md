@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: f926479227f11def5c8bb8c6bf29ad30a04e6ed2
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: b1434938a8e8e81da81e495a6b99e6c99467aae1
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95715132"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009356"
 ---
 # <a name="install-net-on-macos"></a>Installer .NET sur macOS
 
@@ -33,8 +33,9 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 - Une ✔️ indique que la version de .NET Core est toujours prise en charge.
 - Une ❌ indique que la version de .net Core n’est pas prise en charge.
 
-| Système d’exploitation          | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
+| Système d’exploitation          | .NET Core 2.1 | .NET Core 3.1 | .NET 5.0 |
 |---------------------------|---------------|---------------|----------------|
+| macOS 11,0 « Big sur »        | ✔️ 2,1 ([notes de publication][release-notes-21]) | ✔️ 3,1 ([notes de publication][release-notes-31]) | ✔️ 5,0 ([notes de publication][release-notes-50]) |
 | macOS 10.15 « Catalina »    | ✔️ 2,1 ([notes de publication][release-notes-21]) | ✔️ 3,1 ([notes de publication][release-notes-31]) | ✔️ 5,0 ([notes de publication][release-notes-50]) |
 | macOS 10.14 « Mojave »      | ✔️ 2,1 ([notes de publication][release-notes-21]) | ✔️ 3,1 ([notes de publication][release-notes-31]) | ✔️ 5,0 ([notes de publication][release-notes-50]) |
 | macOS 10.13 « High Sierra » | ✔️ 2,1 ([notes de publication][release-notes-21]) | ✔️ 3,1 ([notes de publication][release-notes-31]) | ✔️ 5,0 ([notes de publication][release-notes-50]) |
@@ -74,7 +75,7 @@ Le kit de développement logiciel (SDK) est utilisé pour générer et publier d
 > [!NOTE]
 > Un `+` symbole représente la version minimale.
 
-| Version de .NET Core | macOS                 | Architectures | Autres informations    |
+| Version de .NET Core | macOS                 | Architectures | Informations complémentaires    |
 | ----------------- | --------------------- | --------------| --- |
 | 5.0               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) |
 | 3.1               | High Sierra (10.13 +)  | x64 | [Plus d’informations](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) |

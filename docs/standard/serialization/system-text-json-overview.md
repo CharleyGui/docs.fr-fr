@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: d8bd5bcf78db534bd722972db01253cbd13a7a06
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: cb5c15c2a5c336e2d5b4a3754fa7a02a370602f3
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282406"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009883"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Sérialisation et désérialisation JSON (marshaling et démarshaling) dans .NET-vue d’ensemble
 
@@ -37,9 +37,19 @@ La bibliothèque fournit également des classes pour l’utilisation d’un mod�
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Comment utiliser la bibliothèque](system-text-json-how-to.md)
-* [Migration à partir de Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [Comment écrire des convertisseurs](system-text-json-converters-how-to.md)
-* [System.Text.Json code source](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json)
+* [Instancier des instances JsonSerializerOptions](system-text-json-configure-options.md)
+* [Activer la correspondance non sensible à la casse](system-text-json-character-casing.md)
+* [Personnaliser les noms et valeurs de propriété](system-text-json-customize-properties.md)
+* [Ignorer les propriétés](system-text-json-ignore-properties.md)
+* [Autoriser JSON non valide](system-text-json-invalid-json.md)
+* [Gérer le JSON de dépassement](system-text-json-handle-overflow.md)
+* [Préserver les références](system-text-json-preserve-references.md)
+* [Types immuables et accesseurs non publics](system-text-json-immutability.md)
+* [Sérialisation polymorphe](system-text-json-polymorphism.md)
+* [Migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Personnaliser l’encodage de caractères](system-text-json-character-encoding.md)
+* [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
+* [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
+* [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
 * [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)
-<!-- * [Roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

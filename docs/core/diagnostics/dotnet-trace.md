@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-trace-CLI .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-trace pour collecter les traces .NET d’un processus en cours d’exécution sans le profileur natif, à l’aide de .NET EventPipe.
 ms.date: 11/17/2020
-ms.openlocfilehash: 6bc5ad449f62ed0080ff6b1f401f1871d90cf5ec
-ms.sourcegitcommit: c6de55556add9f92af17e0f8d1da8f356a19a03d
+ms.openlocfilehash: 868ce7828eee6bd7f2101d5d6a65c7f7bf87fe24
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549330"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009532"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>utilitaire d’analyse des performances dotnet-trace
 
@@ -29,7 +29,7 @@ Il existe deux façons de télécharger et d’installer `dotnet-trace` :
 
   Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
 
-  | Système d’exploitation  | Plateforme |
+  | Système d''exploitation  | Plateforme |
   | --- | -------- |
   | Windows | [x86](https://aka.ms/dotnet-trace/win-x86) \| [x64](https://aka.ms/dotnet-trace/win-x64) \| [ARM](https://aka.ms/dotnet-trace/win-arm) \| [ARM-x64](https://aka.ms/dotnet-trace/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-trace/osx-x64) |
@@ -78,7 +78,7 @@ Collecte une trace de diagnostic à partir d’un processus en cours d’exécut
 ```console
 dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--clrevents <clrevents>]
     [--format <Chromium|NetTrace|Speedscope>] [-h|--help]
-    [-n, --name <name>]  [-o|--output <trace-file-path>] [-p|--process-id <pid>]
+    [-n, --name <name>] [--diagnostic-port] [-o|--output <trace-file-path>] [-p|--process-id <pid>]
     [--profile <profile-name>] [--providers <list-of-comma-separated-providers>]
     [-- <command>] (for target applications running .NET 5.0 or later)
 ```
@@ -99,11 +99,15 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
 
 - **`--format {Chromium|NetTrace|Speedscope}`**
 
-  Définit le format de sortie pour la conversion du fichier de trace. La valeur par défaut est `NetTrace`.
+  Définit le format de sortie pour la conversion du fichier de trace. Par défaut, il s’agit de `NetTrace`.
 
 - **`-n, --name <name>`**
 
   Nom du processus à partir duquel la trace doit être collectée.
+
+- **`--diagnostic-port <path-to-port>`**
+
+  Nom du port de diagnostic à créer. Consultez [utiliser le port de diagnostic pour collecter une trace à partir du démarrage](#use-diagnostic-port-to-collect-a-trace-from-app-startup) de l’application pour savoir comment utiliser cette option pour collecter une trace à partir du démarrage de l’application.
 
 - **`-o|--output <trace-file-path>`**
 
@@ -250,6 +254,48 @@ Vous pouvez arrêter la collecte de la trace en appuyant sur ou sur la `<Enter>`
 > `hello.exe`Le lancement via dotnet-trace rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout.
 > La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant.
 > Si le processus enfant se termine avant l’outil, l’outil s’arrête également et la trace doit être visible en toute sécurité.
+
+## <a name="use-diagnostic-port-to-collect-a-trace-from-app-startup"></a>Utiliser le port de diagnostic pour collecter une trace à partir du démarrage de l’application
+
+  > [!IMPORTANT]
+  > Cela fonctionne pour les applications qui exécutent .NET 5,0 ou une version ultérieure uniquement.
+
+Le port de diagnostic est une nouvelle fonctionnalité d’exécution qui a été ajoutée dans .NET 5, qui vous permet de démarrer le suivi à partir du démarrage de l’application. Pour ce faire à l’aide de `dotnet-trace` , vous pouvez utiliser `dotnet-trace collect -- <command>` comme décrit dans les exemples ci-dessus ou utiliser l' `--diagnostic-port` option.
+
+L’utilisation `dotnet-trace <collect|monitor> -- <command>` de pour lancer l’application en tant que processus enfant est la manière la plus simple de la suivre rapidement de son démarrage.
+
+Toutefois, lorsque vous souhaitez mieux contrôler la durée de vie de l’application faisant l’objet d’un suivi (par exemple, surveiller l’application pendant les 10 premières minutes uniquement et continuer l’exécution) ou si vous devez interagir avec l’application à l’aide de l’interface CLI, l’utilisation `--diagnostic-port` de l’option vous permet de contrôler à la fois l’application cible en cours d’analyse et `dotnet-trace` .
+
+1. La commande ci-dessous `dotnet-trace` crée un socket de diagnostic nommé `myport.sock` et attend une connexion.
+
+    > ```dotnet-cli
+    > dotnet-trace collect --diagnostic-port myport.sock
+    > ```
+
+    Sortie :
+
+    > ```bash
+    > Waiting for connection on myport.sock
+    > Start an application with the following environment variable: DOTNET_DiagnosticPorts=/home/user/myport.sock
+    > ```
+
+2. Dans une console distincte, lancez l’application cible avec la variable d’environnement `DOTNET_DiagnosticPorts` définie sur la valeur dans la `dotnet-trace` sortie.
+
+    > ```bash
+    > export DOTNET_DiagnosticPorts=/home/user/myport.sock
+    > ./my-dotnet-app arg1 arg2
+    > ```
+
+    Vous devez ensuite activer `dotnet-trace` le suivi pour démarrer le suivi `my-dotnet-app` :
+
+    > ```bash
+    > Waiting for connection on myport.sock
+    > Start an application with the following environment variable: DOTNET_DiagnosticPorts=myport.sock
+    > Starting a counter session. Press Q to quit.
+    > ```
+
+    > [!IMPORTANT]
+    > Le lancement de votre application avec `dotnet run` peut être problématique, car l’interface CLI dotnet peut générer de nombreux processus enfants qui ne sont pas votre application et qui peuvent se connecter à `dotnet-trace` avant votre application, en laissant votre application interrompue au moment de l’exécution. Nous vous recommandons d’utiliser directement une version autonome de l’application ou `dotnet exec` d’utiliser pour lancer l’application.
 
 ## <a name="view-the-trace-captured-from-dotnet-trace"></a>Afficher la trace capturée à partir de dotnet-trace
 

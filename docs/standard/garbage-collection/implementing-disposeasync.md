@@ -3,18 +3,18 @@ title: Implémenter une méthode DisposeAsync
 description: Découvrez comment implémenter des méthodes DisposeAsync et DisposeAsyncCore pour effectuer un nettoyage asynchrone des ressources.
 author: IEvangelist
 ms.author: dapine
-ms.date: 10/26/2020
+ms.date: 12/09/2020
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 551dbc30f6f5c99c7bfa468d7d708789c06acb7b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f04ac6695864b96cdcb7efeb6eb8e1d9551e1d14
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827800"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009688"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implémenter une méthode DisposeAsync
 
@@ -131,6 +131,8 @@ Si une exception est levée à partir du `AnotherAsyncDisposable` constructeur, 
 > Évitez ce modèle, car cela peut entraîner un comportement inattendu.
 
 ## <a name="see-also"></a>Voir aussi
+
+Pour obtenir un exemple d’implémentation double de `IDisposable` et `IAsyncDisposable` , consultez le <xref:System.Text.Json.Utf8JsonWriter> code source [sur GitHub](https://github.com/dotnet/runtime/blob/035b729d829368c2790d825bd02db14f0c0fd2ea/src/libraries/System.Text.Json/src/System/Text/Json/Writer/Utf8JsonWriter.cs#L297-L345).
 
 - <xref:System.IAsyncDisposable>
 - <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType>

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 2d663ac8c1c15d61959a62c40d9a3b0993484032
-ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
+ms.openlocfilehash: 3e2fb8cbdd35e772b5e97c731199f69aa834bd0a
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96599074"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009740"
 ---
 # <a name="how-to-enable-case-insensitive-property-name-matching-with-no-locsystemtextjson"></a>Comment activer la correspondance des noms de propriétés ne respectant pas la casse avec System.Text.Json
 
@@ -45,12 +45,19 @@ Voici un exemple de JSON avec les noms de propriété de casse mixte. Il peut ê
 ## <a name="see-also"></a>Voir aussi
 
 * [System.Text.Json vue](system-text-json-overview.md)
-* [Instancier JsonSerializerOptions](system-text-json-configure-options.md)
+* [Guide pratique pour sérialiser et désérialiser JSON](system-text-json-how-to.md)
+* [Instancier des instances JsonSerializerOptions](system-text-json-configure-options.md)
 * [Personnaliser les noms et valeurs de propriété](system-text-json-customize-properties.md)
 * [Ignorer les propriétés](system-text-json-ignore-properties.md)
 * [Autoriser JSON non valide](system-text-json-invalid-json.md)
 * [Gérer le JSON de dépassement](system-text-json-handle-overflow.md)
-* [Conserver les références circulaires](system-text-json-preserve-references.md)
+* [Préserver les références](system-text-json-preserve-references.md)
 * [Types immuables et accesseurs non publics](system-text-json-immutability.md)
 * [Sérialisation polymorphe](system-text-json-polymorphism.md)
+* [Migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Personnaliser l’encodage de caractères](system-text-json-character-encoding.md)
+* [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
+* [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
+* [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
+* [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)

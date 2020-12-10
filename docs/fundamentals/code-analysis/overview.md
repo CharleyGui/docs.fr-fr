@@ -8,12 +8,12 @@ ms.custom: updateeachrelease
 helpviewer_keywords:
 - code analysis
 - code analyzers
-ms.openlocfilehash: 657975742c3efc2985264fe16cb316357b959e73
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: 2f59b97de6f92e5a9bf927e1318286e400017dad
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851814"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009844"
 ---
 # <a name="overview-of-net-source-code-analysis"></a>Vue d’ensemble de l’analyse du code source .NET
 
@@ -101,19 +101,18 @@ Par défaut, vous obtiendrez les dernières règles d’analyse du code et les g
 
 ## <a name="code-style-analysis"></a>Analyse de style de code
 
-Les règles d' *analyse de style de code* (« IDExxxx ») vous permettent de définir et de maintenir un style de code cohérent dans votre base de code. Les paramètres d’activation par défaut sont les suivants :
+Les règles d' *analyse de style code* (« IDExxxx ») vous permettent de définir et de maintenir un style de code cohérent dans votre base de code. Les paramètres d’activation par défaut sont les suivants :
 
-- Génération de la ligne de commande : l’analyse du style de code est désactivée, par défaut, pour tous les projets .NET sur les générations à partir de la ligne de commande.
+- Génération à partir de la ligne de commande : l’analyse de style de code est désactivée, par défaut, pour tous les projets .NET sur les générations à partir de la ligne de commande.
 - Visual Studio : l’analyse de style de code est activée, par défaut, pour tous les projets .NET dans Visual Studio en tant que [actions rapides de refactorisation de code](/visualstudio/ide/code-generation-in-visual-studio).
 
-À partir de .NET 5,0, vous pouvez activer l’analyse de style de code sur la build, à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
+À compter de .NET 5,0, vous pouvez activer l’analyse de style de code sur la build, à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
 
 Pour obtenir la liste complète des règles d’analyse de style code, consultez [règles de style de code](style-rules/index.md).
 
-> [!NOTE]
-> La fonctionnalité d’analyse de style de code est expérimentale et peut changer entre les versions .NET 5 et .NET 6.
+### <a name="enable-on-build"></a>Activer sur la Build
 
-Étapes pour activer l’analyse de style de code sur la build :
+Procédez comme suit pour activer l’analyse de style de code sur la build :
 
 1. Affectez à la propriété MSBuild [EnforceCodeStyleInBuild](../../core/project-sdk/msbuild-props.md#enforcecodestyleinbuild) la valeur `true` .
 
@@ -136,6 +135,9 @@ Pour obtenir la liste complète des règles d’analyse de style code, consultez
    # IDE0040: Accessibility modifiers required (disabled on build)
    dotnet_diagnostic.IDE0040.severity = silent
    ```
+
+> [!NOTE]
+> La fonctionnalité d’analyse de style code est expérimentale et peut changer entre les versions .NET 5 et .NET 6.
 
 ## <a name="suppress-a-warning"></a>Supprimer un avertissement
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: d0a928fffb84e925ae167885e6d2456dc45b6892
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bf11edc3669916ba4d30a3648692ca9b084d4340
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825076"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009817"
 ---
 # <a name="best-practices-for-comparing-strings-in-net"></a>Meilleures pratiques pour la comparaison de chaînes dans .NET
 
@@ -167,9 +167,6 @@ est équivalente à la comparaison suivante (mais plus rapide) :
 
 Ces comparaisons restent très rapides.
 
-> [!NOTE]
-> <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>constitue la meilleure représentation du comportement de chaîne du système de fichiers, des clés de Registre et des valeurs, ainsi que des variables d'environnement.
-
 <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> et <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> utilisent tous les deux directement les valeurs binaires et sont les plus adaptés à la mise en correspondance. Quand vous n'êtes pas sûr de vos paramètres de comparaison, utilisez l'une de ces deux valeurs. Toutefois, étant donné qu'elles effectuent une comparaison octet par octet, elles n'effectuent pas le tri selon un ordre de tri linguistique (comme un dictionnaire français), mais selon un ordre de tri binaire. Les résultats peuvent sembler étranges dans la plupart des contextes s'ils sont affichés aux utilisateurs.
 
 La sémantique ordinale est la valeur par défaut pour les surcharges de <xref:System.String.Equals%2A?displayProperty=nameWithType> qui n'incluent pas d'argument <xref:System.StringComparison> (notamment l'opérateur d'égalité). Dans tous les cas, nous vous recommandons d'appeler une surcharge ayant un paramètre <xref:System.StringComparison> .
@@ -201,8 +198,8 @@ Le tableau suivant présente le mappage du contexte de chaîne sémantique à un
 |----------|--------------|-----------------------------------------------------|
 |Identificateurs internes respectant la casse.<br /><br /> Identificateurs respectant la casse dans des normes telles que XML et HTTP.<br /><br /> Paramètres liés à la sécurité respectant la casse.|Identificateur non linguistique, où les octets correspondent exactement.|<xref:System.StringComparison.Ordinal>|
 |Identificateurs internes ne respectant pas la casse.<br /><br /> Identificateurs ne respectant pas la casse dans des normes telles que XML et HTTP.<br /><br /> Chemins d'accès aux fichiers.<br /><br /> Clés et valeurs de Registre.<br /><br /> Variables d'environnement.<br /><br /> Identificateurs de ressource (par exemple, noms de handles).<br /><br /> Paramètres liés à la sécurité ne respectant pas la casse.|Identificateur non linguistique, où la casse n'est pas pertinente ; en particulier, les données stockées dans la plupart des services système Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
-|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
-|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
+|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
+|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
 
 ## <a name="common-string-comparison-methods-in-net"></a>Méthodes courantes de comparaison de chaînes dans .NET
 

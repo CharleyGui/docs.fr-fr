@@ -10,18 +10,18 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 2c40d42b26bc5bd05f592cc51c6b5b9b4c6bbd9e
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 265ce4f77d353720419122d17c36e508a377b68f
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439980"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008914"
 ---
 # <a name="how-to-handle-overflow-json-with-no-locsystemtextjson"></a>Comment gérer le JSON de dépassement de capacité avec System.Text.Json
 
 Dans cet article, vous allez apprendre à gérer le code JSON de dépassement de capacité avec l' `System.Text.Json` espace de noms.
 
-## <a name="handle-overflow-json"></a>Handle de dépassement JSON
+## <a name="handle-overflow-json"></a>Gérer le JSON de dépassement
 
 Lors de la désérialisation, vous pouvez recevoir des données dans le JSON qui ne sont pas représentées par les propriétés du type cible. Par exemple, supposons que votre type de cible est le suivant :
 
@@ -86,12 +86,19 @@ Notez que le `ExtensionData` nom de la propriété n’apparaît pas dans le JSO
 ## <a name="see-also"></a>Voir aussi
 
 * [System.Text.Json vue](system-text-json-overview.md)
-* [Instancier JsonSerializerOptions](system-text-json-configure-options.md)
-* [Activer la correspondance qui ne respecte pas la casse](system-text-json-character-casing.md)
-* [Personnaliser les noms et les valeurs des propriétés](system-text-json-customize-properties.md)
+* [Guide pratique pour sérialiser et désérialiser JSON](system-text-json-how-to.md)
+* [Instancier des instances JsonSerializerOptions](system-text-json-configure-options.md)
+* [Activer la correspondance non sensible à la casse](system-text-json-character-casing.md)
+* [Personnaliser les noms et valeurs de propriété](system-text-json-customize-properties.md)
 * [Ignorer les propriétés](system-text-json-ignore-properties.md)
 * [Autoriser JSON non valide](system-text-json-invalid-json.md)
-* [Conserver les références circulaires](system-text-json-preserve-references.md)
+* [Préserver les références](system-text-json-preserve-references.md)
 * [Types immuables et accesseurs non publics](system-text-json-immutability.md)
 * [Sérialisation polymorphe](system-text-json-polymorphism.md)
+* [Migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Personnaliser l’encodage de caractères](system-text-json-character-encoding.md)
+* [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
+* [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
+* [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
+* [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)

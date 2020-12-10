@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 257c99e117dea9a9b3ab2352c9a442d71a2cdabd
-ms.sourcegitcommit: 0014aa4d5cb2da56a70e03fc68f663d64df5247a
+ms.openlocfilehash: 5f32e1369e58dd9550f28abc822f187dee46c022
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96918552"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009831"
 ---
 # <a name="how-to-instantiate-jsonserializeroptions-instances-with-no-locsystemtextjson"></a>Comment instancier des instances JsonSerializerOptions avec System.Text.Json
 
@@ -74,12 +74,19 @@ Un `JsonSerializerOptions` constructeur qui spécifie un jeu de valeurs par déf
 ## <a name="see-also"></a>Voir aussi
 
 * [System.Text.Json vue](system-text-json-overview.md)
+* [Guide pratique pour sérialiser et désérialiser JSON](system-text-json-how-to.md)
 * [Activer la correspondance non sensible à la casse](system-text-json-character-casing.md)
 * [Personnaliser les noms et valeurs de propriété](system-text-json-customize-properties.md)
 * [Ignorer les propriétés](system-text-json-ignore-properties.md)
 * [Autoriser JSON non valide](system-text-json-invalid-json.md)
 * [Gérer le JSON de dépassement](system-text-json-handle-overflow.md)
-* [Conserver les références circulaires](system-text-json-preserve-references.md)
+* [Préserver les références](system-text-json-preserve-references.md)
 * [Types immuables et accesseurs non publics](system-text-json-immutability.md)
 * [Sérialisation polymorphe](system-text-json-polymorphism.md)
+* [Migrer de Newtonsoft.Json vers System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Personnaliser l’encodage de caractères](system-text-json-character-encoding.md)
+* [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
+* [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
+* [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
+* [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)

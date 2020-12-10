@@ -1,19 +1,19 @@
 ---
-title: Didacticiels .NET Core
-description: Suivez les didacticiels pour apprendre .NET Core et générer des applications et des bibliothèques sur Mac, Linux et Windows.
-author: richlander
-ms.date: 09/09/2020
+title: Tutoriels .NET
+description: Suivez les didacticiels pour apprendre à .NET à créer des applications et des bibliothèques sur Mac, Linux et Windows.
+author: tdykstra
+ms.date: 12/07/2020
 titleSuffix: ''
-ms.openlocfilehash: 84c8daa735df0255b0e383244f1abd8db4fe21fe
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: cf466f7ea004199052c1f02f5860668f2bb2ff28
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656156"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009317"
 ---
-# <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET Core et les outils de kit SDK .NET Core en explorant ces didacticiels
+# <a name="learn-net-and-the-net-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET et les outils du kit de développement logiciel (SDK) .NET en explorant ces didacticiels
 
-Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
+Les didacticiels suivants montrent comment développer des bibliothèques et des applications console pour .NET Core, .NET 5 et versions ultérieures. Pour les autres types d’applications, consultez les [didacticiels de prise en](../../standard/get-started.md)main de .net.
 
 ## <a name="use-visual-studio"></a>Utiliser Visual Studio
 
@@ -58,7 +58,3 @@ Choisissez ces didacticiels si vous souhaitez utiliser Visual Studio Code ou un 
 - [Créer des modèles pour l’interface CLI](cli-templates-create-item-template.md)
 - [Créer et utiliser des outils pour l’interface CLI](../tools/global-tools-how-to-create.md)
 - [Créer une application avec des plug-ins](creating-app-with-plugin-support.md)
-
-## <a name="create-web-apps"></a>Créer des applications web
-
-Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).
