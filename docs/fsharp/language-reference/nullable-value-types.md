@@ -1,13 +1,13 @@
 ---
 title: Types valeur Nullable
-description: 'Découvrez comment utiliser les types valeur Nullable, un moyen de représenter un type valeur qui peut également être null, en F #.'
+description: 'Découvrez comment utiliser les types valeur Nullable, un moyen de représenter des types valeur qui peuvent également être null, en F #.'
 ms.date: 11/19/2020
-ms.openlocfilehash: da0cd85bd651db81ba98c02a9db31d92dc52a8c6
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: e28cbfc57c5631573f46ac36462517cf011e96d2
+ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96740405"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97009636"
 ---
 # <a name="nullable-value-types"></a>Types valeur Nullable
 
@@ -62,7 +62,7 @@ Cela est dû au fait que `Nullable<'T>` ne dispose pas `null` de la valeur appro
 
 ## <a name="pass-and-assign-to-members"></a>Passer et assigner à des membres
 
-La principale différence entre l’utilisation des membres et des valeurs F # est que les types valeur Nullable peuvent être implicitement déduits lorsque vous utilisez des membres. Considérez la méthode folling qui accepte un type valeur Nullable comme entrée :
+La principale différence entre l’utilisation des membres et des valeurs F # est que les types valeur Nullable peuvent être implicitement déduits lorsque vous utilisez des membres. Considérez la méthode suivante qui accepte un type valeur Nullable comme entrée :
 
 ```fsharp
 type C() =
@@ -74,7 +74,7 @@ c.M(12)
 c.NVT <- 12
 ```
 
-Dans l’exemple précédent, vous pouvez passer `12` à la méthode `M` . Vous pouvez également assigner `12` à la propriété auto `NVT` . Le compilateur F # convertit implicitement un appel ou une assignation comme suit lorsque le type cible correspond à l’entrée, si l’entrée peut être construite comme un type de valeur nullabel.
+Dans l’exemple précédent, vous pouvez passer `12` à la méthode `M` . Vous pouvez également assigner `12` à la propriété auto `NVT` . Si l’entrée peut être construite comme un type valeur Nullable et qu’elle correspond au type cible, le compilateur F # convertit implicitement ces appels ou attributions.
 
 ## <a name="examine-a-nullable-value-type-instance"></a>Examiner une instance de type valeur Nullable
 
