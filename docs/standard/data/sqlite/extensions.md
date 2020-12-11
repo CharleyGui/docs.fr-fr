@@ -1,13 +1,13 @@
 ---
 title: Extensions
-ms.date: 12/13/2019
+ms.date: 12/08/2020
 description: Découvrez comment charger des extensions SQLite.
-ms.openlocfilehash: 51c705349c25240fe42e0edda8004a3e3b013ca3
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 68d31093662f373d6ebf4460d6a5d44029c27c5c
+ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242957"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97110843"
 ---
 # <a name="extensions"></a>Extensions
 
@@ -18,6 +18,9 @@ SQLite prend en charge le chargement des extensions au moment de l’exécution.
 Pour charger une extension, appelez la <xref:Microsoft.Data.Sqlite.SqliteConnection.LoadExtension%2A> méthode. Microsoft. Data. sqlite garantit que l’extension reste chargée même si la connexion est fermée et rouverte.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/ExtensionsSample/Program.cs?name=snippet_LoadExtension)]
+
+> [!NOTE]
+> La méthode LoadExtension a été ajoutée dans la version 3,0.
 
 ## <a name="see-also"></a>Voir aussi
 

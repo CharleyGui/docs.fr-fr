@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: 349f2cfbe0fc93060eb6927ee8c3528c16b99aca
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 7258dc8b8fcfbd6354b5ceee4183429bfee14038
+ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805087"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97110726"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -58,7 +58,7 @@ Les choses commencent alors à devenir intéressantes. Examinons certaines fonct
 - [Types partiels](../programming-guide/classes-and-structs/partial-classes-and-methods.md#partial-classes)
 - [Méthodes anonymes](../language-reference/operators/delegate-operator.md)
 - [Types valeur Nullable](../language-reference/builtin-types/nullable-value-types.md)
-- [Iterators](../programming-guide/concepts/iterators.md)
+- [Itérateurs](../programming-guide/concepts/iterators.md)
 - [Covariance et contravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 
 D’autres fonctionnalités de C# 2.0 ajoutaient des capacités aux fonctionnalités existantes :
@@ -84,7 +84,7 @@ C# version 3.0 est apparu fin 2007, en même temps que Visual Studio 2008, même
 - [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Expressions de requête](../linq/query-expression-basics.md)
 - [Expressions lambda](../language-reference/operators/lambda-expressions.md)
-- [Arborescences de l’expression](../expression-trees.md)
+- [Arborescences d’expressions](../expression-trees.md)
 - [Méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md)
 - [Variables locales implicitement typées](../language-reference/keywords/var.md)
 - [Méthodes partielles](../language-reference/keywords/partial-method.md)
@@ -134,17 +134,17 @@ Mais `async` et `await` sont les véritables vedettes de cette version. Quand ce
 
 Avec les versions 3.0 et 5.0, C# avait ajouté d’importantes nouvelles fonctionnalités à un langage orienté objet. Avec la version 6,0, publiée avec Visual Studio 2015, il ne s’agissait pas d’une fonctionnalité de déploiement dominant et de libérer à la place de nombreuses fonctionnalités plus petites qui rendaient la programmation C# plus productive. En voici quelques-unes :
 
-- [Importations statiques](./csharp-6.md#using-static)
-- [Filtres d’exceptions](./csharp-6.md#exception-filters)
-- [Initialiseurs de propriétés automatiques](./csharp-6.md#auto-property-initializers)
-- [Membres expression-bodied](./csharp-6.md#expression-bodied-function-members)
-- [Propagateur Null](./csharp-6.md#null-conditional-operators)
-- [Interpolation de chaîne](./csharp-6.md#string-interpolation)
-- [opérateur nameof](./csharp-6.md#the-nameof-expression)
-- [Initialiseurs d’index](csharp-6.md#extension-add-methods-in-collection-initializers)
+- [Importations statiques](../language-reference/keywords/using-static.md)
+- [Filtres d’exceptions](../language-reference/keywords/when.md)
+- [Initialiseurs de propriétés automatiques](../properties.md)
+- [Membres expression-bodied](../language-reference/operators/lambda-operator.md#expression-body-definition)
+- [Propagateur Null](../language-reference/operators/member-access-operators.md#null-conditional-operators--and-)
+- [Interpolation de chaîne](../language-reference/tokens/interpolated.md)
+- [opérateur nameof](../language-reference/operators/nameof.md)
 
 Quelques autres nouvelles fonctions :
 
+- Initialiseurs d’index
 - Await dans des blocs catch/finally
 - Valeurs par défaut pour les propriétés d’accesseur Get
 

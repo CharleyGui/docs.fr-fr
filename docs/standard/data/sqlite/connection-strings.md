@@ -1,13 +1,13 @@
 ---
 title: Chaînes de connexion
-ms.date: 12/13/2019
+ms.date: 12/08/2020
 description: Les mots clés et les valeurs de chaîne de connexion pris en charge.
-ms.openlocfilehash: 3c50b31689abf6d47aa8f83a6f6f755bcfec0ea3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 35283664c4ac3985d4f517fde77644ab2a891120
+ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555391"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97110739"
 ---
 # <a name="connection-strings"></a>Chaînes de connexion
 
@@ -35,7 +35,7 @@ Ce mot clé prend également en charge les noms de fichiers [URI](https://www.sq
 
 Mode de connexion.
 
-| Value           | Description                                                                                        |
+| Valeur           | Description                                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------- |
 | ReadWriteCreate | Ouvre la base de données pour la lecture et l’écriture, et la crée si elle n’existe pas. Il s’agit de la valeur par défaut. |
 | Lecture/écriture       | Ouvre la base de données pour la lecture et l’écriture.                                                        |
@@ -46,10 +46,10 @@ Mode de connexion.
 
 Mode de mise en cache utilisé par la connexion.
 
-| Value   | Description                                                                                    |
+| Valeur   | Description                                                                                    |
 | ------- | ---------------------------------------------------------------------------------------------- |
 | Default | Utilise le mode par défaut de la bibliothèque SQLite sous-jacente. Il s’agit de la valeur par défaut.                   |
-| Private | Chaque connexion utilise un cache privé.                                                          |
+| Privé | Chaque connexion utilise un cache privé.                                                          |
 | Partagé  | Les connexions partagent un cache. Ce mode peut modifier le comportement du verrouillage de la transaction et de la table. |
 
 ### <a name="password"></a>Mot de passe
@@ -59,14 +59,20 @@ Clé de chiffrement. Lorsqu' `PRAGMA key` il est spécifié, est envoyé immédi
 > [!WARNING]
 > Le mot de passe n’a aucun effet lorsque le chiffrement n’est pas pris en charge par la bibliothèque SQLite native.
 
+> [!NOTE]
+> Le mot clé Password a été ajouté dans la version 3,0.
+
 ### <a name="foreign-keys"></a>Clés étrangères
 
 Valeur indiquant s’il faut activer les contraintes de clé étrangère.
 
-| Value   | Description
+> [!NOTE]
+> Le mot clé Foreign Keys a été ajouté dans la version 3,0.
+
+| Valeur   | Description
 | ------- | --- |
 | True    | Envoie `PRAGMA foreign_keys = 1` immédiatement après l’ouverture de la connexion.
-| Faux   | Envoie `PRAGMA foreign_keys = 0` immédiatement après l’ouverture de la connexion.
+| False   | Envoie `PRAGMA foreign_keys = 0` immédiatement après l’ouverture de la connexion.
 | (empty) | N’envoie pas `PRAGMA foreign_keys` . Il s’agit de la valeur par défaut. |
 
 Il n’est pas nécessaire d’activer les clés étrangères si, comme dans e_sqlite3, SQLITE_DEFAULT_FOREIGN_KEYS a été utilisé pour compiler la bibliothèque SQLite native.
@@ -75,10 +81,13 @@ Il n’est pas nécessaire d’activer les clés étrangères si, comme dans e_s
 
 Valeur qui indique s’il faut activer les déclencheurs récursifs.
 
-| Value | Description                                                                 |
+> [!NOTE]
+> Le mot clé déclencheurs récursifs a été ajouté dans la version 3,0.
+
+| Valeur | Description                                                                 |
 | ----- | --------------------------------------------------------------------------- |
 | True  | Envoie `PRAGMA recursive_triggers` immédiatement après l’ouverture de la connexion. |
-| Faux | N’envoie pas `PRAGMA recursive_triggers` . Il s’agit de la valeur par défaut.              |
+| False | N’envoie pas `PRAGMA recursive_triggers` . Il s’agit de la valeur par défaut.              |
 
 ## <a name="connection-string-builder"></a>Générateur de chaînes de connexion
 
@@ -88,7 +97,7 @@ Vous pouvez utiliser <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> 
 
 ## <a name="examples"></a>Exemples
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>De base
 
 Chaîne de connexion de base avec un cache partagé pour améliorer la concurrence.
 

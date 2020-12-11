@@ -6,19 +6,19 @@ ms.author: tdykstra
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-ms.date: 11/30/2020
+ms.date: 12/09/2020
 zone_pivot_groups: dotnet-version
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 418637639790199755803bf374ef99af949ae9b3
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 4a33d9de96af805c3696ceed5cd30a3fa8547222
+ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009896"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97110830"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Comment migrer de Newtonsoft.Json vers System.Text.Json
 
@@ -369,6 +369,10 @@ Pour plus d’informations, consultez [conserver les références et gérer les 
 
 ::: zone pivot="dotnet-5-0"
 `Newtonsoft.Json`Et `System.Text.Json` prennent en charge les collections de type `Dictionary<TKey, TValue>` .
+
+> [!CAUTION]
+> La désérialisation vers une `Dictionary<TKey, TValue>` qui `TKey` est de type autre que `string` pourrait introduire une faille de sécurité dans l’application consommatrice. Pour plus d’informations, consultez [dotnet/Runtime # 4761](https://github.com/dotnet/runtime/issues/4761).
+
 ::: zone-end
 
 ::: zone pivot="dotnet-core-3-1"
@@ -625,7 +629,7 @@ public JsonElement LookAndLoad(JsonElement source)
 
 Le code précédent attend un `JsonElement` qui contient une `fileName` propriété. Il ouvre le fichier JSON et crée un `JsonDocument` . La méthode suppose que l’appelant souhaite travailler avec l’ensemble du document, de sorte qu’il retourne l' `Clone` du `RootElement` .
 
-Si vous recevez un `JsonElement` et que vous retournez un sous-élément, il n’est pas nécessaire de retourner un `Clone` du sous-élément. L’appelant est chargé de conserver les actifs `JsonDocument` auxquels appartient le passé `JsonElement` . Par exemple :
+Si vous recevez un `JsonElement` et que vous retournez un sous-élément, il n’est pas nécessaire de retourner un `Clone` du sous-élément. L’appelant est chargé de conserver les actifs `JsonDocument` auxquels appartient le passé `JsonElement` . Par exemple :
 
 ```csharp
 public JsonElement ReturnFileName(JsonElement source)
