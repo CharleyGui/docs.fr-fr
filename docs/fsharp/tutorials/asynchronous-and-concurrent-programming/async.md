@@ -2,12 +2,12 @@
 title: Programmation asynchrone
 description: 'Découvrez comment F # fournit une prise en charge propre pour l’asynchronie basée sur un modèle de programmation au niveau du langage dérivé des concepts de programmation fonctionnelle de base.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 04b397ddbfb468aa3bc4ee245175d3ec9bdedb50
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: 8bf8d6987187377cc1f44e77141b5d70d873f849
+ms.sourcegitcommit: fcbe432482464b1639decad78cc4dc8387c6269e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96739325"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366816"
 ---
 # <a name="async-programming-in-f"></a>Programmation asynchrone en F\#
 
@@ -33,7 +33,7 @@ Si vous considérez le mot « Asynchronous » comme Etymology, deux éléments
 - « a », ce qui signifie « non ».
 - « synchrone », ce qui signifie « en même temps ».
 
-Lorsque vous regroupez ces deux termes, vous verrez que « asynchrone » signifie « pas en même temps ». Et voilà ! Il n’y a aucune implication de l’accès concurrentiel ou du parallélisme dans cette définition. Cela est également vrai dans la pratique.
+Lorsque vous regroupez ces deux termes, vous verrez que « asynchrone » signifie « pas en même temps ». C’est tout ! Il n’y a aucune implication de l’accès concurrentiel ou du parallélisme dans cette définition. Cela est également vrai dans la pratique.
 
 En pratique, les calculs asynchrones en F # sont planifiés pour s’exécuter indépendamment du déroulement du programme principal. Cette exécution indépendante n’implique pas la concurrence ou le parallélisme, et n’implique pas non plus qu’un calcul se produit toujours en arrière-plan. En fait, les calculs asynchrones peuvent même s’exécuter de façon synchrone, en fonction de la nature du calcul et de l’environnement dans lequel le calcul s’exécute.
 
@@ -93,7 +93,7 @@ let printTotalFileBytes path =
 [<EntryPoint>]
 let main argv =
     argv
-    |> Array.map printTotalFileBytes
+    |> Seq.map printTotalFileBytes
     |> Async.Parallel
     |> Async.Ignore
     |> Async.RunSynchronously
@@ -101,14 +101,14 @@ let main argv =
     0
 ```
 
-Comme vous pouvez le voir, la `main` fonction a d’autres appels effectués. D’un plan conceptuel, elle effectue les opérations suivantes :
+Comme vous pouvez le voir, la `main` fonction a beaucoup plus d’éléments. D’un plan conceptuel, elle effectue les opérations suivantes :
 
-1. Transformez les arguments de ligne de commande en `Async<unit>` calculs avec `Array.map` .
+1. Transformez les arguments de ligne de commande en une séquence de `Async<unit>` calculs avec `Seq.map` .
 2. Créez un `Async<'T[]>` qui planifie et exécute les `printTotalFileBytes` calculs en parallèle lorsqu’il s’exécute.
-3. Créez un `Async<unit>` qui exécutera le calcul parallèle et ignorez son résultat.
-4. Exécute explicitement le dernier calcul avec `Async.RunSynchronously` et bloque jusqu’à ce qu’il se termine.
+3. Créez un `Async<unit>` qui exécutera le calcul parallèle et ignorer son résultat (qui est un `unit[]` ).
+4. Exécutez explicitement le calcul global composé avec `Async.RunSynchronously` , bloquant jusqu’à ce qu’il se termine.
 
-Lorsque ce programme s’exécute, `printTotalFileBytes` s’exécute en parallèle pour chaque argument de ligne de commande. Étant donné que les calculs asynchrones s’exécutent indépendamment du déroulement du programme, il n’y a aucun ordre dans lequel ils impriment leurs informations et terminent leur exécution. Les calculs sont planifiés en parallèle, mais leur ordre d’exécution n’est pas garanti.
+Lorsque ce programme s’exécute, `printTotalFileBytes` s’exécute en parallèle pour chaque argument de ligne de commande. Étant donné que les calculs asynchrones s’exécutent indépendamment du déroulement du programme, il n’existe aucun ordre défini dans lequel ils impriment leurs informations et terminent leur exécution. Les calculs sont planifiés en parallèle, mais leur ordre d’exécution n’est pas garanti.
 
 ## <a name="sequence-asynchronous-computations"></a>Séquencer des calculs asynchrones
 
@@ -125,18 +125,18 @@ let printTotalFileBytes path =
 [<EntryPoint>]
 let main argv =
     argv
-    |> Array.map printTotalFileBytes
+    |> Seq.map printTotalFileBytes
     |> Async.Sequential
     |> Async.Ignore
     |> Async.RunSynchronously
     |> ignore
 ```
 
-Cela permet de planifier `printTotalFileBytes` l’exécution dans l’ordre des éléments de `argv` plutôt que de les planifier en parallèle. Étant donné que l’élément suivant n’est pas planifié tant que le dernier calcul n’a pas fini de s’exécuter, les calculs sont séquencés de telle sorte qu’il n’y a aucun chevauchement de leur exécution.
+Cela permet de planifier `printTotalFileBytes` l’exécution dans l’ordre des éléments de `argv` plutôt que de les planifier en parallèle. Étant donné que chaque opération successive n’est pas planifiée avant la fin de l’exécution du calcul précédent, les calculs sont séquencés de telle sorte qu’il n’y a aucun chevauchement de leur exécution.
 
 ## <a name="important-async-module-functions"></a>Fonctions importantes du module Async
 
-Quand vous écrivez du code asynchrone en F #, vous interagissez généralement avec une infrastructure qui gère la planification des calculs pour vous. Toutefois, ce n’est pas toujours le cas. il est donc judicieux d’apprendre les différentes fonctions de démarrage pour planifier un travail asynchrone.
+Quand vous écrivez du code asynchrone en F #, vous interagissez généralement avec une infrastructure qui gère la planification des calculs pour vous. Toutefois, ce n’est pas toujours le cas. il est donc judicieux de comprendre les différentes fonctions qui peuvent être utilisées pour planifier un travail asynchrone.
 
 Étant donné que les calculs asynchrones F # sont une _spécification_ de travail plutôt qu’une représentation du travail qui est déjà en cours d’exécution, ils doivent être démarrés explicitement avec une fonction de démarrage. De nombreuses [méthodes de démarrage asynchrones](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#section0) sont utiles dans différents contextes. La section suivante décrit quelques-unes des fonctions de démarrage les plus courantes.
 
@@ -190,7 +190,7 @@ computation: Async<'T> * taskCreationOptions: ?TaskCreationOptions * cancellatio
 
 Quand l’utiliser :
 
-- Lorsque vous devez appeler une API .NET qui s’attend à ce qu’un <xref:System.Threading.Tasks.Task%601> représente le résultat d’un calcul asynchrone.
+- Lorsque vous devez appeler une API .NET qui produit un <xref:System.Threading.Tasks.Task%601> pour représenter le résultat d’un calcul asynchrone.
 
 Ce qu’il faut surveiller :
 
@@ -198,12 +198,12 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncparallel"></a>Async. Parallel
 
-Planifie une séquence de calculs asynchrones à exécuter en parallèle. Le degré de parallélisme peut éventuellement être réglé/limité en spécifiant le `maxDegreesOfParallelism` paramètre.
+Planifie une séquence de calculs asynchrones à exécuter en parallèle, ce qui produit un tableau de résultats dans l’ordre dans lequel ils ont été fournis. Le degré de parallélisme peut éventuellement être réglé/limité en spécifiant le `maxDegreeOfParallelism` paramètre.
 
 Signature :
 
 ```fsharp
-computations: seq<Async<'T>> * ?maxDegreesOfParallelism: int -> Async<'T[]>
+computations: seq<Async<'T>> * ?maxDegreeOfParallelism: int -> Async<'T[]>
 ```
 
 Quand l’utiliser :
@@ -251,7 +251,7 @@ Quand l’utiliser :
 
 Ce qu’il faut surveiller :
 
-- Les exceptions sont encapsulées en <xref:System.AggregateException> suivant la Convention de la bibliothèque parallèle de tâches, et ce comportement est différent de la façon dont F # Async recouvre généralement les exceptions.
+- Les exceptions sont encapsulées en <xref:System.AggregateException> suivant la Convention de la bibliothèque parallèle de tâches. ce comportement diffère de la façon dont F # Async recouvre généralement les exceptions.
 
 ### <a name="asynccatch"></a>Async. catch
 
@@ -273,7 +273,7 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncignore"></a>Async. ignore
 
-Crée un calcul asynchrone qui exécute le calcul donné et ignore son résultat.
+Crée un calcul asynchrone qui exécute le calcul donné, mais supprime son résultat.
 
 Signature :
 
@@ -283,7 +283,7 @@ computation: Async<'T> -> Async<unit>
 
 Quand l’utiliser :
 
-- Quand vous avez un calcul asynchrone dont le résultat n’est pas nécessaire. Cela est analogue au `ignore` code pour le code non asynchrone.
+- Quand vous avez un calcul asynchrone dont le résultat n’est pas nécessaire. Cela est analogue à la `ignore` fonction pour du code non asynchrone.
 
 Ce qu’il faut surveiller :
 
@@ -291,7 +291,7 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncrunsynchronously"></a>Async. RunSynchronously
 
-Exécute un calcul asynchrone et attend son résultat sur le thread appelant. Cet appel est bloquant.
+Exécute un calcul asynchrone et attend son résultat sur le thread appelant. Propage une exception si le calcul en génère un. Cet appel est bloquant.
 
 Signature :
 
@@ -310,7 +310,7 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncstart"></a>Async. Start
 
-Démarre un calcul asynchrone dans le pool de threads qui retourne `unit` . N’attend pas son résultat. Les calculs imbriqués démarrés avec `Async.Start` sont démarrés indépendamment du calcul parent qui les a appelés. Leur durée de vie n’est pas liée à un calcul parent. Si le calcul parent est annulé, aucun calcul enfant n’est annulé.
+Démarre un calcul asynchrone qui retourne `unit` dans le pool de threads. N’attend pas la fin de son exécution et/ou ne respecte pas le résultat d’une exception. Les calculs imbriqués démarrés avec `Async.Start` sont démarrés indépendamment du calcul parent qui les a appelés ; leur durée de vie n’est pas liée à un calcul parent. Si le calcul parent est annulé, aucun calcul enfant n’est annulé.
 
 Signature :
 
@@ -323,7 +323,7 @@ computation: Async<unit> * cancellationToken: ?CancellationToken -> unit
 - Vous avez un calcul asynchrone qui ne génère pas de résultat et/ou nécessite le traitement d’un.
 - Vous n’avez pas besoin de savoir quand un calcul asynchrone se termine.
 - Vous ne vous souciez pas du thread sur lequel s’exécute un calcul asynchrone.
-- Vous n’avez pas besoin de connaître ou de signaler les exceptions résultant de la tâche.
+- Vous n’avez pas besoin de connaître ou de signaler les exceptions résultant de l’exécution.
 
 Ce qu’il faut surveiller :
 

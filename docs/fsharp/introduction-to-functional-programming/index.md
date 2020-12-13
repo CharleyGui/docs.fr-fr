@@ -2,12 +2,12 @@
 title: Introduction à la programmation fonctionnelle en F#
 description: 'Découvrez les principes de base de la programmation fonctionnelle en F #.'
 ms.date: 10/29/2018
-ms.openlocfilehash: fc2aebe80de16b92942c3557c0e03c198883dde1
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: 44242a4319a331312a003a555d1483f2a3f1a90d
+ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96740326"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97110583"
 ---
 # <a name="introduction-to-functional-programming-in-f"></a>Présentation de la programmation fonctionnelle en F\#
 
@@ -54,7 +54,7 @@ Pourquoi la signature est-elle importante ? Dans la programmation fonctionnelle
 
 ### <a name="expressions"></a>Expressions
 
-Les expressions sont des constructions qui évaluent une valeur. Contrairement aux instructions qui exécutent une action, les expressions peuvent être considérées comme effectuant une action qui renvoie une valeur. Les expressions sont presque toujours utilisées en faveur des instructions dans la programmation fonctionnelle.
+Les expressions sont des constructions qui évaluent une valeur. Contrairement aux instructions qui exécutent une action, les expressions peuvent être considérées comme effectuant une action qui renvoie une valeur. Les expressions sont presque toujours utilisées dans la programmation fonctionnelle au lieu des instructions.
 
 Examinez la fonction précédente, `addOne` . Le corps de `addOne` est une expression :
 

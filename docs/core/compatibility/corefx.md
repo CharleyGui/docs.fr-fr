@@ -2,12 +2,12 @@
 title: Modifications importantes de la bibliothèque .NET
 description: Répertorie les dernières modifications dans les bibliothèques .NET principales pour .NET Core versions 1.0 à 3.0.
 ms.date: 07/27/2020
-ms.openlocfilehash: 0f42429e44776fc70bb99ed3bdf346f0d5dbc9eb
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 092ff36a5e07c9e226fe2a67d5e7cfd391e9d16b
+ms.sourcegitcommit: fcbe432482464b1639decad78cc4dc8387c6269e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96031983"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366871"
 ---
 # <a name="core-net-libraries-breaking-changes-in-net-core-10-30"></a>Principales modifications importantes des bibliothèques .NET dans .NET Core 1.0-3.0
 
@@ -17,6 +17,7 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 | Modification avec rupture | Version introduite |
 | - | :-: |
+| [Passer GroupCollection à des méthodes d’extension en acceptant IEnumerable \<T> requiert une ambiguïté](#passing-groupcollection-to-extension-methods-taking-ienumerablet-requires-disambiguation) | 3.0 |
 | [API qui signalent la version du produit et non de la version du fichier](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
 | [Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
 | [Modifications du comportement de l’analyse et de la mise en forme à virgule flottante](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
@@ -36,13 +37,17 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 
-[!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/3.0/version-information-changes.md)]
+[!INCLUDE [disambiguate-generic-type-for-groupcollection](../../../includes/core-changes/corefx/3.0/disambiguate-generic-type-for-groupcollection.md)]
 
 ***
 
-[!INCLUDE[Custom EncoderFallbackBuffer instances cannot fall back recursively](~/includes/core-changes/corefx/3.0/custom-encoderfallbackbuffer-cannot-be-recursive.md)]
+[!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/3.0/version-information-changes.md)]
 
 **_
+
+[!INCLUDE[Custom EncoderFallbackBuffer instances cannot fall back recursively](~/includes/core-changes/corefx/3.0/custom-encoderfallbackbuffer-cannot-be-recursive.md)]
+
+_*_
 
 [!INCLUDE[Floating point formatting and parsing behavior changes](~/includes/core-changes/corefx/3.0/floating-point-changes.md)]
 
