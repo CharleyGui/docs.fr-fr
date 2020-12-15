@@ -5,13 +5,13 @@ ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet,contperfq1
-ms.openlocfilehash: 6a3f61525ca86afc9ee71d56cbc9450862760ba4
-ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
+ms.custom: vs-dotnet,contperf-fy21q1
+ms.openlocfilehash: 2d9b02a155c950b77565a66417948568f5fa039f
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96599510"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513118"
 ---
 # <a name="tutorial-create-a-net-class-library-using-visual-studio"></a>Didacticiel : créer une bibliothèque de classes .NET à l’aide de Visual Studio
 

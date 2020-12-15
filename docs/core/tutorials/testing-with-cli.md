@@ -1,18 +1,18 @@
 ---
-title: Organisation et test de projets avec la CLI .NET Core
-description: Ce didacticiel explique comment organiser et tester des projets .NET Core à partir de la ligne de commande.
+title: Organisation et test de projets avec l’interface de commande .NET
+description: Ce didacticiel explique comment organiser et tester des projets .NET à partir de la ligne de commande.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: 58c78c0f11ab1b275e4e4d05bf1da32562333c91
-ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
+ms.openlocfilehash: 93e8a6b8afd9f9405bf21488998a61c2e761bf1e
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84325943"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512253"
 ---
-# <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organisation et test de projets avec la CLI .NET Core
+# <a name="organizing-and-testing-projects-with-the-net-cli"></a>Organisation et test de projets avec l’interface de commande .NET
 
-Ce didacticiel suit le [Didacticiel : créer une application console avec .net core à l’aide de Visual Studio code, en](with-visual-studio-code.md)allant au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
+Ce didacticiel suit le [Didacticiel : créer une application console avec .net à l’aide de Visual Studio code](with-visual-studio-code.md), en allant au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
 
 ## <a name="using-folders-to-organize-code"></a>Utilisation de dossiers pour organiser le code
 
@@ -42,6 +42,10 @@ Pour organiser le projet, créez un dossier et nommez-le *Models* pour stocker l
 Les projets qui regroupent logiquement les fichiers dans des dossiers simplifient la navigation et la gestion. Dans la section suivante, vous allez créer un exemple plus complexe avec des dossiers et des tests unitaires.
 
 ## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a>Organisation et test du code à l’aide de l’exemple NewTypes Pets
+
+### <a name="prerequisites"></a>Prérequis
+
+* [.Net 5,0 SDK](https://dotnet.microsoft.com/download) ou une version ultérieure.
 
 ### <a name="building-the-sample"></a>Génération de l’exemple
 
@@ -181,38 +185,27 @@ Le code suivant montre la structure complète du projet :
       |__NewTypesTests.csproj
 ```
 
-Démarrez dans le répertoire *test/NewTypesTests*. Restaurez le projet de test avec la [`dotnet restore`](../tools/dotnet-restore.md) commande. Exécutez les tests avec la [`dotnet test`](../tools/dotnet-test.md) commande. Cette commande démarre le Test Runner spécifié dans le fichier projet.
-
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+Démarrez dans le répertoire *test/NewTypesTests*. Exécutez les tests avec la [`dotnet test`](../tools/dotnet-test.md) commande. Cette commande démarre le Test Runner spécifié dans le fichier projet.
 
 Comme prévu, les tests échouent et la console affiche la sortie suivante :
 
 ```output
-Test run for c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp2.1\NewTypesTests.dll(.NETCoreApp,Version=v2.1)
-Microsoft (R) Test Execution Command Line Tool Version 15.8.0
+Test run for C:\Source\dotnet\docs\samples\snippets\core\tutorials\testing-with-cli\csharp\test\NewTypesTests\bin\Debug\net5.0\NewTypesTests.dll (.NETCoreApp,Version=v5.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.8.1
 Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Starting test execution, please wait...
-[xUnit.net 00:00:00.77]     PetTests.DogTalkToOwnerReturnsWoof [FAIL]
-[xUnit.net 00:00:00.78]     PetTests.CatTalkToOwnerReturnsMeow [FAIL]
-Failed   PetTests.DogTalkToOwnerReturnsWoof
-Error Message:
- Assert.NotEqual() Failure
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.50]     PetTests.DogTalkToOwnerReturnsWoof [FAIL]
+  Failed PetTests.DogTalkToOwnerReturnsWoof [6 ms]
+  Error Message:
+   Assert.NotEqual() Failure
 Expected: Not "Woof!"
 Actual:   "Woof!"
-Stack Trace:
-   at PetTests.DogTalkToOwnerReturnsWoof() in c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\PetTests.cs:line 13
-Failed   PetTests.CatTalkToOwnerReturnsMeow
-Error Message:
- Assert.NotEqual() Failure
-Expected: Not "Meow!"
-Actual:   "Meow!"
-Stack Trace:
-   at PetTests.CatTalkToOwnerReturnsMeow() in c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\PetTests.cs:line 22
+  Stack Trace:
+     at PetTests.DogTalkToOwnerReturnsWoof() in C:\Source\dotnet\docs\samples\snippets\core\tutorials\testing-with-cli\csharp\test\NewTypesTests\PetTests.cs:line 13
 
-Total tests: 2. Passed: 0. Failed: 2. Skipped: 0.
-Test Run Failed.
-Test execution time: 1.7000 Seconds
+Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2, Duration: 8 ms - NewTypesTests.dll (net5.0)
 ```
 
 Remplacez les assertions de vos tests `Assert.NotEqual` par `Assert.Equal` :
@@ -222,15 +215,14 @@ Remplacez les assertions de vos tests `Assert.NotEqual` par `Assert.Equal` :
 Réexécutez les tests avec la commande `dotnet test` et observez la sortie suivante :
 
 ```output
-Test run for c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp2.1\NewTypesTests.dll(.NETCoreApp,Version=v2.1)
-Microsoft (R) Test Execution Command Line Tool Version 15.8.0
+Test run for C:\Source\dotnet\docs\samples\snippets\core\tutorials\testing-with-cli\csharp\test\NewTypesTests\bin\Debug\net5.0\NewTypesTests.dll (.NETCoreApp,Version=v5.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.8.1
 Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
 
-Total tests: 2. Passed: 2. Failed: 0. Skipped: 0.
-Test Run Successful.
-Test execution time: 1.6029 Seconds
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 2 ms - NewTypesTests.dll (net5.0)
 ```
 
 Les tests réussissent. Les méthodes des types d’animaux domestiques retournent des valeurs correctes quand elles communiquent avec le propriétaire.

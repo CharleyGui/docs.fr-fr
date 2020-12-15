@@ -13,12 +13,12 @@ helpviewer_keywords:
 - regular expressions [.NET], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
-ms.openlocfilehash: aceccc019542bb1afe3082881626cfc32740a338
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 659ba966ab18f2c5db13af3ac687af57dea7b126
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95733644"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513209"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Exemple d'expression régulière : recherche de valeurs HREF
 
@@ -46,7 +46,7 @@ L’exemple suivant recherche une chaîne d’entrée et affiche toutes les vale
 |`\s*`|Correspond à zéro, un ou plusieurs espaces blancs.|  
 |`=`|Correspond au signe égal.|  
 |`\s*`|Correspond à zéro, un ou plusieurs espaces blancs.|  
-|`(?:\["'\](?<1>\[^"'\]*)["']|(?<1>\S+))`|Correspond à l’un des éléments suivants sans assigner le résultat à un groupe capturé :<br /> <ul><li><p>Un guillemet ou une apostrophe, suivi(e) de zéro, une ou plusieurs occurrences de tout caractère autre qu’un guillemet ou une apostrophe, suivie(s) d’un guillemet ou d’une apostrophe. Le groupe nommé `1` est inclus dans ce modèle.</p></li><li><p>Un ou plusieurs caractères autres que des espaces. Le groupe nommé `1` est inclus dans ce modèle.</p></li></ul>|  
+|`(?:\["'\](?<1>\[^"'\]*)["']\|(?<1>\S+))`|Correspond à l’un des éléments suivants sans assigner le résultat à un groupe capturé :<br /> <ul><li><p>Un guillemet ou une apostrophe, suivi(e) de zéro, une ou plusieurs occurrences de tout caractère autre qu’un guillemet ou une apostrophe, suivie(s) d’un guillemet ou d’une apostrophe. Le groupe nommé `1` est inclus dans ce modèle.</p></li><li><p>Un ou plusieurs caractères autres que des espaces. Le groupe nommé `1` est inclus dans ce modèle.</p></li></ul>|  
 |`(?<1>[^"']*)`|Affecte zéro, une ou plusieurs occurrences de tout caractère autre qu’un guillemet ou une apostrophe au groupe de capture nommé `1`.|  
 |`(?<1>\S+)`|Affecte un ou plusieurs caractères non espace blanc au groupe de capture nommé `1`.|  
   

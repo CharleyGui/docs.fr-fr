@@ -3,12 +3,12 @@ title: 'Didacticiel : créer un outil .NET'
 description: Découvrez comment créer un outil .NET. Un outil est une application console installée à l’aide de l’interface CLI .NET.
 ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 93d0567f3d73707f828f84fad6128804debf6579
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 8f2dd15982aff9fe2d9db9ce2cff8ac1b22e440e
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94633776"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512630"
 ---
 # <a name="tutorial-create-a-net-tool-using-the-net-cli"></a>Didacticiel : créer un outil .NET à l’aide de l’interface de commande .NET
 
@@ -18,13 +18,13 @@ Ce didacticiel vous apprend à créer et à empaqueter un outil .NET. L’interf
 
 L’outil que vous allez créer est une application console qui accepte un message comme entrée et affiche le message avec des lignes de texte qui créent l’image d’un robot.
 
-Il s’agit de la première d’une série de trois didacticiels. Dans ce didacticiel, vous allez créer et empaqueter un outil. Dans les deux didacticiels suivants, vous [Utilisez l’outil comme un outil Global](global-tools-how-to-use.md) et vous [Utilisez l’outil comme outil local](local-tools-how-to-use.md).
+Il s’agit de la première d’une série de trois didacticiels. Dans ce didacticiel, vous allez créer et empaqueter un outil. Dans les deux didacticiels suivants, vous [Utilisez l’outil comme un outil Global](global-tools-how-to-use.md) et vous [Utilisez l’outil comme outil local](local-tools-how-to-use.md). Les procédures de création d’un outil sont les mêmes que vous l’utilisiez comme outil Global ou comme outil local.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [Kit SDK .NET Core 3,1](https://dotnet.microsoft.com/download) ou une version ultérieure.
+- [.NET SDK 5,0](https://dotnet.microsoft.com/download) ou version ultérieure.
 
-  Ce didacticiel et le [didacticiel sur les outils généraux](global-tools-how-to-use.md) s’appliquent à kit SDK .net Core 2,1 et versions ultérieures, car les outils globaux sont disponibles à partir de cette version. Toutefois, ce didacticiel suppose que vous avez installé 3,1 ou une version ultérieure afin de pouvoir passer au didacticiel sur les [Outils locaux](local-tools-how-to-use.md). Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0. Les procédures de création d’un outil sont les mêmes que vous l’utilisiez comme outil Global ou comme outil local.
+  Ce didacticiel utilise le kit de développement logiciel (SDK) .NET 5,0, mais les outils globaux sont disponibles à partir de kit SDK .NET Core 2,1. Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.
   
 - Un éditeur de texte ou un éditeur de code de votre choix.
 
@@ -158,7 +158,7 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
 
    `<ToolCommandName>` est un élément facultatif qui spécifie la commande qui appellera l’outil après son installation. Si cet élément n’est pas fourni, le nom de commande de l’outil est le nom du fichier projet sans l’extension *. csproj* .
 
-   `<PackageOutputPath>` est un élément facultatif qui détermine où le package NuGet sera produit. Le package NuGet est ce que le CLI .NET Core utilise pour installer votre outil.
+   `<PackageOutputPath>` est un élément facultatif qui détermine où le package NuGet sera produit. Le package NuGet est ce que l’interface de commande .NET utilise pour installer votre outil.
 
    Le fichier projet se présente maintenant comme dans l’exemple suivant :
 
@@ -168,7 +168,7 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
      <PropertyGroup>
 
        <OutputType>Exe</OutputType>
-       <TargetFramework>netcoreapp3.1</TargetFramework>
+       <TargetFramework>net5.0</TargetFramework>
   
        <PackAsTool>true</PackAsTool>
        <ToolCommandName>botsay</ToolCommandName>

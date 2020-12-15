@@ -2,12 +2,12 @@
 title: 'Modification avec rupture : OutputType défini sur WinExe pour les applications WPF et WinForms'
 description: En savoir plus sur la modification avec rupture dans .NET 5,0 où OutputType est automatiquement défini sur WinExe pour les applications Windows Forms.
 ms.date: 09/18/2020
-ms.openlocfilehash: 072c5b11c8304eb540e176ce9747930789f28505
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 7b2c7a76983c9e7958808e3cc4716be7792841c6
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761256"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513183"
 ---
 # <a name="outputtype-set-to-winexe-for-wpf-and-winforms-apps"></a>OutputType défini sur WinExe pour les applications WPF et WinForms
 
@@ -15,7 +15,7 @@ ms.locfileid: "95761256"
 
 ## <a name="change-description"></a>Description de la modification
 
-Dans les versions précédentes de .NET, la valeur spécifiée pour `OutputType` dans le fichier projet est utilisée. Par exemple :
+Dans les versions précédentes du kit de développement logiciel (SDK) .NET, la valeur spécifiée pour `OutputType` dans le fichier projet est utilisée. Par exemple :
 
 ```xml
 <PropertyGroup>
@@ -23,7 +23,7 @@ Dans les versions précédentes de .NET, la valeur spécifiée pour `OutputType`
 </PropertyGroup>
 ```
 
-À compter de .NET 5,0, `OutputType` a automatiquement la valeur `WinExe` pour WPF et les applications Windows Forms. Par exemple :
+À partir de la version 5.0.1 du kit de développement logiciel (SDK) .NET, `OutputType` a automatiquement la valeur `WinExe` pour WPF et les applications Windows Forms qui ciblent toute version du Framework, y compris .NET Framework. Par exemple :
 
 ```xml
 <PropertyGroup>
@@ -37,7 +37,7 @@ Il est supposé que la plupart des utilisateurs ne souhaitent pas qu’une fenê
 
 ## <a name="version-introduced"></a>Version introduite
 
-.NET 5,0
+.NET 5.0.1
 
 ## <a name="recommended-action"></a>Action recommandée
 

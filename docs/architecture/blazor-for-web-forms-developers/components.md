@@ -6,12 +6,12 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/18/2019
-ms.openlocfilehash: 4fdf062fb719e62b53e47f79db1e93d0bf079350
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: fd560c84c095dffc3718a7709af904d9ba722a18
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267683"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512767"
 ---
 # <a name="build-reusable-ui-components-with-no-locblazor"></a>Créer des composants d’interface utilisateur réutilisables avec Blazor
 
@@ -79,13 +79,13 @@ Le tableau suivant récapitule les différentes directives Razor utilisées dans
 
 |Directive    |Description|Exemple|Équivalent Web Forms|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|None|
+|`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|Aucun|
 |`@code`      |Ajoute des membres de classe au composant|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser code-behind|
 |`@inherits`  |Hérite de la classe de base spécifiée|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|None|
+|`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|Aucun|
 |`@layout`    |Spécifie un composant de disposition pour le composant|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|None|
+|`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|Aucun|
 |`@page`      |Spécifie l’itinéraire pour le composant|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser code-behind|
 |`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *web.config*|
@@ -525,7 +525,7 @@ Blazor les composants peuvent capturer des références à un élément. Contrai
 
 ## <a name="templated-components"></a>Composants basés sur un modèle
 
-Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés*sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. Les exemples de contrôles basés sur un modèle incluent `Repeater` et `DataList` .
+Dans ASP.NET Web Forms, vous pouvez créer des *contrôles basés* sur un modèle. Les contrôles basés sur un modèle permettent au développeur de spécifier une partie du code HTML utilisé pour restituer un contrôle conteneur. La mécanique de la création de contrôles serveur basés sur des modèles est complexe, mais elle permet de puissants scénarios de rendu des données de manière personnalisable par l’utilisateur. Les exemples de contrôles basés sur un modèle incluent `Repeater` et `DataList` .
 
 Blazor les composants peuvent également être basés sur un modèle en définissant des paramètres de composant de type `RenderFragment` ou `RenderFragment<T>` . Un `RenderFragment` représente un segment de balisage Razor qui peut ensuite être rendu par le composant. Un `RenderFragment<T>` est un segment de balisage Razor qui prend un paramètre qui peut être spécifié lors du rendu du fragment de rendu.
 
@@ -550,7 +550,9 @@ Un composant parent peut ensuite fournir le contenu enfant à l’aide d’un sy
 
 ```razor
 <ChildContentComponent>
-    <p>The time is @DateTime.Now</p>
+    <ChildContent>
+        <p>The time is @DateTime.Now</p>
+    </ChildContent>
 </ChildContentComponent>
 ```
 

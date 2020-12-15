@@ -1,20 +1,20 @@
 ---
-title: Créer un modèle d’élément pour la commande dotnet new - CLI .NET Core
+title: Créer un modèle d’élément pour dotnet New-.NET CLI
 description: Découvrez comment créer un modèle d’élément pour la commande dotnet new. Les modèles d’élément peuvent contenir n’importe quel nombre de fichiers.
 author: adegeo
-ms.date: 06/25/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 0b804d26b2f33d4d600c17de2f7f71101a0f9c98
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: b148870480584cff37f3fd395e0594344001f247
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324371"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512422"
 ---
 # <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
 
-Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le premier d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
+Avec .NET, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce didacticiel fait partie d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la `dotnet new` commande.
 
 Dans cette partie de la série, vous découvrirez comment :
 
@@ -28,7 +28,7 @@ Dans cette partie de la série, vous découvrirez comment :
 
 ## <a name="prerequisites"></a>Prérequis
 
-* [SDK .NET Core 2.2](https://dotnet.microsoft.com/download) ou versions ultérieures.
+* [.Net 5,0 SDK](https://dotnet.microsoft.com/download) ou une version ultérieure.
 * Lisez l’article de référence [Modèles personnalisés pour dotnet new](../tools/custom-templates.md).
 
   L’article de référence explique les notions de base sur les modèles et la façon dont ils sont créés. Certaines de ces informations seront répétées ici.
@@ -85,7 +85,7 @@ Maintenant que le contenu du modèle est créé, vous devez créer la configurat
 
 ## <a name="create-the-template-config"></a>Créer la configuration du modèle
 
-Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce tutoriel, votre dossier de modèle se trouve dans _working\templates\extensions_.
+Les modèles sont reconnus par un dossier spécial et un fichier de configuration qui se trouvent à la racine de votre modèle. Dans ce tutoriel, votre dossier de modèle se trouve dans _working\templates\extensions_.
 
 Lorsque vous créez un modèle, tous les fichiers et dossiers du dossier de modèle sont inclus dans le modèle, à l’exception du dossier de configuration spécial. Ce dossier de configuration est nommé _.template.config_.
 
@@ -116,14 +116,14 @@ Ouvrez le _template.jsdans_ avec votre éditeur de texte préféré et collez le
 }
 ```
 
-Ce fichier de configuration contient tous les paramètres de votre modèle. Vous pouvez voir les paramètres de base, tels que `name` et `shortName`, mais il existe également une valeur `tags/type` qui est définie sur `item`. Cela classe votre modèle en tant que modèle d’élément. Il n’existe aucune restriction sur le type de modèle que vous créez. Les valeurs `item` et `project` sont des noms courants que .NET Core recommande afin que les utilisateurs puissent facilement filtrer le type de modèle qu’ils recherchent.
+Ce fichier de configuration contient tous les paramètres de votre modèle. Vous pouvez voir les paramètres de base, tels que `name` et `shortName`, mais il existe également une valeur `tags/type` qui est définie sur `item`. Cela classe votre modèle en tant que modèle d’élément. Il n’existe aucune restriction sur le type de modèle que vous créez. Les `item` `project` valeurs et sont des noms communs que .net recommande afin que les utilisateurs puissent facilement filtrer le type de modèle qu’ils recherchent.
 
 L’élément `classifications` représente la colonne **tags** que vous voyez lorsque vous exécutez `dotnet new` et obtenez une liste de modèles. Les utilisateurs peuvent également effectuer une recherche sur les balises de classification. Ne confondez pas la propriété `tags` dans le fichier \*.json avec la liste de balises `classifications`. Il s’agit de deux choses différentes, qui ont malheureusement le même nom. Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
 Maintenant que vous avez un fichier _.template.config/template.json_ valide, votre modèle est prêt à être installé. Dans votre terminal, accédez au dossier _extensions_ et exécutez la commande suivante pour installer le modèle situé dans le dossier actuel :
 
-* **Sur Windows**:`dotnet new -i .\`
-* **Sur Linux ou MacOS**:`dotnet new -i ./`
+* **Sur Windows**: `dotnet new -i .\`
+* **Sur Linux ou MacOS**: `dotnet new -i ./`
 
 Cette commande génère la liste des modèles installés, qui doivent inclure le vôtre.
 
@@ -137,14 +137,12 @@ Options:
 
 ... cut to save space ...
 
-Templates                                         Short Name            Language          Tags
--------------------------------------------------------------------------------------------------------------------------------
-Example templates: string extensions              stringext             [C#]              Common/Code
-Console Application                               console               [C#], F#, VB      Common/Console
-Class library                                     classlib              [C#], F#, VB      Common/Library
-WPF Application                                   wpf                   [C#], VB          Common/WPF
-Windows Forms (WinForms) Application              winforms              [C#], VB          Common/WinForms
-Worker Service                                    worker                [C#]              Common/Worker/Web
+Templates                                         Short Name               Language          Tags
+--------------------------------------------      -------------------      ------------      ----------------------
+Example templates: string extensions              stringext                [C#]              Common/Code
+Console Application                               console                  [C#], F#, VB      Common/Console
+Class library                                     classlib                 [C#], F#, VB      Common/Library
+WPF Application                                   wpf                      [C#], VB          Common/WPF
 ```
 
 ## <a name="test-the-item-template"></a>Tester le modèle d’élément
@@ -209,11 +207,11 @@ Vous recevez la sortie suivante.
 !dlroW olleH
 ```
 
-Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NET Core. Pour préparer la partie suivante de cette série de tutoriels, vous devez désinstaller le modèle que vous avez créé. Veillez à supprimer également tous les fichiers du dossier _test_. Vous revenez à un nouvel état prêt pour la section principale suivante de ce tutoriel.
+Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NET. Pour préparer la partie suivante de cette série de tutoriels, vous devez désinstaller le modèle que vous avez créé. Veillez à supprimer également tous les fichiers du dossier _test_. Vous revenez à un nouvel état prêt pour la section principale suivante de ce tutoriel.
 
 ## <a name="uninstall-the-template"></a>Désinstaller le modèle
 
-Étant donné que vous avez installé le modèle par chemin de fichier, vous devez le désinstaller avec le chemin de fichier **absolu**. Vous pouvez consulter la liste des modèles installés en exécutant la commande `dotnet new -u`. Votre modèle doit être listé en dernier. Utilisez le chemin indiqué pour désinstaller votre modèle à l’aide de la commande `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>`.
+Étant donné que vous avez installé le modèle par chemin de fichier, vous devez le désinstaller avec le chemin de fichier **absolu**. Vous pouvez consulter la liste des modèles installés en exécutant la commande `dotnet new -u`. Votre modèle doit être listé en dernier. Utilisez la `Uninstall Command` liste pour désinstaller votre modèle.
 
 ```dotnetcli
 dotnet new -u
@@ -225,31 +223,31 @@ Vous recevez une sortie similaire à ce qui suit.
 Template Instantiation Commands for .NET Core CLI
 
 Currently installed items:
-  Microsoft.DotNet.Common.ItemTemplates
+  Microsoft.DotNet.Common.ProjectTemplates.2.2
+    Details:
+      NuGetPackageId: Microsoft.DotNet.Common.ProjectTemplates.2.2
+      Version: 1.0.2-beta4
+      Author: Microsoft
     Templates:
-      dotnet gitignore file (gitignore)
-      global.json file (globaljson)
-      NuGet Config (nugetconfig)
-      Solution File (sln)
-      Dotnet local tool manifest file (tool-manifest)
-      Web Config (webconfig)
+      Class library (classlib) C#
+      Class library (classlib) F#
+      Class library (classlib) VB
+      Console Application (console) C#
+      Console Application (console) F#
+      Console Application (console) VB
+    Uninstall Command:
+      dotnet new -u Microsoft.DotNet.Common.ProjectTemplates.2.2
 
 ... cut to save space ...
 
-  NUnit3.DotNetNew.Template
-    Templates:
-      NUnit 3 Test Project (nunit) C#
-      NUnit 3 Test Item (nunit-test) C#
-      NUnit 3 Test Project (nunit) F#
-      NUnit 3 Test Item (nunit-test) F#
-      NUnit 3 Test Project (nunit) VB
-      NUnit 3 Test Item (nunit-test) VB
-  C:\working\templates\extensions
+C:\Test\templatetutorial\working\templates\extensions
     Templates:
       Example templates: string extensions (stringext) C#
+    Uninstall Command:
+      dotnet new -u C:\working\templates\extensions
 ```
 
-Pour désinstaller un modèle, exécutez la commande suivante.
+Pour désinstaller le modèle que vous avez créé, exécutez le `Uninstall Command` qui est affiché dans la sortie.
 
 ```dotnetcli
 dotnet new -u C:\working\templates\extensions

@@ -5,14 +5,14 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.topic: how-to
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: d344489e88ddc2c8cac51afeb5bbc76bc7b42913
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: 4ae48a05d451a3276b3a0f2ee4d6c633ce7db306
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95099072"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513006"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Comment implémenter et appeler une méthode d’extension personnalisée (Guide de programmation C#)
 
@@ -51,7 +51,7 @@ Cette rubrique montre comment implémenter vos propres méthodes d’extension p
 - [LINQ (Language Integrated Query)](../../linq/linq-in-csharp.md)
 - [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md)
 - [protected](../../language-reference/keywords/protected.md)
-- [internal](../../language-reference/keywords/internal.md)
+- [intérieurs](../../language-reference/keywords/internal.md)
 - [public](../../language-reference/keywords/public.md)
 - [this](../../language-reference/keywords/this.md)
 - [namespace](../../language-reference/keywords/namespace.md)

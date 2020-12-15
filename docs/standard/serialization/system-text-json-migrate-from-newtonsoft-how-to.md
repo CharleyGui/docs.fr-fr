@@ -6,19 +6,19 @@ ms.author: tdykstra
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-ms.date: 12/09/2020
+ms.date: 12/14/2020
 zone_pivot_groups: dotnet-version
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 4a33d9de96af805c3696ceed5cd30a3fa8547222
-ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
+ms.openlocfilehash: 8c2d4baa9b9a3b19b8f1bde09bea0ab718092e24
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97110830"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512643"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Comment migrer de Newtonsoft.Json vers System.Text.Json
 
@@ -75,12 +75,13 @@ Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `Sy
 | Méthode `JsonConvert.PopulateObject`                   | ⚠️[Non pris en charge, solution de contournement](#populate-existing-objects) |
 | `ObjectCreationHandling` paramètre global               | ⚠️[Non pris en charge, solution de contournement](#reuse-rather-than-replace-properties) |
 | Ajouter aux collections sans Setters                    | ⚠️[Non pris en charge, solution de contournement](#add-to-collections-without-setters) |
-| `ReferenceLoopHandling` paramètre global                | ❌ [Non pris en charge](#preserve-object-references-and-handle-loops) |
-| Prise en charge des `System.Runtime.Serialization` attributs | ❌ [Non pris en charge](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling` paramètre global                | ❌ [Non pris en charge](#missingmemberhandling) |
-| Autoriser les noms de propriété sans guillemets                   | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌ [Non pris en charge](#non-string-values-for-string-properties) |
+| `ReferenceLoopHandling` paramètre global                | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
+| Prise en charge des `System.Runtime.Serialization` attributs | ❌[Non pris en charge](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling` paramètre global                | ❌[Non pris en charge](#missingmemberhandling) |
+| Autoriser les noms de propriété sans guillemets                   | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌[Non pris en charge](#non-string-values-for-string-properties) |
+| `TypeNameHandling.All` paramètre global                 | ❌[Non pris en charge](#typenamehandlingall-not-supported) |
 ::: zone-end
 
 ::: zone pivot="dotnet-core-3-1"
@@ -115,13 +116,14 @@ Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `Sy
 | Méthode `JsonConvert.PopulateObject`                   | ⚠️[Non pris en charge, solution de contournement](#populate-existing-objects) |
 | `ObjectCreationHandling` paramètre global               | ⚠️[Non pris en charge, solution de contournement](#reuse-rather-than-replace-properties) |
 | Ajouter aux collections sans Setters                    | ⚠️[Non pris en charge, solution de contournement](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling` paramètre global           | ❌ [Non pris en charge](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling` paramètre global                | ❌ [Non pris en charge](#preserve-object-references-and-handle-loops) |
-| Prise en charge des `System.Runtime.Serialization` attributs | ❌ [Non pris en charge](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling` paramètre global                | ❌ [Non pris en charge](#missingmemberhandling) |
-| Autoriser les noms de propriété sans guillemets                   | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌ [Non pris en charge](#json-strings-property-names-and-string-values) |
-| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌ [Non pris en charge](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling` paramètre global           | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling` paramètre global                | ❌[Non pris en charge](#preserve-object-references-and-handle-loops) |
+| Prise en charge des `System.Runtime.Serialization` attributs | ❌[Non pris en charge](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling` paramètre global                | ❌[Non pris en charge](#missingmemberhandling) |
+| Autoriser les noms de propriété sans guillemets                   | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les guillemets simples autour des valeurs de chaîne              | ❌[Non pris en charge](#json-strings-property-names-and-string-values) |
+| Autoriser les valeurs non-chaîne JSON pour les propriétés de chaîne    | ❌[Non pris en charge](#non-string-values-for-string-properties) |
+| `TypeNameHandling.All` paramètre global                 | ❌[Non pris en charge](#typenamehandlingall-not-supported) |
 ::: zone-end
 
 Il ne s’agit pas d’une liste exhaustive des `Newtonsoft.Json` fonctionnalités. La liste comprend un grand nombre des scénarios qui ont été demandés dans les [problèmes GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou les publications [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Si vous implémentez une solution de contournement pour l’un des scénarios répertoriés ici qui n’a pas d’exemple de code, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la section **Commentaires** en bas de cette page. Cela crée un problème dans le référentiel GitHub de cette documentation et le répertorie également dans la section **Commentaires** sur cette page.
@@ -629,7 +631,7 @@ public JsonElement LookAndLoad(JsonElement source)
 
 Le code précédent attend un `JsonElement` qui contient une `fileName` propriété. Il ouvre le fichier JSON et crée un `JsonDocument` . La méthode suppose que l’appelant souhaite travailler avec l’ensemble du document, de sorte qu’il retourne l' `Clone` du `RootElement` .
 
-Si vous recevez un `JsonElement` et que vous retournez un sous-élément, il n’est pas nécessaire de retourner un `Clone` du sous-élément. L’appelant est chargé de conserver les actifs `JsonDocument` auxquels appartient le passé `JsonElement` . Par exemple :
+Si vous recevez un `JsonElement` et que vous retournez un sous-élément, il n’est pas nécessaire de retourner un `Clone` du sous-élément. L’appelant est chargé de conserver les actifs `JsonDocument` auxquels appartient le passé `JsonElement` . Par exemple :
 
 ```csharp
 public JsonElement ReturnFileName(JsonElement source)
@@ -807,6 +809,10 @@ Si vous devez continuer à utiliser `Newtonsoft.Json` pour certains frameworks c
 
 * [UnifiedJsonWriter.JsonTextWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.JsonTextWriter.cs)
 * [UnifiedJsonWriter.Utf8JsonWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.Utf8JsonWriter.cs)
+
+## <a name="typenamehandlingall-not-supported"></a>TypeNameHandling. All non pris en charge
+
+La décision d’exclure `TypeNameHandling.All` des fonctionnalités équivalentes de `System.Text.Json` était intentionnelle. Permettre à une charge utile JSON de spécifier ses propres informations de type est une source commune de vulnérabilités dans les applications Web. En particulier, la configuration `Newtonsoft.Json` de avec `TypeNameHandling.All` permet au client distant d’incorporer une application exécutable entière dans la charge utile JSON proprement dite. ainsi, pendant la désérialisation, l’application Web extrait et exécute le code incorporé. Pour plus d’informations, consultez [le vendredi 13 attaques JSON, PowerPoint](https://www.blackhat.com/docs/us-17/thursday/us-17-Munoz-Friday-The-13th-Json-Attacks.pdf) et [vendredi, 13e mois d’attaques JSON](https://www.blackhat.com/docs/us-17/thursday/us-17-Munoz-Friday-The-13th-JSON-Attacks-wp.pdf).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

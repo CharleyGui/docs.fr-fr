@@ -5,18 +5,18 @@ author: cartermp
 ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: 35ba90f978b1993f80451a28a4cd08129afddd85
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 58f650e7932d4f5862d545429376b3e417bb433c
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864499"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512240"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
 Si vous avez des besoins liés aux e/s (par exemple, la demande de données à un réseau, l’accès à une base de données ou la lecture et l’écriture dans un système de fichiers), vous pouvez utiliser la programmation asynchrone. L’écriture de code asynchrone est également indiquée si votre code utilise le processeur de manière intensive, notamment pour effectuer un calcul complexe.
 
-C# possède un modèle de programmation asynchrone au niveau du langage, qui permet d’écrire facilement du code asynchrone, sans avoir à jongler avec les rappels ni à se conformer à une bibliothèque qui prend en charge l’asynchronie. Il suit ce que l’on appelle le [modèle asynchrone basé sur des tâches (TAP)](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
+C# possède un modèle de programmation asynchrone au niveau du langage, qui permet d’écrire facilement du code asynchrone sans avoir à jongler avec les rappels ni à se conformer à une bibliothèque qui prend en charge l’asynchronie. Il suit ce que l’on appelle le [modèle asynchrone basé sur des tâches (TAP)](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
 ## <a name="overview-of-the-asynchronous-model"></a>Vue d’ensemble du modèle asynchrone
 
@@ -29,7 +29,7 @@ Le mot clé `await` trouve ici toute son utilité. Il cède le contrôle à l�
 
 ### <a name="io-bound-example-download-data-from-a-web-service"></a>Exemple de liaison d’e/s : Télécharger des données à partir d’un service Web
 
-Vous devrez peut-être télécharger des données à partir d’un service Web lorsque vous appuyez sur un bouton, mais ne souhaitez pas bloquer le thread d’interface utilisateur. Il peut être accompli de la façon suivante :
+Vous devrez peut-être télécharger des données à partir d’un service Web lorsque vous appuyez sur un bouton mais que vous ne souhaitez pas bloquer le thread d’interface utilisateur. Il peut être accompli de la façon suivante :
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -71,7 +71,7 @@ calculateButton.Clicked += async (o, e) =>
 };
 ```
 
-Ce code exprime clairement l’intention de l’événement de clic du bouton. Il ne nécessite pas de gérer un thread d’arrière-plan manuellement et il effectue le travail de façon non bloquante.
+Ce code exprime clairement l’objectif de l’événement Click du bouton, il ne nécessite pas de gérer un thread d’arrière-plan manuellement, et il le fait de façon non bloquante.
 
 ### <a name="what-happens-under-the-covers"></a>Les dessous du code
 
@@ -91,7 +91,7 @@ D’un point de vue théorique, il s’agit d’une implémentation du [modèle 
 
 ## <a name="recognize-cpu-bound-and-io-bound-work"></a>Reconnaître le travail lié au processeur et à l’e/s
 
-Les deux premiers exemples de ce guide vous ont montré comment utiliser `async` et `await` pour un travail utilisant les E/S et le processeur de manière intensive. Il est primordial de savoir déterminer si un travail à effectuer utilise les E/S ou le processeur de manière intensive, car ce point peut avoir un impact important sur les performances de votre code et entraîner une utilisation incorrecte de certaines constructions.
+Les deux premiers exemples de ce guide ont montré comment utiliser `async` et pour le travail lié aux `await` e/s et au processeur. C’est la clé que vous pouvez identifier lorsqu’un travail que vous devez effectuer est lié aux e/s ou à l’UC, car cela peut affecter les performances de votre code et peut potentiellement entraîner une utilisation erronée de certaines constructions.
 
 Voici deux questions à vous poser avant d’écrire du code :
 
@@ -226,16 +226,16 @@ Il s’agit de la Convention utilisée dans .NET pour différencier plus facilem
 L’utilisation de `async void` est le seul moyen de permettre le fonctionnement des gestionnaires d’événements asynchrones, car les événements n’ont pas de types de retour (et ne peuvent donc pas utiliser les objets `Task` et `Task<T>`). Toute autre utilisation de la méthode `async void` ne suit pas le modèle TAP et peut être difficile à implémenter, comme expliqué ci-après :
 
 * Les exceptions levées dans une `async void` méthode ne peuvent pas être interceptées en dehors de cette méthode.
-* `async void`les méthodes sont difficiles à tester.
-* `async void`les méthodes peuvent provoquer des effets secondaires incorrects si l’appelant ne s’attend pas à ce qu’ils soient asynchrones.
+* `async void` les méthodes sont difficiles à tester.
+* `async void` les méthodes peuvent provoquer des effets secondaires incorrects si l’appelant ne s’attend pas à ce qu’ils soient asynchrones.
 
 * **Définissez le thread avec précaution si vous utilisez des expressions lambda asynchrones dans des expressions LINQ.**
 
-Les expressions lambda dans LINQ utilisent l’exécution différée, ce qui signifie que le code peut finir à s’exécuter à un moment où vous ne l’attendiez pas. L’introduction de tâches bloquantes dans ce code peut facilement provoquer un interblocage si le code n’est pas écrit correctement. De plus, l’imbrication de code asynchrone peut rendre la logique d’exécution du code plus compliquée. Combiner du code asynchrone et du code LINQ offre beaucoup de possibilités, mais nécessite d’être fait avec précaution et de manière claire.
+Les expressions lambda dans LINQ utilisent l’exécution différée, ce qui signifie que le code peut finir à s’exécuter à un moment où vous ne l’attendiez pas. L’introduction de tâches bloquantes dans ce code peut facilement provoquer un interblocage si le code n’est pas écrit correctement. De plus, l’imbrication de code asynchrone peut rendre la logique d’exécution du code plus compliquée. Async et LINQ sont puissants, mais doivent être utilisés ensemble aussi bien que possible.
 
 * **Écrivez du code qui attend certaines tâches de façon non bloquante.**
 
-Le blocage du thread actuel comme un moyen d’attendre qu’un `Task` se termine peut entraîner des interblocages et bloquer les threads de contexte, et peut nécessiter une gestion des erreurs plus complexe. Le tableau suivant fournit des conseils sur la façon de traiter l’attente des tâches de façon non bloquante :
+Le fait de bloquer le thread actuel comme un moyen d’attendre qu’un `Task` se termine peut entraîner des interblocages et bloquer les threads de contexte et peut nécessiter une gestion des erreurs plus complexe. Le tableau suivant fournit des conseils sur la façon de traiter l’attente des tâches de façon non bloquante :
 
 | Élément à utiliser...          | Au lieu de...           | Lorsque vous souhaitez effectuer cette opération...                 |
 |----------------------|------------------------------|--------------------------------------------|
@@ -254,7 +254,7 @@ Une question courante est « quand dois-je utiliser la <xref:System.Threading.T
 
 * **Limitez l’écriture de code avec état.**
 
-Ne dépendez pas de l’état des objets globaux ou de l’exécution de certaines méthodes. Le code doit uniquement dépendre des valeurs de retour des méthodes. Pourquoi ?
+Ne dépendez pas de l’état des objets globaux ou de l’exécution de certaines méthodes. Le code doit uniquement dépendre des valeurs de retour des méthodes. Pourquoi ?
 
 * La logique du code sera plus facile à comprendre.
 * Le code sera plus facile à tester.

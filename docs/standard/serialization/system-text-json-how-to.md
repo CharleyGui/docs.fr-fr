@@ -2,7 +2,7 @@
 title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
 description: Découvrez comment utiliser l' System.Text.Json espace de noms pour sérialiser et désérialiser à partir de JSON dans .net. Comprend un exemple de code.
 ms.date: 12/02/2020
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 1ea4ff71b9e21bd7c5b12598581b33e1e96ebb19
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 46203aa1b4daa4281c7c26191f7df947967fa1c0
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008836"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513261"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
