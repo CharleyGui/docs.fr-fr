@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-gcdump-CLI .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-gcdump pour collecter des vidages de mémoire (garbage collector) de processus .NET en temps réel à l’aide de .NET EventPipe.
 ms.date: 11/17/2020
-ms.openlocfilehash: 59de1845ada9e5bdd0b24bf4312517283324ce94
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 02e1a7c5d86b582289672a027464aefd67a6f490
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826038"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593368"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Outil d’analyse de tas (dotnet-gcdump)
 
@@ -29,7 +29,7 @@ Il existe deux façons de télécharger et d’installer `dotnet-gcdump` :
 
   Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
 
-  | Système d’exploitation  | Plateforme |
+  | Système d''exploitation  | Plateforme |
   | --- | -------- |
   | Windows | [x86](https://aka.ms/dotnet-gcdump/win-x86) \| [x64](https://aka.ms/dotnet-gcdump/win-x64) \| [ARM](https://aka.ms/dotnet-gcdump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-gcdump/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-gcdump/osx-x64) |
@@ -68,6 +68,9 @@ Vous pouvez collecter plusieurs `.gcdump` s et les ouvrir simultanément dans Vi
 ## `dotnet-gcdump collect`
 
 Collecte un vidage de mémoire GC à partir d’un processus en cours d’exécution.
+
+> [!WARNING]
+> Pour parcourir le tas GC, cette commande déclenche une garbage collection de génération 2 (complète), qui peut interrompre le runtime pendant une longue période, en particulier lorsque le tas GC est volumineux. N’utilisez pas cette commande dans les environnements sensibles aux performances lorsque le tas GC est volumineux.
 
 ### <a name="synopsis"></a>Synopsis
 

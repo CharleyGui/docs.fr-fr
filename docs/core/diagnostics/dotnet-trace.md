@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-trace-CLI .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-trace pour collecter les traces .NET d’un processus en cours d’exécution sans le profileur natif, à l’aide de .NET EventPipe.
 ms.date: 11/17/2020
-ms.openlocfilehash: 868ce7828eee6bd7f2101d5d6a65c7f7bf87fe24
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: a2925ac0a0815fe48ca9b36b643ff896aa3c0ff6
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009532"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593205"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>utilitaire d’analyse des performances dotnet-trace
 
@@ -144,6 +144,9 @@ dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--
   > [!NOTE]
   > L’utilisation de cette option permet de surveiller le premier processus .NET 5,0 qui communique avec l’outil, ce qui signifie que si votre commande lance plusieurs applications .NET, elle ne collecte que la première application. Par conséquent, il est recommandé d’utiliser cette option sur les applications autonomes ou à l’aide de l' `dotnet exec <app.dll>` option.
 
+> [!NOTE]
+> L’arrêt de la trace peut prendre beaucoup de temps (jusqu’à quelques minutes) pour les applications de grande taille. Le Runtime doit envoyer sur le cache de type pour tout le code managé qui a été capturé dans la trace.
+
 ## <a name="dotnet-trace-convert"></a>conversion dotnet-trace
 
 Convertit les `nettrace` traces en d’autres formats pour les utiliser avec d’autres outils d’analyse de trace.
@@ -169,6 +172,9 @@ dotnet-trace convert [<input-filename>] [--format <Chromium|NetTrace|Speedscope>
 - **`-o|--output <output-filename>`**
 
   Nom du fichier de sortie. L’extension du format cible sera ajoutée.
+
+> [!NOTE]
+> La conversion `nettrace` de fichiers en `chromium` `speedscope` fichiers ou est irréversible. `speedscope``chromium`les fichiers et ne contiennent pas toutes les informations nécessaires à la reconstruction des `nettrace` fichiers. Toutefois, la `convert` commande conserve le fichier d’origine `nettrace` . par conséquent, ne supprimez pas ce fichier si vous envisagez de l’ouvrir à l’avenir.
 
 ## <a name="dotnet-trace-ps"></a>dotnet-trace PS
 
@@ -333,7 +339,7 @@ La commande précédente désactive les événements d’exécution et le profil
 
 Le Runtime .NET Core prend en charge les fournisseurs .NET suivants. .NET Core utilise les mêmes mots clés pour activer `Event Tracing for Windows (ETW)` et les `EventPipe` suivis.
 
-| Nom du fournisseur                            | Information |
+| Nom du fournisseur                            | Informations |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Fournisseur de runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Mots clés du runtime CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Fournisseur d’arrêt](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Mots clés d’arrêt du CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

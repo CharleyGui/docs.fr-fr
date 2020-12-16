@@ -3,12 +3,12 @@ title: Analyseur de compatibilité de plateforme
 description: Analyseur Roslyn qui peut aider à détecter les problèmes de compatibilité de plateforme dans les applications et les bibliothèques multiplateforme.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: 808e89df49a82e091862a052e62a367e6860fe47
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 427a2d8ae61a82699e5cf0987fcd1c5a45152cac
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819485"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97594915"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analyseur de compatibilité de plateforme
 
@@ -26,7 +26,7 @@ Les nouvelles API sont les suivantes :
 
 ## <a name="prerequisites"></a>Prérequis
 
-L’analyseur de compatibilité de la plateforme est l’un des analyseurs de la qualité du code Roslyn. À compter de .NET 5.0, ces analyseurs sont [inclus dans le kit de développement logiciel (SDK) .NET](../../fundamentals/code-analysis/overview.md). L’analyseur de compatibilité de plateforme est activé par défaut uniquement pour les projets qui ciblent `net5.0` ou une version ultérieure. Toutefois, vous pouvez l' [activer](../../fundamentals/code-analysis/quality-rules/ca1416.md#configurability) pour les projets qui ciblent d’autres infrastructures.
+L’analyseur de compatibilité de la plateforme est l’un des analyseurs de la qualité du code Roslyn. À compter de .NET 5.0, ces analyseurs sont [inclus dans le kit de développement logiciel (SDK) .NET](../../fundamentals/code-analysis/overview.md). L’analyseur de compatibilité de plateforme est activé par défaut uniquement pour les projets qui ciblent `net5.0` ou une version ultérieure. Toutefois, vous pouvez l' [activer](../../fundamentals/code-analysis/quality-rules/ca1416.md#configure-code-to-analyze) pour les projets qui ciblent d’autres infrastructures.
 
 ## <a name="how-the-analyzer-determines-platform-dependency"></a>Comment l’analyseur détermine la dépendance de la plateforme
 

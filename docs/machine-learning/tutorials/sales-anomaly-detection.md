@@ -4,12 +4,12 @@ description: Découvrez comment créer une application de détection des anomali
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: cf61f197e4befebdbb1fbf2ca4cbcdc61c48780a
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 48a8b26409b20e2a01aa97425153336b34c9b5b7
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281665"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97594174"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : détecter les anomalies dans les ventes de produits avec ML.NET
 
@@ -64,7 +64,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 Le tableau suivant présente un aperçu des données de votre fichier \*.csv :
 
-|Mois  |ProductSales |
+|Month  |ProductSales |
 |-------|-------------|
 |1 jan  |    271      |
 |2 jan  |    150,9    |
@@ -384,6 +384,6 @@ Dans ce didacticiel, vous avez appris à :
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Consultez le dépôt GitHub d’exemples de machine learning pour explorer un exemple de détection d’anomalie dans le domaine de la consommation d’énergie.
+Consultez Machine Learning le référentiel GitHub samples pour découvrir un exemple de détection d’anomalies de données saisonnier.
 > [!div class="nextstepaction"]
-> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)
+> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PhoneCalls)

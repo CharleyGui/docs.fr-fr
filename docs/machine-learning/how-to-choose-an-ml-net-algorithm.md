@@ -3,12 +3,12 @@ title: Guide pratique pour choisir un algorithme ML.NET
 description: Découvrez comment choisir un algorithme ML.NET pour votre modèle Machine Learning
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: 8af89800485f8f8ac35ee17df10a5e3c039da42d
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 04cf191401c7c25f1fa341acaf9312dc19752260
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679636"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593088"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Guide pratique pour choisir un algorithme ML.NET
 
@@ -20,9 +20,9 @@ Les algorithmes fonctionnent avec des **caractéristiques**. Les caractéristiqu
 
 Un algorithme est une opération mathématique qui s’exécute pour produire un **modèle**. Différents algorithmes produisent des modèles avec des caractéristiques différentes.
 
-Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, l’algorithme Stochastic Dual Coordinated Ascent peut s’appliquer aux tâches de classification binaire, de classification multiclasse et de régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche.
+Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, vous pouvez utiliser la jambage de coordonnée double stochastique pour la classification binaire, la classification multiclasse et la régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche.
 
-Pour chaque combinaison algorithme/tâche, ML.NET fournit un composant qui exécute l’algorithme d’entraînement et interprète la sortie. Ces composants sont appelés des « entraîneurs ». Par exemple, <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> utilise l’algorithme **StochasticDualCoordinatedAscent** appliqué à la tâche de **régression**.
+Pour chaque combinaison algorithme/tâche, ML.NET fournit un composant qui exécute l’algorithme d’apprentissage et effectue l’interprétation. Ces composants sont appelés des « entraîneurs ». Par exemple, <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> utilise l’algorithme **StochasticDualCoordinatedAscent** appliqué à la tâche de **régression**.
 
 ## <a name="linear-algorithms"></a>Algorithmes linéaires
 
@@ -30,11 +30,11 @@ Les algorithmes linéaires produisent un modèle qui calcule des **scores** à p
 
 Les algorithmes linéaires fonctionnent bien avec des caractéristiques [séparables de façon linéaire](https://en.wikipedia.org/wiki/Linear_separability).
 
-Préalablement à l’entraînement avec un algorithme linéaire, les caractéristiques doivent être normalisées. Cela évite qu’une caractéristique ait plus d’influence que les autres sur le résultat.
+Préalablement à l’entraînement avec un algorithme linéaire, les caractéristiques doivent être normalisées. Cela évite qu’une fonctionnalité ait plus d’influence sur le résultat que d’autres.
 
-En général, les algorithmes linéaires sont scalables, rapides à exécuter, et peu coûteux à entraîner et à prédire. Ils s’adaptent selon le nombre de caractéristiques et approximativement selon la taille du jeu de données d’entraînement.
+En général, les algorithmes linéaires sont évolutifs, rapides, peu coûteux à former et à prédire. Ils s’adaptent selon le nombre de caractéristiques et approximativement selon la taille du jeu de données d’entraînement.
 
-Les algorithmes linéaires font plusieurs passages sur les données d’entraînement. Si votre jeu de données tient en mémoire, l’ajout d’un [point de contrôle du cache](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint%2A) à votre pipeline ML.NET avant d’ajouter l’entraîneur accélère le processus d’entraînement.
+Les algorithmes linéaires font plusieurs passages sur les données d’entraînement. Si votre jeu de données s’adapte en mémoire, l’ajout d’un [point de contrôle de cache](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint%2A) à votre pipeline ml.net avant l’ajout du formateur rendra l’exécution de la formation plus rapide.
 
 **Entraîneurs linéaires**
 
@@ -76,7 +76,7 @@ Les arbres de décision boostés sont un ensemble de petits arbres où chaque ar
 
 ## <a name="meta-algorithms"></a>Méta-algorithmes
 
-Ces entraîneurs créent un entraîneur multiclasse à partir d’un entraîneur binaire. À utiliser avec <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>, <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer>.
+Ces formateurs créent un formateur multiclasse à partir d’un formateur binaire. À utiliser avec <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>, <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer>.
 
 |Algorithm|Propriétés|Entraîneurs|
 |---------|----------|--------|

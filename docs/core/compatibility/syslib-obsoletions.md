@@ -2,12 +2,12 @@
 title: Fonctionnalités obsolètes dans .NET 5 +
 description: Découvrez les API qui sont marquées comme obsolètes dans .NET 5,0 et versions ultérieures qui génèrent des avertissements du compilateur SYSLIB.
 ms.date: 10/20/2020
-ms.openlocfilehash: aa5716ba8fe46c7c4ae2faafe7cc963551eecef7
-ms.sourcegitcommit: 30a686fd4377fe6472aa04e215c0de711bc1c322
+ms.openlocfilehash: 336958c93e3db8f66cfbec89476a666e5e103b70
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94440762"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593303"
 ---
 # <a name="obsolete-features-in-net-5"></a>Fonctionnalités obsolètes dans .NET 5
 
@@ -25,18 +25,18 @@ Le tableau suivant fournit un index des `SYSLIBxxxx` obsoletions dans .net 5 +.
 
 | ID de diagnostic | Description |
 | - | - |
-| [SYSLIB0001](syslib0001.md) | L’encodage UTF-7 n’est pas sécurisé et ne doit pas être utilisé. Envisagez plutôt d’utiliser UTF-8. |
-| [SYSLIB0002](syslib0002.md) | <xref:System.Security.Permissions.PrincipalPermissionAttribute> n’est pas respecté par le runtime et ne doit pas être utilisé. |
-| [SYSLIB0003](syslib0003.md) | La sécurité d’accès du code (CAS) n’est pas prise en charge ou respectée par le Runtime. |
-| [SYSLIB0004](syslib0004.md) | La fonctionnalité de région d’exécution limitée n’est pas prise en charge. |
-| [SYSLIB0005](syslib0005.md) | Le Global Assembly Cache (GAC) n’est pas pris en charge. |
-| [SYSLIB0006](syslib0006.md) | <xref:System.Threading.Thread.Abort?displayProperty=nameWithType> n’est pas pris en charge et lève une exception <xref:System.PlatformNotSupportedException> . |
-| [SYSLIB0007](syslib0007.md) | L’implémentation par défaut de cet algorithme de chiffrement n’est pas prise en charge. |
-| [SYSLIB0008](syslib0008.md) | L' <xref:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator> API n’est pas prise en charge et lève une exception <xref:System.PlatformNotSupportedException> . |
-| [SYSLIB0009](syslib0009.md) | Les <xref:System.Net.AuthenticationManager.Authenticate%2A?displayProperty=nameWithType> méthodes et ne <xref:System.Net.AuthenticationManager.PreAuthenticate%2A?displayProperty=nameWithType> sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
-| [SYSLIB0010](syslib0010.md) | Certaines API de communication à distance ne sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
-| [SYSLIB0011](syslib0011.md) | <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> la sérialisation est obsolète et ne doit pas être utilisée. |
-| [SYSLIB0012](syslib0012.md) | <xref:System.Reflection.Assembly.CodeBase?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.EscapedCodeBase?displayProperty=nameWithType> sont uniquement inclus pour la compatibilité .NET Framework. Utilisez <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType> à la place. |
+| [SYSLIB0001](syslib-warnings/syslib0001.md) | L’encodage UTF-7 n’est pas sécurisé et ne doit pas être utilisé. Envisagez plutôt d’utiliser UTF-8. |
+| [SYSLIB0002](syslib-warnings/syslib0002.md) | <xref:System.Security.Permissions.PrincipalPermissionAttribute> n’est pas respecté par le runtime et ne doit pas être utilisé. |
+| [SYSLIB0003](syslib-warnings/syslib0003.md) | La sécurité d’accès du code (CAS) n’est pas prise en charge ou respectée par le Runtime. |
+| [SYSLIB0004](syslib-warnings/syslib0004.md) | La fonctionnalité de région d’exécution limitée n’est pas prise en charge. |
+| [SYSLIB0005](syslib-warnings/syslib0005.md) | Le Global Assembly Cache (GAC) n’est pas pris en charge. |
+| [SYSLIB0006](syslib-warnings/syslib0006.md) | <xref:System.Threading.Thread.Abort?displayProperty=nameWithType> n’est pas pris en charge et lève une exception <xref:System.PlatformNotSupportedException> . |
+| [SYSLIB0007](syslib-warnings/syslib0007.md) | L’implémentation par défaut de cet algorithme de chiffrement n’est pas prise en charge. |
+| [SYSLIB0008](syslib-warnings/syslib0008.md) | L' <xref:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator> API n’est pas prise en charge et lève une exception <xref:System.PlatformNotSupportedException> . |
+| [SYSLIB0009](syslib-warnings/syslib0009.md) | Les <xref:System.Net.AuthenticationManager.Authenticate%2A?displayProperty=nameWithType> méthodes et ne <xref:System.Net.AuthenticationManager.PreAuthenticate%2A?displayProperty=nameWithType> sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
+| [SYSLIB0010](syslib-warnings/syslib0010.md) | Certaines API de communication à distance ne sont pas prises en charge et lèvent <xref:System.PlatformNotSupportedException> . |
+| [SYSLIB0011](syslib-warnings/syslib0011.md) | <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> la sérialisation est obsolète et ne doit pas être utilisée. |
+| [SYSLIB0012](syslib-warnings/syslib0012.md) | <xref:System.Reflection.Assembly.CodeBase?displayProperty=nameWithType> et <xref:System.Reflection.Assembly.EscapedCodeBase?displayProperty=nameWithType> sont uniquement inclus pour la compatibilité .NET Framework. Utilisez <xref:System.Reflection.Assembly.Location?displayProperty=nameWithType> à la place. |
 
 ## <a name="suppress-warnings"></a>Supprimer les avertissements
 

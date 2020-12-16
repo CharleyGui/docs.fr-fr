@@ -3,12 +3,12 @@ title: Suivi des applications .NET avec PerfCollect.
 description: Un didacticiel qui vous guide dans la collecte d’une trace avec perfcollect dans .NET.
 ms.topic: tutorial
 ms.date: 10/23/2020
-ms.openlocfilehash: 376c957833924a9991e574557671ea3c8503d7c2
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 53e4584953d2af4e766daadfa757cca752ae7329
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507239"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593218"
 ---
 # <a name="trace-net-applications-with-perfcollect"></a>Suivre des applications .NET avec PerfCollect
 
@@ -55,7 +55,7 @@ Pour résoudre les noms de méthode des dll du runtime natif (par exemple, libco
 
 ## <a name="collect-a-trace"></a>Collecter une trace
 
-1. Deux interpréteurs de commande disponibles : un pour contrôler le suivi, désigné sous le terme **[trace]** , et l’autre pour l’exécution de l’application, appelé **[App]**.
+1. Deux interpréteurs de commande disponibles : un pour contrôler le suivi, désigné sous le terme **[trace]**, et l’autre pour l’exécution de l’application, appelé **[App]**.
 
 2. **[Trace]** Démarrer la collecte.
 
@@ -250,3 +250,31 @@ Après cela, vous devez obtenir des noms symboliques pour les DLL natives lorsqu
 ## <a name="collect-in-a-docker-container"></a>Collecter dans un conteneur d’ancrage
 
 Pour plus d’informations sur l’utilisation `perfcollect` de dans les environnements de conteneur, consultez [collecter des diagnostics dans des conteneurs](./diagnostics-in-containers.md).
+
+## <a name="learn-more-about-collection-options"></a>En savoir plus sur les options de regroupement
+
+Vous pouvez spécifier les indicateurs facultatifs suivants avec `perfcollect` pour mieux répondre à vos besoins de diagnostic.
+
+### <a name="collect-for-a-specific-duration"></a>Collecter pour une durée spécifique
+
+Lorsque vous souhaitez collecter une trace pour une durée spécifique, vous pouvez utiliser `-collectsec` l’option suivie d’un nombre qui spécifie le nombre total de secondes pendant lesquelles la collecte d’une trace doit être collectée.
+
+### <a name="collect-threadtime-traces"></a>Collecter les traces threadtime
+
+La spécification `-threadtime` de with `perfcollect` vous permet de collecter les données d’utilisation de l’UC par thread. Cela vous permet d’analyser où chaque thread passait son temps processeur.
+
+### <a name="collect-traces-for-managed-memory-and-garbage-collector-performance"></a>Collecter les traces pour la mémoire managée et les performances du garbage collector
+
+Les options suivantes vous permettent de collecter spécifiquement les événements GC du Runtime.
+
+* `perfcollect collect -gccollectonly`
+
+Collectez uniquement un ensemble minimal d’événements de collection GC. Il s’agit du profil de collection d’événements GC le moins détaillé avec l’impact le plus bas sur les performances de l’application cible. Cette commande est analogue à la `PerfView.exe /GCCollectOnly collect` commande dans PerfView.
+
+* `perfcollect collect -gconly`
+
+Collectez des événements de collection GC plus détaillés avec des événements JIT, Loader et exception. Cela demande des événements plus détaillés (tels que les informations d’allocation et les informations de jointure GC) et aura un impact plus important sur l’option performance de l’application cible `-gccollectonly` . Cette commande est analogue à la `PerfView.exe /GCOnly collect` commande dans PerfView.
+
+* `perfcollect collect -gcwithheap`
+
+Collectez les événements de collection de GC les plus détaillés qui effectuent également le suivi de la survie et des mouvements du tas. Cela permet une analyse approfondie du comportement du GC, mais entraîne un coût de performance élevé, car chaque GC peut prendre plus de deux fois plus de temps. Il est recommandé de comprendre les implications en matière de performances de l’utilisation de cette option de trace lors du traçage dans des environnements de production.

@@ -2,12 +2,12 @@
 title: Meilleures pratiques pour l’interopérabilité native – .NET
 description: Découvrez les meilleures pratiques pour interagir avec des composants natifs en .NET.
 ms.date: 01/18/2019
-ms.openlocfilehash: e5d96471e796dca712d25d2d9e2609508180d83f
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: 3ed69fd0f57e937da3f43e11d57ead37984fed78
+ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391219"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97593381"
 ---
 # <a name="native-interoperability-best-practices"></a>Meilleures pratiques pour l’interopérabilité native
 
@@ -27,31 +27,31 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
 
-| Paramètre | Par défaut | Recommandation | Détails |
+| Paramètre | Default | Recommandation | Détails |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Conserver la valeur par défaut  | S’il est défini explicitement sur false, les valeurs de retour HRESULT en échec sont converties en exceptions (et la valeur de retour de la définition devient ainsi Null).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | Dépend de l'API  | Définissez-le sur true si l’API utilise GetLastError et Marshal.GetLastWin32Error pour obtenir la valeur. Si l’API définit une condition indiquant une erreur, récupérez l’erreur avant d’effectuer d’autres appels, de façon à éviter de la remplacer par inadvertance.|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None`, qui bascule en secours vers le comportement `CharSet.Ansi`  | Utilisez explicitement `CharSet.Unicode` ou `CharSet.Ansi` lorsque des chaînes ou des caractères sont présents dans la définition | Cela permet de spécifier le comportement de marshaling des chaînes et le rôle de `ExactSpelling` quand la valeur est `false`. Notez que `CharSet.Ansi` est en réalité UTF-8 sur Unix. _La plupart du temps_, Windows utilise Unicode et Unix UTF-8. Pour plus d'informations, voir la [documentation sur les charsets](./charset.md). |
 | <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> | `false` | `true`             | Définissez-le sur true pour augmenter légèrement les performances. En effet, le runtime ne recherche pas de noms de fonctions de remplacement avec un suffixe « A » ou « W » selon la valeur du paramètre `CharSet` (« A » pour `CharSet.Ansi` et « W » pour `CharSet.Unicode`). |
 
-## <a name="string-parameters"></a>Paramètre de chaîne
+## <a name="string-parameters"></a>Paramètres de chaîne
 
 Lorsque le charset est Unicode ou que l’argument est explicitement marqué comme `[MarshalAs(UnmanagedType.LPWSTR)]` _et_ que la chaîne est passée en valeur (pas `ref` ou `out`), la chaîne est épinglée et utilisée directement par le code natif (et non copiée).
 
 N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous souhaitez explicitement un traitement ANSI de vos chaînes.
 
-❌N’utilisez `[Out] string` pas de paramètres. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+❌ N’utilisez pas de `[Out] string` paramètres. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-❌Évitez `StringBuilder` les paramètres. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
+❌ Évitez les `StringBuilder` paramètres. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
 
-1. Créer un SB de la capacité souhaitée (alloue la capacité managée)**{1}**
+1. Créer un SB de la capacité souhaitée (alloue la capacité managée) **{1}**
 2. Appeler
-   1. Alloue une mémoire tampon Native**{2}**
+   1. Alloue une mémoire tampon Native **{2}**
    2. Copie le contenu si `[In]` _(valeur par défaut d’un paramètre `StringBuilder`)_
    3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(valeur par défaut de `StringBuilder` également)_
-3. `ToString()`alloue un autre groupe géré**{4}**
+3. `ToString()` alloue un autre groupe géré **{4}**
 
-Il s' *{4}* agit des allocations pour obtenir une chaîne à partir du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
+Il s’agit *{4}* des allocations pour obtenir une chaîne à partir du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
 
 L’autre problème de `StringBuilder` est qu’il copie toujours la sauvegarde de la mémoire tampon de retour sur la première valeur Null. Si la chaîne de retour transmise n’est pas terminée ou se termine par un double Null, P/Invoke est au mieux incorrect.
 
@@ -61,7 +61,7 @@ Si vous *utilisez*`StringBuilder`, le dernier piège est que la capacité n’in
 
 Pour plus d’informations sur le marshaling des chaînes, consultez [Marshaling par défaut pour les chaînes](../../framework/interop/default-marshaling-for-strings.md) et [Personnaliser le marshaling des chaînes](customize-parameter-marshaling.md#customizing-string-parameters).
 
-> __Spécifique à Windows__ Pour `[Out]` les chaînes que le CLR `CoTaskMemFree` utilisera par défaut pour libérer `SysStringFree` des chaînes ou pour les chaînes `UnmanagedType.BSTR`qui sont marquées comme.
+> __Spécifique à Windows__ Pour `[Out]` les chaînes que le CLR utilisera par `CoTaskMemFree` défaut pour libérer `SysStringFree` des chaînes ou pour les chaînes qui sont marquées comme `UnmanagedType.BSTR` .
 > **Pour la plupart des API avec une mémoire tampon de chaîne de sortie :** Le nombre de caractères transmis doit inclure la valeur null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.
 >
 > - Pass in 5, obtenir 4 : la chaîne comporte 4 caractères avec une valeur null de fin.
@@ -80,19 +80,25 @@ Les GUID sont directement utilisables dans les signatures. De nombreuses API Win
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-❌N’utilisez `[MarshalAs(UnmanagedType.LPStruct)]` pas pour les paramètres de `ref` GUID.
+❌ N’utilisez pas `[MarshalAs(UnmanagedType.LPStruct)]` pour les paramètres de `ref` GUID.
 
 ## <a name="blittable-types"></a>Types blittables
 
-Les types blittables sont des types qui ont la même représentation au niveau du bit dans le code managé et dans le code natif. Il n’est donc pas nécessaire de les convertir dans un autre format pour les marshaler vers et à partir du code natif. Ils sont à privilégier en raison de l’amélioration des performances qui en résulte.
+Les types blittables sont des types qui ont la même représentation au niveau du bit dans le code managé et dans le code natif. Il n’est donc pas nécessaire de les convertir dans un autre format pour les marshaler vers et à partir du code natif. Ils sont à privilégier en raison de l’amélioration des performances qui en résulte. Certains types ne sont pas blittables, mais sont connus pour contenir du contenu blittable. Ces types ont des optimisations similaires à celles des types blittables lorsqu’ils ne sont pas contenus dans un autre type, mais ne sont pas considérés comme blittables dans les champs de structs ou à des fins de [`UnmanagedCallersOnlyAttribute`](xref:System.Runtime.InteropServices.UnmanagedCallersOnlyAttribute) .
 
 **Types blittables :**
 
 - `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `single`, `double`
-- Tableaux unidimensionnels non imbriqués de types blittables (par exemple, `int[]`)
-- Structs et classes à disposition fixe qui n’ont que des types valeurs blittables, par exemple les champs :
+- structs avec une disposition fixe qui ont uniquement des types de valeur blittables pour les champs d’instance
   - La disposition fixe exige `[StructLayout(LayoutKind.Sequential)]` ou `[StructLayout(LayoutKind.Explicit)]`.
-  - Les structs sont `LayoutKind.Sequential` par défaut, les classes `LayoutKind.Auto`.
+  - les structs sont `LayoutKind.Sequential` par défaut
+
+**Types avec contenu blittable :**
+
+- Tableaux unidimensionnels non imbriqués de types blittables (par exemple, `int[]`)
+- classes avec disposition fixe qui ont uniquement des types de valeur blittables pour les champs d’instance
+  - La disposition fixe exige `[StructLayout(LayoutKind.Sequential)]` ou `[StructLayout(LayoutKind.Explicit)]`.
+  - les classes sont `LayoutKind.Auto` par défaut
 
 **Types NON blittables :**
 
@@ -100,9 +106,13 @@ Les types blittables sont des types qui ont la même représentation au niveau d
 
 **Types PARFOIS blittables :**
 
-- `char`, `string`
+- `char`
 
-Lorsque des types blittables sont passés en référence, ils sont simplement épinglés par le marshaleur, et non copiés vers une mémoire tampon intermédiaire. (Les classes sont, par nature, passées en référence ; les structs sont passés en référence lorsqu’ils sont utilisés avec `ref` ou `out`.)
+**Types avec un contenu parfois blittable :**
+
+- `string`
+
+Lorsque les types blittables sont passés par référence avec `in` , `ref` ou `out` , ou lorsque les types avec contenu blittable sont passés par valeur, ils sont simplement épinglés par le marshaleur au lieu d’être copiés dans une mémoire tampon intermédiaire.
 
 Un `char` est blittable dans un tableau unidimensionnel **ou** s’il fait partie d’un type explicitement marqué `[StructLayout]` avec `CharSet = CharSet.Unicode`.
 
@@ -114,13 +124,13 @@ public struct UnicodeCharStruct
 }
 ```
 
-Une `string` est blittable si elle n’est pas contenue dans un autre type et qu’elle est passé en argument marqué `[MarshalAs(UnmanagedType.LPWStr)]` ou que `CharSet = CharSet.Unicode` est défini pour `[DllImport]`.
+`string` contient le contenu blittable s’il n’est pas contenu dans un autre type et qu’il est passé en tant qu’argument marqué avec `[MarshalAs(UnmanagedType.LPWStr)]` ou que le `[DllImport]` a `CharSet = CharSet.Unicode` défini.
 
-Pour savoir si un type est blittable, essayez de créer un `GCHandle` épinglé. Si le type n’est pas une chaîne ou n’est pas considéré comme blittable, `GCHandle.Alloc` lèvera une `ArgumentException`.
+Vous pouvez voir si un type est blittable ou contient du contenu blittable en tentant de créer un épinglé `GCHandle` . Si le type n’est pas une chaîne ou n’est pas considéré comme blittable, `GCHandle.Alloc` lèvera une `ArgumentException`.
 
 ✔️ À FAIRE : rendez vos structures blittables dans la mesure du possible.
 
-Pour plus d’informations, voir :
+   Pour plus d'informations, consultez les pages suivantes :
 
 - [types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)
 - [Marshaling de type](type-marshaling.md)
@@ -129,9 +139,9 @@ Pour plus d’informations, voir :
 
 `GC.KeepAlive()` garantit qu'un objet reste accessible jusqu'à ce que la méthode KeepAlive soit atteinte.
 
-[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef)permet au marshaleur de conserver un objet actif pendant la durée d’un appel P/Invoke. Il peut être utilisé à la place de `IntPtr` dans les signatures de méthode. `SafeHandle` remplace cette classe et doit être utilisé à la place.
+[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef) permet au marshaleur de conserver un objet actif pendant la durée d’un appel P/Invoke. Il peut être utilisé à la place de `IntPtr` dans les signatures de méthode. `SafeHandle` remplace cette classe et doit être utilisé à la place.
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle)autorise l’épinglage d’un objet managé et l’obtention du pointeur natif vers celui-ci. En voici le modèle de base :
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) autorise l’épinglage d’un objet managé et l’obtention du pointeur natif vers celui-ci. En voici le modèle de base :
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -203,7 +213,7 @@ Un `PVOID` Windows, qui correspond à un `void*` C, peut être marshalé comme `
 
 [Plages de types de données](/cpp/cpp/data-type-ranges)
 
-## <a name="structs"></a>Structs
+## <a name="structs"></a>Structures
 
 Les structs managés sont créés sur la pile et ne sont pas supprimés tant que la méthode n’a pas retourné de valeur. Ils sont donc par définition « épinglés » (ils ne sont pas déplacés par le récupérateur de mémoire). Vous pouvez aussi prendre simplement l’adresse dans des blocs de code unsafe si le code natif n’utilise pas le pointeur après la fin de la méthode actuelle.
 
@@ -217,9 +227,9 @@ Les pointeurs vers des structs dans les définitions doivent être passés en `r
 
 ✔️ À FAIRE : utilisez le `sizeof()` C# au lieu de `Marshal.SizeOf<MyStruct>()` pour les structures blittables afin d’améliorer les performances.
 
-❌Évitez d' `System.Delegate` utiliser `System.MulticastDelegate` des champs ou pour représenter des champs de pointeur de fonction dans des structures.
+❌ Évitez `System.Delegate` d’utiliser `System.MulticastDelegate` des champs ou pour représenter des champs de pointeur de fonction dans des structures.
 
-Étant <xref:System.Delegate?displayProperty=fullName> donné <xref:System.MulticastDelegate?displayProperty=fullName> que et n’ont pas de signature obligatoire, elles ne garantissent pas que le délégué passé correspond à la signature attendue par le code natif. En outre, dans .NET Framework et .NET Core, le marshaling d’un struct `System.Delegate` contenant `System.MulticastDelegate` un ou à partir de sa représentation native vers un objet managé peut déstabiliser le runtime si la valeur du champ dans la représentation native n’est pas un pointeur de fonction qui encapsule un délégué managé. Dans .NET 5 et versions ultérieures, le marshaling d’un `System.Delegate` champ ou `System.MulticastDelegate` d’une représentation native vers un objet managé n’est pas pris en charge. Utilisez un type délégué spécifique au lieu `System.Delegate` de `System.MulticastDelegate`ou.
+Étant donné que <xref:System.Delegate?displayProperty=fullName> et <xref:System.MulticastDelegate?displayProperty=fullName> n’ont pas de signature obligatoire, elles ne garantissent pas que le délégué passé correspond à la signature attendue par le code natif. En outre, dans .NET Framework et .NET Core, le marshaling d’un struct contenant un `System.Delegate` ou `System.MulticastDelegate` à partir de sa représentation native vers un objet managé peut déstabiliser le runtime si la valeur du champ dans la représentation native n’est pas un pointeur de fonction qui encapsule un délégué managé. Dans .NET 5 et versions ultérieures, le marshaling d’un `System.Delegate` `System.MulticastDelegate` champ ou d’une représentation native vers un objet managé n’est pas pris en charge. Utilisez un type délégué spécifique au lieu de `System.Delegate` ou `System.MulticastDelegate` .
 
 ### <a name="fixed-buffers"></a>Mémoires tampons fixes
 
