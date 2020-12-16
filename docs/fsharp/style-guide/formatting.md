@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: 'Découvrez les instructions de mise en forme du code F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: f9b62a18a5c525924f3ae6da3fbc650394340047
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: 7e20c76f4cfafa50a15b6501a498b228b526057e
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96739887"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97513066"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -100,16 +100,91 @@ let myFun (a: decimal) b c = a + b + c
 let myFunBad (a:decimal)(b)c = a + b + c
 ```
 
+### <a name="avoid-name-sensitive-alignments"></a>Éviter les alignements respectant le nom
+
+En général, recherchez pour éviter la mise en retrait et l’alignement sensibles au nom :
+
+```fsharp
+// OK
+let myLongValueName =
+    someExpression
+    |> anotherExpression
+
+
+// Bad
+let myLongValueName = someExpression
+                      |> anotherExpression
+```
+
+Cela est parfois appelé « alignement personnel » ou « mise en retrait personnel ». Les principales raisons de l’éviter sont les suivantes :
+
+* Le code important est déplacé vers la droite
+* Il reste moins de largeur pour le code réel
+* L’attribution d’un nouveau nom peut rompre l’alignement
+
+Procédez de la même façon pour que `do` / `do!` la mise en retrait reste cohérente avec `let` / `let!` . Voici un exemple d’utilisation `do` de dans une classe :
+
+```fsharp
+// OK
+type Foo () =
+    let foo =
+        fooBarBaz
+        |> loremIpsumDolorSitAmet
+        |> theQuickBrownFoxJumpedOverTheLazyDog
+    do
+        fooBarBaz
+        |> loremIpsumDolorSitAmet
+        |> theQuickBrownFoxJumpedOverTheLazyDog
+
+// Bad - notice the "do" expression is indented one space less than the `let` expression
+type Foo () =
+    let foo =
+        fooBarBaz
+        |> loremIpsumDolorSitAmet
+        |> theQuickBrownFoxJumpedOverTheLazyDog
+    do fooBarBaz
+       |> loremIpsumDolorSitAmet
+       |> theQuickBrownFoxJumpedOverTheLazyDog
+```
+
+Voici un exemple d' `do!` utilisation de deux espaces de mise en retrait (parce qu' `do!` il n’y a pas de différence entre les approches lors de l’utilisation de 4 espaces de mise en retrait) :
+
+```fsharp
+// OK
+async {
+  let! foo =
+    fooBarBaz
+    |> loremIpsumDolorSitAmet
+    |> theQuickBrownFoxJumpedOverTheLazyDog
+  do!
+    fooBarBaz
+    |> loremIpsumDolorSitAmet
+    |> theQuickBrownFoxJumpedOverTheLazyDog
+}
+
+// Bad - notice the "do!" expression is indented two spaces more than the `let!` expression
+async {
+  let! foo =
+    fooBarBaz
+    |> loremIpsumDolorSitAmet
+    |> theQuickBrownFoxJumpedOverTheLazyDog
+  do! fooBarBaz
+      |> loremIpsumDolorSitAmet
+      |> theQuickBrownFoxJumpedOverTheLazyDog
+}
+```
+
 ### <a name="place-parameters-on-a-new-line-for-long-definitions"></a>Placer des paramètres sur une nouvelle ligne pour les définitions longues
 
 Si vous avez une définition de fonction longue, placez les paramètres sur de nouvelles lignes et mettez-les en retrait pour qu’ils correspondent au niveau de mise en retrait du paramètre suivant.
 
 ```fsharp
 module M =
-    let LongFunctionWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                        =
+    let LongFunctionWithLotsOfParameters
+        (aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        =
         // ... the body of the method follows
 ```
 
@@ -117,14 +192,20 @@ Cela s’applique également aux membres, constructeurs et paramètres à l’ai
 
 ```fsharp
 type TM() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse) =
+    member _.LongMethodWithLotsOfParameters
+        (
+            aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse
+        ) =
         // ... the body of the method
 
-type TC(aVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
+type TC
+    (
+        aVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
         aSecondVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
-        aThirdVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse) =
+        aThirdVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse
+    ) =
     // ... the body of the class follows
 ```
 
@@ -132,15 +213,18 @@ Si les paramètres sont currified ou s’il existe une annotation de type de ret
 
 ```fsharp
 type C() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                            : AReturnType =
+    member _.LongMethodWithLotsOfParameters
+        (
+            aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse
+        ) : AReturnType =
         // ... the body of the method
-    member _.LongMethodWithLotsOfCurrifiedParams(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                                (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                                (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
-                                                =
+    member _.LongMethodWithLotsOfCurrifiedParams
+        (aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        =
         // ... the body of the method
 ```
 
@@ -535,13 +619,14 @@ Comme avec les conseils d’enregistrement, vous souhaiterez peut-être dédier 
 
 ```fsharp
 type S = { F1: int; F2: string }
-type State = { F:  S option }
+type State = { Foo: S option }
 
-let state = { F = Some { F1 = 1; F2 = "Hello" } }
+let state = { Foo = Some { F1 = 1; F2 = "Hello" } }
 let newState =
     {
         state with
-            F = Some {
+            Foo =
+                Some {
                     F1 = 0
                     F2 = ""
                 }
@@ -809,7 +894,7 @@ let function1 arg1 arg2 arg3 arg4 =
     arg3 + arg4
 ```
 
-### <a name="formatting-pipeline-operators"></a>Mise en forme des opérateurs de pipeline
+### <a name="formatting-pipeline-operators-or-mutable-assignments"></a>Mise en forme des opérateurs de pipeline ou des assignations mutables
 
 `|>`Les opérateurs de pipeline doivent se trouver sous les expressions sur lesquelles ils opèrent.
 
@@ -832,6 +917,32 @@ let methods2 = System.AppDomain.CurrentDomain.GetAssemblies()
             |> List.ofArray
             |> List.map (fun t -> t.GetMethods())
             |> Array.concat
+
+// Not OK either
+let methods2 = System.AppDomain.CurrentDomain.GetAssemblies()
+               |> List.ofArray
+               |> List.map (fun assm -> assm.GetTypes())
+               |> Array.concat
+               |> List.ofArray
+               |> List.map (fun t -> t.GetMethods())
+               |> Array.concat
+```
+
+Cela s’applique également aux accesseurs set mutables :
+
+```fsharp
+// Preferred approach
+ctx.Response.Headers.[HeaderNames.ContentType] <-
+    Constants.jsonApiMediaType |> StringValues
+ctx.Response.Headers.[HeaderNames.ContentLength] <-
+    bytes.Length |> string |> StringValues
+
+// Not OK
+ctx.Response.Headers.[HeaderNames.ContentType] <- Constants.jsonApiMediaType
+                                                  |> StringValues
+ctx.Response.Headers.[HeaderNames.ContentLength] <- bytes.Length
+                                                    |> string
+                                                    |> StringValues
 ```
 
 ### <a name="formatting-modules"></a>Mise en forme des modules

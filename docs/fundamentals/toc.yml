@@ -19,7 +19,7 @@ items:
             href: ../core/install/macos.md
           - name: Installer sur Linux
             items:
-              - name: Vue d'ensemble
+              - name: Vue d’ensemble
                 href: ../core/install/linux.md
               - name: Ubuntu
                 href: ../core/install/linux-ubuntu.md
@@ -328,7 +328,7 @@ items:
             items:
               - name: Vue d'ensemble
                 href: ../core/project-sdk/overview.md
-              - name: Référence
+              - name: Informations de référence
                 items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
@@ -784,8 +784,6 @@ items:
                         href: code-analysis/quality-rules/ca2119.md
                       - name: CA2153
                         href: code-analysis/quality-rules/ca2153.md
-                      - name: CA2153
-                        href: code-analysis/quality-rules/ca2153.md
                       - name: CA2300
                         href: code-analysis/quality-rules/ca2300.md
                       - name: CA2301
@@ -814,6 +812,8 @@ items:
                         href: code-analysis/quality-rules/ca2328.md
                       - name: CA2329
                         href: code-analysis/quality-rules/ca2329.md
+                      - name: CA2330
+                        href: code-analysis/quality-rules/ca2330.md
                       - name: CA2350
                         href: code-analysis/quality-rules/ca2350.md
                       - name: CA2351
@@ -832,8 +832,6 @@ items:
                         href: code-analysis/quality-rules/ca2361.md
                       - name: CA2362
                         href: code-analysis/quality-rules/ca2362.md
-                      - name: CA2330
-                        href: code-analysis/quality-rules/ca2330.md
                       - name: CA3001
                         href: code-analysis/quality-rules/ca3001.md
                       - name: CA3002
