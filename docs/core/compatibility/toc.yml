@@ -34,6 +34,8 @@
                   href: aspnet-core/5.0/authorization-resource-in-endpoint-routing.md
                 - name: Les packages d’intégration Azure avec préfixe Microsoft ont été supprimés
                   href: aspnet-core/5.0/azure-integration-packages-removed.md
+                - name: "Blazor\_: La logique de priorité des itinéraires a changé dans les applications Blazor"
+                  href: aspnet-core/5.0/blazor-routing-logic-changed.md
                 - name: "Blazor\_: La prise en charge du navigateur a été mise à jour"
                   href: aspnet-core/5.0/blazor-browser-support-updated.md
                 - name: "Blazor\_: L’espace blanc non significatif a été supprimé par le compilateur"
@@ -292,6 +294,8 @@
                   href: aspnet-core/5.0/authorization-resource-in-endpoint-routing.md
                 - name: Les packages d’intégration Azure avec préfixe Microsoft ont été supprimés
                   href: aspnet-core/5.0/azure-integration-packages-removed.md
+                - name: "Blazor\_: La logique de priorité des itinéraires a changé dans les applications Blazor"
+                  href: aspnet-core/5.0/blazor-routing-logic-changed.md
                 - name: "Blazor\_: La prise en charge du navigateur a été mise à jour"
                   href: aspnet-core/5.0/blazor-browser-support-updated.md
                 - name: "Blazor\_: L’espace blanc non significatif a été supprimé par le compilateur"

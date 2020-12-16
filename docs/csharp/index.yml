@@ -6,12 +6,12 @@ metadata:
   description: Développeurs débutants, développeurs débutants en C# et développeurs C#/.NET expérimentés, découvrez la programmation C#.
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: bc75503b565020fb9966fd756d87890263f63533
-  ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
+  ms.openlocfilehash: 584db55455af54bcf7e91771e3598a7349091bee
+  ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 12/04/2020
-  ms.locfileid: "96599445"
+  ms.lasthandoff: 12/15/2020
+  ms.locfileid: "97512149"
 landingContent:
 - title: Apprendre à programmer en C#
   linkLists:
@@ -71,38 +71,20 @@ landingContent:
     links:
     - text: Nouveautés dans C# 9.0
       url: whats-new/csharp-9.md
-- title: Nouvelles fonctionnalités de C# 8.0
+- title: Nouvelles fonctionnalités de C# 9.0
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Nouveautés de C# 8.0
-      url: whats-new/csharp-8.md
-  - linkListType: overview
-    links:
-    - text: Critères spéciaux
-      url: pattern-matching.md
-    - text: Types références Nullables
-      url: nullable-references.md
-  - linkListType: concept
-    links:
-    - text: Choisir une stratégie de migration Nullable
-      url: nullable-migration-strategies.md
+    - text: Nouveautés dans C# 9.0
+      url: whats-new/csharp-9.md
   - linkListType: tutorial
     links:
-    - text: Consommer et générer des flux asynchrones
-      url: tutorials/generate-consume-asynchronous-stream.md
-    - text: Développer avec des types référence Nullable
-      url: tutorials/nullable-reference-types.md
-    - text: Mettre à niveau du code pour utiliser des types de référence Nullable
-      url: tutorials/upgrade-to-nullable-references.md
-    - text: Utiliser les critères spéciaux pour obtenir des algorithmes plus expressifs
-      url: tutorials/pattern-matching.md
-    - text: Versionner de manière sécurisée les interfaces avec les membres d’interface par défaut
-      url: tutorials/default-interface-methods-versions.md
-    - text: Combiner les fonctionnalités avec les membres d’interface par défaut
-      url: tutorials/mixins-with-default-interface-methods.md
-    - text: Utiliser des sous-ensembles avec des plages et des index
-      url: tutorials/ranges-indexes.md
+    - text: Explorer les types d’enregistrement
+      url: tutorials/exploration/records.md
+    - text: Explorer les instructions de niveau supérieur
+      url: tutorials/exploration/top-level-statements.md
+    - text: Explorez les nouveaux modèles
+      url: tutorials/exploration/patterns-objects.md
   - linkListType: reference
     links:
     - text: Changements cassants du compilateur C#
