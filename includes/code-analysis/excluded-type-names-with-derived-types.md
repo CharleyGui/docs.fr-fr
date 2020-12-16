@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 150882f3e4c9ff7abe811e09da94b8141de75778
-ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
+ms.openlocfilehash: 4125df1d64fe7f3f2eb1eb4a821ed46c8270c95f
+ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97366831"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97532046"
 ---
 ### <a name="exclude-specific-types-and-their-derived-types"></a>Exclure des types spécifiques et leurs types dérivés
 
