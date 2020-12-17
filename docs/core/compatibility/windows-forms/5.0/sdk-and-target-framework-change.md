@@ -2,12 +2,12 @@
 title: 'Modification avec rupture : WinForms et les applications WPF utilisent Microsoft. NET. Sdk'
 description: Découvrez la modification avec rupture dans .NET 5,0 où les applications Windows Forms et Windows Presentation Framework utilisent désormais le kit de développement logiciel (SDK) .NET au lieu du kit de développement logiciel (SDK) .NET Core WinForms et WPF SDK.
 ms.date: 09/18/2020
-ms.openlocfilehash: 5f25be44c390abc173f155351d8cb007a6b370b0
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 5eafed03fbf034f6a6457217a8527a877214e239
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761106"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633817"
 ---
 # <a name="winforms-and-wpf-apps-use-microsoftnetsdk"></a>WinForms et les applications WPF utilisent Microsoft. NET. Sdk
 
@@ -47,7 +47,7 @@ Dans .NET 5,0 et versions ultérieures :
 
 ## <a name="version-introduced"></a>Version introduite
 
-.NET 5,0
+KIT DE DÉVELOPPEMENT LOGICIEL (SDK) .NET 5.0.100
 
 ## <a name="recommended-action"></a>Action recommandée
 

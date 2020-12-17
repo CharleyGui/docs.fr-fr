@@ -2,12 +2,12 @@
 title: Gestion des versions du Runtime .NET et du kit de développement logiciel (SDK)
 description: Cet article explique comment les versions du kit de développement logiciel (SDK) .NET et du runtime sont gérées (de façon similaire à la gestion sémantique des versions).
 ms.date: 12/07/2020
-ms.openlocfilehash: 2fe0b162b52f1e4500ec87f7d5d92054cd569552
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 2fbc2775f31b4eab1c9883282c58accd9bb2b9f5
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009304"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633622"
 ---
 # <a name="overview-of-how-net-is-versioned"></a>Vue d’ensemble de la gestion des versions de .NET
 
@@ -19,16 +19,16 @@ Le Runtime .NET présente une approche majeure/mineure/correctif pour le contrô
 
 Le kit de développement logiciel (SDK) .NET ne suit pas le contrôle de version sémantique. Le kit de développement logiciel (SDK) .NET est plus rapide et ses numéros de version doivent communiquer à la fois le runtime aligné et les versions mineures et correctives du SDK.
 
-Les deux premières positions du numéro de version du kit de développement logiciel (SDK) .NET sont verrouillées dans le Runtime .NET qu’il a fourni avec. Chaque version du SDK peut créer des applications pour ce runtime ou toute version antérieure.
+Les deux premières positions du numéro de version du kit de développement logiciel (SDK) .NET sont verrouillées à la version du Runtime .NET qu’il a fournie avec. Chaque version du SDK peut créer des applications pour ce runtime ou toute version antérieure.
 
-La troisième position du numéro de la version du SDK indique le numéro mineur et de correctif. La version mineure est multipliée par 100. La version mineure 1 avec version de correctif 2 serait représentée par le chiffre 102. Les deux derniers chiffres représentent le numéro du correctif. Par exemple, voici une séquence possible des numéros de version du runtime et du kit de développement logiciel (SDK) :
+La troisième position du numéro de la version du SDK indique le numéro mineur et de correctif. La version mineure est multipliée par 100. Les deux derniers chiffres représentent le numéro du correctif. La version mineure 1 avec version de correctif 2 serait représentée par le chiffre 102. Par exemple, voici une séquence possible des numéros de version du runtime et du kit de développement logiciel (SDK) :
 
 | Modifier                | Runtime .NET      | SDK .NET ( \* )     |
 |-----------------------|-------------------|-------------------|
 | Version initiale       | 2.2.0             | 2.2.100           |
-| Correctif de SDK             | 2.2.0             | 2.2.101           |
-| Correctif de SDK et du runtime | 2.2.1             | 2.2.102           |
-| Modifications de fonctionnalités du SDK    | 2.2.1             | 2.2.200           |
+| Correctif SDK             | 2.2.0             | 2.2.101           |
+| Correctif du runtime et du SDK | 2.2.1             | 2.2.102           |
+| Modification des fonctionnalités du SDK    | 2.2.1             | 2.2.200           |
 
 REMARQUES :
 

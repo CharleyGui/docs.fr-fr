@@ -4,12 +4,12 @@ description: Comment installer, utiliser, mettre à jour et supprimer des outils
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 3669ed17d58542aab0435ccea22700c82ba8ea26
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 8839fd4fba72c9f973d906eabb72919306a847dd
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556899"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633882"
 ---
 # <a name="how-to-manage-net-tools"></a>Comment gérer les outils .NET
 
@@ -40,8 +40,6 @@ Voici quelques méthodes pour trouver des outils :
 
 * Utilisez la commande de recherche de l' [outil dotnet](dotnet-tool-search.md) pour rechercher un outil qui est publié sur NuGet.org.
 * Recherchez le site Web [NuGet](https://www.nuget.org) à l’aide du filtre de type de package « outil .net ». Pour plus d’informations, consultez [Recherche et sélection des packages](/nuget/consume-packages/finding-and-choosing-packages).
-* Consultez la liste des outils dans le référentiel GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
-* Utilisez [ToolGet](https://www.toolget.net/) pour rechercher des outils .net.
 * Consultez le code source des outils créés par l’équipe ASP.NET Core dans le [répertoire Tools du référentiel GitHub dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
 * Découvrez les outils de diagnostics dans les [outils de diagnostic .net](../diagnostics/index.md#net-core-diagnostic-global-tools).
 
@@ -68,7 +66,7 @@ Tool 'dotnetsay' (version '2.1.4') was successfully installed.
 
 L’emplacement par défaut des binaires d’un outil dépend du système d’exploitation :
 
-| Système d’exploitation          | Path                          |
+| Système d''exploitation          | Chemin d’accès                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |

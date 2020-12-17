@@ -3,16 +3,16 @@ title: Organisation et test de projets avec l’interface de commande .NET
 description: Ce didacticiel explique comment organiser et tester des projets .NET à partir de la ligne de commande.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: 93e8a6b8afd9f9405bf21488998a61c2e761bf1e
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 263eaf15beac008de8bb353a385b8f3588a7fefc
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512253"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633635"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-cli"></a>Organisation et test de projets avec l’interface de commande .NET
 
-Ce didacticiel suit le [Didacticiel : créer une application console avec .net à l’aide de Visual Studio code](with-visual-studio-code.md), en allant au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
+Ce didacticiel suit le [Didacticiel : créer une application console avec .net à l’aide de Visual Studio code](with-visual-studio-code.md), en allant au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.net/).
 
 ## <a name="using-folders-to-organize-code"></a>Utilisation de dossiers pour organiser le code
 
@@ -104,7 +104,7 @@ Exercice facultatif : Vous pouvez ajouter un nouveau type d’animal domestique
 
 ### <a name="testing-the-sample"></a>Test de l’exemple
 
-Le projet `NewTypes` est en place et vous l’avez organisé en conservant les types liés aux animaux domestiques dans un dossier. Créez à présent votre projet de test et commencez à écrire des tests à l’aide du framework de tests [xUnit](https://xunit.github.io/). Les tests unitaires vous permettent de vérifier automatiquement le comportement de vos types d’animaux domestiques et de vous assurer qu’ils fonctionnent correctement.
+Le projet `NewTypes` est en place et vous l’avez organisé en conservant les types liés aux animaux domestiques dans un dossier. Créez à présent votre projet de test et commencez à écrire des tests à l’aide du framework de tests [xUnit](https://xunit.net/). Les tests unitaires vous permettent de vérifier automatiquement le comportement de vos types d’animaux domestiques et de vous assurer qu’ils fonctionnent correctement.
 
 Accédez au dossier *src*, puis créez un dossier *test* et un sous-dossier *NewTypesTests*. À une invite de commandes à partir du dossier *NewTypesTests*, exécutez `dotnet new xunit`. Deux fichiers sont générés : *NewTypesTests.csproj* et *UnitTest1.cs*.
 

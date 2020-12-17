@@ -2,12 +2,12 @@
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
 ms.date: 08/07/2020
-ms.openlocfilehash: af1187fb1e2afbb9fa953db5a280c9cc317ab6a8
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 67872668781d8ae5d79bf360aee73f744cf4404b
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804768"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633947"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -21,7 +21,7 @@ Vous devez tester le comportement du contrôleur avec les entrées valides et no
 
 - Tests fonctionnels pour chaque microservice. Ils garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
 
-- Tests de service. Ces tests permettent de garantir que les cas d’usage de service de bout en bout (y compris l’exécution simultanée de plusieurs services) sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-compose up, par exemple).
+- Tests de service. Ces tests permettent de garantir que les cas d’usage de service de bout en bout (y compris l’exécution simultanée de plusieurs services) sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-composer, par exemple).
 
 ### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implémentation des tests unitaires pour les API web ASP.NET Core
 
@@ -31,7 +31,7 @@ Quand vous procédez à des tests unitaires pour les actions de votre contrôleu
 
 Les tests unitaires sont implémentés selon les frameworks de tests comme xUnit.net, MSTest, Moq ou NUnit. Pour l’exemple d’application eShopOnContainers, nous utilisons xUnit.
 
-Lorsque vous écrivez un test unitaire pour un contrôleur d’API web, vous instanciez la classe de contrôleur directement à l’aide du mot clé new dans du code C\#, pour que le test s’exécute aussi rapidement que possible. L’exemple suivant montre comment effectuer cette opération en utilisant [xUnit](https://xunit.github.io/) comme framework de tests.
+Lorsque vous écrivez un test unitaire pour un contrôleur d’API web, vous instanciez la classe de contrôleur directement à l’aide du mot clé new dans du code C\#, pour que le test s’exécute aussi rapidement que possible. L’exemple suivant montre comment effectuer cette opération en utilisant [xUnit](https://xunit.net/) comme framework de tests.
 
 ```csharp
 [Fact]
@@ -111,7 +111,7 @@ public class PrimeWebDefaultRequestShould
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 - **xUnit.net**. Site officiel. \
-    <https://xunit.github.io/>
+    <https://xunit.net/>
 
 - **Concepts de base des tests unitaires.** \
     [https://docs.microsoft.com/visualstudio/test/unit-test-basics](/visualstudio/test/unit-test-basics)
@@ -124,7 +124,7 @@ public class PrimeWebDefaultRequestShould
 
 ### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implémentation de tests de service dans une application à plusieurs conteneurs
 
-Comme mentionné précédemment, lorsque vous testez des applications à plusieurs conteneurs, tous les microservices doivent être exécutés au sein de l’hôte Docker ou du cluster de conteneurs. Les tests de service de bout en bout qui incluent plusieurs opérations impliquant plusieurs microservices nécessitent le déploiement et le démarrage de l’application entière dans l’hôte Docker en exécutant docker-compose up (ou d’un mécanisme comparable si vous utilisez un orchestrateur). Une fois que l’application entière et tous ses services sont exécutés, vous pouvez exécuter des tests d’intégration et des tests fonctionnels de bout en bout.
+Comme mentionné précédemment, lorsque vous testez des applications à plusieurs conteneurs, tous les microservices doivent être exécutés au sein de l’hôte Docker ou du cluster de conteneurs. Les tests de service de bout en bout qui incluent plusieurs opérations impliquant plusieurs microservices nécessitent le déploiement et le démarrage de l’application entière dans l’hôte Docker, par l’exécution de docker-compose (ou d’un mécanisme comparable si vous utilisez un orchestrateur). Une fois que l’application entière et tous ses services sont exécutés, vous pouvez exécuter des tests d’intégration et des tests fonctionnels de bout en bout.
 
 Il existe pour cela plusieurs méthodes. Dans le fichier docker-compose.yml que vous utilisez pour déployer l’application au niveau de la solution, vous pouvez développer le point d’entrée pour utiliser la commande [dotnet test](../../../core/tools/dotnet-test.md). Vous pouvez également utiliser un autre fichier Compose pour exécuter vos tests dans l’image que vous ciblez. En utilisant un autre fichier Compose pour les tests d’intégration comprenant vos microservices et vos bases de données dans des conteneurs, vous pouvez être sûr que les données associées sont toujours réinitialisées à leur état d’origine avant d’exécuter les tests.
 

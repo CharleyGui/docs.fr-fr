@@ -2,13 +2,13 @@
 title: 'Didacticiel : créer un outil .NET'
 description: Découvrez comment créer un outil .NET. Un outil est une application console installée à l’aide de l’interface CLI .NET.
 ms.topic: tutorial
-ms.date: 02/12/2020
-ms.openlocfilehash: 8f2dd15982aff9fe2d9db9ce2cff8ac1b22e440e
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.date: 12/14/2020
+ms.openlocfilehash: dc5cf014336848ff1a3035647a386419653a083b
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512630"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633895"
 ---
 # <a name="tutorial-create-a-net-tool-using-the-net-cli"></a>Didacticiel : créer un outil .NET à l’aide de l’interface de commande .NET
 
@@ -22,23 +22,35 @@ Il s’agit de la première d’une série de trois didacticiels. Dans ce didact
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [.NET SDK 5,0](https://dotnet.microsoft.com/download) ou version ultérieure.
+- [Kit de développement logiciel (SDK) .net 5.0.100](https://dotnet.microsoft.com/download) ou version ultérieure.
 
   Ce didacticiel utilise le kit de développement logiciel (SDK) .NET 5,0, mais les outils globaux sont disponibles à partir de kit SDK .NET Core 2,1. Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.
-  
+
 - Un éditeur de texte ou un éditeur de code de votre choix.
 
-## <a name="create-a-project"></a>Créer un projet
+## <a name="create-a-project"></a>Création d’un projet
 
 1. Ouvrez une invite de commandes et créez un dossier nommé *repository*.
 
 1. Accédez au dossier du *référentiel* , puis entrez la commande suivante :
 
    ```dotnetcli
-   dotnet new console -n microsoft.botsay
+   dotnet new console -n microsoft.botsay -f net5.0
    ```
 
    La commande crée un nouveau dossier nommé *Microsoft. botsay* dans le dossier du *référentiel* .
+
+   > [!NOTE]
+   > Pour ce didacticiel, vous allez créer un outil qui cible .NET 5,0. Pour cibler une autre infrastructure, modifiez l' `-f|--framework` option. Pour cibler plusieurs frameworks, remplacez l' `TargetFramework` élément par un `TargetFrameworks` élément dans le fichier projet, comme indiqué dans l’exemple suivant :
+   >
+   > ```xml
+   > <Project Sdk="Microsoft.NET.Sdk">
+   >   <PropertyGroup>
+   >     <OutputType>Exe</OutputType>
+   >     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+   >   </PropertyGroup>
+   > </Project>
+   > ```
 
 1. Accédez au dossier *Microsoft. botsay* .
 
@@ -164,16 +176,16 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
-  
+
      <PropertyGroup>
 
        <OutputType>Exe</OutputType>
        <TargetFramework>net5.0</TargetFramework>
-  
+
        <PackAsTool>true</PackAsTool>
        <ToolCommandName>botsay</ToolCommandName>
        <PackageOutputPath>./nupkg</PackageOutputPath>
-  
+
      </PropertyGroup>
 
    </Project>
@@ -186,10 +198,10 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
    ```
 
    Le fichier *Microsoft. botsay. 1.0.0. nupkg* est créé dans le dossier identifié par la `<PackageOutputPath>` valeur du fichier *Microsoft. botsay. csproj* , qui, dans cet exemple, est le dossier *./nupkg* .
-  
+
    Lorsque vous souhaitez libérer un outil publiquement, vous pouvez le télécharger sur `https://www.nuget.org` . Une fois que l’outil est disponible sur NuGet, les développeurs peuvent installer l’outil à l’aide de la commande d’installation de l' [outil dotnet](dotnet-tool-install.md) . Pour ce didacticiel, vous installez le package directement à partir du dossier local *nupkg* . il n’est donc pas nécessaire de charger le package dans NuGet.
 
-## <a name="troubleshoot"></a>Dépanner
+## <a name="troubleshoot"></a>Résoudre des problèmes
 
 Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation des outils .net](troubleshoot-usage-issues.md).
 

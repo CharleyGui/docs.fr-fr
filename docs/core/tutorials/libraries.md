@@ -4,12 +4,12 @@ description: Découvrez comment créer des bibliothèques .NET à l’aide de l�
 author: cartermp
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 5a70cec4a991f673f4d5d3e7b00cd704c6799f47
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 6f4c1feac7630a6a0250e4b0b39ef01152f5a400
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512409"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633674"
 ---
 # <a name="develop-libraries-with-the-net-cli"></a>Développer des bibliothèques avec l’interface CLI .NET
 
@@ -206,7 +206,7 @@ Chacun d’eux contient les `.dll` fichiers de chaque cible.
 
 ## <a name="how-to-test-libraries-on-net"></a>Comment tester les bibliothèques sur .NET
 
-Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous pouvez utiliser [xUnit](https://xunit.github.io/) ou MSTest dans leur version d’origine. Les deux sont parfaitement adaptées au test unitaire de votre bibliothèque sur .NET. La façon dont vous configurez votre solution avec des projets de test dépend de la [structure de votre solution](#structuring-a-solution). L’exemple suivant part du principe que les répertoires de test et source résident dans le même répertoire de premier niveau.
+Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous pouvez utiliser [xUnit](https://xunit.net/) ou MSTest dans leur version d’origine. Les deux sont parfaitement adaptées au test unitaire de votre bibliothèque sur .NET. La façon dont vous configurez votre solution avec des projets de test dépend de la [structure de votre solution](#structuring-a-solution). L’exemple suivant part du principe que les répertoires de test et source résident dans le même répertoire de premier niveau.
 
 > [!NOTE]
 > Cela utilise certaines commandes [CLI .net](../tools/index.md) . Pour plus d’informations, consultez [dotnet new](../tools/dotnet-new.md) et [dotnet sln](../tools/dotnet-sln.md).

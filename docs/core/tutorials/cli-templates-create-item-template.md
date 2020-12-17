@@ -1,16 +1,17 @@
 ---
 title: Créer un modèle d’élément pour dotnet New-.NET CLI
+titleSuffix: ''
 description: Découvrez comment créer un modèle d’élément pour la commande dotnet new. Les modèles d’élément peuvent contenir n’importe quel nombre de fichiers.
 author: adegeo
 ms.date: 12/11/2020
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: b148870480584cff37f3fd395e0594344001f247
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: d213646a933c77bd0d9a3f1aa9b6b4948b66439b
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512422"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633661"
 ---
 # <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
 

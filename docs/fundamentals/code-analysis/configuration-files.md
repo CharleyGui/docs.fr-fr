@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 no-loc:
 - EditorConfig
-ms.openlocfilehash: cf9b8f4033e6774684b2b7e3b788ef3c157d95df
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 0d64df42ffb1763afed3e883c4f043755e158489
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96588671"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633986"
 ---
 # <a name="configuration-files-for-code-analysis-rules"></a>Fichiers de configuration pour les règles d’analyse du code
 
@@ -37,7 +37,7 @@ Si vous avez un fichier *. editorconfig* existant pour les paramètres de l’é
 > [!TIP]
 > Visual Studio fournit un modèle d’élément *. editorconfig* qui facilite l’ajout de l’un de ces fichiers à votre projet. Pour plus d’informations, consultez [Ajouter un EditorConfig fichier à un projet](/visualstudio/ide/create-portable-custom-editor-options#add-an-editorconfig-file-to-a-project).
 
-### <a name="example"></a> Exemple
+### <a name="example"></a>Exemple
 
 Voici un exemple EditorConfig de fichier permettant de configurer les options et la gravité de la règle :
 
@@ -68,7 +68,7 @@ dotnet_diagnostic.CA1000.severity = warning
 
 ## <a name="global-analyzerconfig"></a>AnalyzerConfig global
 
-À compter du kit de développement logiciel (SDK) .NET 5,0 (qui est pris en charge dans Visual Studio 2019 version 16,8 et versions ultérieures), vous pouvez également configurer des options d’analyseur avec des fichiers _AnalyzerConfig_ globaux. Ces fichiers sont utilisés pour fournir des **options qui s’appliquent à tous les fichiers sources d’un projet**, quels que soient leur nom de fichier ou leur chemin d’accès.
+À compter du kit de développement logiciel (SDK) .NET 5 (qui est pris en charge dans Visual Studio 2019 version 16,8 et versions ultérieures), vous pouvez également configurer des options d’analyseur avec des fichiers _AnalyzerConfig_ globaux. Ces fichiers sont utilisés pour fournir des **options qui s’appliquent à tous les fichiers sources d’un projet**, quels que soient leur nom de fichier ou leur chemin d’accès.
 
 Contrairement aux [EditorConfig](#editorconfig) fichiers, les fichiers de configuration globaux ne peuvent pas être utilisés pour configurer les paramètres de style de l’éditeur pour les IDE, tels que la taille du retrait ou la suppression des espaces blancs de fin. Au lieu de cela, ils sont conçus exclusivement pour spécifier les options de configuration de l’analyseur au niveau du projet.
 
@@ -94,7 +94,7 @@ Contrairement aux EditorConfig fichiers, qui doivent être nommés `.editorconfi
 > [!NOTE]
 > L’entrée de niveau supérieur `is_global = true` est requise même si le fichier est nommé `.globalconfig` .
 
-### <a name="example"></a> Exemple
+### <a name="example"></a>Exemple
 
 Voici un exemple de fichier AnalyzerConfig global permettant de configurer les options et la gravité de la règle au niveau du projet :
 

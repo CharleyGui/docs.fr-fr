@@ -4,12 +4,12 @@ description: Découvrez comment héberger le runtime .NET Core à partir du code
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 79336396de3058e40cf7328e6d92e7e9e54296e9
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 358cbff1ded3bd4ee9a3f78965eac1e1b1883ede
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96242914"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633844"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Écrire un hôte .NET Core personnalisé pour contrôler le runtime .NET à partir de votre code natif
 
@@ -30,7 +30,7 @@ Vous avez également besoin d’une application .NET Core simple pour tester l�
 Vous pouvez utiliser deux API différentes pour héberger .NET Core. Cet article (et ses [exemples](https://github.com/dotnet/samples/tree/master/core/hosting)associés) couvre ces deux options.
 
 * La méthode d’hébergement conseillée pour le runtime .NET Core dans .NET Core 3.0 et versions ultérieures est d’utiliser les API des bibliothèques `nethost` et `hostfxr`. Ces points d’entrée gèrent la complexité de la recherche et de la configuration du runtime pour l’initialisation, et permettent à la fois de lancer une application managée et d’appeler une méthode managée statique.
-* La méthode recommandée pour héberger le Runtime .NET Core avant .NET Core 3,0 est l' [`coreclrhost.h`](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/hosts/inc/coreclrhost.h) API. Cette API expose des fonctions qui permettent de démarrer et d’arrêter facilement le runtime et d’appeler du code managé (soit en lançant un exécutable managé, soit en appelant des méthodes managées statiques).
+* La méthode recommandée pour héberger le Runtime .NET Core avant .NET Core 3,0 est l' [`coreclrhost.h`](https://github.com/dotnet/runtime/blob/master/src/coreclr/hosts/inc/coreclrhost.h) API. Cette API expose des fonctions qui permettent de démarrer et d’arrêter facilement le runtime et d’appeler du code managé (soit en lançant un exécutable managé, soit en appelant des méthodes managées statiques).
 
 ## <a name="sample-hosts"></a>Exemples d’hôtes
 
@@ -84,7 +84,7 @@ L’hôte natif peut maintenant appeler la méthode managée et lui passer les p
 
 Les étapes suivantes détaillent comment utiliser l' `coreclrhost.h` API pour démarrer le Runtime .net core dans une application native et appeler une méthode statique managée. Les extraits de code de ce document utilisent des API spécifiques à Windows, mais l’[exemple d’hôte complet](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithCoreClrHost) indique les chemins de code pour Windows et Linux.
 
-L' [hôte de coexécution UNIX](https://github.com/dotnet/runtime/tree/master/src/coreclr/src/hosts/unixcorerun) présente un exemple plus complexe et réaliste d’hébergement à l’aide de `coreclrhost.h` .
+L' [hôte de coexécution UNIX](https://github.com/dotnet/runtime/tree/master/src/coreclr/hosts/unixcorerun) présente un exemple plus complexe et réaliste d’hébergement à l’aide de `coreclrhost.h` .
 
 ### <a name="step-1---find-and-load-coreclr"></a>Étape 1 : Rechercher et charger CoreCLR
 

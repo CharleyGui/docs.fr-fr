@@ -2,12 +2,12 @@
 title: DevOps
 description: Considérations relatives à DevOps pour les applications Cloud natives
 ms.date: 05/13/2020
-ms.openlocfilehash: e6e093a1847d3aec37ac5d4ca56f64e0091a9b6b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 1a04f5178877f3fdde707753e94718ce0f0bb49d
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163997"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633713"
 ---
 # <a name="devops"></a>DevOps
 
@@ -118,11 +118,11 @@ De nombreux outils peuvent effectuer une analyse statique du code pour détecter
 
 L’approche de référentiel unique présente également de nombreux inconvénients. L’une des plus inquiétantes est que la présence d’un référentiel unique soulève des problèmes de sécurité. Si le contenu d’un référentiel est divulgué dans un référentiel par modèle de service, la quantité de code perdue est minime. Avec un référentiel unique, tout ce que l’entreprise possède peut être perdu. Il y a eu de nombreux exemples par le passé et nous avons mis au point les efforts de développement de jeux. Le fait de disposer de plusieurs référentiels réduit la surface d’exposition, ce qui est une caractéristique souhaitable dans la plupart des pratiques de sécurité.
 
-La taille du dépôt unique est susceptible d’être ingérable rapidement. Cela présente des implications intéressantes sur les performances. Il peut s’avérer nécessaire d’utiliser des outils spécialisés tels que le [système de fichiers virtuel pour git](https://vfsforgit.org/), qui a été conçu à l’origine pour améliorer l’expérience des développeurs de l’équipe Windows.
+La taille du dépôt unique est susceptible d’être ingérable rapidement. Cela présente des implications intéressantes sur les performances. Il peut s’avérer nécessaire d’utiliser des outils spécialisés tels que le [système de fichiers virtuel pour git](https://github.com/Microsoft/VFSForGit), qui a été conçu à l’origine pour améliorer l’expérience des développeurs de l’équipe Windows.
 
 Souvent, l’argument pour l’utilisation d’un référentiel unique se résume à un argument que Facebook ou Google utilisent cette méthode pour la disposition du code source. Si l’approche est suffisante pour ces entreprises, il s’agit certainement de la bonne approche pour toutes les entreprises. La vérité est que peu d’entreprises opèrent sur n’importe quel type de mise à l’échelle de Facebook ou Google. Les problèmes qui se produisent à ces échelles sont différents de ceux auxquels la plupart des développeurs seront confrontés. Ce qui est parfait pour l’OIE peut ne pas être adapté au examinons.
 
-À la fin, l’une ou l’autre solution peut être utilisée pour héberger le code source pour les microservices. Toutefois, dans la plupart des cas, la gestion et la surcharge d’ingénierie du fonctionnement dans un référentiel unique ne valent pas les avantages de Meager. Le fractionnement du code sur plusieurs référentiels favorise une meilleure séparation des préoccupations et encourage l’autonomie entre les équipes de développement.  
+À la fin, l’une ou l’autre solution peut être utilisée pour héberger le code source pour les microservices. Toutefois, dans la plupart des cas, la gestion et la surcharge d’ingénierie du fonctionnement dans un référentiel unique ne valent pas les avantages de Meager. Le fractionnement du code sur plusieurs référentiels favorise une meilleure séparation des préoccupations et encourage l’autonomie entre les équipes de développement.
 
 ### <a name="standard-directory-structure"></a>Structure de répertoires standard
 
@@ -199,7 +199,7 @@ variables:
   artifactName: drop
   buildPlatform: any cpu
   buildConfiguration: release
-  
+
 pool:
   name: Hosted VS2017
   demands:

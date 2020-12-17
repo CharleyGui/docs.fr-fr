@@ -3,12 +3,12 @@ title: Porter des bibliothèques vers .NET Core
 description: Découvrez comment porter des projets de bibliothèque de .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: dcacf4d59964e0ef2009b4e9694d7f562e3a1547
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 25c53cdc71f4269b058953ef1903dc72d222f65f
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92223568"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633908"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
@@ -30,7 +30,7 @@ Cet article décrit la spécification formelle des API .NET qui sont destinées 
 [Développement de bibliothèques avec des outils multiplateformes](../tutorials/libraries.md)\
 Cet article explique comment écrire des bibliothèques à l’aide de l’CLI .NET Core.
 
-[Ajouts au format* csproj* pour .NET Core](../tools/csproj.md)\
+[Ajouts au format *csproj* pour .NET Core](../tools/csproj.md)\
 Cet article décrit les modifications qui ont été apportées au fichier projet dans le cadre du passage à *csproj* et à MSBuild.
 
 [Portage vers .NET Core-analyse de vos dépendances tierces](third-party-deps.md)\
@@ -107,8 +107,8 @@ Il est probable que vous allez combiner les approches ci-dessus de façon diffé
 
 La meilleure façon de vérifier que tout fonctionne quand vous avez porté votre code est de tester votre code quand vous l’avez porté sur .NET Core. Pour cela, vous devez utiliser une infrastructure de test qui génère et exécute des tests pour .NET Core. Vous avez actuellement trois options :
 
-- [xUnit](https://xunit.github.io/)
-  - [Prise en main](https://xunit.github.io/docs/getting-started-dotnet-core.html)
+- [xUnit](https://xunit.net/)
+  - [Prise en main](https://xunit.net/docs/getting-started/netcore/cmdline)
   - [Outil pour convertir un projet MSTest en xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
 - [NUnit](https://nunit.org/)
   - [Prise en main](https://github.com/nunit/docs/wiki/Installation)

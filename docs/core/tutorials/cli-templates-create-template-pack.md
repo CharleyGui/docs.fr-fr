@@ -5,12 +5,12 @@ author: adegeo
 ms.date: 12/11/2020
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 0d8ef9c158920ec49948215afb505a3753503286
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 2aea143f1e41d580de41a9cc9e924d70b55695db
+ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512448"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97633596"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Didacticiel : créer un pack de modèles
 
@@ -50,10 +50,6 @@ dotnet new console -n templatepack -o .
 ```
 
 Le `-n` paramètre définit le nom de fichier _. csproj_ sur _templatepack. csproj_. Le `-o` paramètre crée les fichiers dans le répertoire actif. Vous devez voir un résultat similaire à la sortie suivante.
-
-```dotnetcli
-dotnet new console -n templatepack -o .
-```
 
 ```console
 The template "Console Application" was created successfully.
