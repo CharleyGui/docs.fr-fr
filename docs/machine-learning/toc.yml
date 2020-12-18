@@ -45,6 +45,8 @@
           href: tutorials/image-classification.md
         - name: Prévoir la demande de location de vélos (série chronologique)
           href: tutorials/time-series-demand-forecasting.md
+        - name: Pics du volume d’appels (détection d’anomalie)
+          href: tutorials/phone-calls-anomaly-detection.md
         - name: Analyse des ventes de produits (détection d’anomalie)
           href: tutorials/sales-anomaly-detection.md
         - name: Détecter des objets dans des images (détection d’objets)
