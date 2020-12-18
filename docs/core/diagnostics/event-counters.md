@@ -2,12 +2,12 @@
 title: EventCounters dans .NET Core
 description: Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 ms.date: 08/07/2020
-ms.openlocfilehash: 68c831713eed8c49d24ebf93da301ef68d213bf9
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 08180b5580d2e7fe782fbd531a26872715825cdf
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437818"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678198"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters dans .NET Core
 
@@ -15,13 +15,11 @@ ms.locfileid: "96437818"
 
 EventCounters sont des API .NET Core utilisées pour la collecte des métriques de performances légère, multiplateforme et quasiment en temps réel. Les EventCounters ont été ajoutés comme une alternative multiplateforme aux « compteurs de performances » de l' .NET Framework sur Windows. Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 
-Le Runtime .NET Core et quelques bibliothèques .NET publient des informations de diagnostic de base à l’aide de EventCounters à partir de .NET Core 3,0. Outre les EventCounters fournies par le Runtime .NET, vous pouvez choisir d’implémenter votre propre EventCounters. EventCounters peut être utilisé pour effectuer le suivi de diverses mesures.
+Le Runtime .NET Core et quelques bibliothèques .NET publient des informations de diagnostic de base à l’aide de EventCounters à partir de .NET Core 3,0. Outre les EventCounters fournies par le Runtime .NET, vous pouvez choisir d’implémenter votre propre EventCounters. EventCounters peut être utilisé pour effectuer le suivi de diverses mesures. En savoir plus à leur sujet dans le [EventCounters connu dans .net](available-counters.md)
 
 EventCounters en direct dans le cadre d’un <xref:System.Diagnostics.Tracing.EventSource> objet et sont automatiquement poussés vers les outils d’écouteur régulièrement. Comme tous les autres événements sur un <xref:System.Diagnostics.Tracing.EventSource> , ils peuvent être utilisés à la fois en-proc et hors processus via <xref:System.Diagnostics.Tracing.EventListener> et [EventPipe](./eventpipe.md). Cet article se concentre sur les fonctionnalités inter-plateformes de EventCounters et exclut intentionnellement PerfView et ETW (Suivi d’v nements pour Windows), bien que les deux puissent être utilisés avec EventCounters.
 
 ![Image de diagramme in-proc et out-of-proc EventCounters](media/event-counters.svg)
-
-[!INCLUDE [available-counters](includes/available-counters.md)]
 
 ## <a name="eventcounter-api-overview"></a>Vue d’ensemble de l’API EventCounter
 
@@ -131,7 +129,7 @@ var monitorContentionCounter = new IncrementingPollingCounter(
 
 Il existe d’autres implémentations de compteur à utiliser comme référence dans le [Runtime .net](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Diagnostics/Tracing/RuntimeEventSource.cs) référentiel.
 
-## <a name="concurrency"></a>Concurrence
+## <a name="concurrency"></a>Accès concurrentiel
 
 > [!TIP]
 > L’API EventCounters ne garantit pas la sécurité des threads. Lorsque les délégués passés à <xref:System.Diagnostics.Tracing.PollingCounter> <xref:System.Diagnostics.Tracing.IncrementingPollingCounter> des instances ou sont appelés par plusieurs threads, il vous incombe de garantir la sécurité des threads des délégués.

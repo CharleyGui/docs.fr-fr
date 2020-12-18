@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: c43e661ad8c9f665151e0240bf6b54e61b9acfef
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 0aa404497cb7d6a488fb51e1df8f7f45d4f213fd
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031915"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678097"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -24,7 +24,11 @@ Les [débogueurs managés](managed-debuggers.md) vous permettent d’interagir a
 
 La [journalisation et le suivi](logging-tracing.md) sont des techniques associées. Elles se réfèrent au code d'instrumentation permettant de créer des fichiers journaux. Les fichiers consignent le détail des tâches exécutées par un programme. Ces informations peuvent être utilisées pour diagnostiquer les problèmes les plus complexes. Combinées à l'horodatage, ces techniques sont également très utiles dans les analyses de performances.
 
-## <a name="unit-testing"></a>Test des unités
+## <a name="metrics"></a>Mesures
+
+[EventCounters](event-counters.md) vous permet d’écrire des mesures pour identifier et surveiller les problèmes de performances. Les métriques entraînent une baisse des performances par rapport au suivi, ce qui le rend plus adapté à une analyse des performances Always on. Le Runtime .NET et les bibliothèques publient plusieurs [EventCounters bien connus](available-counters.md) que vous pouvez également surveiller.
+
+## <a name="unit-testing"></a>Test unitaire
 
 Le [test unitaire](../testing/index.md) est un composant clé de l’intégration et du déploiement continus de logiciels de haute qualité. Les tests unitaires sont conçus pour vous prévenir d’un problème survenu.
 
@@ -35,10 +39,6 @@ Un [dump](./dumps.md) est un fichier qui contient un instantané du processus au
 ## <a name="collect-diagnostics-in-containers"></a>Collecter les diagnostics dans les conteneurs
 
 Les outils de diagnostic utilisés dans les environnements Linux non conteneurs peuvent également être utilisés pour [collecter les diagnostics dans des conteneurs](diagnostics-in-containers.md). Il n’y a que quelques modifications d’utilisation nécessaires pour s’assurer que les outils fonctionnent dans un conteneur d’ancrage.
-
-## <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
-
-[Déboguer les vidages Linux](debug-linux-dumps.md) explique comment collecter et analyser les vidages sur Linux.
 
 ## <a name="net-core-diagnostic-global-tools"></a>Outils globaux de diagnostic .NET Core
 
@@ -83,6 +83,10 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 ### <a name="debug-deadlock"></a>Déboguer un interblocage
 
 [Didacticiel : déboguer le blocage](debug-deadlock.md) vous montre comment utiliser l’outil [dotnet-dump](dotnet-dump.md) pour examiner les threads et les verrous.
+
+### <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
+
+[Déboguer les vidages Linux](debug-linux-dumps.md) explique comment collecter et analyser les vidages sur Linux.
 
 ### <a name="measure-performance-using-eventcounters"></a>Mesurer les performances à l’aide de EventCounters
 

@@ -1,7 +1,7 @@
 ---
 title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
 description: Découvrez comment utiliser l' System.Text.Json espace de noms pour sérialiser et désérialiser à partir de JSON dans .net. Comprend un exemple de code.
-ms.date: 12/02/2020
+ms.date: 12/16/2020
 ms.custom: contperf-fy21q2
 no-loc:
 - System.Text.Json
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 46203aa1b4daa4281c7c26191f7df947967fa1c0
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: b69dfd6238f529c3b315d63a93a82da0f316f459
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513261"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678258"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -188,6 +188,15 @@ Pour désérialiser à partir d’un fichier à l’aide d’un code synchrone, 
 Pour désérialiser à partir d’un fichier à l’aide de code asynchrone, appelez la <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A> méthode :
 
 :::code language="csharp" source="snippets/system-text-json-how-to/csharp/RoundtripToFileAsync.cs" id="Deserialize":::
+
+> [!TIP]
+> Si vous souhaitez désérialiser JSON et que vous n’avez pas la classe dans laquelle la désérialiser, Visual Studio 2019 peut générer automatiquement la classe dont vous avez besoin :
+>
+> 1. Copiez le JSON que vous devez désérialiser.
+> 1. Créez un fichier de classe et supprimez le code du modèle.
+> 1. Choisissez **Edition**  >  **coller spécial**  >  **coller JSON comme classes**.
+>
+> Le résultat est une classe que vous pouvez utiliser pour votre cible de désérialisation.
 
 ## <a name="deserialize-from-utf-8"></a>Désérialiser à partir d’UTF-8
 

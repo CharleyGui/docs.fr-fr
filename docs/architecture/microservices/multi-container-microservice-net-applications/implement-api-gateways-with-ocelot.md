@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 03/02/2020
-ms.openlocfilehash: 6d9229228e228b664a602ce9a682d435505a8107
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 5da8533eff394b587d123970742727484a7236ad
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95718096"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678119"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
@@ -39,7 +39,7 @@ Par exemple, une granularité fine au niveau de la passerelle d’API peut être
 
 Nous approfondissons davantage dans la section précédente, [Création d’une interface utilisateur composite basée sur des microservices](../architect-microservice-container-applications/microservice-based-composite-ui-shape-layout.md).
 
-Comme élément clé à retenir, pour de nombreuses applications moyennes ou grandes, l’utilisation d’un produit de passerelle d’API personnalisée constitue généralement une bonne approche. Toutefois, pas comme agrégateur monolithique unique ni comme passerelle d’API personnalisée, centrale, unique, sauf si cette passerelle API autorise plusieurs zones de configuration indépendantes pour les équipes de développement qui créent des microservices autonomes.
+En guise de point de vue clé, pour de nombreuses applications de taille moyenne ou grande, l’utilisation d’un produit de passerelle d’API personnalisée est généralement une bonne approche, mais pas en tant qu’agrégateur monolithique unique ou passerelle d’API personnalisée centrale unique, sauf si cette passerelle d’API autorise plusieurs zones de configuration indépendantes pour les différentes équipes de développement créant des microservices autonomes.
 
 ### <a name="sample-microservicescontainers-to-reroute-through-the-api-gateways"></a>Exemples de microservices/conteneurs à réacheminer via les passerelles d’API
 
@@ -97,7 +97,7 @@ Le port 80 indiqué dans le code est interne à l’hôte Docker et n’est don
 
 Les applications clientes peuvent uniquement accéder aux ports externes (le cas échéant) publiés lors du déploiement avec `docker-compose`.
 
-Ces ports externes ne doivent pas être publiés lors du déploiement dans un environnement de production. C’est précisément la raison pour laquelle vous souhaitez utiliser la passerelle d’API, afin d’éviter la communication directe entre les applications clientes et les microservices.
+Ces ports externes ne doivent pas être publiés lors du déploiement dans un environnement de production. Pour cette raison spécifique, pourquoi vous souhaitez utiliser la passerelle d’API pour éviter la communication directe entre les applications clientes et les microservices.
 
 Toutefois, lors du développement, vous souhaitez accéder directement au microservice/conteneur et l’exécuter via Swagger. C’est pourquoi, dans eShopOnContainers, les ports externes sont toujours spécifiés même s’ils ne sont pas utilisés par la passerelle d’API ou les applications clientes.
 
@@ -155,7 +155,7 @@ Dans eShopOnContainers, son implémentation de passerelle d’API est un simple 
 
 **Figure 6-32.** Projet de base OcelotApiGw dans eShopOnContainers
 
-Ce projet WebHost ASP.NET Core est essentiellement généré avec deux fichiers simples : `Program.cs` et `Startup.cs`.
+Ce projet ASP.NET Core WebHost est généré avec deux fichiers simples :  `Program.cs` et `Startup.cs` .
 
 Le fichier Program.cs doit simplement créer et configurer la fonction BuildWebHost ASP.NET Core standard.
 
@@ -267,7 +267,7 @@ Le port est le port interne utilisé par le service. Lorsque vous utilisez des c
 
 L’élément `Host` est un nom de service qui dépend de la résolution de noms de service que vous utilisez. Lors de l’utilisation de docker-compose, les noms des services sont fournis par l’hôte Docker, lequel utilise les noms de service fournis dans les fichiers docker-compose. Si vous utilisez un orchestrateur comme Kubernetes ou Service Fabric, ce nom doit être résolu par la résolution de noms ou DNS fournie par chaque orchestrateur.
 
-DownstreamHostAndPorts est un tableau qui contient l’hôte et le port de tous les services en aval vers lesquels vous souhaitez transférer des demandes. Généralement, il contient uniquement une entrée, mais vous pouvez parfois équilibrer la charge des demandes à vos services en aval, et Ocelot vous permet d’ajouter plusieurs entrées puis de sélectionner un équilibreur de charge. Toutefois, si vous utilisez Azure et un orchestrateur quelconque, il est probablement plus judicieux d’équilibrer la charge avec l’infrastructure d’orchestrateur et le cloud.
+DownstreamHostAndPorts est un tableau qui contient l’hôte et le port de tous les services en aval vers lesquels vous souhaitez transférer des demandes. En règle générale, cette configuration ne contient qu’une seule entrée, mais vous pouvez parfois souhaiter équilibrer la charge des demandes vers vos services en aval et Ocelot vous permet d’ajouter plusieurs entrées, puis de sélectionner un équilibreur de charge. Toutefois, si vous utilisez Azure et un orchestrateur quelconque, il est probablement plus judicieux d’équilibrer la charge avec l’infrastructure d’orchestrateur et le cloud.
 
 UpstreamPathTemplate est l’URL dont Ocelot se servira pour identifier l’URL DownstreamPathTemplate à utiliser pour une demande donnée à partir du client. Enfin, la méthode UpstreamHttpMethod est utilisée pour qu’Ocelot puisse faire la distinction entre les différentes demandes (GET, POST, PUT) sur la même URL.
 
@@ -393,7 +393,7 @@ En effectuant un zoom avant, dans le cadre de l’entreprise « shopping » de
 
 **Figure 6-38.** Vision agrandie des services d’agrégation
 
-Vous pouvez remarquer le moment où le diagramme montre les demandes possibles provenant des passerelles d’API qu’il peut devenir complexes. Vous pouvez voir comment les flèches en bleu seraient simplifiées, du point de vue des applications clientes, lors de l’utilisation du modèle d’agrégation en réduisant les échanges et la latence de la communication, et en améliorant finalement considérablement l’expérience utilisateur pour les applications distantes (applications mobiles et SPA), en particulier.
+Vous pouvez remarquer le moment où le diagramme montre les demandes possibles provenant des passerelles d’API qu’il peut devenir complexes. En revanche, lorsque vous utilisez le modèle d’agrégation, vous pouvez voir comment les flèches en bleu simplifient la communication du point de vue d’une application cliente. Ce modèle permet non seulement de réduire la échanges excessifs et la latence dans la communication, mais également d’améliorer l’expérience utilisateur de manière significative pour les applications distantes (applications mobiles et SPA).
 
 Dans le cas de la zone d’entreprise et des microservices « marketing », il s’agit d’un cas d’usage simple. il n’était donc pas nécessaire d’utiliser des agrégations, mais cela peut également être possible, si nécessaire.
 
@@ -527,7 +527,7 @@ Dans Kubernetes, si vous n’utilisez pas d’approche d’entrée, vos services
 
 Toutefois, si vous utilisez une approche d’entrée, vous disposez d’un niveau intermédiaire entre Internet et vos services (y compris vos passerelles d’API), agissant comme un proxy inverse.
 
-Par définition, une entrée est une collection de règles qui autorisent les connexions entrantes à atteindre les services de cluster. Une entrée est généralement configurée pour fournir aux services des URL accessibles en externe, un trafic d’équilibrage de charge, un processus de terminaison SSL, et plus encore. Les utilisateurs demandent une entrée en publiant la ressource d’entrée sur le serveur d’API.
+Par définition, une entrée est une collection de règles qui autorisent les connexions entrantes à atteindre les services de cluster. Une entrée est configurée pour fournir aux services des URL accessibles en externe, un trafic d’équilibrage de charge, un processus de terminaison SSL, etc. Les utilisateurs demandent une entrée en publiant la ressource d’entrée sur le serveur d’API.
 
 Dans eShopOnContainers, lorsque vous effectuez un développement local et utilisez simplement votre machine de développement en tant qu’hôte Docker, vous n’utilisez pas d’entrée, mais uniquement les multiples passerelles d’API.
 
@@ -543,7 +543,7 @@ Le fait d’avoir un niveau Nginx d’entrée dans Kubernetes en face des applic
 
 **Figure 6-41.** Niveau d’entrée dans eShopOnContainers lors d’un déploiement dans Kubernetes
 
-Une entrée Kubernetes agit comme un proxy inverse pour tout le trafic vers l’application, notamment les applications web, qui sont généralement en dehors de l’étendue de la passerelle API. Quand vous déployez eShopOnContainers dans Kubernetes, il expose simplement quelques services ou points de terminaison via _l’entrée_, en fait la liste suivante de suffixes sur les URL :
+Une entrée Kubernetes agit comme un proxy inverse pour tout le trafic vers l’application, y compris les applications Web, qui sont en dehors de l’étendue de la passerelle API. Quand vous déployez eShopOnContainers dans Kubernetes, il expose simplement quelques services ou points de terminaison via _l’entrée_, en fait la liste suivante de suffixes sur les URL :
 
 - `/` pour l’application web SPA cliente
 - `/webmvc` pour l’application web MVC cliente

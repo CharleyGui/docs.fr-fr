@@ -2,12 +2,12 @@
 title: Appel de code non managé (P/Invoke)
 description: Découvrez comment appeler des fonctions natives via P/Invoke dans .NET.
 ms.date: 01/18/2019
-ms.openlocfilehash: fa8b43edfba50fbc620f257c4e7caf1673f83235
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cde52d9d0a4e3b84fec632b615b635e7b7df3924
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706303"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678261"
 ---
 # <a name="platform-invoke-pinvoke"></a>Appel de code non managé (P/Invoke)
 
@@ -19,9 +19,9 @@ Commençons par l’exemple le plus courant, c’est-à-dire appeler des fonctio
 
 L’exemple précédent est simple, mais il ne montre pas ce dont vous avez besoin pour appeler des fonctions non managées à partir de code managé. Examinons l’exemple :
 
-- La ligne 1 montre l’instruction d’utilisation de l’espace de noms `System.Runtime.InteropServices`, qui contient tous les éléments dont nous avons besoin.
-- La ligne 7 introduit l’attribut `DllImport`. Cet attribut est crucial, car il indique au runtime qu’il doit charger la DLL non managée. La chaîne passée est la DLL où se trouve notre fonction cible. En outre, il définit le [jeu de caractères](./charset.md) à utiliser pour marshaler les chaînes. Il spécifie enfin que cette fonction appelle [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) et que le runtime doit capturer ce code d’erreur pour que l’utilisateur puisse le récupérer avec <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
-- La ligne 8 est l’essentiel du travail de P/Invoke. Elle définit une méthode managée qui a **exactement la même signature** que la méthode non managée. Notez que la déclaration a un nouveau mot clé, `extern`, qui indique au runtime qu’il s’agit d’une méthode externe et que, quand vous l’appelez, le runtime doit la trouver dans la DLL spécifiée dans l’attribut `DllImport`.
+- Line #2 affiche l’instruction using pour l' `System.Runtime.InteropServices` espace de noms qui contient tous les éléments nécessaires.
+- Line #8 introduit l' `DllImport` attribut. Cet attribut est crucial, car il indique au runtime qu’il doit charger la DLL non managée. La chaîne passée est la DLL où se trouve notre fonction cible. En outre, il définit le [jeu de caractères](./charset.md) à utiliser pour marshaler les chaînes. Il spécifie enfin que cette fonction appelle [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) et que le runtime doit capturer ce code d’erreur pour que l’utilisateur puisse le récupérer avec <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
+- Line #9 est le essentiel du travail P/Invoke. Elle définit une méthode managée qui a **exactement la même signature** que la méthode non managée. Notez que la déclaration a un nouveau mot clé, `extern`, qui indique au runtime qu’il s’agit d’une méthode externe et que, quand vous l’appelez, le runtime doit la trouver dans la DLL spécifiée dans l’attribut `DllImport`.
 
 Le reste de l’exemple appelle simplement la méthode comme toute autre méthode managée.
 

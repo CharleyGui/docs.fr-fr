@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 10/02/2020
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 84f5961d573b99438320a75d7f89bc7fd94f6266
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c238439b0f435e579d932b3b1eb13e9b0061fa5f
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955211"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678230"
 ---
 # <a name="whats-new-in-c-70-through-c-73"></a>Nouveautés de C# 7,0 par C# 7,3
 
@@ -57,7 +57,7 @@ Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité
 1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
 1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
 1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le référentiel *try-samples*.
-1. Exécuter `dotnet try`.
+1. Exécutez `dotnet try`.
 
 ## <a name="tuples-and-discards"></a>Tuples et éléments ignorés
 
@@ -235,7 +235,7 @@ L’attribut `SomeThingAboutFieldAttribute` est appliqué au champ de stockage g
 
 ## <a name="more-expression-bodied-members"></a>Autres membres expression-bodied
 
-C# 6 a introduit les [membres expression-bodied](csharp-6.md#expression-bodied-function-members) pour les fonctions membres, ainsi que des propriétés en lecture seule. C# 7.0 développe les membres autorisés pouvant être implémentés comme expressions. Dans C# 7.0, vous pouvez implémenter des *constructeurs*, des *finaliseurs* ainsi que des accesseurs `get` et `set` sur des *propriétés* et des *indexeurs*. Le code suivant présente des exemples de chaque élément :
+C# 6 a introduit les membres des expressions et des propriétés en lecture seule. C# 7.0 développe les membres autorisés pouvant être implémentés comme expressions. Dans C# 7.0, vous pouvez implémenter des *constructeurs*, des *finaliseurs* ainsi que des accesseurs `get` et `set` sur des *propriétés* et des *indexeurs*. Le code suivant présente des exemples de chaque élément :
 
 [!code-csharp[ExpressionBodiedMembers](~/samples/snippets/csharp/new-in-7/expressionmembers.cs#ExpressionBodiedEverything "new expression-bodied members")]
 

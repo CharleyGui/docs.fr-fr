@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 36cdc9f5-7579-4cd2-aa36-fc05c741584c
 topic_type:
 - apiref
-ms.openlocfilehash: 632a9070eab227bc48ce76c51ea08f98060d680d
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 94c2c6e01e4188f1fa13c3b6a9f638d4b79a502f
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95722533"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678192"
 ---
 # <a name="icorprofilerinfogethandlefromthread-method"></a>ICorProfilerInfo::GetHandleFromThread, méthode
 
@@ -45,6 +45,8 @@ HRESULT GetHandleFromThread(
 ## <a name="remarks"></a>Remarques  
 
  Le profileur doit appeler la `DuplicateHandle` fonction Win32 sur le descripteur avant de l’utiliser.  
+
+ Le handle retourné par cette méthode est détenu par le runtime et le profileur ne doit jamais le fermer.
   
 ## <a name="requirements"></a>Configuration requise  
 

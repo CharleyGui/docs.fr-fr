@@ -6,16 +6,16 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: 639755dd78892df1b70ea5245a9584e575fbf691
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: dbb0a94b0401d58139c024fd8ca3e00353a19efa
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267878"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678038"
 ---
 # <a name="modules-handlers-and-middleware"></a>Modules, gestionnaires et intergiciel (middleware)
 
-Une application ASP.NET Core est basée sur une série d' *intergiciels (middleware*). L’intergiciel est un gestionnaire qui est organisé dans un pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une Blazor application.
+Une application ASP.NET Core est basée sur une série d' *intergiciels (middleware*). L’intergiciel est un gestionnaire qui est organisé dans un pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs* et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir les intergiciels (middleware) dans le contexte d’une Blazor application.
 
 ## <a name="overview"></a>Vue d’ensemble
 

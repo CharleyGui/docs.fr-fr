@@ -4,12 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 6c1e9a665ad541bf6109634a6df857880ee47042
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 56f51cde0e52a9e6a38e5291c81470beee61adef
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281647"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678106"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 
@@ -48,7 +48,7 @@ L’écriture de tests pour votre code permet de le découpler de manière natur
 ## <a name="characteristics-of-a-good-unit-test"></a>Caractéristiques d’un bon test unitaire
 
 - **Rapidement**. Il n’est pas rare pour des projets matures de comporter des milliers de tests unitaires. Les tests unitaires doivent durer très peu de temps. Millisecondes.
-- **Isolé**. Les tests unitaires sont autonomes et peuvent être exécutés de manière isolée. Ils ne dépendent d’aucun facteur externe, par exemple un système de fichiers ou une base de données.
+- **Isolées**. Les tests unitaires sont autonomes et peuvent être exécutés de manière isolée. Ils ne dépendent d’aucun facteur externe, par exemple un système de fichiers ou une base de données.
 - **Renouvelable**. L’exécution d’un test unitaire doit être cohérente avec ses résultats. En d’autres termes, il retourne toujours le même résultat si vous ne changez rien entre les exécutions.
 - **Autovérification**. Le test doit pouvoir détecter automatiquement son état de réussite ou d’échec sans aucune interaction humaine.
 - **Délai approprié**. Écrire un test unitaire ne doit pas prendre un temps disproportionné par rapport au code testé. Si vous trouvez que le test du code prend beaucoup de temps par rapport à son écriture, optez pour une conception plus facile à tester.
@@ -65,9 +65,9 @@ Le terme *simulacre* n’est pas souvent utilisé de façon inutilisée pour par
 
 *Factice* : un substitut est un terme générique qui peut être utilisé pour décrire un objet de type stub ou factice. Qu’il s’agisse d’un stub ou d’un simulacre dépend du contexte dans lequel il est utilisé. En d’autres termes, un fake (élément fictif) peut être un stub ou un mob (objet fictif).
 
-*Mock*  - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un simulacre commence comme un substitut jusqu’à ce qu’il soit déclaré.
+*Mock* - Il s’agit d’un objet fictif du système qui détermine la réussite ou l’échec d’un test unitaire. Un simulacre commence comme un substitut jusqu’à ce qu’il soit déclaré.
 
-*Stub*  - Un stub permet de remplacer de manière contrôlée une dépendance existante (ou collaborateur) dans le système. À l’aide d’un stub, vous pouvez tester votre code sans avoir à gérer directement la dépendance. Par défaut, un fake commence comme par être un stub.
+*Stub* - Un stub permet de remplacer de manière contrôlée une dépendance existante (ou collaborateur) dans le système. À l’aide d’un stub, vous pouvez tester votre code sans avoir à gérer directement la dépendance. Par défaut, un stub démarre en tant que substitut.
 
 Prenez l'exemple de l'extrait de code suivant :
 
@@ -113,7 +113,7 @@ Dans le cas présent, vous vérifiez une propriété sur le Fake (en le différe
 
 Le point principal à retenir à propos des mocks et des stubs est que les mocks sont comme des stubs. Toutefois, vous différenciez le mock (objet fictif) par assertion, contrairement au stub.
 
-## <a name="best-practices"></a>meilleures pratiques recommandées.
+## <a name="best-practices"></a>Meilleures pratiques
 
 Essayez de ne pas introduire de dépendances à l’infrastructure quand vous écrivez des tests unitaires. Ils rendent les tests lents et fragiles et doivent être réservés pour les tests d’intégration. Vous pouvez éviter ces dépendances dans votre application en suivant le [principe des dépendances explicites](https://deviq.com/explicit-dependencies-principle) et en utilisant l’[injection de dépendances](../extensions/dependency-injection.md). Vous pouvez également conserver vos tests unitaires dans un projet distinct de vos tests d’intégration. Cela garantit que votre projet de test unitaire n’a pas de références à des dépendances ou à des dépendances sur des packages d’infrastructure.
 
@@ -125,7 +125,7 @@ Le nom de votre test doit être composé de trois parties :
 - Scénario de test utilisé
 - Comportement attendu quand le scénario est appelé
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Les standards de nommage sont importants, car ils expriment explicitement la finalité du test.
 
@@ -143,11 +143,11 @@ Les tests ne se limitent pas à la vérification du bon fonctionnement de votre 
 
 **Organisation, Action, Assertion** est un modèle courant pour les tests unitaires. Comme son nom l’indique, il comporte trois actions principales :
 
-- *Organisation* , création et configuration des objets selon les besoins
+- *Organisation*, création et configuration des objets selon les besoins
 - *Agir* sur un objet.
 - *Assertion* de ce qui est prévu
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Permet de séparer clairement ce qui est testé des étapes *organisation* et *assertion*.
 - Moins de risques de mélanger les assertions avec le code de l’étape « Action ».
@@ -166,7 +166,7 @@ La lisibilité est l’un des aspects les plus importants durant l’écriture d
 
 L’entrée à utiliser dans un test unitaire doit être la plus simple possible pour vérifier le comportement testé.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Les tests deviennent plus résilients face aux futurs changements du code base.
 - Plus proche du comportement de test que de l’implémentation.
@@ -185,10 +185,10 @@ Les tests qui contiennent plus d’informations que nécessaire pour être réus
 
 Le nommage des variables dans les tests unitaires est aussi important, sinon plus, que le nommage des variables dans le code de production. Les tests unitaires ne doivent pas contenir de chaînes magiques.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Évite au lecteur du test d’inspecter le code de production pour déterminer ce qui rend la valeur spéciale.
-- Montre explicitement ce que vous essayez de *prouver* et non ce que vous essayez d’ *accomplir*.
+- Montre explicitement ce que vous essayez de *prouver* et non ce que vous essayez d’*accomplir*.
 
 Les chaînes magiques peuvent être sources de confusion pour le lecteur de vos tests. Si une chaîne semble inhabituelle, il peut se demander pourquoi une certaine valeur a été choisie pour un paramètre ou une valeur de retour. Cela peut l’amener à examiner de plus près les détails de l’implémentation, au lieu de se concentrer sur le test.
 
@@ -207,7 +207,7 @@ Les chaînes magiques peuvent être sources de confusion pour le lecteur de vos 
 
 Durant l’écriture des tests unitaires, évitez la concaténation manuelle des chaînes et les conditions logiques telles que `if`, `while`, `for`, `switch`, etc.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Moins de risques d’introduire un bogue dans vos tests.
 - Concentrez-vous sur le résultat final plutôt que sur les détails de l’implémentation.
@@ -229,7 +229,7 @@ Quand vous introduisez une logique dans votre suite de tests, le risque d’intr
 
 Si vous avez besoin d’un objet ou d’un état similaire pour vos tests, préférez une méthode d’assistance à l’utilisation des `Setup` `Teardown` attributs et s’ils existent.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - Moins de confusion durant la lecture des tests, car l’ensemble du code est visible à partir de chaque test.
 - Moins de risques d’effectuer une configuration excessive ou insuffisante pour le test donné.
@@ -267,7 +267,7 @@ Durant l’écriture des tests, essayez d’inclure uniquement une instruction A
 - Créez un test distinct pour chaque assertion.
 - Utilisez des tests paramétrables.
 
-#### <a name="why"></a>Pourquoi ?
+#### <a name="why"></a>Pourquoi ?
 
 - En cas d’échec d’une instruction Assert, les assertions qui suivent ne sont pas évaluées.
 - Permet de vérifier que vous n’effectuez pas l’assertion de plusieurs cas dans vos tests.

@@ -3,13 +3,13 @@ title: Application à fichier unique
 description: Découvrez ce qu’est une application à fichier unique et pourquoi envisager d’utiliser ce modèle de déploiement d’application.
 author: lakshanf
 ms.author: lakshanf
-ms.date: 08/28/2020
-ms.openlocfilehash: 16e9586cfc29072fa2ca70dc482272a5a0e7306a
-ms.sourcegitcommit: 39b1d5f2978be15409c189a66ab30781d9082cd8
+ms.date: 12/17/2020
+ms.openlocfilehash: e2d2c9ed4c28d11a77e4f840602982a36cf1c80c
+ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92050414"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678156"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -23,7 +23,7 @@ Certaines API ne sont pas compatibles avec le déploiement à fichier unique et 
 
 Le tableau ci-dessous contient les détails de l’API de la bibliothèque Runtime appropriée pour une utilisation à fichier unique.
 
-| API                            | Notes                                                                   |
+| API                            | Remarque                                                                   |
 |--------------------------------|------------------------------------------------------------------------|
 | `Assembly.Location`            | Retourne une chaîne vide.                                               |
 | `Module.FullyQualifiedName`    | Retourne une chaîne avec la valeur de `<Unknown>` ou lève une exception. |
@@ -53,7 +53,7 @@ Sans ce fichier, Visual Studio peut générer l’erreur «Impossible d’attach
 
 Pour corriger ces erreurs, _mscordbi_ doit être copié en regard de l’exécutable. _mscordbi_ est `publish` Ed par défaut dans le sous-répertoire avec l’ID d’exécution de l’application. Ainsi, par exemple, s’il s’agit de publier un fichier exécutable à fichier unique autonome à l’aide `dotnet` de l’interface CLI pour Windows à l’aide des paramètres `-r win-x64` , l’exécutable est placé dans _bin/debug/net 5.0/Win-x64/Publish_. Une copie de _mscordbi.dll_ serait présente dans _bin/debug/net 5.0/Win-x64_.
 
-## <a name="other-considerations"></a>Autres considérations
+## <a name="other-considerations"></a>Autres éléments à prendre en compte
 
 Un fichier unique ne regroupe pas les bibliothèques natives par défaut. Sur Linux, nous prévoyons le runtime dans le bundle et seules les bibliothèques natives de l’application sont déployées dans le même répertoire que l’application à fichier unique. Sur Windows, nous prévoyons uniquement le code d’hébergement et les bibliothèques Runtime et application natives sont déployées dans le même répertoire que l’application à fichier unique. Cela permet de garantir une bonne expérience de débogage, qui requiert que les fichiers natifs soient exclus du fichier unique. Il existe une option pour définir un indicateur, `IncludeNativeLibrariesForSelfExtract` , pour inclure les bibliothèques natives dans le groupe de fichiers unique, mais ces fichiers seront extraits dans un répertoire temporaire de l’ordinateur client lors de l’exécution de l’application à fichier unique.
 
@@ -96,6 +96,39 @@ Par exemple, ajoutez la propriété suivante au fichier projet d’un assembly p
 </PropertyGroup>
 ```
 
+## <a name="publish-a-single-file-app---sample-project-file"></a>Publication d’un fichier d’application à fichier unique-exemple de fichier projet
+
+Voici un exemple de fichier projet qui spécifie la publication à fichier unique :
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+  </PropertyGroup>
+
+</Project>
+```
+
+Ces propriétés ont les fonctions suivantes :
+
+* `PublishSingleFile` -Active la publication sur un seul fichier.
+* `SelfContained` : Détermine si l’application doit être autonome ou dépendante de l’infrastructure.
+* `RuntimeIdentifier` -Spécifie le [système d’exploitation et le type de processeur](../rid-catalog.md) que vous ciblez.
+* `PublishTrimmed` -Active l’utilisation de la [Suppression d’assembly](trim-self-contained.md), qui est uniquement prise en charge pour les applications autonomes.
+* `PublishReadyToRun` -Active la compilation à l' [avance (AOA)](ready-to-run.md).
+
+**Remarques :**
+
+* Les applications sont spécifiques au système d’exploitation et à l’architecture. Vous devez publier pour chaque configuration, comme Linux x64, Linux ARM64, Windows x64, etc.
+* Les fichiers de configuration, tels que *\*.runtimeconfig.jssur*, sont inclus dans le fichier unique. Si un fichier de configuration supplémentaire est nécessaire, vous pouvez le placer à côté du fichier unique.
+
 ## <a name="publish-a-single-file-app---cli"></a>Publier une application à fichier unique-CLI
 
 Publiez une application à fichier unique à l’aide de la commande [dotnet Publish](../tools/dotnet-publish.md) . Lorsque vous publiez votre application, définissez les propriétés suivantes :
@@ -129,7 +162,7 @@ Visual Studio crée des profils de publication réutilisables qui contrôlent la
 
 01. Choisissez **Modifier**.
 
-    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-edit-settings.png" alt-text="Profil de publication Visual Studio avec le bouton modifier.":::
 
 01. Dans la boîte de dialogue **paramètres de profil** , définissez les options suivantes :
 
@@ -139,7 +172,7 @@ Visual Studio crée des profils de publication réutilisables qui contrôlent la
 
     Choisissez **Enregistrer** pour enregistrer les paramètres et revenir à la boîte de dialogue **publier** .
 
-    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Explorateur de solutions avec un menu contextuel, sélectionnez l’option publier.":::
+    :::image type="content" source="media/single-file/visual-studio-publish-single-file-properties.png" alt-text="Boîte de dialogue Paramètres de profil avec le mode de déploiement, le runtime cible et les options à fichier unique mis en surbrillance.":::
 
 01. Choisissez **publier** pour publier votre application en tant que fichier unique.
 
