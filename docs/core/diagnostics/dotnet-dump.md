@@ -2,182 +2,185 @@
 title: outil de diagnostic dotnet-dump-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-dump pour collecter et analyser les vidages Windows et Linux sans débogueur natif.
 ms.date: 11/17/2020
-ms.openlocfilehash: ea9a70c4dc47b5006339e9a197712092eb66b241
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eaffbb1f2959dba5c25a603b6f785c7480e4a8c0
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822202"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765044"
 ---
-# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a><span data-ttu-id="a4d61-103">Utilitaire de collecte et d’analyse des vidages (dotnet-dump)</span><span class="sxs-lookup"><span data-stu-id="a4d61-103">Dump collection and analysis utility (dotnet-dump)</span></span>
+# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a><span data-ttu-id="fe04f-103">Utilitaire de collecte et d’analyse des vidages (dotnet-dump)</span><span class="sxs-lookup"><span data-stu-id="fe04f-103">Dump collection and analysis utility (dotnet-dump)</span></span>
 
-<span data-ttu-id="a4d61-104">**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="a4d61-104">**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions</span></span>
+<span data-ttu-id="fe04f-104">**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="fe04f-104">**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a4d61-105">`dotnet-dump` pour macOS est pris en charge uniquement avec .NET 5,0 et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="a4d61-105">`dotnet-dump` for macOS is only supported with .NET 5.0 and later versions.</span></span>
+> <span data-ttu-id="fe04f-105">`dotnet-dump` pour macOS est pris en charge uniquement avec .NET 5,0 et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="fe04f-105">`dotnet-dump` for macOS is only supported with .NET 5.0 and later versions.</span></span>
 
-## <a name="install"></a><span data-ttu-id="a4d61-106">Installer</span><span class="sxs-lookup"><span data-stu-id="a4d61-106">Install</span></span>
+## <a name="install"></a><span data-ttu-id="fe04f-106">Installer</span><span class="sxs-lookup"><span data-stu-id="fe04f-106">Install</span></span>
 
-<span data-ttu-id="a4d61-107">Il existe deux façons de télécharger et d’installer `dotnet-dump` :</span><span class="sxs-lookup"><span data-stu-id="a4d61-107">There are two ways to download and install `dotnet-dump`:</span></span>
+<span data-ttu-id="fe04f-107">Il existe deux façons de télécharger et d’installer `dotnet-dump` :</span><span class="sxs-lookup"><span data-stu-id="fe04f-107">There are two ways to download and install `dotnet-dump`:</span></span>
 
-- <span data-ttu-id="a4d61-108">**outil Global dotnet :**</span><span class="sxs-lookup"><span data-stu-id="a4d61-108">**dotnet global tool:**</span></span>
+- <span data-ttu-id="fe04f-108">**outil Global dotnet :**</span><span class="sxs-lookup"><span data-stu-id="fe04f-108">**dotnet global tool:**</span></span>
 
-  <span data-ttu-id="a4d61-109">Pour installer la dernière version Release du `dotnet-dump` [package NuGet](https://www.nuget.org/packages/dotnet-dump), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :</span><span class="sxs-lookup"><span data-stu-id="a4d61-109">To install the latest release version of the `dotnet-dump` [NuGet package](https://www.nuget.org/packages/dotnet-dump), use the [dotnet tool install](../tools/dotnet-tool-install.md) command:</span></span>
+  <span data-ttu-id="fe04f-109">Pour installer la dernière version Release du `dotnet-dump` [package NuGet](https://www.nuget.org/packages/dotnet-dump), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :</span><span class="sxs-lookup"><span data-stu-id="fe04f-109">To install the latest release version of the `dotnet-dump` [NuGet package](https://www.nuget.org/packages/dotnet-dump), use the [dotnet tool install](../tools/dotnet-tool-install.md) command:</span></span>
 
   ```dotnetcli
   dotnet tool install --global dotnet-dump
   ```
 
-- <span data-ttu-id="a4d61-110">**Téléchargement direct :**</span><span class="sxs-lookup"><span data-stu-id="a4d61-110">**Direct download:**</span></span>
+- <span data-ttu-id="fe04f-110">**Téléchargement direct :**</span><span class="sxs-lookup"><span data-stu-id="fe04f-110">**Direct download:**</span></span>
 
-  <span data-ttu-id="a4d61-111">Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :</span><span class="sxs-lookup"><span data-stu-id="a4d61-111">Download the tool executable that matches your platform:</span></span>
+  <span data-ttu-id="fe04f-111">Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :</span><span class="sxs-lookup"><span data-stu-id="fe04f-111">Download the tool executable that matches your platform:</span></span>
 
-  | <span data-ttu-id="a4d61-112">Système d’exploitation</span><span class="sxs-lookup"><span data-stu-id="a4d61-112">OS</span></span>  | <span data-ttu-id="a4d61-113">Plateforme</span><span class="sxs-lookup"><span data-stu-id="a4d61-113">Platform</span></span> |
+  | <span data-ttu-id="fe04f-112">Système d’exploitation</span><span class="sxs-lookup"><span data-stu-id="fe04f-112">OS</span></span>  | <span data-ttu-id="fe04f-113">Plateforme</span><span class="sxs-lookup"><span data-stu-id="fe04f-113">Platform</span></span> |
   | --- | -------- |
-  | <span data-ttu-id="a4d61-114">Windows</span><span class="sxs-lookup"><span data-stu-id="a4d61-114">Windows</span></span> | <span data-ttu-id="a4d61-115">[x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [ARM](https://aka.ms/dotnet-dump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-dump/win-arm64)</span><span class="sxs-lookup"><span data-stu-id="a4d61-115">[x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [arm](https://aka.ms/dotnet-dump/win-arm) \| [arm-x64](https://aka.ms/dotnet-dump/win-arm64)</span></span> |
-  | <span data-ttu-id="a4d61-116">macOS</span><span class="sxs-lookup"><span data-stu-id="a4d61-116">macOS</span></span>   | [<span data-ttu-id="a4d61-117">x64</span><span class="sxs-lookup"><span data-stu-id="a4d61-117">x64</span></span>](https://aka.ms/dotnet-dump/osx-x64) |
-  | <span data-ttu-id="a4d61-118">Linux</span><span class="sxs-lookup"><span data-stu-id="a4d61-118">Linux</span></span>   | <span data-ttu-id="a4d61-119">[x64](https://aka.ms/dotnet-dump/linux-x64) \| [ARM](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64)</span><span class="sxs-lookup"><span data-stu-id="a4d61-119">[x64](https://aka.ms/dotnet-dump/linux-x64) \| [arm](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [musl-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [musl-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64)</span></span> |
+  | <span data-ttu-id="fe04f-114">Windows</span><span class="sxs-lookup"><span data-stu-id="fe04f-114">Windows</span></span> | <span data-ttu-id="fe04f-115">[x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [ARM](https://aka.ms/dotnet-dump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-dump/win-arm64)</span><span class="sxs-lookup"><span data-stu-id="fe04f-115">[x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [arm](https://aka.ms/dotnet-dump/win-arm) \| [arm-x64](https://aka.ms/dotnet-dump/win-arm64)</span></span> |
+  | <span data-ttu-id="fe04f-116">macOS</span><span class="sxs-lookup"><span data-stu-id="fe04f-116">macOS</span></span>   | [<span data-ttu-id="fe04f-117">x64</span><span class="sxs-lookup"><span data-stu-id="fe04f-117">x64</span></span>](https://aka.ms/dotnet-dump/osx-x64) |
+  | <span data-ttu-id="fe04f-118">Linux</span><span class="sxs-lookup"><span data-stu-id="fe04f-118">Linux</span></span>   | <span data-ttu-id="fe04f-119">[x64](https://aka.ms/dotnet-dump/linux-x64) \| [ARM](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64)</span><span class="sxs-lookup"><span data-stu-id="fe04f-119">[x64](https://aka.ms/dotnet-dump/linux-x64) \| [arm](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [musl-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [musl-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64)</span></span> |
 
-## <a name="synopsis"></a><span data-ttu-id="a4d61-120">Synopsis</span><span class="sxs-lookup"><span data-stu-id="a4d61-120">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="fe04f-120">Synopsis</span><span class="sxs-lookup"><span data-stu-id="fe04f-120">Synopsis</span></span>
 
 ```console
 dotnet-dump [-h|--help] [--version] <command>
 ```
 
-## <a name="description"></a><span data-ttu-id="a4d61-121">Description</span><span class="sxs-lookup"><span data-stu-id="a4d61-121">Description</span></span>
+## <a name="description"></a><span data-ttu-id="fe04f-121">Description</span><span class="sxs-lookup"><span data-stu-id="fe04f-121">Description</span></span>
 
-<span data-ttu-id="a4d61-122">L' `dotnet-dump` outil Global est un moyen de collecter et d’analyser les vidages Windows et Linux sans que le débogueur natif ne soit impliqué `lldb` sur Linux.</span><span class="sxs-lookup"><span data-stu-id="a4d61-122">The `dotnet-dump` global tool is a way to collect and analyze Windows and Linux dumps without any native debugger involved like `lldb` on Linux.</span></span> <span data-ttu-id="a4d61-123">Cet outil est important sur les plateformes telles que Alpine Linux où un travail complet `lldb` n’est pas disponible.</span><span class="sxs-lookup"><span data-stu-id="a4d61-123">This tool is important on platforms like Alpine Linux where a fully working `lldb` isn't available.</span></span> <span data-ttu-id="a4d61-124">L' `dotnet-dump` outil vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="a4d61-124">The `dotnet-dump` tool allows you to run SOS commands to analyze crashes and the garbage collector (GC), but it isn't a native debugger so things like displaying native stack frames aren't supported.</span></span>
+<span data-ttu-id="fe04f-122">L' `dotnet-dump` outil Global est un moyen de collecter et d’analyser les vidages Windows et Linux sans que le débogueur natif ne soit impliqué `lldb` sur Linux.</span><span class="sxs-lookup"><span data-stu-id="fe04f-122">The `dotnet-dump` global tool is a way to collect and analyze Windows and Linux dumps without any native debugger involved like `lldb` on Linux.</span></span> <span data-ttu-id="fe04f-123">Cet outil est important sur les plateformes telles que Alpine Linux où un travail complet `lldb` n’est pas disponible.</span><span class="sxs-lookup"><span data-stu-id="fe04f-123">This tool is important on platforms like Alpine Linux where a fully working `lldb` isn't available.</span></span> <span data-ttu-id="fe04f-124">L' `dotnet-dump` outil vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="fe04f-124">The `dotnet-dump` tool allows you to run SOS commands to analyze crashes and the garbage collector (GC), but it isn't a native debugger so things like displaying native stack frames aren't supported.</span></span>
 
-## <a name="options"></a><span data-ttu-id="a4d61-125">Options</span><span class="sxs-lookup"><span data-stu-id="a4d61-125">Options</span></span>
+## <a name="options"></a><span data-ttu-id="fe04f-125">Options</span><span class="sxs-lookup"><span data-stu-id="fe04f-125">Options</span></span>
 
 - **`--version`**
 
-  <span data-ttu-id="a4d61-126">Affiche la version de l’utilitaire dotnet-dump.</span><span class="sxs-lookup"><span data-stu-id="a4d61-126">Displays the version of the dotnet-dump utility.</span></span>
+  <span data-ttu-id="fe04f-126">Affiche la version de l’utilitaire dotnet-dump.</span><span class="sxs-lookup"><span data-stu-id="fe04f-126">Displays the version of the dotnet-dump utility.</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="a4d61-127">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="a4d61-127">Shows command-line help.</span></span>
+  <span data-ttu-id="fe04f-127">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="fe04f-127">Shows command-line help.</span></span>
 
-## <a name="commands"></a><span data-ttu-id="a4d61-128">Commandes</span><span class="sxs-lookup"><span data-stu-id="a4d61-128">Commands</span></span>
+## <a name="commands"></a><span data-ttu-id="fe04f-128">Commandes</span><span class="sxs-lookup"><span data-stu-id="fe04f-128">Commands</span></span>
 
-| <span data-ttu-id="a4d61-129">Commande</span><span class="sxs-lookup"><span data-stu-id="a4d61-129">Command</span></span>                                     |
+| <span data-ttu-id="fe04f-129">Commande</span><span class="sxs-lookup"><span data-stu-id="fe04f-129">Command</span></span>                                     |
 | ------------------------------------------- |
-| [<span data-ttu-id="a4d61-130">dotnet-vider la collecte</span><span class="sxs-lookup"><span data-stu-id="a4d61-130">dotnet-dump collect</span></span>](#dotnet-dump-collect) |
-| [<span data-ttu-id="a4d61-131">dotnet-vider l’analyse</span><span class="sxs-lookup"><span data-stu-id="a4d61-131">dotnet-dump analyze</span></span>](#dotnet-dump-analyze) |
+| [<span data-ttu-id="fe04f-130">dotnet-vider la collecte</span><span class="sxs-lookup"><span data-stu-id="fe04f-130">dotnet-dump collect</span></span>](#dotnet-dump-collect) |
+| [<span data-ttu-id="fe04f-131">dotnet-vider l’analyse</span><span class="sxs-lookup"><span data-stu-id="fe04f-131">dotnet-dump analyze</span></span>](#dotnet-dump-analyze) |
 
-## <a name="dotnet-dump-collect"></a><span data-ttu-id="a4d61-132">dotnet-vider la collecte</span><span class="sxs-lookup"><span data-stu-id="a4d61-132">dotnet-dump collect</span></span>
+## <a name="dotnet-dump-collect"></a><span data-ttu-id="fe04f-132">dotnet-vider la collecte</span><span class="sxs-lookup"><span data-stu-id="fe04f-132">dotnet-dump collect</span></span>
 
-<span data-ttu-id="a4d61-133">Capture un vidage à partir d’un processus.</span><span class="sxs-lookup"><span data-stu-id="a4d61-133">Captures a dump from a process.</span></span>
+<span data-ttu-id="fe04f-133">Capture un vidage à partir d’un processus.</span><span class="sxs-lookup"><span data-stu-id="fe04f-133">Captures a dump from a process.</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="a4d61-134">Synopsis</span><span class="sxs-lookup"><span data-stu-id="a4d61-134">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="fe04f-134">Synopsis</span><span class="sxs-lookup"><span data-stu-id="fe04f-134">Synopsis</span></span>
 
 ```console
 dotnet-dump collect [-h|--help] [-p|--process-id] [-n|--name] [--type] [-o|--output] [--diag]
 ```
 
-### <a name="options"></a><span data-ttu-id="a4d61-135">Options</span><span class="sxs-lookup"><span data-stu-id="a4d61-135">Options</span></span>
+### <a name="options"></a><span data-ttu-id="fe04f-135">Options</span><span class="sxs-lookup"><span data-stu-id="fe04f-135">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="a4d61-136">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="a4d61-136">Shows command-line help.</span></span>
+  <span data-ttu-id="fe04f-136">Affiche l’aide de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="fe04f-136">Shows command-line help.</span></span>
 
 - **`-p|--process-id <PID>`**
 
-  <span data-ttu-id="a4d61-137">Spécifie le numéro d’identification du processus à partir duquel un vidage doit être collecté.</span><span class="sxs-lookup"><span data-stu-id="a4d61-137">Specifies the process ID number to collect a dump from.</span></span>
+  <span data-ttu-id="fe04f-137">Spécifie le numéro d’identification du processus à partir duquel un vidage doit être collecté.</span><span class="sxs-lookup"><span data-stu-id="fe04f-137">Specifies the process ID number to collect a dump from.</span></span>
 
 - **`-n|--name <name>`**
 
-  <span data-ttu-id="a4d61-138">Spécifie le nom du processus à partir duquel un vidage doit être collecté.</span><span class="sxs-lookup"><span data-stu-id="a4d61-138">Specifies the name of the process to collect a dump from.</span></span>
+  <span data-ttu-id="fe04f-138">Spécifie le nom du processus à partir duquel un vidage doit être collecté.</span><span class="sxs-lookup"><span data-stu-id="fe04f-138">Specifies the name of the process to collect a dump from.</span></span>
 
 - **`--type <Full|Heap|Mini>`**
 
-  <span data-ttu-id="a4d61-139">Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus.</span><span class="sxs-lookup"><span data-stu-id="a4d61-139">Specifies the dump type, which determines the kinds of information that are collected from the process.</span></span> <span data-ttu-id="a4d61-140">Il existe trois types :</span><span class="sxs-lookup"><span data-stu-id="a4d61-140">There are three types:</span></span>
+  <span data-ttu-id="fe04f-139">Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus.</span><span class="sxs-lookup"><span data-stu-id="fe04f-139">Specifies the dump type, which determines the kinds of information that are collected from the process.</span></span> <span data-ttu-id="fe04f-140">Il existe trois types :</span><span class="sxs-lookup"><span data-stu-id="fe04f-140">There are three types:</span></span>
 
-  - <span data-ttu-id="a4d61-141">`Full` -Le plus grand vidage contenant la mémoire, y compris les images de module.</span><span class="sxs-lookup"><span data-stu-id="a4d61-141">`Full` - The largest dump containing all memory including the module images.</span></span>
-  - <span data-ttu-id="a4d61-142">`Heap` -Un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.</span><span class="sxs-lookup"><span data-stu-id="a4d61-142">`Heap` - A large and relatively comprehensive dump containing module lists, thread lists, all stacks, exception information, handle information, and all memory except for mapped images.</span></span>
-  - <span data-ttu-id="a4d61-143">`Mini` -Un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.</span><span class="sxs-lookup"><span data-stu-id="a4d61-143">`Mini` - A small dump containing module lists, thread lists, exception information, and all stacks.</span></span>
+  - <span data-ttu-id="fe04f-141">`Full` -Le plus grand vidage contenant la mémoire, y compris les images de module.</span><span class="sxs-lookup"><span data-stu-id="fe04f-141">`Full` - The largest dump containing all memory including the module images.</span></span>
+  - <span data-ttu-id="fe04f-142">`Heap` -Un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.</span><span class="sxs-lookup"><span data-stu-id="fe04f-142">`Heap` - A large and relatively comprehensive dump containing module lists, thread lists, all stacks, exception information, handle information, and all memory except for mapped images.</span></span>
+  - <span data-ttu-id="fe04f-143">`Mini` -Un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.</span><span class="sxs-lookup"><span data-stu-id="fe04f-143">`Mini` - A small dump containing module lists, thread lists, exception information, and all stacks.</span></span>
 
-  <span data-ttu-id="a4d61-144">S’il n’est pas spécifié, `Full` est la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="a4d61-144">If not specified, `Full` is the default.</span></span>
+  <span data-ttu-id="fe04f-144">S’il n’est pas spécifié, `Full` est la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="fe04f-144">If not specified, `Full` is the default.</span></span>
 
 - **`-o|--output <output_dump_path>`**
 
-  <span data-ttu-id="a4d61-145">Chemin d’accès complet et nom du fichier dans lequel le dump collecté doit être écrit.</span><span class="sxs-lookup"><span data-stu-id="a4d61-145">The full path and file name where the collected dump should be written.</span></span>
+  <span data-ttu-id="fe04f-145">Chemin d’accès complet et nom du fichier dans lequel le dump collecté doit être écrit.</span><span class="sxs-lookup"><span data-stu-id="fe04f-145">The full path and file name where the collected dump should be written.</span></span>
 
-  <span data-ttu-id="a4d61-146">S’il n’est pas spécifié :</span><span class="sxs-lookup"><span data-stu-id="a4d61-146">If not specified:</span></span>
+  <span data-ttu-id="fe04f-146">S’il n’est pas spécifié :</span><span class="sxs-lookup"><span data-stu-id="fe04f-146">If not specified:</span></span>
 
-  - <span data-ttu-id="a4d61-147">La valeur par défaut est *. \ dump_YYYYMMDD_HHMMSS. dmp* sur Windows.</span><span class="sxs-lookup"><span data-stu-id="a4d61-147">Defaults to *.\dump_YYYYMMDD_HHMMSS.dmp* on Windows.</span></span>
-  - <span data-ttu-id="a4d61-148">La valeur par défaut est *./core_YYYYMMDD_HHMMSS* sur Linux.</span><span class="sxs-lookup"><span data-stu-id="a4d61-148">Defaults to *./core_YYYYMMDD_HHMMSS* on Linux.</span></span>
+  - <span data-ttu-id="fe04f-147">La valeur par défaut est *. \ dump_YYYYMMDD_HHMMSS. dmp* sur Windows.</span><span class="sxs-lookup"><span data-stu-id="fe04f-147">Defaults to *.\dump_YYYYMMDD_HHMMSS.dmp* on Windows.</span></span>
+  - <span data-ttu-id="fe04f-148">La valeur par défaut est *./core_YYYYMMDD_HHMMSS* sur Linux.</span><span class="sxs-lookup"><span data-stu-id="fe04f-148">Defaults to *./core_YYYYMMDD_HHMMSS* on Linux.</span></span>
 
-  <span data-ttu-id="a4d61-149">AAAAMMJJ correspond à année/mois/jour et HHMMSS à heure/minute/seconde.</span><span class="sxs-lookup"><span data-stu-id="a4d61-149">YYYYMMDD is Year/Month/Day and HHMMSS is Hour/Minute/Second.</span></span>
+  <span data-ttu-id="fe04f-149">AAAAMMJJ correspond à année/mois/jour et HHMMSS à heure/minute/seconde.</span><span class="sxs-lookup"><span data-stu-id="fe04f-149">YYYYMMDD is Year/Month/Day and HHMMSS is Hour/Minute/Second.</span></span>
 
 - **`--diag`**
 
-  <span data-ttu-id="a4d61-150">Active la journalisation des diagnostics de collection de vidages.</span><span class="sxs-lookup"><span data-stu-id="a4d61-150">Enables dump collection diagnostic logging.</span></span>
+  <span data-ttu-id="fe04f-150">Active la journalisation des diagnostics de collection de vidages.</span><span class="sxs-lookup"><span data-stu-id="fe04f-150">Enables dump collection diagnostic logging.</span></span>
 
-## <a name="dotnet-dump-analyze"></a><span data-ttu-id="a4d61-151">dotnet-vider l’analyse</span><span class="sxs-lookup"><span data-stu-id="a4d61-151">dotnet-dump analyze</span></span>
+## <a name="dotnet-dump-analyze"></a><span data-ttu-id="fe04f-151">dotnet-vider l’analyse</span><span class="sxs-lookup"><span data-stu-id="fe04f-151">dotnet-dump analyze</span></span>
 
-<span data-ttu-id="a4d61-152">Démarre un interpréteur de commandes interactif pour explorer un vidage.</span><span class="sxs-lookup"><span data-stu-id="a4d61-152">Starts an interactive shell to explore a dump.</span></span> <span data-ttu-id="a4d61-153">Le shell accepte différentes [commandes SOS](#analyze-sos-commands).</span><span class="sxs-lookup"><span data-stu-id="a4d61-153">The shell accepts various [SOS commands](#analyze-sos-commands).</span></span>
+<span data-ttu-id="fe04f-152">Démarre un interpréteur de commandes interactif pour explorer un vidage.</span><span class="sxs-lookup"><span data-stu-id="fe04f-152">Starts an interactive shell to explore a dump.</span></span> <span data-ttu-id="fe04f-153">Le shell accepte différentes [commandes SOS](#analyze-sos-commands).</span><span class="sxs-lookup"><span data-stu-id="fe04f-153">The shell accepts various [SOS commands](#analyze-sos-commands).</span></span>
 
-### <a name="synopsis"></a><span data-ttu-id="a4d61-154">Synopsis</span><span class="sxs-lookup"><span data-stu-id="a4d61-154">Synopsis</span></span>
+### <a name="synopsis"></a><span data-ttu-id="fe04f-154">Synopsis</span><span class="sxs-lookup"><span data-stu-id="fe04f-154">Synopsis</span></span>
 
 ```console
 dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 ```
 
-### <a name="arguments"></a><span data-ttu-id="a4d61-155">Arguments</span><span class="sxs-lookup"><span data-stu-id="a4d61-155">Arguments</span></span>
+### <a name="arguments"></a><span data-ttu-id="fe04f-155">Arguments</span><span class="sxs-lookup"><span data-stu-id="fe04f-155">Arguments</span></span>
 
 - **`<dump_path>`**
 
-  <span data-ttu-id="a4d61-156">Spécifie le chemin d’accès au fichier de vidage à analyser.</span><span class="sxs-lookup"><span data-stu-id="a4d61-156">Specifies the path to the dump file to analyze.</span></span>
+  <span data-ttu-id="fe04f-156">Spécifie le chemin d’accès au fichier de vidage à analyser.</span><span class="sxs-lookup"><span data-stu-id="fe04f-156">Specifies the path to the dump file to analyze.</span></span>
 
-### <a name="options"></a><span data-ttu-id="a4d61-157">Options</span><span class="sxs-lookup"><span data-stu-id="a4d61-157">Options</span></span>
+### <a name="options"></a><span data-ttu-id="fe04f-157">Options</span><span class="sxs-lookup"><span data-stu-id="fe04f-157">Options</span></span>
 
 - **`-c|--command <debug_command>`**
 
-  <span data-ttu-id="a4d61-158">Spécifie la [commande](#analyze-sos-commands) à exécuter dans le shell au démarrage.</span><span class="sxs-lookup"><span data-stu-id="a4d61-158">Specifies the [command](#analyze-sos-commands) to run in the shell on start.</span></span>
+  <span data-ttu-id="fe04f-158">Spécifie la [commande](#analyze-sos-commands) à exécuter dans le shell au démarrage.</span><span class="sxs-lookup"><span data-stu-id="fe04f-158">Specifies the [command](#analyze-sos-commands) to run in the shell on start.</span></span>
 
-### <a name="analyze-sos-commands"></a><span data-ttu-id="a4d61-159">Analyser les commandes SOS</span><span class="sxs-lookup"><span data-stu-id="a4d61-159">Analyze SOS commands</span></span>
+### <a name="analyze-sos-commands"></a><span data-ttu-id="fe04f-159">Analyser les commandes SOS</span><span class="sxs-lookup"><span data-stu-id="fe04f-159">Analyze SOS commands</span></span>
 
-| <span data-ttu-id="a4d61-160">Commande</span><span class="sxs-lookup"><span data-stu-id="a4d61-160">Command</span></span>                             | <span data-ttu-id="a4d61-161">Fonction</span><span class="sxs-lookup"><span data-stu-id="a4d61-161">Function</span></span>                                                                                      |
+| <span data-ttu-id="fe04f-160">Commande</span><span class="sxs-lookup"><span data-stu-id="fe04f-160">Command</span></span>                             | <span data-ttu-id="fe04f-161">Fonction</span><span class="sxs-lookup"><span data-stu-id="fe04f-161">Function</span></span>                                                                                      |
 | ----------------------------------- | --------------------------------------------------------------------------------------------- |
-| `soshelp`                           | <span data-ttu-id="a4d61-162">Affiche toutes les commandes disponibles</span><span class="sxs-lookup"><span data-stu-id="a4d61-162">Displays all available commands</span></span>                                                               |
-| `soshelp|help <command>`            | <span data-ttu-id="a4d61-163">Affiche la commande spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-163">Displays the specified command.</span></span>                                                               |
-| `exit|quit`                         | <span data-ttu-id="a4d61-164">Quitte le mode interactif.</span><span class="sxs-lookup"><span data-stu-id="a4d61-164">Exits interactive mode.</span></span>                                                                       |
-| `clrstack <arguments>`              | <span data-ttu-id="a4d61-165">Fournit uniquement une trace de la pile du code managé.</span><span class="sxs-lookup"><span data-stu-id="a4d61-165">Provides a stack trace of managed code only.</span></span>                                                  |
-| `clrthreads <arguments>`            | <span data-ttu-id="a4d61-166">Répertorie les threads managés qui exécutent.</span><span class="sxs-lookup"><span data-stu-id="a4d61-166">Lists the managed threads running.</span></span>                                                            |
-| `dumpasync <arguments>`             | <span data-ttu-id="a4d61-167">Affiche des informations sur les machines à États asynchrones sur le tas récupéré par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="a4d61-167">Displays information about async state machines on the garbage-collected heap.</span></span>                |
-| `dumpassembly <arguments>`          | <span data-ttu-id="a4d61-168">Affiche des détails sur un assembly.</span><span class="sxs-lookup"><span data-stu-id="a4d61-168">Displays details about an assembly.</span></span>                                                           |
-| `dumpclass <arguments>`             | <span data-ttu-id="a4d61-169">Affiche des informations sur une structure de classe EE à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-169">Displays information about a EE class structure at the specified address.</span></span>                     |
-| `dumpdelegate <arguments>`          | <span data-ttu-id="a4d61-170">Affiche des informations sur un délégué.</span><span class="sxs-lookup"><span data-stu-id="a4d61-170">Displays information about a delegate.</span></span>                                                        |
-| `dumpdomain <arguments>`            | <span data-ttu-id="a4d61-171">Affiche des informations sur tous les AppDomains et tous les assemblys dans les domaines.</span><span class="sxs-lookup"><span data-stu-id="a4d61-171">Displays information all the AppDomains and all assemblies within the domains.</span></span>                |
-| `dumpheap <arguments>`              | <span data-ttu-id="a4d61-172">Affiche des informations sur le tas récupéré par le garbage collector et des statistiques de collection concernant les objets.</span><span class="sxs-lookup"><span data-stu-id="a4d61-172">Displays info about the garbage-collected heap and collection statistics about objects.</span></span>       |
-| `dumpil <arguments>`                | <span data-ttu-id="a4d61-173">Affiche le Microsoft Intermediate Language (MSIL) associé à une méthode managée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-173">Displays the Microsoft intermediate language (MSIL) that is associated with a managed method.</span></span> |
-| `dumplog <arguments>`               | <span data-ttu-id="a4d61-174">Écrit le contenu d'un journal de contrainte en mémoire dans le fichier spécifié.</span><span class="sxs-lookup"><span data-stu-id="a4d61-174">Writes the contents of an in-memory stress log to the specified file.</span></span>                         |
-| `dumpmd <arguments>`                | <span data-ttu-id="a4d61-175">Affiche des informations sur une structure MethodDesc à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-175">Displays information about a MethodDesc structure at the specified address.</span></span>                   |
-| `dumpmodule <arguments>`            | <span data-ttu-id="a4d61-176">Affiche des informations sur une structure de module EE à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-176">Displays information about a EE module structure at the specified address.</span></span>                    |
-| `dumpmt <arguments>`                | <span data-ttu-id="a4d61-177">Affiche des informations sur une table de méthodes à l'adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-177">Displays information about a method table at the specified address.</span></span>                           |
-| `dumpobj <arguments>`               | <span data-ttu-id="a4d61-178">Affiche des informations sur un objet à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-178">Displays info about an object at the specified address.</span></span>                                       |
-| `dso|dumpstackobjects <arguments>`  | <span data-ttu-id="a4d61-179">Affiche tous les objets managés recherchés dans les limites de la pile actuelle.</span><span class="sxs-lookup"><span data-stu-id="a4d61-179">Displays all managed objects found within the bounds of the current stack.</span></span>                    |
-| `eeheap <arguments>`                | <span data-ttu-id="a4d61-180">Affiche des informations sur la mémoire de processus consommée par les structures de données de Runtime internes.</span><span class="sxs-lookup"><span data-stu-id="a4d61-180">Displays info about process memory consumed by internal runtime data structures.</span></span>              |
-| `finalizequeue <arguments>`         | <span data-ttu-id="a4d61-181">Affiche tous les objets enregistrés pour la finalisation.</span><span class="sxs-lookup"><span data-stu-id="a4d61-181">Displays all objects registered for finalization.</span></span>                                             |
-| `gcroot <arguments>`                | <span data-ttu-id="a4d61-182">Affiche des informations sur les références (ou racines) à un objet à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-182">Displays info about references (or roots) to an object at the specified address.</span></span>              |
-| `gcwhere <arguments>`               | <span data-ttu-id="a4d61-183">Affiche l’emplacement dans le tas GC de l’argument passé.</span><span class="sxs-lookup"><span data-stu-id="a4d61-183">Displays the location in the GC heap of the argument passed in.</span></span>                               |
-| `ip2md <arguments>`                 | <span data-ttu-id="a4d61-184">Affiche la structure MethodDesc à l’adresse spécifiée dans le code JIT.</span><span class="sxs-lookup"><span data-stu-id="a4d61-184">Displays the MethodDesc structure at the specified address in JIT code.</span></span>                       |
-| `histclear <arguments>`             | <span data-ttu-id="a4d61-185">Libère toutes les ressources utilisées par la famille de commandes `hist*`.</span><span class="sxs-lookup"><span data-stu-id="a4d61-185">Releases any resources used by the family of `hist*` commands.</span></span>                                |
-| `histinit <arguments>`              | <span data-ttu-id="a4d61-186">Initialise les structures SOS du journal de contrainte enregistré dans l’élément débogué.</span><span class="sxs-lookup"><span data-stu-id="a4d61-186">Initializes the SOS structures from the stress log saved in the debuggee.</span></span>                     |
-| `histobj <arguments>`               | <span data-ttu-id="a4d61-187">Affiche les réadressages du journal de stress garbage collection liés à `<arguments>` .</span><span class="sxs-lookup"><span data-stu-id="a4d61-187">Displays the garbage collection stress log relocations related to `<arguments>`.</span></span>              |
-| `histobjfind <arguments>`           | <span data-ttu-id="a4d61-188">Affiche toutes les entrées de journal qui référencent un objet à l'adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-188">Displays all the log entries that reference an object at the specified address.</span></span>               |
-| `histroot <arguments>`              | <span data-ttu-id="a4d61-189">Affiche les informations liées aux promotions et aux réadressages de la racine spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a4d61-189">Displays information related to both promotions and relocations of the specified root.</span></span>        |
-| `lm|modules`                        | <span data-ttu-id="a4d61-190">Affiche les modules natifs dans le processus.</span><span class="sxs-lookup"><span data-stu-id="a4d61-190">Displays the native modules in the process.</span></span>                                                   |
-| `name2ee <arguments>`               | <span data-ttu-id="a4d61-191">Affiche la structure MethodTable et la structure EEClass pour le `<argument>` .</span><span class="sxs-lookup"><span data-stu-id="a4d61-191">Displays the MethodTable structure and EEClass structure for the `<argument>`.</span></span>                |
-| `pe|printexception <arguments>`     | <span data-ttu-id="a4d61-192">Affiche tout objet dérivé de la classe d’exception à l’adresse `<argument>` .</span><span class="sxs-lookup"><span data-stu-id="a4d61-192">Displays any object derived from the Exception class at the address `<argument>`.</span></span>             |
-| `setsymbolserver <arguments>`       | <span data-ttu-id="a4d61-193">Active la prise en charge du serveur de symboles</span><span class="sxs-lookup"><span data-stu-id="a4d61-193">Enables the symbol server support</span></span>                                                             |
-| `syncblk <arguments>`               | <span data-ttu-id="a4d61-194">Affiche les informations sur le support SyncBlock.</span><span class="sxs-lookup"><span data-stu-id="a4d61-194">Displays the SyncBlock holder info.</span></span>                                                           |
-| `threads|setthread <threadid>`      | <span data-ttu-id="a4d61-195">Définit ou affiche l’ID de thread actuel pour les commandes SOS.</span><span class="sxs-lookup"><span data-stu-id="a4d61-195">Sets or displays the current thread ID for the SOS commands.</span></span>                                  |
+| `soshelp`                           | <span data-ttu-id="fe04f-162">Affiche toutes les commandes disponibles</span><span class="sxs-lookup"><span data-stu-id="fe04f-162">Displays all available commands</span></span>                                                               |
+| `soshelp|help <command>`            | <span data-ttu-id="fe04f-163">Affiche la commande spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-163">Displays the specified command.</span></span>                                                               |
+| `exit|quit`                         | <span data-ttu-id="fe04f-164">Quitte le mode interactif.</span><span class="sxs-lookup"><span data-stu-id="fe04f-164">Exits interactive mode.</span></span>                                                                       |
+| `clrstack <arguments>`              | <span data-ttu-id="fe04f-165">Fournit uniquement une trace de la pile du code managé.</span><span class="sxs-lookup"><span data-stu-id="fe04f-165">Provides a stack trace of managed code only.</span></span>                                                  |
+| `clrthreads <arguments>`            | <span data-ttu-id="fe04f-166">Répertorie les threads managés qui exécutent.</span><span class="sxs-lookup"><span data-stu-id="fe04f-166">Lists the managed threads running.</span></span>                                                            |
+| `dumpasync <arguments>`             | <span data-ttu-id="fe04f-167">Affiche des informations sur les machines à États asynchrones sur le tas récupéré par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="fe04f-167">Displays information about async state machines on the garbage-collected heap.</span></span>                |
+| `dumpassembly <arguments>`          | <span data-ttu-id="fe04f-168">Affiche des détails sur l’assembly à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-168">Displays details about the assembly at the specified address.</span></span>                                 |
+| `dumpclass <arguments>`             | <span data-ttu-id="fe04f-169">Affiche des informations sur la `EEClass` structure à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-169">Displays information about the `EEClass` structure at the specified address.</span></span>                  |
+| `dumpdelegate <arguments>`          | <span data-ttu-id="fe04f-170">Affiche des informations sur le délégué à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-170">Displays information about the delegate at the specified address.</span></span>                             |
+| `dumpdomain <arguments>`            | <span data-ttu-id="fe04f-171">Affiche des informations sur tous les AppDomains et tous les assemblys au sein du domaine spécifié.</span><span class="sxs-lookup"><span data-stu-id="fe04f-171">Displays information all the AppDomains and all assemblies within the specified domain.</span></span>       |
+| `dumpheap <arguments>`              | <span data-ttu-id="fe04f-172">Affiche des informations sur le tas récupéré par le garbage collector et des statistiques de collection concernant les objets.</span><span class="sxs-lookup"><span data-stu-id="fe04f-172">Displays info about the garbage-collected heap and collection statistics about objects.</span></span>       |
+| `dumpil <arguments>`                | <span data-ttu-id="fe04f-173">Affiche le Microsoft Intermediate Language (MSIL) associé à une méthode managée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-173">Displays the Microsoft intermediate language (MSIL) that is associated with a managed method.</span></span> |
+| `dumplog <arguments>`               | <span data-ttu-id="fe04f-174">Écrit le contenu d'un journal de contrainte en mémoire dans le fichier spécifié.</span><span class="sxs-lookup"><span data-stu-id="fe04f-174">Writes the contents of an in-memory stress log to the specified file.</span></span>                         |
+| `dumpmd <arguments>`                | <span data-ttu-id="fe04f-175">Affiche des informations sur la `MethodDesc` structure à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-175">Displays information about the `MethodDesc` structure at the specified address.</span></span>               |
+| `dumpmodule <arguments>`            | <span data-ttu-id="fe04f-176">Affiche des informations sur le module à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-176">Displays information about the module at the specified address.</span></span>                               |
+| `dumpmt <arguments>`                | <span data-ttu-id="fe04f-177">Affiche des informations sur le `MethodTable` à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-177">Displays information about the `MethodTable` at the specified address.</span></span>                        |
+| `dumpobj <arguments>`               | <span data-ttu-id="fe04f-178">Affiche des informations sur l’objet à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-178">Displays info about the object at the specified address.</span></span>                                      |
+| `dso|dumpstackobjects <arguments>`  | <span data-ttu-id="fe04f-179">Affiche tous les objets managés recherchés dans les limites de la pile actuelle.</span><span class="sxs-lookup"><span data-stu-id="fe04f-179">Displays all managed objects found within the bounds of the current stack.</span></span>                    |
+| `eeheap <arguments>`                | <span data-ttu-id="fe04f-180">Affiche des informations sur la mémoire de processus consommée par les structures de données de Runtime internes.</span><span class="sxs-lookup"><span data-stu-id="fe04f-180">Displays info about process memory consumed by internal runtime data structures.</span></span>              |
+| `finalizequeue <arguments>`         | <span data-ttu-id="fe04f-181">Affiche tous les objets enregistrés pour la finalisation.</span><span class="sxs-lookup"><span data-stu-id="fe04f-181">Displays all objects registered for finalization.</span></span>                                             |
+| `gcroot <arguments>`                | <span data-ttu-id="fe04f-182">Affiche des informations sur les références (ou racines) à l’objet à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-182">Displays info about references (or roots) to the object at the specified address.</span></span>             |
+| `gcwhere <arguments>`               | <span data-ttu-id="fe04f-183">Affiche l’emplacement dans le tas GC de l’argument passé.</span><span class="sxs-lookup"><span data-stu-id="fe04f-183">Displays the location in the GC heap of the argument passed in.</span></span>                               |
+| `ip2md <arguments>`                 | <span data-ttu-id="fe04f-184">Affiche la `MethodDesc` structure à l’adresse spécifiée dans le code JIT.</span><span class="sxs-lookup"><span data-stu-id="fe04f-184">Displays the `MethodDesc` structure at the specified address in JIT code.</span></span>                     |
+| `histclear <arguments>`             | <span data-ttu-id="fe04f-185">Libère toutes les ressources utilisées par la famille de commandes `hist*`.</span><span class="sxs-lookup"><span data-stu-id="fe04f-185">Releases any resources used by the family of `hist*` commands.</span></span>                                |
+| `histinit <arguments>`              | <span data-ttu-id="fe04f-186">Initialise les structures SOS du journal de contrainte enregistré dans l’élément débogué.</span><span class="sxs-lookup"><span data-stu-id="fe04f-186">Initializes the SOS structures from the stress log saved in the debuggee.</span></span>                     |
+| `histobj <arguments>`               | <span data-ttu-id="fe04f-187">Affiche les réadressages du journal de stress garbage collection liés à `<arguments>` .</span><span class="sxs-lookup"><span data-stu-id="fe04f-187">Displays the garbage collection stress log relocations related to `<arguments>`.</span></span>              |
+| `histobjfind <arguments>`           | <span data-ttu-id="fe04f-188">Affiche toutes les entrées de journal qui référencent l’objet à l’adresse spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-188">Displays all the log entries that reference the object at the specified address.</span></span>              |
+| `histroot <arguments>`              | <span data-ttu-id="fe04f-189">Affiche les informations liées aux promotions et aux réadressages de la racine spécifiée.</span><span class="sxs-lookup"><span data-stu-id="fe04f-189">Displays information related to both promotions and relocations of the specified root.</span></span>        |
+| `lm|modules`                        | <span data-ttu-id="fe04f-190">Affiche les modules natifs dans le processus.</span><span class="sxs-lookup"><span data-stu-id="fe04f-190">Displays the native modules in the process.</span></span>                                                   |
+| `name2ee <arguments>`               | <span data-ttu-id="fe04f-191">Affiche les `MethodTable` `EEClass` structures et pour le `<argument>` .</span><span class="sxs-lookup"><span data-stu-id="fe04f-191">Displays the `MethodTable` and `EEClass` structures for the `<argument>`.</span></span>                     |
+| `pe|printexception <arguments>`     | <span data-ttu-id="fe04f-192">Affiche tout objet dérivé de la <xref:System.Exception> classe pour `<argument>` .</span><span class="sxs-lookup"><span data-stu-id="fe04f-192">Displays any object derived from the <xref:System.Exception> class for the `<argument>`.</span></span>      |
+| `setsymbolserver <arguments>`       | <span data-ttu-id="fe04f-193">Active la prise en charge du serveur de symboles</span><span class="sxs-lookup"><span data-stu-id="fe04f-193">Enables the symbol server support</span></span>                                                             |
+| `syncblk <arguments>`               | <span data-ttu-id="fe04f-194">Affiche les informations sur le support SyncBlock.</span><span class="sxs-lookup"><span data-stu-id="fe04f-194">Displays the SyncBlock holder info.</span></span>                                                           |
+| `threads|setthread <threadid>`      | <span data-ttu-id="fe04f-195">Définit ou affiche l’ID de thread actuel pour les commandes SOS.</span><span class="sxs-lookup"><span data-stu-id="fe04f-195">Sets or displays the current thread ID for the SOS commands.</span></span>                                  |
 
-## <a name="using-dotnet-dump"></a><span data-ttu-id="a4d61-196">Utilisation de `dotnet-dump`</span><span class="sxs-lookup"><span data-stu-id="a4d61-196">Using `dotnet-dump`</span></span>
+> [!NOTE]
+> <span data-ttu-id="fe04f-196">Vous trouverez des informations supplémentaires dans l' [extension de débogage SOS pour .net](sos-debugging-extension.md).</span><span class="sxs-lookup"><span data-stu-id="fe04f-196">Additional details can be found in [SOS Debugging Extension for .NET](sos-debugging-extension.md).</span></span>
 
-<span data-ttu-id="a4d61-197">La première étape consiste à collecter un vidage.</span><span class="sxs-lookup"><span data-stu-id="a4d61-197">The first step is to collect a dump.</span></span> <span data-ttu-id="a4d61-198">Cette étape peut être ignorée si un vidage de base a déjà été généré.</span><span class="sxs-lookup"><span data-stu-id="a4d61-198">This step can be skipped if a core dump has already been generated.</span></span> <span data-ttu-id="a4d61-199">Le système d’exploitation ou la fonctionnalité intégrée de création de [dump](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) de .net Core Runtime peuvent créer des vidages de noyau.</span><span class="sxs-lookup"><span data-stu-id="a4d61-199">The operating system or the .NET Core runtime's built-in [dump generation feature](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) can each create core dumps.</span></span>
+## <a name="using-dotnet-dump"></a><span data-ttu-id="fe04f-197">Utilisation de `dotnet-dump`</span><span class="sxs-lookup"><span data-stu-id="fe04f-197">Using `dotnet-dump`</span></span>
+
+<span data-ttu-id="fe04f-198">La première étape consiste à collecter un vidage.</span><span class="sxs-lookup"><span data-stu-id="fe04f-198">The first step is to collect a dump.</span></span> <span data-ttu-id="fe04f-199">Cette étape peut être ignorée si un vidage de base a déjà été généré.</span><span class="sxs-lookup"><span data-stu-id="fe04f-199">This step can be skipped if a core dump has already been generated.</span></span> <span data-ttu-id="fe04f-200">Le système d’exploitation ou la fonctionnalité intégrée de création de [dump](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) de .net Core Runtime peuvent créer des vidages de noyau.</span><span class="sxs-lookup"><span data-stu-id="fe04f-200">The operating system or the .NET Core runtime's built-in [dump generation feature](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) can each create core dumps.</span></span>
 
 ```console
 $ dotnet-dump collect --process-id 1902
@@ -186,7 +189,7 @@ Written 98983936 bytes (24166 pages) to core file
 Complete
 ```
 
-<span data-ttu-id="a4d61-200">À présent, analysez le vidage de base avec la `analyze` commande :</span><span class="sxs-lookup"><span data-stu-id="a4d61-200">Now analyze the core dump with the `analyze` command:</span></span>
+<span data-ttu-id="fe04f-201">À présent, analysez le vidage de base avec la `analyze` commande :</span><span class="sxs-lookup"><span data-stu-id="fe04f-201">Now analyze the core dump with the `analyze` command:</span></span>
 
 ```console
 $ dotnet-dump analyze ./core_20190226_135850
@@ -196,7 +199,7 @@ Type 'quit' or 'exit' to exit the session.
 >
 ```
 
-<span data-ttu-id="a4d61-201">Cette action affiche une session interactive qui accepte des commandes comme :</span><span class="sxs-lookup"><span data-stu-id="a4d61-201">This action brings up an interactive session that accepts commands like:</span></span>
+<span data-ttu-id="fe04f-202">Cette action affiche une session interactive qui accepte des commandes comme :</span><span class="sxs-lookup"><span data-stu-id="fe04f-202">This action brings up an interactive session that accepts commands like:</span></span>
 
 ```console
 > clrstack
@@ -212,7 +215,7 @@ OS Thread Id: 0x573d (0)
 00007FFD28B43610 00007fb22aa9cedf [GCFrame: 00007ffd28b43610]
 ```
 
-<span data-ttu-id="a4d61-202">Pour voir une exception non gérée qui a interrompu votre application :</span><span class="sxs-lookup"><span data-stu-id="a4d61-202">To see an unhandled exception that killed your app:</span></span>
+<span data-ttu-id="fe04f-203">Pour voir une exception non gérée qui a interrompu votre application :</span><span class="sxs-lookup"><span data-stu-id="fe04f-203">To see an unhandled exception that killed your app:</span></span>
 
 ```console
 > pe -lines
@@ -233,17 +236,17 @@ StackTraceString: <none>
 HResult: 80131604
 ```
 
-## <a name="special-instructions-for-docker"></a><span data-ttu-id="a4d61-203">Instructions spéciales pour l’ancrage</span><span class="sxs-lookup"><span data-stu-id="a4d61-203">Special instructions for Docker</span></span>
+## <a name="special-instructions-for-docker"></a><span data-ttu-id="fe04f-204">Instructions spéciales pour l’ancrage</span><span class="sxs-lookup"><span data-stu-id="fe04f-204">Special instructions for Docker</span></span>
 
-<span data-ttu-id="a4d61-204">Si vous exécutez dans le cadre de l’arrimeur, la collection de vidages requiert des `SYS_PTRACE` fonctionnalités ( `--cap-add=SYS_PTRACE` ou `--privileged` ).</span><span class="sxs-lookup"><span data-stu-id="a4d61-204">If you're running under Docker, dump collection requires `SYS_PTRACE` capabilities (`--cap-add=SYS_PTRACE` or `--privileged`).</span></span>
+<span data-ttu-id="fe04f-205">Si vous exécutez dans le cadre de l’arrimeur, la collection de vidages requiert des `SYS_PTRACE` fonctionnalités ( `--cap-add=SYS_PTRACE` ou `--privileged` ).</span><span class="sxs-lookup"><span data-stu-id="fe04f-205">If you're running under Docker, dump collection requires `SYS_PTRACE` capabilities (`--cap-add=SYS_PTRACE` or `--privileged`).</span></span>
 
-<span data-ttu-id="a4d61-205">Sur les images de la station d’accueil Linux Microsoft .NET Core SDK, certaines `dotnet-dump` commandes peuvent lever l’exception suivante :</span><span class="sxs-lookup"><span data-stu-id="a4d61-205">On Microsoft .NET Core SDK Linux Docker images, some `dotnet-dump` commands can throw the following exception:</span></span>
+<span data-ttu-id="fe04f-206">Sur les images de la station d’accueil Linux Microsoft .NET Core SDK, certaines `dotnet-dump` commandes peuvent lever l’exception suivante :</span><span class="sxs-lookup"><span data-stu-id="fe04f-206">On Microsoft .NET Core SDK Linux Docker images, some `dotnet-dump` commands can throw the following exception:</span></span>
 
-> <span data-ttu-id="a4d61-206">Exception non gérée : System.DllNotFoundException : impossible de charger la bibliothèque partagée « libdl.so » ou l’une de ses dépendances.</span><span class="sxs-lookup"><span data-stu-id="a4d61-206">Unhandled exception: System.DllNotFoundException: Unable to load shared library 'libdl.so' or one of its dependencies' exception.</span></span>
+> <span data-ttu-id="fe04f-207">Exception non gérée : System.DllNotFoundException : impossible de charger la bibliothèque partagée « libdl.so » ou l’une de ses dépendances.</span><span class="sxs-lookup"><span data-stu-id="fe04f-207">Unhandled exception: System.DllNotFoundException: Unable to load shared library 'libdl.so' or one of its dependencies' exception.</span></span>
 
-<span data-ttu-id="a4d61-207">Pour contourner ce problème, installez le package « libc6-dev ».</span><span class="sxs-lookup"><span data-stu-id="a4d61-207">To work around this problem, install the "libc6-dev" package.</span></span>
+<span data-ttu-id="fe04f-208">Pour contourner ce problème, installez le package « libc6-dev ».</span><span class="sxs-lookup"><span data-stu-id="fe04f-208">To work around this problem, install the "libc6-dev" package.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a4d61-208">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a4d61-208">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fe04f-209">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fe04f-209">See also</span></span>
 
-- [<span data-ttu-id="a4d61-209">Blog sur la collecte et l’analyse des vidages de mémoire</span><span class="sxs-lookup"><span data-stu-id="a4d61-209">Collecting and analyzing memory dumps blog</span></span>](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)
-- [<span data-ttu-id="a4d61-210">Outil d’analyse de tas (dotnet-gcdump)</span><span class="sxs-lookup"><span data-stu-id="a4d61-210">Heap analysis tool (dotnet-gcdump)</span></span>](dotnet-gcdump.md)
+- [<span data-ttu-id="fe04f-210">Blog sur la collecte et l’analyse des vidages de mémoire</span><span class="sxs-lookup"><span data-stu-id="fe04f-210">Collecting and analyzing memory dumps blog</span></span>](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)
+- [<span data-ttu-id="fe04f-211">Outil d’analyse de tas (dotnet-gcdump)</span><span class="sxs-lookup"><span data-stu-id="fe04f-211">Heap analysis tool (dotnet-gcdump)</span></span>](dotnet-gcdump.md)
