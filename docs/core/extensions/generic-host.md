@@ -3,13 +3,13 @@ title: Hôte générique .NET
 author: IEvangelist
 description: En savoir plus sur l’hôte générique .NET, qui est responsable du démarrage et de la gestion de la durée de vie des applications.
 ms.author: dapine
-ms.date: 12/04/2020
-ms.openlocfilehash: ddb71b70d15121b7f59899fba38b2bf861219878
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.date: 12/18/2020
+ms.openlocfilehash: bf6d5ad624bbed46994633abace0af64712757f3
+ms.sourcegitcommit: 3d6d6595a03915f617349781f455f838a44b0f44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96740096"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97700733"
 ---
 # <a name="net-generic-host"></a>Hôte générique .NET
 
@@ -120,9 +120,12 @@ Injectez le <xref:Microsoft.Extensions.Hosting.IHostEnvironment> service dans un
 
 ## <a name="host-configuration"></a>Configuration de l’hôte
 
-La configuration de l’hôte est utilisée pour les propriétés de l’implémentation de <xref:Microsoft.Extensions.Hosting.IHostEnvironment>.
+La configuration d’hôte est utilisée pour configurer les propriétés de l’implémentation de [IHostEnvironment](#ihostenvironment) .
 
-La configuration de l’hôte est disponible à partir de [HostBuilderContext.Configuration](xref:Microsoft.Extensions.Hosting.HostBuilderContext.Configuration) dans <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration%2A>. Après `ConfigureAppConfiguration`, `HostBuilderContext.Configuration` est remplacé par la configuration de l’application.
+La configuration d’hôte est disponible dans [HostBuilderContext.Configfiguration](xref:Microsoft.Extensions.Hosting.HostBuilderContext.Configuration) dans la <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration%2A> méthode. Lors de l’appel de la `ConfigureAppConfiguration` méthode, `HostBuilderContext` et `IConfigurationBuilder` sont passés dans le `configureDelegate` . Le `configureDelegate` est défini en tant que `Action<HostBuilderContext, IConfigurationBuilder>` . Le contexte du générateur d’ordinateur hôte expose la `.Configuration` propriété, qui est une instance de `IConfiguration` . Il représente la configuration générée à partir de l’hôte, tandis que le `IConfigurationBuilder` est l’objet générateur utilisé pour configurer l’application.
+
+> [!TIP]
+> Une fois `ConfigureAppConfiguration` appelé `HostBuilderContext.Configuration` , est remplacé par la [configuration](#app-configuration)de l’application.
 
 Pour ajouter la configuration d’hôte, appelez <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureHostConfiguration%2A> sur `IHostBuilder`. `ConfigureHostConfiguration` peut être appelé plusieurs fois avec des résultats additifs. L’hôte utilise l’option qui définit une valeur en dernier sur une clé donnée.
 
@@ -134,7 +137,7 @@ L’exemple suivant crée la configuration d’hôte :
 
 La configuration d’application est créée en appelant <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration%2A> sur `IHostBuilder`. `ConfigureAppConfiguration` peut être appelé plusieurs fois avec des résultats additifs. L’application utilise l’option qui définit une valeur en dernier sur une clé donnée.
 
-La configuration créée par `ConfigureAppConfiguration` est disponible dans [HostBuilderContext.Configuration](xref:Microsoft.Extensions.Hosting.HostBuilderContext.Configuration%2A) pour les opérations suivantes et en tant que service à partir de l’injection de dépendances. La configuration d’hôte est également ajoutée à la configuration d’application.
+La configuration créée par `ConfigureAppConfiguration` est disponible dans [HostBuilderContext.Configfiguration](xref:Microsoft.Extensions.Hosting.HostBuilderContext.Configuration%2A) pour les opérations suivantes et en tant que service à partir de di. La configuration d’hôte est également ajoutée à la configuration d’application.
 
 Pour plus d’informations, consultez [configuration dans .net](configuration.md).
 

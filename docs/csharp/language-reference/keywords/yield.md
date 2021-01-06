@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: c8caf7e34397faf9f7085d6634287cffcb37eb08
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e0efad959d5212f6c07d4c4b5344761490018a4c
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89141879"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899663"
 ---
 # <a name="yield-c-reference"></a>yield (Référence C#)
 
@@ -26,7 +26,7 @@ yield return <expression>;
 yield break;
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Utilisez une instruction `yield return` pour retourner chaque élément un par un.
 
@@ -42,7 +42,7 @@ La déclaration d’un itérateur doit respecter les exigences suivantes :
 
 - Le type de retour doit être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-- La déclaration ne peut avoir aucun paramètre [in, ](in-parameter-modifier.md) [ref](ref.md) ou [out](out-parameter-modifier.md).
+- La déclaration ne peut pas avoir [de paramètres in](in-parameter-modifier.md), [ref](ref.md)ou [out](out-parameter-modifier.md) .
 
 Le type `yield` d'un itérateur qui retourne <xref:System.Collections.IEnumerable> ou <xref:System.Collections.IEnumerator> est `object`.  Si l'itérateur retourne <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.Generic.IEnumerator%601>, il doit exister une conversion implicite du type de l'expression dans l'instruction `yield return` au paramètre de type générique.
 
@@ -101,4 +101,4 @@ L'exemple suivant illustre un accesseur `get` qui est un itérateur. Dans cet ex
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [foreach, in](foreach-in.md)
-- [Iterators](../../iterators.md)
+- [Itérateurs](../../iterators.md)

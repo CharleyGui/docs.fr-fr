@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-Counters-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-Counter pour la surveillance de l’intégrité ad hoc et l’enquête sur les performances de premier niveau.
 ms.date: 11/17/2020
-ms.openlocfilehash: 9787b4a78c5b49b839232c0bb5ffbd87d9f95556
-ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
+ms.openlocfilehash: 89695c77e7913d41f030890be7cc00947e42fa3a
+ms.sourcegitcommit: e395fabeeea5c705d243d246fa64446839ac85b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97593433"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97856053"
 ---
 # <a name="investigate-performance-counters-dotnet-counters"></a>Examiner les compteurs de performance (dotnet-Counters)
 
@@ -29,7 +29,7 @@ Il existe deux façons de télécharger et d’installer `dotnet-counters` :
 
   Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
 
-  | Système d''exploitation  | Plateforme |
+  | Système d’exploitation  | Plateforme |
   | --- | -------- |
   | Windows | [x86](https://aka.ms/dotnet-counters/win-x86) \| [x64](https://aka.ms/dotnet-counters/win-x64) \| [ARM](https://aka.ms/dotnet-counters/win-arm) \| [ARM-x64](https://aka.ms/dotnet-counters/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-counters/osx-x64) |
@@ -277,6 +277,96 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
 
   Press p to pause, r to resume, q to quit.
       request                                      100
+  ```
+
+- Affichez tous les compteurs connus disponibles dans `dotnet-counters` :
+
+  ```console
+  > dotnet-counters list
+
+  Showing well-known counters for .NET (Core) version 3.1 only. Specific processes may support additional counters.
+  System.Runtime              
+      cpu-usage                          The percent of process' CPU usage relative to all of the system CPU resources [0-100]
+      working-set                        Amount of working set used by the process (MB)
+      gc-heap-size                       Total heap size reported by the GC (MB)
+      gen-0-gc-count                     Number of Gen 0 GCs between update intervals
+      gen-1-gc-count                     Number of Gen 1 GCs between update intervals
+      gen-2-gc-count                     Number of Gen 2 GCs between update intervals
+      time-in-gc                         % time in GC since the last GC
+      gen-0-size                         Gen 0 Heap Size
+      gen-1-size                         Gen 1 Heap Size
+      gen-2-size                         Gen 2 Heap Size
+      loh-size                           LOH Size
+      alloc-rate                         Number of bytes allocated in the managed heap between update intervals
+      assembly-count                     Number of Assemblies Loaded
+      exception-count                    Number of Exceptions / sec
+      threadpool-thread-count            Number of ThreadPool Threads
+      monitor-lock-contention-count      Number of times there were contention when trying to take the monitor lock between update intervals
+      threadpool-queue-length            ThreadPool Work Items Queue Length
+      threadpool-completed-items-count   ThreadPool Completed Work Items Count
+      active-timer-count                 Number of timers that are currently active
+
+  Microsoft.AspNetCore.Hosting
+      requests-per-second                Number of requests between update intervals
+      total-requests                     Total number of requests
+      current-requests                   Current number of requests
+      failed-requests                    Failed number of requests
+  ```
+
+- Affichez tous les compteurs connus disponibles dans `dotnet-counters` pour les applications .net 5 :
+
+  ```console
+  > dotnet-counters list --runtime-version 5.0
+
+  Showing well-known counters for .NET (Core) version 5.0 only. Specific processes may support additional counters.
+  System.Runtime                     
+      cpu-usage                          The percent of process' CPU usage relative to all of the system CPU resources [0-100]
+      working-set                        Amount of working set used by the process (MB)
+      gc-heap-size                       Total heap size reported by the GC (MB)
+      gen-0-gc-count                     Number of Gen 0 GCs between update intervals
+      gen-1-gc-count                     Number of Gen 1 GCs between update intervals
+      gen-2-gc-count                     Number of Gen 2 GCs between update intervals
+      time-in-gc                         % time in GC since the last GC
+      gen-0-size                         Gen 0 Heap Size
+      gen-1-size                         Gen 1 Heap Size
+      gen-2-size                         Gen 2 Heap Size
+      loh-size                           LOH Size
+      poh-size                           POH (Pinned Object Heap) Size
+      alloc-rate                         Number of bytes allocated in the managed heap between update intervals
+      gc-fragmentation                   GC Heap Fragmentation
+      assembly-count                     Number of Assemblies Loaded
+      exception-count                    Number of Exceptions / sec
+      threadpool-thread-count            Number of ThreadPool Threads
+      monitor-lock-contention-count      Number of times there were contention when trying to take the monitor lock between update intervals
+      threadpool-queue-length            ThreadPool Work Items Queue Length
+      threadpool-completed-items-count   ThreadPool Completed Work Items Count
+      active-timer-count                 Number of timers that are currently active
+      il-bytes-jitted                    Total IL bytes jitted
+      methods-jitted-count               Number of methods jitted
+
+  Microsoft.AspNetCore.Hosting       
+      requests-per-second   Number of requests between update intervals
+      total-requests        Total number of requests
+      current-requests      Current number of requests
+      failed-requests       Failed number of requests
+
+  Microsoft-AspNetCore-Server-Kestrel
+      connections-per-second      Number of connections between update intervals
+      total-connections           Total Connections
+      tls-handshakes-per-second   Number of TLS Handshakes made between update intervals
+      total-tls-handshakes        Total number of TLS handshakes made
+      current-tls-handshakes      Number of currently active TLS handshakes
+      failed-tls-handshakes       Total number of failed TLS handshakes
+      current-connections         Number of current connections
+      connection-queue-length     Length of Kestrel Connection Queue
+      request-queue-length        Length total HTTP request queue
+
+  System.Net.Http                    
+      requests-started        Total Requests Started
+      requests-started-rate   Number of Requests Started between update intervals
+      requests-aborted        Total Requests Aborted
+      requests-aborted-rate   Number of Requests Aborted between update intervals
+      current-requests        Current Requests
   ```
 
 - Lancer `my-aspnet-server.exe` et surveiller le nombre d’assemblys chargés à partir de leur démarrage (.net 5,0 ou version ultérieure uniquement) :

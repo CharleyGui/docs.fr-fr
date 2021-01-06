@@ -1,17 +1,17 @@
 ---
-title: Mise en forme du journal de la console
+title: Mise en forme des journaux de la console
 description: Découvrez comment utiliser la mise en forme de journal de la console disponible ou implémenter une mise en forme de journal personnalisée pour vos applications .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 10/22/2020
-ms.openlocfilehash: 28a3de833b759e043ec3e2cb5016852f9a861cee
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.date: 12/17/2020
+ms.openlocfilehash: 0ec8fc2018febe4273aa646d1682be197933f925
+ms.sourcegitcommit: 3d6d6595a03915f617349781f455f838a44b0f44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897663"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97700818"
 ---
-# <a name="console-log-formatting"></a>Mise en forme du journal de la console
+# <a name="console-log-formatting"></a>Mise en forme des journaux de la console
 
 Dans .NET 5, la prise en charge de la mise en forme personnalisée a été ajoutée aux journaux de la console dans l' `Microsoft.Extensions.Logging.Console` espace de noms. Trois options de mise en forme prédéfinies sont disponibles : [`Simple`](#simple) , [`Systemd`](#systemd) et [`Json`](#json) .
 
@@ -72,7 +72,7 @@ info: Microsoft.Hosting.Lifetime[0]
       Now listening on: https://localhost:5001
 ```
 
-Par défaut, le module `Simple` de formatage du journal de la console est sélectionné avec la configuration par défaut. Pour modifier cela, appelez `AddJsonConsole` dans *Program.cs* :
+Par défaut, le module `Simple` de formatage du journal de la console est sélectionné avec la configuration par défaut. Pour modifier cela, appelez `AddJsonConsole` dans *Program.cs*:
 
 :::code language="csharp" source="snippets/logging/console-formatter-json/Program.cs" highlight="17-26":::
 
@@ -151,6 +151,19 @@ Un formateur de couleurs personnalisé qui gère l’application de couleurs per
 :::code language="csharp" source="snippets/logging/console-formatter-custom/CustomColorFormatter.cs" highlight="15-18,52-65":::
 
 Lorsque vous exécutez l’application, les journaux affichent le `CustomPrefix` message dans la couleur verte lorsque `FormatterOptions.ColorBehavior` est `Enabled` .
+
+> [!NOTE]
+> Lorsque <xref:Microsoft.Extensions.Logging.Console.LoggerColorBehavior> est `Disabled` , les messages de journalisation n’interprètent _pas_ les codes de couleur ANSI incorporés dans les messages de journal. Au lieu de cela, ils génèrent le message brut. Prenons l’exemple suivant :
+>
+> ```csharp
+> logger.LogInformation("Random log \x1B[42mwith green background\x1B[49m message");
+> ```
+>
+> Cela génère la chaîne textuelle et n’est _pas_ colorée.
+>
+> ```output
+> Random log \x1B[42mwith green background\x1B[49m message
+> ```
 
 ## <a name="see-also"></a>Voir aussi
 

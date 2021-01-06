@@ -6,12 +6,12 @@ ms.prod: dotnet
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: e0adb69d02fe427dd187c788cba34c0673e97ee6
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 93fb10538441d939e95bb48dcdd0e61d9267dde0
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822307"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765031"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -57,7 +57,7 @@ Il n’y aura pas de nouvelles versions de .NET Standard après 2,1. Pour plus d
 
 ## <a name="specification"></a>Caractéristique
 
-La spécification de .NET Standard est un ensemble d’API normalisé. La spécification est gérée par les entités chargées de l’implémentation de .NET, en particulier Microsoft (inclut .NET Framework, .NET Core et Mono) et Unity.
+La spécification de .NET Standard est un ensemble d’API normalisé. La spécification est gérée par les implémenteurs .NET, en particulier Microsoft (y compris .NET Framework, .NET Core et mono) et Unity.
 
 ### <a name="official-artifacts"></a>Artefacts officiels
 
@@ -83,7 +83,7 @@ Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les pack
 
 Le sous- [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) package fait référence à l’ensemble complet des packages NuGet qui définissent .NET standard.  La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et les API associées qui définissent .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 
-### <a name="versioning"></a>Gestion de version
+### <a name="versioning"></a>Contrôle de version
 
 La spécification n’est pas singulière, mais un ensemble d’API avec version linéaire. La première version de la norme établit un ensemble d’API de référence. Les versions ultérieures ajoutent des API et héritent des API définies par les versions précédentes. Il n’existe aucune disposition établie pour supprimer des API de la norme.
 

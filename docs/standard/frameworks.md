@@ -5,12 +5,12 @@ ms.date: 11/06/2020
 ms.prod: dotnet
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 1a0d6ef9d31b85fd6c083604dd11b9ca9ff09c79
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7a3dcd61c330607bacf0d05dbd775c62cfa15b37
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827917"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765057"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
@@ -22,13 +22,13 @@ Une application ou une bibliothèque peut également cibler une implémentation 
 
 Pour certains frameworks cibles, tels que .NET Framework, les API sont définies par les assemblys que le Framework installe sur un système et peuvent inclure des API de Framework d’application (par exemple, ASP.NET).
 
-Pour les frameworks cibles basés sur les packages (par exemple, .NET 5, .NET Core et .NET Standard), les API sont définies par les packages inclus dans l’application ou la bibliothèque. Un *métapackage* est un package NuGet qui n’a aucun contenu propre, mais qui est une liste de dépendances (autres packages). Un framework cible basé sur un package NuGet spécifie implicitement un métapackage qui référence tous les packages constituant le framework.
+Pour les frameworks cibles basés sur les packages (par exemple, .NET 5, .NET Core et .NET Standard), les API sont définies par les packages NuGet inclus dans l’application ou la bibliothèque.
 
 ## <a name="latest-versions"></a>Dernières versions
 
 Le tableau suivant définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker de Framework cible (TFM) est un format de jeton standardisé pour la spécification de la version cible de .NET Framework d’une application ou d’une bibliothèque .NET.
 
-| Version cible de .NET Framework      | Latest <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
+| Version cible de .NET Framework      | Dernière <br/> version stable | Moniker du Framework cible (TFM) | Implémenté <br/> Version de .NET Standard |
 | :-: | :-: | :-: | :-: |
 | .NET 5                | 5.0                         | .net 5.0                         | N/A                                     |
 | .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |

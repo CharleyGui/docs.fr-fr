@@ -5,12 +5,12 @@ ms.date: 11/30/2020
 ms.topic: overview
 ms.author: dapine
 author: IEvangelist
-ms.openlocfilehash: d0b8533dd63dd7d24f49e11093770b52d7daea89
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 7984f235044db5dfc7533343e7d43cd7745fba33
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437863"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899453"
 ---
 # <a name="whats-new-in-net-5"></a>Nouveautés de .NET 5
 
@@ -46,10 +46,10 @@ ASP.NET Core 5,0 est basé sur .NET 5,0, mais conserve le nom « Core » pour 
 
 Il n’est pas prévu de porter les technologies suivantes de .NET Framework vers .NET 5,0, mais il existe des alternatives dans .NET 5,0 :
 
-| Technologie            | Alternative recommandée                                                                         |
+| Technology            | Alternative recommandée                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------|
 | Web Forms             | ASP.NET Core [éblouissant](/aspnet/core/blazor) ou [Razor pages](/aspnet/core/tutorials/razor-pages) |
-| Windows Workflow (WF) | [CoreWF Open source](https://github.com/UiPath-Open/corewf)                                     |
+| Windows Workflow (WF) | [CoreWF Open source](https://github.com/UiPath-Open/corewf) ou [Elsa-Workflow](https://github.com/elsa-workflows/elsa-core) |
 
 ### <a name="windows-communication-foundation"></a>Windows Communication Foundation
 

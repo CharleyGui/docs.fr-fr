@@ -2,12 +2,12 @@
 title: Dumps-.NET
 description: Introduction aux dumps dans .NET.
 ms.date: 10/12/2020
-ms.openlocfilehash: 56cf4085d10658c828bac39be93eed3f774e00d5
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 7a4c7bf54b3e9ea43e685eafbd00b4a373326520
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96242771"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97764940"
 ---
 # <a name="dumps"></a>Vidages
 
@@ -53,7 +53,13 @@ Pour collecter un dump à votre propre demande, vous pouvez utiliser `dotnet-dum
 
 ## <a name="analyze-dumps"></a>Analyser les vidages
 
-Les dumps peuvent être analysés à l’aide de [`dotnet-dump`](dotnet-dump.md) .
+Vous pouvez anlayze des dumps à l’aide de l' [`dotnet-dump`](dotnet-dump.md) outil CLI ou de [Visual Studio](https://docs.microsoft.com/visualstudio/debugger/using-dump-files).
+
+> [!NOTE]
+> Visual Studio version 16,8 et versions ultérieures vous permet d' [ouvrir des vidages Linux](https://devblogs.microsoft.com/visualstudio/linux-managed-memory-dump-debugging/) générés sur .net Core 3.1.7 ou version ultérieure.  
+
+> [!NOTE]
+> Si le débogage natif est nécessaire, l' [extension de débogueur SOS](sos-debugging-extension.md) peut être utilisée avec [LLDB sur Linux et MacOS](debug-linux-dumps.md#analyze-dumps-on-linux). SOS est également pris en charge avec [WinDbg/CDB](/windows-hardware/drivers/debugger/debugger-download-tools) sur Windows, bien que Visual Studio soit recommandé.
 
 ## <a name="see-also"></a>Voir aussi
 

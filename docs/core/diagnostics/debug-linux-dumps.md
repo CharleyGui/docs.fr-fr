@@ -2,12 +2,12 @@
 title: Déboguer des vidages Linux
 description: Dans cet article, vous allez apprendre à collecter et à analyser les vidages des environnements Linux.
 ms.date: 08/27/2020
-ms.openlocfilehash: 94f923f2ec7b5fa20c2ebc9b83540094348dff03
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: e6f2eea3af718853ad7365a5209b397a66035dde
+ms.sourcegitcommit: 35ca2255c6c86968eaef9e3a251c9739ce8e4288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95099144"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97753599"
 ---
 # <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
 
@@ -15,7 +15,10 @@ ms.locfileid: "95099144"
 
 ## <a name="collect-dumps-on-linux"></a>Collecter des vidages sur Linux
 
-Les deux méthodes recommandées pour collecter des vidages sur Linux sont les [`dotnet-dump`](dotnet-dump.md) [`createdump`](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) outils ou.
+Les deux méthodes recommandées pour collecter des vidages sur Linux sont les suivantes :
+
+* [`dotnet-dump`](dotnet-dump.md) Outil CLI
+* [Variables d’environnement](dumps.md#collecting-dumps-on-crash) qui recueillent des vidages sur les incidents
 
 ### <a name="managed-dumps-with-dotnet-dump"></a>Dumps managés avec `dotnet-dump`
 
@@ -25,7 +28,7 @@ L' [`dotnet-dump`](dotnet-dump.md) outil est simple à utiliser et n’a pas de 
 
 En guise d’alternative à `dotnet-dump` , qui crée des dumps managés uniquement, [`createdump`](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) est l’outil recommandé pour créer des vidages principaux sur Linux contenant des informations natives et managées. D’autres outils tels que gdb ou gcore peuvent également être utilisés pour créer des vidages essentiels, mais ils peuvent manquer d’État pour le débogage managé, ce qui entraîne des noms de type ou de fonction « inconnus » lors de l’analyse.
 
-L' `createdump` outil est installé avec le Runtime .net Core et se trouve en regard de libcoreclr.so (généralement dans « /usr/share/dotnet/Shared/Microsoft.NETCore.app/[version] »). L’outil prend un ID de processus pour collecter un dump à partir de comme son argument principal et peut également accepter des paramètres facultatifs qui spécifient le type de vidage à collecter (un minidump avec segment de mémoire est la valeur par défaut). Les options sont les suivantes :
+L' `createdump` outil est installé avec le Runtime .net Core et se trouve en regard de libcoreclr.so (généralement dans « /usr/share/dotnet/Shared/Microsoft.NETCore.app/[version] »). L’outil prend un ID de processus pour collecter un dump à partir de comme son argument principal et peut également accepter des paramètres facultatifs qui spécifient le type de vidage à collecter (un minidump avec segment de mémoire est la valeur par défaut). Options disponibles :
 
 - **`<input-filename>`**
 

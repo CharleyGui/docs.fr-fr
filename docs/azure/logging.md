@@ -2,15 +2,15 @@
 title: Journalisation avec le kit de développement logiciel (SDK) Azure pour .NET
 description: Découvrez comment activer la journalisation avec le kit de développement logiciel (SDK) Azure pour les bibliothèques clientes .NET
 ms.date: 03/20/2020
-ms.custom: azure-sdk-dotnet
+ms.custom: devx-track-dotnet
 ms.author: casoper
 author: camsoper
-ms.openlocfilehash: 0b255713bc9c13e0cbdaeb25a3d0fe46e91e815d
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 6adc485867e9bad401a15da19e6cb4424d2ddb13
+ms.sourcegitcommit: 3d6d6595a03915f617349781f455f838a44b0f44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416036"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97700708"
 ---
 # <a name="logging-with-the-azure-sdk-for-net"></a>Journalisation avec le kit de développement logiciel (SDK) Azure pour .NET
 
@@ -21,7 +21,7 @@ Le [Kit de développement logiciel (SDK) Azure](https://azure.microsoft.com/down
 - Configurer la journalisation personnalisée
 
 > [!IMPORTANT]
-> Cet article s’applique aux bibliothèques clientes qui utilisent les versions les plus récentes du kit de développement logiciel (SDK) Azure pour .NET. Pour savoir si une bibliothèque est prise en charge, reportez-vous à la liste des [dernières versions du kit de développement logiciel (SDK) Azure](https://azure.github.io/azure-sdk/releases/latest/index.html). Si votre application utilise une version antérieure des bibliothèques clientes du kit de développement logiciel (SDK) Azure, reportez-vous à des instructions spécifiques dans la documentation du service applicable.
+> Cet article s’applique aux bibliothèques clientes qui utilisent les versions les plus récentes du kit de développement logiciel (SDK) Azure pour .NET. Pour savoir si une bibliothèque est prise en charge, reportez-vous à la liste des [versions les plus récentes du SDK Azure](https://azure.github.io/azure-sdk/releases/latest/index.html). Si votre application utilise une version antérieure des bibliothèques de client du SDK Azure, reportez-vous aux instructions spécifiques de la documentation du service applicable.
 
 ## <a name="log-information"></a>Enregistrement d’informations
 

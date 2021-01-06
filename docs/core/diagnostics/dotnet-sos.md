@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-SOS-interface de commande .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-SOS pour gérer l’extension de débogueur SOS, qui est utilisée avec les débogueurs natifs sur Windows et Linux.
 ms.date: 11/17/2020
-ms.openlocfilehash: 59512c42a778f68bb3cd092dc854dcc727fd2881
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 09e8228c47bdc632bccf3c9ad2296d55fe420060
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825440"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765005"
 ---
 # <a name="sos-installer-dotnet-sos"></a>Programme d’installation SOS (dotnet-SOS)
 
@@ -43,7 +43,10 @@ dotnet-sos [-h|--help] [options] [command]]
 
 ## <a name="description"></a>Description
 
-L' `dotnet-sos` outil Global installe l' [extension de débogueur SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) permettant l' [inspection de l’État .net Core géré](https://github.com/dotnet/diagnostics/blob/master/documentation/sos-debugging-extension.md) à partir de débogueurs natifs tels que WinDbg/CDB sur Windows et lldb sur Linux et MacOS. Les versions récentes du débogueur Windows (>= version 10.0.18317.1001 de WinDbg ou CDB) chargent automatiquement SOS à partir de la Galerie d’extensions Microsoft. par conséquent, l’installation de SOS via l' `dotnet-sos` outil est uniquement nécessaire sur Linux et MacOS ou sur Windows si vous utilisez des outils de débogage plus anciens.
+L' `dotnet-sos` outil Global installe l' [extension de débogueur SOS](sos-debugging-extension.md). Cette extension vous permet d’inspecter l’état de .NET Core géré à partir de débogueurs natifs tels que lldb et WinDbg.
+
+> [!NOTE]
+> L’installation de SOS via l' `dotnet-sos` outil est uniquement nécessaire sur Linux ou MacOS.  Il peut également s’avérer nécessaire sur Windows si vous utilisez des outils de débogage plus anciens. Les versions récentes du [débogueur Windows](/windows-hardware/drivers/debugger/debugger-download-tools) (>= version 10.0.18317.1001 de WinDbg ou CDB) chargent SOS automatiquement à partir de la Galerie d’extensions Microsoft.  
 
 ## <a name="options"></a>Options
 
@@ -57,17 +60,30 @@ L' `dotnet-sos` outil Global installe l' [extension de débogueur SOS](../../fra
 
 ## <a name="dotnet-sos-install"></a>installation de dotnet-SOS
 
-Installe l' [extension SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) localement pour déboguer les processus .net core. Sur macOS et Linux, le fichier. lldbinit est mis à jour afin que l’extension se charge automatiquement au démarrage de lldb. Si vous installez SOS sur Windows avec les anciens outils de débogage (< version 10.0.18317.1001), vous devrez charger manuellement l’extension dans WinDbg ou CDB en exécutant `.load %USERPROFILE%\.dotnet\sos\sos.dll` dans le débogueur.
+Installe l' [extension SOS](sos-debugging-extension.md) localement pour déboguer les processus .net core. Sur macOS et Linux, le fichier *. lldbinit* est mis à jour afin que l’extension se charge automatiquement au démarrage de lldb. Si vous installez SOS sur Windows avec les anciens outils de débogage (antérieurs à la version 10.0.18317.1001), vous devrez charger manuellement l’extension dans WinDbg ou CDB en exécutant `.load %USERPROFILE%\.dotnet\sos\sos.dll` dans le débogueur.
 
 ### <a name="synopsis"></a>Synopsis
 
 ```console
-dotnet-sos install
+dotnet-sos install [--architecture <arch>]
 ```
+
+### <a name="options"></a>Options
+
+- **`--architecture <arch>`**
+
+  Spécifie l’architecture de processeur des fichiers binaires SOS à installer. Par défaut, `dotnet-sos` installe l’architecture de l’ordinateur hôte. Utilisez cette option lorsque vous souhaitez installer SOS pour une architecture différente de l’architecture d’hôte dotnet. Par exemple, si vous exécutez des binaires Arm32 à partir d’un hôte Arm64, vous devrez installer SOS avec `dotnet-sos install --architecture Arm` .
+
+  Les architectures suivantes sont disponibles :
+
+  - `Arm`
+  - `Arm64`
+  - `X86`
+  - `X64`
 
 ## <a name="dotnet-sos-uninstall"></a>désinstallation de dotnet-SOS
 
-Désinstalle l' [extension SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) et, si sur Linux ou MacOS, la supprime de la configuration lldb.
+Désinstalle l' [extension SOS](sos-debugging-extension.md) et, sur Linux et MacOS, la supprime de la configuration lldb.
 
 ### <a name="synopsis"></a>Synopsis
 

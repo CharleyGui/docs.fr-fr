@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-Symbol-interface de commande .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-Symbol pour télécharger les fichiers requis pour le débogage des dumps .NET et des minidumps.
 ms.date: 11/17/2020
-ms.openlocfilehash: 8ea694e5331f1e4e75b3b3ad644428568e515331
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 69c05544e886d9d41113c8a2383f760b85d01124
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825336"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97764992"
 ---
 # <a name="symbol-downloader-dotnet-symbol"></a>Téléchargeur de symboles (dotnet-Symbol)
 
@@ -15,7 +15,7 @@ ms.locfileid: "94825336"
 
 ## <a name="install"></a>Installer
 
-Pour installer la dernière version Release du `dotnet-trace` [package NuGet](https://www.nuget.org/packages/dotnet-trace), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Pour installer la dernière version Release du `dotnet-symbol` [package NuGet](https://www.nuget.org/packages/dotnet-symbol), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
 dotnet tool install --global dotnet-symbol
@@ -55,7 +55,7 @@ L' `dotnet-symbol` outil Global télécharge les fichiers (symboles, DAC, module
 
 - **`--host-only`**
 
-  Téléchargez uniquement le programme hôte (c’est-à-dire dotnet) dont lldb a besoin pour charger les vidages principaux.
+  Téléchargez uniquement le programme hôte (dotnet) dont lldb a besoin pour charger les vidages principaux.
 
 - **`--symbols`**
 
@@ -98,3 +98,8 @@ dotnet-symbol --host-only --debugging <dump file path>
 - 404 introuvable lors du téléchargement des symboles.
 
    Le téléchargement de symboles n’est pris en charge que pour les versions officielles du Runtime .NET Core acquises par le biais de canaux officiels tels que [le site Web officiel](https://dotnet.microsoft.com/download/dotnet-core) et les [sources par défaut dans les scripts d’installation dotnet](../tools/dotnet-install-script.md). Une erreur 404 lors du téléchargement des fichiers de débogage peut indiquer que le dump a été créé avec un Runtime .NET Core à partir d’une autre source, telle que celle générée à partir de la source localement ou pour un distribution Linux particulier, ou à partir de sites de la communauté tels que Archlinux. Dans ce cas, le fichier nécessaire pour le débogage (dotnet, libcoreclr.so et libmscordaccore.so) doit être copié à partir de ces sources ou de l’environnement dans lequel le fichier de vidage a été créé.
+
+## <a name="see-also"></a>Voir aussi
+
+* [Débogage avec des symboles](/windows/win32/dxtecharts/debugging-with-symbols)
+* [PDB portables](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md)

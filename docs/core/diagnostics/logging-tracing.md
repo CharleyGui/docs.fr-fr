@@ -2,12 +2,12 @@
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: 86444f2451079e54050f6698f3e45ddff0700acf
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: fac8eeed63e8737ad42699d81b421747b207c69a
+ms.sourcegitcommit: 35ca2255c6c86968eaef9e3a251c9739ce8e4288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820577"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97753625"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -36,11 +36,11 @@ Vous avez le choix de l’API de style d’impression à utiliser. :
   - C’est approche est utile pour les informations dont votre client peut avoir besoin lors de la mise en production.
   - Comme il s’agit de l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Souvent, ce code de débogage n’est jamais archivé dans le contrôle de code source.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Activé uniquement quand `TRACE` est défini.
+  - Activé uniquement lorsque `TRACE` est défini en ajoutant `#define TRACE` à votre source ou en spécifiant l’option lors de la `/d:TRACE` compilation.
   - Écrit dans attaché <xref:System.Diagnostics.Trace.Listeners> , par défaut <xref:System.Diagnostics.DefaultTraceListener> .
   - Utilisez cette API lors de la création de journaux qui seront activés dans la plupart des builds.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Activé uniquement quand `DEBUG` est défini.
+  - Activé uniquement lorsque `DEBUG` est défini en ajoutant `#define DEBUG` à votre source ou en spécifiant l’option lors de la `/d:DEBUG` compilation.
   - Écrit dans un débogueur attaché.
   - Lors de l' `*nix` écriture dans stderr si `COMPlus_DebugWriteToStdErr` est défini.
   - Utilisez cette API lors de la création de journaux qui seront activés uniquement dans les builds de débogage.
@@ -95,6 +95,8 @@ Par exemple, pour vous permettre de choisir le meilleur choix pour votre applica
 - L' [interpolation de chaîne C#](../../csharp/language-reference/tokens/interpolated.md) peut simplifier l’écriture d’un code de journalisation.
 
 - [Liste des événements du fournisseur de Runtime](../../fundamentals/diagnostics/runtime-events.md)
+
+- [Fournisseurs d’événements connus dans .NET](well-known-event-providers.md)
 
 - La <xref:System.Exception.Message?displayProperty=nameWithType> propriété est utile pour la journalisation des exceptions.
 

@@ -2,12 +2,12 @@
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
 ms.date: 01/30/2020
-ms.openlocfilehash: f1a240609b898fe8f365c39ba0c95f486377c445
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: a918ea7573d7402a82d2df2c63301e4838fa66dc
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91169256"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899598"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -103,7 +103,7 @@ Comme le montre la figure 4-17, la communication HTTP en temps réel signifie qu
 
 ![Diagramme montrant des comms push et en temps réel basées sur Signalr.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
 
-**Figure 4-17**. Communication par messages asynchrones un-à-un en temps réel
+**Figure 4-17**. Communication des messages asynchrones un-à-plusieurs en temps réel
 
 SignalR est un bon moyen d’effectuer une communication en temps réel pour envoyer (push) du contenu aux clients à partir d’un serveur back-end. Étant donné que la communication est en temps réel, les applications clientes montrent les modifications quasi instantanément. Ceci est généralement géré par un protocole comme WebSockets, avec de nombreuses connexions WebSockets (une par client). Un exemple classique est quand un service communique un changement de score d’une rencontre sportive simultanément à de nombreuses d’applications web clientes.
 

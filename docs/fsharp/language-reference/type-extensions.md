@@ -2,12 +2,12 @@
 title: Extensions de type
 description: 'Découvrez comment les extensions de type F # vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.'
 ms.date: 02/05/2020
-ms.openlocfilehash: 8fdb2d5e527643b23d24a6118e8cef6b11f1a546
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: c9adddb3133a4af57a12be0b09c22954a8bff6a7
+ms.sourcegitcommit: c3093e9d106d8ca87cc86eef1f2ae4ecfb392118
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559126"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97737266"
 ---
 # <a name="type-extensions"></a>Extensions de type
 
@@ -19,7 +19,7 @@ Les extensions de type (également appelées « _augmentations_») sont une fami
 
 Chaque peut être utilisé dans différents scénarios et présente des compromis différents.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 // Intrinsic and optional extensions
@@ -34,7 +34,7 @@ open System.Runtime.CompilerServices
 [<Extension>]
 type Extensions() =
     [<Extension>]
-    static member self-identifier.extension-name (ty: typename, [args]) =
+    static member extension-name (ty: typename, [args]) =
         body
     ...
 ```

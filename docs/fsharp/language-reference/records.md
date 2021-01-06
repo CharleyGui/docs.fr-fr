@@ -2,12 +2,12 @@
 title: Enregistrements
 description: 'Découvrez comment les enregistrements F # représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 03de96b9c53bc21e7a7723a15d2a8451d100ba76
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 2da31da0ec830d458a370e64ca105048181f5d74
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95682027"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899637"
 ---
 # <a name="records"></a>Enregistrements
 
@@ -163,7 +163,7 @@ let weirdString = p.WeirdToString()
 
 ## <a name="differences-between-records-and-classes"></a>Différences entre les enregistrements et les classes
 
-Les champs d’enregistrement diffèrent des classes en ce qu’ils sont automatiquement exposés en tant que propriétés, et ils sont utilisés lors de la création et de la copie des enregistrements. La construction d’enregistrement diffère également de la construction de classe. Dans un type d’enregistrement, vous ne pouvez pas définir un constructeur. Au lieu de cela, la syntaxe de construction décrite dans cette rubrique s’applique. Les classes n’ont aucune relation directe entre les paramètres de constructeur, les champs et les propriétés.
+Les champs d’enregistrement diffèrent des champs de classe dans la mesure où ils sont automatiquement exposés en tant que propriétés et sont utilisés lors de la création et de la copie des enregistrements. La construction d’enregistrement diffère également de la construction de classe. Dans un type d’enregistrement, vous ne pouvez pas définir un constructeur. Au lieu de cela, la syntaxe de construction décrite dans cette rubrique s’applique. Les classes n’ont aucune relation directe entre les paramètres de constructeur, les champs et les propriétés.
 
 Comme les types d’Union et de structure, les enregistrements ont une sémantique d’égalité structurelle. Les classes ont une sémantique d’égalité des références. L'exemple de code suivant illustre cette tâche.
 

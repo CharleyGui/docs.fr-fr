@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-dump-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-dump pour collecter et analyser les vidages Windows et Linux sans débogueur natif.
 ms.date: 11/17/2020
-ms.openlocfilehash: ea9a70c4dc47b5006339e9a197712092eb66b241
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: eaffbb1f2959dba5c25a603b6f785c7480e4a8c0
+ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822202"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765044"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (dotnet-dump)
 
@@ -146,34 +146,37 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `clrstack <arguments>`              | Fournit uniquement une trace de la pile du code managé.                                                  |
 | `clrthreads <arguments>`            | Répertorie les threads managés qui exécutent.                                                            |
 | `dumpasync <arguments>`             | Affiche des informations sur les machines à États asynchrones sur le tas récupéré par le garbage collector.                |
-| `dumpassembly <arguments>`          | Affiche des détails sur un assembly.                                                           |
-| `dumpclass <arguments>`             | Affiche des informations sur une structure de classe EE à l’adresse spécifiée.                     |
-| `dumpdelegate <arguments>`          | Affiche des informations sur un délégué.                                                        |
-| `dumpdomain <arguments>`            | Affiche des informations sur tous les AppDomains et tous les assemblys dans les domaines.                |
+| `dumpassembly <arguments>`          | Affiche des détails sur l’assembly à l’adresse spécifiée.                                 |
+| `dumpclass <arguments>`             | Affiche des informations sur la `EEClass` structure à l’adresse spécifiée.                  |
+| `dumpdelegate <arguments>`          | Affiche des informations sur le délégué à l’adresse spécifiée.                             |
+| `dumpdomain <arguments>`            | Affiche des informations sur tous les AppDomains et tous les assemblys au sein du domaine spécifié.       |
 | `dumpheap <arguments>`              | Affiche des informations sur le tas récupéré par le garbage collector et des statistiques de collection concernant les objets.       |
 | `dumpil <arguments>`                | Affiche le Microsoft Intermediate Language (MSIL) associé à une méthode managée. |
 | `dumplog <arguments>`               | Écrit le contenu d'un journal de contrainte en mémoire dans le fichier spécifié.                         |
-| `dumpmd <arguments>`                | Affiche des informations sur une structure MethodDesc à l’adresse spécifiée.                   |
-| `dumpmodule <arguments>`            | Affiche des informations sur une structure de module EE à l’adresse spécifiée.                    |
-| `dumpmt <arguments>`                | Affiche des informations sur une table de méthodes à l'adresse spécifiée.                           |
-| `dumpobj <arguments>`               | Affiche des informations sur un objet à l’adresse spécifiée.                                       |
+| `dumpmd <arguments>`                | Affiche des informations sur la `MethodDesc` structure à l’adresse spécifiée.               |
+| `dumpmodule <arguments>`            | Affiche des informations sur le module à l’adresse spécifiée.                               |
+| `dumpmt <arguments>`                | Affiche des informations sur le `MethodTable` à l’adresse spécifiée.                        |
+| `dumpobj <arguments>`               | Affiche des informations sur l’objet à l’adresse spécifiée.                                      |
 | `dso|dumpstackobjects <arguments>`  | Affiche tous les objets managés recherchés dans les limites de la pile actuelle.                    |
 | `eeheap <arguments>`                | Affiche des informations sur la mémoire de processus consommée par les structures de données de Runtime internes.              |
 | `finalizequeue <arguments>`         | Affiche tous les objets enregistrés pour la finalisation.                                             |
-| `gcroot <arguments>`                | Affiche des informations sur les références (ou racines) à un objet à l’adresse spécifiée.              |
+| `gcroot <arguments>`                | Affiche des informations sur les références (ou racines) à l’objet à l’adresse spécifiée.             |
 | `gcwhere <arguments>`               | Affiche l’emplacement dans le tas GC de l’argument passé.                               |
-| `ip2md <arguments>`                 | Affiche la structure MethodDesc à l’adresse spécifiée dans le code JIT.                       |
+| `ip2md <arguments>`                 | Affiche la `MethodDesc` structure à l’adresse spécifiée dans le code JIT.                     |
 | `histclear <arguments>`             | Libère toutes les ressources utilisées par la famille de commandes `hist*`.                                |
 | `histinit <arguments>`              | Initialise les structures SOS du journal de contrainte enregistré dans l’élément débogué.                     |
 | `histobj <arguments>`               | Affiche les réadressages du journal de stress garbage collection liés à `<arguments>` .              |
-| `histobjfind <arguments>`           | Affiche toutes les entrées de journal qui référencent un objet à l'adresse spécifiée.               |
+| `histobjfind <arguments>`           | Affiche toutes les entrées de journal qui référencent l’objet à l’adresse spécifiée.              |
 | `histroot <arguments>`              | Affiche les informations liées aux promotions et aux réadressages de la racine spécifiée.        |
 | `lm|modules`                        | Affiche les modules natifs dans le processus.                                                   |
-| `name2ee <arguments>`               | Affiche la structure MethodTable et la structure EEClass pour le `<argument>` .                |
-| `pe|printexception <arguments>`     | Affiche tout objet dérivé de la classe d’exception à l’adresse `<argument>` .             |
+| `name2ee <arguments>`               | Affiche les `MethodTable` `EEClass` structures et pour le `<argument>` .                     |
+| `pe|printexception <arguments>`     | Affiche tout objet dérivé de la <xref:System.Exception> classe pour `<argument>` .      |
 | `setsymbolserver <arguments>`       | Active la prise en charge du serveur de symboles                                                             |
 | `syncblk <arguments>`               | Affiche les informations sur le support SyncBlock.                                                           |
 | `threads|setthread <threadid>`      | Définit ou affiche l’ID de thread actuel pour les commandes SOS.                                  |
+
+> [!NOTE]
+> Vous trouverez des informations supplémentaires dans l' [extension de débogage SOS pour .net](sos-debugging-extension.md).
 
 ## <a name="using-dotnet-dump"></a>Utilisation de `dotnet-dump`
 

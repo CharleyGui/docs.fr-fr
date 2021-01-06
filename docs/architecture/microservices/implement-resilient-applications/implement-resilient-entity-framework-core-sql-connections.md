@@ -2,12 +2,12 @@
 title: Implémenter des connexions SQL à Entity Framework Core résilientes
 description: Découvrez comment implémenter des connexions SQL à Entity Framework Core résilientes. Cette technique est particulièrement importante lors de l’utilisation d’Azure SQL Database dans le cloud.
 ms.date: 10/16/2018
-ms.openlocfilehash: 7a047edca21d63a451e90f407b23f3358d461330
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cae3550ce301750949b042957d5d10f0167e614c
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78241063"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899559"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implémenter des connexions SQL à Entity Framework Core résilientes
 
@@ -134,11 +134,9 @@ public class ResilientTransaction
         var strategy = _context.Database.CreateExecutionStrategy();
         await strategy.ExecuteAsync(async () =>
         {
-            using (var transaction = _context.Database.BeginTransaction())
-            {
-                await action();
-                transaction.Commit();
-            }
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+            await action();
+            await transaction.CommitAsync();
         });
     }
 }
@@ -146,12 +144,12 @@ public class ResilientTransaction
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Liaison De résilience et d’interception de commandement avec EF dans une application MVC ASP.NET** \
+- **Résilience des connexions et interception des commandes avec EF dans une application ASP.NET MVC** \
   [https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
 
-- **Cesar de la Torre. Utilisation de connexions et de transactions SQL de base de cadre d’entités résilientes** \
+- **Cesar de la Torre. Utilisation de connexions et de transactions Entity Framework Core SQL résilientes** \
   <https://devblogs.microsoft.com/cesardelatorre/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
 >[!div class="step-by-step"]
->[Suivant précédent](implement-retries-exponential-backoff.md)
->[Next](use-httpclientfactory-to-implement-resilient-http-requests.md)
+>[Précédent](implement-retries-exponential-backoff.md) 
+> [Suivant](use-httpclientfactory-to-implement-resilient-http-requests.md)

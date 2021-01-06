@@ -2,12 +2,12 @@
 title: Indications de conception de composants F#
 description: 'Découvrez les instructions relatives à l’écriture de composants F # destinés à être consommés par d’autres appelants.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 590bda0660d54ea73c590d31e694f3d499e0fd9f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 24be2a422c97b9334f749e3d9dfcccd0feec219b
+ms.sourcegitcommit: e395fabeeea5c705d243d246fa64446839ac85b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209134"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97856105"
 ---
 # <a name="f-component-design-guidelines"></a>Indications de conception de composants F#
 
@@ -70,11 +70,11 @@ Cette section présente les recommandations pour le développement de bibliothè
 
 Le tableau suivant suit les conventions de nommage et de mise en majuscules de .NET. Il y a de petites additions pour inclure également des constructions F #.
 
-| Construction | Cas | Élément | Exemples | Remarques |
+| Construction | Cas | Élément | Exemples | Notes |
 |-----------|------|------|----------|-------|
 | Types concrets | Casse Pascal | Substantif/adjectif | Liste, double, complexe | Les types concrets sont les structs, les classes, les énumérations, les délégués, les enregistrements et les unions. Bien que les noms de types soient généralement en minuscules dans OCaml, F # a adopté le schéma de nommage .NET pour les types.
-| DLL           | Casse Pascal |                 | Fabrikam. Core. dll |  |
-| Étiquettes d’Union     | Casse Pascal | Nom | Some, ajouter, réussite | N’utilisez pas de préfixe dans les API publiques. Si vous le souhaitez, vous pouvez utiliser un préfixe en interne, par exemple`type Teams = TAlpha | TBeta | TDelta.` |
+| DLL           | Casse Pascal |                 | Fabrikam.Core.dll |  |
+| Étiquettes d’Union     | Casse Pascal | Nom | Some, ajouter, réussite | N’utilisez pas de préfixe dans les API publiques. Si vous le souhaitez, vous pouvez utiliser un préfixe en interne, par exemple `type Teams = TAlpha | TBeta | TDelta.` |
 | Événement          | Casse Pascal | Verbe | ValueChanged/ValueChanging |  |
 | Exceptions     | Casse Pascal |      | WebException | Le nom doit se terminer par « exception ». |
 | Champ          | Casse Pascal | Nom | CurrentName  | |
@@ -191,8 +191,8 @@ Utilisez les types d’interface pour représenter un ensemble d’opérations. 
 
 ```fsharp
 type Serializer =
-    abstract Serialize<'T>: preserveRefEq: bool -> value: 'T -> string
-    abstract Deserialize<'T>: preserveRefEq: bool -> pickle: string -> 'T
+    abstract Serialize<'T> : preserveRefEq: bool -> value: 'T -> string
+    abstract Deserialize<'T> : preserveRefEq: bool -> pickle: string -> 'T
 ```
 
 Dans la préférence :
@@ -222,7 +222,7 @@ Si vous incluez un tel module, suivez les conventions d’affectation de noms st
 
 #### <a name="use-a-module-to-group-functions-for-common-canonical-functions-especially-in-math-and-dsl-libraries"></a>Utilisez un module pour regrouper des fonctions pour les fonctions canoniques courantes, en particulier dans les bibliothèques mathématiques et DSL
 
-Par exemple, `Microsoft.FSharp.Core.Operators` est une collection automatiquement ouverte de fonctions de niveau supérieur (comme `abs` et `sin` ) fournies par FSharp. Core. dll.
+Par exemple, `Microsoft.FSharp.Core.Operators` est une collection ouverte automatiquement de fonctions de niveau supérieur (comme `abs` et `sin` ) fournies par FSharp.Core.dll.
 
 De même, une bibliothèque de statistiques peut inclure un module avec des fonctions `erf` et `erfc` , où ce module est conçu pour être ouvert de manière explicite ou automatique.
 
@@ -653,7 +653,7 @@ member this.ParamOverload(x: int) = x
 member this.ParamOverload(x: int, y: int) = x + y
 ```
 
-#### <a name="use-the-net-collection-interface-types-ienumerablet-and-idictionarykeyvalue-for-parameters-and-return-values"></a>Utilisez les types d’interfaces de collection .NET IEnumerable \< T \> et IDictionary \< clé, valeur \> pour les paramètres et les valeurs de retour
+#### <a name="use-the-net-collection-interface-types-ienumerablet-and-idictionarykeyvalue-for-parameters-and-return-values"></a>Utiliser les types d’interfaces de collection .NET IEnumerable \<T\> et IDictionary \<Key,Value\> pour les paramètres et les valeurs de retour
 
 Évitez l’utilisation de types de collections concrets tels que les tableaux .NET `T[]` , les types F # `list<T>` , `Map<Key,Value>` et `Set<T>` , ainsi que les types de collections concrètes .NET tels que `Dictionary<Key,Value>` . Les règles de conception de la bibliothèque .NET ont de bons conseils quant à l’utilisation de différents types de collections comme `IEnumerable<T>` . Certaines utilisation de tableaux ( `T[]` ) sont acceptables dans certains cas, pour des raisons de performances. Notez surtout qu’il `seq<T>` s’agit simplement de l’alias F # pour `IEnumerable<T>` , et donc seq est souvent un type approprié pour une API .net vanille.
 

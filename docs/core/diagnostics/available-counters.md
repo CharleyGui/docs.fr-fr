@@ -3,12 +3,12 @@ title: EventCounters bien connus dans .NET
 description: Passez en revue les EventCounters publiés par le runtime et les bibliothèques .NET.
 ms.topic: reference
 ms.date: 12/17/2020
-ms.openlocfilehash: 724e49ba616a7f656d629a0443ec5e322a51d6f5
-ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
+ms.openlocfilehash: 8bd14c7caf004cefe73d5b0676b9fa3280840442
+ms.sourcegitcommit: c3093e9d106d8ca87cc86eef1f2ae4ecfb392118
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681962"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97737292"
 ---
 # <a name="well-known-eventcounters-in-net"></a>EventCounters bien connus dans .NET
 
@@ -22,7 +22,7 @@ Les compteurs suivants sont publiés dans le cadre du Runtime .NET (CoreCLR) et 
 |--|--|
 | :::no-loc text="% Time in GC since last GC"::: (`time-in-gc`) | Pourcentage de temps dans le GC depuis le dernier GC |
 | :::no-loc text="Allocation Rate"::: (`alloc-rate`) | Nombre d’octets alloués par intervalle de mise à jour |
-| :::no-loc text="CPU Usage"::: (`cpu-usage`) | Pourcentage d’utilisation du processeur par le processus |
+| :::no-loc text="CPU Usage"::: (`cpu-usage`) | Pourcentage de l’utilisation du processeur du processus par rapport à toutes les ressources processeur du système |
 | :::no-loc text="Exception Count"::: (`exception-count`) | Nombre d’exceptions qui se sont produites |
 | :::no-loc text="GC Heap Size"::: (`gc-heap-size`) | Nombre d’octets supposés être alloués en fonction de <xref:System.GC.GetTotalMemory(System.Boolean)?displayProperty=nameWithType> |
 | :::no-loc text="Gen 0 GC Count"::: (`gen-0-gc-count`) | Nombre de fois que GC s’est produit pour la génération 0 par intervalle de mise à jour |
@@ -83,3 +83,62 @@ Les compteurs suivants sont publiés dans le cadre du [serveur web ASP.net Core 
 | :::no-loc text="TLS Handshake Rate"::: (`tls-handshakes-per-second`) | Nombre de négociations TLS par intervalle de mise à jour |
 | :::no-loc text="Total Connections"::: (`total-connections`) | Nombre total de connexions au serveur Web |
 | :::no-loc text="Total TLS Handshakes"::: (`total-tls-handshakes`) | Nombre total de négociations TLS avec le serveur Web |
+
+## <a name="systemnethttp-counters"></a>Compteurs « System .net. http »
+
+Les compteurs suivants sont publiés par la pile HTTP.  Ces compteurs sont disponibles uniquement sur .NET 5 et versions ultérieures.
+
+| Compteur | Description |
+|--|--|
+| :::no-loc text="Requests Started"::: (`requests-started`) | Nombre de requêtes démarrées depuis le démarrage du processus |
+| :::no-loc text="Requests Started Rate"::: (`requests-started-rate`) | Nombre de requêtes démarrées par intervalle de mise à jour |
+| :::no-loc text="Requests Failed"::: (`requests-failed`) | Nombre de demandes ayant échoué depuis le démarrage du processus |
+| :::no-loc text="Requests Failed Rate"::: (`requests-failed-rate`) | Nombre de demandes ayant échoué par intervalle de mise à jour |
+| :::no-loc text="Current Requests"::: (`current-requests`) | Nombre actuel de requêtes HTTP actives qui ont démarré mais qui ne sont pas encore terminées ou qui ont échoué |
+| :::no-loc text="Current HTTP 1.1 Connections"::: (`http11-connections-current-total`) | Nombre actuel de connexions HTTP 1,1 qui ont démarré mais qui ne sont pas encore terminées ou qui ont échoué |
+| :::no-loc text="Current HTTP 2.0 Connections"::: (`http20-connections-current-total`) | Nombre actuel de connexions HTTP 2,0 qui ont démarré mais qui ne sont pas encore terminées ou qui ont échoué |
+| :::no-loc text="HTTP 1.1 Requests Queue Duration"::: (`http11-requests-queue-duration`) | Durée moyenne des requêtes HTTP 1,1 passées dans la file d’attente des demandes |
+| :::no-loc text="HTTP 2.0 Requests Queue Duration"::: (`http20-requests-queue-duration`) | Durée moyenne des requêtes HTTP 2,0 passées dans la file d’attente des demandes |
+
+## <a name="systemnetnameresolution-counters"></a>Compteurs « System .net. NameResolution »
+
+Les compteurs suivants effectuent le suivi des mesures relatives aux recherches DNS. Ces compteurs sont disponibles uniquement sur .NET 5 et versions ultérieures.
+
+| Compteur | Description |
+|--|--|
+| :::no-loc text="DNS Lookups Requested"::: (`dns-lookups-requested`) | Nombre de recherches DNS demandées depuis le démarrage du processus |
+| :::no-loc text="Average DNS Lookup Duration"::: (`dns-lookups-duration`) | Temps moyen nécessaire pour une recherche DNS |
+
+## <a name="systemnetsecurity-counters"></a>Compteurs « System .net. Security »
+
+Les compteurs suivants effectuent le suivi des mesures relatives au protocole TLS (Transport Layer Security).  Ces compteurs sont disponibles uniquement sur .NET 5 et versions ultérieures.
+
+| Compteur | Description |
+|--|--|
+| :::no-loc text="TLS handshakes completed"::: (`tls-handshake-rate`) | Nombre de négociations TLS effectuées par intervalle de mise à jour |
+| :::no-loc text="Total TLS handshakes completed"::: (`total-tls-handshakes`) | Nombre total de négociations TLS terminées depuis le démarrage du processus |
+| :::no-loc text="Current TLS handshakes"::: (`current-tls-handshakes`) | Nombre actuel de négociations TLS démarrées mais pas encore terminées |
+| :::no-loc text="Total TLS handshakes failed"::: (`failed-tls-handshakes`) | Nombre total d’échecs de négociation TLS depuis le démarrage du processus |
+| :::no-loc text="All TLS Sessions Active"::: (`all-tls-sessions-open`) | Nombre de sessions TLS actives de toute version |
+| :::no-loc text="TLS 1.0 Sessions Active"::: (`tls10-sessions-open`) | Nombre de sessions TLS 1,0 actives |
+| :::no-loc text="TLS 1.1 Sessions Active"::: (`tls11-sessions-open`) | Nombre de sessions TLS 1,1 actives |
+| :::no-loc text="TLS 1.2 Sessions Active"::: (`tls12-sessions-open`) | Nombre de sessions TLS 1,2 actives |
+| :::no-loc text="TLS 1.3 Sessions Active"::: (`tls13-sessions-open`) | Nombre de sessions TLS 1,3 actives |
+| :::no-loc text="TLS Handshake Duration"::: (`all-tls-handshake-duration`) | Durée moyenne de toutes les négociations TLS |
+| :::no-loc text="TLS 1.0 Handshake Duration"::: (`tls10-handshake-duration`) | Durée moyenne des négociations TLS 1,0 |
+| :::no-loc text="TLS 1.1 Handshake Duration"::: (`tls11-handshake-duration`) | Durée moyenne des négociations TLS 1,1 |
+| :::no-loc text="TLS 1.2 Handshake Duration"::: (`tls12-handshake-duration`) | Durée moyenne des négociations TLS 1,2 |
+| :::no-loc text="TLS 1.3 Handshake Duration"::: (`tls13-handshake-duration`) | Durée moyenne des négociations TLS 1,3 |
+
+## <a name="systemnetsockets-counters-available-on-net-5-and-later-versions"></a>Compteurs « System .net. Sockets » (disponibles sur .NET 5 et versions ultérieures)
+
+Les compteurs suivants effectuent le suivi des mesures relatives à <xref:System.Net.Sockets.Socket> .
+
+| Compteur | Description |
+|--|--|
+| :::no-loc text="Outgoing Connections Established"::: (`outgoing-connections-established`) | Nombre total de connexions sortantes établies depuis le démarrage du processus |
+| :::no-loc text="Incoming Connections Established"::: (`incoming-connections-established`) | Nombre total de connexions entrantes établies depuis le démarrage du processus |
+| :::no-loc text="Bytes Received"::: (`bytes-received`) | Nombre total d’octets reçus depuis le démarrage du processus |
+| :::no-loc text="Bytes Sent"::: (`bytes-sent`) | Nombre total d’octets envoyés depuis le démarrage du processus |
+| :::no-loc text="Datagrams Received"::: (`datagrams-received`) | Nombre total de datagrammes reçus depuis le démarrage du processus |
+| :::no-loc text="Datagrams Sent"::: (`datagrams-sent`) | Nombre total de datagrammes envoyés depuis le démarrage du processus |

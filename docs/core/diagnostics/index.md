@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 0aa404497cb7d6a488fb51e1df8f7f45d4f213fd
-ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
+ms.openlocfilehash: d468ec5b9cc050cc54f6c53f8a4ea4531f8b58f5
+ms.sourcegitcommit: 35ca2255c6c86968eaef9e3a251c9739ce8e4288
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678097"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97753612"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -35,6 +35,10 @@ Le [test unitaire](../testing/index.md) est un composant clé de l’intégratio
 ## <a name="dumps"></a>Vidages
 
 Un [dump](./dumps.md) est un fichier qui contient un instantané du processus au moment de la création. Elles peuvent être utiles pour examiner l’état de votre application à des fins de débogage.
+
+## <a name="symbols"></a>symboles
+
+Les symboles sont une condition fondamentale pour le débogage et d’autres outils de diagnostic. Le contenu des fichiers de symboles varie selon les langages, les compilateurs et les plateformes. À un niveau très élevé, les symboles sont un mappage entre le code source et le binaire produit par le compilateur. Ces mappages sont utilisés pour fournir des informations telles que le numéro de ligne et les noms de vos variables locales dans les outils de diagnostic tels que [Visual Studio](/visualstudio/debugger/what-is-debugging) et [Visual Studio code](https://code.visualstudio.com/Docs/editor/debugging).  Le lien suivant contient une explication détaillée des [symboles](/windows/win32/dxtecharts/debugging-with-symbols) pour Windows, bien que la plupart des concepts s’appliquent également à d’autres plateformes. Les [symboles portables .net](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) ont une extension de fichier « PDB » similaire à celle de Windows PDB, mais ne sont pas compatibles avec le format PDB Windows.
 
 ## <a name="collect-diagnostics-in-containers"></a>Collecter les diagnostics dans les conteneurs
 
@@ -64,7 +68,7 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 
 ### <a name="dotnet-sos"></a>dotnet-sos
 
-[dotnet-SOS](dotnet-sos.md) est utilisé pour installer l' [extension de débogage SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) sur Linux ou MacOS (ou sur Windows si vous utilisez des outils de débogage plus anciens).
+[dotnet-SOS](dotnet-sos.md) installe l' [extension de débogage SOS](sos-debugging-extension.md) sur Linux et MacOS (et sur Windows si vous utilisez [WinDbg/CDB](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)).
 
 ### <a name="perfcollect"></a>PerfCollect
 
@@ -83,6 +87,10 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 ### <a name="debug-deadlock"></a>Déboguer un interblocage
 
 [Didacticiel : déboguer le blocage](debug-deadlock.md) vous montre comment utiliser l’outil [dotnet-dump](dotnet-dump.md) pour examiner les threads et les verrous.
+
+### <a name="debug-a-stackoverflow"></a>Déboguer un StackOverflow
+
+[Didacticiel : déboguer un StackOverflow](debug-stackoverflow.md) montre comment déboguer un <xref:System.StackOverflowException> sur Linux.
 
 ### <a name="debug-linux-dumps"></a>Déboguer des vidages Linux
 

@@ -3,12 +3,12 @@ title: Informations de référence sur les commandes CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 4c6cb1346c16f6162077d3414140d693de9e0d8c
-ms.sourcegitcommit: 182c7b6c079ebcc0e1898dfd9e921b9ef472ea2c
+ms.openlocfilehash: 6f07cd8b4237f8931bbc0ec97bc0bbe18c488f16
+ms.sourcegitcommit: e395fabeeea5c705d243d246fa64446839ac85b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85946939"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97856066"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>Informations de référence sur la commande CLI ML.NET
 
@@ -17,7 +17,7 @@ Les `classification` `regression` commandes, et `recommendation` sont les princi
 > [!NOTE]
 > Cette rubrique fait référence à l’interface CLI ML.NET et au moteur AutoML ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être changées.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Exemple d’utilisation :
 
@@ -99,7 +99,7 @@ mlnet classification
 L’exécution `mlnet regression` entraîne l’apprentissage d’un modèle de régression. Choisissez cette commande si vous souhaitez qu’un modèle ML prédise une valeur numérique (par exemple, la prédiction de prix).
 
 ```console
-mlnet classification
+mlnet regression
 
 --dataset <path> (REQUIRED)
 
@@ -134,7 +134,7 @@ mlnet classification
 L’exécution `mlnet recommendation` entraîne l’apprentissage d’un modèle de recommandation.  Choisissez cette commande si vous souhaitez qu’un modèle ML recommande des éléments aux utilisateurs en fonction des évaluations (par exemple, recommandation du produit).
 
 ```console
-mlnet classification
+mlnet recommendation
 
 --dataset <path> (REQUIRED)
 
@@ -217,7 +217,7 @@ Dans tous les cas, ces pourcentages sont déterminés par l’utilisateur à l�
 
 ## <a name="label-column"></a>Colonne d'étiquette
 
-`--label-col`(int ou String)
+`--label-col` (int ou String)
 
 Avec cet argument, vous pouvez spécifier une colonne objective/Target (la variable que vous souhaitez prédire) à l’aide du nom de la colonne défini dans l’en-tête du DataSet ou de l’index numérique de la colonne dans le fichier du jeu de données (les valeurs d’index de colonne commencent à 0).
 
@@ -225,7 +225,7 @@ Cet argument est utilisé pour les problèmes de *classification* et de *régres
 
 ## <a name="item-column"></a>Colonne d’élément
 
-`--item-col`(int ou String)
+`--item-col` (int ou String)
 
 La colonne élément contient la liste des éléments que les utilisateurs évaluent (les éléments sont recommandés pour les utilisateurs). Cette colonne peut être spécifiée à l’aide du nom de la colonne défini dans l’en-tête du DataSet ou de l’index numérique de la colonne dans le fichier du jeu de données (les valeurs d’index de colonne commencent à 0).
 
@@ -233,7 +233,7 @@ Cet argument est utilisé uniquement pour la tâche de *recommandation* .
 
 ## <a name="rating-column"></a>Colonne d’évaluation
 
-`--rating-col`(int ou String)
+`--rating-col` (int ou String)
 
 La colonne évaluation contient la liste des évaluations accordées aux éléments par les utilisateurs. Cette colonne peut être spécifiée à l’aide du nom de la colonne défini dans l’en-tête du DataSet ou de l’index numérique de la colonne dans le fichier du jeu de données (les valeurs d’index de colonne commencent à 0).
 
@@ -241,7 +241,7 @@ Cet argument est utilisé uniquement pour la tâche de *recommandation* .
 
 ## <a name="user-column"></a>Colonne de l’utilisateur
 
-`--user-col`(int ou String)
+`--user-col` (int ou String)
 
 La colonne utilisateur contient la liste des utilisateurs qui attribuent des évaluations aux éléments. Cette colonne peut être spécifiée à l’aide du nom de la colonne défini dans l’en-tête du DataSet ou de l’index numérique de la colonne dans le fichier du jeu de données (les valeurs d’index de colonne commencent à 0).
 
@@ -281,7 +281,7 @@ Cet argument définit la durée maximale (en secondes) dont dispose le processus
 
 La durée nécessaire pour les itérations peut varier selon la taille du jeu de données.
 
-## <a name="cache"></a>d'instance/de clé
+## <a name="cache"></a>Cache
 
 `--cache` (chaîne)
 

@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 10/29/2020
 ms.topic: guide
-ms.openlocfilehash: 092fdc70bd5d6bae82c4c1da96db4d5ac08df452
-ms.sourcegitcommit: b1442669f1982d3a1cb18ea35b5acfb0fc7d93e4
+ms.openlocfilehash: 6b12d0d607dc0aed8f281943cecf3afa69b0575a
+ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063166"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899439"
 ---
 # <a name="dependency-injection-guidelines"></a>Recommandations relatives à l’injection de dépendances
 
@@ -149,7 +149,7 @@ Les conteneurs tiers suivants peuvent être utilisés avec les applications ASP.
 
 Créez des services singleton thread-safe. Si un service Singleton a une dépendance vis-à-vis d’un service temporaire, le service temporaire peut également nécessiter la sécurité des threads en fonction de la façon dont il est utilisé par le singleton.
 
-La méthode de fabrique d’un service unique, telle que le deuxième argument de [AddSingleton \<TService> (IServiceCollection, Func \<IServiceProvider,TService> )](xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton%2A), n’a pas besoin d’être thread-safe. À l’instar d’un constructeur de type ( `static` ), il est garanti qu’il soit appelé une seule fois par un seul thread.
+La méthode de fabrique d’un service Singleton, telle que le deuxième argument de [AddSingleton \<TService> (IServiceCollection, Func \<IServiceProvider,TService> )](xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton%2A), n’a pas besoin d’être thread-safe. À l’instar d’un constructeur de type ( `static` ), il est garanti qu’il soit appelé une seule fois par un seul thread.
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -169,7 +169,7 @@ L’injection de dépendance constitue une *alternative* aux modèles d’accès
 
 ## <a name="example-anti-patterns"></a>Exemples d’anti-modèles
 
-Outre les instructions de cet article, il existe plusieurs anti-modèles à *éviter. **should*** Certains de ces anti-modèles sont des apprentissages du développement des runtimes eux-mêmes.
+Outre les instructions de cet article, il existe plusieurs anti-modèles à *éviter.* Certains de ces anti-modèles sont des apprentissages du développement des runtimes eux-mêmes.
 
 > [!WARNING]
 > Il s’agit d’un exemple de anti-modèles, de ne *pas* copier le code, de *ne pas* utiliser ces modèles et d’éviter ces modèles à tous les coûts.
@@ -190,7 +190,7 @@ Le terme « DI fabriques » fait référence aux méthodes de surcharge qui ex
 
 :::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="32-45" highlight="4-8":::
 
-Dans le code précédent, `implementationFactory` reçoit une expression lambda dans laquelle le corps appelle <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> sur une `Task<Bar>` méthode de retour. Cela ***provoque un interblocage*** . La `GetBarAsync` méthode émule simplement une opération de travail asynchrone avec <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> , puis appelle <xref:Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService%60%601(System.IServiceProvider)> .
+Dans le code précédent, `implementationFactory` reçoit une expression lambda dans laquelle le corps appelle <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> sur une `Task<Bar>` méthode de retour. Cela ***provoque un interblocage***. La `GetBarAsync` méthode émule simplement une opération de travail asynchrone avec <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> , puis appelle <xref:Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService%60%601(System.IServiceProvider)> .
 
 :::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="47-53":::
 
