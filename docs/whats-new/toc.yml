@@ -1,18 +1,19 @@
-name: Nouveautés
-href: index.yml
-expanded: true
 items:
-  - name: 2020
+  - name: Nouveautés
+    href: index.yml
+    expanded: true
     items:
-      - name: Novembre
-        href: 2020-11.md
-      - name: Octobre
-        href: 2020-10.md
-      - name: Septembre
-        href: 2020-09.md
-      - name: Août
-        href: 2020-08.md
-      - name: Juillet
-        href: 2020-07.md
-      - name: June
-        href: 2020-06.md
+      - name: '2020'
+        items:
+          - name: Décembre
+            href: 2020-12.md
+          - name: Novembre
+            href: 2020-11.md
+          - name: Octobre
+            href: 2020-10.md
+          - name: Septembre
+            href: 2020-09.md
+          - name: Août
+            href: 2020-08.md
+          - name: Juillet
+            href: 2020-07.md
