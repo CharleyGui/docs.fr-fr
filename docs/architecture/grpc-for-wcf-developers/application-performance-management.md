@@ -1,17 +1,17 @@
 ---
 title: Gestion des performances des applications-gRPC pour les développeurs WCF
 description: La journalisation, les métriques et le suivi des applications ASP.NET Core gRPC.
-ms.date: 09/02/2019
-ms.openlocfilehash: 8a13d1c4df95768e55c90ac491150bfc78ec2bab
-ms.sourcegitcommit: 6d1ae17e60384f3b5953ca7b45ac859ec6d4c3a0
+ms.date: 12/15/2020
+ms.openlocfilehash: 8a2a89e268e3b2dffdcc945ac71b2de85b4d4964
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94982340"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938453"
 ---
 # <a name="application-performance-management"></a>Gestion des performances des applications
 
-Dans les environnements de production tels que Kubernetes, il est important de surveiller les applications pour s’assurer qu’elles s’exécutent de manière optimale. La journalisation et les métriques sont particulièrement importantes. ASP.NET Core, y compris gRPC, offre une prise en charge intégrée de la production et de la gestion des messages de journaux et des données de métriques, ainsi que du *suivi* des données.
+Dans les environnements de production tels que Kubernetes, il est important de surveiller les applications pour s’assurer qu’elles s’exécutent de manière optimale. La journalisation et les métriques sont importantes en particulier. ASP.NET Core, y compris gRPC, offre une prise en charge intégrée de la production et de la gestion des messages de journaux et des données de métriques, ainsi que du *suivi* des données.
 
 ## <a name="the-difference-between-logging-and-metrics"></a>Différence entre la journalisation et les métriques
 
@@ -65,7 +65,7 @@ La plupart des plateformes de métriques prennent en charge les types suivants 
 | Jauge       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
 | Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille d’un jeu de données, compter le nombre d’enregistrements contenus <10, le nombre d’enregistrements 11-100, le nombre d’enregistrements 101-1000 contenus et le nombre d’enregistrements contenus >1000. |
 | Compteur       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
-| Minuteur       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
+| Minuterie       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
 
 En utilisant des *métriques d’application*, une `IMetrics` interface peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de `Get` demandes effectuées dans le temps :
 
@@ -110,7 +110,7 @@ La nature numérique des données de métriques signifie qu’elle est idéaleme
 
 ## <a name="distributed-tracing"></a>Traçage distribué
 
-Le traçage distribué est un développement relativement récent dans le monitoring, qui vient de l’utilisation accrue des microservices et des architectures distribuées. Une demande unique d’un navigateur client, d’une application ou d’un appareil peut être divisée en plusieurs étapes et sous-requêtes, et impliquer l’utilisation de nombreux services sur un réseau. Cela complique la mise en corrélation des messages du journal et des métriques avec la demande spécifique qui les a déclenchés. Le traçage distribué applique des identificateurs aux requêtes, ce qui permet de corréler les journaux et les métriques avec une opération particulière. Cela est similaire au [suivi de bout en bout de WCF](../../framework/wcf/diagnostics/tracing/end-to-end-tracing.md), mais il est appliqué sur plusieurs plateformes.
+Le traçage distribué est un développement relativement récent dans le monitoring, qui vient de l’utilisation accrue des microservices et des architectures distribuées. Une demande unique d’un navigateur client, d’une application ou d’un appareil peut être divisée en plusieurs étapes et sous-requêtes, et impliquer l’utilisation de nombreux services sur un réseau. Cette activité rend difficile la mise en corrélation des messages de journal et des métriques avec la demande spécifique qui les a déclenchés. Le traçage distribué applique des identificateurs aux demandes et permet la mise en corrélation des journaux et des métriques avec une opération particulière. Ce suivi est similaire au [suivi de bout en bout de WCF](../../framework/wcf/diagnostics/tracing/end-to-end-tracing.md), mais il est appliqué sur plusieurs plateformes.
 
 Le suivi distribué a augmenté rapidement et commence à normaliser. La Fondation Cloud Native Computing a créé la [norme Open Tracing](https://opentracing.io), en tentant de fournir des bibliothèques indépendantes du fournisseur pour travailler avec des serveurs back end comme [Jaeger](https://www.jaegertracing.io/) et l' [APM élastique](https://www.elastic.co/products/apm). En même temps, Google a créé le [projet OpenCensus](https://opencensus.io/) pour résoudre le même ensemble de problèmes. Ces deux projets sont fusionnés dans un nouveau projet, [OpenTelemetry](https://opentelemetry.io), qui a pour but d’être la norme du secteur.
 
@@ -120,9 +120,9 @@ Le traçage distribué est basé sur le concept d' *étendues*: les opérations 
 
 ### <a name="distributed-tracing-with-diagnosticsource"></a>Traçage distribué avec `DiagnosticSource`
 
-.NET Core possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le `DiagnosticSource` module a le concept d' *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du `Activity` type, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
+.NET possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le `DiagnosticSource` module a le concept d' *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du `Activity` type, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
 
-Étant donné que `DiagnosticSource` fait partie de l’infrastructure de base, il est pris en charge par plusieurs composants de base. Ces derniers incluent <xref:System.Net.Http.HttpClient> , Entity Framework Core et ASP.net Core, notamment la prise en charge explicite dans l’infrastructure gRPC. Lorsque ASP.NET Core reçoit une demande, il recherche une paire d’en-têtes HTTP correspondant à la norme du [contexte de trace W3C](https://www.w3.org/TR/trace-context) . Si les en-têtes sont trouvés, une activité est démarrée à l’aide des valeurs d’identité et du contexte des en-têtes. Si aucun en-tête n’est trouvé, une activité est démarrée avec des valeurs d’identité générées qui correspondent au format standard. Les diagnostics générés par l’infrastructure ou par le code d’application pendant la durée de vie de cette activité peuvent être marqués avec les identificateurs de trace et d’étendue. La `HttpClient` prise en charge s’étend davantage en vérifiant une activité en cours à chaque demande et en ajoutant automatiquement les en-têtes de trace à la demande sortante.
+Étant donné que `DiagnosticSource` fait partie de l’infrastructure de base et ultérieure, il est pris en charge par plusieurs composants de base. Ces derniers incluent <xref:System.Net.Http.HttpClient> , Entity Framework Core et ASP.net Core, notamment la prise en charge explicite dans l’infrastructure gRPC. Lorsque ASP.NET Core reçoit une demande, il recherche une paire d’en-têtes HTTP correspondant à la norme du [contexte de trace W3C](https://www.w3.org/TR/trace-context) . Si les en-têtes sont trouvés, une activité est démarrée à l’aide des valeurs d’identité et du contexte des en-têtes. Si aucun en-tête n’est trouvé, une activité est démarrée avec des valeurs d’identité générées qui correspondent au format standard. Les diagnostics générés par l’infrastructure ou par le code d’application pendant la durée de vie de cette activité peuvent être marqués avec les identificateurs de trace et d’étendue. La `HttpClient` prise en charge étend cette fonctionnalité plus en vérifiant une activité en cours à chaque demande, et en ajoutant automatiquement les en-têtes de trace à la demande sortante.
 
 Les bibliothèques clientes et serveur ASP.NET Core gRPC incluent une prise en charge explicite de `DiagnosticSource` et `Activity` , et créent des activités et appliquent et utilisent automatiquement les informations d’en-tête.
 

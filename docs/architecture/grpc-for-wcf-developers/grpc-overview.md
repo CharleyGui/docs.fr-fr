@@ -1,13 +1,13 @@
 ---
 title: Vue d’ensemble de gRPC-gRPC pour les développeurs WCF
 description: En savoir plus sur l’ensemble de principes guidant le développement de gRPC.
-ms.date: 09/02/2019
-ms.openlocfilehash: a0811adadc617097d86edc5f845c42a7e90f560f
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.date: 12/15/2020
+ms.openlocfilehash: 99e1bdb1f49469f444044027c3ac5d927f9cab13
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542921"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938401"
 ---
 # <a name="grpc-overview"></a>présentation de gRPC
 
@@ -19,7 +19,7 @@ ASP.NET Core 3,0 est la première version de ASP.NET qui prend en charge gRPC en
 
 Comme indiqué dans le chapitre 1, Google souhaitait utiliser l’introduction du protocole HTTP/2 pour remplacer Stubby, son infrastructure RPC interne et à usage général. gRPC, basé sur Stubby, peut désormais tirer parti de la normalisation et étendre son applicabilité à l’informatique mobile, au Cloud et aux Internet des objets.
 
-Pour y parvenir, [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/) a établi un ensemble de principes qui régissent gRPC. La liste suivante présente les éléments les plus pertinents, principalement liés à l’optimisation de l’accessibilité et de la convivialité :
+Pour réaliser cette normalisation, [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/) a établi un ensemble de principes qui régissent gRPC. La liste suivante présente les éléments les plus pertinents, principalement liés à l’optimisation de l’accessibilité et de la convivialité :
 
 - **Gratuit et ouvert** : tous les artefacts doivent être open source, avec une licence qui ne contraint pas les développeurs à adopter gRPC.
 - **Couverture et simplicité** : gRPC doit être disponible sur toutes les plateformes populaires et être suffisamment simple pour s’appuyer sur n’importe quelle plateforme.
@@ -27,8 +27,8 @@ Pour y parvenir, [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/
 - **Usage général et performant** : l’infrastructure doit être utilisable par autant de cas d’utilisation que possible, sans compromettre les performances.
 - **Streaming** : le protocole doit fournir une sémantique de diffusion en continu pour les jeux de données volumineux ou la messagerie asynchrone.
 - **Échange de métadonnées** : le protocole permet aux données non professionnelles, telles que les jetons d’authentification, d’être gérées séparément des données métier réelles.
-- **Codes d’État normalisés** : la variabilité des codes d’erreur doit être réduite pour rendre les décisions de gestion des erreurs plus claires. Dans le cas où une gestion des erreurs plus riche est nécessaire, un mécanisme de gestion des métadonnées doit être fourni.
+- **Codes d’État normalisés** : la variabilité des codes d’erreur doit être réduite pour rendre les décisions de gestion des erreurs plus claires. Là où une gestion des erreurs plus riche est nécessaire, un mécanisme doit être fourni pour gérer le comportement au sein de l’échange de métadonnées.
 
 >[!div class="step-by-step"]
->[Précédent](introduction.md)
->[Suivant](approach.md)
+>[Précédent](introduction.md) 
+> [Suivant](approach.md)

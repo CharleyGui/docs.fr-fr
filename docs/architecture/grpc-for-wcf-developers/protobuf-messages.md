@@ -1,13 +1,13 @@
 ---
 title: Messages Protobuf-gRPC pour les développeurs WCF
 description: Découvrez comment les messages Protobuf sont définis dans l’IDL et générés en C#.
-ms.date: 09/09/2019
-ms.openlocfilehash: 6fc7b9c34810abaa8d674af56d1517a5cf87521b
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.date: 12/15/2020
+ms.openlocfilehash: c1f2a3071d45dcbe4b98d747f19fed508bad102f
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325036"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938102"
 ---
 # <a name="protobuf-messages"></a>Messages Protobuf
 
@@ -62,9 +62,9 @@ La `Stock` définition du message spécifie quatre champs. Chaque a un type, un 
 
 ## <a name="field-numbers"></a>Numéros de champ
 
-Les numéros de champ constituent une partie importante de Protobuf. Elles sont utilisées pour identifier les champs dans les données binaires codées, ce qui signifie qu’elles ne peuvent pas passer d’une version à une version de votre service. L’avantage est que la compatibilité descendante et la compatibilité ascendante sont possibles. Les clients et les services ignorent simplement les numéros de champ qu’ils ne connaissent pas, à condition que la possibilité de valeurs manquantes soit gérée.
+Les numéros de champ constituent une partie importante de Protobuf. Elles sont utilisées pour identifier les champs dans les données binaires codées, ce qui signifie qu’elles ne peuvent pas passer d’une version à une version de votre service. L’avantage est que la compatibilité descendante et la compatibilité ascendante sont possibles. Les clients et les services ignorent les numéros de champ qu’ils ne connaissent pas, à condition que la possibilité de valeurs manquantes soit gérée.
 
-Dans le format binaire, le numéro de champ est associé à un identificateur de type. Les numéros de champ de 1 à 15 peuvent être encodés avec leur type comme un seul octet. Les nombres compris entre 16 et 2 047 prennent 2 octets. Vous pouvez aller plus haut si vous avez besoin de plus de 2 047 champs sur un message pour une raison quelconque. Les identificateurs à un seul octet pour les numéros de champ 1 à 15 offrent de meilleures performances. vous devez donc les utiliser pour les champs les plus basiques et les plus fréquemment utilisés.
+Dans le format binaire, le numéro de champ est associé à un identificateur de type. Les numéros de champ de 1 à 15 peuvent être encodés avec leur type comme un seul octet. Les nombres compris entre 16 et 2 047 prennent 2 octets. Vous pouvez aller plus haut si vous avez besoin de plus de 2 047 champs sur un message pour une raison quelconque. Les identificateurs sur un octet pour les numéros de champ 1 à 15 offrent de meilleures performances. vous devez donc les utiliser pour les champs les plus basiques et les plus fréquemment utilisés.
 
 ## <a name="types"></a>Types
 

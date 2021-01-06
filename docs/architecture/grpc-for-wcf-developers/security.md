@@ -1,61 +1,61 @@
 ---
-title: Sécurité dans les applications gRPC - gRPC pour les développeurs WCF
-description: Aperçu de l’authentification et de l’autorisation des appels et des canaux dans gRPC.
-ms.date: 09/02/2019
-ms.openlocfilehash: 70cbf441bbc1b299b997f7d1f02bcd2bf7fde60c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: Sécurité dans les applications gRPC-gRPC pour les développeurs WCF
+description: Vue d’ensemble de l’authentification et de l’autorisation de l’appel et du canal dans gRPC.
+ms.date: 12/15/2020
+ms.openlocfilehash: a5c16a4a4f7567e23bf4f9e3049fe116086daf12
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79147813"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938089"
 ---
 # <a name="security-in-grpc-applications"></a>Sécurité dans les applications gRPC
 
-Dans n’importe quel scénario réel, il est essentiel de sécuriser les applications et les services. La sécurité couvre trois domaines clés :
+Dans tout scénario réel, la sécurisation des applications et des services est essentielle. La sécurité couvre trois domaines clés :
 
-* Chiffrer le trafic réseau pour empêcher les pirates malveillants de l’intercepter.
-* Authentifier les clients et les serveurs pour établir l’identité et la confiance.
-* Autoriser les clients à contrôler l’accès aux systèmes et à appliquer des autorisations basées sur l’identité.
+* Chiffrement du trafic réseau pour empêcher les pirates malveillants de les intercepter.
+* Authentification des clients et des serveurs pour établir l’identité et l’approbation.
+* Autoriser les clients à contrôler l’accès aux systèmes et appliquer des autorisations en fonction de leur identité.
 
 > [!NOTE]
-> *L’authentification* vise à établir l’identité d’un client ou d’un serveur. *L’autorisation* vise à déterminer si un client a la permission d’accéder à une ressource ou d’émettre une commande.
+> *L’authentification* concerne l’établissement de l’identité d’un client ou d’un serveur. L' *autorisation* consiste à déterminer si un client a l’autorisation d’accéder à une ressource ou d’émettre une commande.
 
-Ce chapitre couvrira les installations d’authentification et d’autorisation en gRPC pour ASP.NET Core. Il discutera également de la sécurité du réseau par le biais de connexions cryptées TLS.
+Ce chapitre aborde les fonctionnalités d’authentification et d’autorisation dans gRPC pour ASP.NET Core. Il aborde également la sécurité réseau via des connexions chiffrées TLS.
 
-## <a name="wcf-authentication-and-authorization"></a>Authentification et autorisation de la WCF
+## <a name="wcf-authentication-and-authorization"></a>Authentification et autorisation WCF
 
-Dans Windows Communication Foundation (WCF), l’authentification et l’autorisation ont été traitées de différentes manières, en fonction des transports et des liaisons utilisées. WCF a soutenu\* diverses normes de sécurité WS. Il a également pris en charge l’authentification de Windows pour les services HTTP exécutant dans les services IIS ou NetTCP entre les systèmes Windows.
+Dans Windows Communication Foundation (WCF), l’authentification et l’autorisation ont été gérées de différentes façons, en fonction des transports et des liaisons utilisés. WCF prenait en charge différentes \* normes WS-Security. Il prend également en charge l’authentification Windows pour les services HTTP qui s’exécutent dans les services IIS ou NetTCP entre les systèmes Windows.
 
-## <a name="grpc-authentication-and-authorization"></a>gRPC authentification et autorisation
+## <a name="grpc-authentication-and-authorization"></a>authentification et autorisation gRPC
 
-gRPC authentification et autorisation fonctionne sur deux niveaux :
+l’authentification et l’autorisation gRPC fonctionnent sur deux niveaux :
 
-* L’authentification/autorisation au niveau des appels est généralement traitée par des jetons qui sont appliqués dans les métadonnées lorsque l’appel est effectué.
-* L’authentification au niveau des canaux utilise un certificat client qui est appliqué au niveau de connexion. Il peut également inclure des informations d’authentification/autorisation au niveau des appels à appliquer automatiquement à chaque appel sur le canal.
+* L’authentification/autorisation au niveau de l’appel est généralement gérée par le biais de jetons appliqués dans les métadonnées lorsque l’appel est effectué.
+* L’authentification au niveau du canal utilise un certificat client qui est appliqué au niveau de la connexion. Il peut également inclure des informations d’authentification/autorisation au niveau de l’appel à appliquer automatiquement à chaque appel sur le canal.
 
-Vous pouvez utiliser l’un ou l’autre ou les deux de ces mécanismes pour vous aider à sécuriser votre service.
+Vous pouvez utiliser l’un ou l’autre de ces mécanismes, ou les deux, pour vous aider à sécuriser votre service.
 
-La mise en œuvre de base ASP.NET de gRPC prend en charge l’authentification et l’autorisation par la plupart des mécanismes ASP.NET de base standard :
+La ASP.NET Core implémentation de gRPC prend en charge l’authentification et l’autorisation via la plupart des mécanismes de ASP.NET Core standard :
 
-- Appel authentification
+- Appeler l’authentification
   - Azure Active Directory
   - IdentityServer
-  - Jeton de porteur de JWT
-  - OAuth 2.0
+  - Jeton du porteur JWT
+  - OAuth 2.0
   - OpenID Connect
   - Un certificat de fournisseur d'identité WS-Federation
-- Authentification des canaux
+- Authentification de canal
   - Certificat client
 
-Les méthodes d’authentification d’appel sont toutes basées sur *des jetons.* La seule vraie différence est la façon dont les jetons sont générés et les bibliothèques qui sont utilisées pour valider les jetons dans le service ASP.NET Core.
+Les méthodes d’authentification d’appel sont toutes basées sur des *jetons*. La seule différence réelle est la façon dont les jetons sont générés et les bibliothèques utilisées pour valider les jetons dans le service ASP.NET Core.
 
-Pour plus d’informations, consultez l’article [d’authentification et d’autorisation.](/aspnet/core/grpc/authn-and-authz)
+Pour plus d’informations, consultez l’article [authentification et autorisation](/aspnet/core/grpc/authn-and-authz) .
 
 > [!NOTE]
-> Lorsque vous utilisez gRPC sur une connexion HTTP/2 cryptée TLS, tout le trafic entre les clients et les serveurs est crypté, même si vous n’utilisez pas d’authentification au niveau du canal.
+> Lorsque vous utilisez gRPC sur une connexion HTTP/2 chiffrée TLS, tout le trafic entre les clients et les serveurs est chiffré, même si vous n’utilisez pas l’authentification au niveau du canal.
 
-Ce chapitre montrera comment appliquer les informations d’identification des appels et canaliser les informations d’identification à un service gRPC. Il montrera également comment utiliser les informations d’identification d’un client .NET Core gRPC pour authentifier avec le service.
+Ce chapitre explique comment appliquer des informations d’identification d’appel et des informations d’identification de canal à un service gRPC. Il indique également comment utiliser les informations d’identification d’un client .NET gRPC pour s’authentifier auprès du service.
 
 >[!div class="step-by-step"]
->[Suivant précédent](client-libraries.md)
->[Next](call-credentials.md)
+>[Précédent](client-libraries.md) 
+> [Suivant](call-credentials.md)

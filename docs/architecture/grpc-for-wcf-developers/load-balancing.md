@@ -1,13 +1,13 @@
 ---
 title: Équilibrage de charge gRPC-gRPC pour les développeurs WCF
 description: Choix d’un équilibreur de charge pour fonctionner avec les services gRPC.
-ms.date: 09/02/2019
-ms.openlocfilehash: 215c0983146bbf9168f01956d64733f80cea6faf
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.date: 12/15/2020
+ms.openlocfilehash: 55f61608dce1f159b11d7265a47938ba49e9e188
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711176"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938583"
 ---
 # <a name="load-balancing-grpc"></a>Équilibrage de charge gRPC
 
@@ -17,7 +17,7 @@ Les équilibrages de charge sont classés en fonction de la *couche* sur laquell
 
 ## <a name="l4-load-balancers"></a>Équilibreurs de charge L4
 
-Un équilibreur de charge L4 accepte une demande de connexion TCP à partir d’un client, ouvre une autre connexion à l’une des instances de serveur principal, et copie les données entre les deux connexions sans traitement réel. L4 offre d’excellentes performances et une faible latence, mais très peu de contrôle ou d’intelligence. Tant que le client maintient la connexion ouverte, toutes les demandes sont dirigées vers la même instance de serveur principal.
+Un équilibreur de charge L4 accepte une demande de connexion TCP à partir d’un client, ouvre une autre connexion à l’une des instances de serveur principal, et copie les données entre les deux connexions sans traitement réel. L4 offre d’excellentes performances et une faible latence, mais avec peu de contrôle ou d’intelligence. Tant que le client maintient la connexion ouverte, toutes les demandes sont dirigées vers la même instance de serveur principal.
 
  [Azure load balancer](https://azure.microsoft.com/services/load-balancer/) est un exemple d’équilibrage de charge n4.
 
@@ -45,5 +45,5 @@ Consultez la documentation de votre équilibreur de charge préféré pour savoi
 Consultez [la section sur les maillages de service](service-mesh.md) pour une discussion sur l’équilibrage de charge entre les services internes sur Kubernetes.
 
 >[!div class="step-by-step"]
->[Précédent](service-mesh.md)
->[Suivant](application-performance-management.md)
+>[Précédent](service-mesh.md) 
+> [Suivant](application-performance-management.md)

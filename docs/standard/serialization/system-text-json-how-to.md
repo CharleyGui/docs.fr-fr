@@ -1,7 +1,7 @@
 ---
 title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
 description: Découvrez comment utiliser l' System.Text.Json espace de noms pour sérialiser et désérialiser à partir de JSON dans .net. Comprend un exemple de code.
-ms.date: 12/16/2020
+ms.date: 01/04/2021
 ms.custom: contperf-fy21q2
 no-loc:
 - System.Text.Json
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: b69dfd6238f529c3b315d63a93a82da0f316f459
-ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
+ms.openlocfilehash: bd257cf8d79ea2afa209fe71ad7eff969a62d6b2
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678258"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938713"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -30,6 +30,9 @@ La majeure partie de l’exemple de code de sérialisation affecte <xref:System.
 Les exemples de code font référence à la classe et aux variantes suivantes :
 
 :::code language="csharp" source="snippets/system-text-json-how-to/csharp/WeatherForecast.cs" id="WF":::
+
+> [!NOTE]
+> System.Text.Json utilise des [structs de référence](../../csharp/language-reference/builtin-types/struct.md#ref-struct), qui ne sont pas pris en charge par Visual Basic. Si vous essayez d’utiliser System.Text.Json des API avec Visual Basic, vous recevez des erreurs de compilation BC40000. Le message d’erreur indique que le problème est une API obsolète, mais le problème réel est l’absence de `ref struct` prise en charge dans le compilateur.
 
 ## <a name="namespaces"></a>Espaces de noms
 

@@ -1,19 +1,19 @@
 ---
 title: Appeler les informations d’identification-gRPC pour les développeurs WCF
 description: Comment implémenter et utiliser les informations d’identification d’appel gRPC dans ASP.NET Core 3,0.
-ms.date: 09/02/2019
-ms.openlocfilehash: 01f21f58ed4235f45509c948c84653cd99d35618
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.date: 12/15/2020
+ms.openlocfilehash: 66394c75929bf068f83d631e022b467386e59ec5
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711533"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938440"
 ---
 # <a name="call-credentials"></a>Informations d’identification de l’appel
 
 Les informations d’identification d’appel sont toutes basées sur un jeton passé dans les métadonnées avec chaque demande.
 
-## <a name="ws-federation"></a>WS-Federation
+## <a name="ws-federation"></a>Un certificat de fournisseur d'identité WS-Federation
 
 ASP.NET Core prend en charge WS-Federation à l’aide du package NuGet [WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) . WS-Federation est l’alternative la plus proche disponible à l’authentification Windows, qui n’est pas prise en charge sur HTTP/2. Les utilisateurs sont authentifiés à l’aide de Services ADFS (AD FS), qui fournit un jeton qui peut être utilisé pour s’authentifier auprès d’ASP.NET Core.
 
@@ -23,11 +23,11 @@ Pour plus d’informations sur la prise en main de cette méthode d’authentifi
 
 La norme [JSON Web Token](https://jwt.io) (JWT) offre un moyen d’encoder des informations sur un utilisateur et leurs revendications dans une chaîne encodée. Il fournit également un moyen de signer ce jeton, afin que le consommateur puisse vérifier l’intégrité du jeton à l’aide du chiffrement à clé publique. Vous pouvez utiliser différents services, tels que IdentityServer4, pour authentifier les utilisateurs et générer des jetons OpenID Connect (OIDC) à utiliser avec les API gRPC et HTTP.
 
-ASP.NET Core 3,0 peut gérer jetons JWT à l’aide du package du porteur JWT. La configuration est exactement la même pour une application gRPC que pour une application MVC ASP.NET Core. Ici, nous allons nous concentrer sur les jetons de porteur JWT, car ils sont plus faciles à développer avec WS-Federation.
+ASP.NET Core 5,0 peut gérer jetons JWT à l’aide du package du porteur JWT. La configuration est exactement la même pour une application gRPC que pour une application MVC ASP.NET Core. Ici, nous allons nous concentrer sur les jetons de porteur JWT, car ils sont plus faciles à développer avec WS-Federation.
 
 ## <a name="add-authentication-and-authorization-to-the-server"></a>Ajouter l’authentification et l’autorisation au serveur
 
-Le package du porteur JWT n’est pas inclus dans ASP.NET Core 3,0 par défaut. Installez le package NuGet [Microsoft. AspNetCore. Authentication. JwtBearer](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer) dans votre application.
+Le package du porteur JWT n’est pas inclus dans ASP.NET Core 5,0 par défaut. Installez le package NuGet [Microsoft. AspNetCore. Authentication. JwtBearer](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer) dans votre application.
 
 Ajoutez le service d’authentification dans la classe Startup et configurez le gestionnaire du porteur JWT :
 
@@ -55,7 +55,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-La propriété `IssuerSigningKey` nécessite une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Stockez ce jeton en toute sécurité dans un *serveur de secrets*, comme Azure Key Vault.
+La `IssuerSigningKey` propriété requiert une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Stockez ce jeton en toute sécurité dans un *serveur de secrets*, comme Azure Key Vault.
 
 Ensuite, ajoutez le service d’autorisation, qui contrôle l’accès au système :
 
@@ -74,7 +74,7 @@ Ensuite, ajoutez le service d’autorisation, qui contrôle l’accès au systè
 > [!TIP]
 > L’authentification et l’autorisation sont deux étapes distinctes. Vous utilisez l’authentification pour déterminer l’identité de l’utilisateur. Vous utilisez l’autorisation pour décider si cet utilisateur est autorisé à accéder aux différentes parties du système.
 
-Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.NET Core dans la méthode `Configure` :
+Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.NET Core dans la `Configure` méthode :
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -97,7 +97,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-Enfin, appliquez l’attribut `[Authorize]` à tous les services ou méthodes à sécuriser, et utilisez la propriété `User` à partir du `HttpContext` sous-jacent pour vérifier les autorisations.
+Enfin, appliquez l' `[Authorize]` attribut à tous les services ou méthodes à sécuriser et utilisez la `User` propriété du sous-jacent `HttpContext` pour vérifier les autorisations.
 
 ```csharp
 [Authorize]
@@ -142,5 +142,5 @@ public async Task ShowPortfolioAsync(int portfolioId)
 Maintenant, vous avez sécurisé votre service gRPC en utilisant des jetons de porteur JWT comme informations d’identification d’appel. Une version de l' [exemple d’application gRPC portefeuille avec l’authentification et l’autorisation ajoutée](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/grpc/TraderSysAuth) se trouve sur GitHub.
 
 >[!div class="step-by-step"]
->[Précédent](security.md)
->[Suivant](channel-credentials.md)
+>[Précédent](security.md) 
+> [Suivant](channel-credentials.md)

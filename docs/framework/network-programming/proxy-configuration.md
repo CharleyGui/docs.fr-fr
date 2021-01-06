@@ -12,12 +12,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 5094a066fe6689a1c0cda227b284accaac49ad54
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 668e6a4082a132d94e6aa8039e2afaaf543fb5e9
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96263163"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938154"
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
 
@@ -73,7 +73,7 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
                 bypassonlocal="True"  
         />  
         <bypasslist>  
-            <add address="[a-z]+.blueyonderairlines.com$" />  
+            <add address="[a-z]+\.blueyonderairlines\.com$" />  
         </bypasslist>  
     </defaultProxy>  
 </system.net>  

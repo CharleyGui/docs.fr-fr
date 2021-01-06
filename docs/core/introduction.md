@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 11/16/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 1fd452ac9b7740c428e92cc6a510bab5f4d2d7d0
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 0adc348c1fc340fe481d9987cdbe28c6cf8b065d
+ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687515"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97938674"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -26,7 +26,7 @@ ms.locfileid: "94687515"
 * [Joueur](https://dotnet.microsoft.com/apps/games)
 * [Internet des objets (IoT)](/dotnet/iot)
 * [Machine Learning](../machine-learning/index.yml)
-* [Applications console](tutorials/with-visual-studio-code.md)
+* [Applications de console](tutorials/with-visual-studio-code.md)
 * [Services Windows](/aspnet/core/host-and-deploy/windows-service)
 
 Partager des fonctionnalités entre différentes applications et types d’applications à l’aide de [bibliothèques de classes](../standard/class-libraries.md).
@@ -144,6 +144,13 @@ Le téléchargement du kit de développement logiciel (SDK) comprend les composa
 * [Bibliothèques Runtime](#runtime-libraries). Fournit des types de données primitifs et des utilitaires fondamentaux.
 * Runtime ASP.NET Core. Fournit des services de base pour les applications connectées à Internet, telles que les applications Web, les applications IoT et les backends mobiles.
 * Le runtime Desktop. Fournit des services de base pour les applications de bureau Windows, y compris Windows Forms et WPF.
+
+Le téléchargement du runtime comprend les composants suivants :
+
+* Éventuellement, le bureau ou le runtime ASP.NET Core.
+* Le [Runtime .net](#clr). Fournit un système de type, un chargement d’assembly, un récupérateur de mémoire, une interopérabilité native et d’autres services de base.
+* [Bibliothèques Runtime](#runtime-libraries). Fournit des types de données primitifs et des utilitaires fondamentaux.
+* `dotnet` [Pilote](tools/index.md#driver). Commande CLI qui exécute des applications dépendantes du Framework.
 
 Pour plus d’informations, consultez les ressources suivantes :
 
@@ -286,8 +293,8 @@ Les bibliothèques pour certaines fonctionnalités d’application couramment ut
 |---------|---------|
 | [Microsoft.Extensions.Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) | [Gestion de la durée de vie des applications (hôte générique)](extensions/generic-host.md) |
 | [Microsoft. extensions. DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) | [Injection de dépendances (DI)](extensions/dependency-injection.md)
-| [Microsoft.Extensions.Configfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration) | [Configuration](extensions/configuration.md) |
-| [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Logging](extensions/logging.md) |
+| [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration) | [Configuration](extensions/configuration.md) |
+| [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Journalisation](extensions/logging.md) |
 | [Microsoft. extensions. options](https://www.nuget.org/packages/Microsoft.Extensions.Options) | [Modèle d’options](extensions/options.md) |
 
 Pour plus d’informations, consultez le [référentiel dotnet/extensions sur GitHub](https://github.com/dotnet/extensions).
