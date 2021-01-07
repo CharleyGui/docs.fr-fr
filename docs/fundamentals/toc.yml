@@ -19,7 +19,7 @@ items:
             href: ../core/install/macos.md
           - name: Installer sur Linux
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: ../core/install/linux.md
               - name: Ubuntu
                 href: ../core/install/linux-ubuntu.md
@@ -393,14 +393,28 @@ items:
               - name: Vue d’ensemble
                 displayName: dumps
                 href: ../core/diagnostics/dumps.md
+              - name: Déboguer StackOverflow
+                href: ../core/diagnostics/debug-stackoverflow.md
               - name: Images mémoire Linux
                 href: ../core/diagnostics/debug-linux-dumps.md
+              - name: Extension de débogueur SOS
+                href: ../core/diagnostics/sos-debugging-extension.md
           - name: EventCounters
-            href: ../core/diagnostics/event-counters.md
+            items:
+              - name: Vue d’ensemble
+                displayName: EventCounters
+                href: ../core/diagnostics/event-counters.md
+              - name: Compteurs connus dans .NET
+                href: ../core/diagnostics/available-counters.md
           - name: EventPipe
             href: ../core/diagnostics/eventpipe.md
           - name: Journalisation et suivi
-            href: ../core/diagnostics/logging-tracing.md
+            items:
+              - name: Vue d’ensemble
+                displayName: logging and tracing
+                href: ../core/diagnostics/logging-tracing.md
+              - name: Fournisseur d'événements connus
+                href: ../core/diagnostics/well-known-event-providers.md
           - name: Événements du runtime
             items:
               - name: Vue d’ensemble
@@ -413,7 +427,7 @@ items:
                 href: ../fundamentals/diagnostics/runtime-garbage-collection-events.md
               - name: Événements d’interopérabilité
                 href: ../fundamentals/diagnostics/runtime-interop-events.md
-              - name: Événements de chargeur et de module de liaison
+              - name: Événements de chargeur et de binder
                 href: ../fundamentals/diagnostics/runtime-loader-binder-events.md
               - name: Événements de méthode
                 href: ../fundamentals/diagnostics/runtime-method-events.md
@@ -579,8 +593,6 @@ items:
                         href: code-analysis/quality-rules/ca1069.md
                       - name: CA1070
                         href: code-analysis/quality-rules/ca1070.md
-                      - name: CA1071
-                        href: code-analysis/quality-rules/ca1071.md
                   - name: Règles de documentation
                     items:
                       - name: Vue d'ensemble
