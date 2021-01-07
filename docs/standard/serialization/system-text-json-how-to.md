@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: bd257cf8d79ea2afa209fe71ad7eff969a62d6b2
-ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
+ms.openlocfilehash: 541ac80ce40b0410167b14f96e36b354d19411db
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97938713"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970900"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -311,5 +311,6 @@ Les méthodes d’extension sur `HttpClient` et ne `HttpContent` sont pas dispon
 * [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
 * [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
 * [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
+* [Types de collections pris en charge dans System.Text.Json](system-text-json-supported-collection-types.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
 * [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)

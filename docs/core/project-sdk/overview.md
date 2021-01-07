@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Découvrez les kits de développement logiciel (SDK) de projet .NET.
 ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6b6651f674f09d5d0d18ddb873096037ad3b2ba5
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: 270735c9eef9f1930680687917317ac8bdf39e6d
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247569"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970692"
 ---
 # <a name="net-project-sdks"></a>SDK de projet .NET
 
@@ -83,9 +83,9 @@ Si le projet comporte plusieurs frameworks cibles, vous ne concentrez les résul
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
-### <a name="default-compilation-includes"></a>La compilation par défaut comprend
+### <a name="default-includes-and-excludes"></a>Inclusions et exclusions par défaut
 
-Les éléments include et Exclude par défaut pour les éléments de compilation, les ressources incorporées et `None` les éléments sont définis dans le kit de développement logiciel (SDK). Contrairement aux projets de .NET Framework non SDK, vous n’avez pas besoin de spécifier ces éléments dans votre fichier projet, car les valeurs par défaut couvrent les cas d’utilisation les plus courants. Cela rend le fichier projet plus petit et plus facile à comprendre et à modifier manuellement, si nécessaire.
+La valeur par défaut inclut et exclut [ `Compile` les éléments, les](/visualstudio/msbuild/common-msbuild-project-items#compile) [ressources incorporées](/visualstudio/msbuild/common-msbuild-project-items#embeddedresource)et les [ `None` éléments](/visualstudio/msbuild/common-msbuild-project-items#none) sont définis dans le kit de développement logiciel (SDK). Contrairement aux projets de .NET Framework non SDK, vous n’avez pas besoin de spécifier ces éléments dans votre fichier projet, car les valeurs par défaut couvrent les cas d’utilisation les plus courants. Ce comportement rend le fichier projet plus petit et plus facile à comprendre et à modifier manuellement, si nécessaire.
 
 Le tableau suivant répertorie les éléments et les [modèles glob](https://en.wikipedia.org/wiki/Glob_(programming)) inclus et exclus dans le kit de développement logiciel (SDK) .net :
 
@@ -93,10 +93,10 @@ Le tableau suivant répertorie les éléments et les [modèles glob](https://en.
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
 | Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| Aucune              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
+| None              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx |
 
 > [!NOTE]
-> Les `./bin` `./obj` dossiers et, représentés par les `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` Propriétés et MSBuild, sont exclus par défaut de modèles glob. Les exclusions sont représentées par la propriété `$(DefaultItemExcludes)` .
+> Les `./bin` `./obj` dossiers et, représentés par les `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` Propriétés et MSBuild, sont exclus par défaut de modèles glob. Les exclusions sont représentées par la [propriété DefaultItemExcludes](msbuild-props.md#defaultitemexcludes).
 
 #### <a name="build-errors"></a>Erreurs de build
 
@@ -110,7 +110,7 @@ Pour résoudre les erreurs, effectuez l’une des opérations suivantes :
 
 - Supprimez les `Compile` éléments explicites, `EmbeddedResource` ou `None` qui correspondent aux éléments implicites listés dans le tableau précédent.
 
-- Affectez à la propriété la valeur `EnableDefaultItems` `false` pour désactiver toute inclusion de fichier implicite :
+- Affectez à la [propriété EnableDefaultItems](msbuild-props.md#enabledefaultitems) la valeur `false` pour désactiver toute inclusion de fichier implicite :
 
   ```xml
   <PropertyGroup>
@@ -120,7 +120,7 @@ Pour résoudre les erreurs, effectuez l’une des opérations suivantes :
 
   Si vous souhaitez spécifier des fichiers à publier avec votre application, vous pouvez toujours utiliser les mécanismes MSBuild connus pour cela, par exemple, l' `Content` élément.
 
-- Désactivez de manière sélective uniquement `Compile` , `EmbeddedResource` ou `None` modèles glob en affectant `EnableDefaultCompileItems` à la propriété, ou la valeur `EnableDefaultEmbeddedResourceItems` `EnableDefaultNoneItems` `false` :
+- Désactivez de manière sélective uniquement `Compile` , `EmbeddedResource` ou `None` modèles glob en affectant à la propriété [EnableDefaultCompileItems](msbuild-props.md#enabledefaultcompileitems), [EnableDefaultEmbeddedResourceItems](msbuild-props.md#enabledefaultembeddedresourceitems)ou [EnableDefaultNoneItems](msbuild-props.md#enabledefaultnoneitems) la valeur `false` :
 
   ```xml
   <PropertyGroup>

@@ -1,19 +1,19 @@
 ---
 title: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 description: Bénéficiez d’une vue d’ensemble du processus de développement et de déploiement pour le développement et le déploiement d’applications en conteneur avec l’arrimeur et la plateforme et les outils Microsoft.
-ms.date: 11/10/2020
-ms.openlocfilehash: cf20ea97ec252649cdb14add40ead67b6319520a
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.date: 01/06/2021
+ms.openlocfilehash: 94c277e349bacee9b9fc7b160043005dd4135958
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506660"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970113"
 ---
 # <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 
 ![Couverture de livre](./media/devops-book-cover-large-we.png)
 
-**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
+**Édition v 5.0** -mise à jour vers ASP.net Core 5,0
 
 Reportez-vous à [Journal des modifications](https://aka.ms/DockerLifecycleEbookChangelog) pour les mises à jour de livres et les contributions de la communauté.
 
@@ -29,7 +29,7 @@ Nous avons rédigé ce guide pour vous aider à comprendre l’architecture des 
 
 Auteur :
 
-> **Cesar de la Torre** , chef de produit, équipe produit .NET, Microsoft Corp.
+> **Cesar de la Torre**, chef de produit, équipe produit .NET, Microsoft Corp.
 
 Éditeur des acquisitions :
 
@@ -37,7 +37,7 @@ Auteur :
 
 Éditeur de développement :
 
-> **Bob Olivier** , solutions Professional chez Microsoft
+> **Bob Olivier**, solutions Professional chez Microsoft
 >
 > [**Octal publication, Inc.**](http://www.octalpub.com/)
 
@@ -49,15 +49,15 @@ Production éditoriale :
 
 Copyeditor:
 
-> **Bob Olivier** , solutions Professional chez Microsoft
+> **Bob Olivier**, solutions Professional chez Microsoft
 
 Participants et réviseurs :
 
-> **Nish Anil** , responsable de programme senior, équipe .NET, Microsoft
+> **Nish Anil**, responsable de programme senior, équipe .NET, Microsoft
 >
-> **Miguel Veloso** , ingénieur de développement logiciel chez des concepts simples
+> **Miguel Veloso**, ingénieur de développement logiciel chez des concepts simples
 >
-> **Sumit Ghosh** , consultant principal chez Neudesic
+> **Sumit Ghosh**, consultant principal chez Neudesic
 
 ## <a name="copyright"></a>copyright
 
@@ -71,7 +71,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright &copy; 2020 par Microsoft Corporation
+Copyright &copy; 2021 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 

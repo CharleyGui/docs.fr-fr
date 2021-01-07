@@ -3,13 +3,13 @@ title: Installer .NET sur CentOS-.NET
 description: Montre les différentes façons d’installer le kit de développement logiciel (SDK) .NET et le Runtime .NET sur CentOS.
 author: adegeo
 ms.author: adegeo
-ms.date: 11/10/2020
-ms.openlocfilehash: 2c3453c79a1dc31f01577bc0c1b9e320eb307c0a
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.date: 01/06/2021
+ms.openlocfilehash: 7e73f90a1f1f7e11e592b1b074f243c9f5b32ced
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851677"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970861"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-centos"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur CentOS
 
@@ -44,10 +44,6 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 
 [!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
-## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
-
-[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
-
 ## <a name="centos-8-"></a>CentOS 8 ✔️
 
 .NET 5,0 est disponible dans les référentiels de packages par défaut pour CentOS 8.
@@ -64,6 +60,10 @@ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-
 
 [!INCLUDE [linux-yum-install-50](includes/linux-install-50-yum.md)]
 
+## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
+
+[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET.
@@ -76,22 +76,11 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 
 [!INCLUDE [package-manager-failed-to-fetch-rpm](includes/package-manager-failed-to-fetch-rpm.md)]
 
-## <a name="snap"></a>Snap
-
-[!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
-
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 [!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
-## <a name="scripted-install"></a>Installation par script
-
-[!INCLUDE [linux-install-scripted](includes/linux-install-scripted.md)]
-
-## <a name="manual-install"></a>Installation manuelle
-
-[!INCLUDE [linux-install-manual](includes/linux-install-manual.md)]
-
 ## <a name="next-steps"></a>Étapes suivantes
 
+- [Comment activer la saisie semi-automatique via la touche TAB pour .NET CLI](../tools/enable-tab-autocomplete.md)
 - [Didacticiel : créer une application console avec le kit de développement logiciel (SDK) .NET à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)

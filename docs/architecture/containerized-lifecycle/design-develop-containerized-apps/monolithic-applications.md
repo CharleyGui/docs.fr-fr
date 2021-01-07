@@ -1,13 +1,13 @@
 ---
 title: Applications monolithiques
 description: Comprenez les principes de base de la mise en conteneur des applications monolithiques.
-ms.date: 08/06/2020
-ms.openlocfilehash: c9a5baf209a47f62f421a236c0b04fe5dae37e3a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/06/2021
+ms.openlocfilehash: a66c76c473c116b303975040d893348182b96713
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163542"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970536"
 ---
 # <a name="monolithic-applications"></a>Applications monolithiques
 
@@ -69,7 +69,7 @@ Que vous vouliez obtenir une validation rapide d’un conteneur déployé sur Az
 
 L’utilisation d’Azure App Service s’avère intuitive et vous permet d’être rapidement opérationnel. En effet, grâce à sa parfaite intégration de Git, votre code est généré dans Microsoft Visual Studio et directement déployé dans Azure. En revanche, par le passé (avant Docker), si vous aviez besoin d’autres fonctionnalités, frameworks ou dépendances qui n’étaient pas prises en charge dans App Services, vous deviez attendre que l’équipe Azure mette à jour ces dépendances dans App Service ou vous tourner vers d’autres services comme Service Fabric, Cloud Services, voire de simples machines virtuelles, que vous pouviez mieux contrôler et sur lesquelles vous pouviez installer le composant ou le framework dont avait besoin votre application.
 
-Désormais, comme le montre la figure 4-4, quand vous utilisez Visual Studio 2017, la prise en charge des conteneurs dans Azure App Service vous offre la possibilité d’inclure tout ce que vous voulez dans l’environnement de votre application. Si vous avez ajouté une dépendance à votre application, parce que vous l’exécutez dans un conteneur, vous avez la possibilité d’inclure ces dépendances dans votre fichier Dockerfile ou image Docker.
+À présent, comme le montre la figure 4-4, lorsque vous utilisez Visual Studio 2019, la prise en charge des conteneurs dans Azure App Service vous donne la possibilité d’inclure ce que vous souhaitez dans votre environnement d’application. Si vous avez ajouté une dépendance à votre application, parce que vous l’exécutez dans un conteneur, vous avez la possibilité d’inclure ces dépendances dans votre fichier Dockerfile ou image Docker.
 
 ![Capture d’écran de la boîte de dialogue créer un App Service montrant une Container Registry.](./media/monolithic-applications/publish-azure-app-service-container.png)
 

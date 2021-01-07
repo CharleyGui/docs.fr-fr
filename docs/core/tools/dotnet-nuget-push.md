@@ -3,12 +3,12 @@ title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 50a4a542c2d192bfbd927845489d04fd1b6c6cf3
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 99e735f7bb18b7af1c12c3ef77fc150a19083542
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555121"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970653"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -74,7 +74,9 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
 
 - **`-s|--source <SOURCE>`**
 
-  Spécifie l’URL du serveur. Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.
+  Spécifie l’URL du serveur. NuGet identifie une source de dossier local ou UNC et copie simplement le fichier ici au lieu de l’envoyer à l’aide du protocole HTTP.
+  > [!IMPORTANT]
+  > À partir de NuGet 3.4.2, il s’agit d’un paramètre obligatoire, sauf si le fichier de configuration NuGet spécifie une `DefaultPushSource` valeur. Pour plus d’informations, consultez la page [Configurer le comportement de NuGet](/nuget/consume-packages/configuring-nuget-behavior).
 
 - **`--skip-duplicate`**
 
@@ -94,7 +96,7 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
 
 ## <a name="examples"></a>Exemples
 
-- Envoyez *foo. nupkg* à la source push par défaut, en spécifiant une clé API :
+- Envoyez *foo. nupkg* à la source push par défaut spécifiée dans le fichier de configuration NuGet, à l’aide d’une clé API :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
@@ -112,7 +114,7 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
   ```
 
-- Envoyez *foo. nupkg* vers la source de push par défaut :
+- Envoyez *foo. nupkg* à la source push par défaut spécifiée dans le fichier de configuration NuGet :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg
@@ -124,13 +126,13 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
   dotnet nuget push foo.symbols.nupkg
   ```
 
-- Envoyez *foo. nupkg* à la source de push par défaut, en spécifiant un délai de 360 seconde :
+- Envoyez *foo. nupkg* à la source push par défaut spécifiée dans le fichier de configuration NuGet, avec un délai de 360 seconde :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg --timeout 360
   ```
 
-- Envoyer tous les fichiers *. nupkg* du répertoire actif vers la source de push par défaut :
+- Envoyer tous les fichiers *. nupkg* du répertoire actif vers la source de push par défaut spécifiée dans le fichier de configuration NuGet :
 
   ```dotnetcli
   dotnet nuget push "*.nupkg"
@@ -143,7 +145,7 @@ La commande exécute un push d’un package existant. Il ne crée pas de package
   > [!NOTE]
   > Les guillemets englobantes sont requis pour les shells tels que bash qui effectuent des globbing de fichier. Pour plus d’informations, consultez [NuGet/page de démarrage # 4393](https://github.com/NuGet/Home/issues/4393#issuecomment-667618120).
 
-- Envoyer tous les fichiers *. nupkg* même si une réponse de conflit 409 est retournée par un serveur http (S) :
+- Envoyer tous les fichiers *. nupkg* vers la source de push par défaut spécifiée dans le fichier de configuration NuGet, même si une réponse de conflit 409 est retournée par un serveur http (S) :
 
   ```dotnetcli
   dotnet nuget push "*.nupkg" --skip-duplicate

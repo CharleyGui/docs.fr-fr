@@ -3,19 +3,19 @@ title: Comment MSBuild génère des noms de fichiers manifestes
 description: Décrit les facteurs qui influencent le nom d’un fichier manifeste de ressources généré par MSBuild au moment de la compilation.
 ms.date: 05/08/2020
 ms.topic: conceptual
-ms.openlocfilehash: 383bf6a077b0631e70ddaa4721b20e992127a73c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 2e0461e34bbd7f8da35bea1db1913a32915c7117
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83232325"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970679"
 ---
 # <a name="how-resource-manifest-files-are-named"></a>Nom des fichiers manifestes de ressources
 
 Lorsque MSBuild compile un projet .NET Core, les fichiers de ressources XML, qui ont l’extension de fichier *. resx* , sont convertis en fichiers *. Resources* binaires. Les fichiers binaires sont incorporés dans la sortie du compilateur et peuvent être lus par le <xref:System.Resources.ResourceManager> . Cet article explique comment MSBuild choisit un nom pour chaque fichier *. Resources* .
 
 > [!TIP]
-> Si vous ajoutez explicitement un élément de ressource à votre fichier projet et qu’il est également [inclus avec le modèles glob par défaut pour .net Core](../project-sdk/overview.md#default-compilation-includes), vous obtiendrez une erreur de Build. Pour inclure manuellement les fichiers de ressources en tant qu' `EmbeddedResource` éléments, affectez la valeur `EnableDefaultEmbeddedResourceItems` false à la propriété.
+> Si vous ajoutez explicitement un élément de ressource à votre fichier projet et qu’il est également [inclus avec le modèles glob par défaut pour .net Core](../project-sdk/overview.md#default-includes-and-excludes), vous obtiendrez une erreur de Build. Pour inclure manuellement les fichiers de ressources en tant qu' `EmbeddedResource` éléments, affectez la valeur `EnableDefaultEmbeddedResourceItems` false à la propriété.
 
 ## <a name="default-name"></a>Nom par défaut
 
@@ -24,11 +24,11 @@ Dans .NET Core 3,0 et versions ultérieures, le nom par défaut d’un manifeste
 - Le fichier de ressources n’est pas explicitement inclus dans le fichier projet en tant qu' `EmbeddedResource` élément avec les `LogicalName` `ManifestResourceName` `DependentUpon` métadonnées, ou.
 - La `EmbeddedResourceUseDependentUponConvention` propriété n’a pas la valeur `false` dans le fichier projet. Par défaut, cette propriété est définie sur `true`. Pour plus d’informations, consultez [EmbeddedResourceUseDependentUponConvention](../project-sdk/msbuild-props.md#embeddedresourceusedependentuponconvention).
 
-Si le fichier de ressources est colocalisé avec un fichier source (*. cs* ou *. vb*) du même nom de fichier racine, le nom complet du premier type défini dans le fichier source est utilisé pour le nom du fichier manifeste. Par exemple, si `MyNamespace.Form1` est le premier type défini dans *Form1.cs*et que *Form1.cs* est colocalisé avec *Form1. resx*, le nom du manifeste généré pour ce fichier de ressources est *MyNamespace. Form1. Resources*.
+Si le fichier de ressources est colocalisé avec un fichier source (*. cs* ou *. vb*) du même nom de fichier racine, le nom complet du premier type défini dans le fichier source est utilisé pour le nom du fichier manifeste. Par exemple, si `MyNamespace.Form1` est le premier type défini dans *Form1.cs* et que *Form1.cs* est colocalisé avec *Form1. resx*, le nom du manifeste généré pour ce fichier de ressources est *MyNamespace. Form1. Resources*.
 
 ## <a name="logicalname-metadata"></a>Métadonnées LogicalName
 
-Si un fichier de ressources est explicitement inclus dans le fichier projet en tant qu' `EmbeddedResource` élément avec des `LogicalName` métadonnées, la `LogicalName` valeur est utilisée comme nom de manifeste. `LogicalName`est prioritaire sur toutes les autres métadonnées ou paramètres.
+Si un fichier de ressources est explicitement inclus dans le fichier projet en tant qu' `EmbeddedResource` élément avec des `LogicalName` métadonnées, la `LogicalName` valeur est utilisée comme nom de manifeste. `LogicalName` est prioritaire sur toutes les autres métadonnées ou paramètres.
 
 Par exemple, le nom du manifeste du fichier de ressources qui est défini dans l’extrait de code du fichier projet suivant est *nom. Resources*.
 
@@ -36,7 +36,7 @@ Par exemple, le nom du manifeste du fichier de ressources qui est défini dans l
 <EmbeddedResource Include="X.resx" LogicalName="SomeName.resources" />
 ```
 
--ou-
+- ou -
 
 ```xml
 <EmbeddedResource Include="X.fr-FR.resx" LogicalName="SomeName.resources" />

@@ -3,13 +3,13 @@ title: Installer .NET sur Windows
 description: Découvrez les versions de Windows sur lesquelles vous pouvez installer .NET.
 author: adegeo
 ms.author: adegeo
-ms.date: 11/10/2020
-ms.openlocfilehash: b5c0949bbd591906536094a33d8583a265d8a4c8
-ms.sourcegitcommit: 9b877e160c326577e8aa5ead22a937110d80fa44
+ms.date: 01/06/2021
+ms.openlocfilehash: 9d39ec28ea2cea875ddd6da34b92eeb740ee6638
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97110232"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970744"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -84,7 +84,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net.
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
@@ -98,7 +98,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET 5,0 :
 
 | Système d''exploitation                  | Version       | Architectures   |
 |---------------------|---------------|-----------------|
-| Client Windows 10   | Version 1607 + | x64, x86, ARM64 |
+| Client Windows 10   | Version 1607+ | x64, x86, ARM64 |
 | Client Windows      | 7 SP1 +, 8,1   | x64, x86        |
 | Windows Server      | 2012 R2 +      | x64, x86        |
 | Ordinateur Windows Server principal | 2012 R2 +      | x64, x86        |
@@ -116,9 +116,9 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,1 :
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
-| Client Windows 10             | Version 1607 +                  | x64, x86        |
+| Client Windows 10             | Version 1607+                  | x64, x86        |
 | Windows Server                | 2012 R2 +                       | x64, x86        |
-| Nano Server                   | Version 1803 +                  | x64, ARM32      |
+| Nano Server                   | Version 1803                  | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,1](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
 
@@ -134,9 +134,9 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 3,0 :
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
-| Client Windows 10             | Version 1607 +                  | x64, x86        |
+| Client Windows 10             | Version 1607+                  | x64, x86        |
 | Windows Server                | 2012 R2 +                       | x64, x86        |
-| Nano Server                   | Version 1803 +                  | x64, ARM32      |
+| Nano Server                   | Version 1803                  | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 3,0 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
@@ -152,9 +152,9 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,2 :
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
-| Client Windows 10             | Version 1607 +                  | x64, x86        |
+| Client Windows 10             | Version 1607+                  | x64, x86        |
 | Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
-| Nano Server                   | Version 1803 +                   | x64, ARM32      |
+| Nano Server                   | Version 1803                   | x64, ARM32      |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,2 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
 
@@ -168,9 +168,9 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,1 :
 | Système d''exploitation                            | Version                        | Architectures   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Client Windows                | 7 SP1 +, 8,1                    | x64, x86        |
-| Client Windows 10             | Version 1607 +                  | x64, x86        |
+| Client Windows 10             | Version 1607+                  | x64, x86        |
 | Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
-| Nano Server                   | Version 1803 +                  | 64x            |
+| Nano Server                   | Version 1803                  | 64x            |
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
 

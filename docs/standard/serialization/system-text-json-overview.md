@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: cb5c15c2a5c336e2d5b4a3754fa7a02a370602f3
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: b4432e7a137720216e7c0941b3384ce7ad7049e9
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009883"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970913"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Sérialisation et désérialisation JSON (marshaling et démarshaling) dans .NET-vue d’ensemble
 
@@ -51,5 +51,6 @@ La bibliothèque fournit également des classes pour l’utilisation d’un mod�
 * [Écrire des sérialiseurs et des désérialiseurs personnalisés](write-custom-serializer-deserializer.md)
 * [Écrire des convertisseurs personnalisés pour la sérialisation JSON](system-text-json-converters-how-to.md)
 * [Prise en charge DateTime et DateTimeOffset](../datetime/system-text-json-support.md)
+* [Types de collections pris en charge dans System.Text.Json](system-text-json-supported-collection-types.md)
 * [System.Text.Json Référence d’API](xref:System.Text.Json)
 * [System.Text.Json. Référence de l’API de sérialisation](xref:System.Text.Json.Serialization)

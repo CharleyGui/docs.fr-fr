@@ -3,13 +3,13 @@ title: Installer .NET sur openSUSE-.NET
 description: Montre les différentes façons d’installer le kit de développement logiciel (SDK) .NET et le Runtime .NET sur openSUSE.
 author: adegeo
 ms.author: adegeo
-ms.date: 11/10/2020
-ms.openlocfilehash: eb31e3109ccd40999c22a27607d48544bf117dc2
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.date: 01/06/2021
+ms.openlocfilehash: 7a519f19f708e1f12af1e9715bad4f38a607f9c3
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031863"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970809"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-opensuse"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur openSUSE
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les versions .NET actuellement prises en charge s
 - Une ❌ indique que la version de openSUSE ou .net n’est pas prise en charge sur cette version de openSUSE.
 - Quand une version de openSUSE et une version de .NET sont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
 
-| OpenSUSE                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
+| OpenSUSE                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5.0 |
 |----------------------------|---------------|---------------|----------------|
 | ✔️ [15](#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
@@ -40,10 +40,6 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 ## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
 
 [!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
-
-## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
-
-[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
 ## <a name="opensuse-15-"></a>openSUSE 15 ✔️
 
@@ -59,6 +55,10 @@ sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 
 [!INCLUDE [linux-zyp-install-50](includes/linux-install-50-zyp.md)]
 
+## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
+
+[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
 Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET.
@@ -70,10 +70,6 @@ Cette section fournit des informations sur les erreurs courantes que vous pouvez
 ### <a name="failed-to-fetch"></a>Échec de la récupération
 
 [!INCLUDE [package-manager-failed-to-fetch-rpm](includes/package-manager-failed-to-fetch-rpm.md)]
-
-## <a name="snap"></a>Snap
-
-[!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
 ## <a name="dependencies"></a>Dépendances
 
@@ -92,16 +88,9 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
-
-## <a name="scripted-install"></a>Installation par script
-
-[!INCLUDE [linux-install-scripted](includes/linux-install-scripted.md)]
-
-## <a name="manual-install"></a>Installation manuelle
-
-[!INCLUDE [linux-install-manual](includes/linux-install-manual.md)]
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
+- [Comment activer la saisie semi-automatique via la touche TAB pour .NET CLI](../tools/enable-tab-autocomplete.md)
 - [Didacticiel : créer une application console avec le kit de développement logiciel (SDK) .NET à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)

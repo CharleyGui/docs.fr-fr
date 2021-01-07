@@ -2,12 +2,12 @@
 title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
-ms.openlocfilehash: 0d4190a02389089a888d8b52dd8e7c412636b575
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 73fbfed6943e3eb535e6eead3b3496edd3426c26
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538248"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970718"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
@@ -23,7 +23,7 @@ Ce document s’applique uniquement aux projets .NET Core plus anciens qui utili
 
 La migration à partir de *project.json* vers *.csproj* peut être effectuée à l’aide de l’une des méthodes suivantes :
 
-- [Visual Studio](#visual-studio)
+- [Visual Studio](#visual-studio)
 - [Outil de ligne de commande dotnet migrate](#dotnet-migrate)
 
 Les deux méthodes utilisant le même moteur sous-jacent pour migrer les projets, les résultats obtenus sont donc identiques dans les deux cas. Dans la plupart des cas, l’utilisation de l’une de ces deux méthodes pour migrer le *project.jssur* *csproj* est la seule chose nécessaire et aucune autre modification manuelle du fichier projet n’est nécessaire. Le fichier *.csproj* obtenu porte le même nom que le répertoire le contenant.
@@ -36,7 +36,7 @@ Quand vous ouvrez un fichier *. xproj* ou un fichier solution qui fait référen
 
 Visual Studio migre automatiquement les projets sélectionnés. Lors de la migration d’une solution, si vous ne choisissez pas tous les projets, la même boîte de dialogue s’affiche pour vous demander de mettre à niveau les projets restants à partir de cette solution. Une fois le projet migré, vous pouvez afficher et modifier son contenu en cliquant avec le bouton droit sur le projet dans la fenêtre **Explorateur de solutions** et en sélectionnant **modifier \<project name> . csproj**.
 
-Les fichiers qui ont été migrés (*project.jssur*, *global.js*, *. xproj*et fichier solution) sont déplacés vers un dossier de *sauvegarde* . Le fichier solution migrée est mis à niveau vers Visual Studio 2017 ou Visual Studio 2019 et vous ne pouvez pas ouvrir ce fichier solution dans Visual Studio 2015 ou versions antérieures. Un fichier nommé *UpgradeLog.htm* qui contient un rapport de migration est également enregistré et ouvert automatiquement.
+Les fichiers qui ont été migrés (*project.jssur*, *global.js*, *. xproj* et fichier solution) sont déplacés vers un dossier de *sauvegarde* . Le fichier solution migrée est mis à niveau vers Visual Studio 2017 ou Visual Studio 2019 et vous ne pouvez pas ouvrir ce fichier solution dans Visual Studio 2015 ou versions antérieures. Un fichier nommé *UpgradeLog.htm* qui contient un rapport de migration est également enregistré et ouvert automatiquement.
 
 > [!IMPORTANT]
 > Dans Visual Studio 2019 version 16,3 et versions ultérieures, vous ne pouvez pas charger ou migrer un fichier *. xproj* . En outre, Visual Studio 2015 ne permet pas de migrer un fichier *. xproj* . Si vous utilisez l’une de ces versions de Visual Studio, installez une version appropriée de Visual Studio ou utilisez l’outil de migration en ligne de commande décrit ci-après.
@@ -45,7 +45,7 @@ Les fichiers qui ont été migrés (*project.jssur*, *global.js*, *. xproj*et fi
 
 Dans le scénario de ligne de commande, vous pouvez utiliser la [`dotnet migrate`](../tools/dotnet-migrate.md) commande. Il migre un projet, une solution ou un ensemble de dossiers dans cet ordre, en fonction de ceux qui ont été trouvés. Quand vous migrez un projet, le projet et toutes ses dépendances sont migrés.
 
-Les fichiers qui ont été migrés (*project.jssur*, *global.js*et *. xproj*) sont déplacés vers un dossier de *sauvegarde* .
+Les fichiers qui ont été migrés (*project.jssur*, *global.js* et *. xproj*) sont déplacés vers un dossier de *sauvegarde* .
 
 > [!NOTE]
 > Si vous utilisez Visual Studio Code, la `dotnet migrate` commande ne modifie pas les fichiers spécifiques à Visual Studio code, tels que *tasks.jssur*. Ces fichiers doivent être modifiés manuellement.
@@ -80,7 +80,7 @@ Le format csproj .NET Core est modifié et évolue avec chaque nouvelle version 
 - Supprimez les instructions `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` et `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` en haut et en bas du projet. Ces instructions d’importation étant indiquées implicitement par le SDK, il est inutile qu’elles figurent dans le projet.
 - Si vous avez `Microsoft.NETCore.App` des `NETStandard.Library` `<PackageReference>` éléments ou dans votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](../tools/csproj.md).
 - Supprimez l' `Microsoft.NET.Sdk` `<PackageReference>` élément, s’il existe. La référence SDK est fournie par l’attribut `Sdk` sur l’élément `<Project>`.
-- Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../project-sdk/overview.md#default-compilation-includes). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
+- Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../project-sdk/overview.md#default-includes-and-excludes). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
 
 Une fois ces étapes effectuées, votre projet doit être entièrement compatible avec le format csproj .NET Core final.
 

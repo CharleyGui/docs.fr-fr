@@ -3,17 +3,17 @@ title: Installer .NET sur Ubuntu-.NET
 description: Montre les différentes façons d’installer le kit de développement logiciel (SDK) .NET et le Runtime .NET sur Ubuntu.
 author: adegeo
 ms.author: adegeo
-ms.date: 11/10/2020
-ms.openlocfilehash: 22ce3379e028f065528e1f507a2d8c1ae598f0e8
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.date: 01/06/2021
+ms.openlocfilehash: 14e5e9548d4aa09a586e2038f3e35a489ee65cd2
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031842"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970762"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-ubuntu"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Ubuntu
 
-.NET est pris en charge sur Ubuntu. Cet article explique comment installer .NET sur Ubuntu. Quand une version d’Ubuntu n’est plus prise en charge, .NET n’est plus pris en charge avec cette version. Toutefois, ces instructions peuvent vous aider à faire fonctionner .NET sur ces versions, même si elles ne sont pas prises en charge.
+.NET est pris en charge sur Ubuntu. Cet article explique comment installer .NET sur Ubuntu. Quand une version d’Ubuntu n’est plus prise en charge, .NET n’est plus pris en charge avec cette version.
 
 [!INCLUDE [linux-intro-sdk-vs-runtime](includes/linux-intro-sdk-vs-runtime.md)]
 
@@ -27,17 +27,17 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 - Une ❌ indique que la version d’Ubuntu ou de .net n’est pas prise en charge sur cette version d’Ubuntu.
 - Quand une version d’Ubuntu et une version de .NET sont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
 
-| Ubuntu                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
+| Ubuntu                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5.0 |
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [20,10](#2010-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ [19.04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌ [18.10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌ [17.10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ❌ [17.04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
-| ❌[16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌ [16.10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
 Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargements sont toujours publiés :
@@ -50,14 +50,7 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 
 [!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
 
-## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
-
-[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
-
 ## <a name="2010-"></a>20,10 ✔️
-
-> [!IMPORTANT]
-> .NET Core 2,1 n’est pas encore disponible dans le flux de package.
 
 [!INCLUDE [linux-prep-intro-apt](includes/linux-prep-intro-apt.md)]
 
@@ -179,7 +172,11 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
-## <a name="apt-update-sdk-or-runtime"></a>Kit de développement logiciel (SDK) APT Update ou Runtime
+## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
+
+[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
+## <a name="use-apt-to-update-net"></a>Utiliser APT pour mettre à jour .NET
 
 Quand une nouvelle version de correctif est disponible pour .NET, vous pouvez simplement la mettre à niveau à l’aide de la commande APT avec les commandes suivantes :
 
@@ -218,10 +215,6 @@ sudo apt-get update; \
 
 [!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]
 
-## <a name="snap"></a>Snap
-
-[!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
-
 ## <a name="dependencies"></a>Dépendances
 
 Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
@@ -243,16 +236,9 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
-
-## <a name="scripted-install"></a>Installation par script
-
-[!INCLUDE [linux-install-scripted](includes/linux-install-scripted.md)]
-
-## <a name="manual-install"></a>Installation manuelle
-
-[!INCLUDE [linux-install-manual](includes/linux-install-manual.md)]
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
+- [Comment activer la saisie semi-automatique via la touche TAB pour .NET CLI](../tools/enable-tab-autocomplete.md)
 - [Didacticiel : créer une application console avec le kit de développement logiciel (SDK) .NET à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)

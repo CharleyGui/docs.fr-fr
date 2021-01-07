@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: c8638bc30ba09d8e8d464159aded60dcde4b8dc0
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: 7de9f623a57a6a094debd3e018edc1560d837fc2
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87427019"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970874"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -620,7 +620,7 @@ Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbui
 ```
 
 > [!NOTE]
-> Plusieurs [modèles d’utilisation des caractères génériques (globbing)](https://en.wikipedia.org/wiki/Glob_(programming)) par défaut sont ajoutés automatiquement par le SDK .NET Core. Pour plus d’informations, consultez [compilation par défaut avec](../project-sdk/overview.md#default-compilation-includes).
+> Plusieurs [modèles d’utilisation des caractères génériques (globbing)](https://en.wikipedia.org/wiki/Glob_(programming)) par défaut sont ajoutés automatiquement par le SDK .NET Core. Pour plus d’informations, consultez [compilation par défaut avec](../project-sdk/overview.md#default-includes-and-excludes).
 
 Tous les éléments MSBuild `ItemGroup` prennent en charge `Include`, `Exclude` et `Remove`.
 

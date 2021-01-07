@@ -3,13 +3,13 @@ title: Installer .NET sur Debian-.NET
 description: Montre les différentes façons d’installer le kit de développement logiciel (SDK) .NET et le Runtime .NET sur Debian.
 author: adegeo
 ms.author: adegeo
-ms.date: 11/10/2020
-ms.openlocfilehash: 683d0a9c47edf3cf9c47426d659e778eeb6f84df
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.date: 01/06/2021
+ms.openlocfilehash: 913d8bffdd6c0b5e88a70dae0ec4c8d732e80cc0
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031889"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970835"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-debian"></a>Installer le kit de développement logiciel (SDK) .NET ou le Runtime .NET sur Debian
 
@@ -27,11 +27,11 @@ Le tableau suivant répertorie les versions de .NET actuellement prises en charg
 - Une ❌ indique que la version de Debian ou de .net n’est pas prise en charge sur cette version Debian.
 - Quand une version de Debian et une version de .NET sont ✔️, cette combinaison de système d’exploitation et .NET est prise en charge.
 
-| Debian                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5,0 |
+| Debian                   | .NET Core 2.1 | .NET Core 3.1 | .NET 5.0 |
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌[8](#debian-8-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 
 Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargements sont toujours publiés :
 
@@ -42,10 +42,6 @@ Les versions suivantes de .NET ne sont plus prises en charge. Les téléchargeme
 ## <a name="remove-preview-versions"></a>Supprimer les versions préliminaires
 
 [!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
-
-## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
-
-[!INCLUDE [hack-pkgname](./includes/package-manager-heading-hack-pkgname.md)]
 
 ## <a name="debian-10-"></a>✔️ Debian 10
 
@@ -90,7 +86,11 @@ sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="apt-update-sdk-or-runtime"></a>Kit de développement logiciel (SDK) APT Update ou Runtime
+## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
+
+[!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
+## <a name="use-apt-to-update-net"></a>Utiliser APT pour mettre à jour .NET
 
 Quand une nouvelle version de correctif est disponible pour .NET, vous pouvez simplement la mettre à niveau à l’aide de la commande APT avec les commandes suivantes :
 
@@ -129,10 +129,6 @@ sudo apt-get update; \
 
 [!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]
 
-## <a name="snap"></a>Snap
-
-[!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
-
 ## <a name="dependencies"></a>Dépendances
 
 Lorsque vous installez avec un gestionnaire de package, ces bibliothèques sont installées pour vous. Toutefois, si vous installez manuellement .NET Core ou si vous publiez une application autonome, vous devez vous assurer que ces bibliothèques sont installées :
@@ -154,16 +150,9 @@ Pour les applications .NET Core qui utilisent l’assembly *System. Drawing. Com
 - libgdiplus (version 6.0.1 ou ultérieure)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
-
-## <a name="scripted-install"></a>Installation par script
-
-[!INCLUDE [linux-install-scripted](includes/linux-install-scripted.md)]
-
-## <a name="manual-install"></a>Installation manuelle
-
-[!INCLUDE [linux-install-manual](includes/linux-install-manual.md)]
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
+- [Comment activer la saisie semi-automatique via la touche TAB pour .NET CLI](../tools/enable-tab-autocomplete.md)
 - [Didacticiel : créer une application console avec le kit de développement logiciel (SDK) .NET à l’aide de Visual Studio Code](../tutorials/with-visual-studio-code.md)

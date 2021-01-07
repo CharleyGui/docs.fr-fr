@@ -17,12 +17,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: bf11edc3669916ba4d30a3648692ca9b084d4340
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 840e5b0e6a523ac8e3f24586d4980958cd58f613
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009817"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970887"
 ---
 # <a name="best-practices-for-comparing-strings-in-net"></a>Meilleures pratiques pour la comparaison de chaînes dans .NET
 
@@ -198,8 +198,8 @@ Le tableau suivant présente le mappage du contexte de chaîne sémantique à un
 |----------|--------------|-----------------------------------------------------|
 |Identificateurs internes respectant la casse.<br /><br /> Identificateurs respectant la casse dans des normes telles que XML et HTTP.<br /><br /> Paramètres liés à la sécurité respectant la casse.|Identificateur non linguistique, où les octets correspondent exactement.|<xref:System.StringComparison.Ordinal>|
 |Identificateurs internes ne respectant pas la casse.<br /><br /> Identificateurs ne respectant pas la casse dans des normes telles que XML et HTTP.<br /><br /> Chemins d'accès aux fichiers.<br /><br /> Clés et valeurs de Registre.<br /><br /> Variables d'environnement.<br /><br /> Identificateurs de ressource (par exemple, noms de handles).<br /><br /> Paramètres liés à la sécurité ne respectant pas la casse.|Identificateur non linguistique, où la casse n'est pas pertinente ; en particulier, les données stockées dans la plupart des services système Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
-|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
-|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
+|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|
+|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|
 
 ## <a name="common-string-comparison-methods-in-net"></a>Méthodes courantes de comparaison de chaînes dans .NET
 
@@ -234,7 +234,7 @@ La classe <xref:System.String> vous permet de tester l'égalité en appelant les
 
 Interprétation par défaut : <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.
 
-Vous devez faire preuve de prudence quand vous utilisez ces méthodes, car imposer une majuscule ou une minuscule dans une chaîne est souvent utilisé comme une petite normalisation pour la comparaison de chaînes indépendamment de la casse. Si tel est le cas, vous devez envisager d'utiliser une comparaison ne respectant pas la casse.
+Soyez prudent lorsque vous utilisez les <xref:System.String.ToUpper?displayProperty=nameWithType> <xref:System.String.ToLower?displayProperty=nameWithType> méthodes et, car la force d’une chaîne en majuscules ou en minuscules est souvent utilisée comme une petite normalisation pour comparer des chaînes indépendamment de la casse. Si tel est le cas, vous devez envisager d'utiliser une comparaison ne respectant pas la casse.
 
 Les méthodes <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> et <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> sont également disponibles. <xref:System.String.ToUpperInvariant%2A> est le moyen standard de normaliser la casse. Les comparaisons faites à l'aide de <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> sont, sur le plan comportemental, la composition de deux appels : appel à <xref:System.String.ToUpperInvariant%2A> sur les deux arguments de chaîne, et exécution d'une comparaison à l'aide de <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.
 
@@ -244,7 +244,7 @@ Des surcharges sont également disponibles pour la conversion en majuscules et e
 
 Interprétation par défaut : <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.
 
-Ces méthodes fonctionnent de la même façon que les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType> et <xref:System.String.ToLower%2A?displayProperty=nameWithType> décrites dans la section précédente.
+Les <xref:System.Char.ToUpper(System.Char)?displayProperty=nameWithType> méthodes et fonctionnent de la <xref:System.Char.ToLower(System.Char)?displayProperty=nameWithType> même façon que les <xref:System.String.ToUpper?displayProperty=nameWithType> <xref:System.String.ToLower?displayProperty=nameWithType> méthodes et décrites dans la section précédente.
 
 ### <a name="stringstartswith-and-stringendswith"></a>String.StartsWith et String.EndsWith
 

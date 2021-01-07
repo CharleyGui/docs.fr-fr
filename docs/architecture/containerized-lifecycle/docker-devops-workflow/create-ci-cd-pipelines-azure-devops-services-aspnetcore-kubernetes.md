@@ -1,15 +1,15 @@
 ---
-title: Étapes du workflow DevOps de la boucle externe pour une application Docker
+title: Créer des pipelines CI/CD dans Azure DevOps Services pour une application .NET sur des conteneurs et déploiement sur un cluster Kubernetes
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
-ms.date: 08/06/2020
-ms.openlocfilehash: 1a973407d59484899f99fb6e326b8d7c8e97079b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.date: 01/06/2021
+ms.openlocfilehash: ef994f132716547ee402237016ee71013528d779
+ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915217"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97970484"
 ---
-# <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Création de pipelines CI/CD dans Azure DevOps Services pour une application .NET Core sur des conteneurs et déploiement sur un cluster Kubernetes
+# <a name="create-cicd-pipelines-in-azure-devops-services-for-a-net-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Créer des pipelines CI/CD dans Azure DevOps Services pour une application .NET sur des conteneurs et déploiement sur un cluster Kubernetes
 
 Dans la figure 5-12, vous pouvez voir le scénario DevOps de bout en bout couvrant la gestion du code, sa compilation, la création d’images Docker, leur poussée (push) vers un registre Docker et enfin le déploiement sur un cluster Kubernetes dans Azure.
 
