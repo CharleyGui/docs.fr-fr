@@ -9,12 +9,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 96a39609e9ae8b11e9872b049134136fe1ff3e2a
-ms.sourcegitcommit: 9d525bb8109216ca1dc9e39c149d4902f4b43da5
+ms.openlocfilehash: 2ceac94c04dd8deb169e836f09928dfd9a38ac35
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96599100"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025431"
 ---
 # <a name="structure-types-c-reference"></a>Types de structures (référence C#)
 
@@ -30,11 +30,7 @@ En général, vous utilisez des types de structure pour concevoir de petits type
 
 ## <a name="readonly-struct"></a>`readonly` modélis
 
-À compter de C# 7,2, vous utilisez le `readonly` modificateur pour déclarer qu’un type structure est immuable :
-
-[!code-csharp[readonly struct](snippets/shared/StructType.cs#ReadonlyStruct)]
-
-Tous les membres de données d’un `readonly` struct doivent être en lecture seule, comme suit :
+À compter de C# 7,2, vous utilisez le `readonly` modificateur pour déclarer qu’un type structure est immuable. Tous les membres de données d’un `readonly` struct doivent être en lecture seule, comme suit :
 
 - Toute déclaration de champ doit avoir le [ `readonly` modificateur](../keywords/readonly.md)
 - Toute propriété, y compris celles implémentées automatiquement, doit être en lecture seule. Dans C# 9,0 et versions ultérieures, une propriété peut avoir un [ `init` accesseur](../../whats-new/csharp-9.md#init-only-setters).
@@ -43,6 +39,10 @@ Cela garantit qu’aucun membre d’un `readonly` struct ne modifie l’état de
 
 > [!NOTE]
 > Dans un `readonly` struct, un membre de données d’un type référence mutable peut toujours muter son propre État. Par exemple, vous ne pouvez pas remplacer une <xref:System.Collections.Generic.List%601> instance, mais vous pouvez lui ajouter de nouveaux éléments.
+
+Le code suivant définit un `readonly` struct avec des accesseurs set de propriété init-only, disponible en C# 9,0 et versions ultérieures :
+
+[!code-csharp[readonly struct](snippets/shared/StructType.cs#ReadonlyStruct)]
 
 ## <a name="readonly-instance-members"></a>`readonly` membres d’instance
 

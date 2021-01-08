@@ -1,13 +1,13 @@
 ---
 title: Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
-ms.date: 04/30/2018
-ms.openlocfilehash: 8e9f1eda71e4b98a56cbfc1c7a4ff34e67bee3f4
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/21/2020
+ms.openlocfilehash: 4d592a5761cdf696f3e57516d747cbd770512053
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172155"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025327"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients compatibles avec le cloud : gérer les échecs passagers dans le cloud
 
@@ -35,7 +35,7 @@ Vous pouvez utiliser ces techniques à la fois dans les ressources HTTP et dans 
 
 Lors de l’implémentation de communications résilientes qui accèdent à la base de données, en fonction de la version de .NET que vous utilisez, elle peut être simple (par exemple, [avec Entity Framework 6 ou version ultérieure](/ef/ef6/fundamentals/connection-resiliency/retry-logic)). Il suffit de configurer la connexion à la base de données. Ou bien, vous devrez peut-être utiliser des bibliothèques supplémentaires telles que le [bloc applicatif de gestion des erreurs temporaires](/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pour les versions antérieures de .net) ou même implémenter votre propre bibliothèque.
 
-Lors de l’implémentation de nouvelles tentatives HTTP et de disjoncteurs, la recommandation pour .NET consiste à utiliser la bibliothèque [Polly](https://github.com/App-vNext/Polly) , qui cible .NET Framework 4,0, .NET Framework 4,5 et .NET standard 1,1, qui comprend la prise en charge de .net core.
+Lors de l’implémentation de nouvelles tentatives HTTP et de disjoncteurs, la recommandation pour .NET consiste à utiliser la bibliothèque [Polly](https://github.com/App-vNext/Polly) , qui cible .NET standard 1,1 (couverture : .net Core 1,0, mono, XAMARIN, UWP, WP 8.1 +) et .NET standard 2.0 + (couverture : .net Core 2.0 +, .net Core 3,0 et versions ultérieures mono, XAMARIN et UWP). Le package NuGet comprend également des cibles directes pour .NET Framework 4.6.1 et 4.7.2.
 
 Pour savoir comment implémenter des stratégies de gestion des défaillances partielles dans le Cloud, consultez les références suivantes.
 

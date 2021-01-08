@@ -1,13 +1,13 @@
 ---
 title: Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure.
-ms.date: 04/28/2018
-ms.openlocfilehash: d610222aa6649c1b28e198c074794dd316f895ec
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/21/2020
+ms.openlocfilehash: fb875c38cac236826007bba217189238b7c00898
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172168"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025392"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 
@@ -17,11 +17,11 @@ Avant d' *apprendre* à migrer vos applications existantes vers la plateforme Az
 
 Un autre point à analyser est la *raison pour laquelle* vous souhaiterez peut-être migrer vers le Cloud IaaS pur plutôt que d’ajouter simplement des services gérés plus avancés dans Azure. Déterminez les cas qui peuvent nécessiter IaaS en premier lieu.
 
-La figure 2-1 positionne les applications prêtes pour l’infrastructure cloud dans les niveaux de maturité de modernisation :
+La figure 2-1 positionne les applications Cloud Infrastructure-Ready dans les niveaux de maturité de modernisation :
 
-![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-1.png)
+![Positionnement des applications Infrastructure-Ready du Cloud](./media/image2-1.png)
 
-**Figure 2-1.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-1.** Positionnement des applications Infrastructure-Ready du Cloud
 
 ## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Pourquoi migrer des applications Web .NET existantes vers Azure IaaS
 
@@ -29,17 +29,17 @@ La principale raison de migrer vers le Cloud, même au niveau d’un IaaS initia
 
 Une fois que vous avez pris la décision de migrer vos applications vers le Cloud, la raison principale pour laquelle vous pouvez choisir IaaS plutôt que des options plus avancées comme PaaS est simplement que l’environnement IaaS sera plus familier. Le passage à un environnement similaire à votre environnement local actuel offre une courbe d’apprentissage inférieure, ce qui en fait le chemin le plus rapide vers le Cloud.
 
-Toutefois, le fait d’avoir le chemin le plus rapide vers le Cloud ne signifie pas que vous tirerez le meilleur parti de l’exécution de vos applications dans le Cloud. Toute organisation bénéficiera des avantages les plus significatifs d’une migration Cloud aux niveaux de maturité déjà introduits dans le Cloud et optimisés pour le Cloud.
+Toutefois, le fait d’avoir le chemin le plus rapide vers le Cloud ne signifie pas que vous tirerez le meilleur parti de l’exécution de vos applications dans le Cloud. Toute organisation bénéficiera des avantages les plus significatifs d’une migration Cloud à la Cloud-Optimized et Cloud-Native niveaux de maturité déjà introduits.
 
-Il est également évident que les applications sont plus faciles à moderniser et à remanier dans le futur quand elles s’exécutent déjà dans le Cloud, même sur IaaS. La migration des données d’application a déjà été effectuée. En outre, votre organisation aura acquis les compétences nécessaires pour travailler dans le Cloud et a fait passer le fonctionnement dans une « culture Cloud ».
+Il est également évident que les applications sont plus faciles à moderniser et à remanier dans le futur quand elles s’exécutent déjà dans le Cloud, même sur IaaS. La migration des données d’application a déjà été effectuée. En outre, votre organisation aura acquis les compétences requises pour travailler dans le Cloud et a fait passer le fonctionnement dans une « culture Cloud ».
 
 ## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Quand migrer vers IaaS au lieu de PaaS
 
-Les sections suivantes traitent des applications optimisées pour le Cloud qui sont principalement basées sur les plateformes et les services PaaS. Ces applications vous offrent les avantages de la migration vers le Cloud.
+Les sections suivantes abordent Cloud-Optimized applications qui sont principalement basées sur des plateformes et des services PaaS. Ces applications vous offrent les avantages de la migration vers le Cloud.
 
 Si votre objectif est simplement de déplacer des applications existantes vers le Cloud, identifiez d’abord les applications existantes qui ne nécessitent pas de modifications substantielles pour s’exécuter dans Azure App Service. Ces applications doivent être les premiers candidats à l’optimisation du Cloud.
 
-Ensuite, pour les applications qui ne peuvent toujours pas être migrées vers des conteneurs Windows et PaaS, comme des App Service ou des orchestrateurs tels que le service Azure Kubernetes, migrez-les vers des machines virtuelles simples (IaaS) simples.
+Ensuite, pour les applications qui ne peuvent toujours pas être migrées vers des conteneurs Windows et PaaS, comme des App Service ou des orchestrateurs tels que le service Azure Kubernetes, migrez ces applications vers des machines virtuelles simples (IaaS) simples.
 
 Toutefois, gardez à l’esprit que la configuration, la sécurisation et la maintenance des machines virtuelles nécessitent bien plus de temps et d’expertise informatique par rapport à l’utilisation des services PaaS dans Azure. Si vous envisagez d’utiliser des machines virtuelles Azure, veillez à prendre en compte l’effort de maintenance en cours requis pour corriger, mettre à jour et gérer votre environnement de machine virtuelle. Machines virtuelles Azure est IaaS.
 
@@ -63,9 +63,9 @@ Azure Migrate vous donne la certitude que vos charges de travail peuvent migrer 
 
 La figure 2-2 montre le mappage de dépendances intégré pour toutes les connexions de serveur et d’application effectuées par Azure Migrate.
 
-![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-2.png)
+![Positionnement des applications Infrastructure-Ready du Cloud](./media/image2-2.png)
 
-**Figure 2-2.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-2.** Positionnement des applications Infrastructure-Ready du Cloud
 
 ## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>Utiliser Azure Site Recovery pour migrer vos machines virtuelles existantes vers des machines virtuelles Azure
 
@@ -75,9 +75,9 @@ Site Recovery est également conçu spécifiquement pour les environnements hybr
 
 La figure 2-3 illustre l’exécution de plusieurs migrations de machine virtuelle à l’aide de Azure Site Recovery.
 
-![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-3.png)
+![Positionnement des applications Infrastructure-Ready du Cloud](./media/image2-3.png)
 
-**Figure 2-3.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-3.** Positionnement des applications Infrastructure-Ready du Cloud
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

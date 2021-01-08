@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.author: daberry
 author: daberry
-ms.openlocfilehash: 43737aaf5dfd02b8c4ffa6c213d7221cfe38162f
-ms.sourcegitcommit: 3d6d6595a03915f617349781f455f838a44b0f44
+ms.openlocfilehash: aa2739cc6c11145887e64921398c72affeaec729
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97701141"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025027"
 ---
 # <a name="install-the-azure-cli"></a>Installer l’interface de ligne de commande Microsoft Azure
 
@@ -35,3 +35,7 @@ Le Azure CLI est disponible pour Windows, macOS et Linux.
 Vous pouvez également utiliser le Azure CLI dans le Azure Cloud Shell à l’adresse [https://shell.azure.com](https://shell.azure.com) .  Le Azure Cloud Shell est un interpréteur de commandes entièrement fonctionnel et basé sur un navigateur pour la gestion des ressources Azure.  Le Azure Cloud Shell est utile lorsque vous avez besoin d’un environnement de ligne de commande, mais que vous travaillez sur un appareil sur lequel vous ne parvenez pas à installer le Azure CLI.
 
 ![Capture d’écran de l’Azure Cloud Shell s’exécutant dans un navigateur](media/azure-cloud-shell.png)
+
+### <a name="next-steps"></a>Étapes suivantes
+
+Ensuite, vous voudrez [installer des outils Azure supplémentaires](./azure-tools.md) comme Explorateur Stockage Azure et Azure Data Studio pour améliorer votre productivité avec Azure.

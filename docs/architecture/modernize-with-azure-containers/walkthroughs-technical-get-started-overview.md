@@ -1,13 +1,13 @@
 ---
 title: Procédures pas à pas et vue d’ensemble technique pour le démarrage
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Procédures pas à pas et présentation technique de la prise en main
-ms.date: 04/28/2018
-ms.openlocfilehash: 98d33b13d2b28bfe1c35894df45e525cff0520c1
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/21/2020
+ms.openlocfilehash: 6bfa25e3eeeecf5a936f378df3ae548d6fa37a30
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172142"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025275"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Procédures pas à pas et vue d’ensemble technique pour le démarrage
 
@@ -117,7 +117,7 @@ L’exécution de votre application monolithique dans un conteneur présente des
 
 Un autre avantage est que les développeurs peuvent exécuter l’application dans l’environnement cohérent fourni par les conteneurs Windows. Les problèmes qui apparaissent uniquement avec certaines versions peuvent être détectés immédiatement, au lieu de s’afficher dans un environnement intermédiaire ou de production. Les différences dans les environnements de développement utilisés par les membres de l’équipe de développement sont moins importantes quand les applications s’exécutent dans des conteneurs.
 
-Les applications en conteneur ont également une courbe de montée en puissance parallèle. Les applications en conteneur vous permettent d’avoir plus d’instances d’application et de service (basées sur des conteneurs) sur une machine virtuelle ou un ordinateur physique par rapport aux déploiements d’applications standard par ordinateur. Cela se traduit par une densité plus élevée et moins de ressources requises, en particulier quand vous utilisez des orchestrateurs comme Kubernetes.
+Les applications en conteneur ont également une courbe de montée en puissance parallèle. Les applications en conteneur vous permettent d’avoir plus d’instances d’application et de service (basées sur des conteneurs) sur une machine virtuelle ou un ordinateur physique par rapport aux déploiements d’applications standard par ordinateur. Cette approche se traduit par une densité plus élevée et moins de ressources requises, en particulier quand vous utilisez des orchestrateurs comme Kubernetes.
 
 Dans les situations idéales, le conteneur ne nécessite pas d’apporter des modifications au code de l’application (C \# ). Dans la plupart des scénarios, vous avez simplement besoin des fichiers de métadonnées de déploiement de l’arrimeur (fichiers dockerfile et Docker Compose).
 
@@ -198,7 +198,7 @@ Cette procédure pas à pas vous montre les principaux scénarios de déploiemen
 
 ### <a name="scenarios"></a>Scénarios
 
-Il peut y avoir des variantes relatives au déploiement des applications eShopModernizing dans ACI, telles que le déploiement d’une seule ou de toutes les applications (application MVC, application WebForms ou service WCF). Dans le scénario suivant illustré ci-dessous, vous pouvez voir l’application MVC ASP.NET plus le conteneur SQL Server les deux étant déployés en tant que conteneurs dans ACI (Azure Container Instances).
+Il peut y avoir des variantes relatives au déploiement des applications eShopModernizing dans ACI, telles que le déploiement d’une seule ou de toutes les applications (application MVC, application WebForms ou service WCF). Dans le scénario suivant illustré ci-dessous, vous pouvez voir l’application ASP.NET MVC et le conteneur SQL Server les deux déployés en tant que conteneurs dans ACI (Azure Container Instances).
 
 ![Déployer dans ACI à partir d’un environnement de développement](./media/image5-3.5.6.png)
 
@@ -228,7 +228,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 ### <a name="overview"></a>Vue d’ensemble
 
-Une application basée sur des conteneurs Windows devra rapidement utiliser des plateformes, en se déplaçant encore plus loin des machines virtuelles IaaS. Cela est nécessaire pour obtenir facilement une évolutivité élevée et une plus grande évolutivité automatisée, et pour une amélioration significative des déploiements et du contrôle de version automatisés. Vous pouvez atteindre ces objectifs à l’aide d’Orchestrator [Kubernetes](https://kubernetes.io/), disponible dans [Azure Container Services](https://azure.microsoft.com/services/container-service/).
+Une application basée sur des conteneurs Windows devra rapidement utiliser des plateformes, en se déplaçant encore plus loin des machines virtuelles IaaS. Cette approche est nécessaire pour obtenir facilement une évolutivité élevée et une plus grande évolutivité automatisée, et pour une amélioration significative des déploiements et du contrôle de version automatisés. Vous pouvez atteindre ces objectifs à l’aide d’Orchestrator [Kubernetes](https://kubernetes.io/), disponible dans [Azure Container Services](https://azure.microsoft.com/services/container-service/).
 
 ### <a name="goals"></a>Objectifs
 
@@ -288,7 +288,7 @@ La procédure pas à pas complète technique est disponible dans le wiki eShopMo
 
 ### <a name="overview"></a>Vue d’ensemble
 
-Une application en conteneur simple utilisant des conteneurs Windows peut facilement être déployée pour Azure App Service pour les conteneurs. Il s’agit de l’approche recommandée pour la plupart des applications basées sur des conteneurs Windows.
+Une application en conteneur simple utilisant des conteneurs Windows peut facilement être déployée pour Azure App Service pour les conteneurs. Cette approche est recommandée pour la plupart des applications basées sur des conteneurs Windows.
 
 ### <a name="goals"></a>Objectifs
 

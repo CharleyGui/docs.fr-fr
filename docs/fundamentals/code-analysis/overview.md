@@ -8,12 +8,12 @@ ms.custom: updateeachrelease
 helpviewer_keywords:
 - code analysis
 - code analyzers
-ms.openlocfilehash: 2f59b97de6f92e5a9bf927e1318286e400017dad
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 80815b5913ad72756de503209b52e8848dd708bf
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009844"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025079"
 ---
 # <a name="overview-of-net-source-code-analysis"></a>Vue d’ensemble de l’analyse du code source .NET
 
@@ -40,7 +40,7 @@ Les règles d’analyse de la *qualité du code* (« CAXXXX ») inspectent vot
 
 Les règles suivantes sont activées par défaut dans .NET 5,0.
 
-| ID de diagnostic | Category | Gravité | Description |
+| ID de diagnostic | Catégorie | severity | Description |
 | - | - | - | - |
 | [CA1416](/visualstudio/code-quality/ca1416) | Interopérabilité | Avertissement | Analyseur de compatibilité de plateforme |
 | [CA1417](/visualstudio/code-quality/ca1417) | Interopérabilité | Avertissement | Ne pas utiliser `OutAttribute` sur les paramètres de chaîne pour P/Invoke |
@@ -60,7 +60,7 @@ Vous pouvez modifier la gravité de ces règles pour les désactiver ou les éle
 
 Le *mode d’analyse* fait référence à une configuration d’analyse du code prédéfinie dans laquelle aucune, une partie ou l’ensemble des règles n’est activée. Dans le mode d’analyse par défaut, seul un petit nombre de règles est [activé en tant qu’avertissements de génération](#enabled-rules). Vous pouvez modifier le mode d’analyse de votre projet en définissant la propriété [AnalysisMode](../../core/project-sdk/msbuild-props.md#analysismode) dans le fichier projet. Les valeurs autorisées sont les suivantes :
 
-| Valeur | Description |
+| Value | Description |
 | - | - |
 | `AllDisabledByDefault` | Il s’agit du mode le plus conservateur. Toutes les règles sont désactivées par défaut. Vous pouvez [choisir](configuration-options.md) des règles individuelles pour les activer.<br /><br />`<AnalysisMode>AllDisabledByDefault</AnalysisMode>` |
 | `AllEnabledByDefault` | Il s’agit du mode le plus agressif. Toutes les règles sont activées en tant qu’avertissements de Build. Vous pouvez [choisir de](configuration-options.md) désactiver les règles individuelles de manière sélective pour les désactiver.<br /><br />`<AnalysisMode>AllEnabledByDefault</AnalysisMode>` |
@@ -104,13 +104,16 @@ Par défaut, vous obtiendrez les dernières règles d’analyse du code et les g
 Les règles d' *analyse de style code* (« IDExxxx ») vous permettent de définir et de maintenir un style de code cohérent dans votre base de code. Les paramètres d’activation par défaut sont les suivants :
 
 - Génération à partir de la ligne de commande : l’analyse de style de code est désactivée, par défaut, pour tous les projets .NET sur les générations à partir de la ligne de commande.
-- Visual Studio : l’analyse de style de code est activée, par défaut, pour tous les projets .NET dans Visual Studio en tant que [actions rapides de refactorisation de code](/visualstudio/ide/code-generation-in-visual-studio).
 
-À compter de .NET 5,0, vous pouvez activer l’analyse de style de code sur la build, à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
+  À compter de .NET 5,0, vous pouvez [activer l’analyse de style de code sur la build](#enable-on-build), à la fois sur la ligne de commande et dans Visual Studio. Les violations de style de code apparaissent sous la forme d’avertissements ou d’erreurs avec un préfixe « IDE ». Cela vous permet d’appliquer des styles de code cohérents au moment de la génération.
+
+- Visual Studio : l’analyse de style de code est activée, par défaut, pour tous les projets .NET dans Visual Studio en tant que [actions rapides de refactorisation de code](/visualstudio/ide/code-generation-in-visual-studio).
 
 Pour obtenir la liste complète des règles d’analyse de style code, consultez [règles de style de code](style-rules/index.md).
 
 ### <a name="enable-on-build"></a>Activer sur la Build
+
+Avec le kit de développement logiciel (SDK) .NET 5,0 et les versions ultérieures, vous pouvez activer l’analyse de style de code lors de la génération à partir de la ligne de commande et dans Visual Studio. (Toutefois, pour des raisons de performances, [quelques règles de style de code](https://github.com/dotnet/roslyn/blob/9f87b444da9c48a4d492b19f8337339056bf2b95/src/Analyzers/Core/Analyzers/EnforceOnBuildValues.cs#L95) s’appliqueront toujours uniquement dans l’IDE de Visual Studio.)
 
 Procédez comme suit pour activer l’analyse de style de code sur la build :
 

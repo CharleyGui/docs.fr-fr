@@ -3,13 +3,13 @@ title: Journalisation hautes performances dans .NET
 author: IEvangelist
 description: Découvrez comment utiliser LoggerMessage pour créer des délégués pouvant être mis en cache et nécessitant moins d’allocations d’objets pour les scénarios de journalisation à hautes performances.
 ms.author: dapine
-ms.date: 09/25/2020
-ms.openlocfilehash: 9111b9553c913cff2937b574250b65e633250f4f
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.date: 01/04/2021
+ms.openlocfilehash: 0031ff7a9f70cb0cf724fdf6dfa4fbe0a44af7c1
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91804760"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025443"
 ---
 # <a name="high-performance-logging-in-net"></a>Journalisation hautes performances dans .NET
 
@@ -30,7 +30,7 @@ La chaîne fournie à la méthode <xref:Microsoft.Extensions.Logging.LoggerMessa
 
 Chaque message de journal est une <xref:System.Action> contenue dans un champ statique créé par [LoggerMessage.Define](xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A). Par exemple, l’exemple d’application crée un champ pour décrire un message de journal pour le traitement des éléments de travail :
 
-:::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingWorkField":::
+:::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="FailedProcessingField":::
 
 Pour l’<xref:System.Action>, spécifiez :
 
@@ -40,19 +40,15 @@ Pour l’<xref:System.Action>, spécifiez :
 
 Comme les éléments de travail sont déplacés dans la file d’attente pour le traitement, l’application de service Worker définit :
 
-- Le niveau de journal sur `Critical`
+- Le niveau de journal sur <xref:Microsoft.Extensions.Logging.LogLevel.Critical?displayProperty=nameWithType>
 - L’ID d’événement sur `13` avec le nom de la méthode `FailedToProcessWorkItem`
 - Le modèle de message (chaîne de format nommée) sur une chaîne
 
-:::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingWorkAssignment":::
+:::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="FailedProcessingAssignment":::
 
 Des magasins de journalisation structurée peuvent utiliser le nom d’événement quand il est fourni avec l’ID d’événement pour enrichir la journalisation. Par exemple, [Serilog](https://github.com/serilog/serilog-extensions-logging) utilise le nom d’événement.
 
-L’<xref:System.Action> est appelée par le biais d’une méthode d’extension fortement typée. La `FailedToProcessWorkItem` méthode journalise un message chaque fois qu’un élément de travail est en cours de traitement :
-
-:::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingWorkMethod":::
-
-`FailedToProcessWorkItem` est appelé sur l’enregistreur d’événements dans la `ExecuteAsync` méthode dans *Worker.cs* lorsqu’une erreur se produit :
+L’<xref:System.Action> est appelée par le biais d’une méthode d’extension fortement typée. La `PriorityItemProcessed` méthode journalise un message chaque fois qu’un élément de travail est en cours de traitement. En revanche, `FailedToProcessWorkItem` est appelé quand (et si) une exception se produit :
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Worker.cs" range="18-39" highlight="15-18":::
 
@@ -70,7 +66,7 @@ Pour passer des paramètres à un message de journal, définissez jusqu’à six
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingItemField":::
 
-Le modèle de message de journal du délégué reçoit ses valeurs d’espace réservé des types fournis. L’exemple d’application définit un délégué pour l’ajout d’une citation, où le paramètre Quote est de type `WorkItem` :
+Le modèle de message de journal du délégué reçoit ses valeurs d’espace réservé des types fournis. L’exemple d’application définit un délégué pour ajouter un élément de travail où le paramètre d’élément est `WorkItem` :
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingItemAssignment":::
 
@@ -95,19 +91,15 @@ La méthode [DefineScope (String)](xref:Microsoft.Extensions.Logging.LoggerMessa
 
 Comme c’est le cas avec la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.Define%2A>, la chaîne fournie à la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> est un modèle et non pas une chaîne interpolée. Les espaces réservés sont remplis dans l’ordre dans lequel les types sont spécifiés. Les noms d’espace réservé dans le modèle doivent être descriptifs et cohérents d’un modèle à l’autre. Ils servent de noms de propriété dans les données de journal structurées. Nous vous recommandons d’utiliser la [casse Pascal](../../standard/design-guidelines/capitalization-conventions.md) pour les noms d’espace réservé. Par exemple, `{Item}`, `{DateTime}`.
 
-Définissez une [étendue de journal](logging.md#log-scopes) à appliquer à une série de messages de journal à l’aide de la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A>.
-
-L’exemple d’application a un bouton **Clear All** (Effacer tout) pour supprimer toutes les citations de la base de données. Les citations sont supprimées une par une. Chaque fois qu’une citation est supprimée, la méthode `QuoteDeleted` est appelée sur le journaliseur. Une étendue de journal est ajoutée à ces messages de journal.
-
-Activez `IncludeScopes` dans la section du journaliseur de console *d’appsettings.json* :
+Définissez une [étendue de journal](logging.md#log-scopes) à appliquer à une série de messages de journal à l’aide de la méthode <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A>. Activez `IncludeScopes` dans la section du journaliseur de console *d’appsettings.json* :
 
 :::code language="json" source="snippets/configuration/worker-service-options/appsettings.json" highlight="3-5":::
 
-Pour créer une étendue de journal, ajoutez un champ destiné à contenir un délégué <xref:System.Func%601> pour l’étendue. L’exemple d’application crée un champ intitulé `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*) :
+Pour créer une étendue de journal, ajoutez un champ destiné à contenir un délégué <xref:System.Func%601> pour l’étendue. L’exemple d’application crée un champ intitulé `_processingWorkScope` (*Internal/LoggerExtensions.cs*) :
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingWorkField":::
 
-Utilisez <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> pour créer le délégué. Vous pouvez spécifier jusqu’à trois types à utiliser comme arguments de modèle quand le délégué est appelé. L’exemple d’application utilise un modèle de message qui inclut le nombre de citations supprimées (un type `int`) :
+Utilisez <xref:Microsoft.Extensions.Logging.LoggerMessage.DefineScope%2A> pour créer le délégué. Vous pouvez spécifier jusqu’à trois types à utiliser comme arguments de modèle quand le délégué est appelé. L’exemple d’application utilise un modèle de message qui comprend la date et l’heure de début du traitement :
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Extensions/LoggerExtensions.cs" id="ProcessingWorkAssignment":::
 
@@ -119,7 +111,7 @@ L’étendue inclut les appels d’extension de journalisation dans un bloc [usi
 
 :::code language="csharp" source="snippets/configuration/worker-service-options/Worker.cs" range="18-39" highlight="4":::
 
-Examinez les messages de journal dans la sortie de la console de l’application. Le résultat suivant montre trois citations supprimées, message d’étendue de journal compris :
+Examinez les messages de journal dans la sortie de la console de l’application. Le résultat suivant montre l’ordre de priorité des messages de journal avec le message d’étendue du journal inclus :
 
 ```console
 info: WorkerServiceOptions.Example.Worker[1]

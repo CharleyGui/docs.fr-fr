@@ -1,13 +1,13 @@
 ---
 title: Moderniser vos applications avec la surveillance et la télémétrie
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Moderniser vos applications avec la surveillance et la télémétrie
-ms.date: 04/30/2018
-ms.openlocfilehash: a6094435eece661d99904876ac49b3ca85ec45a7
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 12/21/2020
+ms.openlocfilehash: c79a16400ce9dadca50fabb6c7df2859e4519a41
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91171999"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025236"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Moderniser vos applications avec la surveillance et la télémétrie
 
@@ -15,7 +15,7 @@ Lorsque vous exécutez une application en production, il est essentiel de dispos
 
 ## <a name="monitor-your-application-with-application-insights"></a>Surveillez votre application avec Application Insights
 
-Application Insights est un service extensible de gestion des performances des applications (APM) destiné aux développeurs Web qui travaillent sur plusieurs plateformes. Utilisez-le pour analyser votre application web en direct. Application Insights détecte automatiquement les anomalies de performances. Il comprend des outils d’analyse puissants pour vous aider à diagnostiquer les problèmes et pour vous aider à comprendre ce que font les utilisateurs avec votre application. Application Insights a été conçu pour vous permettre d’améliorer continuellement les performances et la facilité d’utilisation. Il fonctionne pour les applications sur un large éventail de plateformes, notamment .NET, Node.js et J2EE, qu’elles soient hébergées en local ou dans le Cloud. Application Insights s’intègre à vos processus DevOps et offre des points de connexion à un large éventail d’outils de développement.
+Application Insights est un service extensible de gestion des performances des applications (APM) destiné aux développeurs Web qui travaillent sur plusieurs plateformes. Utilisez-le pour analyser votre application web en direct. Application Insights détecte automatiquement les anomalies de performances. Il comprend des outils d’analyse puissants pour vous aider à diagnostiquer les problèmes et pour vous aider à comprendre ce que font les utilisateurs avec votre application. Application Insights a été conçu pour vous permettre d’améliorer continuellement les performances et la facilité d’utilisation. Il fonctionne pour les applications sur un large éventail de plateformes, notamment .NET, Node.js et J2EE, qu’elles soient hébergées en local ou dans le Cloud. Application Insights s’intègre à vos processus DevOps et offre des points de connexion à divers outils de développement.
 
 La figure 4-10 montre un exemple de la façon dont Application Insights surveille votre application et comment elle couvre ces informations dans un tableau de bord.
 

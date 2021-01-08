@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: 9d39ec28ea2cea875ddd6da34b92eeb740ee6638
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: d8ca3eed3786a728002d8ffe80b774a0018eee82
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970744"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025451"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -84,7 +84,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net.
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
@@ -182,28 +182,19 @@ Pour plus d’informations sur les systèmes d’exploitation, les distributions
 
 Des dépendances supplémentaires sont requises si vous installez le kit de développement logiciel (SDK) .NET ou le runtime sur les versions suivantes de Windows :
 
-- Windows 7 SP1 [UDE][esu]
-- Windows Vista SP 2
-- Windows 8.1
-- Windows Server 2008 R2
-- Windows Server 2012 R2
+| Système d’exploitation         | Prérequis                                                                    |
+|--------------------------|----------------------------------------------------------------------------------|
+| Windows 7 SP1 [UDE][esu] | -Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits <br> -KB3063858 [64-bit][kb64]  /  [32][kb32] bits <br> - [MicrosoftRootCertificateAuthority2011. cer](https://go.microsoft.com/fwlink/?linkid=747875&clcid=0x409) (.net Core 2,1 uniquement) |
+| Windows Vista SP 2       | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
+| Windows 8.1              | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
+| Windows Server 2008 R2   | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
+| Windows Server 2012 R2   | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
 
-Installez les éléments suivants :
+La configuration requise précédente est également requise si vous recevez une erreur liée à l’une ou l’autre des dll suivantes :
 
-- [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685).
-- [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot)
-
-La configuration requise précédente est également requise si vous rencontrez l’une des erreurs suivantes :
-
-> Le programme ne peut pas démarrer, car *api-ms-win-crt-runtime-l1-1-0.dll* n’est pas présent sur votre ordinateur. Essayez de réinstaller le programme pour résoudre ce problème.
->
-> \- ou -
->
-> Le programme ne peut pas démarrer, car *api-ms-win-cor-timezone-l1-1-0.dll* n’est pas présent sur votre ordinateur. Essayez de réinstaller le programme pour résoudre ce problème.
->
-> \- ou -
->
-> La bibliothèque *hostfxr.dll* a été trouvée, mais son chargement à partir de *C : \\ \<path_to_app> \\hostfxr.dll* a échoué.
+- *api-ms-win-crt-runtime-l1-1-0.dll*
+- *api-ms-win-cor-timezone-l1-1-0.dll*
+- *hostfxr.dll*
 
 ## <a name="install-with-powershell-automation"></a>Installer avec l’automatisation PowerShell
 
@@ -318,3 +309,7 @@ Pour plus d’informations sur l’utilisation de .NET dans un conteneur d’anc
 - [Didacticiel : conteneur d’une application .net Core](../docker/build-container.md).
 
 [esu]: /troubleshoot/windows-client/windows-7-eos-faq/windows-7-extended-security-updates-faq
+[vcc64]: https://aka.ms/vs/16/release/vc_redist.x64.exe
+[vcc32]: https://aka.ms/vs/16/release/vc_redist.x86.exe
+[kb64]: https://www.microsoft.com/en-us/download/details.aspx?id=47442
+[kb32]: https://www.microsoft.com/en-us/download/details.aspx?id=47409

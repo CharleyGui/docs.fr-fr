@@ -1,39 +1,39 @@
 ---
-title: Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
-description: Moderniser les applications .NET existantes avec les conteneurs Azure Cloud et Windows (fr) Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
-ms.date: 04/29/2018
-ms.openlocfilehash: 6c889db6f0475f24a196144c7fb62faec4c173ed
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+title: Quand déployer des conteneurs Windows sur Azure Container Instances (ACI)
+description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Quand déployer des conteneurs Windows sur Azure Container Instances (ACI)
+ms.date: 12/21/2020
+ms.openlocfilehash: 556fe7cbec7d259db9ec886b777feda9eed09116
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989153"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025131"
 ---
-# <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Quand déployer des conteneurs Windows dans les instances de conteneurs Azure (ACI)
+# <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Quand déployer des conteneurs Windows sur Azure Container Instances (ACI)
 
-Azure Container Instances principale proposition de valeur est que vous pouvez immédiatement déployer des conteneurs à elle et vous n’avez pas besoin de maintenir cet environnement, vous n’avez pas besoin de mettre à niveau / patcher le système d’exploitation sous-jacent ou VMs, tout ce qui est transparent et vous venez de déployer des conteneurs dans un environnement prêt à l’emploi.
+La principale valeur de Azure Container Instances est que vous pouvez immédiatement déployer des conteneurs sur celui-ci et que vous n’avez pas besoin de gérer cet environnement, vous n’avez pas besoin de mettre à niveau/corriger le système d’exploitation sous-jacent ou les machines virtuelles, tout ce qui est transparent et vous déployez simplement des conteneurs dans un environnement prêt à l’emploi.
 
-Les raisons et les scénarios lorsque vous souhaitez utiliser ACI sont similaires aux principaux scénarios lorsque vous utilisez des VM Azure avec des conteneurs, donc fondamentalement, les principaux scénarios pour l’utilisation azure Container Instances sont les suivantes:
+Les raisons et les scénarios dans lesquels vous souhaiteriez utiliser ACI sont similaires aux scénarios principaux lorsque vous utilisez des machines virtuelles Azure avec des conteneurs. fondamentalement, les principaux scénarios d’utilisation de Azure Container Instances sont les suivants :
 
-- **Scénarios Dev/Test**
+- **Scénarios de développement et de test**
 - **Automatisation des tâches**
 - **Agents CI/CD**
-- **Traitement par lots à petite échelle**
-- **Applications web simples**
+- **Traitement par lots de petite/échelle**
+- **Applications Web simples**
 
-Le scénario simple des applications Web est un scénario équitable pour ACI, mais prenez en compte que puisque dans ACI vous ne pouvez avoir qu’une seule instance de conteneur par image de conteneur, vous n’aurez pas une grande disponibilité et n’aurez qu’une évolutivité limitée.
+Le scénario Web Apps simple est un scénario équitable pour ACI mais tient compte du fait que dans ACI, vous ne pouvez avoir qu’une seule instance de conteneur par image de conteneur, vous n’avez pas de haute disponibilité et n’avez qu’une évolutivité limitée.
 
-Cependant, même lorsque L’ACI est considérée comme une infrastructure parce qu’elle ne fournit que des instances de conteneur unique, il y a un énorme avantage par rapport aux VM Azure réguliers avec Windows Server. Avec ACI, vous venez de déployer les conteneurs dans un environnement auto-entretenu et vous venez de payer pour ces conteneurs. Vous n’avez pas besoin de maintenir / mise à jour / patch VMs, il est donc une plate-forme beaucoup mieux pour la plupart des scénarios où vous pourriez utiliser des VM avec des conteneurs. L’utilisation d’ACI est simple, vous venez de déployer un conteneur, il n’est pas nécessaire de créer un environnement VM que vous venez de déployer des conteneurs.
+Toutefois, même quand ACI est considéré comme une infrastructure, car elle fournit simplement des instances de conteneur uniques, il y a un avantage énorme par rapport aux machines virtuelles Azure classiques avec Windows Server. Avec ACI, vous déployez simplement les conteneurs dans un environnement autonome et vous payez uniquement pour ces conteneurs. Vous n’avez pas besoin de gérer/mettre à jour/corriger les machines virtuelles. il s’agit donc d’une plateforme bien meilleure pour la plupart des scénarios dans lesquels vous pouvez utiliser des machines virtuelles avec des conteneurs. En utilisant ACI, vous déployez simplement un conteneur, il n’est pas nécessaire de créer un environnement de machine virtuelle que vous venez de déployer.
 
-Les principaux avantages des instances de conteneurs Azure (ACI) sont :
+Les principaux avantages de Azure Container Instances (ACI) sont les suivants :
 
 - Exécuter des conteneurs sans gérer les serveurs
-- Augmenter l’agilité avec les conteneurs à la demande
-- Déployez des conteneurs dans le nuage avec une simplicité et une vitesse sans précédent, avec une seule commande.
-- Applications sécurisées avec isolement hyperviseur
+- Améliorez l’agilité avec les conteneurs à la demande
+- Déployez des conteneurs dans le Cloud avec une simplicité et une rapidité sans précédent, à l’aide d’une seule commande.
+- Sécuriser les applications avec l’isolation hyperviseur
 
-En bref, avec ACI, vous pouvez développer des applications rapidement sans gérer les machines virtuelles ou d’avoir à apprendre de nouveaux outils. C’est juste votre application, dans un conteneur, en cours d’exécution dans le nuage.
+En bref, avec ACI, vous pouvez développer rapidement des applications sans avoir à gérer des machines virtuelles ou à apprendre de nouveaux outils. C’est simplement votre application, dans un conteneur, qui s’exécute dans le Cloud.
 
 > [!div class="step-by-step"]
-> [Suivant précédent](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
-> [Next](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+> [Précédent](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md) 
+>  [Suivant](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
