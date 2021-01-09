@@ -2,12 +2,12 @@
 title: Documentation XML
 description: 'En savoir plus sur la prise en charge dans F # pour générer la documentation à partir de commentaires.'
 ms.date: 09/15/2020
-ms.openlocfilehash: 24d9dbfb5e28d39e224ef9428f025298464fc7f4
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: 2f8788e79ea964143eecfaddbeb039474dd61f8e
+ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95099007"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025014"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
@@ -21,7 +21,7 @@ Les commentaires de documentation XML, comme tous les autres commentaires, sont 
 
 Vous pouvez générer le fichier XML au moment de la compilation en procédant comme suit :
 
-- Vous pouvez ajouter un `GenerateDocumentationFile` élément à la `<PropertyGroup>` section de votre `.fsproj` fichier projet, ce qui génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que l’assembly. Exemple :
+- Vous pouvez ajouter un `GenerateDocumentationFile` élément à la `<PropertyGroup>` section de votre `.fsproj` fichier projet, ce qui génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que l’assembly. Par exemple :
 
    ```xml
    <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -87,7 +87,7 @@ Lorsque `--warnon:3390` est activé, le compilateur vérifie la syntaxe du XML e
 ## <a name="documenting-f-constructs"></a>Documentation des constructions F #
 
 Les constructions F # telles que les modules, les membres, les cas d’Union et les champs d’enregistrement sont documentées par un `///` Commentaire immédiatement avant leur déclaration.
-Si nécessaire, les constructeurs implicites des classes sont documentés en donnant un `///` commentaire avant la liste d’arguments. Exemple :
+Si nécessaire, les constructeurs implicites des classes sont documentés en donnant un `///` commentaire avant la liste d’arguments. Par exemple :
 
 ```fsharp
 /// This is the type
@@ -101,7 +101,7 @@ type SomeType
 
 ## <a name="limitations"></a>Limites
 
-Certaines fonctionnalités de la documentation XML en C# et d’autres langages .NET ne sont pas prises en charge en C#.
+Certaines fonctionnalités de la documentation XML en C# et d’autres langages .NET ne sont pas prises en charge en F #.
 
 - En F #, les références croisées doivent utiliser la signature XML complète du symbole correspondant, par exemple `cref="T:System.Console"` .
   Les références croisées de style C# simples telles que `cref="Console"` ne sont pas élaborées vers des signatures XML complètes et ces éléments ne sont pas vérifiés par le compilateur F #. Certains outils de documentation peuvent autoriser l’utilisation de ces références croisées par le traitement suivant, mais les signatures complètes doivent être utilisées.
