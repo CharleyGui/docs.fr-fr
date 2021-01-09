@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-Counters-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-Counter pour la surveillance de l’intégrité ad hoc et l’enquête sur les performances de premier niveau.
 ms.date: 11/17/2020
-ms.openlocfilehash: 89695c77e7913d41f030890be7cc00947e42fa3a
-ms.sourcegitcommit: e395fabeeea5c705d243d246fa64446839ac85b6
+ms.openlocfilehash: 44d74cfaca7483b1506fe7ad762818e9b9ed7d63
+ms.sourcegitcommit: 0273f8845eb1ea8de64086bef2271b4f22182c91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97856053"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98058088"
 ---
 # <a name="investigate-performance-counters-dotnet-counters"></a>Examiner les compteurs de performance (dotnet-Counters)
 
@@ -220,7 +220,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
   > L’utilisation de cette option permet de surveiller le premier processus .NET 5,0 qui communique avec l’outil, ce qui signifie que si votre commande lance plusieurs applications .NET, elle ne collecte que la première application. Par conséquent, il est recommandé d’utiliser cette option sur les applications autonomes ou à l’aide de l' `dotnet exec <app.dll>` option.
 
   > [!NOTE]
-  > Le lancement d’un exécutable .NET via dotnet-Counter rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout. La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant. Si le processus enfant se termine avant l’outil, l’outil s’arrête également et la trace doit être visible en toute sécurité. Si vous devez utiliser stdin/stdout, vous pouvez utiliser l' `--diagnostic-port` option. Pour plus d’informations, consultez [utilisation du port de diagnostic](#using-diagnostic-port) .
+  > Le lancement d’un exécutable .NET via dotnet-Counter rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout. La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant. Si le processus enfant se termine avant l’outil, l’outil s’arrête également. Si vous devez utiliser stdin/stdout, vous pouvez utiliser l' `--diagnostic-port` option. Pour plus d’informations, consultez [utilisation du port de diagnostic](#using-diagnostic-port) .
 
 ### <a name="examples"></a>Exemples
 

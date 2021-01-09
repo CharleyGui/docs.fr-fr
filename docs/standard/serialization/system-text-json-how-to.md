@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 541ac80ce40b0410167b14f96e36b354d19411db
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: fd92c067fc76bea6bede1e5370e7ac168856fa9b
+ms.sourcegitcommit: 0273f8845eb1ea8de64086bef2271b4f22182c91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970900"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98058100"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -25,7 +25,7 @@ Cet article explique comment utiliser l' <xref:System.Text.Json?displayProperty=
 
 Les instructions et l’exemple de code utilisent directement la bibliothèque, et non un Framework comme [ASP.net Core](/aspnet/core/).
 
-La majeure partie de l’exemple de code de sérialisation affecte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` la valeur « joli Printing » au format JSON (avec mise en retrait et espace blanc pour la lisibilité humaine). Pour une utilisation en production, vous acceptez généralement la valeur par défaut de `false` pour ce paramètre.
+La majeure partie de l’exemple de code de sérialisation affecte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` la valeur « joli Printing » au format JSON (avec mise en retrait et espace blanc pour la lisibilité humaine). Pour une utilisation en production, vous acceptez généralement la valeur par défaut de `false` pour ce paramètre, car l’ajout d’espaces blancs inutiles peut entraîner un impact négatif et sensible sur les performances et l’utilisation de la bande passante.
 
 Les exemples de code font référence à la classe et aux variantes suivantes :
 
