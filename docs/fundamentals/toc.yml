@@ -37,6 +37,10 @@ items:
                 href: ../core/install/linux-rhel.md
               - name: SLES
                 href: ../core/install/linux-sles.md
+              - name: Installer avec Snap
+                href: ../core/install/linux-snap.md
+              - name: Binaires et script d’installation
+                href: ../core/install/linux-scripted-manual.md
           - name: Supprimer des runtimes et kits SDK obsolètes
             href: ../core/install/remove-runtime-sdk-versions.md
           - name: Gérer les modèles .NET
@@ -328,7 +332,7 @@ items:
             items:
               - name: Vue d'ensemble
                 href: ../core/project-sdk/overview.md
-              - name: Informations de référence
+              - name: Référence
                 items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
@@ -1644,6 +1648,8 @@ items:
                     href: ../standard/serialization/system-text-json-polymorphism.md
               - name: Guide pratique pour migrer à partir de Newtonsoft.Json
                 href: ../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md
+              - name: Types de collection pris en charge
+                href: ../standard/serialization/system-text-json-supported-collection-types.md
               - name: Avancé
                 items:
                   - name: Personnaliser l’encodage de caractères
@@ -2290,7 +2296,7 @@ items:
           - name: Organiser les projets pour .NET Core
             href: ../core/porting/project-structure.md
           - name: Technologies non disponibles
-            href: ../core/porting/net-framework-tech-unavailable.md
+            href: ../core/porting/net-framework-tech-unavailable.md?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
           - name: Outils
             href: ../core/porting/tools.md
           - name: Utiliser le pack de compatibilité Windows
