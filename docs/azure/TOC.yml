@@ -17,6 +17,10 @@
           href: configure-vs-code.md
         - name: "Installer l’interface de ligne de commande Microsoft\_Azure"
           href: install-azure-cli.md
+        - name: Installer des outils supplémentaires
+          href: azure-tools.md
+        - name: Check-list de la configuration du développement
+          href: dotnet-dev-env-checklist.md
 - name: Migrer vers Azure
   items:
     - name: Choisir l’option d’hébergement Azure appropriée
