@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-Counters-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-Counter pour la surveillance de l’intégrité ad hoc et l’enquête sur les performances de premier niveau.
 ms.date: 11/17/2020
-ms.openlocfilehash: 44d74cfaca7483b1506fe7ad762818e9b9ed7d63
-ms.sourcegitcommit: 0273f8845eb1ea8de64086bef2271b4f22182c91
+ms.openlocfilehash: 1842b1fb9cde0e0b7a570456766cbfdeb64c5896
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98058088"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188580"
 ---
 # <a name="investigate-performance-counters-dotnet-counters"></a>Examiner les compteurs de performance (dotnet-Counters)
 
@@ -34,6 +34,9 @@ Il existe deux façons de télécharger et d’installer `dotnet-counters` :
   | Windows | [x86](https://aka.ms/dotnet-counters/win-x86) \| [x64](https://aka.ms/dotnet-counters/win-x64) \| [ARM](https://aka.ms/dotnet-counters/win-arm) \| [ARM-x64](https://aka.ms/dotnet-counters/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-counters/osx-x64) |
   | Linux   | [x64](https://aka.ms/dotnet-counters/linux-x64) \| [ARM](https://aka.ms/dotnet-counters/linux-arm) \| [arm64](https://aka.ms/dotnet-counters/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-counters/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-counters/linux-musl-arm64) |
+
+> [!NOTE]
+> Pour utiliser `dotnet-counters` sur une application x86, vous avez besoin d’une version x86 correspondante de l’outil.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -113,6 +116,12 @@ dotnet-counters collect [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
 
   > [!NOTE]
   > Le lancement d’un exécutable .NET via dotnet-Counter rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout. La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant. Si le processus enfant se termine avant l’outil, l’outil s’arrête également et la trace doit être visible en toute sécurité. Si vous devez utiliser stdin/stdout, vous pouvez utiliser l' `--diagnostic-port` option. Pour plus d’informations, consultez [utilisation du port de diagnostic](#using-diagnostic-port) .
+
+> [!NOTE]
+> Sur Linux et macOS, cette commande attend l’application cible et `dotnet-counters` partager la même variable d' `TMPDIR` environnement. Dans le cas contraire, la commande expire.
+
+> [!NOTE]
+> Pour collecter des mesures à l’aide de `dotnet-counters` , il doit être exécuté en tant qu’utilisateur exécutant le processus cible ou en tant qu’utilisateur racine. Dans le cas contraire, l’outil ne parviendra pas à établir une connexion avec le processus cible.
 
 ### <a name="examples"></a>Exemples
 
@@ -222,6 +231,12 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
   > [!NOTE]
   > Le lancement d’un exécutable .NET via dotnet-Counter rend son entrée/sortie redirigée et vous ne pouvez pas interagir avec son stdin/stdout. La sortie de l’outil via CTRL + C ou SIGTERM met fin en toute sécurité à la fois à l’outil et au processus enfant. Si le processus enfant se termine avant l’outil, l’outil s’arrête également. Si vous devez utiliser stdin/stdout, vous pouvez utiliser l' `--diagnostic-port` option. Pour plus d’informations, consultez [utilisation du port de diagnostic](#using-diagnostic-port) .
 
+> [!NOTE]
+> Sur Linux et macOS, cette commande attend l’application cible et `dotnet-counters` partager la même variable d' `TMPDIR` environnement.
+
+> [!NOTE]
+> Pour surveiller les métriques à l’aide de `dotnet-counters` , il doit être exécuté en tant qu’utilisateur exécutant le processus cible ou en tant qu’utilisateur racine.
+
 ### <a name="examples"></a>Exemples
 
 - Surveiller tous les compteurs à partir d' `System.Runtime` un intervalle d’actualisation de 3 secondes :
@@ -285,7 +300,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
   > dotnet-counters list
 
   Showing well-known counters for .NET (Core) version 3.1 only. Specific processes may support additional counters.
-  System.Runtime              
+  System.Runtime
       cpu-usage                          The percent of process' CPU usage relative to all of the system CPU resources [0-100]
       working-set                        Amount of working set used by the process (MB)
       gc-heap-size                       Total heap size reported by the GC (MB)
@@ -319,7 +334,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
   > dotnet-counters list --runtime-version 5.0
 
   Showing well-known counters for .NET (Core) version 5.0 only. Specific processes may support additional counters.
-  System.Runtime                     
+  System.Runtime
       cpu-usage                          The percent of process' CPU usage relative to all of the system CPU resources [0-100]
       working-set                        Amount of working set used by the process (MB)
       gc-heap-size                       Total heap size reported by the GC (MB)
@@ -344,7 +359,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
       il-bytes-jitted                    Total IL bytes jitted
       methods-jitted-count               Number of methods jitted
 
-  Microsoft.AspNetCore.Hosting       
+  Microsoft.AspNetCore.Hosting
       requests-per-second   Number of requests between update intervals
       total-requests        Total number of requests
       current-requests      Current number of requests
@@ -361,7 +376,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [-n|--name] [--diagnostic-
       connection-queue-length     Length of Kestrel Connection Queue
       request-queue-length        Length total HTTP request queue
 
-  System.Net.Http                    
+  System.Net.Http
       requests-started        Total Requests Started
       requests-started-rate   Number of Requests Started between update intervals
       requests-aborted        Total Requests Aborted

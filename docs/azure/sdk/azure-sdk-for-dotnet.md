@@ -5,12 +5,12 @@ ms.date: 11/30/2020
 ms.custom: devx-track-dotnet
 ms.author: daberry
 author: daberry
-ms.openlocfilehash: 3ec1ee9e8da3a6e03581ce2a29a655ec0d68fe54
-ms.sourcegitcommit: 3d6d6595a03915f617349781f455f838a44b0f44
+ms.openlocfilehash: b547e105b13d380ffae049ab55e76aa25abe8cc3
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97701118"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189198"
 ---
 # <a name="azure-sdk-for-net-overview"></a>Présentation du kit de développement logiciel (SDK) Azure pour .NET
 
@@ -32,4 +32,4 @@ Pour utiliser un package du kit de développement logiciel (SDK) Azure dans l’
 
 3. **Écrire du code à l’aide du kit de développement logiciel (SDK) dans votre application** Lorsque vous utilisez des services Azure, votre code crée d’abord un objet client pour travailler avec le service, puis appelle des méthodes sur cet objet client pour interagir avec le service.  Des méthodes synchrones et asynchrones sont fournies.  Vous trouverez des exemples d’utilisation de chaque package du kit de développement logiciel (SDK) dans tout le contenu de la documentation Azure.
 
-4. **Configurer la journalisation pour le kit de développement logiciel (facultatif)-** Si vous avez besoin de diagnostiquer des problèmes entre votre application et Azure, vous pouvez [activer la journalisation dans le kit de développement logiciel (SDK) Azure pour .net](./logging.md).
+4. **Configurer la journalisation pour le kit de développement logiciel (facultatif)-** Si vous avez besoin de diagnostiquer des problèmes entre votre application et Azure, vous pouvez [activer la journalisation dans le kit de développement logiciel (SDK) Azure pour .net](../logging.md).

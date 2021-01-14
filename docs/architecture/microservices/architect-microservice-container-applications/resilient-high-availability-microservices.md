@@ -1,13 +1,13 @@
 ---
 title: Résilience et haute disponibilité dans les microservices
 description: Les microservices doivent être conçus pour gérer les pannes de dépendances et de réseau temporaires auxquelles ils doivent être résilients pour assurer une haute disponibilité.
-ms.date: 09/20/2018
-ms.openlocfilehash: 601255c1e6941b2de9fdb34098dea7edf6d8b987
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/13/2021
+ms.openlocfilehash: 8afe92babb38cc3a87f26315b42311de3269de9d
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172448"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188450"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Résilience et haute disponibilité dans les microservices
 
@@ -15,9 +15,9 @@ La gestion des défaillances inattendues est l’un des problèmes les plus diff
 
 Un microservice doit être résilient en cas de défaillance et pouvoir redémarrer souvent sur une autre machine pour assurer sa disponibilité. Cette résilience s’applique également à l’état qui a été enregistré pour le compte du microservice, où le microservice peut récupérer cet état, et si le microservice peut redémarrer correctement. En d’autres termes, il doit exister une résilience de la capacité de traitement (le processus peut redémarrer à tout moment), ainsi qu’une résilience de l’état ou des données (pas de perte de données, et les données doivent rester cohérentes).
 
-Les problèmes de résilience peuvent être aggravés dans d’autres scénarios, comme quand des erreurs se produisent pendant la mise à niveau d’une application. Le microservice, en combinaison avec le système de déploiement, doit déterminer s’il peut continuer le processus de passage à la version plus récente ou s’il doit au contraire revenir à une version antérieure pour maintenir un état cohérent. Il faut prendre en compte les questions de savoir s’il y a suffisamment de machines disponibles pour continuer de progresser, et la manière de restaurer les versions précédentes du microservice. Ceci implique que le microservice émette des informations sur son intégrité, afin que l’application globale et l’orchestrateur puissent prendre ces décisions.
+Les problèmes de résilience peuvent être aggravés dans d’autres scénarios, comme quand des erreurs se produisent pendant la mise à niveau d’une application. Le microservice, en combinaison avec le système de déploiement, doit déterminer s’il peut continuer le processus de passage à la version plus récente ou s’il doit au contraire revenir à une version antérieure pour maintenir un état cohérent. Il faut prendre en compte les questions de savoir s’il y a suffisamment de machines disponibles pour continuer de progresser, et la manière de restaurer les versions précédentes du microservice. Cette approche nécessite que le microservice émette des informations d’intégrité afin que l’application globale et l’orchestrateur puissent prendre ces décisions.
 
-De plus, la résilience est liée à la façon dont les systèmes basés sur le cloud doivent se comporter. Comme mentionné, un système basé sur le cloud doit traiter les défaillances et essayer de récupérer automatiquement quand elles surviennent. Par exemple, en cas de défaillances du réseau ou d’un conteneur, les applications clientes ou les services clients doivent avoir une stratégie de nouvelles tentatives d’envoi des messages ou pour les demandes, car dans de nombreux cas, les défaillances dans le cloud sont partielles. La section [Implémentation d’applications résilientes](../implement-resilient-applications/index.md) de ce guide explique comment gérer une défaillance partielle. Elle décrit des techniques comme les nouvelles tentatives avec interruption exponentielle ou le modèle de disjoncteur dans .NET Core avec des bibliothèques comme [Polly](https://github.com/App-vNext/Polly), qui offre une grande variété de stratégies pour traiter cette question.
+De plus, la résilience est liée à la façon dont les systèmes basés sur le cloud doivent se comporter. Comme mentionné, un système basé sur le cloud doit traiter les défaillances et essayer de récupérer automatiquement quand elles surviennent. Par exemple, en cas de défaillances du réseau ou d’un conteneur, les applications clientes ou les services clients doivent avoir une stratégie de nouvelles tentatives d’envoi des messages ou pour les demandes, car dans de nombreux cas, les défaillances dans le cloud sont partielles. La section [Implémentation d’applications résilientes](../implement-resilient-applications/index.md) de ce guide explique comment gérer une défaillance partielle. Il décrit des techniques telles que les nouvelles tentatives avec interruption exponentielle ou le modèle disjoncteur dans .NET à l’aide de bibliothèques telles que [Polly](https://github.com/App-vNext/Polly), qui offre une grande variété de stratégies pour gérer ce sujet.
 
 ## <a name="health-management-and-diagnostics-in-microservices"></a>Gestion de l’intégrité et diagnostics dans les microservices
 
@@ -38,7 +38,7 @@ Vous avez aussi la possibilité d’utiliser une excellente bibliothèque open s
 
 Les journaux fournissent des informations sur la façon dont une application ou un service s’exécute, notamment les exceptions, les avertissements et les simples messages d’information. En règle générale, chaque journal est au format texte, avec une ligne par événement, bien que les exceptions s’accompagnent souvent de la trace de pile sur plusieurs lignes.
 
-Dans les applications serveur monolithiques, vous pouvez simplement écrire les journaux dans un fichier sur disque (un fichier journal), puis les analyser avec n’importe quel outil. Comme l’exécution de l’application est limitée à un serveur ou une machine virtuelle fixe, il n’est généralement pas trop complexe d’analyser le flux des événements. Cependant, dans une application distribuée où plusieurs services sont exécutés sur de nombreux nœuds d’un cluster orchestrateur, mettre en corrélation les événements distribués peut être difficile.
+Dans les applications basées sur un serveur monolithique, vous pouvez écrire des journaux dans un fichier sur disque (fichier journal), puis les analyser avec n’importe quel outil. Comme l’exécution de l’application est limitée à un serveur ou une machine virtuelle fixe, il n’est généralement pas trop complexe d’analyser le flux des événements. Cependant, dans une application distribuée où plusieurs services sont exécutés sur de nombreux nœuds d’un cluster orchestrateur, mettre en corrélation les événements distribués peut être difficile.
 
 Une application basée sur des microservices ne doit pas tenter de stocker elle-même le flux de sortie des événements ou des fichiers journaux, ni même tenter de gérer le routage des événements vers un emplacement central. Ce doit être transparent, ce qui signifie que chaque processus doit simplement écrire son flux d’événements vers une sortie standard, qui sera collectée plus tard par l’infrastructure de l’environnement d’exécution où il s’exécute. [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow) est un exemple de ces routeurs de flux d’événements, qui collecte les flux d’événements provenant de plusieurs sources et les publie sur des systèmes de sortie. Ces systèmes peuvent être des sorties standard simples pour un environnement de développement, ou des systèmes cloud comme [Azure Monitor](https://azure.microsoft.com/services/monitor//) et [Diagnostics Azure](/azure/azure-monitor/platform/diagnostics-extension-overview). Il existe également des plateformes et des outils de tiers performants pour l’analyse des journaux, qui permettent de rechercher, alerter, communiquer et surveiller les journaux, même en temps réel, comme [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
 
@@ -50,13 +50,13 @@ Quand vous créez une application basée sur des microservices, vous devez gére
 
 **Figure 4-22**. Une plateforme de microservices est essentielle pour la gestion de l’intégrité d’une application
 
-Les problèmes complexes montrés dans la figure 4-22 sont très difficiles à résoudre par vous-même. Les équipes de développement doivent se concentrer sur la résolution des problèmes métier et sur la création d’applications personnalisées avec des approches basées sur les microservices. Elles ne doivent pas se concentrer sur la résolution des problèmes d’infrastructure complexes ; si elles le font, le coût des applications basées sur des microservices serait énorme. Pour cette raison, il existe des plateformes orientée microservices, appelées orchestrateurs ou clusters de microservices, qui tentent de résoudre les difficiles problèmes de l’efficacité de la création et de l’exécution d’un service, et de l’utilisation des ressources de l’infrastructure. Ceci réduit la complexité de la création d’applications qui utilisent une approche par microservices.
+Les problèmes complexes illustrés dans la figure 4-22 sont difficiles à résoudre par vous-même. Les équipes de développement doivent se concentrer sur la résolution des problèmes métier et sur la création d’applications personnalisées avec des approches basées sur les microservices. Elles ne doivent pas se concentrer sur la résolution des problèmes d’infrastructure complexes ; si elles le font, le coût des applications basées sur des microservices serait énorme. Pour cette raison, il existe des plateformes orientée microservices, appelées orchestrateurs ou clusters de microservices, qui tentent de résoudre les difficiles problèmes de l’efficacité de la création et de l’exécution d’un service, et de l’utilisation des ressources de l’infrastructure. Cette approche réduit la complexité de la création d’applications qui utilisent une approche de microservices.
 
 Les différents orchestrateurs peuvent sembler similaires, mais les diagnostics et les vérifications d’intégrité offerts par chacun d’eux diffèrent par leurs fonctionnalités et leur état de maturité, parfois en fonction de la plateforme du système d’exploitation, comme expliqué dans la section suivante.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **App. XI à 12 facteurs. Journaux : traiter les journaux comme des flux d’événements** \
+- **Twelve-Factor App. XI. Journaux : traiter les journaux comme des flux d’événements** \
   <https://12factor.net/logs>
 
 - Dépôt GitHub **Microsoft Diagnostic EventFlow Library**. \

@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-gcdump-CLI .NET
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-gcdump pour collecter des vidages de mémoire (garbage collector) de processus .NET en temps réel à l’aide de .NET EventPipe.
 ms.date: 11/17/2020
-ms.openlocfilehash: 02e1a7c5d86b582289672a027464aefd67a6f490
-ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
+ms.openlocfilehash: fe7772eed642daadbd1754627751f58d0ab57b8e
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97593368"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188567"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Outil d’analyse de tas (dotnet-gcdump)
 
@@ -29,11 +29,14 @@ Il existe deux façons de télécharger et d’installer `dotnet-gcdump` :
 
   Téléchargez le fichier exécutable de l’outil qui correspond à votre plateforme :
 
-  | Système d''exploitation  | Plateforme |
+  | Système d’exploitation  | Plateforme |
   | --- | -------- |
   | Windows | [x86](https://aka.ms/dotnet-gcdump/win-x86) \| [x64](https://aka.ms/dotnet-gcdump/win-x64) \| [ARM](https://aka.ms/dotnet-gcdump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-gcdump/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-gcdump/osx-x64) |
   | Linux   | [x64](https://aka.ms/dotnet-gcdump/linux-x64) \| [ARM](https://aka.ms/dotnet-gcdump/linux-arm) \| [arm64](https://aka.ms/dotnet-gcdump/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-gcdump/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-gcdump/linux-musl-arm64) |
+
+> [!NOTE]
+> Pour utiliser `dotnet-gcdump` sur une application x86, vous avez besoin d’une version x86 correspondante de l’outil.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -103,6 +106,12 @@ dotnet-gcdump collect [-h|--help] [-p|--process-id <pid>] [-o|--output <gcdump-f
 - **`-n|--name <name>`**
 
   Nom du processus à partir duquel collecter le vidage GC.
+
+> [!NOTE]
+> Sur Linux et macOS, cette commande attend l’application cible et `dotnet-gcdump` partager la même variable d' `TMPDIR` environnement. Dans le cas contraire, la commande expire.
+
+> [!NOTE]
+> Pour collecter un vidage GC à l’aide de `dotnet-gcdump` , il doit être exécuté en tant que même utilisateur que l’utilisateur qui exécute le processus cible ou en tant que racine. Dans le cas contraire, l’outil ne parviendra pas à établir une connexion avec le processus cible.
 
 ## `dotnet-gcdump ps`
 

@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/14/2020
-ms.openlocfilehash: ea0291129aeaed3bebef5c454ff003131bd3562b
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: cc8c6ed30dbf8ff0602fb19e5001f618a8380f16
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634479"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189953"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -83,7 +83,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Compile pour un [framework](../../standard/frameworks.md) spécifique. Le framework doit être défini dans le [fichier projet](csproj.md).
+  Compile pour un [framework](../../standard/frameworks.md) spécifique. Le framework doit être défini dans le [fichier projet](../project-sdk/overview.md).
 
 - **`--force`**
 

@@ -2,12 +2,12 @@
 title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
-ms.openlocfilehash: 73fbfed6943e3eb535e6eead3b3496edd3426c26
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: 28da1723ed91d169305c2865c5346b8ce6e0b3d1
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970718"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189704"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
@@ -78,7 +78,7 @@ Le format csproj .NET Core est modifié et évolue avec chaque nouvelle version 
 - Supprimez l’espace de noms XML (`xmlns`) de l’élément `<Project>`.
 - S’il n’existe pas, ajoutez l’attribut `Sdk` à l’élément `<Project>` et affectez-lui la valeur `Microsoft.NET.Sdk` ou `Microsoft.NET.Sdk.Web`. Cet attribut spécifie que le projet utilise le SDK à utiliser. `Microsoft.NET.Sdk.Web` est utilisé pour les applications web.
 - Supprimez les instructions `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` et `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` en haut et en bas du projet. Ces instructions d’importation étant indiquées implicitement par le SDK, il est inutile qu’elles figurent dans le projet.
-- Si vous avez `Microsoft.NETCore.App` des `NETStandard.Library` `<PackageReference>` éléments ou dans votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](../tools/csproj.md).
+- Si vous avez `Microsoft.NETCore.App` des `NETStandard.Library` `<PackageReference>` éléments ou dans votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](../project-sdk/overview.md).
 - Supprimez l' `Microsoft.NET.Sdk` `<PackageReference>` élément, s’il existe. La référence SDK est fournie par l’attribut `Sdk` sur l’élément `<Project>`.
 - Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../project-sdk/overview.md#default-includes-and-excludes). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
 

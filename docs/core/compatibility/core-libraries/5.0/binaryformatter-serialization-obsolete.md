@@ -2,12 +2,12 @@
 title: 'Modification avec rupture : les méthodes de sérialisation BinaryFormatter sont obsolètes et interdites dans les applications ASP.NET'
 description: Découvrez la modification avec rupture .NET 5,0 dans les bibliothèques .NET de base où les méthodes de sérialisation et de désérialisation sur BinaryFormatter, Formatter et IFormatter sont obsolètes.
 ms.date: 11/01/2020
-ms.openlocfilehash: 5807a7d4e6beab26b9848b803922396dd893075b
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 1dca30d33f2aa0a6fe8f05fe728557092f836b2d
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761021"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189842"
 ---
 # <a name="binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps"></a>Les méthodes de sérialisation BinaryFormatter sont obsolètes et interdites dans les applications ASP.NET
 
@@ -75,7 +75,7 @@ Ces méthodes sont marquées comme obsolètes dans le cadre d’un effort visant
   </PropertyGroup>
   ```
 
-Pour plus d’informations sur les actions recommandées, consultez [résolution des erreurs BinaryFormatter obsoletion et des erreurs de désactivation](https://aka.ms/binaryformatter).
+Pour plus d’informations sur les actions recommandées, consultez [résolution des erreurs BinaryFormatter obsoletion et des erreurs de désactivation](../../../../standard/serialization/binaryformatter-security-guide.md).
 
 ## <a name="affected-apis"></a>API affectées
 

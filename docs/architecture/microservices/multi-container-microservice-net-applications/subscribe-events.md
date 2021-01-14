@@ -1,17 +1,17 @@
 ---
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
-ms.date: 01/30/2020
-ms.openlocfilehash: 838aaebbd390a66142c2bcdfa2f3b0ee4c32b7f0
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/13/2021
+ms.openlocfilehash: c9146ddbdfbf00e743108c07af1f74d7690a17a8
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172207"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188723"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
-Pour utiliser Service Bus, vous devez d’abord abonner les microservices aux événements souhaités. Cette étape doit être effectuée dans les microservices récepteurs.
+Pour utiliser Service Bus, vous devez d’abord abonner les microservices aux événements souhaités. Cette fonctionnalité doit être effectuée dans les microservices du récepteur.
 
 L’exemple de code suivant montre ce que chaque microservice récepteur doit implémenter au démarrage du service (dans la classe `Startup`) pour s’abonner aux événements dont il a besoin. Dans ce cas, le microservice `basket-api` doit s’abonner à `ProductPriceChangedIntegrationEvent` et aux messages `OrderStartedIntegrationEvent`.
 
@@ -32,7 +32,7 @@ Lorsque ce code est exécuté, le microservice abonné écoute via les canaux Ra
 
 ## <a name="publishing-events-through-the-event-bus"></a>Publication d’événements via le bus d’événements
 
-Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. (Il s’agit d’un exemple simplifié qui ne prend pas en compte l’atomicité.) Vous devez implémenter un code similaire chaque fois qu’un événement doit être propagé sur plusieurs microservices, généralement juste après la validation des données ou des transactions du microservice d’origine.
+Enfin, l’expéditeur du message (le microservice d’origine) publie les événements d’intégration avec du code similaire à celui de l’exemple suivant. (Cette approche est un exemple simplifié qui ne prend pas en compte l’atomicité.) Vous devez implémenter un code similaire chaque fois qu’un événement doit être propagé sur plusieurs microservices, généralement juste après la validation des données ou des transactions du microservice d’origine.
 
 Tout d’abord, l’objet d’implémentation du bus d’événements (basé sur RabbitMQ ou sur un bus de services) est injecté dans le constructeur du contrôleur, comme dans le code suivant :
 
@@ -91,25 +91,25 @@ Dans les microservices plus avancés, comme avec l’approche CQRS, vous pouvez 
 
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>Conception de l’atomicité et de la résilience lors de la publication d’événements dans le bus d’événements
 
-Quand vous publiez des événements d’intégration par le biais d’un système de messagerie distribuée comme votre bus d’événements, vous être confronté au problème de mettre à jour la base de données d’origine et de publier un événement de manière atomique (autrement dit, les deux opérations se terminent ou aucune des deux ne se termine). Par exemple, dans l’exemple simplifié précédent, le code valide les données dans la base de données lorsque le prix du produit est modifié, puis il publie un message ProductPriceChangedIntegrationEvent. Au début, il peut paraître essentiel que ces deux opérations soient effectuées de manière atomique. Toutefois, si vous utilisez une transaction distribuée impliquant la base de données et le répartiteur de messages, comme vous le feriez sur les anciens systèmes tels que [Microsoft Message Queuing (MSMQ)](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)), cette méthode n’est pas recommandée pour les raisons énoncées par le [théorème CAP](https://www.quora.com/What-Is-CAP-Theorem-1).
+Quand vous publiez des événements d’intégration par le biais d’un système de messagerie distribuée comme votre bus d’événements, vous être confronté au problème de mettre à jour la base de données d’origine et de publier un événement de manière atomique (autrement dit, les deux opérations se terminent ou aucune des deux ne se termine). Par exemple, dans l’exemple simplifié précédent, le code valide les données dans la base de données lorsque le prix du produit est modifié, puis il publie un message ProductPriceChangedIntegrationEvent. Au début, il peut paraître essentiel que ces deux opérations soient effectuées de manière atomique. Toutefois, si vous utilisez une transaction distribuée impliquant la base de données et le courtier de messages, comme vous le feriez dans des systèmes plus anciens tels que [Microsoft Message Queuing (MSMQ)](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)), cette approche n’est pas recommandée pour les raisons décrites dans le titre de la [PAC](https://www.quora.com/What-Is-CAP-Theorem-1).
 
 Pour résumer, vous utilisez des microservices pour créer des systèmes évolutifs et hautement disponibles. En simplifiant un peu, le seuil de CAP stipule que vous ne pouvez pas créer une base de données (distribuée) (ou un microservice qui possède son modèle) qui est continuellement disponible, fortement cohérente *et* tolérante à n’importe quelle partition. Vous ne pouvez avoir que deux de ces propriétés à la fois.
 
 Dans les architectures basées sur des microservices, vous devez choisir la disponibilité et la tolérance, et vous devez mettre en évidence une forte cohérence. Par conséquent, dans les applications de microservice les plus récentes, il n’est généralement pas souhaitable d’utiliser des transactions distribuées pour la messagerie, comme vous le feriez pour implémenter des [transactions distribuées](/previous-versions/windows/desktop/ms681205(v=vs.85)) DTC avec [MSMQ](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)).
 
-Revenons au problème initial et à son exemple. Si le service se bloque après la mise à jour de la base de données (dans ce cas, juste après la ligne de code avec `_context.SaveChangesAsync()` ), mais avant la publication de l’événement d’intégration, le système global peut devenir incohérent. Cela peut être critique pour l’entreprise, selon le type d’opération.
+Revenons au problème initial et à son exemple. Si le service se bloque après la mise à jour de la base de données (dans ce cas, juste après la ligne de code avec `_context.SaveChangesAsync()` ), mais avant la publication de l’événement d’intégration, le système global peut devenir incohérent. Cette approche peut être critique pour l’entreprise, en fonction de l’opération métier spécifique que vous utilisez.
 
 Comme déjà mentionné dans la section relative à l’architecture, plusieurs méthodes permettent de traiter ce problème :
 
 - Utiliser la version complète du [modèle d’approvisionnement en événements](/azure/architecture/patterns/event-sourcing)
 
-- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
+- Utiliser l’exploration des données du journal des transactions
 
 - Utiliser le [modèle de boîte d’envoi](https://www.kamilgrzybek.com/design/the-outbox-pattern/) Il s’agit d’une table transactionnelle permettant de stocker les événements d’intégration (en étendant la transaction locale).
 
 Pour ce scénario, l’utilisation du modèle d’approvisionnement en événements est l’une des meilleures approches, sinon *la* meilleure. Toutefois, dans de nombreux scénarios d’application, vous ne pourrez pas implémenter un système d’approvisionnement en événements complet. Avec l’approvisionnement en événements, vous stockez uniquement des événements de domaine dans votre base de données transactionnelle, au lieu de stocker les données de l’état actuel. Le fait de stocker uniquement les événements de domaine comporte des avantages, tels que la disponibilité de l’historique de votre système et la capacité à déterminer l’état antérieur de votre système. Toutefois, l’implémentation d’un système d’approvisionnement en événements complet nécessite la modification d’une grande partie de l’architecture de votre système, et ajoute de nombreuses exigences et davantage de complexité. Par exemple, vous pouvez utiliser une base de données créée spécialement pour l’approvisionnement en événements, telle qu’un [magasin d’événements](https://eventstore.org/), ou une base de données orientée documents, telle qu’Azure Cosmos DB, MongoDB, Cassandra, CouchDB ou RavenDB. L’approvisionnement en événements est une excellente approche pour ce problème, mais ce n’est pas la plus simple, sauf si vous êtes déjà familiarisé avec l’approvisionnement en événements.
 
-L’option permettant d’utiliser l’exploration des journaux de transactions est initialement transparente. Toutefois, pour cette méthode, vous devez associer le microservice à votre journal des transactions SGBDR, comme par exemple le journal des transactions SQL Server. Toutefois, cela n’est pas souhaitable. Un autre inconvénient à cela est que les mises à jour de bas niveau enregistrées dans le journal des transactions peuvent ne pas être au même niveau que les événements d’intégration de haut niveau. Si c’est le cas, il peut être difficile d’effectuer une rétroconception sur les opérations du journal des transactions.
+L’option permettant d’utiliser l’exploration des journaux de transactions est initialement transparente. Toutefois, pour cette méthode, vous devez associer le microservice à votre journal des transactions SGBDR, comme par exemple le journal des transactions SQL Server. Cette approche n’est probablement pas souhaitable. Un autre inconvénient à cela est que les mises à jour de bas niveau enregistrées dans le journal des transactions peuvent ne pas être au même niveau que les événements d’intégration de haut niveau. Si c’est le cas, il peut être difficile d’effectuer une rétroconception sur les opérations du journal des transactions.
 
 La meilleure approche consiste à combiner une table de base de données transactionnelle et un modèle simplifié d’approvisionnement en événements. Vous pouvez utiliser un état tel que « prêt à publier l’événement », que vous définissez dans l’événement d’origine lorsque vous le validez dans la table des événements d’intégration. Ensuite, vous essayez de publier l’événement dans le bus d’événements. Si l’action de publication de l’événement est réussie, vous démarrez une autre transaction dans le service d’origine et vous passez l’état « prêt à publier l’événement » à « événement déjà publié ».
 
@@ -355,7 +355,7 @@ Si l’indicateur « Redelivered » est défini, le récepteur doit en tenir c
 - **Base de données du magasin d’événements**. Site officiel. \
     <https://geteventstore.com/>
 
-- **Patrick Nommensen. Gestion des données pilotée par les événements pour les microservices** \
+- **Patrick Nommensen. Gestion des données Event-Driven pour les microservices** \
     <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
 - **Le niveau de CAP** \

@@ -4,12 +4,12 @@ description: Découvrez les déploiements ReadyToRun et les raisons pour lesquel
 author: davidwr
 ms.author: davidwr
 ms.date: 09/21/2020
-ms.openlocfilehash: cd8eaebd05d79b11e90e255e702a52220fffda76
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.openlocfilehash: 3302e5e18a20965a1eff1f09737910e924ed6d08
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342629"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188606"
 ---
 # <a name="readytorun-compilation"></a>Compilation ReadyToRun
 
@@ -17,7 +17,7 @@ Le temps de démarrage et la latence de l’application .NET peuvent être amél
 
 Les fichiers binaires R2R améliorent les performances de démarrage en réduisant la quantité de travail que le compilateur juste-à-temps (JIT) doit faire lorsque votre application est chargée. Les fichiers binaires contiennent du code natif similaire à ce que la compilation JIT produirait. Cependant, les fichiers binaires R2R sont plus grands, car ils contiennent à la fois le code du langage intermédiaire (IL), qui est toujours nécessaire pour certains scénarios, et la version native du même code. R2R est disponible uniquement lorsque vous publiez une application qui cible des environnements d’exécution spécifiques (RID) tels que Linux x64 ou Windows x64.
 
-Pour compiler votre projet en tant que ReadyToRun, l’application doit être publiée avec la propriété PublishReadyToRun définie sur true.
+Pour compiler votre projet en tant que ReadyToRun, l’application doit être publiée avec la propriété PublishReadyToRun définie sur `true` .
 
 Il existe deux façons de publier votre application en tant que ReadyToRun :
 
@@ -27,7 +27,7 @@ Il existe deux façons de publier votre application en tant que ReadyToRun :
     dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true
     ```
 
-02. Spécifier la propriété dans le projet
+02. Spécifiez la propriété dans le projet.
 
     - Ajoutez le `<PublishReadyToRun>` paramètre à votre projet.
 
@@ -45,13 +45,13 @@ Il existe deux façons de publier votre application en tant que ReadyToRun :
 
 ## <a name="impact-of-using-the-readytorun-feature"></a>Impact de l’utilisation de la fonctionnalité ReadyToRun
 
-La compilation à l’avance a un impact complexe sur les performances des applications, ce qui peut être difficile à prédire. En général, la taille d’un assembly est comprise entre deux et trois fois plus grand. Cette augmentation de la taille physique du fichier peut réduire les performances de chargement de l’assembly à partir du disque et augmenter la plage de travail du processus. Toutefois, en retour, le nombre de méthodes compilées au moment de l’exécution est généralement réduit de façon significative. Le résultat est que la plupart des applications qui ont de grandes quantités de code reçoivent des avantages en matière de performances de l’activation de ReadyToRun. Les applications, qui ont de petites quantités de code ne subiront probablement pas une amélioration significative de l’activation de ReadyToRun, car les bibliothèques du Runtime .NET ont déjà été précompilées avec ReadyToRun.
+La compilation à l’avance a un impact complexe sur les performances des applications, ce qui peut être difficile à prédire. En général, la taille d’un assembly est comprise entre deux et trois fois plus grand. Cette augmentation de la taille physique du fichier peut réduire les performances de chargement de l’assembly à partir du disque et augmenter la plage de travail du processus. Toutefois, en retour, le nombre de méthodes compilées au moment de l’exécution est généralement réduit de façon significative. Le résultat est que la plupart des applications qui ont de grandes quantités de code reçoivent des avantages en matière de performances de l’activation de ReadyToRun. Les applications qui ont de petites quantités de code ne subiront probablement pas une amélioration significative de l’activation de ReadyToRun, car les bibliothèques du Runtime .NET ont déjà été précompilées avec ReadyToRun.
 
 L’amélioration du démarrage décrite ici s’applique non seulement au démarrage de l’application, mais également à la première utilisation du code dans l’application. Par exemple, ReadyToRun peut être utilisé pour réduire la latence de la réponse de la première utilisation de l’API Web dans une application ASP.NET.
 
 ### <a name="interaction-with-tiered-compilation"></a>Interaction avec la compilation à plusieurs niveaux
 
-La génération anticipée n’est pas aussi hautement optimisée que le code produit par le JIT. Pour résoudre ce problème, la compilation à plusieurs niveaux remplace les méthodes ReadyToRun couramment utilisées par les méthodes générées juste-à-temps.
+Le code généré à l’avance n’est pas aussi hautement optimisé que le code produit par le JIT. Pour résoudre ce problème, la compilation à plusieurs niveaux remplace les méthodes ReadyToRun couramment utilisées par les méthodes générées juste-à-temps.
 
 ## <a name="how-is-the-set-of-precompiled-assemblies-chosen"></a>Comment l’ensemble d’assemblys précompilés est-il choisi ?
 
@@ -59,19 +59,17 @@ Le kit de développement logiciel (SDK) précompile les assemblys qui sont distr
 
 ## <a name="how-is-the-set-of-methods-to-precompile-chosen"></a>Comment l’ensemble de méthodes à précompiler est-il choisi ?
 
-Le compilateur tente de précompiler autant de méthodes que possible. Toutefois, différentes raisons pour lesquelles il n’est pas prévu d’utiliser la fonctionnalité ReadyToRun empêchent l’exécution du JIT.
+Le compilateur tente de précompiler autant de méthodes que possible. Toutefois, pour diverses raisons, il n’est pas prévu que l’utilisation de la fonctionnalité ReadyToRun empêchera l’exécution du JIT. Ces raisons peuvent inclure, mais ne sont pas limitées à :
 
-Ces raisons peuvent inclure, mais ne sont pas limitées à :
-
-- Utilisation de types génériques définis dans des assemblys séparés
-- Interopérabilité avec du code natif
-- Utilisation des intrinsèques matériels que le compilateur ne peut pas prouver pouvoir utiliser sur un ordinateur cible
-- Certains modèles de langage intermédiaire inhabituels
-- Création de méthodes dynamiques via la réflexion, ou LINQ
+- Utilisation de types génériques définis dans des assemblys distincts.
+- Interopérabilité avec le code natif.
+- L’utilisation des intrinsèques matériels que le compilateur ne peut pas prouver peut être utilisée en toute sécurité sur un ordinateur cible.
+- Certains modèles de langage intermédiaire inhabituels.
+- Création de méthodes dynamiques via la réflexion ou LINQ.
 
 ## <a name="cross-platformarchitecture-restrictions"></a>Restrictions d’architecture/de multiplateforme
 
-Pour certaines plateformes du kit de développement logiciel (SDK), le compilateur ReadyToRun peut effectuer une compilation croisée pour d’autres plateformes cibles. Les cibles de compilation prises en charge sont décrites dans le tableau ci-dessous.
+Pour certaines plateformes du kit de développement logiciel (SDK), le compilateur ReadyToRun peut effectuer une compilation croisée pour d’autres plateformes cibles. Les cibles de compilation prises en charge sont décrites dans le tableau suivant.
 
 | Plateforme du Kit de développement logiciel (SDK) | Plateformes cibles prises en charge |
 | ------------ | --------------------------- |

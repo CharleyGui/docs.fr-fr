@@ -1,13 +1,13 @@
 ---
 title: Communication basée sur des messages asynchrones
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Les communications asynchrones par messages représentent un concept essentiel dans l’architecture de microservices, car elles constituent le meilleur moyen de maintenir l’indépendance des microservices les uns par rapport aux autres tout en les synchronisant au bout du compte.
-ms.date: 09/20/2018
-ms.openlocfilehash: 17b3fb3fe3f94d5387359061e3297ebfa6e5be7a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/13/2021
+ms.openlocfilehash: f9d92e2640721b12d47223902712c420b06a5618
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91169243"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189588"
 ---
 # <a name="asynchronous-message-based-communication"></a>Communication basée sur des messages asynchrones
 
@@ -45,9 +45,9 @@ Quand vous utilisez une communication par publication/abonnement, vous pouvez ut
 
 ## <a name="asynchronous-event-driven-communication"></a>Communication asynchrone pilotée par les événements
 
-Quand vous utilisez une communication asynchrone pilotée par les événements, un microservice publie un événement d’intégration dès que quelque chose se produit dans son domaine, comme un changement de prix dans un microservice de catalogue de produits, pour en informer un autre microservice. D’autres microservices peuvent s’abonner aux événements pour les recevoir de manière asynchrone. Dans ce cas, les récepteurs peuvent mettre à jour leurs propres entités de domaine, ce qui peut entraîner d’autres événements d’intégration. Ce système de publication/abonnement est généralement obtenu à l’aide de l’implémentation d’un bus d’événements. Le bus d’événements peut être conçu comme une abstraction ou une interface, avec l’API nécessaire pour s’abonner aux événements ou s’en désabonner ainsi que pour les publier. Le bus d’événements peut également avoir une ou plusieurs implémentations basées sur un répartiteur entre processus ou de messagerie, comme une file d’attente de messagerie ou un Service Bus prenant en charge la communication asynchrone, ainsi qu’un modèle de publication/abonnement.
+Quand vous utilisez une communication asynchrone pilotée par les événements, un microservice publie un événement d’intégration dès que quelque chose se produit dans son domaine, comme un changement de prix dans un microservice de catalogue de produits, pour en informer un autre microservice. D’autres microservices peuvent s’abonner aux événements pour les recevoir de manière asynchrone. Dans ce cas, les récepteurs peuvent mettre à jour leurs propres entités de domaine, ce qui peut entraîner d’autres événements d’intégration. Ce système de publication/abonnement est exécuté à l’aide d’une implémentation d’un bus d’événements. Le bus d’événements peut être conçu comme une abstraction ou une interface, avec l’API nécessaire pour s’abonner aux événements ou s’en désabonner ainsi que pour les publier. Le bus d’événements peut également avoir une ou plusieurs implémentations basées sur un répartiteur entre processus ou de messagerie, comme une file d’attente de messagerie ou un Service Bus prenant en charge la communication asynchrone, ainsi qu’un modèle de publication/abonnement.
 
-Si un système utilise la cohérence à terme pilotée par les événements d’intégration, il est recommandé que cette approche soit clairement indiquée à l’utilisateur final. Le système ne doit pas utiliser une approche qui reproduit les événements d’intégration, par exemple SignalR ou les systèmes d’interrogation du client. L’utilisateur final et le propriétaire de l’entreprise doivent explicitement adopter la cohérence à terme dans le système. Ils doivent aussi avoir conscience que cette approche ne pose généralement aucun problème dans l’entreprise, à condition qu’elle soit explicite. Cela est important, car les utilisateurs peuvent s’attendre à voir des résultats immédiatement, ce qui ne se produit pas forcément avec une cohérence à terme.
+Si un système utilise la cohérence éventuelle pilotée par les événements d’intégration, il est recommandé de rendre cette approche claire à l’utilisateur final. Le système ne doit pas utiliser une approche qui reproduit les événements d’intégration, par exemple SignalR ou les systèmes d’interrogation du client. L’utilisateur final et le propriétaire de l’entreprise doivent explicitement adopter la cohérence à terme dans le système. Ils doivent aussi avoir conscience que cette approche ne pose généralement aucun problème dans l’entreprise, à condition qu’elle soit explicite. Cette approche est importante, car les utilisateurs peuvent s’attendre à voir immédiatement certains résultats et cet aspect peut ne pas se produire avec la cohérence éventuelle.
 
 Comme indiqué précédemment dans la section [Défis et solutions pour la gestion de données distribuée](distributed-data-management.md), vous pouvez utiliser des événements d’intégration pour implémenter des tâches d’entreprise qui s’étendent sur plusieurs microservices. Vous bénéficiez ainsi d’une cohérence à terme entre ces services. Une transaction cohérente à terme se compose d’une collection d’actions distribuées. À chaque action, le microservice connexe met à jour une entité de domaine et publie un autre événement d’intégration qui déclenche l’action suivante au sein de la même tâche d’entreprise de bout en bout.
 
@@ -69,11 +69,11 @@ Toutefois, pour les systèmes stratégiques et les systèmes de production qui n
 
 ## <a name="resiliently-publishing-to-the-event-bus"></a>Publication résiliente sur le bus d’événements
 
-L’implémentation d’une architecture pilotée par les événements sur plusieurs microservices soulève le problème suivant : comment mettre à jour atomiquement l’état dans le microservice d’origine tout en publiant avec résilience son événement d’intégration connexe dans le bus d’événements et en tenant compte des transactions. Voici quelques manières d’y parvenir, mais d’autres approches peuvent être envisagées.
+L’implémentation d’une architecture pilotée par les événements sur plusieurs microservices soulève le problème suivant : comment mettre à jour atomiquement l’état dans le microservice d’origine tout en publiant avec résilience son événement d’intégration connexe dans le bus d’événements et en tenant compte des transactions. Voici quelques façons d’accomplir cette fonctionnalité, bien qu’il puisse également y avoir d’autres approches.
 
 - Utilisation d’une file d’attente transactionnelle, basée sur DTC, comme MSMQ. (Toutefois, il s’agit d’une approche héritée.)
 
-- Utiliser [l’exploration des données du journal des transactions](https://www.scoop.it/t/sql-server-transaction-log-mining)
+- Utiliser l’exploration des données du journal des transactions
 
 - Utilisation de la version complète du [modèle d’approvisionnement en événements](/azure/architecture/patterns/event-sourcing).
 

@@ -1,18 +1,18 @@
 ---
-title: Choix entre .NET Core et .NET Framework pour les conteneurs Docker
-description: Architecture des microservices .NET pour les applications .NET en conteneur | Choix entre .NET Core et .NET Framework pour les conteneurs Docker
-ms.date: 09/11/2018
-ms.openlocfilehash: b01aaf25f4071e8e4a07905a12ec9dd0d89a738d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: Choix entre .NET 5 et .NET Framework pour les conteneurs de l’ancrage
+description: Architecture des microservices .NET pour les applications .NET en conteneur | Choix entre .NET 5 et .NET Framework pour les conteneurs de l’ancrage
+ms.date: 01/13/2021
+ms.openlocfilehash: 5c7ea1be02722fce7c5784afa89c18defbe4eeaf
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70849275"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188645"
 ---
-# <a name="choosing-between-net-core-and-net-framework-for-docker-containers"></a>Choix entre .NET Core et .NET Framework pour les conteneurs Docker
+# <a name="choosing-between-net-and-net-framework-for-docker-containers"></a>Choix entre .NET et .NET Framework pour les conteneurs de l’ancrage
 
-Il existe deux frameworks pris en charge pour générer des applications Docker en conteneur côté serveur avec .NET : [.NET Framework et .NET Core](https://dotnet.microsoft.com/download). Ils partagent de nombreux composants de plateforme .NET et vous permettent de partager du code entre les deux. Toutefois, il existe des différences fondamentales entre eux et votre choix dépend de ce que vous souhaitez accomplir. Cette section fournit des instructions pour éclairer le choix de chaque framework.
+Il existe deux Frameworks pris en charge pour la création d’applications d’ancrage conteneur côté serveur avec .NET : [.NET Framework et .net 5](https://dotnet.microsoft.com/download). Ils partagent de nombreux composants de plateforme .NET et vous permettent de partager du code entre les deux. Toutefois, il existe des différences fondamentales entre eux et votre choix dépend de ce que vous souhaitez accomplir. Cette section fournit des instructions pour éclairer le choix de chaque framework.
 
 >[!div class="step-by-step"]
->[Suivant précédent](../container-docker-introduction/docker-containers-images-registries.md)
->[Next](general-guidance.md)
+>[Précédent](../container-docker-introduction/docker-containers-images-registries.md) 
+> [Suivant](general-guidance.md)

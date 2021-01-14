@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: 7f76ed5ad1a76a155489339a9febf12eefd64ae8
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: b92385fa169e03254abdf940f2964c1966cbc2ce
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96279985"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190089"
 ---
 # <a name="how-to-run-a-workflow"></a>Procédure : exécuter un workflow
 
@@ -19,9 +19,6 @@ Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow 
 
 > [!NOTE]
 > Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Avant de parcourir cette rubrique, vous devez avoir parcouru [How to: Create an Activity](how-to-create-an-activity.md) et [How to: Create a Workflow](how-to-create-a-workflow.md).
-
-> [!NOTE]
-> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
   
 ### <a name="to-create-the-workflow-host-project"></a>Pour créer le projet d'hôte du workflow  
   
@@ -152,7 +149,7 @@ Cette rubrique est la suite du didacticiel de mise en route de Windows Workflow 
 
      Pour obtenir des instructions sur la façon d’ajouter la persistance à une application de workflow, consultez la rubrique suivante, [How to: Create and Run a Long Running Workflow](how-to-create-and-run-a-long-running-workflow.md).
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
  L'exemple suivant constitue l'intégralité du code de la méthode `Main` .
 

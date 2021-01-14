@@ -1,13 +1,13 @@
 ---
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
 description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
-ms.date: 08/17/2020
-ms.openlocfilehash: 45121026e06c55258a16f41aa801c06808a6919f
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.date: 01/13/2021
+ms.openlocfilehash: bf37b0bfc7d9438752673d1c617657822b2a48ad
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437796"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188970"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -27,7 +27,7 @@ ASP.NET Core inclut un simple [conteneur IoC intégré](/aspnet/core/fundamental
 
 En règle générale, vous injectez des dépendances qui implémentent des objets d’infrastructure. Une dépendance classique à injecter est un référentiel. Mais vous pouvez injecter toutes vos autres dépendances d’infrastructure. Pour simplifier les implémentations, vous pouvez injecter directement votre objet de modèle Unité de travail (objet DbContext EF), car DBContext est également l’implémentation de vos objets de persistance d’infrastructure.
 
-Dans l’exemple suivant, vous pouvez voir comment .NET Core injecte les objets de dépôt requis par le biais du constructeur. La classe est un gestionnaire de commandes, qui sera traité dans la section suivante.
+Dans l’exemple suivant, vous pouvez voir comment .NET injecte les objets de dépôt requis par le biais du constructeur. La classe est un gestionnaire de commandes, qui sera traité dans la section suivante.
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -111,7 +111,7 @@ Le modèle le plus courant pour inscrire des types dans un conteneur IoC consist
 
 #### <a name="use-the-scrutor-library-for-automatic-types-registration"></a>Utiliser la bibliothèque Scrutor pour l’inscription automatique des types
 
-Quand vous utilisez l’injection de dépendances dans .NET Core, vous pouvez avoir envie d’analyser un assembly et d’inscrire automatiquement ses types par convention. Cette fonctionnalité n’est pas disponible dans ASP.NET Core pour le moment. Toutefois, vous pouvez utiliser la bibliothèque [Scrutor](https://github.com/khellang/Scrutor) à la place. Cette approche est pratique lorsque vous avez des dizaines de types à inscrire dans votre conteneur IoC.
+Lorsque vous utilisez DI dans .NET, vous pouvez être en mesure d’analyser un assembly et d’inscrire automatiquement ses types par Convention. Cette fonctionnalité n’est pas disponible dans ASP.NET Core pour le moment. Toutefois, vous pouvez utiliser la bibliothèque [Scrutor](https://github.com/khellang/Scrutor) à la place. Cette approche est pratique lorsque vous avez des dizaines de types à inscrire dans votre conteneur IoC.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -503,7 +503,7 @@ Dans tous les cas, cette décision doit être basée sur les besoins métier de 
 
 À titre d’exemple d’implémentation, le présent guide propose d’utiliser le pipeline in-process basé sur le modèle Médiateur pour diriger l’ingestion des commandes et acheminer les commandes, dans la mémoire, vers les gestionnaires de commandes appropriés. Le guide propose également d’appliquer des [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors) pour séparer les problèmes transversaux.
 
-Pour l’implémentation dans .NET Core, il existe plusieurs bibliothèques open source disponibles qui implémentent le modèle Médiateur. La bibliothèque utilisée dans ce guide est la bibliothèque open source [MediatR](https://github.com/jbogard/MediatR) (créée par Jimmy Bogard), mais vous pouvez utiliser une autre approche. MediatR est une petite bibliothèque simple qui vous permet de traiter les messages en mémoire comme une commande, tout en appliquant des éléments décoratifs ou des comportements.
+Pour l’implémentation dans .NET, plusieurs bibliothèques Open source sont disponibles et implémentent le modèle médiateur. La bibliothèque utilisée dans ce guide est la bibliothèque open source [MediatR](https://github.com/jbogard/MediatR) (créée par Jimmy Bogard), mais vous pouvez utiliser une autre approche. MediatR est une petite bibliothèque simple qui vous permet de traiter les messages en mémoire comme une commande, tout en appliquant des éléments décoratifs ou des comportements.
 
 L’utilisation du modèle Médiateur vous aide à réduire le couplage et à isoler les problèmes du travail demandé, tout en vous connectant automatiquement au gestionnaire qui effectue ce travail (ici, les gestionnaires de commandes).
 

@@ -3,12 +3,12 @@ title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: d468ec5b9cc050cc54f6c53f8a4ea4531f8b58f5
-ms.sourcegitcommit: 35ca2255c6c86968eaef9e3a251c9739ce8e4288
+ms.openlocfilehash: ee79057e45700e17fdd37cc36288b790d64d7a09
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97753612"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188476"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -68,7 +68,7 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 
 ### <a name="dotnet-sos"></a>dotnet-sos
 
-[dotnet-SOS](dotnet-sos.md) installe l' [extension de débogage SOS](sos-debugging-extension.md) sur Linux et MacOS (et sur Windows si vous utilisez [WinDbg/CDB](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)).
+[dotnet-SOS](dotnet-sos.md) installe l' [extension de débogage SOS](sos-debugging-extension.md) sur Linux et MacOS (et sur Windows si vous utilisez [WinDbg/CDB](/windows-hardware/drivers/debugger/debugger-download-tools)).
 
 ### <a name="perfcollect"></a>PerfCollect
 
@@ -88,7 +88,7 @@ L’outil [dotnet-gcdump](dotnet-gcdump.md) est un moyen de collecter des vidage
 
 [Didacticiel : déboguer le blocage](debug-deadlock.md) vous montre comment utiliser l’outil [dotnet-dump](dotnet-dump.md) pour examiner les threads et les verrous.
 
-### <a name="debug-a-stackoverflow"></a>Déboguer un StackOverflow
+### <a name="debug-a-stackoverflow"></a>Déboguer StackOverflow
 
 [Didacticiel : déboguer un StackOverflow](debug-stackoverflow.md) montre comment déboguer un <xref:System.StackOverflowException> sur Linux.
 

@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: a5666cfe4c09b2b88d77b256fac922154c7d6bd7
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 4834da766bd052f44127a72635b65866eb7e3352
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634381"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189152"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -130,7 +130,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Force l’utilisation de `dotnet` ou .NET Framework hôte de test pour les binaires de test. Cette option détermine uniquement le type d’hôte à utiliser. La version de .NET Framework à utiliser est déterminée par le *runtimeconfig.js* du projet de test. Lorsqu’il n’est pas spécifié, l' [attribut d’assembly TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) est utilisé pour déterminer le type d’hôte. Lorsque cet attribut est supprimé du *fichier. dll* , l’hôte .NET Framework est utilisé.
+  Force l’utilisation de `dotnet` ou .NET Framework hôte de test pour les binaires de test. Cette option détermine uniquement le type d’hôte à utiliser. La version de .NET Framework à utiliser est déterminée par le *runtimeconfig.js* du projet de test. Lorsqu’il n’est pas spécifié, l' [attribut d’assembly TargetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) est utilisé pour déterminer le type d’hôte. Lorsque cet attribut est supprimé du *fichier. dll*, l’hôte .NET Framework est utilisé.
 
 - **`--filter <EXPRESSION>`**
 
@@ -146,7 +146,7 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 - **`-l|--logger <LOGGER>`**
 
-  Spécifie un enregistreur d’événements pour les résultats de tests. Contrairement à MSBuild, dotnet test n’accepte pas les abréviations : au lieu d' `-l "console;v=d"` utiliser `-l "console;verbosity=detailed"` .
+  Spécifie un enregistreur d’événements pour les résultats de tests. Contrairement à MSBuild, dotnet test n’accepte pas les abréviations : au lieu d' `-l "console;v=d"` utiliser `-l "console;verbosity=detailed"` . Spécifiez le paramètre plusieurs fois pour activer plusieurs enregistreurs d’événements.
 
 - **`--no-build`**
 

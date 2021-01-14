@@ -1,17 +1,17 @@
 ---
-title: Implémentation d’un modèle de domaine de microservice avec .NET Core
+title: Implémentation d’un modèle de domaine de microservice avec .NET
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Accéder aux détails d’implémentation d’un modèle de domaine orienté DDD.
-ms.date: 10/08/2018
-ms.openlocfilehash: e24f4e643d258450a2b33ed4dc4aded718bebd82
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/13/2021
+ms.openlocfilehash: 9689058b77701eee35ef018ed2e3f18bd648b0f4
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152544"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188268"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implémenter un modèle de domaine de microservice avec .NET Core
 
-Dans la section précédente, les modèles et principes fondamentaux de conception d’un modèle de domaine ont été expliqués. Il est maintenant temps de découvrir des méthodes possibles pour implémenter le modèle de domaine à l’aide de .NET Core (code C\# standard) et EF Core. Votre modèle de domaine sera composé simplement de votre code. Il présentera seulement les exigences en matière de modèle EF Core, mais pas de dépendances réelles sur EF. Vous ne devez pas avoir de dépendances dures ni de références à EF Core ou n’importe quel autre ORM dans votre modèle de domaine.
+Dans la section précédente, les modèles et principes fondamentaux de conception d’un modèle de domaine ont été expliqués. À présent, il est temps d’explorer les différentes façons d’implémenter le modèle de domaine à l’aide du code .NET (code C simple \# ) et EF Core. Votre modèle de domaine sera composé simplement de votre code. Il présentera seulement les exigences en matière de modèle EF Core, mais pas de dépendances réelles sur EF. Vous ne devez pas avoir de dépendances dures ni de références à EF Core ou n’importe quel autre ORM dans votre modèle de domaine.
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Structure de modèle de domaine dans une bibliothèque .NET Standard personnalisée
 
@@ -46,7 +46,7 @@ Si vous ouvrez l’un des fichiers dans un dossier d’agrégats, vous pouvez vo
 Vous implémentez un modèle de domaine dans .NET en créant des classes OCT qui implémentent vos entités de domaine. Dans l’exemple suivant, la classe Order est définie comme une entité et également comme une racine d’agrégat. Étant donné que la classe Order dérive de la classe de base Entity, elle peut réutiliser le code commun lié aux entités. Gardez à l’esprit que ces classes de base et interfaces sont définies par vous dans le projet de modèle de domaine ; il s’agit donc de votre code et non d’un code d’infrastructure provenant d’un ORM tel qu’EF.
 
 ```csharp
-// COMPATIBLE WITH ENTITY FRAMEWORK CORE 2.0
+// COMPATIBLE WITH ENTITY FRAMEWORK CORE 5.0
 // Entity is a custom base class with the ID
 public class Order : Entity, IAggregateRoot
 {
@@ -173,7 +173,7 @@ Par exemple, dans l’exemple de code OrderAggregate précédent, il existe plus
 - **Vaughn Vernon. Modélisation des agrégats avec DDD et Entity Framework.** Notez qu’il ne s’agit *pas* d’Entity Framework Core. \
   <https://kalele.io/blog-posts/modeling-aggregates-with-ddd-and-entity-framework/>
 
-- **Julie Lerman. Points de données-codage pour la conception pilotée par domaine : conseils pour les développeurs centrés sur les données** \
+- **Julie Lerman. Points de données-codage pour la conception de Domain-Driven : conseils pour les développeurs de Data-Focused** \
   <https://docs.microsoft.com/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs>
 
 - **UDI Dahan. Comment créer des modèles de domaine entièrement encapsulés** \

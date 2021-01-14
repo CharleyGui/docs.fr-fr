@@ -2,18 +2,18 @@
 title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
 ms.date: 02/14/2020
-ms.openlocfilehash: a59922feba75e940a5cee2dfeb500f4f86372870
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1023f13c7662abb7dad613128631c7644ca15bb9
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463698"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189601"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet clean` : Nettoie la sortie d’un projet.
 
@@ -42,11 +42,11 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
+  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug` , mais vous pouvez remplacer les paramètres de configuration de build dans votre projet. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
 
 * **`-f|--framework <FRAMEWORK>`**
 
-  Le [framework](../../standard/frameworks.md) spécifié au moment de la génération. Le framework doit être défini dans le [fichier projet](csproj.md). Si vous avez spécifié le framework au moment de la génération, vous devez spécifier le framework lors du nettoyage.
+  Le [framework](../../standard/frameworks.md) spécifié au moment de la génération. Le framework doit être défini dans le [fichier projet](../project-sdk/overview.md). Si vous avez spécifié le framework au moment de la génération, vous devez spécifier le framework lors du nettoyage.
 
 * **`-h|--help`**
 
@@ -70,7 +70,7 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `normal`.
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `normal`.
 
 ## <a name="examples"></a>Exemples
 

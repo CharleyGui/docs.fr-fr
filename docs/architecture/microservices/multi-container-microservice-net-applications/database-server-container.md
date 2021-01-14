@@ -1,13 +1,13 @@
 ---
 title: Utiliser un serveur de base de données s’exécutant en tant que conteneur
 description: Comprendre l’importance de l’utilisation d’un serveur de base de données qui s’exécute en tant que conteneur uniquement pour le développement. Jamais pour la production.
-ms.date: 01/30/2020
-ms.openlocfilehash: 38f77e195b184d57dcad5904674a0025ef6c2bd8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 01/13/2021
+ms.openlocfilehash: 1292bf37e3baaeb6284f6fba15b4bc7c9c17b4a7
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539397"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188736"
 ---
 # <a name="use-a-database-server-running-as-a-container"></a>Utiliser un serveur de base de données s’exécutant en tant que conteneur
 
@@ -270,7 +270,7 @@ Dans eShopOnContainers, le `basket-api` microservice utilise un cache redims s�
       - "6379"
 ```
 
-Ce code dans docker-compose. yml définit un conteneur nommé `basketdata` en fonction de l’image redims et en publiant le port 6379 en interne. Cela signifie qu’elle sera uniquement accessible à partir d’autres conteneurs exécutés dans l’hôte de l’ordinateur de la station d’accueil.
+Ce code dans docker-compose. yml définit un conteneur nommé `basketdata` en fonction de l’image redims et en publiant le port 6379 en interne. Cette configuration signifie qu’elle sera uniquement accessible à partir d’autres conteneurs exécutés dans l’hôte de l’ordinateur de la station d’accueil.
 
 Enfin, dans le fichier *docker-compose. override. yml* , le `basket-api` microservice de l’exemple eShopOnContainers définit la chaîne de connexion à utiliser pour ce conteneur ReDim :
 

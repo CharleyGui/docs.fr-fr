@@ -2,18 +2,18 @@
 title: Commande dotnet pack
 description: La commande dotnet Pack crée des packages NuGet pour votre projet .NET.
 ms.date: 04/28/2020
-ms.openlocfilehash: 3ca7947b4ed9902b163f09a7b57696f304610cce
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: a9a634c358f5de4f28c3de06edc9a2b4d2eb8d57
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95674799"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190076"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet pack` : Place le code dans un package NuGet.
 
@@ -46,7 +46,7 @@ Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comport
 > [!NOTE]
 > Dans certains cas, la génération implicite ne peut pas être effectuée. Cela peut se produire lorsque `GeneratePackageOnBuild` est défini, afin d’éviter une dépendance cyclique entre les cibles de build et de Pack. La génération peut également échouer si un fichier est verrouillé ou un autre problème.
 
-Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). La section [Exemples](#examples) montre comment utiliser le commutateur MSBuild -p pour deux scénarios différents.
+Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez Propriétés de la [cible du Pack NuGet](/nuget/reference/msbuild-targets#pack-target) et informations de référence sur les [Command-Line MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). La section [exemples](#examples) montre comment utiliser le commutateur MSBuild `-p` pour plusieurs scénarios différents.
 
 Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour remplacer le comportement par défaut, ajoutez la propriété suivante à votre fichier *.csproj* :
 
@@ -64,7 +64,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 `PROJECT | SOLUTION`
 
-  Projet ou solution à empaqueter. Il s’agit d’un chemin d’accès à un fichier [csproj](csproj.md), à un fichier vbproj, à un fichier fsproj, à un fichier solution ou à un répertoire. S’il n’est pas spécifié, la commande recherche un fichier projet ou solution dans le répertoire actif.
+  Projet ou solution à empaqueter. Il s’agit soit d’un chemin d’accès à un fichier csproj, vbproj ou fsproj, soit d’un fichier ou d’un répertoire de solution. S’il n’est pas spécifié, la commande recherche un fichier projet ou solution dans le répertoire actif.
 
 ## <a name="options"></a>Options
 

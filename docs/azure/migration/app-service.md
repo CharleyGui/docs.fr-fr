@@ -3,18 +3,18 @@ title: Migrer votre application ou service web .NET vers Azure App Service
 description: En savoir plus sur la migration d’une application ou d’un service Web .NET d’un site local vers un Azure App Service.
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: a5e193b2dbaedb86ff0e24bc8b70043896bbeea3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0e2aaa23aedabef007878901ec7297711f140533
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539084"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189250"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrer votre application ou service web .NET vers Azure App Service
 
 [App service](/azure/app-service/overview) est un service de plateforme de calcul entièrement géré qui est optimisé pour héberger des sites Web évolutifs et des applications Web. Cet article fournit des informations sur la façon de lever-déplacer une application existante vers Azure App Service, les modifications à prendre en compte et des ressources supplémentaires pour [migrer vers le Cloud](https://azure.microsoft.com/migration/web-applications/). La plupart des sites web ASP.NET (WebForms, MVC) et des services (API Web, WCF) peuvent passer directement à Azure App Service, sans aucune modification. Certains peuvent nécessiter des modifications mineures tandis que d’autres peuvent nécessiter une refactorisation.
 
-Prêt à vous lancer ? [Publiez une application ASP.NET + SQL sur Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
+Vous êtes prêt à commencer ? [Publiez une application ASP.NET + SQL sur Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
 
 ## <a name="considerations"></a>Considérations
 
@@ -24,7 +24,7 @@ Vérifiez l’accès aux ressources locales, car elles peuvent nécessiter une m
 
 * Créez un VPN connectant App Service aux ressources locales à l’aide des [Réseaux virtuels Azure](/azure/app-service/web-sites-integrate-with-vnet).
 * Exposez les services locaux au cloud de manière sécurisée sans modification du pare-feu à l’aide de [Azure Relay](/azure/service-bus-relay/relay-what-is-it).
-* Migrez des dépendances comme une [base de données SQL](https://go.microsoft.com/fwlink/?linkid=863217) vers Azure.
+* Migrez des dépendances comme une [base de données SQL](./sql.md) vers Azure.
 * Utilisez des offres de plateforme en tant que service dans le Cloud pour réduire les dépendances. Par exemple, plutôt que de vous connecter à un serveur de messagerie sur site, envisagez d’utiliser [SendGrid](/azure/sendgrid-dotnet-how-to-send-email).
 
 ### <a name="port-bindings"></a>Liaisons de port

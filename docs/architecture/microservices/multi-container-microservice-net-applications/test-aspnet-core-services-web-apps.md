@@ -1,13 +1,13 @@
 ---
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
-ms.date: 08/07/2020
-ms.openlocfilehash: 67872668781d8ae5d79bf360aee73f744cf4404b
-ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
+ms.date: 01/13/2021
+ms.openlocfilehash: dfd0a320491f92154bc9e2804d56c00120224e62
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97633947"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188001"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -15,13 +15,13 @@ Les contrôleurs constituent l’élément central des services d’API ASP.NET 
 
 Vous devez tester le comportement du contrôleur avec les entrées valides et non valides, ainsi que les réponses du contrôleur en fonction du résultat de l’opération qu’il effectue. Toutefois, vous devez avoir ces types de test pour vos microservices :
 
-- Tests unitaires. Ces tests permettent de vérifier que les composants de l’application fonctionnent comme prévu. Les assertions testent l’API des composants.
+- Tests unitaires. Ces tests garantissent que les composants individuels de l’application fonctionnent comme prévu. Les assertions testent l’API des composants.
 
-- Tests d’intégration. Ces tests permettent de vérifier que les interactions entre composants fonctionnent comme prévu, en se basant sur des artefacts externes comme les bases de données. Les assertions peuvent tester l’API des composants, l’interface utilisateur ou les effets secondaires des actions telles que les E/S de base de données, la journalisation, etc.
+- Tests d’intégration. Ces tests garantissent que les interactions entre les composants fonctionnent comme prévu sur des artefacts externes tels que des bases de données. Les assertions peuvent tester l’API des composants, l’interface utilisateur ou les effets secondaires des actions telles que les E/S de base de données, la journalisation, etc.
 
-- Tests fonctionnels pour chaque microservice. Ils garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
+- Tests fonctionnels pour chaque microservice. Ces tests garantissent que l’application fonctionne comme prévu du point de vue de l’utilisateur.
 
-- Tests de service. Ces tests permettent de garantir que les cas d’usage de service de bout en bout (y compris l’exécution simultanée de plusieurs services) sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-composer, par exemple).
+- Tests de service. Ces tests garantissent que les cas d’utilisation de service de bout en bout, y compris le test de plusieurs services en même temps, sont testés. Pour ce type de test, vous devez d’abord préparer l’environnement. Dans ce cas, cela signifie démarrer les services (à l’aide de docker-composer, par exemple).
 
 ### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implémentation des tests unitaires pour les API web ASP.NET Core
 
@@ -70,7 +70,7 @@ Contrairement aux tests unitaires, les tests d’intégration rencontrent souven
 
 ASP.NET Core comprend un hôte Web de test intégré qui peut être utilisé pour gérer les requêtes HTTP sans surcharge du réseau, ce qui signifie que vous pouvez exécuter ces tests plus rapidement que lors de l’utilisation d’un hôte Web réel. L’hôte web de test (TestServer) est disponible dans un composant NuGet, sous le nom de Microsoft.AspNetCore.TestHost. Il peut être ajouté aux projets de test d’intégration et utilisé pour héberger les applications ASP.NET Core.
 
-Comme vous pouvez le voir dans le code suivant, lorsque vous créez des tests d’intégration pour des contrôleurs ASP.NET Core, vous instanciez les contrôleurs via l’hôte de test. Ceci est comparable à une requête HTTP, avec toutefois, une exécution plus rapide.
+Comme vous pouvez le voir dans le code suivant, lorsque vous créez des tests d’intégration pour des contrôleurs ASP.NET Core, vous instanciez les contrôleurs via l’hôte de test. Cette fonctionnalité est comparable à une requête HTTP, mais elle s’exécute plus rapidement.
 
 ```csharp
 public class PrimeWebDefaultRequestShould
@@ -107,7 +107,7 @@ public class PrimeWebDefaultRequestShould
 - **Steve Smith. Test d’intégration** (ASP.net Core) \
     [https://docs.microsoft.com/aspnet/core/test/integration-tests](/aspnet/core/test/integration-tests)
 
-- **Tests unitaires dans .NET Core à l’aide de dotnet test** \
+- **Tests unitaires dans .NET à l’aide de dotnet test** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 - **xUnit.net**. Site officiel. \
@@ -146,7 +146,7 @@ Tandis que les tests d’unité et d’intégration sont organisés dans un doss
 
 **Figure 6-25.** Tester la structure des dossiers dans eShopOnContainers
 
-Les tests fonctionnels/d’intégration de microservices et d’applications sont exécutés à partir de Visual Studio, à l’aide de l’exécuteur de tests standard, mais vous devez d’abord démarrer les services d’infrastructure nécessaires au moyen d’un ensemble de fichiers docker-compose contenus dans le dossier de test de la solution :
+Les tests fonctionnels et d’intégration des microservices et des applications sont exécutés à partir de Visual Studio, à l’aide d’un test Runner standard, mais vous devez d’abord démarrer les services d’infrastructure requis, avec un ensemble de fichiers dockr-compose contenus dans le dossier test de la solution :
 
 **docker-compose-test.yml**
 
@@ -194,7 +194,7 @@ Par conséquent, pour exécuter les tests fonctionnels/d’intégration, vous de
 docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 ```
 
-Comme on peut le constater, ces fichiers Docker Compose lancent seulement les microservices Redis, RabbitMQ, SQL Server et MongoDB.
+Comme vous pouvez le voir, ces fichiers dockr-compose démarrent uniquement les microservices ReDim, RabbitMQ, SQL Server et MongoDB.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

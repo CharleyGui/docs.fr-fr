@@ -2,12 +2,12 @@
 title: Commande dotnet list package
 description: La commande 'dotnet list package' est pratique pour lister les références de packages à un projet ou à une solution.
 ms.date: 11/11/2020
-ms.openlocfilehash: ecb83e5485c9fb49a454a35091e1a7b753b1f291
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 684b73dec553a424252e1368c265847622fb7850
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556886"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189894"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -43,7 +43,7 @@ Project 'SentimentAnalysis' has the following package references
 (A) : Auto-referenced package.
 ```
 
-La colonne **Demandée** fait référence à la version du package spécifiée dans le fichier projet et peut représenter une plage. La colonne **Résolue** répertorie la version utilisée par le projet aide et représente toujours une valeur unique. Les packages affichant une lettre `(A)` en regard de leurs noms représentent des [références de package implicites](csproj.md#implicit-package-references) déduites de vos paramètres de projet (type `Sdk`, propriété `<TargetFramework>` ou `<TargetFrameworks>`, etc.)
+La colonne **Demandée** fait référence à la version du package spécifiée dans le fichier projet et peut représenter une plage. La colonne **Résolue** répertorie la version utilisée par le projet aide et représente toujours une valeur unique. Les packages qui affichent un `(A)` juste en regard de leurs noms représentent des références de package implicites qui sont déduites de vos paramètres de projet ( `Sdk` type, ou `<TargetFramework>` `<TargetFrameworks>` propriété).
 
 Utilisez l’option `--outdated` pour savoir s’il existe des versions plus récentes des packages que vous utilisez dans vos projets. Par défaut, `--outdated` répertorie les derniers packages stables, sauf si la version résolue est également une version préliminaire. Pour inclure des versions préliminaires lors de l’énumération des versions plus récentes, spécifiez également l’option `--include-prerelease`. Les exemples suivants montrent le résultat de la commande `dotnet list package --outdated --include-prerelease` pour le même projet que l’exemple précédent :
 
@@ -85,7 +85,7 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 
 - **`--framework <FRAMEWORK>`**
 
-  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
+  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
 
 - **`-h|--help`**
 

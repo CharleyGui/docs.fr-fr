@@ -4,12 +4,12 @@ description: Découvrez .NET, une plateforme de développement Open source gratu
 author: tdykstra
 ms.date: 11/16/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 0adc348c1fc340fe481d9987cdbe28c6cf8b065d
-ms.sourcegitcommit: 655f8a16c488567dfa696fc0b293b34d3c81e3df
+ms.openlocfilehash: e0c86b377d4ea73bb275bc48c0f0cccb2db249dd
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97938674"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189998"
 ---
 # <a name="introduction-to-net"></a>Introduction à .NET
 
@@ -24,10 +24,10 @@ ms.locfileid: "97938674"
   * [Windows Forms](/dotnet/desktop/winforms/)
   * [Plateforme Windows universelle (UWP)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * [Joueur](https://dotnet.microsoft.com/apps/games)
-* [Internet des objets (IoT)](/dotnet/iot)
+* [Internet des objets (IoT)](../iot/index.yml)
 * [Machine Learning](../machine-learning/index.yml)
 * [Applications de console](tutorials/with-visual-studio-code.md)
-* [Services Windows](/aspnet/core/host-and-deploy/windows-service)
+* [Windows Services](/aspnet/core/host-and-deploy/windows-service)
 
 Partager des fonctionnalités entre différentes applications et types d’applications à l’aide de [bibliothèques de classes](../standard/class-libraries.md).
 
@@ -294,7 +294,7 @@ Les bibliothèques pour certaines fonctionnalités d’application couramment ut
 | [Microsoft.Extensions.Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) | [Gestion de la durée de vie des applications (hôte générique)](extensions/generic-host.md) |
 | [Microsoft. extensions. DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection) | [Injection de dépendances (DI)](extensions/dependency-injection.md)
 | [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration) | [Configuration](extensions/configuration.md) |
-| [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Journalisation](extensions/logging.md) |
+| [Microsoft.Extensions.Logging](https://www.nuget.org/packages/Microsoft.Extensions.Logging) | [Logging](extensions/logging.md) |
 | [Microsoft. extensions. options](https://www.nuget.org/packages/Microsoft.Extensions.Options) | [Modèle d’options](extensions/options.md) |
 
 Pour plus d’informations, consultez le [référentiel dotnet/extensions sur GitHub](https://github.com/dotnet/extensions).
@@ -335,7 +335,7 @@ Pour plus d’informations, consultez composants de l' [architecture .net](../st
 
 Une partie de la terminologie pour .NET peut être déroutante, car le même mot est utilisé de différentes façons dans différents contextes. Voici quelques-unes des instances les plus importantes :
 
-* **runtime**
+* **Language**
 
   |Context  |signification de « Runtime » |
   |---------|---------|

@@ -1,13 +1,13 @@
 ---
 title: Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser RabbitMQ pour implémenter une messagerie de bus d’événements pour les événements d’intégration des environnements de développement ou de test.
-ms.date: 10/02/2018
-ms.openlocfilehash: 1af72d18825eb610d6900178205450e2c2e34c25
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.date: 01/13/2021
+ms.openlocfilehash: a1e7d11e376080a03269f202fa6ae24ffeb0f4d2
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306888"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188079"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implémentation d’un bus d’événements avec RabbitMQ pour un environnement de développement ou de test
 
@@ -21,7 +21,7 @@ L’implémentation du bus d’événements avec RabbitMQ permet aux microservic
 
 **Figure 6-21.** Implémentation RabbitMQ d’un bus d’événements
 
-RabbitMQ fonctionne comme un intermédiaire entre le serveur de publication des messages et les abonnés pour gérer la distribution. Dans le code, la classe EventBusRabbitMQ implémente l’interface IEventBus générique. Cette opération est basée sur une injection de dépendances pour vous permettre de passer de cette version de développement/test à une version de production.
+RabbitMQ fonctionne comme un intermédiaire entre le serveur de publication des messages et les abonnés pour gérer la distribution. Dans le code, la classe EventBusRabbitMQ implémente l’interface IEventBus générique. Cette implémentation est basée sur l’injection de dépendances, ce qui vous permet de basculer de cette version de développement/test vers une version de production.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -35,7 +35,7 @@ L’implémentation RabbitMQ d’un exemple de bus d’événements de développ
 
 ## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>Implémentation d’une méthode de publication simplifiée avec RabbitMQ
 
-Le code suivant est une version ***simplifiée*** de l’implémentation d’un bus d’événements pour RabbitMQ, qui présente le scénario. On ne gère pas la connexion de cette façon. Pour voir l’implémentation complète, consultez le code dans le référentiel [dotnet-architecture/eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs).
+Le code suivant est une version **_simplifiée_* d’une implémentation de bus d’événements pour RabbitMQ, pour présenter le scénario entier. On ne gère pas la connexion de cette façon. Pour voir l’implémentation complète, consultez le code dans le référentiel [dotnet-architecture/eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs).
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -63,7 +63,7 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 }
 ```
 
-Le [code réel](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) de la méthode Publish de l’application eShopOnContainers est amélioré à l’aide d’une stratégie de nouvelles tentatives d’[interrogation](https://github.com/App-vNext/Polly). Cette stratégie consiste à réessayer d’exécuter la tâche un certain nombre de fois, au cas où le conteneur RabbitMQ ne serait pas prêt. Cela peut se produire quand docker-compose démarre les conteneurs. Par exemple, le conteneur RabbitMQ peut démarrer plus lentement que les autres conteneurs.
+Le [code réel](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) de la méthode de publication dans l’application eShopOnContainers est amélioré à l’aide d’une stratégie de nouvelle tentative [Polly](https://github.com/App-vNext/Polly) , qui retente la tâche à un moment donné si le conteneur RabbitMQ n’est pas prêt. Ce scénario peut se produire lorsque dockr-compose démarre les conteneurs. par exemple, le conteneur RabbitMQ peut démarrer plus lentement que les autres conteneurs.
 
 Comme indiqué précédemment, il existe de nombreuses configurations possibles dans RabbitMQ. Ce code doit donc être utilisé uniquement pour les environnements de développement/test.
 
@@ -116,7 +116,7 @@ Pour les scénarios de production, vérifiez les ressources supplémentaires ci-
 
 Solution prête pour la production avec prise en charge de RabbitMQ.
 
-- **EasyNetQ** -client API .net Open source pour RabbitMQ \
+- _ *EasyNetQ**-client API .net Open source pour RabbitMQ \
   <https://easynetq.com/>
 
 - **MassTransit** \

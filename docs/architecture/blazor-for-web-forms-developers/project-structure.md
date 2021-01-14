@@ -7,12 +7,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 11/20/2020
-ms.openlocfilehash: d91430eb654ee16934408bf064803b34ca700640
-ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
+ms.openlocfilehash: ba7113c88db728f30812821deaf7c06a80663d1f
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96509804"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189087"
 ---
 # <a name="project-structure-for-no-locblazor-apps"></a>Structure de projet pour les Blazor applications
 
@@ -223,7 +223,7 @@ Dans l' Blazor WebAssembly application, la page hôte est un simple fichier HTML
 
 ```
 
-Le composant racine à restituer est configuré dans la méthode de l’application `Program.Main` avec la flexibilité nécessaire pour inscrire différents services via l’injection de dépendances. Vous pouvez faire référence à ajouter des services à [ Blazor WebAssembly ](https://docs.microsoft.com/aspnet/core/blazor/fundamentals/dependency-injection?view=aspnetcore-5.0#blazor-webassembly) une application dans
+Le composant racine à restituer est spécifié dans la méthode de l’application, `Program.Main` avec la flexibilité nécessaire pour inscrire les services via l’injection de dépendances. Pour plus d’informations, consultez [ASP.net Core Blazor injection de dépendances](/aspnet/core/blazor/fundamentals/dependency-injection?pivots=webassembly).
 
 ```csharp
 public class Program

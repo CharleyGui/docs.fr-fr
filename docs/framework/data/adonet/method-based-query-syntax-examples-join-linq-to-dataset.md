@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4fd5ed2c-b03a-4054-a3ed-3ddb380d7d9d
-ms.openlocfilehash: 8bfcd8ae5d81c0d04ca7a43e6d5b25a492266605
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 9573b1bf9dad77567fee8801a5e612c7efd53b1e
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91189342"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98187806"
 ---
 # <a name="method-based-query-syntax-examples-join-linq-to-dataset"></a>Exemples de syntaxe de requête fondée sur une méthode : jointure (LINQ to DataSet)
 
@@ -51,5 +51,3 @@ La jointure est une opération importante dans les requêtes qui ciblent des sou
 - [Exemples de LINQ to DataSet](linq-to-dataset-examples.md)
 - [Présentation des opérateurs de requête standard (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Exemples de jointure](https://go.microsoft.com/fwlink/?LinkId=187357)
-- [Exemples de jeux de données](https://go.microsoft.com/fwlink/?LinkId=187358)

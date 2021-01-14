@@ -1,19 +1,19 @@
 ---
 title: Implémenter des tâches en arrière-plan dans les microservices avec IHostedService et la classe BackgroundService
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les nouvelles options pour utiliser IHostedService et BackgroundService afin d’implémenter des tâches d’arrière-plan dans des microservices .NET Core.
-ms.date: 08/14/2020
-ms.openlocfilehash: 279f9e0093deafab51e63d72dce233c8e9466a55
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/13/2021
+ms.openlocfilehash: 26bc06c4a63cddcd32bf7da705f6258fab8eaafa
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91173352"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188801"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implémenter des tâches en arrière-plan dans les microservices avec IHostedService et la classe BackgroundService
 
 Les tâches en arrière-plan et les tâches planifiées sont des éléments que vous devrez peut-être utiliser dans n’importe quelle application, qu’elle respecte ou non le modèle d’architecture de microservices. La différence lors de l’utilisation d’une architecture de microservices est que vous pouvez implémenter la tâche en arrière-plan dans un processus/conteneur distinct pour l’hébergement, afin de pouvoir la mettre à l’échelle en fonction de vos besoins.
 
-D’un point de vue générique, dans .NET Core, nous avons appelé les tâches de ce type *services hébergés*, car il s’agit de services/d’une logique que vous hébergez dans votre hôte/application/microservice. Notez que dans ce cas, le service hébergé représente simplement une classe avec la logique de tâche en arrière-plan.
+D’un point de vue générique, dans .NET, nous avons appelé ces types de tâches *services hébergés*, car il s’agit de services/logiques que vous hébergez dans votre hôte/application/microservice. Notez que dans ce cas, le service hébergé représente simplement une classe avec la logique de tâche en arrière-plan.
 
 Depuis .NET Core 2.0, le framework fournit une nouvelle interface nommée <xref:Microsoft.Extensions.Hosting.IHostedService>, qui vous aide à implémenter facilement les services hébergés. L’idée de base est que vous pouvez inscrire plusieurs tâches en arrière-plan (services hébergés) qui s’exécutent en arrière-plan pendant l’exécution de votre hôte ou hôte Web, comme illustré dans l’image 6-26.
 
@@ -45,7 +45,7 @@ SignalR est un exemple d’artefact qui utilise des services hébergés, mais vo
 
 Fondamentalement, vous pouvez décharger ces actions vers une tâche en arrière-plan qui implémente `IHostedService` .
 
-La façon dont vous ajoutez un ou plusieurs `IHostedServices` à votre `WebHost` ou `Host` consiste à les inscrire à l’aide de la <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionHostedServiceExtensions.AddHostedService%2A>   méthode d’extension dans un ASP.net Core `WebHost` (ou dans un `Host` dans .net Core 2,1 et versions ultérieures). En fait, vous devez inscrire les services hébergés dans la méthode `ConfigureServices()` bien connue de la classe `Startup`, comme dans le code suivant d’un WebHost ASP.NET classique.
+La façon dont vous ajoutez un ou plusieurs `IHostedServices` à votre `WebHost` ou `Host` consiste à les inscrire à l’aide de la <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionHostedServiceExtensions.AddHostedService%2A> méthode d’extension dans un ASP.net Core `WebHost` (ou dans un `Host` dans .net Core 2,1 et versions ultérieures). En fait, vous devez inscrire les services hébergés dans la méthode `ConfigureServices()` bien connue de la classe `Startup`, comme dans le code suivant d’un WebHost ASP.NET classique.
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -54,8 +54,8 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
     // Register Hosted Services
     services.AddHostedService<GracePeriodManagerService>();
-    services.AddHostedService<MyHostedServiceB>();
-    services.AddHostedService<MyHostedServiceC>();
+    services.AddHostedService<MyHostedServiceB>();
+    services.AddHostedService<MyHostedServiceC>();
     //...
 }
 ```
@@ -68,7 +68,7 @@ Sans utiliser `IHostedService`, vous pouvez tout de même démarrer un thread d�
 
 ## <a name="the-ihostedservice-interface"></a>Interface IHostedService
 
-Quand vous inscrivez `IHostedService`, .NET Core appelle les méthodes `StartAsync()` et `StopAsync()` de votre type `IHostedService` durant le démarrage et l’arrêt de l’application, respectivement. Pour plus d’informations, consultez [IHostedService interface](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.1#ihostedservice-interface) .
+Lorsque vous inscrivez un `IHostedService` , .NET appelle les `StartAsync()` méthodes et `StopAsync()` de votre `IHostedService` type au moment du démarrage et de l’arrêt de l’application, respectivement. Pour plus d’informations, consultez [IHostedService interface](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.1#ihostedservice-interface) .
 
 Naturellement, vous pouvez créer plusieurs implémentations d’IHostedService et les inscrire auprès de la méthode `ConfigureService()` dans le conteneur d’injection de dépendances, comme nous l’avons déjà indiqué. Tous ces services hébergés démarrent et s’arrêtent avec l’application/le microservice.
 
@@ -76,13 +76,13 @@ En tant que développeur, vous êtes responsable de la prise en charge de l’ac
 
 ## <a name="implementing-ihostedservice-with-a-custom-hosted-service-class-deriving-from-the-backgroundservice-base-class"></a>Implémentation d’IHostedService avec une classe de service hébergé personnalisé dérivant de la classe de base BackgroundService
 
-Vous pouvez donc créer entièrement votre classe de service hébergé personnalisé, et implémentez `IHostedService`, comme vous le faites quand vous utilisez .NET Core 2.0.
+Vous pouvez créer votre classe de service hébergée personnalisée à partir de zéro et implémenter le `IHostedService` , comme vous le feriez lors de l’utilisation de .net Core 2,0 et versions ultérieures.
 
 Toutefois, comme la plupart des tâches en arrière-plan ont des besoins similaires en ce qui concerne la gestion des jetons d’annulation et d’autres opérations classiques, il existe une classe de base abstraite pratique, nommée `BackgroundService` (disponible depuis .NET Core 2.1).
 
 Cette classe fournit le travail principal nécessaire à la configuration de la tâche en arrière-plan.
 
-Le code suivant est la classe de base BackgroundService abstraite implémentée dans .NET Core.
+Le code suivant est la classe de base BackgroundService abstraite telle qu’elle est implémentée dans .NET.
 
 ```csharp
 // Copyright (c) .NET Foundation. Licensed under the Apache License, Version 2.0.
@@ -210,7 +210,7 @@ Diagramme de classes : IWebHost et IHost peuvent héberger de nombreux services
 
 ### <a name="deployment-considerations-and-takeaways"></a>Éléments importants à retenir et considérations relatives au déploiement
 
-Il est important de noter que la façon dont vous déployez votre `WebHost` ASP.NET Core ou votre `Host` .NET Core peut avoir un impact sur la solution finale. Par exemple, si vous déployez votre `WebHost` sur IIS ou sur un Azure App Service normal, votre hôte peut être arrêté en raison des recyclages de pools d’applications. Toutefois, si vous déployez votre hôte en tant que conteneur dans un orchestrateur comme Kubernetes, vous pouvez contrôler le nombre d’instances actives de votre hôte. En outre, vous pouvez envisager d’autres approches liées au cloud, spécialement conçues pour ces scénarios, par exemple Azure Functions. Enfin, si vous avez besoin que le service soit exécuté tout le temps et si vous déployez sur un serveur Windows, vous pouvez utiliser un service Windows.
+Il est important de noter que la façon dont vous déployez votre ASP.NET Core `WebHost` ou .NET `Host` peut avoir un impact sur la solution finale. Par exemple, si vous déployez votre `WebHost` sur IIS ou sur un Azure App Service normal, votre hôte peut être arrêté en raison des recyclages de pools d’applications. Toutefois, si vous déployez votre hôte en tant que conteneur dans un orchestrateur comme Kubernetes, vous pouvez contrôler le nombre d’instances actives de votre hôte. En outre, vous pouvez envisager d’autres approches liées au cloud, spécialement conçues pour ces scénarios, par exemple Azure Functions. Enfin, si vous avez besoin que le service soit exécuté tout le temps et si vous déployez sur un serveur Windows, vous pouvez utiliser un service Windows.
 
 Toutefois, même pour un `WebHost` déployé dans un pool d’applications, il existe des scénarios tels que le remplissage ou le vidage du cache en mémoire de l’application qui serait toujours applicable.
 

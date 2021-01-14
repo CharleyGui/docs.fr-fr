@@ -1,17 +1,17 @@
 ---
 title: Implémentation de lectures/requêtes dans un microservice CQRS
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre l’implémentation du côté requêtes de CQRS sur le microservice Ordering dans eShopOnContainers avec Dapper.
-ms.date: 10/08/2018
-ms.openlocfilehash: e6ea7b4b7b37df9ee972319f597ab045bf3bd215
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.date: 01/13/2021
+ms.openlocfilehash: 047fc3893dcaf72a17d29f5560c928879757d024
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678801"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188918"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implémenter les lectures/requêtes dans un microservice CQRS
 
-Pour les lectures/requêtes, le microservice Ordering (Commandes) de l’application de référence eShopOnContainers implémente les requêtes indépendamment du modèle DDD et de la zone transactionnelle. La raison principale en est que les demandes de requêtes et de transactions sont radicalement différentes. Les écritures exécutent des transactions qui doivent être conformes à la logique de domaine. En revanche, les requêtes sont idempotentes et peuvent être séparées des règles du domaine.
+Pour les lectures/requêtes, le microservice Ordering (Commandes) de l’application de référence eShopOnContainers implémente les requêtes indépendamment du modèle DDD et de la zone transactionnelle. Cette implémentation a été effectuée principalement parce que les demandes de requêtes et de transactions sont radicalement différentes. Les écritures exécutent des transactions qui doivent être conformes à la logique de domaine. En revanche, les requêtes sont idempotentes et peuvent être séparées des règles du domaine.
 
 L’approche est simple, comme le montre la figure 7-3. L’interface API est implémentée par les contrôleurs d’API web à l’aide de n’importe quelle infrastructure, comme un micro-mappeur objet/relationnel (ORM) tel que Dapper, et en retournant des ViewModels dynamiques en fonction des besoins des applications d’interface utilisateur.
 
@@ -21,7 +21,7 @@ L’approche est simple, comme le montre la figure 7-3. L’interface API est i
 
 Il est possible d’implémenter l’approche la plus simple pour les requêtes dans une approche CQRS simplifiée en interrogeant la base de données avec un micro-ORM comme dapper, en renvoyant des ViewModels dynamiques. Les définitions de requête interrogent la base de données et retournent un ViewModel dynamique généré instantanément pour chaque requête. Étant donné que les requêtes sont idempotentes, elles ne changent pas les données, quel que soit le nombre d’exécutions d’une requête. Par conséquent, vous n’avez pas besoin d’être restreint par un modèle DDD utilisé du côté transactionnel, comme les agrégats et d’autres modèles. C’est pourquoi les requêtes sont séparées de la zone transactionnelle. Vous interrogez la base de données pour obtenir les données dont l’interface utilisateur a besoin et retourner un ViewModel dynamique qui n’a pas besoin d’être défini de manière statique en tout lieu (aucune classe pour le ViewModels), sauf dans les instructions SQL elles-mêmes.
 
-Dans la mesure où cette approche est simple, le code requis pour le côté des requêtes (par exemple, le code utilisant un micro ORM comme [dapper](https://github.com/StackExchange/Dapper)) peut être implémenté [dans le même projet d’API Web](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs). La figure 7-4 illustre ceci. Les requêtes sont définies dans le projet de microservice **Ordering.API** dans la solution eShopOnContainers.
+Dans la mesure où cette approche est simple, le code requis pour le côté des requêtes (par exemple, le code utilisant un micro ORM comme [dapper](https://github.com/StackExchange/Dapper)) peut être implémenté [dans le même projet d’API Web](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs). La figure 7-4 illustre cette approche. Les requêtes sont définies dans le projet de microservice **Ordering.API** dans la solution eShopOnContainers.
 
 ![Capture d’écran du dossier de requêtes du projet Ordering. API.](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
 
@@ -33,7 +33,7 @@ Dans la mesure où cette approche est simple, le code requis pour le côté des 
 
 Les données retournées (ViewModel) peuvent être le résultat de données de plusieurs entités ou tables jointes à la base de données, ou même de plusieurs agrégats définis dans le modèle de domaine de la zone transactionnelle. Dans ce cas, étant donné que vous créez des requêtes indépendantes du modèle de domaine, les limites et contraintes des agrégats sont ignorées et vous êtes libre d’interroger une table et une colonne dont vous pourriez avoir besoin. Cette approche offre une grande souplesse et une grande productivité pour les développeurs qui créent ou mettent à jour les requêtes.
 
-Les ViewModels peuvent être des types statiques définis dans des classes (tels qu’ils sont implémentés dans le microservice de commande). Ils peuvent être créés dynamiquement en fonction des requêtes effectuées, ce qui est très agile pour les développeurs.
+Les ViewModels peuvent être des types statiques définis dans des classes (tels qu’ils sont implémentés dans le microservice de commande). Elles peuvent être créées dynamiquement en fonction des requêtes exécutées, ce qui est agile pour les développeurs.
 
 ## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>Utiliser Dapper comme micro-ORM pour effectuer des requêtes
 
@@ -173,7 +173,7 @@ public class OrderSummary
 }
 ```
 
-C’est une autre raison pour laquelle les types retournés explicites sont, à long terme, préférables aux types dynamiques. Lorsque vous utilisez l' `ProducesResponseType` attribut, vous pouvez également spécifier le résultat attendu en ce qui concerne les erreurs/codes http possibles, tels que 200, 400, etc.
+C’est une autre raison pour laquelle les types retournés explicites sont, à long terme, préférables aux types dynamiques. Lorsque vous utilisez l' `ProducesResponseType` attribut, vous pouvez également spécifier le résultat attendu en cas d’erreurs/codes http possibles, par exemple 200, 400, etc.
 
 Dans l’image suivante, vous pouvez voir comment l’interface utilisateur de Swagger affiche les informations ResponseType.
 

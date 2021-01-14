@@ -1,13 +1,13 @@
 ---
 title: Application des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la façon dont CQRS est implémenté dans le microservice Ordering de l’application eShopOnContainers.
-ms.date: 03/03/2020
-ms.openlocfilehash: 2916df596a6d0f887411f3ef0074aed395ef58ba
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.date: 01/13/2021
+ms.openlocfilehash: 0c07ecad0fb2dfdaea85d47b519b858e0519f6bd
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306940"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98188255"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Appliquer des approches CQRS et CQS dans un microservice DDD dans eShopOnContainers
 
@@ -27,7 +27,7 @@ Comme le montre la figure 7-2 de la section précédente, ce guide suggère l’
 
 Pour l’implémentation du côté « requêtes », vous pouvez choisir entre plusieurs approches, à partir de votre ORM complet, comme EF Core, les projections du Mappeur, les procédures stockées, les vues, les vues matérialisées ou un micro ORM.
 
-Dans ce guide et dans eShopOnContainers (en particulier le microservice de commandes), nous avons choisi d’implémenter des requêtes simples à l’aide d’un micro-ORM comme [Dapper](https://github.com/StackExchange/dapper-dot-net). Cela vous permet d’implémenter n’importe quelle requête basée sur des instructions SQL pour obtenir des performances optimales grâce à une infrastructure légère avec peu de surcharge.
+Dans ce guide et dans eShopOnContainers (en particulier le microservice de commandes), nous avons choisi d’implémenter des requêtes simples à l’aide d’un micro-ORM comme [Dapper](https://github.com/StackExchange/dapper-dot-net). Ce guide vous permet d’implémenter n’importe quelle requête basée sur des instructions SQL pour obtenir des performances optimales grâce à une infrastructure légère avec peu de surcharge.
 
 Lorsque vous utilisez cette approche, toutes les mises à jour de votre modèle qui ont un impact sur la façon dont les entités sont conservées dans une base de données SQL nécessitent également des mises à jour séparées pour les requêtes SQL utilisées par dapper ou toute autre approche distincte (non EF) pour l’interrogation.
 
@@ -37,7 +37,7 @@ Il est important de comprendre que CQRS et la plupart des modèles DDD (comme le
 
 Des contextes délimités différents vont utiliser différents modèles. Ils ont des responsabilités diverses, ce qui aboutit à différentes solutions. Il est important de souligner que le fait d’imposer le même modèle partout entraîne un échec. N’utilisez pas les modèles CQRS et DDD partout. De nombreux sous-systèmes, contextes délimités ou microservices sont plus simples et peuvent être implémentés plus facilement à l’aide de services CRUD de base ou d’une autre approche.
 
-Il n’existe qu’une seule architecture des applications : l’architecture de l’application système ou de bout en bout que vous concevez (par exemple, l’architecture de microservices). Toutefois, la conception de chaque contexte délimité ou microservice au sein de cette application reflète ses propres compromis et décisions de conception interne à un niveau de modèles d’architecture. N’essayez pas d’appliquer les mêmes modèles d’architecture CQRS ou DDD partout.
+Il n’existe qu’une seule architecture des applications : l’architecture de l’application système ou de bout en bout que vous concevez (par exemple, l’architecture de microservices). Toutefois, la conception de chaque contexte délimité ou microservice au sein de cette application reflète ses propres compromis et décisions de conception interne à un niveau de modèles d’architecture. N’essayez pas d’appliquer les mêmes modèles d’architecture que CQRS ou DDD partout.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

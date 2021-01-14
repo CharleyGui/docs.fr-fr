@@ -6,12 +6,12 @@ ms.author: wiwagn
 no-loc:
 - Blazor
 ms.date: 12/01/2020
-ms.openlocfilehash: a4549e48152b21af05c67f601c1db65029e346fa
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: 75c696d881ad0586b11cdbd264f3ff90ec3bce8d
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851664"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98187962"
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies web courantes côté client
 
@@ -169,7 +169,7 @@ L’exécution de code .NET dans des navigateurs Web est rendue possible par web
 
 Le code webassembly peut accéder aux fonctionnalités complètes du navigateur via JavaScript, appelé interopérabilité JavaScript, souvent abrégé en COM Interop ou l’interopérabilité JS. Le code .NET exécuté via WebAssembly dans le navigateur s’exécute dans le bac à sable JavaScript du navigateur avec les protections offertes par le bac à sable contre les actions malveillantes sur l’ordinateur client.
 
-Pour plus d’informations, consultez [Introduction à Blazor ASP.net Core](https://docs.microsoft.com/aspnet/core/blazor/?view=aspnetcore-5.0)
+Pour plus d’informations, consultez [Présentation de Blazor ASP.net Core ](/aspnet/core/blazor/).
 
 ### <a name="choosing-a-spa-framework"></a>Choix d’un framework SPA
 

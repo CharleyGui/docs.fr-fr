@@ -1,13 +1,13 @@
 ---
 title: Création, évolution et version des contrats et des API de microservices
 description: Créez des API et des contrats de microservices en tenant compte de l’évolution et de la gestion de versions, car les besoins changent.
-ms.date: 09/20/2018
-ms.openlocfilehash: 9164bfd12df18a88ac187c8962f0afc80b702881
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.date: 01/13/2021
+ms.openlocfilehash: 84eeaa9776947abda6171949c730f8473e97b241
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557670"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189458"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Création, évolution et version des contrats et des API de microservices
 
@@ -19,7 +19,7 @@ Toutefois, même si votre contrat initial est l’aboutissement d’une réflexi
 
 Si vous apportez des changements minimes à l’API, comme l’ajout d’attributs ou de paramètres, il est recommandé que les clients qui utilisent une API antérieure passent à la nouvelle version du service. Il est possible que vous puissiez fournir des valeurs par défaut pour tous les attributs obligatoires manquants et que les clients ignorent les attributs de réponse en trop.
 
-Toutefois, vous pouvez parfois être amené à apporter des changements majeurs à une API de service qui débouchent sur des incompatibilités. Dans l’éventualité où vous ne pourriez pas forcer les applications ou services clients à passer tout de suite à la nouvelle version, un service doit prendre en charge les anciennes versions de l’API pendant un certain temps. Si vous utilisez un mécanisme HTTP, par exemple REST, il existe une approche qui consiste à incorporer le numéro de version de l’API dans l’URL ou dans un en-tête HTTP. Vous pouvez ensuite soit implémenter simultanément les deux versions du service dans la même instance de service, soit déployer des instances distinctes gérant des versions différentes de l’API. Une bonne approche consiste à utiliser le [modèle Médiateur](https://en.wikipedia.org/wiki/Mediator_pattern) (par exemple, la [bibliothèque MediatR](https://github.com/jbogard/MediatR)) pour découpler les versions de l’implémentation en gestionnaires indépendants.
+Toutefois, vous pouvez parfois être amené à apporter des changements majeurs à une API de service qui débouchent sur des incompatibilités. Dans l’éventualité où vous ne pourriez pas forcer les applications ou services clients à passer tout de suite à la nouvelle version, un service doit prendre en charge les anciennes versions de l’API pendant un certain temps. Si vous utilisez un mécanisme HTTP, par exemple REST, il existe une approche qui consiste à incorporer le numéro de version de l’API dans l’URL ou dans un en-tête HTTP. Vous pouvez ensuite soit implémenter simultanément les deux versions du service dans la même instance de service, soit déployer des instances distinctes gérant des versions différentes de l’API. Une bonne approche pour cette fonctionnalité est le [modèle de médiateur](https://en.wikipedia.org/wiki/Mediator_pattern) (par exemple, la [bibliothèque de médiateurs](https://github.com/jbogard/MediatR)) pour découpler les différentes versions d’implémentation dans des gestionnaires indépendants.
 
 Enfin, si vous utilisez une architecture REST, [Hypermedia](https://www.infoq.com/articles/mark-baker-hypermedia) constitue la meilleure solution pour la gestion de versions de vos services et la prise en charge d’API évolutives.
 

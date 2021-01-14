@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie un projet ou une solution .NET dans un répertoire.
 ms.date: 11/11/2020
-ms.openlocfilehash: 9b5d00816e2f4f9557280175e4b016fe79af0673
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 3918c0708e207157ac33dd1a8fdefb993a1d6741
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634427"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190063"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -72,8 +72,8 @@ Pour plus d’informations, consultez les ressources suivantes :
 - **`PROJECT|SOLUTION`**
 
   Projet ou solution à publier.
-  
-  * `PROJECT` est le chemin d’accès et le nom de fichier d’un fichier projet [c#](csproj.md), f # ou Visual Basic, ou le chemin d’accès à un répertoire qui contient un fichier projet C#, f # ou Visual Basic. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut.
+
+  * `PROJECT` est le chemin d’accès et le nom de fichier d’un fichier projet C#, F # ou Visual Basic, ou le chemin d’accès à un répertoire qui contient un fichier projet C#, F # ou Visual Basic. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut.
 
   * `SOLUTION` est le chemin d’accès et le nom de fichier d’un fichier solution (extension *. sln* ), ou le chemin d’accès à un répertoire qui contient un fichier solution. Si le répertoire n’est pas spécifié, le répertoire actif est utilisé par défaut. Option disponible à partir du kit SDK .NET Core 3.0.
 
@@ -125,23 +125,23 @@ Pour plus d’informations, consultez les ressources suivantes :
   
   S’il n’est pas spécifié, la valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/Publish/* pour un exécutable dépendant du Framework et des binaires multiplateforme. La valeur par défaut est *[project_file_folder]/bin/[Configuration]/[Framework]/[Runtime]/Publish/* pour un exécutable autonome.
 
-  Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject* et que le dossier de sortie de publication est *MyProject/Publish* , et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput* , ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
+  Dans un projet Web, si le dossier de sortie se trouve dans le dossier du projet, les commandes successives `dotnet publish` génèrent des dossiers de sortie imbriqués. Par exemple, si le dossier du projet est *MyProject* et que le dossier de sortie de publication est *MyProject/Publish*, et que vous exécutez `dotnet publish` deux fois, la deuxième exécution place les fichiers de contenu, tels que les fichiers *. config* et *. JSON* dans *MyProject/Publish/Publish*. Pour éviter d’imbriquer des dossiers de publication, spécifiez un dossier de publication qui ne se trouve pas **directement** sous le dossier du projet, ou excluez le dossier de publication du projet. Pour exclure un dossier de publication nommé *publishoutput*, ajoutez l’élément suivant à un `PropertyGroup` élément dans le fichier *. csproj* :
 
   ```xml
   <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>
   ```
 
   - Kit de développement logiciel (SDK) .NET Core 3. x et versions ultérieures
-  
-    Si un chemin d’accès relatif est spécifié lors de la publication d’un projet, le répertoire de sortie généré est relatif au répertoire de travail actuel, et non à l’emplacement du fichier projet.
 
-    Si un chemin d’accès relatif est spécifié lors de la publication d’une solution, toutes les sorties de tous les projets sont placées dans le dossier spécifié par rapport au répertoire de travail actuel. Pour que la sortie de publication passe à des dossiers distincts pour chaque projet, spécifiez un chemin d’accès relatif à l’aide `PublishDir` de la propriété MSBuild au lieu de l' `--output` option. Par exemple, `dotnet publish -p:PublishDir=.\publish` envoie la sortie de publication pour chaque projet dans un `publish` dossier sous le dossier qui contient le fichier projet.
+    Si vous spécifiez un chemin d’accès relatif lors de la publication d’un projet, le répertoire de sortie généré est relatif au répertoire de travail actuel, et non à l’emplacement du fichier projet.
+
+    Si vous spécifiez un chemin d’accès relatif lors de la publication d’une solution, toutes les sorties de tous les projets sont placées dans le dossier spécifié par rapport au répertoire de travail actuel. Pour que la sortie de publication passe à des dossiers distincts pour chaque projet, spécifiez un chemin d’accès relatif à l’aide `PublishDir` de la propriété MSBuild au lieu de l' `--output` option. Par exemple, `dotnet publish -p:PublishDir=.\publish` envoie la sortie de publication pour chaque projet dans un `publish` dossier sous le dossier qui contient le fichier projet.
 
   - Kit de développement logiciel (SDK) .NET Core 2. x
-  
-    Si un chemin d’accès relatif est spécifié lors de la publication d’un projet, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
 
-    Si un chemin d’accès relatif est spécifié lors de la publication d’une solution, la sortie de chaque projet passe dans un dossier distinct relatif à l’emplacement du fichier projet. Si un chemin d’accès absolu est spécifié lors de la publication d’une solution, toutes les sorties de publication de tous les projets sont placées dans le dossier spécifié.
+    Si vous spécifiez un chemin d’accès relatif lors de la publication d’un projet, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
+
+    Si vous spécifiez un chemin d’accès relatif lors de la publication d’une solution, la sortie de chaque projet passe dans un dossier distinct relatif à l’emplacement du fichier projet. Si vous spécifiez un chemin d’accès absolu lors de la publication d’une solution, toutes les sorties de publication de tous les projets sont placées dans le dossier spécifié.
 
 - **`-p:PublishReadyToRun=true`**
 

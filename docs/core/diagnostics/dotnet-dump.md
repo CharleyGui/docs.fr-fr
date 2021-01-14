@@ -2,12 +2,12 @@
 title: outil de diagnostic dotnet-dump-.NET CLI
 description: Découvrez comment installer et utiliser l’outil CLI dotnet-dump pour collecter et analyser les vidages Windows et Linux sans débogueur natif.
 ms.date: 11/17/2020
-ms.openlocfilehash: eaffbb1f2959dba5c25a603b6f785c7480e4a8c0
-ms.sourcegitcommit: c0b803bffaf101e12f071faf94ca21b46d04ff30
+ms.openlocfilehash: 84b3796f4ee92880e6d432df606a6addfd2471b0
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97765044"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189802"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (dotnet-dump)
 
@@ -37,6 +37,9 @@ Il existe deux façons de télécharger et d’installer `dotnet-dump` :
   | Windows | [x86](https://aka.ms/dotnet-dump/win-x86) \| [x64](https://aka.ms/dotnet-dump/win-x64) \| [ARM](https://aka.ms/dotnet-dump/win-arm) \| [ARM-x64](https://aka.ms/dotnet-dump/win-arm64) |
   | macOS   | [x64](https://aka.ms/dotnet-dump/osx-x64) |
   | Linux   | [x64](https://aka.ms/dotnet-dump/linux-x64) \| [ARM](https://aka.ms/dotnet-dump/linux-arm) \| [arm64](https://aka.ms/dotnet-dump/linux-arm64) \| [MUSL-x64](https://aka.ms/dotnet-dump/linux-musl-x64) \| [MUSL-arm64](https://aka.ms/dotnet-dump/linux-musl-arm64) |
+
+> [!NOTE]
+> Pour utiliser `dotnet-dump` sur une application x86, vous avez besoin d’une version x86 correspondante de l’outil.
 
 ## <a name="synopsis"></a>Synopsis
 
@@ -113,6 +116,12 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [-n|--name] [--type] [-o|--out
 - **`--diag`**
 
   Active la journalisation des diagnostics de collection de vidages.
+
+> [!NOTE]
+> Sur Linux et macOS, cette commande attend l’application cible et `dotnet-dump` partager la même variable d' `TMPDIR` environnement. Dans le cas contraire, la commande expire.
+
+> [!NOTE]
+> Pour collecter un vidage à l’aide de `dotnet-dump` , il doit être exécuté en tant que même utilisateur que l’utilisateur qui exécute le processus cible ou en tant que racine. Dans le cas contraire, l’outil ne parviendra pas à établir une connexion avec le processus cible.
 
 ## <a name="dotnet-dump-analyze"></a>dotnet-vider l’analyse
 

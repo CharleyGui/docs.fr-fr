@@ -3,12 +3,12 @@ title: Déplacer du .NET Framework à .NET Core
 description: Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 764c615d250474573f873b1745b9f1469e637d29
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 247e709ac6898a6a89318626e3aa9a2a8e239a9a
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687410"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189933"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core
 
@@ -53,7 +53,7 @@ Nous vous recommandons d’utiliser le processus suivant lors du Portage de votr
 
 1. Convertissez votre fichier projet vers la nouvelle structure de fichiers de style SDK. Vous pouvez créer des projets pour .NET Core et copier des fichiers sources, ou essayer de convertir votre fichier projet existant à l’aide d’un outil.
 
-   .NET Core utilise un [format de fichier projet](../tools/csproj.md) simplifié (et différent) que .NET Framework. Vous devez convertir vos fichiers projet dans ce format pour continuer. Ce style de projet vous permet également de cibler .NET Framework, à ce stade, vous souhaitez toujours cibler.
+   .NET Core utilise un [format de fichier projet](../project-sdk/overview.md) simplifié (et différent) que .NET Framework. Vous devez convertir vos fichiers projet dans ce format pour continuer. Ce style de projet vous permet également de cibler .NET Framework, à ce stade, vous souhaitez toujours cibler.
 
    Vous pouvez tenter de porter des solutions plus petites ou des projets individuels en une seule opération au format de fichier projet .NET Core à l’aide de l’outil [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert` n’a pas la garantie de fonctionner pour tous vos projets et peut entraîner des modifications subtiles du comportement dont vous dépendez. Utilisez-le comme _point de départ_ pour automatiser les éléments de base qui peuvent être automatisés. Il ne s’agit pas d’une solution garantie pour la migration d’un projet, car il existe de nombreuses différences dans les cibles utilisées par les projets de style du kit de développement logiciel (SDK) par rapport aux anciens fichiers de projet.
 

@@ -1,13 +1,13 @@
 ---
 title: Conteneurs, images et registres Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Conteneurs, images et registres Docker
-ms.date: 08/31/2018
-ms.openlocfilehash: 3b643a3bf4ca3ce1b8ba3fc40cd2f3ad8bbe5ffb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 01/13/2021
+ms.openlocfilehash: 0dfde34cd9dab1ef47237746ca6ac2ed75379635
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73737774"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98189367"
 ---
 # <a name="docker-containers-images-and-registries"></a>Conteneurs, images et registres Docker
 
@@ -19,7 +19,7 @@ Les développeurs doivent stocker les images dans un registre, comparable à une
 
 La figure 2-4 montre les liens entre les images et registres Docker et les autres composants. Elle montre également les divers registres des autres fournisseurs.
 
-![Un diagramme montrant la taxonomie de base dans Docker.](./media/docker-containers-images-registries/taxonomy-of-docker-terms-and-concepts.png)
+![Diagramme montrant la taxonomie de base dans l’ancrage.](./media/docker-containers-images-registries/taxonomy-of-docker-terms-and-concepts.png)
 
 **Figure 2-4**. Taxonomie des termes et concepts Docker
 
@@ -31,8 +31,8 @@ L’utilisation de registres d’images privés, hébergés localement ou dans l
 
 - Vous ne voulez pas partager vos images publiquement pour des raisons de confidentialité.
 
-- Vous souhaitez limiter la latence du réseau entre vos images et l’environnement de déploiement choisi. Par exemple, si votre environnement de production est azuréen cloud, vous souhaitez probablement stocker vos images dans [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) afin que la latence du réseau soit minime. De la même manière, si votre environnement de production est local, vous souhaiterez peut-être disposer d’un service Docker Trusted Registry local dans le même réseau local.
+- Vous souhaitez limiter la latence du réseau entre vos images et l’environnement de déploiement choisi. Par exemple, si votre environnement de production est Azure Cloud, vous souhaiterez probablement stocker vos images dans [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) afin que la latence du réseau soit minime. De la même manière, si votre environnement de production est local, vous souhaiterez peut-être disposer d’un service Docker Trusted Registry local dans le même réseau local.
 
 >[!div class="step-by-step"]
->[Suivant précédent](docker-terminology.md)
->[Next](../net-core-net-framework-containers/index.md)
+>[Précédent](docker-terminology.md) 
+> [Suivant](../net-core-net-framework-containers/index.md)
