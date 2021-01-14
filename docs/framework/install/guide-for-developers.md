@@ -8,12 +8,12 @@ helpviewer_keywords:
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
-ms.openlocfilehash: 4ea1954841696ef28cceca2968e750d9771be038
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 45ae10a92b66bc1b487e3ed4e1e29b6905b895f5
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543709"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190778"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Installer le .NET Framework pour les développeurs
 
@@ -37,12 +37,12 @@ Utilisez le tableau suivant pour les liens rapides ou poursuivez la lecture pour
 | ---------------------- | -------------------------------------- | ---------------- |
 |**4.8**   | [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)    | **Inclus dans :**<br/><br/>Mise à jour de Windows 10 de mai 2019<br/>[Visual Studio 2019 (mise à jour 16,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br/><br/>Windows 10 avec la mise à jour d’octobre 2018<br/>Mise à jour d’avril 2018 de Windows 10<br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 2019<br/>Windows Server, version 1809<br/>Windows Server, version 1803<br /><br/> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
 |**4.7.2** | [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) | **Inclus dans :** <br/><br/>Windows 10 avec la mise à jour d’octobre 2018<br/>Mise à jour d’avril 2018 de Windows 10<br/>Windows Server 2019<br/>Windows Server, version 1809<br/>Windows Server, version 1803<br/>[Visual Studio 2017 (mise à jour 15,8)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br/> <br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 1709 et versions antérieures<br /><br/> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
-|**4.7.1** | [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471) | **Inclus dans :** <br/><br/>Windows 10 Fall Creators Update<br/>Windows Server version 1709<br/>[Visual Studio 2017 (mise à jour 15,5)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br/><br/> Windows 10 Creators Update <br /> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 2016 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
-|**4,7**   | [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)    | **Inclus dans :** <br/><br/>Windows 10 Creators Update<br/>[Visual Studio 2017 (mise à jour 15,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br /><br/> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 2016 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
+|**4.7.1** | [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471) | **Inclus dans :** <br/><br/>Windows 10 Fall Creators Update<br/>Windows Server, version 1709<br/>[Visual Studio 2017 (mise à jour 15,5)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br/><br/> Windows 10 Creators Update <br /> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 2016 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
+|**4,7**   | [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)    | **Inclus dans :** <br/><br/>Windows 10 Creators Update<br/>[Visual Studio 2017 (mise à jour 15,3)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017)<br/><br/> **Vous pouvez installer sur :**<br /><br/> Mise à jour anniversaire Windows 10<br /> Windows 8.1 et versions antérieures<br /> Windows Server 2016 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))||
 |**4.6.2** | [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462) | **Inclus dans :** <br/><br/>Mise à jour anniversaire Windows 10<br /><br /> **Vous pouvez installer sur :**<br /><br/> Mise à jour de novembre de Windows 10 <br/> Windows 10 <br /> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
 |**4.6.1** | [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461) | **Inclus dans :** <br/><br/>[Visual Studio 2015 Mise à jour 2](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br/><br/>**Vous pouvez installer sur :**<br /><br/> Windows 10 <br /> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
-|**4.6**   | [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)    | **Inclus dans :** <br/><br/> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **Vous pouvez installer sur :**<br /><br/> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
-|**4.5.2** | [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452) | **Vous pouvez installer sur :**<br/><br/> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
+|**4,6**   | [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)    | **Inclus dans :** <br/><br/> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **Vous pouvez installer sur :**<br /><br/> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
+|**4.5.2** | [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452) | **Vous pouvez installer sur :**<br/><br/> Windows 8.1 et versions antérieures<br /> Windows Server 2012 R2 et versions antérieures<br /> (pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
 |**4.5.1** | [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451) | **Inclus dans :**<br/><br/>Windows 8.1<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **Vous pouvez installer sur :**<br /><br/> Windows 8 et versions antérieures<br /> Windows Server 2012 et versions antérieures<br />(pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
 |**4.5**   | [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)    | **Inclus dans :** <br/><br/>Windows 8<br /> Windows Server 2012<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **Vous pouvez installer sur :**<br/><br /> Windows 7 et versions antérieures<br /> Windows Server 2008 SP2 et versions antérieures<br />(pour obtenir une liste complète, consultez [Configuration requise](../get-started/system-requirements.md))|
 
@@ -71,10 +71,10 @@ Le Developer Pack pour .NET Framework 4.5.1 ou 4.5.2, le pack de ciblage pour .N
 - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
 - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
-- [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
+- [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-- [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+- [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452) pour installer la version 4.5.2 sur Windows 8.1 ou version antérieure, Visual Studio 2013, Visual Studio 2012 ou d’autres IDE.
 - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451) pour installer la version 4.5.1 sur Visual Studio 2012 ou d’autres IDE.
 
@@ -105,11 +105,11 @@ Les deux programmes d’installation web et hors connexion sont conçus pour les
    - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
    - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
    - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
-   - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
+   - [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
    - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
    - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-   - [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
-   - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
+   - [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+   - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
    - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
    - [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
 
@@ -134,7 +134,7 @@ Les deux programmes d’installation web et hors connexion sont conçus pour les
 
 - .NET Framework 4,5 et versions ultérieures remplacent .NET Framework 4,0. Quand vous installez ces versions sur un système où .NET Framework 4 est installé, les assemblys sont remplacés.
 
-- La désinstallation de .NET Framework 4,5 ou des versions ultérieures supprime également les fichiers .NET Framework 4 préexistants. Si vous souhaitez revenir au .NET Framework 4, vous devrez le réinstaller et effectuer toutes ses mises à jour. Consultez [installation du .NET Framework 4](https://go.microsoft.com/fwlink/p/?LinkId=230665).
+- La désinstallation de .NET Framework 4,5 ou des versions ultérieures supprime également les fichiers .NET Framework 4 préexistants. Si vous souhaitez revenir au .NET Framework 4, vous devrez le réinstaller et effectuer toutes ses mises à jour. Consultez [installation du .NET Framework 4](/previous-versions/dotnet/netframework-4.0/5a4x27ek(v=vs.100)).
 
 - Vous devez disposer d’informations d’identification d’administration pour installer .NET Framework 4,5 ou versions ultérieures.
 
@@ -152,11 +152,11 @@ Les modules linguistiques sont des exécutables contenant les ressources localis
    - [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
    - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
    - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
-   - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
+   - [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
    - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
    - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-   - [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
-   - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
+   - [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+   - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
    - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
    - [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
 

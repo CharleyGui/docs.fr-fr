@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 950ff048a918a52e6c64d8cc15e1ef0f80233b88
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: dddd10846c5c57c88d23fef6d6851e288bd2d4b1
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96238650"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98191090"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
 
@@ -25,7 +25,7 @@ Vous pouvez télécharger les packages redistribuables et les modules linguistiq
 - [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-- [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+- [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
 - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
 - [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
@@ -262,7 +262,7 @@ Par exemple, pour détecter si le module linguistique japonais complet (LCID = 1
 | | |
 |-|-|
 | Clé | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
-| Nom | Libérer |
+| Name | Libérer |
 | Type | DWORD |
 
 Pour déterminer si la version finale d’un module linguistique est installée pour une version spécifique du .NET Framework (versions 4.5 à 4.7.2), vérifiez la valeur DWORD de la clé RELEASE décrite dans la section précédente, [Détection du .NET Framework](#detect_net).
@@ -279,7 +279,7 @@ Le .NET Framework fournit un ensemble de fichiers exécutables de modules lingui
 - [.NET Framework 4.7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-- [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+- [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
 - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
 - [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
@@ -316,19 +316,19 @@ Le tableau ci-dessous répertorie les codes de retour les plus courants relatifs
 
 Consultez la
 
-- [Codes d’erreur du service de transfert intelligent en arrière-plan (BITS)](https://go.microsoft.com/fwlink/?LinkId=180946)
+- [Codes d’erreur du service de transfert intelligent en arrière-plan (BITS)](/windows/win32/bits/bits-return-values)
 
-- [Codes d’erreur du moniker d’URL](https://go.microsoft.com/fwlink/?LinkId=180947)
+- [Codes d’erreur du moniker d’URL](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145(v=vs.85))
 
-- [Codes d’erreur WinHttp](https://go.microsoft.com/fwlink/?LinkId=180948)
+- [Codes d’erreur WinHttp](/windows/win32/winhttp/error-messages)
 
 #### <a name="other-error-codes"></a>Autres codes d'erreur
 
 Consultez la
 
-- [Codes d’erreur Windows Installer](https://go.microsoft.com/fwlink/?LinkId=180949)
+- [Codes d’erreur Windows Installer](/previous-versions/aa368542(v=vs.85))
 
-- [Codes de résultat de l’agent de mise à jour automatique Windows Update](https://go.microsoft.com/fwlink/?LinkId=180951)
+- [Codes de résultat de l’agent de mise à jour automatique Windows Update](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
 
 ## <a name="uninstalling-the-net-framework"></a>Désinstallation du .NET Framework
 
@@ -365,7 +365,7 @@ Le tableau ci-dessous répertorie les options que vous pouvez inclure lorsque vo
 
 Le tableau suivant répertorie .NET Framework modules linguistiques disponibles pour .NET Framework 4,5 et versions ultérieures.
 
-|LCID|Langue – pays/région|culture|
+|LCID|Langue – pays/région|Culture|
 |----------|--------------------------------|-------------|
 |1025|Arabe - Arabie saoudite|ar|
 |1028|Chinois – Traditionnel|zh-Hant|

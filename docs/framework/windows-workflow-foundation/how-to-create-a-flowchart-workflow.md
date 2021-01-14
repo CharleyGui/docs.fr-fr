@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: f8e0703591629a72e0a8f6eeb05dd9d19c8c4c91
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: eb30a3a21ffc4cffe64d2f5d0bc741728f1ea87d
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96275825"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190479"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d’organigramme
 
@@ -19,9 +19,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 > [!NOTE]
 > Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [la procédure : créer une activité](how-to-create-an-activity.md).  
-  
-> [!NOTE]
-> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
   
 ### <a name="to-create-the-workflow"></a>Pour créer le flux de travail  
   

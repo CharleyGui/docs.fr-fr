@@ -6,25 +6,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-ms.openlocfilehash: dae099d102b0c85d09a1ef8bcce56e8a9096bd20
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c7610d8612eb944afa9c23e1bf2abceeb3a6d38b
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419588"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190765"
 ---
 # <a name="how-to-create-an-activity"></a>Procédure : créer une activité
 
 Les activités sont l'unité principale de comportement dans [!INCLUDE[wf1](../../../includes/wf1-md.md)]. La logique d'exécution d'une activité peut être implémentée en code managé ou à l'aide d'autres activités. Cette rubrique indique comment créer deux activités. La première activité est une activité simple qui utilise le code pour implémenter la logique d'exécution. L'implémentation de la deuxième activité est définie à l'aide d'autres activités. Ces activités sont utilisées dans les procédures du didacticiel.
 
-> [!NOTE]
-> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).
-
 ## <a name="create-the-activity-library-project"></a>Créer le projet de bibliothèque d’activités
 
 1. Ouvrez Visual Studio et choisissez **nouveau**  >  **projet** dans le menu **fichier** .
 
-2. Dans la boîte de dialogue **nouveau projet** , sous la catégorie **installé** , sélectionnez flux de travail **Visual C#**  >  **Workflow** (ou **Visual Basic**  >  **Workflow**).
+2. Dans la boîte de dialogue **nouveau projet** , sous la catégorie **installé** , sélectionnez flux de travail **Visual C#**  >   (ou **Visual Basic**  >  **Workflow**).
 
     > [!NOTE]
     > Si vous ne voyez pas la catégorie de modèle de **flux de travail** , vous devrez peut-être installer le composant **Windows Workflow Foundation** de Visual Studio. Choisissez le lien **ouvrir le Visual Studio installer** sur le côté gauche de la boîte de dialogue **nouveau projet** . Dans Visual Studio Installer, sélectionnez l’onglet **composants individuels** . Ensuite, sous la catégorie **activités de développement** , sélectionnez le composant **Windows Workflow Foundation** . Choisissez **modifier** pour installer le composant.
@@ -37,7 +34,7 @@ Les activités sont l'unité principale de comportement dans [!INCLUDE[wf1](../.
 
 1. Choisissez **Ajouter un nouvel élément** dans le menu **projet** .
 
-2. Dans le **Installed**  >  nœud**éléments communs** installés, sélectionnez **flux de travail**. Sélectionnez **activité du code** dans la liste **flux de travail** .
+2. Dans le   >  nœud **éléments communs** installés, sélectionnez **flux de travail**. Sélectionnez **activité du code** dans la liste **flux de travail** .
 
 3. Entrez `ReadInt` dans la zone **Nom**, puis cliquez sur **Ajouter**.
 
@@ -55,7 +52,7 @@ Les activités sont l'unité principale de comportement dans [!INCLUDE[wf1](../.
 
 2. Choisissez **Ajouter un nouvel élément** dans le menu **projet** .
 
-3. Dans le **Installed**  >  nœud**éléments communs** installés, sélectionnez **flux de travail**. Sélectionnez **Activité** dans la liste **Flux de travail**.
+3. Dans le   >  nœud **éléments communs** installés, sélectionnez **flux de travail**. Sélectionnez **Activité** dans la liste **Flux de travail**.
 
 4. Entrez `Prompt` dans la zone **Nom**, puis cliquez sur **Ajouter**.
 
@@ -107,7 +104,7 @@ Pour obtenir des instructions sur la création d’un workflow à l’aide de ce
 
 - <xref:System.Activities.CodeActivity>
 - <xref:System.Activities.NativeActivity%601>
-- [Conception et implémentation d’activités personnalisées](designing-and-implementing-custom-activities.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
-- [Guide pratique pour créer un workflow](how-to-create-a-workflow.md)
-- [Utilisation d’ExpressionTextBox dans un concepteur d’activités personnalisées](./samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)
+- [Conception et implémentation d'activités personnalisées](designing-and-implementing-custom-activities.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
+- [Procédure : créer un workflow](how-to-create-a-workflow.md)
+- [Utilisation d'ExpressionTextBox dans un concepteur d'activités personnalisées](./samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
-ms.openlocfilehash: f80ac471fdcc425504b11b5fb17effa888aa9590
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 0c47290d11770a094fb09bcb4dc34aee1e4371a9
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419692"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190518"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Procédure : créer un workflow séquentiel
 
@@ -19,9 +19,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 
 > [!NOTE]
 > Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [la procédure : créer une activité](how-to-create-an-activity.md).
-
-> [!NOTE]
-> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).
 
 ## <a name="to-create-the-workflow"></a>Pour créer le flux de travail
 
@@ -164,7 +161,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
 - [Programmation Windows Workflow Foundation](programming.md)
-- [Conception des workflows](designing-workflows.md)
-- [Didacticiel Prise en main](getting-started-tutorial.md)
-- [Guide pratique pour créer une activité](how-to-create-an-activity.md)
-- [Guide pratique pour exécuter un workflow](how-to-run-a-workflow.md)
+- [Conception des flux de travaux](designing-workflows.md)
+- [Didacticiel de mise en route](getting-started-tutorial.md)
+- [Procédure : créer une activité](how-to-create-an-activity.md)
+- [Procédure : exécuter un workflow](how-to-run-a-workflow.md)

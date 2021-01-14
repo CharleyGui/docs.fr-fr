@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: 7de9f623a57a6a094debd3e018edc1560d837fc2
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: 3c9b2f266c2fcc3acdfbe40e19509edde20eec93
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970874"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190180"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -253,6 +253,9 @@ La `<RuntimeFrameworkVersion>` valeur dans le projet migré est déterminée par
 </ItemGroup>
 ```
 
+> [!NOTE]
+> La propriété `PackageTargetFallback` est déconseillée. Utilisez [AssetTargetFallback](../project-sdk/msbuild-props.md#assettargetfallback) à la place.
+
 ### <a name="dependency-type"></a>type de dépendance
 
 #### <a name="type-project"></a>type : project
@@ -356,7 +359,9 @@ Pour plus d’informations, consultez [Déploiements autonomes](../deploying/ind
 ```
 
 > [!NOTE]
-> La section `imports` n’est pas prise en charge dans csproj. Les outils qui nécessitent des importations ne fonctionnent pas avec le nouveau `Microsoft.NET.Sdk`.
+>
+> - La section `imports` n’est pas prise en charge dans csproj. Les outils qui n’ont pas besoin d’être importés ne fonctionneront pas avec `Microsoft.NET.Sdk` .
+> - `DotNetCliToolReference` est déconseillé en faveur des [Outils locaux](global-tools.md#install-a-local-tool).
 
 ## <a name="buildoptions"></a>buildOptions
 
@@ -609,7 +614,7 @@ Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbui
   <EmbeddedResource Include="..\Shared\*.resx" />
   <Content Include="Views\**\*" PackagePath="%(Identity)" />
   <None Include="some/path/in/project.txt" Pack="true" PackagePath="in/package.txt" />
-  
+
   <None Include="notes.txt" CopyToOutputDirectory="Always" />
   <!-- CopyToOutputDirectory = { Always, PreserveNewest, Never } -->
 
@@ -674,3 +679,4 @@ Pour plus d’informations, consultez [Inclusion de contenu dans un package](/nu
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble générale des modifications de l’interface CLI](cli-msbuild-architecture.md)
+- [Référence MSBuild pour les projets SDK .NET](../project-sdk/msbuild-props.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 9df911779422ca2710686963a040a95258db8891
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 8e977a182d55143f8d877d61a0f0345bbe6bded4
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96248917"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190466"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Procédure : créer un flux de travail de machine à états
 
@@ -19,9 +19,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 > [!NOTE]
 > Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [la procédure : créer une activité](how-to-create-an-activity.md).  
-  
-> [!NOTE]
-> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
   
 ### <a name="to-create-the-workflow"></a>Pour créer le flux de travail  
   
@@ -139,7 +136,6 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
     > [!NOTE]
     > Des transitions partagées peuvent également être créées à partir du concepteur de transition en cliquant sur **Ajouter une transition de déclencheur partagée** en bas du concepteur de transition, puis en sélectionnant l’État cible souhaité dans la liste déroulante **États disponibles pour la connexion** .  
-  
     > [!NOTE]
     > Notez que si la condition <xref:System.Activities.Statements.Transition.Condition%2A> d'une transition a pour valeur `false` (ou si toutes les conditions d'une transition de déclencheur partagée ont la valeur `false`), la transition n'a pas lieu et tous les déclencheurs de toutes les transitions de l'état sont replanifiés. Dans ce didacticiel, cette situation ne peut pas se produire en raison de la façon dont les conditions sont configurées (il existe des actions spécifiques lorsque l'estimation est correcte ou incorrecte).  
   

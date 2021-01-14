@@ -5,19 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: 5f00997b059d7ea6f6ac6fb6d7bd83e4515ac02a
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 6fc8584b979c606a32e70e971be30a4bed89bdc2
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96275799"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190505"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Procédure : créer un participant de suivi de personnalisé
 
 Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow. L'exécution de workflow émet des enregistrements de suivi qui décrivent les événements de cycle de vie du workflow, les événements de cycle de vie de l'activité, la reprise de signet et les erreurs. Ces enregistrements de suivi sont consommés par les participants de suivi. Windows Workflow Foundation (WF) comprend un participant de suivi standard qui écrit des enregistrements de suivi en tant qu’événements de Suivi d’v nements pour Windows (ETW). Si cela ne répond pas à vos besoins, vous pouvez également écrire un participant de suivi personnalisé. Cette étape du didacticiel décrit comment créer un participant de suivi et un modèle de suivi qui capturent la sortie des activités de `WriteLine` afin qu'elles puissent être affichées à l'utilisateur.  
-  
-> [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d'abord terminer les rubriques précédentes. Pour télécharger une version complète ou afficher une vidéo pas à pas du didacticiel, consultez [Windows Workflow Foundation (WF45)-prise en main didacticiel](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="to-create-the-custom-tracking-participant"></a>Pour créer le participant de suivi personnalisé  
   

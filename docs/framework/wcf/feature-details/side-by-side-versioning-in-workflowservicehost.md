@@ -5,19 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-ms.openlocfilehash: 878e610bd1fe0b7e2496f251333a3ad21909788a
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 1505582e5ac7303a2df20539fdcf67435746b9d3
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96245092"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190492"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Versioning côte à côte dans WorkflowServiceHost
 
 Le contrôle <xref:System.ServiceModel.Activities.WorkflowServiceHost> de version côte à côte introduit dans .NET Framework 4,5 offre la possibilité d’héberger plusieurs versions d’un service de flux de travail sur un seul point de terminaison. Une fonctionnalité côte à côte fournie permet de configurer un service de workflow de façon à ce que les nouvelles instances du service de workflow soient créées à l'aide de la nouvelle définition de workflow, alors que les instances en cours de exécution s'achèvent à l'aide de définition existante. Cette rubrique fournit une vue d'ensemble de l'exécution de service de workflow côte à côte à l'aide de <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
-  
-> [!NOTE]
-> Pour télécharger un exemple et regarder une vidéo de présentation de la gestion des versions côte à côte du service de workflow, consultez Gestion des versions côte à côte [avec un service de flux de travail Web-Hosted xamlx](https://go.microsoft.com/fwlink/?LinkId=393746).  
   
 ## <a name="hosting-multiple-versions-in-a-workflow-service"></a>Hébergement de plusieurs versions dans un service de workflow  
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: c347dbc6af46d4c334445d606d7cedfdf17e43f6
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: 6a1a5b230e427a4991162a702245f1a87352784d
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95098708"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190245"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -75,8 +75,6 @@ Il est important de comprendre deux points fondamentaux concernant le système d
 
 L’illustration suivante montre la relation entre les types valeur et les types référence dans le CTS.
 
-L’image suivante montre les types valeur et les types référence dans CTS :
-
 ![Capture d’écran montrant des types valeur et des types référence dans CTS.](./media/index/value-reference-types-common-type-system.png)
 
 > [!NOTE]
@@ -108,7 +106,7 @@ L’autre catégorie de types valeur est [enum](../../language-reference/builtin
 
 :::code language="csharp" source="snippets/index/Program.cs" id="EnumFileMode":::
 
-La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est bien plus explicite pour les êtres humains qui lisent le code source. pour cette raison, il est préférable d’utiliser des énumérations au lieu de nombres littéraux constants. Pour plus d’informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
+La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est bien plus explicite pour les êtres humains qui lisent le code source. pour cette raison, il est préférable d’utiliser des énumérations au lieu de nombres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
 Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [types énumération](../../language-reference/builtin-types/enum.md).
 
@@ -173,7 +171,7 @@ Si les deux types sont différents pour une variable, il est important de compre
 Pour plus d’informations, consultez les articles suivants :
 
 - [Cast et conversions de types](./casting-and-type-conversions.md)
-- [Conversion boxing et unboxing](./boxing-and-unboxing.md)
+- [Boxing et unboxing](./boxing-and-unboxing.md)
 - [Utilisation du type dynamic](./using-type-dynamic.md)
 - [Types valeur](../../language-reference/builtin-types/value-types.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)

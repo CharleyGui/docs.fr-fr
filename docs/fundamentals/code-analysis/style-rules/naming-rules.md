@@ -16,12 +16,12 @@ helpviewer_keywords:
 - naming code style rules [EditorConfig]
 - naming rules
 - EditorConfig naming conventions
-ms.openlocfilehash: 8ce209e64ee7f9f9028c221daedef8fc6a993ef7
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 0eea5e89ac5055a45d9ead14363cc2f2fc574401
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96588714"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98191077"
 ---
 # <a name="naming-rules"></a>Règles d’affectation des noms
 
@@ -51,7 +51,7 @@ L’ordre des propriétés n’est pas important.
 
 **\<prefix>** Spécifie le type d’élément défini comme &mdash; règle de nommage, groupe de symboles ou style de nom &mdash; et doit être l’un des éléments suivants :
 
-| Pour définir une propriété pour | Utiliser le préfixe |  Exemple |
+| Pour définir une propriété pour | Utiliser le préfixe | Exemple |
 | --- | --- | -- |
 | Règle de nommage | `dotnet_naming_rule` | `dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion` |
 | Groupe de symboles | `dotnet_naming_symbols` | `dotnet_naming_symbols.interface.applicable_kinds = interface` |
@@ -79,7 +79,7 @@ Toutes les propriétés de règle de nommage sont requises pour que la règle pr
 | -- | -- |
 | `symbols` | Titre du groupe de symboles, définissant les symboles auxquels cette règle doit être appliquée |
 | `style` | Titre du style d’affectation de noms qui doit être associé à cette règle |
-| `severity` |  Définit la gravité avec laquelle appliquer la règle de nommage. Définissez la valeur associée sur l’un des [niveaux de gravité](https://docs.microsoft.com/dotnet/fundamentals/code-analysis/configuration-options#severity-level)disponibles. <sup>1</sup> |
+| `severity` |  Définit la gravité avec laquelle appliquer la règle de nommage. Définissez la valeur associée sur l’un des [niveaux de gravité](../configuration-options.md#severity-level)disponibles. <sup>1</sup> |
 
 **Remarques :**
 
@@ -139,7 +139,7 @@ Si vous ne spécifiez aucune règle de nommage personnalisée, les styles par d�
 
 - Pour les interfaces avec l’accessibilité `public`, `private`, `internal`, `protected` ou `protected_internal`, le style de dénomination par défaut est la casse Pascal avec le préfixe **I** requis.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 Le fichier *.editorconfig* suivant contient une convention de nommage qui spécifie que les propriétés publiques, les méthodes, les champs, les événements et les délégués doivent être mis en majuscules. Notez que cette convention de nommage spécifie plusieurs types de symboles auxquels appliquer la règle, en utilisant une virgule pour séparer les valeurs.
 
