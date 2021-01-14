@@ -2,12 +2,12 @@
 title: 'Nouveautés du guide F # 5,0-F #'
 description: 'Profitez d’une vue d’ensemble des nouvelles fonctionnalités disponibles dans F # 5,0.'
 ms.date: 11/06/2020
-ms.openlocfilehash: 2384f1a75f5e708dc6f170d82fa15c5e0f54c85d
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: 9b138e4801a3e599db650990acd53c0f956b78b8
+ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96740183"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98190726"
 ---
 # <a name="whats-new-in-f-50"></a>Nouveautés de F # 5,0
 
@@ -407,7 +407,7 @@ Cette fonctionnalité implémente [F # RFC FS-1074](https://github.com/fsharp/fs
 
 ## <a name="simplified-interop-with-nullable-value-types"></a>Interopérabilité simplifiée avec les types valeur Nullable
 
-Les [types Nullable (valeur)](https://docs.microsoft.com/dotnet/api/system.nullable-1) (appelés types Nullable historiquement) ont longtemps été pris en charge par F #, mais l’interaction avec eux a traditionnellement été une douleur puisque vous auriez dû construire un `Nullable` `Nullable<SomeType>` Wrapper ou chaque fois que vous souhaitiez passer une valeur. À présent, le compilateur convertit implicitement un type valeur en un `Nullable<ThatValueType>` si le type cible correspond à. Le code suivant est désormais possible :
+Les [types Nullable (valeur)](/dotnet/api/system.nullable-1) (appelés types Nullable historiquement) ont longtemps été pris en charge par F #, mais l’interaction avec eux a traditionnellement été une douleur puisque vous auriez dû construire un `Nullable` `Nullable<SomeType>` Wrapper ou chaque fois que vous souhaitiez passer une valeur. À présent, le compilateur convertit implicitement un type valeur en un `Nullable<ThatValueType>` si le type cible correspond à. Le code suivant est désormais possible :
 
 ```fsharp
 #r "nuget: Microsoft.Data.Analysis"

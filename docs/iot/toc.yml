@@ -23,4 +23,4 @@
     - name: Débogage
       href: debugging.md
 - name: Informations de référence sur les API
-  href: /dotnet/api?view=iot-dotnet-1.1
+  href: ../../api/index.md?view=iot-dotnet-1.1
