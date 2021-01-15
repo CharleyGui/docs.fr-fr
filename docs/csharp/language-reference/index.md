@@ -1,7 +1,8 @@
 ---
 description: Informations de référence sur C#
 title: Informations de référence sur C#
-ms.date: 02/14/2017
+ms.date: 01/13/2021
+ms.custom: updateeachrelease
 f1_keywords:
 - _CSharpKeyword
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: 317f375c46eee3bb9c719afb68993cd4720e54fe
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 663d08921b1fb6c5013ce8dddb044ba12ead8409
+ms.sourcegitcommit: 4f5f1855849cb02c3b610c7006ac21d7429f3348
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127189"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235233"
 ---
 # <a name="c-reference"></a>Informations de référence sur C#
 
@@ -61,7 +62,10 @@ Les fonctionnalités ayant été implémentées dans les versions C# ultérieure
   
  [Propositions de spécification C# 8,0](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
  C# 8,0 est disponible avec .NET Core 3,0. Les fonctionnalités incluent les types de référence Nullable, les critères spéciaux récursifs, les méthodes d’interface par défaut, les flux asynchrones, les plages et les index, les modèles basés sur et les déclarations, l’affectation de fusion Null et les membres d’instance en lecture seule.
-  
+
+ [Propositions de spécification C# 9,0](../../../_csharplang/proposals/csharp-9.0/records.md)  
+ C# 9,0 est disponible avec .NET 5,0. Les fonctionnalités incluent les enregistrements, les instructions de niveau supérieur, les améliorations de critères spéciaux, les Setters init uniquement, les nouvelles expressions de type cible, les initialiseurs de module, l’extension des méthodes partielles, les fonctions anonymes statiques, les expressions conditionnelles de type cible, les types de retour covariant, les valeurs d’extension GetEnumerator dans les boucles Foreach, les paramètres d’abandon de la valeur lambda, les attributs des fonctions locales
+
 ## <a name="related-sections"></a>Sections connexes  
 
  [Utilisation de l’environnement de développement Visual Studio pour C#](/visualstudio/get-started/csharp)  

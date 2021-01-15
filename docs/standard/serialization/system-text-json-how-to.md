@@ -1,7 +1,7 @@
 ---
 title: Comment sérialiser et désérialiser JSON à l’aide de C#-.NET
 description: Découvrez comment utiliser l' System.Text.Json espace de noms pour sérialiser et désérialiser à partir de JSON dans .net. Comprend un exemple de code.
-ms.date: 01/04/2021
+ms.date: 01/12/2021
 ms.custom: contperf-fy21q2
 no-loc:
 - System.Text.Json
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fd92c067fc76bea6bede1e5370e7ac168856fa9b
-ms.sourcegitcommit: 0273f8845eb1ea8de64086bef2271b4f22182c91
+ms.openlocfilehash: 6e7c9d9c87eb8407489939ec77ba4fbe9b20cc82
+ms.sourcegitcommit: 4f5f1855849cb02c3b610c7006ac21d7429f3348
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98058100"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235298"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -32,7 +32,12 @@ Les exemples de code font référence à la classe et aux variantes suivantes :
 :::code language="csharp" source="snippets/system-text-json-how-to/csharp/WeatherForecast.cs" id="WF":::
 
 > [!NOTE]
-> System.Text.Json utilise des [structs de référence](../../csharp/language-reference/builtin-types/struct.md#ref-struct), qui ne sont pas pris en charge par Visual Basic. Si vous essayez d’utiliser System.Text.Json des API avec Visual Basic, vous recevez des erreurs de compilation BC40000. Le message d’erreur indique que le problème est une API obsolète, mais le problème réel est l’absence de `ref struct` prise en charge dans le compilateur.
+> Les parties de System.Text.Json utilisent des [structs de référence](../../csharp/language-reference/builtin-types/struct.md#ref-struct), qui ne sont pas pris en charge par Visual Basic. Si vous essayez d’utiliser System.Text.Json des API de struct Ref avec Visual Basic vous recevez des erreurs du compilateur BC40000. Le message d’erreur indique que le problème est une API obsolète, mais le problème réel est l’absence de prise en charge de la structure de référence dans le compilateur. Les parties suivantes de System.Text.Json ne sont pas utilisables à partir de Visual Basic :
+>
+> * La classe <xref:System.Text.Json.Utf8JsonReader>.
+> * Surcharges d’autres API qui incluent un <xref:System.Memory%601.Span> type. La plupart des méthodes incluent des surcharges qui utilisent à la `String` place de `Span` .
+>
+> Ces restrictions sont en place, car les structs de référence ne peuvent pas être utilisés en toute sécurité sans prise en charge linguistique, même quand il suffit de « passer des données via ». Si vous annulez cette erreur, Visual Basic code risque de corrompre la mémoire et de ne pas le faire.
 
 ## <a name="namespaces"></a>Espaces de noms
 

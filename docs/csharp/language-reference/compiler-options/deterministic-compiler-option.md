@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -deterministic compiler option [C#]
 - deterministic compiler option [C#]
 - /deterministic compiler option [C#]
-ms.openlocfilehash: 9d0bcc2957e5a666c21cdc2ce61e74fc90fe3530
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d64f4d4b0d4e9b5ed2cc1ee40662dc669fc6660d
+ms.sourcegitcommit: 4f5f1855849cb02c3b610c7006ac21d7429f3348
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125824"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235324"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -27,7 +27,7 @@ Indique au compilateur de générer un assembly dont la sortie octet-pour-octet 
 
 ## <a name="remarks"></a>Notes
 
-Par défaut, le résultat de la compilation d’un ensemble défini d’entrées est unique, étant donné que le compilateur ajoute un horodatage et un GUID qui est généré à partir de nombres aléatoires. Utilisez l’option `-deterministic` pour générer un *assembly déterministe*, dont le contenu binaire sera identique dans les compilations tant que l’entrée restera la même.
+Par défaut, la sortie du compilateur d’un ensemble donné d’entrées est unique, puisque le compilateur ajoute un horodatage et un MVID généré à partir de nombres aléatoires. Utilisez l’option `-deterministic` pour générer un *assembly déterministe*, dont le contenu binaire sera identique dans les compilations tant que l’entrée restera la même. Dans ce type de build, les champs timestamp et MVID seront remplacés par des valeurs dérivées d’un hachage de toutes les entrées de compilation.
 
 Le compilateur considère les entrées suivantes à des fins déterministes :
 
