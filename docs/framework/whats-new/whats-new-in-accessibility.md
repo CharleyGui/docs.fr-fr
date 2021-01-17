@@ -1,36 +1,38 @@
 ---
-title: Nouveautés du .NET Framework dans le domaine de l’accessibilité
+title: Nouveautés de l’accessibilité dans .NET Framework
+titleSuffix: ''
 description: Découvrez les nouveautés de l’accessibilité .NET, à partir de .NET Framework 4.7.1. Les fonctionnalités d’accessibilité permettent à une application d’offrir la bonne expérience aux utilisateurs des technologies d’assistance.
-ms.date: 04/18/2019
+ms.date: 01/05/2021
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: d204bea7f5ec1ed0c25b7b2dedd04d61c7f3e93d
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: c2ebaed8bf347eb8d8764f4bdf76dcc33db86bad
+ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679545"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98536162"
 ---
-# <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
+# <a name="whats-new-in-accessibility-in-net-framework"></a>Nouveautés de l’accessibilité dans .NET Framework
 
-Le .NET Framework vise à rendre les applications plus accessibles pour vos utilisateurs. Les fonctionnalités d’accessibilité permettent à une application de fournir une expérience appropriée pour les utilisateurs des technologies d’assistance. La version 4.7.1 de .NET Framework inclut de nombreuses améliorations au niveau de l’accessibilité, qui permettent aux développeurs de créer des applications accessibles.
+.NET Framework vise à rendre les applications plus accessibles à vos utilisateurs. Les fonctionnalités d’accessibilité permettent à une application de fournir une expérience appropriée pour les utilisateurs des technologies d’assistance. À compter de .NET Framework 4.7.1, .NET Framework comprend un grand nombre d’améliorations de l’accessibilité qui permettent aux développeurs de créer des applications accessibles.
 
 ## <a name="accessibility-switches"></a>Commutateurs d’accessibilité
 
-Si votre application cible .NET Framework 4.7 ou une version antérieure, mais est exécutée sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez la configurer pour qu’elle active les fonctionnalités d’accessibilité. Si elle cible .NET Framework 4.7.1 ou une version ultérieure, vous pouvez également la configurer afin qu’elle utilise les fonctionnalités héritées (et ainsi, qu’elle n’active pas les fonctionnalités d’accessibilité). Chaque version du .NET Framework qui inclut des fonctionnalités d’accessibilité a un commutateur d’accessibilité spécifique à la version, que vous ajoutez à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application. Les commutateurs pris en charge sont les suivants :
+Si votre application cible .NET Framework 4.7 ou une version antérieure, mais est exécutée sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez la configurer pour qu’elle active les fonctionnalités d’accessibilité. Si elle cible .NET Framework 4.7.1 ou une version ultérieure, vous pouvez également la configurer afin qu’elle utilise les fonctionnalités héritées (et ainsi, qu’elle n’active pas les fonctionnalités d’accessibilité). Chaque version de .NET Framework qui inclut des fonctionnalités d’accessibilité a un commutateur d’accessibilité spécifique à la version, que vous ajoutez à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application. Les commutateurs pris en charge sont les suivants :
 
 |Version|Commutateur|
 |---|---|
 |.NET Framework 4.7.1|"Switch.UseLegacyAccessibilityFeatures"|
 |.NET Framework 4.7.2|"Switch.UseLegacyAccessibilityFeatures.2"|
 |.NET Framework 4.8|"Switch.UseLegacyAccessibilityFeatures.3"|
+|11 août 2020-mise à jour cumulative KB4569746 pour .NET Framework 4,8|« Switch. UseLegacyAccessibilityFeatures. 4 »|
 
 ### <a name="taking-advantage-of-accessibility-enhancements"></a>Activation des nouvelles fonctionnalités d’accessibilité
 
-Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pour les applications qui ciblent .NET Framework 4.7.1 ou version ultérieure. En outre, les applications qui ciblent une version antérieure du .NET Framework, mais qui s’exécutent sur .NET Framework 4.7.1 ou version ultérieure, peuvent refuser les comportements d’accessibilité hérités (et ainsi tirer parti des améliorations de l’accessibilité) en ajoutant des commutateurs à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application et en définissant leur valeur sur `false` . Le code ci-dessous montre comment activer les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.1 :
+Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pour les applications qui ciblent .NET Framework 4.7.1 ou version ultérieure. En outre, les applications qui ciblent une version antérieure du .NET Framework, mais qui s’exécutent sur .NET Framework 4.7.1 ou version ultérieure, peuvent refuser les comportements d’accessibilité hérités (et ainsi tirer parti des améliorations de l’accessibilité) en ajoutant des commutateurs à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application et en définissant leur valeur sur `false` . L’extrait de code suivant montre comment accepter les améliorations apportées à l’accessibilité introduites dans .NET Framework 4.7.1 :
 
 ```xml
 <runtime>
@@ -39,7 +41,7 @@ Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pou
 </runtime>
 ```
 
-Si vous choisissez d’activer les fonctionnalités d’accessibilité d’une version ultérieure du .NET Framework, vous devez aussi activer explicitement les fonctionnalités des versions antérieures du .NET Framework. La configuration de votre application pour tirer parti des améliorations de l’accessibilité dans .NET Framework 4.7.1 et 4.7.2 nécessite l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément suivant :
+Si vous choisissez d’accepter les fonctionnalités d’accessibilité dans une version ultérieure .NET Framework, vous devez également choisir explicitement les fonctionnalités des versions antérieures. Pour configurer votre application afin de tirer parti des améliorations apportées à l’accessibilité dans .NET Framework 4.7.1 et 4.7.2, ajoutez l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément suivant :
 
 ```xml
 <runtime>
@@ -48,18 +50,18 @@ Si vous choisissez d’activer les fonctionnalités d’accessibilité d’une v
 </runtime>
 ```
 
-La configuration de votre application pour tirer parti des améliorations de l’accessibilité dans .NET Framework 4.7.1, 4.7.2 et 4,8 requiert l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément suivant :
+Pour configurer votre application afin de tirer parti des améliorations apportées à l’accessibilité dans .NET Framework 4.7.1, 4.7.2, 4,8 et la mise à jour cumulative d’août 2020 pour .NET Framework 4,8, ajoutez l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément suivant :
 
 ```xml
 <runtime>
     <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true|false;key2=true|false  -->
-    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false" />
+    <AppContextSwitchOverrides value=Switch.UseLegacyAccessibilityFeatures=false|Switch.UseLegacyAccessibilityFeatures.2=false|Switch.UseLegacyAccessibilityFeatures.3=false|Switch.UseLegacyAccessibilityFeatures.4=false"/>
 </runtime>
 ```
 
 ### <a name="restoring-legacy-behavior"></a>Restauration du comportement hérité
 
-Les applications qui ciblent des versions du .NET Framework à compter du 4.7.1 peuvent désactiver les fonctionnalités d’accessibilité en ajoutant des commutateurs à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application et en affectant à leur valeur `true` . Par exemple, la configuration suivante active les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.2 :
+Les applications qui ciblent des versions de .NET Framework à partir de 4.7.1 peuvent désactiver les fonctionnalités d’accessibilité en ajoutant des commutateurs à l' [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) élément dans la [`<runtime>`](../configure-apps/file-schema/runtime/index.md) section du fichier de configuration de l’application et en affectant à leur valeur `true` . Par exemple, la configuration suivante active les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.2 :
 
 ```xml
 <runtime>
@@ -67,6 +69,20 @@ Les applications qui ciblent des versions du .NET Framework à compter du 4.7.1 
     <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures.2=true" />
 </runtime>
 ```
+
+## <a name="whats-new-in-accessibility-in-the-august-11-2020-cumulative-update-for-net-framework-48"></a>Nouveautés de l’accessibilité dans la mise à jour cumulative du 11 août 2020 pour .NET Framework 4,8
+
+La mise à jour cumulative du 11 août 2020-KB4569746 pour .NET Framework 4,8 comprend de nouvelles fonctionnalités d’accessibilité dans Windows Forms :
+
+- Résout un problème lié à l’annonce d' `PropertyGrid` éléments de contrôle et à l’état développé/réduit d’une catégorie par les lecteurs d’écran.
+
+- Met à jour les modèles accessibles du `PropertyGrid` contrôle et de ses éléments internes.
+
+- Met à jour les noms accessibles des `PropertyGrid` éléments internes du contrôle afin qu’ils soient correctement annoncés par les lecteurs d’écran.
+
+- Résout les propriétés accessibles du rectangle englobant pour les `PropertyGridView` contrôles.
+
+- Permet aux lecteurs d’écran d’annoncer correctement l’état développé/réduit des `DataGridView` cellules de zone de liste déroulante.
 
 ## <a name="whats-new-in-accessibility-in-net-framework-48"></a>Nouveautés concernant l’accessibilité dans .NET Framework 4.8
 
@@ -149,7 +165,7 @@ if (raiseMethod != null) {
 
 **Info-bulles pour l’accès par clavier**
 
-Dans les applications qui ciblent .NET Framework 4.7.2 et versions antérieures, pour déclencher une [info-bulle](xref:System.Windows.Forms.ToolTip) de contrôle en vue de son affichage, vous devez déplacer le pointeur de la souris dans le contrôle. À compter de .NET Framework 4.8, un utilisateur de clavier peut déclencher l’info-bulle d’un contrôle en apportant le focus sur le contrôle à l’aide d’une touche tabulation ou de touches de direction, avec ou sans touches de modification. Cette amélioration de l’accessibilité nécessite un autre [commutateur AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) :
+Dans les applications qui ciblent .NET Framework 4.7.2 et versions antérieures, pour déclencher une [info-bulle](xref:System.Windows.Forms.ToolTip) de contrôle en vue de son affichage, vous devez déplacer le pointeur de la souris dans le contrôle. À compter de .NET Framework 4,8, un utilisateur du clavier peut déclencher l’info-bulle d’un contrôle en le mettant en avant en utilisant une touche Tab ou des touches de direction avec ou sans touches de modification. Cette amélioration de l’accessibilité nécessite un autre [commutateur AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -181,7 +197,7 @@ Les éléments réduits ou masqués (Collapsed ou Hidden) ne sont plus annoncés
 
 **Propriété SelectionTextBrush à utiliser avec une sélection de texte sans ornement**
 
-Dans .NET Framework 4.7.2, WPF permet désormais de dessiner une sélection de texte <xref:System.Windows.Controls.TextBox> et <xref:System.Windows.Controls.PasswordBox> sans utiliser la couche d’ornement. Dans ce scénario, la couleur de premier plan du texte sélectionné a été dictée par <xref:System.Windows.SystemColors.HighlightTextBrush?displayProperty=nameWithType>.
+Dans .NET Framework 4.7.2, WPF a ajouté la possibilité de dessiner <xref:System.Windows.Controls.TextBox> et la <xref:System.Windows.Controls.PasswordBox> sélection de texte sans utiliser la couche d’ornement. Dans ce scénario, la couleur de premier plan du texte sélectionné a été dictée par <xref:System.Windows.SystemColors.HighlightTextBrush?displayProperty=nameWithType>.
 
 .NET Framework 4.8 comprend une nouvelle propriété (`SelectionTextBrush`) qui permet aux développeurs de sélectionner le pinceau du texte sélectionné lors de l’utilisation d’une sélection de texte sans ornement. Cette propriété fonctionne uniquement avec les contrôles dérivés de <xref:System.Windows.Controls.Primitives.TextBoxBase> et avec le contrôle <xref:System.Windows.Controls.PasswordBox>des applications WPF où la sélection de texte sans ornement est activée. Elle ne fonctionne pas avec le contrôle <xref:System.Windows.Controls.RichTextBox>. Si la sélection de texte sans ornement n’est pas activée, cette propriété est ignorée.
 
@@ -472,7 +488,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **Contraste élevé**
 
-À compter de .NET Framework 4.7.1, des améliorations ont été apportées au niveau du contraste élevé pour différents contrôles WPF. Elles sont désormais visibles quand le thème <xref:System.Windows.SystemParameters.HighContrast%2A> est défini. Elles incluent notamment :
+À compter de .NET Framework 4.7.1, des améliorations ont été apportées au niveau du contraste élevé pour différents contrôles WPF. Elles sont désormais visibles quand le thème <xref:System.Windows.SystemParameters.HighContrast%2A> est défini. Il s’agit, entre autres, des suivantes :
 
 - Contrôle <xref:System.Windows.Controls.Expander>
 
@@ -562,7 +578,7 @@ Dans .NET Framework 4.7.1, WinForms (Windows Forms) présente des modifications
 
 **Affichage amélioré en mode de contraste élevé**
 
-À compter de .NET Framework 4.7.1, différents contrôles WinForms offrent un meilleur rendu dans les modes de contraste élevé disponibles dans le système d’exploitation. Windows 10 a modifié les valeurs de certaines couleurs système à contraste élevé et Windows Forms repose sur le framework Windows 10 Win32. Pour une expérience optimale, procédez à une exécution sur la dernière version de Windows et activez les dernières modifications du système d’exploitation en ajoutant un fichier app.manifest dans une application de test et supprimez les marques de commentaire de la ligne de système d’exploitation Windows 10 pour qu’elle ressemble à ce qui suit :
+À compter de .NET Framework 4.7.1, différents contrôles WinForms offrent un meilleur rendu dans les modes de contraste élevé disponibles dans le système d’exploitation. Windows 10 a modifié les valeurs de certaines couleurs système à contraste élevé et Windows Forms repose sur le framework Windows 10 Win32. Pour une expérience optimale, procédez à une exécution sur la dernière version de Windows et activez les dernières modifications du système d’exploitation en ajoutant un fichier app.manifest dans une application de test et supprimez les marques de commentaire de la ligne de système d’exploitation Windows 10 pour qu’elle ressemble à ce qui suit :
 
 ```xml
 <!-- Windows 10 -->

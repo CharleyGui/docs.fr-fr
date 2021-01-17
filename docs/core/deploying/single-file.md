@@ -4,12 +4,12 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 12/17/2020
-ms.openlocfilehash: e2d2c9ed4c28d11a77e4f840602982a36cf1c80c
-ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
+ms.openlocfilehash: 10ffc947f6a3adcf2889a03edd2616007ce236f3
+ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678156"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98536136"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -23,7 +23,7 @@ Certaines API ne sont pas compatibles avec le déploiement à fichier unique et 
 
 Le tableau ci-dessous contient les détails de l’API de la bibliothèque Runtime appropriée pour une utilisation à fichier unique.
 
-| API                            | Remarque                                                                   |
+| API                            | Notes                                                                   |
 |--------------------------------|------------------------------------------------------------------------|
 | `Assembly.Location`            | Retourne une chaîne vide.                                               |
 | `Module.FullyQualifiedName`    | Retourne une chaîne avec la valeur de `<Unknown>` ou lève une exception. |
@@ -53,9 +53,11 @@ Sans ce fichier, Visual Studio peut générer l’erreur «Impossible d’attach
 
 Pour corriger ces erreurs, _mscordbi_ doit être copié en regard de l’exécutable. _mscordbi_ est `publish` Ed par défaut dans le sous-répertoire avec l’ID d’exécution de l’application. Ainsi, par exemple, s’il s’agit de publier un fichier exécutable à fichier unique autonome à l’aide `dotnet` de l’interface CLI pour Windows à l’aide des paramètres `-r win-x64` , l’exécutable est placé dans _bin/debug/net 5.0/Win-x64/Publish_. Une copie de _mscordbi.dll_ serait présente dans _bin/debug/net 5.0/Win-x64_.
 
-## <a name="other-considerations"></a>Autres éléments à prendre en compte
+## <a name="other-considerations"></a>Autres considérations
 
 Un fichier unique ne regroupe pas les bibliothèques natives par défaut. Sur Linux, nous prévoyons le runtime dans le bundle et seules les bibliothèques natives de l’application sont déployées dans le même répertoire que l’application à fichier unique. Sur Windows, nous prévoyons uniquement le code d’hébergement et les bibliothèques Runtime et application natives sont déployées dans le même répertoire que l’application à fichier unique. Cela permet de garantir une bonne expérience de débogage, qui requiert que les fichiers natifs soient exclus du fichier unique. Il existe une option pour définir un indicateur, `IncludeNativeLibrariesForSelfExtract` , pour inclure les bibliothèques natives dans le groupe de fichiers unique, mais ces fichiers seront extraits dans un répertoire temporaire de l’ordinateur client lors de l’exécution de l’application à fichier unique.
+
+`IncludeAllContentForSelfExtract`La spécification de permet d’extraire tous les fichiers avant d’exécuter le fichier exécutable. Cela préserve le comportement d’origine du déploiement de fichier unique .NET Core.
 
 Une application à fichier unique aura tous les fichiers PDB associés et ne sera pas regroupée par défaut. Si vous souhaitez inclure des fichiers PDB à l’intérieur de l’assembly pour les projets que vous générez, affectez la valeur `DebugType` `embedded` décrite [ci-dessous](#include-pdb-files-inside-the-bundle) en détail.
 

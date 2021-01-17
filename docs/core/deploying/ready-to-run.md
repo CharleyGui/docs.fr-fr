@@ -1,15 +1,15 @@
 ---
 title: Présentation du déploiement de ReadyToRun
 description: Découvrez les déploiements ReadyToRun et les raisons pour lesquelles vous devez envisager de l’utiliser dans le cadre de la publication de votre application avec .NET 5 et .NET Core 3,0 et versions ultérieures.
-author: davidwr
+author: davidwrighton
 ms.author: davidwr
 ms.date: 09/21/2020
-ms.openlocfilehash: 3302e5e18a20965a1eff1f09737910e924ed6d08
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: 2d4aaac2534bbb1279eb88d8e24e1f5f022afe7d
+ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98188606"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98536097"
 ---
 # <a name="readytorun-compilation"></a>Compilation ReadyToRun
 

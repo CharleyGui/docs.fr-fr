@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: d8ca3eed3786a728002d8ffe80b774a0018eee82
-ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
+ms.openlocfilehash: 57cebc562949627be70aabe24e75ad4567d072fd
+ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98025451"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98536123"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -35,7 +35,7 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 > [!TIP]
 > Un `+` symbole représente la version minimale.
 
-| Système d’exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
+| Système d'exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
 |-----------------------------|---------------|---------------|--------|
 | Windows 10, version 20H2    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 2004    | ✔️           | ✔️            | ✔️    |
@@ -84,7 +84,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net.
 
-## <a name="dependencies"></a>Les dépendances
+## <a name="dependencies"></a>Dépendances
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
@@ -260,11 +260,31 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 
 La [page de téléchargement](https://dotnet.microsoft.com/download/dotnet-core) de .NET fournit des fichiers exécutables Windows Installer.
 
-Lorsque vous utilisez les fichiers MSI pour installer .NET< vous pouvez personnaliser le chemin d’installation en définissant les `DOTNETHOME_X64` `DOTNETHOME_X86` paramètres et :
+Lorsque vous utilisez les programmes d’installation Windows pour installer .NET, vous pouvez personnaliser le chemin d’installation en définissant les `DOTNETHOME_X64` `DOTNETHOME_X86` paramètres et :
 
 ```console
 dotnet-sdk-3.1.301-win-x64.exe DOTNETHOME_X64="F:\dotnet\x64" DOTNETHOME_X86="F:\dotnet\x86"
 ```
+
+Si vous souhaitez installer .NET en mode silencieux, par exemple dans un environnement de production ou pour prendre en charge l’intégration continue, utilisez les commutateurs suivants :
+
+- `/install`\
+Installe .NET.
+
+- `/quiet`\
+Empêche l’affichage de l’interface utilisateur et des invites.
+
+- `norestart`\
+Supprime toute tentative de redémarrage.
+
+```console
+dotnet-sdk-3.1.301-win-x64.exe /install /quiet /norestart
+```
+
+Pour plus d’informations, consultez [Options du programme d’installation Standard Command-Line](/windows/win32/msi/standard-installer-command-line-options).
+
+> [!TIP]
+> Le programme d’installation renvoie un code de sortie égal à 0 en cas de réussite et un code de sortie de 3010 pour indiquer qu’un redémarrage est nécessaire. Une autre valeur est généralement un code d’erreur.
 
 ## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
 
