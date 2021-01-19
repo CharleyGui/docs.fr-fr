@@ -1,13 +1,13 @@
 ---
 title: 'Modification avec rupture : les méthodes WinForms lèvent désormais ArgumentException'
-description: Découvrez la modification avec rupture dans .NET 5,0 où les méthodes sWindows Forms lèvent désormais une exception ArgumentException pour les arguments non valides.
+description: En savoir plus sur la modification avec rupture dans .NET 5,0 où certaines méthodes Windows Forms lèvent désormais une exception ArgumentException pour les arguments non valides.
 ms.date: 07/18/2020
-ms.openlocfilehash: 46fe3f3b1208a5cd676e1b7546507bed36a850f2
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 892f4d16b80f3e42187480a7fcfb24e81868d07c
+ms.sourcegitcommit: f8cd3ef517ee177c99feed944824c27d208cc0d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761304"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570214"
 ---
 # <a name="winforms-methods-now-throw-argumentexception"></a>Les méthodes WinForms lèvent désormais ArgumentException
 
@@ -21,7 +21,7 @@ La levée d’une <xref:System.ArgumentException> conforme au comportement du Ru
 
 ## <a name="version-introduced"></a>Version introduite
 
-.NET 5,0
+.NET 5.0
 
 ## <a name="recommended-action"></a>Action recommandée
 
