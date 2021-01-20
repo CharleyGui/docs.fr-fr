@@ -1,13 +1,13 @@
 ---
 title: Migration vers Windows 10
 description: Présentation approfondie des fonctionnalités de Windows 10, telles que l’empaquetage et les îlots XAML.
-ms.date: 09/16/2019
-ms.openlocfilehash: cd17088b086a32fd3bb37e617d3a1047acedde0e
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.date: 12/29/2020
+ms.openlocfilehash: 139a8f2354803dafeb0178b4dbfb57a95c4ddb34
+ms.sourcegitcommit: 632818f4b527e5bf3c48fc04e0c7f3b4bdb8a248
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423207"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98615943"
 ---
 # <a name="windows-10-migration"></a>Migration vers Windows 10
 
@@ -19,9 +19,9 @@ Avec la sortie de Windows 10, Microsoft a introduit de nombreuses innovations po
 - Utilisez un stylet pour dessiner ou écrire du texte qui est automatiquement reconnu et numériquement.
 - Exécutez des modèles IA personnalisés localement basés sur le Cloud à l’aide de WinML.
 
-Toutes ces fonctionnalités sont activées pour les développeurs Windows via des bibliothèques Windows Runtime (WinRT). Vous pouvez tirer parti de ces fonctionnalités dans vos applications de bureau existantes, car les bibliothèques sont exposées aussi bien aux .NET Framework qu’à .NET Core. Vous pouvez même moderniser votre interface utilisateur avec l’utilisation d’îlots XAML et améliorer les visuels et le comportement de vos applications en fonction des heures.
+Toutes ces fonctionnalités sont activées pour les développeurs Windows via des bibliothèques Windows Runtime (WinRT). Vous pouvez tirer parti de ces fonctionnalités dans vos applications de bureau existantes, car celles-ci sont également exposées aux .NET Framework et à .NET. Vous pouvez même moderniser votre interface utilisateur avec l’utilisation d’îlots XAML et améliorer les visuels et le comportement de vos applications en fonction des heures.
 
-Une chose importante à noter ici est que vous n’avez pas besoin d’abandonner .NET Framework technologie pour suivre ce chemin de modernisation. Vous pouvez rester en toute sécurité et bénéficier de tous les avantages de Windows 10 sans avoir à migrer vers .NET Core. Vous bénéficiez ainsi de la puissance et de la flexibilité nécessaire pour choisir votre chemin de modernisation.
+Une chose importante à noter ici est que vous n’avez pas besoin d’abandonner .NET Framework technologie pour suivre ce chemin de modernisation. Vous pouvez rester en toute sécurité et bénéficier de tous les avantages de Windows 10 sans avoir à migrer vers .NET. Vous bénéficiez ainsi de la puissance et de la flexibilité nécessaire pour choisir votre chemin de modernisation.
 
 ## <a name="winrt-apis"></a>API WinRT
 
@@ -40,19 +40,19 @@ Les applications UWP disposent d’un système de déploiement dans lequel le sy
 
 Certaines API WinRT requièrent que cette identité de package fonctionne comme prévu. Toutefois, les applications de bureau classiques, comme les applications natives C++ ou .NET, utilisent des systèmes de déploiement différents qui ne nécessitent pas d’identité de package. Si vous souhaitez utiliser ces API WinRT dans votre application de bureau, vous devez leur fournir une identité de package.
 
-Une façon de procéder consiste à créer un projet d’empaquetage supplémentaire. Dans le projet de Packaging, vous pointez sur le projet de code source d’origine et spécifiez les informations d’identité que vous souhaitez fournir.Si vous installez le package et exécutez l’application installée, vous obtiendrez automatiquement une identification permettant à votre code d’appeler toutes les API WinRT nécessitant une identité.
+Une façon de procéder consiste à créer un projet d’empaquetage supplémentaire. Dans le projet de Packaging, vous pointez sur le projet de code source d’origine et spécifiez les informations d’identité que vous souhaitez fournir. Si vous installez le package et exécutez l’application installée, vous obtiendrez automatiquement une identification permettant à votre code d’appeler toutes les API WinRT nécessitant une identité.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10">
-    <Identity Name="YOUR-APP-GUID "
-              Publisher="CN=YOUR COMPANY"
-              Version="1.x.x.x" />
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10">
+    <Identity Name="YOUR-APP-GUID "
+              Publisher="CN=YOUR COMPANY"
+              Version="1.x.x.x" />
 </Package>
 ```
 
-Vous pouvez vérifier les API qui ont besoin d’une identité d’application empaquetée en inspectant si le type qui contient l’API est marqué avec l’attribut [DualApiPartition](xref:Windows.Foundation.Metadata.DualApiPartitionAttribute) .Si c’est le cas, vous pouvez appeler si à partir d’une application de bureau traditionnelle non comprise. Dans le cas contraire, vous devez convertir votre application de bureau classique en UWP à l’aide d’un projet de Packaging.
+Vous pouvez vérifier les API qui ont besoin d’une identité d’application empaquetée en inspectant si le type qui contient l’API est marqué avec l’attribut [DualApiPartition](xref:Windows.Foundation.Metadata.DualApiPartitionAttribute) . Si c’est le cas, vous pouvez appeler si à partir d’une application de bureau traditionnelle non comprise. Dans le cas contraire, vous devez convertir votre application de bureau classique en UWP à l’aide d’un projet de Packaging.
 
 <https://docs.microsoft.com/windows/desktop/apiindex/uwp-apis-callable-from-a-classic-desktop-app>
 
@@ -78,7 +78,7 @@ Les packages que vous créez pour votre application de bureau sont des applicati
 
 ##### <a name="installation"></a>Installation
 
-Les packages d’application sont installés sous *% ProgramFiles% \\ WindowsApps \\ package_name*, avec l’exécutable intitulé  `app_name.exe` . Chaque dossier de package contient un manifeste (nommé `AppxManifest.xml` ) qui contient un espace de noms XML spécial pour les applications empaquetées. Dans ce fichier manifeste se trouve un  `<EntryPoint>`   élément qui fait référence à l’application de confiance totale. Lorsque cette application est lancée, elle ne s’exécute pas dans un conteneur d’application, mais elle s’exécute en tant qu’utilisateur normalement.
+Les packages d’application sont installés sous *% ProgramFiles% \\ WindowsApps \\ package_name*, avec l’exécutable intitulé `app_name.exe` . Chaque dossier de package contient un manifeste (nommé `AppxManifest.xml` ) qui contient un espace de noms XML spécial pour les applications empaquetées. Ce fichier manifeste contient un élément `<EntryPoint>` qui fait référence à l’application totalement approuvée. Lorsque cette application est lancée, elle ne s’exécute pas dans un conteneur d’application, mais elle s’exécute en tant qu’utilisateur normalement.
 
 Après le déploiement, les fichiers du package sont marqués en lecture seule et fortement verrouillés par le système d’exploitation. Windows empêche le lancement des applications si ces fichiers sont falsifiés.
 
@@ -90,13 +90,13 @@ Lorsque vous tentez d’accéder au dossier *AppData* de l’utilisateur, le sys
 
 ##### <a name="registry"></a>Registre
 
-Les packages d’application contiennent un fichier Registry. dat, qui sert d’équivalent logique de  `HKLM\Software`   dans le registre réel. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux.
+Les packages d’application contiennent un fichier Registry. dat, qui sert d’équivalent logique de `HKLM\Software` dans le registre réel. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux.
 
 Toutes les écritures sont conservées lors de la mise à niveau du package et ne sont supprimées que lorsque l’application est désinstallée.
 
 ##### <a name="uninstallation"></a>Désinstallation
 
-Lorsque l’utilisateur désinstalle un package, tous les fichiers et dossiers situés sous  `C:\Program Files\WindowsApps\package_name` sont supprimés, ainsi que toutes les écritures redirigées vers AppData ou le Registre qui ont été capturées pendant le processus.
+Lorsque l’utilisateur désinstalle un package, tous les fichiers et dossiers situés sous `C:\Program Files\WindowsApps\package_name` sont supprimés, ainsi que toutes les écritures redirigées vers AppData ou le Registre qui ont été capturées pendant le processus.
 
 Pour plus d’informations sur la façon dont une application empaquetée gère l’installation, l’accès aux fichiers, le registre et la désinstallation, consultez <https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes> .
 
@@ -118,7 +118,7 @@ Notre exemple utilise l' <xref:Windows.UI.Notifications.Notification?displayProp
 
 ![Classe de notification dans la documentation Microsoft](./media/windows-migration/notification-class-documentation.png)
 
-Pour accéder à l’API WinRT, ajoutez une référence au `Microsoft.Windows.SDK.Contracts`   package NuGet. ce package fera la magie en arrière-plan (consultez les détails à l’adresse <https://blogs.windows.com/windowsdeveloper/2019/04/30/calling-windows-10-apis-from-a-desktop-application-just-got-easier/> ).
+Pour accéder à l’API WinRT, ajoutez une référence au `Microsoft.Windows.SDK.Contracts` package NuGet. ce package fera la magie en arrière-plan (consultez les détails à l’adresse <https://blogs.windows.com/windowsdeveloper/2019/04/30/calling-windows-10-apis-from-a-desktop-application-just-got-easier/> ).
 
 Vous êtes maintenant prêt à commencer à ajouter du code.
 
@@ -177,7 +177,7 @@ Les îlots XAML sont un ensemble de composants qui permettent aux développeurs 
 
 ![Structure des îlots XAML](./media/windows-migration/xaml-islands.png)
 
-Vous pouvez créer une image de votre application Win32 avec vos contrôles standard et parmi eux un « îlot » d’interfaces utilisateur UWP contenant des contrôles du monde moderne. Le concept est similaire à la présence d’un iFrame dans une page Web qui affiche le contenu d’un`different page.`
+Vous pouvez créer une image de votre application Win32 avec vos contrôles standard et parmi eux un « îlot » d’interfaces utilisateur UWP contenant des contrôles du monde moderne. Le concept est similaire à la présence d’un iFrame dans une page Web qui affiche le contenu d’un `different page.`
 
 Outre l’ajout de fonctionnalités à partir des API Windows 10, vous pouvez ajouter des éléments de code XAML UWP à l’intérieur de votre application à l’aide des îlots XAML.
 
@@ -193,11 +193,11 @@ Au niveau de la build 2018, Microsoft a annoncé aux développeurs qu’ils util
 
 ### <a name="how-it-works"></a>Fonctionnement
 
-La mise à jour de Windows 10 1903 introduit plusieurs API d’hébergement XAML. Deux d’entre eux sont `WindowsXamlManager`   et  `DesktopWindowXamlSource` .
+La mise à jour de Windows 10 1903 introduit plusieurs API d’hébergement XAML. Deux d’entre eux sont `WindowsXamlManager` et `DesktopWindowXamlSource` .
 
-La  `WindowsXamlManager`   classe gère l’infrastructure XAML UWP. Sa `InitializeForCurrentThread` méthode charge l’infrastructure XAML UWP dans le thread actuel de l’application Win32.
+La `WindowsXamlManager` classe gère l’infrastructure XAML UWP. Sa `InitializeForCurrentThread` méthode charge l’infrastructure XAML UWP dans le thread actuel de l’application Win32.
 
- `DesktopWindowXamlSource`   Est l’instance de votre contenu d’îlot XAML. Il possède la `Content` propriété, que vous êtes chargé d’instancier et de définir. Le `DesktopWindowXamlSource`   restitue et obtient son entrée à partir d’un HWND. Il doit savoir à quel autre HWND il attachera l’îlot XAML, et vous êtes responsable du dimensionnement et du positionnement du HWND du parent.
+`DesktopWindowXamlSource`Est l’instance de votre contenu d’îlot XAML. Il possède la `Content` propriété, que vous êtes chargé d’instancier et de définir. Le `DesktopWindowXamlSource` restitue et obtient son entrée à partir d’un HWND. Il doit savoir à quel autre HWND il attachera l’îlot XAML, et vous êtes responsable du dimensionnement et du positionnement du HWND du parent.
 
 Les développeurs WPF ou Windows Forms ne traitent généralement pas HWND à l’intérieur de leur code. il peut donc être difficile de comprendre et de gérer les pointeurs HWND et les câbles sous-jacents pour communiquer des mondes Win32 et UWP.
 
@@ -223,12 +223,12 @@ Ajoutez le `Microsoft.Toolkit.Wpf.UI.Controls` package à votre projet, incluez 
         ...
         xmlns:uwpControls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls">
 <Grid>
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="\*"/>
-    </Grid.RowDefinitions>
-    <uwpControls:InkToolbar TargetInkCanvas="{x:Reference Name=inkCanvas}"/>
-    <uwpControls:InkCanvas Grid.Row="1" x:Name="inkCanvas" />
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="\*"/>
+    </Grid.RowDefinitions>
+    <uwpControls:InkToolbar TargetInkCanvas="{x:Reference Name=inkCanvas}"/>
+    <uwpControls:InkCanvas Grid.Row="1" x:Name="inkCanvas" />
 </Grid>
 ```
 
@@ -263,7 +263,7 @@ Pour voir une procédure pas à pas sur l’utilisation des îlots XAML, consult
 
 Un contrôle personnalisé XAML est un contrôle (ou contrôle utilisateur) créé par vous ou par des tiers (y compris des contrôles WinUI 2. x). Pour héberger un contrôle UWP personnalisé dans une Windows Forms ou une application WPF, vous avez besoin des éléments suivants :
 
-- Pour utiliser le `WindowsXamlHost` contrôle UWP dans votre application .net Core 3. x.
+- Pour utiliser le `WindowsXamlHost` contrôle UWP dans votre application .net.
 - Pour créer un projet d’application UWP qui définit un `XamlApplication` objet.
 
 Votre projet WPF ou Windows Forms doit avoir accès à une instance de la `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` classe fournie par le kit de pratiques de la communauté Windows. Cet objet joue le rôle de fournisseur de métadonnées racine pour le chargement des métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application. La méthode recommandée consiste à ajouter un projet application vide (Windows universel) à la même solution que votre projet WPF ou Windows Forms et à modifier la classe d’application par défaut de ce projet.
@@ -280,13 +280,13 @@ Outre les contrôles Windows 10 fournis avec le système d’exploitation, la m�
 
 WinUI 2 est open source et vous pouvez trouver des informations à l’adresse <https://github.com/microsoft/microsoft-ui-xaml> .
 
-L’article suivant montre comment héberger un contrôle XAML UWP à partir de la bibliothèque WinUI 2 :<https://docs.microsoft.com/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands>
+L’article suivant montre comment héberger un contrôle XAML UWP à partir de la bibliothèque WinUI 2 : <https://docs.microsoft.com/windows/apps/desktop/modernize/host-custom-control-with-xaml-islands>
 
 ### <a name="do-you-need-xaml-islands"></a>Avez-vous besoin d’îlots XAML
 
-Les îlots XAML sont destinés aux applications Win32 existantes qui souhaitent améliorer leur expérience utilisateur en tirant parti de nouveaux contrôles et comportements UWP sans réécriture complète de l’application. Vous pouvez déjà [tirer parti des API Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance), mais jusqu’à ce qu’elles jusqu’à des îlots XAML, seules les API non liées à l’interface utilisateur.
+Les îlots XAML sont destinés aux applications Win32 existantes qui souhaitent améliorer leur expérience utilisateur en tirant parti de nouveaux contrôles et comportements UWP sans réécriture complète de l’application. Vous pouvez déjà [tirer parti des API Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance), mais jusqu’à ce qu’elles jusqu’à des îlots XAML, seules les API non liées à l’interface utilisateur.
 
-Si vous développez une nouvelle application Windows, une [application UWP](/windows/uwp/get-started/universal-application-platform-guide)   est probablement la bonne approche.
+Si vous développez une nouvelle application Windows, une [application UWP](/windows/uwp/get-started/universal-application-platform-guide) est probablement la bonne approche.
 
 ### <a name="the-road-ahead-xaml-islands-winui-30"></a>Les îles de la chaussée à l’avance XAML : WinUI 3,0
 
@@ -300,9 +300,9 @@ WinUI 3 est en cours de développement actif et élargit de manière importante 
 
 ![Structure de l’WinUI 3,0](./media/windows-migration/winui3.png)
 
-L’infrastructure XAML sera désormais développée sur GitHub et livrée hors bande sous forme de packages [NuGet](/nuget/what-is-nuget)   .
+L’infrastructure XAML sera désormais développée sur GitHub et livrée hors bande sous forme de packages [NuGet](/nuget/what-is-nuget) .
 
-Les API XAML UWP existantes fournies dans le cadre du système d’exploitation ne recevront plus de nouvelles mises à jour de fonctionnalités. Ils recevront toujours les mises à jour de sécurité et les correctifs critiques conformément au cycle de vie de la prise en charge de Windows 10.
+Les API XAML UWP existantes fournies dans le cadre du système d’exploitation ne recevront plus de nouvelles mises à jour des fonctionnalités. Ils recevront toujours les mises à jour de sécurité et les correctifs critiques conformément au cycle de vie de la prise en charge de Windows 10.
 
 Le plateforme Windows universelle contient plus que l’infrastructure XAML (par exemple, le modèle d’application et de sécurité, le pipeline multimédia, les intégrations de l’interpréteur de commandes Xbox et Windows 10, la prise en charge étendue des appareils) et continuera à évoluer. Toutes les nouvelles fonctionnalités XAML seront simplement développées et fournies dans le cadre de l’appel à la fonction WinUI.
 
@@ -315,7 +315,7 @@ WinUI 3 répond à ces commentaires critiques **en ajoutant WinUI dans les appli
 Dans cette agrégation, WinUI 3 permet aux développeurs de mélanger facilement et de faire correspondre la bonne combinaison de :
 
 * Modèle d’application : UWP, Win32
-* Plateforme : .NET Core ou native
+* Plateforme : .NET ou native
 * Langage : .NET (C \# , Visual Basic), C++ standard
 * Empaquetage : MSIX, AppX pour le Microsoft Store, unpacked
 * Interop : utilisez WinUI 3 pour étendre des applications WPF, WinForms et MFC existantes à l’aide des îlots XAML WinUI.
@@ -324,4 +324,4 @@ Si vous souhaitez en savoir plus, Microsoft partage cette feuille de route dans 
 
 >[!div class="step-by-step"]
 >[Précédent](migrate-modern-applications.md) 
-> [Suivant](example-migration-core.md)
+> [Suivant](example-migration.md)

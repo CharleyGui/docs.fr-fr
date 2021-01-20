@@ -1,21 +1,21 @@
 ---
 title: Migration d’applications de bureau modernes
 description: Tout ce que vous devez savoir sur le processus de migration pour les applications de bureau modernes.
-ms.date: 05/12/2020
-ms.openlocfilehash: f7862d6379eeeb737c386b5ffeaab938d258b046
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: b5bea6e601dc040adfd8ed410320a3416cb3372e
+ms.sourcegitcommit: 632818f4b527e5bf3c48fc04e0c7f3b4bdb8a248
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91173331"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98615761"
 ---
 # <a name="migrating-modern-desktop-applications"></a>Migration d’applications de bureau modernes
 
-Dans ce chapitre, nous explorons les problèmes et les défis les plus courants que vous pouvez rencontrer lors de la migration d’une application existante de .NET Framework à .NET Core.
+Dans ce chapitre, nous explorons les problèmes et les défis les plus courants que vous pouvez rencontrer lors de la migration d’une application existante de .NET Framework vers .NET.
 
 Une application de bureau complexe ne fonctionne pas de manière isolée et nécessite un type d’interaction avec les sous-systèmes qui peuvent résider sur l’ordinateur local ou sur un serveur distant. Il aura probablement besoin d’un type de base de données pour se connecter en tant que stockage de persistance localement ou à distance. Avec le déclenchement d’architectures orientées services et Internet, il est courant que votre application soit connectée à une sorte de service résidant sur un serveur distant ou dans le Cloud. Vous devrez peut-être accéder au système de fichiers de l’ordinateur pour implémenter certaines fonctionnalités. Vous pouvez également utiliser une partie des fonctionnalités qui résident à l’intérieur d’un objet COM en dehors de votre application, ce qui est un scénario courant si, par exemple, vous intégrez des assemblys Office à votre application.
 
-En outre, il existe des différences dans la surface de l’API qui est exposée par .NET Framework et .NET Core, et certaines fonctionnalités disponibles sur .NET Framework ne sont pas disponibles sur .NET Core. C’est pourquoi il est important que vous les sachiez et les prenne en compte lors de la planification d’une migration.
+En outre, il existe des différences dans la surface de l’API exposée par .NET Framework et .NET, et certaines fonctionnalités disponibles sur .NET Framework ne sont pas disponibles sur .NET. C’est pourquoi il est important que vous les sachiez et les prenne en compte lors de la planification d’une migration.
 
 ## <a name="configuration-files"></a>Fichiers de configuration
 
@@ -27,9 +27,9 @@ Si vous disposez d’une application de bureau .NET Framework, il est probable q
 
 Dans l’infrastructure .NET Framework, il existe une hiérarchie de fichiers de configuration qui héritent des propriétés de ses parents. Vous pouvez trouver un fichier de *machine.config* qui définit de nombreuses propriétés et sections de configuration qui peuvent être utilisées ou remplacées dans n’importe quel fichier de configuration descendant.
 
-### <a name="configuration-on-net-core"></a>Configuration sur .NET Core
+### <a name="configuration-on-net"></a>Configuration sur .NET
 
-Dans le monde .NET Core, il n’y a pas de fichier *machine.config* . Et même si vous pouvez continuer à utiliser l’ancien <xref:System.Configuration> espace de noms, vous pouvez envisager de passer à la version moderne <xref:Microsoft.Extensions.Configuration> , ce qui offre un bon nombre d’améliorations.
+Dans le monde .NET, il n’y a pas de fichier *machine.config* . Et même si vous pouvez continuer à utiliser l’ancien <xref:System.Configuration> espace de noms, vous pouvez envisager de passer à la version moderne <xref:Microsoft.Extensions.Configuration> , ce qui offre un bon nombre d’améliorations.
 
 L’API de configuration prend en charge le concept de fournisseur de configuration, qui définit la source de données à utiliser pour charger la configuration. Il existe différents types de fournisseurs intégrés, tels que :
 
@@ -49,13 +49,13 @@ L' <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> objet vous per
 
 ### <a name="migrating-configuration-files"></a>Migration des fichiers de configuration
 
-Vous pouvez continuer à utiliser votre fichier app.config XML existant. Toutefois, vous pouvez prendre cette occasion de migrer votre configuration pour tirer parti des nombreuses améliorations apportées à .NET Core.
+Vous pouvez continuer à utiliser votre fichier app.config XML existant. Toutefois, vous pouvez prendre cette occasion de migrer votre configuration pour tirer parti des nombreuses améliorations apportées à .NET.
 
 Pour migrer d’un ancien *app.config* vers un nouveau fichier de configuration, vous devez choisir entre un format XML et un format JSON.
 
-Si vous choisissez XML, la conversion est simple. Étant donné que le contenu est identique, il vous suffit de renommer le fichier *app.config* dans un fichier avec l’extension XML. Ensuite, modifiez le code qui référence AppSettings pour utiliser la `ConfigurationBuilder` classe. Cette modification doit être facile.
+Si vous choisissez XML, la conversion est simple. Étant donné que le contenu est le même, enregistrez simplement le fichier *app.config* avec le type XML. Ensuite, modifiez le code qui référence AppSettings pour utiliser la `ConfigurationBuilder` classe. Cette modification doit être facile.
 
-Si vous souhaitez utiliser un format JSON et que vous ne souhaitez pas migrer manuellement, il existe un outil appelé [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) disponible sur .net Core, qui peut convertir un fichier *app.config* en fichier de configuration JSON.
+Si vous souhaitez utiliser un format JSON et que vous ne souhaitez pas migrer manuellement, il existe un outil appelé [dotnet-config2json](https://www.nuget.org/packages/dotnet-config2json/) disponible sur .net qui peut convertir un fichier *app.config* en fichier de configuration JSON.
 
 Vous pouvez également rencontrer certains problèmes lors de l’utilisation des sections de configuration qui ont été définies dans le fichier *machine.config* . Par exemple, considérez la configuration suivante :
 
@@ -78,9 +78,9 @@ Vous pouvez également rencontrer certains problèmes lors de l’utilisation de
 </configuration>
 ```
 
-Si vous utilisez cette configuration dans .NET Core, vous obtenez une exception :
+Si vous utilisez cette configuration dans .NET, vous obtenez une exception :
 
-Section de configuration non reconnue System. Diagnostics
+> Section de configuration non reconnue System. Diagnostics
 
 Cette exception se produit parce que cette section et l’assembly responsable de la gestion de cette section ont été définis dans le fichier *machine.config* , qui n’existe pas.
 
@@ -104,15 +104,15 @@ Les exemples les plus courants de base de données que vous pouvez trouver lorsq
 
 ### <a name="odbc"></a>ODBC
 
-Vous pouvez continuer à utiliser ODBC sur .NET Core, car Microsoft fournit la `System.Data.Odbc` bibliothèque compatible avec .NET Standard 2,0.
+Vous pouvez continuer à utiliser ODBC sur .NET, car Microsoft fournit la `System.Data.Odbc` bibliothèque compatible avec .NET Standard 2,0.
 
 ### <a name="ole-db"></a>OLE DB
 
-[OLE DB](/previous-versions/windows/desktop/ms722784(v=vs.85))   est un excellent moyen d’accéder à diverses sources de données de manière uniforme. Mais il était basé sur COM, qui est une technologie Windows uniquement et, comme cela n’était pas le mieux adapté pour une technologie multiplateforme telle que .NET Core. Il n’est pas non plus pris en charge dans les versions 2014 et ultérieures de SQL Server. Pour ces raisons, OLE DB ne sera pas pris en charge par .NET Core.
+[OLE DB](/previous-versions/windows/desktop/ms722784(v=vs.85)) est un excellent moyen d’accéder à diverses sources de données de manière uniforme. Mais il était basé sur COM, qui est une technologie Windows uniquement et n’était donc pas la solution la mieux adaptée pour une technologie multiplateforme telle que .NET. Il n’est pas non plus pris en charge dans les versions 2014 et ultérieures de SQL Server. Pour ces raisons, OLE DB ne sera pas pris en charge par .NET.
 
 ### <a name="adonet"></a>ADO.NET
 
-Vous pouvez toujours utiliser ADO.NET à partir de votre code de bureau existant sur .NET Core. Vous devez simplement mettre à jour certains packages NuGet.
+Vous pouvez toujours utiliser ADO.NET à partir de votre code de bureau existant sur .NET. Vous devez simplement mettre à jour certains packages NuGet.
 
 ### <a name="ef-core-vs-ef6"></a>EF Core et EF6
 
@@ -120,9 +120,9 @@ Il existe deux versions actuellement prises en charge de Entity Framework (EF), 
 
 La technologie la plus récente publiée dans le cadre du monde de la .NET Framework est Entity Framework, 6,4 étant la dernière version. Avec le lancement de .NET Core, Microsoft a également publié une nouvelle pile d’accès aux données basée sur Entity Framework et appelée Entity Framework Core.
 
-Vous pouvez utiliser EF 6,4 et EF Core à la fois à partir de .NET Framework et de .NET Core. Alors, quels sont les facteurs décisionnels qui vous aideront à décider entre les deux ?
+Vous pouvez utiliser EF 6,4 et EF Core à la fois à partir de .NET Framework et de .NET. Alors, quels sont les facteurs décisionnels qui vous aideront à décider entre les deux ?
 
-EF 6,3 est la première version de EF6 qui peut s’exécuter sur .NET Core et travailler sur plusieurs plateformes. En fait, l’objectif principal de cette version était de faciliter la migration des applications existantes qui utilisent EF6 vers .NET Core.
+EF 6,3 est la première version de EF6 qui peut s’exécuter sur .NET et travailler sur plusieurs plateformes. En fait, l’objectif principal de cette version était de faciliter la migration des applications existantes qui utilisent EF6 vers .NET.
 
 EF Core a été conçu pour fournir une expérience de développement similaire à EF6. La plupart des API de niveau supérieur restent les mêmes ; EF Core semblera donc familier aux développeurs EF6.
 
@@ -131,7 +131,7 @@ Pour plus d’informations, consultez [comparer EF Core & EF6](/ef/efcore-and-ef
 
 La recommandation consiste à utiliser EF Core dans les cas suivants :
 
-* L’application a besoin des fonctionnalités de .NET Core.
+* L’application a besoin des fonctionnalités de .NET.
 * EF Core prend en charge toutes les fonctionnalités requises par l’application.
 
 Utilisez plutôt EF6 si les deux conditions suivantes sont remplies :
@@ -145,7 +145,7 @@ Utilisez plutôt EF6 si les deux conditions suivantes sont remplies :
 
 SQL Server a été l’une des bases de données de choix si vous développez pour le bureau il y a quelques années. Avec l’utilisation de <xref:System.Data.SqlClient> dans .NET Framework, vous pouvez accéder à des versions de SQL Server, qui encapsule des protocoles spécifiques à la base de données.
 
-Dans .NET Core, vous pouvez trouver une nouvelle `SqlClient` classe, entièrement compatible avec celle qui existe dans le .NET Framework, mais qui se trouve dans la <xref:Microsoft.Data.SqlClient> bibliothèque. Il vous suffit d’ajouter une référence au package NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/) et de renommer les espaces de noms pour que tout fonctionne comme prévu.
+Dans .NET, vous pouvez trouver une nouvelle `SqlClient` classe, entièrement compatible avec celle qui existe dans le .NET Framework, mais qui se trouve dans la <xref:Microsoft.Data.SqlClient> bibliothèque. Il vous suffit d’ajouter une référence au package NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/) et de renommer les espaces de noms pour que tout fonctionne comme prévu.
 
 #### <a name="microsoft-access"></a>Microsoft Access
 
@@ -155,19 +155,19 @@ Microsoft Access a été utilisé depuis des années lorsque le SQL Server sophi
 
 Avec l’augmentation des architectures orientées service, les applications de bureau ont commencé à évoluer d’un modèle client-serveur à l’approche à trois couches. Dans l’approche client-serveur, une connexion directe à la base de données est établie à partir du client qui détient la logique métier généralement à l’intérieur d’un seul fichier EXE. En revanche, l’approche à trois couches établit une couche de service intermédiaire qui implémente la logique métier et l’accès aux bases de données, ce qui permet de renforcer la sécurité, l’extensibilité et la réutilisation. Au lieu de travailler directement avec les jeux de données de données, l’approche de couche s’appuie sur un ensemble de services qui implémentent des contrats et des objets de type comme un moyen d’implémenter le transfert de données.
 
-Si vous disposez d’une application de bureau à l’aide d’un service WCF et que vous souhaitez la migrer vers .NET Core, vous devez prendre en compte certains éléments.
+Si vous disposez d’une application de bureau à l’aide d’un service WCF et que vous souhaitez la migrer vers .NET, vous devez prendre en compte certaines choses.
 
-La première chose à faire est de résoudre la configuration pour accéder au service. Étant donné que la configuration est différente sur .NET Core, vous devez effectuer certaines mises à jour dans votre fichier de configuration.
+La première chose à faire est de résoudre la configuration pour accéder au service. Étant donné que la configuration est différente sur .NET, vous devez effectuer certaines mises à jour dans votre fichier de configuration.
 
 Deuxièmement, vous devez régénérer le client de service avec les nouveaux outils présents sur Visual Studio 2019. Dans cette étape, vous devez envisager d’activer la génération des opérations synchrones pour rendre le client compatible avec votre code existant.
 
-Après la migration, si vous constatez qu’il existe des bibliothèques dont vous avez besoin et qui ne sont pas présentes sur .NET Core, vous pouvez ajouter une référence au package NuGet [Microsoft. Windows. Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) et voir si les fonctions manquantes y sont.
+Après la migration, si vous constatez qu’il existe des bibliothèques dont vous avez besoin et qui ne sont pas présentes sur .NET, vous pouvez ajouter une référence au package NuGet [Microsoft. Windows. Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) et voir si les fonctions manquantes y sont.
 
-Si vous utilisez la <xref:System.Net.WebRequest> classe pour effectuer des appels de service Web, il se peut que vous trouviez des différences sur .net core. La recommandation consiste à utiliser System .net. http. HttpClient à la place.
+Si vous utilisez la <xref:System.Net.WebRequest> classe pour effectuer des appels de service Web, il se peut que vous trouviez des différences sur .net. La recommandation consiste à utiliser System .net. http. HttpClient à la place.
 
 ## <a name="consuming-a-com-object"></a>Utilisation d’un objet COM
 
-Actuellement, il n’existe aucun moyen d’ajouter une référence à un objet COM à partir de Visual Studio 2019 pour l’utiliser avec .NET Core. Par conséquent, vous devez modifier manuellement le fichier projet.
+Actuellement, il n’existe aucun moyen d’ajouter une référence à un objet COM à partir de Visual Studio 2019 pour l’utiliser avec .NET. Par conséquent, vous devez modifier manuellement le fichier projet.
 
 Insérez une `COMReference` structure à l’intérieur du fichier projet, comme dans l’exemple suivant :
 
@@ -186,7 +186,7 @@ Insérez une `COMReference` structure à l’intérieur du fichier projet, comme
 
 ## <a name="more-things-to-consider"></a>Autres éléments à prendre en compte
 
-Plusieurs technologies disponibles pour les bibliothèques de .NET Framework ne sont pas disponibles pour .NET Core. Si votre code s’appuie sur certaines de ces technologies, tenez compte des autres approches décrites dans cette section.
+Plusieurs technologies disponibles pour .NET Framework bibliothèques ne sont pas disponibles pour .NET Core ou .NET 5. Si votre code s’appuie sur certaines de ces technologies, tenez compte des autres approches décrites dans cette section.
 
 Le [Pack de compatibilité Windows](../../core/porting/windows-compat-pack.md) fournit un accès aux API qui étaient auparavant disponibles uniquement pour les .NET Framework. Il peut être utilisé sur des projets .NET Core et .NET Standard.
 
@@ -194,13 +194,13 @@ Pour plus d’informations sur la compatibilité des API, consultez la documenta
 
 ### <a name="appdomains"></a>AppDomains
 
-Les domaines d’application (AppDomains) isolent les applications les unes des autres. Les AppDomains nécessitent une prise en charge du runtime et sont coûteux. La création de domaines d’application supplémentaires n’est pas prise en charge. Pour l’isolation du code, nous recommandons d’utiliser des processus distincts ou des conteneurs à la place. Pour le chargement dynamique d’assemblys, nous vous recommandons d’utiliser la nouvelle  <xref:System.Runtime.Loader.AssemblyLoadContext> classe.
+Les domaines d’application (AppDomains) isolent les applications les unes des autres. Les AppDomains nécessitent une prise en charge du runtime et sont coûteux. La création de domaines d’application supplémentaires n’est pas prise en charge. Pour l’isolation du code, nous recommandons d’utiliser des processus distincts ou des conteneurs à la place. Pour le chargement dynamique d’assemblys, nous recommandons la nouvelle classe <xref:System.Runtime.Loader.AssemblyLoadContext>.
 
-Pour faciliter la migration du code .NET Framework, .NET Core expose une partie de la surface de l’API AppDomain. Certaines des API fonctionnent normalement (par exemple,  <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType> ), certains membres ne font rien (par exemple,  <xref:System.AppDomain.SetCachePath%2A> ), et certains lèvent <xref:System.PlatformNotSupportedException> (par exemple,  <xref:System.AppDomain.CreateDomain%2A> ).
+Pour faciliter la migration du code .NET Framework, .NET expose une partie de la surface de l' `AppDomain` API. Certaines API fonctionnent normalement (par exemple, <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), certains membres ne font rien (par exemple, <xref:System.AppDomain.SetCachePath%2A>) et d’autres lèvent <xref:System.PlatformNotSupportedException> (par exemple, <xref:System.AppDomain.CreateDomain%2A>).
 
 ### <a name="remoting"></a>Communication à distance
 
-.NET Remoting a été utilisé pour la communication entre AppDomains, qui n’est plus prise en charge. Par ailleurs, Remoting requiert la prise en charge du runtime, dont la maintenance est coûteuse. Pour ces raisons, .NET Remoting n’est pas pris en charge sur .NET Core.
+.NET Remoting a été utilisé pour la communication entre AppDomains, qui n’est plus prise en charge. Par ailleurs, Remoting requiert la prise en charge du runtime, dont la maintenance est coûteuse. Pour ces raisons, .NET Remoting n’est pas pris en charge sur .NET.
 
 Pour la communication entre les processus, vous devez considérer les mécanismes de communication entre processus (IPC) comme une alternative à la communication à distance, telle que la <xref:System.IO.Pipes?displayProperty=nameWithType> <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> classe ou.
 
@@ -208,7 +208,7 @@ Pour la communication entre ordinateurs, utilisez plutôt une solution réseau. 
 
 ### <a name="code-access-security-cas"></a>Sécurité d'accès du code
 
-Le sandboxing, qui s’appuie sur le runtime ou l’infrastructure pour contraindre les ressources qu’une application ou une bibliothèque managée utilise ou exécute, n’est pas pris en charge sur .NET Core.
+Le sandboxing, qui s’appuie sur le runtime ou l’infrastructure pour contraindre les ressources qu’une application ou une bibliothèque managée utilise ou exécute, n’est pas pris en charge sur .NET.
 
 Utilisez les limites de sécurité fournies par le système d’exploitation, telles que la virtualisation, les conteneurs ou les comptes d’utilisateur pour l’exécution des processus avec l’ensemble minimal de privilèges.
 
@@ -219,5 +219,5 @@ Tout comme la sécurité d’accès du code, la transparence de la sécurité s�
 Utilisez les limites de sécurité fournies par le système d’exploitation, telles que la virtualisation, les conteneurs ou les comptes d’utilisateur pour l’exécution des processus avec le plus petit ensemble de privilèges.
 
 >[!div class="step-by-step"]
->[Précédent](whats-new-dotnet-core.md ) 
+>[Précédent](whats-new-dotnet.md ) 
 > [Suivant](windows-migration.md)

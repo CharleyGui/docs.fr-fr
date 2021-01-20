@@ -9,16 +9,16 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 51bf44af5ec3478f2b2557b047df270c0c22990d
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 2ae63396c0b1bb0bf1fe5c33b1103f69f6dcf664
+ms.sourcegitcommit: 632818f4b527e5bf3c48fc04e0c7f3b4bdb8a248
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556840"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98615865"
 ---
 # <a name="lambda-expressions-c-reference"></a>Expressions lambda (référence C#)
 
-Une *expression lambda* est une expression de l’une des deux formes suivantes :
+Vous utilisez une *expression lambda* pour créer une fonction anonyme. Utilisez l’[opérateur de déclaration lambda`=>`](lambda-operator.md) pour séparer la liste des paramètres de l’expression lambda de son corps. Une expression lambda peut être de l’une des deux formes suivantes :
 
 - [Expression lambda](#expression-lambdas) qui a une expression comme corps :
 
@@ -32,7 +32,7 @@ Une *expression lambda* est une expression de l’une des deux formes suivantes�
   (input-parameters) => { <sequence-of-statements> }
   ```
 
-Utilisez l’[opérateur de déclaration lambda`=>`](lambda-operator.md) pour séparer la liste des paramètres de l’expression lambda de son corps. Pour créer une expression lambda, vous spécifiez des paramètres d’entrée (le cas échéant) à gauche de l’opérateur lambda et une expression ou un bloc d’instructions de l’autre côté.
+Pour créer une expression lambda, vous spécifiez des paramètres d’entrée (le cas échéant) à gauche de l’opérateur lambda et une expression ou un bloc d’instructions de l’autre côté.
 
 Toute expression lambda peut être convertie en type [délégué](../builtin-types/reference-types.md#the-delegate-type). Le type délégué vers lequel une expression lambda peut être convertie est défini par les types de ses paramètres et de sa valeur de retour. Si une expression lambda ne retourne pas de valeur, elle peut être convertie en l’un des types délégués `Action` ; sinon, elle peut être convertie en l’un des types délégués `Func`. Par exemple, une expression lambda qui a deux paramètres et qui ne retourne aucune valeur peut être convertie en un délégué <xref:System.Action%602>. Une expression lambda qui a un paramètre et qui retourne une valeur peut être convertie en un délégué <xref:System.Func%602>. Dans l’exemple suivant, l’expression lambda `x => x * x` , qui spécifie un paramètre nommé `x` et retourne la valeur du `x` carré, est assignée à une variable d’un type délégué :
 
@@ -251,6 +251,6 @@ Pour plus d’informations sur les fonctionnalités ajoutées dans C# 9,0, consu
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs et expressions C#](index.md)
 - [LINQ (Language Integrated Query)](../../programming-guide/concepts/linq/index.md)
-- [Arborescences d’expressions](../../programming-guide/concepts/expression-trees/index.md)
+- [Arborescences de l’expression](../../programming-guide/concepts/expression-trees/index.md)
 - [Fonctions locales et expressions lambda](../../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)

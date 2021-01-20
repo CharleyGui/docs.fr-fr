@@ -3,12 +3,12 @@ title: Traiter les tâches asynchrones terminées
 description: Cet exemple montre comment utiliser Task. WhenAny en C# pour démarrer plusieurs tâches et traiter leurs résultats à mesure qu’ils se terminent, au lieu de les traiter dans l’ordre de début.
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 860e94a9c3973ce56e7321741a1136f752aa3d18
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.openlocfilehash: 4cdd35af900863895911ea5c2c9772af362951ec
+ms.sourcegitcommit: 632818f4b527e5bf3c48fc04e0c7f3b4bdb8a248
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805237"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98615969"
 ---
 # <a name="process-asynchronous-tasks-as-they-complete-c"></a>Traiter les tâches asynchrones à mesure qu’elles se terminent (C#)
 
@@ -128,13 +128,13 @@ La `while` boucle effectue les étapes suivantes pour chaque tâche de la collec
 1. Attend un appel à `WhenAny` pour identifier la première tâche de la collection dont le téléchargement est terminé.
 
     ```csharp
-    Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
+    Task<int> finishedTask = await Task.WhenAny(downloadTasks);
     ```
 
 1. Elle supprime cette tâche de la collection.
 
     ```csharp
-    downloadTasks.Remove(firstFinishedTask);
+    downloadTasks.Remove(finishedTask);
     ```
 
 1. Elle attend `finishedTask`, qui est retourné par un appel à `ProcessUrlAsync`. La variable `finishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TResult` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant. Si la tâche est défaillante, `await` lèvera la première exception enfant stockée dans le `AggregateException` , contrairement à la lecture de la <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> propriété, qui lèverait `AggregateException` .

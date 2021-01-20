@@ -2,12 +2,12 @@
 title: Déploiement d’applications de bureau modernes
 description: Tout ce que vous devez savoir sur le déploiement d’applications de bureau modernes.
 ms.date: 05/12/2020
-ms.openlocfilehash: 4a4d93caf1c2f8f58d48ee3199bbe6983fa939f4
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: ba47f09b27adf270734bbfff285fe44dd4175d29
+ms.sourcegitcommit: 632818f4b527e5bf3c48fc04e0c7f3b4bdb8a248
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423256"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98615852"
 ---
 # <a name="deploying-modern-desktop-applications"></a>Déploiement d’applications de bureau modernes
 
@@ -113,9 +113,9 @@ L’un des aspects les plus intéressants de MSIX est qu’il fonctionne pour l�
 
 ### <a name="tools"></a>Outils
 
-#### <a name="windows-application-packaging-project"></a>Projet de création de packages d’application Windows
+#### <a name="windows-application-packaging-project"></a>Projet de création de package d’application Windows
 
-Vous pouvez utiliser le projet de création de packages d' **applications Windows**   dans Visual Studio pour générer un package pour votre application de bureau. Vous pouvez ensuite publier ce package sur le Microsoft Store ou le chargement sur un ou plusieurs PC.
+Vous pouvez utiliser le **Projet d’empaquetage d’applications Windows** dans Visual Studio afin de générer un package pour votre application de bureau. Vous pouvez ensuite publier ce package sur le Microsoft Store ou le chargement sur un ou plusieurs PC.
 
 #### <a name="msix-packaging-tool"></a>Outil d’empaquetage MSIX
 
@@ -167,7 +167,7 @@ Définissez le projet de Packaging comme projet de démarrage pour la solution e
 - Créez un package MSIX à partir des résultats de la génération.
 - Déployez les packages.
 - Installez-la localement sur l’ordinateur de développement.
-- Lancez l’application.
+- Lancer l’application.
 
 ![Notre application installée](./media/deploy-modern-applications/our-installed-application.png)
 
@@ -226,4 +226,4 @@ MSIX crée une interface utilisateur pour l’installation, en présentant autom
 Une fois que vous avez généré le nouveau package MSIX et que vous l’avez déplacé vers le serveur de déploiement, il vous suffit de modifier le fichier *. appinstaller* pour refléter ces modifications, principalement la version et le chemin d’accès au nouveau fichier MSIX. La prochaine fois que l’utilisateur lance l’application, le système va détecter la modification et télécharger les fichiers pour la nouvelle version en arrière-plan. Une fois cette opération effectuée, l’installation s’exécutera sur le nouveau lancement de l’application de manière transparente pour votre utilisateur.
 
 >[!div class="step-by-step"]
->[Précédent](example-migration-core.md)
+>[Précédent](example-migration.md)
