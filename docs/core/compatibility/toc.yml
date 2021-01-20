@@ -18,6 +18,14 @@
     - name: Modifications avec rupture par version
       expanded: true
       items:
+        - name: ".NET\_6.0"
+          items:
+            - name: Vue d'ensemble
+              href: 6.0.md
+            - name: Windows Forms
+              items:
+                - name: Les propriétés TableLayoutSettings lèvent InvalidEnumArgumentException
+                  href: windows-forms/6.0/tablelayoutsettings-apis-throw-invalidenumargumentexception.md
         - name: ".NET\_5.0"
           items:
             - name: Vue d’ensemble
@@ -551,6 +559,10 @@
               href: visualbasic.md
         - name: Windows Forms
           items:
+            - name: ".NET\_6.0"
+              items:
+                - name: Les propriétés TableLayoutSettings lèvent InvalidEnumArgumentException
+                  href: windows-forms/6.0/tablelayoutsettings-apis-throw-invalidenumargumentexception.md
             - name: ".NET\_5.0"
               items:
                 - name: OutputType défini sur WinExe
