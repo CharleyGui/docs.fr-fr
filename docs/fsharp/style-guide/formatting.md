@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: 'Découvrez les instructions de mise en forme du code F #.'
 ms.date: 08/31/2020
-ms.openlocfilehash: 01a5f9ce0c9b5a67bb0c70bce0829ac300032883
-ms.sourcegitcommit: c3093e9d106d8ca87cc86eef1f2ae4ecfb392118
+ms.openlocfilehash: b4b70d86b36f2ba50318cb50e54d65cc6abff450
+ms.sourcegitcommit: f8cd3ef517ee177c99feed944824c27d208cc0d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97737188"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570227"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -232,16 +232,15 @@ type TC
     // ... the body of the class follows
 ```
 
-Si les paramètres sont currified ou s’il existe une annotation de type de retour explicite, il est préférable de placer le `=` caractère sur une nouvelle ligne :
+Si les paramètres sont currified, placez le `=` caractère avec n’importe quel type de retour sur une nouvelle ligne :
 
 ```fsharp
 type C() =
-    member _.LongMethodWithLotsOfParameters
-        (
-            aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
-            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse
-        ) : AReturnType =
+    member _.LongMethodWithLotsOfCurrifiedParamsAndReturnType
+        (aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+        : ReturnType =
         // ... the body of the method
     member _.LongMethodWithLotsOfCurrifiedParams
         (aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
