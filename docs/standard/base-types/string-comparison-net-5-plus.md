@@ -1,13 +1,14 @@
 ---
 title: Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 description: En savoir plus sur les changements de comportement de comparaison de chaînes dans .NET 5 et versions ultérieures sur Windows.
+ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: a53c36b31785fb43c0aa5f5040042abb6d40031a
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: 0db8477ce4e8c3a7167c719e2a29a32e5346a8e7
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851749"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692693"
 ---
 # <a name="behavior-changes-when-comparing-strings-on-net-5"></a>Changements de comportement lors de la comparaison de chaînes sur .NET 5 +
 
@@ -218,7 +219,7 @@ Les routines de recherche et de comparaison *prenant en compte la culture* sont 
 
 Par exemple, [dans l’alphabet hongrois](https://en.wikipedia.org/wiki/Hungarian_alphabet), lorsque les deux caractères \<dz\> apparaissent en arrière-plan, ils sont considérés comme des lettres uniques distinctes de \<d\> ou \<z\> . Cela signifie que lorsque \<dz\> est visible dans une chaîne, un comparateur prenant en charge la culture hongrois le traite comme un élément de classement unique.
 
-| String | En tant qu’éléments de classement | Remarques |
+| String | En tant qu’éléments de classement | Notes |
 |---|---|---|
 | `"endz"` | `"e" + "n" + "d" + "z"` | (à l’aide d’un comparateur linguistique standard) |
 | `"endz"` | `"e" + "n" + "dz"` | (à l’aide d’un comparateur prenant en charge la culture hongrois) |
@@ -267,7 +268,7 @@ public bool ContainsHtmlSensitiveCharacters(string input)
 
 Le tableau suivant répertorie les types de comparaison et de recherche par défaut pour diverses API de chaîne et de type chaîne. Si l’appelant fournit un `CultureInfo` paramètre ou explicite `StringComparison` , ce paramètre sera respecté sur n’importe quelle valeur par défaut.
 
-| API | Comportement par défaut | Remarques |
+| API | Comportement par défaut | Notes |
 |---|---|---|
 | `string.Compare` | CurrentCulture | |
 | `string.CompareTo` | CurrentCulture | |
@@ -298,7 +299,7 @@ Le tableau suivant répertorie les types de comparaison et de recherche par déf
 
 Contrairement aux `string` API, toutes les `MemoryExtensions` API effectuent des recherches *ordinales* et des comparaisons par défaut, avec les exceptions suivantes.
 
-| API | Comportement par défaut | Remarques |
+| API | Comportement par défaut | Notes |
 |---|---|---|
 | `MemoryExtensions.ToLower` | CurrentCulture | (lorsqu’un argument null est passé `CultureInfo` ) |
 | `MemoryExtensions.ToLowerInvariant` | InvariantCulture | |

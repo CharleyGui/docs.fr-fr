@@ -1,6 +1,7 @@
 ---
 title: Conversion de types dans .NET
 description: En savoir plus sur la conversion de type dans .NET, qui crée une valeur dans un nouveau type équivalent à la valeur de l’ancien type, mais peut ne pas conserver l’identité de l’original.
+ms.topic: conceptual
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -24,12 +25,12 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-ms.openlocfilehash: 8e1ea153ccd65de967a34e79d4a26c96e678c4ad
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9dcd1533312c259fd1e120c224c49efa4f829fee
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831024"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692641"
 ---
 # <a name="type-conversion-in-net"></a>Conversion de types dans .NET
 
@@ -45,7 +46,7 @@ Chaque valeur a un type associé qui définit des attributs, tels la quantité d
   
 - Reconversion d’un objet d’interface vers le type d’origine qui implémente cette interface.  En C#, cette conversion nécessite un opérateur de cast. En Visual Basic, elle nécessite l’opérateur `CType` si `Option Strict` est activée.  
   
-En plus de ces conversions automatiques, .NET fournit plusieurs fonctionnalités qui prennent en charge la conversion de type personnalisé. Elles sont associées aux limitations suivantes :  
+En plus de ces conversions automatiques, .NET fournit plusieurs fonctionnalités qui prennent en charge la conversion de type personnalisé. Ces options en question sont les suivantes :  
   
 - L'opérateur `Implicit`, qui définit les conversions étendues disponibles entre des types. Pour plus d’informations, consultez la section [conversion implicite avec l’opérateur Implicit](#implicit-conversion-with-the-implicit-operator) .  
   

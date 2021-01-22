@@ -1,6 +1,7 @@
 ---
 title: Modèle objet d'expression régulière
 description: Passez en revue le modèle objet d’expression régulière dans .NET. Utilisez le moteur d’expression régulière, & objets & collections liées à la correspondance, au regroupement & à la capture.
+ms.topic: conceptual
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -35,12 +36,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: 996a8cca8222e3de6517ee6fa7cef3c4f44fc5a9
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 115955f48f0470adf584acf2c2e72680cef105cb
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734182"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692563"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
 
@@ -306,7 +307,7 @@ ms.locfileid: "95734182"
   
 - Si le quantificateur `*` ou `*?` (qui spécifie zéro correspondance, ou plus) est appliqué à un groupe, un groupe de capture peut ne pas avoir de correspondance dans la chaîne d'entrée. En l'absence de texte capturé, les propriétés de l'objet <xref:System.Text.RegularExpressions.Group> sont définies comme indiqué dans le tableau suivant.  
   
-    |Propriété de groupe|Value|  
+    |Propriété de groupe|Valeur|  
     |--------------------|-----------|  
     |`Success`|`false`|  
     |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  

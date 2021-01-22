@@ -2,6 +2,7 @@
 title: Chaînes de format numériques standard
 description: Dans cet article, Apprenez à utiliser des chaînes de format numériques standard pour mettre en forme des types numériques communs en représentations textuelles dans .NET.
 ms.date: 06/10/2018
+ms.topic: reference
 dev_langs:
 - csharp
 - vb
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: b8537e8dcfdd45ed8da18b8b82aae5e9fc0cd96e
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e104154d7ee6afb14d86c04307c6f4d9d039c04b
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818763"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692667"
 ---
 # <a name="standard-numeric-format-strings"></a>Chaînes de format numériques standard
 

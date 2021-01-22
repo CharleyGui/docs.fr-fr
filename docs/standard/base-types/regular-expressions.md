@@ -1,6 +1,7 @@
 ---
 title: Expressions régulières .NET
 description: Utilisez des expressions régulières pour rechercher des modèles de caractères spécifiques, valider du texte, utiliser des sous-chaînes de texte & ajouter des chaînes extraites à une collection dans .NET.
+ms.topic: conceptual
 ms.date: 06/30/2020
 dev_langs:
 - csharp
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - .NET regular expressions
 - strings [.NET], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: 6fa791005aa9fa9956a3169f8f9ddecfa201bcda
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ea6b16909b79236245b35238ad43d778eec3051a
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831336"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692771"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
 
@@ -129,7 +130,7 @@ La classe <xref:System.String> comprend de nombreuses méthodes de recherche et 
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
-|Intitulé|Description|  
+|Titre|Description|  
 |-----------|-----------------|  
 |[Langage des expressions régulières - Aide-mémoire](regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d'opérateurs et de constructions permettant de définir des expressions régulières.|  
 |[Modèle objet d'expression régulière](the-regular-expression-object-model.md)|Fournit des informations et des exemples de code illustrant l'utilisation des classes d'expression régulière.|  

@@ -2,6 +2,7 @@
 title: Chaînes de format TimeSpan standard
 description: Passez en revue les chaînes de format TimeSpan standard, qui utilisent un spécificateur de format unique pour définir la représentation textuelle d’une valeur TimeSpan dans .NET.
 ms.date: 03/30/2017
+ms.topic: reference
 dev_langs:
 - csharp
 - vb
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 251f90e85d037d8cf4f3fd58bc27659c98d04b5e
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: d9872bab996244b630d1ca33c85b06dce6a315ef
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734242"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692602"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 

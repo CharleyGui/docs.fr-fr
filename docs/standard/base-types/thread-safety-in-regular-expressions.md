@@ -1,6 +1,7 @@
 ---
 title: Sécurité des threads dans les expressions régulières
 ms.date: 03/30/2017
+ms.topic: conceptual
 helpviewer_keywords:
 - .NET regular expressions, threads
 - regular expressions, threads
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - parsing text with regular expressions, threads
 - pattern-matching with regular expressions, threads
 ms.assetid: 7c4a167b-5236-4cde-a2ca-58646230730f
-ms.openlocfilehash: a10b5d01d308af3c808404608e6be1d77e6be8e0
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 4be73ba89ff7114c52394ab23a8de02adb35e0e2
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734164"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692550"
 ---
 # <a name="thread-safety-in-regular-expressions"></a>Sécurité des threads dans les expressions régulières
 

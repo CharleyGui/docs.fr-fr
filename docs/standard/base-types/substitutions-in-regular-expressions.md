@@ -1,6 +1,7 @@
 ---
 title: Substitutions dans les expressions régulières
 description: Faites en sorte que les substitutions remplacent le texte mis en correspondance à l’aide d’expressions régulières dans .NET. Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement.
+ms.topic: conceptual
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: f1cab01e7a6ee48bd01f65d4cc8a8a540fbabc61
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: aa889f449f2e020b8a7d90a50eb7a9a14d70f4e6
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734203"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692654"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 
@@ -52,7 +53,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Tous les chiffres qui suivent `$` sont interprétés comme appartenant au groupe *nombre* . Si ce n'est pas votre intention, vous pouvez remplacer un groupe nommé à la place. Par exemple, vous pouvez utiliser la chaîne de remplacement `${1}1` au lieu de `$11` pour définir la chaîne de remplacement comme la valeur du premier groupe capturé avec le numéro « 1 ». Pour plus d'informations, consultez [Substitution d'un groupe nommé](#substituting-a-named-group).  
   
- Les groupes de capture auxquels des noms ne sont pas explicitement assignés à l’aide de la `(?<` *name* `>)` syntaxe de nom sont numérotés de gauche à droite en commençant à un. Les groupes nommés sont également numérotés de gauche à droite, en démarrant à un numéro de plus que l'index du dernier groupe sans nom. Par exemple, dans l'expression régulière `(\w)(?<digit>\d)`, l'index du groupe nommé `digit` est 2.  
+ Les groupes de capture auxquels des noms ne sont pas explicitement assignés à l’aide de la `(?<`  `>)` syntaxe de nom sont numérotés de gauche à droite en commençant à un. Les groupes nommés sont également numérotés de gauche à droite, en démarrant à un numéro de plus que l'index du dernier groupe sans nom. Par exemple, dans l'expression régulière `(\w)(?<digit>\d)`, l'index du groupe nommé `digit` est 2.  
   
  Si le *nombre* ne spécifie pas un groupe de capture valide défini dans le modèle d'expression régulière, `$`*nombre* est interprété comme une séquence de caractères littéraux utilisée pour remplacer chaque correspondance.  
   
@@ -74,7 +75,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
 
 ## <a name="substituting-a-named-group"></a>Substitution d'un groupe nommé  
 
- L' `${` *name* `}` élément langage de nom remplace la dernière sous-chaîne correspondant au groupe de capture *nom* , où *nom* est le nom d’un groupe de capture défini par l' `(?<` élément de langage *nom* `>)` . Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
+ L' `${`  `}` élément langage de nom remplace la dernière sous-chaîne correspondant au groupe de capture *nom* , où *nom* est le nom d’un groupe de capture défini par l' `(?<` élément de langage *nom* `>)` . Pour plus d’informations sur les groupes de capture nommés, consultez [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
   
  Si le *nom* ne spécifie pas de groupe de capture nommé valide défini dans le modèle d'expression régulière mais se compose de chiffres, `${`*nom*`}` est interprété en tant que groupe numéroté.  
   
