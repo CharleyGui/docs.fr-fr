@@ -2,6 +2,7 @@
 title: Échappements de caractères dans les expressions régulières .NET
 description: Découvrez plus en détail les caractères spéciaux et les caractères d’échappement dans les expressions régulières .NET.
 ms.date: 03/30/2017
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - .NET regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.openlocfilehash: 820e6cd7fa4a60fa6adfcaf0f0ff4d25fdda0f21
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 44c297b7cc897ee08d3434dfcb18df0024b44e6f
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95734385"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693096"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Caractères d'échappement dans les expressions régulières
 
@@ -40,7 +41,7 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 |---------------------------|-----------------|  
 |Tous les caractères à l'exception des suivants :<br /><br /> . $ ^ { [ ( &#124; ) * + ? \ |Les caractères autres que ceux répertoriés dans la colonne **Caractère ou séquence** n’ont pas de signification spéciale dans les expressions régulières ; ils ne correspondent qu’à eux-mêmes.<br /><br /> Les caractères inclus dans la colonne **Caractère ou séquence** sont des éléments spéciaux du langage des expressions régulières. Pour les faire correspondre dans une expression régulière, ils doivent être placés dans une séquence d’échappement ou inclus dans un [groupe de caractères positif](character-classes-in-regular-expressions.md). Par exemple, l'expression régulière `\$\d+` ou `[$]\d+` est en correspondance avec "$1200".|  
 |`\a`|Correspond à un caractère représentant une cloche (alarme), `\u0007`.|  
-|`\b`|Dans une `[` *character_group* `]` classe de caractères character_group, correspond à un retour arrière, `\u0008` .  (Consultez [classes de caractères](character-classes-in-regular-expressions.md).) En dehors d’une classe de caractères, `\b` est une ancre qui correspond à une limite de mot. (Voir [Ancres](anchors-in-regular-expressions.md).)|  
+|`\b`|Dans une `[`  `]` classe de caractères character_group, correspond à un retour arrière, `\u0008` .  (Consultez [classes de caractères](character-classes-in-regular-expressions.md).) En dehors d’une classe de caractères, `\b` est une ancre qui correspond à une limite de mot. (Voir [Ancres](anchors-in-regular-expressions.md).)|  
 |`\t`|Correspond à une tabulation, `\u0009`.|  
 |`\r`|Correspond à un retour chariot, `\u000D`. Notez que `\r` n'est pas équivalent au caractère de nouvelle ligne, `\n`.|  
 |`\v`|Correspond à une tabulation verticale, `\u000B`.|  

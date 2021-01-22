@@ -2,6 +2,7 @@
 title: Système de type commun
 description: Explorez le système de type dans .NET. En savoir plus sur les types dans .NET (types valeur ou types référence), la définition de type, les membres de type et les caractéristiques des membres de type.
 ms.date: 03/30/2017
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: 0f80be2d1da43341f8e2af6f32580be2e01289dc
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: c25ff63d3bfb318144d42f98e2e20bdb9dd709e4
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95723218"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692940"
 ---
 # <a name="common-type-system"></a>Système de type commun
 

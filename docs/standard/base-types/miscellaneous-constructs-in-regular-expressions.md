@@ -1,6 +1,7 @@
 ---
 title: Constructions diverses dans les expressions régulières
 ms.date: 03/30/2017
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - .NET regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-ms.openlocfilehash: ef8f126559b51aa9b918f04e27f5599fba519b43
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: b37244ec218c4bfee9c14f4504ab1018cb12d35b
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95683795"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692953"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
 
@@ -39,7 +40,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
  Toute modification des options d’expression régulière définies par la construction `(?imnsx-imnsx)` reste en vigueur jusqu’à la fin du groupe englobant.  
   
 > [!NOTE]
-> La `(?imnsx-imnsx:` *subexpression* `)` construction de regroupement sous-expression fournit des fonctionnalités identiques pour une sous-expression. Pour plus d’informations, consultez [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).  
+> La `(?imnsx-imnsx:`  `)` construction de regroupement sous-expression fournit des fonctionnalités identiques pour une sous-expression. Pour plus d’informations, consultez [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).  
   
  L’exemple suivant utilise les options `i`, `n` et `x` pour activer le non-respect de la casse et les captures explicites, et pour ignorer l’espace blanc dans le modèle d’expression régulière au milieu d’une expression régulière.  
   
@@ -59,7 +60,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
   
 ## <a name="inline-comment"></a>Commentaire inline  
 
- La `(?#` *comment* `)` construction comment vous permet d’inclure un commentaire inline dans une expression régulière. Le moteur d’expression régulière n’utilise aucune partie du commentaire dans la mise en correspondance du modèle, bien que le commentaire soit inclus dans la chaîne retournée par la méthode <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType>. Le commentaire se termine à la première parenthèse fermante.  
+ La `(?#`  `)` construction comment vous permet d’inclure un commentaire inline dans une expression régulière. Le moteur d’expression régulière n’utilise aucune partie du commentaire dans la mise en correspondance du modèle, bien que le commentaire soit inclus dans la chaîne retournée par la méthode <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType>. Le commentaire se termine à la première parenthèse fermante.  
   
  L’exemple suivant répète le premier modèle d’expression régulière de l’exemple de la section précédente. Il ajoute deux commentaires inline à l’expression régulière pour indiquer si la comparaison respecte la casse. Le modèle d’expression régulière, `\b((?# case-sensitive comparison)D\w+)\s(?ixn)((?#case-insensitive comparison)d\w+)\b`, est défini comme suit.  
   

@@ -2,6 +2,7 @@
 title: Chaînes de format numériques personnalisées
 description: Découvrez comment créer une chaîne de format numérique personnalisée pour mettre en forme des données numériques dans .NET. Une chaîne de format numérique personnalisée possède un ou plusieurs spécificateurs numériques personnalisés.
 ms.date: 06/25/2018
+ms.topic: reference
 dev_langs:
 - csharp
 - vb
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - formatting numbers [.NET]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 7665c0980d631069728bcce8178763eb934e054b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 52cdf8a28a43239d5c218b7154d67a1d0b3c210d
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824387"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693005"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
@@ -255,7 +256,7 @@ L’exemple suivant utilise les deux approches pour inclure des caractères rés
 
 <a name="NotesCustomFormatting"></a>
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
 ### <a name="floating-point-infinities-and-nan"></a>Infinis à virgule flottante et NaN
 

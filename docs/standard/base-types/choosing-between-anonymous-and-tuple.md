@@ -3,13 +3,14 @@ title: Choix entre les types de tuples et anonymes
 description: Découvrez quand il est approprié de choisir entre les types anonymes et le type de Tuple.
 author: IEvangelist
 ms.author: dapine
+ms.topic: conceptual
 ms.date: 07/01/2020
-ms.openlocfilehash: f8465b2f22ecfafd739355ddd35635e2eee49232
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1f171851c383862828600f6f43ce1e3fc1b3a168
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823197"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693082"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Choix entre les types de tuples et anonymes
 
@@ -120,7 +121,7 @@ En tant que développeur qui choisit entre les tuples et les types anonymes, plu
 ## <a name="see-also"></a>Voir aussi
 
 - [Types anonymes](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
-- [Arborescences de l’expression](../../csharp/expression-trees.md)
+- [Arborescences d’expressions](../../csharp/expression-trees.md)
 - [Types de tuples (référence C#)](../../csharp/language-reference/builtin-types/value-tuples.md)
 - [Tuples (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md)
 - [Instructions de conception de types](../design-guidelines/type.md)

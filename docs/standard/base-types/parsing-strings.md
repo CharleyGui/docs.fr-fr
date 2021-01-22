@@ -2,6 +2,7 @@
 title: Convertir des chaînes en types
 description: Comprendre l’analyse des chaînes dans .NET. L’analyse convertit une chaîne représentant un type de base .NET en ce type de base. L’analyse est l’opération inverse de la mise en forme.
 ms.date: 03/30/2017
+ms.topic: conceptual
 helpviewer_keywords:
 - parsing strings, about parsing strings
 - IFormatProvider interface, parsing strings
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Parse method
 - parsing strings
 ms.assetid: 5e758b41-db93-456b-8999-99b7304b090d
-ms.openlocfilehash: a5c38c29a45a9ce6f8aed7205c5bd44bebb023c2
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: ff357f8b8225c84e2f6c0e022b269f0ab774dfed
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95683717"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692849"
 ---
 # <a name="parse-strings-in-net"></a>Analyser des chaînes dans .NET
 

@@ -1,5 +1,7 @@
 ---
 title: Compilation et réutilisation dans les expressions régulières
+description: En savoir plus sur la compilation et la réutilisation dans les expressions régulières.
+ms.topic: conceptual
 ms.date: 03/30/2017
 helpviewer_keywords:
 - parsing text with regular expressions, compilation
@@ -11,12 +13,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-ms.openlocfilehash: b0d3ac619e8d9548fffcb41b23d2ebd6663915e9
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: c834817856d799c5621359a28b8a4c54ea6000d4
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95723205"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693057"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Compilation et réutilisation dans les expressions régulières
 

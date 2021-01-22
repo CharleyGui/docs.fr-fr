@@ -2,6 +2,7 @@
 title: Langage des expressions régulières - Aide-mémoire
 description: Dans ce référence rapide, Apprenez à utiliser des modèles d’expressions régulières pour faire correspondre le texte d’entrée. Un modèle a un ou plusieurs littéraux de caractère, opérateurs ou constructions.
 ms.date: 03/30/2017
+ms.topic: reference
 f1_keywords:
 - VS.RegularExpressionBuilder
 helpviewer_keywords:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: 1b261211997837e8664ea60e9210a7f0517f7a9f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f34d52bc2413aaf666c07ff511f3c1beb14519d4
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818802"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692823"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
@@ -48,7 +49,7 @@ La barre oblique inverse (\\) dans une expression régulière indique que le ca
 |`\e`|Correspond à un caractère d’échappement, \u001B.|`\e`|`"\x001B"` dans `"\x001B"`|
 |`\`*nnn*|Utilise la représentation octale pour spécifier un caractère (*nnn* se compose de deux ou trois chiffres).|`\w\040\w`|`"a b"`, `"c d"` dans `"a bc d"`|
 |`\x` *nn*|Utilise une représentation hexadécimale pour spécifier un caractère (*nn* se compose de deux chiffres exactement).|`\w\x20\w`|`"a b"`, `"c d"` dans `"a bc d"`|
-|`\c` *X*<br /><br /> `\c` *x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x*, où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
+|`\c`*X*<br /><br /> `\c` *x*|Correspond au caractère de contrôle ASCII spécifié par *X* ou *x*, où *X* ou *x* représente la lettre du caractère de contrôle.|`\cC`|`"\x0003"` dans `"\x0003"` (Ctrl-C)|
 |`\u` *nnnn*|Correspond à un caractère Unicode en utilisant la représentation hexadécimale (quatre chiffres exactement, représentés par *nnnn*).|`\w\u0020\w`|`"a b"`, `"c d"` dans `"a bc d"`|
 |`\`|Lorsque ce caractère d'échappement est suivi d'un caractère non identifié comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` est identique à `\x2A`et `\.` est identique à `\x2E`. Cela permet au moteur des expressions régulières de lever l’ambiguïté d’éléments de langage (tels que \* ou ?) et de caractères littéraux (représentés par `\*` ou `\?`).|`\d+[\+-x\*]\d+`|`"2+2"` et `"3*9"` dans `"(2+2) * 3*9"`|
 
@@ -93,8 +94,8 @@ Les constructions de regroupement délimitent les sous-expressions d’une expre
 |Construction de regroupement|Description|Modèle|Correspond à|
 |------------------------|-----------------|-------------|-------------|
 |`(`sous- *expression*`)`|Capture la sous-expression mise en correspondance et lui assigne un nombre ordinal de base un.|`(\w)\1`|`"ee"` dans `"deep"`|
-|`(?<` *name* `>` *sous-expression* `)`<br /> or <br />`(?'` *name* `'` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
-|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)` <br /> or <br /> `(?'` *nom1* `-` *nom2* `'` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
+|`(?<` *name* `>` *sous-expression* `)`<br /> ou <br />`(?'` *name* `'` *sous-expression* `)`|Capture la sous-expression mise en correspondance dans un groupe nommé.|`(?<double>\w)\k<double>`|`"ee"` dans `"deep"`|
+|`(?<` *nom1* `-` *nom2* `>` *sous-expression* `)` <br /> ou <br /> `(?'` *nom1* `-` *nom2* `'` *sous-expression* `)`|Définit un équilibre de définition de groupe. Pour plus d’informations, consultez la section « Équilibre de définition de groupe » dans [Constructions de regroupement](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` dans `"3+2^((1-3)*(3-1))"`|
 |`(?:`sous- *expression*`)`|Définit un groupe sans capture.|`Write(?:Line)?`|`"WriteLine"` dans `"Console.WriteLine()"`<br /><br /> `"Write"` dans `"Console.Write(value)"`|
 |`(?imnsx-imnsx:`sous- *expression*`)`|Active ou désactive les options spécifiées dans *sous-expression*. Pour plus d’informations, consultez [Options des expressions régulières](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` dans `"A12xl A12XL a12xl"`|
 |`(?=`sous- *expression*`)`|Assertion de préanalyse positive de largeur nulle.|`\w+(?=\.)`|`"is"`, `"ran"` et `"out"` dans `"He is. The dog ran. The sun is out."`|
@@ -128,7 +129,7 @@ Une backreference permet qu’une sous-expression précédemment mise en corresp
 
 |Construction de backreference|Description|Modèle|Correspond à|
 |-----------------------------|-----------------|-------------|-------------|
-|`\`*nombre*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
+|`\` *number*|Backreference. Correspond à la valeur d’une sous-expression numérotée.|`(\w)\1`|`"ee"` dans `"seek"`|
 |`\k<`*nom*`>`|Backreference nommée. Correspond à la valeur d’une expression nommée.|`(?<char>\w)\k<char>`|`"ee"` dans `"seek"`|
 
 ## <a name="alternation-constructs"></a>Constructions d’alternative
@@ -147,7 +148,7 @@ Les substitutions sont des éléments de langage d’expression régulière pris
 
 |Caractère|Description|Modèle|Modèle de remplacement|Chaîne d’entrée|Chaîne de résultat|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$`*nombre*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`$` *number*|Remplace la sous-chaîne mise en correspondance par le groupe *nombre*.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
 |`${`*nom*`}`|Remplace la sous-chaîne mise en correspondance par le groupe nommé *nom*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Remplace un "$" littéral.|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Remplace une copie de la totalité de la correspondance.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|

@@ -2,6 +2,7 @@
 title: Chaînes de format TimeSpan personnalisées
 description: Comprendre les chaînes de format TimeSpan personnalisées dans .NET. Une chaîne de format personnalisée contient un ou plusieurs spécificateurs de format TimeSpan & un nombre quelconque de caractères littéraux.
 ms.date: 03/30/2017
+ms.topic: reference
 dev_langs:
 - csharp
 - vb
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - formatting [.NET], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-ms.openlocfilehash: e8447e580ac85e1ebbc33f8c8334b7c5cfeb334b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: dd6a27ee9454dce4e76e25af325f081e804f0599
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824361"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692888"
 ---
 # <a name="custom-timespan-format-strings"></a>Chaînes de format TimeSpan personnalisées
 
@@ -394,4 +395,4 @@ L’exemple suivant utilise le caractère d’échappement et le guillemet simpl
 ## <a name="see-also"></a>Voir aussi
 
 - [Mise en forme des types](formatting-types.md)
-- [Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)
+- [Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)

@@ -2,6 +2,7 @@
 title: quantificateurs dans les expressions régulières
 description: En savoir plus sur les quantificateurs d’expressions régulières, qui spécifient le nombre d’instances d’un caractère, d’un groupe ou d’une classe de caractères devant être présentes dans l’entrée à mettre en correspondance.
 ms.date: 03/30/2017
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 75d37527507b596d6017171279e84b8348489831
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 5bee54d24726de1a904254dbd33d6d9be539ae09
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95733579"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692927"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>quantificateurs dans les expressions régulières
 
@@ -101,7 +102,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
 ### <a name="match-exactly-n-times-n"></a>Mettre en correspondance exactement n occurrences : {n}  
 
- Le `{` *n* `}` quantificateur n correspond à l’élément qui précède exactement *n* fois, où *n* est un entier. `{`*n* `}` est un quantificateur gourmand dont l’équivalent paresseux est `{` *n* `}?` .  
+ Le `{`  `}` quantificateur n correspond à l’élément qui précède exactement *n* fois, où *n* est un entier. `{`*n* `}` est un quantificateur gourmand dont l’équivalent paresseux est `{` *n* `}?` .  
   
  Par exemple, l’expression régulière `\b\d+\,\d{3}\b` tente d’établir une correspondance avec une limite de mot suivie d’un ou de plusieurs chiffres décimaux suivis de trois chiffres décimaux suivis d’une limite de mot. L’exemple suivant illustre cette expression régulière.  
   
@@ -120,7 +121,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
 ### <a name="match-at-least-n-times-n"></a>Mettre en correspondance au moins n occurrences : {n,}  
 
- Le `{` *n* `,}` quantificateur n correspond à l’élément qui précède au moins *n* fois, où *n* est un entier. `{`*n* `,}` est un quantificateur gourmand dont l’équivalent paresseux est `{` *n* `,}?` .  
+ Le `{`  `,}` quantificateur n correspond à l’élément qui précède au moins *n* fois, où *n* est un entier. `{`*n* `,}` est un quantificateur gourmand dont l’équivalent paresseux est `{` *n* `,}?` .  
   
  Par exemple, l’expression régulière `\b\d{2,}\b\D+` tente d’établir une correspondance avec une limite de mot suivie d’au moins deux chiffres suivis d’une limite de mot et d’un caractère non numérique. L’exemple suivant illustre cette expression régulière. L’expression régulière ne peut pas établir de correspondance avec l’expression `"7 days"`, car elle ne contient qu’un chiffre. En revanche, une correspondance est établie les expressions `"10 weeks and 300 years"`.  
   
@@ -195,7 +196,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
 ### <a name="match-exactly-n-times-lazy-match-n"></a>Mettre en correspondance exactement n occurrences (correspondance paresseuse) : {n}?  
 
- Le `{` *n* `}?` quantificateur n correspond exactement à l’élément qui précède `n` , où *n* est un entier. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{` *n* `}` .  
+ Le `{`  `}?` quantificateur n correspond exactement à l’élément qui précède `n` , où *n* est un entier. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{` *n* `}` .  
   
  Dans l’exemple suivant, l’expression régulière `\b(\w{3,}?\.){2}?\w{3,}?\b` est utilisée pour identifier une adresse de site web. Notez qu’elle établit une correspondance avec « www.microsoft.com » et « msdn.microsoft.com », mais pas avec « mywebsite » ou « mycompany.com ».  
   
@@ -213,9 +214,9 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
 ### <a name="match-at-least-n-times-lazy-match-n"></a>Mettre en correspondance au moins n occurrences (correspondance paresseuse) : {n,}?  
 
- Le `{` *n* `,}?` quantificateur n correspond à l’élément qui précède au moins `n` fois, où *n* est un entier, mais le moins de fois possible. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{` *n* `,}` .  
+ Le `{`  `,}?` quantificateur n correspond à l’élément qui précède au moins `n` fois, où *n* est un entier, mais le moins de fois possible. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{` *n* `,}` .  
   
- Pour obtenir une illustration, consultez l’exemple du `{` quantificateur *n* `}?` dans la section précédente. L’expression régulière de cet exemple utilise le `{` *n* `,}` quantificateur n pour faire correspondre une chaîne comportant au moins trois caractères suivis d’un point.  
+ Pour obtenir une illustration, consultez l’exemple du `{` quantificateur *n* `}?` dans la section précédente. L’expression régulière de cet exemple utilise le `{`  `,}` quantificateur n pour faire correspondre une chaîne comportant au moins trois caractères suivis d’un point.  
   
 ### <a name="match-between-n-and-m-times-lazy-match-nm"></a>Mettre en correspondance entre n et m fois (correspondance paresseuse) : {n,m}?  
 

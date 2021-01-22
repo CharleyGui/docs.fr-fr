@@ -1,6 +1,7 @@
 ---
 title: Comportement des expressions régulières
 ms.date: 03/30/2017
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 1e5d2d40f52220a8fff40eb19a24d8b2efd3cab5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4007813f2c40c78e3b5e426bed39ac6b6f3747bf
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829698"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692979"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 
@@ -143,7 +144,7 @@ Le moteur d’expression régulière .NET est un analyseur d’expression régul
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Rétroaction](backtracking-in-regular-expressions.md)|Fournit des informations sur la manière dont la rétroaction d’expression régulière se ramifie pour trouver d’autres correspondances.|
 |[Compilation et réutilisation](compilation-and-reuse-in-regular-expressions.md)|Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.|

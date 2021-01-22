@@ -2,6 +2,7 @@
 title: Bonnes pratiques pour les expressions régulières dans .NET
 description: Découvrez comment créer des expressions régulières effectives et efficaces dans .NET.
 ms.date: 06/30/2020
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - .NET regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: ae74d263034de4d402520d751fe97af9e33a2a48
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6a4c1ac5879447d829bcd162f764c33adcbea184
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820590"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693148"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -235,7 +236,7 @@ L'exemple ci-dessous définit une méthode `GetWordData` qui instancie une expre
 
 ## <a name="capture-only-when-necessary"></a>Capture uniquement quand cela s’avère nécessaire
 
-Les expressions régulières dans .NET prennent en charge plusieurs constructions de regroupement, ce qui vous permet de regrouper un modèle d’expression régulière dans une ou plusieurs sous-expressions. Les constructions de regroupement les plus couramment utilisées dans le langage d’expression régulière .net sont sous- `(` *expression* `)` , qui définit un groupe de capture numéroté et nom sous- `(?<` *name* `>` *expression* `)` , qui définit un groupe de capture nommé. Les constructions de regroupement sont essentielles pour créer des références arrières et pour définir une sous-expression à laquelle un quantificateur est appliqué.
+Les expressions régulières dans .NET prennent en charge plusieurs constructions de regroupement, ce qui vous permet de regrouper un modèle d’expression régulière dans une ou plusieurs sous-expressions. Les constructions de regroupement les plus couramment utilisées dans le langage d’expression régulière .net sont sous- `(` *expression* `)` , qui définit un groupe de capture numéroté et nom sous- `(?<`  `>` *expression* `)` , qui définit un groupe de capture nommé. Les constructions de regroupement sont essentielles pour créer des références arrières et pour définir une sous-expression à laquelle un quantificateur est appliqué.
 
 Toutefois, l'utilisation de ces éléments de langage n'est pas sans effet. Ils entraînent le remplissage de l'objet <xref:System.Text.RegularExpressions.GroupCollection> renvoyé par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> avec les captures nommées ou sans nom les plus récentes. Si une seule construction de regroupement a capturé plusieurs sous-chaînes dans la chaîne d'entrée, elles remplissent également l'objet <xref:System.Text.RegularExpressions.CaptureCollection> renvoyé par la propriété <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> d'un groupe de capture particulier à l'aide de plusieurs objets <xref:System.Text.RegularExpressions.Capture>.
 
@@ -272,7 +273,7 @@ Vous pouvez désactiver les captures de l'une des façons suivantes :
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Intitulé|Description|
+|Titre|Description|
 |-----------|-----------------|
 |[Comportement détaillé des expressions régulières](details-of-regular-expression-behavior.md)|Aborde l’implémentation du moteur d’expression régulière dans .NET. Cette rubrique traite de la flexibilité des expressions régulières. Elle explique la responsabilité du développeur pour que le fonctionnement efficace et fiable du moteur des expressions régulières soit garanti.|
 |[Rétroaction](backtracking-in-regular-expressions.md)|Aborde la rétroaction et la façon dont elle affecte les performances des expressions régulières, ainsi que les éléments de langage, qui offrent des alternatives à la rétroaction.|

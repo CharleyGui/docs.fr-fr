@@ -1,6 +1,7 @@
 ---
 title: Table de conversion de type dans .NET
 ms.date: 03/30/2017
+ms.topic: reference
 helpviewer_keywords:
 - widening conversions
 - narrowing conversions
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - tables [.NET], type conversions
 - data types [.NET], converting
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
-ms.openlocfilehash: dc98a326155273805e3157d99755de2e97f83a46
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: ecfa0841ea6335ce1d7148d21b076af9dbe91a13
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95730212"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98692992"
 ---
 # <a name="type-conversion-tables-in-net"></a>Table de conversion de type dans .NET
 

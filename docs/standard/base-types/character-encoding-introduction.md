@@ -2,6 +2,7 @@
 title: Présentation de char l’encodage acter dans .net
 description: En savoir plus sur char l’encodage et le décodage acter dans .net.
 ms.date: 03/09/2020
+ms.topic: conceptual
 no-loc:
 - Rune
 - char
@@ -10,12 +11,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: 572fcd289eea720873d94e7fc71f3b4a030d1d70
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 92710e2d223d1d765efc7e877cb16546ef372907
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282312"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693135"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
@@ -46,7 +47,7 @@ s[3] = 'l' ('\u006c')
 s[4] = 'o' ('\u006f')
 ```
 
-Chaque char acter est représenté par une `char` valeur unique. Ce modèle est valable pour la plupart des langues du monde. Par exemple, voici la sortie de deux acters chinois char qui ressemble à *Nǐ hǎo* et signifiant *Hello* :
+Chaque char acter est représenté par une `char` valeur unique. Ce modèle est valable pour la plupart des langues du monde. Par exemple, voici la sortie de deux acters chinois char qui ressemble à *Nǐ hǎo* et signifiant *Hello*:
 
 ```csharp
 PrintChars("你好");
@@ -134,7 +135,7 @@ Une seule unité de code 16 bits peut représenter n’importe quel point de cod
 
 ## <a name="surrogate-pairs"></a>Paires de substitution
 
-La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par une plage spéciale appelée points de code de *substitution* , de `U+D800` à `U+DFFF` (décimal 55 296 à 57 343), incluse.
+La conversion de valeurs 2 16 bits en valeur 21 bits unique est facilitée par une plage spéciale appelée points de code de *substitution*, de `U+D800` à `U+DFFF` (décimal 55 296 à 57 343), incluse.
 
 Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.
 

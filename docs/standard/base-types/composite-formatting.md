@@ -2,6 +2,7 @@
 title: Mise en forme composite
 description: En savoir plus sur la mise en forme composite .NET, qui prend comme entrée une liste d’objets et une chaîne de format composite, contenant du texte fixe avec des espaces réservés indexés.
 ms.date: 10/26/2018
+ms.topic: conceptual
 dev_langs:
 - csharp
 - vb
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: a0252d013ee6cf7cba7f953fc8a1e2c66c510ca7
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 3c5c1233ebdfc3ad624b2e4f2a8231969657eef1
+ms.sourcegitcommit: 4313614f57690f9a5119a37314f0a1fd738ebda2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95683951"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693044"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
@@ -92,11 +93,11 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 |Type ou catégorie de type|Consultez|  
 |---------------------------|---------|  
-|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)|  
-|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d'énumération](enumeration-format-strings.md)|  
+|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)|  
+|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d’énumération](enumeration-format-strings.md)|  
 |Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Chaînes de format numériques standard](standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
-|<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|  
+|<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>Accolades d'échappement  
 
@@ -174,8 +175,8 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 - [Mise en forme des types](formatting-types.md)
 - [Chaînes de format numériques standard](standard-numeric-format-strings.md)
 - [Chaînes de format numériques personnalisées](custom-numeric-format-strings.md)
-- [Chaînes de format de date et d'heure standard](standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
-- [Chaînes de format TimeSpan standard.](standard-timespan-format-strings.md)
+- [Chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format TimeSpan standard](standard-timespan-format-strings.md)
 - [Chaînes de format TimeSpan personnalisées](custom-timespan-format-strings.md)
-- [Chaînes de format d'énumération](enumeration-format-strings.md)
+- [Chaînes de format d’énumération](enumeration-format-strings.md)
