@@ -2,18 +2,18 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 04/29/2020
-ms.openlocfilehash: 4834da766bd052f44127a72635b65866eb7e3352
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: 2671cbe6f610cfa8aa98e63e67f3240a1650cd6b
+ms.sourcegitcommit: 2b878d7011306b215dbf3d5dc9c1e78355a6dcd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98189152"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757874"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet test` - Pilote de test .NET utilisée pour exécuter des tests unitaires.
 
@@ -249,13 +249,13 @@ Où `Microsoft.NET.Test.Sdk` est l’hôte de test, `xunit` est l’infrastructu
 
 | Framework de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
-| xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priority</li></ul>                                   |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
+| xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Catégorie</li></ul>                                 |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Nom</li><li>TestCategory</li><li>Priorité</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 
-| Opérateur | Fonction        |
+| Opérateur | Function        |
 | :------: | --------------- |
 | `=`      | Concordance exacte     |
 | `!=`     | Pas de correspondance exacte |
@@ -268,9 +268,9 @@ Une expression sans `<operator>` est automatiquement considérée comme `contain
 
 Les expressions peuvent être associées à des opérateurs conditionnels :
 
-| Opérateur            | Fonction |
+| Opérateur            | Function |
 | ------------------- | -------- |
-| <code>&#124;</code> | OR       |
+| <code>&#124;</code> | OU       |
 | `&`                 | AND      |
 
 Vous pouvez mettre des expressions entre parenthèses quand vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).

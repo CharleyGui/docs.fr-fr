@@ -3,12 +3,12 @@ title: Télémétrie du SDK .NET
 description: Découvrez les fonctionnalités de télémétrie du SDK .NET qui collectent les informations d’utilisation à des fins d’analyse, quelles données sont collectées et comment les désactiver.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 4f137822c61e1a04eccd28ebd0cd56c04f4a85e2
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 137b703dc9369f09fb535af40edf057e4e02117a
+ms.sourcegitcommit: 2b878d7011306b215dbf3d5dc9c1e78355a6dcd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94633867"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757835"
 ---
 # <a name="net-sdk-telemetry"></a>Télémétrie du SDK .NET
 
@@ -33,6 +33,9 @@ Les données de télémétrie *sont collectées* lors de l’utilisation des com
 La fonctionnalité de télémétrie du SDK .NET est activée par défaut. Pour désactiver la fonctionnalité de télémétrie, définissez la variable d’environnement `DOTNET_CLI_TELEMETRY_OPTOUT` sur `1` ou `true`.
 
 Une seule entrée de télémétrie est également envoyée par le programme d’installation du kit de développement logiciel (SDK) .NET lors de la réussite de l’installation. Pour vous désabonner, définissez la `DOTNET_CLI_TELEMETRY_OPTOUT` variable d’environnement avant d’installer le kit de développement logiciel (SDK) .net.
+
+> [!IMPORTANT]
+> Pour refuser une fois que vous avez démarré le programme d’installation : fermez le programme d’installation, définissez la variable d’environnement, puis réexécutez le programme d’installation avec cette valeur définie.
 
 ## <a name="disclosure"></a>Divulgation d’informations
 

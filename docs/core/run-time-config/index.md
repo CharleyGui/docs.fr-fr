@@ -2,12 +2,12 @@
 title: Options de configuration au moment de l’exécution
 description: Découvrez comment configurer des applications .NET Core à l’aide des paramètres de configuration de l’exécution.
 ms.date: 01/21/2020
-ms.openlocfilehash: 21673a221d0f21202febf4730b955da66132d5f7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5e9f292476cf953c3e63bb8e89268f7cc06b3bfc
+ms.sourcegitcommit: 2b878d7011306b215dbf3d5dc9c1e78355a6dcd5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538196"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757848"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Paramètres de configuration du Runtime .NET Core
 
@@ -29,7 +29,7 @@ ms.locfileid: "90538196"
 - [Variables d’environnement](#environment-variables)
 
 > [!TIP]
-> La configuration d’une option au moment de l’exécution à l’aide d’une variable d’environnement applique le paramètre à toutes les applications .NET Core. La configuration d’une option au moment de l’exécution dans le fichier * deruntimeconfig.jsou sur* le fichier projet applique le paramètre à cette application uniquement.
+> La configuration d’une option au moment de l’exécution à l’aide d’une variable d’environnement applique le paramètre à toutes les applications .NET Core. La configuration d’une option au moment de l’exécution dans le fichier *deruntimeconfig.jsou sur* le fichier projet applique le paramètre à cette application uniquement.
 
 Certaines valeurs de configuration peuvent également être définies par programmation en appelant la <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> méthode.
 
@@ -37,7 +37,7 @@ Les Articles de cette section de la documentation sont organisés par catégorie
 
 ## <a name="runtimeconfigjson"></a>runtimeconfig.js
 
-Lorsqu’un projet est [généré](../tools/dotnet-build.md), une *.runtimeconfig.js[AppName] sur* le fichier est générée dans le répertoire de sortie. Si un *runtimeconfig.template.jssur* le fichier existe dans le même dossier que le fichier projet, toutes les options de configuration qu’il contient sont fusionnées dans le fichier *[AppName] .runtimeconfig.js* . Si vous créez l’application vous-même, placez toutes les options de configuration dans le *runtimeconfig.template.js* fichier. Si vous exécutez simplement l’application, insérez-la directement dans le fichier *[AppName] .runtimeconfig.js* .
+Lorsqu’un projet est [généré](../tools/dotnet-build.md), une *.runtimeconfig.js[AppName] sur* le fichier est générée dans le répertoire de sortie. Si un *runtimeconfig.template.jssur* le fichier existe dans le même dossier que le fichier projet, toutes les options de configuration qu’il contient sont insérées dans le fichier *[AppName] .runtimeconfig.js* . Si vous créez l’application vous-même, placez toutes les options de configuration dans le *runtimeconfig.template.js* fichier. Si vous exécutez simplement l’application, insérez-la directement dans le fichier *[AppName] .runtimeconfig.js* .
 
 > [!NOTE]
 > Le *.runtimeconfig.js[AppName] sur* le fichier sera remplacé lors des builds suivantes.
@@ -88,7 +88,7 @@ Si vous placez les options dans le fichier JSON du modèle, omettez la `runtimeO
 
 ## <a name="msbuild-properties"></a>MSBuild (propriétés)
 
-Certaines options de configuration au moment de l’exécution peuvent être définies à l’aide des propriétés MSBuild dans le fichier *. csproj* ou *. vbproj* des projets .net Core de type SDK. Les propriétés MSBuild sont prioritaires sur les options définies dans le *runtimeconfig.template.jssur* le fichier. Elles remplacent également toutes les options que vous définissez dans le *.runtimeconfig.js[AppName]* au moment de la génération.
+Certaines options de configuration au moment de l’exécution peuvent être définies à l’aide des propriétés MSBuild dans le fichier *. csproj* ou *. vbproj* des projets .net Core de type SDK. Les propriétés MSBuild sont prioritaires sur les options définies dans le *runtimeconfig.template.jssur* le fichier.
 
 Voici un exemple de fichier projet de type SDK avec des propriétés MSBuild pour la configuration du comportement au moment de l’exécution :
 
