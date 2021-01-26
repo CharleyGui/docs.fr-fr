@@ -2,12 +2,12 @@
 title: Programmation orientée objet (C#)
 description: C# fournit une prise en charge complète de la programmation orientée objet, notamment l’abstraction, l’encapsulation, l’héritage et le polymorphisme.
 ms.date: 09/30/2020
-ms.openlocfilehash: 4ae31e18fcd88870f511e77bb0c555f35394fd1b
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: b778b7c42bbfb1f20bdd2d83b9cb10512ea3f41b
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687992"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794848"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation Object-Oriented (C#)
 
@@ -99,7 +99,16 @@ Le remplacement applique l’ensemble de dépôts mensuels dans le constructeur.
 
 Vérifiez les résultats. Ajoutez maintenant un ensemble similaire de code de test pour le `LineOfCreditAccount` :
 
-:::code language="csharp" source="./snippets/object-oriented-programming/Program.cs" ID="TestLineOfCredit":::
+```
+    var lineOfCredit = new LineOfCreditAccount("line of credit", 0);
+    // How much is too much to borrow?
+    lineOfCredit.MakeWithdrawal(1000m, DateTime.Now, "Take out monthly advance");
+    lineOfCredit.MakeDeposit(50m, DateTime.Now, "Pay back small amount");
+    lineOfCredit.MakeWithdrawal(5000m, DateTime.Now, "Emergency funds for repairs");
+    lineOfCredit.MakeDeposit(150m, DateTime.Now, "Partial restoration on repairs");
+    lineOfCredit.PerformMonthEndTransactions();
+    Console.WriteLine(lineOfCredit.GetAccountHistory());
+ ```
 
 Lorsque vous ajoutez le code précédent et exécutez le programme, un message semblable à l’erreur suivante s’affiche :
 
@@ -114,7 +123,7 @@ Unhandled exception. System.ArgumentOutOfRangeException: Amount of deposit must 
 > [!NOTE]
 > La sortie réelle comprend le chemin d’accès complet au dossier contenant le projet. Les noms de dossiers ont été omis par souci de concision. En outre, selon le format de votre code, les numéros de ligne peuvent être légèrement différents.
 
-Ce code échoue car le `BankAccount` suppose que le solde initial doit être supérieur à 0. Une autre hypothèse intégrée à la `BankAccount` classe est que le solde ne peut pas être négatif. Au lieu de cela, tout retrait qui dédessine le compte est rejeté. Ces deux hypothèses doivent être modifiées. Le compte de la ligne de crédit commence à 0 et est généralement un solde négatif. En outre, si un client emprunte trop d’argent, il est facturé. La transaction est acceptée, mais elle coûte juste plus cher. La première règle peut être implémentée en ajoutant un argument facultatif au `BankAccount` constructeur qui spécifie le solde minimal. La valeur par défaut est `0`. La deuxième règle requiert un mécanisme qui permet aux classes dérivées de modifier l’algorithme par défaut. Dans un sens, la classe de base « demande » le type dérivé qui doit se produire lorsqu’il y a un surplus. Le comportement par défaut consiste à rejeter la transaction en levant une exception.
+Ce code échoue car le `BankAccount` suppose que le solde initial doit être supérieur à 0. Une autre hypothèse intégrée à la `BankAccount` classe est que le solde ne peut pas être négatif. Au lieu de cela, tout retrait qui dédessine le compte est rejeté. Ces deux hypothèses doivent être modifiées. Le compte de la ligne de crédit commence à 0 et est généralement un solde négatif. En outre, si un client emprunte trop d’argent, il est facturé. La transaction est acceptée, mais elle coûte juste plus cher. La première règle peut être implémentée en ajoutant un argument facultatif au `BankAccount` constructeur qui spécifie le solde minimal. Par défaut, il s’agit de `0`. La deuxième règle requiert un mécanisme qui permet aux classes dérivées de modifier l’algorithme par défaut. Dans un sens, la classe de base « demande » le type dérivé qui doit se produire lorsqu’il y a un surplus. Le comportement par défaut consiste à rejeter la transaction en levant une exception.
 
 Commençons par ajouter un deuxième constructeur qui comprend un paramètre facultatif `minimumBalance` . Ce nouveau constructeur effectue toutes les actions effectuées par le constructeur existant. En outre, il définit la propriété solde minimal. Vous pouvez copier le corps du constructeur existant. mais cela signifie que deux emplacements doivent être modifiés à l’avenir. Au lieu de cela, vous pouvez utiliser le *chaînage de constructeur* pour qu’un constructeur en appelle un autre. Le code suivant montre les deux constructeurs et le nouveau champ supplémentaire :
 
@@ -172,7 +181,7 @@ Le remplacement retourne une transaction de frais lorsque le compte est redessin
 
 Exécutez le programme et vérifiez les résultats.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Si vous vous êtes bloqué, vous pouvez voir la source de ce didacticiel [dans notre référentiel GitHub](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/intro-to-csharp/snippets/object-oriented-programming).
 

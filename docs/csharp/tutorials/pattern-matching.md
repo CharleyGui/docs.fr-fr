@@ -4,12 +4,12 @@ description: Ce tutoriel avancé montre comment utiliser des techniques de crit�
 ms.date: 10/06/2020
 ms.technology: csharp-whats-new
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 730098bf599dfc855676c86ab7a6e7f3ef7658f1
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: be1c330973859df62cd4706e5f6f9ca4326fb221
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513222"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794821"
 ---
 # <a name="tutorial-use-pattern-matching-to-build-type-driven-and-data-driven-algorithms"></a>Didacticiel : utiliser des critères spéciaux pour générer des algorithmes pilotés par type et pilotés par les données.
 
@@ -152,7 +152,7 @@ L’autorité de péage souhaite inciter les véhicules à circuler à capacité
 - Bus remplis à moins de 50 % : +2,00 $.
 - Bus remplis à plus de 90 % : -1,00 $.
 
-Il est possible d’implémenter ces règles avec le **modèle de propriété** dans la même expression switch. Le modèle de propriété examine les propriétés de l’objet une fois que le type a été déterminé. L’unique cas `Car` est étendu à quatre cas différents :
+Il est possible d’implémenter ces règles avec le **modèle de propriété** dans la même expression switch. Un modèle de propriété est une `when` clause qui compare une valeur de propriété à une valeur de constante. Le modèle de propriété examine les propriétés de l’objet une fois que le type a été déterminé. L’unique cas `Car` est étendu à quatre cas différents :
 
 ```csharp
 vehicle switch

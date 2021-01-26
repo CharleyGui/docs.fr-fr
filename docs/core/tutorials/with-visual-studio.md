@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: e395122e59f17ed66bbd9d83b01610993f663ce1
-ms.sourcegitcommit: 5114e7847e0ff8ddb8c266802d47af78567949cf
+ms.openlocfilehash: a3a27c1baaab135108ef475d77c35d607c45fa82
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915918"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794797"
 ---
 # <a name="tutorial-create-a-net-console-application-using-visual-studio"></a>Didacticiel : créer une application console .NET à l’aide de Visual Studio
 
@@ -23,7 +23,7 @@ Ce didacticiel montre comment créer et exécuter une application console .NET d
 
   Pour plus d’informations, consultez [installer le kit de développement logiciel (SDK) .net avec Visual Studio](../install/windows.md#install-with-visual-studio).
 
-## <a name="create-the-app"></a>Créer l’application
+## <a name="create-the-app"></a>Créer l'application
 
 Créez un projet d’application console .NET nommé « HelloWorld ».
 
@@ -108,7 +108,7 @@ Améliorez l’application pour inviter l’utilisateur à entrer son nom et l�
 
    Ce code affiche une invite dans la fenêtre de console et attend que l’utilisateur entre une chaîne suivie de la touche <kbd>entrée</kbd> . Elle stocke cette chaîne dans une variable nommée `name` . Elle récupère également la valeur de la <xref:System.DateTime.Now?displayProperty=nameWithType> propriété, qui contient l’heure locale actuelle, et l’assigne à une variable nommée `date` ( `currentDate` dans Visual Basic). Et affiche ces valeurs dans la fenêtre de console. Enfin, il affiche une invite dans la fenêtre de console et appelle la <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> méthode pour attendre l’entrée utilisateur.
 
-   `\n`( `vbCrLf` En Visual Basic) représente un caractère de saut de ligne.
+   Le `\n` (ou `vbCrLf` dans le code Visual Basic) représente un caractère de saut de ligne.
 
    Le signe dollar ( `$` ) devant une chaîne vous permet de placer des expressions telles que des noms de variable entre accolades dans la chaîne. La valeur de l’expression est insérée dans la chaîne à la place de l’expression. Cette syntaxe est appelée « [chaînes interpolées](../../csharp/language-reference/tokens/interpolated.md)».
 

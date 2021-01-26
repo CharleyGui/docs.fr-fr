@@ -2,14 +2,14 @@
 title: 'Modification avec rupture : constructeurs non publics et sans paramètre non utilisés pour la désérialisation'
 description: Découvrez la modification avec rupture dans .NET 5,0 où les constructeurs non publics et sans paramètre ne sont plus utilisés pour la désérialisation avec JsonSerializer.
 ms.date: 10/18/2020
-ms.openlocfilehash: 6bdcc92c61008aa4ee27370bbac4dbf4ee3ef7c8
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: a2ea54b6a76692dae7d6e01b06b11218d66b1cd7
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761202"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794707"
 ---
-# <a name="non-public-parameterless-constructors-not-used-for-deserialization"></a>Constructeurs non publics, sans paramètre, non utilisés pour la désérialisation
+# <a name="non-public-parameterless-constructors-not-used-for-deserialization"></a>Les constructeurs sans paramètre et non publics ne sont pas utilisés pour la désérialisation
 
 Pour garantir la cohérence entre tous les monikers du Framework cible (TFM) pris en charge, les constructeurs non publics et sans paramètre ne sont plus utilisés pour la désérialisation avec <xref:System.Text.Json.JsonSerializer> , par défaut.
 
@@ -37,7 +37,7 @@ Si aucun de ces constructeurs n’est disponible, une <xref:System.NotSupportedE
 ## <a name="recommended-action"></a>Action recommandée
 
 - Si vous êtes propriétaire du type et que cela est faisable, rendez le constructeur sans paramètre public.
-- Sinon, implémentez un `JsonConverter<T>` pour le type et contrôlez le comportement de désérialisation.
+- Sinon, implémentez un <xref:System.Text.Json.Serialization.JsonConverter%601> pour le type et contrôlez le comportement de désérialisation. Vous pouvez appeler un constructeur non public à partir d’une <xref:System.Text.Json.Serialization.JsonConverter%601> implémentation si les règles d’accessibilité C# pour ce scénario l’autorisent.
 
 ## <a name="affected-apis"></a>API affectées
 

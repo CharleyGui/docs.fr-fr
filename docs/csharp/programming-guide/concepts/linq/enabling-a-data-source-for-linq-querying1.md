@@ -3,12 +3,12 @@ title: Activation d'une source de données pour l'interrogation LINQ
 description: Découvrez comment étendre LINQ en C# pour permettre l’interrogation de toute source de données dans le modèle LINQ, ce qui permet aux clients d’interroger facilement une source de données.
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-ms.openlocfilehash: d7d751c0584072e740b4e5292071e400a5020f82
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 84769e27e3f8b8d7ee30b79c219b180333337af9
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91202615"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794828"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Activation d'une source de données pour l'interrogation LINQ
 
@@ -32,7 +32,7 @@ Il existe plusieurs façons d’étendre LINQ pour permettre l’interrogation d
   
 ### <a name="remote-data"></a>Données distantes  
 
- La meilleure option pour activer l’interrogation LINQ d’une source de données distante est d’implémenter l' <xref:System.Linq.IQueryable%601> interface. Toutefois, cette méthode diffère de l'extension d'un fournisseur tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour une source de données. Aucun modèle de fournisseur pour l’extension des technologies LINQ existantes, tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] , à d’autres types de source de données n’est disponible dans Visual Studio 2008.
+ La meilleure option pour activer l’interrogation LINQ d’une source de données distante est d’implémenter l' <xref:System.Linq.IQueryable%601> interface. Toutefois, cette méthode diffère de l'extension d'un fournisseur tel que [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour une source de données.
   
 ## <a name="iqueryable-linq-providers"></a>Fournisseurs LINQ IQueryable  
 

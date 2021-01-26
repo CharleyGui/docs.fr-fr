@@ -8,12 +8,12 @@ helpviewer_keywords:
 - weak references, long
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
-ms.openlocfilehash: 1eb5e57f5cc1065f1b8510e4fb0a980a85abca29
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: a364435a5b0a480b0f6f70315e2d5465f61e6b5a
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95714209"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794661"
 ---
 # <a name="weak-references"></a>Références faibles
 
@@ -27,7 +27,7 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
   
  Quand l’utilisateur passe à une autre partie de l’application, vous pouvez utiliser la classe <xref:System.WeakReference> pour créer une référence faible à l’arborescence et détruire toutes les références fortes. Quand l’utilisateur revient à l’arborescence, l’application tente d’obtenir une référence forte à l’arborescence et, en cas de réussite, évite de reconstruire l’arborescence.  
   
- Pour établir une référence faible à un objet, vous créez un <xref:System.WeakReference> à l’aide de l’instance de l’objet à suivre. Vous affectez ensuite cet objet à la propriété <xref:System.WeakReference.Target%2A> et vous définissez la référence d’origine à l’objet sur `null`. Pour obtenir un exemple de code, consultez <xref:System.WeakReference> dans la bibliothèque de classes.  
+ Pour établir une référence faible à un objet, vous créez un <xref:System.WeakReference> à l’aide de l’instance de l’objet à suivre. Pour obtenir un exemple de code, consultez <xref:System.WeakReference> dans la bibliothèque de classes.  
   
 ## <a name="short-and-long-weak-references"></a>Références faibles courtes et longues  
 

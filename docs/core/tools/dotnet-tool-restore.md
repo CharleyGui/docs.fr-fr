@@ -2,12 +2,12 @@
 title: commande de restauration de l’outil dotnet
 description: La commande de restauration de l’outil dotnet installe sur votre machine les outils locaux .NET qui sont dans l’étendue du répertoire actif.
 ms.date: 02/14/2020
-ms.openlocfilehash: 3425bc6b78fd53f578c209013f83b006305dbb81
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 87bdfb77cda361b800f107c565cbbed6ad75ec78
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96242927"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794858"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
@@ -22,7 +22,7 @@ ms.locfileid: "96242927"
 ```dotnetcli
 dotnet tool restore
     [--configfile <FILE>] [--add-source <SOURCE>]
-    [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
+    [--tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
     [--ignore-failed-sources] [--no-cache] [--interactive]
     [-v|--verbosity <LEVEL>]
 
@@ -71,7 +71,7 @@ La `dotnet tool restore` commande recherche le fichier de manifeste de l’outil
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-## <a name="example"></a> Exemple
+## <a name="example"></a>Exemple
 
 - **`dotnet tool restore`**
 
