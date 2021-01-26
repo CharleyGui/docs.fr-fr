@@ -125,7 +125,7 @@ s[1] = '�' ('\udc02')
 
 <span data-ttu-id="c1ea6-160">Le diagramme suivant illustre la relation entre le BMP et les points de code supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="c1ea6-160">The following diagram illustrates the relationship between the BMP and the supplementary code points.</span></span>
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text =" BMP et les points de code supplémentaires " :::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Supplementary. svg "alt-text ="BMP et les points de code supplémentaires":::
 
 ## <a name="utf-16-code-units"></a><span data-ttu-id="c1ea6-162">Unités de code UTF-16</span><span class="sxs-lookup"><span data-stu-id="c1ea6-162">UTF-16 code units</span></span>
 
@@ -139,7 +139,7 @@ s[1] = '�' ('\udc02')
 
 <span data-ttu-id="c1ea6-170">Le diagramme suivant illustre la relation entre le BMP et les points de code de substitution.</span><span class="sxs-lookup"><span data-stu-id="c1ea6-170">The following diagram illustrates the relationship between the BMP and the surrogate code points.</span></span>
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text =" BMP et les points de code de substitution " :::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/BMP-and-Surrogate. svg "alt-text ="BMP et les points de code de substitution":::
 
 <span data-ttu-id="c1ea6-172">Quand un point de code de *substitution étendu* ( `U+D800..U+DBFF` ) est immédiatement suivi d’un point de code de *substitution faible* ( `U+DC00..U+DFFF` ), la paire est interprétée comme un point de code supplémentaire à l’aide de la formule suivante :</span><span class="sxs-lookup"><span data-stu-id="c1ea6-172">When a *high surrogate* code point (`U+D800..U+DBFF`) is immediately followed by a *low surrogate* code point (`U+DC00..U+DFFF`), the pair is interpreted as a supplementary code point by using the following formula:</span></span>
 
@@ -185,7 +185,7 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 <span data-ttu-id="c1ea6-184">Le diagramme suivant illustre les points de code de la valeur scalaire.</span><span class="sxs-lookup"><span data-stu-id="c1ea6-184">The following diagram illustrates the scalar value code points.</span></span>
 
-:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text =" valeurs scalaires " :::
+:::image type="content" source="media/:::No-Loc (Char) ::: acter-Encoding-Introduction/Scalar-values. svg "alt-text ="valeurs scalaires":::
 
 ### <a name="the-no-locrune-type-as-a-scalar-value"></a><span data-ttu-id="c1ea6-186">RuneType en tant que valeur scalaire</span><span class="sxs-lookup"><span data-stu-id="c1ea6-186">The Rune type as a scalar value</span></span>
 
