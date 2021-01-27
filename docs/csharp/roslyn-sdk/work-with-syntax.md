@@ -3,16 +3,16 @@ title: Utiliser le modèle syntaxique du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur les types que vous utilisez pour comprendre et manipuler les nœuds de syntaxe.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: fdb13095c2b91e54d58988a51a51b05652e57ea6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3666b0ec875b465954780c3c313ca87c9a4e6676
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208393"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899137"
 ---
 # <a name="work-with-syntax"></a>Utiliser la syntaxe
 
-Une *arborescence de syntaxe* est une structure de données de base qui est exposée par les API du compilateur. Ces arborescences représentent la structure lexicale et syntaxique du code source. Elles ont deux utilités principales :
+L' *arborescence de syntaxe* est une structure de données immuables fondamentale exposée par les API du compilateur. Ces arborescences représentent la structure lexicale et syntaxique du code source. Elles ont deux utilités principales :
 
 - Pour autoriser les outils, tels qu’un IDE, des compléments, des outils d’analyse du code et des refactorisations, pour afficher et traiter la structure syntaxique du code source dans le projet d’un utilisateur.
 - Pour activer les outils, tels que les refactorisations et un IDE, pour créer, modifier et réorganiser le code source de manière naturelle sans avoir à utiliser des modifications de texte direct. Par la création et la manipulation des arborescences, les outils peuvent facilement créer et réorganiser le code source.
@@ -21,11 +21,11 @@ Une *arborescence de syntaxe* est une structure de données de base qui est expo
 
 Les arborescences de syntaxe sont la structure principale utilisée pour la compilation, l’analyse de code, la liaison, la refactorisation, les fonctionnalités de l’IDE et la génération de code. Aucune partie du code source ne peut être comprise sans avoir au préalable été identifiée et classée dans l’un des nombreux éléments de langage structurel connus.
 
-Les arborescences de syntaxe ont trois caractéristiques principales. Leur première caractéristique est qu’elles stockent toutes les informations sources avec une haute fidélité. Une fidélité complète signifie que l’arborescence de syntaxe contient chaque information trouvée dans le texte source, chaque construction grammaticale, chaque jeton lexical et tout le reste entre, y compris les espaces blancs, les commentaires et les directives de préprocesseur. Par exemple, chaque littéral mentionné dans la source est représenté exactement comme il a été tapé. Les arborescences de syntaxe capturent également les erreurs dans le code source lorsque le programme est incomplet ou incorrect en représentant des jetons ignorés ou manquants.
+Les arborescences de syntaxe ont trois attributs principaux :
 
-Le deuxième attribut des arborescences de syntaxe est qu’ils peuvent produire le texte exact à partir duquel ils ont été analysés. À partir de n’importe quel nœud de syntaxe, il est possible d’extraire la représentation textuelle de la sous-arborescence enracinée sur ce nœud. Cette capacité signifie que les arborescences de syntaxe peuvent être utilisées pour construire et modifier le texte source. En créant une arborescence, vous avez créé le texte équivalent et, en modifiant une arborescence de syntaxe, en rendant une nouvelle arborescence des modifications apportées à une arborescence existante, vous avez modifié le texte.
-
-La troisième caractéristique des arborescences de syntaxe est qu’elles sont immuables et thread-safe. Après l’obtention d’une arborescence, il s’agit d’un instantané de l’état actuel du code et ne change jamais. Cela permet à plusieurs utilisateurs d’interagir simultanément avec la même arborescence de syntaxe dans différents threads sans verrouillage ou duplication. Étant donné que les arborescences sont immuables et qu’elles ne peuvent pas être modifiées directement, les méthodes de fabrique facilitent la création et la modification des arborescences de syntaxe en créant des instantanés supplémentaires de l’arborescence. Les arborescences réutilisent avantageusement les nœuds sous-jacents pour accélérer la génération d’une nouvelle version, sans consommer beaucoup plus de mémoire.
+- Elles contiennent toutes les informations sources en toute fidélité. Une fidélité complète signifie que l’arborescence de syntaxe contient chaque information trouvée dans le texte source, chaque construction grammaticale, chaque jeton lexical et tout le reste entre, y compris les espaces blancs, les commentaires et les directives de préprocesseur. Par exemple, chaque littéral mentionné dans la source est représenté exactement comme il a été tapé. Les arborescences de syntaxe capturent également les erreurs dans le code source lorsque le programme est incomplet ou incorrect en représentant des jetons ignorés ou manquants.
+- Ils peuvent produire le texte exact à partir duquel ils ont été analysés. À partir de n’importe quel nœud de syntaxe, il est possible d’extraire la représentation textuelle de la sous-arborescence enracinée sur ce nœud. Cette capacité signifie que les arborescences de syntaxe peuvent être utilisées pour construire et modifier le texte source. En créant une arborescence, par implication, en créant le texte équivalent et en rendant une nouvelle arborescence des modifications apportées à une arborescence existante, vous avez modifié le texte.
+- Ils sont immuables et thread-safe. Après l’obtention d’une arborescence, il s’agit d’un instantané de l’état actuel du code et ne change jamais. Cela permet à plusieurs utilisateurs d’interagir simultanément avec la même arborescence de syntaxe dans différents threads sans verrouillage ou duplication. Étant donné que les arborescences sont immuables et qu’elles ne peuvent pas être modifiées directement, les méthodes de fabrique facilitent la création et la modification des arborescences de syntaxe en créant des instantanés supplémentaires de l’arborescence. Les arborescences réutilisent avantageusement les nœuds sous-jacents pour accélérer la génération d’une nouvelle version, sans consommer beaucoup plus de mémoire.
 
 Une arborescence de syntaxe est littéralement une structure de données arborescente, où des éléments structurels non terminaux sont parents d’autres éléments. Chaque arborescence de syntaxe est constituée de nœuds, de jetons et de trivia.
 
@@ -91,7 +91,10 @@ La propriété <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> permet de lever
 
 Prenons l’exemple d’une classe <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax>, qui a les enfants <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> et <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. La propriété <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind%2A> détermine si le nœud de syntaxe est du genre <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression> ou <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression>.
 
-## <a name="errors"></a>Errors
+> [!TIP]
+> Il est recommandé de vérifier les types à l’aide <xref:Microsoft.CodeAnalysis.CSharpExtensions.IsKind%2A> des méthodes d’extension (pour C#) ou <xref:Microsoft.CodeAnalysis.VisualBasicExtensions.IsKind%2A> (pour VB).
+
+## <a name="errors"></a>Erreurs
 
 Même si le texte source contient des erreurs de syntaxe, une arborescence de syntaxe complète avec aller-retour au code source est exposée. Lorsque l’analyseur rencontre du code qui n’est pas conforme à la syntaxe définie du langage, il utilise l’une des deux techniques suivantes pour créer une arborescence de syntaxe :
 

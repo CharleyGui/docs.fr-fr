@@ -15,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 70e68de3ce736bc4935dea80e37cc805068b0bc5
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 296c69e5238bca9a13aa28197926c67b6ac5c5ef
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95722464"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898890"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Chaînes de format de date et d’heure personnalisées
 
@@ -221,7 +221,7 @@ Bien qu’il soit possible d’afficher les dix millionièmes du composant « se
 
 ### <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a> Spécificateur de format personnalisé "F"
 
-Le spécificateur de format personnalisé "F" représente le chiffre le plus significatif de la fraction de seconde ; autrement dit, il représente les dixièmes de seconde dans une valeur de date et d'heure. Rien ne s'affiche si le chiffre est zéro.
+Le spécificateur de format personnalisé "F" représente le chiffre le plus significatif de la fraction de seconde ; autrement dit, il représente les dixièmes de seconde dans une valeur de date et d'heure. Rien ne s’affiche si le chiffre est égal à zéro, et la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 Si le spécificateur de format « F » est utilisé sans autre spécificateur de format, il est interprété comme le spécificateur de format de date et d’heure standard « F ». Pour plus d’informations sur l’utilisation d’un seul spécificateur de format, voir [Utiliser des spécificateurs de format personnalisés uniques](#UsingSingleSpecifiers) plus loin dans cette rubrique.
 
@@ -236,7 +236,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "F" dans une
 
 ### <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a> Spécificateur de format personnalisé "FF"
 
-Le spécificateur de format personnalisé "FF" représente les deux chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les centièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et doubles zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FF" représente les deux chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les centièmes de seconde dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les deux chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 L'exemple suivant inclut le spécificateur de format personnalisé "FF" dans une chaîne de format personnalisée.
 
@@ -247,7 +247,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "FF" dans un
 
 ### <a name="the-fff-custom-format-specifier"></a><a name="FFF_Specifier"></a> Spécificateur de format personnalisé "FFF"
 
-Le spécificateur de format personnalisé "FFF" représente les trois chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millisecondes dans une valeur de date et d'heure. Toutefois, les zéros de fin et triples zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FFF" représente les trois chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millisecondes dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les trois chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 L'exemple suivant inclut le spécificateur de format personnalisé "FFF" dans une chaîne de format personnalisée.
 
@@ -258,7 +258,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "FFF" dans u
 
 ### <a name="the-ffff-custom-format-specifier"></a><a name="FFFF_Specifier"></a> Spécificateur de format personnalisé "FFFF"
 
-Le spécificateur de format personnalisé "FFFF" représente les quatre chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et quadruples zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FFFF" représente les quatre chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millièmes de seconde dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les quatre chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 Bien qu’il soit possible d’afficher les dix millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
@@ -266,7 +266,7 @@ Bien qu’il soit possible d’afficher les dix millièmes du composant « secon
 
 ### <a name="the-fffff-custom-format-specifier"></a><a name="FFFFF_Specifier"></a> Spécificateur de format personnalisé "FFFFF"
 
-Le spécificateur de format personnalisé "FFFFF" représente les cinq chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les cent millièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et quintuples zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FFFFF" représente les cinq chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les cent millièmes de seconde dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les cinq chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 Bien qu’il soit possible d’afficher les cent millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
@@ -274,7 +274,7 @@ Bien qu’il soit possible d’afficher les cent millièmes du composant « seco
 
 ### <a name="the-ffffff-custom-format-specifier"></a><a name="FFFFFF_Specifier"></a> Spécificateur de format personnalisé "FFFFFF"
 
-Le spécificateur de format personnalisé "FFFFFF" représente les six chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millionièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et sextuples zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FFFFFF" représente les six chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millionièmes de seconde dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les six chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 Bien qu’il soit possible d’afficher les millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
@@ -282,7 +282,7 @@ Bien qu’il soit possible d’afficher les millionièmes du composant « second
 
 ### <a name="the-fffffff-custom-format-specifier"></a><a name="FFFFFFF_Specifier"></a> Spécificateur de format personnalisé "FFFFFFF"
 
-Le spécificateur de format personnalisé "FFFFFFF" représente les sept chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millionièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et septuples zéros ne sont pas affichés.
+Le spécificateur de format personnalisé "FFFFFFF" représente les sept chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millionièmes de seconde dans une valeur de date et d'heure. Les zéros à droite ne sont pas affichés. Rien n’est affiché si les sept chiffres significatifs sont nuls et, dans ce cas, la virgule décimale qui suit le nombre de secondes n’est pas non plus affichée.
 
 Bien qu’il soit possible d’afficher les dix millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 

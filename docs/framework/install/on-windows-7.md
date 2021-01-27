@@ -2,12 +2,12 @@
 title: Installer le .NET Framework sur Windows 7 SP1
 description: Découvrez comment installer le .NET Framework sur Windows 7 SP1.
 ms.date: 04/18/2019
-ms.openlocfilehash: 3f94562f2a14c108a021343b89a8279e95215f30
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 900b38110626a93f37829045a8676ea87101d7e9
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558853"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899085"
 ---
 # <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Installer le .NET Framework sur Windows 7 SP1 et Windows Server 2008 R2
 
@@ -23,6 +23,16 @@ Ces instructions ont pour but de vous aider à installer les versions du .NET Fr
 > [Télécharger .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
+
+### <a name="offline-installer"></a>programme d’installation hors connexion
+
+Lorsque vous effectuez une installation hors connexion de .NET Framework sur Windows 7, vous devez d’abord vous assurer que la dernière [autorité de certification racine Microsoft 2011](https://www.microsoft.com/pkiops/Docs/Repository.htm) a été installée sur l’ordinateur cible.
+
+L’outil _certmgr.exe_ peut automatiser l’installation d’un certificat et est obtenu à partir de Visual Studio ou du SDK Windows. La commande suivante est utilisée pour installer le certificat avant d’exécuter le programme d’installation de .NET Framework :
+
+```console
+certmgr.exe /add MicRooCerAut2011_2011_03_22.crt /s /r localMachine root
+```
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 

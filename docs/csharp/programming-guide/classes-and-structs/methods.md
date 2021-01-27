@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 7b411283822360f3057b0d4f4e60ebade4fe45bc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 879e57cfbce82f1aa77f8810e23d6a61a6ea5bc8
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810935"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899449"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
@@ -29,19 +29,19 @@ Les méthodes sont déclarées dans une [classe](../../language-reference/keywor
 
 Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre. Cette classe contient quatre méthodes :
 
-[!code-csharp[csProgGuideObjects#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#40)]
+[!code-csharp[DifferentModifiersOnMethods#1](snippets/methods/Program.cs#1)]
 
 ## <a name="method-access"></a>Accès aux méthodes
 
 L'appel d'une méthode sur un objet revient à accéder à un champ. Après le nom de l'objet, ajoutez un point, le nom de la méthode et les parenthèses. Les arguments sont répertoriés entre les parenthèses et séparés par des virgules. Les méthodes de la classe `Motorcycle` peuvent donc être appelées comme dans l'exemple suivant :
 
-[!code-csharp[csProgGuideObjects#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#41)]
+[!code-csharp[CallingMethods#2](snippets/methods/Program.cs#2)]
 
 ## <a name="method-parameters-vs-arguments"></a>Paramètres de méthode et arguments
 
 La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom d’argument (le cas échéant) utilisé dans le code appelant ne doit pas nécessairement être le même que le paramètre nommé défini dans la méthode. Par exemple :
 
-[!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]
+[!code-csharp[MethodExamples#3](snippets/methods/Program.cs#3)]
 
 ## <a name="passing-by-reference-vs-passing-by-value"></a>Passage par référence et passage par valeur
 
@@ -51,17 +51,17 @@ Quand un objet d'un type référence est passé à une méthode, une référence
 
 Vous créez un type référence à l’aide du `class` mot clé, comme le montre l’exemple suivant :
 
-[!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]
+[!code-csharp[SampleRefTypeClass#4](snippets/methods/Program.cs#4)]
 
 Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L’exemple suivant passe un objet de type `SampleRefType` à la méthode `ModifyObject` :
 
-[!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]
+[!code-csharp[PassingAReferenceType#5](snippets/methods/Program.cs#5)]
 
 L'exemple produit essentiellement la même chose que l'exemple précédent, dans la mesure où il passe un argument par valeur à une méthode. Mais, puisqu'un type référence est utilisé, le résultat est différent. La modification apportée dans `ModifyObject` au champ `value` du paramètre, `obj`, modifie également le champ `value` de l'argument, `rt`, dans la méthode `TestRefType` . La méthode `TestRefType` affiche 33 en tant que sortie.
 
 Pour plus d’informations sur le passage de types référence par référence et par valeur, consultez [Passage de paramètres de type référence ](./passing-reference-type-parameters.md) et [Types référence](../../language-reference/keywords/reference-types.md).
 
-## <a name="return-values"></a>Valeurs retournées
+## <a name="return-values"></a>Valeurs de retour
 
 Les méthodes peuvent retourner une valeur à l'appelant. Si le type de retour, le type répertorié avant le nom de la méthode, n'est pas `void`, la méthode peut retourner la valeur à l'aide du mot clé `return` . Une instruction avec le mot clé `return` suivi d'une valeur qui correspond au type de retour retourne cette valeur à l'appelant de la méthode.
 
@@ -76,13 +76,13 @@ public ref double GetEstimatedDistance()
 
 Le mot clé `return` arrête également l'exécution de la méthode. Si le type de retour est `void`, une instruction `return` sans valeur est quand même utile pour arrêter l'exécution de la méthode. Sans le mot clé `return` , la méthode arrête de s'exécuter quand elle atteint la fin du bloc de code. Les méthodes dotées d'un type de retour non void doivent utiliser le mot clé `return` pour retourner une valeur. Par exemple, ces deux méthodes utilisent le mot clé `return` pour retourner des entiers :
 
-[!code-csharp[csProgGuideObjects#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#44)]
+[!code-csharp[SimpleMathClass#6](snippets/methods/Program.cs#6)]
 
 Pour utiliser une valeur retournée à partir d'une méthode, la méthode d'appel peut utiliser l'appel de méthode proprement dit partout où une valeur du même type peut suffire. Vous pouvez également affecter la valeur de retour à une variable. Par exemple, les deux exemples de code suivants remplissent le même objectif :
 
-[!code-csharp[csProgGuideObjects#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#45)]
+[!code-csharp[SquareANumberWithAddTwoNumbersUsingLocalVariable#7](snippets/methods/Program.cs#7)]
 
-[!code-csharp[csProgGuideObjects#46](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#46)]
+[!code-csharp[SquareANumberWithAddTwoNumbersInTheSameLine#8](snippets/methods/Program.cs#8)]
 
 L'utilisation d'une variable locale, dans cet exemple, `result`, pour stocker une valeur est facultative. Elle peut favoriser la lisibilité du code ou s'avérer nécessaire si vous avez besoin de stocker la valeur d'origine de l'argument pour la portée entière de la méthode.
 
@@ -178,4 +178,4 @@ Pour plus d’informations, consultez [itérateurs](../concepts/iterators.md).
 - [renvoi](../../language-reference/keywords/return.md)
 - [à](../../language-reference/keywords/out.md)
 - [ref](../../language-reference/keywords/ref.md)
-- [Passer des paramètres](passing-parameters.md)
+- [Passage de paramètres](passing-parameters.md)

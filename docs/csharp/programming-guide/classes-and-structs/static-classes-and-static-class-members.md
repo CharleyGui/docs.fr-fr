@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: cbfe4b63dc27cf0a0b6aad87c4f011151bacd4e5
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 31de2a7d58d610213bfa4fc0377e1ab7283e111e
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91199014"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899007"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -61,7 +61,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 
  Voici un exemple d’une classe statique qui contient deux méthodes qui convertissent la température des degrés Celsius en degrés Fahrenheit et des degrés Fahrenheit en degrés Celsius :  
   
- [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
+ [!code-csharp[TemperatureConverter#1](snippets/static-classes-and-static-class-members/Program.cs#1)]  
   
 ## <a name="static-members"></a>Membres static  
 
@@ -77,11 +77,11 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Vous déclarez des membres de classe statique en utilisant le mot clé `static` avant le type de retour du membre, comme illustré dans l’exemple suivant :  
   
- [!code-csharp[csProgGuideObjects#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#29)]  
+ [!code-csharp[AutomobileExample#2](snippets/static-classes-and-static-class-members/Program.cs#2)]  
   
  Les membres statiques sont initialisés avant le premier accès au membre statique et avant que le constructeur statique, s’il en existe un, soit appelé. Pour accéder à un membre de classe statique, utilisez le nom de la classe au lieu d’un nom de variable pour spécifier l’emplacement du membre, comme illustré dans l’exemple suivant :  
   
- [!code-csharp[csProgGuideObjects#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#30)]  
+ [!code-csharp[AccessingStaticMembers#3](snippets/static-classes-and-static-class-members/Program.cs#3)]  
   
  Si votre classe contient des champs statiques, fournissez un constructeur statique qui les initialise quand la classe est chargée.  
   

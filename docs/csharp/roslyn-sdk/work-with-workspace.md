@@ -3,12 +3,12 @@ title: Utiliser le modèle d’espace de travail du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur le type que vous utilisez pour interroger et manipuler l’espace de travail et les projets dans votre code.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: d21873b132d5f0788033693a319e556feeac59a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b613c85c01cc054dea9dd4bb9cf0062ffedb08bf
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156881"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899111"
 ---
 # <a name="work-with-a-workspace"></a>Utiliser un espace de travail
 
@@ -24,7 +24,7 @@ La classe <xref:Microsoft.CodeAnalysis.Workspace> fournit l’accès au modèle 
 
 Vous pouvez également créer des espaces de travail autonomes qui sont déconnectés de l’environnement hôte ou qui sont utilisés dans une application sans environnement hôte.
 
-## <a name="solutions-projects-documents"></a>Solutions, projets, documents
+## <a name="solutions-projects-and-documents"></a>Solutions, projets et documents
 
 Même si un espace de travail change chaque fois qu’un utilisateur appuie sur une touche, vous pouvez utiliser le modèle de la solution en mode isolation.
 
@@ -40,4 +40,4 @@ Le diagramme suivant illustre les relations entre l’espace de travail et l’e
 
 ## <a name="summary"></a>Résumé
 
-Roslyn expose un ensemble d’API de compilateur et d’API d’espaces de travail. Ces API fournissent des informations détaillées sur votre code source et offrent une haute fidélité avec les langages Visual Basic et C#.  Le SDK .NET Compiler Platform réduit considérablement les difficultés inhérentes à la création d’applications et d’outils axés sur le code. Il crée de nombreuses possibilités d’innovation dans des domaines tels que la méta-programmation, la génération et la transformation de code, l’utilisation interactive des langues de base de C et visual, et l’intégration de C et Visual Basic dans des langues spécifiques au domaine.  
+Roslyn expose un ensemble d’API de compilateur et d’API d’espaces de travail. Ces API fournissent des informations détaillées sur votre code source et offrent une haute fidélité avec les langages Visual Basic et C#.  Le SDK .NET Compiler Platform réduit considérablement les difficultés inhérentes à la création d’applications et d’outils axés sur le code. Il crée de nombreuses opportunités d’innovation dans des domaines tels que la méta-programmation, la génération et la transformation de code, l’utilisation interactive des langages C# et Visual Basic, ainsi que l’incorporation de C# et de Visual Basic dans des langages spécifiques à un domaine.  

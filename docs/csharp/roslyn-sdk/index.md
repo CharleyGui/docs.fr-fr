@@ -3,12 +3,12 @@ title: Kit SDK .NET Compiler Platform (API Roslyn)
 description: Apprenez à utiliser le Kit de développement logiciel (SDK) .NET Compiler Platform (également appelé API Roslyn) pour comprendre le code .NET, identifier les erreurs et les corriger.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 872bfd388f6974a6d99f769c43e5d341454518cc
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: cd81551234a1bc955323e392f473cd01180f6dc5
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226671"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899241"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kit SDK .NET Compiler Platform
 
@@ -19,17 +19,18 @@ Au lieu de rester d’opaques traducteurs de code source en code objet, les comp
 
 Le Kit SDK .NET Compiler Platform réduit considérablement la barrière à l’entrée pour la création d’applications et d’outils axés sur le code. Il crée de nombreuses opportunités d’innovation dans des domaines tels que la méta-programmation, la génération et la transformation de code, l’utilisation interactive des langages C# et Visual Basic, ainsi que l’incorporation de C# et de Visual Basic dans des langages spécifiques à un domaine.
 
-Le Kit SDK .NET Compiler Platform permet de générer des ***analyseurs*** et des ***correctifs de code*** qui recherchent et corrigent les erreurs de codage. Les ***analyseurs*** comprennent la syntaxe et la structure du code, et détectent les pratiques à corriger. Les ***correctifs de code*** représentent des propositions de correction des erreurs de codage trouvées par les analyseurs. En règle générale, un analyseur et les correctifs de code associés sont regroupés dans un seul projet.
+Le kit de développement logiciel (SDK) .NET Compiler Platform vous permet de générer des ***analyseurs** et des _*_correctifs de code_*_ qui recherchent et corrigent les erreurs de codage. Les _*_analyseurs_*_ comprennent la syntaxe (structure de code) et la sémantique pour détecter les pratiques qui doivent être corrigées. Les _*_correctifs de code_*_ fournissent un ou plusieurs correctifs suggérés pour résoudre les erreurs de codage détectées par les analyseurs ou les diagnostics du compilateur. En règle générale, un analyseur et les correctifs de code associés sont regroupés dans un seul projet.
 
 Les analyseurs et les correctifs de code utilisent l’analyse statique pour comprendre le code. Ils n’exécutent pas le code, et n’offrent aucun autre avantage en matière de tests. Toutefois, ils peuvent signaler des pratiques qui mènent souvent à des bogues, à un code non gérable ou à une violation des indications standard.
 
-Le Kit SDK .NET Compiler Platform se compose d’un unique ensemble d’API permettant d’examiner et de comprendre un codebase C# ou Visual Basic. Grâce à ce codebase unique, il est plus facile d’écrire des analyseurs et des correctifs de code en utilisant les API d’analyse syntaxique et sémantique fournies par le Kit SDK .NET Compiler Platform. Une fois libéré de la tâche chronophage qui consiste à répliquer l’analyse effectuée par le compilateur, vous pouvez vous concentrer sur la tâche, plus ciblée, de recherche et de résolution des erreurs de codage courantes de votre projet ou de votre bibliothèque.
+En plus des analyseurs et des correctifs de code, le kit de développement logiciel (SDK) .NET Compiler Platform vous permet également de créer des _*_refactorisations de code_*_.
+Il fournit également un ensemble unique d’API qui vous permettent d’examiner et de comprendre un code base C# ou Visual Basic. Grâce à ce codebase unique, il est plus facile d’écrire des analyseurs et des correctifs de code en utilisant les API d’analyse syntaxique et sémantique fournies par le Kit SDK .NET Compiler Platform. Une fois libéré de la tâche chronophage qui consiste à répliquer l’analyse effectuée par le compilateur, vous pouvez vous concentrer sur la tâche, plus ciblée, de recherche et de résolution des erreurs de codage courantes de votre projet ou de votre bibliothèque.
 
 Autre avantage, plus modeste, vos analyseurs et vos correctifs de code sont plus petits et utilisent beaucoup moins de mémoire une fois chargés dans Visual Studio que si vous aviez écrit votre propre codebase pour comprendre le code d’un projet. En exploitant les mêmes classes que le compilateur et Visual Studio, vous pouvez créer vos propres outils d’analyse statique. Votre équipe a donc la possibilité d’utiliser des analyseurs et des correctifs de code sans impact perceptible sur les performances de l’IDE.
 
 Il existe trois grands scénarios d’écriture d’analyseurs et de correctifs de code :
 
-1. [*Appliquer des normes de codage pour l’équipe*](#enforce-team-coding-standards)
+1. [_Enforce les normes de codage d’équipe *](#enforce-team-coding-standards)
 1. [*Offrir de l’aide sur les packages de bibliothèque*](#provide-guidance-with-library-packages)
 1. [*Proposer des conseils généraux*](#provide-general-guidance)
 
@@ -40,6 +41,9 @@ De nombreuses équipes ont des normes de codage, qui sont appliquées par le bia
 Les analyseurs s’exécutent au moment même où il écrit du code. Le développeur obtient immédiatement des commentaires qui l’encouragent à suivre les instructions sans attendre. Le développeur prend l’habitude d’écrire du code conforme dès qu’il commence le prototypage. Lorsque la fonctionnalité est prête à être révisée par des humains, toutes les instructions standard ont été appliquées.
 
 Les équipes peuvent créer des analyseurs et des correctifs de code permettant de rechercher les pratiques les plus courantes qui enfreignent les pratiques de codage de l’équipe. Ils peuvent être installés sur l’ordinateur de chaque développeur pour appliquer les normes.
+
+> [!TIP]
+> Avant de créer votre propre analyseur, consultez les éléments intégrés. Pour plus d’informations, consultez [règles de style de code](../../fundamentals/code-analysis/overview.md#code-style-analysis).
 
 ## <a name="provide-guidance-with-library-packages"></a>Offrir de l’aide sur les packages de bibliothèque
 
@@ -52,7 +56,7 @@ Vous pouvez ajouter les analyseurs et les correctifs de code au package de votre
 
 ## <a name="provide-general-guidance"></a>Proposer des conseils généraux
 
-La communauté de développeurs .NET a découvert, par l’expérience, des modèles qui fonctionnent bien et d’autres qu’il vaut mieux éviter. Plusieurs membres de la communauté ont créé des analyseurs qui appliquent ces modèles recommandés. Plus nous gagnons en expérience, plus il y a de place pour de nouvelles idées.
+La communauté de développeurs .NET a découvert, par l’expérience, des modèles qui fonctionnent correctement et des modèles qui sont mieux évités. Plusieurs membres de la communauté ont créé des analyseurs qui appliquent ces modèles recommandés. Plus nous gagnons en expérience, plus il y a de place pour de nouvelles idées.
 
 Ces analyseurs peuvent être chargés sur [Visual Studio Marketplace](https://marketplace.visualstudio.com/vs) et téléchargés par les développeurs avec Visual Studio. Ceux qui débutent avec le langage et la plateforme apprennent rapidement les pratiques acceptées et deviennent plus vite productifs, dès le début de leur parcours d’apprentissage de .NET. Comme ils sont de plus en plus utilisés, la communauté adopte ces pratiques.
 

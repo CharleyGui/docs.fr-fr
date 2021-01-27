@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 61a00e766b0f975691b9f2a7c7561bb4f1d33c02
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: a2f4f5f9342d5df1f9fa741c86cfe6f8b1d88bd1
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91174301"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899059"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 
@@ -32,7 +32,7 @@ Les finaliseurs (également appelés **destructeurs**) servent à effectuer les 
   
  Par exemple, voici une déclaration de finaliseur pour la classe `Car`.
   
- [!code-csharp[csProgGuideObjects#86](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#86)]  
+ [!code-csharp[csProgGuideObjects#86](snippets/destructors/Program.cs#2)]
 
 Un finaliseur peut aussi être implémenté en tant que définition de corps d’expression, comme l’illustre l’exemple suivant.
 
@@ -77,7 +77,7 @@ protected override void Finalize()
   
 - [Nettoyage de ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
   
-- [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
+- [Implémentation d'une méthode Dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
 - [using, instruction](../../language-reference/keywords/using-statement.md)  
   
@@ -85,7 +85,7 @@ protected override void Finalize()
 
  L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
   
- [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  
+ [!code-csharp[Destructors#1](snippets/destructors/Program.cs#1)]
   
 ## <a name="c-language-specification"></a>spécification du langage C#  
 

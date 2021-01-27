@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 792159786131654d6ee0363f7ab7b87ac50d32bb
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: cfda3b89bfd9dc046274dfa53d62a0789d4d597e
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864746"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899098"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
@@ -28,7 +28,7 @@ Il peut être utile de fractionner une définition de classe dans les situations
 
 - Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../language-reference/keywords/partial-type.md), comme ci-dessous :
 
-  [!code-csharp[csProgGuideObjects#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#26)]
+  [!code-csharp[EmployeeExample#1](snippets/partial-classes-and-methods/Program.cs#1)]
 
 Le mot clé `partial` indique que d’autres parties de la classe, du struct ou de l’interface peuvent être définies dans l’espace de noms. Toutes les parties doivent utiliser le mot clé `partial`. Toutes les parties doivent être disponibles à la compilation pour former le type final. Toutes les parties doivent avoir la même accessibilité : `public`, `private`, etc.
 
@@ -41,15 +41,15 @@ Toutes les parties qui spécifient une classe de base doivent être en accord, m
 
 L’exemple suivant montre que les types imbriqués peuvent être partiels, même si le type dans lequel ils sont imbriqués n’est pas partiel lui-même.
 
-[!code-csharp[csProgGuideObjects#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#25)]
+[!code-csharp[NestedPartialTypes#2](snippets/partial-classes-and-methods/Program.cs#2)]
 
 Au moment de la compilation, les attributs de définitions de type partiel sont fusionnés. Observez, par exemple, les déclarations suivantes :
 
-[!code-csharp[csProgGuideObjects#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#23)]
+[!code-csharp[PartialMoonDeclarations#3](snippets/partial-classes-and-methods/Program.cs#3)]
 
 Elles sont équivalentes aux déclarations suivantes :
 
-[!code-csharp[csProgGuideObjects#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#24)]
+[!code-csharp[SingleMoonDeclaration#4](snippets/partial-classes-and-methods/Program.cs#4)]
 
 Les éléments suivants sont fusionnés à partir de toutes les définitions de type partiel :
 
@@ -65,11 +65,11 @@ Les éléments suivants sont fusionnés à partir de toutes les définitions de 
 
 Observez, par exemple, les déclarations suivantes :
 
-[!code-csharp[csProgGuideObjects#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#21)]
+[!code-csharp[PartialEarthDeclarations#5](snippets/partial-classes-and-methods/Program.cs#5)]
 
 Elles sont équivalentes aux déclarations suivantes :
 
-[!code-csharp[csProgGuideObjects#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#22)]
+[!code-csharp[SingleEarthDeclaration#6](snippets/partial-classes-and-methods/Program.cs#6)]
 
 ### <a name="restrictions"></a>Restrictions
 
@@ -77,13 +77,13 @@ Il y a plusieurs règles à respecter quand vous utilisez des définitions de cl
 
 - Toutes les définitions de type partiel conçues comme des parties du même type doivent être modifiées avec `partial`. Par exemple, les déclarations de classe suivantes génèrent une erreur :
 
-  [!code-csharp[csProgGuideObjects#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#20)]
+  [!code-csharp[AllDefinitionsMustBePartials#7](snippets/partial-classes-and-methods/Program.cs#7)]
 
 - Le modificateur `partial` peut uniquement être placé juste avant les mots clés `class`, `struct` ou `interface`.
 
 - Les types partiels imbriqués sont autorisés dans les définitions de type partiel, comme illustré dans l’exemple suivant :
 
-  [!code-csharp[csProgGuideObjects#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#19)]
+  [!code-csharp[NestedPartialTypes#8](snippets/partial-classes-and-methods/Program.cs#8)]
 
 - Toutes les définitions de type partiel conçues comme des parties du même type doivent être définies dans le même assembly et dans le même module (fichier .exe ou .dll). Les définitions partielles ne peuvent pas être fractionnées entre plusieurs modules.
 
@@ -119,7 +119,7 @@ Dans l’exemple suivant, les champs et le constructeur de la classe `Coords` so
 
 ### <a name="code"></a>Code
 
-[!code-csharp[csProgGuideObjects#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#17)]
+[!code-csharp[CoordsExample#9](snippets/partial-classes-and-methods/Program.cs#9)]
 
 ## <a name="example-2"></a>Exemple 2
 
@@ -129,7 +129,7 @@ L’exemple suivant montre que vous pouvez également développer des interfaces
 
 ### <a name="code"></a>Code
 
-[!code-csharp[csProgGuideObjects#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#18)]
+[!code-csharp[PartialStructsAndInterfaces#10](snippets/partial-classes-and-methods/Program.cs#10)]
 
 ## <a name="partial-methods"></a>Méthodes partielles
 
@@ -173,7 +173,7 @@ Pour plus d’informations, consultez [Types partiels](~/_csharplang/spec/classe
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Catégories](./classes.md)
+- [Classes](./classes.md)
 - [Types de structure](../../language-reference/builtin-types/struct.md)
 - [Interfaces](../interfaces/index.md)
 - [partial, Type](../../language-reference/keywords/partial-type.md)

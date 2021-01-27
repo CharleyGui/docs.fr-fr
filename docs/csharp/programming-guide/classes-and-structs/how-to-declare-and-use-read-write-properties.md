@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.topic: how-to
 ms.custom: contperf-fy21q2
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 824ce8a8cd8f0ef94495a85726331cd6cd024891
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 75f3b4d6fa8595734cf1310c08281c26c829fd84
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513005"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899020"
 ---
 # <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Comment déclarer et utiliser les propriétés en lecture/écriture (Guide de programmation C#)
 
@@ -26,27 +26,27 @@ Les propriétés offrent la commodité des membres de données publics sans les 
   
 ## <a name="example"></a>Exemple  
 
- [!code-csharp[csProgGuideObjects#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#33)]  
+ [!code-csharp[properties#1](snippets/how-to-declare-and-use-read-write-properties/Program.cs#1)]
   
 ## <a name="robust-programming"></a>Programmation fiable  
 
  Dans l’exemple précédent, les propriétés `Name` et `Age` sont [publiques](../../language-reference/keywords/public.md), et incluent un accesseur `get` et un accesseur `set`. Cela permet à n’importe quel objet de lire et d’écrire ces propriétés. Toutefois, il est parfois souhaitable d’exclure l’un des accesseurs. L’omission de l’accesseur `set`, par exemple, met la propriété en lecture seule :  
   
- [!code-csharp[csProgGuideObjects#87](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#87)]  
+ [!code-csharp[properties#2](snippets/how-to-declare-and-use-read-write-properties/Program.cs#2)]
   
  Vous pouvez également exposer publiquement un accesseur mais rendre l’autre private ou protected. Pour plus d’informations, consultez [Accessibilité de l’accesseur asymétrique](./restricting-accessor-accessibility.md).  
   
  Une fois les propriétés déclarées, vous pouvez les utiliser comme s’il s’agissait de champs de la classe. Cela permet une syntaxe très naturelle pour obtenir ou définir la valeur d’une propriété, comme dans les instructions suivantes :  
   
- [!code-csharp[csProgGuideObjects#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#35)]  
+ [!code-csharp[properties#3](snippets/how-to-declare-and-use-read-write-properties/Program.cs#3)]
   
  Notez qu’une variable `value` spéciale est disponible dans la méthode `set` d’une propriété. Cette variable contient la valeur que l’utilisateur a spécifiée, par exemple :  
   
- [!code-csharp[csProgGuideObjects#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#36)]  
+ [!code-csharp[properties#4](snippets/how-to-declare-and-use-read-write-properties/Program.cs#4)]
   
  Notez la syntaxe correcte pour incrémenter la propriété `Age` sur un objet `Person` :  
   
- [!code-csharp[csProgGuideObjects#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#37)]  
+ [!code-csharp[properties#5](snippets/how-to-declare-and-use-read-write-properties/Program.cs#5)]
   
  Si des méthodes `set` et `get` distinctes ont été utilisées pour modeler des propriétés, le code équivalent peut avoir la forme suivante :  
   
@@ -56,7 +56,7 @@ person.SetAge(person.GetAge() + 1);
   
  La méthode `ToString` est substituée dans cet exemple :  
   
- [!code-csharp[csProgGuideObjects#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#38)]  
+ [!code-csharp[properties#6](snippets/how-to-declare-and-use-read-write-properties/Program.cs#6)]
   
  Vous pouvez remarquer que `ToString` n’est pas utilisée de façon explicite dans le programme. Elle est appelée par défaut par les appels `WriteLine`.  
   

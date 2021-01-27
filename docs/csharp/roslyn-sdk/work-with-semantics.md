@@ -3,12 +3,12 @@ title: Utiliser le modèle sémantique du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur le type que vous utilisez pour comprendre et manipuler le modèle sémantique de votre code.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: 8575988cd98a4c0ba3f24107788f065f7472f55d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f0d254045a168f82888c5cc77a34f194a68aed0e
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156933"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899124"
 ---
 # <a name="work-with-semantics"></a>Utiliser la sémantique
 
@@ -35,13 +35,13 @@ Toutes ces informations étant stockées au même emplacement, les éléments co
 
 De la même façon que les arborescences de syntaxe, les compilations sont immuables. Une fois créée, une compilation ne peut plus être modifiée, que ce soit par vous ou par tout autre utilisateur avec qui vous la partagez. Toutefois, vous pouvez créer une autre compilation à partir d’une compilation existante, en y apportant la modification souhaitée. Par exemple, vous pouvez créer une compilation semblable en tous points à une compilation existante, mais y ajouter un fichier source ou une référence d’assembly supplémentaire.
 
-## <a name="symbols"></a>Symboles
+## <a name="symbols"></a>symboles
 
 Un symbole représente un élément distinct qui est déclaré dans le code source, ou importé en tant que métadonnées à partir d’un assembly. Chaque élément (espace de noms, type, méthode, propriété, champ, événement, paramètre ou variable locale) est représenté par un symbole.
 
 Diverses méthodes et propriétés du type <xref:Microsoft.CodeAnalysis.Compilation> vous aident à trouver les symboles. Par exemple, vous pouvez rechercher un symbole d’un type déclaré par son nom de métadonnées commun. Vous pouvez aussi accéder à la table de symboles entière comme une arborescence de symboles ayant pour racine l’espace de noms global.
 
-Les symboles contiennent également des informations supplémentaires que le compilateur collecte à partir du code source ou des métadonnées, par exemple, les autres symboles référencés. Chaque genre de symbole est représenté par une interface distincte dérivée de l’interface <xref:Microsoft.CodeAnalysis.ISymbol>, qui a ses propres méthodes et propriétés pour décrire en détail les informations collectées par le compilateur. Nombre de ces propriétés référencent directement d’autres symboles. Par exemple, la propriété <xref:Microsoft.CodeAnalysis.IMethodSymbol.ReturnType?displayProperty=nameWithType> indique quel symbole de type est référencé par la déclaration de méthode.
+Les symboles contiennent également des informations supplémentaires que le compilateur collecte à partir du code source ou des métadonnées, par exemple, les autres symboles référencés. Chaque genre de symbole est représenté par une interface distincte dérivée de l’interface <xref:Microsoft.CodeAnalysis.ISymbol>, qui a ses propres méthodes et propriétés pour décrire en détail les informations collectées par le compilateur. Nombre de ces propriétés référencent directement d’autres symboles. Par exemple, la <xref:Microsoft.CodeAnalysis.IMethodSymbol.ReturnType?displayProperty=nameWithType> propriété indique le type réel que la méthode retourne.
 
 Les symboles fournissent une représentation des espaces de noms, types et membres commune au code source et aux métadonnées. Par exemple, une méthode déclarée dans le code source et une méthode importée des métadonnées sont toutes les deux représentées par un symbole <xref:Microsoft.CodeAnalysis.IMethodSymbol> ayant les mêmes propriétés.
 

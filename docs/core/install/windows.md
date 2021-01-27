@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: 57cebc562949627be70aabe24e75ad4567d072fd
-ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
+ms.openlocfilehash: 33492cc6fa6c64ec3a1d745a4fa0c6cc418f87bd
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98536123"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898786"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -35,7 +35,7 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 > [!TIP]
 > Un `+` symbole représente la version minimale.
 
-| Système d'exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
+| Système d’exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
 |-----------------------------|---------------|---------------|--------|
 | Windows 10, version 20H2    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 2004    | ✔️           | ✔️            | ✔️    |
@@ -56,7 +56,7 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 
 ## <a name="unsupported-releases"></a>Mises en production non prises en charge
 
-Les versions suivantes de .NET ne sont ❌ plus prises en charge. Les téléchargements sont toujours publiés :
+Les versions suivantes de .NET ne sont ❌ plus prises en charge. Les téléchargements pour ces versions restent toujours publiés :
 
 - 3.0
 - 2.2
@@ -84,7 +84,7 @@ Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il
 
 Le kit de développement logiciel (SDK) est utilisé pour générer et publier des applications et des bibliothèques .NET. L’installation du kit de développement logiciel (SDK) comprend les trois [runtimes](#runtime-information): ASP.net Core, Desktop et .net.
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD024 -->
@@ -158,7 +158,7 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,2 :
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,2 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
 
-# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 Les versions de Windows suivantes sont prises en charge avec .NET Core 2,1 :
 
@@ -174,6 +174,18 @@ Les versions de Windows suivantes sont prises en charge avec .NET Core 2,1 :
 
 Pour plus d’informations sur les systèmes d’exploitation, les distributions et la stratégie de cycle de vie de .NET Core 2,1 pris en charge, consultez [versions de système d’exploitation prises en charge pour .net core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
 
+### <a name="offline-install-for-windows-7"></a>Installation hors connexion pour Windows 7
+
+Lorsque vous effectuez une installation hors connexion pour .NET Core 2,1 sur Windows 7, vous devez d’abord vous assurer que la dernière [autorité de certification racine Microsoft 2011](https://www.microsoft.com/pkiops/Docs/Repository.htm) a été installée sur l’ordinateur cible.
+
+L’outil _certmgr.exe_ peut automatiser l’installation d’un certificat et est obtenu à partir de Visual Studio ou du SDK Windows. La commande suivante est utilisée pour installer le certificat avant d’exécuter le programme d’installation de .NET Core 2,1 :
+
+```console
+certmgr.exe /add MicRooCerAut2011_2011_03_22.crt /s /r localMachine root
+```
+
+Veillez à consulter les dépendances requises pour [Windows 7 ci-dessous](#additional-deps).
+
 ---
 
 <!-- markdownlint-disable MD001 -->
@@ -184,7 +196,7 @@ Des dépendances supplémentaires sont requises si vous installez le kit de dév
 
 | Système d’exploitation         | Prérequis                                                                    |
 |--------------------------|----------------------------------------------------------------------------------|
-| Windows 7 SP1 [UDE][esu] | -Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits <br> -KB3063858 [64-bit][kb64]  /  [32][kb32] bits <br> - [MicrosoftRootCertificateAuthority2011. cer](https://go.microsoft.com/fwlink/?linkid=747875&clcid=0x409) (.net Core 2,1 uniquement) |
+| Windows 7 SP1 [UDE][esu] | -Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits <br> -KB3063858 [64-bit][kb64]  /  [32][kb32] bits <br> - [Autorité de certification racine Microsoft 2011](https://www.microsoft.com/pkiops/Docs/Repository.htm) (programme d’installation hors connexion .net Core 2,1 uniquement) |
 | Windows Vista SP 2       | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
 | Windows 8.1              | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
 | Windows Server 2008 R2   | Microsoft Visual C++ 2015-2019 Redistributable [64][vcc64]bits  /  [32][vcc32] bits |
@@ -331,5 +343,5 @@ Pour plus d’informations sur l’utilisation de .NET dans un conteneur d’anc
 [esu]: /troubleshoot/windows-client/windows-7-eos-faq/windows-7-extended-security-updates-faq
 [vcc64]: https://aka.ms/vs/16/release/vc_redist.x64.exe
 [vcc32]: https://aka.ms/vs/16/release/vc_redist.x86.exe
-[kb64]: https://www.microsoft.com/en-us/download/details.aspx?id=47442
-[kb32]: https://www.microsoft.com/en-us/download/details.aspx?id=47409
+[kb64]: https://www.microsoft.com/download/details.aspx?id=47442
+[kb32]: https://www.microsoft.com/download/details.aspx?id=47409
