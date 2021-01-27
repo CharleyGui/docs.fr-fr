@@ -5,16 +5,20 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: a1844ab3449b6bce526276eba693a1f2da0ebf6b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 6f085f87286aa5af4a3c2aaf2b74c9bf19023356
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91202173"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899436"
 ---
 # <a name="wcf-data-services-overview"></a>Vue d'ensemble des services de données WCF
 
-WCF Data Services permet la création et la consommation de services de données pour le Web ou un intranet à l’aide de la Open Data Protocol (OData). OData vous permet d’exposer vos données sous forme de ressources adressables par des URI. Cela vous permet d'accéder et de modifier des données en utilisant la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE. Cette rubrique fournit une vue d’ensemble des modèles et des pratiques définis par OData, ainsi que des fonctionnalités fournies par WCF Data Services pour tirer parti d’OData dans les applications basées sur .NET Framework.  
+[!INCLUDE [wcf-deprecated](~/includes/wcf-deprecated.md)]
+
+## <a name="overview"></a>Vue d’ensemble
+
+Services de données WCF permet la création et la consommation de services de données pour le Web ou un intranet à l’aide de la Open Data Protocol (OData). OData vous permet d’exposer vos données sous forme de ressources adressables par des URI. Cela vous permet d'accéder et de modifier des données en utilisant la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE. Cette rubrique fournit une vue d’ensemble des modèles et des pratiques définis par OData, ainsi que des fonctionnalités fournies par Services de données WCF pour tirer parti d’OData dans les applications basées sur .NET Framework.  
   
 ## <a name="address-data-as-resources"></a>Adresser des données comme ressources  
 
@@ -30,21 +34,21 @@ WCF Data Services permet la création et la consommation de services de données
   
 OData définit un ensemble d’extensions pour le protocole de publication Atom (AtomPub). Il prend en charge les requêtes et les réponses HTTP sous plusieurs formats de données pour prendre en charge des plateformes et des applications clientes diverses. Un flux OData peut représenter des données dans Atom, JavaScript Object Notation (JSON) et au format XML brut. Bien qu'Atom soit le format par défaut, le format du flux est spécifié dans l'en-tête de la requête HTTP. Pour plus d’informations, consultez [OData : format Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/) et [ODATA : format JSON](https://www.odata.org/documentation/odata-version-2-0/json-format/).  
   
- Lors de la publication de données sous forme de flux OData, WCF Data Services s’appuie sur d’autres fonctionnalités Internet existantes pour des opérations telles que la mise en cache et l’authentification. Pour ce faire, WCF Data Services s’intègre aux applications et services d’hébergement existants, tels que ASP.NET, Windows Communication Foundation (WCF) et Internet Information Services (IIS).  
+ Lors de la publication de données sous forme de flux OData, Services de données WCF s’appuie sur d’autres fonctionnalités Internet existantes pour des opérations telles que la mise en cache et l’authentification. Pour ce faire, Services de données WCF s’intègre aux applications et services d’hébergement existants, tels que ASP.NET, Windows Communication Foundation (WCF) et Internet Information Services (IIS).  
   
 ## <a name="storage-independence"></a>Indépendance du stockage  
 
- Bien que les ressources soient adressées selon un modèle de relation d’entité, WCF Data Services exposer des flux OData, quelle que soit la source de données sous-jacente. Une fois que WCF Data Services accepte une requête HTTP pour une ressource identifiée par un URI, la demande est désérialisée et une représentation de cette demande est transmise à un fournisseur WCF Data Services. Ce fournisseur traduit la demande dans un format spécifique à la source de données et exécute la demande sur la source de données sous-jacente. WCF Data Services atteint l’indépendance du stockage en séparant le modèle conceptuel qui traite les ressources prescrites par OData du schéma spécifique de la source de données sous-jacente.  
+ Bien que les ressources soient adressées selon un modèle de relation d’entité, Services de données WCF exposer des flux OData, quelle que soit la source de données sous-jacente. Une fois que Services de données WCF accepte une requête HTTP pour une ressource identifiée par un URI, la demande est désérialisée et une représentation de cette demande est transmise à un fournisseur Services de données WCF. Ce fournisseur traduit la demande dans un format spécifique à la source de données et exécute la demande sur la source de données sous-jacente. Services de données WCF atteint l’indépendance du stockage en séparant le modèle conceptuel qui traite les ressources prescrites par OData du schéma spécifique de la source de données sous-jacente.  
   
- WCF Data Services s’intègre au Entity Framework ADO.NET pour vous permettre de créer des services de données qui exposent des données relationnelles. Vous pouvez utiliser les outils Entity Data Model pour créer un modèle de données qui contient des ressources adressables en tant qu'entités et définir en même temps le mappage entre ce modèle et les tables dans la base de données sous-jacente. Pour plus d’informations, consultez [Entity Framework fournisseur](entity-framework-provider-wcf-data-services.md).  
+ Services de données WCF s’intègre au Entity Framework ADO.NET pour vous permettre de créer des services de données qui exposent des données relationnelles. Vous pouvez utiliser les outils Entity Data Model pour créer un modèle de données qui contient des ressources adressables en tant qu'entités et définir en même temps le mappage entre ce modèle et les tables dans la base de données sous-jacente. Pour plus d’informations, consultez [Entity Framework fournisseur](entity-framework-provider-wcf-data-services.md).  
   
- WCF Data Services vous permet également de créer des services de données qui exposent toutes les structures de données qui retournent une implémentation de l' <xref:System.Linq.IQueryable%601> interface. De cette manière, vous pouvez créer des services de données qui exposent des données à partir de types .NET Framework. Les opérations de création, de mise à jour et de suppression sont prises en charge lorsque vous implémentez également l'interface <xref:System.Data.Services.IUpdatable>. Pour plus d’informations, consultez la page [fournisseur de réflexion](reflection-provider-wcf-data-services.md).  
+ Services de données WCF vous permet également de créer des services de données qui exposent toutes les structures de données qui retournent une implémentation de l' <xref:System.Linq.IQueryable%601> interface. De cette manière, vous pouvez créer des services de données qui exposent des données à partir de types .NET Framework. Les opérations de création, de mise à jour et de suppression sont prises en charge lorsque vous implémentez également l'interface <xref:System.Data.Services.IUpdatable>. Pour plus d’informations, consultez la page [fournisseur de réflexion](reflection-provider-wcf-data-services.md).  
   
- Pour une illustration de la façon dont WCF Data Services s’intègre à ces fournisseurs de données, consultez le diagramme architectural plus loin dans cette rubrique.  
+ Pour une illustration de la façon dont Services de données WCF s’intègre à ces fournisseurs de données, consultez le diagramme architectural plus loin dans cette rubrique.  
   
 ## <a name="custom-business-logic"></a>Logique métier personnalisée  
 
- WCF Data Services facilite l’ajout d’une logique métier personnalisée à un service de données via des opérations de service et des intercepteurs. Les opérations de service sont des méthodes définies sur le serveur qui sont adressables par des URI sous la même forme que des ressources de données. Les opérations de service peuvent également utiliser la syntaxe d'expression de requête pour filtrer, classer et paginer des données retournées par une opération. Par exemple, l'URI `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$orderby=OrderDate&$top=10&$skip=10` représente un appel à une opération de service nommée `GetOrdersByCity` sur le service de données Northwind qui retourne des commandes de clients de Londres et des résultats paginés triés par `OrderDate`. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
+ Services de données WCF facilite l’ajout d’une logique métier personnalisée à un service de données via des opérations de service et des intercepteurs. Les opérations de service sont des méthodes définies sur le serveur qui sont adressables par des URI sous la même forme que des ressources de données. Les opérations de service peuvent également utiliser la syntaxe d'expression de requête pour filtrer, classer et paginer des données retournées par une opération. Par exemple, l'URI `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$orderby=OrderDate&$top=10&$skip=10` représente un appel à une opération de service nommée `GetOrdersByCity` sur le service de données Northwind qui retourne des commandes de clients de Londres et des résultats paginés triés par `OrderDate`. Pour plus d’informations, consultez [opérations de service](service-operations-wcf-data-services.md).  
   
  Les intercepteurs permettent à la logique d'application personnalisée d'être intégrée dans le traitement des messages de réponse ou de demande par un service de données. Les intercepteurs sont appelés lorsqu'une action de requête, d'insertion, de mise à jour ou de suppression a lieu dans le jeu d'entités spécifié. Un intercepteur peut alors modifier les données, appliquer la stratégie d'autorisation ou même mettre fin à l'opération. Les méthodes d'intercepteur doivent être enregistrées explicitement pour un jeu d'entités donné exposé par un service de données. Pour plus d’informations, consultez [intercepteurs](interceptors-wcf-data-services.md).  
   
@@ -52,15 +56,15 @@ OData définit un ensemble d’extensions pour le protocole de publication Atom 
 
  OData définit un ensemble de modèles uniformes pour l’interaction avec les services de données. Ainsi, il est possible de créer des composants réutilisables selon ces services, comme des bibliothèques côté client qui simplifient la consommation de ces services de données.  
   
- WCF Data Services comprend des bibliothèques clientes pour les applications clientes basées sur .NET Framework et Silverlight. Ces bibliothèques clientes vous permettent d'interagir avec les services de données en utilisant des objets .NET Framework. Elles prennent également en charge des requêtes basées sur des objets et des requêtes LINQ, le chargement des objets connexes, le suivi des modifications et la résolution d'identité. Pour plus d’informations, consultez [WCF Data Services bibliothèque cliente](wcf-data-services-client-library.md).  
+ Services de données WCF comprend des bibliothèques clientes pour les applications clientes basées sur .NET Framework et Silverlight. Ces bibliothèques clientes vous permettent d'interagir avec les services de données en utilisant des objets .NET Framework. Elles prennent également en charge des requêtes basées sur des objets et des requêtes LINQ, le chargement des objets connexes, le suivi des modifications et la résolution d'identité. Pour plus d’informations, consultez [services de données WCF bibliothèque cliente](wcf-data-services-client-library.md).  
   
  Outre les bibliothèques clientes OData incluses dans le .NET Framework et avec Silverlight, il existe d’autres bibliothèques clientes qui vous permettent de consommer un flux OData dans des applications clientes, telles que des applications PHP, AJAX et Java. Pour plus d’informations sur le kit de développement logiciel (SDK) OData, consultez [exemple de code ODATA SDK](https://www.odata.org/ecosystem/#sdk).
   
 ## <a name="architecture-overview"></a>Présentation de l'architecture  
 
- Le diagramme suivant illustre l’architecture WCF Data Services pour l’exposition de flux OData et l’utilisation de ces flux dans les bibliothèques clientes compatibles OData :  
+ Le diagramme suivant illustre l’architecture Services de données WCF pour l’exposition de flux OData et l’utilisation de ces flux dans les bibliothèques clientes compatibles OData :  
   
- ![Capture d’écran montrant un diagramme d’architecture WCF Data Services.](./media/wcf-data-services-overview/windows-communication-foundation-data-services-architecture.gif)  
+ ![Capture d’écran montrant un diagramme d’architecture Services de données WCF.](./media/wcf-data-services-overview/windows-communication-foundation-data-services-architecture.gif)  
   
 ## <a name="see-also"></a>Voir aussi
 

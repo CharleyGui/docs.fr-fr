@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.topic: how-to
 ms.custom: contperf-fy21q2
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: dfc702bfe183b3712b20c64f9e82d2d3c3edd6d5
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: db26b26ebcc51b57fdbe58ddaf92e5019cb69659
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512370"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899384"
 ---
 # <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Comment écrire un constructeur de copie (Guide de programmation C#)
 
@@ -23,7 +23,7 @@ C# ne fournit pas de constructeur de copie pour les objets, mais vous pouvez en 
 
  Dans l’exemple suivant, la `Person`[classe](../../language-reference/keywords/class.md) définit un constructeur de copie qui prend comme argument une instance de `Person`. Les valeurs des propriétés de l’argument sont assignées aux propriétés de la nouvelle instance de `Person`. Le code contient un autre constructeur de copie qui envoie les propriétés `Name` et `Age` de l’instance que vous voulez copier au constructeur d’instance de la classe.  
   
- [!code-csharp[csProgGuideObjects#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#16)]  
+ [!code-csharp[CopyConstructor](snippets/how-to-write-a-copy-constructor/Program.cs)]
   
 ## <a name="see-also"></a>Voir aussi
 

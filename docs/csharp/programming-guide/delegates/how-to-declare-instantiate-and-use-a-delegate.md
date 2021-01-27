@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: 83dbd2dc497fafaf1922f8ad53208d0ab14f14a9
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 08d8e10b4aba3fd75e200b2c8c14bb3d1825b318
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91185897"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898877"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Comment déclarer, instancier et utiliser un délégué (Guide de programmation C#)
 
@@ -34,7 +34,7 @@ Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués com
   
  Pour plus d’informations, consultez [expressions lambda](../../language-reference/operators/lambda-expressions.md).  
   
- L’exemple suivant illustre la déclaration, l’instanciation et l’utilisation d’un délégué. La classe `BookDB` encapsule une base de données de librairie qui tient à jour un inventaire des livres. Elle expose une méthode, `ProcessPaperbackBooks`, qui recherche tous les livres de poche dans la base de données et appelle un délégué pour chacun d’entre eux. Le type `delegate` qui est utilisé se nomme `ProcessBookDelegate`. La classe `Test` utilise cette classe pour imprimer les titres et le prix moyen des livres de poche.  
+ L’exemple suivant illustre la déclaration, l’instanciation et l’utilisation d’un délégué. La classe `BookDB` encapsule une base de données de librairie qui tient à jour un inventaire des livres. Elle expose une méthode, `ProcessPaperbackBooks`, qui recherche tous les livres de poche dans la base de données et appelle un délégué pour chacun d’entre eux. Le type `delegate` qui est utilisé se nomme `ProcessBookCallback`. La classe `Test` utilise cette classe pour imprimer les titres et le prix moyen des livres de poche.  
   
  L’utilisation des délégués favorise une bonne séparation des fonctionnalités entre la base de données de librairie et le code client. Le code client n’a aucune connaissance de la façon dont les livres sont stockés, ni de la façon dont le code librairie trouve les livres de poche. Le code librairie n’a aucune connaissance du traitement effectué sur les livres de poche une fois qu’il les a trouvés.  
   
