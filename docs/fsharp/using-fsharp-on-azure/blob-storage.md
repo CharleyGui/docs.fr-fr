@@ -1,19 +1,19 @@
 ---
-title: Bien démarrer avec le stockage Blob Azure en F#
+title: 'Prise en main du stockage d’objets BLOB Azure à l’aide de F #'
 description: Stockez des données non structurées dans le Cloud avec le stockage d’objets BLOB Azure.
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 91aec8fc2b57c71ce4ba47d62619912af6c71e59
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 58c120c26a1e99481b49ae3a0fb096a2188f359e
+ms.sourcegitcommit: 4d5e25a46aa7cd0d29b4b9227b92987354d444c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756245"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98794811"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main du stockage d’objets BLOB Azure à l’aide de F\#
 
-Le stockage d’objets blob Azure est un service qui stocke des données non structurées dans le cloud en tant qu’objets/blobs. Ce service peut stocker tout type de données texte ou binaires, par exemple, un document, un fichier multimédia ou un programme d’installation d’application. Le stockage d’objets blob est également appelé Stockage Blob.
+Le stockage BLOB Azure est un service qui stocke des données non structurées dans le Cloud en tant qu’objets/objets BLOB. Ce service peut stocker tout type de données texte ou binaires, par exemple, un document, un fichier multimédia ou un programme d’installation d’application. Le stockage d’objets blob est également appelé Stockage Blob.
 
 Cet article explique comment effectuer des tâches courantes à l’aide du stockage d’objets BLOB. Les exemples sont écrits à l’aide de F # à l’aide de la bibliothèque cliente Azure Storage pour .NET. Les tâches traitées incluent le chargement, la liste, le téléchargement et la suppression d’objets BLOB.
 
