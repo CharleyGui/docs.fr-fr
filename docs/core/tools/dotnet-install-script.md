@@ -2,16 +2,16 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer le kit de développement logiciel (SDK) .NET et le runtime partagé.
 ms.date: 09/22/2020
-ms.openlocfilehash: a1598a84aa31aeac970f0493d1481651164d733e
-ms.sourcegitcommit: b201d177e01480a139622f3bf8facd367657a472
+ms.openlocfilehash: 1904d0322774de25aeba7e7a53ab36ce135d685d
+ms.sourcegitcommit: 7e42488c2f8f63f6d499b5f8fb1dec5bac9ad254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634440"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98957874"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet-install.ps1` | `dotnet-install.sh` -Script utilisé pour installer le kit de développement logiciel (SDK) .NET et le runtime partagé.
 
@@ -157,9 +157,15 @@ Les scripts d’installation ne mettent pas à jour le registre sur Windows. Ils
   - `aspnetcore` - le runtime partagé `Microsoft.AspNetCore.App`.
   - `windowsdesktop` - le runtime partagé `Microsoft.WindowsDesktop.App`.
 
-- **`--runtime-id <RID>`**
+- **`--runtime-id <RID>` Déconseillé**
 
-  Spécifie l' [identificateur du runtime](../rid-catalog.md) pour lequel les outils sont installés. Utilisez `linux-x64` pour portable Linux. (Valide uniquement pour Linux/macOS.)
+  Spécifie l' [identificateur du runtime](../rid-catalog.md) pour lequel les outils sont installés. Utilisez `linux-x64` pour portable Linux. (Valide uniquement pour Linux/macOS et pour les versions antérieures à .NET Core 2,1.)
+
+  **`--os <OPERATING_SYSTEM>`**
+
+  Spécifie le système d’exploitation pour lequel les outils sont installés. Les valeurs possibles sont : `osx` , `linux` ,, `linux-musl` `freebsd` , `rhel.6` . (Valide pour .NET Core 2,1 et versions ultérieures.)
+
+  Le paramètre est facultatif et ne doit être utilisé que lorsqu’il est requis pour remplacer le système d’exploitation qui est détecté par le script.
 
 - **`-SharedRuntime|--shared-runtime`**
 

@@ -2,12 +2,12 @@
 title: Quel système d’exploitation cibler avec les conteneurs .NET
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Quel système d’exploitation cibler avec les conteneurs .NET
 ms.date: 01/13/2021
-ms.openlocfilehash: 1b914d9afca9ade37f13e639f73001b91f338d26
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: b128a7b98d7f46034a56314bd8cc6b4f5731f121
+ms.sourcegitcommit: 7e42488c2f8f63f6d499b5f8fb1dec5bac9ad254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98187979"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98957908"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Quel système d’exploitation cibler avec les conteneurs .NET
 
@@ -27,9 +27,6 @@ Lors du déploiement d’applications .NET Framework héritées, vous devez cibl
 
 Vous pouvez aussi créer votre propre image Docker si souhaitez utiliser une autre distribution Linux ou une image contenant des versions non fournies par Microsoft. Par exemple, vous pouvez créer une image avec ASP.NET Core s’exécutant sur le .NET Framework classique et Windows Server Core, ce qui n’est pas un scénario très courant pour Docker.
 
-> [!IMPORTANT]
-> Lorsque vous utilisez des images Windows Server Core, vous pouvez constater que certaines dll sont manquantes, par rapport aux images Windows complètes. Vous pouvez peut-être résoudre ce problème en créant une image Server Core personnalisée, en ajoutant les fichiers manquants au moment de la génération de l’image, comme indiqué dans ce [Commentaire GitHub](https://github.com/microsoft/dotnet-framework-docker/issues/299#issuecomment-511537448).
-
 Au moment d’ajouter le nom de l’image à votre fichier Dockerfile, vous pouvez sélectionner le système d’exploitation et la version en fonction de la balise que vous utilisez, comme dans les exemples suivants :
 
 | Image | Commentaires |
@@ -38,11 +35,6 @@ Au moment d’ajouter le nom de l’image à votre fichier Dockerfile, vous pouv
 | mcr.microsoft.com/dotnet/aspnet:5.0 | Architecture multi-architecture ASP.NET Core 5,0 : prend en charge Linux et Windows nano Server en fonction de l’hôte de l’ordinateur de la station d’accueil. <br/> L’image aspnetcore a quelques optimisations pour ASP.NET Core. |
 | mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim | Runtime .NET 5 uniquement sur Linux Debian distribution |
 | mcr.microsoft.com/dotnet/aspnet:5.0-nanoserver-1809 | Runtime .NET 5 uniquement sur Windows nano Server (Windows Server version 1809) |
-
-## <a name="additional-resources"></a>Ressources supplémentaires
-
-- **BitmapDecoder échoue en raison d’un WindowsCodecsExt.dll manquant (problème GitHub)**  
-  <https://github.com/microsoft/dotnet-framework-docker/issues/299>
 
 > [!div class="step-by-step"]
 > [Précédent](container-framework-choice-factors.md) 

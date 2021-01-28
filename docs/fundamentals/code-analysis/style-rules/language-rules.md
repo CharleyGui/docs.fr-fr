@@ -12,12 +12,12 @@ helpviewer_keywords:
 - language code style rules [EditorConfig]
 - language rules
 - EditorConfig language conventions
-ms.openlocfilehash: b77d9aa2a528a6cf540babd5e5acc148e48c489c
-ms.sourcegitcommit: 721c3e4bdbb1ea0bb420818ec944c538fe5c513a
+ms.openlocfilehash: 2aa2261534363f1da6a2109f092e08d210ebd915
+ms.sourcegitcommit: 7e42488c2f8f63f6d499b5f8fb1dec5bac9ad254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96588719"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98957973"
 ---
 # <a name="language-rules"></a>Règles de langage
 
@@ -31,10 +31,21 @@ Les règles de langage de style de code affectent la manière dont les différen
 
 Les options des règles de langue peuvent être spécifiées dans un fichier EditorConfig au format suivant :
 
+`option_name = value` (Visual Studio 2019 version 16,9 Preview 2 et versions ultérieures)
+
+ou
+
 `option_name = value:severity`
 
-- **Valeur**: pour chaque règle de langue, vous spécifiez une valeur qui définit si le style doit être préféré ou pas. De nombreuses règles acceptent la valeur `true` (préférer ce style) ou `false` (ne pas préférer ce style). D’autres règles acceptent des valeurs telles que `when_on_single_line` ou `never` .
-- **Gravité**: la deuxième partie de la règle spécifie le [niveau de gravité](../configuration-options.md#severity-level) de la règle. La spécification de gravité dans le cadre de la syntaxe d’option ci-dessus n’est respectée que dans les IDE de développement, tels que Visual Studio. Ce paramètre n’est pas compris par les compilateurs C# ou VB, il n’est donc pas respecté pendant la génération. Au lieu de cela, pour appliquer des règles de style de code à la génération, vous devez définir la gravité en utilisant la syntaxe de configuration de gravité basée sur l’ID de règle pour les analyseurs. La syntaxe prend la forme `dotnet_diagnostic.<rule ID>.severity = <severity>` , par exemple, `dotnet_diagnostic.IDE0040.severity = silent` . Pour plus d’informations, consultez ce [problème GitHub](https://github.com/dotnet/roslyn/issues/44201).
+- **Valeur**
+
+  Pour chaque règle de langue, vous spécifiez une valeur qui définit si le style doit être préféré ou pas. De nombreuses règles acceptent la valeur `true` (préférer ce style) ou `false` (ne pas préférer ce style). D’autres règles acceptent des valeurs telles que `when_on_single_line` ou `never` .
+
+- **Gravité** (facultatif dans Visual Studio 2019 version 16,9 Preview 2 et versions ultérieures)
+
+  La deuxième partie de la règle spécifie le [niveau de gravité](../configuration-options.md#severity-level) de la règle. Lorsqu’il est spécifié de cette manière, le paramètre de gravité est respecté uniquement dans les IDE de développement, tels que Visual Studio. Elle n’est *pas* respectée lors de la génération.
+
+  Pour appliquer des règles de style de code au moment de la génération, définissez la gravité en utilisant la syntaxe de configuration de gravité basée sur l’ID de règle pour les analyseurs à la place. La syntaxe prend la forme `dotnet_diagnostic.<rule ID>.severity = <severity>` , par exemple, `dotnet_diagnostic.IDE0040.severity = silent` . Pour plus d’informations, consultez [niveau de gravité](../configuration-options.md#severity-level).
 
 > [!TIP]
 >

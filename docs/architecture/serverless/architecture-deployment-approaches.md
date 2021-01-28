@@ -4,12 +4,12 @@ description: Guide sur les différentes façons dont les architectures d’entre
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 7e91412600e8e4e5a0dca2a454f1cb0680c881b2
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 89a8e6a52331b563be334a867f563e9ded8d8cc4
+ms.sourcegitcommit: 7e42488c2f8f63f6d499b5f8fb1dec5bac9ad254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91173339"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98957960"
 ---
 # <a name="architecture-deployment-approaches"></a>Approches du déploiement de l’architecture
 
@@ -101,7 +101,7 @@ Pour plus d’informations sur les conteneurs d’ancrage, consultez [qu’est-c
 
 La gestion des conteneurs sur les hôtes nécessite généralement un outil d’orchestration tel que Kubernetes. La configuration et la gestion des solutions d’orchestration peuvent ajouter une surcharge et une complexité supplémentaires aux projets. Heureusement, de nombreux fournisseurs de Cloud fournissent des services d’orchestration via des solutions PaaS pour simplifier la gestion des conteneurs.
 
-L’image suivante illustre un exemple d’installation de Kubernetes. Les nœuds de l’adresse d’installation sont mis à l’échelle et basculement. Ils exécutent des instances de conteneur de l’arrimeur qui sont gérées par le serveur maître. Le *kubelet* est le client qui relaie les commandes de Kubernetes vers l’ancrage.
+L’image suivante illustre un exemple d’installation de Kubernetes. Les nœuds de l’adresse d’installation sont mis à l’échelle et basculement. Ils exécutent des instances de conteneur de l’arrimeur qui sont gérées par le serveur principal. Le *kubelet* est le client qui relaie les commandes de Kubernetes vers l’ancrage.
 
 ![Kubernetes](./media/kubernetes-example.png)
 
@@ -138,9 +138,9 @@ Il existe un large éventail de choix disponibles pour l’architecture, y compr
 
 |         |IaaS     |PaaS     |Conteneur|Sans serveur|
 |---------|---------|---------|---------|----------|
-|**Mise à l’échelle**|Machine virtuelle       |Instance |Application      |Fonction  |
+|**Mettre à l’échelle**|Machine virtuelle       |Instance |Application      |Fonction  |
 |**Extrait**|Matériel|Plateforme|Hôte de système d’exploitation|Runtime   |
-|**Unité** |Machine virtuelle       |Projet  |Image    |Code      |
+|**Unité** |Machine virtuelle       |Project  |Image    |Code      |
 |**Durée de vie**|Mois|Jours à mois|Minutes et jours|Millisecondes en minutes|
 |**Responsabilité**|Applications, dépendances, Runtime et système d’exploitation|Applications et dépendances|Applications, dépendances et Runtime|Fonction
 
@@ -162,7 +162,7 @@ Le chapitre suivant se concentre sur l’architecture sans serveur, les cas d’
 - [Microservices](/azure/architecture/guide/architecture-styles/microservices)
 - [Architecture de référence multiniveau d’ordinateur virtuel](/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
 - [Machines virtuelles](/azure/virtual-machines/)
-- [Présentation de Docker](../microservices/container-docker-introduction/docker-defined.md)
+- [Qu’est-ce que Docker ?](../microservices/container-docker-introduction/docker-defined.md)
 - [Application SaaS Wingtip tickets](/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
 >[!div class="step-by-step"]

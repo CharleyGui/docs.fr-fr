@@ -6,12 +6,12 @@ author: Niharikadutta
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 945e494e8a027d438bf4659d989da6033a13f6f0
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 3889088ce32046f72a9a3392e28a5a36cda4745e
+ms.sourcegitcommit: 7e42488c2f8f63f6d499b5f8fb1dec5bac9ad254
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687601"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98957843"
 ---
 # <a name="connect-net-for-apache-spark-to-mongodb"></a>Connectez .NET pour Apache Spark à MongoDB
 
@@ -19,7 +19,7 @@ Dans cet article, vous allez apprendre à vous connecter à une instance MongoDB
 
 ## <a name="prerequisites"></a>Prérequis
 
-1. Avoir un serveur MongoDB opérationnel avec une [base de données et une collection](https://docs.mongodb.com/manual/core/databases-and-collections/) ajoutée (téléchargez [ce serveur de communauté](https://www.mongodb.com/try/download/community) pour un serveur local ou vous pouvez essayer [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) pour un service Cloud MongoDB).
+- Avoir un serveur MongoDB opérationnel avec une [base de données et une collection](https://docs.mongodb.com/manual/core/databases-and-collections/) ajoutée (téléchargez [ce serveur de communauté](https://www.mongodb.com/try/download/community) pour un serveur local ou vous pouvez essayer [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) pour un service Cloud MongoDB).
 
 ## <a name="set-up-your-mongodb-instance"></a>Configurer votre instance MongoDB
 
@@ -38,7 +38,7 @@ Pour que Apache Spark .NET puisse communiquer avec votre instance MongoDB, vous 
     )
     ```
 
-2. Assurez-vous que l’adresse IP de l’ordinateur sur lequel votre application .NET pour Apache Spark s’exécute est liste d’autorisation pour que le serveur MongoDB puisse se connecter à. Vous pouvez vous reporter à [ce guide](https://docs.atlas.mongodb.com/security/add-ip-address-to-list/) pour savoir comment procéder.
+2. Assurez-vous que l’adresse IP de l’ordinateur sur lequel s’exécute votre application .NET pour Apache Spark est allowlisted pour que le serveur MongoDB puisse se connecter à. Vous pouvez vous reporter à [ce guide](https://docs.atlas.mongodb.com/security/add-ip-address-to-list/) pour savoir comment procéder.
 
 ## <a name="configure-your-net-for-apache-spark-application"></a>Configurer votre application .NET pour Apache Spark
 
@@ -79,7 +79,7 @@ Pour que Apache Spark .NET puisse communiquer avec votre instance MongoDB, vous 
 
 ## <a name="run-your-application"></a>Exécuter votre application
 
-Pour exécuter votre application .NET pour Apache Spark, vous devez définir le module dans `mongo-spark-connector` le cadre de la définition de build dans votre projet Spark, à l’aide `libraryDependency` de dans `build.sbt` pour les projets SBT. Pour les environnements Spark tels que `spark-submit` (ou `spark-shell` ), vous devez utiliser l' `--packages` option de ligne de commande comme suit :
+Pour exécuter votre application .NET pour Apache Spark, vous devez définir le module dans `mongo-spark-connector` le cadre de la définition de build dans votre projet Spark, à l’aide `libraryDependency` de dans `build.sbt` pour les projets SBT. Pour les environnements Spark tels que `spark-submit` (ou `spark-shell` ), utilisez l' `--packages` option de ligne de commande comme suit :
 
 ```bash
 spark-submit --master local --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.0 --class org.apache.spark.deploy.dotnet.DotnetRunner microsoft-spark-<spark_majorversion-spark_minorversion>_<scala_majorversion.scala_minorversion>-<spark_dotnet_version>.jar yourApp.exe
@@ -88,7 +88,7 @@ spark-submit --master local --packages org.mongodb.spark:mongo-spark-connector_2
 > [!NOTE]
 > Veillez à inclure la version du package conformément à la version de Spark en cours d’exécution.
 
-Le résultat affiché est le tableau ( `df` ), comme indiqué ci-dessous :
+Le résultat affiché est le tableau ( `df` ) illustré ici :
 
 ```text
 +--------------------+----+-------+
