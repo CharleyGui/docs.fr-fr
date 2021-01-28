@@ -282,13 +282,13 @@
 - name: Utiliser F# sur Azure
   href: using-fsharp-on-azure/index.md
   items:
-    - name: "Bien démarrer avec le stockage Blob Azure en\_F#"
+    - name: 'Prise en main du stockage d’objets BLOB Azure à l’aide de F #'
       href: using-fsharp-on-azure/blob-storage.md
-    - name: "Bien démarrer avec le stockage Fichier Azure en\_F#"
+    - name: 'Prise en main du stockage de fichiers Azure à l’aide de F #'
       href: using-fsharp-on-azure/file-storage.md
-    - name: "Bien démarrer avec le stockage File d’attente Azure en\_F#"
+    - name: 'Prise en main du stockage de files d’attente Azure à l’aide de F #'
       href: using-fsharp-on-azure/queue-storage.md
-    - name: "Bien démarrer avec le stockage Table Azure en\_F#"
+    - name: 'Prise en main du stockage de tables Azure à l’aide de F #'
       href: using-fsharp-on-azure/table-storage.md
     - name: "Gestion des packages pour les dépendances\_F# Azure"
       href: using-fsharp-on-azure/package-management.md
