@@ -1,15 +1,15 @@
 ---
-title: Bien démarrer avec le stockage File d’attente Azure en F#
+title: 'Prise en main du stockage de files d’attente Azure à l’aide de F #'
 description: Les files d’attente Azure fournissent une messagerie asynchrone fiable entre les composants d’application. La messagerie cloud permet de mettre à l’échelle vos composants d’application indépendamment.
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: daa5372b7903f10c0d966c5c92e35c8bf9d362d8
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 0ab131647e37985d45073966ffc01b9a7f379e2f
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91756219"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899293"
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>Prise en main du stockage de files d’attente Azure à l’aide de F\#
 
@@ -78,7 +78,7 @@ Cet exemple montre comment créer une file d’attente si elle n’existe pas d�
 
 ## <a name="insert-a-message-into-a-queue"></a>Insertion d'un message dans une file d'attente
 
-Pour insérer un message dans une file d’attente existante, commencez par créer un nouveau `CloudQueueMessage` . Ensuite, appelez la `AddMessage` méthode. Un `CloudQueueMessage` peut être créé à partir d’une chaîne (au format UTF-8) ou d’un `byte` tableau, comme suit :
+Pour insérer un message dans une file d’attente existante, commencez par créer un `CloudQueueMessage`. Appelez ensuite la méthode `AddMessage`. Un `CloudQueueMessage` peut être créé à partir d’une chaîne (au format UTF-8) ou d’un `byte` tableau, comme suit :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L42-L44)]
 
@@ -104,7 +104,7 @@ Vous pouvez modifier le contenu d’un message récupéré sur place dans la fil
 
 ## <a name="de-queue-the-next-message"></a>Enlèvement du message suivant de la file d'attente
 
-Votre code enlève un message d'une file d'attente en deux étapes. Lorsque vous appelez `GetMessage` , vous recevez le message suivant dans une file d’attente. Un message renvoyé par `GetMessage` devient invisible par les autres codes lisant les messages de cette file d'attente. Par défaut, ce message reste invisible pendant 30 secondes. Pour terminer la suppression du message de la file d’attente, vous devez également appeler `DeleteMessage` . Ce processus de suppression d'un message en deux étapes garantit que, si votre code ne parvient pas à traiter un message à cause d'une défaillance matérielle ou logicielle, une autre instance de votre code peut obtenir le même message et réessayer. Votre code appelle `DeleteMessage` juste après le traitement du message.
+Votre code enlève un message d'une file d'attente en deux étapes. Lorsque vous appelez `GetMessage`, vous obtenez le message suivant dans une file d'attente. Un message renvoyé par `GetMessage` devient invisible par les autres codes lisant les messages de cette file d'attente. Par défaut, ce message reste invisible pendant 30 secondes. Pour finaliser la suppression du message de la file d’attente, vous devez aussi appeler `DeleteMessage`. Ce processus de suppression d'un message en deux étapes garantit que, si votre code ne parvient pas à traiter un message à cause d'une défaillance matérielle ou logicielle, une autre instance de votre code peut obtenir le même message et réessayer. Votre code appelle `DeleteMessage` juste après le traitement du message.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L75-L76)]
 
@@ -129,7 +129,7 @@ Vous pouvez obtenir une estimation du nombre de messages dans une file d'attente
 
 ## <a name="delete-a-queue"></a>Suppression d'une file d'attente
 
-Pour supprimer une file d’attente et tous les messages qu’elle contient, appelez la `Delete` méthode sur l’objet file d’attente.
+Pour supprimer une file d’attente et tous les messages qu’elle contient, appelez la méthode `Delete` sur l’objet file d’attente.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 

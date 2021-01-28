@@ -4,12 +4,12 @@ description: 'Guide d’utilisation des services Azure avec F #'
 author: sylvanc
 ms.date: 07/29/2020
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: c3235db9274065f81e5476d8d0e06b99d7c987a0
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 16599aa48776acee05edf8201cdd148a87507cdb
+ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100137"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98899407"
 ---
 # <a name="using-f-on-azure"></a>Utilisation de F# dans Azure
 
@@ -42,10 +42,10 @@ Autres ressources relatives à l’utilisation d’Azure Functions et de F# :
 
 Stockage Azure est une couche de base de services de stockage pour les applications modernes qui s’appuient sur la durabilité, la disponibilité et la scalabilité afin de répondre aux besoins de leurs clients. Les programmes F # peuvent interagir directement avec les services de stockage Azure, à l’aide des techniques décrites dans les articles suivants.
 
-* [Bien démarrer avec le stockage Blob Azure en F#](blob-storage.md)
-* [Bien démarrer avec le stockage Fichier Azure en F#](file-storage.md)
-* [Bien démarrer avec le stockage File d’attente Azure en F#](queue-storage.md)
-* [Bien démarrer avec le stockage Table Azure en F#](table-storage.md)
+* [Prise en main du stockage d’objets BLOB Azure à l’aide de F #](blob-storage.md)
+* [Prise en main du stockage de fichiers Azure à l’aide de F #](file-storage.md)
+* [Prise en main du stockage de files d’attente Azure à l’aide de F #](queue-storage.md)
+* [Prise en main du stockage de tables Azure à l’aide de F #](table-storage.md)
 
 Vous pouvez aussi utiliser Stockage Azure conjointement avec Azure Functions en remplaçant les appels d’API explicites par une configuration déclarative. Pour obtenir des exemples d’utilisation de F#, consultez [Déclencheurs et liaisons Azure Functions pour Stockage Azure](/azure/azure-functions/functions-bindings-storage).
 
