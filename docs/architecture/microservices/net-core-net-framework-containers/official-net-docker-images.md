@@ -2,12 +2,12 @@
 title: Images officielles .NET Docker
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Images officielles .NET Docker
 ms.date: 01/13/2021
-ms.openlocfilehash: 3f4b58b2775c4e80b69cbd707396ebe98ccfe29c
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: 072e565260bf81c123ee837ccca46fbdf7c67361
+ms.sourcegitcommit: 78eb25647b0c750cd80354ebd6ce83a60668e22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98188619"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065120"
 ---
 # <a name="official-net-docker-images"></a>Images officielles .NET Docker
 
@@ -48,7 +48,7 @@ En explorant les dépôts d’images .NET dans Docker Hub, vous trouverez plusie
 | Image | Commentaires |
 |-------|----------|
 | mcr.microsoft.com/dotnet/aspnet :**5,0** | ASP.NET Core, avec le runtime uniquement et les optimisations ASP.NET Core, Linux et Windows (multi-arch) |
-| mcr.microsoft.com/dotnet/sdk :**5,01** | .NET 5, avec les kits de développement logiciel (SDK) inclus, sur Linux et Windows (multi-arch) |
+| mcr.microsoft.com/dotnet/sdk :**5,0** | .NET 5, avec les kits de développement logiciel (SDK) inclus, sur Linux et Windows (multi-arch) |
 
 > [!div class="step-by-step"]
 > [Précédent](net-container-os-targets.md) 

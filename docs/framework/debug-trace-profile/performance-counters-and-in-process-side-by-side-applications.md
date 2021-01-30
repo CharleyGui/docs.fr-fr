@@ -11,12 +11,12 @@ helpviewer_keywords:
 - performance,.NET Framework applications
 - performance monitoring,counters
 ms.assetid: 6888f9be-c65b-4b03-a07b-df7ebdee2436
-ms.openlocfilehash: a40cc1d318fbca3feca89431ce18d18d2e5c3e9f
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: 5cc3951c65a0be37294324c767a00bc7a35634b8
+ms.sourcegitcommit: 78eb25647b0c750cd80354ebd6ce83a60668e22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96254517"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065036"
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Compteurs de performance et applications côte à côte in-process
 
@@ -39,11 +39,11 @@ ms.locfileid: "96254517"
 |||  
 |-|-|  
 |Nom de clé|HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\\.NETFramework\Performance|  
-|Nom de la valeur|ProcessNameFormat|  
+|Nom de valeur|ProcessNameFormat|  
 |Type de valeur|REG_DWORD|  
-|Valeur|1 (0x00000001)|  
+|Valeur|2 (0x00000002)|
   
- La valeur 0 pour `ProcessNameFormat` indique que le comportement par défaut est « Activé » ; autrement dit, Perfmon.exe affiche les compteurs de performance pour chaque application. Quand vous affectez la valeur 1, Perfmon.exe lève l’ambiguïté liée aux versions multiples d’une application et fournit des compteurs de performance pour chaque runtime. Toute autre valeur pour le paramètre de clé de Registre `ProcessNameFormat` est non prise en charge et réservée à un usage ultérieur.  
+ La valeur 0 pour `ProcessNameFormat` indique que le comportement par défaut est « Activé » ; autrement dit, Perfmon.exe affiche les compteurs de performance pour chaque application. Lorsque vous définissez cette valeur sur 2, Perfmon.exe ambiguïté plusieurs versions d’une application et fournit des compteurs de performances pour chaque Runtime. Toute autre valeur pour le paramètre de clé de Registre `ProcessNameFormat` est non prise en charge et réservée à un usage ultérieur.
   
  Après avoir mis à jour le paramètre de clé de Registre `ProcessNameFormat`, vous devez redémarrer Perfmon.exe ou tout autre consommateur de compteurs de performance afin que la nouvelle fonctionnalité de nommage d’instance fonctionne correctement.  
   
@@ -52,11 +52,9 @@ ms.locfileid: "96254517"
  [!code-csharp[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/cs/regsetting1.cs#1)]
  [!code-vb[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/vb/regsetting1.vb#1)]  
   
- Lorsque vous apportez cette modification au registre, Perfmon.exe affiche les noms des applications qui ciblent le .NET Framework 4 As *application* _ `p` *ProcessID* \_ `r` *runtimeID*, où *application* est le nom de l’application, *ProcessID* est l’identificateur de processus de l’application et *runtimeID* est un identificateur de Common Language Runtime. Par exemple, si une application nommée MonApp.exe charge deux instances du Common Language Runtime, Perfmon.exe peut identifier une instance comme MonApp_p1416_r10 et la deuxième comme MonApp_p3160_r10. L’identificateur de runtime lève uniquement l’ambiguïté liée aux runtimes dans un processus ; il ne fournit aucune autre information sur le runtime. (Par exemple, l’ID de runtime n’a aucun lien avec la version ou la référence SKU du runtime.)  
-  
- Si le .NET Framework 4 est installé, la modification du Registre affecte également les applications qui ont été développées à l’aide de versions antérieures du .NET Framework. Celles-ci apparaissent dans Perfmon.exe en tant que *application_* `p` *ProcessID*, où *application* est le nom de l’application et *ProcessID* est l’identificateur du processus. Par exemple, si les compteurs de performance de deux applications nommées MonApp.exe sont analysés, l’un d’eux peut apparaître comme MonApp_p23900 et l’autre comme MonApp_p24908.  
+ Lorsque vous apportez cette modification au registre et si .NET Framework 4 ou version ultérieure est installé, Perfmon.exe affiche les noms des applications sous la forme *application* _ `p` *ProcessID*, où *application* est le nom de l’application et *ProcessID* est l’identificateur de processus de l’application. Par exemple, si une application nommée myapp.exe charge deux instances du common language runtime, Perfmon.exe peut identifier une instance comme myapp_1416 et la seconde comme myapp_3160.
   
 > [!NOTE]
 > L’identificateur de processus élimine l’ambiguïté liée à la résolution de deux applications du même nom qui utilisent des versions antérieures du runtime. Aucun identificateur de runtime n’est nécessaire pour les versions antérieures, car les versions précédentes du Common Language Runtime ne prennent pas en charge les scénarios côte à côte.  
   
- Si la .NET Framework 4 n’est pas présente ou a été désinstallée, la définition de la clé de Registre n’a aucun effet. Cela signifie que deux applications portant le même nom continueront d’apparaître dans Perfmon.exe comme *application* et *application#1* (par exemple, **MonApp** et **MonApp#1**).
+ Si la .NET Framework 4 ou une version ultérieure n’est pas présente ou a été désinstallée, la définition de la clé de Registre n’a aucun effet. Cela signifie que deux applications portant le même nom continueront d’apparaître dans Perfmon.exe comme *application* et *application#1* (par exemple, **MonApp** et **MonApp#1**).

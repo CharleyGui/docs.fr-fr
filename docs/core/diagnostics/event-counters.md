@@ -2,12 +2,12 @@
 title: EventCounters dans .NET Core
 description: Dans cet article, vous allez découvrir les EventCounters, comment les implémenter et comment les utiliser.
 ms.date: 08/07/2020
-ms.openlocfilehash: 08180b5580d2e7fe782fbd531a26872715825cdf
-ms.sourcegitcommit: 4b79862c5b41fbd86cf38f926f6a49516059f6f2
+ms.openlocfilehash: 843f1ec645bf7f52fd4f85e30d183e6e21fee5c6
+ms.sourcegitcommit: 78eb25647b0c750cd80354ebd6ce83a60668e22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678198"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065062"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters dans .NET Core
 
@@ -195,11 +195,11 @@ Vous pouvez utiliser les valeurs de compteur via l' <xref:System.Diagnostics.Tra
 
 Tout d’abord, le <xref:System.Diagnostics.Tracing.EventSource> qui produit la valeur de compteur doit être activé. Substituez la <xref:System.Diagnostics.Tracing.EventListener.OnEventSourceCreated%2A?displayProperty=nameWithType> méthode pour obtenir une notification quand un <xref:System.Diagnostics.Tracing.EventSource> est créé, et si c’est le correct <xref:System.Diagnostics.Tracing.EventSource> avec votre EventCounters, vous pouvez appeler <xref:System.Diagnostics.Tracing.EventListener.EnableEvents%2A?displayProperty=nameWithType> dessus. Voici un exemple de remplacement :
 
-:::code language="csharp" source="snippets/EventCounters/SimpleEventListener.cs" range="16-27":::
+:::code language="csharp" source="snippets/EventCounters/SimpleEventListener.cs" range="11-22":::
 
 #### <a name="sample-code"></a>Exemple de code
 
-Voici un exemple de <xref:System.Diagnostics.Tracing.EventListener> classe qui imprime tous les noms et valeurs de compteur à partir du Runtime .NET <xref:System.Diagnostics.Tracing.EventSource> , pour la publication de ses compteurs internes ( `System.Runtime` ) à un certain intervalle.
+Voici un exemple de <xref:System.Diagnostics.Tracing.EventListener> classe qui imprime tous les noms et valeurs de compteur à partir du Runtime .NET <xref:System.Diagnostics.Tracing.EventSource> , pour la publication de ses compteurs internes ( `System.Runtime` ) chaque seconde.
 
 :::code language="csharp" source="snippets/EventCounters/SimpleEventListener.cs":::
 

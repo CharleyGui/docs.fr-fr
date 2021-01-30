@@ -16,42 +16,40 @@ helpviewer_keywords:
 - naming code style rules [EditorConfig]
 - naming rules
 - EditorConfig naming conventions
-ms.openlocfilehash: 0eea5e89ac5055a45d9ead14363cc2f2fc574401
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: 1fce275204b729b4d23729ca432e06a5a249620d
+ms.sourcegitcommit: 78eb25647b0c750cd80354ebd6ce83a60668e22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98191077"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065133"
 ---
 # <a name="naming-rules"></a>Règles d’affectation des noms
 
-Les règles de nommage concernent le nom des éléments de code du langage de programmation .NET, tels que les classes, les propriétés et les méthodes. Par exemple, vous pouvez spécifier que les membres publics doivent être en majuscules ou que les champs privés doivent commencer par `_` .
+Dans votre `.editorconfig` fichier, vous pouvez définir des **règles d’affectation de noms** pour la façon dont les éléments de code du langage de programmation .NET &mdash; tels que les classes, les propriétés et les méthodes &mdash; doivent être nommés. Par exemple, vous pouvez spécifier que les membres publics doivent être en majuscules ou que les champs privés doivent commencer par `_` .
 
-Une règle de nommage se compose de trois parties :
+Une règle de nommage comporte trois composants :
 
-* Groupe de symboles auquel il s’applique.
-* Style d’affectation de noms à associer à la règle.
+* **Groupe** &mdash; de symboles auquel la règle s’applique.
+* **Style d’affectation de noms** à associer à la règle.
 * Gravité de l’application de la Convention.
-
-Vous définissez des règles d’affectation de noms dans un fichier baEditorConfig.
 
 ## <a name="general-syntax"></a>Syntaxe générale
 
 Pour définir une règle de nommage, un groupe de symboles ou un style de nom, définissez une ou plusieurs propriétés à l’aide de la syntaxe suivante :
 
 ```ini
-<prefix>.<title>.<propertyName> = <propertyValue>
+<kind>.<title>.<propertyName> = <propertyValue>
 ```
 
 Chaque propriété ne doit être définie qu’une seule fois, mais certains paramètres autorisent plusieurs valeurs séparées par des virgules.
 
 L’ordre des propriétés n’est pas important.
 
-### \<prefix>
+### \<kind>
 
-**\<prefix>** Spécifie le type d’élément défini comme &mdash; règle de nommage, groupe de symboles ou style de nom &mdash; et doit être l’un des éléments suivants :
+**\<kind>** Spécifie le type d’élément défini comme &mdash; règle de nommage, groupe de symboles ou style de nom &mdash; et doit être l’un des éléments suivants :
 
-| Pour définir une propriété pour | Utiliser le préfixe | Exemple |
+| Pour définir une propriété pour | Utilisez la \<kind> valeur | Exemple |
 | --- | --- | -- |
 | Règle de nommage | `dotnet_naming_rule` | `dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion` |
 | Groupe de symboles | `dotnet_naming_symbols` | `dotnet_naming_symbols.interface.applicable_kinds = interface` |
@@ -77,25 +75,17 @@ Toutes les propriétés de règle de nommage sont requises pour que la règle pr
 
 | Propriété | Description |
 | -- | -- |
-| `symbols` | Titre du groupe de symboles, définissant les symboles auxquels cette règle doit être appliquée |
+| `symbols` | Titre d’un groupe de symboles ; la règle d’affectation de noms sera appliquée aux symboles de ce groupe |
 | `style` | Titre du style d’affectation de noms qui doit être associé à cette règle |
 | `severity` |  Définit la gravité avec laquelle appliquer la règle de nommage. Définissez la valeur associée sur l’un des [niveaux de gravité](../configuration-options.md#severity-level)disponibles. <sup>1</sup> |
 
 **Remarques :**
 
-1. La spécification de gravité dans une règle de nommage n’est respectée que dans des environnements IDE de développement, tels que Visual Studio. Ce paramètre n’est pas compris par les compilateurs C# ou VB, il n’est donc pas respecté pendant la génération. Au lieu de cela, pour appliquer des règles de style d’affectation de noms à la build, vous devez définir la gravité en utilisant la configuration de gravité basée sur l’ID de règle, comme expliqué dans [cette section](#rule-id-ide1006-naming-rule-violation). Pour plus d’informations, consultez ce [problème GitHub](https://github.com/dotnet/roslyn/issues/44201).
-
-## <a name="rule-order"></a>Ordre des règles
-
-L’ordre dans lequel les règles d’affectation de noms sont définies dans un fichier EditorConfig n’a pas d’importance. Les règles d’affectation de noms sont automatiquement triées en fonction de la définition des règles proprement dites. L' [extension du service de langage EditorConfig](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig) peut analyser un fichier EditorConfig et signaler les cas où l’ordonnancement des règles dans le fichier est différent de ce que le compilateur utilisera au moment de l’exécution.
-
-> [!NOTE]
->
-> Si vous utilisez une version de Visual Studio antérieure à Visual Studio 2019 version 16,2, les règles de nommage doivent être classées de la plus spécifique à la moins spécifique dans le fichier EditorConfig. La première règle applicable rencontrée est la seule règle appliquée. Toutefois, s’il existe plusieurs *propriétés* de règle portant le même nom, la propriété la plus récemment trouvée portant ce nom est prioritaire. Pour plus d’informations, consultez [Priorité et hiérarchie des fichiers](/visualstudio/ide/create-portable-custom-editor-options#file-hierarchy-and-precedence).
+1. La spécification de gravité dans une règle de nommage n’est respectée que dans des environnements IDE de développement, tels que Visual Studio. Ce paramètre n’est pas compris par les compilateurs C# ou VB, il n’est donc pas respecté pendant la génération. Pour appliquer des règles de style d’affectation de noms à la build, vous devez définir la gravité à l’aide de la configuration de gravité de la [règle de code](#rule-id-ide1006-naming-rule-violation). Pour plus d’informations, consultez ce [problème GitHub](https://github.com/dotnet/roslyn/issues/44201).
 
 ## <a name="symbol-group-properties"></a>Propriétés du groupe de symboles
 
-Vous pouvez définir les propriétés suivantes pour les groupes de symboles, afin de limiter les symboles inclus dans le groupe. Pour spécifier plusieurs valeurs dans un même paramètre de propriété, séparez-les par une virgule.
+Vous pouvez définir les propriétés suivantes pour les groupes de symboles, afin de limiter les symboles inclus dans le groupe. Pour spécifier plusieurs valeurs pour une seule propriété, séparez les valeurs par une virgule.
 
 | Propriété | Description | Valeurs autorisées | Obligatoire |
 | -- | -- | -- | -- |
@@ -131,6 +121,14 @@ Vous pouvez définir les propriétés suivantes pour un style d’affectation de
 
 1. Vous devez spécifier un style de mise en majuscules dans le cadre de votre style de nommage, sans quoi votre style de nommage risque d’être ignoré.
 
+## <a name="rule-order"></a>Ordre des règles
+
+L’ordre dans lequel les règles d’affectation de noms sont définies dans un fichier EditorConfig n’a pas d’importance. Les règles d’affectation de noms sont automatiquement triées en fonction de la définition des règles proprement dites. L' [extension du service de langage EditorConfig](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig) peut analyser un fichier EditorConfig et signaler les cas où l’ordonnancement des règles dans le fichier est différent de ce que le compilateur utilisera au moment de l’exécution.
+
+> [!NOTE]
+>
+> Si vous utilisez une version de Visual Studio antérieure à Visual Studio 2019 version 16,2, les règles de nommage doivent être classées de la plus spécifique à la moins spécifique dans le fichier EditorConfig. La première règle applicable rencontrée est la seule règle appliquée. Toutefois, s’il existe plusieurs *propriétés* de règle portant le même nom, la propriété la plus récemment trouvée portant ce nom est prioritaire. Pour plus d’informations, consultez [Priorité et hiérarchie des fichiers](/visualstudio/ide/create-portable-custom-editor-options#file-hierarchy-and-precedence).
+
 ## <a name="default-naming-styles"></a>Styles de dénomination par défaut
 
 Si vous ne spécifiez aucune règle de nommage personnalisée, les styles par défaut suivants sont utilisés :
@@ -138,6 +136,16 @@ Si vous ne spécifiez aucune règle de nommage personnalisée, les styles par d�
 - Pour les classes, structures, énumérations, propriétés et événements avec l’accessibilité `public`, `private`, `internal`, `protected` ou `protected_internal`, le style de dénomination par défaut est la casse Pascal.
 
 - Pour les interfaces avec l’accessibilité `public`, `private`, `internal`, `protected` ou `protected_internal`, le style de dénomination par défaut est la casse Pascal avec le préfixe **I** requis.
+
+## <a name="code-rule-id-ide1006-naming-rule-violation"></a><a name="rule-id-ide1006-naming-rule-violation"></a>ID de règle de code : `IDE1006 (Naming rule violation)`
+
+Toutes les options d’attribution de noms ont un ID `IDE1006` et un titre de règle `Naming rule violation` . Vous pouvez configurer le niveau de gravité des violations de nom globalement dans un fichier EditorConfig avec la syntaxe suivante :
+
+```ini
+dotnet_diagnostic.IDE1006.severity = <severity value>
+```
+
+La valeur de gravité doit être ou doit être `warning` `error` [appliquée lors de la génération](../overview.md#code-style-analysis). Pour toutes les valeurs de gravité possibles, consultez [niveau de gravité](../configuration-options.md#severity-level).
 
 ## <a name="example"></a>Exemple
 
@@ -161,16 +169,6 @@ dotnet_naming_rule.public_members_must_be_capitalized.style    = first_word_uppe
 # and setting the severity.
 dotnet_naming_rule.public_members_must_be_capitalized.severity = suggestion
 ```
-
-## <a name="rule-id-ide1006-naming-rule-violation"></a><a name="rule-id-ide1006-naming-rule-violation"></a>ID de règle : « IDE1006 » (violation de règle de nommage)
-
-Toutes les options d’attribution de noms ont un ID `IDE1006` et un titre de règle `Naming rule violation` . Vous pouvez configurer le niveau de gravité des violations de nom globalement dans un fichier EditorConfig avec la syntaxe suivante :
-
-```ini
-dotnet_diagnostic.IDE1006.severity = <severity value>
-```
-
-La valeur de gravité doit être ou doit être `warning` `error` [appliquée lors de la génération](../overview.md#code-style-analysis). Pour toutes les valeurs de gravité possibles, consultez [niveau de gravité](../configuration-options.md#severity-level).
 
 ## <a name="see-also"></a>Voir aussi
 

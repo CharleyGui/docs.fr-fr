@@ -1,6 +1,6 @@
 ---
 title: Exposition de composants .NET Core à COM
-description: Ce didacticiel vous montre comment exposer une classe à COM à partir de .NET Core. Vous générez un serveur COM et un manifeste de serveur côte à côte pour COM sans registre.
+description: Ce didacticiel vous montre comment exposer une classe à COM à partir de .NET Core. Vous générez un serveur COM et un manifeste de serveur côte à côte pour Registry-Free COM.
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 346776ebae3a6077fd39f26d5bd19d599d163db2
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 13c91e5cb6728c5669642d1b5f7bb461efdd44f8
+ms.sourcegitcommit: 78eb25647b0c750cd80354ebd6ce83a60668e22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608343"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99065049"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Exposition de composants .NET Core à COM
 
@@ -92,6 +92,9 @@ Un [exemple de serveur COM](https://github.com/dotnet/samples/tree/master/core/e
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
 Contrairement au .NET Framework, .NET Core ne prend pas en charge la génération d’une bibliothèque de types COM à partir d’un assembly .NET Core. L’aide consiste à écrire manuellement un fichier IDL ou un en-tête C/C++ pour les déclarations natives des interfaces COM.
+
+> [!IMPORTANT]
+> Dans .NET Framework, un assembly « Any CPU » peut être consommé par les clients 32 bits et 64 bits. Par défaut, dans .NET Core, .NET 5 et versions ultérieures, les assemblys « Any CPU » sont accompagnés d’un *\*.comhost.dll* bits 64. Pour cette raison, elles ne peuvent être consommées que par des clients 64 bits. C’est la valeur par défaut, car c’est ce que représente le kit de développement logiciel (SDK). Ce comportement est identique à la publication de la fonctionnalité « autonome » : par défaut, elle utilise ce que le kit de développement logiciel (SDK) fournit. La `NETCoreSdkRuntimeIdentifier` propriété MSBuild détermine le nombre de bits de *\*.comhost.dll*. La partie gérée est en réalité un nombre de bits agnostique comme prévu, mais l’élément multimédia natif qui l’accompagne est par défaut le kit de développement logiciel (SDK) ciblé.
 
 Les [déploiements autonomes](../deploying/index.md#publish-self-contained) de composants COM ne sont pas pris en charge. Seuls les [déploiements dépendants du Framework](../deploying/index.md#publish-framework-dependent) des composants COM sont pris en charge.
 
