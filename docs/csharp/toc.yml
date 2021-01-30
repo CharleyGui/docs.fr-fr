@@ -1,22 +1,17 @@
 items:
   - name: Documentation C#
     href: index.yml
-  - name: Prise en main
+  - name: "Présentation de\_C#"
     items:
-      - name: Introduction au langage C# et à .NET
-        displayName: get started
-        href: getting-started/index.md
-      - name: "Présentation de\_C#"
-        items:
-          - name: Introduction
-            href: tour-of-csharp/index.md
-          - name: Types
-            href: tour-of-csharp/types.md
-          - name: Blocs de construction de programme
-            href: tour-of-csharp/program-building-blocks.md
-          - name: Principales zones de langue
-            href: tour-of-csharp/features.md
-  - name: Tutoriels
+      - name: Introduction
+        href: tour-of-csharp/index.md
+      - name: Types
+        href: tour-of-csharp/types.md
+      - name: Blocs de construction de programme
+        href: tour-of-csharp/program-building-blocks.md
+      - name: Principales zones de langue
+        href: tour-of-csharp/features.md
+  - name: Didacticiels
     items:
       - name: Vue d'ensemble
         displayName: tutorials
