@@ -1,7 +1,7 @@
 ---
 title: Comment écrire des convertisseurs personnalisés pour la sérialisation JSON-.NET
 description: Découvrez comment créer des convertisseurs personnalisés pour les classes de sérialisation JSON fournies dans l’espace de System.Text.Json noms.
-ms.date: 12/14/2020
+ms.date: 01/22/2021
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: 390438e3dca7a5d40dd9957090f498b495996e05
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 5406f862eeec83b619f660716e68b85f3d90b28f
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513196"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216354"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
@@ -243,6 +243,18 @@ Pour les scénarios qui requièrent l’inférence de type, le code suivant mont
 * Chaînes à `string`
 * Tout le reste vers `JsonElement`
 
+::: zone pivot="dotnet-5-0"
+
+:::code language="csharp" source="snippets/system-text-json-how-to-5-0/csharp/CustomConverterInferredTypesToObject.cs":::
+
+L’exemple montre le code de convertisseur et une `WeatherForecast` classe avec des `object` Propriétés. La `Main` méthode désérialise une chaîne JSON dans une `WeatherForecast` instance, tout d’abord sans utiliser le convertisseur, puis en utilisant le convertisseur. La sortie de la console indique que, sans le convertisseur, le type au moment de l’exécution de la `Date` propriété est `JsonElement` ; avec le convertisseur, le type au moment de l’exécution est `DateTime` .
+
+Le [dossier tests unitaires](https://github.com/dotnet/runtime/tree/c72b54243ade2e1118ab24476220a2eba6057466/src/libraries/System.Text.Json/tests/Serialization/) de l' `System.Text.Json.Serialization` espace de noms contient plus d’exemples de convertisseurs personnalisés qui gèrent la désérialisation des `object` Propriétés.
+
+:::zone-end
+
+::: zone pivot="dotnet-core-3-1"
+
 :::code language="csharp" source="snippets/system-text-json-how-to/csharp/ObjectToInferredTypesConverter.cs":::
 
 Le code suivant inscrit le convertisseur :
@@ -266,6 +278,8 @@ L’exemple suivant de JSON à désérialiser contient des valeurs qui seront d�
 Sans le convertisseur personnalisé, la désérialisation place un `JsonElement` dans chaque propriété.
 
 Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) de l' `System.Text.Json.Serialization` espace de noms contient plus d’exemples de convertisseurs personnalisés qui gèrent la désérialisation des `object` Propriétés.
+
+:::zone-end
 
 ::: zone pivot="dotnet-core-3-1"
 

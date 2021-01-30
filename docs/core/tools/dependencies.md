@@ -1,20 +1,20 @@
 ---
-title: Gérer les dépendances dans .NET Core
-description: Explique comment gérer les dépendances de projet pour une application .NET Core.
+title: Gérer les dépendances dans .NET
+description: Explique comment gérer les dépendances de projet pour une application .NET.
 no-loc:
 - dotnet add package
 - dotnet remove package
 - dotnet list package
 ms.topic: how-to
-ms.date: 02/25/2020
-ms.openlocfilehash: 2aeedb56f774b51076764c2772eb02b2fa095d92
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.date: 01/28/2021
+ms.openlocfilehash: 9f5f814d0b4dc7aa3ff1a938c172475169a55bf2
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062858"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216126"
 ---
-# <a name="manage-dependencies-in-net-core-applications"></a>Gérer les dépendances dans les applications .NET Core
+# <a name="manage-dependencies-in-net-applications"></a>Gérer les dépendances dans les applications .NET
 
 Cet article explique comment ajouter et supprimer des dépendances en modifiant le fichier projet ou à l’aide de l’interface CLI.
 
@@ -37,7 +37,7 @@ Utilisez des conditions pour ajouter une dépendance qui est disponible uniqueme
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
-La dépendance dans l’exemple précédent sera valide uniquement si la génération se produit pour cette cible donnée. `$(TargetFramework)`Dans la condition, il s’agit d’une propriété MSBuild qui est définie dans le projet. Pour la plupart des applications .NET Core courantes, vous n’avez pas besoin de le faire.
+La dépendance dans l’exemple précédent sera valide uniquement si la génération se produit pour cette cible donnée. `$(TargetFramework)`Dans la condition, il s’agit d’une propriété MSBuild qui est définie dans le projet. Pour la plupart des applications .NET courantes, vous n’avez pas besoin de le faire.
 
 ## <a name="add-a-dependency-by-editing-the-project-file"></a>Ajouter une dépendance en modifiant le fichier projet
 
@@ -80,4 +80,4 @@ dotnet remove package Microsoft.EntityFrameworkCore
 ## <a name="see-also"></a>Voir aussi
 
 * [Références de package dans les fichiers projet](../project-sdk/msbuild-props.md#reference-properties-and-items)
-* [dotnet list packagecommande](dotnet-list-package.md)
+* [dotnet list package commande](dotnet-list-package.md)

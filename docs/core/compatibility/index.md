@@ -1,27 +1,27 @@
 ---
 title: Types de changements cassants
-description: Découvrez comment .NET Core tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
-ms.date: 06/10/2019
-ms.openlocfilehash: bc93316141ae99d8cfedc5e6d88a9e91216f9c6e
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+description: Découvrez comment .NET tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
+ms.date: 01/28/2021
+ms.openlocfilehash: d539a82b21abc4df8d726673ef728020f36551bf
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415743"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216036"
 ---
 # <a name="changes-that-affect-compatibility"></a>Modifications qui affectent la compatibilité
 
-Tout au long de son histoire, .NET a tenté de maintenir un niveau élevé de compatibilité de version en version et entre les différentes déclinaisons de .NET. Cette philosophie s’applique toujours avec .NET Core. Bien que .NET Core peut être considéré comme une nouvelle technologie indépendante du .NET Framework, deux facteurs majeurs limitent la capacité de .NET Core à diverger du .NET Framework :
+Tout au long de son histoire, .NET a tenté de maintenir un niveau élevé de compatibilité de la version à la version et entre les implémentations de .NET. Même si .NET 5 (et .NET Core) et les versions ultérieures peuvent être considérés comme une nouvelle technologie par rapport à .NET Framework, deux facteurs majeurs limitent la capacité de cette implémentation de .NET à s’écarter de .NET Framework :
 
 - Un grand nombre de développeurs ont développé à la base ou continuent à développer des applications .NET Framework. Ils s’attendent à un comportement cohérent entre les implémentations de .NET.
 
-- Les projets de bibliothèque .NET Standard permettent aux développeurs de créer des bibliothèques qui ciblent les API communes partagées par .NET Core et .NET Framework. Les développeurs s’attendent à ce qu’une bibliothèque utilisée dans une application .NET Core se comporte comme la bibliothèque utilisée dans une application .NET Framework.
+- .NET Standard projets de bibliothèque permettent aux développeurs de créer des bibliothèques qui ciblent les API communes partagées par .NET Framework et .NET 5 (et .NET Core) et versions ultérieures. Les développeurs s’attendent à ce qu’une bibliothèque utilisée dans une application .NET 5 se comporte de manière identique à la même bibliothèque que celle utilisée dans une application .NET Framework.
 
-En plus de la compatibilité entre les implémentations de .NET, les développeurs s’attendent à un haut niveau de compatibilité entre les versions de .NET Core. En particulier, le code écrit pour une version antérieure de .NET Core doit s’exécuter sans problème sur une version ultérieure de .NET Core. En fait, de nombreux développeurs s’attendent à ce que les nouvelles API dans les dernières versions de .NET Core soient également compatibles avec les versions préliminaires dans lesquelles ces API ont été introduites.
+Outre la compatibilité entre les implémentations de .NET, les développeurs attendent un niveau élevé de compatibilité entre les versions d’une implémentation donnée de .NET. En particulier, le code écrit pour une version antérieure de .NET Core doit s’exécuter en toute transparence sur .NET 5 ou une version ultérieure. En fait, de nombreux développeurs s’attendent à ce que les nouvelles API présentes dans les versions récentes de .NET soient également compatibles avec les versions préliminaires dans lesquelles ces API ont été introduites.
 
 Cet article décrit les modifications qui affectent la compatibilité et la façon dont l’équipe .NET évalue chaque type de modification. Comprendre comment l’équipe .NET approche des modifications avec rupture possibles est particulièrement utile pour les développeurs qui ouvrent des requêtes de tirage qui modifient le comportement des [API .NET existantes](https://github.com/dotnet/runtime).
 
-Les sections suivantes décrivent les catégories de modifications apportées aux API .NET Core et leur impact sur la compatibilité des applications. Les modifications sont autorisées ✔️, interdites ❌ ou nécessitent un jugement et une évaluation de la manière prévisible, évidente et cohérente du ❓ comportement précédent.
+Les sections suivantes décrivent les catégories de modifications apportées aux API .NET et leur impact sur la compatibilité des applications. Les modifications sont autorisées ✔️, interdites ❌ ou nécessitent un jugement et une évaluation de la manière prévisible, évidente et cohérente du ❓ comportement précédent.
 
 > [!NOTE]
 >
@@ -76,7 +76,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Il existe une exception à la règle pour la suppression de l’interface : vous pouvez ajouter l’implémentation d’une interface qui dérive de l’interface supprimée. Par exemple, vous pouvez supprimer <xref:System.IDisposable> si le type ou l’interface implémente désormais <xref:System.ComponentModel.IComponent>, qui implémente <xref:System.IDisposable>.
 
-- ❌Non **autorisé : modification d’un `readonly struct` type en type [struct](../../csharp/language-reference/builtin-types/struct.md) **
+- ❌Non **autorisé : modification d’un `readonly struct` type en type [struct](../../csharp/language-reference/builtin-types/struct.md)**
 
   Toutefois, le changement d’un `struct` type en `readonly struct` type est autorisé.
 
@@ -88,13 +88,13 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
 ### <a name="members"></a>Membres
 
-- ✔️ **autorisé : extension de la visibilité d’un membre qui n’est pas [virtuel](../../csharp/language-reference/keywords/sealed.md) **
+- ✔️ **autorisé : extension de la visibilité d’un membre qui n’est pas [virtuel](../../csharp/language-reference/keywords/sealed.md)**
 
-- ✔️ **autorisé : ajout d’un membre abstrait à un type public qui n’a pas de constructeurs (publics ou protégés) *accessibles* , ou le type est [sealed](../../csharp/language-reference/keywords/sealed.md) **
+- ✔️ **autorisé : ajout d’un membre abstrait à un type public qui n’a pas de constructeurs (publics ou protégés) *accessibles* , ou le type est [sealed](../../csharp/language-reference/keywords/sealed.md)**
 
   Toutefois, l’ajout à un membre abstrait à un type qui a des constructeurs accessibles (publics ou protégés) et n’est pas `sealed` n’est pas autorisé.
 
-- ✔️ **autorisé : restriction de la visibilité d’un membre [protégé](../../csharp/language-reference/keywords/protected.md) quand le type n’a pas de constructeurs accessibles (publics ou protégés) ou si le type est [sealed](../../csharp/language-reference/keywords/sealed.md) **
+- ✔️ **autorisé : restriction de la visibilité d’un membre [protégé](../../csharp/language-reference/keywords/protected.md) quand le type n’a pas de constructeurs accessibles (publics ou protégés) ou si le type est [sealed](../../csharp/language-reference/keywords/sealed.md)**
 
 - ✔️ **autorisé : déplacement d’un membre dans une classe située plus haut dans la hiérarchie que le type à partir duquel il a été supprimé**
 
@@ -163,7 +163,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Un [membre virtuel](../../csharp/language-reference/keywords/virtual.md) fournit une implémentation de méthode qui *peut être* substituée par une classe dérivée. Un [membre abstrait](../../csharp/language-reference/keywords/abstract.md) ne fournit aucune implémentation et *doit être* substitué.
 
-- ❌**Non autorisé : ajout d’un membre abstrait à un type public qui a des constructeurs accessibles (publics ou protégés) et qui n’est pas [sealed](../../csharp/language-reference/keywords/sealed.md) **
+- ❌**Non autorisé : ajout d’un membre abstrait à un type public qui a des constructeurs accessibles (publics ou protégés) et qui n’est pas [sealed](../../csharp/language-reference/keywords/sealed.md)**
 
 - ❌Non **autorisé : ajout ou suppression du mot clé [static](../../csharp/language-reference/keywords/static.md) d’un membre**
 
@@ -206,19 +206,19 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Par exemple, une méthode qui retourne un type <xref:System.Object> peut retourner une instance de <xref:System.String>. (Toutefois, la signature de méthode ne peut pas être modifiée).
 
-- ✔️ **autorisé : l’extension de la plage de valeurs acceptées pour une propriété ou un paramètre si le membre n’est pas [virtuel](../../csharp/language-reference/keywords/virtual.md) **
+- ✔️ **autorisé : l’extension de la plage de valeurs acceptées pour une propriété ou un paramètre si le membre n’est pas [virtuel](../../csharp/language-reference/keywords/virtual.md)**
 
   Alors que la plage de valeurs qui peuvent être passées à la méthode ou qui sont retournées par le membre peut être développée, le paramètre ou le type de membre ne peut pas. Par exemple, tandis que les valeurs passées à une méthode peuvent s’étendre de 0-124 à 0-255, le type de paramètre ne peut pas être changé de <xref:System.Byte> à <xref:System.Int32>.
 
-- ❌**Non autorisé : en accroissant la plage de valeurs acceptées pour une propriété ou un paramètre si le membre est [virtuel](../../csharp/language-reference/keywords/virtual.md) **
+- ❌**Non autorisé : en accroissant la plage de valeurs acceptées pour une propriété ou un paramètre si le membre est [virtuel](../../csharp/language-reference/keywords/virtual.md)**
 
    Ce changement empêche le fonctionnement des membres substitués existants, qui ne fonctionneront pas correctement pour la plage de valeurs étendue.
 
 - ❌Non **autorisé : diminution de la plage de valeurs acceptées pour une propriété ou un paramètre**
 
-- ❌Non **autorisé : l’extension de la plage des valeurs retournées pour une propriété, un champ, une valeur de retour ou un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md) **
+- ❌Non **autorisé : l’extension de la plage des valeurs retournées pour une propriété, un champ, une valeur de retour ou un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
 
-- ❌Non **autorisé : modification des valeurs retournées pour une propriété, un champ, une valeur de retour de méthode ou un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md) **
+- ❌Non **autorisé : modification des valeurs retournées pour une propriété, un champ, une valeur de retour de méthode ou un paramètre de [sortie](../../csharp/language-reference/keywords/out-parameter-modifier.md)**
 
 - ❌Non **autorisé : modification de la valeur par défaut d’une propriété, d’un champ ou d’un paramètre**
 
@@ -232,7 +232,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Étant donné que la nouvelle exception est une sous-classe d’une exception existante, le code de gestion des exceptions précédent continue à gérer l’exception. Par exemple, dans .NET Framework 4, les méthodes de création et de récupération de culture ont commencé à lever un <xref:System.Globalization.CultureNotFoundException> au lieu d’un <xref:System.ArgumentException> si la culture est introuvable. Étant donné que <xref:System.Globalization.CultureNotFoundException> dérive de <xref:System.ArgumentException>, il s’agit d’une modification acceptable.
 
-- ✔️ **autorisé : la levée d’une exception plus spécifique que <xref:System.NotSupportedException> , <xref:System.NotImplementedException> , <xref:System.NullReferenceException> **
+- ✔️ **autorisé : la levée d’une exception plus spécifique que <xref:System.NotSupportedException> , <xref:System.NotImplementedException> , <xref:System.NullReferenceException>**
 
 - ✔️ **autorisé : levée d’une exception considérée comme irrécupérable**
 
@@ -263,7 +263,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
 - ✔️ **autorisé : modification de la valeur d’un attribut qui n’est *pas* observable**
 
-- ❌**Non autorisé : modification de la valeur d’un attribut observable *is* **
+- ❌**Non autorisé : modification de la valeur d’un attribut observable**
 
 - ❓ **Nécessite un jugement : suppression d’un attribut**
 

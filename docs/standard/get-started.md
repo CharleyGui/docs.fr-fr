@@ -3,12 +3,12 @@ title: Didacticiels pour la prise en main de .NET
 description: Choisissez un didacticiel pour apprendre le développement d’applications .NET ou l’un des langages de programmation .NET.
 author: tdykstra
 ms.date: 09/30/2020
-ms.openlocfilehash: 3002b23dcae44b38c9e4dbc2679a2919f1a8d1ce
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e41a6ce0ae3e1c58b9d83eb644b2e68362cc04ed
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827176"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99215905"
 ---
 # <a name="tutorials-for-getting-started-with-net"></a>Didacticiels pour la prise en main de .NET
 
@@ -44,7 +44,7 @@ Les didacticiels pas à pas suivants s’exécutent sur Windows, Linux ou macOS,
 
 ## <a name="resources-for-learning-net-languages"></a>Ressources pour l’apprentissage des langages .NET
 
-* [Prise en main de C#](../csharp/getting-started/index.md)
+* [Prise en main de C#](../csharp/tour-of-csharp/index.md)
 * [Prise en main de F#](../fsharp/get-started/index.md)
 * [Bien démarrer avec Visual Basic](../visual-basic/getting-started/index.md)
 

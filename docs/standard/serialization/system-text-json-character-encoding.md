@@ -1,7 +1,7 @@
 ---
 title: Comment personnaliser l’encodage de caractères avec System.Text.Json
 description: Découvrez comment personnaliser l’encodage de caractères lors de la sérialisation et de la désérialisation de JSON dans .NET.
-ms.date: 11/30/2020
+ms.date: 01/22/2021
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: cfb83af0c58e0c9dfb73ecb8e2177d255e403fae
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 136a75ab73767fd79f99caa1d1387706ab655473
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009623"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99215977"
 ---
 # <a name="how-to-customize-character-encoding-with-no-locsystemtextjson"></a>Comment personnaliser l’encodage de caractères avec System.Text.Json
 
@@ -47,6 +47,8 @@ Ce code n’échappe pas aux caractères cyrilliques ou grecs. Si la `Summary` p
 }
 ```
 
+Par défaut, l’encodeur est initialisé avec la <xref:System.Text.Unicode.UnicodeRanges.BasicLatin> plage.
+
 Pour sérialiser tous les jeux de langues sans échappement, utilisez <xref:System.Text.Unicode.UnicodeRanges.All?displayProperty=nameWithType> .
 
 ## <a name="serialize-specific-characters"></a>Sérialiser des caractères spécifiques
@@ -66,6 +68,20 @@ Voici un exemple de JSON généré par le code précédent :
   "Summary": "жа\u0440\u043A\u043E"
 }
 ```
+
+## <a name="block-lists"></a>Listes de blocage
+
+Les sections précédentes montrent comment spécifier des listes d’autorisation de points de code ou de plages que vous ne souhaitez pas placer dans une séquence d’échappement. Toutefois, il existe des listes de blocage globales et spécifiques à l’encodeur qui peuvent remplacer certains points de code dans votre liste verte. Les points de code d’une liste rouge sont toujours placés dans une séquence d’échappement, même s’ils sont inclus dans votre liste verte.
+
+### <a name="global-block-list"></a>Liste rouge globale
+
+La liste rouge globale contient des éléments tels que les caractères à usage privé, les caractères de contrôle, les points de code non définis et certaines catégories Unicode, telles que la [catégorie Space_Separator](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B:General_Category=Space_Separator:%5D), à l’exception de `U+0020 SPACE` . Par exemple, `U+3000 IDEOGRAPHIC SPACE` est placé dans une séquence d’échappement même si vous spécifiez la plage Unicode des [symboles CJC et des signes de ponctuation (u +3000-u + 303F)](xref:System.Text.Unicode.UnicodeRanges.CjkSymbolsandPunctuation) comme liste verte.
+
+La liste rouge globale est un détail d’implémentation qui a changé dans chaque version de .NET Core et dans .NET 5. N’effectuez pas de dépendance sur un caractère qui est membre (ou n’est pas membre de) la liste rouge globale.
+
+### <a name="encoder-specific-block-lists"></a>Listes de blocs spécifiques à l’encodeur
+
+Les exemples de points de code bloqués spécifiques à l’encodeur incluent `'<'` et `'&'` pour l' [encodeur html](xref:System.Text.Encodings.Web.HtmlEncoder), `'\'` pour l' [encodeur JSON](xref:System.Text.Encodings.Web.JavaScriptEncoder)et `'%'` pour l' [encodeur d’URL](xref:System.Text.Encodings.Web.UrlEncoder). Par exemple, l’encodeur HTML échappe toujours à l’esperluette ( `'&'` ), même si l’esperluette est `BasicLatin` comprise dans la plage et que tous les encodeurs sont initialisés avec `BasicLatin` par défaut.
 
 ## <a name="serialize-all-characters"></a>Sérialiser tous les caractères
 

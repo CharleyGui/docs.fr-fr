@@ -3,13 +3,13 @@ title: Modèle d’options dans .NET
 author: IEvangelist
 description: Découvrez comment utiliser le modèle d’options pour représenter des groupes de paramètres associés dans les applications .NET.
 ms.author: dapine
-ms.date: 01/06/2021
-ms.openlocfilehash: 392b3abca01864349f8b1b25ffb3109132d2435a
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.date: 01/21/2021
+ms.openlocfilehash: 413f731337a6012bb1e29f1f38c2df6da7525867
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98189730"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216028"
 ---
 # <a name="options-pattern-in-net"></a>Modèle d’options dans .NET
 
@@ -347,3 +347,4 @@ services.PostConfigureAll<CustomOptions>(customOptions =>
 ## <a name="see-also"></a>Voir aussi
 
 - [Configuration dans .NET](configuration.md)
+- [Aide sur les modèles d’options pour les auteurs de bibliothèques .NET](options-library-authors.md)

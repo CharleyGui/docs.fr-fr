@@ -1,13 +1,13 @@
 ---
 title: Visite guidée de C#-zones de langage majeures
-description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
+description: Novice en matière de langage C# ? Découvrez les principes de base du langage. Cet article contient une étude des principales fonctionnalités du langage.
 ms.date: 08/06/2020
-ms.openlocfilehash: a73399643ada05a4bfb17fadd17bf3267514e99d
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 943701b544dd3495fa2286e804e2566da146cb45
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "93400746"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216653"
 ---
 # <a name="major-language-areas"></a>Principales zones de langue
 
@@ -21,11 +21,11 @@ Un [ * **tableau** _](../programming-guide/arrays/index.md) est une structure de
 
 Les types tableau sont des types référence, et la déclaration d’une variable tableau réserve simplement un espace pour une référence à une instance de tableau. Les instances de tableau réelles sont créées dynamiquement au moment de l’exécution à l’aide de l' `new` opérateur. L' `new` opération spécifie la _*_longueur_*_ de la nouvelle instance de tableau, qui est ensuite résolue pour la durée de vie de l’instance. Les indices des éléments d’un tableau vont de `0` à `Length - 1`. L’opérateur `new` initialise automatiquement les éléments d’un tableau à leur valeur par défaut, c'est-à-dire, par exemple, zéro pour tous les types numériques et `null` pour tous les types référence.
 
-L’exemple suivant crée un tableau de `int` éléments, initialise le tableau et imprime le contenu du tableau.
+L’exemple suivant crée un tableau d' `int` éléments, initialise le tableau et imprime le contenu du tableau.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="ArraysSample":::
 
-Cet exemple crée et opère sur un _*_tableau unidimensionnel_*_. C# prend également en charge _*_les tableaux multidimensionnels_*_. Le nombre de dimensions d’un type tableau, également appelé _*_rang_*_ du type tableau, est un plus le nombre de virgules écrites entre les crochets du type tableau. L’exemple suivant alloue respectivement des tableaux à une seule, deux et trois dimensions, respectivement.
+Cet exemple crée et opère sur un _*_tableau unidimensionnel_*_. C# prend également en charge _*_les tableaux multidimensionnels_*_. Le nombre de dimensions d’un type tableau, également appelé _*_rang_*_ du type tableau, est un plus le nombre de virgules entre les crochets du type tableau. L’exemple suivant alloue respectivement des tableaux à une seule, deux et trois dimensions, respectivement.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="DeclareArrays":::
 
@@ -110,7 +110,7 @@ Toutes les classes d’attributs dérivent de la <xref:System.Attribute> classe 
 
 Cet exemple joint un `HelpAttribute` à la classe `Widget`. Il ajoute un autre `HelpAttribute` à la méthode `Display` dans la classe. Les constructeurs publics d’une classe d’attributs contrôlent les informations qui doivent être fournies lorsque l’attribut est joint à une entité de programme. Des informations supplémentaires peuvent être fournies en référençant les propriétés en lecture-écriture publiques de la classe d’attributs (comme la référence à la propriété `Topic`, précédemment).
 
-Les métadonnées définies par les attributs peuvent être lues et manipulées par réflexion lors de l’exécution. Lorsqu’un attribut particulier est demandé à l’aide de cette technique, le constructeur de la classe d’attributs est appelé avec les informations fournies dans la source du programme, et l’instance d’attribut qui en résulte est retournée. Si des informations supplémentaires ont été fournies via les propriétés, ces propriétés sont définies sur les valeurs données avant que le renvoi de l’instance de l’attribut.
+Les métadonnées définies par les attributs peuvent être lues et manipulées par réflexion lors de l’exécution. Lorsqu’un attribut particulier est demandé à l’aide de cette technique, le constructeur de la classe d’attributs est appelé avec les informations fournies dans la source du programme. L’instance d’attribut résultante est retournée. Si des informations supplémentaires ont été fournies via les propriétés, ces propriétés sont définies sur les valeurs données avant que le renvoi de l’instance de l’attribut.
 
 L’exemple de code suivant montre comment obtenir les `HelpAttribute` instances associées à la classe `Widget` et sa méthode `Display`.
 

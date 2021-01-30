@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 no-loc:
 - EditorConfig
-ms.openlocfilehash: 4f7b392a2b066023fec75c5295bd94651654d645
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: 0687bcb16cae6a0a2dde6c7864a1af1d0027e122
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851788"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216458"
 ---
 # <a name="configuration-options-for-code-analysis"></a>Options de configuration pour l’analyse du code
 
@@ -80,7 +80,7 @@ Pour définir la gravité de la règle pour une seule règle, utilisez la syntax
 dotnet_diagnostic.<rule ID>.severity = <severity value>
 ```
 
-Pour définir la gravité de la règle par défaut pour une catégorie de règles d’analyseur, utilisez la syntaxe suivante.
+Pour définir la gravité de la règle par défaut pour une catégorie de règles d’analyseur, utilisez la syntaxe suivante. La catégorie de chaque règle est fournie dans les pages de référence de règle individuelles, par exemple, [CA1000](quality-rules/ca1000.md).
 
 ```ini
 dotnet_analyzer_diagnostic.category-<rule category>.severity = <severity value>

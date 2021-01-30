@@ -338,16 +338,17 @@
         - name: UShort (type de données)
           href: language-reference/data-types/ushort-data-type.md
     - name: Directives
-      href: language-reference/directives/index.md
       items:
-        - name: '#Const, directive'
+        - name: '#Const'
           href: language-reference/directives/const-directive.md
-        - name: '#ExternalSource, directive'
+        - name: '#ExternalSource'
           href: language-reference/directives/externalsource-directive.md
-        - name: '#If...Then...#Else, directives'
+        - name: '#If... Then... #Else'
           href: language-reference/directives/if-then-else-directives.md
-        - name: '#Region, directive'
+        - name: '#Région'
           href: language-reference/directives/region-directive.md
+        - name: '#Désactiver et #Enable'
+          href: language-reference/directives/disable-enable.md
     - name: Fonctions
       href: language-reference/functions/index.md
       items:

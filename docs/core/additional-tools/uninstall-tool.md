@@ -1,49 +1,49 @@
 ---
 title: Outil de désinstallation
-description: Vue d’ensemble de l’outil de désinstallation de .NET Core, outil guidé qui permet le nettoyage contrôlé des kits de développement logiciel (SDK) .NET Core et des runtimes.
+description: Vue d’ensemble de l’outil de désinstallation de .NET, un outil guidé qui permet le nettoyage contrôlé des kits de développement logiciel (SDK) .NET et des runtimes.
 author: sfoslund
-ms.date: 05/27/2020
-ms.openlocfilehash: ed43b4ec8437ae0ccaf5f1234758dda9f16bd51e
-ms.sourcegitcommit: 4f5f1855849cb02c3b610c7006ac21d7429f3348
+ms.date: 01/28/2021
+ms.openlocfilehash: a3819b11af94d4fec3ecb072ec3d5ddf6de706c9
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235350"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216315"
 ---
-# <a name="net-core-uninstall-tool"></a>Outil de désinstallation de .NET Core
+# <a name="net-uninstall-tool"></a>Outil de désinstallation .NET
 
-L' [outil de désinstallation de .net Core](https://aka.ms/dotnet-core-uninstall-tool) ( `dotnet-core-uninstall` ) vous permet de supprimer des kits de développement logiciel (SDK) .net Core et des runtimes d’un système. Une collection d’options est disponible pour spécifier les versions que vous souhaitez désinstaller.
+L' [outil de désinstallation de .net](https://aka.ms/dotnet-core-uninstall-tool) ( `dotnet-core-uninstall` ) vous permet de supprimer les kits de développement logiciel (SDK) et runtimes .net d’un système. Une collection d’options est disponible pour spécifier les versions que vous souhaitez désinstaller.
 
 L’outil prend en charge Windows et macOS. Pour le moment, Linux n’est pas pris en charge.
 
 Sur Windows, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes qui ont été installés à l’aide de l’un des programmes d’installation suivants :
 
-- Kit SDK .NET Core et le programme d’installation du Runtime.
+- Le kit de développement logiciel .NET et le programme d’installation du Runtime.
 - Le programme d’installation de Visual Studio dans les versions antérieures à Visual Studio 2019 version 16,3.
 
 Sur macOS, l’outil ne peut désinstaller que les kits de développement logiciel (SDK) et les runtimes situés dans le dossier */usr/local/share/dotnet* .
 
-En raison de ces limitations, l’outil peut ne pas être en mesure de désinstaller tous les kits de développement logiciel (SDK) .NET Core et les runtimes sur votre ordinateur. Vous pouvez utiliser la `dotnet --info` commande pour rechercher tous les kits de développement logiciel (SDK) .net Core et les runtimes installés, y compris les kits de développement logiciel (SDK) et runtimes que cet outil ne peut pas supprimer. La `dotnet-core-uninstall list` commande affiche les kits de développement logiciel (SDK) qui peuvent être désinstallés avec l’outil. Les versions 1,2 et ultérieures peuvent désinstaller les kits de développement logiciel (SDK) et les runtimes avec la version 5,0 ou antérieure, et les versions précédentes de l’outil peuvent désinstaller 3,1 et versions antérieures.
+En raison de ces limitations, l’outil peut ne pas être en mesure de désinstaller tous les kits de développement logiciel (SDK) .NET et runtimes sur votre ordinateur. Vous pouvez utiliser la `dotnet --info` commande pour rechercher tous les kits de développement logiciel (SDK) .net et les runtimes installés, y compris les kits de développement logiciel (SDK) et runtimes que cet outil ne peut pas supprimer. La `dotnet-core-uninstall list` commande affiche les kits de développement logiciel (SDK) qui peuvent être désinstallés avec l’outil. Les versions 1,2 et ultérieures peuvent désinstaller les kits de développement logiciel (SDK) et les runtimes avec la version 5,0 ou antérieure, et les versions précédentes de l’outil peuvent désinstaller 3,1 et versions antérieures.
 
 ## <a name="install-the-tool"></a>Installer l’outil
 
-Vous pouvez télécharger l’outil de désinstallation de .NET Core à partir de [la page des versions de l’outil](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .
+Vous pouvez télécharger l’outil de désinstallation de .NET à partir de [la page des versions de l’outil](https://aka.ms/dotnet-core-uninstall-tool) et rechercher le code source dans le référentiel GitHub [dotnet/CLI-Lab](https://github.com/dotnet/cli-lab) .
 
 > [!NOTE]
-> L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes. Par conséquent, il doit être installé dans un répertoire protégé en écriture, tel que *C:\Program Files* sur Windows ou */usr/local/bin* sur MacOS. Consultez également [l’accès avec élévation de privilèges pour les commandes dotnet](../tools/elevated-access.md). Pour plus d’informations, consultez les [instructions d’installation détaillées](https://aka.ms/dotnet-core-uninstall-tool).
+> L’outil requiert une élévation pour la désinstallation des runtimes et SDK .NET. Par conséquent, il doit être installé dans un répertoire protégé en écriture, tel que *C:\Program Files* sur Windows ou */usr/local/bin* sur MacOS. Consultez également [l’accès avec élévation de privilèges pour les commandes dotnet](../tools/elevated-access.md). Pour plus d’informations, consultez les [instructions d’installation détaillées](https://aka.ms/dotnet-core-uninstall-tool).
 
 ## <a name="run-the-tool"></a>Exécution de l'outil
 
 Les étapes suivantes illustrent l’approche recommandée pour l’exécution de l’outil de désinstallation :
 
-- [Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes](#step-1---display-installed-net-core-sdks-and-runtimes)
+- [Étape 1 : afficher les kits de développement logiciel (SDK) et runtimes .NET installés](#step-1---display-installed-net-sdks-and-runtimes)
 - [Étape 2 : effectuer une exécution à sec](#step-2---do-a-dry-run)
-- [Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core](#step-3---uninstall-net-core-sdks-and-runtimes)
+- [Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET](#step-3---uninstall-net-sdks-and-runtimes)
 - [Étape 4 : supprimer le dossier NuGet Fallback (facultatif)](#step-4---delete-the-nuget-fallback-folder-optional)
 
-### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a>Étape 1 : afficher les kits de développement logiciel (SDK) .NET Core installés et les runtimes
+### <a name="step-1---display-installed-net-sdks-and-runtimes"></a>Étape 1 : afficher les kits de développement logiciel (SDK) et runtimes .NET installés
 
-La `dotnet-core-uninstall list` commande répertorie les kits de développement logiciel (SDK) .net Core installés et les runtimes qui peuvent être supprimés avec cet outil. Certains kits de développement logiciel (SDK) et runtimes peuvent être requis par Visual Studio et ils s’affichent avec la raison pour laquelle il n’est pas recommandé de les désinstaller.
+La `dotnet-core-uninstall list` commande répertorie les kits de développement logiciel (SDK) et runtimes .net installés qui peuvent être supprimés avec cet outil. Certains kits de développement logiciel (SDK) et runtimes peuvent être requis par Visual Studio et ils s’affichent avec la raison pour laquelle il n’est pas recommandé de les désinstaller.
 
 > [!NOTE]
 > La sortie de la `dotnet-core-uninstall list` commande ne correspond pas à la liste des versions installées dans la sortie de `dotnet --info` dans la plupart des cas. Plus précisément, cet outil n’affiche pas les versions installées par les fichiers zip ou gérées par Visual Studio (n’importe quelle version installée avec Visual Studio 2019 16,3 ou version ultérieure). Une façon de vérifier si une version est gérée par Visual Studio est de l’afficher dans `Add or Remove Programs` , où les versions gérées de Visual Studio sont marquées comme telles dans leurs noms complets.
@@ -62,19 +62,19 @@ dotnet-core-uninstall list [options]
 
 * **`--aspnet-runtime`**
 
-  Répertorie tous les runtimes ASP.NET Core qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les runtimes ASP.NET qui peuvent être désinstallés avec cet outil.
 
 * **`--hosting-bundle`**
 
-  Répertorie toutes les offres d’hébergement .NET Core qui peuvent être désinstallées avec cet outil.
+  Répertorie toutes les offres d’hébergement .NET qui peuvent être désinstallées avec cet outil.
 
 * **`--runtime`**
 
-  Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les runtimes .NET qui peuvent être désinstallés avec cet outil.
 
 * **`--sdk`**
 
-  Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les kits de développement logiciel (SDK) .NET qui peuvent être désinstallés avec cet outil.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -82,21 +82,21 @@ dotnet-core-uninstall list [options]
 
 * **`--x64`**
 
-  Répertorie tous les kits de développement logiciel (SDK) .NET Core x64 et les runtimes qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les kits de développement logiciel (SDK) et runtimes .NET x64 qui peuvent être désinstallés avec cet outil.
 
 * **`--x86`**
 
-  Répertorie tous les kits de développement logiciel (SDK) .NET Core x86 et les runtimes qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les kits de développement logiciel (SDK) .NET x86 et les runtimes qui peuvent être désinstallés avec cet outil.
 
 ## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--runtime`**
 
-  Répertorie tous les runtimes .NET Core qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les runtimes .NET qui peuvent être désinstallés avec cet outil.
 
 * **`--sdk`**
 
-  Répertorie tous les kits de développement logiciel (SDK) .NET Core qui peuvent être désinstallés avec cet outil.
+  Répertorie tous les kits de développement logiciel (SDK) .NET qui peuvent être désinstallés avec cet outil.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -106,19 +106,19 @@ dotnet-core-uninstall list [options]
 
 #### <a name="examples"></a>Exemples
 
-* Répertorie tous les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être supprimés à l’aide de cet outil :
+* Répertorie tous les kits de développement logiciel (SDK) et runtimes .NET qui peuvent être supprimés à l’aide de cet outil :
 
   ```console
   dotnet-core-uninstall list
   ```
 
-* Répertoriez tous les kits de développement logiciel (SDK) et runtimes x64 .NET Core :
+* Répertorier tous les kits de développement logiciel (SDK) et runtimes .NET x64 :
 
   ```console
   dotnet-core-uninstall list --x64
   ```
 
-* Répertorier tous les kits de développement logiciel (SDK) .NET Core x86 :
+* Répertorier tous les kits de développement logiciel (SDK) .NET x86 :
 
   ```console
   dotnet-core-uninstall list --sdk --x86
@@ -126,7 +126,7 @@ dotnet-core-uninstall list [options]
 
 ### <a name="step-2---do-a-dry-run"></a>Étape 2 : effectuer une exécution à sec
 
-Les `dotnet-core-uninstall dry-run` `dotnet-core-uninstall whatif` commandes et affichent les kits de développement logiciel (SDK) .net Core et les runtimes qui seront supprimés en fonction des options fournies sans effectuer la désinstallation. Ces commandes sont des synonymes.
+Les `dotnet-core-uninstall dry-run` `dotnet-core-uninstall whatif` commandes et affichent les kits de développement logiciel (SDK) et runtimes .net qui seront supprimés en fonction des options fournies sans effectuer la désinstallation. Ces commandes sont des synonymes.
 
 **dotnet-Core-désinstaller Dry-Run et DOTNET-Core-Uninstall WhatIf**
 
@@ -155,51 +155,51 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
 * **`--all`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes.
 
 * **`--all-below <VERSION>[ <VERSION>...]`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
 
 * **`--all-but <VERSIONS>[ <VERSION>...]`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes, à l’exception de ceux spécifiés.
 
 * **`--all-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception de la version la plus récente.
 
 * **`--all-lower-patches`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
 
 * **`--all-previews`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes marqués en tant qu’aperçus.
 
 * **`--all-previews-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
 
 * **`--aspnet-runtime`**
 
-  Supprime ASP.NET Core runtimes uniquement.
+  Supprime uniquement les runtimes ASP.NET.
 
 * **`--hosting-bundle`**
 
-  Supprime uniquement le Runtime .NET Core et les regroupements d’hébergement.
+  Supprime uniquement le Runtime .NET et les regroupements d’hébergement.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET qui correspondent à la `major.minor` version spécifiée.
 
 * **`--runtime`**
 
-  Supprime uniquement les runtimes .NET Core.
+  Supprime uniquement les runtimes .NET.
 
 * **`--sdk`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -225,43 +225,43 @@ Remarques :
 
 * **`--all`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes.
 
 * **`--all-below <VERSION>[ <VERSION>...]`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée. La version spécifiée est conservée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET sous la version spécifiée. La version spécifiée est conservée.
 
 * **`--all-but <VERSIONS>[ <VERSION>...]`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception des versions spécifiées.
 
 * **`--all-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception de la version la plus récente.
 
 * **`--all-lower-patches`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
 
 * **`--all-previews`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes marqués en tant qu’aperçus.
 
 * **`--all-previews-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET qui correspondent à la `major.minor` version spécifiée.
 
 * **`--runtime`**
 
-  Supprime uniquement les runtimes .NET Core.
+  Supprime uniquement les runtimes .NET.
 
 * **`--sdk`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -279,36 +279,36 @@ Remarques :
 #### <a name="examples"></a>Exemples
 
 > [!NOTE]
-> Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres SDK ne sont pas inclus dans la `dotnet-core-uninstall dry-run` sortie. Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent ne pas être inclus dans la sortie, en fonction de l’état de l’ordinateur. Pour inclure tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.
+> Par défaut, les kits de développement logiciel (SDK) et runtimes .NET qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK) ne sont pas inclus dans la `dotnet-core-uninstall dry-run` sortie. Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent ne pas être inclus dans la sortie, en fonction de l’état de l’ordinateur. Pour inclure tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.
 
-* Exécution à sec de la suppression de tous les runtimes .NET Core qui ont été remplacés par des correctifs plus élevés :
+* Exécution à sec de la suppression de tous les runtimes .NET qui ont été remplacés par des correctifs plus élevés :
 
   ```console
   dotnet-core-uninstall dry-run --all-lower-patches --runtime
   ```
 
-* Exécution à sec de la suppression de tous les kits de développement logiciel (SDK) .NET Core sous la version `2.2.301` :
+* Exécution à sec de la suppression de tous les kits de développement logiciel (SDK) .NET sous la version `2.2.301` :
 
   ```console
   dotnet-core-uninstall whatif --all-below 2.2.301 --sdk
   ```
 
-### <a name="step-3---uninstall-net-core-sdks-and-runtimes"></a>Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET Core
+### <a name="step-3---uninstall-net-sdks-and-runtimes"></a>Étape 3 : désinstaller les kits de développement logiciel (SDK) et runtimes .NET
 
-`dotnet-core-uninstall remove` désinstalle les kits de développement logiciel (SDK) .NET Core et les runtimes spécifiés par une collection d’options. Les versions 1,2 et ultérieures peuvent désinstaller les kits de développement logiciel (SDK) et les runtimes avec la version 5,0 ou antérieure, et les versions précédentes de l’outil peuvent désinstaller 3,1 et versions antérieures.
+`dotnet-core-uninstall remove` désinstalle les kits de développement logiciel (SDK) .NET et les runtimes spécifiés par une collection d’options. Les versions 1,2 et ultérieures peuvent désinstaller les kits de développement logiciel (SDK) et les runtimes avec la version 5,0 ou antérieure, et les versions précédentes de l’outil peuvent désinstaller 3,1 et versions antérieures.
 
-Étant donné que cet outil a un comportement destructif, il est **fortement** recommandé d’effectuer une exécution à sec avant d’exécuter la commande Remove. La série à sec vous montrera les kits de développement logiciel (SDK) .NET Core et les runtimes qui seront supprimés lorsque vous utiliserez la `remove` commande. Reportez-vous à [la rubrique dois-je supprimer une version ?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) pour savoir quels SDK et runtimes peuvent être supprimés en toute sécurité.
+Étant donné que cet outil a un comportement destructif, il est **fortement** recommandé d’effectuer une exécution à sec avant d’exécuter la commande Remove. La série à sec vous montrera les kits de développement logiciel (SDK) et runtimes .NET qui seront supprimés lorsque vous utiliserez la `remove` commande. Reportez-vous à [la rubrique dois-je supprimer une version ?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) pour savoir quels SDK et runtimes peuvent être supprimés en toute sécurité.
 
 > [!CAUTION]
 > Rappelez-vous des avertissements suivants :
 >
->- Cet outil peut désinstaller les versions des kit SDK .NET Core requises par les `global.json` fichiers sur votre ordinateur. Vous pouvez réinstaller les kits de développement logiciel (SDK) .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .
->- Cet outil peut désinstaller des versions du Runtime .NET Core qui sont requises par les applications dépendantes du Framework sur votre ordinateur. Vous pouvez réinstaller les runtimes .NET Core à partir de la page [Télécharger .net Core](https://dotnet.microsoft.com/download/dotnet-core) .
->- Cet outil peut désinstaller des versions du kit SDK .NET Core et du Runtime sur lesquelles s’appuie Visual Studio. Si vous interrompez votre installation de Visual Studio, exécutez « réparer » dans le programme d’installation de Visual Studio pour revenir à un état de travail.
+>- Cet outil peut désinstaller des versions du kit de développement logiciel (SDK) .NET qui sont requises par les `global.json` fichiers sur votre ordinateur. Vous pouvez réinstaller les kits de développement logiciel (SDK) .NET à partir de la page [Télécharger .net](https://dotnet.microsoft.com/download/dotnet-core) .
+>- Cet outil peut désinstaller des versions du Runtime .NET qui sont requises par les applications dépendantes du Framework sur votre ordinateur. Vous pouvez réinstaller les runtimes .NET à partir de la page [Télécharger .net](https://dotnet.microsoft.com/download/dotnet-core) .
+>- Cet outil peut désinstaller des versions du kit de développement logiciel (SDK) .NET et du Runtime sur lequel Visual Studio s’appuie. Si vous interrompez votre installation de Visual Studio, exécutez « réparer » dans le programme d’installation de Visual Studio pour revenir à un état de travail.
 
-Par défaut, toutes les commandes conservent les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK). Ces kits de développement logiciel (SDK) et runtimes peuvent être désinstallés en les répertoriant explicitement comme arguments ou à l’aide de l' `--force` option.
+Par défaut, toutes les commandes conservent les kits de développement logiciel (SDK) et runtimes .NET qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK). Ces kits de développement logiciel (SDK) et runtimes peuvent être désinstallés en les répertoriant explicitement comme arguments ou à l’aide de l' `--force` option.
 
-L’outil nécessite une élévation pour désinstaller les kits de développement logiciel (SDK) .NET Core et les runtimes. Exécutez l’outil dans une invite de commandes d’administrateur sur Windows et avec `sudo` sur MacOS. Les `dry-run` `whatif` commandes et ne nécessitent pas d’élévation.
+L’outil requiert une élévation pour la désinstallation des runtimes et SDK .NET. Exécutez l’outil dans une invite de commandes d’administrateur sur Windows et avec `sudo` sur MacOS. Les `dry-run` `whatif` commandes et ne nécessitent pas d’élévation.
 
 **dotnet-Core-désinstaller supprimer**
 
@@ -335,51 +335,51 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`--all`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes.
 
 * **`--all-below <VERSION>[ <VERSION>...]`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET et les runtimes dont la version est inférieure à la version spécifiée. La version spécifiée reste installée.
 
 * **`--all-but <VERSIONS>[ <VERSION>...]`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes, à l’exception de ceux spécifiés.
 
 * **`--all-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception de la version la plus récente.
 
 * **`--all-lower-patches`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
 
 * **`--all-previews`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes marqués en tant qu’aperçus.
 
 * **`--all-previews-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
 
 * **`--aspnet-runtime`**
 
-  Supprime ASP.NET Core runtimes uniquement.
+  Supprime uniquement les runtimes ASP.NET.
 
 * **`--hosting-bundle`**
 
-  Supprime uniquement les regroupements d’hébergement .NET Core.
+  Supprime les regroupements d’hébergement .NET uniquement.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET qui correspondent à la `major.minor` version spécifiée.
 
 * **`--runtime`**
 
-  Supprime uniquement les runtimes .NET Core.
+  Supprime uniquement les runtimes .NET.
 
 * **`--sdk`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -407,43 +407,43 @@ Remarques :
 
 * **`--all`**
 
-  Supprime tous les kits de développement logiciel (SDK) .NET Core et les runtimes.
+  Supprime tous les kits de développement logiciel (SDK) .NET et runtimes.
 
 * **`--all-below <VERSION>[ <VERSION>...]`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes inférieurs à la version spécifiée. La version spécifiée est conservée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET sous la version spécifiée. La version spécifiée est conservée.
 
 * **`--all-but <VERSIONS>[ <VERSION>...]`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception des versions spécifiées.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception des versions spécifiées.
 
 * **`--all-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes, à l’exception de la version la plus récente.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET, à l’exception de la version la plus récente.
 
 * **`--all-lower-patches`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes remplacés par des correctifs plus élevés. Cette option protège global.js.
 
 * **`--all-previews`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes marqués en tant qu’aperçus.
+  Supprime les kits de développement logiciel (SDK) .NET et les runtimes marqués en tant qu’aperçus.
 
 * **`--all-previews-but-latest`**
 
-  Supprime les kits de développement logiciel (SDK) et runtimes .NET Core marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET marqués comme préversions, à l’exception de la version préliminaire la plus élevée.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Supprime les kits de développement logiciel (SDK) .NET Core et les runtimes qui correspondent à la `major.minor` version spécifiée.
+  Supprime les kits de développement logiciel (SDK) et runtimes .NET qui correspondent à la `major.minor` version spécifiée.
 
 * **`--runtime`**
 
-  Supprime uniquement les runtimes .NET Core.
+  Supprime uniquement les runtimes .NET.
 
 * **`--sdk`**
 
-  Supprime uniquement les kits de développement logiciel (SDK) .NET Core.
+  Supprime uniquement les kits de développement logiciel (SDK) .NET.
 
 * **`-v, --verbosity <LEVEL>`**
 
@@ -463,9 +463,9 @@ Remarques :
 #### <a name="examples"></a>Exemples
 
 > [!NOTE]
-> Par défaut, les kits de développement logiciel (SDK) .NET Core et les runtimes qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK) sont conservés. Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent être conservés, en fonction de l’état de l’ordinateur. Pour supprimer tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.
+> Par défaut, les kits de développement logiciel (SDK) et runtimes .NET qui peuvent être requis par Visual Studio ou d’autres kits de développement logiciel (SDK) sont conservés. Dans les exemples suivants, certains des kits de développement logiciel (SDK) et runtimes spécifiés peuvent être conservés, en fonction de l’état de l’ordinateur. Pour supprimer tous les kits de développement logiciel (SDK) et runtimes, répertoriez-les explicitement comme arguments ou utilisez l' `--force` option.
 
-* Supprimez tous les runtimes .NET Core à l’exception de la version `3.0.0-preview6-27804-01` sans demander de confirmation Y/N :
+* Supprimez tous les runtimes .NET à l’exception de la version `3.0.0-preview6-27804-01` sans demander de confirmation Y/N :
 
   ```console
   dotnet-core-uninstall remove --all-but 3.0.0-preview6-27804-01 --runtime --yes
@@ -483,19 +483,19 @@ Remarques :
   dotnet-core-uninstall remove 1.1.11 --sdk --yes --verbosity q
   ```
 
-* Supprimez tous les kits de développement logiciel (SDK) .NET Core pouvant être supprimés en toute sécurité par cet outil :
+* Supprimez tous les kits de développement logiciel (SDK) .NET qui peuvent être supprimés en toute sécurité par cet outil :
 
   ```console
   dotnet-core-uninstall remove --all --sdk
   ```
 
-* Supprimer tous les kits de développement logiciel (SDK) .NET Core qui peuvent être supprimés par cet outil, y compris les kits de développement logiciel (SDK) qui peuvent être requis par Visual Studio (non recommandé) :
+* Supprimer tous les kits de développement logiciel (SDK) .NET qui peuvent être supprimés par cet outil, y compris les kits de développement logiciel (SDK) qui peuvent être requis par Visual Studio (non recommandé) :
 
   ```console
   dotnet-core-uninstall remove --all --sdk --force
   ```
 
-* Supprimer tous les kits de développement logiciel (SDK) .NET Core spécifiés dans le fichier réponse `versions.rsp`
+* Supprimer tous les kits de développement logiciel (SDK) .NET spécifiés dans le fichier réponse `versions.rsp`
 
   ```console
   dotnet-core-uninstall remove --sdk @versions.rsp
@@ -517,7 +517,7 @@ Dans certains cas, vous n’avez plus besoin de la et vous souhaiterez `NuGetFal
 ## <a name="windows"></a>[Windows](#tab/windows)
 
 1. Ouvrez la boîte de dialogue **Ajout/Suppression de programmes**.
-2. Recherchez `Microsoft .NET Core SDK Uninstall Tool`.
+2. Recherchez `Microsoft .NET SDK Uninstall Tool`.
 3. Sélectionner **Désinstaller**.
 
 ## <a name="macos"></a>[macOS](#tab/macos)

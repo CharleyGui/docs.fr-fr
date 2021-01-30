@@ -5,19 +5,19 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 no-loc:
 - EditorConfig
-ms.openlocfilehash: 0d64df42ffb1763afed3e883c4f043755e158489
-ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
+ms.openlocfilehash: b98fdd48f2373bd23fcd3273834860a60c682969
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97633986"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216380"
 ---
 # <a name="configuration-files-for-code-analysis-rules"></a>Fichiers de configuration pour les règles d’analyse du code
 
 Les règles d’analyse du code ont plusieurs [options de configuration](configuration-options.md). Vous spécifiez ces options en tant que paires clé-valeur dans l’un des fichiers de configuration de l’analyseur suivants :
 
 - [EditorConfig](#editorconfig) fichier : options de configuration basées sur un fichier ou sur un dossier.
-- Fichier [Global AnalyzerConfig](#global-analyzerconfig) : options de configuration au niveau du projet.
+- Fichier [Global AnalyzerConfig](#global-analyzerconfig) : options de configuration au niveau du projet. Utile lorsque certains fichiers projet résident à l’extérieur du dossier du projet.
 
 ## EditorConfig
 
@@ -58,7 +58,7 @@ tab_width = 4
 #### .NET Coding Conventions ####
 
 # this. and Me. preferences
-dotnet_style_qualification_for_method = true:warning
+dotnet_style_qualification_for_method = true
 
 #### Diagnostic configuration ####
 

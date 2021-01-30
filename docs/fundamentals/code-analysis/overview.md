@@ -8,12 +8,12 @@ ms.custom: updateeachrelease
 helpviewer_keywords:
 - code analysis
 - code analyzers
-ms.openlocfilehash: 80815b5913ad72756de503209b52e8848dd708bf
-ms.sourcegitcommit: 5d9cee27d9ffe8f5670e5f663434511e81b8ac38
+ms.openlocfilehash: efc440adb59da1ef9838ec5445d9c55544c14380
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98025079"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216471"
 ---
 # <a name="overview-of-net-source-code-analysis"></a>Vue d’ensemble de l’analyse du code source .NET
 
@@ -40,7 +40,7 @@ Les règles d’analyse de la *qualité du code* (« CAXXXX ») inspectent vot
 
 Les règles suivantes sont activées par défaut dans .NET 5,0.
 
-| ID de diagnostic | Catégorie | severity | Description |
+| ID de diagnostic | Category | Gravité | Description |
 | - | - | - | - |
 | [CA1416](/visualstudio/code-quality/ca1416) | Interopérabilité | Avertissement | Analyseur de compatibilité de plateforme |
 | [CA1417](/visualstudio/code-quality/ca1417) | Interopérabilité | Avertissement | Ne pas utiliser `OutAttribute` sur les paramètres de chaîne pour P/Invoke |
@@ -60,7 +60,7 @@ Vous pouvez modifier la gravité de ces règles pour les désactiver ou les éle
 
 Le *mode d’analyse* fait référence à une configuration d’analyse du code prédéfinie dans laquelle aucune, une partie ou l’ensemble des règles n’est activée. Dans le mode d’analyse par défaut, seul un petit nombre de règles est [activé en tant qu’avertissements de génération](#enabled-rules). Vous pouvez modifier le mode d’analyse de votre projet en définissant la propriété [AnalysisMode](../../core/project-sdk/msbuild-props.md#analysismode) dans le fichier projet. Les valeurs autorisées sont les suivantes :
 
-| Value | Description |
+| Valeur | Description |
 | - | - |
 | `AllDisabledByDefault` | Il s’agit du mode le plus conservateur. Toutes les règles sont désactivées par défaut. Vous pouvez [choisir](configuration-options.md) des règles individuelles pour les activer.<br /><br />`<AnalysisMode>AllDisabledByDefault</AnalysisMode>` |
 | `AllEnabledByDefault` | Il s’agit du mode le plus agressif. Toutes les règles sont activées en tant qu’avertissements de Build. Vous pouvez [choisir de](configuration-options.md) désactiver les règles individuelles de manière sélective pour les désactiver.<br /><br />`<AnalysisMode>AllEnabledByDefault</AnalysisMode>` |
@@ -127,7 +127,7 @@ Procédez comme suit pour activer l’analyse de style de code sur la build :
    dotnet_diagnostic.IDE0040.severity = warning
    ```
 
-   Vous pouvez également configurer la catégorie « style » entière comme un avertissement ou une erreur, par défaut, puis désactiver de manière sélective les règles que vous ne souhaitez pas exécuter lors de la génération. Par exemple :
+   Vous pouvez également configurer une catégorie entière comme un avertissement ou une erreur, par défaut, puis désactiver de manière sélective les règles de cette catégorie que vous ne souhaitez pas exécuter lors de la génération. Par exemple :
 
    ```ini
    [*.{cs,vb}]

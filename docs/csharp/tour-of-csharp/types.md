@@ -2,14 +2,16 @@
 title: 'Définir des types et leurs membres-visite guidée de C #'
 description: Les blocs de construction des programmes sont des types. Découvrez comment créer des classes, des structs, des interfaces, etc. en C#.
 ms.date: 08/06/2020
-ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: b1ce24611fec6fdf01d5ecb8d6ae974e147c78c5
+ms.sourcegitcommit: 68c9d9d9a97aab3b59d388914004b5474cf1dbd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88559113"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99216601"
 ---
 # <a name="types-and-members"></a>Types et membres
+
+En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Une classe peut hériter directement d’une classe parente et peut implémenter un nombre quelconque d’interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est semblable à une classe légère ; Il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage. C# fournit également des enregistrements, qui sont des types de classe dont l’objectif est principalement le stockage des valeurs de données.
 
 ## <a name="classes-and-objects"></a>Classes et objets
 
@@ -32,7 +34,7 @@ Les instances de classes sont créées à l’aide de l’opérateur `new`, qui 
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="CreatePoints":::
 
-La mémoire occupée par un objet est automatiquement libérée lorsque l’objet n’est plus accessible. Il n’est ni nécessaire ni possible de libérer explicitement des objets en C#.
+La mémoire occupée par un objet est automatiquement libérée lorsque l’objet n’est plus accessible. Il n’est pas nécessaire ou possible de libérer explicitement des objets en C#.
 
 ### <a name="type-parameters"></a>Paramètres de type
 
@@ -59,7 +61,7 @@ Il existe une conversion implicite d’un type de classe vers un de ses types de
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="ImplicitCastToBase":::
 
-## <a name="structs"></a>Structures
+## <a name="structs"></a>Structs
 
 Les classes définissent des types qui prennent en charge l’héritage et le polymorphisme. Elles vous permettent de créer des comportements sophistiqués basés sur des hiérarchies de classes dérivées. En revanche, les types [ * **struct** _](../language-reference/builtin-types/struct.md) sont des types plus simples dont l’objectif principal est de stocker des valeurs de données. Les structs ne peuvent pas déclarer un type de base ; ils dérivent implicitement de <xref:System.ValueType?displayProperty=nameWithType> . Vous ne pouvez pas dériver `struct` d’autres types à partir d’un `struct` type. Ils sont implicitement sealed.
 
