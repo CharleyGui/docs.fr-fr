@@ -197,7 +197,7 @@ items:
                 href: ../core/tools/sdk-errors/netsdk1079.md
               - name: NETSDK1145
                 href: ../core/tools/sdk-errors/netsdk1145.md
-      - name: CLI .NET Core
+      - name: CLI .NET
         items:
           - name: Vue d'ensemble
             displayName: '.net cli,command-line interface,cli,tool'
@@ -439,7 +439,7 @@ items:
                 href: ../fundamentals/diagnostics/runtime-type-events.md
           - name: Collecter les diagnostics dans les conteneurs
             href: ../core/diagnostics/diagnostics-in-containers.md
-          - name: Outils .NET Core généraux
+          - name: Outils globaux de l’interface CLI .NET
             items:
               - name: dotnet-counters
                 href: ../core/diagnostics/dotnet-counters.md
@@ -453,7 +453,7 @@ items:
                 href: ../core/diagnostics/dotnet-symbol.md
               - name: dotnet-sos
                 href: ../core/diagnostics/dotnet-sos.md
-          - name: Tutoriels de diagnostics .NET Core
+          - name: Didacticiels de diagnostic .NET
             items:
               - name: Collecter le suivi des performances dans Linux avec PerfCollect
                 href: ../core/diagnostics/trace-perfcollect-lttng.md
@@ -478,6 +478,8 @@ items:
                 href: code-analysis/configuration-options.md
               - name: Fichiers de configuration
                 href: code-analysis/configuration-files.md
+              - name: Comment supprimer des avertissements
+                href: code-analysis/suppress-warnings.md
               - name: Règles de qualité du code
                 items:
                   - name: Options de règle
@@ -492,7 +494,7 @@ items:
             items:
               - name: Règles de qualité du code
                 items:
-                  - name: Vue d’ensemble
+                  - name: Vue d'ensemble
                     href: code-analysis/quality-rules/index.md
                   - name: Règles de conception
                     items:
@@ -1296,15 +1298,15 @@ items:
                 href: ../core/dependency-loading/loading-unmanaged.md
           - name: Didacticiels
             items:
-              - name: Créer une application .NET Core avec des plug-ins
+              - name: Créer une application .NET avec des plug-ins
                 href: ../core/tutorials/creating-app-with-plugin-support.md
-              - name: Comment utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core
+              - name: Comment utiliser et déboguer l’inchargement d’assemblys dans .NET
                 href: ../core/../standard/assembly/unloadability.md
       - name: Gestion de version
         items:
           - name: Vue d'ensemble
             href: ../core/versions/index.md
-          - name: Sélection de la version de .NET Core
+          - name: Sélection de la version .NET
             href: ../core/versions/selection.md
       - name: Configuration d’exécution
         items:
@@ -1354,7 +1356,7 @@ items:
         items:
           - name: Introduction à .NET et à Docker
             href: ../core/docker/introduction.md
-          - name: Conteneuriser une application .NET Core
+          - name: Conteneur d’une application .NET
             href: ../core/docker/build-container.md
           - name: Outils de conteneur dans Visual Studio
             href: /visualstudio/containers/overview
@@ -1531,7 +1533,7 @@ items:
             href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Opérations de chaînes de base
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: ../standard/base-types/basic-string-operations.md
                 displayName: string operations
               - name: Créer de nouvelles chaînes
@@ -1687,7 +1689,7 @@ items:
                 href: ../standard/serialization/how-to-determine-if-netstandard-object-is-serializable.md
           - name: "Sérialisation\_XML et\_SOAP"
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: ../standard/serialization/xml-and-soap-serialization.md
               - name: Sérialisation XML en profondeur
                 href: ../standard/serialization/introducing-xml-serialization.md
@@ -1836,6 +1838,8 @@ items:
             displayName: 'custom configuration,custom config,custom configuration provider,custom config provider'
           - name: Modèle d’options
             href: ../core/extensions/options.md
+          - name: Aide sur les modèles d’options pour les auteurs de bibliothèque
+            href: ../core/extensions/options-library-authors.md
       - name: Journalisation
         items:
           - name: Vue d'ensemble
@@ -2054,7 +2058,7 @@ items:
         href: ../core/testing/unit-testing-code-coverage.md
       - name: Sortie publiée des tests unitaires
         href: ../core/testing/unit-testing-published-output.md
-      - name: Test unitaire en direct sur des projets .NET Core avec Visual Studio
+      - name: Projets .NET Live Unit Test avec Visual Studio
         href: /visualstudio/test/live-unit-testing-start
   - name: Sécurité
     href: ../standard/security/
@@ -2133,9 +2137,9 @@ items:
             href: ../standard/native-interop/best-practices.md
           - name: Charsets et marshaling
             href: ../standard/native-interop/charset.md
-          - name: Exposer les composants .NET Core à COM
+          - name: Exposer des composants .NET à COM
             href: ../core/native-interop/expose-components-to-com.md
-          - name: Héberger .NET Core à partir du code natif
+          - name: Héberger .NET à partir du code natif
             href: ../core/tutorials/netcore-hosting.md
           - name: COM interop
             items:
@@ -2157,7 +2161,7 @@ items:
             href: ../standard/native-interop/apply-interop-attributes.md
           - name: Exceptions
             href: ../standard/native-interop/exceptions-interoperability.md
-      - name: Empaquetage de la distribution de .NET Core
+      - name: Package de distribution .NET
         href: ../core/distribution-packaging.md
       - name: Globalisation et localisation
         href: ../standard/globalization-localization/
@@ -2295,7 +2299,7 @@ items:
             href: ../core/porting/third-party-deps.md
           - name: Bibliothèques de portage
             href: ../core/porting/libraries.md
-          - name: Organiser les projets pour .NET Core
+          - name: Organiser des projets pour .NET
             href: ../core/porting/project-structure.md
           - name: Technologies non disponibles
             href: ../core/porting/net-framework-tech-unavailable.md?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
