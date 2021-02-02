@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 61d79f5647fa05edade9aef90653544b08c20c83
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: e49bfaf573c317523b739796c29d807e5369ada4
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91181828"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427072"
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
 
@@ -24,7 +24,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 
  Étant donné que les classes sont des types référence, une variable d’un objet de classe conserve une référence à l’adresse de l’objet sur le tas managé. Si un deuxième objet du même type est assigné au premier objet, les deux variables font référence à l’objet à cette adresse. Ce point est abordé en détail plus loin dans cette rubrique.  
   
- Les instances de classes sont créées à l’aide de l’[opérateur new](../../language-reference/operators/new-operator.md). Dans l’exemple suivant, `Person` est le type, et `person1` et `person 2` sont des instances, ou objets, de ce type.  
+ Les instances de classes sont créées à l’aide de l’[opérateur new](../../language-reference/operators/new-operator.md). Dans l’exemple suivant, `Person` est le type, et `person1` et `person2` sont des instances, ou objets, de ce type.  
   
  [!code-csharp[csProgGuideStatements#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#30)]  
   

@@ -3,12 +3,12 @@ title: Réflexion (C#)
 description: La réflexion fournit des objets qui décrivent les assemblys, les modules et les types en C#. Si votre code comprend des attributs, la réflexion vous permet d’y accéder.
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: 4d4f4c082dd2d58e212bae53524e5dd4fd06fb75
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 91d6d9bbd54199f3468f867d8804596f4a7546d9
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302800"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427059"
 ---
 # <a name="reflection-c"></a>Réflexion (C#)
 
@@ -39,7 +39,7 @@ Console.WriteLine(info);
 La sortie est : `System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e` .
 
 > [!NOTE]
-> Les mots clés C# `protected` et `internal` n’ont aucune signification en langage intermédiaire et ne sont pas utilisés dans les API de réflexion. Les termes correspondants en langage intermédiaire sont *Family* et *Assembly*. Pour identifier une méthode `internal` à l’aide de la réflexion, utilisez la propriété <xref:System.Reflection.MethodBase.IsAssembly%2A>. Pour identifier une méthode `protected internal`, utilisez <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>.
+> Les mots clés C# `protected` et n' `internal` ont aucune signification en langage intermédiaire (il) et ne sont pas utilisés dans les API de réflexion. Les termes correspondants en langage intermédiaire sont *Family* et *Assembly*. Pour identifier une méthode `internal` à l’aide de la réflexion, utilisez la propriété <xref:System.Reflection.MethodBase.IsAssembly%2A>. Pour identifier une méthode `protected internal`, utilisez <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>.
 
 ## <a name="reflection-overview"></a>Vue d’ensemble de la réflexion
 

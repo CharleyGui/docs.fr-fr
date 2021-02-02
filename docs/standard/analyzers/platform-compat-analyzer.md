@@ -3,12 +3,12 @@ title: Analyseur de compatibilité de plateforme
 description: Analyseur Roslyn qui peut aider à détecter les problèmes de compatibilité de plateforme dans les applications et les bibliothèques multiplateforme.
 author: buyaa-n
 ms.date: 09/17/2020
-ms.openlocfilehash: 427a2d8ae61a82699e5cf0987fcd1c5a45152cac
-ms.sourcegitcommit: e301979e3049ce412d19b094c60ed95b316a8f8c
+ms.openlocfilehash: 6ba521110e21e169955c54faf5c2a16c2838335b
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97594915"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99426994"
 ---
 # <a name="platform-compatibility-analyzer"></a>Analyseur de compatibilité de plateforme
 
@@ -35,7 +35,7 @@ L’analyseur de compatibilité de la plateforme est l’un des analyseurs de la
   - L’attribut peut être appliqué plusieurs fois pour indiquer la **prise en charge de plusieurs plateformes** ( `[SupportedOSPlatform("windows"), SupportedOSPlatform("Android6.0")]` ).
   - L’analyseur produira un **Avertissement** si les API spécifiques à la plateforme sont référencées sans un **contexte de plateforme** approprié :
     - **Avertit** si le projet ne cible pas la plateforme prise en charge (par exemple, un appel d’API spécifique à Windows et les cibles de projet `<TargetFramework>net5.0-ios14.0</TargetFramework>` ).
-    - **Avertit** si le projet est multi-ciblé ( `<TargetFramework>net5.0</TargetFramework>` ).
+    - **Avertit** si le projet est multi-ciblé (par exemple, `<TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>` ).
     - **N’avertit pas** si l’API spécifique à la plateforme est référencée dans un projet qui cible l’une des **plateformes spécifiées** (par exemple, pour un appel d’API spécifique à Windows et les cibles de projet `<TargetFramework>net5.0-windows</TargetFramework>` ).
     - **N’avertit pas** si l’appel d’API spécifique à la plateforme est protégé par les méthodes de vérification de plateforme correspondantes (par exemple, `if(OperatingSystem.IsWindows())` ).
     - **N’avertit pas** si l’API spécifique à la plateforme est référencée à partir du même contexte spécifique à la plateforme (le **site d’appel est également attribué** avec `[SupportedOSPlatform("platform")` ).

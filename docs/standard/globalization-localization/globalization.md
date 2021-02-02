@@ -12,12 +12,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: 055bdfa82ea0e1721a6125ba14d7b6340dc254b9
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6ed1f6fa41b7a8b8ea8ecc89fa603836d72dfa8c
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829867"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99426973"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -35,7 +35,7 @@ La gestion des caractères et des chaînes est un élément central de la global
 
 Par défaut, .NET utilise des chaînes Unicode. Une chaîne Unicode se compose de zéro, un ou plusieurs objets <xref:System.Char>, chacun représentant une unité de code UTF-16. Il existe une représentation Unicode pour pratiquement tous les caractères de chaque jeu de caractères utilisé dans le monde.
 
-Beaucoup d’applications et de systèmes d’exploitation, dont le système d’exploitation Windows, peuvent aussi utiliser des pages de codes pour représenter des jeux de caractères. Les pages de codes contiennent généralement les valeurs ASCII standard (de 0x00 à 0x7F) et mappent les autres caractères aux valeurs restantes (de 0x80 à 0xFF). L’interprétation des valeurs 0x80 à 0xFF dépend de la page de codes utilisée. C’est pour cette raison que vous devez éviter d’utiliser des pages de codes dans une application globalisée, dans la mesure du possible.
+De nombreuses applications et systèmes d’exploitation, y compris le système d’exploitation Windows, peuvent également utiliser des pages de codes pour représenter des jeux de caractères. Les pages de codes contiennent généralement les valeurs ASCII standard (de 0x00 à 0x7F) et mappent les autres caractères aux valeurs restantes (de 0x80 à 0xFF). L’interprétation des valeurs 0x80 à 0xFF dépend de la page de codes utilisée. C’est pour cette raison que vous devez éviter d’utiliser des pages de codes dans une application globalisée, dans la mesure du possible.
 
 L’exemple suivant illustre les risques liés à l’interprétation des données de page de codes quand la page de codes par défaut d’un système est différente de celle sur lequel les données ont été enregistrées. (Pour simuler ce scénario, l’exemple spécifie explicitement des pages de codes différentes.) Tout d’abord, l’exemple définit un tableau qui se compose des caractères majuscules de l’alphabet grec. Ces caractères sont encodés dans un tableau d’octets en utilisant la page de codes 737 (aussi appelée MS-DOS Grec), tableau d’octets qui est ensuite enregistré dans un fichier. Si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 737, les caractères d’origine sont restaurés. En revanche, si le fichier est récupéré et que son tableau d’octets est décodé en utilisant la page de codes 1252 (ou Windows-1252, qui représente les caractères de l’alphabet latin), les caractères d’origine sont perdus.
 

@@ -2,12 +2,12 @@
 title: Bibliothèques NuGet et .NET
 description: Meilleures pratiques recommandées pour l’empaquetage avec des bibliothèques NuGet pour .NET.
 ms.date: 01/15/2019
-ms.openlocfilehash: d9f8d7cc4402a87e1429791b57a0306b318dfbe4
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 14d65ae29a09f98e99b2cabd5d69cfc889df7d5e
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382111"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427046"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -51,7 +51,7 @@ Un package NuGet prend en charge plusieurs [propriétés de métadonnées](/nuge
 | `Title`                            | `title`                    | Un titre convivial du package. Ce champ est défini sur `PackageId` par défaut.             |
 | `Description`                      | `description`              | Longue description du package affiché dans l’interface utilisateur.             |
 | `Authors`                          | `authors`                  | Liste séparée par des virgules des auteurs de packages, qui correspondent aux noms de profil sur nuget.org.             |
-| `PackageTags`                      | `tags`                     | Liste délimitée par des espaces des balises et mots clés qui décrivent le package. Les balises sont utilisées lors de la recherche des packages.             |
+| `PackageTags`                      | `tags`                     | Liste de balises et de mots clés délimités par des espaces ou des points-virgules qui décrivent le package. Les balises sont utilisées lors de la recherche des packages.             |
 | `PackageIcon`                   | `icon`                  | Chemin d’accès à une image dans le package à utiliser comme icône de package. En savoir plus sur les [ `icon` métadonnées](/nuget/reference/nuspec#icon). |
 | `PackageProjectUrl`                | `projectUrl`               | Une URL pour la page d'accueil du projet ou le référentiel source.             |
 | `PackageLicenseExpression`         | `license`                  | L’[identificateur SPDX](https://spdx.org/licenses/) de la licence du projet. Seules des licences OSI et FSF approuvées peuvent utiliser un identificateur. Les autres licences doivent utiliser `PackageLicenseFile`. En savoir plus sur les [ `license` métadonnées](/nuget/reference/nuspec#license). |

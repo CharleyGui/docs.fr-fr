@@ -13,14 +13,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 8c2d4baa9b9a3b19b8f1bde09bea0ab718092e24
-ms.sourcegitcommit: d0990c1c1ab2f81908360f47eafa8db9aa165137
+ms.openlocfilehash: 3c9383aed97ed3b22f8fccdd55a9fa5664edef2d
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512643"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99426929"
 ---
-# <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Comment migrer de Newtonsoft.Json vers System.Text.Json
+# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Comment migrer de Newtonsoft.Json vers System.Text.Json
 
 Cet article explique comment migrer de [Newtonsoft.Json](https://www.newtonsoft.com/json) vers <xref:System.Text.Json> .
 
@@ -34,7 +34,7 @@ L' `System.Text.Json` espace de noms fournit des fonctionnalités pour sérialis
 
 La majeure partie de cet article concerne l’utilisation de l' <xref:System.Text.Json.JsonSerializer> API, mais elle fournit également des conseils sur l’utilisation de <xref:System.Text.Json.JsonDocument> (qui représente les types Document Object Model ou DOM), <xref:System.Text.Json.Utf8JsonReader> et <xref:System.Text.Json.Utf8JsonWriter> .
 
-## <a name="table-of-differences-between-no-locnewtonsoftjson-and-no-locsystemtextjson"></a>Tableau des différences entre Newtonsoft.Json et System.Text.Json
+## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>Tableau des différences entre Newtonsoft.Json et System.Text.Json
 
 Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `System.Text.Json` équivalents. Les équivalents sont classés dans les catégories suivantes :
 
@@ -128,7 +128,7 @@ Le tableau suivant répertorie les `Newtonsoft.Json` fonctionnalités et les `Sy
 
 Il ne s’agit pas d’une liste exhaustive des `Newtonsoft.Json` fonctionnalités. La liste comprend un grand nombre des scénarios qui ont été demandés dans les [problèmes GitHub](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) ou les publications [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) . Si vous implémentez une solution de contournement pour l’un des scénarios répertoriés ici qui n’a pas d’exemple de code, et si vous souhaitez partager votre solution, sélectionnez **cette page** dans la section **Commentaires** en bas de cette page. Cela crée un problème dans le référentiel GitHub de cette documentation et le répertorie également dans la section **Commentaires** sur cette page.
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-no-locnewtonsoftjson"></a>Différences dans le comportement de JsonSerializer par défaut par rapport à Newtonsoft.Json
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Différences dans le comportement de JsonSerializer par défaut par rapport à Newtonsoft.Json
 
 <xref:System.Text.Json> est strict par défaut et évite toute estimation ou interprétation au nom de l’appelant, en mettant l’accent sur le comportement déterministe. La bibliothèque est intentionnellement conçue de cette façon pour les performances et la sécurité. `Newtonsoft.Json` est flexible par défaut. Cette différence fondamentale en matière de conception repose sur la plupart des différences spécifiques suivantes dans le comportement par défaut.
 
@@ -388,7 +388,12 @@ Pour prendre en charge un dictionnaire avec un entier ou un autre type comme cl�
 <xref:System.Text.Json> ne fournit pas de prise en charge intégrée pour les types suivants :
 
 * <xref:System.Data.DataTable> et types associés
+::: zone pivot="dotnet-5-0"
+* Types F #, tels que les [unions discriminées](../../fsharp/language-reference/discriminated-unions.md). Les [types d’enregistrements](../../fsharp/language-reference/records.md) et les types d' [enregistrements anonymes](../../fsharp/language-reference/anonymous-records.md) sont traités comme des poco immuables et sont donc pris en charge.
+::: zone-end
+::: zone pivot="dotnet-core-3-1"
 * Types F #, tels que les [unions discriminées](../../fsharp/language-reference/discriminated-unions.md), les [types d’enregistrements](../../fsharp/language-reference/records.md)et les types d' [enregistrements anonymes](../../fsharp/language-reference/anonymous-records.md).
+::: zone-end
 * <xref:System.Dynamic.ExpandoObject>
 * <xref:System.TimeZoneInfo>
 * <xref:System.Numerics.BigInteger>
