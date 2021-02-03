@@ -4,12 +4,12 @@ description: 'Découvrez comment F# Interactive (dotnet FSI) est utilisé pour e
 ms.date: 11/29/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: fe8ee2ebb97f4a47e80f39d5be8d95ba5b72ddc7
-ms.sourcegitcommit: ecd9e9bb2225eb76f819722ea8b24988fe46f34c
+ms.openlocfilehash: fe48d4d7de92eea800a489b12342e3ae181e8cb1
+ms.sourcegitcommit: 38999dc0ec4f7c4404de5ce0951b64c55997d9ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96739307"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99426972"
 ---
 # <a name="interactive-programming-with-f"></a>Programmation interactive avec F\#
 
@@ -91,7 +91,7 @@ Les scripts F # sont pris en charge en mode natif dans [Visual Studio](../../get
 ## <a name="referencing-packages-in-f-interactive"></a>Référencement de packages dans F# Interactive
 
 > [!NOTE]
-> Le système de gestion des packages est extensible, en savoir plus [sur les autres extensions](https://github.com/dotnet/fsharp/tree/main/src/fsharp/Microsoft.DotNet.DependencyManager).
+> Le système de gestion des packages est extensible, en savoir plus [sur les autres extensions](https://fsharp.github.io/FSharp.Compiler.Service/reference/Microsoft.DotNet.DependencyManager.html).
 
 F# Interactive prend en charge le référencement de packages NuGet avec la `#r "nuget:"` syntaxe et une version facultative :
 
@@ -126,7 +126,7 @@ printfn $"{f (dsharp.tensor 1.2)}"
 Vous pouvez également spécifier une source de package à l’aide de la `#i` commande. L’exemple suivant spécifie une source locale et distante :
 
 ```fsharp
-#i "nuget:https://my-remote-package-source/index.json
+#i "nuget:https://my-remote-package-source/index.json"
 #i @"path-to-my-local-source"
 ```
 
@@ -168,7 +168,7 @@ Vous pouvez spécifier autant de références d’assembly que vous le souhaitez
 
 ## <a name="loading-other-scripts"></a>Chargement d’autres scripts
 
-Lors de l’écriture de scripts, il peut souvent être utile d’utiliser différents scripts pour différentes tâches. Il peut arriver que vous souhaitiez réutiliser du code à partir d’un script dans un autre. Au lieu de copier-coller son contenu dans votre fichier, vous pouvez le charger et l’évaluer facilement avec `#load` .
+Lors de l’écriture de scripts, il peut souvent être utile d’utiliser différents scripts pour différentes tâches. Parfois, vous souhaiterez peut-être réutiliser le code d’un script dans un autre. Au lieu de copier-coller son contenu dans votre fichier, vous pouvez simplement le charger et l’évaluer avec `#load` .
 
 Tenez compte des points suivants `Script1.fsx` :
 
