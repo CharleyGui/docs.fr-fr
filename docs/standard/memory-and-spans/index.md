@@ -6,22 +6,22 @@ helpviewer_keywords:
 - Span<T>
 - buffers"
 - pipeline processing
-ms.openlocfilehash: 4b0464cc81cf0908a907f8305ea4e35b716c18fb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b81531d77bae1dce9d6cf58fe1b5439bf79f9e9c
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830660"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506368"
 ---
 # <a name="memory--and-span-related-types"></a>Types liés à la mémoire et l’étendue
 
-À compter de .NET Core 2,1, .NET comprend un certain nombre de types interdépendants qui représentent une région contiguë fortement typée de mémoire arbitraire. Elles incluent notamment :
+À compter de .NET Core 2,1, .NET comprend un certain nombre de types interdépendants qui représentent une région contiguë fortement typée de mémoire arbitraire. Il s’agit des tables suivantes :
 
 - <xref:System.Span%601?displayProperty=nameWithType>, un type utilisé pour accéder à une zone contiguë de mémoire. Une instance <xref:System.Span%601> peut être sauvegardée par un tableau de type `T`, un objet <xref:System.String>, une mémoire tampon allouée avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), ou un pointeur vers une mémoire non managée. Comme elle doit être allouée sur la pile, elle comporte plusieurs restrictions. Par exemple, un champ dans une classe ne peut pas être de type <xref:System.Span%601>, et l’étendue ne peut pas être utilisée dans des opérations asynchrones.
 
 - <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, une version immuable de la structure <xref:System.Span%601>.
 
-- <xref:System.Memory%601?displayProperty=nameWithType>, une zone contiguë de mémoire qui est allouée sur le segment managé plutôt que sur la pile. Une instance <xref:System.Memory%601> peut être sauvegardée par un tableau de type `T` ou un <xref:System.String>. Comme elle peut être stockée sur le tas managé, <xref:System.Memory%601> ne présente aucune limite pour <xref:System.Span%601>.
+- <xref:System.Memory%601?displayProperty=nameWithType>, un wrapper sur une région contiguë de mémoire. Une <xref:System.Memory%601> instance peut être sauvegardée par un tableau de type `T` , ou un <xref:System.String> ou un gestionnaire de mémoire. Comme il peut être stocké sur le tas managé, <xref:System.Memory%601> n’a aucune des limitations de <xref:System.Span%601> .
 
 - <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>, une version immuable de la structure <xref:System.Memory%601>.
 
@@ -34,6 +34,8 @@ ms.locfileid: "94830660"
 - <xref:System.ArraySegment%601>, un wrapper pour un certain nombre d’éléments de tableau commençant à un index particulier.
 
 - <xref:System.MemoryExtensions?displayProperty=nameWithType>, une collection de méthodes d’extension pour la conversion de chaînes, de tableaux et de segments de tableau en blocs <xref:System.Memory%601>.
+
+<xref:System.Span%601?displayProperty=nameWithType>, <xref:System.Memory%601?displayProperty=nameWithType> , et leurs équivalents ReadOnly sont conçus pour permettre la création d’algorithmes qui évitent de copier la mémoire ou d’allouer le tas managé plus que nécessaire. Leur création (via `Slice` ou leurs constructeurs) n’implique pas la duplication des mémoires tampons sous-jacentes : seules les références et les offsets pertinents, qui représentent la « vue » de la mémoire encapsulée, sont mis à jour.
 
 > [!NOTE]
 > Pour les frameworks antérieurs, <xref:System.Span%601> et <xref:System.Memory%601> sont disponibles dans le [package System.Memory NuGet](https://www.nuget.org/packages/System.Memory/).

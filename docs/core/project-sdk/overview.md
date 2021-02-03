@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Découvrez les kits de développement logiciel (SDK) de projet .NET.
 ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2adb0713fabda142d071425a2affe66cc9d4c172
-ms.sourcegitcommit: a4cecb7389f02c27e412b743f9189bd2a6dea4d6
+ms.openlocfilehash: d0eb4291f4def9263f37d2d09f09ef43d40dfbac
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98189666"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506394"
 ---
 # <a name="net-project-sdks"></a>SDK de projet .NET
 
@@ -131,6 +131,30 @@ Pour résoudre les erreurs, effectuez l’une des opérations suivantes :
   ```
 
   Si vous désactivez uniquement `Compile` modèles glob, Explorateur de solutions dans Visual Studio affiche toujours \* les éléments. cs dans le cadre du projet, inclus en tant qu' `None` éléments. Pour désactiver la glob implicite `None` , affectez la valeur `EnableDefaultNoneItems` à `false` .
+
+## <a name="implicit-package-references"></a>Références de package implicites
+
+Quand vous ciblez .NET Core 1,0-2,2 ou .NET Standard 1,0-2,0, le kit de développement logiciel (SDK) .NET ajoute des références implicites à certains sous- *packages*. Un reconditionnement est un package basé sur une infrastructure qui se compose uniquement de dépendances sur d’autres packages. Les reconditionnements sont référencés implicitement en fonction du ou des frameworks cibles spécifiés dans la propriété [targetFramework](msbuild-props.md#targetframework) ou [TargetFrameworks](msbuild-props.md#targetframeworks) de votre fichier projet.
+
+```xml
+<PropertyGroup>
+  <TargetFramework>netcoreapp2.1</TargetFramework>
+</PropertyGroup>
+```
+
+```xml
+<PropertyGroup>
+  <TargetFrameworks>netcoreapp2.1;net462</TargetFrameworks>
+</PropertyGroup>
+```
+
+Si nécessaire, vous pouvez désactiver les références de package implicites à l’aide de la propriété [DisableImplicitFrameworkReferences](msbuild-props.md#disableimplicitframeworkreferences) et ajouter des références explicites uniquement aux frameworks ou aux packages dont vous avez besoin.
+
+Recommandations :
+
+- Quand vous ciblez .NET Framework, .NET Core 1,0-2,2 ou .NET Standard 1,0-2,0, n’ajoutez pas de référence explicite aux `Microsoft.NETCore.App` packages ou à l' `NETStandard.Library` aide d’un `<PackageReference>` élément de votre fichier projet. Pour les projets .NET Core 1,0-2,2 et .NET Standard 1,0-2,0, ces packages sont référencés implicitement. Pour les projets .NET Framework, si une version de `NETStandard.Library` est nécessaire lors de l’utilisation d’un package NuGet basé sur .NET standard, NuGet installe automatiquement cette version.
+- Si vous avez besoin d’une version spécifique du runtime lorsque vous ciblez .NET Core 1,0-2,2, utilisez la `<RuntimeFrameworkVersion>` propriété dans votre projet (par exemple, `1.0.4` ) au lieu de référencer le repackage. Par exemple, vous pouvez avoir besoin d’une version de correctif spécifique de 1.0.0 LTS Runtime si vous utilisez des [déploiements autonomes](../deploying/index.md#publish-self-contained).
+- Si vous avez besoin d’une version spécifique du `NETStandard.Library` repackage lorsque vous ciblez .NET Standard 1,0-2,0, vous pouvez utiliser la `<NetStandardImplicitPackageVersion>` propriété et définir la version dont vous avez besoin.
 
 ## <a name="build-events"></a>Événements de build
 

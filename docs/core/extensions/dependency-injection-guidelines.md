@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 10/29/2020
 ms.topic: guide
-ms.openlocfilehash: 6b12d0d607dc0aed8f281943cecf3afa69b0575a
-ms.sourcegitcommit: 88fbb019b84c2d044d11fb4f6004aec07f2b25b1
+ms.openlocfilehash: 105536df873829dc79dcca1b86d080360e71303f
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97899439"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505403"
 ---
 # <a name="dependency-injection-guidelines"></a>Recommandations relatives à l’injection de dépendances
 
@@ -176,7 +176,7 @@ Outre les instructions de cet article, il existe plusieurs anti-modèles à *év
 
 ### <a name="disposable-transient-services-captured-by-container"></a>Services transitoires jetables capturés par conteneur
 
-Lorsque vous enregistrez des services *temporaires* qui implémentent <xref:System.IDisposable> , le conteneur d’injection de transactions contiendra par défaut ces références, et non <xref:System.IDisposable.Dispose> jusqu’à ce que l’application s’arrête. Cela peut entraîner une fuite de mémoire si elle est résolue à partir du conteneur de niveau.
+Lorsque vous enregistrez des services *temporaires* qui implémentent <xref:System.IDisposable> , le conteneur d’injection de transactions contiendra par défaut ces références, et non <xref:System.IDisposable.Dispose> jusqu’à ce que le conteneur soit supprimé lorsque l’application s’arrêtera si elles étaient résolues à partir du conteneur, ou jusqu’à ce que l’étendue soit supprimée si elles ont été résolues à partir d’une étendue. Cela peut entraîner une fuite de mémoire si elle est résolue à partir du niveau du conteneur.
 
 :::code language="csharp" source="snippets/configuration/di-anti-patterns/Program.cs" range="18-30":::
 

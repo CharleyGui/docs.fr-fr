@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 05/18/2020
 zone_pivot_groups: unit-testing-framework-set-one
-ms.openlocfilehash: eb426b790e0623b0cf233a763e93d2bd501b8034
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: a7b6b66e4cc865d4ec6b7cfc31ac79767935df2f
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100819"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506381"
 ---
 # <a name="order-unit-tests"></a>Trier les tests unitaires
 
@@ -28,9 +28,9 @@ Si vous préférez parcourir le code source, consultez le référentiel d’exem
 Avec MSTest, les tests sont automatiquement classés par nom de test.
 
 > [!NOTE]
-> Un test nommé `Test14` s’exécutera avant `Test2` même si le nombre `2` est inférieur à `14` . En effet, le classement des noms de tests utilise le nom de texte du test.
+> Un test nommé `Test14` s’exécutera avant `Test2` même si le nombre  `2` est inférieur à `14` . En effet, le classement des noms de tests utilise le nom de texte du test.
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/MSTest.Project/ByAlphabeticalOrder.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/MSTest.Project/ByAlphabeticalOrder.cs":::
 
 :::zone-end
 :::zone pivot="xunit"
@@ -41,35 +41,35 @@ L’infrastructure de test xUnit permet une plus grande granularité et un meill
 
 Pour classer les cas de test par leur nom de méthode, implémentez le `ITestCaseOrderer` et fournissez un mécanisme de tri.
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/Orderers/AlphabeticalOrderer.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/Orderers/AlphabeticalOrderer.cs":::
 
 Ensuite, dans une classe de test, vous définissez l’ordre des cas de test avec `TestCaseOrdererAttribute` .
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/ByAlphabeticalOrder.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/ByAlphabeticalOrder.cs":::
 
 ## <a name="order-by-collection-alphabetically"></a>Classer par collection par ordre alphabétique
 
 Pour classer les collections de test par leur nom d’affichage, vous devez implémenter le `ITestCollectionOrderer` et fournir un mécanisme de commande.
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/Orderers/DisplayNameOrderer.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/Orderers/DisplayNameOrderer.cs":::
 
 Étant donné que les collections de tests peuvent s’exécuter en parallèle, vous devez désactiver explicitement la parallélisation de test des collections avec le `CollectionBehaviorAttribute` . Spécifiez ensuite l’implémentation du `TestCollectionOrdererAttribute` .
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/ByDisplayName.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/ByDisplayName.cs":::
 
 ## <a name="order-by-custom-attribute"></a>Classer par attribut personnalisé
 
 Pour classer les tests xUnit avec des attributs personnalisés, vous devez d’abord utiliser un attribut. Définissez un `TestPriorityAttribute` comme suit :
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/Attributes/TestPriorityAttribute.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/Attributes/TestPriorityAttribute.cs":::
 
 Examinez ensuite l' `PriorityOrderer` implémentation suivante de l' `ITestCaseOrderer` interface.
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/Orderers/PriorityOrderer.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/Orderers/PriorityOrderer.cs":::
 
 Ensuite, dans une classe de test, vous définissez l’ordre des cas de test avec le `TestCaseOrdererAttribute` sur `PriorityOrderer` .
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/XUnit.TestProject/ByPriorityOrder.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/XUnit.TestProject/ByPriorityOrder.cs":::
 
 :::zone-end
 :::zone pivot="nunit"
@@ -78,7 +78,7 @@ Ensuite, dans une classe de test, vous définissez l’ordre des cas de test ave
 
 Pour trier les tests explicitement, NUnit fournit un [`OrderAttribute`](https://github.com/nunit/docs/wiki/Order-Attribute) . Les tests avec cet attribut sont démarrés avant les tests sans. La valeur d’ordre est utilisée pour déterminer l’ordre d’exécution des tests unitaires.
 
-:::code language="csharp" source="~/dotnet-samples/csharp/unit-testing/NUnit.TestProject/ByOrder.cs":::
+:::code language="csharp" source="snippets/order-unit-tests/csharp/NUnit.TestProject/ByOrder.cs":::
 
 :::zone-end
 

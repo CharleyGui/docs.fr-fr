@@ -2,13 +2,13 @@
 title: Définition du Cloud Native
 description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
 author: robvet
-ms.date: 05/13/2020
-ms.openlocfilehash: 1f0d842a2369ae04ffc1c634f9de60398a88e86f
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.date: 01/19/2021
+ms.openlocfilehash: 180b32d753fea5071174830be4ff3b8a81527a75
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654690"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506212"
 ---
 # <a name="defining-cloud-native"></a>Définition du Cloud Native
 
@@ -66,13 +66,13 @@ La plateforme Cloud Azure prend en charge ce type d’infrastructure hautement �
 
 Comment conceviez-vous une application Cloud Native ? À quoi ressemble votre architecture ? Quels sont les principes, les modèles et les meilleures pratiques que vous respectez ? Quelles sont les préoccupations en matière d’infrastructure et de fonctionnement ?
 
-### <a name="the-twelve-factor-application"></a>Application à 12 facteurs
+### <a name="the-twelve-factor-application"></a>Application Twelve-Factor
 
 L' [application à 12 facteurs](https://12factor.net/)est une méthodologie largement acceptée pour la construction d’applications basées sur le Cloud. Il décrit un ensemble de principes et de pratiques que les développeurs suivent pour créer des applications optimisées pour les environnements Cloud modernes. Une attention particulière est accordée à la portabilité entre les environnements et l’automatisation déclarative.
 
-Bien qu’applicables à n’importe quelle application basée sur le Web, de nombreux praticiens considèrent le plus de douze facteurs comme une base solide pour la création d’applications Cloud natives. Les systèmes basés sur ces principes peuvent être déployés et mis à l’échelle rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements de marché.
+Bien qu’applicables à n’importe quelle application basée sur le Web, de nombreux praticiens considèrent Twelve-Factor comme une base solide pour la création d’applications Cloud natives. Les systèmes basés sur ces principes peuvent être déployés et mis à l’échelle rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements de marché.
 
-Le tableau suivant met en évidence la méthodologie à douze facteurs :
+Le tableau suivant met en évidence la méthodologie de Twelve-Factor :
 
 |    |  Facteur | Explication  |
 | :-------- | :-------- | :-------- |
@@ -89,7 +89,7 @@ Le tableau suivant met en évidence la méthodologie à douze facteurs :
 | 11 | Journalisation | Traitez les journaux générés par les microservices en tant que flux d’événements. Traitez-les avec une agrégation d’événements et Propagez les données aux outils de gestion des journaux et de l’exploration de données, comme Azure Monitor ou Splunk, et enfin un archivage à long terme. |
 | 12 | Processus d’administration | Exécuter des tâches d’administration/de gestion en tant que processus unique. Les tâches peuvent inclure le nettoyage des données et l’extraction des analytiques pour un rapport. Les outils qui exécutent ces tâches doivent être appelés à partir de l’environnement de production, mais séparément de l’application. |
 
-Dans le livre, [au-delà de l’application à douze facteurs](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), l’auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrit en 2011). En outre, il aborde trois facteurs supplémentaires qui reflètent la conception d’applications Cloud modernes actuelles.
+Dans le livre, [au-delà de l’application Twelve-Factor, l'](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrit en 2011). En outre, il aborde trois facteurs supplémentaires qui reflètent la conception d’applications Cloud modernes actuelles.
 
 |    |  Nouveau facteur | Explication  |
 | :-------- | :-------- | :-------- |
@@ -171,13 +171,13 @@ Les microservices .net sont un excellent guide de référence pour comprendre le
 
 Les microservices peuvent être créés avec n’importe quelle plateforme de développement moderne.
 
-La plateforme Microsoft .NET Core est un excellent choix. Gratuit et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement de microservices. .NET Core est multiplateforme. Les applications peuvent être générées et exécutées sur Windows, macOS et la plupart des versions de Linux.
+La plateforme Microsoft .NET est un excellent choix. Gratuit et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement de microservices. .NET est multiplateforme. Les applications peuvent être générées et exécutées sur Windows, macOS et la plupart des versions de Linux.
 
-.NET Core est très performant et a bien été évalué par rapport à Node.js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans les 10 premiers Node.js et les autres plateformes concurrentes.
+.NET est très performant et a bien été évalué par rapport à Node.js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET a évalué les 10 meilleurs Node.js et les autres plateformes concurrentes.
 
-.NET Core est géré par Microsoft et la communauté .NET sur GitHub.
+.NET est géré par Microsoft et la communauté .NET sur GitHub.
 
-## <a name="containers"></a>Conteneurs
+## <a name="containers"></a>Containers
 
 De nos jours, il est naturel d’entendre le terme *conteneur* mentionné dans toute conversation concernant le *Cloud Native*. Dans le livre, le [Cloud Native patterns](https://www.manning.com/books/cloud-native-patterns), auteur Cornelia Davis observe cela, « les conteneurs sont un excellent activateur des logiciels natifs du Cloud ». Le Cloud Native Computing Foundation place le conteneur de microservices en tant que première étape de leur [carte de piste Cloud Native](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) pour les entreprises qui commencent leur parcours Cloud-native.
 
@@ -242,7 +242,7 @@ Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://k
 
 Vous pouvez héberger votre propre instance de Kubernetes, mais vous serez alors responsable de l’approvisionnement et de la gestion de ses ressources, ce qui peut être complexe. Le Cloud Azure offre Kubernetes en tant que service managé, [service Kubernetes Azure (AKS)](https://azure.microsoft.com/services/kubernetes-service/). Un service géré vous permet de tirer pleinement parti de ses fonctionnalités, sans avoir à l’installer ni à le maintenir à jour.
 
-Azure Kubernetes services est abordé en détail dans le chapitre 2, *mise à l’échelle des applications Cloud natives*.
+Les services Azure Kubernetes sont abordés en détail dans le chapitre 2, *mise à l’échelle des Applications Cloud-Native*.
 
 ## <a name="backing-services"></a>Services de stockage
 
@@ -274,7 +274,7 @@ Avec ce modèle, un service de sauvegarde peut être attaché et détaché sans 
 
 Les fournisseurs de Cloud fournissent des API qui vous permettent de communiquer avec leurs services de stockage propriétaires. Ces bibliothèques encapsulent la plomberie et la complexité. En communiquant directement avec ces API, vous associez étroitement votre code au service de sauvegarde. Il est recommandé d’isoler les détails d’implémentation de l’API du fournisseur. Introduisez une couche d’intermédiation ou une API intermédiaire qui expose des opérations génériques à votre code de service. Ce couplage faible vous permet de permuter un service de sauvegarde pour un autre ou de déplacer votre code vers un cloud public différent sans avoir à apporter de modifications au code du service principal.
 
-Les services de stockage sont présentés en détail dans le chapitre 5, les *modèles de données natifs du Cloud*et le chapitre 4, *modèles de communication natifs dans le Cloud*.
+Les services de stockage sont présentés en détail dans le chapitre 5, les *modèles de données natifs du Cloud* et le chapitre 4, *modèles de communication natifs dans le Cloud*.
 
 ## <a name="automation"></a>Automatisation
 

@@ -4,12 +4,12 @@ description: En savoir plus sur les versions de macOS sur lesquelles vous pouvez
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: b1434938a8e8e81da81e495a6b99e6c99467aae1
-ms.sourcegitcommit: 81f1bba2c97a67b5ca76bcc57b37333ffca60c7b
+ms.openlocfilehash: 871263b820aaf4cc04e573dd4aa3022caa401857
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97009356"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506303"
 ---
 # <a name="install-net-on-macos"></a>Installer .NET sur macOS
 
@@ -53,13 +53,13 @@ Les versions suivantes de .NET ne sont ❌ plus prises en charge. Les téléchar
 
 Le runtime est utilisé pour exécuter des applications créées avec .NET. Quand un auteur d’application publie une application, il peut inclure le Runtime avec son application. Si elles n’incluent pas le runtime, c’est à l’utilisateur d’installer le Runtime.
 
-Il existe trois runtimes différents que vous pouvez installer sur macOS :
+Il existe deux runtimes différents que vous pouvez installer sur macOS :
 
-*Runtime ASP.NET Core*\
-Exécute ASP.NET Core applications. Comprend le Runtime .NET.
+- *Runtime ASP.NET Core*\
+  Exécute ASP.NET Core applications. Comprend le Runtime .NET.
 
-*Runtime .NET*\
-Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il est fortement recommandé d’installer *ASP.net Core Runtime* pour une meilleure compatibilité avec les applications .net.
+- *Runtime .NET*\
+  Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il est fortement recommandé d’installer *ASP.net Core Runtime* pour une meilleure compatibilité avec les applications .net.
 
 > [!div class="button"]
 > [Télécharger le Runtime .NET](https://dotnet.microsoft.com/download/dotnet-core)
@@ -125,20 +125,15 @@ Ensuite, extrayez le fichier téléchargé et utilisez la `export` commande pour
 
 Pour extraire le runtime et rendre les commandes de l’interface de commande .NET CLI disponibles sur le terminal, commencez par télécharger une version binaire .NET. Ensuite, ouvrez un terminal et exécutez les commandes suivantes à partir du répertoire dans lequel le fichier a été enregistré. Le nom du fichier d’archive peut être différent en fonction de ce que vous avez téléchargé.
 
-**Utilisez la commande suivante pour extraire le runtime**:
+**Utilisez les commandes suivantes pour extraire le runtime ou le kit de développement logiciel (SDK) que vous avez téléchargé.** N’oubliez pas de remplacer la `DOTNET_FILE` valeur par votre nom de fichier :
 
 ```bash
-mkdir -p "$HOME/dotnet" && tar zxf aspnetcore-runtime-5.0.0-osx-x64.tar.gz -C "$HOME/dotnet"
+DOTNET_FILE=dotnet-sdk-5.0.102-linux-x64.tar.gz
 export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-```
 
-**Utilisez la commande suivante pour extraire le kit de développement logiciel (SDK)**:
+mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 
-```bash
-mkdir -p "$HOME/dotnet" && tar zxf dotnet-sdk-5.0.100-osx-x64.tar.gz -C "$HOME/dotnet"
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
+export PATH=$PATH:$DOTNET_ROOT
 ```
 
 > [!TIP]

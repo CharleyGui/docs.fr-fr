@@ -1,13 +1,13 @@
 ---
 title: Identité
 description: Architecture des applications .NET natives Cloud pour Azure | Personnelles
-ms.date: 05/13/2020
-ms.openlocfilehash: 66ff29947093d7c4fe57b11039190836dc37db08
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: b304c8f56996a258fe79e1c38f434a40d773b770
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163750"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505659"
 ---
 # <a name="identity"></a>Identité
 
@@ -17,9 +17,9 @@ La plupart des applications logicielles doivent avoir une connaissance de l’ut
 
 Bien que cette solution soit efficace au sein des réseaux d’entreprise, elle n’est pas conçue pour une utilisation par des utilisateurs ou des applications qui se trouvent en dehors du domaine Active Directory. Avec la croissance des applications basées sur Internet et la montée d’applications Cloud natives, les modèles de sécurité ont évolué.
 
-Dans le modèle d’identité Cloud natif d’aujourd’hui, l’architecture est supposée être distribuée. Les applications peuvent être déployées n’importe où et peuvent communiquer avec d’autres applications n’importe où. Les clients peuvent communiquer avec ces applications depuis n’importe quel endroit, et en fait, les clients peuvent se composer de n’importe quelle combinaison de plateformes et d’appareils. Les solutions d’identité natives du Cloud tirent parti des normes ouvertes pour obtenir un accès sécurisé aux applications à partir des clients. Ces clients vont des utilisateurs humains sur des PC ou téléphones, à d’autres applications hébergées en ligne, à des boîtiers et des appareils IOT qui exécutent n’importe quelle plate-forme logicielle n’importe où dans le monde.
+Dans le modèle d’identité Cloud natif d’aujourd’hui, l’architecture est supposée être distribuée. Les applications peuvent être déployées n’importe où et peuvent communiquer avec d’autres applications n’importe où. Les clients peuvent communiquer avec ces applications depuis n’importe quel endroit, et en fait, les clients peuvent se composer de n’importe quelle combinaison de plateformes et d’appareils. Les solutions d’identité natives du Cloud utilisent des normes ouvertes pour obtenir un accès sécurisé aux applications à partir des clients. Ces clients vont des utilisateurs humains sur des PC ou téléphones, à d’autres applications hébergées en ligne, à des boîtiers et des appareils IOT qui exécutent n’importe quelle plate-forme logicielle n’importe où dans le monde.
 
-Les solutions d’identité Cloud Native modernes tirent généralement parti des jetons d’accès émis par un service/serveur de jeton sécurisé (STS) à un principal de sécurité une fois leur identité déterminée. Le jeton d’accès, en général un JSON Web Token (JWT), comprend les *revendications* relatives au principal de sécurité. Ces revendications incluent au minimum l’identité de l’utilisateur, mais peuvent également inclure des revendications supplémentaires qui peuvent être utilisées par les applications pour déterminer le niveau d’accès à accorder au principal.
+Les solutions d’identité Cloud Native modernes utilisent généralement des jetons d’accès émis par un service/serveur de jeton sécurisé (STS) vers un principal de sécurité une fois leur identité déterminée. Le jeton d’accès, en général un JSON Web Token (JWT), comprend les *revendications* relatives au principal de sécurité. Ces revendications incluent au minimum l’identité de l’utilisateur, mais peuvent également inclure d’autres revendications qui peuvent être utilisées par les applications pour déterminer le niveau d’accès à accorder au principal.
 
 <!-- (insert figure showing basic handshake involving a principal, an STS, and an app) -->
 

@@ -4,12 +4,12 @@ description: Découvrez ce qu’est une application à fichier unique et pourquo
 author: lakshanf
 ms.author: lakshanf
 ms.date: 12/17/2020
-ms.openlocfilehash: 10ffc947f6a3adcf2889a03edd2616007ce236f3
-ms.sourcegitcommit: 3a8f1979a98c6c19217a1930e0af5908988eb8ba
+ms.openlocfilehash: fb768fa6fe390fbe8390e441f4eb71c3172ad395
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98536136"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505424"
 ---
 # <a name="single-file-deployment-and-executable"></a>Déploiement et exécutable d’un seul fichier
 
@@ -23,7 +23,7 @@ Certaines API ne sont pas compatibles avec le déploiement à fichier unique et 
 
 Le tableau ci-dessous contient les détails de l’API de la bibliothèque Runtime appropriée pour une utilisation à fichier unique.
 
-| API                            | Notes                                                                   |
+| API                            | Remarque                                                                   |
 |--------------------------------|------------------------------------------------------------------------|
 | `Assembly.Location`            | Retourne une chaîne vide.                                               |
 | `Module.FullyQualifiedName`    | Retourne une chaîne avec la valeur de `<Unknown>` ou lève une exception. |
@@ -168,8 +168,8 @@ Visual Studio crée des profils de publication réutilisables qui contrôlent la
 
 01. Dans la boîte de dialogue **paramètres de profil** , définissez les options suivantes :
 
-    - Définissez **le** **mode de déploiement** sur autonome.
-    - Définissez le **Runtime cible** sur la plateforme sur laquelle vous souhaitez publier.
+    - Définissez le **mode de déploiement** sur autonome ou **dépendant du Framework**. 
+    - Définissez le **Runtime cible** sur la plateforme sur laquelle vous souhaitez publier. (Doit être autre chose qu' **portable**.)
     - Sélectionnez **produire un fichier unique**.
 
     Choisissez **Enregistrer** pour enregistrer les paramètres et revenir à la boîte de dialogue **publier** .

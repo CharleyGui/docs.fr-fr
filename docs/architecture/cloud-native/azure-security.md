@@ -1,13 +1,13 @@
 ---
 title: Sécurité Azure pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | Sécurité Azure pour les applications Cloud natives
-ms.date: 12/01/2020
-ms.openlocfilehash: 5e541606c762ea192ab8767e78e9b7346b3ec9c1
-ms.sourcegitcommit: 2f485e721f7f34b87856a51181b5b56624b31fd5
+ms.date: 01/19/2021
+ms.openlocfilehash: 1e2dce97a43479d49aecf220893efcc19bb00a8c
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96509817"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505880"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Sécurité Azure pour les applications Cloud natives
 
@@ -72,7 +72,7 @@ Le processus de génération est un bon endroit pour mettre en place des outils 
 
 ## <a name="built-in-security"></a>Sécurité intégrée
 
-Azure est conçu pour équilibrer l’utilisation et la sécurité pour la majorité des utilisateurs. Les différents utilisateurs ont des exigences de sécurité différentes, donc ils doivent ajuster leur approche à la sécurité du Cloud. Microsoft publie une grande quantité d’informations de sécurité dans le [Centre](https://azure.microsoft.com/support/trust-center/)de gestion de la confidentialité. Cette ressource doit être la première étape pour les professionnels qui souhaitent comprendre le fonctionnement des technologies d’atténuation des attaques intégrées.
+Azure est conçu pour équilibrer l’utilisation et la sécurité pour la plupart des utilisateurs. Les différents utilisateurs ont des exigences de sécurité différentes, donc ils doivent ajuster leur approche à la sécurité du Cloud. Microsoft publie une grande quantité d’informations de sécurité dans le [Centre](https://azure.microsoft.com/support/trust-center/)de gestion de la confidentialité. Cette ressource doit être la première étape pour les professionnels qui souhaitent comprendre le fonctionnement des technologies d’atténuation des attaques intégrées.
 
 Dans le Portail Azure, le [Azure Advisor](https://azure.microsoft.com/services/advisor/) est un système qui analyse constamment un environnement et formule des recommandations. Certaines de ces recommandations sont conçues pour faire gagner de l’argent aux utilisateurs, mais d’autres sont conçues pour identifier les configurations potentiellement non sécurisées, telles que la présence d’un conteneur de stockage ouvert au monde et non protégé par un réseau virtuel.
 
@@ -117,7 +117,7 @@ Le premier composant dans RBAC est un principal de sécurité. Un principal de s
 - Principal du service : identité de sécurité sous laquelle les services ou applications s’exécutent.
 - Identité gérée : identité Azure Active Directory gérée par Azure. Les identités gérées sont généralement utilisées lors du développement d’applications Cloud qui gèrent les informations d’identification pour l’authentification auprès des services Azure.
 
-L’entité de sécurité peut être appliquée à la plupart des ressources. Cela signifie qu’il est possible d’affecter un principal de sécurité à un conteneur s’exécutant dans Azure Kubernetes, ce qui lui permet d’accéder aux secrets stockés dans Key Vault. Une fonction Azure peut prendre une autorisation qui lui permet de communiquer avec une instance de Active Directory pour valider un jeton JWT pour un utilisateur appelant. Une fois que les services sont activés avec un principal de service, leurs autorisations peuvent être gérées de manière granulaire à l’aide de rôles et d’étendues.
+L’entité de sécurité peut être appliquée à la plupart des ressources. Cet aspect signifie qu’il est possible d’affecter un principal de sécurité à un conteneur s’exécutant dans Azure Kubernetes, ce qui lui permet d’accéder aux secrets stockés dans Key Vault. Une fonction Azure peut prendre une autorisation qui lui permet de communiquer avec une instance de Active Directory pour valider un jeton JWT pour un utilisateur appelant. Une fois que les services sont activés avec un principal de service, leurs autorisations peuvent être gérées de manière granulaire à l’aide de rôles et d’étendues.
 
 ## <a name="roles"></a>Rôles
 

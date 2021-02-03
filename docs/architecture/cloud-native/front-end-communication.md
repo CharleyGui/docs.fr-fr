@@ -2,13 +2,13 @@
 title: Communication client et front-end
 description: Découvrez comment les clients frontaux communiquent avec les systèmes natifs du Cloud
 author: robvet
-ms.date: 05/13/2020
-ms.openlocfilehash: 147adb3d0375f8bf5dadf14e1237aa93e9e42908
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: 089f55f8f6b9320fe552602eb40bb83be28f119b
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91158108"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506238"
 ---
 # <a name="front-end-client-communication"></a>Communication client et front-end
 
@@ -55,7 +55,7 @@ Pour commencer, vous pouvez créer votre propre service de passerelle d’API. U
 
 Pour les applications simples en mode Cloud .NET, vous pouvez envisager la [passerelle Ocelot](https://github.com/ThreeMammals/Ocelot). Ocelot est une passerelle d’API Open source créée pour les microservices .NET qui requièrent un point d’entrée unifié dans leur système. Elle est légère, rapide et évolutive.
 
-Comme toute passerelle d’API, ses principales fonctionnalités sont de transférer les requêtes HTTP entrantes vers les services en aval. En outre, il prend en charge un large éventail de fonctionnalités configurables dans un pipeline d’intergiciel (middleware) .NET Core. Son ensemble de fonctionnalités est présenté dans le tableau suivant.
+Comme toute passerelle d’API, ses principales fonctionnalités sont de transférer les requêtes HTTP entrantes vers les services en aval. En outre, il prend en charge un large éventail de fonctionnalités configurables dans un pipeline .NET middleware. Son ensemble de fonctionnalités est présenté dans le tableau suivant.
 
 |Fonctionnalités de Ocelot  | |
 | :-------- | :-------- |
@@ -64,7 +64,7 @@ Comme toute passerelle d’API, ses principales fonctionnalités sont de transf�
 | Découverte de service (avec consul et Eureka) | Limitation |
 | Équilibrage de la charge. | Journalisation, suivi |
 | Mise en cache | En-têtes/transformation de chaîne de requête |
-| Transfert de corrélation | Intergiciel (middleware) personnalisé |
+| Pass-Through de corrélation | Intergiciel (middleware) personnalisé |
 | Qualité de service | Stratégies de nouvelle tentative |
 
 Chaque passerelle Ocelot spécifie les adresses en amont et en aval et les fonctionnalités configurables dans un fichier de configuration JSON. Le client envoie une requête HTTP à la passerelle ocelot. Une fois reçu, Ocelot passe l’objet HttpRequest via son pipeline en le manipulant dans l’état spécifié par sa configuration. À la fin du pipeline, Ocelot crée un nouveau HTTPResponseObject et le transmet au service en aval. Pour la réponse, Ocelot inverse le pipeline, en renvoyant la réponse au client.
@@ -117,18 +117,18 @@ La gestion des API Azure est disponible sur [quatre niveaux différents](https:/
 
 - Développeur
 - De base
-- Standard
+- standard
 - Premium
 
 Le niveau développeur est conçu pour les charges de travail de non-production et l’évaluation. Les autres niveaux offrent progressivement plus de puissance, de fonctionnalités et de contrats de niveau de service (SLA) plus élevés. Le niveau Premium offre une [prise en charge de plusieurs régions](/azure/api-management/api-management-howto-deploy-multi-region)et d’un [réseau virtuel Azure](/azure/virtual-network/virtual-networks-overview) . Tous les niveaux ont un prix fixe par heure.
 
-Le Cloud Azure offre également un [niveau sans serveur](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) pour la gestion des API Azure. Appelé « niveau de *tarification*de la consommation », le service est une variante de la gestion des API conçue autour du modèle de calcul sans serveur. Contrairement aux niveaux tarifaires « pré-alloués » précédemment affichés, le niveau de consommation fournit un approvisionnement instantané et une tarification par action.
+Le Cloud Azure offre également un [niveau sans serveur](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) pour la gestion des API Azure. Appelé « niveau de *tarification* de la consommation », le service est une variante de la gestion des API conçue autour du modèle de calcul sans serveur. Contrairement aux niveaux tarifaires « pré-alloués » précédemment affichés, le niveau de consommation fournit un approvisionnement instantané et une tarification par action.
 
 Il active les fonctionnalités de la passerelle API pour les cas d’utilisation suivants :
 
 - Microservices implémentés à l’aide de technologies sans serveur telles que [Azure Functions](/azure/azure-functions/functions-overview) et [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 - Les ressources du service de sauvegarde Azure, telles que les Service Bus files d’attente et les rubriques, le stockage Azure et d’autres.
-- Les microservices où le trafic a des pics de grande ampleur, mais qui reste peu la plupart du temps.
+- Les microservices où le trafic a des pics de grande ampleur, mais qui reste peu de temps.
 
 Le niveau de consommation utilise les mêmes composants de gestion des API de service sous-jacents, mais utilise une architecture entièrement différente basée sur des ressources allouées dynamiquement. Il s’aligne parfaitement avec le modèle de calcul sans serveur :
 
@@ -148,7 +148,7 @@ Les systèmes en temps réel sont souvent caractérisés par des flux de donnée
 
 Le [service Azure signalr](https://azure.microsoft.com/services/signalr-service/) est un service Azure entièrement géré qui simplifie la communication en temps réel pour vos applications Cloud natives. Les détails de l’implémentation technique, tels que la configuration de la capacité, la mise à l’échelle et les connexions persistantes, sont extraits. Ils sont gérés pour vous avec un contrat de niveau de service de 99,9%. Vous vous concentrez sur les fonctionnalités de l’application, et non sur l’infrastructure.
 
-Une fois activé, un service HTTP basé sur le Cloud peut envoyer des mises à jour de contenu directement à des clients connectés, y compris des applications de navigateur, mobiles et de bureau. Les clients sont mis à jour sans qu’il soit nécessaire d’interroger le serveur. Azure Signalr extrait les technologies de transport qui créent une connectivité en temps réel, notamment les WebSockets, les événements côté serveur et l’interrogation longue. Les développeurs se concentrent sur l’envoi de messages à tous ou à des sous-ensembles spécifiques de clients connectés.
+Une fois activé, un service HTTP basé sur le Cloud peut envoyer des mises à jour de contenu directement à des clients connectés, y compris des applications de navigateur, mobiles et de bureau. Les clients sont mis à jour sans qu’il soit nécessaire d’interroger le serveur. Azure Signalr extrait les technologies de transport qui créent une connectivité en temps réel, y compris WebSockets, les événements de Server-Side et l’interrogation longue. Les développeurs se concentrent sur l’envoi de messages à tous ou à des sous-ensembles spécifiques de clients connectés.
 
 La figure 4-7 illustre un ensemble de clients HTTP qui se connectent à une application Cloud native avec Azure Signalr activé.
 

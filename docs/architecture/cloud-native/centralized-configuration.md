@@ -1,19 +1,19 @@
 ---
 title: Configuration centralisée
 description: Centralisation de la configuration des applications Cloud natives à l’aide de Azure App configuration et du coffre AzureKey.
-ms.date: 05/13/2020
-ms.openlocfilehash: 0d40c5b2d70f30beb17489dfd55900f7c5fc1a75
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: 770c0c19a6de01250c59a586badb6a4afa2e9ae5
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160877"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505711"
 ---
 # <a name="centralized-configuration"></a>Configuration centralisée
 
 Contrairement à une application monolithique dans laquelle tous les éléments s’exécutent au sein d’une instance unique, une application Cloud Native se compose de services indépendants répartis sur des machines virtuelles, des conteneurs et des régions géographiques. La gestion des paramètres de configuration pour des dizaines de services interdépendants peut être difficile. Les copies dupliquées des paramètres de configuration dans différents emplacements sont sujettes aux erreurs et difficiles à gérer. La configuration centralisée est une condition essentielle pour les applications Cloud natives distribuées.
 
-Comme indiqué dans le [Chapitre 1](introduction.md), les recommandations relatives aux applications à douze facteurs requièrent une séparation stricte entre le code et la configuration. La configuration doit être stockée en externe à partir de l’application et lue en fonction des besoins. Le stockage des valeurs de configuration en tant que constantes ou valeurs littérales dans le code est une violation. Les mêmes valeurs de configuration sont souvent utilisées par de nombreux services dans la même application. En outre, nous devons prendre en charge les mêmes valeurs dans plusieurs environnements, tels que le développement, les tests et la production. La meilleure pratique consiste à les stocker dans un magasin de configuration centralisé.
+Comme indiqué dans le [Chapitre 1](introduction.md), les recommandations relatives aux applications Twelve-Factor nécessitent une séparation stricte entre le code et la configuration. La configuration doit être stockée en externe à partir de l’application et lue en fonction des besoins. Le stockage des valeurs de configuration en tant que constantes ou valeurs littérales dans le code est une violation. Les mêmes valeurs de configuration sont souvent utilisées par de nombreux services dans la même application. En outre, nous devons prendre en charge les mêmes valeurs dans plusieurs environnements, tels que le développement, les tests et la production. La meilleure pratique consiste à les stocker dans un magasin de configuration centralisé.
 
 Le Cloud Azure présente plusieurs options intéressantes.
 

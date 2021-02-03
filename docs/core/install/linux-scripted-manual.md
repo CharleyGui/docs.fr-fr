@@ -4,12 +4,12 @@ description: Montre comment installer le kit de développement logiciel (SDK) .N
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: 5879d4d66aba8bfa00caadbe3c33d6df0d7da59a
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: 14789587a58c7b9d5ef2c9251ed599ce18a48f24
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970966"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505574"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-manually"></a>Installer manuellement le kit de développement logiciel (SDK) .NET ou le Runtime .NET
 
@@ -33,7 +33,7 @@ Le tableau suivant répertorie les versions de .NET (et .NET Core) :
 
 Pour plus d’informations sur le cycle de vie des versions de .NET, consultez [stratégie de support .net Core et .net 5](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 
-## <a name="dependencies"></a>Dépendances
+## <a name="dependencies"></a>Les dépendances
 
 Lorsque vous installez .NET, il est possible que des dépendances spécifiques ne soient pas installées, par exemple lors de [l’installation manuelle](#manual-install). La liste suivante répertorie les distributions Linux prises en charge par Microsoft et qui présentent des dépendances que vous devrez peut-être installer. Consultez la page distribution pour plus d’informations :
 
@@ -76,7 +76,7 @@ Pour les applications .NET qui utilisent l’assembly *System. Drawing. Common* 
 - [libgdiplus (version 6.0.1 ou ultérieure)](https://www.mono-project.com/docs/gui/libgdiplus/)
 
   > [!WARNING]
-  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d'informations, consultez <https://www.mono-project.com/download/stable/>.
+  > Vous pouvez installer une version récente de *libgdiplus* en ajoutant le référentiel mono à votre système. Pour plus d’informations, consultez <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Installation par script
 
@@ -119,20 +119,15 @@ Ensuite, extrayez le fichier téléchargé et utilisez la `export` commande pour
 
 Pour extraire le runtime et rendre les commandes de l’interface de commande .NET CLI disponibles sur le terminal, commencez par télécharger une version binaire .NET. Ensuite, ouvrez un terminal et exécutez les commandes suivantes à partir du répertoire dans lequel le fichier a été enregistré. Le nom du fichier d’archive peut être différent en fonction de ce que vous avez téléchargé.
 
-**Utilisez la commande suivante pour extraire le runtime**:
+**Utilisez les commandes suivantes pour extraire le runtime ou le kit de développement logiciel (SDK) que vous avez téléchargé.** N’oubliez pas de remplacer la `DOTNET_FILE` valeur par votre nom de fichier :
 
 ```bash
-mkdir -p "$HOME/dotnet" && tar zxf aspnetcore-runtime-5.0.0-linux-x64.tar.gz -C "$HOME/dotnet"
+DOTNET_FILE=dotnet-sdk-5.0.102-linux-x64.tar.gz
 export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-```
 
-**Utilisez la commande suivante pour extraire le kit de développement logiciel (SDK)**:
+mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 
-```bash
-mkdir -p "$HOME/dotnet" && tar zxf dotnet-sdk-5.0.100-linux-x64.tar.gz -C "$HOME/dotnet"
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
+export PATH=$PATH:$DOTNET_ROOT
 ```
 
 > [!TIP]

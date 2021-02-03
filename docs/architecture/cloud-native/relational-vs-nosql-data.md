@@ -2,13 +2,13 @@
 title: Modèles d'exploration de données relationnels et données NoSQL
 description: En savoir plus sur les données relationnelles et NoSQL dans les applications natives du Cloud
 author: robvet
-ms.date: 05/17/2020
-ms.openlocfilehash: 11db5cdca06b9c2c8ce12598456c4b147ac379ba
-ms.sourcegitcommit: 98d20cb038669dca4a195eb39af37d22ea9d008e
+ms.date: 01/19/2021
+ms.openlocfilehash: 1148778b68c90586187d927eccd9b733403ede44
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434862"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505509"
 ---
 # <a name="relational-vs-nosql-data"></a>Modèles d'exploration de données relationnels et données NoSQL
 
@@ -191,7 +191,7 @@ En cas de changement de plate-forme d’applications monolithiques dans une arch
 
 | Fournisseur | Description  |
 | :-------- | :-------- |
-| API SQL | API propriétaire qui prend en charge les documents JSON et les requêtes basées sur SQL |
+| API SQL | API propriétaire qui prend en charge les documents JSON et les requêtes basées sur SQL |
 | API MongoDB | Prend en charge les API Mongo DB et les documents JSON|
 | API Gremlin | Prend en charge l’API Gremlin avec des nœuds basés sur des graphiques et des représentations de données de périphérie |
 | API Cassandra | Prend en charge l’API Casandra pour les représentations de données à grande colonne |  
@@ -269,7 +269,7 @@ CNCF (Cloud Native Computing Foundation) propose plusieurs projets de base de do
 | YugabyteDB | Une base de données SQL distribuée, hautement performante et open source. Il prend en charge la faible latence des requêtes, la résilience contre les défaillances et la distribution globale des données. YugabyteDB est compatible avec PostgressSQL et gère les charges de travail OLTP avec montée en charge et à l’échelle d’Internet. Le produit prend également en charge NoSQL et est compatible avec Cassandra. |
 |Vitess | Vitess est une solution de base de données pour le déploiement, la mise à l’échelle et la gestion de grands clusters d’instances MySQL. Il peut s’exécuter dans une architecture de cloud privé ou public. Vitess combine et étend de nombreuses fonctionnalités et fonctionnalités MySQL importantes en matière de prise en charge des partitionnement verticales et horizontales. Provient de YouTube, vitess a servi tout le trafic de la base de données YouTube depuis 2011. |
 
-Les projets open source de la figure précédente sont disponibles à partir de la Fondation Cloud Native Computing. Trois de ces offres sont des produits de base de données complets, qui incluent la prise en charge de .NET Core. L’autre, vitess, est un système de mise en cluster de bases de données qui met horizontalement à l’échelle des clusters volumineux d’instances MySQL.
+Les projets open source de la figure précédente sont disponibles à partir de la Fondation Cloud Native Computing. Trois de ces offres sont des produits de base de données complets, qui incluent la prise en charge de .NET. L’autre, vitess, est un système de mise en cluster de bases de données qui met horizontalement à l’échelle des clusters volumineux d’instances MySQL.
 
 L’un des principaux objectifs de conception pour les bases de données NewSQL consiste à travailler en mode natif dans Kubernetes, en tirant parti de la résilience et de l’évolutivité de la plateforme.
 

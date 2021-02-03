@@ -4,12 +4,12 @@ description: Découvrez les versions de Windows sur lesquelles vous pouvez insta
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: 33492cc6fa6c64ec3a1d745a4fa0c6cc418f87bd
-ms.sourcegitcommit: 8299abfbd5c49b596d61f1e4d09bc6b8ba055b36
+ms.openlocfilehash: 55746b29b579a6d3aacb7d11c5604dc601440ab5
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898786"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506290"
 ---
 # <a name="install-net-on-windows"></a>Installer .NET sur Windows
 
@@ -35,28 +35,26 @@ Les dates de fin de service des versions de Windows 10 sont segmentées par édi
 > [!TIP]
 > Un `+` symbole représente la version minimale.
 
-| Système d’exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
+| Système d'exploitation            | .NET Core 2.1 | .NET Core 3.1 | .NET 5 |
 |-----------------------------|---------------|---------------|--------|
-| Windows 10, version 20H2    | ✔️           | ✔️            | ✔️    |
-| Windows 10, version 2004    | ✔️           | ✔️            | ✔️    |
-| Windows 10, version 1909    | ✔️           | ✔️            | ✔️    |
-| Windows 10, version 1903    | ✔️           | ✔️            | ✔️    |
+| Windows 10/Windows Server, version 20H2    | ✔️           | ✔️            | ✔️    |
+| Windows 10/Windows Server, version 2004    | ✔️           | ✔️            | ✔️    |
+| Windows 10/Windows Server, version 1909    | ✔️           | ✔️            | ✔️    |
+| Windows 10/Windows Server, version 1903    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 1809    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 1803    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 1709    | ✔️           | ✔️            | ✔️    |
 | Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
 | Windows 8.1                 | ✔️           | ✔️            | ✔️    |
 | Windows 7 SP1 [UDE][esu]    | ✔️           | ✔️            | ✔️    |
-| Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
-| Windows 10, version 1607    | ✔️           | ✔️            | ✔️    |
-| Windows Server 2012 R2      | ✔️           | ✔️            | ✔️    |
+| Windows Server 2019<br>Windows Server 2016<br>Windows Server 2012 R2<br>      | ✔️           | ✔️            | ✔️    |
 | Windows Server Core 2012 R2 | ✔️           | ✔️            | ✔️    |
 | Nano Server, version 1809 +  | ✔️           | ✔️            | ✔️    |
 | Nano Server, version 1803   | ✔️           | ✔️            | ❌    |
 
 ## <a name="unsupported-releases"></a>Mises en production non prises en charge
 
-Les versions suivantes de .NET ne sont ❌ plus prises en charge. Les téléchargements pour ces versions restent toujours publiés :
+Les versions suivantes de .NET ne sont ❌ plus prises en charge :
 
 - 3.0
 - 2.2
@@ -68,14 +66,14 @@ Le runtime est utilisé pour exécuter des applications créées avec .NET. Quan
 
 Il existe trois runtimes différents que vous pouvez installer sur Windows :
 
-*Runtime ASP.NET Core*\
-Exécute ASP.NET Core applications. Comprend le Runtime .NET.
+- *Runtime ASP.NET Core*\
+  Exécute ASP.NET Core applications. Comprend le Runtime .NET.
 
-*Runtime Desktop*\
-Exécute .NET WPF et les applications de bureau Windows Forms pour Windows. Comprend le Runtime .NET.
+- *Runtime Desktop*\
+  Exécute .NET WPF et les applications de bureau Windows Forms pour Windows. Comprend le Runtime .NET.
 
-*Runtime .NET*\
-Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il est fortement recommandé d’installer à la fois *ASP.net Core Runtime* et *Desktop Runtime* pour une meilleure compatibilité avec les applications .net.
+- *Runtime .NET*\
+  Ce Runtime est le runtime le plus simple et n’inclut pas d’autre Runtime. Il est fortement recommandé d’installer à la fois *ASP.net Core Runtime* et *Desktop Runtime* pour une meilleure compatibilité avec les applications .net.
 
 > [!div class="button"]
 > [Télécharger le Runtime .NET](https://dotnet.microsoft.com/download/dotnet-core)

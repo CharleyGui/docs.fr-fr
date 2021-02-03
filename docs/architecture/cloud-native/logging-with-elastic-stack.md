@@ -1,13 +1,13 @@
 ---
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
-ms.date: 05/13/2020
-ms.openlocfilehash: 3f10b0d06c87b7bed6d3e302742b1dc52e2c9d3b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: ebe7eef16d3b1a73d0fd3a010a509bbaf7be3fd5
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91155339"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505815"
 ---
 # <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
 
@@ -26,10 +26,10 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 **Figure 7-5**. Variables de configuration pour Kubernetes
 
-Cette opération installe Elasticsearch sur le cluster et cible l’envoi de tous les journaux de cluster vers ce dernier.
+Cette étape installe Elasticsearch sur le cluster et cible l’envoi de tous les journaux de cluster vers ce dernier.
 
 ![Exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés à partir de la ](./media/kibana-dashboard.png)
- **figure 7-6**de Kubernetes. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
+ **figure 7-6** de Kubernetes. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Quels sont les avantages de la pile élastique ?
 
@@ -39,7 +39,7 @@ La pile élastique fournit une journalisation centralisée dans une solution clo
 
 Le premier composant est [Logstash](https://www.elastic.co/products/logstash). Cet outil est utilisé pour collecter des informations de journalisation à partir d’une grande variété de sources différentes. Par exemple, Logstash peut lire les journaux à partir du disque et recevoir également des messages des bibliothèques de journalisation telles que [Serilog](https://serilog.net/). Logstash peut effectuer un filtrage et une expansion de base sur les journaux au fur et à mesure de leur arrivée. Par exemple, si vos journaux contiennent des adresses IP, Logstash peut être configuré pour effectuer une recherche géographique et obtenir un pays ou même une ville d’origine pour ce message.
 
-Serilog est une bibliothèque de journalisation pour les langages .NET, qui permet la journalisation paramétrée. Au lieu de générer un message de journalisation qui incorpore des champs, les paramètres sont conservés séparément. Cela permet un filtrage et une recherche plus intelligents. Un exemple de configuration Serilog pour l’écriture dans Logstash apparaît dans la figure 7-7.
+Serilog est une bibliothèque de journalisation pour les langages .NET, qui permet la journalisation paramétrée. Au lieu de générer un message de journalisation qui incorpore des champs, les paramètres sont conservés séparément. Cette bibliothèque permet un filtrage et une recherche plus intelligents. Un exemple de configuration Serilog pour l’écriture dans Logstash apparaît dans la figure 7-7.
 
 ```csharp
 var log = new LoggerConfiguration()
@@ -105,7 +105,7 @@ Le composant final de la pile est Kibana. Cet outil est utilisé pour fournir de
 
 ## <a name="installing-elastic-stack-on-azure"></a>Installation de la pile élastique sur Azure
 
-La pile élastique peut être installée sur Azure de plusieurs façons. Comme toujours, il est possible d' [approvisionner des machines virtuelles et d’y installer directement la pile élastique](/azure/virtual-machines/linux/tutorial-elasticsearch). Cette option est recommandée par certains utilisateurs expérimentés, car elle offre le degré de personnalisation le plus élevé. Le déploiement sur infrastructure as a service introduit une surcharge de gestion importante qui oblige les personnes qui utilisent ce chemin d’accès à prendre possession de toutes les tâches associées à infrastructure as a service telles que la sécurisation des ordinateurs et la mise à jour des correctifs.
+La pile élastique peut être installée sur Azure de nombreuses façons. Comme toujours, il est possible d' [approvisionner des machines virtuelles et d’y installer directement la pile élastique](/azure/virtual-machines/linux/tutorial-elasticsearch). Cette option est recommandée par certains utilisateurs expérimentés, car elle offre le degré de personnalisation le plus élevé. Le déploiement sur infrastructure as a service introduit une surcharge de gestion importante qui oblige les personnes qui utilisent ce chemin d’accès à prendre possession de toutes les tâches associées à infrastructure as a service telles que la sécurisation des ordinateurs et la mise à jour des correctifs.
 
 Une option avec moins de surcharge consiste à utiliser l’un des nombreux conteneurs d’ancrage sur lesquels la pile élastique a déjà été configurée. Ces conteneurs peuvent être déposés dans un cluster Kubernetes existant et exécutés avec le code d’application. Le conteneur [sebp/Elk](https://elk-docker.readthedocs.io/) est un conteneur de pile élastique bien documenté et testé.
 

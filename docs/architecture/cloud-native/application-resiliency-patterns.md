@@ -2,23 +2,23 @@
 title: Modèles de résilience d’application
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de résilience d’application
 author: robvet
-ms.date: 05/13/2020
-ms.openlocfilehash: e81d6e1d6b95cf0053de3ba557068ff458a59dc9
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: 9a59a7d93b61b0dea11680f6caf0bd3b68a0f853
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91161150"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505919"
 ---
 # <a name="application-resiliency-patterns"></a>Modèles de résilience d’application
 
 La première ligne de défense est la résilience des applications.
 
-Bien que vous puissiez consacrer beaucoup de temps à écrire votre propre infrastructure de résilience, de tels produits existent déjà. [Polly](http://www.thepollyproject.org/) est une bibliothèque complète de résilience .net et de gestion des erreurs temporaires qui permet aux développeurs d’exprimer les stratégies de résilience de façon Fluent et thread-safe. Polly cible les applications générées avec le .NET Framework ou .NET Core. Le tableau suivant décrit les fonctionnalités de résilience, appelées `policies` , disponibles dans la bibliothèque Polly. Elles peuvent être appliquées individuellement ou regroupées.
+Bien que vous puissiez consacrer beaucoup de temps à écrire votre propre infrastructure de résilience, de tels produits existent déjà. [Polly](http://www.thepollyproject.org/) est une bibliothèque complète de résilience .net et de gestion des erreurs temporaires qui permet aux développeurs d’exprimer les stratégies de résilience de façon Fluent et thread-safe. Polly cible les applications générées avec le .NET Framework ou le .NET 5. Le tableau suivant décrit les fonctionnalités de résilience, appelées `policies` , disponibles dans la bibliothèque Polly. Elles peuvent être appliquées individuellement ou regroupées.
 
-| Stratégie | Expérience |
+| Policy | Expérience |
 | :-------- | :-------- |
-| Réessayer | Configure les opérations de nouvelle tentative sur les opérations désignées. |
+| Recommencer | Configure les opérations de nouvelle tentative sur les opérations désignées. |
 | Disjoncteur | Bloque les opérations demandées pour une période prédéfinie lorsque les erreurs dépassent un seuil configuré |
 | Délai d'expiration | Limite la durée pendant laquelle un appelant peut attendre une réponse. |
 | Cloisonnement | Limite les actions à un pool de ressources de taille fixe pour empêcher les appels défaillants de inonder une ressource. |
@@ -38,7 +38,7 @@ Notez comment, dans la figure précédente, les stratégies de résilience s’a
 
 Question : voulez-vous réessayer un code d’état HTTP 403-interdit ? Non. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
 
-Comme nous l’avons recommandé dans le chapitre 1, les développeurs Microsoft qui créent des applications Cloud natives doivent cibler la plateforme .NET Core. La version 2,1 a introduit la bibliothèque [HTTPClientFactory](https://www.stevejgordon.co.uk/introduction-to-httpclientfactory-aspnetcore) pour la création d’instances client http pour l’interaction avec les ressources basées sur une URL. En remplaçant la classe HTTPClient d’origine, la classe Factory prend en charge de nombreuses fonctionnalités améliorées, dont l’une est une [intégration étroite](../microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md) avec la bibliothèque de résilience Polly. Avec elle, vous pouvez facilement définir des stratégies de résilience dans la classe de démarrage de l’application pour gérer les défaillances partielles et les problèmes de connectivité.
+Comme nous l’avons recommandé dans le chapitre 1, les développeurs Microsoft qui créent des applications Cloud natives doivent cibler la plate-forme .NET. La version 2,1 a introduit la bibliothèque [HTTPClientFactory](https://www.stevejgordon.co.uk/introduction-to-httpclientfactory-aspnetcore) pour la création d’instances client http pour l’interaction avec les ressources basées sur une URL. En remplaçant la classe HTTPClient d’origine, la classe Factory prend en charge de nombreuses fonctionnalités améliorées, dont l’une est une [intégration étroite](../microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md) avec la bibliothèque de résilience Polly. Avec elle, vous pouvez facilement définir des stratégies de résilience dans la classe de démarrage de l’application pour gérer les défaillances partielles et les problèmes de connectivité.
 
 Nous allons ensuite développer les modèles de réessai et de disjoncteur.
 
@@ -82,7 +82,7 @@ Gardez à l’esprit que l’objectif du modèle de disjoncteur est *différent*
 
 ## <a name="testing-for-resiliency"></a>Test pour la résilience
 
-Le test de la résilience ne peut pas toujours être effectué de la même façon que vous testez les fonctionnalités de l’application (en exécutant des tests unitaires, des tests d’intégration, etc.). Au lieu de cela, vous devez tester le fonctionnement de la charge de travail de bout en bout dans les conditions d’échec qui ne se produisent que par intermittence. Par exemple : injecter des échecs en bloquant des processus, des certificats arrivés à expiration, rendre les services dépendants indisponibles, etc. Des infrastructures comme [chaos-singe](https://github.com/Netflix/chaosmonkey) peuvent être utilisées pour des tests de chaos.
+Le test de la résilience ne peut pas toujours être effectué de la même façon que vous testez les fonctionnalités de l’application (en exécutant des tests unitaires, des tests d’intégration, etc.). Au lieu de cela, vous devez tester la manière dont la charge de travail de bout en bout s’effectue dans des conditions d’échec, qui se produisent uniquement par intermittence. Par exemple : injecter des échecs en bloquant des processus, des certificats arrivés à expiration, rendre les services dépendants indisponibles, etc. Des infrastructures comme [chaos-singe](https://github.com/Netflix/chaosmonkey) peuvent être utilisées pour des tests de chaos.
 
 La résilience des applications est nécessaire pour gérer les opérations demandées. Mais il ne s’agit que de la moitié de l’histoire. Nous aborderons ensuite les fonctionnalités de résilience disponibles dans le Cloud Azure.
 

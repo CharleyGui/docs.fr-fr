@@ -1,13 +1,13 @@
 ---
 title: Azure Monitor
 description: L’utilisation de Azure Monitor pour obtenir une visibilité de votre système est en cours d’exécution.
-ms.date: 07/05/2020
-ms.openlocfilehash: 65e17740dba49c3ac3f6e13462897b5342da6710
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: a93b71db642e05a830b20b80d8387c24d35ea8c1
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160968"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506173"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
@@ -74,7 +74,7 @@ Lorsqu’elles sont déclenchées, les alertes peuvent effectuer une grande vari
 
 Comme les causes courantes des alertes sont identifiées, les alertes peuvent être améliorées avec des détails sur les causes courantes des alertes et les étapes à suivre pour les résoudre. Les déploiements d’applications Cloud-natives très matures peuvent choisir de déclencher des tâches de réparation spontanée, qui effectuent des actions telles que la suppression de nœuds défaillants d’un groupe identique ou le déclenchement d’une activité de mise à l’échelle automatique. Il se peut qu’il ne soit plus nécessaire de réveiller le personnel sur 2AM pour résoudre un problème de site actif, car le système sera en mesure de s’adapter pour compenser ou au moins LIMP, jusqu’à ce que quelqu’un arrive au travail le lendemain matin.
 
-Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre les paramètres de fonctionnement normaux des applications déployées. Cela lui permet de détecter les services qui fonctionnent en dehors de leurs paramètres normaux. Par exemple, le trafic de jour de la semaine classique sur le site peut être de 10 000 demandes par minute. Puis, pour une semaine donnée, soudain, le nombre de demandes atteint un nombre de demandes 20 000 très inhabituelles par minute. La [détection intelligente](/azure/azure-monitor/app/proactive-diagnostics) remarquera cet écart par rapport à la norme et déclenchera une alerte. En même temps, l’analyse des tendances est suffisamment intelligente pour éviter de déclencher des faux positifs lorsque la charge du trafic est attendue.
+Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre les paramètres de fonctionnement normaux des applications déployées. Cette approche permet au service informatique de détecter les services qui fonctionnent en dehors de leurs paramètres normaux. Par exemple, le trafic de jour de la semaine classique sur le site peut être de 10 000 demandes par minute. Puis, pour une semaine donnée, soudain, le nombre de demandes atteint un nombre de demandes 20 000 très inhabituelles par minute. La [détection intelligente](/azure/azure-monitor/app/proactive-diagnostics) remarquera cet écart par rapport à la norme et déclenchera une alerte. En même temps, l’analyse des tendances est suffisamment intelligente pour éviter de déclencher des faux positifs lorsque la charge du trafic est attendue.
 
 ## <a name="references"></a>Références
 

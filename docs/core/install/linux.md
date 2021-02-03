@@ -4,12 +4,12 @@ description: En savoir plus sur les distributions Linux qui prennent en charge l
 author: adegeo
 ms.author: adegeo
 ms.date: 01/06/2021
-ms.openlocfilehash: 3834bd7d977bb13e9543d511bee7170161a755ac
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: 27be7151d95810d8cc607564d5c0ce8dfe5b9ed8
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970731"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506277"
 ---
 # <a name="install-net-on-linux"></a>Installer .NET sur Linux
 
@@ -34,6 +34,16 @@ Les versions suivantes de .NET ne sont ❌ plus prises en charge. Les téléchar
 - 2.0
 
 Ces versions non prises en charge ne sont pas détaillées dans les sections ci-dessous et votre kilométrage peut varier si vous essayez de les installer.
+
+## <a name="manual-installation"></a>Installation manuelle
+
+Si vous ne souhaitez pas utiliser un gestionnaire de package pour installer .NET sur Linux, vous pouvez installer .NET de l’une des manières suivantes :
+
+- [Package d’alignement](linux-snap.md)
+- [Installation par script avec _install-dotnet.sh_](linux-scripted-manual.md#scripted-install)
+- [Extraction binaire manuelle](linux-scripted-manual.md#manual-install)
+
+Veillez à consulter la page de distribution appropriée pour obtenir plus d’informations sur les dépendances requises qui peuvent être manquantes lorsque vous effectuez une installation manuelle.
 
 ## <a name="alpine"></a>Alpine
 
@@ -167,12 +177,12 @@ Le tableau suivant représente l’état de prise en charge d’Ubuntu et de .NE
 | ✔️ [20,10](linux-ubuntu.md#2010-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ✔️ [20,04 (LTS)](linux-ubuntu.md#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌[19,10](linux-ubuntu.md#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
-| ❌[19,04](linux-ubuntu.md#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
+| ❌ [19.04](linux-ubuntu.md#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 |
 | ❌ [18.10](linux-ubuntu.md#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ✔️ [18,04 (LTS)](linux-ubuntu.md#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 | ❌ [17.10](linux-ubuntu.md#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ❌ [17.04](linux-ubuntu.md#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 |
-| ❌ [16.10](linux-ubuntu.md#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
+| ❌[16,10](linux-ubuntu.md#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 |
 | ✔️ [16,04 (LTS)](linux-ubuntu.md#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 |
 
 Pour plus d’informations, consultez [installer .net sur Ubuntu](linux-ubuntu.md).

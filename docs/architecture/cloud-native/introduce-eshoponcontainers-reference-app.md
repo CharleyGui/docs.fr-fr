@@ -1,17 +1,17 @@
 ---
 title: Présentation de l’application de référence eShopOnContainers
 description: Présentation de l’application de référence eShopOnContainers Cloud Native microservices pour ASP.NET Core et Azure.
-ms.date: 05/13/2020
-ms.openlocfilehash: a6f3defabec809eaf1cb143e2b521904248b74f2
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.date: 01/19/2021
+ms.openlocfilehash: 35aa92794d8488c3de60f42af52654c4c26aad82
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613965"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505672"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Présentation de l’application de référence eShopOnContainers
 
-Microsoft, en partenariat avec les principaux experts de la Communauté, a produit une application de référence de microservices Cloud native complète, eShopOnContainers. Cette application est conçue pour s’intégrer à l’aide de .NET Core et de docker, et éventuellement Azure, Kubernetes et Visual Studio, pour créer une boutique en ligne.
+Microsoft, en partenariat avec les principaux experts de la Communauté, a produit une application de référence de microservices Cloud native complète, eShopOnContainers. Cette application est conçue pour s’exposer à l’aide de .NET et de docker, et éventuellement Azure, Kubernetes et Visual Studio, pour créer une vitrine en ligne.
 
 ![Capture d’écran de l’exemple d’application eShopOnContainers.](./media/eshoponcontainers-sample-app-screenshot.png)
 
@@ -48,9 +48,9 @@ L’application présente également les exigences non fonctionnelles suivantes�
 
 L’application eShopOnContainers est accessible à partir de clients Web ou mobiles qui accèdent à l’application via le protocole HTTPs ciblant soit l’application de serveur ASP.NET Core MVC, soit une passerelle d’API appropriée. Les passerelles d’API offrent plusieurs avantages, tels que le découplage des services principaux de clients frontaux individuels et une meilleure sécurité. L’application utilise également un modèle associé connu sous le nom de « serveurs principaux-pour-frontends » (BFF), qui recommande de créer des passerelles d’API distinctes pour chaque client frontal. L’architecture de référence montre comment fractionner les passerelles d’API selon que la demande provient d’un client Web ou mobile.
 
-La fonctionnalité de l’application est divisée en plusieurs microservices distincts. Des services sont responsables de l’authentification et de l’identité, de la liste des éléments du catalogue de produits, de la gestion des paniers d’achat des utilisateurs et du placement des commandes. Chacun de ces services distincts a son propre stockage persistant. Il n’existe pas de magasin de données maître unique avec lequel tous les services interagissent. Au lieu de cela, la coordination et la communication entre les services s’effectuent en fonction des besoins et à l’aide d’un bus de messages.
+La fonctionnalité de l’application est divisée en plusieurs microservices distincts. Des services sont responsables de l’authentification et de l’identité, de la liste des éléments du catalogue de produits, de la gestion des paniers d’achat des utilisateurs et du placement des commandes. Chacun de ces services distincts a son propre stockage persistant. Il n’existe pas un seul magasin de données maître avec lequel tous les services interagissent. Au lieu de cela, la coordination et la communication entre les services s’effectuent en fonction des besoins et à l’aide d’un bus de messages.
 
-Chacun des différents microservices est conçu différemment, en fonction de leurs besoins individuels. Cela signifie que leur pile technologique peut varier, bien qu’elles soient toutes créées à l’aide de .NET Core et conçues pour le Cloud. Les services plus simples offrent un accès de base en création-lecture-mise à jour-suppression (CRUD) aux magasins de données sous-jacents, tandis que les services plus avancés utilisent des approches de conception pilotées par domaine et des modèles pour gérer la complexité des activités.
+Chacun des différents microservices est conçu différemment, en fonction de leurs besoins individuels. Cet aspect signifie que la pile de technologies peut varier, bien qu’elles soient toutes créées à l’aide de .NET et conçues pour le Cloud. Les services plus simples offrent un accès de base en création-lecture-mise à jour-suppression (CRUD) aux magasins de données sous-jacents, tandis que les services plus avancés utilisent Domain-Driven approches et des modèles de conception pour gérer la complexité des activités.
 
 ![Différents genres de microservices](./media/different-kinds-of-microservices.png)
 
@@ -58,13 +58,13 @@ Chacun des différents microservices est conçu différemment, en fonction de le
 
 ## <a name="overview-of-the-code"></a>Vue d’ensemble du code
 
-Étant donné qu’il tire parti des microservices, l’application eShopOnContainers comprend un certain nombre de projets et de solutions distincts dans son référentiel GitHub. En plus des solutions et des fichiers exécutables distincts, les différents services sont conçus pour s’exécuter dans leurs propres conteneurs, à la fois pendant le développement local et au moment de l’exécution en production. La figure 2-4 illustre la solution Visual Studio complète, dans laquelle les différents projets sont organisés.
+Étant donné qu’il utilise des microservices, l’application eShopOnContainers comprend un certain nombre de projets et de solutions distincts dans son référentiel GitHub. En plus des solutions et des fichiers exécutables distincts, les différents services sont conçus pour s’exécuter dans leurs propres conteneurs, à la fois pendant le développement local et au moment de l’exécution en production. La figure 2-4 illustre la solution Visual Studio complète, dans laquelle les différents projets sont organisés.
 
 ![Projets dans la solution Visual Studio.](./media/projects-in-visual-studio-solution.png)
 
 **Figure 2-4**. Projets dans la solution Visual Studio.
 
-Le code est organisé pour prendre en charge les différents microservices, et au sein de chaque microservice, le code est divisé en logique de domaine, en problèmes d’infrastructure et en interface utilisateur ou point de terminaison de service. Dans de nombreux cas, les dépendances de chaque service peuvent être exécutées par les services Azure en production, ainsi que des options alternatives pour le développement local. Examinons comment les exigences de l’application sont mappées aux services Azure.
+Le code est organisé pour prendre en charge les différents microservices, et au sein de chaque microservice, le code est divisé en logique de domaine, en problèmes d’infrastructure et en interface utilisateur ou point de terminaison de service. Dans de nombreux cas, les dépendances de chaque service peuvent être remplies par les services Azure en production et d’autres options pour le développement local. Examinons comment les exigences de l’application sont mappées aux services Azure.
 
 ## <a name="understanding-microservices"></a>Compréhension des microservices
 

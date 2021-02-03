@@ -1,13 +1,13 @@
 ---
 title: Exploitation des conteneurs et des orchestrateurs
 description: Tirer parti des conteneurs et orchestrateurs Kubernetes dans Azure
-ms.date: 05/31/2020
-ms.openlocfilehash: 0ca69b71aa7d414a7bc55253b123020d49468dee
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.date: 01/19/2021
+ms.openlocfilehash: 63ac91b05a88dc13b7c62e6e04eecb0550cd4652
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95672511"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505745"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Exploitation des conteneurs et des orchestrateurs
 
@@ -184,12 +184,12 @@ Visual Studio prend en charge le développement de l’ancrage pour les applicat
 Lorsque cette option est sélectionnée, le projet est créé avec un `Dockerfile` à sa racine, qui peut être utilisé pour générer et héberger l’application dans un conteneur d’ancrage. Un exemple de fichier dockerfile est illustré à la figure 3 -6. git.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
 COPY ["eShopWeb/eShopWeb.csproj", "eShopWeb/"]
 RUN dotnet restore "eShopWeb/eShopWeb.csproj"

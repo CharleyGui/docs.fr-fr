@@ -1,13 +1,13 @@
 ---
 title: DevOps
 description: Considérations relatives à DevOps pour les applications Cloud natives
-ms.date: 05/13/2020
-ms.openlocfilehash: 1a04f5178877f3fdde707753e94718ce0f0bb49d
-ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
+ms.date: 01/19/2021
+ms.openlocfilehash: 089f6ac82f3ce0613c7b8e0b9527f3fa9cf7b50c
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97633713"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506199"
 ---
 # <a name="devops"></a>DevOps
 
@@ -47,7 +47,7 @@ Azure DevOps est divisé en cinq composants principaux :
 
 **Azure Boards** : fournit un outil de suivi des problèmes et des éléments de travail qui s’efforce d’autoriser les utilisateurs à choisir les workflows qui leur conviennent le mieux. Il est fourni avec un certain nombre de modèles préconfigurés, notamment ceux pour prendre en charge SCRUM et les styles de kanban de développement.
 
-**Azure pipelines** : un système de gestion de builds et de versions qui prend en charge une intégration étroite avec Azure. Les builds peuvent être exécutées sur diverses plateformes, de Windows à Linux à MacOS. Les agents de build peuvent être approvisionnés dans le Cloud ou localement.
+**Azure pipelines** : un système de gestion de builds et de versions qui prend en charge une intégration étroite avec Azure. Les builds peuvent être exécutées sur différentes plateformes, de Windows à Linux à macOS. Les agents de build peuvent être approvisionnés dans le Cloud ou localement.
 
 **Azure test plans** -aucune personne ne pourra rester en contact avec la prise en charge de la gestion des tests et des tests exploratoires offerte par la fonctionnalité de test plans.
 
@@ -79,7 +79,7 @@ Le fractionnement du code pour les microservices dans le projet Azure DevOps peu
 
 ### <a name="repository-per-microservice"></a>Référentiel par Microservice
 
-À première vue, cela semble être l’approche la plus logique pour fractionner le code source pour les microservices. Chaque référentiel peut contenir le code nécessaire à la création d’un microservice. Les avantages de cette approche sont facilement visibles :
+À première vue, cette approche semble être l’approche la plus logique pour fractionner le code source pour les microservices. Chaque référentiel peut contenir le code nécessaire à la création d’un microservice. Les avantages de cette approche sont facilement visibles :
 
 1. Les instructions relatives à la création et à la maintenance de l’application peuvent être ajoutées à un fichier Lisez-moi à la racine de chaque référentiel. Lors du basculement dans les référentiels, il est facile de trouver ces instructions, ce qui réduit le temps de rotation pour les développeurs.
 2. Chaque service se trouve dans un emplacement logique, facilement accessible en connaissant le nom du service.
@@ -100,19 +100,19 @@ Un autre inconvénient se présente pour le déplacement du code entre les servi
 
 L’inconvénient final et le plus important est la coordination des modifications. Dans une application true microservices, il ne doit y avoir aucune dépendance de déploiement entre les services. Il doit être possible de déployer les services A, B et C dans n’importe quel ordre, car ils ont un couplage faible. En réalité, cependant, il est parfois souhaitable d’effectuer une modification qui traverse plusieurs dépôts en même temps. Certains exemples incluent la mise à jour d’une bibliothèque pour fermer une brèche de sécurité ou la modification d’un protocole de communication utilisé par tous les services.
 
-Pour effectuer une modification inter-référentiel, vous devez effectuer une validation sur chaque dépôt à la suite. Chaque modification de chaque dépôt doit être demandée et examinée séparément. Cela peut être difficile à coordonner.
+Pour effectuer une modification inter-référentiel, vous devez effectuer une validation sur chaque dépôt à la suite. Chaque modification de chaque dépôt doit être demandée et examinée séparément. Cette activité peut être difficile à coordonner.
 
 Une alternative à l’utilisation de nombreux référentiels consiste à placer tout le code source dans un géant, tout en sachant qu’un référentiel unique.
 
 ### <a name="single-repository"></a>Référentiel unique
 
-Dans cette approche, parfois appelée [monorepository](https://danluu.com/monorepo/), tout le code source de chaque service est placé dans le même référentiel. Dans un premier temps, cela semble être une idée terrible qui est susceptible de compliquer le traitement du code source. Il existe toutefois des avantages marqués pour fonctionner de cette façon.
+Dans cette approche, parfois appelée [monorepository](https://danluu.com/monorepo/), tout le code source de chaque service est placé dans le même référentiel. Dans un premier temps, cette approche semble être une idée terrible susceptible de compliquer le traitement du code source. Il existe toutefois des avantages marqués pour fonctionner de cette façon.
 
 Le premier avantage est qu’il est plus facile de gérer les dépendances entre les projets. Au lieu de s’appuyer sur un flux d’artefact externe, les projets peuvent être importés directement. Cela signifie que les mises à jour sont instantanées et que les versions conflictuelles sont susceptibles d’être détectées au moment de la compilation sur la station de travail du développeur. En effet, le décalage de la partie gauche du test d’intégration.
 
 Lorsque vous déplacez du code entre des projets, il est désormais plus facile de conserver l’historique, car les fichiers sont détectés comme ayant été déplacés au lieu d’être réécrits.
 
-Un autre avantage est qu’il y a un grand nombre de modifications qui peuvent être effectuées dans une seule validation. Cela réduit le temps de traitement des dizaines de modifications à examiner individuellement.
+Un autre avantage est qu’il y a un grand nombre de modifications qui peuvent être effectuées dans une seule validation. Cette activité réduit la surcharge liée au fait que des dizaines de modifications peuvent être révisées individuellement.
 
 De nombreux outils peuvent effectuer une analyse statique du code pour détecter les pratiques de programmation non sécurisées ou l’utilisation problématique des API. Dans un monde à plusieurs référentiels, chaque dépôt doit être itéré pour rechercher les problèmes qu’il rencontre. Le référentiel unique permet d’exécuter l’analyse en un seul endroit.
 

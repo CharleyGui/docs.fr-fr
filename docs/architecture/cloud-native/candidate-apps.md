@@ -2,13 +2,13 @@
 title: Applications candidates pour le Cloud Native
 description: Découvrez les types d’applications qui bénéficient d’une approche Cloud Native
 author: robvet
-ms.date: 05/14/2020
-ms.openlocfilehash: 8f00633a575dad12b0bc1d5adb83acac03db0659
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: 443a7c1a1aaef078b33f352f597b33b768d989a3
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91160942"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506186"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Applications candidates pour le Cloud Native
 
@@ -40,7 +40,7 @@ Le livre électronique gratuit de Microsoft, [moderniser les applications .NET e
 
 Les applications monolithiques non critiques bénéficient en grande partie d’une migration rapide (prête à l'[emploi pour l’infrastructure cloud](../modernize-with-azure-containers/lift-and-shift-existing-apps-azure-iaas.md)). Ici, la charge de travail locale est réhébergée sur une machine virtuelle basée sur le Cloud, sans modification. Cette approche utilise le [modèle IaaS (infrastructure as a service)](https://azure.microsoft.com/overview/what-is-iaas/). Azure comprend plusieurs outils tels que [Azure Migrate](https://azure.microsoft.com/services/azure-migrate/), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)et [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/) pour faciliter ce type de déplacement. Bien que cette stratégie puisse entraîner des économies, ces applications n’ont généralement pas été conçues pour se déverrouiller et tirer parti des avantages de cloud computing.
 
-Les applications monolithiques qui sont essentielles pour l’entreprise bénéficient souvent d’une migration améliorée avec élévation et décalage (*optimisée*pour le Cloud). Cette approche comprend des optimisations de déploiement qui activent les services de Cloud Computing clés, sans modifier l’architecture principale de l’application. Par exemple, vous pouvez créer un [conteneur](/virtualization/windowscontainers/about/) pour l’application et la déployer dans un Orchestrator de conteneur, comme [Azure Kubernetes services](https://azure.microsoft.com/services/kubernetes-service/), abordé plus loin dans cet ouvrage. Une fois dans le Cloud, l’application peut consommer d’autres services Cloud tels que les bases de données, les files d’attente de messages, la surveillance et la mise en cache distribuée.
+Les applications monolithiques qui sont essentielles pour l’entreprise bénéficient souvent d’une migration améliorée avec élévation et décalage (*optimisée* pour le Cloud). Cette approche comprend des optimisations de déploiement qui activent les services de Cloud Computing clés, sans modifier l’architecture principale de l’application. Par exemple, vous pouvez créer un [conteneur](/virtualization/windowscontainers/about/) pour l’application et la déployer dans un Orchestrator de conteneur, comme [Azure Kubernetes services](https://azure.microsoft.com/services/kubernetes-service/), abordé plus loin dans cet ouvrage. Une fois dans le Cloud, l’application peut consommer d’autres services Cloud tels que les bases de données, les files d’attente de messages, la surveillance et la mise en cache distribuée.
 
 Enfin, les applications monolithiques qui exécutent des fonctions d’entreprise stratégiques peuvent tirer le meilleur parti d’une approche *Cloud Native* , l’objet de ce livre. Cette approche offre une agilité et une vélocité. Mais il s’agit d’un coût de recréation de plate-forme, de remaniement et de réécriture du code.
 
@@ -74,11 +74,11 @@ Avec l’introduction de, nous nous penchons maintenant sur un examen bien plus 
 
 - [Microservices .NET : architecture pour les applications .NET en conteneur](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
-- [Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
+- [Moderniser des applications .NET existantes avec le cloud Azure et des conteneurs Windows](https://dotnet.microsoft.com/download/thank-you/modernizing-existing-net-apps-ebook)
 
 - [Modèles natifs Cloud par Cornelia Davis](https://www.manning.com/books/cloud-native-patterns)
 
-- [Au-delà de l’application à 12 facteurs](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
+- [Au-delà de l’application Twelve-Factor](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
 
 - [Qu’est-ce que l’infrastructure en tant que code ?](/azure/devops/learn/what-is-infrastructure-as-code)
 

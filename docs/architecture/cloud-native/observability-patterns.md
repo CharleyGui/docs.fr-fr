@@ -1,17 +1,17 @@
 ---
 title: Modèles d’observabilité
 description: Modèles d’observation pour les applications Cloud natives
-ms.date: 08/10/2020
-ms.openlocfilehash: 2a6ef0e58f1e20667167042614768b099f640858
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 01/19/2021
+ms.openlocfilehash: acb1dc5c62787e9487c0e95c7e86a8f9a1967951
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539851"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506017"
 ---
 # <a name="observability-patterns"></a>Modèles d’observabilité
 
-Tout comme les modèles ont été développés pour faciliter la mise en page du code dans les applications, il existe des modèles pour les applications de fonctionnement de manière fiable. Trois modèles utiles dans la gestion des applications sont apparu : **journalisation**, **surveillance**et **alertes**.
+Tout comme les modèles ont été développés pour faciliter la mise en page du code dans les applications, il existe des modèles pour les applications de fonctionnement de manière fiable. Trois modèles utiles dans la gestion des applications sont apparu : **journalisation**, **surveillance** et **alertes**.
 
 ## <a name="when-to-use-logging"></a>Quand utiliser la journalisation
 
@@ -44,7 +44,7 @@ Chaque langage de programmation dispose d’outils qui autorisent l’écriture 
 * Débogage
 * Information
 * Avertissement
-* Error
+* Erreur
 * Erreur irrécupérable
 
 Ces différents niveaux de journalisation fournissent la granularité de la journalisation. Lorsque l’application fonctionne correctement en production, elle peut être configurée pour enregistrer uniquement les messages importants. Lorsque l’application ne fonctionne pas correctement, le niveau de journalisation peut être augmenté pour que les journaux plus détaillés soient collectés. Cela équilibre les performances par rapport à la facilité de débogage.
@@ -74,7 +74,7 @@ Correctement implémentés, la surveillance peut vous informer des conditions qu
 
 Certains systèmes de journalisation centralisée prennent le rôle supplémentaire de collecter les données de télémétrie en dehors des journaux purs. Ils peuvent collecter des mesures, telles que le temps nécessaire à l’exécution d’une requête de base de données, le temps de réponse moyen d’un serveur Web, et même les moyennes de charge du processeur et la sollicitation de la mémoire, comme indiqué par le système d’exploitation. Conjointement avec les journaux, ces systèmes peuvent fournir une vue holistique de l’intégrité des nœuds du système et de l’application dans son ensemble.
 
-Les fonctionnalités de collecte des mesures des outils de surveillance peuvent également être alimentées manuellement à partir de l’application. Les flux d’activités qui présentent un intérêt particulier, tels que les nouveaux utilisateurs qui s’inscrivent ou les commandes en cours de placement, peuvent être instrumentés de telle sorte qu’ils incrémentent un compteur dans le système de surveillance central. Cela déverrouille les outils de surveillance pour non seulement surveiller l’intégrité de l’application, mais aussi l’intégrité de l’entreprise.
+Les fonctionnalités de collecte des mesures des outils de surveillance peuvent également être alimentées manuellement à partir de l’application. Les flux d’activités qui présentent un intérêt particulier, tels que les nouveaux utilisateurs qui s’inscrivent ou les commandes en cours de placement, peuvent être instrumentés de telle sorte qu’ils incrémentent un compteur dans le système de surveillance central. Cet aspect déverrouille les outils de surveillance pour non seulement surveiller l’intégrité de l’application, mais aussi l’intégrité de l’entreprise.
 
 Les requêtes peuvent être créées dans les outils d’agrégation de journaux pour rechercher certaines statistiques ou certains modèles, qui peuvent ensuite être affichés sous forme graphique, sur des tableaux de bord personnalisés. Souvent, les équipes investiront dans des affichages de grande taille et montés sur un mur qui font pivoter les statistiques relatives à une application. De cette façon, il est facile de voir les problèmes à mesure qu’ils se produisent.
 

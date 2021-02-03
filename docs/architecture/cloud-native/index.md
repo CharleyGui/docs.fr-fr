@@ -2,19 +2,19 @@
 title: Architecture des applications .NET natives Cloud pour Azure
 description: Guide pour la création d’applications Cloud natives tirant parti de conteneurs, de microservices et de fonctionnalités sans serveur d’Azure.
 author: ardalis
-ms.date: 11/10/2020
-ms.openlocfilehash: 673bfef27c3767f68b1c30d4383cee010ba377f0
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.date: 01/19/2021
+ms.openlocfilehash: ad641517f9dc24aed9180cf6a092f4754739bceb
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506647"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506121"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architecture des applications .NET natives Cloud pour Azure
 
 ![image de couverture](./media/cover.png)
 
-**ÉDITION v 1.0**
+**ÉDITION v 1.0.2**
 
 Reportez-vous à [Journal des modifications](https://aka.ms/cn-ebook-changelog) pour les mises à jour de livres et les contributions de la communauté.
 
@@ -28,7 +28,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright &copy; 2020 par Microsoft Corporation
+Copyright &copy; 2021 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
@@ -48,25 +48,29 @@ Auteurs :
 
 > **Rob** distribuateur, architecte du système Cloud principal/architecte IP- [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
 >
-> **Steve « ardalis » Smith** , architecte logiciel et formateur- [Ardalis.com](https://ardalis.com)
+> **Steve « ardalis » Smith**, architecte logiciel et formateur- [Ardalis.com](https://ardalis.com)
 
 Participants et réviseurs :
 
-> **Cesar de la Torre** , responsable de programme principal, équipe .net, Microsoft
+> **Cesar de la Torre**, responsable de programme principal, équipe .net, Microsoft
 >
-> **Nish Anile** , responsable de programme senior, équipe .net, Microsoft
+> **Nish Anile**, responsable de programme senior, équipe .net, Microsoft
 >
-> **Jeremy Likness** , responsable de programme senior, équipe .net, Microsoft
+> **Jeremy Likness**, responsable de programme senior, équipe .net, Microsoft
 >
-> **Cecil Phillip** , avocat du Cloud senior, Microsoft
+> **Cecil Phillip**, avocat du Cloud senior, Microsoft
+>
+> **Sumit Ghosh**, consultant principal chez Neudesic
 
 Rédacteurs :
 
-> **Maira Wenzel** , responsable de programme, équipe .net, Microsoft
+> **Maira Wenzel**, responsable de programme, équipe .net, Microsoft
+
+> **David pins**, développeur de contenu senior, .net docs, Microsoft
 
 ## <a name="version"></a>Version
 
-Ce guide a été écrit de façon à couvrir la version **3,1 de .net Core** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version 3,1 de .net core.
+Ce guide a été écrit pour couvrir la version de **.net 5** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version .net 5.
 
 ## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 

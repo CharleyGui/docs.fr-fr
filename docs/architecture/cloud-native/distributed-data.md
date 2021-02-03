@@ -2,13 +2,13 @@
 title: Données distribuées
 description: Le contraste du stockage des données dans les applications monolithiques et Cloud natives.
 author: robvet
-ms.date: 05/13/2020
-ms.openlocfilehash: b7c8c43b16f2f70f9009c4fe4a8d19c52fa7ea2a
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.date: 01/19/2021
+ms.openlocfilehash: c83ac5dc973ff4c7a4626746472a74cfc6bf54bb
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91163932"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505867"
 ---
 # <a name="distributed-data"></a>Données distribuées
 
@@ -61,7 +61,7 @@ Alors que les microservices sont indépendants et qu’ils se concentrent sur de
 
 **Figure 5-3**. Interrogation sur des microservices
 
-Dans la figure précédente, nous voyons un microservice de panier d’achat qui ajoute un élément au panier d’achat d’un utilisateur. Alors que le magasin de données pour ce microservice contient des données de panier et d’élément de ligne, il ne conserve pas les données de produit ou de tarification. Au lieu de cela, ces éléments de données sont détenus par le catalogue et les microservices de tarification. Cela pose un problème. Comment le microservice du panier d’achat peut-il ajouter un produit au panier d’achat de l’utilisateur lorsqu’il n’a pas de données de produit ou de prix dans sa base de données ?
+Dans la figure précédente, nous voyons un microservice de panier d’achat qui ajoute un élément au panier d’achat d’un utilisateur. Alors que le magasin de données pour ce microservice contient des données de panier et d’élément de ligne, il ne conserve pas les données de produit ou de tarification. Au lieu de cela, ces éléments de données sont détenus par le catalogue et les microservices de tarification. Cet aspect présente un problème. Comment le microservice du panier d’achat peut-il ajouter un produit au panier d’achat de l’utilisateur lorsqu’il n’a pas de données de produit ou de prix dans sa base de données ?
 
 L’une des options présentées dans le chapitre 4 est un [appel http direct](service-to-service-communication.md#queries) du panier d’achat aux microservices de catalogue et de tarification. Toutefois, dans le chapitre 4, nous avons dit que les appels HTTP synchrones *couplent* les microservices ensemble, ce qui réduit leur autonomie et réduit leurs avantages architecturaux.
 

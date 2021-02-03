@@ -5,12 +5,12 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: 34deb802183f20cc92449c21eb7e149cc002850f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2eaa01fad3913272dc90891592d0e35cd89ad2ab
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284220"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506316"
 ---
 # <a name="dependency-loading-in-net-core"></a>Chargement des dépendances dans .NET Core
 
@@ -40,3 +40,7 @@ Le didacticiel [créer une application .net core avec des plug-ins](../tutorials
 ## <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>Comment utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core
 
 L’article [comment utiliser et déboguer l’assembly dans .net Core](../../standard/assembly/unloadability.md) est un didacticiel pas à pas. Il montre comment charger une application .NET Core, l’exécuter, puis la décharger. L’article fournit également des conseils de débogage.
+
+## <a name="collect-detailed-assembly-loading-information"></a>Collecter des informations détaillées sur le chargement d’assembly
+
+L’article [collecter des informations détaillées](collect-details.md) sur le chargement de l’assembly décrit comment collecter des informations détaillées sur le chargement d’assemblys managés dans le Runtime. Elle utilise l’outil [dotnet-trace](../diagnostics/dotnet-trace.md) pour capturer des événements de chargeur d’assembly dans une trace d’un processus en cours d’exécution.

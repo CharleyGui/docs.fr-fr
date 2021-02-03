@@ -5,24 +5,24 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: d9a50fa18e027b6df7415438e1a5584003f7a094
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 4a08148dc8a4736b40af45d11490200056bb6f83
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245594"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506354"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de la mémoire\<T> et de l’étendue\<T>
 
-.NET Core inclut un nombre de types qui représentent une région contiguë arbitraire de mémoire. .NET Core 2.0 a introduit <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>, qui sont des mémoires tampons légères pouvant être sauvegardées par de la mémoire managée ou non managée. Ces types pouvant uniquement être stockés sur la pile, ils sont ne sont pas adaptés à plusieurs scénarios, notamment les appels de méthode asynchrone. .NET Core 2.1 ajoute un certain nombre de types supplémentaires, notamment <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601> et <xref:System.Buffers.MemoryPool%601>. Comme <xref:System.Span%601>, <xref:System.Memory%601> et ses types associés peuvent être sauvegardés par la mémoire managée et non managée. Contrairement à <xref:System.Span%601>, <xref:System.Memory%601> peut être stockée sur le tas managé.
+.NET Core inclut un nombre de types qui représentent une région contiguë arbitraire de mémoire. .NET Core 2,0 a introduit <xref:System.Span%601> et <xref:System.ReadOnlySpan%601> , qui sont des mémoires tampons de mémoire légères qui encapsulent les références à la mémoire managée ou non managée. Ces types pouvant uniquement être stockés sur la pile, ils sont ne sont pas adaptés à plusieurs scénarios, notamment les appels de méthode asynchrone. .NET Core 2.1 ajoute un certain nombre de types supplémentaires, notamment <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601> et <xref:System.Buffers.MemoryPool%601>. Comme <xref:System.Span%601>, <xref:System.Memory%601> et ses types associés peuvent être sauvegardés par la mémoire managée et non managée. Contrairement à <xref:System.Span%601>, <xref:System.Memory%601> peut être stockée sur le tas managé.
 
-<xref:System.Span%601> et <xref:System.Memory%601> sont des mémoires tampons de données structurées qui peuvent être utilisées dans les pipelines. Autrement dit, elles sont conçues afin que certaines données ou leur totalité puissent être transmises efficacement à des composants du pipeline qui puissent les traiter et, éventuellement, modifier la mémoire tampon. Étant donné que <xref:System.Memory%601> et ses types associés sont accessibles par plusieurs composants ou par plusieurs threads, il est important que les développeurs suivent des instructions d’utilisation standard pour produire un code robuste.
+<xref:System.Span%601>Et <xref:System.Memory%601> sont des wrappers sur des mémoires tampons de données structurées qui peuvent être utilisées dans des pipelines. Autrement dit, elles sont conçues afin que certaines données ou leur totalité puissent être transmises efficacement à des composants du pipeline qui puissent les traiter et, éventuellement, modifier la mémoire tampon. Étant donné que <xref:System.Memory%601> et ses types associés sont accessibles par plusieurs composants ou par plusieurs threads, il est important que les développeurs suivent des instructions d’utilisation standard pour produire un code robuste.
 
 ## <a name="owners-consumers-and-lifetime-management"></a>Gestion des propriétaires, des consommateurs et de la durée de vie
 
 Les mémoires tampons pouvant passer d’une API à l’autre et étant parfois accessibles depuis plusieurs threads, il est important de tenir compte de la gestion de la durée de vie. Il y a trois concepts fondamentaux :
 
-- **Propriété**. Le propriétaire d’une instance de la mémoire tampon est responsable de la gestion de la durée de vie, notamment de la destruction de la mémoire tampon lorsqu’elle n’est plus utilisée. Toutes les mémoires tampons ont un propriétaire unique. En règle générale, le propriétaire est le composant qui a créé la mémoire tampon ou l’a reçue à partir d’une fabrique. La propriété peut également être transférée ; **Component-A** peut abandonner le contrôle de la mémoire tampon à **Component-B**, à la suite de quoi **Component-A** ne peut plus utiliser la mémoire tampon, et **Component-B ** devient responsable de sa destruction lorsqu’elle n’est plus utilisée.
+- **Propriété**. Le propriétaire d’une instance de la mémoire tampon est responsable de la gestion de la durée de vie, notamment de la destruction de la mémoire tampon lorsqu’elle n’est plus utilisée. Toutes les mémoires tampons ont un propriétaire unique. En règle générale, le propriétaire est le composant qui a créé la mémoire tampon ou l’a reçue à partir d’une fabrique. La propriété peut également être transférée ; **Component-A** peut abandonner le contrôle de la mémoire tampon à **Component-B**, à la suite de quoi **Component-A** ne peut plus utiliser la mémoire tampon, et **Component-B** devient responsable de sa destruction lorsqu’elle n’est plus utilisée.
 
 - **Consommation**. Le consommateur d’une instance de la mémoire tampon est autorisé à utiliser l’instance de la mémoire tampon en la lisant et, éventuellement, en écrivant dedans. Les mémoires tampons peuvent avoir un consommateur à la fois, sauf si un mécanisme de synchronisation externe est disponible. Le consommateur actif d’une mémoire tampon n’est pas nécessairement le propriétaire de la mémoire tampon.
 

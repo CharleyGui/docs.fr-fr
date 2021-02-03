@@ -2,13 +2,13 @@
 title: Présentation des applications cloud natives
 description: En savoir plus sur l’informatique Cloud Native
 author: robvet
-ms.date: 05/13/2020
-ms.openlocfilehash: 6ec02a1388d6e0f26cdaa1f728f23a22ba52d735
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.date: 01/19/2021
+ms.openlocfilehash: 852eed27d4cfcaefdfa89a73c54414a6306ed28d
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613939"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99506095"
 ---
 # <a name="introduction-to-cloud-native-applications"></a>Présentation des applications cloud natives
 
@@ -42,7 +42,7 @@ Tout est incorrect. Les monolithiques offrent des avantages distincts. Par exemp
 - résolution
 - scale
 
-De nombreuses applications qui existent aujourd’hui ont été créées en tant que monolithes. L’application est un accès et continue à évoluer, à l’itération après l’itération, et à ajouter de plus en plus de fonctionnalités.
+De nombreuses applications qui existent aujourd’hui ont été créées en tant que monolithes. L’application est un accès et continue à évoluer, à effectuer une itération après l’itération, à ajouter des fonctionnalités.
 
 À un moment donné, toutefois, vous ne vous sentez pas à l’aise. Vous perdez le contrôle de l’application. À mesure que le temps passe, le sentiment devient plus intense et vous finissez par entrer un état connu sous le nom de `Fear Cycle` .
 
@@ -58,7 +58,7 @@ De nombreuses applications qui existent aujourd’hui ont été créées en tant
 
 De nombreuses organisations ont traité le cycle de crainte monolithique en adoptant une approche Cloud native pour la création de systèmes. La figure 1-2 illustre le même système généré en appliquant des techniques et des pratiques Cloud natives.
 
-![Conception Cloud-natif](./media/cloud-native-design.png)
+![Conception de Cloud-Native](./media/cloud-native-design.png)
 
 **Figure 1-2**. Conception Cloud-natif
 

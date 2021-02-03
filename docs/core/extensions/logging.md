@@ -4,12 +4,12 @@ author: IEvangelist
 description: Découvrez comment utiliser le framework de journalisation fourni par le package NuGet Microsoft.Extensions.Logging.
 ms.author: dapine
 ms.date: 09/30/2020
-ms.openlocfilehash: 73c16c80e7e000533b880e908b38109d2b1e88fd
-ms.sourcegitcommit: 45c7148f2483db2501c1aa696ab6ed2ed8cb71b2
+ms.openlocfilehash: 80695558cabb741bc25e7fe2650d4a99f9c25c1f
+ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96851728"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99505625"
 ---
 # <a name="logging-in-net"></a>Journalisation dans .NET
 
@@ -64,7 +64,7 @@ Le niveau de journal minimal peut être spécifié pour l’un des éléments su
 - Catégories spécifiques : par exemple, `Logging:LogLevel:Microsoft:Warning`
 - Tous les fournisseurs et toutes les catégories : `Logging:LogLevel:Default:Warning`
 
-Tous les journaux situés en dessous du niveau minimal sont ***not** _ :
+Les journaux situés en dessous du niveau minimal ne sont ***pas***:
 
 - Passé au fournisseur.
 - Consigné ou affiché.
@@ -73,7 +73,7 @@ Pour supprimer tous les journaux, spécifiez [LogLevel. None](xref:Microsoft.Ext
 
 Si un fournisseur prend en charge les [étendues de journal](#log-scopes), `IncludeScopes` indique s’ils sont activés. Pour plus d’informations, consultez [étendues de journaux](#log-scopes)
 
-Le _appsettings.jssuivant sur le fichier * contient les paramètres de tous les fournisseurs intégrés :
+Le *appsettings.jssuivant sur* le fichier contient les paramètres de tous les fournisseurs intégrés :
 
 :::code language="json" source="snippets/configuration/worker-service/appsettings.Production.json":::
 
@@ -169,7 +169,7 @@ namespace Example
 }
 ```
 
-L’appel de `CreateLogger` avec un nom fixe peut être utile lorsqu’il est utilisé dans plusieurs méthodes afin que les événements puissent être organisés par catégorie.
+L’appel de `CreateLogger` avec un nom fixe peut être utile lorsqu’il est utilisé dans plusieurs classes/types afin que les événements puissent être organisés par catégorie.
 
 `ILogger<T>` équivaut à appeler `CreateLogger` avec le nom de type complet `T`.
 
@@ -179,12 +179,12 @@ Le tableau suivant répertorie les <xref:Microsoft.Extensions.Logging.LogLevel> 
 
 | LogLevel | Valeur | Méthode | Description |
 |--|--|--|--|
-| [Trace](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Contiennent les messages les plus détaillés. Ces messages peuvent contenir des données d’application sensibles. Ces messages sont désactivés par défaut et ne doivent **pas** être activés en production. |
+| [Trace](xref:Microsoft.Extensions.Logging.LogLevel) | 0 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogTrace%2A> | Contiennent les messages les plus détaillés. Ces messages peuvent contenir des données d’application sensibles. Ces messages sont désactivés par défaut et ***ne doivent pas*** être activés en production. |
 | [Déboguer](xref:Microsoft.Extensions.Logging.LogLevel) | 1 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogDebug%2A> | Pour le débogage et le développement. Utilisez avec précaution en production en raison du volume élevé. |
-| [Informations](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Effectue le suivi du déroulement général de l’application. Peut avoir une valeur à long terme. |
+| [Information](xref:Microsoft.Extensions.Logging.LogLevel) | 2 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogInformation%2A> | Effectue le suivi du déroulement général de l’application. Peut avoir une valeur à long terme. |
 | [Avertissement](xref:Microsoft.Extensions.Logging.LogLevel) | 3 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogWarning%2A> | Pour les événements anormaux ou inattendus. Comprend généralement des erreurs ou des conditions qui ne provoquent pas l’échec de l’application. |
 | [Error](xref:Microsoft.Extensions.Logging.LogLevel) | 4 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogError%2A> | Fournit des informations sur des erreurs et des exceptions qui ne peuvent pas être gérées. Ces messages indiquent un échec dans l’opération ou la demande en cours, et non dans l’ensemble de l’application. |
-| [Critique](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Fournit des informations sur des échecs qui nécessitent un examen immédiat. Exemples : perte de données, espace disque insuffisant. |
+| [Critical](xref:Microsoft.Extensions.Logging.LogLevel) | 5 | <xref:Microsoft.Extensions.Logging.LoggerExtensions.LogCritical%2A> | Fournit des informations sur des échecs qui nécessitent un examen immédiat. Exemples : perte de données, espace disque insuffisant. |
 | [Aucun](xref:Microsoft.Extensions.Logging.LogLevel) | 6 |  | Spécifie qu’aucun message ne doit être écrit. |
 
 Dans le tableau précédent, la `LogLevel` est indiquée du niveau de gravité le plus bas au plus élevé.
@@ -239,7 +239,7 @@ Le code JSON suivant définit `Logging:Console:LogLevel:Microsoft:Information` :
 
 ## <a name="log-event-id"></a>ID d’événement de log
 
-Chaque journal peut spécifier un identificateur de _event *, <xref:Microsoft.Extensions.Logging.EventId> est une structure avec un `Id` et des `Name` propriétés ReadOnly facultatives. L’exemple de code source utilise la `AppLogEvents` classe pour définir les ID d’événement :
+Chaque journal peut spécifier un *identificateur d’événement*, le <xref:Microsoft.Extensions.Logging.EventId> est une structure avec un `Id` et des `Name` propriétés ReadOnly facultatives. L’exemple de code source utilise la `AppLogEvents` classe pour définir les ID d’événement :
 
 ```csharp
 internal static class AppLogEvents
