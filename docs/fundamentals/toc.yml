@@ -494,7 +494,7 @@ items:
             items:
               - name: Règles de qualité du code
                 items:
-                  - name: Vue d'ensemble
+                  - name: Vue d’ensemble
                     href: code-analysis/quality-rules/index.md
                   - name: Règles de conception
                     items:
@@ -1296,7 +1296,9 @@ items:
                 href: ../core/dependency-loading/loading-resources.md
               - name: Charger des bibliothèques non managées
                 href: ../core/dependency-loading/loading-unmanaged.md
-          - name: Didacticiels
+              - name: Collecter des informations détaillées sur le chargement d’assembly
+                href: ../core/dependency-loading/collect-details.md
+          - name: Tutoriels
             items:
               - name: Créer une application .NET avec des plug-ins
                 href: ../core/tutorials/creating-app-with-plugin-support.md
@@ -1533,7 +1535,7 @@ items:
             href: ../standard/base-types/string-comparison-net-5-plus.md
           - name: Opérations de chaînes de base
             items:
-              - name: Vue d'ensemble
+              - name: Vue d’ensemble
                 href: ../standard/base-types/basic-string-operations.md
                 displayName: string operations
               - name: Créer de nouvelles chaînes
@@ -1689,7 +1691,7 @@ items:
                 href: ../standard/serialization/how-to-determine-if-netstandard-object-is-serializable.md
           - name: "Sérialisation\_XML et\_SOAP"
             items:
-              - name: Vue d'ensemble
+              - name: Vue d’ensemble
                 href: ../standard/serialization/xml-and-soap-serialization.md
               - name: Sérialisation XML en profondeur
                 href: ../standard/serialization/introducing-xml-serialization.md
@@ -2133,6 +2135,8 @@ items:
             href: ../standard/native-interop/customize-struct-marshaling.md
           - name: Personnaliser le marshaling de paramètres
             href: ../standard/native-interop/customize-parameter-marshaling.md
+          - name: P/Invoke inter-plateformes
+            href: ../standard/native-interop/cross-platform.md
           - name: Aide sur l’interopérabilité
             href: ../standard/native-interop/best-practices.md
           - name: Charsets et marshaling
