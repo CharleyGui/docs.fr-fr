@@ -28,6 +28,8 @@
                   href: windows-forms/6.0/notifyicon-text-max-text-length-increased.md
                 - name: Les propriétés TableLayoutSettings lèvent InvalidEnumArgumentException
                   href: windows-forms/6.0/tablelayoutsettings-apis-throw-invalidenumargumentexception.md
+                - name: TreeNodeCollection. Item lève une exception si le nœud est affecté ailleurs
+                  href: windows-forms/6.0/treenodecollection-item-throws-argumentexception.md
         - name: ".NET\_5.0"
           items:
             - name: Vue d’ensemble
@@ -260,6 +262,8 @@
                   href: serialization/5.0/options-honored-when-serializing-key-value-pairs.md
             - name: Windows Forms
               items:
+                - name: Le code natif ne peut pas accéder aux objets Windows Forms
+                  href: windows-forms/5.0/winforms-objects-not-accessible-from-native-code.md
                 - name: OutputType défini sur WinExe
                   href: windows-forms/5.0/automatically-infer-winexe-output-type.md
                 - name: DataGridView ne réinitialise pas les polices personnalisées
@@ -566,8 +570,12 @@
                   href: windows-forms/6.0/notifyicon-text-max-text-length-increased.md
                 - name: Les propriétés TableLayoutSettings lèvent InvalidEnumArgumentException
                   href: windows-forms/6.0/tablelayoutsettings-apis-throw-invalidenumargumentexception.md
+                - name: TreeNodeCollection. Item lève une exception si le nœud est affecté ailleurs
+                  href: windows-forms/6.0/treenodecollection-item-throws-argumentexception.md
             - name: ".NET\_5.0"
               items:
+                - name: Le code natif ne peut pas accéder aux objets Windows Forms
+                  href: windows-forms/5.0/winforms-objects-not-accessible-from-native-code.md
                 - name: OutputType défini sur WinExe
                   href: windows-forms/5.0/automatically-infer-winexe-output-type.md
                 - name: DataGridView ne réinitialise pas les polices personnalisées
