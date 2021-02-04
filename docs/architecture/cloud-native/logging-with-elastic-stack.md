@@ -2,12 +2,12 @@
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
 ms.date: 01/19/2021
-ms.openlocfilehash: ebe7eef16d3b1a73d0fd3a010a509bbaf7be3fd5
-ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
+ms.openlocfilehash: f8dbcd68bf809715a10d0ea1ab36cf5ceb6a96a9
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99505815"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548082"
 ---
 # <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
 
@@ -17,7 +17,7 @@ Ces outils sont appelés pile élastique ou pile ELK.
 
 ## <a name="elastic-stack"></a>Pile élastique
 
-La pile élastique est une option puissante pour la collecte d’informations à partir d’un cluster Kubernetes. Kubernetes prend en charge l’envoi de journaux à un point de terminaison Elasticsearch. dans la [plupart](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)des cas, vous devez commencer par définir les variables d’environnement, comme illustré dans la figure 7-5 :
+La pile élastique est une option puissante pour la collecte d’informations à partir d’un cluster Kubernetes. Kubernetes prend en charge l’envoi de journaux à un point de terminaison Elasticsearch. dans la [plupart](https://v1-19.docs.kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)des cas, vous devez commencer par définir les variables d’environnement, comme illustré dans la figure 7-5 :
 
 ```kubernetes
 KUBE_LOGGING_DESTINATION=elasticsearch
@@ -111,7 +111,7 @@ Une option avec moins de surcharge consiste à utiliser l’un des nombreux cont
 
 Une autre option est une [offre de kit en tant que service récemment annoncée](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - [Installer la pile élastique sur Azure](/azure/virtual-machines/linux/tutorial-elasticsearch)
 

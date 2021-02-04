@@ -1,13 +1,13 @@
 ---
 title: 'Attributs réservés C# : analyse statique Nullable'
-ms.date: 04/14/2020
+ms.date: 02/02/2021
 description: Ces attributs sont interprétés par le compilateur pour fournir une meilleure analyse statique pour les types de référence Nullable et non Nullable.
-ms.openlocfilehash: 6678cd21de23d4ed391eff089e33939b5adff0fa
-ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
+ms.openlocfilehash: c1c3e0a0fe1ee9000e0a1a85ee08e6e966200be5
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955601"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548355"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Les attributs réservés contribuent à l’analyse statique d’État null du compilateur
 
@@ -16,7 +16,7 @@ Dans un contexte Nullable, le compilateur effectue une analyse statique du code 
 - *not null*: l’analyse statique détermine qu’une valeur non null est assignée à une variable.
 - *peut-être null*: l’analyse statique ne peut pas déterminer qu’une valeur non null est assignée à une variable.
 
-Vous pouvez appliquer un certain nombre d’attributs qui fournissent des informations au compilateur sur la sémantique de vos API. Ces informations permettent au compilateur d’effectuer une analyse statique et de déterminer quand une variable n’a pas la valeur null. Cet article fournit une brève description de chacun de ces attributs et explique comment les utiliser. Tous les exemples supposent C# 8,0 ou une version plus récente et le code se trouve dans un contexte Nullable.
+Vous pouvez appliquer des attributs qui fournissent des informations au compilateur sur la sémantique de vos API. Ces informations permettent au compilateur d’effectuer une analyse statique et de déterminer quand une variable n’a pas la valeur null. Cet article fournit une brève description de chacun de ces attributs et explique comment les utiliser. Tous les exemples supposent C# 8,0 ou une version plus récente et le code se trouve dans un contexte Nullable.
 
 Commençons par un exemple familier. Imaginez que votre bibliothèque possède l’API suivante pour récupérer une chaîne de ressource :
 
@@ -45,6 +45,8 @@ Les règles de vos API sont probablement plus compliquées, comme vous l’avez 
 - [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): une valeur de retour n’est pas null si l’argument pour le paramètre spécifié n’est pas null.
 - [DoesNotReturn](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute): une méthode ne retourne jamais. En d’autres termes, elle lève toujours une exception.
 - [DoesNotReturnIf](xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute): cette méthode ne retourne jamais si le `bool` paramètre associé a la valeur spécifiée.
+- [MemberNotNull](xref:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute): le membre indiqué n’a pas la valeur NULL lorsque la méthode est retournée.
+- [MemberNotNullWhen](xref:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute): le membre indiqué n’est pas NULL lorsque la méthode retourne la `bool` valeur spécifiée.
 
 Les descriptions précédentes sont une référence rapide à ce que fait chaque attribut. Chaque section suivante décrit le comportement et la signification de manière plus approfondie.
 
@@ -63,7 +65,7 @@ public string ScreenName
 private string _screenName;
 ```
 
-Quand vous compilez le code précédent dans un contexte oublie Nullable, tout est parfait. Une fois que vous activez les types référence Nullable, la `ScreenName` propriété devient une référence qui n’accepte pas les valeurs NULL. C’est correct pour l' `get` accesseur : il ne retourne jamais `null` . Les appelants n’ont pas besoin de vérifier la propriété retournée pour `null` . Mais maintenant, le paramétrage de la propriété pour `null` générer un avertissement. Pour continuer à prendre en charge ce type de code, vous ajoutez l' <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> attribut à la propriété, comme illustré dans le code suivant :
+Quand vous compilez le code précédent dans un contexte oublie Nullable, tout est parfait. Une fois que vous activez les types référence Nullable, la `ScreenName` propriété devient une référence qui n’accepte pas les valeurs NULL. C’est correct pour l' `get` accesseur : il ne retourne jamais `null` . Les appelants n’ont pas besoin de vérifier la propriété retournée pour `null` . Mais maintenant, le paramétrage de la propriété pour `null` générer un avertissement. Pour prendre en charge ce type de code, vous ajoutez l' <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> attribut à la propriété, comme illustré dans le code suivant :
 
 ```csharp
 [AllowNull]
@@ -75,7 +77,7 @@ public string ScreenName
 private string _screenName = GenerateRandomScreenName();
 ```
 
-Vous devrez peut-être ajouter une `using` directive pour <xref:System.Diagnostics.CodeAnalysis> utiliser ce et d’autres attributs abordés dans cet article. L’attribut est appliqué à la propriété, et non à l' `set` accesseur. L' `AllowNull` attribut spécifie des *conditions préalables*et s’applique uniquement aux entrées. L' `get` accesseur a une valeur de retour, mais aucun argument d’entrée. Par conséquent, l' `AllowNull` attribut s’applique uniquement à l' `set` accesseur.
+Vous devrez peut-être ajouter une `using` directive pour <xref:System.Diagnostics.CodeAnalysis> utiliser ce et d’autres attributs abordés dans cet article. L’attribut est appliqué à la propriété, et non à l' `set` accesseur. L' `AllowNull` attribut spécifie des *conditions préalables* et s’applique uniquement aux entrées. L' `get` accesseur a une valeur de retour, mais aucun argument d’entrée. Par conséquent, l' `AllowNull` attribut s’applique uniquement à l' `set` accesseur.
 
 L’exemple précédent montre ce qu’il faut rechercher lors de l’ajout `AllowNull` de l’attribut à un argument :
 
@@ -180,7 +182,7 @@ Vous êtes probablement familiarisé avec la `string` méthode <xref:System.Stri
 bool IsNullOrEmpty([NotNullWhen(false)] string? value);
 ```
 
-Cela indique au compilateur que tout code dont la valeur de retour est n’a `false` pas besoin d’être vérifié par null. L’ajout de l’attribut informe l’analyse statique du compilateur qui `IsNullOrEmpty` effectue la vérification de la valeur null nécessaire : lorsqu’il retourne `false` , l’argument d’entrée n’est pas `null` .
+Cela indique au compilateur que tout code pour lequel la valeur de retour n’a `false` pas besoin de vérifications de valeur null. L’ajout de l’attribut informe l’analyse statique du compilateur qui `IsNullOrEmpty` effectue la vérification de la valeur null nécessaire : lorsqu’il retourne `false` , l’argument d’entrée n’est pas `null` .
 
 ```csharp
 string? userInput = GetUserInput();
@@ -215,7 +217,7 @@ Vous pouvez également avoir un attribut final. Parfois, l’État null d’une 
 string GetTopLevelDomainFromFullUrl(string url);
 ```
 
-Si l' `url` argument n’est pas null, la sortie n’est pas `null` . Une fois que les références Nullable sont activées, cette signature fonctionne correctement, à condition que votre API n’accepte jamais une entrée null. Toutefois, si l’entrée peut être null, la valeur de retour peut également être null. Par conséquent, vous pouvez remplacer la signature par le code suivant :
+Si l' `url` argument n’est pas null, la sortie n’est pas `null` . Une fois que les références Nullable sont activées, cette signature fonctionne correctement, à condition que votre API n’accepte jamais une entrée null. Toutefois, si l’entrée peut être null, la valeur de retour peut également être null. Vous pouvez remplacer la signature par le code suivant :
 
 ```csharp
 string? GetTopLevelDomainFromFullUrl(string? url);
@@ -236,11 +238,21 @@ Vous spécifiez des post-conditions conditionnelles à l’aide des attributs su
 - [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): un argument d’entrée Nullable ne sera pas NULL lorsque la méthode retourne la `bool` valeur spécifiée.
 - [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): une valeur de retour n’est pas null si l’argument d’entrée pour le paramètre spécifié n’est pas null.
 
+## <a name="constructor-helper-methods-membernotnull-and-membernotnullwhen"></a>Méthodes d’assistance du constructeur : `MemberNotNull` et `MemberNotNullWhen`
+
+Ces attributs spécifient votre intention lorsque vous avez refactorisé du code commun à partir de constructeurs dans des méthodes d’assistance. Le compilateur C# analyse les constructeurs et les initialiseurs de champ pour s’assurer que tous les champs de référence non Nullable ont été initialisés avant le retour de chaque constructeur. Toutefois, le compilateur C# n’effectue pas le suivi des assignations de champs par toutes les méthodes d’assistance. Le compilateur émet `CS8618` un avertissement lorsque les champs ne sont pas initialisés directement dans le constructeur, mais plutôt dans une méthode d’assistance. Vous ajoutez <xref:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute> à une déclaration de méthode aux champs qui sont initialisés à une valeur non null dans la méthode. Considérez l’exemple suivant :
+
+:::code language="csharp" source="snippets/InitializeMembers.cs" ID="MemberNotNullExample":::
+
+Vous pouvez spécifier plusieurs noms de champs comme arguments pour le `MemberNotNull` constructeur d’attribut.
+
+<xref:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute>A un `bool` argument. Vous utilisez `MemberNotNullWhen` dans les cas où votre méthode d’assistance retourne un `bool` qui indique si votre méthode d’assistance a initialisé des champs.
+
 ## <a name="verify-unreachable-code"></a>Vérifier le code inaccessible
 
 Certaines méthodes, généralement des applications d’assistance d’exception ou d’autres méthodes utilitaires, se ferment toujours en levant une exception. Ou bien, une application d’assistance peut lever une exception en fonction de la valeur d’un argument booléen.
 
-Dans le premier cas, vous pouvez ajouter l' `DoesNotReturn` attribut à la déclaration de méthode. Le compilateur vous aide de trois façons. Tout d’abord, le compilateur émet un avertissement s’il existe un chemin d’accès où la méthode peut se fermer sans lever d’exception. Deuxièmement, le compilateur marque tout code après un appel à cette méthode comme étant *inaccessible*, jusqu’à ce qu’une `catch` clause appropriée soit rencontrée. Troisièmement, le code inaccessible n’affecte pas les États null. Prenons la méthode suivante :
+Dans le premier cas, vous pouvez ajouter l' `DoesNotReturn` attribut à la déclaration de méthode. Le compilateur vous aide de trois façons. Tout d’abord, le compilateur émet un avertissement s’il y a un chemin d’accès où la méthode peut se fermer sans lever d’exception. Deuxièmement, le compilateur marque tout code après un appel à cette méthode comme étant *inaccessible*, jusqu’à ce qu’une `catch` clause appropriée soit trouvée. Troisièmement, le code inaccessible n’affecte pas les États null. Prenons la méthode suivante :
 
 ```csharp
 [DoesNotReturn]
@@ -285,7 +297,7 @@ public void SetState(object containedField)
 
 [!INCLUDE [C# version alert](../../includes/csharp-version-alert.md)]
 
-L’ajout de types de référence Nullable fournit un vocabulaire initial pour décrire les attentes des API pour les variables qui pourraient être `null` . Les attributs supplémentaires fournissent un vocabulaire plus riche pour décrire l’État null des variables en tant que conditions préalables et post-conditions. Ces attributs décrivent plus clairement vos attentes et offrent une meilleure expérience aux développeurs qui utilisent vos API.
+L’ajout de types de référence Nullable fournit un vocabulaire initial pour décrire les attentes des API pour les variables qui pourraient être `null` . Les attributs fournissent un vocabulaire plus riche pour décrire l’État null des variables en tant que conditions préalables et post-conditions. Ces attributs décrivent plus clairement vos attentes et offrent une meilleure expérience aux développeurs qui utilisent vos API.
 
 Lorsque vous mettez à jour des bibliothèques pour un contexte Nullable, ajoutez ces attributs pour guider les utilisateurs de vos API vers l’utilisation correcte. Ces attributs vous aident à décrire complètement l’État null des arguments d’entrée et les valeurs de retour :
 

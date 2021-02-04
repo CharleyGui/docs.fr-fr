@@ -2,12 +2,12 @@
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
 ms.date: 10/12/2020
-ms.openlocfilehash: fac8eeed63e8737ad42699d81b421747b207c69a
-ms.sourcegitcommit: 35ca2255c6c86968eaef9e3a251c9739ce8e4288
+ms.openlocfilehash: a8c6d82ddb7bc3f8b4cc9eae9dd7aaf65732a0b8
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97753625"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548393"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -72,6 +72,10 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
   - Windows uniquement.
   - Écrit des messages dans le journal des événements Windows.
   - Les administrateurs système attendent que des messages d’erreur d’application irrécupérables s’affichent dans le journal des événements Windows.
+
+## <a name="distributed-tracing"></a>Suivi distribué
+
+Le [traçage distribué](./distributed-tracing.md) permet de publier et d’observer les données de suivi dans un système distribué.
 
 ## <a name="ilogger-and-logging-frameworks"></a>Frameworks ILogger et Logging
 

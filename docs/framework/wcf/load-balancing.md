@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: ccafce51cadba588dc6c4e8fc8b476f3cd8ee699
-ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.openlocfilehash: ccb915c33be217d2a8d00a54c5bd57384286140f
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96262708"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548095"
 ---
 # <a name="load-balancing"></a>Équilibrage de la charge.
 
@@ -85,7 +85,9 @@ Une façon d’augmenter la capacité des applications Windows Communication Fou
 
  <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.WSDualHttpBinding> peuvent tous deux faire l’objet d’un équilibrage de charge à l’aide des techniques d’équilibrage de charge HTTP sous réserve que plusieurs modifications soient apportées à la configuration de liaison par défaut.  
   
-- Désactivez l'établissement du contexte de sécurité : pour ce faire, affectez <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> a la propriété <xref:System.ServiceModel.WSHttpBinding> de `false`. En guise d’alternative, si des sessions de sécurité sont requises, il est possible d’utiliser des sessions de sécurité avec état comme décrit dans la rubrique [sessions sécurisées](./feature-details/secure-sessions.md) . Les sessions de sécurité avec état permettent au service de rester sans état car l’ensemble de l’état de la session de sécurité est transmis avec chaque demande dans le cadre du jeton de sécurité de protection. Notez que pour activer une session de sécurité avec état, il est nécessaire d’utiliser <xref:System.ServiceModel.Channels.CustomBinding> ou <xref:System.ServiceModel.Channels.Binding> défini par l’utilisateur car les paramètres de configuration requis ne sont pas exposés sur <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.WSDualHttpBinding> qui sont fournis par le système.  
+- Désactivez l’établissement du contexte de sécurité ou utilisez des sessions de sécurité avec état. L’établissement du contexte de sécurité peut être désactivé en affectant <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> à la propriété de la <xref:System.ServiceModel.WSHttpBinding> valeur `false` . Si vous utilisez ou si vous avez <xref:System.ServiceModel.WSDualHttpBinding> besoin de sessions de sécurité, il est possible d’utiliser des sessions de sécurité avec état comme décrit dans [sessions sécurisées](./feature-details/secure-sessions.md). Les sessions de sécurité avec état permettent au service de rester sans État, car l’ensemble de l’état de la session de sécurité est transmis avec chaque demande dans le cadre du jeton de sécurité de protection. Pour activer une session de sécurité avec état, vous devez utiliser un <xref:System.ServiceModel.Channels.CustomBinding> ou un défini par <xref:System.ServiceModel.Channels.Binding> l’utilisateur, car les paramètres de configuration nécessaires ne sont pas exposés sur le fourni par le système <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.WSDualHttpBinding> .
+
+- Si vous désactivez l’établissement du contexte de sécurité, vous devez également désactiver la négociation des informations d’identification du service. Pour la désactiver, affectez la valeur <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential> à la propriété de <xref:System.ServiceModel.WSHttpBinding> `false` . Pour désactiver la négociation des informations d’identification du service, vous devrez peut-être spécifier explicitement l’identité du point de terminaison sur le client.
   
 - N'utilisez pas de session fiable. Cette fonctionnalité est désactivée par défaut.  
   

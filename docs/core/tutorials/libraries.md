@@ -4,12 +4,12 @@ description: Découvrez comment créer des bibliothèques .NET à l’aide de l�
 author: cartermp
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 6f4c1feac7630a6a0250e4b0b39ef01152f5a400
-ms.sourcegitcommit: 635a0ff775d2447a81ef7233a599b8f88b162e5d
+ms.openlocfilehash: 76d08007e191fe9090f3f14c906a40e84e37bd19
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97633674"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548407"
 ---
 # <a name="develop-libraries-with-the-net-cli"></a>Développer des bibliothèques avec l’interface CLI .NET
 
@@ -17,16 +17,16 @@ Cet article explique comment écrire des bibliothèques pour .NET à l’aide de
 
 ## <a name="prerequisites"></a>Prérequis
 
-[Le kit de développement logiciel (SDK) .net et l’interface CLI](https://dotnet.microsoft.com/download) doivent être installés sur votre machine.
+Vous avez besoin du [Kit de développement logiciel (SDK) .net](https://dotnet.microsoft.com/download) installé sur votre ordinateur.
 
-Pour accéder aux sections de ce document concernant les versions du .NET Framework, vous devez installer le [.NET Framework](https://dotnet.microsoft.com) sur un ordinateur Windows.
+Pour accéder aux sections de ce document concernant les versions du .NET Framework, vous devez installer le [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework) sur un ordinateur Windows.
 
-En outre, si vous souhaitez prendre en charge des cibles de .NET Framework plus anciennes, vous devez installer des packs de ciblage ou des packs de développement à partir de la [page des Archives de téléchargement .net](https://dotnet.microsoft.com/download/archives). Reportez-vous au tableau suivant :
+En outre, si vous souhaitez prendre en charge des cibles de .NET Framework plus anciennes, vous devez installer des packs de ciblage ou des packs de développement à partir de la [page de téléchargements .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework). Reportez-vous au tableau suivant :
 
 | Version du .NET Framework | À télécharger                                       |
 | ---------------------- | ------------------------------------------------------ |
 | 4.6.1                  | Pack de ciblage .NET Framework 4.6.1                    |
-| 4,6                    | Pack de ciblage .NET Framework 4.6                      |
+| 4.6                    | Pack de ciblage .NET Framework 4.6                      |
 | 4.5.2                  | Pack du développeur .NET Framework 4.5.2                    |
 | 4.5.1                  | Pack du développeur .NET Framework 4.5.1                    |
 | 4.5                    | SDK Windows pour Windows 8         |
