@@ -3,12 +3,12 @@ title: Communication résiliente
 description: Architecture des applications .NET natives Cloud pour Azure | Communication résiliente
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 18b26223634efc5c05f680d0cbb7c8cbc2490a59
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 52f08c066767175c699f5a058267cb42d2b1d4aa
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91166038"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99547692"
 ---
 # <a name="resilient-communications"></a>Communications résilientes
 
@@ -77,11 +77,11 @@ Le Cloud Azure prend en charge Istio et fournit un support direct pour celui-ci 
 - [Installation de Istio dans AKS](/azure/aks/istio-install)
 - [Utilisation de AKS et Istio](/azure/aks/istio-scenario-routing)
 
-### <a name="references"></a>Références
+### <a name="references"></a>References
 
-- [Polly](http://www.thepollyproject.org/)
+- [Polly](https://dotnetfoundation.org/projects/polly)
 
-- [Modèle de nouvelle tentative](/azure/architecture/patterns/retry)
+- [Modèle Nouvelle tentative](/azure/architecture/patterns/retry)
 
 - [Modèle Disjoncteur](/azure/architecture/patterns/circuit-breaker)
 

@@ -3,18 +3,18 @@ title: Modèles de résilience d’application
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de résilience d’application
 author: robvet
 ms.date: 01/19/2021
-ms.openlocfilehash: 9a59a7d93b61b0dea11680f6caf0bd3b68a0f853
-ms.sourcegitcommit: f2ab02d9a780819ca2e5310bbcf5cfe5b7993041
+ms.openlocfilehash: 655df16ef58f1deb2d2f4d0487c47658499f2108
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99505919"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99547718"
 ---
 # <a name="application-resiliency-patterns"></a>Modèles de résilience d’application
 
 La première ligne de défense est la résilience des applications.
 
-Bien que vous puissiez consacrer beaucoup de temps à écrire votre propre infrastructure de résilience, de tels produits existent déjà. [Polly](http://www.thepollyproject.org/) est une bibliothèque complète de résilience .net et de gestion des erreurs temporaires qui permet aux développeurs d’exprimer les stratégies de résilience de façon Fluent et thread-safe. Polly cible les applications générées avec le .NET Framework ou le .NET 5. Le tableau suivant décrit les fonctionnalités de résilience, appelées `policies` , disponibles dans la bibliothèque Polly. Elles peuvent être appliquées individuellement ou regroupées.
+Bien que vous puissiez consacrer beaucoup de temps à écrire votre propre infrastructure de résilience, de tels produits existent déjà. [Polly](https://dotnetfoundation.org/projects/polly) est une bibliothèque complète de résilience .net et de gestion des erreurs temporaires qui permet aux développeurs d’exprimer les stratégies de résilience de façon Fluent et thread-safe. Polly cible les applications générées avec le .NET Framework ou le .NET 5. Le tableau suivant décrit les fonctionnalités de résilience, appelées `policies` , disponibles dans la bibliothèque Polly. Elles peuvent être appliquées individuellement ou regroupées.
 
 | Policy | Expérience |
 | :-------- | :-------- |
@@ -36,7 +36,7 @@ Notez comment, dans la figure précédente, les stratégies de résilience s’a
 | 503 | Service indisponible |
 | 504 | Délai d’expiration de la passerelle |
 
-Question : voulez-vous réessayer un code d’état HTTP 403-interdit ? Non. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
+Question : voulez-vous réessayer un code d’état HTTP 403-interdit ? Faux. Ici, le système fonctionne correctement, mais informe l’appelant qu’il n’est pas autorisé à effectuer l’opération demandée. Vous devez veiller à ne réessayer que les opérations provoquées par des défaillances.
 
 Comme nous l’avons recommandé dans le chapitre 1, les développeurs Microsoft qui créent des applications Cloud natives doivent cibler la plate-forme .NET. La version 2,1 a introduit la bibliothèque [HTTPClientFactory](https://www.stevejgordon.co.uk/introduction-to-httpclientfactory-aspnetcore) pour la création d’instances client http pour l’interaction avec les ressources basées sur une URL. En remplaçant la classe HTTPClient d’origine, la classe Factory prend en charge de nombreuses fonctionnalités améliorées, dont l’une est une [intégration étroite](../microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md) avec la bibliothèque de résilience Polly. Avec elle, vous pouvez facilement définir des stratégies de résilience dans la classe de démarrage de l’application pour gérer les défaillances partielles et les problèmes de connectivité.
 

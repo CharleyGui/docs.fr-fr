@@ -1,7 +1,7 @@
 ---
 title: Types de collections pris en charge dans System.Text.Json
 description: Découvrez les types de collections pris en charge pour la sérialisation par les API dans l' System.Text.Json espace de noms.
-ms.date: 01/06/2021
+ms.date: 02/01/2021
 no-loc:
 - System.Text.Json
 ms.topic: reference
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 48033689e844dd29c999395255b5a1565fa2996e
-ms.sourcegitcommit: 7ef96827b161ef3fcde75f79d839885632e26ef1
+ms.openlocfilehash: 5a5016c70e86124510a4778aafb9fb14b1890add
+ms.sourcegitcommit: 4df8e005c074ceb1f978f007b222fe253be2baf3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97970992"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99547653"
 ---
-# <a name="supported-collection-types-in-no-locsystemtextjson"></a>Types de collections pris en charge dans System.Text.Json
+# <a name="supported-collection-types-in-systemtextjson"></a>Types de collections pris en charge dans System.Text.Json
 
 Cet article donne une vue d’ensemble des regroupements pris en charge pour la sérialisation et la désérialisation. <xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> prend en charge un type de collection pour la sérialisation s’il :
 
@@ -30,6 +30,14 @@ Le sérialiseur appelle la <xref:System.Collections.IEnumerable.GetEnumerator> m
 La désérialisation est plus compliquée et n’est pas prise en charge pour certains types de collections.
 
 Les sections suivantes sont organisées par espace de noms et indiquent les types pris en charge pour la sérialisation et la désérialisation.
+
+## <a name="systemarray-namespace"></a>Espace de noms System. Array
+
+| Type                                                                                            | Sérialisation | Désérialisation |
+|-------------------------------------------------------------------------------------------------|---------------|-----------------|
+| [Tableaux unidimensionnels](../../csharp/programming-guide/arrays/single-dimensional-arrays.md) | ✔️           | ✔️              |
+| [Tableaux multidimensionnels](../../csharp/programming-guide/arrays/multidimensional-arrays.md)    | ❌           | ❌              |
+| [Tableaux en escalier](../../csharp/programming-guide/arrays/jagged-arrays.md)                         | ✔️           | ✔️              |
 
 ## <a name="systemcollections-namespace"></a>Espace de noms System.Collections
 
